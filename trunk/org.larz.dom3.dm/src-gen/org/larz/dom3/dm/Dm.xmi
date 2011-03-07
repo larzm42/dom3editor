@@ -1,0 +1,2321 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xtext:Grammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext" name="org.larz.dom3.dm.Dm" definesHiddenTokens="true" hiddenTokens="//@rules.101 //@rules.102 //@rules.103">
+  <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
+    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </metamodelDeclarations>
+  <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="dm">
+    <ePackage href="http://www.larz.org/dom3/dm/Dm#/"/>
+  </metamodelDeclarations>
+  <rules xsi:type="xtext:ParserRule" name="Dom3Mod">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Dom3Mod"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:UnorderedGroup">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="#modname"/>
+          <elements xsi:type="xtext:Assignment" feature="modname" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#description"/>
+          <elements xsi:type="xtext:Assignment" feature="desc" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#icon"/>
+          <elements xsi:type="xtext:Assignment" feature="icon" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#version"/>
+          <elements xsi:type="xtext:Assignment" feature="version" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#domversion"/>
+          <elements xsi:type="xtext:Assignment" feature="domversion" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#poppergold"/>
+          <elements xsi:type="xtext:Assignment" feature="poppergold" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#resourcemult"/>
+          <elements xsi:type="xtext:Assignment" feature="resourcemult" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#supplymult"/>
+          <elements xsi:type="xtext:Assignment" feature="supplymult" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#unresthalfinc"/>
+          <elements xsi:type="xtext:Assignment" feature="unresthalfinc" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#unresthalfres"/>
+          <elements xsi:type="xtext:Assignment" feature="unresthalfres" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#eventisrare"/>
+          <elements xsi:type="xtext:Assignment" feature="eventisrare" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#turmoilincome"/>
+          <elements xsi:type="xtext:Assignment" feature="turmoilincome" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#turmoilevents"/>
+          <elements xsi:type="xtext:Assignment" feature="turmoilevents" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#deathincome"/>
+          <elements xsi:type="xtext:Assignment" feature="deathincome" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#deathsupply"/>
+          <elements xsi:type="xtext:Assignment" feature="deathsupply" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#deathdeath"/>
+          <elements xsi:type="xtext:Assignment" feature="deathdeath" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#slothincome"/>
+          <elements xsi:type="xtext:Assignment" feature="slothincome" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#slothresources"/>
+          <elements xsi:type="xtext:Assignment" feature="slothresources" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#coldincome"/>
+          <elements xsi:type="xtext:Assignment" feature="coldincome" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#coldsupply"/>
+          <elements xsi:type="xtext:Assignment" feature="coldsupply" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#misfortune"/>
+          <elements xsi:type="xtext:Assignment" feature="misfortune" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#luckevents"/>
+          <elements xsi:type="xtext:Assignment" feature="luckevents" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="#researchscale"/>
+          <elements xsi:type="xtext:Assignment" feature="researchscale" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="elements" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="AbstractElement">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//AbstractElement"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.40"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.55"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.64"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.71"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.84"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="VersionNum">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Armor">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Armor"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.4"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.6"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectArmorById">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectArmorById"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectarmor"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectArmorByName">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectArmorByName"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectarmor"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NewArmor">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NewArmor"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#newarmor"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ArmorMods">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ArmorMods"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.8"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.9"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ArmorPattern1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ArmorPattern1"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.10"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ArmorPattern2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ArmorPattern2"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ArmorInst1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ArmorInst1"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="name" operator="?=">
+      <terminal xsi:type="xtext:Keyword" value="#name"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ArmorInst2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ArmorInst2"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="type" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#type"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="prot" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#prot"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="def" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#def"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="enc" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#enc"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="rcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#rcost"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Weapon">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Weapon"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectWeaponById">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectWeaponById"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectweapon"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectWeaponByName">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectWeaponByName"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectweapon"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NewWeapon">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NewWeapon"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#newweapon"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="WeaponMods">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponMods"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.18"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.20"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="WeaponPattern1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponPattern1"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.21"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="WeaponPattern2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponPattern2"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="WeaponPattern3">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponPattern3"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+      <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="WeaponPattern4">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponPattern4"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="WeaponInst1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponInst1"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="name" operator="?=">
+      <terminal xsi:type="xtext:Keyword" value="#name"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="WeaponInst2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponInst2"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="dmg" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dmg"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="nratt" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#nratt"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="att" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#att"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="def" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#def"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="len" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#len"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="range" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#range"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="ammo" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#ammo"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="rcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#rcost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="sound" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#sound"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="aoe" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#aoe"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="secondaryeffect" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#secondaryeffect"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="secondaryeffectalways" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#secondaryeffectalways"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="explspr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#explspr"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="WeaponInst3">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponInst3"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="flyspr" operator="?=">
+      <terminal xsi:type="xtext:Keyword" value="#flyspr"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="WeaponInst4">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponInst4"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="twohanded" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#twohanded"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="armorpiercing" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#armorpiercing"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="armornegating" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#armornegating"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="magic" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#magic"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_normal" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_normal"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_stun" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_stun"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_paralyze" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_paralyze"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_poison" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_poison"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_cap" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_cap"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_demon" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_demon"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_demononly" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_demononly"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_holy" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_holy"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_magic" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_magic"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_small" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_small"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_large" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_large"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_constructonly" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_constructonly"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dt_raise" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dt_raise"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mind" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mind"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="cold" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#cold"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="fire" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#fire"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="shock" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#shock"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="poison" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#poison"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="bonus" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#bonus"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="charge" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#charge"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="flail" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#flail"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="nostr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#nostr"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mrnegates" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mrnegates"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mrnegateseasily" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mrnegateseasily"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Monster">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Monster"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.26"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.28"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectMonsterById">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectMonsterById"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectmonster"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectMonsterByName">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectMonsterByName"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectmonster"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NewMonster">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NewMonster"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#newmonster"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterMods">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterMods"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.32"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.33"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.34"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterPattern1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern1"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterPattern2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern2"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterPattern3">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern3"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.37"/>
+      <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterPattern4">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern4"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.38"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterPattern5">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern5"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.39"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterInst1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterInst1"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="name" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#name"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="spr1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#spr1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="spr2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#spr2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="descr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#descr"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="armor" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#armor"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterInst2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterInst2"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="speciallook" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#speciallook"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="ap" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#ap"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mapmove" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mapmove"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="hp" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#hp"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="prot" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#prot"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="size" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#size"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="ressize" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#ressize"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="str" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#str"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="enc" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#enc"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="att" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#att"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="def" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#def"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="prec" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#prec"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mr"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mor" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mor"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="gcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#gcost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="rcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#rcost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="pathcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#pathcost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="startdom" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startdom"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="eyes" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#eyes"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="copystats" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#copystats"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="copyspr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#copyspr"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="restrictedgod" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#restrictedgod"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="shatteredsoul" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#shatteredsoul"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="coldres" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#coldres"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="fireres" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#fireres"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="poisonres" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#poisonres"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="shockres" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#shockres"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="darkvision" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#darkvision"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="stealthy" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#stealthy"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="seduce" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#seduce"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="succubus" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#succubus"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="beckon" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#beckon"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="startage" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startage"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="maxage" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#maxage"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="older" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#older"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="healer" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#healer"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="startaff" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startaff"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="supplybonus" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#supplybonus"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwdamage" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwdamage"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="coldpower" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#coldpower"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="firepower" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#firepower"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="stormpower" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#stormpower"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="darkpower" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#darkpower"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="springpower" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#springpower"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="summerpower" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#summerpower"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="fallpower" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#fallpower"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="winterpower" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#winterpower"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="ambidextrous" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#ambidextrous"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="banefireshield" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#banefireshield"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="berserk" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#berserk"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="standard" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#standard"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="animalawe" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#animalawe"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="awe" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#awe"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="fear" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#fear"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="regeneration" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#regeneration"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="reinvigoration" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#reinvigoration"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="fireshield" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#fireshield"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="heat" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#heat"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="cold" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#cold"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="iceprot" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#iceprot"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="poisoncloud" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#poisoncloud"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="diseasecloud" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#diseasecloud"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="bloodvengeance" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#bloodvengeance"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="castledef" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#castledef"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="siegebonus" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#siegebonus"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="patrolbonus" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#patrolbonus"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="pillagebonus" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#pillagebonus"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="researchbonus" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#researchbonus"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="forgebonus" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#forgebonus"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="douse" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#douse"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="nobadevents" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#nobadevents"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="incunrest" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#incunrest"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="spreaddom" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#spreaddom"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="leper" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#leper"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="popkill" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#popkill"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="heretic" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#heretic"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="itemslots" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#itemslots"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="nametype" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#nametype"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterInst3">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterInst3"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="magicskill" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#magicskill"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="custommagic" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#custommagic"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="magicboost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#magicboost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="gemprod" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#gemprod"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterInst4">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterInst4"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="clear" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#clear"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="clearmagic" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#clearmagic"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="clearspec" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#clearspec"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="female" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#female"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mounted" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mounted"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="holy" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#holy"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="animal" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#animal"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="undead" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#undead"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="demon" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#demon"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="magicbeing" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#magicbeing"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="stonebeing" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#stonebeing"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="inanimate" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#inanimate"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="coldblood" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#coldblood"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="immortal" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#immortal"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="blind" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#blind"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="unique" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#unique"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="immobile" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#immobile"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="aquatic" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#aquatic"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="amphibian" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#amphibian"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="pooramphibian" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#pooramphibian"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="flying" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#flying"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="stormimmune" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#stormimmune"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="sailing" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#sailing"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="forestsurvival" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#forestsurvival"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mountainsurvival" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mountainsurvival"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="swampsurvival" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#swampsurvival"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="wastesurvival" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#wastesurvival"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="illusion" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#illusion"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="spy" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#spy"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="assassin" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#assassin"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="heal" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#heal"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="noheal" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#noheal"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="neednoteat" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#neednoteat"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="ethereal" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#ethereal"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="trample" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#trample"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="entangle" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#entangle"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="eyeloss" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#eyeloss"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="horrormark" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#horrormark"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="poisonarmor" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#poisonarmor"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="inquisitor" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#inquisitor"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="noitem" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#noitem"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="noleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#noleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="poorleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#poorleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="okleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#okleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="goodleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#goodleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="expertleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#expertleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="superiorleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#superiorleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="nomagicleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#nomagicleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="poormagicleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#poormagicleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="okmagicleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#okmagicleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="goodmagicleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#goodmagicleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="expertmagicleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#expertmagicleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="superiormagicleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#superiormagicleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="noundeadleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#noundeadleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="poorundeadleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#poorundeadleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="okundeadleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#okundeadleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="goodundeadleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#goodundeadleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="expertundeadleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#expertundeadleader"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="superiorundeadleader" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#superiorundeadleader"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MonsterInst5">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterInst5"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="weapon" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#weapon"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="onebattlespell" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#onebattlespell"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="firstshape" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#firstshape"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="secondshape" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#secondshape"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="secondtmpshape" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#secondtmpshape"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="shapechange" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#shapechange"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="landshape" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#landshape"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="watershape" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#watershape"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="forestshape" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#forestshape"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="plainshape" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#plainshape"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="domsummon" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#domsummon"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="domsummon2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#domsummon2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="domsummon20" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#domsummon20"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="makemonster1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#makemonster1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="makemonster2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#makemonster2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="makemonster3" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#makemonster3"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="makemonster4" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#makemonster4"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="makemonster5" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#makemonster5"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="summon1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#summon1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="summon5" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#summon5"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Spell">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Spell"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.41"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.42"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.43"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectSpellById">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectSpellById"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectspell"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.44"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectSpellByName">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectSpellByName"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectspell"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.44"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NewSpell">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NewSpell"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#newspell"/>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.44"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellMods">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellMods"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.45"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.46"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.47"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.48"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.49"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellPattern1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellPattern1"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.50"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellPattern2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellPattern2"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.51"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellPattern3">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellPattern3"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.52"/>
+      <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellPattern4">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellPattern4"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.53"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellPattern5">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellPattern5"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.54"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellInst1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellInst1"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="name" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#name"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="descr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#descr"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellInst2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellInst2"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="school" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#school"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="researchlevel" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#researchlevel"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="aoe" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#aoe"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="damage" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#damage"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="effect" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#effect"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="fatiguecost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#fatiguecost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="flightspr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#flightspr"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="explspr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#explspr"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="nreff" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#nreff"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="range" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#range"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="precision" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#precision"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="sound" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#sound"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="spec" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#spec"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="restricted" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#restricted"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellInst3">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellInst3"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="path" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#path"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="pathlevel" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#pathlevel"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellInst4">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellInst4"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="clear" operator="?=">
+      <terminal xsi:type="xtext:Keyword" value="#clear"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SpellInst5">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellInst5"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="copyspell" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#copyspell"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="nextspell" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#nextspell"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Item">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Item"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.56"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.57"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectItemById">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectItemById"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectitem"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.59"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectItemByName">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectItemByName"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectitem"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.59"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NewItem">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NewItem"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#newitem"/>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.59"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ItemMods">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ItemMods"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.60"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.61"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ItemPattern1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ItemPattern1"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.62"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ItemPattern2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ItemPattern2"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.63"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ItemInst1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ItemInst1"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="name" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#name"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="descr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#descr"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="armor" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#armor"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ItemInst2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ItemInst2"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="constlevel" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#constlevel"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mainpath" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mainpath"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mainlevel" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mainlevel"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="secondarypath" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#secondarypath"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="secondarylevel" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#secondarylevel"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="copyspr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#copyspr"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="type" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#type"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="weapon" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#weapon"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Name">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Name"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.65"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectName">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectName"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectnametype"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.66"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NameMods">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NameMods"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.67"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.68"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NamePattern1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NamePattern1"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.69"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NamePattern2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NamePattern2"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.70"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NameInst1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NameInst1"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="name" operator="?=">
+      <terminal xsi:type="xtext:Keyword" value="#addname"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NameInst2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NameInst2"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="clear" operator="?=">
+      <terminal xsi:type="xtext:Keyword" value="#clear"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Site">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Site"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.72"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.73"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.74"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectSiteById">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectSiteById"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectsite"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.75"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectSiteByName">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectSiteByName"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectsite"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.75"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NewSite">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NewSite"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#newsite"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.75"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SiteMods">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SiteMods"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.76"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.77"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.78"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.79"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SitePattern1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SitePattern1"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.80"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SitePattern2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SitePattern2"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.81"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SitePattern3">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SitePattern3"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.82"/>
+      <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SitePattern4">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SitePattern4"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.83"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SiteInst1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SiteInst1"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="name" operator="?=">
+      <terminal xsi:type="xtext:Keyword" value="#name"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SiteInst2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SiteInst2"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="path" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#path"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="level" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#level"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="rarity" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#rarity"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="loc" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#loc"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="homemon" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#homemon"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="homecom" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#homecom"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mon" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mon"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="com" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#com"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="gold" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#gold"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="res" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#res"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="incscale" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#incscale"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="decscale" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#decscale"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SiteInst3">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SiteInst3"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="gems" operator="?=">
+      <terminal xsi:type="xtext:Keyword" value="#gems"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SiteInst4">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SiteInst4"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="clear" operator="?=">
+      <terminal xsi:type="xtext:Keyword" value="#clear"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Nation">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Nation"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.85"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.86"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SelectNation">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SelectNation"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#selectnation"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.87"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="#end"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="IndepFlag">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//IndepFlag"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#indepflag"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationMods">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationMods"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.88"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.89"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.90"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.91"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.92"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationPattern1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationPattern1"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.94"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationPattern2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationPattern2"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.95"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationPattern3">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationPattern3"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.96"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationPattern4">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationPattern4"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.97"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationPattern5">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationPattern5"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.98"/>
+      <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.93"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.93"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="value3" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.93"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="DecimalValue">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationInst1">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationInst1"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="name" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#name"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="epithet" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#epithet"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="descr" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#descr"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="summary" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#summary"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="brief" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#brief"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="flag" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#flag"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mapbackground" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mapbackground"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="startsite" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startsite"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationInst2">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationInst2"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="era" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#era"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="labcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#labcost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="templecost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#templecost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="templepic" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#templepic"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="startunitnbrs1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startunitnbrs1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="startunitnbrs2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startunitnbrs2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="hero1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#hero1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="hero2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#hero2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="hero3" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#hero3"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="hero4" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#hero4"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="hero5" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#hero5"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="hero6" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#hero6"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="multihero1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#multihero1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="multihero2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#multihero2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defmult1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defmult1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defmult1b" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defmult1b"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defmult2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defmult2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defmult2b" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defmult2b"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="idealcold" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#idealcold"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="castleprod" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#castleprod"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="domkill" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#domkill"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="domunrest" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#domunrest"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="startfort" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startfort"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defaultfort" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defaultfort"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="farmfort" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#farmfort"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="mountainfort" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#mountainfort"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="forestfort" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#forestfort"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="swampfort" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#swampfort"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwfort" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwfort"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="deepfort" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#deepfort"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationInst3">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationInst3"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="clearnation" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#clearnation"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="clearrec" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#clearrec"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="clearsites" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#clearsites"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwnation" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwnation"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="bloodnation" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#bloodnation"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="nopreach" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#nopreach"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="dyingdom" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#dyingdom"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="sacrificedom" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#sacrificedom"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="nodeathsupply" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#nodeathsupply"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="autoundead" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#autoundead"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="zombiereanim" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#zombiereanim"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="horsereanim" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#horsereanim"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="wightreanim" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#wightreanim"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="manikinreanim" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#manikinreanim"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="tombwyrmreanim" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#tombwyrmreanim"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationInst4">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationInst4"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="startcom" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startcom"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="startscout" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startscout"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="startunittype1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startunittype1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="startunittype2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#startunittype2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="addrecunit" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#addrecunit"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="addreccom" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#addreccom"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwunit1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwunit1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwunit2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwunit2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwunit3" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwunit3"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwunit4" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwunit4"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwunit5" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwunit5"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwcom1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwcom1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwcom2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwcom2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwcom3" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwcom3"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwcom4" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwcom4"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="uwcom5" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#uwcom5"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defcom1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defcom1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defcom2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defcom2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defunit1" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defunit1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defunit1b" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defunit1b"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defunit2" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defunit2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="defunit2b" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#defunit2b"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NationInst5">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationInst5"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="color" operator="?=">
+      <terminal xsi:type="xtext:Keyword" value="#color"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="INT">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" cardinality="?" value="-"/>
+      <elements xsi:type="xtext:CharacterRange" cardinality="+">
+        <left value="0"/>
+        <right value="9"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="STRING">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="&quot;"/>
+        <elements xsi:type="xtext:Alternatives" cardinality="*">
+          <elements xsi:type="xtext:Group">
+            <elements xsi:type="xtext:Keyword" value="\"/>
+            <elements xsi:type="xtext:Alternatives">
+              <elements xsi:type="xtext:Keyword" value="b"/>
+              <elements xsi:type="xtext:Keyword" value="t"/>
+              <elements xsi:type="xtext:Keyword" value="n"/>
+              <elements xsi:type="xtext:Keyword" value="f"/>
+              <elements xsi:type="xtext:Keyword" value="r"/>
+              <elements xsi:type="xtext:Keyword" value="&quot;"/>
+              <elements xsi:type="xtext:Keyword" value="'"/>
+              <elements xsi:type="xtext:Keyword" value="\"/>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:NegatedToken">
+            <terminal xsi:type="xtext:Alternatives">
+              <elements xsi:type="xtext:Keyword" value="\"/>
+              <elements xsi:type="xtext:Keyword" value="&quot;"/>
+            </terminal>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="&quot;"/>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="'"/>
+        <elements xsi:type="xtext:Alternatives" cardinality="*">
+          <elements xsi:type="xtext:Group">
+            <elements xsi:type="xtext:Keyword" value="\"/>
+            <elements xsi:type="xtext:Alternatives">
+              <elements xsi:type="xtext:Keyword" value="b"/>
+              <elements xsi:type="xtext:Keyword" value="t"/>
+              <elements xsi:type="xtext:Keyword" value="n"/>
+              <elements xsi:type="xtext:Keyword" value="f"/>
+              <elements xsi:type="xtext:Keyword" value="r"/>
+              <elements xsi:type="xtext:Keyword" value="&quot;"/>
+              <elements xsi:type="xtext:Keyword" value="'"/>
+              <elements xsi:type="xtext:Keyword" value="\"/>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:NegatedToken">
+            <terminal xsi:type="xtext:Alternatives">
+              <elements xsi:type="xtext:Keyword" value="\"/>
+              <elements xsi:type="xtext:Keyword" value="'"/>
+            </terminal>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="'"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ML_COMMENT">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.102"/>
+        <elements xsi:type="xtext:Group" cardinality="+">
+          <elements xsi:type="xtext:Keyword" cardinality="*" value=" "/>
+          <elements xsi:type="xtext:Keyword" cardinality="*" value="&#x9;"/>
+          <elements xsi:type="xtext:Keyword" cardinality="?" value="&#xD;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:NegatedToken">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="#"/>
+          <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:NegatedToken" cardinality="*">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+        </terminal>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="SL_COMMENT">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="-"/>
+      <elements xsi:type="xtext:NegatedToken">
+        <terminal xsi:type="xtext:CharacterRange">
+          <left value="0"/>
+          <right value="9"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:NegatedToken" cardinality="*">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" cardinality="?" value="&#xD;"/>
+        <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="WS">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives" cardinality="+">
+      <elements xsi:type="xtext:Keyword" value=" "/>
+      <elements xsi:type="xtext:Keyword" value="&#x9;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+    </alternatives>
+  </rules>
+</xtext:Grammar>

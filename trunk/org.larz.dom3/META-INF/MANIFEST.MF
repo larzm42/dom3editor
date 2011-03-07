@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.larz.dom3
+Bundle-SymbolicName: org.larz.dom3; singleton:=true
+Bundle-Version: 0.1
+Bundle-Activator: org.larz.dom3.Activator
+Require-Bundle: org.larz.dom3.dm.ui,
+ org.eclipse.ui.forms
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Larz
+Bundle-ClassPath: .,
+ lib/hsqldb.jar,
+ lib/imageio_tga_1.1.0.jar,
+ src/
