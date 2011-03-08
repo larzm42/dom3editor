@@ -142,10 +142,15 @@ public class ArmorDetailsPage implements IDetailsPage {
 		glayout.numColumns = 3;
 		client.setLayout(glayout);
 		
-		GridData gd;
-		toolkit.createLabel(client, Messages.getString("ArmorDetailsSection.mod.name")); //$NON-NLS-1$
+		Composite nameComp = toolkit.createComposite(client);
+		nameComp.setLayout(new GridLayout(2, false));
+		GridData gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+		gd.horizontalSpan = 3;
+		nameComp.setLayoutData(gd);
+
+		toolkit.createLabel(nameComp, Messages.getString("ArmorDetailsSection.mod.name")); //$NON-NLS-1$
 		
-		name = toolkit.createText(client, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
+		name = toolkit.createText(nameComp, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 		name.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
@@ -162,9 +167,8 @@ public class ArmorDetailsPage implements IDetailsPage {
 			
 		});
 		
-		gd = new GridData(GridData.FILL_HORIZONTAL|GridData.VERTICAL_ALIGN_BEGINNING);
-		gd.widthHint = 10;
-		gd.horizontalSpan = 2;
+		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+		gd.widthHint = 200;
 		name.setLayoutData(gd);
 		
 		for (final Map.Entry<Inst2, Inst2Fields> fields : inst2Map.entrySet()) {
@@ -172,6 +176,8 @@ public class ArmorDetailsPage implements IDetailsPage {
 			final Button check = toolkit.createButton(client, key.label, SWT.CHECK);
 			final Text value = toolkit.createText(client, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 			Label defaultLabel = toolkit.createLabel(client, "");
+			defaultLabel.setEnabled(false);
+			
 			value.addVerifyListener(new VerifyListener() {
 				
 				@Override
@@ -212,8 +218,8 @@ public class ArmorDetailsPage implements IDetailsPage {
 				
 			});
 			value.setEnabled(false);
-			gd = new GridData(GridData.FILL_HORIZONTAL|GridData.VERTICAL_ALIGN_BEGINNING);
-			gd.widthHint = 10;
+			gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+			gd.widthHint = 30;
 			value.setLayoutData(gd);
 			fields.getValue().check = check;
 			fields.getValue().value = value;
@@ -263,23 +269,24 @@ public class ArmorDetailsPage implements IDetailsPage {
 				}
 				switch (fields.getKey()) {
 				case DEF:
-					fields.getValue().defaultLabel.setText(Integer.toString(armorDB.def));
+					fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(armorDB.def)));
 					break;
 				case ENC:
-					fields.getValue().defaultLabel.setText(Integer.toString(armorDB.enc));
+					fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(armorDB.enc)));
 					break;
 				case PROT:
-					fields.getValue().defaultLabel.setText(Integer.toString(armorDB.prot));
+					fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(armorDB.prot)));
 					break;
 				case RCOST:
-					fields.getValue().defaultLabel.setText(Integer.toString(armorDB.res));
+					fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(armorDB.res)));
 					break;
 				case TYPE:
-					fields.getValue().defaultLabel.setText(Integer.toString(armorDB.type));
+					fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(armorDB.type)));
 					break;
 				}
 			}
 		}
+		name.getParent().getParent().layout(true);
 	}
 	
 	private String getArmorname(Armor armor) {
