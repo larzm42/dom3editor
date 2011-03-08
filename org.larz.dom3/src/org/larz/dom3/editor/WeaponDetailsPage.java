@@ -240,12 +240,19 @@ public class WeaponDetailsPage implements IDetailsPage {
 		Composite client = toolkit.createComposite(s1);
 		GridLayout glayout = new GridLayout();
 		glayout.marginWidth = glayout.marginHeight = 0;
-		glayout.numColumns = 5;
+		glayout.numColumns = 2;
+		glayout.makeColumnsEqualWidth = true;
 		client.setLayout(glayout);
 		
-		toolkit.createLabel(client, Messages.getString("WeaponDetailsSection.mod.name")); //$NON-NLS-1$
+		Composite nameComp = toolkit.createComposite(client);
+		nameComp.setLayout(new GridLayout(2, false));
+		GridData gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+		gd.horizontalSpan = 2;
+		nameComp.setLayoutData(gd);
 		
-		name = toolkit.createText(client, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
+		toolkit.createLabel(nameComp, Messages.getString("WeaponDetailsSection.mod.name")); //$NON-NLS-1$
+		
+		name = toolkit.createText(nameComp, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 		name.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
@@ -262,15 +269,26 @@ public class WeaponDetailsPage implements IDetailsPage {
 			
 		});
 		
-		GridData gd = new GridData(GridData.FILL_HORIZONTAL|GridData.VERTICAL_ALIGN_BEGINNING);
-		gd.widthHint = 10;
-		gd.horizontalSpan = 4;
+		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+		gd.widthHint = 200;
 		name.setLayoutData(gd);
 		
+		Composite leftColumn = new Composite(client, SWT.NONE);
+		glayout = new GridLayout(5, false);
+		glayout.marginHeight = 0;
+		glayout.marginWidth = 0;
+		leftColumn.setLayout(glayout);
+		leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		
+		Composite rightColumn = new Composite(client, SWT.NONE);
+		rightColumn.setLayout(new GridLayout(5, false));
+		rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+
+		boolean isRight = false;
 		for (final Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			final Inst key = fields.getKey();
 			final InstFields field = fields.getValue();
-			final Button check = toolkit.createButton(client, key.label, SWT.CHECK);
+			final Button check = toolkit.createButton(isRight?rightColumn:leftColumn, key.label, SWT.CHECK);
 			check.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
@@ -291,9 +309,8 @@ public class WeaponDetailsPage implements IDetailsPage {
 
 			Text myValue1 = null;
 			Text myValue2 = null;
-			if (field instanceof Inst2Fields ||
-					field instanceof Inst3Fields) {
-				final Text value = toolkit.createText(client, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
+			if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
+				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 				myValue1 = value;
 				value.addVerifyListener(new VerifyListener() {
 					
@@ -340,22 +357,28 @@ public class WeaponDetailsPage implements IDetailsPage {
 					}
 				});
 				value.setEnabled(false);
-				gd = new GridData(GridData.FILL_HORIZONTAL|GridData.VERTICAL_ALIGN_BEGINNING);
-				gd.widthHint = 10;
-				if (field instanceof Inst2Fields) {
-					gd.horizontalSpan = 3;
-				}
+				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				gd.widthHint = 30;
 				value.setLayoutData(gd);
 				
-			} else {
-				createSpacer(toolkit, client, 1);
 			}
 				
-			Label defaultLabel1 = toolkit.createLabel(client, "");
+			Label defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+			defaultLabel1.setEnabled(false);
+			if (field instanceof Inst2Fields) {
+				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				gd.horizontalSpan = 3;
+				defaultLabel1.setLayoutData(gd);
+			} else if (field instanceof Inst4Fields) {
+				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+				gd.horizontalSpan = 2;
+				check.setLayoutData(gd);
+				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
+			}
 
 			Label defaultLabel2 = null;
 			if (field instanceof Inst3Fields) {
-				final Text value = toolkit.createText(client, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
+				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 				myValue2 = value;
 				value.addVerifyListener(new VerifyListener() {
 					
@@ -394,17 +417,14 @@ public class WeaponDetailsPage implements IDetailsPage {
 					}
 				});
 				value.setEnabled(false);
-				gd = new GridData(GridData.FILL_HORIZONTAL|GridData.VERTICAL_ALIGN_BEGINNING);
-				gd.widthHint = 10;
+				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				gd.widthHint = 30;
 				value.setLayoutData(gd);
 				
-				defaultLabel2 = toolkit.createLabel(client, "");
+				defaultLabel2 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+				defaultLabel2.setEnabled(false);
 			}
 			
-			if (field instanceof Inst4Fields) {
-				createSpacer(toolkit, client, 2);
-			}
-
 			if (field instanceof Inst2Fields) {
 				((Inst2Fields)field).check = check;
 				((Inst2Fields)field).value = myValue1;
@@ -420,9 +440,10 @@ public class WeaponDetailsPage implements IDetailsPage {
 				((Inst4Fields)field).defaultLabel = defaultLabel1;
 			}
 
+			isRight = !isRight;
 		}
 
-		createSpacer(toolkit, client, 2);
+		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 		
 		s1.setClient(client);
 	}
@@ -493,131 +514,131 @@ public class WeaponDetailsPage implements IDetailsPage {
 				}
 				switch (fields.getKey()) {
 				case DMG:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.dmg));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.dmg)));
 					break;
 				case NRATT:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.nratt));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.nratt)));
 					break;
 				case ATT:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.att));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.att)));
 					break;
 				case DEF:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.def));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.def)));
 					break;
 				case LEN:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.len));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.len)));
 					break;
 				case RANGE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.range));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.range)));
 					break;
 				case AMMO:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.ammo));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.ammo)));
 					break;
 				case RCOST:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.rcost));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.rcost)));
 					break;
 				case SOUND:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.sound));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.sound)));
 					break;
 				case AOE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.aoe));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.aoe)));
 					break;
 				case SECONDARYEFFECT:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.secondaryeffect));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.secondaryeffect)));
 					break;
 				case SECONDARYEFFECTALWAYS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.secondaryeffectalways));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.secondaryeffectalways)));
 					break;
 				case EXPLSPR:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Integer.toString(weaponDB.explspr));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.explspr)));
 					break;
 				case FLYSPR:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(Integer.toString(weaponDB.flyspr1));
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(Integer.toString(weaponDB.flyspr2));
+					((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.flyspr1)));
+					((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.flyspr2)));
 					break;
 				case TWOHANDED:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.twohanded));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.twohanded)));
 					break;
 				case ARMORPIERCING:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.armorpiercing));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.armorpiercing)));
 					break;
 				case ARMORNEGATING:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.armornegating));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.armornegating)));
 					break;
 				case MAGIC:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.magic));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.magic)));
 					break;
 				case DT_NORMAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_normal));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_normal)));
 					break;
 				case DT_STUN:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_stun));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_stun)));
 					break;
 				case DT_PARALYZE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_paralyze));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_paralyze)));
 					break;
 				case DT_POISON:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_poison));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_poison)));
 					break;
 				case DT_CAP:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_cap));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_cap)));
 					break;
 				case DT_DEMON:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_demon));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_demon)));
 					break;
 				case DT_DEMONONLY:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_demononly));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_demononly)));
 					break;
 				case DT_HOLY:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_holy));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_holy)));
 					break;
 				case DT_MAGIC:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_magic));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_magic)));
 					break;
 				case DT_SMALL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_small));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_small)));
 					break;
 				case DT_LARGE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_large));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_large)));
 					break;
 				case DT_CONSTRUCTONLY:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_constructonly));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_constructonly)));
 					break;
 				case DT_RAISE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.dt_raise));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_raise)));
 					break;
 				case MIND:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.mind));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.mind)));
 					break;
 				case COLD:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.cold));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.cold)));
 					break;
 				case FIRE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.fire));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.fire)));
 					break;
 				case SHOCK:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.shock));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.shock)));
 					break;
 				case POISON:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.poison));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.poison)));
 					break;
 				case BONUS:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.bonus));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.bonus)));
 					break;
 				case CHARGE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.charge));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.charge)));
 					break;
 				case FLAIL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.flail));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.flail)));
 					break;
 				case NOSTR:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.nostr));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.nostr)));
 					break;
 				case MRNEGATES:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.mrnegates));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.mrnegates)));
 					break;
 				case MRNEGATESEASILY:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Boolean.toString(weaponDB.mrnegateseasily));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.mrnegateseasily)));
 					break;
 				}
 			}

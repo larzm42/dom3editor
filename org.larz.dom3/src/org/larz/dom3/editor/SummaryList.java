@@ -107,9 +107,12 @@ import org.larz.dom3.dm.dm.Weapon;
 import org.larz.dom3.dm.dm.WeaponInst1;
 import org.larz.dom3.dm.dm.WeaponMods;
 import org.larz.dom3.dm.dm.impl.NewArmorImpl;
+import org.larz.dom3.dm.dm.impl.NewMonsterImpl;
 import org.larz.dom3.dm.dm.impl.NewWeaponImpl;
 import org.larz.dom3.dm.dm.impl.SelectArmorByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectArmorByNameImpl;
+import org.larz.dom3.dm.dm.impl.SelectMonsterByIdImpl;
+import org.larz.dom3.dm.dm.impl.SelectMonsterByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectWeaponByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectWeaponByNameImpl;
 import org.larz.dom3.dm.ui.internal.DmActivator;
@@ -388,7 +391,7 @@ public class SummaryList extends MasterDetailsBlock {
 			
 		});
 		viewer.getTable().setMenu(menu);
-
+		
 		// Set menu enablement
 		menuManager.addMenuListener(new IMenuListener() {
 			public void menuAboutToShow(IMenuManager menuManager) {
@@ -396,6 +399,14 @@ public class SummaryList extends MasterDetailsBlock {
 		});
 
 	}
+		
+	@Override
+	public void createContent(IManagedForm managedForm, Composite parent) {
+		super.createContent(managedForm, parent);
+		sashForm.setSashWidth(4);
+		sashForm.setWeights(new int[]{4,6});
+	}
+	
 	protected void createToolBarActions(IManagedForm managedForm) {
 		final ScrolledForm form = managedForm.getForm();
 		Action haction = new Action("hor", Action.AS_RADIO_BUTTON) { //$NON-NLS-1$
@@ -440,6 +451,9 @@ public class SummaryList extends MasterDetailsBlock {
 		detailsPart.registerPage(SelectWeaponByIdImpl.class, new WeaponDetailsPage(doc, viewer));
 		detailsPart.registerPage(SelectWeaponByNameImpl.class, new WeaponDetailsPage(doc, viewer));
 		detailsPart.registerPage(NewWeaponImpl.class, new WeaponDetailsPage(doc, viewer));
+		detailsPart.registerPage(SelectMonsterByIdImpl.class, new MonsterDetailsPage(doc, viewer));
+		detailsPart.registerPage(SelectMonsterByNameImpl.class, new MonsterDetailsPage(doc, viewer));
+		detailsPart.registerPage(NewMonsterImpl.class, new MonsterDetailsPage(doc, viewer));
 	}
 	
 	public void addArmor(final AddTypes type, final String name, final int id) 

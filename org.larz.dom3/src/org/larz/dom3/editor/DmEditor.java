@@ -65,49 +65,49 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 	 */
 	@Override
 	public void addPages() {
-			IExtensionPoint ep = RegistryFactory.getRegistry().getExtensionPoint("org.eclipse.ui.editors");
-			IExtension[ ] extensions = ep.getExtensions();
-			IExtension ex;
-			final MasterFormPage masterDetailsPage;
-			IConfigurationElement confElem = null;
-			for (int i = 0; i < extensions.length; i++) {
-				ex = extensions[i];
-				if (ex.getContributor().getName().equals("org.larz.dom3.dm.ui")) {
-					for (IConfigurationElement c : ex.getConfigurationElements()) {
-						if (c.getName().equals("editor")) {
-							confElem = c;
-						        break;
-						}
+		IExtensionPoint ep = RegistryFactory.getRegistry().getExtensionPoint("org.eclipse.ui.editors");
+		IExtension[ ] extensions = ep.getExtensions();
+		IExtension ex;
+		final MasterFormPage masterDetailsPage;
+		IConfigurationElement confElem = null;
+		for (int i = 0; i < extensions.length; i++) {
+			ex = extensions[i];
+			if (ex.getContributor().getName().equals("org.larz.dom3.dm.ui")) {
+				for (IConfigurationElement c : ex.getConfigurationElements()) {
+					if (c.getName().equals("editor")) {
+						confElem = c;
+						break;
 					}
 				}
 			}
-			try {
-				// create the xtext editor
-				sourcePage = (IEditorPart) confElem.createExecutableExtension("class");
-				
-				masterDetailsPage = new MasterFormPage(this, (XtextEditor)sourcePage);
-				addPage(masterDetailsPage);
-				
-				int index = addPage(sourcePage, getEditorInput());
-				setPageText(index, Messages.getString("MasterDetailsPage.source.label"));
-				
-				// Hack to get errors to show
-				((XtextEditor)sourcePage).doRevertToSaved();
-				
-			} catch (CoreException e1) {
-				e1.printStackTrace();
-				return;
+		}
+		try {
+			// create the xtext editor
+			sourcePage = (IEditorPart) confElem.createExecutableExtension("class");
+
+			masterDetailsPage = new MasterFormPage(this, (XtextEditor)sourcePage);
+			addPage(masterDetailsPage);
+
+			int index = addPage(sourcePage, getEditorInput());
+			setPageText(index, Messages.getString("MasterDetailsPage.source.label"));
+
+			// Hack to get errors to show
+			((XtextEditor)sourcePage).doRevertToSaved();
+
+		} catch (CoreException e1) {
+			e1.printStackTrace();
+			return;
+		}
+
+		getSite().getShell().getDisplay().asyncExec
+		(new Runnable() {
+			public void run() {
+				setActivePage(0);
 			}
+		});
 
-			getSite().getShell().getDisplay().asyncExec
-				(new Runnable() {
-					 public void run() {
-						 setActivePage(0);
-					 }
-				 });
+		this.addPageChangedListener(new IPageChangedListener() {
 
-			this.addPageChangedListener(new IPageChangedListener() {
-			
 			@Override
 			public void pageChanged(PageChangedEvent event) {
 				if (masterDetailsPage.block != null && masterDetailsPage.block.viewer != null) {
@@ -130,14 +130,20 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 								if (one != two) {
 									masterDetailsPage.block.viewer.setSelection(null);
 								}
+							} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof MonsterDetailsPage) {
+								((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+								Object one = ((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+								if (one != two) {
+									masterDetailsPage.block.viewer.setSelection(null);
+								}
 							}
 						}
 					}
 				}
 			}
 		});
-
-
 	}
 	
 	/**
