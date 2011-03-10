@@ -514,133 +514,132 @@ public class WeaponDetailsPage implements IDetailsPage {
 				}
 				switch (fields.getKey()) {
 				case DMG:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.dmg)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.dmg != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dmg) : "");
 					break;
 				case NRATT:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.nratt)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.nratt != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.nratt) : "");
 					break;
 				case ATT:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.att)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.att != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.att) : "");
 					break;
 				case DEF:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.def)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.def != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.def) : "");
 					break;
 				case LEN:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.len)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.len != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.len) : "");
 					break;
 				case RANGE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.range)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.range != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.range) : "");
 					break;
 				case AMMO:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.ammo)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.ammo != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.ammo) : "");
 					break;
 				case RCOST:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.rcost)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.rcost != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.rcost) : "");
 					break;
 				case SOUND:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.sound)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.sound != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.sound) : "");
 					break;
 				case AOE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.aoe)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.aoe != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.aoe) : "");
 					break;
 				case SECONDARYEFFECT:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.secondaryeffect)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.secondaryeffect != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.secondaryeffect) : "");
 					break;
 				case SECONDARYEFFECTALWAYS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.secondaryeffectalways)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.secondaryeffectalways != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.secondaryeffectalways) : "");
 					break;
 				case EXPLSPR:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.explspr)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(weaponDB.explspr != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.explspr) : "");
 					break;
 				case FLYSPR:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.flyspr1)));
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(weaponDB.flyspr2)));
+					((Inst3Fields)fields.getValue()).defaultLabel1.setText(weaponDB.flyspr1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.flyspr1) : "");
+					((Inst3Fields)fields.getValue()).defaultLabel2.setText(weaponDB.flyspr2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.flyspr2) : "");
 					break;
 				case TWOHANDED:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.twohanded)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.twohanded != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.twohanded) : "");
 					break;
 				case ARMORPIERCING:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.armorpiercing)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.armorpiercing != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.armorpiercing) : "");
 					break;
 				case ARMORNEGATING:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.armornegating)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.armornegating != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.armornegating) : "");
 					break;
 				case MAGIC:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.magic)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.magic != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.magic) : "");
 					break;
 				case DT_NORMAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_normal)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_normal != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_normal) : "");
 					break;
 				case DT_STUN:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_stun)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_stun != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_stun) : "");
 					break;
 				case DT_PARALYZE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_paralyze)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_paralyze != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_paralyze) : "");
 					break;
 				case DT_POISON:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_poison)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_poison != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_poison) : "");
 					break;
 				case DT_CAP:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_cap)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_cap != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_cap) : "");
 					break;
 				case DT_DEMON:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_demon)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_demon != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_demon) : "");
 					break;
 				case DT_DEMONONLY:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_demononly)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_demononly != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_demononly) : "");
 					break;
 				case DT_HOLY:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_holy)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_holy != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_holy) : "");
 					break;
 				case DT_MAGIC:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_magic)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_magic != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_magic) : "");
 					break;
 				case DT_SMALL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_small)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_small != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_small) : "");
 					break;
 				case DT_LARGE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_large)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_large != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_large) : "");
 					break;
 				case DT_CONSTRUCTONLY:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_constructonly)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_constructonly != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_constructonly) : "");
 					break;
 				case DT_RAISE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.dt_raise)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.dt_raise != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.dt_raise) : "");
 					break;
 				case MIND:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.mind)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.mind != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.mind) : "");
 					break;
 				case COLD:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.cold)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.cold != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.cold) : "");
 					break;
 				case FIRE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.fire)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.fire != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.fire) : "");
 					break;
 				case SHOCK:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.shock)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.shock != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.shock) : "");
 					break;
 				case POISON:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.poison)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.poison != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.poison) : "");
 					break;
 				case BONUS:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.bonus)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.bonus != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.bonus) : "");
 					break;
 				case CHARGE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.charge)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.charge != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.charge) : "");
 					break;
 				case FLAIL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.flail)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.flail != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.flail) : "");
 					break;
 				case NOSTR:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.nostr)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.nostr != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.nostr) : "");
 					break;
 				case MRNEGATES:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.mrnegates)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.mrnegates != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.mrnegates) : "");
 					break;
 				case MRNEGATESEASILY:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(weaponDB.mrnegateseasily)));
-					break;
-				}
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(weaponDB.mrnegateseasily != null ? Messages.format("DetailsPage.DefaultLabel.fmt", weaponDB.mrnegateseasily) : "");
+					break;				}
 			}
 		}
 	}

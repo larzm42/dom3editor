@@ -16,12 +16,12 @@
 package org.larz.dom3.db;
 
 public class ArmorDB {
-	public int id;
+	public Integer id;
 	public String name;
-	public int type;
-	public int prot;
-	public int def;
-	public int enc;
-	public int res;
+	public Integer type;
+	public Integer prot;
+	public Integer def;
+	public Integer enc;
+	public Integer res;
 	
 }

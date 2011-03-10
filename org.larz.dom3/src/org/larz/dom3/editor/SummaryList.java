@@ -32,6 +32,7 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -40,6 +41,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
@@ -304,8 +306,27 @@ public class SummaryList extends MasterDetailsBlock {
 		layout.marginHeight = 2;
 		client.setLayout(layout);
 		
+		Composite comboComp = new Composite(client, SWT.NONE);
+		comboComp.setLayout(new GridLayout(2, false));
+		toolkit.createLabel(comboComp, "Show:");
+		final Combo listFilter = new Combo(comboComp, SWT.DROP_DOWN | SWT.READ_ONLY);
+		toolkit.adapt(listFilter, true, true);
+		listFilter.add("All");
+		listFilter.add(Messages.getString("AddDialog.typelist.armor"));
+		listFilter.add(Messages.getString("AddDialog.typelist.weapon"));
+		listFilter.add(Messages.getString("AddDialog.typelist.monster"));
+		listFilter.add(Messages.getString("AddDialog.typelist.spell"));
+		listFilter.add(Messages.getString("AddDialog.typelist.item"));
+		listFilter.add(Messages.getString("AddDialog.typelist.name"));
+		listFilter.add(Messages.getString("AddDialog.typelist.site"));
+		listFilter.add(Messages.getString("AddDialog.typelist.nation"));
+		listFilter.select(0);
+		GridData gd = new GridData(SWT.FILL, SWT.DEFAULT, true, false);
+		gd.horizontalSpan = 2;
+		comboComp.setLayoutData(gd);
+
 		Table t = toolkit.createTable(client, SWT.NULL);
-		GridData gd = new GridData(GridData.FILL_BOTH);
+		gd = new GridData(GridData.FILL_BOTH);
 		gd.heightHint = 20;
 		gd.widthHint = 100;
 		t.setLayoutData(gd);
@@ -380,7 +401,57 @@ public class SummaryList extends MasterDetailsBlock {
 		viewer.setContentProvider(new MasterContentProvider());
 		viewer.setLabelProvider(new MasterLabelProvider());
 		viewer.setInput(page.getEditor().getEditorInput());
-		
+		listFilter.addSelectionListener(new SelectionAdapter() {
+
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				
+				viewer.setFilters(new ViewerFilter[]{new ViewerFilter() {
+				@Override
+				public boolean select(Viewer viewer, Object parentElement, Object element) {
+					if (listFilter.getSelectionIndex() == 1) {
+						return ((AbstractElementWrapper)element).getElement() instanceof SelectArmorByIdImpl ||
+						((AbstractElementWrapper)element).getElement() instanceof SelectArmorByNameImpl ||
+						((AbstractElementWrapper)element).getElement() instanceof NewArmorImpl;
+					}
+					if (listFilter.getSelectionIndex() == 2) {
+						return ((AbstractElementWrapper)element).getElement() instanceof SelectWeaponByIdImpl ||
+						((AbstractElementWrapper)element).getElement() instanceof SelectWeaponByNameImpl ||
+						((AbstractElementWrapper)element).getElement() instanceof NewWeaponImpl;
+					}
+					if (listFilter.getSelectionIndex() == 3) {
+						return ((AbstractElementWrapper)element).getElement() instanceof SelectMonsterByIdImpl ||
+						((AbstractElementWrapper)element).getElement() instanceof SelectMonsterByNameImpl ||
+						((AbstractElementWrapper)element).getElement() instanceof NewMonsterImpl;
+					}
+					if (listFilter.getSelectionIndex() == 4) {
+						return ((AbstractElementWrapper)element).getElement() instanceof SelectSpellByName ||
+						((AbstractElementWrapper)element).getElement() instanceof SelectSpellById ||
+						((AbstractElementWrapper)element).getElement() instanceof NewSpell;
+					}
+					if (listFilter.getSelectionIndex() == 5) {
+						return ((AbstractElementWrapper)element).getElement() instanceof SelectItemByName ||
+						((AbstractElementWrapper)element).getElement() instanceof SelectItemById ||
+						((AbstractElementWrapper)element).getElement() instanceof NewItem;
+					}
+					if (listFilter.getSelectionIndex() == 6) {
+						return ((AbstractElementWrapper)element).getElement() instanceof SelectName;
+					}
+					if (listFilter.getSelectionIndex() == 7) {
+						return ((AbstractElementWrapper)element).getElement() instanceof SelectSiteByName ||
+						((AbstractElementWrapper)element).getElement() instanceof SelectSiteById ||
+						((AbstractElementWrapper)element).getElement() instanceof NewSite;
+					}
+					if (listFilter.getSelectionIndex() == 8) {
+						return ((AbstractElementWrapper)element).getElement() instanceof SelectNation;
+					}
+					return true;
+				}
+			}});
+			}
+			
+		});
+
 		MenuManager menuManager = new MenuManager();
 		Menu menu = menuManager.createContextMenu(viewer.getTable());
 		menuManager.add(new Action("Delete") {

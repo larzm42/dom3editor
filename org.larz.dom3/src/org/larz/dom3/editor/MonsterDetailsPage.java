@@ -875,492 +875,432 @@ public class MonsterDetailsPage implements IDetailsPage {
 				}
 				switch (fields.getKey()) {
 				case SPECIALLOOK:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.speciallook)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.speciallook != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.speciallook) : "");
 					break;
 				case AP:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.ap)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.ap != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.ap) : "");
 					break;
 				case MAPMOVE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.mapmove)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.mapmove != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.mapmove) : "");
 					break;
 				case HP:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.hp)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.hp != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.hp) : "");
 					break;
 				case PROT:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.prot)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.prot != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.prot) : "");
 					break;
 				case SIZE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.size)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.size != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.size) : "");
 					break;
 				case RESSIZE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.ressize)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.ressize != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.ressize) : "");
 					break;
 				case STR:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.str)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.str != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.str) : "");
 					break;
 				case ENC:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.enc)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.enc != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.enc) : "");
 					break;
 				case ATT:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.att)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.att != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.att) : "");
 					break;
 				case DEF:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.def)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.def != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.def) : "");
 					break;
 				case PREC:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.prec)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.prec != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.prec) : "");
 					break;
 				case MR:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.mr)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.mr != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.mr) : "");
 					break;
 				case MOR:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.mor)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.mor != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.mor) : "");
 					break;
 				case GCOST:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.gcost)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.gcost != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.gcost) : "");
 					break;
 				case RCOST:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.rcost)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.rcost != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.rcost) : "");
 					break;
 				case PATHCOST:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.pathcost)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.pathcost != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.pathcost) : "");
 					break;
 				case STARTDOM:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.startdom)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.startdom != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.startdom) : "");
 					break;
 				case EYES:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.eyes)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.eyes != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.eyes) : "");
 					break;
 				case COPYSTATS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.copystats)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.copystats != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.copystats) : "");
 					break;
 				case COPYSPR:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.copyspr)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.copyspr != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.copyspr) : "");
 					break;
 				case RESTRICTEDGOD:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.restrictedgod)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.restrictedgod != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.restrictedgod) : "");
 					break;
 				case SHATTEREDSOUL:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.shatteredsoul)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.shatteredsoul != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.shatteredsoul) : "");
 					break;
 				case COLDRES:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.coldres)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.coldres != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.coldres) : "");
 					break;
 				case FIRERES:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.fireres)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.fireres != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.fireres) : "");
 					break;
 				case POISONRES:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.poisonres)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.poisonres != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poisonres) : "");
 					break;
 				case SHOCKRES:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.shockres)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.shockres != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.shockres) : "");
 					break;
 				case DARKVISION:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.darkvision)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.darkvision != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.darkvision) : "");
 					break;
 				case STEALTHY:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.stealthy)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.stealthy != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stealthy) : "");
 					break;
 				case SEDUCE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.seduce)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.seduce != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.seduce) : "");
 					break;
 				case SUCCUBUS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.succubus)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.succubus != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.succubus) : "");
 					break;
 				case BECKON:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.beckon)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.beckon != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.beckon) : "");
 					break;
 				case STARTAGE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.startage)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.startage != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.startage) : "");
 					break;
 				case MAXAGE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.maxage)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.maxage != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.maxage) : "");
 					break;
 				case OLDER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.older)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.older != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.older) : "");
 					break;
 				case HEALER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.healer)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.healer != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.healer) : "");
 					break;
 				case STARTAFF:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.startaff)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.startaff != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.startaff) : "");
 					break;
 				case SUPPLYBONUS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.supplybonus)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.supplybonus != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.supplybonus) : "");
 					break;
 				case UWDAMAGE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.uwdamage)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.uwdamage != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.uwdamage) : "");
 					break;
 				case COLDPOWER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.coldpower)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.coldpower != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.coldpower) : "");
 					break;
 				case FIREPOWER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.firepower)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.firepower != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.firepower) : "");
 					break;
 				case STORMPOWER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.stormpower)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.stormpower != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stormpower) : "");
 					break;
 				case DARKPOWER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.darkpower)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.darkpower != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.darkpower) : "");
 					break;
 				case SPRINGPOWER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.springpower)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.springpower != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.springpower) : "");
 					break;
 				case SUMMERPOWER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.summerpower)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.summerpower != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.summerpower) : "");
 					break;
 				case FALLPOWER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.fallpower)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.fallpower != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.fallpower) : "");
 					break;
 				case WINTERPOWER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.winterpower)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.winterpower != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.winterpower) : "");
 					break;
 				case AMBIDEXTROUS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.ambidextrous)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.ambidextrous != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.ambidextrous) : "");
 					break;
 				case BANEFIRESHIELD:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.banefireshield)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.banefireshield != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.banefireshield) : "");
 					break;
 				case BERSERK:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.berserk)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.berserk != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.berserk) : "");
 					break;
 				case STANDARD:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.standard)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.standard != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.standard) : "");
 					break;
 				case ANIMALAWE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.animalawe)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.animalawe != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.animalawe) : "");
 					break;
 				case AWE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.awe)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.awe != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.awe) : "");
 					break;
 				case FEAR:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.fear)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.fear != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.fear) : "");
 					break;
 				case REGENERATION:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.regeneration)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.regeneration != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.regeneration) : "");
 					break;
 				case REINVIGORATION:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.reinvigoration)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.reinvigoration != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.reinvigoration) : "");
 					break;
 				case FIRESHIELD:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.fireshield)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.fireshield != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.fireshield) : "");
 					break;
 				case HEAT:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.heat)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.heat != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.heat) : "");
 					break;
 				case COLD:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.cold)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.cold != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.cold) : "");
 					break;
 				case ICEPROT:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.iceprot)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.iceprot != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.iceprot) : "");
 					break;
 				case POISONCLOUD:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.poisoncloud)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.poisoncloud != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poisoncloud) : "");
 					break;
 				case DISEASECLOUD:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.diseasecloud)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.diseasecloud != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.diseasecloud) : "");
 					break;
 				case BLOODVENGEANCE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.bloodvengeance)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.bloodvengeance != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.bloodvengeance) : "");
 					break;
 				case CASTLEDEF:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.castledef)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.castledef != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.castledef) : "");
 					break;
 				case SIEGEBONUS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.siegebonus)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.siegebonus != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.siegebonus) : "");
 					break;
 				case PATROLBONUS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.patrolbonus)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.patrolbonus != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.patrolbonus) : "");
 					break;
 				case PILLAGEBONUS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.pillagebonus)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.pillagebonus != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.pillagebonus) : "");
 					break;
 				case RESEARCHBONUS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.researchbonus)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.researchbonus != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.researchbonus) : "");
 					break;
 				case FORGEBONUS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.forgebonus)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.forgebonus != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.forgebonus) : "");
 					break;
 				case DOUSE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.douse)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.douse != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.douse) : "");
 					break;
 				case NOBADEVENTS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.nobadevents)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.nobadevents != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.nobadevents) : "");
 					break;
 				case INCUNREST:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.incunrest)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.incunrest != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.incunrest) : "");
 					break;
 				case SPREADDOM:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.spreaddom)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.spreaddom != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.spreaddom) : "");
 					break;
 				case LEPER:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.leper)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.leper != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.leper) : "");
 					break;
 				case POPKILL:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.popkill)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.popkill != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.popkill) : "");
 					break;
 				case HERETIC:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.heretic)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.heretic != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.heretic) : "");
 					break;
 				case ITEMSLOTS:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.itemslots)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.itemslots != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.itemslots) : "");
 					break;
 				case NAMETYPE:
-					((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.nametype)));
+					((Inst2Fields)fields.getValue()).defaultLabel.setText(monsterDB.nametype != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.nametype) : "");
 					break;
 				case MAGICSKILL:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.magicskill1)));
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.magicskill2)));
+					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskill1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskill1) : "");
+					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskill2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskill2) : "");
 					break;
 				case CUSTOMMAGIC:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.custommagic1)));
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.custommagic2)));
+					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.custommagic1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagic1) : "");
+					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.custommagic2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagic2) : "");
 					break;
 				case MAGICBOOST:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.magicboost1)));
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.magicboost2)));
+					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicboost1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicboost1) : "");
+					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicboost2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicboost2) : "");
 					break;
 				case GEMPROD:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.gemprod1)));
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(monsterDB.gemprod2)));
+					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.gemprod1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.gemprod1) : "");
+					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.gemprod2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.gemprod2) : "");
 					break;
 				case CLEAR:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.clear)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.clear != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.clear) : "");
 					break;
 				case CLEARMAGIC:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.clearmagic)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.clearmagic != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.clearmagic) : "");
 					break;
 				case CLEARSPEC:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.clearspec)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.clearspec != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.clearspec) : "");
 					break;
 				case FEMALE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.female)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.female != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.female) : "");
 					break;
 				case MOUNTED:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.mounted)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.mounted != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.mounted) : "");
 					break;
 				case HOLY:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.holy)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.holy != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.holy) : "");
 					break;
 				case ANIMAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.animal)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.animal != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.animal) : "");
 					break;
 				case UNDEAD:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.undead)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.undead != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.undead) : "");
 					break;
 				case DEMON:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.demon)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.demon != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.demon) : "");
 					break;
 				case MAGICBEING:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.magicbeing)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.magicbeing != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicbeing) : "");
 					break;
 				case STONEBEING:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.stonebeing)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.stonebeing != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stonebeing) : "");
 					break;
 				case INANIMATE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.inanimate)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.inanimate != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.inanimate) : "");
 					break;
 				case COLDBLOOD:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.coldblood)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.coldblood != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.coldblood) : "");
 					break;
 				case IMMORTAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.immortal)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.immortal != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.immortal) : "");
 					break;
 				case BLIND:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.blind)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.blind != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.blind) : "");
 					break;
 				case UNIQUE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.unique)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.unique != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.unique) : "");
 					break;
 				case IMMOBILE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.immobile)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.immobile != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.immobile) : "");
 					break;
 				case AQUATIC:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.aquatic)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.aquatic != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.aquatic) : "");
 					break;
 				case AMPHIBIAN:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.amphibian)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.amphibian != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.amphibian) : "");
 					break;
 				case POORAMPHIBIAN:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.pooramphibian)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.pooramphibian != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.pooramphibian) : "");
 					break;
 				case FLYING:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.flying)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.flying != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.flying) : "");
 					break;
 				case STORMIMMUNE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.stormimmune)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.stormimmune != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stormimmune) : "");
 					break;
 				case SAILING:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.sailing)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.sailing != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.sailing) : "");
 					break;
 				case FORESTSURVIVAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.forestsurvival)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.forestsurvival != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.forestsurvival) : "");
 					break;
 				case MOUNTAINSURVIVAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.mountainsurvival)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.mountainsurvival != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.mountainsurvival) : "");
 					break;
 				case SWAMPSURVIVAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.swampsurvival)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.swampsurvival != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.swampsurvival) : "");
 					break;
 				case WASTESURVIVAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.wastesurvival)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.wastesurvival != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.wastesurvival) : "");
 					break;
 				case ILLUSION:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.illusion)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.illusion != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.illusion) : "");
 					break;
 				case SPY:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.spy)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.spy != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.spy) : "");
 					break;
 				case ASSASSIN:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.assassin)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.assassin != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.assassin) : "");
 					break;
 				case HEAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.heal)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.heal != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.heal) : "");
 					break;
 				case NOHEAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.noheal)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.noheal != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.noheal) : "");
 					break;
 				case NEEDNOTEAT:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.neednoteat)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.neednoteat != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.neednoteat) : "");
 					break;
 				case ETHEREAL:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.ethereal)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.ethereal != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.ethereal) : "");
 					break;
 				case TRAMPLE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.trample)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.trample != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.trample) : "");
 					break;
 				case ENTANGLE:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.entangle)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.entangle != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.entangle) : "");
 					break;
 				case EYELOSS:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.eyeloss)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.eyeloss != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.eyeloss) : "");
 					break;
 				case HORRORMARK:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.horrormark)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.horrormark != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.horrormark) : "");
 					break;
 				case POISONARMOR:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.poisonarmor)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.poisonarmor != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poisonarmor) : "");
 					break;
 				case INQUISITOR:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.inquisitor)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.inquisitor != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.inquisitor) : "");
 					break;
 				case NOITEM:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.noitem)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.noitem != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.noitem) : "");
 					break;
 				case NOLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.noleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.noleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.noleader) : "");
 					break;
 				case POORLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.poorleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.poorleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poorleader) : "");
 					break;
 				case OKLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.okleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.okleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.okleader) : "");
 					break;
 				case GOODLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.goodleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.goodleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.goodleader) : "");
 					break;
 				case EXPERTLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.expertleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.expertleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.expertleader) : "");
 					break;
 				case SUPERIORLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.superiorleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.superiorleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.superiorleader) : "");
 					break;
 				case NOMAGICLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.nomagicleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.nomagicleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.nomagicleader) : "");
 					break;
 				case POORMAGICLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.poormagicleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.poormagicleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poormagicleader) : "");
 					break;
 				case OKMAGICLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.okmagicleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.okmagicleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.okmagicleader) : "");
 					break;
 				case GOODMAGICLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.goodmagicleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.goodmagicleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.goodmagicleader) : "");
 					break;
 				case EXPERTMAGICLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.expertmagicleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.expertmagicleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.expertmagicleader) : "");
 					break;
 				case SUPERIORMAGICLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.superiormagicleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.superiormagicleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.superiormagicleader) : "");
 					break;
 				case NOUNDEADLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.noundeadleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.noundeadleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.noundeadleader) : "");
 					break;
 				case POORUNDEADLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.poorundeadleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.poorundeadleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poorundeadleader) : "");
 					break;
 				case OKUNDEADLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.okundeadleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.okundeadleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.okundeadleader) : "");
 					break;
 				case GOODUNDEADLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.goodundeadleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.goodundeadleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.goodundeadleader) : "");
 					break;
 				case EXPERTUNDEADLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.expertundeadleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.expertundeadleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.expertundeadleader) : "");
 					break;
 				case SUPERIORUNDEADLEADER:
-					((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Boolean.toString(monsterDB.superiorundeadleader)));
+					((Inst4Fields)fields.getValue()).defaultLabel.setText(monsterDB.superiorundeadleader != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.superiorundeadleader) : "");
 					break;
-//				case WEAPON:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon));
-//					break;
-//				case ONEBATTLESPELL:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.onebattlespell));
-//					break;
-//				case FIRSTSHAPE:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.firstshape));
-//					break;
-//				case SECONDSHAPE:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.secondshape));
-//					break;
-//				case SECONDTMPSHAPE:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.secondtmpshape));
-//					break;
-//				case SHAPECHANGE:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.shapechange));
-//					break;
-//				case LANDSHAPE:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.landshape));
-//					break;
-//				case WATERSHAPE:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.watershape));
-//					break;
-//				case FORESTSHAPE:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.forestshape));
-//					break;
-//				case PLAINSHAPE:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.plainshape));
-//					break;
-//				case DOMSUMMON:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.domsummon));
-//					break;
-//				case DOMSUMMON2:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.domsummon2));
-//					break;
-//				case DOMSUMMON20:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.domsummon20));
-//					break;
-//				case MAKEMONSTER1:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster1));
-//					break;
-//				case MAKEMONSTER2:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster2));
-//					break;
-//				case MAKEMONSTER3:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster3));
-//					break;
-//				case MAKEMONSTER4:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster4));
-//					break;
-//				case MAKEMONSTER5:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster5));
-//					break;
-//				case SUMMON1:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.summon1));
-//					break;
-//				case SUMMON5:
-//					((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.summon5));
-//					break;
 				}
 			}
 		}
