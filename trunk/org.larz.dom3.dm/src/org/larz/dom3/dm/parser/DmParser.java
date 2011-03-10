@@ -44,7 +44,10 @@ public class DmParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser
 				if (theData instanceof char[]) {
 					char[] chars = ((char[])theData);
 					if (chars[0]!= '#' && chars[0] != '\n') {
-						chars[0] = '\n';
+						char[] newChars = new char[chars.length];
+						System.arraycopy(chars, 0, newChars, 0, chars.length);
+						newChars[0] = '\n';
+						data.set(in, newChars);
 					}
 				}
 			} catch (Exception e) {
