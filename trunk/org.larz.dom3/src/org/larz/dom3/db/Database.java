@@ -231,7 +231,7 @@ public class Database {
 			Connection con = getConnection();
 
 			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery("SELECT * FROM \"BaseA\" where \"armorname\" = '"+name+"'");
+			ResultSet rs = statement.executeQuery("SELECT * FROM \"BaseA\" where \"armorname\" = '"+getSafeString(name)+"'");
 			armor = getArmorDB(rs);
 			statement.close();
 			con.close();
@@ -240,6 +240,11 @@ public class Database {
 			ex.printStackTrace();
 		}
 		return armor;
+	}
+	
+	private static String getSafeString(String str) {
+		str = str.replaceAll("'", "''");
+		return str;
 	}
 
 	private static ArmorDB getArmorDB(ResultSet rs) throws SQLException {
@@ -277,7 +282,7 @@ public class Database {
 		try {
 			Connection con = getConnection();
 			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery("SELECT * FROM \"BaseW\" where \"wpname\" = '"+name+"'");
+			ResultSet rs = statement.executeQuery("SELECT * FROM \"BaseW\" where \"wpname\" = '"+getSafeString(name)+"'");
 			weapon = getWeaponDB(rs);
 			statement.close();
 			con.close();
@@ -307,7 +312,7 @@ public class Database {
 		try {
 			Connection con = getConnection();
 			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery("SELECT * FROM \"BaseU\" where \"unitname\" = '"+name+"'");
+			ResultSet rs = statement.executeQuery("SELECT * FROM \"BaseU\" where \"unitname\" = '"+getSafeString(name)+"'");
 			monster = getMonsterDB(rs);
 			statement.close();
 			con.close();

@@ -269,19 +269,19 @@ public class ArmorDetailsPage implements IDetailsPage {
 				}
 				switch (fields.getKey()) {
 				case DEF:
-					fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(armorDB.def)));
+					fields.getValue().defaultLabel.setText(armorDB.def != null ? Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.def.toString()) : "");
 					break;
 				case ENC:
-					fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(armorDB.enc)));
+					fields.getValue().defaultLabel.setText(armorDB.enc != null ? Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.enc.toString()) : "");
 					break;
 				case PROT:
-					fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(armorDB.prot)));
+					fields.getValue().defaultLabel.setText(armorDB.prot != null ? Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.prot.toString()) : "");
 					break;
 				case RCOST:
-					fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(armorDB.res)));
+					fields.getValue().defaultLabel.setText(armorDB.res != null ? Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.res.toString()) : "");
 					break;
 				case TYPE:
-					fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", Integer.toString(armorDB.type)));
+					fields.getValue().defaultLabel.setText(armorDB.type != null ? Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.type.toString()) : "");
 					break;
 				}
 			}
