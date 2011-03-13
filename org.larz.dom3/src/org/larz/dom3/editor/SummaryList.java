@@ -45,8 +45,6 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
-import org.eclipse.ui.ISharedImages;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.DetailsPart;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IDetailsPageProvider;
@@ -123,6 +121,14 @@ public class SummaryList extends MasterDetailsBlock {
 	private FormPage page;
 	private XtextEditor doc;
 	public TableViewer viewer;
+	
+	private static final Image ARMOR_IMAGE = Activator.getImageDescriptor("icons/armor.png").createImage();
+	private static final Image WEAPON_IMAGE = Activator.getImageDescriptor("icons/weapon.png").createImage();
+	private static final Image SPELL_IMAGE = Activator.getImageDescriptor("icons/spell.png").createImage();
+	private static final Image SITE_IMAGE = Activator.getImageDescriptor("icons/site.png").createImage();
+	private static final Image ITEM_IMAGE = Activator.getImageDescriptor("icons/item.png").createImage();
+	private static final Image NATION_IMAGE = Activator.getImageDescriptor("icons/nation.png").createImage();
+	private static final Image MONSTER_IMAGE = Activator.getImageDescriptor("icons/monster.png").createImage();
 	
 	enum AddTypes {
 		BY_NAME, BY_ID, NEW
@@ -278,12 +284,35 @@ public class SummaryList extends MasterDetailsBlock {
 			if (element instanceof NewArmorImpl || 
 				element instanceof SelectArmorById ||
 				element instanceof SelectArmorByName) {
-				return PlatformUI.getWorkbench().getSharedImages().getImage(
-						ISharedImages.IMG_OBJ_ELEMENT);
+				return ARMOR_IMAGE;
 			}
-			if (element instanceof SelectMonsterById) {
-				return PlatformUI.getWorkbench().getSharedImages().getImage(
-						ISharedImages.IMG_OBJ_FILE);
+			if (element instanceof NewWeapon ||
+				element instanceof SelectWeaponById ||
+				element instanceof SelectWeaponByName) {
+				return WEAPON_IMAGE;
+			}
+			if (element instanceof NewMonster ||
+				element instanceof SelectMonsterById ||
+				element instanceof SelectMonsterByName) {
+				return MONSTER_IMAGE;
+			}
+			if (element instanceof NewItem ||
+				element instanceof SelectItemById ||
+				element instanceof SelectItemByName) {
+				return ITEM_IMAGE;
+			}
+			if (element instanceof NewSite ||
+				element instanceof SelectSiteById ||
+				element instanceof SelectSiteByName) {
+				return SITE_IMAGE;
+			}
+			if (element instanceof NewSpell ||
+				element instanceof SelectSpellById ||
+				element instanceof SelectSpellByName) {
+				return SPELL_IMAGE;
+			}
+			if (element instanceof SelectNation) {
+				return NATION_IMAGE;
 			}
 			return null;
 		}
