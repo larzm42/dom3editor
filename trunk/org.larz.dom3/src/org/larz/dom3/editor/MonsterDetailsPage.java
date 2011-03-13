@@ -15,6 +15,10 @@
  */
 package org.larz.dom3.editor;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.DecimalFormat;
+import java.text.Format;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -31,6 +35,7 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.VerifyEvent;
 import org.eclipse.swt.events.VerifyListener;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -52,16 +57,18 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.db.Database;
 import org.larz.dom3.db.MonsterDB;
 import org.larz.dom3.dm.dm.DmFactory;
-import org.larz.dom3.dm.dm.MonsterInst5;
-import org.larz.dom3.dm.dm.SelectMonsterById;
-import org.larz.dom3.dm.dm.SelectMonsterByName;
 import org.larz.dom3.dm.dm.Monster;
 import org.larz.dom3.dm.dm.MonsterInst1;
 import org.larz.dom3.dm.dm.MonsterInst2;
 import org.larz.dom3.dm.dm.MonsterInst3;
 import org.larz.dom3.dm.dm.MonsterInst4;
+import org.larz.dom3.dm.dm.MonsterInst5;
 import org.larz.dom3.dm.dm.MonsterMods;
+import org.larz.dom3.dm.dm.SelectMonsterById;
+import org.larz.dom3.dm.dm.SelectMonsterByName;
 import org.larz.dom3.dm.ui.internal.DmActivator;
+import org.larz.dom3.image.ImageConverter;
+import org.larz.dom3.image.ImageLoader;
 
 public class MonsterDetailsPage implements IDetailsPage {
 	private IManagedForm mform;
@@ -71,11 +78,12 @@ public class MonsterDetailsPage implements IDetailsPage {
 
 	private Text name;
 	private Text descr;
+	private Label sprite1Label;
+	private Label sprite2Label;
 
 	enum Inst {
 		SPR1 (Messages.getString("MonsterDetailsSection.mod.spr1"), ""),
 		SPR2 (Messages.getString("MonsterDetailsSection.mod.spr2"), ""),
-		//DESCR (Messages.getString("MonsterDetailsSection.mod.descr"), ""),
 		SPECIALLOOK (Messages.getString("MonsterDetailsSection.mod.speciallook"), "10"),
 		AP (Messages.getString("MonsterDetailsSection.mod.ap"), "10"),
 		MAPMOVE (Messages.getString("MonsterDetailsSection.mod.mapmove"), "10"),
@@ -293,7 +301,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 	class Inst5Fields implements InstFields {
 		private Button check;
 		private Text value;
-		//private Label defaultLabel;
 	}
 	
 	EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
@@ -543,7 +550,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		
 		toolkit.createLabel(nameComp, Messages.getString("MonsterDetailsSection.mod.descr")); //$NON-NLS-1$
 		
-		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
+		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		descr.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
@@ -562,7 +569,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 		
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.widthHint = 200;
+		gd.heightHint = 26;
 		descr.setLayoutData(gd);
+		
+		sprite1Label = new Label(nameComp, SWT.NONE);
+		sprite2Label = new Label(nameComp, SWT.NONE);
 		
 		Composite leftColumn = new Composite(client, SWT.NONE);
 		glayout = new GridLayout(5, false);
@@ -768,7 +779,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 			} else if (field instanceof Inst5Fields) {
 				((Inst5Fields)field).check = check;
 				((Inst5Fields)field).value = myValue1;
-				//((Inst5Fields)field).defaultLabel = defaultLabel1;
 			}
 
 			isRight = !isRight;
@@ -792,6 +802,33 @@ public class MonsterDetailsPage implements IDetailsPage {
 				String str = getSelectMonstername(input);
 				name.setText(str!= null?str:"");
 				name.setEnabled(false);
+				int id = getSelectMonsterid(input);
+				Format format = new DecimalFormat("0000");
+				final String name1 = format.format(id) + "_1.tga";
+				final String name2 = format.format(id) + "_2.tga";
+				
+				ImageLoader loader1 = new ImageLoader() {
+					@Override
+					public InputStream getStream() throws IOException {
+						return ImageLoader.class.getClassLoader().getResource(name1).openStream();
+					}
+				};
+				ImageLoader loader2 = new ImageLoader() {
+					@Override
+					public InputStream getStream() throws IOException {
+						return ImageLoader.class.getClassLoader().getResource(name2).openStream();
+					}
+				};
+				
+				try {
+					Image image1 = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
+					Image image2 = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader2.loadImage())));
+					sprite1Label.setImage(image1);
+					sprite2Label.setImage(image2);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
 			} else {
 				String str = getMonstername(input);
 				name.setText(str!=null?str:"");
@@ -1324,6 +1361,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 		} else {
 			int id = ((SelectMonsterById)monster).getValue();
 			return Database.getMonsterName(id);
+		}
+	}
+	
+	private int getSelectMonsterid(Monster monster) {
+		if (monster instanceof SelectMonsterByName) {
+			return Database.getMonster(((SelectMonsterByName) monster).getValue()).id;
+		} else {
+			return ((SelectMonsterById)monster).getValue();
 		}
 	}
 	

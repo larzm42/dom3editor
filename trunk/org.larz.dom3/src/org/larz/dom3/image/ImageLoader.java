@@ -15,12 +15,9 @@
  */
 package org.larz.dom3.image;
 
-import java.awt.Color;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
@@ -29,68 +26,11 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-public class ImageLoader
+public abstract class ImageLoader
 {
-	final static int BLACK = Color.BLACK.getRGB();
-	final static int WHITE = Color.white.getRGB();
-
-	public static BufferedImage cropImage(BufferedImage buffer) {
-		int x = getX(buffer);
-		int y = getY(buffer);
-		int z = getZ(buffer);
-		
-		BufferedImage image = buffer.getSubimage(x, y, z-x, buffer.getHeight()-y);
-		for (int j = 0; j < image.getWidth(); j++) {
-			for (int k = 0; k < image.getHeight(); k++) {
-				int rgb = image.getRGB(j, k);
-				if (rgb == BLACK) {
-					image.setRGB(j, k, WHITE);
-				}
-			}
-		}
-		return image;
-	}
+	public abstract InputStream getStream() throws IOException;
 	
-	private static int getX(BufferedImage buffer) {
-		for (int x = 0; x < buffer.getWidth(); x++) {
-			for (int y = 0; y < buffer.getHeight(); y++) {
-				int rgb = buffer.getRGB(x, y);
-				if (rgb != BLACK) {
-					return x;
-				}
-			}
-		}
-		return 0;
-	}
-	
-	private static int getY(BufferedImage buffer) {
-		for (int y = 0; y < buffer.getHeight(); y++) {
-			for (int x = 0; x < buffer.getWidth(); x++) {
-				int rgb = buffer.getRGB(x, y);
-				if (rgb != BLACK) {
-					return y;
-				}
-			}
-		}
-		return 0;
-	}
-	
-	private static int getZ(BufferedImage buffer) {
-		for (int z = buffer.getWidth()-1; z >= 0; z--) {
-			for (int y = 0; y < buffer.getHeight(); y++) {
-				int rgb = buffer.getRGB(z, y);
-				if (rgb != BLACK) {
-					return z;
-				}
-			}
-		}
-		return 0;
-	}
-	
-
-    public static BufferedImage loadImage(final File file)
-        throws Exception
-    {
+    public BufferedImage loadImage() throws Exception {
         // set no caching for ImageIO as there should be no rewinds
         // NOTE:  having caching enabled *severely* slows down image reading
         //        performance
@@ -112,7 +52,7 @@ public class ImageLoader
             // TODO:  determine if there is a way (via classpath tricks) to set
             //        the order of the service providers so that precedence can
             //        be given to the RI provider
-        	inputStream = new FileInputStream(file);
+        	inputStream = getStream();
             imageStream = ImageIO.createImageInputStream(inputStream);
             if(imageStream == null)
                 throw new Exception("Image could not be loaded.  Probably an unknown format.");
@@ -142,7 +82,7 @@ public class ImageLoader
 
                     // try the next ImageReader
                 	inputStream.close();
-                	inputStream = new FileInputStream(file);
+                	inputStream = getStream();
                     imageStream = ImageIO.createImageInputStream(inputStream);
                     continue;
                 }

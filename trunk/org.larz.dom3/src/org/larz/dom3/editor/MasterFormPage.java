@@ -16,6 +16,9 @@
 package org.larz.dom3.editor;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
@@ -131,13 +134,23 @@ public class MasterFormPage extends FormPage {
 		
 		String path = ((DmXtextEditor)doc).getPath();
 		path = path.substring(0, path.lastIndexOf('/')+1);
-		path += iconPath.substring(iconPath.indexOf('/') == -1 ? 0 : iconPath.indexOf('/'));
+		if (iconPath.startsWith("./")) {
+			iconPath = iconPath.substring(2);
+		}
+		path += iconPath;
 		
-		File file = new File(path);
+		final File file = new File(path);
 		
 		try {
-			Image image = new Image(null, ImageConverter.convertToSWT(ImageLoader.loadImage(file)));
+			ImageLoader loader = new ImageLoader() {
+				@Override
+				public InputStream getStream() throws IOException {
+					return new FileInputStream(file);
+				}
+			};
+			Image image = new Image(null, ImageConverter.convertToSWT(loader.loadImage()));
 			Label label = toolkit.createLabel(header1, "");
+			
 			label.setImage(image);			
 		} catch (Exception e) {
 			e.printStackTrace();
