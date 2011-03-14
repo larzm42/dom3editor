@@ -376,6 +376,7 @@ public class Database {
 	private static MonsterDB getMonsterDB(ResultSet rs) throws SQLException {
 		MonsterDB monster = new MonsterDB();
 		if (rs.next()) {
+			monster.id = rs.getInt("id#");
 			monster.name = rs.getString("unitname");
 			//monster.spr1 = rs.getString("spr1");
 			//monster.spr2 = rs.getString("spr2");
