@@ -113,6 +113,7 @@ import org.larz.dom3.dm.dm.impl.SelectArmorByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectArmorByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectMonsterByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectMonsterByNameImpl;
+import org.larz.dom3.dm.dm.impl.SelectNationImpl;
 import org.larz.dom3.dm.dm.impl.SelectWeaponByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectWeaponByNameImpl;
 import org.larz.dom3.dm.ui.internal.DmActivator;
@@ -554,6 +555,7 @@ public class SummaryList extends MasterDetailsBlock {
 		detailsPart.registerPage(SelectMonsterByIdImpl.class, new MonsterDetailsPage(doc, viewer));
 		detailsPart.registerPage(SelectMonsterByNameImpl.class, new MonsterDetailsPage(doc, viewer));
 		detailsPart.registerPage(NewMonsterImpl.class, new MonsterDetailsPage(doc, viewer));
+		detailsPart.registerPage(SelectNationImpl.class, new NationDetailsPage(doc, viewer));
 	}
 	
 	public void addArmor(final AddTypes type, final String name, final int id) 

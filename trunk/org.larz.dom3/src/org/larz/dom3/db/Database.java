@@ -321,6 +321,39 @@ public class Database {
 		}
 		return monster;
 	}
+	
+	public static NationDB getNation(int id) {
+		NationDB nation = new NationDB();
+		try {
+			Connection con = getConnection();
+
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * FROM \"Nations\" where \"#id\"="+id);
+			nation = getNationDB(rs);
+			statement.close();
+			con.close();
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return nation;
+	}
+	
+	private static NationDB getNationDB(ResultSet rs) throws SQLException {
+		NationDB nation = new NationDB();
+		if (rs.next()) {
+			nation.id = rs.getInt("#id");
+			nation.name = rs.getString("name");
+			nation.epithet = rs.getString("epithet");
+			nation.era = rs.getInt("era");
+			nation.startfort = rs.getInt("fort");
+			nation.startsite1 = getSiteName(rs.getInt("site1"));
+			nation.startsite2 = getSiteName(rs.getInt("site2"));
+			nation.startsite3 = getSiteName(rs.getInt("site3"));
+			nation.startsite4 = getSiteName(rs.getInt("site4"));
+		}
+		return nation;
+	}
 
 	private static WeaponDB getWeaponDB(ResultSet rs) throws SQLException {
 		WeaponDB weapon = new WeaponDB();
