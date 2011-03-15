@@ -15,6 +15,8 @@
  */
 package org.larz.dom3.editor;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
@@ -40,7 +42,9 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
@@ -66,6 +70,7 @@ import org.larz.dom3.dm.dm.MonsterInst5;
 import org.larz.dom3.dm.dm.MonsterMods;
 import org.larz.dom3.dm.dm.SelectMonsterById;
 import org.larz.dom3.dm.dm.SelectMonsterByName;
+import org.larz.dom3.dm.ui.editor.DmXtextEditor;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 import org.larz.dom3.image.ImageConverter;
 import org.larz.dom3.image.ImageLoader;
@@ -512,14 +517,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 		TableWrapData td = new TableWrapData(TableWrapData.FILL, TableWrapData.TOP);
 		td.grabHorizontal = true;
 		s1.setLayoutData(td);
-		Composite client = toolkit.createComposite(s1);
+		final Composite client = toolkit.createComposite(s1);
 		GridLayout glayout = new GridLayout();
 		glayout.marginWidth = glayout.marginHeight = 0;
 		glayout.numColumns = 2;
 		glayout.makeColumnsEqualWidth = true;
 		client.setLayout(glayout);
 		
-		Composite nameComp = toolkit.createComposite(client);
+		final Composite nameComp = toolkit.createComposite(client);
 		nameComp.setLayout(new GridLayout(2, false));
 		GridData gd = new GridData(SWT.DEFAULT, SWT.FILL, false, false);
 		gd.horizontalSpan = 2;
@@ -566,11 +571,20 @@ public class MonsterDetailsPage implements IDetailsPage {
 			}
 			
 		});
-		
-		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-		gd.widthHint = 200;
-		gd.heightHint = 26;
-		descr.setLayoutData(gd);
+		descr.setLayoutData(new GridData(600, SWT.DEFAULT));
+		descr.addListener(SWT.Modify, new Listener() {
+			
+			@Override
+			public void handleEvent(Event event) {
+				int currentHeight = descr.getSize().y;
+				int preferredHeight = descr.computeSize(600, SWT.DEFAULT).y;
+				if (currentHeight != preferredHeight) {
+					GridData data = (GridData)descr.getLayoutData();
+					data.heightHint = preferredHeight;
+					client.pack();
+				}
+			}
+		});
 		
 		sprite1Label = new Label(nameComp, SWT.NONE);
 		sprite2Label = new Label(nameComp, SWT.NONE);
@@ -798,41 +812,104 @@ public class MonsterDetailsPage implements IDetailsPage {
 	
 	public void update() {
 		if (input != null) {
+			String sprite1 = null;
+			String sprite2 = null;
+			boolean fromZip1 = false;
+			boolean fromZip2 = false;
 			if (input instanceof SelectMonsterByName || input instanceof SelectMonsterById) {
 				String str = getSelectMonstername(input);
 				name.setText(str!= null?str:"");
 				name.setEnabled(false);
+
+				final Format format = new DecimalFormat("0000");
 				int id = getSelectMonsterid(input);
-				Format format = new DecimalFormat("0000");
-				final String name1 = format.format(id) + "_1.tga";
-				final String name2 = format.format(id) + "_2.tga";
-				
-				ImageLoader loader1 = new ImageLoader() {
-					@Override
-					public InputStream getStream() throws IOException {
-						return ImageLoader.class.getClassLoader().getResource(name1).openStream();
-					}
-				};
-				ImageLoader loader2 = new ImageLoader() {
-					@Override
-					public InputStream getStream() throws IOException {
-						return ImageLoader.class.getClassLoader().getResource(name2).openStream();
-					}
-				};
-				
-				try {
-					Image image1 = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
-					Image image2 = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader2.loadImage())));
-					sprite1Label.setImage(image1);
-					sprite2Label.setImage(image2);
-				} catch (Exception e) {
-					e.printStackTrace();
+				if (getSprite1(input) != null) {
+					sprite1 = getSprite1(input);
+				} else {
+					sprite1 = format.format(id) + "_1.tga";
+					fromZip1 = true;
+				}
+
+				if (getSprite2(input) != null) {
+					sprite2 = getSprite2(input);
+				} else {
+					sprite2 = format.format(id) + "_2.tga";
+					fromZip2 = true;
 				}
 				
 			} else {
 				String str = getMonstername(input);
 				name.setText(str!=null?str:"");
+				
+				if (getSprite1(input) != null) {
+					sprite1 = getSprite1(input);
+				}
+
+				if (getSprite2(input) != null) {
+					sprite2 = getSprite2(input);
+				}
 			}
+			if (sprite1 != null) {
+				final String finalName1 = sprite1;
+				final boolean finalFromZip = fromZip1;
+				ImageLoader loader1 = new ImageLoader() {
+					@Override
+					public InputStream getStream() throws IOException {
+						if (finalFromZip) {
+							return ImageLoader.class.getClassLoader().getResource(finalName1).openStream();							
+						} else {
+							String path = ((DmXtextEditor)doc).getPath();
+							path = path.substring(0, path.lastIndexOf('/')+1);
+							if (finalName1.startsWith("./")) {
+								path += finalName1.substring(2);
+							} else {
+								path += finalName1;
+							}
+							
+							return new FileInputStream(new File(path));
+						}
+					}
+				};
+				try {
+					Image image1 = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
+					sprite1Label.setImage(image1);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else {
+				sprite1Label.setImage(null);
+			}
+			if (sprite2 != null) {
+				final String finalName2 = sprite2;
+				final boolean finalFromZip = fromZip2;
+				ImageLoader loader2 = new ImageLoader() {
+					@Override
+					public InputStream getStream() throws IOException {
+						if (finalFromZip) {
+							return ImageLoader.class.getClassLoader().getResource(finalName2).openStream();							
+						} else {
+							String path = ((DmXtextEditor)doc).getPath();
+							path = path.substring(0, path.lastIndexOf('/')+1);
+							if (finalName2.startsWith("./")) {
+								path += finalName2.substring(2);
+							} else {
+								path += finalName2;
+							}
+							
+							return new FileInputStream(new File(path));
+						}
+					}
+				};
+				try {
+					Image image2 = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader2.loadImage())));
+					sprite2Label.setImage(image2);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else {
+				sprite2Label.setImage(null);
+			}
+			
 			String description = getMonsterdesc(input);
 			descr.setText(description!=null?description:"");
 		}
@@ -1370,6 +1447,30 @@ public class MonsterDetailsPage implements IDetailsPage {
 		} else {
 			return ((SelectMonsterById)monster).getValue();
 		}
+	}
+	
+	private String getSprite1(Monster monster) {
+		EList<MonsterMods> list = monster.getMods();
+		for (MonsterMods mod : list) {
+			if (mod instanceof MonsterInst1) {
+				if (((MonsterInst1)mod).isSpr1()) {
+					return ((MonsterInst1)mod).getValue();
+				}
+			}
+		}
+		return null;
+	}
+	
+	private String getSprite2(Monster monster) {
+		EList<MonsterMods> list = monster.getMods();
+		for (MonsterMods mod : list) {
+			if (mod instanceof MonsterInst1) {
+				if (((MonsterInst1)mod).isSpr2()) {
+					return ((MonsterInst1)mod).getValue();
+				}
+			}
+		}
+		return null;
 	}
 	
 	private void setMonstername(final XtextEditor editor, final Monster armor, final String newName) 

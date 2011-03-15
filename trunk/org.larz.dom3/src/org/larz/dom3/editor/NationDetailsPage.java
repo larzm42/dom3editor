@@ -35,7 +35,9 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
@@ -70,6 +72,8 @@ public class NationDetailsPage implements IDetailsPage {
 
 	private Text name;
 	private Text descr;
+	private Text summary;
+	private Text brief;
 
 	enum Inst {
 		NAME (Messages.getString("NationDetailsSection.mod.name"), ""),
@@ -113,44 +117,44 @@ public class NationDetailsPage implements IDetailsPage {
 		SWAMPFORT (Messages.getString("NationDetailsSection.mod.swampfort"), ""),
 		UWFORT (Messages.getString("NationDetailsSection.mod.uwfort"), ""),
 		DEEPFORT (Messages.getString("NationDetailsSection.mod.deepfort"), ""),
-		CLEARNATION (Messages.getString("MonsterDetailsSection.mod.clearnation")),
-		CLEARREC (Messages.getString("MonsterDetailsSection.mod.clearrec")),
-		CLEARSITES (Messages.getString("MonsterDetailsSection.mod.clearsites")),
-		UWNATION (Messages.getString("MonsterDetailsSection.mod.uwnation")),
-		BLOODNATION (Messages.getString("MonsterDetailsSection.mod.bloodnation")),
-		NOPREACH (Messages.getString("MonsterDetailsSection.mod.nopreach")),
-		DYINGDOM (Messages.getString("MonsterDetailsSection.mod.dyingdom")),
-		SACRIFICEDOM (Messages.getString("MonsterDetailsSection.mod.sacrificedom")),
-		NODEATHSUPPLY (Messages.getString("MonsterDetailsSection.mod.nodeathsupply")),
-		AUTOUNDEAD (Messages.getString("MonsterDetailsSection.mod.autoundead")),
-		ZOMBIEREANIM (Messages.getString("MonsterDetailsSection.mod.zombiereanim")),
-		HORSEREANIM (Messages.getString("MonsterDetailsSection.mod.horsereanim")),
-		WIGHTREANIM (Messages.getString("MonsterDetailsSection.mod.wightreanim")),
-		MANIKINREANIM (Messages.getString("MonsterDetailsSection.mod.manikinreanim")),
-		TOMBWYRMREANIM (Messages.getString("MonsterDetailsSection.mod.tombwyrmreanim")),
-		STARTCOM (Messages.getString("MonsterDetailsSection.mod.startcom"), ""),
-		STARTSCOUT (Messages.getString("MonsterDetailsSection.mod.startscout"), ""),
-		STARTUNITTYPE1 (Messages.getString("MonsterDetailsSection.mod.startunittype1"), ""),
-		STARTUNITTYPE2 (Messages.getString("MonsterDetailsSection.mod.startunittype2"), ""),
-		ADDRECUNIT (Messages.getString("MonsterDetailsSection.mod.addrecunit"), ""),
-		ADDRECCOM (Messages.getString("MonsterDetailsSection.mod.addreccom"), ""),
-		UWUNIT1 (Messages.getString("MonsterDetailsSection.mod.uwunit1"), ""),
-		UWUNIT2 (Messages.getString("MonsterDetailsSection.mod.uwunit2"), ""),
-		UWUNIT3 (Messages.getString("MonsterDetailsSection.mod.uwunit3"), ""),
-		UWUNIT4 (Messages.getString("MonsterDetailsSection.mod.uwunit4"), ""),
-		UWUNIT5 (Messages.getString("MonsterDetailsSection.mod.uwunit5"), ""),
-		UWCOM1 (Messages.getString("MonsterDetailsSection.mod.uwcom1"), ""),
-		UWCOM2 (Messages.getString("MonsterDetailsSection.mod.uwcom2"), ""),
-		UWCOM3 (Messages.getString("MonsterDetailsSection.mod.uwcom3"), ""),
-		UWCOM4 (Messages.getString("MonsterDetailsSection.mod.uwcom4"), ""),
-		UWCOM5 (Messages.getString("MonsterDetailsSection.mod.uwcom5"), ""),
-		DEFCOM1 (Messages.getString("MonsterDetailsSection.mod.defcom1"), ""),
-		DEFCOM2 (Messages.getString("MonsterDetailsSection.mod.defcom2"), ""),
-		DEFUNIT1 (Messages.getString("MonsterDetailsSection.mod.defunit1"), ""),
-		DEFUNIT1B (Messages.getString("MonsterDetailsSection.mod.defunit1b"), ""),
-		DEFUNIT2 (Messages.getString("MonsterDetailsSection.mod.defunit2"), ""),
-		DEFUNIT2B (Messages.getString("MonsterDetailsSection.mod.defunit2b"), ""),
-		COLOR (Messages.getString("MonsterDetailsSection.mod.color"));
+		CLEARNATION (Messages.getString("NationDetailsSection.mod.clearnation")),
+		CLEARREC (Messages.getString("NationDetailsSection.mod.clearrec")),
+		CLEARSITES (Messages.getString("NationDetailsSection.mod.clearsites")),
+		UWNATION (Messages.getString("NationDetailsSection.mod.uwnation")),
+		BLOODNATION (Messages.getString("NationDetailsSection.mod.bloodnation")),
+		NOPREACH (Messages.getString("NationDetailsSection.mod.nopreach")),
+		DYINGDOM (Messages.getString("NationDetailsSection.mod.dyingdom")),
+		SACRIFICEDOM (Messages.getString("NationDetailsSection.mod.sacrificedom")),
+		NODEATHSUPPLY (Messages.getString("NationDetailsSection.mod.nodeathsupply")),
+		AUTOUNDEAD (Messages.getString("NationDetailsSection.mod.autoundead")),
+		ZOMBIEREANIM (Messages.getString("NationDetailsSection.mod.zombiereanim")),
+		HORSEREANIM (Messages.getString("NationDetailsSection.mod.horsereanim")),
+		WIGHTREANIM (Messages.getString("NationDetailsSection.mod.wightreanim")),
+		MANIKINREANIM (Messages.getString("NationDetailsSection.mod.manikinreanim")),
+		TOMBWYRMREANIM (Messages.getString("NationDetailsSection.mod.tombwyrmreanim")),
+		STARTCOM (Messages.getString("NationDetailsSection.mod.startcom"), ""),
+		STARTSCOUT (Messages.getString("NationDetailsSection.mod.startscout"), ""),
+		STARTUNITTYPE1 (Messages.getString("NationDetailsSection.mod.startunittype1"), ""),
+		STARTUNITTYPE2 (Messages.getString("NationDetailsSection.mod.startunittype2"), ""),
+		ADDRECUNIT (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECCOM (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		UWUNIT1 (Messages.getString("NationDetailsSection.mod.uwunit1"), ""),
+		UWUNIT2 (Messages.getString("NationDetailsSection.mod.uwunit2"), ""),
+		UWUNIT3 (Messages.getString("NationDetailsSection.mod.uwunit3"), ""),
+		UWUNIT4 (Messages.getString("NationDetailsSection.mod.uwunit4"), ""),
+		UWUNIT5 (Messages.getString("NationDetailsSection.mod.uwunit5"), ""),
+		UWCOM1 (Messages.getString("NationDetailsSection.mod.uwcom1"), ""),
+		UWCOM2 (Messages.getString("NationDetailsSection.mod.uwcom2"), ""),
+		UWCOM3 (Messages.getString("NationDetailsSection.mod.uwcom3"), ""),
+		UWCOM4 (Messages.getString("NationDetailsSection.mod.uwcom4"), ""),
+		UWCOM5 (Messages.getString("NationDetailsSection.mod.uwcom5"), ""),
+		DEFCOM1 (Messages.getString("NationDetailsSection.mod.defcom1"), ""),
+		DEFCOM2 (Messages.getString("NationDetailsSection.mod.defcom2"), ""),
+		DEFUNIT1 (Messages.getString("NationDetailsSection.mod.defunit1"), ""),
+		DEFUNIT1B (Messages.getString("NationDetailsSection.mod.defunit1b"), ""),
+		DEFUNIT2 (Messages.getString("NationDetailsSection.mod.defunit2"), ""),
+		DEFUNIT2B (Messages.getString("NationDetailsSection.mod.defunit2b"), ""),
+		COLOR (Messages.getString("NationDetailsSection.mod.color"));
 		
 		private String label;
 		private String defaultValue;
@@ -207,11 +211,11 @@ public class NationDetailsPage implements IDetailsPage {
 	public NationDetailsPage(XtextEditor doc, TableViewer viewer) {
 		this.doc = doc;
 		this.viewer = viewer;
-		instMap.put(Inst.NAME, new Inst1Fields());
+		//instMap.put(Inst.NAME, new Inst1Fields());
 		instMap.put(Inst.EPITHET, new Inst1Fields());
-		instMap.put(Inst.DESCR, new Inst1Fields());
-		instMap.put(Inst.SUMMARY, new Inst1Fields());
-		instMap.put(Inst.BRIEF, new Inst1Fields());
+		//instMap.put(Inst.DESCR, new Inst1Fields());
+		//instMap.put(Inst.SUMMARY, new Inst1Fields());
+		//instMap.put(Inst.BRIEF, new Inst1Fields());
 		instMap.put(Inst.FLAG, new Inst1Fields());
 		instMap.put(Inst.MAPBACKGROUND, new Inst1Fields());
 		instMap.put(Inst.STARTSITE1, new Inst1Fields());
@@ -322,7 +326,7 @@ public class NationDetailsPage implements IDetailsPage {
 		TableWrapData td = new TableWrapData(TableWrapData.FILL, TableWrapData.TOP);
 		td.grabHorizontal = true;
 		s1.setLayoutData(td);
-		Composite client = toolkit.createComposite(s1);
+		final Composite client = toolkit.createComposite(s1);
 		GridLayout glayout = new GridLayout();
 		glayout.marginWidth = glayout.marginHeight = 0;
 		glayout.numColumns = 2;
@@ -376,11 +380,86 @@ public class NationDetailsPage implements IDetailsPage {
 			}
 			
 		});
+		descr.setLayoutData(new GridData(600, SWT.DEFAULT));
+		descr.addListener(SWT.Modify, new Listener() {
+			
+			@Override
+			public void handleEvent(Event event) {
+				int currentHeight = descr.getSize().y;
+				int preferredHeight = descr.computeSize(600, SWT.DEFAULT).y;
+				if (currentHeight != preferredHeight) {
+					GridData data = (GridData)descr.getLayoutData();
+					data.heightHint = preferredHeight;
+					client.pack();
+				}
+			}
+		});
 		
-		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-		gd.widthHint = 200;
-		gd.heightHint = 26;
-		descr.setLayoutData(gd);
+		toolkit.createLabel(nameComp, Messages.getString("NationDetailsSection.mod.summary")); //$NON-NLS-1$
+		
+		summary = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
+		summary.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				setInst1(Inst.SUMMARY, doc, input, summary.getText());
+			}			
+		});
+		summary.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.character == '\r') {
+					setInst1(Inst.SUMMARY, doc, input, summary.getText());
+				}
+			}
+			
+		});
+		summary.setLayoutData(new GridData(600, SWT.DEFAULT));
+		summary.addListener(SWT.Modify, new Listener() {
+			
+			@Override
+			public void handleEvent(Event event) {
+				int currentHeight = summary.getSize().y;
+				int preferredHeight = summary.computeSize(600, SWT.DEFAULT).y;
+				if (currentHeight != preferredHeight) {
+					GridData data = (GridData)summary.getLayoutData();
+					data.heightHint = preferredHeight;
+					client.pack();
+				}
+			}
+		});
+		
+		toolkit.createLabel(nameComp, Messages.getString("NationDetailsSection.mod.brief")); //$NON-NLS-1$
+		
+		brief = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
+		brief.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				setInst1(Inst.BRIEF, doc, input, brief.getText());
+			}			
+		});
+		brief.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.character == '\r') {
+					setInst1(Inst.BRIEF, doc, input, brief.getText());
+				}
+			}
+			
+		});
+		brief.setLayoutData(new GridData(600, SWT.DEFAULT));
+		brief.addListener(SWT.Modify, new Listener() {
+			
+			@Override
+			public void handleEvent(Event event) {
+				int currentHeight = brief.getSize().y;
+				int preferredHeight = brief.computeSize(600, SWT.DEFAULT).y;
+				if (currentHeight != preferredHeight) {
+					GridData data = (GridData)brief.getLayoutData();
+					data.heightHint = preferredHeight;
+					client.pack();
+				}
+			}
+		});
 		
 		Composite leftColumn = new Composite(client, SWT.NONE);
 		glayout = new GridLayout(5, false);
@@ -430,7 +509,7 @@ public class NationDetailsPage implements IDetailsPage {
 				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 				myValue1 = value;
 				
-				if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
+				if (field instanceof Inst2Fields ||	field instanceof Inst4Fields) {
 					value.addVerifyListener(new VerifyListener() {
 						
 						@Override
@@ -488,10 +567,10 @@ public class NationDetailsPage implements IDetailsPage {
 				if (field instanceof Inst1Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 					gd.horizontalSpan = 4;
-				} else if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
+				} else if (field instanceof Inst2Fields ||	field instanceof Inst4Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 					gd.widthHint = 30;
-				} else if (field instanceof Inst4Fields) {
+				} else if (field instanceof Inst3Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 					gd.horizontalSpan = 2;
 				} else if (field instanceof Inst5Fields) {
@@ -504,15 +583,15 @@ public class NationDetailsPage implements IDetailsPage {
 				
 			Label defaultLabel1 = null;
 			
-			if (field instanceof Inst2Fields || field instanceof Inst3Fields|| field instanceof Inst4Fields) {
+			if (field instanceof Inst2Fields || field instanceof Inst3Fields || field instanceof Inst4Fields) {
 				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel1.setEnabled(false);
 			}
-			if (field instanceof Inst2Fields) {
+			if (field instanceof Inst2Fields || field instanceof Inst4Fields) {
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 				gd.horizontalSpan = 3;
 				defaultLabel1.setLayoutData(gd);
-			} else if (field instanceof Inst4Fields) {
+			} else if (field instanceof Inst3Fields) {
 				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 				gd.horizontalSpan = 2;
 				check.setLayoutData(gd);
@@ -610,6 +689,10 @@ public class NationDetailsPage implements IDetailsPage {
 			name.setEnabled(false);
 			String description = getNationdesc(input);
 			descr.setText(description!=null?description:"");
+			String summaryStr = getInst1(Inst.SUMMARY, input);
+			summary.setText(summaryStr!=null?summaryStr:"");
+			String briefStr = getInst1(Inst.BRIEF, input);
+			brief.setText(summaryStr!=null?briefStr:"");
 		}
 		for (Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			String val1 = getInst1(fields.getKey(), input);
@@ -1925,7 +2008,11 @@ public class NationDetailsPage implements IDetailsPage {
 					type.setEra(true);
 					break;
 				}
-				type.setValue(Integer.valueOf(newName));
+				try {
+					type.setValue(Integer.valueOf(newName));
+				} catch (NumberFormatException e) {
+					e.printStackTrace();
+				}
 				mods.add(type);
 			}  
 		},
