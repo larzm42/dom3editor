@@ -505,7 +505,7 @@ public class SummaryList extends MasterDetailsBlock {
 	public void createContent(IManagedForm managedForm, Composite parent) {
 		super.createContent(managedForm, parent);
 		sashForm.setSashWidth(4);
-		sashForm.setWeights(new int[]{4,6});
+		sashForm.setWeights(new int[]{7,13});
 	}
 	
 	protected void createToolBarActions(IManagedForm managedForm) {
