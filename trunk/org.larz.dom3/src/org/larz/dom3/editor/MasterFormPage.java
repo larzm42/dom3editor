@@ -106,7 +106,6 @@ public class MasterFormPage extends FormPage {
 		expandable.setClient(header1);
 		expandable.setExpanded(false);
 		
-		
 		for (final General general : General.values()) {
 			toolkit.createLabel(header, general.label); //$NON-NLS-1$
 			

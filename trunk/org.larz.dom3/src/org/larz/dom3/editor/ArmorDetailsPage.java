@@ -132,11 +132,11 @@ public class ArmorDetailsPage implements IDetailsPage {
 		Section s1 = toolkit.createSection(parent, Section.DESCRIPTION|Section.TITLE_BAR);
 		s1.marginWidth = 10;
 		s1.setText(Messages.getString("ArmorDetailsSection.name")); //$NON-NLS-1$
-		s1.setDescription(Messages.getString("ArmorDetailsPage.name")); //$NON-NLS-1$
 		TableWrapData td = new TableWrapData(TableWrapData.FILL, TableWrapData.TOP);
 		td.grabHorizontal = true;
 		s1.setLayoutData(td);
-		Composite client = toolkit.createComposite(s1);
+		
+		Composite client = toolkit.createComposite(parent);
 		GridLayout glayout = new GridLayout();
 		glayout.marginWidth = glayout.marginHeight = 0;
 		glayout.numColumns = 3;
@@ -227,8 +227,6 @@ public class ArmorDetailsPage implements IDetailsPage {
 		}
 
 		createSpacer(toolkit, client, 2);
-		
-		s1.setClient(client);
 	}
 	
 	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {

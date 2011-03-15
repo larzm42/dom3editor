@@ -83,10 +83,13 @@ public class MonsterDetailsPage implements IDetailsPage {
 
 	private Text name;
 	private Text descr;
+	private Button descCheck;
 	private Label sprite1Label;
 	private Label sprite2Label;
 
 	enum Inst {
+		NAME (Messages.getString("MonsterDetailsSection.mod.name"), ""),
+		DESCR (Messages.getString("MonsterDetailsSection.mod.descr"), ""),
 		SPR1 (Messages.getString("MonsterDetailsSection.mod.spr1"), ""),
 		SPR2 (Messages.getString("MonsterDetailsSection.mod.spr2"), ""),
 		SPECIALLOOK (Messages.getString("MonsterDetailsSection.mod.speciallook"), "10"),
@@ -509,15 +512,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 		layout.bottomMargin = 2;
 		parent.setLayout(layout);
 
-		FormToolkit toolkit = mform.getToolkit();
+		final FormToolkit toolkit = mform.getToolkit();
 		Section s1 = toolkit.createSection(parent, Section.DESCRIPTION|Section.TITLE_BAR);
 		s1.marginWidth = 10;
-		s1.setText(Messages.getString("MonsterDetailsSection.name")); //$NON-NLS-1$
-		s1.setDescription(Messages.getString("MonsterDetailsPage.name")); //$NON-NLS-1$
+		s1.setText(Messages.getString("MonsterDetailsSection.name"));
 		TableWrapData td = new TableWrapData(TableWrapData.FILL, TableWrapData.TOP);
 		td.grabHorizontal = true;
 		s1.setLayoutData(td);
-		final Composite client = toolkit.createComposite(s1);
+		
+		final Composite client = toolkit.createComposite(parent);
 		GridLayout glayout = new GridLayout();
 		glayout.marginWidth = glayout.marginHeight = 0;
 		glayout.numColumns = 2;
@@ -550,11 +553,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 		});
 		
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-		gd.widthHint = 400;
+		gd.widthHint = 500;
 		name.setLayoutData(gd);
 		
-		toolkit.createLabel(nameComp, Messages.getString("MonsterDetailsSection.mod.descr")); //$NON-NLS-1$
-		
+		descCheck = toolkit.createButton(nameComp, Messages.getString("MonsterDetailsSection.mod.descr"), SWT.CHECK);
+
 		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		descr.addFocusListener(new FocusAdapter() {
 			@Override
@@ -571,13 +574,13 @@ public class MonsterDetailsPage implements IDetailsPage {
 			}
 			
 		});
-		descr.setLayoutData(new GridData(600, SWT.DEFAULT));
+		descr.setLayoutData(new GridData(500, SWT.DEFAULT));
 		descr.addListener(SWT.Modify, new Listener() {
 			
 			@Override
 			public void handleEvent(Event event) {
 				int currentHeight = descr.getSize().y;
-				int preferredHeight = descr.computeSize(600, SWT.DEFAULT).y;
+				int preferredHeight = descr.computeSize(500, SWT.DEFAULT).y;
 				if (currentHeight != preferredHeight) {
 					GridData data = (GridData)descr.getLayoutData();
 					data.heightHint = preferredHeight;
@@ -585,18 +588,36 @@ public class MonsterDetailsPage implements IDetailsPage {
 				}
 			}
 		});
-		
+		descr.setEnabled(false);
+		descr.setBackground(toolkit.getColors().getInactiveBackground());
+		descCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (descCheck.getSelection()) {
+					addInst1(Inst.DESCR, doc, input, "");
+					descr.setEnabled(true);
+					descr.setBackground(toolkit.getColors().getBackground());
+					descr.setText("");
+				} else {
+					removeInst2(Inst.DESCR, doc, input);
+					descr.setEnabled(false);
+					descr.setBackground(toolkit.getColors().getInactiveBackground());
+					descr.setText("");
+				}
+			}
+		});
+
 		sprite1Label = new Label(nameComp, SWT.NONE);
 		sprite2Label = new Label(nameComp, SWT.NONE);
 		
-		Composite leftColumn = new Composite(client, SWT.NONE);
+		Composite leftColumn = toolkit.createComposite(client);
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
 		leftColumn.setLayout(glayout);
 		leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
-		Composite rightColumn = new Composite(client, SWT.NONE);
+		Composite rightColumn = toolkit.createComposite(client);
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
@@ -629,6 +650,12 @@ public class MonsterDetailsPage implements IDetailsPage {
 				}
 
 			});
+
+			if (field instanceof Inst4Fields) {
+				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+				gd.horizontalSpan = 2;
+				check.setLayoutData(gd);
+			}
 
 			Text myValue1 = null;
 			Text myValue2 = null;
@@ -693,13 +720,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 				value.setEnabled(false);
 				if (field instanceof Inst1Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+					gd.widthHint = 160;
 					gd.horizontalSpan = 4;
 				} else if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 					gd.widthHint = 30;
-				} else if (field instanceof Inst4Fields) {
-					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.horizontalSpan = 2;
 				} else if (field instanceof Inst5Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 					gd.horizontalSpan = 4;
@@ -719,9 +744,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 				gd.horizontalSpan = 3;
 				defaultLabel1.setLayoutData(gd);
 			} else if (field instanceof Inst4Fields) {
-				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-				gd.horizontalSpan = 2;
-				check.setLayoutData(gd);
 				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 			}
 
@@ -799,8 +821,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 
 		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
-		
-		s1.setClient(client);
 	}
 	
 	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
@@ -823,30 +843,30 @@ public class MonsterDetailsPage implements IDetailsPage {
 
 				final Format format = new DecimalFormat("0000");
 				int id = getSelectMonsterid(input);
-				if (getSprite1(input) != null) {
-					sprite1 = getSprite1(input);
+				if (getInst1(Inst.SPR1, input) != null) {
+					sprite1 = getInst1(Inst.SPR1, input);
 				} else {
 					sprite1 = format.format(id) + "_1.tga";
 					fromZip1 = true;
 				}
 
-				if (getSprite2(input) != null) {
-					sprite2 = getSprite2(input);
+				if (getInst1(Inst.SPR2, input) != null) {
+					sprite2 = getInst1(Inst.SPR2, input);
 				} else {
 					sprite2 = format.format(id) + "_2.tga";
 					fromZip2 = true;
 				}
 				
 			} else {
-				String str = getMonstername(input);
+				String str = getInst1(Inst.NAME, input);
 				name.setText(str!=null?str:"");
 				
-				if (getSprite1(input) != null) {
-					sprite1 = getSprite1(input);
+				if (getInst1(Inst.SPR1, input) != null) {
+					sprite1 = getInst1(Inst.SPR1, input);
 				}
 
-				if (getSprite2(input) != null) {
-					sprite2 = getSprite2(input);
+				if (getInst1(Inst.SPR2, input) != null) {
+					sprite2 = getInst1(Inst.SPR2, input);
 				}
 			}
 			if (sprite1 != null) {
@@ -910,8 +930,20 @@ public class MonsterDetailsPage implements IDetailsPage {
 				sprite2Label.setImage(null);
 			}
 			
-			String description = getMonsterdesc(input);
-			descr.setText(description!=null?description:"");
+			String description = getInst1(Inst.DESCR, input);
+			final FormToolkit toolkit = mform.getToolkit();
+			if (description != null) {
+				descr.setText(description);
+				descr.setEnabled(true);
+				descr.setBackground(toolkit.getColors().getBackground());
+				descCheck.setSelection(true);
+			} else {
+				descr.setText("");
+				descr.setEnabled(false);
+				descr.setBackground(toolkit.getColors().getInactiveBackground());
+				descCheck.setSelection(false);
+			}
+
 		}
 		for (Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			String val1 = getInst1(fields.getKey(), input);
@@ -1420,18 +1452,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private String getMonstername(Monster monster) {
-		EList<MonsterMods> list = monster.getMods();
-		for (MonsterMods mod : list) {
-			if (mod instanceof MonsterInst1) {
-				if (((MonsterInst1)mod).isName()) {
-					return ((MonsterInst1)mod).getValue();
-				}
-			}
-		}
-		return null;
-	}
-	
 	private String getSelectMonstername(Monster monster) {
 		if (monster instanceof SelectMonsterByName) {
 			return ((SelectMonsterByName)monster).getValue();
@@ -1447,30 +1467,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 		} else {
 			return ((SelectMonsterById)monster).getValue();
 		}
-	}
-	
-	private String getSprite1(Monster monster) {
-		EList<MonsterMods> list = monster.getMods();
-		for (MonsterMods mod : list) {
-			if (mod instanceof MonsterInst1) {
-				if (((MonsterInst1)mod).isSpr1()) {
-					return ((MonsterInst1)mod).getValue();
-				}
-			}
-		}
-		return null;
-	}
-	
-	private String getSprite2(Monster monster) {
-		EList<MonsterMods> list = monster.getMods();
-		for (MonsterMods mod : list) {
-			if (mod instanceof MonsterInst1) {
-				if (((MonsterInst1)mod).isSpr2()) {
-					return ((MonsterInst1)mod).getValue();
-				}
-			}
-		}
-		return null;
 	}
 	
 	private void setMonstername(final XtextEditor editor, final Monster armor, final String newName) 
@@ -1510,18 +1506,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private String getMonsterdesc(Monster monster) {
-		EList<MonsterMods> list = monster.getMods();
-		for (MonsterMods mod : list) {
-			if (mod instanceof MonsterInst1) {
-				if (((MonsterInst1)mod).isDescr()) {
-					return ((MonsterInst1)mod).getValue();
-				}
-			}
-		}
-		return null;
-	}
-	
 	private void setMonsterdescr(final XtextEditor editor, final Monster armor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
@@ -1565,6 +1549,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst1) {
 				switch (inst2) {
+				case NAME:
+					if (((MonsterInst1)mod).isName()){
+						return ((MonsterInst1)mod).getValue();
+					}
+					break;
 				case SPR1:
 					if (((MonsterInst1)mod).isSpr1()){
 						return ((MonsterInst1)mod).getValue();
@@ -1575,11 +1564,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 						return ((MonsterInst1)mod).getValue();
 					}
 					break;
-//				case DESCR:
-//					if (((MonsterInst1)mod).isDescr()){
-//						return ((MonsterInst1)mod).getValue();
-//					}
-//					break;
+				case DESCR:
+					if (((MonsterInst1)mod).isDescr()){
+						return ((MonsterInst1)mod).getValue();
+					}
+					break;
 				case ARMOR1:
 					if (((MonsterInst1)mod).isArmor()){
 						armorCount++;
@@ -3432,9 +3421,9 @@ public class MonsterDetailsPage implements IDetailsPage {
 				case SPR2:
 					type.setSpr2(true);
 					break;
-//				case DESCR:
-//					type.setDescr(true);
-//					break;
+				case DESCR:
+					type.setDescr(true);
+					break;
 				case ARMOR1:
 					type.setArmor(true);
 					break;
@@ -4091,11 +4080,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 								modToRemove = mod;
 							}
 							break;
-//						case DESCR:
-//							if (((MonsterInst1)mod).isDescr()){
-//								modToRemove = mod;
-//							}
-//							break;
+						case DESCR:
+							if (((MonsterInst1)mod).isDescr()){
+								modToRemove = mod;
+							}
+							break;
 						case ARMOR1:
 							if (((MonsterInst1)mod).isArmor()){
 								armorCount++;

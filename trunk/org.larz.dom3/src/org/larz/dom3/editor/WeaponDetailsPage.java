@@ -233,11 +233,11 @@ public class WeaponDetailsPage implements IDetailsPage {
 		Section s1 = toolkit.createSection(parent, Section.DESCRIPTION|Section.TITLE_BAR);
 		s1.marginWidth = 10;
 		s1.setText(Messages.getString("WeaponDetailsSection.name")); //$NON-NLS-1$
-		s1.setDescription(Messages.getString("WeaponDetailsPage.name")); //$NON-NLS-1$
 		TableWrapData td = new TableWrapData(TableWrapData.FILL, TableWrapData.TOP);
 		td.grabHorizontal = true;
 		s1.setLayoutData(td);
-		Composite client = toolkit.createComposite(s1);
+		
+		Composite client = toolkit.createComposite(parent);
 		GridLayout glayout = new GridLayout();
 		glayout.marginWidth = glayout.marginHeight = 0;
 		glayout.numColumns = 2;
@@ -270,18 +270,21 @@ public class WeaponDetailsPage implements IDetailsPage {
 		});
 		
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-		gd.widthHint = 200;
+		gd.widthHint = 400;
 		name.setLayoutData(gd);
 		
-		Composite leftColumn = new Composite(client, SWT.NONE);
+		Composite leftColumn = toolkit.createComposite(client);
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
 		leftColumn.setLayout(glayout);
 		leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
-		Composite rightColumn = new Composite(client, SWT.NONE);
-		rightColumn.setLayout(new GridLayout(5, false));
+		Composite rightColumn = toolkit.createComposite(client);
+		glayout = new GridLayout(5, false);
+		glayout.marginHeight = 0;
+		glayout.marginWidth = 0;
+		rightColumn.setLayout(glayout);
 		rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
 		boolean isRight = false;
@@ -444,8 +447,6 @@ public class WeaponDetailsPage implements IDetailsPage {
 		}
 
 		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
-		
-		s1.setClient(client);
 	}
 	
 	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {

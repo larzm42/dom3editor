@@ -48,6 +48,7 @@ import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.forms.widgets.TableWrapLayout;
@@ -59,9 +60,6 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.db.Database;
 import org.larz.dom3.db.NationDB;
 import org.larz.dom3.dm.dm.DmFactory;
-import org.larz.dom3.dm.dm.Monster;
-import org.larz.dom3.dm.dm.MonsterInst1;
-import org.larz.dom3.dm.dm.MonsterMods;
 import org.larz.dom3.dm.dm.Nation;
 import org.larz.dom3.dm.dm.NationInst1;
 import org.larz.dom3.dm.dm.NationInst2;
@@ -223,11 +221,7 @@ public class NationDetailsPage implements IDetailsPage {
 	public NationDetailsPage(XtextEditor doc, TableViewer viewer) {
 		this.doc = doc;
 		this.viewer = viewer;
-		//instMap.put(Inst.NAME, new Inst1Fields());
 		instMap.put(Inst.EPITHET, new Inst1Fields());
-		//instMap.put(Inst.DESCR, new Inst1Fields());
-		//instMap.put(Inst.SUMMARY, new Inst1Fields());
-		//instMap.put(Inst.BRIEF, new Inst1Fields());
 		instMap.put(Inst.FLAG, new Inst1Fields());
 		instMap.put(Inst.MAPBACKGROUND, new Inst1Fields());
 		instMap.put(Inst.STARTSITE1, new Inst1Fields());
@@ -334,11 +328,12 @@ public class NationDetailsPage implements IDetailsPage {
 		Section s1 = toolkit.createSection(parent, Section.DESCRIPTION|Section.TITLE_BAR);
 		s1.marginWidth = 10;
 		s1.setText(Messages.getString("NationDetailsSection.name")); //$NON-NLS-1$
-		s1.setDescription(Messages.getString("NationDetailsPage.name")); //$NON-NLS-1$
+		//s1.setDescription(Messages.getString("NationDetailsPage.name")); //$NON-NLS-1$
 		TableWrapData td = new TableWrapData(TableWrapData.FILL, TableWrapData.TOP);
 		td.grabHorizontal = true;
 		s1.setLayoutData(td);
-		final Composite client = toolkit.createComposite(s1);
+		
+		final Composite client = toolkit.createComposite(parent);
 		GridLayout glayout = new GridLayout();
 		glayout.marginWidth = glayout.marginHeight = 0;
 		glayout.numColumns = 2;
@@ -371,7 +366,7 @@ public class NationDetailsPage implements IDetailsPage {
 		});
 		
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-		gd.widthHint = 400;
+		gd.widthHint = 500;
 		name.setLayoutData(gd);
 		
 		toolkit.createLabel(nameComp, Messages.getString("NationDetailsSection.mod.descr")); //$NON-NLS-1$
@@ -392,13 +387,13 @@ public class NationDetailsPage implements IDetailsPage {
 			}
 			
 		});
-		descr.setLayoutData(new GridData(600, SWT.DEFAULT));
+		descr.setLayoutData(new GridData(500, SWT.DEFAULT));
 		descr.addListener(SWT.Modify, new Listener() {
 			
 			@Override
 			public void handleEvent(Event event) {
 				int currentHeight = descr.getSize().y;
-				int preferredHeight = descr.computeSize(600, SWT.DEFAULT).y;
+				int preferredHeight = descr.computeSize(500, SWT.DEFAULT).y;
 				if (currentHeight != preferredHeight) {
 					GridData data = (GridData)descr.getLayoutData();
 					data.heightHint = preferredHeight;
@@ -425,13 +420,13 @@ public class NationDetailsPage implements IDetailsPage {
 			}
 			
 		});
-		summary.setLayoutData(new GridData(600, SWT.DEFAULT));
+		summary.setLayoutData(new GridData(500, SWT.DEFAULT));
 		summary.addListener(SWT.Modify, new Listener() {
 			
 			@Override
 			public void handleEvent(Event event) {
 				int currentHeight = summary.getSize().y;
-				int preferredHeight = summary.computeSize(600, SWT.DEFAULT).y;
+				int preferredHeight = summary.computeSize(500, SWT.DEFAULT).y;
 				if (currentHeight != preferredHeight) {
 					GridData data = (GridData)summary.getLayoutData();
 					data.heightHint = preferredHeight;
@@ -458,13 +453,13 @@ public class NationDetailsPage implements IDetailsPage {
 			}
 			
 		});
-		brief.setLayoutData(new GridData(600, SWT.DEFAULT));
+		brief.setLayoutData(new GridData(500, SWT.DEFAULT));
 		brief.addListener(SWT.Modify, new Listener() {
 			
 			@Override
 			public void handleEvent(Event event) {
 				int currentHeight = brief.getSize().y;
-				int preferredHeight = brief.computeSize(600, SWT.DEFAULT).y;
+				int preferredHeight = brief.computeSize(500, SWT.DEFAULT).y;
 				if (currentHeight != preferredHeight) {
 					GridData data = (GridData)brief.getLayoutData();
 					data.heightHint = preferredHeight;
@@ -475,14 +470,14 @@ public class NationDetailsPage implements IDetailsPage {
 		
 		spriteLabel = new Label(nameComp, SWT.NONE);
 
-		Composite leftColumn = new Composite(client, SWT.NONE);
+		Composite leftColumn = toolkit.createComposite(client);
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
 		leftColumn.setLayout(glayout);
 		leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
-		Composite rightColumn = new Composite(client, SWT.NONE);
+		Composite rightColumn = toolkit.createComposite(client);
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
@@ -580,6 +575,7 @@ public class NationDetailsPage implements IDetailsPage {
 				value.setEnabled(false);
 				if (field instanceof Inst1Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+					gd.widthHint = 160;
 					gd.horizontalSpan = 4;
 				} else if (field instanceof Inst2Fields ||	field instanceof Inst4Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
@@ -686,7 +682,7 @@ public class NationDetailsPage implements IDetailsPage {
 
 		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 		
-		s1.setClient(client);
+		//s1.setClient(client);
 	}
 	
 	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
@@ -698,17 +694,17 @@ public class NationDetailsPage implements IDetailsPage {
 	
 	public void update() {
 		if (input != null) {
-			String str = getNationname(input);
+			String str = getInst1(Inst.NAME, input);
 			name.setText(str!= null?str:"");
 			name.setEnabled(false);
-			String description = getNationdesc(input);
+			String description = getInst1(Inst.DESCR, input);
 			descr.setText(description!=null?description:"");
 			String summaryStr = getInst1(Inst.SUMMARY, input);
 			summary.setText(summaryStr!=null?summaryStr:"");
 			String briefStr = getInst1(Inst.BRIEF, input);
 			brief.setText(summaryStr!=null?briefStr:"");
 
-			String sprite = getSprite(input);
+			String sprite = getInst1(Inst.FLAG, input);
 
 			if (sprite != null) {
 				final String finalName1 = sprite;
@@ -787,37 +783,22 @@ public class NationDetailsPage implements IDetailsPage {
 			}
 			if (input instanceof SelectNation) {
 				NationDB nationDB = Database.getNation(((SelectNation)input).getValue());
-//				switch (fields.getKey()) {
-//				case SPECIALLOOK:
-//					((Inst2Fields)fields.getValue()).defaultLabel.setText(nationDB.speciallook != null ? Messages.format("DetailsPage.DefaultLabel.fmt", nationDB.speciallook) : "");
+				switch (fields.getKey()) {
+//				name;
+//				public String epithet;
+//				public String descr;
+//				public String startsite1;
+//				public String startsite2;
+//				public String startsite3;
+//				public String startsite4;
+//				public Integer era;
+//				public Integer startfort
+//				case NAME:
+//					((Inst1Fields)fields.getValue()).defaultLabel.setText(nationDB.speciallook != null ? Messages.format("DetailsPage.DefaultLabel.fmt", nationDB.speciallook) : "");
 //					break;
-//				}
-			}
-		}
-	}
-	
-	private String getNationname(SelectNation nation) {
-		EList<NationMods> list = nation.getMods();
-		for (NationMods mod : list) {
-			if (mod instanceof NationInst1) {
-				if (((NationInst1)mod).isName()) {
-					return ((NationInst1)mod).getValue();
 				}
 			}
 		}
-		return null;
-	}
-	
-	private String getSprite(SelectNation nation) {
-		EList<NationMods> list = nation.getMods();
-		for (NationMods mod : list) {
-			if (mod instanceof NationInst1) {
-				if (((NationInst1)mod).isFlag()) {
-					return ((NationInst1)mod).getValue();
-				}
-			}
-		}
-		return null;
 	}
 	
 	private void setNationname(final XtextEditor editor, final Nation armor, final String newName) 
@@ -855,18 +836,6 @@ public class NationDetailsPage implements IDetailsPage {
 		} else {
 			input = null;
 		}
-	}
-
-	private String getNationdesc(SelectNation nation) {
-		EList<NationMods> list = nation.getMods();
-		for (NationMods mod : list) {
-			if (mod instanceof NationInst1) {
-				if (((NationInst1)mod).isDescr()) {
-					return ((NationInst1)mod).getValue();
-				}
-			}
-		}
-		return null;
 	}
 	
 	private void setNationdescr(final XtextEditor editor, final SelectNation armor, final String newName) 
@@ -912,6 +881,16 @@ public class NationDetailsPage implements IDetailsPage {
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst1) {
 				switch (inst2) {
+				case NAME:
+					if (((NationInst1)mod).isName()){
+						return ((NationInst1)mod).getValue();
+					}
+					break;
+				case DESCR:
+					if (((NationInst1)mod).isDescr()){
+						return ((NationInst1)mod).getValue();
+					}
+					break;
 				case EPITHET:
 					if (((NationInst1)mod).isEpithet()){
 						return ((NationInst1)mod).getValue();
