@@ -15,6 +15,10 @@
  */
 package org.larz.dom3.editor;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -31,6 +35,7 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.VerifyEvent;
 import org.eclipse.swt.events.VerifyListener;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -54,6 +59,9 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.db.Database;
 import org.larz.dom3.db.NationDB;
 import org.larz.dom3.dm.dm.DmFactory;
+import org.larz.dom3.dm.dm.Monster;
+import org.larz.dom3.dm.dm.MonsterInst1;
+import org.larz.dom3.dm.dm.MonsterMods;
 import org.larz.dom3.dm.dm.Nation;
 import org.larz.dom3.dm.dm.NationInst1;
 import org.larz.dom3.dm.dm.NationInst2;
@@ -62,7 +70,10 @@ import org.larz.dom3.dm.dm.NationInst4;
 import org.larz.dom3.dm.dm.NationInst5;
 import org.larz.dom3.dm.dm.NationMods;
 import org.larz.dom3.dm.dm.SelectNation;
+import org.larz.dom3.dm.ui.editor.DmXtextEditor;
 import org.larz.dom3.dm.ui.internal.DmActivator;
+import org.larz.dom3.image.ImageConverter;
+import org.larz.dom3.image.ImageLoader;
 
 public class NationDetailsPage implements IDetailsPage {
 	private IManagedForm mform;
@@ -74,6 +85,7 @@ public class NationDetailsPage implements IDetailsPage {
 	private Text descr;
 	private Text summary;
 	private Text brief;
+	private Label spriteLabel;
 
 	enum Inst {
 		NAME (Messages.getString("NationDetailsSection.mod.name"), ""),
@@ -461,6 +473,8 @@ public class NationDetailsPage implements IDetailsPage {
 			}
 		});
 		
+		spriteLabel = new Label(nameComp, SWT.NONE);
+
 		Composite leftColumn = new Composite(client, SWT.NONE);
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
@@ -693,6 +707,34 @@ public class NationDetailsPage implements IDetailsPage {
 			summary.setText(summaryStr!=null?summaryStr:"");
 			String briefStr = getInst1(Inst.BRIEF, input);
 			brief.setText(summaryStr!=null?briefStr:"");
+
+			String sprite = getSprite(input);
+
+			if (sprite != null) {
+				final String finalName1 = sprite;
+				ImageLoader loader1 = new ImageLoader() {
+					@Override
+					public InputStream getStream() throws IOException {
+						String path = ((DmXtextEditor)doc).getPath();
+						path = path.substring(0, path.lastIndexOf('/')+1);
+						if (finalName1.startsWith("./")) {
+							path += finalName1.substring(2);
+						} else {
+							path += finalName1;
+						}
+
+						return new FileInputStream(new File(path));
+					}
+				};
+				try {
+					Image image1 = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
+					spriteLabel.setImage(image1);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else {
+				spriteLabel.setImage(null);
+			}
 		}
 		for (Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			String val1 = getInst1(fields.getKey(), input);
@@ -766,11 +808,17 @@ public class NationDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-//	private String getSelectNationname(SelectNation nation) {
-//		if (nation instanceof SelectNation) {
-//			return ((SelectNation)nation).getValue();
-//		}
-//	}
+	private String getSprite(SelectNation nation) {
+		EList<NationMods> list = nation.getMods();
+		for (NationMods mod : list) {
+			if (mod instanceof NationInst1) {
+				if (((NationInst1)mod).isFlag()) {
+					return ((NationInst1)mod).getValue();
+				}
+			}
+		}
+		return null;
+	}
 	
 	private void setNationname(final XtextEditor editor, final Nation armor, final String newName) 
 	{
