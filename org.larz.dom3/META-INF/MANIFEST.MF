@@ -12,5 +12,5 @@ Bundle-Vendor: Larz
 Bundle-ClassPath: .,
  lib/hsqldb.jar,
  lib/imageio_tga_1.1.0.jar,
- lib/sprites.jar,
+ lib/sprites.zip,
  src/
