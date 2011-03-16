@@ -48,7 +48,6 @@ import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.forms.widgets.TableWrapLayout;
@@ -164,11 +163,12 @@ public class NationDetailsPage implements IDetailsPage {
 		DEFUNIT1B (Messages.getString("NationDetailsSection.mod.defunit1b"), ""),
 		DEFUNIT2 (Messages.getString("NationDetailsSection.mod.defunit2"), ""),
 		DEFUNIT2B (Messages.getString("NationDetailsSection.mod.defunit2b"), ""),
-		COLOR (Messages.getString("NationDetailsSection.mod.color"));
+		COLOR (Messages.getString("NationDetailsSection.mod.color"), "0.0", "0.0", "0.0");
 		
 		private String label;
 		private String defaultValue;
 		private String defaultValue2;
+		private String defaultValue3;
 		
 		Inst(String label, String defaultValue) {
 			this.label = label;
@@ -179,6 +179,13 @@ public class NationDetailsPage implements IDetailsPage {
 			this.label = label;
 			this.defaultValue = defaultValue;
 			this.defaultValue2 = defaultValue2;
+		}
+		
+		Inst(String label, String defaultValue, String defaultValue2, String defaultValue3) {
+			this.label = label;
+			this.defaultValue = defaultValue;
+			this.defaultValue2 = defaultValue2;
+			this.defaultValue3 = defaultValue3;
 		}
 		
 		Inst(String label) {
@@ -502,7 +509,7 @@ public class NationDetailsPage implements IDetailsPage {
 						} else if (field instanceof Inst4Fields) {
 							addInst4(key, doc, input, key.defaultValue);
 						} else if (field instanceof Inst5Fields) {
-							addInst5(key, doc, input, key.defaultValue, key.defaultValue2, key.defaultValue2);
+							addInst5(key, doc, input, key.defaultValue, key.defaultValue2, key.defaultValue3);
 						}
 					} else {
 						removeInst2(key, doc, input);
@@ -573,6 +580,7 @@ public class NationDetailsPage implements IDetailsPage {
 					}
 				});
 				value.setEnabled(false);
+				
 				if (field instanceof Inst1Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 					gd.widthHint = 160;
@@ -585,7 +593,7 @@ public class NationDetailsPage implements IDetailsPage {
 					gd.horizontalSpan = 2;
 				} else if (field instanceof Inst5Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.horizontalSpan = 4;
+					//gd.horizontalSpan = 4;
 				}
 				value.setLayoutData(gd);
 				
@@ -609,11 +617,11 @@ public class NationDetailsPage implements IDetailsPage {
 			}
 
 			Label defaultLabel2 = null;
+			Label defaultLabel3 = null;
 			if (field instanceof Inst5Fields) {
 				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 				myValue2 = value;
 				value.addVerifyListener(new VerifyListener() {
-					
 					@Override
 					public void verifyText(VerifyEvent e) {
 						if (Character.isLetter(e.character)) {
@@ -649,12 +657,59 @@ public class NationDetailsPage implements IDetailsPage {
 					}
 				});
 				value.setEnabled(false);
+				
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 				gd.widthHint = 30;
 				value.setLayoutData(gd);
 				
 				defaultLabel2 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel2.setEnabled(false);
+
+				final Text value3 = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
+				myValue3 = value3;
+				value3.addVerifyListener(new VerifyListener() {
+					@Override
+					public void verifyText(VerifyEvent e) {
+						if (Character.isLetter(e.character)) {
+							e.doit = false;
+						}
+					}
+				});
+				check.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						if (check.getSelection()) {
+							value3.setEnabled(true);
+							value3.setText("");
+						} else {
+							value3.setEnabled(false);
+							value3.setText("");
+						}
+					}
+
+				});
+				value3.addFocusListener(new FocusAdapter() {
+					@Override
+					public void focusLost(FocusEvent e) {
+						setInst5(key, doc, input, null, value3.getText(), null);
+					}			
+				});
+				value3.addKeyListener(new KeyAdapter() {
+					@Override
+					public void keyPressed(KeyEvent e) {
+						if (e.character == '\r') {
+							setInst5(key, doc, input, null, value3.getText(), null);
+						}
+					}
+				});
+				value3.setEnabled(false);
+				
+				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				gd.widthHint = 30;
+				value3.setLayoutData(gd);
+				
+				defaultLabel3 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+				defaultLabel3.setEnabled(false);
 			}
 			
 			if (field instanceof Inst1Fields) {
@@ -681,8 +736,6 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 
 		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
-		
-		//s1.setClient(client);
 	}
 	
 	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
@@ -767,10 +820,10 @@ public class NationDetailsPage implements IDetailsPage {
 					((Inst3Fields)fields.getValue()).check.setSelection(isVal);
 				}
 			}
-			Object val5 = getInst4(fields.getKey(), input);
-			if (val5 != null) {
+			Object val4 = getInst4(fields.getKey(), input);
+			if (val4 != null) {
 				if (fields.getValue() instanceof Inst4Fields) {
-					((Inst4Fields)fields.getValue()).value.setText(val5.toString());
+					((Inst4Fields)fields.getValue()).value.setText(val4.toString());
 					((Inst4Fields)fields.getValue()).value.setEnabled(true);
 					((Inst4Fields)fields.getValue()).check.setSelection(true);
 				}
@@ -779,6 +832,28 @@ public class NationDetailsPage implements IDetailsPage {
 					((Inst4Fields)fields.getValue()).value.setText("");
 					((Inst4Fields)fields.getValue()).value.setEnabled(false);
 					((Inst4Fields)fields.getValue()).check.setSelection(false);
+				}
+			}
+			Double[] val5 = getInst5(fields.getKey(), input);
+			if (val5 != null) {
+				if (fields.getValue() instanceof Inst5Fields) {
+					((Inst5Fields)fields.getValue()).value1.setText(val5[0] != null ? val5[0].toString() : "");
+					((Inst5Fields)fields.getValue()).value1.setEnabled(true);
+					((Inst5Fields)fields.getValue()).value2.setText(val5[1] != null ? val5[1].toString() : "");
+					((Inst5Fields)fields.getValue()).value2.setEnabled(true);
+					((Inst5Fields)fields.getValue()).value3.setText(val5[2] != null ? val5[2].toString() : "");
+					((Inst5Fields)fields.getValue()).value3.setEnabled(true);
+					((Inst5Fields)fields.getValue()).check.setSelection(true);
+				}
+			} else {
+				if (fields.getValue() instanceof Inst5Fields) {
+					((Inst5Fields)fields.getValue()).value1.setText("");
+					((Inst5Fields)fields.getValue()).value1.setEnabled(false);
+					((Inst5Fields)fields.getValue()).value2.setText("");
+					((Inst5Fields)fields.getValue()).value2.setEnabled(false);
+					((Inst5Fields)fields.getValue()).value3.setText("");
+					((Inst5Fields)fields.getValue()).value3.setEnabled(false);
+					((Inst5Fields)fields.getValue()).check.setSelection(false);
 				}
 			}
 			if (input instanceof SelectNation) {
@@ -1439,7 +1514,10 @@ public class NationDetailsPage implements IDetailsPage {
 				switch (inst5) {
 				case COLOR:
 					if (((NationInst5)mod).isColor()){
-						return new Double[]{Double.valueOf(((NationInst5)mod).getValue1()), Double.valueOf(((NationInst5)mod).getValue2()), Double.valueOf(((NationInst5)mod).getValue3())};
+						Double value1 = ((NationInst5)mod).getValue1() != null ? Double.valueOf(((NationInst5)mod).getValue1()) : null; 
+						Double value2 = ((NationInst5)mod).getValue2() != null ? Double.valueOf(((NationInst5)mod).getValue2()) : null;
+						Double value3 = ((NationInst5)mod).getValue3() != null ? Double.valueOf(((NationInst5)mod).getValue3()) : null;
+						return new Double[]{value1, value2, value3};
 					}
 					break;
 				}
@@ -2004,6 +2082,33 @@ public class NationDetailsPage implements IDetailsPage {
 				case EPITHET:
 					type.setEpithet(true);
 					break;
+				case DESCR:
+					type.setDescr(true);
+					break;
+				case SUMMARY:
+					type.setSummary(true);
+					break;
+				case BRIEF:
+					type.setBrief(true);
+					break;
+				case FLAG:
+					type.setFlag(true);
+					break;
+				case MAPBACKGROUND:
+					type.setMapbackground(true);
+					break;
+				case STARTSITE1:
+					type.setStartsite(true);
+					break;
+				case STARTSITE2:
+					type.setStartsite(true);
+					break;
+				case STARTSITE3:
+					type.setStartsite(true);
+					break;
+				case STARTSITE4:
+					type.setStartsite(true);
+					break;
 				}
 				type.setValue(newName);
 				mods.add(type);
@@ -2033,6 +2138,93 @@ public class NationDetailsPage implements IDetailsPage {
 				switch (inst) {
 				case ERA:
 					type.setEra(true);
+					break;
+				case LABCOST:
+					type.setLabcost(true);
+					break;
+				case TEMPLECOST:
+					type.setTemplecost(true);
+					break;
+				case TEMPLEPIC:
+					type.setTemplepic(true);
+					break;
+				case STARTUNITNBRS1:
+					type.setStartunitnbrs1(true);
+					break;
+				case STARTUNITNBRS2:
+					type.setStartunitnbrs2(true);
+					break;
+				case HERO1:
+					type.setHero1(true);
+					break;
+				case HERO2:
+					type.setHero2(true);
+					break;
+				case HERO3:
+					type.setHero3(true);
+					break;
+				case HERO4:
+					type.setHero4(true);
+					break;
+				case HERO5:
+					type.setHero5(true);
+					break;
+				case HERO6:
+					type.setHero6(true);
+					break;
+				case MULTIHERO1:
+					type.setMultihero1(true);
+					break;
+				case MULTIHERO2:
+					type.setMultihero2(true);
+					break;
+				case DEFMULT1:
+					type.setDefmult1(true);
+					break;
+				case DEFMULT1B:
+					type.setDefmult1b(true);
+					break;
+				case DEFMULT2:
+					type.setDefmult2(true);
+					break;
+				case DEFMULT2B:
+					type.setDefmult2b(true);
+					break;
+				case IDEALCOLD:
+					type.setIdealcold(true);
+					break;
+				case CASTLEPROD:
+					type.setCastleprod(true);
+					break;
+				case DOMKILL:
+					type.setDomkill(true);
+					break;
+				case DOMUNREST:
+					type.setDomunrest(true);
+					break;
+				case STARTFORT:
+					type.setStartfort(true);
+					break;
+				case DEFAULTFORT:
+					type.setDefaultfort(true);
+					break;
+				case FARMFORT:
+					type.setFarmfort(true);
+					break;
+				case MOUNTAINFORT:
+					type.setMountainfort(true);
+					break;
+				case FORESTFORT:
+					type.setForestfort(true);
+					break;
+				case SWAMPFORT:
+					type.setSwampfort(true);
+					break;
+				case UWFORT:
+					type.setUwfort(true);
+					break;
+				case DEEPFORT:
+					type.setDeepfort(true);
 					break;
 				}
 				try {
@@ -2068,6 +2260,48 @@ public class NationDetailsPage implements IDetailsPage {
 				case CLEARNATION:
 					type.setClearnation(true);
 					break;
+				case CLEARREC:
+					type.setClearrec(true);
+					break;
+				case CLEARSITES:
+					type.setClearsites(true);
+					break;
+				case UWNATION:
+					type.setUwnation(true);
+					break;
+				case BLOODNATION:
+					type.setBloodnation(true);
+					break;
+				case NOPREACH:
+					type.setNopreach(true);
+					break;
+				case DYINGDOM:
+					type.setDyingdom(true);
+					break;
+				case SACRIFICEDOM:
+					type.setSacrificedom(true);
+					break;
+				case NODEATHSUPPLY:
+					type.setNodeathsupply(true);
+					break;
+				case AUTOUNDEAD:
+					type.setAutoundead(true);
+					break;
+				case ZOMBIEREANIM:
+					type.setZombiereanim(true);
+					break;
+				case HORSEREANIM:
+					type.setHorsereanim(true);
+					break;
+				case WIGHTREANIM:
+					type.setWightreanim(true);
+					break;
+				case MANIKINREANIM:
+					type.setManikinreanim(true);
+					break;
+				case TOMBWYRMREANIM:
+					type.setTombwyrmreanim(true);
+					break;
 				}
 				mods.add(type);
 			}  
@@ -2096,6 +2330,69 @@ public class NationDetailsPage implements IDetailsPage {
 				switch (inst) {
 				case STARTCOM:
 					type.setStartcom(true);
+					break;
+				case STARTSCOUT:
+					type.setStartscout(true);
+					break;
+				case STARTUNITTYPE1:
+					type.setStartunittype1(true);
+					break;
+				case STARTUNITTYPE2:
+					type.setStartunittype2(true);
+					break;
+				case ADDRECUNIT:
+					type.setAddrecunit(true);
+					break;
+				case ADDRECCOM:
+					type.setAddreccom(true);
+					break;
+				case UWUNIT1:
+					type.setUwunit1(true);
+					break;
+				case UWUNIT2:
+					type.setUwunit2(true);
+					break;
+				case UWUNIT3:
+					type.setUwunit3(true);
+					break;
+				case UWUNIT4:
+					type.setUwunit4(true);
+					break;
+				case UWUNIT5:
+					type.setUwunit5(true);
+					break;
+				case UWCOM1:
+					type.setUwcom1(true);
+					break;
+				case UWCOM2:
+					type.setUwcom2(true);
+					break;
+				case UWCOM3:
+					type.setUwcom3(true);
+					break;
+				case UWCOM4:
+					type.setUwcom4(true);
+					break;
+				case UWCOM5:
+					type.setUwcom5(true);
+					break;
+				case DEFCOM1:
+					type.setDefcom1(true);
+					break;
+				case DEFCOM2:
+					type.setDefcom2(true);
+					break;
+				case DEFUNIT1:
+					type.setDefunit1(true);
+					break;
+				case DEFUNIT1B:
+					type.setDefunit1b(true);
+					break;
+				case DEFUNIT2:
+					type.setDefunit2(true);
+					break;
+				case DEFUNIT2B:
+					type.setDefunit2b(true);
 					break;
 				}
 				Integer newValue = null;
@@ -2164,6 +2461,7 @@ public class NationDetailsPage implements IDetailsPage {
 			public void process(XtextResource resource) {
 				SelectNation armorToEdit = input;
 				NationMods modToRemove = null;
+				int siteCount = 0;
 				EList<NationMods> mods = armorToEdit.getMods();
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst1) {
@@ -2173,12 +2471,214 @@ public class NationDetailsPage implements IDetailsPage {
 								modToRemove = mod;
 							}
 							break;
+						case DESCR:
+							if (((NationInst1)mod).isDescr()){
+								modToRemove = mod;
+							}
+							break;
+						case SUMMARY:
+							if (((NationInst1)mod).isSummary()){
+								modToRemove = mod;
+							}
+							break;
+						case BRIEF:
+							if (((NationInst1)mod).isBrief()){
+								modToRemove = mod;
+							}
+							break;
+						case FLAG:
+							if (((NationInst1)mod).isFlag()){
+								modToRemove = mod;
+							}
+							break;
+						case MAPBACKGROUND:
+							if (((NationInst1)mod).isMapbackground()){
+								modToRemove = mod;
+							}
+							break;
+						case STARTSITE1:
+							if (((NationInst1)mod).isStartsite()){
+								siteCount++;
+								if (siteCount == 1) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case STARTSITE2:
+							if (((NationInst1)mod).isStartsite()){
+								siteCount++;
+								if (siteCount == 2) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case STARTSITE3:
+							if (((NationInst1)mod).isStartsite()){
+								siteCount++;
+								if (siteCount == 3) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case STARTSITE4:
+							if (((NationInst1)mod).isStartsite()){
+								siteCount++;
+								if (siteCount == 4) {
+									modToRemove = mod;
+								}
+							}
+							break;
 						}
 					}
 					if (mod instanceof NationInst2) {
 						switch (inst2) {
 						case ERA:
 							if (((NationInst2)mod).isEra()){
+								modToRemove = mod;
+							}
+							break;
+						case LABCOST:
+							if (((NationInst2)mod).isLabcost()){
+								modToRemove = mod;
+							}
+							break;
+						case TEMPLECOST:
+							if (((NationInst2)mod).isTemplecost()){
+								modToRemove = mod;
+							}
+							break;
+						case TEMPLEPIC:
+							if (((NationInst2)mod).isTemplepic()){
+								modToRemove = mod;
+							}
+							break;
+						case STARTUNITNBRS1:
+							if (((NationInst2)mod).isStartunitnbrs1()){
+								modToRemove = mod;
+							}
+							break;
+						case STARTUNITNBRS2:
+							if (((NationInst2)mod).isStartunitnbrs2()){
+								modToRemove = mod;
+							}
+							break;
+						case HERO1:
+							if (((NationInst2)mod).isHero1()){
+								modToRemove = mod;
+							}
+							break;
+						case HERO2:
+							if (((NationInst2)mod).isHero2()){
+								modToRemove = mod;
+							}
+							break;
+						case HERO3:
+							if (((NationInst2)mod).isHero3()){
+								modToRemove = mod;
+							}
+							break;
+						case HERO4:
+							if (((NationInst2)mod).isHero4()){
+								modToRemove = mod;
+							}
+							break;
+						case HERO5:
+							if (((NationInst2)mod).isHero5()){
+								modToRemove = mod;
+							}
+							break;
+						case HERO6:
+							if (((NationInst2)mod).isHero6()){
+								modToRemove = mod;
+							}
+							break;
+						case MULTIHERO1:
+							if (((NationInst2)mod).isMultihero1()){
+								modToRemove = mod;
+							}
+							break;
+						case MULTIHERO2:
+							if (((NationInst2)mod).isMultihero2()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFMULT1:
+							if (((NationInst2)mod).isDefmult1()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFMULT1B:
+							if (((NationInst2)mod).isDefmult1b()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFMULT2:
+							if (((NationInst2)mod).isDefmult2()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFMULT2B:
+							if (((NationInst2)mod).isDefmult2b()){
+								modToRemove = mod;
+							}
+							break;
+						case IDEALCOLD:
+							if (((NationInst2)mod).isIdealcold()){
+								modToRemove = mod;
+							}
+							break;
+						case CASTLEPROD:
+							if (((NationInst2)mod).isCastleprod()){
+								modToRemove = mod;
+							}
+							break;
+						case DOMKILL:
+							if (((NationInst2)mod).isDomkill()){
+								modToRemove = mod;
+							}
+							break;
+						case DOMUNREST:
+							if (((NationInst2)mod).isDomunrest()){
+								modToRemove = mod;
+							}
+							break;
+						case STARTFORT:
+							if (((NationInst2)mod).isStartfort()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFAULTFORT:
+							if (((NationInst2)mod).isDefaultfort()){
+								modToRemove = mod;
+							}
+							break;
+						case FARMFORT:
+							if (((NationInst2)mod).isFarmfort()){
+								modToRemove = mod;
+							}
+							break;
+						case MOUNTAINFORT:
+							if (((NationInst2)mod).isMountainfort()){
+								modToRemove = mod;
+							}
+							break;
+						case FORESTFORT:
+							if (((NationInst2)mod).isForestfort()){
+								modToRemove = mod;
+							}
+							break;
+						case SWAMPFORT:
+							if (((NationInst2)mod).isSwampfort()){
+								modToRemove = mod;
+							}
+							break;
+						case UWFORT:
+							if (((NationInst2)mod).isUwfort()){
+								modToRemove = mod;
+							}
+							break;
+						case DEEPFORT:
+							if (((NationInst2)mod).isDeepfort()){
 								modToRemove = mod;
 							}
 							break;
@@ -2191,12 +2691,187 @@ public class NationDetailsPage implements IDetailsPage {
 								modToRemove = mod;
 							}
 							break;
+						case CLEARREC:
+							if (((NationInst3)mod).isClearrec()){
+								modToRemove = mod;
+							}
+							break;
+						case CLEARSITES:
+							if (((NationInst3)mod).isClearsites()){
+								modToRemove = mod;
+							}
+							break;
+						case UWNATION:
+							if (((NationInst3)mod).isUwnation()){
+								modToRemove = mod;
+							}
+							break;
+						case BLOODNATION:
+							if (((NationInst3)mod).isBloodnation()){
+								modToRemove = mod;
+							}
+							break;
+						case NOPREACH:
+							if (((NationInst3)mod).isNopreach()){
+								modToRemove = mod;
+							}
+							break;
+						case DYINGDOM:
+							if (((NationInst3)mod).isDyingdom()){
+								modToRemove = mod;
+							}
+							break;
+						case SACRIFICEDOM:
+							if (((NationInst3)mod).isSacrificedom()){
+								modToRemove = mod;
+							}
+							break;
+						case NODEATHSUPPLY:
+							if (((NationInst3)mod).isNodeathsupply()){
+								modToRemove = mod;
+							}
+							break;
+						case AUTOUNDEAD:
+							if (((NationInst3)mod).isAutoundead()){
+								modToRemove = mod;
+							}
+							break;
+						case ZOMBIEREANIM:
+							if (((NationInst3)mod).isZombiereanim()){
+								modToRemove = mod;
+							}
+							break;
+						case HORSEREANIM:
+							if (((NationInst3)mod).isHorsereanim()){
+								modToRemove = mod;
+							}
+							break;
+						case WIGHTREANIM:
+							if (((NationInst3)mod).isWightreanim()){
+								modToRemove = mod;
+							}
+							break;
+						case MANIKINREANIM:
+							if (((NationInst3)mod).isManikinreanim()){
+								modToRemove = mod;
+							}
+							break;
+						case TOMBWYRMREANIM:
+							if (((NationInst3)mod).isTombwyrmreanim()){
+								modToRemove = mod;
+							}
+							break;
 						}
 					}
 					if (mod instanceof NationInst4) {
 						switch (inst2) {
 						case STARTCOM:
 							if (((NationInst4)mod).isStartcom()){
+								modToRemove = mod;
+							}
+							break;
+						case STARTSCOUT:
+							if (((NationInst4)mod).isStartscout()){
+								modToRemove = mod;
+							}
+							break;
+						case STARTUNITTYPE1:
+							if (((NationInst4)mod).isStartunittype1()){
+								modToRemove = mod;
+							}
+							break;
+						case STARTUNITTYPE2:
+							if (((NationInst4)mod).isStartunittype2()){
+								modToRemove = mod;
+							}
+							break;
+						case ADDRECUNIT:
+							if (((NationInst4)mod).isAddrecunit()){
+								modToRemove = mod;
+							}
+							break;
+						case ADDRECCOM:
+							if (((NationInst4)mod).isAddreccom()){
+								modToRemove = mod;
+							}
+							break;
+						case UWUNIT1:
+							if (((NationInst4)mod).isUwunit1()){
+								modToRemove = mod;
+							}
+							break;
+						case UWUNIT2:
+							if (((NationInst4)mod).isUwunit2()){
+								modToRemove = mod;
+							}
+							break;
+						case UWUNIT3:
+							if (((NationInst4)mod).isUwunit3()){
+								modToRemove = mod;
+							}
+							break;
+						case UWUNIT4:
+							if (((NationInst4)mod).isUwunit4()){
+								modToRemove = mod;
+							}
+							break;
+						case UWUNIT5:
+							if (((NationInst4)mod).isUwunit5()){
+								modToRemove = mod;
+							}
+							break;
+						case UWCOM1:
+							if (((NationInst4)mod).isUwcom1()){
+								modToRemove = mod;
+							}
+							break;
+						case UWCOM2:
+							if (((NationInst4)mod).isUwcom2()){
+								modToRemove = mod;
+							}
+							break;
+						case UWCOM3:
+							if (((NationInst4)mod).isUwcom3()){
+								modToRemove = mod;
+							}
+							break;
+						case UWCOM4:
+							if (((NationInst4)mod).isUwcom4()){
+								modToRemove = mod;
+							}
+							break;
+						case UWCOM5:
+							if (((NationInst4)mod).isUwcom5()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFCOM1:
+							if (((NationInst4)mod).isDefcom1()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFCOM2:
+							if (((NationInst4)mod).isDefcom2()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFUNIT1:
+							if (((NationInst4)mod).isDefunit1()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFUNIT1B:
+							if (((NationInst4)mod).isDefunit1b()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFUNIT2:
+							if (((NationInst4)mod).isDefunit2()){
+								modToRemove = mod;
+							}
+							break;
+						case DEFUNIT2B:
+							if (((NationInst4)mod).isDefunit2b()){
 								modToRemove = mod;
 							}
 							break;
