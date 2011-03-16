@@ -607,8 +607,13 @@ public class MonsterDetailsPage implements IDetailsPage {
 			}
 		});
 
-		sprite1Label = new Label(nameComp, SWT.NONE);
-		sprite2Label = new Label(nameComp, SWT.NONE);
+		Composite spriteComp = toolkit.createComposite(nameComp);
+		spriteComp.setLayout(new GridLayout(2, false));
+		gd = new GridData();
+		gd.horizontalSpan = 2;
+		spriteComp.setLayoutData(gd);
+		sprite1Label = new Label(spriteComp, SWT.NONE);
+		sprite2Label = new Label(spriteComp, SWT.NONE);
 		
 		Composite leftColumn = toolkit.createComposite(client);
 		glayout = new GridLayout(5, false);
@@ -2614,11 +2619,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 								((MonsterInst1)mod).setValue(newName);
 							}
 							break;
-//						case DESCR:
-//							if (((MonsterInst1)mod).isDescr()) {
-//								((MonsterInst1)mod).setValue(newName);
-//							}
-//							break;
+						case DESCR:
+							if (((MonsterInst1)mod).isDescr()) {
+								((MonsterInst1)mod).setValue(newName);
+							}
+							break;
 						case ARMOR1:
 							if (((MonsterInst1)mod).isArmor()) {
 								armorCount++;
