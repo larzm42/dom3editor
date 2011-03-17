@@ -247,6 +247,12 @@ public class ArmorDetailsPage implements IDetailsPage {
 				name.setText(str!=null?str:"");
 			}
 		}
+		ArmorDB armorDB = new ArmorDB();
+		if (input instanceof SelectArmorById) {
+			armorDB = Database.getArmor(((SelectArmorById)input).getValue());
+		} else if (input instanceof SelectArmorByName) {
+			armorDB = Database.getArmor(((SelectArmorByName)input).getValue());
+		}
 		for (Map.Entry<Inst2, Inst2Fields> fields : inst2Map.entrySet()) {
 			Integer val = getInst2(fields.getKey(), input);
 			if (val != null) {
@@ -259,27 +265,36 @@ public class ArmorDetailsPage implements IDetailsPage {
 				fields.getValue().check.setSelection(false);
 			}
 			if (input instanceof SelectArmorByName || input instanceof SelectArmorById) {
-				ArmorDB armorDB;
-				if (input instanceof SelectArmorById) {
-					armorDB = Database.getArmor(((SelectArmorById)input).getValue());
-				} else {
-					armorDB = Database.getArmor(((SelectArmorByName)input).getValue());
-				}
 				switch (fields.getKey()) {
 				case DEF:
-					fields.getValue().defaultLabel.setText(armorDB.def != null ? Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.def.toString()) : "");
+					if (armorDB.def != null) {
+						fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.def.toString()));
+						Inst2.DEF.defaultValue = armorDB.def.toString();
+					}
 					break;
 				case ENC:
-					fields.getValue().defaultLabel.setText(armorDB.enc != null ? Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.enc.toString()) : "");
+					if (armorDB.enc != null) {
+						fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.enc.toString()));
+						Inst2.ENC.defaultValue = armorDB.enc.toString();
+					}
 					break;
 				case PROT:
-					fields.getValue().defaultLabel.setText(armorDB.prot != null ? Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.prot.toString()) : "");
+					if (armorDB.prot != null) {
+						fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.prot.toString()));
+						Inst2.PROT.defaultValue = armorDB.prot.toString();
+					}
 					break;
 				case RCOST:
-					fields.getValue().defaultLabel.setText(armorDB.res != null ? Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.res.toString()) : "");
+					if (armorDB.res != null) {
+						fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.res.toString()));
+						Inst2.RCOST.defaultValue = armorDB.res.toString();
+					}
 					break;
 				case TYPE:
-					fields.getValue().defaultLabel.setText(armorDB.type != null ? Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.type.toString()) : "");
+					if (armorDB.type != null) {
+						fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.type.toString()));
+						Inst2.TYPE.defaultValue = armorDB.type.toString();
+					}
 					break;
 				}
 			}
