@@ -80,8 +80,11 @@ public class NationDetailsPage implements IDetailsPage {
 
 	private Text name;
 	private Text descr;
+	private Button descrCheck;
 	private Text summary;
+	private Button summaryCheck;
 	private Text brief;
+	private Button briefCheck;
 	private Label spriteLabel;
 
 	enum Inst {
@@ -331,11 +334,10 @@ public class NationDetailsPage implements IDetailsPage {
 		layout.bottomMargin = 2;
 		parent.setLayout(layout);
 
-		FormToolkit toolkit = mform.getToolkit();
+		final FormToolkit toolkit = mform.getToolkit();
 		Section s1 = toolkit.createSection(parent, Section.DESCRIPTION|Section.TITLE_BAR);
 		s1.marginWidth = 10;
 		s1.setText(Messages.getString("NationDetailsSection.name")); //$NON-NLS-1$
-		//s1.setDescription(Messages.getString("NationDetailsPage.name")); //$NON-NLS-1$
 		TableWrapData td = new TableWrapData(TableWrapData.FILL, TableWrapData.TOP);
 		td.grabHorizontal = true;
 		s1.setLayoutData(td);
@@ -376,8 +378,8 @@ public class NationDetailsPage implements IDetailsPage {
 		gd.widthHint = 500;
 		name.setLayoutData(gd);
 		
-		toolkit.createLabel(nameComp, Messages.getString("NationDetailsSection.mod.descr")); //$NON-NLS-1$
-		
+		descrCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.descr"), SWT.CHECK);
+
 		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
 		descr.addFocusListener(new FocusAdapter() {
 			@Override
@@ -408,9 +410,27 @@ public class NationDetailsPage implements IDetailsPage {
 				}
 			}
 		});
-		
-		toolkit.createLabel(nameComp, Messages.getString("NationDetailsSection.mod.summary")); //$NON-NLS-1$
-		
+		descr.setEnabled(false);
+		descr.setBackground(toolkit.getColors().getInactiveBackground());
+		descrCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (descrCheck.getSelection()) {
+					addInst1(Inst.DESCR, doc, input, "");
+					descr.setEnabled(true);
+					descr.setBackground(toolkit.getColors().getBackground());
+					descr.setText("");
+				} else {
+					removeInst2(Inst.DESCR, doc, input);
+					descr.setEnabled(false);
+					descr.setBackground(toolkit.getColors().getInactiveBackground());
+					descr.setText("");
+				}
+			}
+		});
+
+		summaryCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.summary"), SWT.CHECK);
+
 		summary = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
 		summary.addFocusListener(new FocusAdapter() {
 			@Override
@@ -441,9 +461,27 @@ public class NationDetailsPage implements IDetailsPage {
 				}
 			}
 		});
-		
-		toolkit.createLabel(nameComp, Messages.getString("NationDetailsSection.mod.brief")); //$NON-NLS-1$
-		
+		summary.setEnabled(false);
+		summary.setBackground(toolkit.getColors().getInactiveBackground());
+		summaryCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (summaryCheck.getSelection()) {
+					addInst1(Inst.SUMMARY, doc, input, "");
+					summary.setEnabled(true);
+					summary.setBackground(toolkit.getColors().getBackground());
+					summary.setText("");
+				} else {
+					removeInst2(Inst.SUMMARY, doc, input);
+					summary.setEnabled(false);
+					summary.setBackground(toolkit.getColors().getInactiveBackground());
+					summary.setText("");
+				}
+			}
+		});
+
+		briefCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.brief"), SWT.CHECK);
+
 		brief = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
 		brief.addFocusListener(new FocusAdapter() {
 			@Override
@@ -474,7 +512,25 @@ public class NationDetailsPage implements IDetailsPage {
 				}
 			}
 		});
-		
+		brief.setEnabled(false);
+		brief.setBackground(toolkit.getColors().getInactiveBackground());
+		briefCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (briefCheck.getSelection()) {
+					addInst1(Inst.BRIEF, doc, input, "");
+					brief.setEnabled(true);
+					brief.setBackground(toolkit.getColors().getBackground());
+					brief.setText("");
+				} else {
+					removeInst2(Inst.BRIEF, doc, input);
+					brief.setEnabled(false);
+					brief.setBackground(toolkit.getColors().getInactiveBackground());
+					brief.setText("");
+				}
+			}
+		});
+
 		spriteLabel = new Label(nameComp, SWT.NONE);
 
 		Composite leftColumn = toolkit.createComposite(client);
@@ -750,12 +806,6 @@ public class NationDetailsPage implements IDetailsPage {
 			String str = getInst1(Inst.NAME, input);
 			name.setText(str!= null?str:"");
 			name.setEnabled(false);
-			String description = getInst1(Inst.DESCR, input);
-			descr.setText(description!=null?description:"");
-			String summaryStr = getInst1(Inst.SUMMARY, input);
-			summary.setText(summaryStr!=null?summaryStr:"");
-			String briefStr = getInst1(Inst.BRIEF, input);
-			brief.setText(summaryStr!=null?briefStr:"");
 
 			String sprite = getInst1(Inst.FLAG, input);
 
@@ -784,6 +834,50 @@ public class NationDetailsPage implements IDetailsPage {
 			} else {
 				spriteLabel.setImage(null);
 			}
+			
+			String description = getInst1(Inst.DESCR, input);
+			final FormToolkit toolkit = mform.getToolkit();
+			if (description != null) {
+				descr.setText(description);
+				descr.setEnabled(true);
+				descr.setBackground(toolkit.getColors().getBackground());
+				descrCheck.setSelection(true);
+			} else {
+				descr.setText("");
+				descr.setEnabled(false);
+				descr.setBackground(toolkit.getColors().getInactiveBackground());
+				descrCheck.setSelection(false);
+			}
+
+			String summaryStr = getInst1(Inst.SUMMARY, input);
+			if (summaryStr != null) {
+				summary.setText(summaryStr);
+				summary.setEnabled(true);
+				summary.setBackground(toolkit.getColors().getBackground());
+				summaryCheck.setSelection(true);
+			} else {
+				summary.setText("");
+				summary.setEnabled(false);
+				summary.setBackground(toolkit.getColors().getInactiveBackground());
+				summaryCheck.setSelection(false);
+			}
+
+			String briefStr = getInst1(Inst.BRIEF, input);
+			if (briefStr != null) {
+				brief.setText(briefStr);
+				brief.setEnabled(true);
+				brief.setBackground(toolkit.getColors().getBackground());
+				briefCheck.setSelection(true);
+			} else {
+				brief.setText("");
+				brief.setEnabled(false);
+				brief.setBackground(toolkit.getColors().getInactiveBackground());
+				briefCheck.setSelection(false);
+			}
+		}
+		NationDB nationDB = new NationDB();
+		if (input instanceof SelectNation) {
+			nationDB = Database.getNation(((SelectNation)input).getValue());
 		}
 		for (Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			String val1 = getInst1(fields.getKey(), input);
@@ -857,20 +951,49 @@ public class NationDetailsPage implements IDetailsPage {
 				}
 			}
 			if (input instanceof SelectNation) {
-				NationDB nationDB = Database.getNation(((SelectNation)input).getValue());
 				switch (fields.getKey()) {
-//				name;
-//				public String epithet;
-//				public String descr;
-//				public String startsite1;
-//				public String startsite2;
-//				public String startsite3;
-//				public String startsite4;
-//				public Integer era;
-//				public Integer startfort
-//				case NAME:
-//					((Inst1Fields)fields.getValue()).defaultLabel.setText(nationDB.speciallook != null ? Messages.format("DetailsPage.DefaultLabel.fmt", nationDB.speciallook) : "");
-//					break;
+				case EPITHET:
+					if (nationDB.epithet != null) {
+						Inst.EPITHET.defaultValue = nationDB.epithet;
+					}
+					break;
+				case DESCR:
+					if (nationDB.descr != null) {
+						Inst.DESCR.defaultValue = nationDB.descr;
+					}
+					break;
+				case STARTSITE1:
+					if (nationDB.startsite1 != null) {
+						Inst.STARTSITE1.defaultValue = nationDB.startsite1;
+					}
+					break;
+				case STARTSITE2:
+					if (nationDB.startsite2 != null) {
+						Inst.STARTSITE2.defaultValue = nationDB.startsite2;
+					}
+					break;
+				case STARTSITE3:
+					if (nationDB.startsite3 != null) {
+						Inst.STARTSITE3.defaultValue = nationDB.startsite3;
+					}
+					break;
+				case STARTSITE4:
+					if (nationDB.startsite4 != null) {
+						Inst.STARTSITE4.defaultValue = nationDB.startsite4;
+					}
+					break;
+				case ERA:
+					if (nationDB.era != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", nationDB.era));
+						Inst.ERA.defaultValue = nationDB.era.toString();
+					}
+					break;
+				case STARTFORT:
+					if (nationDB.startfort != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", nationDB.startfort));
+						Inst.STARTFORT.defaultValue = nationDB.startfort.toString();
+					}
+					break;
 				}
 			}
 		}

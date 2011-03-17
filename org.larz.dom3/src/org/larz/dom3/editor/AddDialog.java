@@ -43,8 +43,8 @@ import org.larz.dom3.db.IDNameDB;
  */
 public class AddDialog extends Dialog {
 	public enum TypeToAdd {
-		WEAPON(Messages.getString("AddDialog.typelist.armor")),
-		ARMOR(Messages.getString("AddDialog.typelist.weapon")),
+		WEAPON(Messages.getString("AddDialog.typelist.weapon")),
+		ARMOR(Messages.getString("AddDialog.typelist.armor")),
 		MONSTER(Messages.getString("AddDialog.typelist.monster")),
 		SPELL(Messages.getString("AddDialog.typelist.spell")),
 		ITEM(Messages.getString("AddDialog.typelist.item")),
