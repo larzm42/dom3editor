@@ -539,14 +539,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 		name.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setMonstername(doc, input, name.getText());
+				setMonstername(doc, name.getText());
 			}			
 		});
 		name.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setMonstername(doc, input, name.getText());
+					setMonstername(doc, name.getText());
 				}
 			}
 			
@@ -562,14 +562,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 		descr.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setMonsterdescr(doc, input, descr.getText());
+				setMonsterdescr(doc, descr.getText());
 			}			
 		});
 		descr.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setMonsterdescr(doc, input, descr.getText());
+					setMonsterdescr(doc, descr.getText());
 				}
 			}
 			
@@ -594,12 +594,12 @@ public class MonsterDetailsPage implements IDetailsPage {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if (descCheck.getSelection()) {
-					addInst1(Inst.DESCR, doc, input, "");
+					addInst1(Inst.DESCR, doc, "");
 					descr.setEnabled(true);
 					descr.setBackground(toolkit.getColors().getBackground());
 					descr.setText("");
 				} else {
-					removeInst2(Inst.DESCR, doc, input);
+					removeInst2(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
 					descr.setText("");
@@ -639,18 +639,18 @@ public class MonsterDetailsPage implements IDetailsPage {
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
 						if (field instanceof Inst1Fields) {
-							addInst1(key, doc, input, key.defaultValue);
+							addInst1(key, doc, key.defaultValue);
 						} else if (field instanceof Inst2Fields) {
-							addInst2(key, doc, input, key.defaultValue);
+							addInst2(key, doc, key.defaultValue);
 						} else if (field instanceof Inst3Fields) {
-							addInst3(key, doc, input, key.defaultValue, key.defaultValue2);
+							addInst3(key, doc, key.defaultValue, key.defaultValue2);
 						} else if (field instanceof Inst4Fields) {
-							addInst4(key, doc, input);
+							addInst4(key, doc);
 						} else if (field instanceof Inst5Fields) {
-							addInst5(key, doc, input, key.defaultValue);
+							addInst5(key, doc, key.defaultValue);
 						}
 					} else {
-						removeInst2(key, doc, input);
+						removeInst2(key, doc);
 					}
 				}
 
@@ -696,13 +696,13 @@ public class MonsterDetailsPage implements IDetailsPage {
 					@Override
 					public void focusLost(FocusEvent e) {
 						if (field instanceof Inst1Fields) {
-							setInst1(key, doc, input, value.getText());
+							setInst1(key, doc, value.getText());
 						} else if (field instanceof Inst2Fields) {
-							setInst2(key, doc, input, value.getText());
+							setInst2(key, doc, value.getText());
 						} else if (field instanceof Inst3Fields) {
-							setInst3(key, doc, input, value.getText(), null);
+							setInst3(key, doc, value.getText(), null);
 						} else if (field instanceof Inst5Fields) {
-							setInst5(key, doc, input, value.getText());
+							setInst5(key, doc, value.getText());
 						}
 					}			
 				});
@@ -711,13 +711,13 @@ public class MonsterDetailsPage implements IDetailsPage {
 					public void keyPressed(KeyEvent e) {
 						if (e.character == '\r') {
 							if (field instanceof Inst1Fields) {
-								setInst1(key, doc, input, value.getText());
+								setInst1(key, doc, value.getText());
 							} else if (field instanceof Inst2Fields) {
-								setInst2(key, doc, input, value.getText());
+								setInst2(key, doc, value.getText());
 							} else if (field instanceof Inst3Fields) {
-								setInst3(key, doc, input, value.getText(), null);
+								setInst3(key, doc, value.getText(), null);
 							} else if (field instanceof Inst5Fields) {
-								setInst5(key, doc, input, value.getText());
+								setInst5(key, doc, value.getText());
 							}
 						}
 					}
@@ -781,14 +781,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 				value.addFocusListener(new FocusAdapter() {
 					@Override
 					public void focusLost(FocusEvent e) {
-						setInst3(key, doc, input, null, value.getText());
+						setInst3(key, doc, null, value.getText());
 					}			
 				});
 				value.addKeyListener(new KeyAdapter() {
 					@Override
 					public void keyPressed(KeyEvent e) {
 						if (e.character == '\r') {
-							setInst3(key, doc, input, null, value.getText());
+							setInst3(key, doc, null, value.getText());
 						}
 					}
 				});
@@ -1885,15 +1885,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void setMonstername(final XtextEditor editor, final Monster armor, final String newName) 
+	private void setMonstername(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				boolean nameSet = false;
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst1) {
@@ -1922,15 +1922,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void setMonsterdescr(final XtextEditor editor, final Monster armor, final String newName) 
+	private void setMonsterdescr(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				boolean nameSet = false;
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst1) {
@@ -1959,8 +1959,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private String getInst1(Inst inst2, Monster armor) {
-		EList<MonsterMods> list = armor.getMods();
+	private String getInst1(Inst inst2, Monster monster) {
+		EList<MonsterMods> list = monster.getMods();
 		int armorCount = 0;
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst1) {
@@ -2015,8 +2015,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer getInst2(Inst inst2, Monster armor) {
-		EList<MonsterMods> list = armor.getMods();
+	private Integer getInst2(Inst inst2, Monster monster) {
+		EList<MonsterMods> list = monster.getMods();
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst2) {
 				switch (inst2) {
@@ -2416,8 +2416,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer[] getInst3(Inst inst3, Monster armor) {
-		EList<MonsterMods> list = armor.getMods();
+	private Integer[] getInst3(Inst inst3, Monster monster) {
+		EList<MonsterMods> list = monster.getMods();
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst3) {
 				switch (inst3) {
@@ -2447,8 +2447,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Boolean getInst4(Inst inst4, Monster armor) {
-		EList<MonsterMods> list = armor.getMods();
+	private Boolean getInst4(Inst inst4, Monster monster) {
+		EList<MonsterMods> list = monster.getMods();
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst4) {
 				switch (inst4) {
@@ -2753,8 +2753,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return Boolean.FALSE;
 	}
 	
-	private Object getInst5(Inst inst2, Monster armor) {
-		EList<MonsterMods> list = armor.getMods();
+	private Object getInst5(Inst inst2, Monster monster) {
+		EList<MonsterMods> list = monster.getMods();
 		int weaponCount = 0;
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst5) {
@@ -3007,16 +3007,16 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private void setInst1(final Inst inst2, final XtextEditor editor, final Monster armor, final String newName) 
+	private void setInst1(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
+				Monster monsterToEdit = input;
 				int armorCount = 0;
-				EList<MonsterMods> mods = armorToEdit.getMods();				
+				EList<MonsterMods> mods = monsterToEdit.getMods();				
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst1) {
 						switch (inst2) {
@@ -3076,15 +3076,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void setInst2(final Inst inst2, final XtextEditor editor, final Monster armor, final String newName) 
+	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst2) {
 						switch (inst2) {
@@ -3495,15 +3495,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void setInst3(final Inst inst3, final XtextEditor editor, final Monster armor, final String value1, final String value2) 
+	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst3) {
 						switch (inst3) {
@@ -3564,16 +3564,16 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void setInst5(final Inst inst2, final XtextEditor editor, final Monster armor, final String newName) 
+	private void setInst5(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
+				Monster monsterToEdit = input;
 				int weaponCount = 0;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst5) {
 						Integer newValue = null;
@@ -3820,15 +3820,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void addInst1(final Inst inst, final XtextEditor editor, final Monster armor, final String newName) 
+	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				MonsterInst1 type = DmFactory.eINSTANCE.createMonsterInst1();
 				switch (inst) {
 				case SPR1:
@@ -3865,15 +3865,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst2(final Inst inst, final XtextEditor editor, final Monster armor, final String newName) 
+	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				MonsterInst2 type = DmFactory.eINSTANCE.createMonsterInst2();
 				switch (inst) {
 				case SPECIALLOOK:
@@ -4126,15 +4126,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst3(final Inst inst, final XtextEditor editor, final Monster armor, final String newName1, final String newName2) 
+	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				MonsterInst3 type = DmFactory.eINSTANCE.createMonsterInst3();
 				switch (inst) {
 				case MAGICSKILL:
@@ -4166,15 +4166,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst4(final Inst inst, final XtextEditor editor, final Monster armor) 
+	private void addInst4(final Inst inst, final XtextEditor editor) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				MonsterInst4 type = DmFactory.eINSTANCE.createMonsterInst4();
 				switch (inst) {
 				case CLEAR:
@@ -4368,15 +4368,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst5(final Inst inst, final XtextEditor editor, final Monster armor, final String newName) 
+	private void addInst5(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				MonsterInst5 type = DmFactory.eINSTANCE.createMonsterInst5();
 				switch (inst) {
 				case WEAPON1:
@@ -4471,18 +4471,18 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void removeInst2(final Inst inst2, final XtextEditor editor, final Monster armor) 
+	private void removeInst2(final Inst inst2, final XtextEditor editor) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster armorToEdit = input;
+				Monster monsterToEdit = input;
 				MonsterMods modToRemove = null;
 				int armorCount = 0;
 				int weaponCount = 0;
-				EList<MonsterMods> mods = armorToEdit.getMods();
+				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst1) {
 						switch (inst2) {

@@ -256,14 +256,14 @@ public class WeaponDetailsPage implements IDetailsPage {
 		name.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setWeaponname(doc, input, name.getText());
+				setWeaponname(doc, name.getText());
 			}			
 		});
 		name.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setWeaponname(doc, input, name.getText());
+					setWeaponname(doc, name.getText());
 				}
 			}
 			
@@ -297,14 +297,14 @@ public class WeaponDetailsPage implements IDetailsPage {
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
 						if (field instanceof Inst2Fields) {
-							addInst2(key, doc, input, key.defaultValue);
+							addInst2(key, doc, key.defaultValue);
 						} else if (field instanceof Inst3Fields) {
-							addInst3(key, doc, input, key.defaultValue, key.defaultValue2);
+							addInst3(key, doc, key.defaultValue, key.defaultValue2);
 						} else if (field instanceof Inst4Fields) {
-							addInst4(key, doc, input);
+							addInst4(key, doc);
 						}
 					} else {
-						removeInst2(key, doc, input);
+						removeInst2(key, doc);
 					}
 				}
 
@@ -341,9 +341,9 @@ public class WeaponDetailsPage implements IDetailsPage {
 					@Override
 					public void focusLost(FocusEvent e) {
 						if (field instanceof Inst2Fields) {
-							setInst2(key, doc, input, value.getText());
+							setInst2(key, doc, value.getText());
 						} else if (field instanceof Inst3Fields) {
-							setInst3(key, doc, input, value.getText(), null);
+							setInst3(key, doc, value.getText(), null);
 						}
 					}			
 				});
@@ -352,9 +352,9 @@ public class WeaponDetailsPage implements IDetailsPage {
 					public void keyPressed(KeyEvent e) {
 						if (e.character == '\r') {
 							if (field instanceof Inst2Fields) {
-								setInst2(key, doc, input, value.getText());
+								setInst2(key, doc, value.getText());
 							} else if (field instanceof Inst3Fields) {
-								setInst3(key, doc, input, value.getText(), null);
+								setInst3(key, doc, value.getText(), null);
 							}
 						}
 					}
@@ -408,14 +408,14 @@ public class WeaponDetailsPage implements IDetailsPage {
 				value.addFocusListener(new FocusAdapter() {
 					@Override
 					public void focusLost(FocusEvent e) {
-						setInst3(key, doc, input, null, value.getText());
+						setInst3(key, doc, null, value.getText());
 					}			
 				});
 				value.addKeyListener(new KeyAdapter() {
 					@Override
 					public void keyPressed(KeyEvent e) {
 						if (e.character == '\r') {
-							setInst3(key, doc, input, null, value.getText());
+							setInst3(key, doc, null, value.getText());
 						}
 					}
 				});
@@ -790,15 +790,15 @@ public class WeaponDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void setWeaponname(final XtextEditor editor, final Weapon armor, final String newName) 
+	private void setWeaponname(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Weapon armorToEdit = input;
-				EList<WeaponMods> mods = armorToEdit.getMods();
+				Weapon weaponToEdit = input;
+				EList<WeaponMods> mods = weaponToEdit.getMods();
 				boolean nameSet = false;
 				for (WeaponMods mod : mods) {
 					if (mod instanceof WeaponInst1) {
@@ -827,8 +827,8 @@ public class WeaponDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private Integer getInst2(Inst inst2, Weapon armor) {
-		EList<WeaponMods> list = armor.getMods();
+	private Integer getInst2(Inst inst2, Weapon weapon) {
+		EList<WeaponMods> list = weapon.getMods();
 		for (WeaponMods mod : list) {
 			if (mod instanceof WeaponInst2) {
 				switch (inst2) {
@@ -903,8 +903,8 @@ public class WeaponDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer[] getInst3(Inst inst3, Weapon armor) {
-		EList<WeaponMods> list = armor.getMods();
+	private Integer[] getInst3(Inst inst3, Weapon weapon) {
+		EList<WeaponMods> list = weapon.getMods();
 		for (WeaponMods mod : list) {
 			if (mod instanceof WeaponInst3) {
 				switch (inst3) {
@@ -919,8 +919,8 @@ public class WeaponDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Boolean getInst4(Inst inst4, Weapon armor) {
-		EList<WeaponMods> list = armor.getMods();
+	private Boolean getInst4(Inst inst4, Weapon weapon) {
+		EList<WeaponMods> list = weapon.getMods();
 		for (WeaponMods mod : list) {
 			if (mod instanceof WeaponInst4) {
 				switch (inst4) {
@@ -1070,15 +1070,15 @@ public class WeaponDetailsPage implements IDetailsPage {
 		return Boolean.FALSE;
 	}
 	
-	private void setInst2(final Inst inst2, final XtextEditor editor, final Weapon armor, final String newName) 
+	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Weapon armorToEdit = input;
-				EList<WeaponMods> mods = armorToEdit.getMods();
+				Weapon weaponToEdit = input;
+				EList<WeaponMods> mods = weaponToEdit.getMods();
 				for (WeaponMods mod : mods) {
 					if (mod instanceof WeaponInst2) {
 						switch (inst2) {
@@ -1164,15 +1164,15 @@ public class WeaponDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void setInst3(final Inst inst3, final XtextEditor editor, final Weapon armor, final String value1, final String value2) 
+	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Weapon armorToEdit = input;
-				EList<WeaponMods> mods = armorToEdit.getMods();
+				Weapon weaponToEdit = input;
+				EList<WeaponMods> mods = weaponToEdit.getMods();
 				for (WeaponMods mod : mods) {
 					if (mod instanceof WeaponInst3) {
 						switch (inst3) {
@@ -1203,15 +1203,15 @@ public class WeaponDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void addInst2(final Inst inst, final XtextEditor editor, final Weapon armor, final String newName) 
+	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Weapon armorToEdit = input;
-				EList<WeaponMods> mods = armorToEdit.getMods();
+				Weapon weaponToEdit = input;
+				EList<WeaponMods> mods = weaponToEdit.getMods();
 				WeaponInst2 type = DmFactory.eINSTANCE.createWeaponInst2();
 				switch (inst) {
 				case DMG:
@@ -1269,15 +1269,15 @@ public class WeaponDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst3(final Inst inst, final XtextEditor editor, final Weapon armor, final String newName1, final String newName2) 
+	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Weapon armorToEdit = input;
-				EList<WeaponMods> mods = armorToEdit.getMods();
+				Weapon weaponToEdit = input;
+				EList<WeaponMods> mods = weaponToEdit.getMods();
 				WeaponInst3 type = DmFactory.eINSTANCE.createWeaponInst3();
 				switch (inst) {
 				case FLYSPR:
@@ -1300,15 +1300,15 @@ public class WeaponDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst4(final Inst inst, final XtextEditor editor, final Weapon armor) 
+	private void addInst4(final Inst inst, final XtextEditor editor) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Weapon armorToEdit = input;
-				EList<WeaponMods> mods = armorToEdit.getMods();
+				Weapon weaponToEdit = input;
+				EList<WeaponMods> mods = weaponToEdit.getMods();
 				WeaponInst4 type = DmFactory.eINSTANCE.createWeaponInst4();
 				switch (inst) {
 				case TWOHANDED:
@@ -1410,16 +1410,16 @@ public class WeaponDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void removeInst2(final Inst inst2, final XtextEditor editor, final Weapon armor) 
+	private void removeInst2(final Inst inst2, final XtextEditor editor) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Weapon armorToEdit = input;
+				Weapon weaponToEdit = input;
 				WeaponMods modToRemove = null;
-				EList<WeaponMods> mods = armorToEdit.getMods();
+				EList<WeaponMods> mods = weaponToEdit.getMods();
 				for (WeaponMods mod : mods) {
 					if (mod instanceof WeaponInst2) {
 						switch (inst2) {

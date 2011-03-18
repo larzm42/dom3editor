@@ -154,6 +154,22 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 								if (one != two) {
 									masterDetailsPage.block.viewer.setSelection(null);
 								}
+							} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ItemDetailsPage) {
+								((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+								Object one = ((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+								if (one != two) {
+									masterDetailsPage.block.viewer.setSelection(null);
+								}
+							} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SiteDetailsPage) {
+								((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+								Object one = ((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+								if (one != two) {
+									masterDetailsPage.block.viewer.setSelection(null);
+								}
 							}
 						}
 					}

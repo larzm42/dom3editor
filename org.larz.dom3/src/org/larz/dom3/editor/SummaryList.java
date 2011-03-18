@@ -107,14 +107,20 @@ import org.larz.dom3.dm.dm.Weapon;
 import org.larz.dom3.dm.dm.WeaponInst1;
 import org.larz.dom3.dm.dm.WeaponMods;
 import org.larz.dom3.dm.dm.impl.NewArmorImpl;
+import org.larz.dom3.dm.dm.impl.NewItemImpl;
 import org.larz.dom3.dm.dm.impl.NewMonsterImpl;
+import org.larz.dom3.dm.dm.impl.NewSiteImpl;
 import org.larz.dom3.dm.dm.impl.NewSpellImpl;
 import org.larz.dom3.dm.dm.impl.NewWeaponImpl;
 import org.larz.dom3.dm.dm.impl.SelectArmorByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectArmorByNameImpl;
+import org.larz.dom3.dm.dm.impl.SelectItemByIdImpl;
+import org.larz.dom3.dm.dm.impl.SelectItemByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectMonsterByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectMonsterByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectNationImpl;
+import org.larz.dom3.dm.dm.impl.SelectSiteByIdImpl;
+import org.larz.dom3.dm.dm.impl.SelectSiteByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectSpellByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectSpellByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectWeaponByIdImpl;
@@ -562,6 +568,12 @@ public class SummaryList extends MasterDetailsBlock {
 		detailsPart.registerPage(SelectSpellByIdImpl.class, new SpellDetailsPage(doc, viewer));
 		detailsPart.registerPage(SelectSpellByNameImpl.class, new SpellDetailsPage(doc, viewer));
 		detailsPart.registerPage(NewSpellImpl.class, new SpellDetailsPage(doc, viewer));
+		detailsPart.registerPage(SelectItemByIdImpl.class, new ItemDetailsPage(doc, viewer));
+		detailsPart.registerPage(SelectItemByNameImpl.class, new ItemDetailsPage(doc, viewer));
+		detailsPart.registerPage(NewItemImpl.class, new ItemDetailsPage(doc, viewer));
+		detailsPart.registerPage(SelectSiteByIdImpl.class, new SiteDetailsPage(doc, viewer));
+		detailsPart.registerPage(SelectSiteByNameImpl.class, new SiteDetailsPage(doc, viewer));
+		detailsPart.registerPage(NewSiteImpl.class, new SiteDetailsPage(doc, viewer));
 	}
 	
 	public void addArmor(final AddTypes type, final String name, final int id) 

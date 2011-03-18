@@ -35,6 +35,26 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(0, 1, 2).before(((DmGrammarAccess)getGrammarAccess()).getML_COMMENTRule());
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getML_COMMENTRule());
 		
+		// General rules
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getPoppergoldKeyword_0_5_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getResourcemultKeyword_0_6_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getSupplymultKeyword_0_7_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getUnresthalfincKeyword_0_8_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getUnresthalfresKeyword_0_9_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getEventisrareKeyword_0_10_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getTurmoilincomeKeyword_0_11_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getTurmoileventsKeyword_0_12_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getDeathincomeKeyword_0_13_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getDeathsupplyKeyword_0_14_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getDeathdeathKeyword_0_15_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getSlothincomeKeyword_0_16_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getSlothresourcesKeyword_0_17_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getColdincomeKeyword_0_18_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getColdsupplyKeyword_0_19_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getMisfortuneKeyword_0_20_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getLuckeventsKeyword_0_21_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getResearchscaleKeyword_0_22_0());
+		
 		// Armor rules
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectArmorByIdRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectArmorByIdRule());

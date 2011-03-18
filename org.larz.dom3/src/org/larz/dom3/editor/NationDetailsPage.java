@@ -361,14 +361,14 @@ public class NationDetailsPage implements IDetailsPage {
 		name.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setNationname(doc, input, name.getText());
+				setNationname(doc, name.getText());
 			}			
 		});
 		name.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setNationname(doc, input, name.getText());
+					setNationname(doc, name.getText());
 				}
 			}
 			
@@ -384,14 +384,14 @@ public class NationDetailsPage implements IDetailsPage {
 		descr.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setNationdescr(doc, input, descr.getText());
+				setNationdescr(doc, descr.getText());
 			}			
 		});
 		descr.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setNationdescr(doc, input, descr.getText());
+					setNationdescr(doc, descr.getText());
 				}
 			}
 			
@@ -416,12 +416,12 @@ public class NationDetailsPage implements IDetailsPage {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if (descrCheck.getSelection()) {
-					addInst1(Inst.DESCR, doc, input, "");
+					addInst1(Inst.DESCR, doc, "");
 					descr.setEnabled(true);
 					descr.setBackground(toolkit.getColors().getBackground());
 					descr.setText("");
 				} else {
-					removeInst2(Inst.DESCR, doc, input);
+					removeInst(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
 					descr.setText("");
@@ -435,14 +435,14 @@ public class NationDetailsPage implements IDetailsPage {
 		summary.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setInst1(Inst.SUMMARY, doc, input, summary.getText());
+				setInst1(Inst.SUMMARY, doc, summary.getText());
 			}			
 		});
 		summary.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setInst1(Inst.SUMMARY, doc, input, summary.getText());
+					setInst1(Inst.SUMMARY, doc, summary.getText());
 				}
 			}
 			
@@ -467,12 +467,12 @@ public class NationDetailsPage implements IDetailsPage {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if (summaryCheck.getSelection()) {
-					addInst1(Inst.SUMMARY, doc, input, "");
+					addInst1(Inst.SUMMARY, doc, "");
 					summary.setEnabled(true);
 					summary.setBackground(toolkit.getColors().getBackground());
 					summary.setText("");
 				} else {
-					removeInst2(Inst.SUMMARY, doc, input);
+					removeInst(Inst.SUMMARY, doc);
 					summary.setEnabled(false);
 					summary.setBackground(toolkit.getColors().getInactiveBackground());
 					summary.setText("");
@@ -486,14 +486,14 @@ public class NationDetailsPage implements IDetailsPage {
 		brief.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setInst1(Inst.BRIEF, doc, input, brief.getText());
+				setInst1(Inst.BRIEF, doc, brief.getText());
 			}			
 		});
 		brief.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setInst1(Inst.BRIEF, doc, input, brief.getText());
+					setInst1(Inst.BRIEF, doc, brief.getText());
 				}
 			}
 			
@@ -518,12 +518,12 @@ public class NationDetailsPage implements IDetailsPage {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if (briefCheck.getSelection()) {
-					addInst1(Inst.BRIEF, doc, input, "");
+					addInst1(Inst.BRIEF, doc, "");
 					brief.setEnabled(true);
 					brief.setBackground(toolkit.getColors().getBackground());
 					brief.setText("");
 				} else {
-					removeInst2(Inst.BRIEF, doc, input);
+					removeInst(Inst.BRIEF, doc);
 					brief.setEnabled(false);
 					brief.setBackground(toolkit.getColors().getInactiveBackground());
 					brief.setText("");
@@ -557,18 +557,18 @@ public class NationDetailsPage implements IDetailsPage {
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
 						if (field instanceof Inst1Fields) {
-							addInst1(key, doc, input, key.defaultValue);
+							addInst1(key, doc, key.defaultValue);
 						} else if (field instanceof Inst2Fields) {
-							addInst2(key, doc, input, key.defaultValue);
+							addInst2(key, doc, key.defaultValue);
 						} else if (field instanceof Inst3Fields) {
-							addInst3(key, doc, input);
+							addInst3(key, doc);
 						} else if (field instanceof Inst4Fields) {
-							addInst4(key, doc, input, key.defaultValue);
+							addInst4(key, doc, key.defaultValue);
 						} else if (field instanceof Inst5Fields) {
-							addInst5(key, doc, input, key.defaultValue, key.defaultValue2, key.defaultValue3);
+							addInst5(key, doc, key.defaultValue, key.defaultValue2, key.defaultValue3);
 						}
 					} else {
-						removeInst2(key, doc, input);
+						removeInst(key, doc);
 					}
 				}
 
@@ -609,13 +609,13 @@ public class NationDetailsPage implements IDetailsPage {
 					@Override
 					public void focusLost(FocusEvent e) {
 						if (field instanceof Inst1Fields) {
-							setInst1(key, doc, input, value.getText());
+							setInst1(key, doc, value.getText());
 						} else if (field instanceof Inst2Fields) {
-							setInst2(key, doc, input, value.getText());
+							setInst2(key, doc, value.getText());
 						} else if (field instanceof Inst4Fields) {
-							setInst4(key, doc, input, value.getText());
+							setInst4(key, doc, value.getText());
 						} else if (field instanceof Inst5Fields) {
-							setInst5(key, doc, input, value.getText(), null, null);
+							setInst5(key, doc, value.getText(), null, null);
 						}
 					}			
 				});
@@ -624,13 +624,13 @@ public class NationDetailsPage implements IDetailsPage {
 					public void keyPressed(KeyEvent e) {
 						if (e.character == '\r') {
 							if (field instanceof Inst1Fields) {
-								setInst1(key, doc, input, value.getText());
+								setInst1(key, doc, value.getText());
 							} else if (field instanceof Inst2Fields) {
-								setInst2(key, doc, input, value.getText());
+								setInst2(key, doc, value.getText());
 							} else if (field instanceof Inst3Fields) {
-								setInst4(key, doc, input, value.getText());
+								setInst4(key, doc, value.getText());
 							} else if (field instanceof Inst5Fields) {
-								setInst5(key, doc, input, value.getText(), null, null);
+								setInst5(key, doc, value.getText(), null, null);
 							}
 						}
 					}
@@ -701,14 +701,14 @@ public class NationDetailsPage implements IDetailsPage {
 				value.addFocusListener(new FocusAdapter() {
 					@Override
 					public void focusLost(FocusEvent e) {
-						setInst5(key, doc, input, null, value.getText(), null);
+						setInst5(key, doc, null, value.getText(), null);
 					}			
 				});
 				value.addKeyListener(new KeyAdapter() {
 					@Override
 					public void keyPressed(KeyEvent e) {
 						if (e.character == '\r') {
-							setInst5(key, doc, input, null, value.getText(), null);
+							setInst5(key, doc, null, value.getText(), null);
 						}
 					}
 				});
@@ -747,14 +747,14 @@ public class NationDetailsPage implements IDetailsPage {
 				value3.addFocusListener(new FocusAdapter() {
 					@Override
 					public void focusLost(FocusEvent e) {
-						setInst5(key, doc, input, null, value3.getText(), null);
+						setInst5(key, doc, null, value3.getText(), null);
 					}			
 				});
 				value3.addKeyListener(new KeyAdapter() {
 					@Override
 					public void keyPressed(KeyEvent e) {
 						if (e.character == '\r') {
-							setInst5(key, doc, input, null, value3.getText(), null);
+							setInst5(key, doc, null, value3.getText(), null);
 						}
 					}
 				});
@@ -999,15 +999,15 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void setNationname(final XtextEditor editor, final Nation armor, final String newName) 
+	private void setNationname(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
-				EList<NationMods> mods = armorToEdit.getMods();
+				SelectNation nationToEdit = input;
+				EList<NationMods> mods = nationToEdit.getMods();
 				boolean nameSet = false;
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst1) {
@@ -1036,15 +1036,15 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void setNationdescr(final XtextEditor editor, final SelectNation armor, final String newName) 
+	private void setNationdescr(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
-				EList<NationMods> mods = armorToEdit.getMods();
+				SelectNation nationToEdit = input;
+				EList<NationMods> mods = nationToEdit.getMods();
 				boolean nameSet = false;
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst1) {
@@ -1073,8 +1073,8 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private String getInst1(Inst inst2, SelectNation armor) {
-		EList<NationMods> list = armor.getMods();
+	private String getInst1(Inst inst2, SelectNation nation) {
+		EList<NationMods> list = nation.getMods();
 		int siteCount = 0;
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst1) {
@@ -1152,8 +1152,8 @@ public class NationDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer getInst2(Inst inst2, SelectNation armor) {
-		EList<NationMods> list = armor.getMods();
+	private Integer getInst2(Inst inst2, SelectNation nation) {
+		EList<NationMods> list = nation.getMods();
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst2) {
 				switch (inst2) {
@@ -1313,8 +1313,8 @@ public class NationDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Boolean getInst3(Inst inst3, SelectNation armor) {
-		EList<NationMods> list = armor.getMods();
+	private Boolean getInst3(Inst inst3, SelectNation nation) {
+		EList<NationMods> list = nation.getMods();
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst3) {
 				switch (inst3) {
@@ -1399,8 +1399,8 @@ public class NationDetailsPage implements IDetailsPage {
 		return Boolean.FALSE;
 	}
 	
-	private Object getInst4(Inst inst4, SelectNation armor) {
-		EList<NationMods> list = armor.getMods();
+	private Object getInst4(Inst inst4, SelectNation nation) {
+		EList<NationMods> list = nation.getMods();
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst4) {
 				switch (inst4) {
@@ -1630,8 +1630,8 @@ public class NationDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Double[] getInst5(Inst inst5, SelectNation armor) {
-		EList<NationMods> list = armor.getMods();
+	private Double[] getInst5(Inst inst5, SelectNation nation) {
+		EList<NationMods> list = nation.getMods();
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst5) {
 				switch (inst5) {
@@ -1649,16 +1649,16 @@ public class NationDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private void setInst1(final Inst inst2, final XtextEditor editor, final SelectNation armor, final String newName) 
+	private void setInst1(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
+				SelectNation nationToEdit = input;
 				int siteCount = 0;
-				EList<NationMods> mods = armorToEdit.getMods();				
+				EList<NationMods> mods = nationToEdit.getMods();				
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst1) {
 						switch (inst2) {
@@ -1736,15 +1736,15 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void setInst2(final Inst inst2, final XtextEditor editor, final SelectNation armor, final String newName) 
+	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
-				EList<NationMods> mods = armorToEdit.getMods();
+				SelectNation nationToEdit = input;
+				EList<NationMods> mods = nationToEdit.getMods();
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst2) {
 						switch (inst2) {
@@ -1915,15 +1915,15 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void setInst4(final Inst inst2, final XtextEditor editor, final SelectNation armor, final String newName) 
+	private void setInst4(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
-				EList<NationMods> mods = armorToEdit.getMods();
+				SelectNation nationToEdit = input;
+				EList<NationMods> mods = nationToEdit.getMods();
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst4) {
 						Integer newValue = null;
@@ -2149,15 +2149,15 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void setInst5(final Inst inst5, final XtextEditor editor, final SelectNation nation, final String value1, final String value2, final String value3) 
+	private void setInst5(final Inst inst5, final XtextEditor editor, final String value1, final String value2, final String value3) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
-				EList<NationMods> mods = armorToEdit.getMods();
+				SelectNation nationToEdit = input;
+				EList<NationMods> mods = nationToEdit.getMods();
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst5) {
 						switch (inst5) {
@@ -2191,15 +2191,15 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst1(final Inst inst, final XtextEditor editor, final SelectNation armor, final String newName) 
+	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
-				EList<NationMods> mods = armorToEdit.getMods();
+				SelectNation nationToEdit = input;
+				EList<NationMods> mods = nationToEdit.getMods();
 				NationInst1 type = DmFactory.eINSTANCE.createNationInst1();
 				switch (inst) {
 				case EPITHET:
@@ -2248,15 +2248,15 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst2(final Inst inst, final XtextEditor editor, final SelectNation armor, final String newName) 
+	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
-				EList<NationMods> mods = armorToEdit.getMods();
+				SelectNation nationToEdit = input;
+				EList<NationMods> mods = nationToEdit.getMods();
 				NationInst2 type = DmFactory.eINSTANCE.createNationInst2();
 				switch (inst) {
 				case ERA:
@@ -2369,15 +2369,15 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst3(final Inst inst, final XtextEditor editor, final SelectNation armor) 
+	private void addInst3(final Inst inst, final XtextEditor editor) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
-				EList<NationMods> mods = armorToEdit.getMods();
+				SelectNation nationToEdit = input;
+				EList<NationMods> mods = nationToEdit.getMods();
 				NationInst3 type = DmFactory.eINSTANCE.createNationInst3();
 				switch (inst) {
 				case CLEARNATION:
@@ -2440,15 +2440,15 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst4(final Inst inst, final XtextEditor editor, final SelectNation armor, final String newName) 
+	private void addInst4(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
-				EList<NationMods> mods = armorToEdit.getMods();
+				SelectNation nationToEdit = input;
+				EList<NationMods> mods = nationToEdit.getMods();
 				NationInst4 type = DmFactory.eINSTANCE.createNationInst4();
 				switch (inst) {
 				case STARTCOM:
@@ -2543,15 +2543,15 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst5(final Inst inst, final XtextEditor editor, final SelectNation armor, final String newName1, final String newName2, final String newName3) 
+	private void addInst5(final Inst inst, final XtextEditor editor, final String newName1, final String newName2, final String newName3) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
-				EList<NationMods> mods = armorToEdit.getMods();
+				SelectNation nationToEdit = input;
+				EList<NationMods> mods = nationToEdit.getMods();
 				NationInst5 type = DmFactory.eINSTANCE.createNationInst5();
 				switch (inst) {
 				case COLOR:
@@ -2575,20 +2575,20 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void removeInst2(final Inst inst2, final XtextEditor editor, final SelectNation armor) 
+	private void removeInst(final Inst inst, final XtextEditor editor) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation armorToEdit = input;
+				SelectNation nationToEdit = input;
 				NationMods modToRemove = null;
 				int siteCount = 0;
-				EList<NationMods> mods = armorToEdit.getMods();
+				EList<NationMods> mods = nationToEdit.getMods();
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst1) {
-						switch (inst2) {
+						switch (inst) {
 						case EPITHET:
 							if (((NationInst1)mod).isEpithet()){
 								modToRemove = mod;
@@ -2654,7 +2654,7 @@ public class NationDetailsPage implements IDetailsPage {
 						}
 					}
 					if (mod instanceof NationInst2) {
-						switch (inst2) {
+						switch (inst) {
 						case ERA:
 							if (((NationInst2)mod).isEra()){
 								modToRemove = mod;
@@ -2808,7 +2808,7 @@ public class NationDetailsPage implements IDetailsPage {
 						}
 					}
 					if (mod instanceof NationInst3) {
-						switch (inst2) {
+						switch (inst) {
 						case CLEARNATION:
 							if (((NationInst3)mod).isClearnation()){
 								modToRemove = mod;
@@ -2887,7 +2887,7 @@ public class NationDetailsPage implements IDetailsPage {
 						}
 					}
 					if (mod instanceof NationInst4) {
-						switch (inst2) {
+						switch (inst) {
 						case STARTCOM:
 							if (((NationInst4)mod).isStartcom()){
 								modToRemove = mod;
@@ -3001,7 +3001,7 @@ public class NationDetailsPage implements IDetailsPage {
 						}
 					}
 					if (mod instanceof NationInst5) {
-						switch (inst2) {
+						switch (inst) {
 						case COLOR:
 							if (((NationInst5)mod).isColor()){
 								modToRemove = mod;
