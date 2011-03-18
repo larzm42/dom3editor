@@ -108,12 +108,15 @@ import org.larz.dom3.dm.dm.WeaponInst1;
 import org.larz.dom3.dm.dm.WeaponMods;
 import org.larz.dom3.dm.dm.impl.NewArmorImpl;
 import org.larz.dom3.dm.dm.impl.NewMonsterImpl;
+import org.larz.dom3.dm.dm.impl.NewSpellImpl;
 import org.larz.dom3.dm.dm.impl.NewWeaponImpl;
 import org.larz.dom3.dm.dm.impl.SelectArmorByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectArmorByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectMonsterByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectMonsterByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectNationImpl;
+import org.larz.dom3.dm.dm.impl.SelectSpellByIdImpl;
+import org.larz.dom3.dm.dm.impl.SelectSpellByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectWeaponByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectWeaponByNameImpl;
 import org.larz.dom3.dm.ui.internal.DmActivator;
@@ -556,6 +559,9 @@ public class SummaryList extends MasterDetailsBlock {
 		detailsPart.registerPage(SelectMonsterByNameImpl.class, new MonsterDetailsPage(doc, viewer));
 		detailsPart.registerPage(NewMonsterImpl.class, new MonsterDetailsPage(doc, viewer));
 		detailsPart.registerPage(SelectNationImpl.class, new NationDetailsPage(doc, viewer));
+		detailsPart.registerPage(SelectSpellByIdImpl.class, new SpellDetailsPage(doc, viewer));
+		detailsPart.registerPage(SelectSpellByNameImpl.class, new SpellDetailsPage(doc, viewer));
+		detailsPart.registerPage(NewSpellImpl.class, new SpellDetailsPage(doc, viewer));
 	}
 	
 	public void addArmor(final AddTypes type, final String name, final int id) 
