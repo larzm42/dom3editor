@@ -74,27 +74,27 @@ public class SpellDetailsPage implements IDetailsPage {
 	private Button descCheck;
 
 	enum Inst {
-		NAME (Messages.getString("SpellDetailsSection.name.name"), ""),
-		DESCR (Messages.getString("SpellDetailsSection.descr.name"), ""),
-		SCHOOL (Messages.getString("SpellDetailsSection.school.name"), ""),
-		RESEARCHLEVEL (Messages.getString("SpellDetailsSection.researchlevel.name"), ""),
-		AOE (Messages.getString("SpellDetailsSection.aoe.name"), ""),
-		DAMAGE (Messages.getString("SpellDetailsSection.damage.name"), ""),
-		EFFECT (Messages.getString("SpellDetailsSection.effect.name"), ""),
-		FATIGUECOST (Messages.getString("SpellDetailsSection.fatiguecost.name"), ""),
-		FLIGHTSPR (Messages.getString("SpellDetailsSection.flightspr.name"), ""),
-		EXPLSPR (Messages.getString("SpellDetailsSection.explspr.name"), ""),
-		NREFF (Messages.getString("SpellDetailsSection.nreff.name"), ""),
-		RANGE (Messages.getString("SpellDetailsSection.range.name"), ""),
-		PRECISION (Messages.getString("SpellDetailsSection.precision.name"), ""),
-		SOUND (Messages.getString("SpellDetailsSection.sound.name"), ""),
-		SPEC (Messages.getString("SpellDetailsSection.spec.name"), ""),
-		RESTRICTED (Messages.getString("SpellDetailsSection.restricted.name"), ""),
-		PATH (Messages.getString("SpellDetailsSection.path.name"), ""),
-		PATHLEVEL (Messages.getString("SpellDetailsSection.pathlevel.name"), ""),
-		CLEAR (Messages.getString("SpellDetailsSection.clear.name"), ""),
-		COPYSPELL (Messages.getString("SpellDetailsSection.copyspell.name"), ""),
-		NEXTSPELL (Messages.getString("SpellDetailsSection.nextspell.name"), "");
+		NAME (Messages.getString("SpellDetailsSection.mod.name"), ""),
+		DESCR (Messages.getString("SpellDetailsSection.mod.descr"), ""),
+		SCHOOL (Messages.getString("SpellDetailsSection.mod.school"), "0"),
+		RESEARCHLEVEL (Messages.getString("SpellDetailsSection.mod.researchlevel"), "0"),
+		AOE (Messages.getString("SpellDetailsSection.mod.aoe"), "0"),
+		DAMAGE (Messages.getString("SpellDetailsSection.mod.damage"), "0"),
+		EFFECT (Messages.getString("SpellDetailsSection.mod.effect"), "0"),
+		FATIGUECOST (Messages.getString("SpellDetailsSection.mod.fatiguecost"), "0"),
+		FLIGHTSPR (Messages.getString("SpellDetailsSection.mod.flightspr"), "0"),
+		EXPLSPR (Messages.getString("SpellDetailsSection.mod.explspr"), "0"),
+		NREFF (Messages.getString("SpellDetailsSection.mod.nreff"), "0"),
+		RANGE (Messages.getString("SpellDetailsSection.mod.range"), "0"),
+		PRECISION (Messages.getString("SpellDetailsSection.mod.precision"), "0"),
+		SOUND (Messages.getString("SpellDetailsSection.mod.sound"), "0"),
+		SPEC (Messages.getString("SpellDetailsSection.mod.spec"), "0"),
+		RESTRICTED (Messages.getString("SpellDetailsSection.mod.restricted"), "0"),
+		PATH (Messages.getString("SpellDetailsSection.mod.path"), "0", "0"),
+		PATHLEVEL (Messages.getString("SpellDetailsSection.mod.pathlevel"), "0", "0"),
+		CLEAR (Messages.getString("SpellDetailsSection.mod.clear"), ""),
+		COPYSPELL (Messages.getString("SpellDetailsSection.mod.copyspell"), ""),
+		NEXTSPELL (Messages.getString("SpellDetailsSection.mod.nextspell"), "");
 		
 		private String label;
 		private String defaultValue;
@@ -149,6 +149,24 @@ public class SpellDetailsPage implements IDetailsPage {
 		this.doc = doc;
 		this.viewer = viewer;
 		instMap.put(Inst.SCHOOL, new Inst2Fields());
+		instMap.put(Inst.RESEARCHLEVEL, new Inst2Fields());
+		instMap.put(Inst.AOE, new Inst2Fields());
+		instMap.put(Inst.DAMAGE, new Inst2Fields());
+		instMap.put(Inst.EFFECT, new Inst2Fields());
+		instMap.put(Inst.FATIGUECOST, new Inst2Fields());
+		instMap.put(Inst.FLIGHTSPR, new Inst2Fields());
+		instMap.put(Inst.EXPLSPR, new Inst2Fields());
+		instMap.put(Inst.NREFF, new Inst2Fields());
+		instMap.put(Inst.RANGE, new Inst2Fields());
+		instMap.put(Inst.PRECISION, new Inst2Fields());
+		instMap.put(Inst.SOUND, new Inst2Fields());
+		instMap.put(Inst.SPEC, new Inst2Fields());
+		instMap.put(Inst.RESTRICTED, new Inst2Fields());	
+		instMap.put(Inst.PATH, new Inst3Fields());	
+		instMap.put(Inst.PATHLEVEL, new Inst3Fields());	
+		instMap.put(Inst.CLEAR, new Inst4Fields());	
+		instMap.put(Inst.COPYSPELL, new Inst5Fields());	
+		instMap.put(Inst.NEXTSPELL, new Inst5Fields());	
 	}
 	
 	/* (non-Javadoc)
@@ -203,14 +221,14 @@ public class SpellDetailsPage implements IDetailsPage {
 		name.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setSpellname(doc, input, name.getText());
+				setSpellname(doc, name.getText());
 			}			
 		});
 		name.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setSpellname(doc, input, name.getText());
+					setSpellname(doc, name.getText());
 				}
 			}
 			
@@ -226,14 +244,14 @@ public class SpellDetailsPage implements IDetailsPage {
 		descr.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setSpelldescr(doc, input, descr.getText());
+				setSpelldescr(doc, descr.getText());
 			}			
 		});
 		descr.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setSpelldescr(doc, input, descr.getText());
+					setSpelldescr(doc, descr.getText());
 				}
 			}
 			
@@ -258,12 +276,12 @@ public class SpellDetailsPage implements IDetailsPage {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if (descCheck.getSelection()) {
-					addInst1(Inst.DESCR, doc, input, "");
+					addInst1(Inst.DESCR, doc, "");
 					descr.setEnabled(true);
 					descr.setBackground(toolkit.getColors().getBackground());
 					descr.setText("");
 				} else {
-					removeInst2(Inst.DESCR, doc, input);
+					removeInst2(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
 					descr.setText("");
@@ -295,18 +313,18 @@ public class SpellDetailsPage implements IDetailsPage {
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
 						if (field instanceof Inst1Fields) {
-							addInst1(key, doc, input, key.defaultValue);
+							addInst1(key, doc, key.defaultValue);
 						} else if (field instanceof Inst2Fields) {
-							addInst2(key, doc, input, key.defaultValue);
+							addInst2(key, doc, key.defaultValue);
 						} else if (field instanceof Inst3Fields) {
-							addInst3(key, doc, input, key.defaultValue, key.defaultValue2);
+							addInst3(key, doc, key.defaultValue, key.defaultValue2);
 						} else if (field instanceof Inst4Fields) {
-							addInst4(key, doc, input);
+							addInst4(key, doc);
 						} else if (field instanceof Inst5Fields) {
-							addInst5(key, doc, input, key.defaultValue);
+							addInst5(key, doc, key.defaultValue);
 						}
 					} else {
-						removeInst2(key, doc, input);
+						removeInst2(key, doc);
 					}
 				}
 
@@ -352,13 +370,13 @@ public class SpellDetailsPage implements IDetailsPage {
 					@Override
 					public void focusLost(FocusEvent e) {
 						if (field instanceof Inst1Fields) {
-							setInst1(key, doc, input, value.getText());
+							setInst1(key, doc, value.getText());
 						} else if (field instanceof Inst2Fields) {
-							setInst2(key, doc, input, value.getText());
+							setInst2(key, doc, value.getText());
 						} else if (field instanceof Inst3Fields) {
-							setInst3(key, doc, input, value.getText(), null);
+							setInst3(key, doc, value.getText(), null);
 						} else if (field instanceof Inst5Fields) {
-							setInst5(key, doc, input, value.getText());
+							setInst5(key, doc, value.getText());
 						}
 					}			
 				});
@@ -367,13 +385,13 @@ public class SpellDetailsPage implements IDetailsPage {
 					public void keyPressed(KeyEvent e) {
 						if (e.character == '\r') {
 							if (field instanceof Inst1Fields) {
-								setInst1(key, doc, input, value.getText());
+								setInst1(key, doc, value.getText());
 							} else if (field instanceof Inst2Fields) {
-								setInst2(key, doc, input, value.getText());
+								setInst2(key, doc, value.getText());
 							} else if (field instanceof Inst3Fields) {
-								setInst3(key, doc, input, value.getText(), null);
+								setInst3(key, doc, value.getText(), null);
 							} else if (field instanceof Inst5Fields) {
-								setInst5(key, doc, input, value.getText());
+								setInst5(key, doc, value.getText());
 							}
 						}
 					}
@@ -437,14 +455,14 @@ public class SpellDetailsPage implements IDetailsPage {
 				value.addFocusListener(new FocusAdapter() {
 					@Override
 					public void focusLost(FocusEvent e) {
-						setInst3(key, doc, input, null, value.getText());
+						setInst3(key, doc, null, value.getText());
 					}			
 				});
 				value.addKeyListener(new KeyAdapter() {
 					@Override
 					public void keyPressed(KeyEvent e) {
 						if (e.character == '\r') {
-							setInst3(key, doc, input, null, value.getText());
+							setInst3(key, doc, null, value.getText());
 						}
 					}
 				});
@@ -609,23 +627,15 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 	
-//	private int getSelectSpellid(Spell spell) {
-//		if (spell instanceof SelectSpellByName) {
-//			return ((SelectSpellByName) spell).getValue());
-//		} else {
-//			return ((SelectSpellById)spell).getValue();
-//		}
-//	}
-	
-	private void setSpellname(final XtextEditor editor, final Spell armor, final String newName) 
+	private void setSpellname(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();
 				boolean nameSet = false;
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst1) {
@@ -654,15 +664,15 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void setSpelldescr(final XtextEditor editor, final Spell armor, final String newName) 
+	private void setSpelldescr(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();
 				boolean nameSet = false;
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst1) {
@@ -691,8 +701,8 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private String getInst1(Inst inst2, Spell armor) {
-		EList<SpellMods> list = armor.getMods();
+	private String getInst1(Inst inst2, Spell spell) {
+		EList<SpellMods> list = spell.getMods();
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst1) {
 				switch (inst2) {
@@ -712,8 +722,8 @@ public class SpellDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer getInst2(Inst inst2, Spell armor) {
-		EList<SpellMods> list = armor.getMods();
+	private Integer getInst2(Inst inst2, Spell spell) {
+		EList<SpellMods> list = spell.getMods();
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst2) {
 				switch (inst2) {
@@ -793,8 +803,8 @@ public class SpellDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer[] getInst3(Inst inst3, Spell armor) {
-		EList<SpellMods> list = armor.getMods();
+	private Integer[] getInst3(Inst inst3, Spell spell) {
+		EList<SpellMods> list = spell.getMods();
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst3) {
 				switch (inst3) {
@@ -814,8 +824,8 @@ public class SpellDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Boolean getInst4(Inst inst4, Spell armor) {
-		EList<SpellMods> list = armor.getMods();
+	private Boolean getInst4(Inst inst4, Spell spell) {
+		EList<SpellMods> list = spell.getMods();
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst4) {
 				switch (inst4) {
@@ -830,8 +840,8 @@ public class SpellDetailsPage implements IDetailsPage {
 		return Boolean.FALSE;
 	}
 	
-	private Object getInst5(Inst inst2, Spell armor) {
-		EList<SpellMods> list = armor.getMods();
+	private Object getInst5(Inst inst2, Spell spell) {
+		EList<SpellMods> list = spell.getMods();
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst5) {
 				switch (inst2) {
@@ -861,15 +871,15 @@ public class SpellDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private void setInst1(final Inst inst2, final XtextEditor editor, final Spell armor, final String newName) 
+	private void setInst1(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();				
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();				
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst1) {
 						switch (inst2) {
@@ -900,20 +910,85 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void setInst2(final Inst inst2, final XtextEditor editor, final Spell armor, final String newName) 
+	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst2) {
 						switch (inst2) {
 						case SCHOOL:
 							if (((SpellInst2)mod).isSchool()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case RESEARCHLEVEL:
+							if (((SpellInst2)mod).isResearchlevel()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case AOE:
+							if (((SpellInst2)mod).isAoe()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case DAMAGE:
+							if (((SpellInst2)mod).isDamage()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case EFFECT:
+							if (((SpellInst2)mod).isEffect()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case FATIGUECOST:
+							if (((SpellInst2)mod).isFatiguecost()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case FLIGHTSPR:
+							if (((SpellInst2)mod).isFlightspr()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case EXPLSPR:
+							if (((SpellInst2)mod).isExplspr()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case NREFF:
+							if (((SpellInst2)mod).isNreff()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case RANGE:
+							if (((SpellInst2)mod).isRange()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case PRECISION:
+							if (((SpellInst2)mod).isPrecision()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case SOUND:
+							if (((SpellInst2)mod).isSound()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case SPEC:
+							if (((SpellInst2)mod).isSpec()){
+								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case RESTRICTED:
+							if (((SpellInst2)mod).isRestricted()){
 								((SpellInst2)mod).setValue(Integer.parseInt(newName));
 							}
 							break;
@@ -934,15 +1009,15 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void setInst3(final Inst inst3, final XtextEditor editor, final Spell armor, final String value1, final String value2) 
+	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst3) {
 						switch (inst3) {
@@ -983,15 +1058,15 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void setInst5(final Inst inst2, final XtextEditor editor, final Spell armor, final String newName) 
+	private void setInst5(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst5) {
 						Integer newValue = null;
@@ -1037,15 +1112,15 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void addInst1(final Inst inst, final XtextEditor editor, final Spell armor, final String newName) 
+	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();
 				SpellInst1 type = DmFactory.eINSTANCE.createSpellInst1();
 				switch (inst) {
 				case NAME:
@@ -1070,19 +1145,58 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst2(final Inst inst, final XtextEditor editor, final Spell armor, final String newName) 
+	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();
 				SpellInst2 type = DmFactory.eINSTANCE.createSpellInst2();
 				switch (inst) {
 				case SCHOOL:
 					type.setSchool(true);
+					break;
+				case RESEARCHLEVEL:
+					type.setResearchlevel(true);
+					break;
+				case AOE:
+					type.setAoe(true);
+					break;
+				case DAMAGE:
+					type.setDamage(true);
+					break;
+				case EFFECT:
+					type.setEffect(true);
+					break;
+				case FATIGUECOST:
+					type.setFatiguecost(true);
+					break;
+				case FLIGHTSPR:
+					type.setFlightspr(true);
+					break;
+				case EXPLSPR:
+					type.setExplspr(true);
+					break;
+				case NREFF:
+					type.setNreff(true);
+					break;
+				case RANGE:
+					type.setRange(true);
+					break;
+				case PRECISION:
+					type.setPrecision(true);
+					break;
+				case SOUND:
+					type.setSound(true);
+					break;
+				case SPEC:
+					type.setSpec(true);
+					break;
+				case RESTRICTED:
+					type.setRestricted(true);
 					break;
 				}
 				type.setValue(Integer.valueOf(newName));
@@ -1100,15 +1214,15 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst3(final Inst inst, final XtextEditor editor, final Spell armor, final String newName1, final String newName2) 
+	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();
 				SpellInst3 type = DmFactory.eINSTANCE.createSpellInst3();
 				switch (inst) {
 				case PATH:
@@ -1134,15 +1248,15 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst4(final Inst inst, final XtextEditor editor, final Spell armor) 
+	private void addInst4(final Inst inst, final XtextEditor editor) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();
 				SpellInst4 type = DmFactory.eINSTANCE.createSpellInst4();
 				switch (inst) {
 				case CLEAR:
@@ -1163,15 +1277,15 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst5(final Inst inst, final XtextEditor editor, final Spell armor, final String newName) 
+	private void addInst5(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				Spell spellToEdit = input;
+				EList<SpellMods> mods = spellToEdit.getMods();
 				SpellInst5 type = DmFactory.eINSTANCE.createSpellInst5();
 				switch (inst) {
 				case COPYSPELL:
@@ -1206,16 +1320,16 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void removeInst2(final Inst inst2, final XtextEditor editor, final Spell armor) 
+	private void removeInst2(final Inst inst2, final XtextEditor editor) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell armorToEdit = input;
+				Spell spellToEdit = input;
 				SpellMods modToRemove = null;
-				EList<SpellMods> mods = armorToEdit.getMods();
+				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst1) {
 						switch (inst2) {

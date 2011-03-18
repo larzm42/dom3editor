@@ -322,6 +322,36 @@ public class Database {
 		return monster;
 	}
 	
+	public static SiteDB getSite(int id) {
+		SiteDB site = new SiteDB();
+		try {
+			Connection con = getConnection();
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * FROM \"MagicSites\" where \"id#\"="+id);
+			site = getSiteDB(rs);
+			statement.close();
+			con.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return site;
+	}
+
+	public static SiteDB getSite(String name) {
+		SiteDB site = new SiteDB();
+		try {
+			Connection con = getConnection();
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * FROM \"MagicSites\" where \"name\" = '"+getSafeString(name)+"'");
+			site = getSiteDB(rs);
+			statement.close();
+			con.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return site;
+	}
+	
 	public static NationDB getNation(int id) {
 		NationDB nation = new NationDB();
 		try {
@@ -339,6 +369,158 @@ public class Database {
 		return nation;
 	}
 	
+	private static SiteDB getSiteDB(ResultSet rs) throws SQLException {
+		SiteDB site = new SiteDB();
+		if (rs.next()) {
+			site.id = rs.getInt("id#");
+			site.name = rs.getString("name");
+			String type = rs.getString("type");
+			if (type != null) {
+				if (type.equals("Fire")) {
+					site.path = 0;
+				} else if (type.equals("Water")) {
+					site.path = 2;
+				} else if (type.equals("Earth")) {
+					site.path = 3;
+				} else if (type.equals("Astral")) {
+					site.path = 4;
+				} else if (type.equals("Nature")) {
+					site.path = 6;
+				} else if (type.equals("Air")) {
+					site.path = 1;
+				} else if (type.equals("Death")) {
+					site.path = 5;
+				} else if (type.equals("Blood")) {
+					site.path = 7;
+				} else if (type.equals("Holy")) {
+					site.path = 8;
+				}
+			}
+			site.level = rs.getInt("lvl");
+			site.rarity = rs.getInt("frq");
+			site.loc = rs.getInt("mask");
+			site.gold = rs.getInt("gold");
+			site.res = rs.getInt("res");
+			
+			String F = rs.getString("F");
+			String W = rs.getString("W");
+			String A = rs.getString("A");
+			String E = rs.getString("E");
+			String S = rs.getString("S");
+			String D = rs.getString("D");
+			String N = rs.getString("N");
+			String B = rs.getString("B");
+
+			List<Integer[]> gem = new ArrayList<Integer[]>();
+			if (F != null && !F.equals("")) {
+				gem.add(new Integer[]{Integer.valueOf(F), Integer.valueOf(0)});
+			}
+			if (W != null && !W.equals("")) {
+				gem.add(new Integer[]{Integer.valueOf(W), Integer.valueOf(2)});
+			}
+			if (A != null && !A.equals("")) {
+				gem.add(new Integer[]{Integer.valueOf(A), Integer.valueOf(1)});
+			}
+			if (E != null && !E.equals("")) {
+				gem.add(new Integer[]{Integer.valueOf(E), Integer.valueOf(3)});
+			}
+			if (S != null && !S.equals("")) {
+				gem.add(new Integer[]{Integer.valueOf(S), Integer.valueOf(4)});
+			}
+			if (D != null && !D.equals("")) {
+				gem.add(new Integer[]{Integer.valueOf(D), Integer.valueOf(5)});
+			}
+			if (N != null && !N.equals("")) {
+				gem.add(new Integer[]{Integer.valueOf(N), Integer.valueOf(6)});
+			}
+			if (B != null && !B.equals("")) {
+				gem.add(new Integer[]{Integer.valueOf(B), Integer.valueOf(7)});
+			}
+			
+			int gemCount = 0;
+			for (Integer[] gemArray : gem) {
+				gemCount ++;
+				switch (gemCount) {
+				case 1:
+					site.gemsamt1 = gemArray[0];
+					site.gemspath1 = gemArray[1];
+					break;
+				case 2:
+					site.gemsamt2 = gemArray[0];
+					site.gemspath2 = gemArray[1];
+					break;
+				case 3:
+					site.gemsamt3 = gemArray[0];
+					site.gemspath3 = gemArray[1];
+					break;
+				}
+			}
+			
+			String scale1 = rs.getString("scale1");
+			String scale2 = rs.getString("scale2");
+			if (scale1 != null) {
+				if (scale1.equals("Turmoil")) {
+					site.incscale1 = 0;
+				} else if (scale1.equals("Order")) {
+					site.decscale1 = 0;
+				} else if (scale1.equals("Sloth")) {
+					site.incscale1 = 1;
+				} else if (scale1.equals("Productivity")) {
+					site.decscale1 = 1;
+				} else if (scale1.equals("Cold")) {
+					site.incscale1 = 2;
+				} else if (scale1.equals("Heat")) {
+					site.decscale1 = 2;
+				} else if (scale1.equals("Death")) {
+					site.incscale1 = 3;
+				} else if (scale1.equals("Growth")) {
+					site.decscale1 = 3;
+				} else if (scale1.equals("Misfortune")) {
+					site.incscale1 = 4;
+				} else if (scale1.equals("Luck")) {
+					site.decscale1 = 4;
+				} else if (scale1.equals("Drain")) {
+					site.incscale1 = 5;
+				} else if (scale1.equals("Magic")) {
+					site.decscale1 = 5;
+				}
+			}
+			if (scale2 != null) {
+				if (scale2.equals("Turmoil")) {
+					site.incscale2 = 0;
+				} else if (scale2.equals("Order")) {
+					site.decscale2 = 0;
+				} else if (scale2.equals("Sloth")) {
+					site.incscale2 = 1;
+				} else if (scale2.equals("Productivity")) {
+					site.decscale2 = 1;
+				} else if (scale2.equals("Cold")) {
+					site.incscale2 = 2;
+				} else if (scale2.equals("Heat")) {
+					site.decscale2 = 2;
+				} else if (scale2.equals("Death")) {
+					site.incscale2 = 3;
+				} else if (scale2.equals("Growth")) {
+					site.decscale2 = 3;
+				} else if (scale2.equals("Misfortune")) {
+					site.incscale2 = 4;
+				} else if (scale2.equals("Luck")) {
+					site.decscale2 = 4;
+				} else if (scale2.equals("Drain")) {
+					site.incscale2 = 5;
+				} else if (scale2.equals("Magic")) {
+					site.decscale2 = 5;
+				}
+			}
+
+//			public Integer homemon;
+//			public Integer homecom;
+//			public Integer mon;
+//			public Integer com;
+		}
+		return site;
+	}
+
 	private static NationDB getNationDB(ResultSet rs) throws SQLException {
 		NationDB nation = new NationDB();
 		if (rs.next()) {
@@ -628,6 +810,81 @@ public class Database {
 		return monster;
 	}
 	
+	private static ItemDB getItemDB(ResultSet rs) throws SQLException {
+		ItemDB item = new ItemDB();
+		if (rs.next()) {
+			item.id = rs.getInt("id#");
+			item.name = rs.getString("name");
+			item.armor = rs.getString("armor");
+			item.constlevel = rs.getInt("con");
+			String mainPath = rs.getString("p1");
+			if (mainPath != null) {
+				if (mainPath.equals("F")) {
+					item.mainpath = 0;
+				} else if (mainPath.equals("W")) {
+					item.mainpath = 2;
+				} else if (mainPath.equals("E")) {
+					item.mainpath = 3;
+				} else if (mainPath.equals("S")) {
+					item.mainpath = 4;
+				} else if (mainPath.equals("N")) {
+					item.mainpath = 6;
+				} else if (mainPath.equals("A")) {
+					item.mainpath = 1;
+				} else if (mainPath.equals("D")) {
+					item.mainpath = 5;
+				} else if (mainPath.equals("B")) {
+					item.mainpath = 7;
+				}
+			}
+			item.mainlevel = rs.getInt("lv1");
+			
+			String secondarypath = rs.getString("p2");
+			if (secondarypath != null) {
+				if (secondarypath.equals("F")) {
+					item.secondarypath = 0;
+				} else if (secondarypath.equals("W")) {
+					item.secondarypath = 2;
+				} else if (secondarypath.equals("E")) {
+					item.secondarypath = 3;
+				} else if (secondarypath.equals("S")) {
+					item.secondarypath = 4;
+				} else if (secondarypath.equals("N")) {
+					item.secondarypath = 6;
+				} else if (secondarypath.equals("A")) {
+					item.secondarypath = 1;
+				} else if (secondarypath.equals("D")) {
+					item.secondarypath = 5;
+				} else if (secondarypath.equals("B")) {
+					item.secondarypath = 7;
+				}
+			}
+			item.secondarylevel = rs.getInt("lv2");
+			String type = rs.getString("type");
+			if (type != null) {
+				if (type.equals("1-h wpn")) {
+					item.type = 1;
+				} else if (type.equals("2-h wpn")) {
+					item.type = 2;
+				} else if (type.equals("missile")) {
+					item.type = 3;
+				} else if (type.equals("shield")) {
+					item.type = 4;
+				} else if (type.equals("armor")) {
+					item.type = 5;
+				} else if (type.equals("helm")) {
+					item.type = 6;
+				} else if (type.equals("boots")) {
+					item.type = 7;
+				} else if (type.equals("misc")) {
+					item.type = 8;
+				}
+			}
+			item.weapon = rs.getInt("wpn");
+		}
+		return item;
+	}
+
 	public static String getArmorName(int id) {
 		String armorName = null;
 		try {
@@ -727,6 +984,37 @@ public class Database {
 		}
 		return armorName;
 	}
+	
+	public static ItemDB getItem(int id) {
+		ItemDB item = new ItemDB();
+		try {
+			Connection con = getConnection();
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * FROM \"BaseI\" where \"id#\"="+id);
+			item = getItemDB(rs);
+			statement.close();
+			con.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return item;
+	}
+
+	public static ItemDB getItem(String name) {
+		ItemDB item = new ItemDB();
+		try {
+			Connection con = getConnection();
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * FROM \"BaseI\" where \"name\" = '"+getSafeString(name)+"'");
+			item = getItemDB(rs);
+			statement.close();
+			con.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return item;
+	}
+	
 	
 	public static String getNationName(int id) {
 		String armorName = null;
