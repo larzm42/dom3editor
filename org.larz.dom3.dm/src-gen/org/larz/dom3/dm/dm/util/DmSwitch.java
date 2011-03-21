@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm.util;
 
@@ -378,6 +377,14 @@ public class DmSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DmPackage.MONSTER_PATTERN6:
+      {
+        MonsterPattern6 monsterPattern6 = (MonsterPattern6)theEObject;
+        T result = caseMonsterPattern6(monsterPattern6);
+        if (result == null) result = caseMonsterMods(monsterPattern6);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DmPackage.MONSTER_INST1:
       {
         MonsterInst1 monsterInst1 = (MonsterInst1)theEObject;
@@ -420,6 +427,15 @@ public class DmSwitch<T>
         T result = caseMonsterInst5(monsterInst5);
         if (result == null) result = caseMonsterPattern5(monsterInst5);
         if (result == null) result = caseMonsterMods(monsterInst5);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DmPackage.MONSTER_INST6:
+      {
+        MonsterInst6 monsterInst6 = (MonsterInst6)theEObject;
+        T result = caseMonsterInst6(monsterInst6);
+        if (result == null) result = caseMonsterPattern6(monsterInst6);
+        if (result == null) result = caseMonsterMods(monsterInst6);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1461,6 +1477,22 @@ public class DmSwitch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Monster Pattern6</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Monster Pattern6</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMonsterPattern6(MonsterPattern6 object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Monster Inst1</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1536,6 +1568,22 @@ public class DmSwitch<T>
    * @generated
    */
   public T caseMonsterInst5(MonsterInst5 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Monster Inst6</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Monster Inst6</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMonsterInst6(MonsterInst6 object)
   {
     return null;
   }

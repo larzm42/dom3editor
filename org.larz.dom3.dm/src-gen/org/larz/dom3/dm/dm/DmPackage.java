@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm;
 
@@ -1607,6 +1606,25 @@ public interface DmPackage extends EPackage
   int MONSTER_PATTERN5_FEATURE_COUNT = MONSTER_MODS_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.MonsterPattern6Impl <em>Monster Pattern6</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.larz.dom3.dm.dm.impl.MonsterPattern6Impl
+   * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterPattern6()
+   * @generated
+   */
+  int MONSTER_PATTERN6 = 34;
+
+  /**
+   * The number of structural features of the '<em>Monster Pattern6</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONSTER_PATTERN6_FEATURE_COUNT = MONSTER_MODS_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.MonsterInst1Impl <em>Monster Inst1</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1614,7 +1632,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst1()
    * @generated
    */
-  int MONSTER_INST1 = 34;
+  int MONSTER_INST1 = 35;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1687,7 +1705,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst2()
    * @generated
    */
-  int MONSTER_INST2 = 35;
+  int MONSTER_INST2 = 36;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2212,31 +2230,13 @@ public interface DmPackage extends EPackage
   int MONSTER_INST2__FIRESHIELD = MONSTER_PATTERN2_FEATURE_COUNT + 57;
 
   /**
-   * The feature id for the '<em><b>Heat</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MONSTER_INST2__HEAT = MONSTER_PATTERN2_FEATURE_COUNT + 58;
-
-  /**
-   * The feature id for the '<em><b>Cold</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MONSTER_INST2__COLD = MONSTER_PATTERN2_FEATURE_COUNT + 59;
-
-  /**
    * The feature id for the '<em><b>Iceprot</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__ICEPROT = MONSTER_PATTERN2_FEATURE_COUNT + 60;
+  int MONSTER_INST2__ICEPROT = MONSTER_PATTERN2_FEATURE_COUNT + 58;
 
   /**
    * The feature id for the '<em><b>Poisoncloud</b></em>' attribute.
@@ -2245,7 +2245,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__POISONCLOUD = MONSTER_PATTERN2_FEATURE_COUNT + 61;
+  int MONSTER_INST2__POISONCLOUD = MONSTER_PATTERN2_FEATURE_COUNT + 59;
 
   /**
    * The feature id for the '<em><b>Diseasecloud</b></em>' attribute.
@@ -2254,7 +2254,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__DISEASECLOUD = MONSTER_PATTERN2_FEATURE_COUNT + 62;
+  int MONSTER_INST2__DISEASECLOUD = MONSTER_PATTERN2_FEATURE_COUNT + 60;
 
   /**
    * The feature id for the '<em><b>Bloodvengeance</b></em>' attribute.
@@ -2263,7 +2263,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__BLOODVENGEANCE = MONSTER_PATTERN2_FEATURE_COUNT + 63;
+  int MONSTER_INST2__BLOODVENGEANCE = MONSTER_PATTERN2_FEATURE_COUNT + 61;
 
   /**
    * The feature id for the '<em><b>Castledef</b></em>' attribute.
@@ -2272,7 +2272,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__CASTLEDEF = MONSTER_PATTERN2_FEATURE_COUNT + 64;
+  int MONSTER_INST2__CASTLEDEF = MONSTER_PATTERN2_FEATURE_COUNT + 62;
 
   /**
    * The feature id for the '<em><b>Siegebonus</b></em>' attribute.
@@ -2281,7 +2281,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__SIEGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 65;
+  int MONSTER_INST2__SIEGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 63;
 
   /**
    * The feature id for the '<em><b>Patrolbonus</b></em>' attribute.
@@ -2290,7 +2290,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__PATROLBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 66;
+  int MONSTER_INST2__PATROLBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 64;
 
   /**
    * The feature id for the '<em><b>Pillagebonus</b></em>' attribute.
@@ -2299,7 +2299,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__PILLAGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 67;
+  int MONSTER_INST2__PILLAGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 65;
 
   /**
    * The feature id for the '<em><b>Researchbonus</b></em>' attribute.
@@ -2308,7 +2308,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__RESEARCHBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 68;
+  int MONSTER_INST2__RESEARCHBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 66;
 
   /**
    * The feature id for the '<em><b>Forgebonus</b></em>' attribute.
@@ -2317,7 +2317,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__FORGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 69;
+  int MONSTER_INST2__FORGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 67;
 
   /**
    * The feature id for the '<em><b>Douse</b></em>' attribute.
@@ -2326,7 +2326,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__DOUSE = MONSTER_PATTERN2_FEATURE_COUNT + 70;
+  int MONSTER_INST2__DOUSE = MONSTER_PATTERN2_FEATURE_COUNT + 68;
 
   /**
    * The feature id for the '<em><b>Nobadevents</b></em>' attribute.
@@ -2335,7 +2335,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__NOBADEVENTS = MONSTER_PATTERN2_FEATURE_COUNT + 71;
+  int MONSTER_INST2__NOBADEVENTS = MONSTER_PATTERN2_FEATURE_COUNT + 69;
 
   /**
    * The feature id for the '<em><b>Incunrest</b></em>' attribute.
@@ -2344,7 +2344,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__INCUNREST = MONSTER_PATTERN2_FEATURE_COUNT + 72;
+  int MONSTER_INST2__INCUNREST = MONSTER_PATTERN2_FEATURE_COUNT + 70;
 
   /**
    * The feature id for the '<em><b>Spreaddom</b></em>' attribute.
@@ -2353,7 +2353,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__SPREADDOM = MONSTER_PATTERN2_FEATURE_COUNT + 73;
+  int MONSTER_INST2__SPREADDOM = MONSTER_PATTERN2_FEATURE_COUNT + 71;
 
   /**
    * The feature id for the '<em><b>Leper</b></em>' attribute.
@@ -2362,7 +2362,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__LEPER = MONSTER_PATTERN2_FEATURE_COUNT + 74;
+  int MONSTER_INST2__LEPER = MONSTER_PATTERN2_FEATURE_COUNT + 72;
 
   /**
    * The feature id for the '<em><b>Popkill</b></em>' attribute.
@@ -2371,7 +2371,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__POPKILL = MONSTER_PATTERN2_FEATURE_COUNT + 75;
+  int MONSTER_INST2__POPKILL = MONSTER_PATTERN2_FEATURE_COUNT + 73;
 
   /**
    * The feature id for the '<em><b>Heretic</b></em>' attribute.
@@ -2380,7 +2380,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__HERETIC = MONSTER_PATTERN2_FEATURE_COUNT + 76;
+  int MONSTER_INST2__HERETIC = MONSTER_PATTERN2_FEATURE_COUNT + 74;
 
   /**
    * The feature id for the '<em><b>Itemslots</b></em>' attribute.
@@ -2389,7 +2389,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__ITEMSLOTS = MONSTER_PATTERN2_FEATURE_COUNT + 77;
+  int MONSTER_INST2__ITEMSLOTS = MONSTER_PATTERN2_FEATURE_COUNT + 75;
 
   /**
    * The feature id for the '<em><b>Nametype</b></em>' attribute.
@@ -2398,7 +2398,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__NAMETYPE = MONSTER_PATTERN2_FEATURE_COUNT + 78;
+  int MONSTER_INST2__NAMETYPE = MONSTER_PATTERN2_FEATURE_COUNT + 76;
 
   /**
    * The number of structural features of the '<em>Monster Inst2</em>' class.
@@ -2407,7 +2407,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2_FEATURE_COUNT = MONSTER_PATTERN2_FEATURE_COUNT + 79;
+  int MONSTER_INST2_FEATURE_COUNT = MONSTER_PATTERN2_FEATURE_COUNT + 77;
 
   /**
    * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.MonsterInst3Impl <em>Monster Inst3</em>}' class.
@@ -2417,7 +2417,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst3()
    * @generated
    */
-  int MONSTER_INST3 = 36;
+  int MONSTER_INST3 = 37;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -2490,7 +2490,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst4()
    * @generated
    */
-  int MONSTER_INST4 = 37;
+  int MONSTER_INST4 = 38;
 
   /**
    * The feature id for the '<em><b>Clear</b></em>' attribute.
@@ -3040,7 +3040,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst5()
    * @generated
    */
-  int MONSTER_INST5 = 38;
+  int MONSTER_INST5 = 39;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -3250,6 +3250,52 @@ public interface DmPackage extends EPackage
   int MONSTER_INST5_FEATURE_COUNT = MONSTER_PATTERN5_FEATURE_COUNT + 22;
 
   /**
+   * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.MonsterInst6Impl <em>Monster Inst6</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.larz.dom3.dm.dm.impl.MonsterInst6Impl
+   * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst6()
+   * @generated
+   */
+  int MONSTER_INST6 = 40;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONSTER_INST6__VALUE = MONSTER_PATTERN6_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Heat</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONSTER_INST6__HEAT = MONSTER_PATTERN6_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Cold</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONSTER_INST6__COLD = MONSTER_PATTERN6_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Monster Inst6</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONSTER_INST6_FEATURE_COUNT = MONSTER_PATTERN6_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.SpellImpl <em>Spell</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3257,7 +3303,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpell()
    * @generated
    */
-  int SPELL = 39;
+  int SPELL = 41;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3285,7 +3331,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectSpellById()
    * @generated
    */
-  int SELECT_SPELL_BY_ID = 40;
+  int SELECT_SPELL_BY_ID = 42;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3322,7 +3368,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectSpellByName()
    * @generated
    */
-  int SELECT_SPELL_BY_NAME = 41;
+  int SELECT_SPELL_BY_NAME = 43;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3359,7 +3405,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNewSpell()
    * @generated
    */
-  int NEW_SPELL = 42;
+  int NEW_SPELL = 44;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3387,7 +3433,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellMods()
    * @generated
    */
-  int SPELL_MODS = 43;
+  int SPELL_MODS = 45;
 
   /**
    * The number of structural features of the '<em>Spell Mods</em>' class.
@@ -3406,7 +3452,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellPattern1()
    * @generated
    */
-  int SPELL_PATTERN1 = 44;
+  int SPELL_PATTERN1 = 46;
 
   /**
    * The number of structural features of the '<em>Spell Pattern1</em>' class.
@@ -3425,7 +3471,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellPattern2()
    * @generated
    */
-  int SPELL_PATTERN2 = 45;
+  int SPELL_PATTERN2 = 47;
 
   /**
    * The number of structural features of the '<em>Spell Pattern2</em>' class.
@@ -3444,7 +3490,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellPattern3()
    * @generated
    */
-  int SPELL_PATTERN3 = 46;
+  int SPELL_PATTERN3 = 48;
 
   /**
    * The number of structural features of the '<em>Spell Pattern3</em>' class.
@@ -3463,7 +3509,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellPattern4()
    * @generated
    */
-  int SPELL_PATTERN4 = 47;
+  int SPELL_PATTERN4 = 49;
 
   /**
    * The number of structural features of the '<em>Spell Pattern4</em>' class.
@@ -3482,7 +3528,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellPattern5()
    * @generated
    */
-  int SPELL_PATTERN5 = 48;
+  int SPELL_PATTERN5 = 50;
 
   /**
    * The number of structural features of the '<em>Spell Pattern5</em>' class.
@@ -3501,7 +3547,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellInst1()
    * @generated
    */
-  int SPELL_INST1 = 49;
+  int SPELL_INST1 = 51;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3547,7 +3593,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellInst2()
    * @generated
    */
-  int SPELL_INST2 = 50;
+  int SPELL_INST2 = 52;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3701,7 +3747,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellInst3()
    * @generated
    */
-  int SPELL_INST3 = 51;
+  int SPELL_INST3 = 53;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -3756,7 +3802,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellInst4()
    * @generated
    */
-  int SPELL_INST4 = 52;
+  int SPELL_INST4 = 54;
 
   /**
    * The feature id for the '<em><b>Clear</b></em>' attribute.
@@ -3784,7 +3830,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellInst5()
    * @generated
    */
-  int SPELL_INST5 = 53;
+  int SPELL_INST5 = 55;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -3839,7 +3885,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItem()
    * @generated
    */
-  int ITEM = 54;
+  int ITEM = 56;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3867,7 +3913,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectItemById()
    * @generated
    */
-  int SELECT_ITEM_BY_ID = 55;
+  int SELECT_ITEM_BY_ID = 57;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3904,7 +3950,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectItemByName()
    * @generated
    */
-  int SELECT_ITEM_BY_NAME = 56;
+  int SELECT_ITEM_BY_NAME = 58;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3941,7 +3987,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNewItem()
    * @generated
    */
-  int NEW_ITEM = 57;
+  int NEW_ITEM = 59;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3969,7 +4015,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemMods()
    * @generated
    */
-  int ITEM_MODS = 58;
+  int ITEM_MODS = 60;
 
   /**
    * The number of structural features of the '<em>Item Mods</em>' class.
@@ -3988,7 +4034,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemPattern1()
    * @generated
    */
-  int ITEM_PATTERN1 = 59;
+  int ITEM_PATTERN1 = 61;
 
   /**
    * The number of structural features of the '<em>Item Pattern1</em>' class.
@@ -4007,7 +4053,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemPattern2()
    * @generated
    */
-  int ITEM_PATTERN2 = 60;
+  int ITEM_PATTERN2 = 62;
 
   /**
    * The number of structural features of the '<em>Item Pattern2</em>' class.
@@ -4026,7 +4072,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemInst1()
    * @generated
    */
-  int ITEM_INST1 = 61;
+  int ITEM_INST1 = 63;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4081,7 +4127,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemInst2()
    * @generated
    */
-  int ITEM_INST2 = 62;
+  int ITEM_INST2 = 64;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4181,7 +4227,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getName_()
    * @generated
    */
-  int NAME = 63;
+  int NAME = 65;
 
   /**
    * The number of structural features of the '<em>Name</em>' class.
@@ -4200,7 +4246,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectName()
    * @generated
    */
-  int SELECT_NAME = 64;
+  int SELECT_NAME = 66;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4237,7 +4283,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNameMods()
    * @generated
    */
-  int NAME_MODS = 65;
+  int NAME_MODS = 67;
 
   /**
    * The number of structural features of the '<em>Name Mods</em>' class.
@@ -4256,7 +4302,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNamePattern1()
    * @generated
    */
-  int NAME_PATTERN1 = 66;
+  int NAME_PATTERN1 = 68;
 
   /**
    * The number of structural features of the '<em>Name Pattern1</em>' class.
@@ -4275,7 +4321,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNamePattern2()
    * @generated
    */
-  int NAME_PATTERN2 = 67;
+  int NAME_PATTERN2 = 69;
 
   /**
    * The number of structural features of the '<em>Name Pattern2</em>' class.
@@ -4294,7 +4340,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNameInst1()
    * @generated
    */
-  int NAME_INST1 = 68;
+  int NAME_INST1 = 70;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4331,7 +4377,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNameInst2()
    * @generated
    */
-  int NAME_INST2 = 69;
+  int NAME_INST2 = 71;
 
   /**
    * The feature id for the '<em><b>Clear</b></em>' attribute.
@@ -4359,7 +4405,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSite()
    * @generated
    */
-  int SITE = 70;
+  int SITE = 72;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -4387,7 +4433,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectSiteById()
    * @generated
    */
-  int SELECT_SITE_BY_ID = 71;
+  int SELECT_SITE_BY_ID = 73;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -4424,7 +4470,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectSiteByName()
    * @generated
    */
-  int SELECT_SITE_BY_NAME = 72;
+  int SELECT_SITE_BY_NAME = 74;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -4461,7 +4507,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNewSite()
    * @generated
    */
-  int NEW_SITE = 73;
+  int NEW_SITE = 75;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -4498,7 +4544,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSiteMods()
    * @generated
    */
-  int SITE_MODS = 74;
+  int SITE_MODS = 76;
 
   /**
    * The number of structural features of the '<em>Site Mods</em>' class.
@@ -4517,7 +4563,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSitePattern1()
    * @generated
    */
-  int SITE_PATTERN1 = 75;
+  int SITE_PATTERN1 = 77;
 
   /**
    * The number of structural features of the '<em>Site Pattern1</em>' class.
@@ -4536,7 +4582,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSitePattern2()
    * @generated
    */
-  int SITE_PATTERN2 = 76;
+  int SITE_PATTERN2 = 78;
 
   /**
    * The number of structural features of the '<em>Site Pattern2</em>' class.
@@ -4555,7 +4601,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSitePattern3()
    * @generated
    */
-  int SITE_PATTERN3 = 77;
+  int SITE_PATTERN3 = 79;
 
   /**
    * The number of structural features of the '<em>Site Pattern3</em>' class.
@@ -4574,7 +4620,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSitePattern4()
    * @generated
    */
-  int SITE_PATTERN4 = 78;
+  int SITE_PATTERN4 = 80;
 
   /**
    * The number of structural features of the '<em>Site Pattern4</em>' class.
@@ -4593,7 +4639,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSiteInst1()
    * @generated
    */
-  int SITE_INST1 = 79;
+  int SITE_INST1 = 81;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4630,7 +4676,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSiteInst2()
    * @generated
    */
-  int SITE_INST2 = 80;
+  int SITE_INST2 = 82;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4766,7 +4812,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSiteInst3()
    * @generated
    */
-  int SITE_INST3 = 81;
+  int SITE_INST3 = 83;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -4812,7 +4858,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSiteInst4()
    * @generated
    */
-  int SITE_INST4 = 82;
+  int SITE_INST4 = 84;
 
   /**
    * The feature id for the '<em><b>Clear</b></em>' attribute.
@@ -4840,7 +4886,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNation()
    * @generated
    */
-  int NATION = 83;
+  int NATION = 85;
 
   /**
    * The number of structural features of the '<em>Nation</em>' class.
@@ -4859,7 +4905,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectNation()
    * @generated
    */
-  int SELECT_NATION = 84;
+  int SELECT_NATION = 86;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4896,7 +4942,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getIndepFlag()
    * @generated
    */
-  int INDEP_FLAG = 85;
+  int INDEP_FLAG = 87;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4924,7 +4970,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationMods()
    * @generated
    */
-  int NATION_MODS = 86;
+  int NATION_MODS = 88;
 
   /**
    * The number of structural features of the '<em>Nation Mods</em>' class.
@@ -4943,7 +4989,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationPattern1()
    * @generated
    */
-  int NATION_PATTERN1 = 87;
+  int NATION_PATTERN1 = 89;
 
   /**
    * The number of structural features of the '<em>Nation Pattern1</em>' class.
@@ -4962,7 +5008,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationPattern2()
    * @generated
    */
-  int NATION_PATTERN2 = 88;
+  int NATION_PATTERN2 = 90;
 
   /**
    * The number of structural features of the '<em>Nation Pattern2</em>' class.
@@ -4981,7 +5027,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationPattern3()
    * @generated
    */
-  int NATION_PATTERN3 = 89;
+  int NATION_PATTERN3 = 91;
 
   /**
    * The number of structural features of the '<em>Nation Pattern3</em>' class.
@@ -5000,7 +5046,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationPattern4()
    * @generated
    */
-  int NATION_PATTERN4 = 90;
+  int NATION_PATTERN4 = 92;
 
   /**
    * The number of structural features of the '<em>Nation Pattern4</em>' class.
@@ -5019,7 +5065,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationPattern5()
    * @generated
    */
-  int NATION_PATTERN5 = 91;
+  int NATION_PATTERN5 = 93;
 
   /**
    * The number of structural features of the '<em>Nation Pattern5</em>' class.
@@ -5038,7 +5084,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationInst1()
    * @generated
    */
-  int NATION_INST1 = 92;
+  int NATION_INST1 = 94;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -5138,7 +5184,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationInst2()
    * @generated
    */
-  int NATION_INST2 = 93;
+  int NATION_INST2 = 95;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -5436,7 +5482,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationInst3()
    * @generated
    */
-  int NATION_INST3 = 94;
+  int NATION_INST3 = 96;
 
   /**
    * The feature id for the '<em><b>Clearnation</b></em>' attribute.
@@ -5590,7 +5636,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationInst4()
    * @generated
    */
-  int NATION_INST4 = 95;
+  int NATION_INST4 = 97;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -5825,7 +5871,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationInst5()
    * @generated
    */
-  int NATION_INST5 = 96;
+  int NATION_INST5 = 98;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -7215,6 +7261,16 @@ public interface DmPackage extends EPackage
   EClass getMonsterPattern5();
 
   /**
+   * Returns the meta object for class '{@link org.larz.dom3.dm.dm.MonsterPattern6 <em>Monster Pattern6</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Monster Pattern6</em>'.
+   * @see org.larz.dom3.dm.dm.MonsterPattern6
+   * @generated
+   */
+  EClass getMonsterPattern6();
+
+  /**
    * Returns the meta object for class '{@link org.larz.dom3.dm.dm.MonsterInst1 <em>Monster Inst1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -7937,28 +7993,6 @@ public interface DmPackage extends EPackage
    * @generated
    */
   EAttribute getMonsterInst2_Fireshield();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.MonsterInst2#isHeat <em>Heat</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Heat</em>'.
-   * @see org.larz.dom3.dm.dm.MonsterInst2#isHeat()
-   * @see #getMonsterInst2()
-   * @generated
-   */
-  EAttribute getMonsterInst2_Heat();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.MonsterInst2#isCold <em>Cold</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cold</em>'.
-   * @see org.larz.dom3.dm.dm.MonsterInst2#isCold()
-   * @see #getMonsterInst2()
-   * @generated
-   */
-  EAttribute getMonsterInst2_Cold();
 
   /**
    * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.MonsterInst2#isIceprot <em>Iceprot</em>}'.
@@ -9155,6 +9189,49 @@ public interface DmPackage extends EPackage
    * @generated
    */
   EAttribute getMonsterInst5_Summon5();
+
+  /**
+   * Returns the meta object for class '{@link org.larz.dom3.dm.dm.MonsterInst6 <em>Monster Inst6</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Monster Inst6</em>'.
+   * @see org.larz.dom3.dm.dm.MonsterInst6
+   * @generated
+   */
+  EClass getMonsterInst6();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.MonsterInst6#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.larz.dom3.dm.dm.MonsterInst6#getValue()
+   * @see #getMonsterInst6()
+   * @generated
+   */
+  EAttribute getMonsterInst6_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.MonsterInst6#isHeat <em>Heat</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Heat</em>'.
+   * @see org.larz.dom3.dm.dm.MonsterInst6#isHeat()
+   * @see #getMonsterInst6()
+   * @generated
+   */
+  EAttribute getMonsterInst6_Heat();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.MonsterInst6#isCold <em>Cold</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Cold</em>'.
+   * @see org.larz.dom3.dm.dm.MonsterInst6#isCold()
+   * @see #getMonsterInst6()
+   * @generated
+   */
+  EAttribute getMonsterInst6_Cold();
 
   /**
    * Returns the meta object for class '{@link org.larz.dom3.dm.dm.Spell <em>Spell</em>}'.

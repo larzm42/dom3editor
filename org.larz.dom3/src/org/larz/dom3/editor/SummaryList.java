@@ -386,6 +386,9 @@ public class SummaryList extends MasterDetailsBlock {
 						if (!dialog.select) {
 							type = AddTypes.NEW;
 							name = dialog.name;
+							if (dialog.id != null && !dialog.id.isEmpty()) {
+								id = Integer.valueOf(dialog.id);
+							}
 						} else {
 							if (dialog.id != null && !dialog.id.isEmpty()) {
 								type = AddTypes.BY_ID;

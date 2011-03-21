@@ -27,7 +27,8 @@ Dom3Mod:
 	('#coldsupply' coldsupply=INT)? &
 	('#misfortune' misfortune=INT)? &
 	('#luckevents' luckevents=INT)? &
-	('#researchscale' researchscale=INT)?)
+	('#researchscale' researchscale=INT)? &
+	('#end')?)
 	elements+=AbstractElement*;
 
 AbstractElement:
@@ -188,7 +189,7 @@ NewMonster:
 	'#end';
 
 MonsterMods:
-	MonsterPattern1 | MonsterPattern2 | MonsterPattern3 | MonsterPattern4 | MonsterPattern5;
+	MonsterPattern1 | MonsterPattern2 | MonsterPattern3 | MonsterPattern4 | MonsterPattern5 | MonsterPattern6;
 	
 MonsterPattern1:
 	MonsterInst1 value=STRING;
@@ -204,6 +205,9 @@ MonsterPattern4:
 	
 MonsterPattern5:
 	MonsterInst5 (value1=STRING | value2=INT);
+
+MonsterPattern6:
+	MonsterInst6 (value=INT)?;
 
 MonsterInst1:
 	name?='#name' |
@@ -270,8 +274,6 @@ MonsterInst2:
 	regeneration?='#regeneration' |
 	reinvigoration?='#reinvigoration' |
 	fireshield?='#fireshield' |
-	heat?='#heat' |
-	cold?='#cold' |
 	iceprot?='#iceprot' |
 	poisoncloud?='#poisoncloud' |
 	diseasecloud?='#diseasecloud' |
@@ -381,6 +383,9 @@ MonsterInst5:
 	summon1?='#summon1' |
 	summon5?='#summon5';
 
+MonsterInst6:
+	heat?='#heat' |
+	cold?='#cold';
 
 /**************/
 /* Spell Mods */

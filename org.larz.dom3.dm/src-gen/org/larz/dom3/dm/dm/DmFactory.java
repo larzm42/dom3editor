@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm;
 
@@ -333,6 +332,15 @@ public interface DmFactory extends EFactory
   MonsterPattern5 createMonsterPattern5();
 
   /**
+   * Returns a new object of class '<em>Monster Pattern6</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Monster Pattern6</em>'.
+   * @generated
+   */
+  MonsterPattern6 createMonsterPattern6();
+
+  /**
    * Returns a new object of class '<em>Monster Inst1</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -376,6 +384,15 @@ public interface DmFactory extends EFactory
    * @generated
    */
   MonsterInst5 createMonsterInst5();
+
+  /**
+   * Returns a new object of class '<em>Monster Inst6</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Monster Inst6</em>'.
+   * @generated
+   */
+  MonsterInst6 createMonsterInst6();
 
   /**
    * Returns a new object of class '<em>Spell</em>'.
