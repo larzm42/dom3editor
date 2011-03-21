@@ -152,6 +152,7 @@
     <genClasses ecoreClass="Dm.ecore#//MonsterPattern3"/>
     <genClasses ecoreClass="Dm.ecore#//MonsterPattern4"/>
     <genClasses ecoreClass="Dm.ecore#//MonsterPattern5"/>
+    <genClasses ecoreClass="Dm.ecore#//MonsterPattern6"/>
     <genClasses ecoreClass="Dm.ecore#//MonsterInst1">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst1/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst1/name"/>
@@ -219,8 +220,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/regeneration"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/reinvigoration"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/fireshield"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/heat"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/cold"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/iceprot"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/poisoncloud"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/diseasecloud"/>
@@ -333,6 +332,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst5/makemonster5"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst5/summon1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst5/summon5"/>
+    </genClasses>
+    <genClasses ecoreClass="Dm.ecore#//MonsterInst6">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst6/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst6/heat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst6/cold"/>
     </genClasses>
     <genClasses ecoreClass="Dm.ecore#//Spell">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dm.ecore#//Spell/mods"/>

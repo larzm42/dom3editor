@@ -12,24 +12,24 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.larz.dom3.dm.dm.DmPackage;
-import org.larz.dom3.dm.dm.SpellInst1;
+import org.larz.dom3.dm.dm.MonsterInst6;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Spell Inst1</b></em>'.
+ * An implementation of the model object '<em><b>Monster Inst6</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.larz.dom3.dm.dm.impl.SpellInst1Impl#getValue <em>Value</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.impl.SpellInst1Impl#isName <em>Name</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.impl.SpellInst1Impl#isDescr <em>Descr</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst6Impl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst6Impl#isHeat <em>Heat</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst6Impl#isCold <em>Cold</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
+public class MonsterInst6Impl extends MonsterPattern6Impl implements MonsterInst6
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -39,7 +39,7 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
+  protected static final int VALUE_EDEFAULT = 0;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -49,54 +49,54 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
    * @generated
    * @ordered
    */
-  protected String value = VALUE_EDEFAULT;
+  protected int value = VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #isHeat() <em>Heat</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isName()
+   * @see #isHeat()
    * @generated
    * @ordered
    */
-  protected static final boolean NAME_EDEFAULT = false;
+  protected static final boolean HEAT_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #isHeat() <em>Heat</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isName()
+   * @see #isHeat()
    * @generated
    * @ordered
    */
-  protected boolean name = NAME_EDEFAULT;
+  protected boolean heat = HEAT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isDescr() <em>Descr</em>}' attribute.
+   * The default value of the '{@link #isCold() <em>Cold</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isDescr()
+   * @see #isCold()
    * @generated
    * @ordered
    */
-  protected static final boolean DESCR_EDEFAULT = false;
+  protected static final boolean COLD_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isDescr() <em>Descr</em>}' attribute.
+   * The cached value of the '{@link #isCold() <em>Cold</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isDescr()
+   * @see #isCold()
    * @generated
    * @ordered
    */
-  protected boolean descr = DESCR_EDEFAULT;
+  protected boolean cold = COLD_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SpellInst1Impl()
+  protected MonsterInst6Impl()
   {
     super();
   }
@@ -109,7 +109,7 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
   @Override
   protected EClass eStaticClass()
   {
-    return DmPackage.eINSTANCE.getSpellInst1();
+    return DmPackage.eINSTANCE.getMonsterInst6();
   }
 
   /**
@@ -117,7 +117,7 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public int getValue()
   {
     return value;
   }
@@ -127,12 +127,12 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  public void setValue(int newValue)
   {
-    String oldValue = value;
+    int oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SPELL_INST1__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST6__VALUE, oldValue, value));
   }
 
   /**
@@ -140,9 +140,9 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isName()
+  public boolean isHeat()
   {
-    return name;
+    return heat;
   }
 
   /**
@@ -150,12 +150,12 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(boolean newName)
+  public void setHeat(boolean newHeat)
   {
-    boolean oldName = name;
-    name = newName;
+    boolean oldHeat = heat;
+    heat = newHeat;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SPELL_INST1__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST6__HEAT, oldHeat, heat));
   }
 
   /**
@@ -163,9 +163,9 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isDescr()
+  public boolean isCold()
   {
-    return descr;
+    return cold;
   }
 
   /**
@@ -173,12 +173,12 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDescr(boolean newDescr)
+  public void setCold(boolean newCold)
   {
-    boolean oldDescr = descr;
-    descr = newDescr;
+    boolean oldCold = cold;
+    cold = newCold;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SPELL_INST1__DESCR, oldDescr, descr));
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST6__COLD, oldCold, cold));
   }
 
   /**
@@ -191,12 +191,12 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
   {
     switch (featureID)
     {
-      case DmPackage.SPELL_INST1__VALUE:
+      case DmPackage.MONSTER_INST6__VALUE:
         return getValue();
-      case DmPackage.SPELL_INST1__NAME:
-        return isName();
-      case DmPackage.SPELL_INST1__DESCR:
-        return isDescr();
+      case DmPackage.MONSTER_INST6__HEAT:
+        return isHeat();
+      case DmPackage.MONSTER_INST6__COLD:
+        return isCold();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -211,14 +211,14 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
   {
     switch (featureID)
     {
-      case DmPackage.SPELL_INST1__VALUE:
-        setValue((String)newValue);
+      case DmPackage.MONSTER_INST6__VALUE:
+        setValue((Integer)newValue);
         return;
-      case DmPackage.SPELL_INST1__NAME:
-        setName((Boolean)newValue);
+      case DmPackage.MONSTER_INST6__HEAT:
+        setHeat((Boolean)newValue);
         return;
-      case DmPackage.SPELL_INST1__DESCR:
-        setDescr((Boolean)newValue);
+      case DmPackage.MONSTER_INST6__COLD:
+        setCold((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -234,14 +234,14 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
   {
     switch (featureID)
     {
-      case DmPackage.SPELL_INST1__VALUE:
+      case DmPackage.MONSTER_INST6__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
-      case DmPackage.SPELL_INST1__NAME:
-        setName(NAME_EDEFAULT);
+      case DmPackage.MONSTER_INST6__HEAT:
+        setHeat(HEAT_EDEFAULT);
         return;
-      case DmPackage.SPELL_INST1__DESCR:
-        setDescr(DESCR_EDEFAULT);
+      case DmPackage.MONSTER_INST6__COLD:
+        setCold(COLD_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -257,12 +257,12 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
   {
     switch (featureID)
     {
-      case DmPackage.SPELL_INST1__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-      case DmPackage.SPELL_INST1__NAME:
-        return name != NAME_EDEFAULT;
-      case DmPackage.SPELL_INST1__DESCR:
-        return descr != DESCR_EDEFAULT;
+      case DmPackage.MONSTER_INST6__VALUE:
+        return value != VALUE_EDEFAULT;
+      case DmPackage.MONSTER_INST6__HEAT:
+        return heat != HEAT_EDEFAULT;
+      case DmPackage.MONSTER_INST6__COLD:
+        return cold != COLD_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -280,12 +280,12 @@ public class SpellInst1Impl extends SpellPattern1Impl implements SpellInst1
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (value: ");
     result.append(value);
-    result.append(", name: ");
-    result.append(name);
-    result.append(", descr: ");
-    result.append(descr);
+    result.append(", heat: ");
+    result.append(heat);
+    result.append(", cold: ");
+    result.append(cold);
     result.append(')');
     return result.toString();
   }
 
-} //SpellInst1Impl
+} //MonsterInst6Impl

@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm.impl;
 
@@ -102,11 +101,13 @@ public class DmFactoryImpl extends EFactoryImpl implements DmFactory
       case DmPackage.MONSTER_PATTERN3: return createMonsterPattern3();
       case DmPackage.MONSTER_PATTERN4: return createMonsterPattern4();
       case DmPackage.MONSTER_PATTERN5: return createMonsterPattern5();
+      case DmPackage.MONSTER_PATTERN6: return createMonsterPattern6();
       case DmPackage.MONSTER_INST1: return createMonsterInst1();
       case DmPackage.MONSTER_INST2: return createMonsterInst2();
       case DmPackage.MONSTER_INST3: return createMonsterInst3();
       case DmPackage.MONSTER_INST4: return createMonsterInst4();
       case DmPackage.MONSTER_INST5: return createMonsterInst5();
+      case DmPackage.MONSTER_INST6: return createMonsterInst6();
       case DmPackage.SPELL: return createSpell();
       case DmPackage.SELECT_SPELL_BY_ID: return createSelectSpellById();
       case DmPackage.SELECT_SPELL_BY_NAME: return createSelectSpellByName();
@@ -549,6 +550,17 @@ public class DmFactoryImpl extends EFactoryImpl implements DmFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public MonsterPattern6 createMonsterPattern6()
+  {
+    MonsterPattern6Impl monsterPattern6 = new MonsterPattern6Impl();
+    return monsterPattern6;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public MonsterInst1 createMonsterInst1()
   {
     MonsterInst1Impl monsterInst1 = new MonsterInst1Impl();
@@ -597,6 +609,17 @@ public class DmFactoryImpl extends EFactoryImpl implements DmFactory
   {
     MonsterInst5Impl monsterInst5 = new MonsterInst5Impl();
     return monsterInst5;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MonsterInst6 createMonsterInst6()
+  {
+    MonsterInst6Impl monsterInst6 = new MonsterInst6Impl();
+    return monsterInst6;
   }
 
   /**

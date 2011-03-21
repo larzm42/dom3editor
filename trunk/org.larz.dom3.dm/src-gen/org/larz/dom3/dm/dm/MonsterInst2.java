@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm;
 
@@ -73,8 +72,6 @@ package org.larz.dom3.dm.dm;
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isRegeneration <em>Regeneration</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isReinvigoration <em>Reinvigoration</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isFireshield <em>Fireshield</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isHeat <em>Heat</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isCold <em>Cold</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isIceprot <em>Iceprot</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isPoisoncloud <em>Poisoncloud</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isDiseasecloud <em>Diseasecloud</em>}</li>
@@ -1610,58 +1607,6 @@ public interface MonsterInst2 extends MonsterPattern2
    * @generated
    */
   void setFireshield(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Heat</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Heat</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Heat</em>' attribute.
-   * @see #setHeat(boolean)
-   * @see org.larz.dom3.dm.dm.DmPackage#getMonsterInst2_Heat()
-   * @model
-   * @generated
-   */
-  boolean isHeat();
-
-  /**
-   * Sets the value of the '{@link org.larz.dom3.dm.dm.MonsterInst2#isHeat <em>Heat</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Heat</em>' attribute.
-   * @see #isHeat()
-   * @generated
-   */
-  void setHeat(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Cold</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Cold</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Cold</em>' attribute.
-   * @see #setCold(boolean)
-   * @see org.larz.dom3.dm.dm.DmPackage#getMonsterInst2_Cold()
-   * @model
-   * @generated
-   */
-  boolean isCold();
-
-  /**
-   * Sets the value of the '{@link org.larz.dom3.dm.dm.MonsterInst2#isCold <em>Cold</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Cold</em>' attribute.
-   * @see #isCold()
-   * @generated
-   */
-  void setCold(boolean value);
 
   /**
    * Returns the value of the '<em><b>Iceprot</b></em>' attribute.

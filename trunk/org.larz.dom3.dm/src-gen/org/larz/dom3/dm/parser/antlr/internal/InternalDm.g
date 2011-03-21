@@ -1016,6 +1016,22 @@ ruleDom3Mod returns [EObject current=null]
 	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
 	 				}
  				)
+			)  |
+
+			( 
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 23)}?=>(
+					{ 
+	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 23);
+	 				}
+					(	'#end' 
+    {
+        createLeafNode(grammarAccess.getDom3ModAccess().getEndKeyword_0_23(), null); 
+    }
+)
+					{ 
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
+	 				}
+ 				)
 			)  
 
 		)+
@@ -1031,7 +1047,7 @@ ruleDom3Mod returns [EObject current=null]
 		{ 
 	        currentNode=createCompositeNode(grammarAccess.getDom3ModAccess().getElementsAbstractElementParserRuleCall_1_0(), currentNode); 
 	    }
-		lv_elements_47_0=ruleAbstractElement		{
+		lv_elements_48_0=ruleAbstractElement		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getDom3ModRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -1040,7 +1056,7 @@ ruleDom3Mod returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"elements",
-	        		lv_elements_47_0, 
+	        		lv_elements_48_0, 
 	        		"AbstractElement", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -3784,6 +3800,16 @@ ruleMonsterMods returns [EObject current=null]
         $current = $this_MonsterPattern5_4.current; 
         currentNode = currentNode.getParent();
     }
+
+    |
+    { 
+        currentNode=createCompositeNode(grammarAccess.getMonsterModsAccess().getMonsterPattern6ParserRuleCall_5(), currentNode); 
+    }
+    this_MonsterPattern6_5=ruleMonsterPattern6
+    { 
+        $current = $this_MonsterPattern6_5.current; 
+        currentNode = currentNode.getParent();
+    }
 )
 ;
 
@@ -4090,6 +4116,62 @@ ruleMonsterPattern5 returns [EObject current=null]
 
 )
 )))
+;
+
+
+
+
+
+// Entry rule entryRuleMonsterPattern6
+entryRuleMonsterPattern6 returns [EObject current=null] 
+	:
+	{ currentNode = createCompositeNode(grammarAccess.getMonsterPattern6Rule(), currentNode); }
+	 iv_ruleMonsterPattern6=ruleMonsterPattern6 
+	 { $current=$iv_ruleMonsterPattern6.current; } 
+	 EOF 
+;
+
+// Rule MonsterPattern6
+ruleMonsterPattern6 returns [EObject current=null] 
+    @init { EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+    }
+    @after { resetLookahead(); 
+    	lastConsumedNode = currentNode;
+    }:
+(
+    { 
+        currentNode=createCompositeNode(grammarAccess.getMonsterPattern6Access().getMonsterInst6ParserRuleCall_0(), currentNode); 
+    }
+    this_MonsterInst6_0=ruleMonsterInst6
+    { 
+        $current = $this_MonsterInst6_0.current; 
+        currentNode = currentNode.getParent();
+    }
+(
+(
+		lv_value_1_0=RULE_INT
+		{
+			createLeafNode(grammarAccess.getMonsterPattern6Access().getValueINTTerminalRuleCall_1_0(), "value"); 
+		}
+		{
+	        if ($current==null) {
+	            $current = factory.create(grammarAccess.getMonsterPattern6Rule().getType().getClassifier());
+	            associateNodeWithAstElement(currentNode, $current);
+	        }
+	        try {
+	       		set(
+	       			$current, 
+	       			"value",
+	        		lv_value_1_0, 
+	        		"INT", 
+	        		lastConsumedNode);
+	        } catch (ValueConverterException vce) {
+				handleValueConverterException(vce);
+	        }
+	    }
+
+)
+)?)
 ;
 
 
@@ -5500,53 +5582,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_heat_57_0=	'#heat' 
+		lv_iceprot_57_0=	'#iceprot' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getHeatHeatKeyword_57_0(), "heat"); 
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = factory.create(grammarAccess.getMonsterInst2Rule().getType().getClassifier());
-	            associateNodeWithAstElement(currentNode, $current);
-	        }
-	        
-	        try {
-	       		set($current, "heat", true, "#heat", lastConsumedNode);
-	        } catch (ValueConverterException vce) {
-				handleValueConverterException(vce);
-	        }
-	    }
-
-)
-)
-    |(
-(
-		lv_cold_58_0=	'#cold' 
-    {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getColdColdKeyword_58_0(), "cold"); 
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = factory.create(grammarAccess.getMonsterInst2Rule().getType().getClassifier());
-	            associateNodeWithAstElement(currentNode, $current);
-	        }
-	        
-	        try {
-	       		set($current, "cold", true, "#cold", lastConsumedNode);
-	        } catch (ValueConverterException vce) {
-				handleValueConverterException(vce);
-	        }
-	    }
-
-)
-)
-    |(
-(
-		lv_iceprot_59_0=	'#iceprot' 
-    {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0(), "iceprot"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_57_0(), "iceprot"); 
     }
  
 	    {
@@ -5566,9 +5604,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_poisoncloud_60_0=	'#poisoncloud' 
+		lv_poisoncloud_58_0=	'#poisoncloud' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0(), "poisoncloud"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_58_0(), "poisoncloud"); 
     }
  
 	    {
@@ -5588,9 +5626,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_diseasecloud_61_0=	'#diseasecloud' 
+		lv_diseasecloud_59_0=	'#diseasecloud' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0(), "diseasecloud"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_59_0(), "diseasecloud"); 
     }
  
 	    {
@@ -5610,9 +5648,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_bloodvengeance_62_0=	'#bloodvengeance' 
+		lv_bloodvengeance_60_0=	'#bloodvengeance' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0(), "bloodvengeance"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_60_0(), "bloodvengeance"); 
     }
  
 	    {
@@ -5632,9 +5670,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_castledef_63_0=	'#castledef' 
+		lv_castledef_61_0=	'#castledef' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0(), "castledef"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_61_0(), "castledef"); 
     }
  
 	    {
@@ -5654,9 +5692,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_siegebonus_64_0=	'#siegebonus' 
+		lv_siegebonus_62_0=	'#siegebonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0(), "siegebonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_62_0(), "siegebonus"); 
     }
  
 	    {
@@ -5676,9 +5714,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_patrolbonus_65_0=	'#patrolbonus' 
+		lv_patrolbonus_63_0=	'#patrolbonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0(), "patrolbonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_63_0(), "patrolbonus"); 
     }
  
 	    {
@@ -5698,9 +5736,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_pillagebonus_66_0=	'#pillagebonus' 
+		lv_pillagebonus_64_0=	'#pillagebonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0(), "pillagebonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_64_0(), "pillagebonus"); 
     }
  
 	    {
@@ -5720,9 +5758,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_researchbonus_67_0=	'#researchbonus' 
+		lv_researchbonus_65_0=	'#researchbonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0(), "researchbonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_65_0(), "researchbonus"); 
     }
  
 	    {
@@ -5742,9 +5780,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_forgebonus_68_0=	'#forgebonus' 
+		lv_forgebonus_66_0=	'#forgebonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0(), "forgebonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_66_0(), "forgebonus"); 
     }
  
 	    {
@@ -5764,9 +5802,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_douse_69_0=	'#douse' 
+		lv_douse_67_0=	'#douse' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0(), "douse"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_67_0(), "douse"); 
     }
  
 	    {
@@ -5786,9 +5824,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_nobadevents_70_0=	'#nobadevents' 
+		lv_nobadevents_68_0=	'#nobadevents' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0(), "nobadevents"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_68_0(), "nobadevents"); 
     }
  
 	    {
@@ -5808,9 +5846,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_incunrest_71_0=	'#incunrest' 
+		lv_incunrest_69_0=	'#incunrest' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0(), "incunrest"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_69_0(), "incunrest"); 
     }
  
 	    {
@@ -5830,9 +5868,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_spreaddom_72_0=	'#spreaddom' 
+		lv_spreaddom_70_0=	'#spreaddom' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0(), "spreaddom"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_70_0(), "spreaddom"); 
     }
  
 	    {
@@ -5852,9 +5890,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_leper_73_0=	'#leper' 
+		lv_leper_71_0=	'#leper' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0(), "leper"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_71_0(), "leper"); 
     }
  
 	    {
@@ -5874,9 +5912,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_popkill_74_0=	'#popkill' 
+		lv_popkill_72_0=	'#popkill' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0(), "popkill"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_72_0(), "popkill"); 
     }
  
 	    {
@@ -5896,9 +5934,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_heretic_75_0=	'#heretic' 
+		lv_heretic_73_0=	'#heretic' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0(), "heretic"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_73_0(), "heretic"); 
     }
  
 	    {
@@ -5918,9 +5956,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_itemslots_76_0=	'#itemslots' 
+		lv_itemslots_74_0=	'#itemslots' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0(), "itemslots"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_74_0(), "itemslots"); 
     }
  
 	    {
@@ -5940,9 +5978,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_nametype_77_0=	'#nametype' 
+		lv_nametype_75_0=	'#nametype' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0(), "nametype"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_75_0(), "nametype"); 
     }
  
 	    {
@@ -7845,6 +7883,72 @@ ruleMonsterInst5 returns [EObject current=null]
 	        
 	        try {
 	       		set($current, "summon5", true, "#summon5", lastConsumedNode);
+	        } catch (ValueConverterException vce) {
+				handleValueConverterException(vce);
+	        }
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleMonsterInst6
+entryRuleMonsterInst6 returns [EObject current=null] 
+	:
+	{ currentNode = createCompositeNode(grammarAccess.getMonsterInst6Rule(), currentNode); }
+	 iv_ruleMonsterInst6=ruleMonsterInst6 
+	 { $current=$iv_ruleMonsterInst6.current; } 
+	 EOF 
+;
+
+// Rule MonsterInst6
+ruleMonsterInst6 returns [EObject current=null] 
+    @init { EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+    }
+    @after { resetLookahead(); 
+    	lastConsumedNode = currentNode;
+    }:
+((
+(
+		lv_heat_0_0=	'#heat' 
+    {
+        createLeafNode(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_0_0(), "heat"); 
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = factory.create(grammarAccess.getMonsterInst6Rule().getType().getClassifier());
+	            associateNodeWithAstElement(currentNode, $current);
+	        }
+	        
+	        try {
+	       		set($current, "heat", true, "#heat", lastConsumedNode);
+	        } catch (ValueConverterException vce) {
+				handleValueConverterException(vce);
+	        }
+	    }
+
+)
+)
+    |(
+(
+		lv_cold_1_0=	'#cold' 
+    {
+        createLeafNode(grammarAccess.getMonsterInst6Access().getColdColdKeyword_1_0(), "cold"); 
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = factory.create(grammarAccess.getMonsterInst6Rule().getType().getClassifier());
+	            associateNodeWithAstElement(currentNode, $current);
+	        }
+	        
+	        try {
+	       		set($current, "cold", true, "#cold", lastConsumedNode);
 	        } catch (ValueConverterException vce) {
 				handleValueConverterException(vce);
 	        }

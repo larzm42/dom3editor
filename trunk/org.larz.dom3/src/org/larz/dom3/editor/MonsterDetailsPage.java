@@ -67,6 +67,7 @@ import org.larz.dom3.dm.dm.MonsterInst2;
 import org.larz.dom3.dm.dm.MonsterInst3;
 import org.larz.dom3.dm.dm.MonsterInst4;
 import org.larz.dom3.dm.dm.MonsterInst5;
+import org.larz.dom3.dm.dm.MonsterInst6;
 import org.larz.dom3.dm.dm.MonsterMods;
 import org.larz.dom3.dm.dm.SelectMonsterById;
 import org.larz.dom3.dm.dm.SelectMonsterByName;
@@ -311,6 +312,12 @@ public class MonsterDetailsPage implements IDetailsPage {
 		private Text value;
 	}
 	
+	class Inst6Fields implements InstFields {
+		private Button check;
+		private Text value;
+		private Label defaultLabel;
+	}
+	
 	EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
 	
 	public MonsterDetailsPage(XtextEditor doc, TableViewer viewer) {
@@ -378,8 +385,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 		instMap.put(Inst.REGENERATION, new Inst2Fields());
 		instMap.put(Inst.REINVIGORATION, new Inst2Fields());
 		instMap.put(Inst.FIRESHIELD, new Inst2Fields());
-		instMap.put(Inst.HEAT, new Inst2Fields());
-		instMap.put(Inst.COLD, new Inst2Fields());
+		instMap.put(Inst.HEAT, new Inst6Fields());
+		instMap.put(Inst.COLD, new Inst6Fields());
 		instMap.put(Inst.ICEPROT, new Inst2Fields());
 		instMap.put(Inst.POISONCLOUD, new Inst2Fields());
 		instMap.put(Inst.DISEASECLOUD, new Inst2Fields());
@@ -648,6 +655,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 							addInst4(key, doc);
 						} else if (field instanceof Inst5Fields) {
 							addInst5(key, doc, key.defaultValue);
+						} else if (field instanceof Inst6Fields) {
+							addInst6(key, doc, key.defaultValue);
 						}
 					} else {
 						removeInst2(key, doc);
@@ -664,11 +673,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 
 			Text myValue1 = null;
 			Text myValue2 = null;
-			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields ||	field instanceof Inst3Fields ||	field instanceof Inst5Fields) {
+			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields ||	field instanceof Inst3Fields ||	field instanceof Inst5Fields || field instanceof Inst6Fields) {
 				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 				myValue1 = value;
 				
-				if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
+				if (field instanceof Inst2Fields ||	field instanceof Inst3Fields || field instanceof Inst6Fields) {
 					value.addVerifyListener(new VerifyListener() {
 						
 						@Override
@@ -703,6 +712,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 							setInst3(key, doc, value.getText(), null);
 						} else if (field instanceof Inst5Fields) {
 							setInst5(key, doc, value.getText());
+						} else if (field instanceof Inst6Fields) {
+							setInst6(key, doc, value.getText());
 						}
 					}			
 				});
@@ -718,6 +729,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 								setInst3(key, doc, value.getText(), null);
 							} else if (field instanceof Inst5Fields) {
 								setInst5(key, doc, value.getText());
+							} else if (field instanceof Inst6Fields) {
+								setInst6(key, doc, value.getText());
 							}
 						}
 					}
@@ -727,7 +740,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 					gd.widthHint = 160;
 					gd.horizontalSpan = 4;
-				} else if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
+				} else if (field instanceof Inst2Fields ||	field instanceof Inst3Fields || field instanceof Inst6Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 					gd.widthHint = 30;
 				} else if (field instanceof Inst5Fields) {
@@ -740,11 +753,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 				
 			Label defaultLabel1 = null;
 			
-			if (field instanceof Inst2Fields || field instanceof Inst3Fields|| field instanceof Inst4Fields) {
+			if (field instanceof Inst2Fields || field instanceof Inst3Fields|| field instanceof Inst4Fields || field instanceof Inst6Fields) {
 				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel1.setEnabled(false);
 			}
-			if (field instanceof Inst2Fields) {
+			if (field instanceof Inst2Fields || field instanceof Inst6Fields) {
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 				gd.horizontalSpan = 3;
 				defaultLabel1.setLayoutData(gd);
@@ -820,6 +833,10 @@ public class MonsterDetailsPage implements IDetailsPage {
 			} else if (field instanceof Inst5Fields) {
 				((Inst5Fields)field).check = check;
 				((Inst5Fields)field).value = myValue1;
+			} else if (field instanceof Inst6Fields) {
+				((Inst6Fields)field).check = check;
+				((Inst6Fields)field).value = myValue1;
+				((Inst6Fields)field).defaultLabel = defaultLabel1;
 			}
 
 			isRight = !isRight;
@@ -1021,6 +1038,20 @@ public class MonsterDetailsPage implements IDetailsPage {
 					((Inst5Fields)fields.getValue()).value.setText("");
 					((Inst5Fields)fields.getValue()).value.setEnabled(false);
 					((Inst5Fields)fields.getValue()).check.setSelection(false);
+				}
+			}
+			Integer val6 = getInst6(fields.getKey(), input);
+			if (val6 != null) {
+				if (fields.getValue() instanceof Inst6Fields) {
+					((Inst6Fields)fields.getValue()).value.setText(val6.equals(Integer.valueOf(0)) ? "" : val6.toString());
+					((Inst6Fields)fields.getValue()).value.setEnabled(true);
+					((Inst6Fields)fields.getValue()).check.setSelection(true);
+				}
+			} else {
+				if (fields.getValue() instanceof Inst6Fields) {
+					((Inst6Fields)fields.getValue()).value.setText("");
+					((Inst6Fields)fields.getValue()).value.setEnabled(false);
+					((Inst6Fields)fields.getValue()).check.setSelection(false);
 				}
 			}
 			if (input instanceof SelectMonsterByName || input instanceof SelectMonsterById) {
@@ -1369,13 +1400,13 @@ public class MonsterDetailsPage implements IDetailsPage {
 					break;
 				case HEAT:
 					if (monsterDB.heat != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.heat));
+						((Inst6Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.heat));
 						Inst.HEAT.defaultValue = monsterDB.heat.toString();
 					}
 					break;
 				case COLD:
 					if (monsterDB.cold != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.cold));
+						((Inst6Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.cold));
 						Inst.COLD.defaultValue = monsterDB.cold.toString();
 					}
 					break;
@@ -2305,16 +2336,16 @@ public class MonsterDetailsPage implements IDetailsPage {
 						return Integer.valueOf(((MonsterInst2)mod).getValue());
 					}
 					break;
-				case HEAT:
-					if (((MonsterInst2)mod).isHeat()){
-						return Integer.valueOf(((MonsterInst2)mod).getValue());
-					}
-					break;
-				case COLD:
-					if (((MonsterInst2)mod).isCold()){
-						return Integer.valueOf(((MonsterInst2)mod).getValue());
-					}
-					break;
+//				case HEAT:
+//					if (((MonsterInst6)mod).isHeat()){
+//						return Integer.valueOf(((MonsterInst2)mod).getValue());
+//					}
+//					break;
+//				case COLD:
+//					if (((MonsterInst6)mod).isCold()){
+//						return Integer.valueOf(((MonsterInst2)mod).getValue());
+//					}
+//					break;
 				case ICEPROT:
 					if (((MonsterInst2)mod).isIceprot()){
 						return Integer.valueOf(((MonsterInst2)mod).getValue());
@@ -3007,6 +3038,27 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
+	private Integer getInst6(Inst inst2, Monster monster) {
+		EList<MonsterMods> list = monster.getMods();
+		for (MonsterMods mod : list) {
+			if (mod instanceof MonsterInst6) {
+				switch (inst2) {
+				case HEAT:
+					if (((MonsterInst6)mod).isHeat()){
+						return Integer.valueOf(((MonsterInst6)mod).getValue());
+					}
+					break;
+				case COLD:
+					if (((MonsterInst6)mod).isCold()){
+						return Integer.valueOf(((MonsterInst6)mod).getValue());
+					}
+					break;
+				}
+			}
+		}
+		return null;
+	}
+	
 	private void setInst1(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
@@ -3370,16 +3422,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 							break;
 						case FIRESHIELD:
 							if (((MonsterInst2)mod).isFireshield()){
-								((MonsterInst2)mod).setValue(Integer.parseInt(newName));
-							}
-							break;
-						case HEAT:
-							if (((MonsterInst2)mod).isHeat()){
-								((MonsterInst2)mod).setValue(Integer.parseInt(newName));
-							}
-							break;
-						case COLD:
-							if (((MonsterInst2)mod).isCold()){
 								((MonsterInst2)mod).setValue(Integer.parseInt(newName));
 							}
 							break;
@@ -3820,6 +3862,45 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 
+	private void setInst6(final Inst inst2, final XtextEditor editor, final String newName) 
+	{
+		final IXtextDocument myDocument = editor.getDocument();
+		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+			@Override
+			public void process(XtextResource resource) {
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
+				for (MonsterMods mod : mods) {
+					if (mod instanceof MonsterInst6) {
+						switch (inst2) {
+						case HEAT:
+							if (((MonsterInst6)mod).isHeat()){
+								((MonsterInst6)mod).setValue("".equals(newName) ? 0 : Integer.parseInt(newName));
+							}
+							break;
+						case COLD:
+							if (((MonsterInst6)mod).isCold()){
+								((MonsterInst6)mod).setValue("".equals(newName) ? 0 : Integer.parseInt(newName));
+							}
+							break;
+						}
+					}
+				}
+
+			}  
+		},
+		myDocument);
+
+		viewer.refresh();
+		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+		if (ssel.size()==1) {
+			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+		} else {
+			input = null;
+		}
+	}
+
 	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
@@ -4046,12 +4127,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 					break;
 				case FIRESHIELD:
 					type.setFireshield(true);
-					break;
-				case HEAT:
-					type.setHeat(true);
-					break;
-				case COLD:
-					type.setCold(true);
 					break;
 				case ICEPROT:
 					type.setIceprot(true);
@@ -4445,6 +4520,9 @@ public class MonsterDetailsPage implements IDetailsPage {
 				case SUMMON1:
 					type.setSummon1(true);
 					break;
+				case SUMMON5:
+					type.setSummon5(true);
+					break;
 				}
 				Integer newValue = null;
 				try {
@@ -4457,6 +4535,39 @@ public class MonsterDetailsPage implements IDetailsPage {
 				} else {
 					type.setValue1(newName);
 				}
+				mods.add(type);
+			}  
+		},
+		myDocument);
+
+		viewer.refresh();
+		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+		if (ssel.size()==1) {
+			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+		} else {
+			input = null;
+		}
+	}
+	
+	private void addInst6(final Inst inst, final XtextEditor editor, final String newName) 
+	{
+		final IXtextDocument myDocument = editor.getDocument();
+		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+			@Override
+			public void process(XtextResource resource) {
+				Monster monsterToEdit = input;
+				EList<MonsterMods> mods = monsterToEdit.getMods();
+				MonsterInst6 type = DmFactory.eINSTANCE.createMonsterInst6();
+				switch (inst) {
+				case HEAT:
+					type.setHeat(true);
+					break;
+				case COLD:
+					type.setCold(true);
+					break;
+				}
+				type.setValue(Integer.valueOf(newName));
 				mods.add(type);
 			}  
 		},
@@ -4811,16 +4922,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 							break;
 						case FIRESHIELD:
 							if (((MonsterInst2)mod).isFireshield()){
-								modToRemove = mod;
-							}
-							break;
-						case HEAT:
-							if (((MonsterInst2)mod).isHeat()){
-								modToRemove = mod;
-							}
-							break;
-						case COLD:
-							if (((MonsterInst2)mod).isCold()){
 								modToRemove = mod;
 							}
 							break;
@@ -5370,6 +5471,20 @@ public class MonsterDetailsPage implements IDetailsPage {
 							break;
 						case SUMMON5:
 							if (((MonsterInst5)mod).isSummon5()){
+								modToRemove = mod;
+							}
+							break;
+						}
+					}
+					if (mod instanceof MonsterInst6) {
+						switch (inst2) {
+						case HEAT:
+							if (((MonsterInst6)mod).isHeat()){
+								modToRemove = mod;
+							}
+							break;
+						case COLD:
+							if (((MonsterInst6)mod).isCold()){
 								modToRemove = mod;
 							}
 							break;

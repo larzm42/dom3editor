@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm.impl;
 
@@ -80,8 +79,6 @@ import org.larz.dom3.dm.dm.MonsterInst2;
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isRegeneration <em>Regeneration</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isReinvigoration <em>Reinvigoration</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isFireshield <em>Fireshield</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isHeat <em>Heat</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isCold <em>Cold</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isIceprot <em>Iceprot</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isPoisoncloud <em>Poisoncloud</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isDiseasecloud <em>Diseasecloud</em>}</li>
@@ -1267,46 +1264,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
    * @ordered
    */
   protected boolean fireshield = FIRESHIELD_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isHeat() <em>Heat</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isHeat()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean HEAT_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isHeat() <em>Heat</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isHeat()
-   * @generated
-   * @ordered
-   */
-  protected boolean heat = HEAT_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isCold() <em>Cold</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isCold()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean COLD_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isCold() <em>Cold</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isCold()
-   * @generated
-   * @ordered
-   */
-  protected boolean cold = COLD_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIceprot() <em>Iceprot</em>}' attribute.
@@ -3048,52 +3005,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isHeat()
-  {
-    return heat;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setHeat(boolean newHeat)
-  {
-    boolean oldHeat = heat;
-    heat = newHeat;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST2__HEAT, oldHeat, heat));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isCold()
-  {
-    return cold;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCold(boolean newCold)
-  {
-    boolean oldCold = cold;
-    cold = newCold;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST2__COLD, oldCold, cold));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public boolean isIceprot()
   {
     return iceprot;
@@ -3652,10 +3563,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
         return isReinvigoration();
       case DmPackage.MONSTER_INST2__FIRESHIELD:
         return isFireshield();
-      case DmPackage.MONSTER_INST2__HEAT:
-        return isHeat();
-      case DmPackage.MONSTER_INST2__COLD:
-        return isCold();
       case DmPackage.MONSTER_INST2__ICEPROT:
         return isIceprot();
       case DmPackage.MONSTER_INST2__POISONCLOUD:
@@ -3881,12 +3788,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
         return;
       case DmPackage.MONSTER_INST2__FIRESHIELD:
         setFireshield((Boolean)newValue);
-        return;
-      case DmPackage.MONSTER_INST2__HEAT:
-        setHeat((Boolean)newValue);
-        return;
-      case DmPackage.MONSTER_INST2__COLD:
-        setCold((Boolean)newValue);
         return;
       case DmPackage.MONSTER_INST2__ICEPROT:
         setIceprot((Boolean)newValue);
@@ -4133,12 +4034,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
       case DmPackage.MONSTER_INST2__FIRESHIELD:
         setFireshield(FIRESHIELD_EDEFAULT);
         return;
-      case DmPackage.MONSTER_INST2__HEAT:
-        setHeat(HEAT_EDEFAULT);
-        return;
-      case DmPackage.MONSTER_INST2__COLD:
-        setCold(COLD_EDEFAULT);
-        return;
       case DmPackage.MONSTER_INST2__ICEPROT:
         setIceprot(ICEPROT_EDEFAULT);
         return;
@@ -4326,10 +4221,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
         return reinvigoration != REINVIGORATION_EDEFAULT;
       case DmPackage.MONSTER_INST2__FIRESHIELD:
         return fireshield != FIRESHIELD_EDEFAULT;
-      case DmPackage.MONSTER_INST2__HEAT:
-        return heat != HEAT_EDEFAULT;
-      case DmPackage.MONSTER_INST2__COLD:
-        return cold != COLD_EDEFAULT;
       case DmPackage.MONSTER_INST2__ICEPROT:
         return iceprot != ICEPROT_EDEFAULT;
       case DmPackage.MONSTER_INST2__POISONCLOUD:
@@ -4499,10 +4390,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
     result.append(reinvigoration);
     result.append(", fireshield: ");
     result.append(fireshield);
-    result.append(", heat: ");
-    result.append(heat);
-    result.append(", cold: ");
-    result.append(cold);
     result.append(", iceprot: ");
     result.append(iceprot);
     result.append(", poisoncloud: ");

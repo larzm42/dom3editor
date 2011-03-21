@@ -112,6 +112,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cResearchscaleKeyword_0_22_0 = (Keyword)cGroup_0_22.eContents().get(0);
 		private final Assignment cResearchscaleAssignment_0_22_1 = (Assignment)cGroup_0_22.eContents().get(1);
 		private final RuleCall cResearchscaleINTTerminalRuleCall_0_22_1_0 = (RuleCall)cResearchscaleAssignment_0_22_1.eContents().get(0);
+		private final Keyword cEndKeyword_0_23 = (Keyword)cUnorderedGroup_0.eContents().get(23);
 		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cElementsAbstractElementParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
@@ -123,7 +124,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//	("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
 		//	("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome" coldincome=INT)? &
 		//	("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)? &
-		//	("#researchscale" researchscale=INT)?) elements+=AbstractElement*;
+		//	("#researchscale" researchscale=INT)? & "#end"?) elements+=AbstractElement*;
 		public ParserRule getRule() { return rule; }
 
 		//("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=VersionNum)? &
@@ -133,7 +134,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
 		//("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome" coldincome=INT)? &
 		//("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)? & ("#researchscale"
-		//researchscale=INT)?) elements+=AbstractElement*
+		//researchscale=INT)? & "#end"?) elements+=AbstractElement*
 		public Group getGroup() { return cGroup; }
 
 		//"#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=VersionNum)? &
@@ -143,7 +144,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
 		//("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome" coldincome=INT)? &
 		//("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)? & ("#researchscale"
-		//researchscale=INT)?
+		//researchscale=INT)? & "#end"?
 		public UnorderedGroup getUnorderedGroup_0() { return cUnorderedGroup_0; }
 
 		//"#modname" modname=STRING
@@ -421,6 +422,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getResearchscaleINTTerminalRuleCall_0_22_1_0() { return cResearchscaleINTTerminalRuleCall_0_22_1_0; }
+
+		//"#end"?
+		public Keyword getEndKeyword_0_23() { return cEndKeyword_0_23; }
 
 		//elements+=AbstractElement*
 		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
@@ -1560,12 +1564,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMonsterPattern3ParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cMonsterPattern4ParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cMonsterPattern5ParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cMonsterPattern6ParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//MonsterMods:
-		//	MonsterPattern1 | MonsterPattern2 | MonsterPattern3 | MonsterPattern4 | MonsterPattern5;
+		//	MonsterPattern1 | MonsterPattern2 | MonsterPattern3 | MonsterPattern4 | MonsterPattern5 | MonsterPattern6;
 		public ParserRule getRule() { return rule; }
 
-		//MonsterPattern1 | MonsterPattern2 | MonsterPattern3 | MonsterPattern4 | MonsterPattern5
+		//MonsterPattern1 | MonsterPattern2 | MonsterPattern3 | MonsterPattern4 | MonsterPattern5 | MonsterPattern6
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//MonsterPattern1
@@ -1582,6 +1587,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//MonsterPattern5
 		public RuleCall getMonsterPattern5ParserRuleCall_4() { return cMonsterPattern5ParserRuleCall_4; }
+
+		//MonsterPattern6
+		public RuleCall getMonsterPattern6ParserRuleCall_5() { return cMonsterPattern6ParserRuleCall_5; }
 	}
 
 	public class MonsterPattern1Elements extends AbstractParserRuleElementFinder {
@@ -1710,6 +1718,30 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValue2INTTerminalRuleCall_1_1_0() { return cValue2INTTerminalRuleCall_1_1_0; }
+	}
+
+	public class MonsterPattern6Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MonsterPattern6");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cMonsterInst6ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		
+		//MonsterPattern6:
+		//	MonsterInst6 value=INT?;
+		public ParserRule getRule() { return rule; }
+
+		//MonsterInst6 value=INT?
+		public Group getGroup() { return cGroup; }
+
+		//MonsterInst6
+		public RuleCall getMonsterInst6ParserRuleCall_0() { return cMonsterInst6ParserRuleCall_0; }
+
+		//value=INT?
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 	}
 
 	public class MonsterInst1Elements extends AbstractParserRuleElementFinder {
@@ -1881,48 +1913,44 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cReinvigorationReinvigorationKeyword_55_0 = (Keyword)cReinvigorationAssignment_55.eContents().get(0);
 		private final Assignment cFireshieldAssignment_56 = (Assignment)cAlternatives.eContents().get(56);
 		private final Keyword cFireshieldFireshieldKeyword_56_0 = (Keyword)cFireshieldAssignment_56.eContents().get(0);
-		private final Assignment cHeatAssignment_57 = (Assignment)cAlternatives.eContents().get(57);
-		private final Keyword cHeatHeatKeyword_57_0 = (Keyword)cHeatAssignment_57.eContents().get(0);
-		private final Assignment cColdAssignment_58 = (Assignment)cAlternatives.eContents().get(58);
-		private final Keyword cColdColdKeyword_58_0 = (Keyword)cColdAssignment_58.eContents().get(0);
-		private final Assignment cIceprotAssignment_59 = (Assignment)cAlternatives.eContents().get(59);
-		private final Keyword cIceprotIceprotKeyword_59_0 = (Keyword)cIceprotAssignment_59.eContents().get(0);
-		private final Assignment cPoisoncloudAssignment_60 = (Assignment)cAlternatives.eContents().get(60);
-		private final Keyword cPoisoncloudPoisoncloudKeyword_60_0 = (Keyword)cPoisoncloudAssignment_60.eContents().get(0);
-		private final Assignment cDiseasecloudAssignment_61 = (Assignment)cAlternatives.eContents().get(61);
-		private final Keyword cDiseasecloudDiseasecloudKeyword_61_0 = (Keyword)cDiseasecloudAssignment_61.eContents().get(0);
-		private final Assignment cBloodvengeanceAssignment_62 = (Assignment)cAlternatives.eContents().get(62);
-		private final Keyword cBloodvengeanceBloodvengeanceKeyword_62_0 = (Keyword)cBloodvengeanceAssignment_62.eContents().get(0);
-		private final Assignment cCastledefAssignment_63 = (Assignment)cAlternatives.eContents().get(63);
-		private final Keyword cCastledefCastledefKeyword_63_0 = (Keyword)cCastledefAssignment_63.eContents().get(0);
-		private final Assignment cSiegebonusAssignment_64 = (Assignment)cAlternatives.eContents().get(64);
-		private final Keyword cSiegebonusSiegebonusKeyword_64_0 = (Keyword)cSiegebonusAssignment_64.eContents().get(0);
-		private final Assignment cPatrolbonusAssignment_65 = (Assignment)cAlternatives.eContents().get(65);
-		private final Keyword cPatrolbonusPatrolbonusKeyword_65_0 = (Keyword)cPatrolbonusAssignment_65.eContents().get(0);
-		private final Assignment cPillagebonusAssignment_66 = (Assignment)cAlternatives.eContents().get(66);
-		private final Keyword cPillagebonusPillagebonusKeyword_66_0 = (Keyword)cPillagebonusAssignment_66.eContents().get(0);
-		private final Assignment cResearchbonusAssignment_67 = (Assignment)cAlternatives.eContents().get(67);
-		private final Keyword cResearchbonusResearchbonusKeyword_67_0 = (Keyword)cResearchbonusAssignment_67.eContents().get(0);
-		private final Assignment cForgebonusAssignment_68 = (Assignment)cAlternatives.eContents().get(68);
-		private final Keyword cForgebonusForgebonusKeyword_68_0 = (Keyword)cForgebonusAssignment_68.eContents().get(0);
-		private final Assignment cDouseAssignment_69 = (Assignment)cAlternatives.eContents().get(69);
-		private final Keyword cDouseDouseKeyword_69_0 = (Keyword)cDouseAssignment_69.eContents().get(0);
-		private final Assignment cNobadeventsAssignment_70 = (Assignment)cAlternatives.eContents().get(70);
-		private final Keyword cNobadeventsNobadeventsKeyword_70_0 = (Keyword)cNobadeventsAssignment_70.eContents().get(0);
-		private final Assignment cIncunrestAssignment_71 = (Assignment)cAlternatives.eContents().get(71);
-		private final Keyword cIncunrestIncunrestKeyword_71_0 = (Keyword)cIncunrestAssignment_71.eContents().get(0);
-		private final Assignment cSpreaddomAssignment_72 = (Assignment)cAlternatives.eContents().get(72);
-		private final Keyword cSpreaddomSpreaddomKeyword_72_0 = (Keyword)cSpreaddomAssignment_72.eContents().get(0);
-		private final Assignment cLeperAssignment_73 = (Assignment)cAlternatives.eContents().get(73);
-		private final Keyword cLeperLeperKeyword_73_0 = (Keyword)cLeperAssignment_73.eContents().get(0);
-		private final Assignment cPopkillAssignment_74 = (Assignment)cAlternatives.eContents().get(74);
-		private final Keyword cPopkillPopkillKeyword_74_0 = (Keyword)cPopkillAssignment_74.eContents().get(0);
-		private final Assignment cHereticAssignment_75 = (Assignment)cAlternatives.eContents().get(75);
-		private final Keyword cHereticHereticKeyword_75_0 = (Keyword)cHereticAssignment_75.eContents().get(0);
-		private final Assignment cItemslotsAssignment_76 = (Assignment)cAlternatives.eContents().get(76);
-		private final Keyword cItemslotsItemslotsKeyword_76_0 = (Keyword)cItemslotsAssignment_76.eContents().get(0);
-		private final Assignment cNametypeAssignment_77 = (Assignment)cAlternatives.eContents().get(77);
-		private final Keyword cNametypeNametypeKeyword_77_0 = (Keyword)cNametypeAssignment_77.eContents().get(0);
+		private final Assignment cIceprotAssignment_57 = (Assignment)cAlternatives.eContents().get(57);
+		private final Keyword cIceprotIceprotKeyword_57_0 = (Keyword)cIceprotAssignment_57.eContents().get(0);
+		private final Assignment cPoisoncloudAssignment_58 = (Assignment)cAlternatives.eContents().get(58);
+		private final Keyword cPoisoncloudPoisoncloudKeyword_58_0 = (Keyword)cPoisoncloudAssignment_58.eContents().get(0);
+		private final Assignment cDiseasecloudAssignment_59 = (Assignment)cAlternatives.eContents().get(59);
+		private final Keyword cDiseasecloudDiseasecloudKeyword_59_0 = (Keyword)cDiseasecloudAssignment_59.eContents().get(0);
+		private final Assignment cBloodvengeanceAssignment_60 = (Assignment)cAlternatives.eContents().get(60);
+		private final Keyword cBloodvengeanceBloodvengeanceKeyword_60_0 = (Keyword)cBloodvengeanceAssignment_60.eContents().get(0);
+		private final Assignment cCastledefAssignment_61 = (Assignment)cAlternatives.eContents().get(61);
+		private final Keyword cCastledefCastledefKeyword_61_0 = (Keyword)cCastledefAssignment_61.eContents().get(0);
+		private final Assignment cSiegebonusAssignment_62 = (Assignment)cAlternatives.eContents().get(62);
+		private final Keyword cSiegebonusSiegebonusKeyword_62_0 = (Keyword)cSiegebonusAssignment_62.eContents().get(0);
+		private final Assignment cPatrolbonusAssignment_63 = (Assignment)cAlternatives.eContents().get(63);
+		private final Keyword cPatrolbonusPatrolbonusKeyword_63_0 = (Keyword)cPatrolbonusAssignment_63.eContents().get(0);
+		private final Assignment cPillagebonusAssignment_64 = (Assignment)cAlternatives.eContents().get(64);
+		private final Keyword cPillagebonusPillagebonusKeyword_64_0 = (Keyword)cPillagebonusAssignment_64.eContents().get(0);
+		private final Assignment cResearchbonusAssignment_65 = (Assignment)cAlternatives.eContents().get(65);
+		private final Keyword cResearchbonusResearchbonusKeyword_65_0 = (Keyword)cResearchbonusAssignment_65.eContents().get(0);
+		private final Assignment cForgebonusAssignment_66 = (Assignment)cAlternatives.eContents().get(66);
+		private final Keyword cForgebonusForgebonusKeyword_66_0 = (Keyword)cForgebonusAssignment_66.eContents().get(0);
+		private final Assignment cDouseAssignment_67 = (Assignment)cAlternatives.eContents().get(67);
+		private final Keyword cDouseDouseKeyword_67_0 = (Keyword)cDouseAssignment_67.eContents().get(0);
+		private final Assignment cNobadeventsAssignment_68 = (Assignment)cAlternatives.eContents().get(68);
+		private final Keyword cNobadeventsNobadeventsKeyword_68_0 = (Keyword)cNobadeventsAssignment_68.eContents().get(0);
+		private final Assignment cIncunrestAssignment_69 = (Assignment)cAlternatives.eContents().get(69);
+		private final Keyword cIncunrestIncunrestKeyword_69_0 = (Keyword)cIncunrestAssignment_69.eContents().get(0);
+		private final Assignment cSpreaddomAssignment_70 = (Assignment)cAlternatives.eContents().get(70);
+		private final Keyword cSpreaddomSpreaddomKeyword_70_0 = (Keyword)cSpreaddomAssignment_70.eContents().get(0);
+		private final Assignment cLeperAssignment_71 = (Assignment)cAlternatives.eContents().get(71);
+		private final Keyword cLeperLeperKeyword_71_0 = (Keyword)cLeperAssignment_71.eContents().get(0);
+		private final Assignment cPopkillAssignment_72 = (Assignment)cAlternatives.eContents().get(72);
+		private final Keyword cPopkillPopkillKeyword_72_0 = (Keyword)cPopkillAssignment_72.eContents().get(0);
+		private final Assignment cHereticAssignment_73 = (Assignment)cAlternatives.eContents().get(73);
+		private final Keyword cHereticHereticKeyword_73_0 = (Keyword)cHereticAssignment_73.eContents().get(0);
+		private final Assignment cItemslotsAssignment_74 = (Assignment)cAlternatives.eContents().get(74);
+		private final Keyword cItemslotsItemslotsKeyword_74_0 = (Keyword)cItemslotsAssignment_74.eContents().get(0);
+		private final Assignment cNametypeAssignment_75 = (Assignment)cAlternatives.eContents().get(75);
+		private final Keyword cNametypeNametypeKeyword_75_0 = (Keyword)cNametypeAssignment_75.eContents().get(0);
 		
 		//MonsterInst2:
 		//	speciallook?="#speciallook" | ap?="#ap" | mapmove?="#mapmove" | hp?="#hp" | prot?="#prot" | size?="#size" |
@@ -1937,12 +1965,11 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//	fallpower?="#fallpower" | winterpower?="#winterpower" | ambidextrous?="#ambidextrous" |
 		//	banefireshield?="#banefireshield" | berserk?="#berserk" | standard?="#standard" | animalawe?="#animalawe" |
 		//	awe?="#awe" | fear?="#fear" | regeneration?="#regeneration" | reinvigoration?="#reinvigoration" |
-		//	fireshield?="#fireshield" | heat?="#heat" | cold?="#cold" | iceprot?="#iceprot" | poisoncloud?="#poisoncloud" |
-		//	diseasecloud?="#diseasecloud" | bloodvengeance?="#bloodvengeance" | castledef?="#castledef" |
-		//	siegebonus?="#siegebonus" | patrolbonus?="#patrolbonus" | pillagebonus?="#pillagebonus" |
-		//	researchbonus?="#researchbonus" | forgebonus?="#forgebonus" | douse?="#douse" | nobadevents?="#nobadevents" |
-		//	incunrest?="#incunrest" | spreaddom?="#spreaddom" | leper?="#leper" | popkill?="#popkill" | heretic?="#heretic" |
-		//	itemslots?="#itemslots" | nametype?="#nametype";
+		//	fireshield?="#fireshield" | iceprot?="#iceprot" | poisoncloud?="#poisoncloud" | diseasecloud?="#diseasecloud" |
+		//	bloodvengeance?="#bloodvengeance" | castledef?="#castledef" | siegebonus?="#siegebonus" | patrolbonus?="#patrolbonus"
+		//	| pillagebonus?="#pillagebonus" | researchbonus?="#researchbonus" | forgebonus?="#forgebonus" | douse?="#douse" |
+		//	nobadevents?="#nobadevents" | incunrest?="#incunrest" | spreaddom?="#spreaddom" | leper?="#leper" |
+		//	popkill?="#popkill" | heretic?="#heretic" | itemslots?="#itemslots" | nametype?="#nametype";
 		public ParserRule getRule() { return rule; }
 
 		//speciallook?="#speciallook" | ap?="#ap" | mapmove?="#mapmove" | hp?="#hp" | prot?="#prot" | size?="#size" |
@@ -1956,12 +1983,12 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//darkpower?="#darkpower" | springpower?="#springpower" | summerpower?="#summerpower" | fallpower?="#fallpower" |
 		//winterpower?="#winterpower" | ambidextrous?="#ambidextrous" | banefireshield?="#banefireshield" | berserk?="#berserk" |
 		//standard?="#standard" | animalawe?="#animalawe" | awe?="#awe" | fear?="#fear" | regeneration?="#regeneration" |
-		//reinvigoration?="#reinvigoration" | fireshield?="#fireshield" | heat?="#heat" | cold?="#cold" | iceprot?="#iceprot" |
-		//poisoncloud?="#poisoncloud" | diseasecloud?="#diseasecloud" | bloodvengeance?="#bloodvengeance" |
-		//castledef?="#castledef" | siegebonus?="#siegebonus" | patrolbonus?="#patrolbonus" | pillagebonus?="#pillagebonus" |
-		//researchbonus?="#researchbonus" | forgebonus?="#forgebonus" | douse?="#douse" | nobadevents?="#nobadevents" |
-		//incunrest?="#incunrest" | spreaddom?="#spreaddom" | leper?="#leper" | popkill?="#popkill" | heretic?="#heretic" |
-		//itemslots?="#itemslots" | nametype?="#nametype"
+		//reinvigoration?="#reinvigoration" | fireshield?="#fireshield" | iceprot?="#iceprot" | poisoncloud?="#poisoncloud" |
+		//diseasecloud?="#diseasecloud" | bloodvengeance?="#bloodvengeance" | castledef?="#castledef" | siegebonus?="#siegebonus"
+		//| patrolbonus?="#patrolbonus" | pillagebonus?="#pillagebonus" | researchbonus?="#researchbonus" |
+		//forgebonus?="#forgebonus" | douse?="#douse" | nobadevents?="#nobadevents" | incunrest?="#incunrest" |
+		//spreaddom?="#spreaddom" | leper?="#leper" | popkill?="#popkill" | heretic?="#heretic" | itemslots?="#itemslots" |
+		//nametype?="#nametype"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//speciallook?="#speciallook"
@@ -2306,131 +2333,119 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//"#fireshield"
 		public Keyword getFireshieldFireshieldKeyword_56_0() { return cFireshieldFireshieldKeyword_56_0; }
 
-		//heat?="#heat"
-		public Assignment getHeatAssignment_57() { return cHeatAssignment_57; }
-
-		//"#heat"
-		public Keyword getHeatHeatKeyword_57_0() { return cHeatHeatKeyword_57_0; }
-
-		//cold?="#cold"
-		public Assignment getColdAssignment_58() { return cColdAssignment_58; }
-
-		//"#cold"
-		public Keyword getColdColdKeyword_58_0() { return cColdColdKeyword_58_0; }
-
 		//iceprot?="#iceprot"
-		public Assignment getIceprotAssignment_59() { return cIceprotAssignment_59; }
+		public Assignment getIceprotAssignment_57() { return cIceprotAssignment_57; }
 
 		//"#iceprot"
-		public Keyword getIceprotIceprotKeyword_59_0() { return cIceprotIceprotKeyword_59_0; }
+		public Keyword getIceprotIceprotKeyword_57_0() { return cIceprotIceprotKeyword_57_0; }
 
 		//poisoncloud?="#poisoncloud"
-		public Assignment getPoisoncloudAssignment_60() { return cPoisoncloudAssignment_60; }
+		public Assignment getPoisoncloudAssignment_58() { return cPoisoncloudAssignment_58; }
 
 		//"#poisoncloud"
-		public Keyword getPoisoncloudPoisoncloudKeyword_60_0() { return cPoisoncloudPoisoncloudKeyword_60_0; }
+		public Keyword getPoisoncloudPoisoncloudKeyword_58_0() { return cPoisoncloudPoisoncloudKeyword_58_0; }
 
 		//diseasecloud?="#diseasecloud"
-		public Assignment getDiseasecloudAssignment_61() { return cDiseasecloudAssignment_61; }
+		public Assignment getDiseasecloudAssignment_59() { return cDiseasecloudAssignment_59; }
 
 		//"#diseasecloud"
-		public Keyword getDiseasecloudDiseasecloudKeyword_61_0() { return cDiseasecloudDiseasecloudKeyword_61_0; }
+		public Keyword getDiseasecloudDiseasecloudKeyword_59_0() { return cDiseasecloudDiseasecloudKeyword_59_0; }
 
 		//bloodvengeance?="#bloodvengeance"
-		public Assignment getBloodvengeanceAssignment_62() { return cBloodvengeanceAssignment_62; }
+		public Assignment getBloodvengeanceAssignment_60() { return cBloodvengeanceAssignment_60; }
 
 		//"#bloodvengeance"
-		public Keyword getBloodvengeanceBloodvengeanceKeyword_62_0() { return cBloodvengeanceBloodvengeanceKeyword_62_0; }
+		public Keyword getBloodvengeanceBloodvengeanceKeyword_60_0() { return cBloodvengeanceBloodvengeanceKeyword_60_0; }
 
 		//castledef?="#castledef"
-		public Assignment getCastledefAssignment_63() { return cCastledefAssignment_63; }
+		public Assignment getCastledefAssignment_61() { return cCastledefAssignment_61; }
 
 		//"#castledef"
-		public Keyword getCastledefCastledefKeyword_63_0() { return cCastledefCastledefKeyword_63_0; }
+		public Keyword getCastledefCastledefKeyword_61_0() { return cCastledefCastledefKeyword_61_0; }
 
 		//siegebonus?="#siegebonus"
-		public Assignment getSiegebonusAssignment_64() { return cSiegebonusAssignment_64; }
+		public Assignment getSiegebonusAssignment_62() { return cSiegebonusAssignment_62; }
 
 		//"#siegebonus"
-		public Keyword getSiegebonusSiegebonusKeyword_64_0() { return cSiegebonusSiegebonusKeyword_64_0; }
+		public Keyword getSiegebonusSiegebonusKeyword_62_0() { return cSiegebonusSiegebonusKeyword_62_0; }
 
 		//patrolbonus?="#patrolbonus"
-		public Assignment getPatrolbonusAssignment_65() { return cPatrolbonusAssignment_65; }
+		public Assignment getPatrolbonusAssignment_63() { return cPatrolbonusAssignment_63; }
 
 		//"#patrolbonus"
-		public Keyword getPatrolbonusPatrolbonusKeyword_65_0() { return cPatrolbonusPatrolbonusKeyword_65_0; }
+		public Keyword getPatrolbonusPatrolbonusKeyword_63_0() { return cPatrolbonusPatrolbonusKeyword_63_0; }
 
 		//pillagebonus?="#pillagebonus"
-		public Assignment getPillagebonusAssignment_66() { return cPillagebonusAssignment_66; }
+		public Assignment getPillagebonusAssignment_64() { return cPillagebonusAssignment_64; }
 
 		//"#pillagebonus"
-		public Keyword getPillagebonusPillagebonusKeyword_66_0() { return cPillagebonusPillagebonusKeyword_66_0; }
+		public Keyword getPillagebonusPillagebonusKeyword_64_0() { return cPillagebonusPillagebonusKeyword_64_0; }
 
 		//researchbonus?="#researchbonus"
-		public Assignment getResearchbonusAssignment_67() { return cResearchbonusAssignment_67; }
+		public Assignment getResearchbonusAssignment_65() { return cResearchbonusAssignment_65; }
 
 		//"#researchbonus"
-		public Keyword getResearchbonusResearchbonusKeyword_67_0() { return cResearchbonusResearchbonusKeyword_67_0; }
+		public Keyword getResearchbonusResearchbonusKeyword_65_0() { return cResearchbonusResearchbonusKeyword_65_0; }
 
 		//forgebonus?="#forgebonus"
-		public Assignment getForgebonusAssignment_68() { return cForgebonusAssignment_68; }
+		public Assignment getForgebonusAssignment_66() { return cForgebonusAssignment_66; }
 
 		//"#forgebonus"
-		public Keyword getForgebonusForgebonusKeyword_68_0() { return cForgebonusForgebonusKeyword_68_0; }
+		public Keyword getForgebonusForgebonusKeyword_66_0() { return cForgebonusForgebonusKeyword_66_0; }
 
 		//douse?="#douse"
-		public Assignment getDouseAssignment_69() { return cDouseAssignment_69; }
+		public Assignment getDouseAssignment_67() { return cDouseAssignment_67; }
 
 		//"#douse"
-		public Keyword getDouseDouseKeyword_69_0() { return cDouseDouseKeyword_69_0; }
+		public Keyword getDouseDouseKeyword_67_0() { return cDouseDouseKeyword_67_0; }
 
 		//nobadevents?="#nobadevents"
-		public Assignment getNobadeventsAssignment_70() { return cNobadeventsAssignment_70; }
+		public Assignment getNobadeventsAssignment_68() { return cNobadeventsAssignment_68; }
 
 		//"#nobadevents"
-		public Keyword getNobadeventsNobadeventsKeyword_70_0() { return cNobadeventsNobadeventsKeyword_70_0; }
+		public Keyword getNobadeventsNobadeventsKeyword_68_0() { return cNobadeventsNobadeventsKeyword_68_0; }
 
 		//incunrest?="#incunrest"
-		public Assignment getIncunrestAssignment_71() { return cIncunrestAssignment_71; }
+		public Assignment getIncunrestAssignment_69() { return cIncunrestAssignment_69; }
 
 		//"#incunrest"
-		public Keyword getIncunrestIncunrestKeyword_71_0() { return cIncunrestIncunrestKeyword_71_0; }
+		public Keyword getIncunrestIncunrestKeyword_69_0() { return cIncunrestIncunrestKeyword_69_0; }
 
 		//spreaddom?="#spreaddom"
-		public Assignment getSpreaddomAssignment_72() { return cSpreaddomAssignment_72; }
+		public Assignment getSpreaddomAssignment_70() { return cSpreaddomAssignment_70; }
 
 		//"#spreaddom"
-		public Keyword getSpreaddomSpreaddomKeyword_72_0() { return cSpreaddomSpreaddomKeyword_72_0; }
+		public Keyword getSpreaddomSpreaddomKeyword_70_0() { return cSpreaddomSpreaddomKeyword_70_0; }
 
 		//leper?="#leper"
-		public Assignment getLeperAssignment_73() { return cLeperAssignment_73; }
+		public Assignment getLeperAssignment_71() { return cLeperAssignment_71; }
 
 		//"#leper"
-		public Keyword getLeperLeperKeyword_73_0() { return cLeperLeperKeyword_73_0; }
+		public Keyword getLeperLeperKeyword_71_0() { return cLeperLeperKeyword_71_0; }
 
 		//popkill?="#popkill"
-		public Assignment getPopkillAssignment_74() { return cPopkillAssignment_74; }
+		public Assignment getPopkillAssignment_72() { return cPopkillAssignment_72; }
 
 		//"#popkill"
-		public Keyword getPopkillPopkillKeyword_74_0() { return cPopkillPopkillKeyword_74_0; }
+		public Keyword getPopkillPopkillKeyword_72_0() { return cPopkillPopkillKeyword_72_0; }
 
 		//heretic?="#heretic"
-		public Assignment getHereticAssignment_75() { return cHereticAssignment_75; }
+		public Assignment getHereticAssignment_73() { return cHereticAssignment_73; }
 
 		//"#heretic"
-		public Keyword getHereticHereticKeyword_75_0() { return cHereticHereticKeyword_75_0; }
+		public Keyword getHereticHereticKeyword_73_0() { return cHereticHereticKeyword_73_0; }
 
 		//itemslots?="#itemslots"
-		public Assignment getItemslotsAssignment_76() { return cItemslotsAssignment_76; }
+		public Assignment getItemslotsAssignment_74() { return cItemslotsAssignment_74; }
 
 		//"#itemslots"
-		public Keyword getItemslotsItemslotsKeyword_76_0() { return cItemslotsItemslotsKeyword_76_0; }
+		public Keyword getItemslotsItemslotsKeyword_74_0() { return cItemslotsItemslotsKeyword_74_0; }
 
 		//nametype?="#nametype"
-		public Assignment getNametypeAssignment_77() { return cNametypeAssignment_77; }
+		public Assignment getNametypeAssignment_75() { return cNametypeAssignment_75; }
 
 		//"#nametype"
-		public Keyword getNametypeNametypeKeyword_77_0() { return cNametypeNametypeKeyword_77_0; }
+		public Keyword getNametypeNametypeKeyword_75_0() { return cNametypeNametypeKeyword_75_0; }
 	}
 
 	public class MonsterInst3Elements extends AbstractParserRuleElementFinder {
@@ -3171,6 +3186,34 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"#summon5"
 		public Keyword getSummon5Summon5Keyword_19_0() { return cSummon5Summon5Keyword_19_0; }
+	}
+
+	public class MonsterInst6Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MonsterInst6");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cHeatAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cHeatHeatKeyword_0_0 = (Keyword)cHeatAssignment_0.eContents().get(0);
+		private final Assignment cColdAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cColdColdKeyword_1_0 = (Keyword)cColdAssignment_1.eContents().get(0);
+		
+		//MonsterInst6:
+		//	heat?="#heat" | cold?="#cold";
+		public ParserRule getRule() { return rule; }
+
+		//heat?="#heat" | cold?="#cold"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//heat?="#heat"
+		public Assignment getHeatAssignment_0() { return cHeatAssignment_0; }
+
+		//"#heat"
+		public Keyword getHeatHeatKeyword_0_0() { return cHeatHeatKeyword_0_0; }
+
+		//cold?="#cold"
+		public Assignment getColdAssignment_1() { return cColdAssignment_1; }
+
+		//"#cold"
+		public Keyword getColdColdKeyword_1_0() { return cColdColdKeyword_1_0; }
 	}
 
 	public class SpellElements extends AbstractParserRuleElementFinder {
@@ -5546,11 +5589,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	private MonsterPattern3Elements pMonsterPattern3;
 	private MonsterPattern4Elements pMonsterPattern4;
 	private MonsterPattern5Elements pMonsterPattern5;
+	private MonsterPattern6Elements pMonsterPattern6;
 	private MonsterInst1Elements pMonsterInst1;
 	private MonsterInst2Elements pMonsterInst2;
 	private MonsterInst3Elements pMonsterInst3;
 	private MonsterInst4Elements pMonsterInst4;
 	private MonsterInst5Elements pMonsterInst5;
+	private MonsterInst6Elements pMonsterInst6;
 	private SpellElements pSpell;
 	private SelectSpellByIdElements pSelectSpellById;
 	private SelectSpellByNameElements pSelectSpellByName;
@@ -5637,7 +5682,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	//	("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
 	//	("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome" coldincome=INT)? &
 	//	("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)? &
-	//	("#researchscale" researchscale=INT)?) elements+=AbstractElement*;
+	//	("#researchscale" researchscale=INT)? & "#end"?) elements+=AbstractElement*;
 	public Dom3ModElements getDom3ModAccess() {
 		return (pDom3Mod != null) ? pDom3Mod : (pDom3Mod = new Dom3ModElements());
 	}
@@ -5935,7 +5980,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MonsterMods:
-	//	MonsterPattern1 | MonsterPattern2 | MonsterPattern3 | MonsterPattern4 | MonsterPattern5;
+	//	MonsterPattern1 | MonsterPattern2 | MonsterPattern3 | MonsterPattern4 | MonsterPattern5 | MonsterPattern6;
 	public MonsterModsElements getMonsterModsAccess() {
 		return (pMonsterMods != null) ? pMonsterMods : (pMonsterMods = new MonsterModsElements());
 	}
@@ -5994,6 +6039,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		return getMonsterPattern5Access().getRule();
 	}
 
+	//MonsterPattern6:
+	//	MonsterInst6 value=INT?;
+	public MonsterPattern6Elements getMonsterPattern6Access() {
+		return (pMonsterPattern6 != null) ? pMonsterPattern6 : (pMonsterPattern6 = new MonsterPattern6Elements());
+	}
+	
+	public ParserRule getMonsterPattern6Rule() {
+		return getMonsterPattern6Access().getRule();
+	}
+
 	//MonsterInst1:
 	//	name?="#name" | spr1?="#spr1" | spr2?="#spr2" | descr?="#descr" | armor?="#armor";
 	public MonsterInst1Elements getMonsterInst1Access() {
@@ -6017,12 +6072,11 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	//	fallpower?="#fallpower" | winterpower?="#winterpower" | ambidextrous?="#ambidextrous" |
 	//	banefireshield?="#banefireshield" | berserk?="#berserk" | standard?="#standard" | animalawe?="#animalawe" |
 	//	awe?="#awe" | fear?="#fear" | regeneration?="#regeneration" | reinvigoration?="#reinvigoration" |
-	//	fireshield?="#fireshield" | heat?="#heat" | cold?="#cold" | iceprot?="#iceprot" | poisoncloud?="#poisoncloud" |
-	//	diseasecloud?="#diseasecloud" | bloodvengeance?="#bloodvengeance" | castledef?="#castledef" |
-	//	siegebonus?="#siegebonus" | patrolbonus?="#patrolbonus" | pillagebonus?="#pillagebonus" |
-	//	researchbonus?="#researchbonus" | forgebonus?="#forgebonus" | douse?="#douse" | nobadevents?="#nobadevents" |
-	//	incunrest?="#incunrest" | spreaddom?="#spreaddom" | leper?="#leper" | popkill?="#popkill" | heretic?="#heretic" |
-	//	itemslots?="#itemslots" | nametype?="#nametype";
+	//	fireshield?="#fireshield" | iceprot?="#iceprot" | poisoncloud?="#poisoncloud" | diseasecloud?="#diseasecloud" |
+	//	bloodvengeance?="#bloodvengeance" | castledef?="#castledef" | siegebonus?="#siegebonus" | patrolbonus?="#patrolbonus"
+	//	| pillagebonus?="#pillagebonus" | researchbonus?="#researchbonus" | forgebonus?="#forgebonus" | douse?="#douse" |
+	//	nobadevents?="#nobadevents" | incunrest?="#incunrest" | spreaddom?="#spreaddom" | leper?="#leper" |
+	//	popkill?="#popkill" | heretic?="#heretic" | itemslots?="#itemslots" | nametype?="#nametype";
 	public MonsterInst2Elements getMonsterInst2Access() {
 		return (pMonsterInst2 != null) ? pMonsterInst2 : (pMonsterInst2 = new MonsterInst2Elements());
 	}
@@ -6079,6 +6133,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMonsterInst5Rule() {
 		return getMonsterInst5Access().getRule();
+	}
+
+	//MonsterInst6:
+	//	heat?="#heat" | cold?="#cold";
+	public MonsterInst6Elements getMonsterInst6Access() {
+		return (pMonsterInst6 != null) ? pMonsterInst6 : (pMonsterInst6 = new MonsterInst6Elements());
+	}
+	
+	public ParserRule getMonsterInst6Rule() {
+		return getMonsterInst6Access().getRule();
 	}
 
 	/// ************** / / * Spell Mods * / / ************** / Spell:

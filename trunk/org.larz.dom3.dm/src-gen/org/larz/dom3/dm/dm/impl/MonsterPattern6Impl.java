@@ -8,25 +8,25 @@ package org.larz.dom3.dm.dm.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import org.larz.dom3.dm.dm.DmPackage;
-import org.larz.dom3.dm.dm.NamePattern2;
+import org.larz.dom3.dm.dm.MonsterPattern6;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Name Pattern2</b></em>'.
+ * An implementation of the model object '<em><b>Monster Pattern6</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class NamePattern2Impl extends NameModsImpl implements NamePattern2
+public class MonsterPattern6Impl extends MonsterModsImpl implements MonsterPattern6
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NamePattern2Impl()
+  protected MonsterPattern6Impl()
   {
     super();
   }
@@ -39,7 +39,7 @@ public class NamePattern2Impl extends NameModsImpl implements NamePattern2
   @Override
   protected EClass eStaticClass()
   {
-    return DmPackage.eINSTANCE.getNamePattern2();
+    return DmPackage.eINSTANCE.getMonsterPattern6();
   }
 
-} //NamePattern2Impl
+} //MonsterPattern6Impl

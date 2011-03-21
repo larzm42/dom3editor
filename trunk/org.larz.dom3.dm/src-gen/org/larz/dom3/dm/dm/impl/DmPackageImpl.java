@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm.impl;
 
@@ -286,6 +285,13 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass monsterPattern6EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass monsterInst1EClass = null;
 
   /**
@@ -315,6 +321,13 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * @generated
    */
   private EClass monsterInst5EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass monsterInst6EClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -2174,11 +2187,25 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMonsterPattern6()
+  {
+    if (monsterPattern6EClass == null)
+    {
+      monsterPattern6EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(34);
+    }
+    return monsterPattern6EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMonsterInst1()
   {
     if (monsterInst1EClass == null)
     {
-      monsterInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(34);
+      monsterInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(35);
     }
     return monsterInst1EClass;
   }
@@ -2252,7 +2279,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (monsterInst2EClass == null)
     {
-      monsterInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(35);
+      monsterInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(36);
     }
     return monsterInst2EClass;
   }
@@ -2842,7 +2869,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Heat()
+  public EAttribute getMonsterInst2_Iceprot()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(58);
   }
@@ -2852,7 +2879,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Cold()
+  public EAttribute getMonsterInst2_Poisoncloud()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(59);
   }
@@ -2862,7 +2889,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Iceprot()
+  public EAttribute getMonsterInst2_Diseasecloud()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(60);
   }
@@ -2872,7 +2899,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Poisoncloud()
+  public EAttribute getMonsterInst2_Bloodvengeance()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(61);
   }
@@ -2882,7 +2909,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Diseasecloud()
+  public EAttribute getMonsterInst2_Castledef()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(62);
   }
@@ -2892,7 +2919,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Bloodvengeance()
+  public EAttribute getMonsterInst2_Siegebonus()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(63);
   }
@@ -2902,7 +2929,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Castledef()
+  public EAttribute getMonsterInst2_Patrolbonus()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(64);
   }
@@ -2912,7 +2939,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Siegebonus()
+  public EAttribute getMonsterInst2_Pillagebonus()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(65);
   }
@@ -2922,7 +2949,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Patrolbonus()
+  public EAttribute getMonsterInst2_Researchbonus()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(66);
   }
@@ -2932,7 +2959,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Pillagebonus()
+  public EAttribute getMonsterInst2_Forgebonus()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(67);
   }
@@ -2942,7 +2969,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Researchbonus()
+  public EAttribute getMonsterInst2_Douse()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(68);
   }
@@ -2952,7 +2979,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Forgebonus()
+  public EAttribute getMonsterInst2_Nobadevents()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(69);
   }
@@ -2962,7 +2989,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Douse()
+  public EAttribute getMonsterInst2_Incunrest()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(70);
   }
@@ -2972,7 +2999,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Nobadevents()
+  public EAttribute getMonsterInst2_Spreaddom()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(71);
   }
@@ -2982,7 +3009,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Incunrest()
+  public EAttribute getMonsterInst2_Leper()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(72);
   }
@@ -2992,7 +3019,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Spreaddom()
+  public EAttribute getMonsterInst2_Popkill()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(73);
   }
@@ -3002,7 +3029,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Leper()
+  public EAttribute getMonsterInst2_Heretic()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(74);
   }
@@ -3012,7 +3039,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Popkill()
+  public EAttribute getMonsterInst2_Itemslots()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(75);
   }
@@ -3022,29 +3049,9 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Heretic()
-  {
-        return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(76);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getMonsterInst2_Itemslots()
-  {
-        return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(77);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getMonsterInst2_Nametype()
   {
-        return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(78);
+        return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(76);
   }
 
   /**
@@ -3056,7 +3063,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (monsterInst3EClass == null)
     {
-      monsterInst3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(36);
+      monsterInst3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(37);
     }
     return monsterInst3EClass;
   }
@@ -3130,7 +3137,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (monsterInst4EClass == null)
     {
-      monsterInst4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(37);
+      monsterInst4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(38);
     }
     return monsterInst4EClass;
   }
@@ -3734,7 +3741,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (monsterInst5EClass == null)
     {
-      monsterInst5EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(38);
+      monsterInst5EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(39);
     }
     return monsterInst5EClass;
   }
@@ -3964,11 +3971,55 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMonsterInst6()
+  {
+    if (monsterInst6EClass == null)
+    {
+      monsterInst6EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(40);
+    }
+    return monsterInst6EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMonsterInst6_Value()
+  {
+        return (EAttribute)getMonsterInst6().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMonsterInst6_Heat()
+  {
+        return (EAttribute)getMonsterInst6().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMonsterInst6_Cold()
+  {
+        return (EAttribute)getMonsterInst6().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSpell()
   {
     if (spellEClass == null)
     {
-      spellEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(39);
+      spellEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(41);
     }
     return spellEClass;
   }
@@ -3992,7 +4043,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (selectSpellByIdEClass == null)
     {
-      selectSpellByIdEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(40);
+      selectSpellByIdEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(42);
     }
     return selectSpellByIdEClass;
   }
@@ -4016,7 +4067,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (selectSpellByNameEClass == null)
     {
-      selectSpellByNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(41);
+      selectSpellByNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(43);
     }
     return selectSpellByNameEClass;
   }
@@ -4040,7 +4091,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (newSpellEClass == null)
     {
-      newSpellEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(42);
+      newSpellEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(44);
     }
     return newSpellEClass;
   }
@@ -4054,7 +4105,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellModsEClass == null)
     {
-      spellModsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(43);
+      spellModsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(45);
     }
     return spellModsEClass;
   }
@@ -4068,7 +4119,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellPattern1EClass == null)
     {
-      spellPattern1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(44);
+      spellPattern1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(46);
     }
     return spellPattern1EClass;
   }
@@ -4082,7 +4133,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellPattern2EClass == null)
     {
-      spellPattern2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(45);
+      spellPattern2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(47);
     }
     return spellPattern2EClass;
   }
@@ -4096,7 +4147,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellPattern3EClass == null)
     {
-      spellPattern3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(46);
+      spellPattern3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(48);
     }
     return spellPattern3EClass;
   }
@@ -4110,7 +4161,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellPattern4EClass == null)
     {
-      spellPattern4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(47);
+      spellPattern4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(49);
     }
     return spellPattern4EClass;
   }
@@ -4124,7 +4175,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellPattern5EClass == null)
     {
-      spellPattern5EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(48);
+      spellPattern5EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(50);
     }
     return spellPattern5EClass;
   }
@@ -4138,7 +4189,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellInst1EClass == null)
     {
-      spellInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(49);
+      spellInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(51);
     }
     return spellInst1EClass;
   }
@@ -4182,7 +4233,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellInst2EClass == null)
     {
-      spellInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(50);
+      spellInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(52);
     }
     return spellInst2EClass;
   }
@@ -4346,7 +4397,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellInst3EClass == null)
     {
-      spellInst3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(51);
+      spellInst3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(53);
     }
     return spellInst3EClass;
   }
@@ -4400,7 +4451,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellInst4EClass == null)
     {
-      spellInst4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(52);
+      spellInst4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(54);
     }
     return spellInst4EClass;
   }
@@ -4424,7 +4475,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (spellInst5EClass == null)
     {
-      spellInst5EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(53);
+      spellInst5EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(55);
     }
     return spellInst5EClass;
   }
@@ -4478,7 +4529,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (itemEClass == null)
     {
-      itemEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(54);
+      itemEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(56);
     }
     return itemEClass;
   }
@@ -4502,7 +4553,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (selectItemByIdEClass == null)
     {
-      selectItemByIdEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(55);
+      selectItemByIdEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(57);
     }
     return selectItemByIdEClass;
   }
@@ -4526,7 +4577,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (selectItemByNameEClass == null)
     {
-      selectItemByNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(56);
+      selectItemByNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(58);
     }
     return selectItemByNameEClass;
   }
@@ -4550,7 +4601,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (newItemEClass == null)
     {
-      newItemEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(57);
+      newItemEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(59);
     }
     return newItemEClass;
   }
@@ -4564,7 +4615,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (itemModsEClass == null)
     {
-      itemModsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(58);
+      itemModsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(60);
     }
     return itemModsEClass;
   }
@@ -4578,7 +4629,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (itemPattern1EClass == null)
     {
-      itemPattern1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(59);
+      itemPattern1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(61);
     }
     return itemPattern1EClass;
   }
@@ -4592,7 +4643,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (itemPattern2EClass == null)
     {
-      itemPattern2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(60);
+      itemPattern2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(62);
     }
     return itemPattern2EClass;
   }
@@ -4606,7 +4657,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (itemInst1EClass == null)
     {
-      itemInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(61);
+      itemInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(63);
     }
     return itemInst1EClass;
   }
@@ -4660,7 +4711,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (itemInst2EClass == null)
     {
-      itemInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(62);
+      itemInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(64);
     }
     return itemInst2EClass;
   }
@@ -4764,7 +4815,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nameEClass == null)
     {
-      nameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(63);
+      nameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(65);
     }
     return nameEClass;
   }
@@ -4778,7 +4829,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (selectNameEClass == null)
     {
-      selectNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(64);
+      selectNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(66);
     }
     return selectNameEClass;
   }
@@ -4812,7 +4863,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nameModsEClass == null)
     {
-      nameModsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(65);
+      nameModsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(67);
     }
     return nameModsEClass;
   }
@@ -4826,7 +4877,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (namePattern1EClass == null)
     {
-      namePattern1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(66);
+      namePattern1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(68);
     }
     return namePattern1EClass;
   }
@@ -4840,7 +4891,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (namePattern2EClass == null)
     {
-      namePattern2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(67);
+      namePattern2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(69);
     }
     return namePattern2EClass;
   }
@@ -4854,7 +4905,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nameInst1EClass == null)
     {
-      nameInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(68);
+      nameInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(70);
     }
     return nameInst1EClass;
   }
@@ -4888,7 +4939,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nameInst2EClass == null)
     {
-      nameInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(69);
+      nameInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(71);
     }
     return nameInst2EClass;
   }
@@ -4912,7 +4963,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (siteEClass == null)
     {
-      siteEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(70);
+      siteEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(72);
     }
     return siteEClass;
   }
@@ -4936,7 +4987,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (selectSiteByIdEClass == null)
     {
-      selectSiteByIdEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(71);
+      selectSiteByIdEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(73);
     }
     return selectSiteByIdEClass;
   }
@@ -4960,7 +5011,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (selectSiteByNameEClass == null)
     {
-      selectSiteByNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(72);
+      selectSiteByNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(74);
     }
     return selectSiteByNameEClass;
   }
@@ -4984,7 +5035,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (newSiteEClass == null)
     {
-      newSiteEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(73);
+      newSiteEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(75);
     }
     return newSiteEClass;
   }
@@ -5008,7 +5059,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (siteModsEClass == null)
     {
-      siteModsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(74);
+      siteModsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(76);
     }
     return siteModsEClass;
   }
@@ -5022,7 +5073,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (sitePattern1EClass == null)
     {
-      sitePattern1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(75);
+      sitePattern1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(77);
     }
     return sitePattern1EClass;
   }
@@ -5036,7 +5087,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (sitePattern2EClass == null)
     {
-      sitePattern2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(76);
+      sitePattern2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(78);
     }
     return sitePattern2EClass;
   }
@@ -5050,7 +5101,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (sitePattern3EClass == null)
     {
-      sitePattern3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(77);
+      sitePattern3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(79);
     }
     return sitePattern3EClass;
   }
@@ -5064,7 +5115,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (sitePattern4EClass == null)
     {
-      sitePattern4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(78);
+      sitePattern4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(80);
     }
     return sitePattern4EClass;
   }
@@ -5078,7 +5129,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (siteInst1EClass == null)
     {
-      siteInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(79);
+      siteInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(81);
     }
     return siteInst1EClass;
   }
@@ -5112,7 +5163,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (siteInst2EClass == null)
     {
-      siteInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(80);
+      siteInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(82);
     }
     return siteInst2EClass;
   }
@@ -5256,7 +5307,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (siteInst3EClass == null)
     {
-      siteInst3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(81);
+      siteInst3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(83);
     }
     return siteInst3EClass;
   }
@@ -5300,7 +5351,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (siteInst4EClass == null)
     {
-      siteInst4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(82);
+      siteInst4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(84);
     }
     return siteInst4EClass;
   }
@@ -5324,7 +5375,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationEClass == null)
     {
-      nationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(83);
+      nationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(85);
     }
     return nationEClass;
   }
@@ -5338,7 +5389,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (selectNationEClass == null)
     {
-      selectNationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(84);
+      selectNationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(86);
     }
     return selectNationEClass;
   }
@@ -5372,7 +5423,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (indepFlagEClass == null)
     {
-      indepFlagEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(85);
+      indepFlagEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(87);
     }
     return indepFlagEClass;
   }
@@ -5396,7 +5447,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationModsEClass == null)
     {
-      nationModsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(86);
+      nationModsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(88);
     }
     return nationModsEClass;
   }
@@ -5410,7 +5461,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationPattern1EClass == null)
     {
-      nationPattern1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(87);
+      nationPattern1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(89);
     }
     return nationPattern1EClass;
   }
@@ -5424,7 +5475,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationPattern2EClass == null)
     {
-      nationPattern2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(88);
+      nationPattern2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(90);
     }
     return nationPattern2EClass;
   }
@@ -5438,7 +5489,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationPattern3EClass == null)
     {
-      nationPattern3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(89);
+      nationPattern3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(91);
     }
     return nationPattern3EClass;
   }
@@ -5452,7 +5503,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationPattern4EClass == null)
     {
-      nationPattern4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(90);
+      nationPattern4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(92);
     }
     return nationPattern4EClass;
   }
@@ -5466,7 +5517,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationPattern5EClass == null)
     {
-      nationPattern5EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(91);
+      nationPattern5EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(93);
     }
     return nationPattern5EClass;
   }
@@ -5480,7 +5531,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationInst1EClass == null)
     {
-      nationInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(92);
+      nationInst1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(94);
     }
     return nationInst1EClass;
   }
@@ -5584,7 +5635,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationInst2EClass == null)
     {
-      nationInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(93);
+      nationInst2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(95);
     }
     return nationInst2EClass;
   }
@@ -5908,7 +5959,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationInst3EClass == null)
     {
-      nationInst3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(94);
+      nationInst3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(96);
     }
     return nationInst3EClass;
   }
@@ -6072,7 +6123,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationInst4EClass == null)
     {
-      nationInst4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(95);
+      nationInst4EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(97);
     }
     return nationInst4EClass;
   }
@@ -6326,7 +6377,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   {
     if (nationInst5EClass == null)
     {
-      nationInst5EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(96);
+      nationInst5EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(DmPackage.eNS_URI).getEClassifiers().get(98);
     }
     return nationInst5EClass;
   }

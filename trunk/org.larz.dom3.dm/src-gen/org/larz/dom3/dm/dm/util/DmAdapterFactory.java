@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm.util;
 
@@ -249,6 +248,11 @@ public class DmAdapterFactory extends AdapterFactoryImpl
         return createMonsterPattern5Adapter();
       }
       @Override
+      public Adapter caseMonsterPattern6(MonsterPattern6 object)
+      {
+        return createMonsterPattern6Adapter();
+      }
+      @Override
       public Adapter caseMonsterInst1(MonsterInst1 object)
       {
         return createMonsterInst1Adapter();
@@ -272,6 +276,11 @@ public class DmAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMonsterInst5(MonsterInst5 object)
       {
         return createMonsterInst5Adapter();
+      }
+      @Override
+      public Adapter caseMonsterInst6(MonsterInst6 object)
+      {
+        return createMonsterInst6Adapter();
       }
       @Override
       public Adapter caseSpell(Spell object)
@@ -1096,6 +1105,21 @@ public class DmAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.larz.dom3.dm.dm.MonsterPattern6 <em>Monster Pattern6</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.larz.dom3.dm.dm.MonsterPattern6
+   * @generated
+   */
+  public Adapter createMonsterPattern6Adapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.larz.dom3.dm.dm.MonsterInst1 <em>Monster Inst1</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1166,6 +1190,21 @@ public class DmAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMonsterInst5Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.larz.dom3.dm.dm.MonsterInst6 <em>Monster Inst6</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.larz.dom3.dm.dm.MonsterInst6
+   * @generated
+   */
+  public Adapter createMonsterInst6Adapter()
   {
     return null;
   }
