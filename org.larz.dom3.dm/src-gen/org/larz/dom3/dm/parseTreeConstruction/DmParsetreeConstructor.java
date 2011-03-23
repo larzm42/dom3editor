@@ -8563,19 +8563,20 @@ protected class MonsterInst1_ArmorAssignment_4 extends AssignmentToken  {
  * 	ressize?="#ressize" | str?="#str" | enc?="#enc" | att?="#att" | def?="#def" | prec?="#prec" | mr?="#mr" | mor?="#mor"
  * 	| gcost?="#gcost" | rcost?="#rcost" | pathcost?="#pathcost" | startdom?="#startdom" | eyes?="#eyes" |
  * 	copystats?="#copystats" | copyspr?="#copyspr" | restrictedgod?="#restrictedgod" | shatteredsoul?="#shatteredsoul" |
- * 	coldres?="#coldres" | fireres?="#fireres" | poisonres?="#poisonres" | shockres?="#shockres" |
- * 	darkvision?="#darkvision" | stealthy?="#stealthy" | seduce?="#seduce" | succubus?="#succubus" | beckon?="#beckon" |
- * 	startage?="#startage" | maxage?="#maxage" | older?="#older" | healer?="#healer" | startaff?="#startaff" |
- * 	supplybonus?="#supplybonus" | uwdamage?="#uwdamage" | coldpower?="#coldpower" | firepower?="#firepower" |
- * 	stormpower?="#stormpower" | darkpower?="#darkpower" | springpower?="#springpower" | summerpower?="#summerpower" |
- * 	fallpower?="#fallpower" | winterpower?="#winterpower" | ambidextrous?="#ambidextrous" |
- * 	banefireshield?="#banefireshield" | berserk?="#berserk" | standard?="#standard" | animalawe?="#animalawe" |
- * 	awe?="#awe" | fear?="#fear" | regeneration?="#regeneration" | reinvigoration?="#reinvigoration" |
- * 	fireshield?="#fireshield" | iceprot?="#iceprot" | poisoncloud?="#poisoncloud" | diseasecloud?="#diseasecloud" |
- * 	bloodvengeance?="#bloodvengeance" | castledef?="#castledef" | siegebonus?="#siegebonus" | patrolbonus?="#patrolbonus"
- * 	| pillagebonus?="#pillagebonus" | researchbonus?="#researchbonus" | forgebonus?="#forgebonus" | douse?="#douse" |
- * 	nobadevents?="#nobadevents" | incunrest?="#incunrest" | spreaddom?="#spreaddom" | leper?="#leper" |
- * 	popkill?="#popkill" | heretic?="#heretic" | itemslots?="#itemslots" | nametype?="#nametype";
+ * 	coldres?="#coldres" | coldres?="#coldresist" | fireres?="#fireres" | fireres?="#fireresist" | poisonres?="#poisonres"
+ * 	| shockres?="#shockres" | darkvision?="#darkvision" | stealthy?="#stealthy" | seduce?="#seduce" |
+ * 	succubus?="#succubus" | beckon?="#beckon" | startage?="#startage" | maxage?="#maxage" | older?="#older" |
+ * 	healer?="#healer" | startaff?="#startaff" | supplybonus?="#supplybonus" | uwdamage?="#uwdamage" |
+ * 	coldpower?="#coldpower" | firepower?="#firepower" | stormpower?="#stormpower" | darkpower?="#darkpower" |
+ * 	springpower?="#springpower" | summerpower?="#summerpower" | fallpower?="#fallpower" | winterpower?="#winterpower" |
+ * 	ambidextrous?="#ambidextrous" | banefireshield?="#banefireshield" | berserk?="#berserk" | standard?="#standard" |
+ * 	animalawe?="#animalawe" | awe?="#awe" | fear?="#fear" | regeneration?="#regeneration" |
+ * 	reinvigoration?="#reinvigoration" | fireshield?="#fireshield" | iceprot?="#iceprot" | poisoncloud?="#poisoncloud" |
+ * 	diseasecloud?="#diseasecloud" | bloodvengeance?="#bloodvengeance" | castledef?="#castledef" |
+ * 	siegebonus?="#siegebonus" | patrolbonus?="#patrolbonus" | pillagebonus?="#pillagebonus" |
+ * 	researchbonus?="#researchbonus" | forgebonus?="#forgebonus" | douse?="#douse" | nobadevents?="#nobadevents" |
+ * 	incunrest?="#incunrest" | spreaddom?="#spreaddom" | leper?="#leper" | popkill?="#popkill" | heretic?="#heretic" |
+ * 	itemslots?="#itemslots" | nametype?="#nametype";
  *
  **/
 
@@ -8583,19 +8584,19 @@ protected class MonsterInst1_ArmorAssignment_4 extends AssignmentToken  {
 // ressize?="#ressize" | str?="#str" | enc?="#enc" | att?="#att" | def?="#def" | prec?="#prec" | mr?="#mr" | mor?="#mor" |
 // gcost?="#gcost" | rcost?="#rcost" | pathcost?="#pathcost" | startdom?="#startdom" | eyes?="#eyes" |
 // copystats?="#copystats" | copyspr?="#copyspr" | restrictedgod?="#restrictedgod" | shatteredsoul?="#shatteredsoul" |
-// coldres?="#coldres" | fireres?="#fireres" | poisonres?="#poisonres" | shockres?="#shockres" | darkvision?="#darkvision"
-// | stealthy?="#stealthy" | seduce?="#seduce" | succubus?="#succubus" | beckon?="#beckon" | startage?="#startage" |
-// maxage?="#maxage" | older?="#older" | healer?="#healer" | startaff?="#startaff" | supplybonus?="#supplybonus" |
-// uwdamage?="#uwdamage" | coldpower?="#coldpower" | firepower?="#firepower" | stormpower?="#stormpower" |
-// darkpower?="#darkpower" | springpower?="#springpower" | summerpower?="#summerpower" | fallpower?="#fallpower" |
-// winterpower?="#winterpower" | ambidextrous?="#ambidextrous" | banefireshield?="#banefireshield" | berserk?="#berserk" |
-// standard?="#standard" | animalawe?="#animalawe" | awe?="#awe" | fear?="#fear" | regeneration?="#regeneration" |
-// reinvigoration?="#reinvigoration" | fireshield?="#fireshield" | iceprot?="#iceprot" | poisoncloud?="#poisoncloud" |
-// diseasecloud?="#diseasecloud" | bloodvengeance?="#bloodvengeance" | castledef?="#castledef" | siegebonus?="#siegebonus"
-// | patrolbonus?="#patrolbonus" | pillagebonus?="#pillagebonus" | researchbonus?="#researchbonus" |
-// forgebonus?="#forgebonus" | douse?="#douse" | nobadevents?="#nobadevents" | incunrest?="#incunrest" |
-// spreaddom?="#spreaddom" | leper?="#leper" | popkill?="#popkill" | heretic?="#heretic" | itemslots?="#itemslots" |
-// nametype?="#nametype"
+// coldres?="#coldres" | coldres?="#coldresist" | fireres?="#fireres" | fireres?="#fireresist" | poisonres?="#poisonres" |
+// shockres?="#shockres" | darkvision?="#darkvision" | stealthy?="#stealthy" | seduce?="#seduce" | succubus?="#succubus" |
+// beckon?="#beckon" | startage?="#startage" | maxage?="#maxage" | older?="#older" | healer?="#healer" |
+// startaff?="#startaff" | supplybonus?="#supplybonus" | uwdamage?="#uwdamage" | coldpower?="#coldpower" |
+// firepower?="#firepower" | stormpower?="#stormpower" | darkpower?="#darkpower" | springpower?="#springpower" |
+// summerpower?="#summerpower" | fallpower?="#fallpower" | winterpower?="#winterpower" | ambidextrous?="#ambidextrous" |
+// banefireshield?="#banefireshield" | berserk?="#berserk" | standard?="#standard" | animalawe?="#animalawe" | awe?="#awe"
+// | fear?="#fear" | regeneration?="#regeneration" | reinvigoration?="#reinvigoration" | fireshield?="#fireshield" |
+// iceprot?="#iceprot" | poisoncloud?="#poisoncloud" | diseasecloud?="#diseasecloud" | bloodvengeance?="#bloodvengeance" |
+// castledef?="#castledef" | siegebonus?="#siegebonus" | patrolbonus?="#patrolbonus" | pillagebonus?="#pillagebonus" |
+// researchbonus?="#researchbonus" | forgebonus?="#forgebonus" | douse?="#douse" | nobadevents?="#nobadevents" |
+// incunrest?="#incunrest" | spreaddom?="#spreaddom" | leper?="#leper" | popkill?="#popkill" | heretic?="#heretic" |
+// itemslots?="#itemslots" | nametype?="#nametype"
 protected class MonsterInst2_Alternatives extends AlternativesToken {
 
 	public MonsterInst2_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8634,58 +8635,60 @@ protected class MonsterInst2_Alternatives extends AlternativesToken {
 			case 21: return new MonsterInst2_RestrictedgodAssignment_21(lastRuleCallOrigin, this, 21, inst);
 			case 22: return new MonsterInst2_ShatteredsoulAssignment_22(lastRuleCallOrigin, this, 22, inst);
 			case 23: return new MonsterInst2_ColdresAssignment_23(lastRuleCallOrigin, this, 23, inst);
-			case 24: return new MonsterInst2_FireresAssignment_24(lastRuleCallOrigin, this, 24, inst);
-			case 25: return new MonsterInst2_PoisonresAssignment_25(lastRuleCallOrigin, this, 25, inst);
-			case 26: return new MonsterInst2_ShockresAssignment_26(lastRuleCallOrigin, this, 26, inst);
-			case 27: return new MonsterInst2_DarkvisionAssignment_27(lastRuleCallOrigin, this, 27, inst);
-			case 28: return new MonsterInst2_StealthyAssignment_28(lastRuleCallOrigin, this, 28, inst);
-			case 29: return new MonsterInst2_SeduceAssignment_29(lastRuleCallOrigin, this, 29, inst);
-			case 30: return new MonsterInst2_SuccubusAssignment_30(lastRuleCallOrigin, this, 30, inst);
-			case 31: return new MonsterInst2_BeckonAssignment_31(lastRuleCallOrigin, this, 31, inst);
-			case 32: return new MonsterInst2_StartageAssignment_32(lastRuleCallOrigin, this, 32, inst);
-			case 33: return new MonsterInst2_MaxageAssignment_33(lastRuleCallOrigin, this, 33, inst);
-			case 34: return new MonsterInst2_OlderAssignment_34(lastRuleCallOrigin, this, 34, inst);
-			case 35: return new MonsterInst2_HealerAssignment_35(lastRuleCallOrigin, this, 35, inst);
-			case 36: return new MonsterInst2_StartaffAssignment_36(lastRuleCallOrigin, this, 36, inst);
-			case 37: return new MonsterInst2_SupplybonusAssignment_37(lastRuleCallOrigin, this, 37, inst);
-			case 38: return new MonsterInst2_UwdamageAssignment_38(lastRuleCallOrigin, this, 38, inst);
-			case 39: return new MonsterInst2_ColdpowerAssignment_39(lastRuleCallOrigin, this, 39, inst);
-			case 40: return new MonsterInst2_FirepowerAssignment_40(lastRuleCallOrigin, this, 40, inst);
-			case 41: return new MonsterInst2_StormpowerAssignment_41(lastRuleCallOrigin, this, 41, inst);
-			case 42: return new MonsterInst2_DarkpowerAssignment_42(lastRuleCallOrigin, this, 42, inst);
-			case 43: return new MonsterInst2_SpringpowerAssignment_43(lastRuleCallOrigin, this, 43, inst);
-			case 44: return new MonsterInst2_SummerpowerAssignment_44(lastRuleCallOrigin, this, 44, inst);
-			case 45: return new MonsterInst2_FallpowerAssignment_45(lastRuleCallOrigin, this, 45, inst);
-			case 46: return new MonsterInst2_WinterpowerAssignment_46(lastRuleCallOrigin, this, 46, inst);
-			case 47: return new MonsterInst2_AmbidextrousAssignment_47(lastRuleCallOrigin, this, 47, inst);
-			case 48: return new MonsterInst2_BanefireshieldAssignment_48(lastRuleCallOrigin, this, 48, inst);
-			case 49: return new MonsterInst2_BerserkAssignment_49(lastRuleCallOrigin, this, 49, inst);
-			case 50: return new MonsterInst2_StandardAssignment_50(lastRuleCallOrigin, this, 50, inst);
-			case 51: return new MonsterInst2_AnimalaweAssignment_51(lastRuleCallOrigin, this, 51, inst);
-			case 52: return new MonsterInst2_AweAssignment_52(lastRuleCallOrigin, this, 52, inst);
-			case 53: return new MonsterInst2_FearAssignment_53(lastRuleCallOrigin, this, 53, inst);
-			case 54: return new MonsterInst2_RegenerationAssignment_54(lastRuleCallOrigin, this, 54, inst);
-			case 55: return new MonsterInst2_ReinvigorationAssignment_55(lastRuleCallOrigin, this, 55, inst);
-			case 56: return new MonsterInst2_FireshieldAssignment_56(lastRuleCallOrigin, this, 56, inst);
-			case 57: return new MonsterInst2_IceprotAssignment_57(lastRuleCallOrigin, this, 57, inst);
-			case 58: return new MonsterInst2_PoisoncloudAssignment_58(lastRuleCallOrigin, this, 58, inst);
-			case 59: return new MonsterInst2_DiseasecloudAssignment_59(lastRuleCallOrigin, this, 59, inst);
-			case 60: return new MonsterInst2_BloodvengeanceAssignment_60(lastRuleCallOrigin, this, 60, inst);
-			case 61: return new MonsterInst2_CastledefAssignment_61(lastRuleCallOrigin, this, 61, inst);
-			case 62: return new MonsterInst2_SiegebonusAssignment_62(lastRuleCallOrigin, this, 62, inst);
-			case 63: return new MonsterInst2_PatrolbonusAssignment_63(lastRuleCallOrigin, this, 63, inst);
-			case 64: return new MonsterInst2_PillagebonusAssignment_64(lastRuleCallOrigin, this, 64, inst);
-			case 65: return new MonsterInst2_ResearchbonusAssignment_65(lastRuleCallOrigin, this, 65, inst);
-			case 66: return new MonsterInst2_ForgebonusAssignment_66(lastRuleCallOrigin, this, 66, inst);
-			case 67: return new MonsterInst2_DouseAssignment_67(lastRuleCallOrigin, this, 67, inst);
-			case 68: return new MonsterInst2_NobadeventsAssignment_68(lastRuleCallOrigin, this, 68, inst);
-			case 69: return new MonsterInst2_IncunrestAssignment_69(lastRuleCallOrigin, this, 69, inst);
-			case 70: return new MonsterInst2_SpreaddomAssignment_70(lastRuleCallOrigin, this, 70, inst);
-			case 71: return new MonsterInst2_LeperAssignment_71(lastRuleCallOrigin, this, 71, inst);
-			case 72: return new MonsterInst2_PopkillAssignment_72(lastRuleCallOrigin, this, 72, inst);
-			case 73: return new MonsterInst2_HereticAssignment_73(lastRuleCallOrigin, this, 73, inst);
-			case 74: return new MonsterInst2_ItemslotsAssignment_74(lastRuleCallOrigin, this, 74, inst);
-			case 75: return new MonsterInst2_NametypeAssignment_75(lastRuleCallOrigin, this, 75, inst);
+			case 24: return new MonsterInst2_ColdresAssignment_24(lastRuleCallOrigin, this, 24, inst);
+			case 25: return new MonsterInst2_FireresAssignment_25(lastRuleCallOrigin, this, 25, inst);
+			case 26: return new MonsterInst2_FireresAssignment_26(lastRuleCallOrigin, this, 26, inst);
+			case 27: return new MonsterInst2_PoisonresAssignment_27(lastRuleCallOrigin, this, 27, inst);
+			case 28: return new MonsterInst2_ShockresAssignment_28(lastRuleCallOrigin, this, 28, inst);
+			case 29: return new MonsterInst2_DarkvisionAssignment_29(lastRuleCallOrigin, this, 29, inst);
+			case 30: return new MonsterInst2_StealthyAssignment_30(lastRuleCallOrigin, this, 30, inst);
+			case 31: return new MonsterInst2_SeduceAssignment_31(lastRuleCallOrigin, this, 31, inst);
+			case 32: return new MonsterInst2_SuccubusAssignment_32(lastRuleCallOrigin, this, 32, inst);
+			case 33: return new MonsterInst2_BeckonAssignment_33(lastRuleCallOrigin, this, 33, inst);
+			case 34: return new MonsterInst2_StartageAssignment_34(lastRuleCallOrigin, this, 34, inst);
+			case 35: return new MonsterInst2_MaxageAssignment_35(lastRuleCallOrigin, this, 35, inst);
+			case 36: return new MonsterInst2_OlderAssignment_36(lastRuleCallOrigin, this, 36, inst);
+			case 37: return new MonsterInst2_HealerAssignment_37(lastRuleCallOrigin, this, 37, inst);
+			case 38: return new MonsterInst2_StartaffAssignment_38(lastRuleCallOrigin, this, 38, inst);
+			case 39: return new MonsterInst2_SupplybonusAssignment_39(lastRuleCallOrigin, this, 39, inst);
+			case 40: return new MonsterInst2_UwdamageAssignment_40(lastRuleCallOrigin, this, 40, inst);
+			case 41: return new MonsterInst2_ColdpowerAssignment_41(lastRuleCallOrigin, this, 41, inst);
+			case 42: return new MonsterInst2_FirepowerAssignment_42(lastRuleCallOrigin, this, 42, inst);
+			case 43: return new MonsterInst2_StormpowerAssignment_43(lastRuleCallOrigin, this, 43, inst);
+			case 44: return new MonsterInst2_DarkpowerAssignment_44(lastRuleCallOrigin, this, 44, inst);
+			case 45: return new MonsterInst2_SpringpowerAssignment_45(lastRuleCallOrigin, this, 45, inst);
+			case 46: return new MonsterInst2_SummerpowerAssignment_46(lastRuleCallOrigin, this, 46, inst);
+			case 47: return new MonsterInst2_FallpowerAssignment_47(lastRuleCallOrigin, this, 47, inst);
+			case 48: return new MonsterInst2_WinterpowerAssignment_48(lastRuleCallOrigin, this, 48, inst);
+			case 49: return new MonsterInst2_AmbidextrousAssignment_49(lastRuleCallOrigin, this, 49, inst);
+			case 50: return new MonsterInst2_BanefireshieldAssignment_50(lastRuleCallOrigin, this, 50, inst);
+			case 51: return new MonsterInst2_BerserkAssignment_51(lastRuleCallOrigin, this, 51, inst);
+			case 52: return new MonsterInst2_StandardAssignment_52(lastRuleCallOrigin, this, 52, inst);
+			case 53: return new MonsterInst2_AnimalaweAssignment_53(lastRuleCallOrigin, this, 53, inst);
+			case 54: return new MonsterInst2_AweAssignment_54(lastRuleCallOrigin, this, 54, inst);
+			case 55: return new MonsterInst2_FearAssignment_55(lastRuleCallOrigin, this, 55, inst);
+			case 56: return new MonsterInst2_RegenerationAssignment_56(lastRuleCallOrigin, this, 56, inst);
+			case 57: return new MonsterInst2_ReinvigorationAssignment_57(lastRuleCallOrigin, this, 57, inst);
+			case 58: return new MonsterInst2_FireshieldAssignment_58(lastRuleCallOrigin, this, 58, inst);
+			case 59: return new MonsterInst2_IceprotAssignment_59(lastRuleCallOrigin, this, 59, inst);
+			case 60: return new MonsterInst2_PoisoncloudAssignment_60(lastRuleCallOrigin, this, 60, inst);
+			case 61: return new MonsterInst2_DiseasecloudAssignment_61(lastRuleCallOrigin, this, 61, inst);
+			case 62: return new MonsterInst2_BloodvengeanceAssignment_62(lastRuleCallOrigin, this, 62, inst);
+			case 63: return new MonsterInst2_CastledefAssignment_63(lastRuleCallOrigin, this, 63, inst);
+			case 64: return new MonsterInst2_SiegebonusAssignment_64(lastRuleCallOrigin, this, 64, inst);
+			case 65: return new MonsterInst2_PatrolbonusAssignment_65(lastRuleCallOrigin, this, 65, inst);
+			case 66: return new MonsterInst2_PillagebonusAssignment_66(lastRuleCallOrigin, this, 66, inst);
+			case 67: return new MonsterInst2_ResearchbonusAssignment_67(lastRuleCallOrigin, this, 67, inst);
+			case 68: return new MonsterInst2_ForgebonusAssignment_68(lastRuleCallOrigin, this, 68, inst);
+			case 69: return new MonsterInst2_DouseAssignment_69(lastRuleCallOrigin, this, 69, inst);
+			case 70: return new MonsterInst2_NobadeventsAssignment_70(lastRuleCallOrigin, this, 70, inst);
+			case 71: return new MonsterInst2_IncunrestAssignment_71(lastRuleCallOrigin, this, 71, inst);
+			case 72: return new MonsterInst2_SpreaddomAssignment_72(lastRuleCallOrigin, this, 72, inst);
+			case 73: return new MonsterInst2_LeperAssignment_73(lastRuleCallOrigin, this, 73, inst);
+			case 74: return new MonsterInst2_PopkillAssignment_74(lastRuleCallOrigin, this, 74, inst);
+			case 75: return new MonsterInst2_HereticAssignment_75(lastRuleCallOrigin, this, 75, inst);
+			case 76: return new MonsterInst2_ItemslotsAssignment_76(lastRuleCallOrigin, this, 76, inst);
+			case 77: return new MonsterInst2_NametypeAssignment_77(lastRuleCallOrigin, this, 77, inst);
 			default: return null;
 		}	
 	}
@@ -9491,16 +9494,49 @@ protected class MonsterInst2_ColdresAssignment_23 extends AssignmentToken  {
 
 }
 
-// fireres?="#fireres"
-protected class MonsterInst2_FireresAssignment_24 extends AssignmentToken  {
+// coldres?="#coldresist"
+protected class MonsterInst2_ColdresAssignment_24 extends AssignmentToken  {
 	
-	public MonsterInst2_FireresAssignment_24(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_ColdresAssignment_24(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getFireresAssignment_24();
+		return grammarAccess.getMonsterInst2Access().getColdresAssignment_24();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("coldres",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("coldres");
+		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getMonsterInst2Access().getColdresColdresistKeyword_24_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// fireres?="#fireres"
+protected class MonsterInst2_FireresAssignment_25 extends AssignmentToken  {
+	
+	public MonsterInst2_FireresAssignment_25(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getMonsterInst2Access().getFireresAssignment_25();
 	}
 
     @Override
@@ -9516,7 +9552,40 @@ protected class MonsterInst2_FireresAssignment_24 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("fireres");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getFireresFireresKeyword_24_0();
+			element = grammarAccess.getMonsterInst2Access().getFireresFireresKeyword_25_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// fireres?="#fireresist"
+protected class MonsterInst2_FireresAssignment_26 extends AssignmentToken  {
+	
+	public MonsterInst2_FireresAssignment_26(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getMonsterInst2Access().getFireresAssignment_26();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("fireres",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("fireres");
+		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getMonsterInst2Access().getFireresFireresistKeyword_26_0();
 			return obj;
 		}
 		return null;
@@ -9525,15 +9594,15 @@ protected class MonsterInst2_FireresAssignment_24 extends AssignmentToken  {
 }
 
 // poisonres?="#poisonres"
-protected class MonsterInst2_PoisonresAssignment_25 extends AssignmentToken  {
+protected class MonsterInst2_PoisonresAssignment_27 extends AssignmentToken  {
 	
-	public MonsterInst2_PoisonresAssignment_25(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_PoisonresAssignment_27(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getPoisonresAssignment_25();
+		return grammarAccess.getMonsterInst2Access().getPoisonresAssignment_27();
 	}
 
     @Override
@@ -9549,7 +9618,7 @@ protected class MonsterInst2_PoisonresAssignment_25 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("poisonres");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getPoisonresPoisonresKeyword_25_0();
+			element = grammarAccess.getMonsterInst2Access().getPoisonresPoisonresKeyword_27_0();
 			return obj;
 		}
 		return null;
@@ -9558,15 +9627,15 @@ protected class MonsterInst2_PoisonresAssignment_25 extends AssignmentToken  {
 }
 
 // shockres?="#shockres"
-protected class MonsterInst2_ShockresAssignment_26 extends AssignmentToken  {
+protected class MonsterInst2_ShockresAssignment_28 extends AssignmentToken  {
 	
-	public MonsterInst2_ShockresAssignment_26(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_ShockresAssignment_28(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getShockresAssignment_26();
+		return grammarAccess.getMonsterInst2Access().getShockresAssignment_28();
 	}
 
     @Override
@@ -9582,7 +9651,7 @@ protected class MonsterInst2_ShockresAssignment_26 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("shockres");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getShockresShockresKeyword_26_0();
+			element = grammarAccess.getMonsterInst2Access().getShockresShockresKeyword_28_0();
 			return obj;
 		}
 		return null;
@@ -9591,15 +9660,15 @@ protected class MonsterInst2_ShockresAssignment_26 extends AssignmentToken  {
 }
 
 // darkvision?="#darkvision"
-protected class MonsterInst2_DarkvisionAssignment_27 extends AssignmentToken  {
+protected class MonsterInst2_DarkvisionAssignment_29 extends AssignmentToken  {
 	
-	public MonsterInst2_DarkvisionAssignment_27(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_DarkvisionAssignment_29(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getDarkvisionAssignment_27();
+		return grammarAccess.getMonsterInst2Access().getDarkvisionAssignment_29();
 	}
 
     @Override
@@ -9615,7 +9684,7 @@ protected class MonsterInst2_DarkvisionAssignment_27 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("darkvision");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getDarkvisionDarkvisionKeyword_27_0();
+			element = grammarAccess.getMonsterInst2Access().getDarkvisionDarkvisionKeyword_29_0();
 			return obj;
 		}
 		return null;
@@ -9624,15 +9693,15 @@ protected class MonsterInst2_DarkvisionAssignment_27 extends AssignmentToken  {
 }
 
 // stealthy?="#stealthy"
-protected class MonsterInst2_StealthyAssignment_28 extends AssignmentToken  {
+protected class MonsterInst2_StealthyAssignment_30 extends AssignmentToken  {
 	
-	public MonsterInst2_StealthyAssignment_28(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_StealthyAssignment_30(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getStealthyAssignment_28();
+		return grammarAccess.getMonsterInst2Access().getStealthyAssignment_30();
 	}
 
     @Override
@@ -9648,7 +9717,7 @@ protected class MonsterInst2_StealthyAssignment_28 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("stealthy");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getStealthyStealthyKeyword_28_0();
+			element = grammarAccess.getMonsterInst2Access().getStealthyStealthyKeyword_30_0();
 			return obj;
 		}
 		return null;
@@ -9657,15 +9726,15 @@ protected class MonsterInst2_StealthyAssignment_28 extends AssignmentToken  {
 }
 
 // seduce?="#seduce"
-protected class MonsterInst2_SeduceAssignment_29 extends AssignmentToken  {
+protected class MonsterInst2_SeduceAssignment_31 extends AssignmentToken  {
 	
-	public MonsterInst2_SeduceAssignment_29(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_SeduceAssignment_31(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getSeduceAssignment_29();
+		return grammarAccess.getMonsterInst2Access().getSeduceAssignment_31();
 	}
 
     @Override
@@ -9681,7 +9750,7 @@ protected class MonsterInst2_SeduceAssignment_29 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("seduce");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_29_0();
+			element = grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_31_0();
 			return obj;
 		}
 		return null;
@@ -9690,15 +9759,15 @@ protected class MonsterInst2_SeduceAssignment_29 extends AssignmentToken  {
 }
 
 // succubus?="#succubus"
-protected class MonsterInst2_SuccubusAssignment_30 extends AssignmentToken  {
+protected class MonsterInst2_SuccubusAssignment_32 extends AssignmentToken  {
 	
-	public MonsterInst2_SuccubusAssignment_30(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_SuccubusAssignment_32(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getSuccubusAssignment_30();
+		return grammarAccess.getMonsterInst2Access().getSuccubusAssignment_32();
 	}
 
     @Override
@@ -9714,7 +9783,7 @@ protected class MonsterInst2_SuccubusAssignment_30 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("succubus");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_30_0();
+			element = grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_32_0();
 			return obj;
 		}
 		return null;
@@ -9723,15 +9792,15 @@ protected class MonsterInst2_SuccubusAssignment_30 extends AssignmentToken  {
 }
 
 // beckon?="#beckon"
-protected class MonsterInst2_BeckonAssignment_31 extends AssignmentToken  {
+protected class MonsterInst2_BeckonAssignment_33 extends AssignmentToken  {
 	
-	public MonsterInst2_BeckonAssignment_31(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_BeckonAssignment_33(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getBeckonAssignment_31();
+		return grammarAccess.getMonsterInst2Access().getBeckonAssignment_33();
 	}
 
     @Override
@@ -9747,7 +9816,7 @@ protected class MonsterInst2_BeckonAssignment_31 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("beckon");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_31_0();
+			element = grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_33_0();
 			return obj;
 		}
 		return null;
@@ -9756,15 +9825,15 @@ protected class MonsterInst2_BeckonAssignment_31 extends AssignmentToken  {
 }
 
 // startage?="#startage"
-protected class MonsterInst2_StartageAssignment_32 extends AssignmentToken  {
+protected class MonsterInst2_StartageAssignment_34 extends AssignmentToken  {
 	
-	public MonsterInst2_StartageAssignment_32(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_StartageAssignment_34(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getStartageAssignment_32();
+		return grammarAccess.getMonsterInst2Access().getStartageAssignment_34();
 	}
 
     @Override
@@ -9780,7 +9849,7 @@ protected class MonsterInst2_StartageAssignment_32 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("startage");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_32_0();
+			element = grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_34_0();
 			return obj;
 		}
 		return null;
@@ -9789,15 +9858,15 @@ protected class MonsterInst2_StartageAssignment_32 extends AssignmentToken  {
 }
 
 // maxage?="#maxage"
-protected class MonsterInst2_MaxageAssignment_33 extends AssignmentToken  {
+protected class MonsterInst2_MaxageAssignment_35 extends AssignmentToken  {
 	
-	public MonsterInst2_MaxageAssignment_33(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_MaxageAssignment_35(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getMaxageAssignment_33();
+		return grammarAccess.getMonsterInst2Access().getMaxageAssignment_35();
 	}
 
     @Override
@@ -9813,7 +9882,7 @@ protected class MonsterInst2_MaxageAssignment_33 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("maxage");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_33_0();
+			element = grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_35_0();
 			return obj;
 		}
 		return null;
@@ -9822,15 +9891,15 @@ protected class MonsterInst2_MaxageAssignment_33 extends AssignmentToken  {
 }
 
 // older?="#older"
-protected class MonsterInst2_OlderAssignment_34 extends AssignmentToken  {
+protected class MonsterInst2_OlderAssignment_36 extends AssignmentToken  {
 	
-	public MonsterInst2_OlderAssignment_34(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_OlderAssignment_36(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getOlderAssignment_34();
+		return grammarAccess.getMonsterInst2Access().getOlderAssignment_36();
 	}
 
     @Override
@@ -9846,7 +9915,7 @@ protected class MonsterInst2_OlderAssignment_34 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("older");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_34_0();
+			element = grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_36_0();
 			return obj;
 		}
 		return null;
@@ -9855,15 +9924,15 @@ protected class MonsterInst2_OlderAssignment_34 extends AssignmentToken  {
 }
 
 // healer?="#healer"
-protected class MonsterInst2_HealerAssignment_35 extends AssignmentToken  {
+protected class MonsterInst2_HealerAssignment_37 extends AssignmentToken  {
 	
-	public MonsterInst2_HealerAssignment_35(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_HealerAssignment_37(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getHealerAssignment_35();
+		return grammarAccess.getMonsterInst2Access().getHealerAssignment_37();
 	}
 
     @Override
@@ -9879,7 +9948,7 @@ protected class MonsterInst2_HealerAssignment_35 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("healer");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_35_0();
+			element = grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_37_0();
 			return obj;
 		}
 		return null;
@@ -9888,15 +9957,15 @@ protected class MonsterInst2_HealerAssignment_35 extends AssignmentToken  {
 }
 
 // startaff?="#startaff"
-protected class MonsterInst2_StartaffAssignment_36 extends AssignmentToken  {
+protected class MonsterInst2_StartaffAssignment_38 extends AssignmentToken  {
 	
-	public MonsterInst2_StartaffAssignment_36(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_StartaffAssignment_38(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getStartaffAssignment_36();
+		return grammarAccess.getMonsterInst2Access().getStartaffAssignment_38();
 	}
 
     @Override
@@ -9912,7 +9981,7 @@ protected class MonsterInst2_StartaffAssignment_36 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("startaff");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_36_0();
+			element = grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_38_0();
 			return obj;
 		}
 		return null;
@@ -9921,15 +9990,15 @@ protected class MonsterInst2_StartaffAssignment_36 extends AssignmentToken  {
 }
 
 // supplybonus?="#supplybonus"
-protected class MonsterInst2_SupplybonusAssignment_37 extends AssignmentToken  {
+protected class MonsterInst2_SupplybonusAssignment_39 extends AssignmentToken  {
 	
-	public MonsterInst2_SupplybonusAssignment_37(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_SupplybonusAssignment_39(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getSupplybonusAssignment_37();
+		return grammarAccess.getMonsterInst2Access().getSupplybonusAssignment_39();
 	}
 
     @Override
@@ -9945,7 +10014,7 @@ protected class MonsterInst2_SupplybonusAssignment_37 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("supplybonus");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_37_0();
+			element = grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_39_0();
 			return obj;
 		}
 		return null;
@@ -9954,15 +10023,15 @@ protected class MonsterInst2_SupplybonusAssignment_37 extends AssignmentToken  {
 }
 
 // uwdamage?="#uwdamage"
-protected class MonsterInst2_UwdamageAssignment_38 extends AssignmentToken  {
+protected class MonsterInst2_UwdamageAssignment_40 extends AssignmentToken  {
 	
-	public MonsterInst2_UwdamageAssignment_38(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_UwdamageAssignment_40(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getUwdamageAssignment_38();
+		return grammarAccess.getMonsterInst2Access().getUwdamageAssignment_40();
 	}
 
     @Override
@@ -9978,7 +10047,7 @@ protected class MonsterInst2_UwdamageAssignment_38 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("uwdamage");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_38_0();
+			element = grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_40_0();
 			return obj;
 		}
 		return null;
@@ -9987,15 +10056,15 @@ protected class MonsterInst2_UwdamageAssignment_38 extends AssignmentToken  {
 }
 
 // coldpower?="#coldpower"
-protected class MonsterInst2_ColdpowerAssignment_39 extends AssignmentToken  {
+protected class MonsterInst2_ColdpowerAssignment_41 extends AssignmentToken  {
 	
-	public MonsterInst2_ColdpowerAssignment_39(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_ColdpowerAssignment_41(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getColdpowerAssignment_39();
+		return grammarAccess.getMonsterInst2Access().getColdpowerAssignment_41();
 	}
 
     @Override
@@ -10011,7 +10080,7 @@ protected class MonsterInst2_ColdpowerAssignment_39 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("coldpower");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_39_0();
+			element = grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_41_0();
 			return obj;
 		}
 		return null;
@@ -10020,15 +10089,15 @@ protected class MonsterInst2_ColdpowerAssignment_39 extends AssignmentToken  {
 }
 
 // firepower?="#firepower"
-protected class MonsterInst2_FirepowerAssignment_40 extends AssignmentToken  {
+protected class MonsterInst2_FirepowerAssignment_42 extends AssignmentToken  {
 	
-	public MonsterInst2_FirepowerAssignment_40(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_FirepowerAssignment_42(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getFirepowerAssignment_40();
+		return grammarAccess.getMonsterInst2Access().getFirepowerAssignment_42();
 	}
 
     @Override
@@ -10044,7 +10113,7 @@ protected class MonsterInst2_FirepowerAssignment_40 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("firepower");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_40_0();
+			element = grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_42_0();
 			return obj;
 		}
 		return null;
@@ -10053,15 +10122,15 @@ protected class MonsterInst2_FirepowerAssignment_40 extends AssignmentToken  {
 }
 
 // stormpower?="#stormpower"
-protected class MonsterInst2_StormpowerAssignment_41 extends AssignmentToken  {
+protected class MonsterInst2_StormpowerAssignment_43 extends AssignmentToken  {
 	
-	public MonsterInst2_StormpowerAssignment_41(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_StormpowerAssignment_43(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getStormpowerAssignment_41();
+		return grammarAccess.getMonsterInst2Access().getStormpowerAssignment_43();
 	}
 
     @Override
@@ -10077,7 +10146,7 @@ protected class MonsterInst2_StormpowerAssignment_41 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("stormpower");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_41_0();
+			element = grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_43_0();
 			return obj;
 		}
 		return null;
@@ -10086,15 +10155,15 @@ protected class MonsterInst2_StormpowerAssignment_41 extends AssignmentToken  {
 }
 
 // darkpower?="#darkpower"
-protected class MonsterInst2_DarkpowerAssignment_42 extends AssignmentToken  {
+protected class MonsterInst2_DarkpowerAssignment_44 extends AssignmentToken  {
 	
-	public MonsterInst2_DarkpowerAssignment_42(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_DarkpowerAssignment_44(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getDarkpowerAssignment_42();
+		return grammarAccess.getMonsterInst2Access().getDarkpowerAssignment_44();
 	}
 
     @Override
@@ -10110,7 +10179,7 @@ protected class MonsterInst2_DarkpowerAssignment_42 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("darkpower");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_42_0();
+			element = grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_44_0();
 			return obj;
 		}
 		return null;
@@ -10119,15 +10188,15 @@ protected class MonsterInst2_DarkpowerAssignment_42 extends AssignmentToken  {
 }
 
 // springpower?="#springpower"
-protected class MonsterInst2_SpringpowerAssignment_43 extends AssignmentToken  {
+protected class MonsterInst2_SpringpowerAssignment_45 extends AssignmentToken  {
 	
-	public MonsterInst2_SpringpowerAssignment_43(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_SpringpowerAssignment_45(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getSpringpowerAssignment_43();
+		return grammarAccess.getMonsterInst2Access().getSpringpowerAssignment_45();
 	}
 
     @Override
@@ -10143,7 +10212,7 @@ protected class MonsterInst2_SpringpowerAssignment_43 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("springpower");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_43_0();
+			element = grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_45_0();
 			return obj;
 		}
 		return null;
@@ -10152,15 +10221,15 @@ protected class MonsterInst2_SpringpowerAssignment_43 extends AssignmentToken  {
 }
 
 // summerpower?="#summerpower"
-protected class MonsterInst2_SummerpowerAssignment_44 extends AssignmentToken  {
+protected class MonsterInst2_SummerpowerAssignment_46 extends AssignmentToken  {
 	
-	public MonsterInst2_SummerpowerAssignment_44(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_SummerpowerAssignment_46(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getSummerpowerAssignment_44();
+		return grammarAccess.getMonsterInst2Access().getSummerpowerAssignment_46();
 	}
 
     @Override
@@ -10176,7 +10245,7 @@ protected class MonsterInst2_SummerpowerAssignment_44 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("summerpower");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_44_0();
+			element = grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_46_0();
 			return obj;
 		}
 		return null;
@@ -10185,15 +10254,15 @@ protected class MonsterInst2_SummerpowerAssignment_44 extends AssignmentToken  {
 }
 
 // fallpower?="#fallpower"
-protected class MonsterInst2_FallpowerAssignment_45 extends AssignmentToken  {
+protected class MonsterInst2_FallpowerAssignment_47 extends AssignmentToken  {
 	
-	public MonsterInst2_FallpowerAssignment_45(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_FallpowerAssignment_47(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getFallpowerAssignment_45();
+		return grammarAccess.getMonsterInst2Access().getFallpowerAssignment_47();
 	}
 
     @Override
@@ -10209,7 +10278,7 @@ protected class MonsterInst2_FallpowerAssignment_45 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("fallpower");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_45_0();
+			element = grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_47_0();
 			return obj;
 		}
 		return null;
@@ -10218,15 +10287,15 @@ protected class MonsterInst2_FallpowerAssignment_45 extends AssignmentToken  {
 }
 
 // winterpower?="#winterpower"
-protected class MonsterInst2_WinterpowerAssignment_46 extends AssignmentToken  {
+protected class MonsterInst2_WinterpowerAssignment_48 extends AssignmentToken  {
 	
-	public MonsterInst2_WinterpowerAssignment_46(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_WinterpowerAssignment_48(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getWinterpowerAssignment_46();
+		return grammarAccess.getMonsterInst2Access().getWinterpowerAssignment_48();
 	}
 
     @Override
@@ -10242,7 +10311,7 @@ protected class MonsterInst2_WinterpowerAssignment_46 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("winterpower");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_46_0();
+			element = grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_48_0();
 			return obj;
 		}
 		return null;
@@ -10251,15 +10320,15 @@ protected class MonsterInst2_WinterpowerAssignment_46 extends AssignmentToken  {
 }
 
 // ambidextrous?="#ambidextrous"
-protected class MonsterInst2_AmbidextrousAssignment_47 extends AssignmentToken  {
+protected class MonsterInst2_AmbidextrousAssignment_49 extends AssignmentToken  {
 	
-	public MonsterInst2_AmbidextrousAssignment_47(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_AmbidextrousAssignment_49(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getAmbidextrousAssignment_47();
+		return grammarAccess.getMonsterInst2Access().getAmbidextrousAssignment_49();
 	}
 
     @Override
@@ -10275,7 +10344,7 @@ protected class MonsterInst2_AmbidextrousAssignment_47 extends AssignmentToken  
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("ambidextrous");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_47_0();
+			element = grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_49_0();
 			return obj;
 		}
 		return null;
@@ -10284,15 +10353,15 @@ protected class MonsterInst2_AmbidextrousAssignment_47 extends AssignmentToken  
 }
 
 // banefireshield?="#banefireshield"
-protected class MonsterInst2_BanefireshieldAssignment_48 extends AssignmentToken  {
+protected class MonsterInst2_BanefireshieldAssignment_50 extends AssignmentToken  {
 	
-	public MonsterInst2_BanefireshieldAssignment_48(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_BanefireshieldAssignment_50(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getBanefireshieldAssignment_48();
+		return grammarAccess.getMonsterInst2Access().getBanefireshieldAssignment_50();
 	}
 
     @Override
@@ -10308,7 +10377,7 @@ protected class MonsterInst2_BanefireshieldAssignment_48 extends AssignmentToken
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("banefireshield");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_48_0();
+			element = grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_50_0();
 			return obj;
 		}
 		return null;
@@ -10317,15 +10386,15 @@ protected class MonsterInst2_BanefireshieldAssignment_48 extends AssignmentToken
 }
 
 // berserk?="#berserk"
-protected class MonsterInst2_BerserkAssignment_49 extends AssignmentToken  {
+protected class MonsterInst2_BerserkAssignment_51 extends AssignmentToken  {
 	
-	public MonsterInst2_BerserkAssignment_49(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_BerserkAssignment_51(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getBerserkAssignment_49();
+		return grammarAccess.getMonsterInst2Access().getBerserkAssignment_51();
 	}
 
     @Override
@@ -10341,7 +10410,7 @@ protected class MonsterInst2_BerserkAssignment_49 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("berserk");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_49_0();
+			element = grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_51_0();
 			return obj;
 		}
 		return null;
@@ -10350,15 +10419,15 @@ protected class MonsterInst2_BerserkAssignment_49 extends AssignmentToken  {
 }
 
 // standard?="#standard"
-protected class MonsterInst2_StandardAssignment_50 extends AssignmentToken  {
+protected class MonsterInst2_StandardAssignment_52 extends AssignmentToken  {
 	
-	public MonsterInst2_StandardAssignment_50(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_StandardAssignment_52(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getStandardAssignment_50();
+		return grammarAccess.getMonsterInst2Access().getStandardAssignment_52();
 	}
 
     @Override
@@ -10374,7 +10443,7 @@ protected class MonsterInst2_StandardAssignment_50 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("standard");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_50_0();
+			element = grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_52_0();
 			return obj;
 		}
 		return null;
@@ -10383,15 +10452,15 @@ protected class MonsterInst2_StandardAssignment_50 extends AssignmentToken  {
 }
 
 // animalawe?="#animalawe"
-protected class MonsterInst2_AnimalaweAssignment_51 extends AssignmentToken  {
+protected class MonsterInst2_AnimalaweAssignment_53 extends AssignmentToken  {
 	
-	public MonsterInst2_AnimalaweAssignment_51(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_AnimalaweAssignment_53(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getAnimalaweAssignment_51();
+		return grammarAccess.getMonsterInst2Access().getAnimalaweAssignment_53();
 	}
 
     @Override
@@ -10407,7 +10476,7 @@ protected class MonsterInst2_AnimalaweAssignment_51 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("animalawe");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_51_0();
+			element = grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_53_0();
 			return obj;
 		}
 		return null;
@@ -10416,15 +10485,15 @@ protected class MonsterInst2_AnimalaweAssignment_51 extends AssignmentToken  {
 }
 
 // awe?="#awe"
-protected class MonsterInst2_AweAssignment_52 extends AssignmentToken  {
+protected class MonsterInst2_AweAssignment_54 extends AssignmentToken  {
 	
-	public MonsterInst2_AweAssignment_52(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_AweAssignment_54(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getAweAssignment_52();
+		return grammarAccess.getMonsterInst2Access().getAweAssignment_54();
 	}
 
     @Override
@@ -10440,7 +10509,7 @@ protected class MonsterInst2_AweAssignment_52 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("awe");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getAweAweKeyword_52_0();
+			element = grammarAccess.getMonsterInst2Access().getAweAweKeyword_54_0();
 			return obj;
 		}
 		return null;
@@ -10449,15 +10518,15 @@ protected class MonsterInst2_AweAssignment_52 extends AssignmentToken  {
 }
 
 // fear?="#fear"
-protected class MonsterInst2_FearAssignment_53 extends AssignmentToken  {
+protected class MonsterInst2_FearAssignment_55 extends AssignmentToken  {
 	
-	public MonsterInst2_FearAssignment_53(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_FearAssignment_55(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getFearAssignment_53();
+		return grammarAccess.getMonsterInst2Access().getFearAssignment_55();
 	}
 
     @Override
@@ -10473,7 +10542,7 @@ protected class MonsterInst2_FearAssignment_53 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("fear");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getFearFearKeyword_53_0();
+			element = grammarAccess.getMonsterInst2Access().getFearFearKeyword_55_0();
 			return obj;
 		}
 		return null;
@@ -10482,15 +10551,15 @@ protected class MonsterInst2_FearAssignment_53 extends AssignmentToken  {
 }
 
 // regeneration?="#regeneration"
-protected class MonsterInst2_RegenerationAssignment_54 extends AssignmentToken  {
+protected class MonsterInst2_RegenerationAssignment_56 extends AssignmentToken  {
 	
-	public MonsterInst2_RegenerationAssignment_54(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_RegenerationAssignment_56(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getRegenerationAssignment_54();
+		return grammarAccess.getMonsterInst2Access().getRegenerationAssignment_56();
 	}
 
     @Override
@@ -10506,7 +10575,7 @@ protected class MonsterInst2_RegenerationAssignment_54 extends AssignmentToken  
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("regeneration");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_54_0();
+			element = grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_56_0();
 			return obj;
 		}
 		return null;
@@ -10515,15 +10584,15 @@ protected class MonsterInst2_RegenerationAssignment_54 extends AssignmentToken  
 }
 
 // reinvigoration?="#reinvigoration"
-protected class MonsterInst2_ReinvigorationAssignment_55 extends AssignmentToken  {
+protected class MonsterInst2_ReinvigorationAssignment_57 extends AssignmentToken  {
 	
-	public MonsterInst2_ReinvigorationAssignment_55(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_ReinvigorationAssignment_57(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getReinvigorationAssignment_55();
+		return grammarAccess.getMonsterInst2Access().getReinvigorationAssignment_57();
 	}
 
     @Override
@@ -10539,7 +10608,7 @@ protected class MonsterInst2_ReinvigorationAssignment_55 extends AssignmentToken
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("reinvigoration");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_55_0();
+			element = grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_57_0();
 			return obj;
 		}
 		return null;
@@ -10548,15 +10617,15 @@ protected class MonsterInst2_ReinvigorationAssignment_55 extends AssignmentToken
 }
 
 // fireshield?="#fireshield"
-protected class MonsterInst2_FireshieldAssignment_56 extends AssignmentToken  {
+protected class MonsterInst2_FireshieldAssignment_58 extends AssignmentToken  {
 	
-	public MonsterInst2_FireshieldAssignment_56(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_FireshieldAssignment_58(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getFireshieldAssignment_56();
+		return grammarAccess.getMonsterInst2Access().getFireshieldAssignment_58();
 	}
 
     @Override
@@ -10572,7 +10641,7 @@ protected class MonsterInst2_FireshieldAssignment_56 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("fireshield");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_56_0();
+			element = grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_58_0();
 			return obj;
 		}
 		return null;
@@ -10581,15 +10650,15 @@ protected class MonsterInst2_FireshieldAssignment_56 extends AssignmentToken  {
 }
 
 // iceprot?="#iceprot"
-protected class MonsterInst2_IceprotAssignment_57 extends AssignmentToken  {
+protected class MonsterInst2_IceprotAssignment_59 extends AssignmentToken  {
 	
-	public MonsterInst2_IceprotAssignment_57(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_IceprotAssignment_59(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getIceprotAssignment_57();
+		return grammarAccess.getMonsterInst2Access().getIceprotAssignment_59();
 	}
 
     @Override
@@ -10605,7 +10674,7 @@ protected class MonsterInst2_IceprotAssignment_57 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("iceprot");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_57_0();
+			element = grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0();
 			return obj;
 		}
 		return null;
@@ -10614,15 +10683,15 @@ protected class MonsterInst2_IceprotAssignment_57 extends AssignmentToken  {
 }
 
 // poisoncloud?="#poisoncloud"
-protected class MonsterInst2_PoisoncloudAssignment_58 extends AssignmentToken  {
+protected class MonsterInst2_PoisoncloudAssignment_60 extends AssignmentToken  {
 	
-	public MonsterInst2_PoisoncloudAssignment_58(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_PoisoncloudAssignment_60(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getPoisoncloudAssignment_58();
+		return grammarAccess.getMonsterInst2Access().getPoisoncloudAssignment_60();
 	}
 
     @Override
@@ -10638,7 +10707,7 @@ protected class MonsterInst2_PoisoncloudAssignment_58 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("poisoncloud");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_58_0();
+			element = grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0();
 			return obj;
 		}
 		return null;
@@ -10647,15 +10716,15 @@ protected class MonsterInst2_PoisoncloudAssignment_58 extends AssignmentToken  {
 }
 
 // diseasecloud?="#diseasecloud"
-protected class MonsterInst2_DiseasecloudAssignment_59 extends AssignmentToken  {
+protected class MonsterInst2_DiseasecloudAssignment_61 extends AssignmentToken  {
 	
-	public MonsterInst2_DiseasecloudAssignment_59(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_DiseasecloudAssignment_61(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getDiseasecloudAssignment_59();
+		return grammarAccess.getMonsterInst2Access().getDiseasecloudAssignment_61();
 	}
 
     @Override
@@ -10671,7 +10740,7 @@ protected class MonsterInst2_DiseasecloudAssignment_59 extends AssignmentToken  
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("diseasecloud");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_59_0();
+			element = grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0();
 			return obj;
 		}
 		return null;
@@ -10680,15 +10749,15 @@ protected class MonsterInst2_DiseasecloudAssignment_59 extends AssignmentToken  
 }
 
 // bloodvengeance?="#bloodvengeance"
-protected class MonsterInst2_BloodvengeanceAssignment_60 extends AssignmentToken  {
+protected class MonsterInst2_BloodvengeanceAssignment_62 extends AssignmentToken  {
 	
-	public MonsterInst2_BloodvengeanceAssignment_60(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_BloodvengeanceAssignment_62(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getBloodvengeanceAssignment_60();
+		return grammarAccess.getMonsterInst2Access().getBloodvengeanceAssignment_62();
 	}
 
     @Override
@@ -10704,7 +10773,7 @@ protected class MonsterInst2_BloodvengeanceAssignment_60 extends AssignmentToken
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("bloodvengeance");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_60_0();
+			element = grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0();
 			return obj;
 		}
 		return null;
@@ -10713,15 +10782,15 @@ protected class MonsterInst2_BloodvengeanceAssignment_60 extends AssignmentToken
 }
 
 // castledef?="#castledef"
-protected class MonsterInst2_CastledefAssignment_61 extends AssignmentToken  {
+protected class MonsterInst2_CastledefAssignment_63 extends AssignmentToken  {
 	
-	public MonsterInst2_CastledefAssignment_61(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_CastledefAssignment_63(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getCastledefAssignment_61();
+		return grammarAccess.getMonsterInst2Access().getCastledefAssignment_63();
 	}
 
     @Override
@@ -10737,7 +10806,7 @@ protected class MonsterInst2_CastledefAssignment_61 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("castledef");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_61_0();
+			element = grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0();
 			return obj;
 		}
 		return null;
@@ -10746,15 +10815,15 @@ protected class MonsterInst2_CastledefAssignment_61 extends AssignmentToken  {
 }
 
 // siegebonus?="#siegebonus"
-protected class MonsterInst2_SiegebonusAssignment_62 extends AssignmentToken  {
+protected class MonsterInst2_SiegebonusAssignment_64 extends AssignmentToken  {
 	
-	public MonsterInst2_SiegebonusAssignment_62(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_SiegebonusAssignment_64(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getSiegebonusAssignment_62();
+		return grammarAccess.getMonsterInst2Access().getSiegebonusAssignment_64();
 	}
 
     @Override
@@ -10770,7 +10839,7 @@ protected class MonsterInst2_SiegebonusAssignment_62 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("siegebonus");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_62_0();
+			element = grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0();
 			return obj;
 		}
 		return null;
@@ -10779,15 +10848,15 @@ protected class MonsterInst2_SiegebonusAssignment_62 extends AssignmentToken  {
 }
 
 // patrolbonus?="#patrolbonus"
-protected class MonsterInst2_PatrolbonusAssignment_63 extends AssignmentToken  {
+protected class MonsterInst2_PatrolbonusAssignment_65 extends AssignmentToken  {
 	
-	public MonsterInst2_PatrolbonusAssignment_63(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_PatrolbonusAssignment_65(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getPatrolbonusAssignment_63();
+		return grammarAccess.getMonsterInst2Access().getPatrolbonusAssignment_65();
 	}
 
     @Override
@@ -10803,7 +10872,7 @@ protected class MonsterInst2_PatrolbonusAssignment_63 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("patrolbonus");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_63_0();
+			element = grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0();
 			return obj;
 		}
 		return null;
@@ -10812,15 +10881,15 @@ protected class MonsterInst2_PatrolbonusAssignment_63 extends AssignmentToken  {
 }
 
 // pillagebonus?="#pillagebonus"
-protected class MonsterInst2_PillagebonusAssignment_64 extends AssignmentToken  {
+protected class MonsterInst2_PillagebonusAssignment_66 extends AssignmentToken  {
 	
-	public MonsterInst2_PillagebonusAssignment_64(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_PillagebonusAssignment_66(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getPillagebonusAssignment_64();
+		return grammarAccess.getMonsterInst2Access().getPillagebonusAssignment_66();
 	}
 
     @Override
@@ -10836,7 +10905,7 @@ protected class MonsterInst2_PillagebonusAssignment_64 extends AssignmentToken  
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("pillagebonus");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_64_0();
+			element = grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0();
 			return obj;
 		}
 		return null;
@@ -10845,15 +10914,15 @@ protected class MonsterInst2_PillagebonusAssignment_64 extends AssignmentToken  
 }
 
 // researchbonus?="#researchbonus"
-protected class MonsterInst2_ResearchbonusAssignment_65 extends AssignmentToken  {
+protected class MonsterInst2_ResearchbonusAssignment_67 extends AssignmentToken  {
 	
-	public MonsterInst2_ResearchbonusAssignment_65(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_ResearchbonusAssignment_67(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getResearchbonusAssignment_65();
+		return grammarAccess.getMonsterInst2Access().getResearchbonusAssignment_67();
 	}
 
     @Override
@@ -10869,7 +10938,7 @@ protected class MonsterInst2_ResearchbonusAssignment_65 extends AssignmentToken 
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("researchbonus");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_65_0();
+			element = grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0();
 			return obj;
 		}
 		return null;
@@ -10878,15 +10947,15 @@ protected class MonsterInst2_ResearchbonusAssignment_65 extends AssignmentToken 
 }
 
 // forgebonus?="#forgebonus"
-protected class MonsterInst2_ForgebonusAssignment_66 extends AssignmentToken  {
+protected class MonsterInst2_ForgebonusAssignment_68 extends AssignmentToken  {
 	
-	public MonsterInst2_ForgebonusAssignment_66(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_ForgebonusAssignment_68(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getForgebonusAssignment_66();
+		return grammarAccess.getMonsterInst2Access().getForgebonusAssignment_68();
 	}
 
     @Override
@@ -10902,7 +10971,7 @@ protected class MonsterInst2_ForgebonusAssignment_66 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("forgebonus");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_66_0();
+			element = grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0();
 			return obj;
 		}
 		return null;
@@ -10911,15 +10980,15 @@ protected class MonsterInst2_ForgebonusAssignment_66 extends AssignmentToken  {
 }
 
 // douse?="#douse"
-protected class MonsterInst2_DouseAssignment_67 extends AssignmentToken  {
+protected class MonsterInst2_DouseAssignment_69 extends AssignmentToken  {
 	
-	public MonsterInst2_DouseAssignment_67(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_DouseAssignment_69(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getDouseAssignment_67();
+		return grammarAccess.getMonsterInst2Access().getDouseAssignment_69();
 	}
 
     @Override
@@ -10935,7 +11004,7 @@ protected class MonsterInst2_DouseAssignment_67 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("douse");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_67_0();
+			element = grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0();
 			return obj;
 		}
 		return null;
@@ -10944,15 +11013,15 @@ protected class MonsterInst2_DouseAssignment_67 extends AssignmentToken  {
 }
 
 // nobadevents?="#nobadevents"
-protected class MonsterInst2_NobadeventsAssignment_68 extends AssignmentToken  {
+protected class MonsterInst2_NobadeventsAssignment_70 extends AssignmentToken  {
 	
-	public MonsterInst2_NobadeventsAssignment_68(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_NobadeventsAssignment_70(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getNobadeventsAssignment_68();
+		return grammarAccess.getMonsterInst2Access().getNobadeventsAssignment_70();
 	}
 
     @Override
@@ -10968,7 +11037,7 @@ protected class MonsterInst2_NobadeventsAssignment_68 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("nobadevents");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_68_0();
+			element = grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0();
 			return obj;
 		}
 		return null;
@@ -10977,15 +11046,15 @@ protected class MonsterInst2_NobadeventsAssignment_68 extends AssignmentToken  {
 }
 
 // incunrest?="#incunrest"
-protected class MonsterInst2_IncunrestAssignment_69 extends AssignmentToken  {
+protected class MonsterInst2_IncunrestAssignment_71 extends AssignmentToken  {
 	
-	public MonsterInst2_IncunrestAssignment_69(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_IncunrestAssignment_71(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getIncunrestAssignment_69();
+		return grammarAccess.getMonsterInst2Access().getIncunrestAssignment_71();
 	}
 
     @Override
@@ -11001,7 +11070,7 @@ protected class MonsterInst2_IncunrestAssignment_69 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("incunrest");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_69_0();
+			element = grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0();
 			return obj;
 		}
 		return null;
@@ -11010,15 +11079,15 @@ protected class MonsterInst2_IncunrestAssignment_69 extends AssignmentToken  {
 }
 
 // spreaddom?="#spreaddom"
-protected class MonsterInst2_SpreaddomAssignment_70 extends AssignmentToken  {
+protected class MonsterInst2_SpreaddomAssignment_72 extends AssignmentToken  {
 	
-	public MonsterInst2_SpreaddomAssignment_70(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_SpreaddomAssignment_72(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getSpreaddomAssignment_70();
+		return grammarAccess.getMonsterInst2Access().getSpreaddomAssignment_72();
 	}
 
     @Override
@@ -11034,7 +11103,7 @@ protected class MonsterInst2_SpreaddomAssignment_70 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("spreaddom");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_70_0();
+			element = grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0();
 			return obj;
 		}
 		return null;
@@ -11043,15 +11112,15 @@ protected class MonsterInst2_SpreaddomAssignment_70 extends AssignmentToken  {
 }
 
 // leper?="#leper"
-protected class MonsterInst2_LeperAssignment_71 extends AssignmentToken  {
+protected class MonsterInst2_LeperAssignment_73 extends AssignmentToken  {
 	
-	public MonsterInst2_LeperAssignment_71(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_LeperAssignment_73(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getLeperAssignment_71();
+		return grammarAccess.getMonsterInst2Access().getLeperAssignment_73();
 	}
 
     @Override
@@ -11067,7 +11136,7 @@ protected class MonsterInst2_LeperAssignment_71 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("leper");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_71_0();
+			element = grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0();
 			return obj;
 		}
 		return null;
@@ -11076,15 +11145,15 @@ protected class MonsterInst2_LeperAssignment_71 extends AssignmentToken  {
 }
 
 // popkill?="#popkill"
-protected class MonsterInst2_PopkillAssignment_72 extends AssignmentToken  {
+protected class MonsterInst2_PopkillAssignment_74 extends AssignmentToken  {
 	
-	public MonsterInst2_PopkillAssignment_72(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_PopkillAssignment_74(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getPopkillAssignment_72();
+		return grammarAccess.getMonsterInst2Access().getPopkillAssignment_74();
 	}
 
     @Override
@@ -11100,7 +11169,7 @@ protected class MonsterInst2_PopkillAssignment_72 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("popkill");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_72_0();
+			element = grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0();
 			return obj;
 		}
 		return null;
@@ -11109,15 +11178,15 @@ protected class MonsterInst2_PopkillAssignment_72 extends AssignmentToken  {
 }
 
 // heretic?="#heretic"
-protected class MonsterInst2_HereticAssignment_73 extends AssignmentToken  {
+protected class MonsterInst2_HereticAssignment_75 extends AssignmentToken  {
 	
-	public MonsterInst2_HereticAssignment_73(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_HereticAssignment_75(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getHereticAssignment_73();
+		return grammarAccess.getMonsterInst2Access().getHereticAssignment_75();
 	}
 
     @Override
@@ -11133,7 +11202,7 @@ protected class MonsterInst2_HereticAssignment_73 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("heretic");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_73_0();
+			element = grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0();
 			return obj;
 		}
 		return null;
@@ -11142,15 +11211,15 @@ protected class MonsterInst2_HereticAssignment_73 extends AssignmentToken  {
 }
 
 // itemslots?="#itemslots"
-protected class MonsterInst2_ItemslotsAssignment_74 extends AssignmentToken  {
+protected class MonsterInst2_ItemslotsAssignment_76 extends AssignmentToken  {
 	
-	public MonsterInst2_ItemslotsAssignment_74(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_ItemslotsAssignment_76(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getItemslotsAssignment_74();
+		return grammarAccess.getMonsterInst2Access().getItemslotsAssignment_76();
 	}
 
     @Override
@@ -11166,7 +11235,7 @@ protected class MonsterInst2_ItemslotsAssignment_74 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("itemslots");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_74_0();
+			element = grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0();
 			return obj;
 		}
 		return null;
@@ -11175,15 +11244,15 @@ protected class MonsterInst2_ItemslotsAssignment_74 extends AssignmentToken  {
 }
 
 // nametype?="#nametype"
-protected class MonsterInst2_NametypeAssignment_75 extends AssignmentToken  {
+protected class MonsterInst2_NametypeAssignment_77 extends AssignmentToken  {
 	
-	public MonsterInst2_NametypeAssignment_75(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst2_NametypeAssignment_77(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst2Access().getNametypeAssignment_75();
+		return grammarAccess.getMonsterInst2Access().getNametypeAssignment_77();
 	}
 
     @Override
@@ -11199,7 +11268,7 @@ protected class MonsterInst2_NametypeAssignment_75 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("nametype");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_75_0();
+			element = grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0();
 			return obj;
 		}
 		return null;
@@ -11391,17 +11460,17 @@ protected class MonsterInst3_GemprodAssignment_3 extends AssignmentToken  {
  * MonsterInst4:
  * 	clear?="#clear" | clearmagic?="#clearmagic" | clearspec?="#clearspec" | female?="#female" | mounted?="#mounted" |
  * 	holy?="#holy" | animal?="#animal" | undead?="#undead" | demon?="#demon" | magicbeing?="#magicbeing" |
- * 	stonebeing?="#stonebeing" | inanimate?="#inanimate" | coldblood?="#coldblood" | immortal?="#immortal" |
- * 	blind?="#blind" | unique?="#unique" | immobile?="#immobile" | aquatic?="#aquatic" | amphibian?="#amphibian" |
- * 	pooramphibian?="#pooramphibian" | flying?="#flying" | stormimmune?="#stormimmune" | sailing?="#sailing" |
- * 	forestsurvival?="#forestsurvival" | mountainsurvival?="#mountainsurvival" | swampsurvival?="#swampsurvival" |
- * 	wastesurvival?="#wastesurvival" | illusion?="#illusion" | spy?="#spy" | assassin?="#assassin" | heal?="#heal" |
- * 	noheal?="#noheal" | neednoteat?="#neednoteat" | ethereal?="#ethereal" | trample?="#trample" | entangle?="#entangle" |
- * 	eyeloss?="#eyeloss" | horrormark?="#horrormark" | poisonarmor?="#poisonarmor" | inquisitor?="#inquisitor" |
- * 	noitem?="#noitem" | noleader?="#noleader" | poorleader?="#poorleader" | okleader?="#okleader" |
- * 	goodleader?="#goodleader" | expertleader?="#expertleader" | superiorleader?="#superiorleader" |
- * 	nomagicleader?="#nomagicleader" | poormagicleader?="#poormagicleader" | okmagicleader?="#okmagicleader" |
- * 	goodmagicleader?="#goodmagicleader" | expertmagicleader?="#expertmagicleader" |
+ * 	stonebeing?="#stonebeing" | inanimate?="#inanimate" | coldblood?="#coldblood" | coldblood?="#coldblooded" |
+ * 	immortal?="#immortal" | blind?="#blind" | unique?="#unique" | immobile?="#immobile" | aquatic?="#aquatic" |
+ * 	amphibian?="#amphibian" | pooramphibian?="#pooramphibian" | flying?="#flying" | stormimmune?="#stormimmune" |
+ * 	sailing?="#sailing" | forestsurvival?="#forestsurvival" | mountainsurvival?="#mountainsurvival" |
+ * 	swampsurvival?="#swampsurvival" | wastesurvival?="#wastesurvival" | illusion?="#illusion" | spy?="#spy" |
+ * 	assassin?="#assassin" | heal?="#heal" | noheal?="#noheal" | neednoteat?="#neednoteat" | ethereal?="#ethereal" |
+ * 	trample?="#trample" | entangle?="#entangle" | eyeloss?="#eyeloss" | horrormark?="#horrormark" |
+ * 	poisonarmor?="#poisonarmor" | inquisitor?="#inquisitor" | noitem?="#noitem" | noleader?="#noleader" |
+ * 	poorleader?="#poorleader" | okleader?="#okleader" | goodleader?="#goodleader" | expertleader?="#expertleader" |
+ * 	superiorleader?="#superiorleader" | nomagicleader?="#nomagicleader" | poormagicleader?="#poormagicleader" |
+ * 	okmagicleader?="#okmagicleader" | goodmagicleader?="#goodmagicleader" | expertmagicleader?="#expertmagicleader" |
  * 	superiormagicleader?="#superiormagicleader" | noundeadleader?="#noundeadleader" |
  * 	poorundeadleader?="#poorundeadleader" | okundeadleader?="#okundeadleader" | goodundeadleader?="#goodundeadleader" |
  * 	expertundeadleader?="#expertundeadleader" | superiorundeadleader?="#superiorundeadleader";
@@ -11410,17 +11479,17 @@ protected class MonsterInst3_GemprodAssignment_3 extends AssignmentToken  {
 
 // clear?="#clear" | clearmagic?="#clearmagic" | clearspec?="#clearspec" | female?="#female" | mounted?="#mounted" |
 // holy?="#holy" | animal?="#animal" | undead?="#undead" | demon?="#demon" | magicbeing?="#magicbeing" |
-// stonebeing?="#stonebeing" | inanimate?="#inanimate" | coldblood?="#coldblood" | immortal?="#immortal" | blind?="#blind"
-// | unique?="#unique" | immobile?="#immobile" | aquatic?="#aquatic" | amphibian?="#amphibian" |
-// pooramphibian?="#pooramphibian" | flying?="#flying" | stormimmune?="#stormimmune" | sailing?="#sailing" |
-// forestsurvival?="#forestsurvival" | mountainsurvival?="#mountainsurvival" | swampsurvival?="#swampsurvival" |
-// wastesurvival?="#wastesurvival" | illusion?="#illusion" | spy?="#spy" | assassin?="#assassin" | heal?="#heal" |
-// noheal?="#noheal" | neednoteat?="#neednoteat" | ethereal?="#ethereal" | trample?="#trample" | entangle?="#entangle" |
-// eyeloss?="#eyeloss" | horrormark?="#horrormark" | poisonarmor?="#poisonarmor" | inquisitor?="#inquisitor" |
-// noitem?="#noitem" | noleader?="#noleader" | poorleader?="#poorleader" | okleader?="#okleader" |
-// goodleader?="#goodleader" | expertleader?="#expertleader" | superiorleader?="#superiorleader" |
-// nomagicleader?="#nomagicleader" | poormagicleader?="#poormagicleader" | okmagicleader?="#okmagicleader" |
-// goodmagicleader?="#goodmagicleader" | expertmagicleader?="#expertmagicleader" |
+// stonebeing?="#stonebeing" | inanimate?="#inanimate" | coldblood?="#coldblood" | coldblood?="#coldblooded" |
+// immortal?="#immortal" | blind?="#blind" | unique?="#unique" | immobile?="#immobile" | aquatic?="#aquatic" |
+// amphibian?="#amphibian" | pooramphibian?="#pooramphibian" | flying?="#flying" | stormimmune?="#stormimmune" |
+// sailing?="#sailing" | forestsurvival?="#forestsurvival" | mountainsurvival?="#mountainsurvival" |
+// swampsurvival?="#swampsurvival" | wastesurvival?="#wastesurvival" | illusion?="#illusion" | spy?="#spy" |
+// assassin?="#assassin" | heal?="#heal" | noheal?="#noheal" | neednoteat?="#neednoteat" | ethereal?="#ethereal" |
+// trample?="#trample" | entangle?="#entangle" | eyeloss?="#eyeloss" | horrormark?="#horrormark" |
+// poisonarmor?="#poisonarmor" | inquisitor?="#inquisitor" | noitem?="#noitem" | noleader?="#noleader" |
+// poorleader?="#poorleader" | okleader?="#okleader" | goodleader?="#goodleader" | expertleader?="#expertleader" |
+// superiorleader?="#superiorleader" | nomagicleader?="#nomagicleader" | poormagicleader?="#poormagicleader" |
+// okmagicleader?="#okmagicleader" | goodmagicleader?="#goodmagicleader" | expertmagicleader?="#expertmagicleader" |
 // superiormagicleader?="#superiormagicleader" | noundeadleader?="#noundeadleader" | poorundeadleader?="#poorundeadleader"
 // | okundeadleader?="#okundeadleader" | goodundeadleader?="#goodundeadleader" | expertundeadleader?="#expertundeadleader"
 // | superiorundeadleader?="#superiorundeadleader"
@@ -11451,52 +11520,53 @@ protected class MonsterInst4_Alternatives extends AlternativesToken {
 			case 10: return new MonsterInst4_StonebeingAssignment_10(lastRuleCallOrigin, this, 10, inst);
 			case 11: return new MonsterInst4_InanimateAssignment_11(lastRuleCallOrigin, this, 11, inst);
 			case 12: return new MonsterInst4_ColdbloodAssignment_12(lastRuleCallOrigin, this, 12, inst);
-			case 13: return new MonsterInst4_ImmortalAssignment_13(lastRuleCallOrigin, this, 13, inst);
-			case 14: return new MonsterInst4_BlindAssignment_14(lastRuleCallOrigin, this, 14, inst);
-			case 15: return new MonsterInst4_UniqueAssignment_15(lastRuleCallOrigin, this, 15, inst);
-			case 16: return new MonsterInst4_ImmobileAssignment_16(lastRuleCallOrigin, this, 16, inst);
-			case 17: return new MonsterInst4_AquaticAssignment_17(lastRuleCallOrigin, this, 17, inst);
-			case 18: return new MonsterInst4_AmphibianAssignment_18(lastRuleCallOrigin, this, 18, inst);
-			case 19: return new MonsterInst4_PooramphibianAssignment_19(lastRuleCallOrigin, this, 19, inst);
-			case 20: return new MonsterInst4_FlyingAssignment_20(lastRuleCallOrigin, this, 20, inst);
-			case 21: return new MonsterInst4_StormimmuneAssignment_21(lastRuleCallOrigin, this, 21, inst);
-			case 22: return new MonsterInst4_SailingAssignment_22(lastRuleCallOrigin, this, 22, inst);
-			case 23: return new MonsterInst4_ForestsurvivalAssignment_23(lastRuleCallOrigin, this, 23, inst);
-			case 24: return new MonsterInst4_MountainsurvivalAssignment_24(lastRuleCallOrigin, this, 24, inst);
-			case 25: return new MonsterInst4_SwampsurvivalAssignment_25(lastRuleCallOrigin, this, 25, inst);
-			case 26: return new MonsterInst4_WastesurvivalAssignment_26(lastRuleCallOrigin, this, 26, inst);
-			case 27: return new MonsterInst4_IllusionAssignment_27(lastRuleCallOrigin, this, 27, inst);
-			case 28: return new MonsterInst4_SpyAssignment_28(lastRuleCallOrigin, this, 28, inst);
-			case 29: return new MonsterInst4_AssassinAssignment_29(lastRuleCallOrigin, this, 29, inst);
-			case 30: return new MonsterInst4_HealAssignment_30(lastRuleCallOrigin, this, 30, inst);
-			case 31: return new MonsterInst4_NohealAssignment_31(lastRuleCallOrigin, this, 31, inst);
-			case 32: return new MonsterInst4_NeednoteatAssignment_32(lastRuleCallOrigin, this, 32, inst);
-			case 33: return new MonsterInst4_EtherealAssignment_33(lastRuleCallOrigin, this, 33, inst);
-			case 34: return new MonsterInst4_TrampleAssignment_34(lastRuleCallOrigin, this, 34, inst);
-			case 35: return new MonsterInst4_EntangleAssignment_35(lastRuleCallOrigin, this, 35, inst);
-			case 36: return new MonsterInst4_EyelossAssignment_36(lastRuleCallOrigin, this, 36, inst);
-			case 37: return new MonsterInst4_HorrormarkAssignment_37(lastRuleCallOrigin, this, 37, inst);
-			case 38: return new MonsterInst4_PoisonarmorAssignment_38(lastRuleCallOrigin, this, 38, inst);
-			case 39: return new MonsterInst4_InquisitorAssignment_39(lastRuleCallOrigin, this, 39, inst);
-			case 40: return new MonsterInst4_NoitemAssignment_40(lastRuleCallOrigin, this, 40, inst);
-			case 41: return new MonsterInst4_NoleaderAssignment_41(lastRuleCallOrigin, this, 41, inst);
-			case 42: return new MonsterInst4_PoorleaderAssignment_42(lastRuleCallOrigin, this, 42, inst);
-			case 43: return new MonsterInst4_OkleaderAssignment_43(lastRuleCallOrigin, this, 43, inst);
-			case 44: return new MonsterInst4_GoodleaderAssignment_44(lastRuleCallOrigin, this, 44, inst);
-			case 45: return new MonsterInst4_ExpertleaderAssignment_45(lastRuleCallOrigin, this, 45, inst);
-			case 46: return new MonsterInst4_SuperiorleaderAssignment_46(lastRuleCallOrigin, this, 46, inst);
-			case 47: return new MonsterInst4_NomagicleaderAssignment_47(lastRuleCallOrigin, this, 47, inst);
-			case 48: return new MonsterInst4_PoormagicleaderAssignment_48(lastRuleCallOrigin, this, 48, inst);
-			case 49: return new MonsterInst4_OkmagicleaderAssignment_49(lastRuleCallOrigin, this, 49, inst);
-			case 50: return new MonsterInst4_GoodmagicleaderAssignment_50(lastRuleCallOrigin, this, 50, inst);
-			case 51: return new MonsterInst4_ExpertmagicleaderAssignment_51(lastRuleCallOrigin, this, 51, inst);
-			case 52: return new MonsterInst4_SuperiormagicleaderAssignment_52(lastRuleCallOrigin, this, 52, inst);
-			case 53: return new MonsterInst4_NoundeadleaderAssignment_53(lastRuleCallOrigin, this, 53, inst);
-			case 54: return new MonsterInst4_PoorundeadleaderAssignment_54(lastRuleCallOrigin, this, 54, inst);
-			case 55: return new MonsterInst4_OkundeadleaderAssignment_55(lastRuleCallOrigin, this, 55, inst);
-			case 56: return new MonsterInst4_GoodundeadleaderAssignment_56(lastRuleCallOrigin, this, 56, inst);
-			case 57: return new MonsterInst4_ExpertundeadleaderAssignment_57(lastRuleCallOrigin, this, 57, inst);
-			case 58: return new MonsterInst4_SuperiorundeadleaderAssignment_58(lastRuleCallOrigin, this, 58, inst);
+			case 13: return new MonsterInst4_ColdbloodAssignment_13(lastRuleCallOrigin, this, 13, inst);
+			case 14: return new MonsterInst4_ImmortalAssignment_14(lastRuleCallOrigin, this, 14, inst);
+			case 15: return new MonsterInst4_BlindAssignment_15(lastRuleCallOrigin, this, 15, inst);
+			case 16: return new MonsterInst4_UniqueAssignment_16(lastRuleCallOrigin, this, 16, inst);
+			case 17: return new MonsterInst4_ImmobileAssignment_17(lastRuleCallOrigin, this, 17, inst);
+			case 18: return new MonsterInst4_AquaticAssignment_18(lastRuleCallOrigin, this, 18, inst);
+			case 19: return new MonsterInst4_AmphibianAssignment_19(lastRuleCallOrigin, this, 19, inst);
+			case 20: return new MonsterInst4_PooramphibianAssignment_20(lastRuleCallOrigin, this, 20, inst);
+			case 21: return new MonsterInst4_FlyingAssignment_21(lastRuleCallOrigin, this, 21, inst);
+			case 22: return new MonsterInst4_StormimmuneAssignment_22(lastRuleCallOrigin, this, 22, inst);
+			case 23: return new MonsterInst4_SailingAssignment_23(lastRuleCallOrigin, this, 23, inst);
+			case 24: return new MonsterInst4_ForestsurvivalAssignment_24(lastRuleCallOrigin, this, 24, inst);
+			case 25: return new MonsterInst4_MountainsurvivalAssignment_25(lastRuleCallOrigin, this, 25, inst);
+			case 26: return new MonsterInst4_SwampsurvivalAssignment_26(lastRuleCallOrigin, this, 26, inst);
+			case 27: return new MonsterInst4_WastesurvivalAssignment_27(lastRuleCallOrigin, this, 27, inst);
+			case 28: return new MonsterInst4_IllusionAssignment_28(lastRuleCallOrigin, this, 28, inst);
+			case 29: return new MonsterInst4_SpyAssignment_29(lastRuleCallOrigin, this, 29, inst);
+			case 30: return new MonsterInst4_AssassinAssignment_30(lastRuleCallOrigin, this, 30, inst);
+			case 31: return new MonsterInst4_HealAssignment_31(lastRuleCallOrigin, this, 31, inst);
+			case 32: return new MonsterInst4_NohealAssignment_32(lastRuleCallOrigin, this, 32, inst);
+			case 33: return new MonsterInst4_NeednoteatAssignment_33(lastRuleCallOrigin, this, 33, inst);
+			case 34: return new MonsterInst4_EtherealAssignment_34(lastRuleCallOrigin, this, 34, inst);
+			case 35: return new MonsterInst4_TrampleAssignment_35(lastRuleCallOrigin, this, 35, inst);
+			case 36: return new MonsterInst4_EntangleAssignment_36(lastRuleCallOrigin, this, 36, inst);
+			case 37: return new MonsterInst4_EyelossAssignment_37(lastRuleCallOrigin, this, 37, inst);
+			case 38: return new MonsterInst4_HorrormarkAssignment_38(lastRuleCallOrigin, this, 38, inst);
+			case 39: return new MonsterInst4_PoisonarmorAssignment_39(lastRuleCallOrigin, this, 39, inst);
+			case 40: return new MonsterInst4_InquisitorAssignment_40(lastRuleCallOrigin, this, 40, inst);
+			case 41: return new MonsterInst4_NoitemAssignment_41(lastRuleCallOrigin, this, 41, inst);
+			case 42: return new MonsterInst4_NoleaderAssignment_42(lastRuleCallOrigin, this, 42, inst);
+			case 43: return new MonsterInst4_PoorleaderAssignment_43(lastRuleCallOrigin, this, 43, inst);
+			case 44: return new MonsterInst4_OkleaderAssignment_44(lastRuleCallOrigin, this, 44, inst);
+			case 45: return new MonsterInst4_GoodleaderAssignment_45(lastRuleCallOrigin, this, 45, inst);
+			case 46: return new MonsterInst4_ExpertleaderAssignment_46(lastRuleCallOrigin, this, 46, inst);
+			case 47: return new MonsterInst4_SuperiorleaderAssignment_47(lastRuleCallOrigin, this, 47, inst);
+			case 48: return new MonsterInst4_NomagicleaderAssignment_48(lastRuleCallOrigin, this, 48, inst);
+			case 49: return new MonsterInst4_PoormagicleaderAssignment_49(lastRuleCallOrigin, this, 49, inst);
+			case 50: return new MonsterInst4_OkmagicleaderAssignment_50(lastRuleCallOrigin, this, 50, inst);
+			case 51: return new MonsterInst4_GoodmagicleaderAssignment_51(lastRuleCallOrigin, this, 51, inst);
+			case 52: return new MonsterInst4_ExpertmagicleaderAssignment_52(lastRuleCallOrigin, this, 52, inst);
+			case 53: return new MonsterInst4_SuperiormagicleaderAssignment_53(lastRuleCallOrigin, this, 53, inst);
+			case 54: return new MonsterInst4_NoundeadleaderAssignment_54(lastRuleCallOrigin, this, 54, inst);
+			case 55: return new MonsterInst4_PoorundeadleaderAssignment_55(lastRuleCallOrigin, this, 55, inst);
+			case 56: return new MonsterInst4_OkundeadleaderAssignment_56(lastRuleCallOrigin, this, 56, inst);
+			case 57: return new MonsterInst4_GoodundeadleaderAssignment_57(lastRuleCallOrigin, this, 57, inst);
+			case 58: return new MonsterInst4_ExpertundeadleaderAssignment_58(lastRuleCallOrigin, this, 58, inst);
+			case 59: return new MonsterInst4_SuperiorundeadleaderAssignment_59(lastRuleCallOrigin, this, 59, inst);
 			default: return null;
 		}	
 	}
@@ -11939,16 +12009,49 @@ protected class MonsterInst4_ColdbloodAssignment_12 extends AssignmentToken  {
 
 }
 
-// immortal?="#immortal"
-protected class MonsterInst4_ImmortalAssignment_13 extends AssignmentToken  {
+// coldblood?="#coldblooded"
+protected class MonsterInst4_ColdbloodAssignment_13 extends AssignmentToken  {
 	
-	public MonsterInst4_ImmortalAssignment_13(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_ColdbloodAssignment_13(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getImmortalAssignment_13();
+		return grammarAccess.getMonsterInst4Access().getColdbloodAssignment_13();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("coldblood",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("coldblood");
+		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getMonsterInst4Access().getColdbloodColdbloodedKeyword_13_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// immortal?="#immortal"
+protected class MonsterInst4_ImmortalAssignment_14 extends AssignmentToken  {
+	
+	public MonsterInst4_ImmortalAssignment_14(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getMonsterInst4Access().getImmortalAssignment_14();
 	}
 
     @Override
@@ -11964,7 +12067,7 @@ protected class MonsterInst4_ImmortalAssignment_13 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("immortal");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_13_0();
+			element = grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_14_0();
 			return obj;
 		}
 		return null;
@@ -11973,15 +12076,15 @@ protected class MonsterInst4_ImmortalAssignment_13 extends AssignmentToken  {
 }
 
 // blind?="#blind"
-protected class MonsterInst4_BlindAssignment_14 extends AssignmentToken  {
+protected class MonsterInst4_BlindAssignment_15 extends AssignmentToken  {
 	
-	public MonsterInst4_BlindAssignment_14(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_BlindAssignment_15(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getBlindAssignment_14();
+		return grammarAccess.getMonsterInst4Access().getBlindAssignment_15();
 	}
 
     @Override
@@ -11997,7 +12100,7 @@ protected class MonsterInst4_BlindAssignment_14 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("blind");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_14_0();
+			element = grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_15_0();
 			return obj;
 		}
 		return null;
@@ -12006,15 +12109,15 @@ protected class MonsterInst4_BlindAssignment_14 extends AssignmentToken  {
 }
 
 // unique?="#unique"
-protected class MonsterInst4_UniqueAssignment_15 extends AssignmentToken  {
+protected class MonsterInst4_UniqueAssignment_16 extends AssignmentToken  {
 	
-	public MonsterInst4_UniqueAssignment_15(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_UniqueAssignment_16(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getUniqueAssignment_15();
+		return grammarAccess.getMonsterInst4Access().getUniqueAssignment_16();
 	}
 
     @Override
@@ -12030,7 +12133,7 @@ protected class MonsterInst4_UniqueAssignment_15 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("unique");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_15_0();
+			element = grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_16_0();
 			return obj;
 		}
 		return null;
@@ -12039,15 +12142,15 @@ protected class MonsterInst4_UniqueAssignment_15 extends AssignmentToken  {
 }
 
 // immobile?="#immobile"
-protected class MonsterInst4_ImmobileAssignment_16 extends AssignmentToken  {
+protected class MonsterInst4_ImmobileAssignment_17 extends AssignmentToken  {
 	
-	public MonsterInst4_ImmobileAssignment_16(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_ImmobileAssignment_17(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getImmobileAssignment_16();
+		return grammarAccess.getMonsterInst4Access().getImmobileAssignment_17();
 	}
 
     @Override
@@ -12063,7 +12166,7 @@ protected class MonsterInst4_ImmobileAssignment_16 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("immobile");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_16_0();
+			element = grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_17_0();
 			return obj;
 		}
 		return null;
@@ -12072,15 +12175,15 @@ protected class MonsterInst4_ImmobileAssignment_16 extends AssignmentToken  {
 }
 
 // aquatic?="#aquatic"
-protected class MonsterInst4_AquaticAssignment_17 extends AssignmentToken  {
+protected class MonsterInst4_AquaticAssignment_18 extends AssignmentToken  {
 	
-	public MonsterInst4_AquaticAssignment_17(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_AquaticAssignment_18(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getAquaticAssignment_17();
+		return grammarAccess.getMonsterInst4Access().getAquaticAssignment_18();
 	}
 
     @Override
@@ -12096,7 +12199,7 @@ protected class MonsterInst4_AquaticAssignment_17 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("aquatic");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_17_0();
+			element = grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_18_0();
 			return obj;
 		}
 		return null;
@@ -12105,15 +12208,15 @@ protected class MonsterInst4_AquaticAssignment_17 extends AssignmentToken  {
 }
 
 // amphibian?="#amphibian"
-protected class MonsterInst4_AmphibianAssignment_18 extends AssignmentToken  {
+protected class MonsterInst4_AmphibianAssignment_19 extends AssignmentToken  {
 	
-	public MonsterInst4_AmphibianAssignment_18(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_AmphibianAssignment_19(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getAmphibianAssignment_18();
+		return grammarAccess.getMonsterInst4Access().getAmphibianAssignment_19();
 	}
 
     @Override
@@ -12129,7 +12232,7 @@ protected class MonsterInst4_AmphibianAssignment_18 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("amphibian");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_18_0();
+			element = grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_19_0();
 			return obj;
 		}
 		return null;
@@ -12138,15 +12241,15 @@ protected class MonsterInst4_AmphibianAssignment_18 extends AssignmentToken  {
 }
 
 // pooramphibian?="#pooramphibian"
-protected class MonsterInst4_PooramphibianAssignment_19 extends AssignmentToken  {
+protected class MonsterInst4_PooramphibianAssignment_20 extends AssignmentToken  {
 	
-	public MonsterInst4_PooramphibianAssignment_19(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_PooramphibianAssignment_20(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getPooramphibianAssignment_19();
+		return grammarAccess.getMonsterInst4Access().getPooramphibianAssignment_20();
 	}
 
     @Override
@@ -12162,7 +12265,7 @@ protected class MonsterInst4_PooramphibianAssignment_19 extends AssignmentToken 
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("pooramphibian");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_19_0();
+			element = grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_20_0();
 			return obj;
 		}
 		return null;
@@ -12171,15 +12274,15 @@ protected class MonsterInst4_PooramphibianAssignment_19 extends AssignmentToken 
 }
 
 // flying?="#flying"
-protected class MonsterInst4_FlyingAssignment_20 extends AssignmentToken  {
+protected class MonsterInst4_FlyingAssignment_21 extends AssignmentToken  {
 	
-	public MonsterInst4_FlyingAssignment_20(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_FlyingAssignment_21(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getFlyingAssignment_20();
+		return grammarAccess.getMonsterInst4Access().getFlyingAssignment_21();
 	}
 
     @Override
@@ -12195,7 +12298,7 @@ protected class MonsterInst4_FlyingAssignment_20 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("flying");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_20_0();
+			element = grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_21_0();
 			return obj;
 		}
 		return null;
@@ -12204,15 +12307,15 @@ protected class MonsterInst4_FlyingAssignment_20 extends AssignmentToken  {
 }
 
 // stormimmune?="#stormimmune"
-protected class MonsterInst4_StormimmuneAssignment_21 extends AssignmentToken  {
+protected class MonsterInst4_StormimmuneAssignment_22 extends AssignmentToken  {
 	
-	public MonsterInst4_StormimmuneAssignment_21(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_StormimmuneAssignment_22(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getStormimmuneAssignment_21();
+		return grammarAccess.getMonsterInst4Access().getStormimmuneAssignment_22();
 	}
 
     @Override
@@ -12228,7 +12331,7 @@ protected class MonsterInst4_StormimmuneAssignment_21 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("stormimmune");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_21_0();
+			element = grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_22_0();
 			return obj;
 		}
 		return null;
@@ -12237,15 +12340,15 @@ protected class MonsterInst4_StormimmuneAssignment_21 extends AssignmentToken  {
 }
 
 // sailing?="#sailing"
-protected class MonsterInst4_SailingAssignment_22 extends AssignmentToken  {
+protected class MonsterInst4_SailingAssignment_23 extends AssignmentToken  {
 	
-	public MonsterInst4_SailingAssignment_22(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_SailingAssignment_23(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getSailingAssignment_22();
+		return grammarAccess.getMonsterInst4Access().getSailingAssignment_23();
 	}
 
     @Override
@@ -12261,7 +12364,7 @@ protected class MonsterInst4_SailingAssignment_22 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("sailing");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_22_0();
+			element = grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_23_0();
 			return obj;
 		}
 		return null;
@@ -12270,15 +12373,15 @@ protected class MonsterInst4_SailingAssignment_22 extends AssignmentToken  {
 }
 
 // forestsurvival?="#forestsurvival"
-protected class MonsterInst4_ForestsurvivalAssignment_23 extends AssignmentToken  {
+protected class MonsterInst4_ForestsurvivalAssignment_24 extends AssignmentToken  {
 	
-	public MonsterInst4_ForestsurvivalAssignment_23(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_ForestsurvivalAssignment_24(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getForestsurvivalAssignment_23();
+		return grammarAccess.getMonsterInst4Access().getForestsurvivalAssignment_24();
 	}
 
     @Override
@@ -12294,7 +12397,7 @@ protected class MonsterInst4_ForestsurvivalAssignment_23 extends AssignmentToken
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("forestsurvival");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_23_0();
+			element = grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_24_0();
 			return obj;
 		}
 		return null;
@@ -12303,15 +12406,15 @@ protected class MonsterInst4_ForestsurvivalAssignment_23 extends AssignmentToken
 }
 
 // mountainsurvival?="#mountainsurvival"
-protected class MonsterInst4_MountainsurvivalAssignment_24 extends AssignmentToken  {
+protected class MonsterInst4_MountainsurvivalAssignment_25 extends AssignmentToken  {
 	
-	public MonsterInst4_MountainsurvivalAssignment_24(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_MountainsurvivalAssignment_25(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getMountainsurvivalAssignment_24();
+		return grammarAccess.getMonsterInst4Access().getMountainsurvivalAssignment_25();
 	}
 
     @Override
@@ -12327,7 +12430,7 @@ protected class MonsterInst4_MountainsurvivalAssignment_24 extends AssignmentTok
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("mountainsurvival");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_24_0();
+			element = grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_25_0();
 			return obj;
 		}
 		return null;
@@ -12336,15 +12439,15 @@ protected class MonsterInst4_MountainsurvivalAssignment_24 extends AssignmentTok
 }
 
 // swampsurvival?="#swampsurvival"
-protected class MonsterInst4_SwampsurvivalAssignment_25 extends AssignmentToken  {
+protected class MonsterInst4_SwampsurvivalAssignment_26 extends AssignmentToken  {
 	
-	public MonsterInst4_SwampsurvivalAssignment_25(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_SwampsurvivalAssignment_26(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getSwampsurvivalAssignment_25();
+		return grammarAccess.getMonsterInst4Access().getSwampsurvivalAssignment_26();
 	}
 
     @Override
@@ -12360,7 +12463,7 @@ protected class MonsterInst4_SwampsurvivalAssignment_25 extends AssignmentToken 
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("swampsurvival");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_25_0();
+			element = grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_26_0();
 			return obj;
 		}
 		return null;
@@ -12369,15 +12472,15 @@ protected class MonsterInst4_SwampsurvivalAssignment_25 extends AssignmentToken 
 }
 
 // wastesurvival?="#wastesurvival"
-protected class MonsterInst4_WastesurvivalAssignment_26 extends AssignmentToken  {
+protected class MonsterInst4_WastesurvivalAssignment_27 extends AssignmentToken  {
 	
-	public MonsterInst4_WastesurvivalAssignment_26(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_WastesurvivalAssignment_27(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getWastesurvivalAssignment_26();
+		return grammarAccess.getMonsterInst4Access().getWastesurvivalAssignment_27();
 	}
 
     @Override
@@ -12393,7 +12496,7 @@ protected class MonsterInst4_WastesurvivalAssignment_26 extends AssignmentToken 
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("wastesurvival");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_26_0();
+			element = grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_27_0();
 			return obj;
 		}
 		return null;
@@ -12402,15 +12505,15 @@ protected class MonsterInst4_WastesurvivalAssignment_26 extends AssignmentToken 
 }
 
 // illusion?="#illusion"
-protected class MonsterInst4_IllusionAssignment_27 extends AssignmentToken  {
+protected class MonsterInst4_IllusionAssignment_28 extends AssignmentToken  {
 	
-	public MonsterInst4_IllusionAssignment_27(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_IllusionAssignment_28(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getIllusionAssignment_27();
+		return grammarAccess.getMonsterInst4Access().getIllusionAssignment_28();
 	}
 
     @Override
@@ -12426,7 +12529,7 @@ protected class MonsterInst4_IllusionAssignment_27 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("illusion");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_27_0();
+			element = grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_28_0();
 			return obj;
 		}
 		return null;
@@ -12435,15 +12538,15 @@ protected class MonsterInst4_IllusionAssignment_27 extends AssignmentToken  {
 }
 
 // spy?="#spy"
-protected class MonsterInst4_SpyAssignment_28 extends AssignmentToken  {
+protected class MonsterInst4_SpyAssignment_29 extends AssignmentToken  {
 	
-	public MonsterInst4_SpyAssignment_28(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_SpyAssignment_29(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getSpyAssignment_28();
+		return grammarAccess.getMonsterInst4Access().getSpyAssignment_29();
 	}
 
     @Override
@@ -12459,7 +12562,7 @@ protected class MonsterInst4_SpyAssignment_28 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("spy");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getSpySpyKeyword_28_0();
+			element = grammarAccess.getMonsterInst4Access().getSpySpyKeyword_29_0();
 			return obj;
 		}
 		return null;
@@ -12468,15 +12571,15 @@ protected class MonsterInst4_SpyAssignment_28 extends AssignmentToken  {
 }
 
 // assassin?="#assassin"
-protected class MonsterInst4_AssassinAssignment_29 extends AssignmentToken  {
+protected class MonsterInst4_AssassinAssignment_30 extends AssignmentToken  {
 	
-	public MonsterInst4_AssassinAssignment_29(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_AssassinAssignment_30(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getAssassinAssignment_29();
+		return grammarAccess.getMonsterInst4Access().getAssassinAssignment_30();
 	}
 
     @Override
@@ -12492,7 +12595,7 @@ protected class MonsterInst4_AssassinAssignment_29 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("assassin");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_29_0();
+			element = grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_30_0();
 			return obj;
 		}
 		return null;
@@ -12501,15 +12604,15 @@ protected class MonsterInst4_AssassinAssignment_29 extends AssignmentToken  {
 }
 
 // heal?="#heal"
-protected class MonsterInst4_HealAssignment_30 extends AssignmentToken  {
+protected class MonsterInst4_HealAssignment_31 extends AssignmentToken  {
 	
-	public MonsterInst4_HealAssignment_30(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_HealAssignment_31(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getHealAssignment_30();
+		return grammarAccess.getMonsterInst4Access().getHealAssignment_31();
 	}
 
     @Override
@@ -12525,7 +12628,7 @@ protected class MonsterInst4_HealAssignment_30 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("heal");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getHealHealKeyword_30_0();
+			element = grammarAccess.getMonsterInst4Access().getHealHealKeyword_31_0();
 			return obj;
 		}
 		return null;
@@ -12534,15 +12637,15 @@ protected class MonsterInst4_HealAssignment_30 extends AssignmentToken  {
 }
 
 // noheal?="#noheal"
-protected class MonsterInst4_NohealAssignment_31 extends AssignmentToken  {
+protected class MonsterInst4_NohealAssignment_32 extends AssignmentToken  {
 	
-	public MonsterInst4_NohealAssignment_31(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_NohealAssignment_32(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getNohealAssignment_31();
+		return grammarAccess.getMonsterInst4Access().getNohealAssignment_32();
 	}
 
     @Override
@@ -12558,7 +12661,7 @@ protected class MonsterInst4_NohealAssignment_31 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("noheal");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_31_0();
+			element = grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_32_0();
 			return obj;
 		}
 		return null;
@@ -12567,15 +12670,15 @@ protected class MonsterInst4_NohealAssignment_31 extends AssignmentToken  {
 }
 
 // neednoteat?="#neednoteat"
-protected class MonsterInst4_NeednoteatAssignment_32 extends AssignmentToken  {
+protected class MonsterInst4_NeednoteatAssignment_33 extends AssignmentToken  {
 	
-	public MonsterInst4_NeednoteatAssignment_32(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_NeednoteatAssignment_33(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getNeednoteatAssignment_32();
+		return grammarAccess.getMonsterInst4Access().getNeednoteatAssignment_33();
 	}
 
     @Override
@@ -12591,7 +12694,7 @@ protected class MonsterInst4_NeednoteatAssignment_32 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("neednoteat");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_32_0();
+			element = grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_33_0();
 			return obj;
 		}
 		return null;
@@ -12600,15 +12703,15 @@ protected class MonsterInst4_NeednoteatAssignment_32 extends AssignmentToken  {
 }
 
 // ethereal?="#ethereal"
-protected class MonsterInst4_EtherealAssignment_33 extends AssignmentToken  {
+protected class MonsterInst4_EtherealAssignment_34 extends AssignmentToken  {
 	
-	public MonsterInst4_EtherealAssignment_33(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_EtherealAssignment_34(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getEtherealAssignment_33();
+		return grammarAccess.getMonsterInst4Access().getEtherealAssignment_34();
 	}
 
     @Override
@@ -12624,7 +12727,7 @@ protected class MonsterInst4_EtherealAssignment_33 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("ethereal");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_33_0();
+			element = grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_34_0();
 			return obj;
 		}
 		return null;
@@ -12633,15 +12736,15 @@ protected class MonsterInst4_EtherealAssignment_33 extends AssignmentToken  {
 }
 
 // trample?="#trample"
-protected class MonsterInst4_TrampleAssignment_34 extends AssignmentToken  {
+protected class MonsterInst4_TrampleAssignment_35 extends AssignmentToken  {
 	
-	public MonsterInst4_TrampleAssignment_34(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_TrampleAssignment_35(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getTrampleAssignment_34();
+		return grammarAccess.getMonsterInst4Access().getTrampleAssignment_35();
 	}
 
     @Override
@@ -12657,7 +12760,7 @@ protected class MonsterInst4_TrampleAssignment_34 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("trample");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_34_0();
+			element = grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_35_0();
 			return obj;
 		}
 		return null;
@@ -12666,15 +12769,15 @@ protected class MonsterInst4_TrampleAssignment_34 extends AssignmentToken  {
 }
 
 // entangle?="#entangle"
-protected class MonsterInst4_EntangleAssignment_35 extends AssignmentToken  {
+protected class MonsterInst4_EntangleAssignment_36 extends AssignmentToken  {
 	
-	public MonsterInst4_EntangleAssignment_35(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_EntangleAssignment_36(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getEntangleAssignment_35();
+		return grammarAccess.getMonsterInst4Access().getEntangleAssignment_36();
 	}
 
     @Override
@@ -12690,7 +12793,7 @@ protected class MonsterInst4_EntangleAssignment_35 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("entangle");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_35_0();
+			element = grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_36_0();
 			return obj;
 		}
 		return null;
@@ -12699,15 +12802,15 @@ protected class MonsterInst4_EntangleAssignment_35 extends AssignmentToken  {
 }
 
 // eyeloss?="#eyeloss"
-protected class MonsterInst4_EyelossAssignment_36 extends AssignmentToken  {
+protected class MonsterInst4_EyelossAssignment_37 extends AssignmentToken  {
 	
-	public MonsterInst4_EyelossAssignment_36(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_EyelossAssignment_37(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getEyelossAssignment_36();
+		return grammarAccess.getMonsterInst4Access().getEyelossAssignment_37();
 	}
 
     @Override
@@ -12723,7 +12826,7 @@ protected class MonsterInst4_EyelossAssignment_36 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("eyeloss");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_36_0();
+			element = grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_37_0();
 			return obj;
 		}
 		return null;
@@ -12732,15 +12835,15 @@ protected class MonsterInst4_EyelossAssignment_36 extends AssignmentToken  {
 }
 
 // horrormark?="#horrormark"
-protected class MonsterInst4_HorrormarkAssignment_37 extends AssignmentToken  {
+protected class MonsterInst4_HorrormarkAssignment_38 extends AssignmentToken  {
 	
-	public MonsterInst4_HorrormarkAssignment_37(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_HorrormarkAssignment_38(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getHorrormarkAssignment_37();
+		return grammarAccess.getMonsterInst4Access().getHorrormarkAssignment_38();
 	}
 
     @Override
@@ -12756,7 +12859,7 @@ protected class MonsterInst4_HorrormarkAssignment_37 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("horrormark");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_37_0();
+			element = grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_38_0();
 			return obj;
 		}
 		return null;
@@ -12765,15 +12868,15 @@ protected class MonsterInst4_HorrormarkAssignment_37 extends AssignmentToken  {
 }
 
 // poisonarmor?="#poisonarmor"
-protected class MonsterInst4_PoisonarmorAssignment_38 extends AssignmentToken  {
+protected class MonsterInst4_PoisonarmorAssignment_39 extends AssignmentToken  {
 	
-	public MonsterInst4_PoisonarmorAssignment_38(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_PoisonarmorAssignment_39(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getPoisonarmorAssignment_38();
+		return grammarAccess.getMonsterInst4Access().getPoisonarmorAssignment_39();
 	}
 
     @Override
@@ -12789,7 +12892,7 @@ protected class MonsterInst4_PoisonarmorAssignment_38 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("poisonarmor");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_38_0();
+			element = grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_39_0();
 			return obj;
 		}
 		return null;
@@ -12798,15 +12901,15 @@ protected class MonsterInst4_PoisonarmorAssignment_38 extends AssignmentToken  {
 }
 
 // inquisitor?="#inquisitor"
-protected class MonsterInst4_InquisitorAssignment_39 extends AssignmentToken  {
+protected class MonsterInst4_InquisitorAssignment_40 extends AssignmentToken  {
 	
-	public MonsterInst4_InquisitorAssignment_39(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_InquisitorAssignment_40(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getInquisitorAssignment_39();
+		return grammarAccess.getMonsterInst4Access().getInquisitorAssignment_40();
 	}
 
     @Override
@@ -12822,7 +12925,7 @@ protected class MonsterInst4_InquisitorAssignment_39 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("inquisitor");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_39_0();
+			element = grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_40_0();
 			return obj;
 		}
 		return null;
@@ -12831,15 +12934,15 @@ protected class MonsterInst4_InquisitorAssignment_39 extends AssignmentToken  {
 }
 
 // noitem?="#noitem"
-protected class MonsterInst4_NoitemAssignment_40 extends AssignmentToken  {
+protected class MonsterInst4_NoitemAssignment_41 extends AssignmentToken  {
 	
-	public MonsterInst4_NoitemAssignment_40(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_NoitemAssignment_41(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getNoitemAssignment_40();
+		return grammarAccess.getMonsterInst4Access().getNoitemAssignment_41();
 	}
 
     @Override
@@ -12855,7 +12958,7 @@ protected class MonsterInst4_NoitemAssignment_40 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("noitem");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_40_0();
+			element = grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_41_0();
 			return obj;
 		}
 		return null;
@@ -12864,15 +12967,15 @@ protected class MonsterInst4_NoitemAssignment_40 extends AssignmentToken  {
 }
 
 // noleader?="#noleader"
-protected class MonsterInst4_NoleaderAssignment_41 extends AssignmentToken  {
+protected class MonsterInst4_NoleaderAssignment_42 extends AssignmentToken  {
 	
-	public MonsterInst4_NoleaderAssignment_41(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_NoleaderAssignment_42(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getNoleaderAssignment_41();
+		return grammarAccess.getMonsterInst4Access().getNoleaderAssignment_42();
 	}
 
     @Override
@@ -12888,7 +12991,7 @@ protected class MonsterInst4_NoleaderAssignment_41 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("noleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_41_0();
+			element = grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_42_0();
 			return obj;
 		}
 		return null;
@@ -12897,15 +13000,15 @@ protected class MonsterInst4_NoleaderAssignment_41 extends AssignmentToken  {
 }
 
 // poorleader?="#poorleader"
-protected class MonsterInst4_PoorleaderAssignment_42 extends AssignmentToken  {
+protected class MonsterInst4_PoorleaderAssignment_43 extends AssignmentToken  {
 	
-	public MonsterInst4_PoorleaderAssignment_42(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_PoorleaderAssignment_43(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getPoorleaderAssignment_42();
+		return grammarAccess.getMonsterInst4Access().getPoorleaderAssignment_43();
 	}
 
     @Override
@@ -12921,7 +13024,7 @@ protected class MonsterInst4_PoorleaderAssignment_42 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("poorleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_42_0();
+			element = grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_43_0();
 			return obj;
 		}
 		return null;
@@ -12930,15 +13033,15 @@ protected class MonsterInst4_PoorleaderAssignment_42 extends AssignmentToken  {
 }
 
 // okleader?="#okleader"
-protected class MonsterInst4_OkleaderAssignment_43 extends AssignmentToken  {
+protected class MonsterInst4_OkleaderAssignment_44 extends AssignmentToken  {
 	
-	public MonsterInst4_OkleaderAssignment_43(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_OkleaderAssignment_44(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getOkleaderAssignment_43();
+		return grammarAccess.getMonsterInst4Access().getOkleaderAssignment_44();
 	}
 
     @Override
@@ -12954,7 +13057,7 @@ protected class MonsterInst4_OkleaderAssignment_43 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("okleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_43_0();
+			element = grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_44_0();
 			return obj;
 		}
 		return null;
@@ -12963,15 +13066,15 @@ protected class MonsterInst4_OkleaderAssignment_43 extends AssignmentToken  {
 }
 
 // goodleader?="#goodleader"
-protected class MonsterInst4_GoodleaderAssignment_44 extends AssignmentToken  {
+protected class MonsterInst4_GoodleaderAssignment_45 extends AssignmentToken  {
 	
-	public MonsterInst4_GoodleaderAssignment_44(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_GoodleaderAssignment_45(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getGoodleaderAssignment_44();
+		return grammarAccess.getMonsterInst4Access().getGoodleaderAssignment_45();
 	}
 
     @Override
@@ -12987,7 +13090,7 @@ protected class MonsterInst4_GoodleaderAssignment_44 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("goodleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_44_0();
+			element = grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_45_0();
 			return obj;
 		}
 		return null;
@@ -12996,15 +13099,15 @@ protected class MonsterInst4_GoodleaderAssignment_44 extends AssignmentToken  {
 }
 
 // expertleader?="#expertleader"
-protected class MonsterInst4_ExpertleaderAssignment_45 extends AssignmentToken  {
+protected class MonsterInst4_ExpertleaderAssignment_46 extends AssignmentToken  {
 	
-	public MonsterInst4_ExpertleaderAssignment_45(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_ExpertleaderAssignment_46(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getExpertleaderAssignment_45();
+		return grammarAccess.getMonsterInst4Access().getExpertleaderAssignment_46();
 	}
 
     @Override
@@ -13020,7 +13123,7 @@ protected class MonsterInst4_ExpertleaderAssignment_45 extends AssignmentToken  
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("expertleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_45_0();
+			element = grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_46_0();
 			return obj;
 		}
 		return null;
@@ -13029,15 +13132,15 @@ protected class MonsterInst4_ExpertleaderAssignment_45 extends AssignmentToken  
 }
 
 // superiorleader?="#superiorleader"
-protected class MonsterInst4_SuperiorleaderAssignment_46 extends AssignmentToken  {
+protected class MonsterInst4_SuperiorleaderAssignment_47 extends AssignmentToken  {
 	
-	public MonsterInst4_SuperiorleaderAssignment_46(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_SuperiorleaderAssignment_47(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getSuperiorleaderAssignment_46();
+		return grammarAccess.getMonsterInst4Access().getSuperiorleaderAssignment_47();
 	}
 
     @Override
@@ -13053,7 +13156,7 @@ protected class MonsterInst4_SuperiorleaderAssignment_46 extends AssignmentToken
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("superiorleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_46_0();
+			element = grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_47_0();
 			return obj;
 		}
 		return null;
@@ -13062,15 +13165,15 @@ protected class MonsterInst4_SuperiorleaderAssignment_46 extends AssignmentToken
 }
 
 // nomagicleader?="#nomagicleader"
-protected class MonsterInst4_NomagicleaderAssignment_47 extends AssignmentToken  {
+protected class MonsterInst4_NomagicleaderAssignment_48 extends AssignmentToken  {
 	
-	public MonsterInst4_NomagicleaderAssignment_47(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_NomagicleaderAssignment_48(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getNomagicleaderAssignment_47();
+		return grammarAccess.getMonsterInst4Access().getNomagicleaderAssignment_48();
 	}
 
     @Override
@@ -13086,7 +13189,7 @@ protected class MonsterInst4_NomagicleaderAssignment_47 extends AssignmentToken 
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("nomagicleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_47_0();
+			element = grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_48_0();
 			return obj;
 		}
 		return null;
@@ -13095,15 +13198,15 @@ protected class MonsterInst4_NomagicleaderAssignment_47 extends AssignmentToken 
 }
 
 // poormagicleader?="#poormagicleader"
-protected class MonsterInst4_PoormagicleaderAssignment_48 extends AssignmentToken  {
+protected class MonsterInst4_PoormagicleaderAssignment_49 extends AssignmentToken  {
 	
-	public MonsterInst4_PoormagicleaderAssignment_48(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_PoormagicleaderAssignment_49(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getPoormagicleaderAssignment_48();
+		return grammarAccess.getMonsterInst4Access().getPoormagicleaderAssignment_49();
 	}
 
     @Override
@@ -13119,7 +13222,7 @@ protected class MonsterInst4_PoormagicleaderAssignment_48 extends AssignmentToke
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("poormagicleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_48_0();
+			element = grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_49_0();
 			return obj;
 		}
 		return null;
@@ -13128,15 +13231,15 @@ protected class MonsterInst4_PoormagicleaderAssignment_48 extends AssignmentToke
 }
 
 // okmagicleader?="#okmagicleader"
-protected class MonsterInst4_OkmagicleaderAssignment_49 extends AssignmentToken  {
+protected class MonsterInst4_OkmagicleaderAssignment_50 extends AssignmentToken  {
 	
-	public MonsterInst4_OkmagicleaderAssignment_49(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_OkmagicleaderAssignment_50(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getOkmagicleaderAssignment_49();
+		return grammarAccess.getMonsterInst4Access().getOkmagicleaderAssignment_50();
 	}
 
     @Override
@@ -13152,7 +13255,7 @@ protected class MonsterInst4_OkmagicleaderAssignment_49 extends AssignmentToken 
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("okmagicleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_49_0();
+			element = grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_50_0();
 			return obj;
 		}
 		return null;
@@ -13161,15 +13264,15 @@ protected class MonsterInst4_OkmagicleaderAssignment_49 extends AssignmentToken 
 }
 
 // goodmagicleader?="#goodmagicleader"
-protected class MonsterInst4_GoodmagicleaderAssignment_50 extends AssignmentToken  {
+protected class MonsterInst4_GoodmagicleaderAssignment_51 extends AssignmentToken  {
 	
-	public MonsterInst4_GoodmagicleaderAssignment_50(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_GoodmagicleaderAssignment_51(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getGoodmagicleaderAssignment_50();
+		return grammarAccess.getMonsterInst4Access().getGoodmagicleaderAssignment_51();
 	}
 
     @Override
@@ -13185,7 +13288,7 @@ protected class MonsterInst4_GoodmagicleaderAssignment_50 extends AssignmentToke
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("goodmagicleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_50_0();
+			element = grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_51_0();
 			return obj;
 		}
 		return null;
@@ -13194,15 +13297,15 @@ protected class MonsterInst4_GoodmagicleaderAssignment_50 extends AssignmentToke
 }
 
 // expertmagicleader?="#expertmagicleader"
-protected class MonsterInst4_ExpertmagicleaderAssignment_51 extends AssignmentToken  {
+protected class MonsterInst4_ExpertmagicleaderAssignment_52 extends AssignmentToken  {
 	
-	public MonsterInst4_ExpertmagicleaderAssignment_51(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_ExpertmagicleaderAssignment_52(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getExpertmagicleaderAssignment_51();
+		return grammarAccess.getMonsterInst4Access().getExpertmagicleaderAssignment_52();
 	}
 
     @Override
@@ -13218,7 +13321,7 @@ protected class MonsterInst4_ExpertmagicleaderAssignment_51 extends AssignmentTo
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("expertmagicleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_51_0();
+			element = grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_52_0();
 			return obj;
 		}
 		return null;
@@ -13227,15 +13330,15 @@ protected class MonsterInst4_ExpertmagicleaderAssignment_51 extends AssignmentTo
 }
 
 // superiormagicleader?="#superiormagicleader"
-protected class MonsterInst4_SuperiormagicleaderAssignment_52 extends AssignmentToken  {
+protected class MonsterInst4_SuperiormagicleaderAssignment_53 extends AssignmentToken  {
 	
-	public MonsterInst4_SuperiormagicleaderAssignment_52(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_SuperiormagicleaderAssignment_53(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getSuperiormagicleaderAssignment_52();
+		return grammarAccess.getMonsterInst4Access().getSuperiormagicleaderAssignment_53();
 	}
 
     @Override
@@ -13251,7 +13354,7 @@ protected class MonsterInst4_SuperiormagicleaderAssignment_52 extends Assignment
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("superiormagicleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_52_0();
+			element = grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_53_0();
 			return obj;
 		}
 		return null;
@@ -13260,15 +13363,15 @@ protected class MonsterInst4_SuperiormagicleaderAssignment_52 extends Assignment
 }
 
 // noundeadleader?="#noundeadleader"
-protected class MonsterInst4_NoundeadleaderAssignment_53 extends AssignmentToken  {
+protected class MonsterInst4_NoundeadleaderAssignment_54 extends AssignmentToken  {
 	
-	public MonsterInst4_NoundeadleaderAssignment_53(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_NoundeadleaderAssignment_54(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getNoundeadleaderAssignment_53();
+		return grammarAccess.getMonsterInst4Access().getNoundeadleaderAssignment_54();
 	}
 
     @Override
@@ -13284,7 +13387,7 @@ protected class MonsterInst4_NoundeadleaderAssignment_53 extends AssignmentToken
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("noundeadleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_53_0();
+			element = grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_54_0();
 			return obj;
 		}
 		return null;
@@ -13293,15 +13396,15 @@ protected class MonsterInst4_NoundeadleaderAssignment_53 extends AssignmentToken
 }
 
 // poorundeadleader?="#poorundeadleader"
-protected class MonsterInst4_PoorundeadleaderAssignment_54 extends AssignmentToken  {
+protected class MonsterInst4_PoorundeadleaderAssignment_55 extends AssignmentToken  {
 	
-	public MonsterInst4_PoorundeadleaderAssignment_54(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_PoorundeadleaderAssignment_55(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getPoorundeadleaderAssignment_54();
+		return grammarAccess.getMonsterInst4Access().getPoorundeadleaderAssignment_55();
 	}
 
     @Override
@@ -13317,7 +13420,7 @@ protected class MonsterInst4_PoorundeadleaderAssignment_54 extends AssignmentTok
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("poorundeadleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_54_0();
+			element = grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_55_0();
 			return obj;
 		}
 		return null;
@@ -13326,15 +13429,15 @@ protected class MonsterInst4_PoorundeadleaderAssignment_54 extends AssignmentTok
 }
 
 // okundeadleader?="#okundeadleader"
-protected class MonsterInst4_OkundeadleaderAssignment_55 extends AssignmentToken  {
+protected class MonsterInst4_OkundeadleaderAssignment_56 extends AssignmentToken  {
 	
-	public MonsterInst4_OkundeadleaderAssignment_55(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_OkundeadleaderAssignment_56(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getOkundeadleaderAssignment_55();
+		return grammarAccess.getMonsterInst4Access().getOkundeadleaderAssignment_56();
 	}
 
     @Override
@@ -13350,7 +13453,7 @@ protected class MonsterInst4_OkundeadleaderAssignment_55 extends AssignmentToken
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("okundeadleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_55_0();
+			element = grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_56_0();
 			return obj;
 		}
 		return null;
@@ -13359,15 +13462,15 @@ protected class MonsterInst4_OkundeadleaderAssignment_55 extends AssignmentToken
 }
 
 // goodundeadleader?="#goodundeadleader"
-protected class MonsterInst4_GoodundeadleaderAssignment_56 extends AssignmentToken  {
+protected class MonsterInst4_GoodundeadleaderAssignment_57 extends AssignmentToken  {
 	
-	public MonsterInst4_GoodundeadleaderAssignment_56(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_GoodundeadleaderAssignment_57(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getGoodundeadleaderAssignment_56();
+		return grammarAccess.getMonsterInst4Access().getGoodundeadleaderAssignment_57();
 	}
 
     @Override
@@ -13383,7 +13486,7 @@ protected class MonsterInst4_GoodundeadleaderAssignment_56 extends AssignmentTok
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("goodundeadleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_56_0();
+			element = grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_57_0();
 			return obj;
 		}
 		return null;
@@ -13392,15 +13495,15 @@ protected class MonsterInst4_GoodundeadleaderAssignment_56 extends AssignmentTok
 }
 
 // expertundeadleader?="#expertundeadleader"
-protected class MonsterInst4_ExpertundeadleaderAssignment_57 extends AssignmentToken  {
+protected class MonsterInst4_ExpertundeadleaderAssignment_58 extends AssignmentToken  {
 	
-	public MonsterInst4_ExpertundeadleaderAssignment_57(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_ExpertundeadleaderAssignment_58(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getExpertundeadleaderAssignment_57();
+		return grammarAccess.getMonsterInst4Access().getExpertundeadleaderAssignment_58();
 	}
 
     @Override
@@ -13416,7 +13519,7 @@ protected class MonsterInst4_ExpertundeadleaderAssignment_57 extends AssignmentT
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("expertundeadleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_57_0();
+			element = grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_58_0();
 			return obj;
 		}
 		return null;
@@ -13425,15 +13528,15 @@ protected class MonsterInst4_ExpertundeadleaderAssignment_57 extends AssignmentT
 }
 
 // superiorundeadleader?="#superiorundeadleader"
-protected class MonsterInst4_SuperiorundeadleaderAssignment_58 extends AssignmentToken  {
+protected class MonsterInst4_SuperiorundeadleaderAssignment_59 extends AssignmentToken  {
 	
-	public MonsterInst4_SuperiorundeadleaderAssignment_58(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterInst4_SuperiorundeadleaderAssignment_59(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderAssignment_58();
+		return grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderAssignment_59();
 	}
 
     @Override
@@ -13449,7 +13552,7 @@ protected class MonsterInst4_SuperiorundeadleaderAssignment_58 extends Assignmen
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("superiorundeadleader");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_58_0();
+			element = grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_59_0();
 			return obj;
 		}
 		return null;

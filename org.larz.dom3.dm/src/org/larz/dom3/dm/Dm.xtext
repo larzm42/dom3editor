@@ -241,7 +241,9 @@ MonsterInst2:
 	restrictedgod?='#restrictedgod' |
 	shatteredsoul?='#shatteredsoul' |
 	coldres?='#coldres' |
+	coldres?='#coldresist' |
 	fireres?='#fireres' |
+	fireres?='#fireresist' |
 	poisonres?='#poisonres' |
 	shockres?='#shockres' |
 	darkvision?='#darkvision' |
@@ -314,6 +316,7 @@ MonsterInst4:
 	(stonebeing?='#stonebeing') |
 	(inanimate?='#inanimate') |
 	(coldblood?='#coldblood') |
+	(coldblood?='#coldblooded') |
 	(immortal?='#immortal') |
 	(blind?='#blind') |
 	(unique?='#unique') |
