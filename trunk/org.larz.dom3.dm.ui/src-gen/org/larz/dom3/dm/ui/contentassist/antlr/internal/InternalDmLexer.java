@@ -158,7 +158,7 @@ public class InternalDmLexer extends Lexer {
     public static final int T9=9;
     public static final int T142=142;
     public static final int T94=94;
-    public static final int Tokens=360;
+    public static final int Tokens=363;
     public static final int RULE_SL_COMMENT=6;
     public static final int T93=93;
     public static final int T92=92;
@@ -303,6 +303,9 @@ public class InternalDmLexer extends Lexer {
     public static final int T221=221;
     public static final int T222=222;
     public static final int T223=223;
+    public static final int T360=360;
+    public static final int T361=361;
+    public static final int T362=362;
     public static final int T357=357;
     public static final int T356=356;
     public static final int T359=359;
@@ -2450,10 +2453,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT118() throws RecognitionException {
         try {
             int _type = T118;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:119:6: ( '#fireres' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:119:8: '#fireres'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:119:6: ( '#coldresist' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:119:8: '#coldresist'
             {
-            match("#fireres"); 
+            match("#coldresist"); 
 
 
             }
@@ -2469,10 +2472,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT119() throws RecognitionException {
         try {
             int _type = T119;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:120:6: ( '#poisonres' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:120:8: '#poisonres'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:120:6: ( '#fireres' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:120:8: '#fireres'
             {
-            match("#poisonres"); 
+            match("#fireres"); 
 
 
             }
@@ -2488,10 +2491,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT120() throws RecognitionException {
         try {
             int _type = T120;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:121:6: ( '#shockres' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:121:8: '#shockres'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:121:6: ( '#fireresist' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:121:8: '#fireresist'
             {
-            match("#shockres"); 
+            match("#fireresist"); 
 
 
             }
@@ -2507,10 +2510,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT121() throws RecognitionException {
         try {
             int _type = T121;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:122:6: ( '#darkvision' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:122:8: '#darkvision'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:122:6: ( '#poisonres' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:122:8: '#poisonres'
             {
-            match("#darkvision"); 
+            match("#poisonres"); 
 
 
             }
@@ -2526,10 +2529,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT122() throws RecognitionException {
         try {
             int _type = T122;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:123:6: ( '#stealthy' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:123:8: '#stealthy'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:123:6: ( '#shockres' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:123:8: '#shockres'
             {
-            match("#stealthy"); 
+            match("#shockres"); 
 
 
             }
@@ -2545,10 +2548,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT123() throws RecognitionException {
         try {
             int _type = T123;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:124:6: ( '#seduce' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:124:8: '#seduce'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:124:6: ( '#darkvision' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:124:8: '#darkvision'
             {
-            match("#seduce"); 
+            match("#darkvision"); 
 
 
             }
@@ -2564,10 +2567,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT124() throws RecognitionException {
         try {
             int _type = T124;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:125:6: ( '#succubus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:125:8: '#succubus'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:125:6: ( '#stealthy' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:125:8: '#stealthy'
             {
-            match("#succubus"); 
+            match("#stealthy"); 
 
 
             }
@@ -2583,10 +2586,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT125() throws RecognitionException {
         try {
             int _type = T125;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:126:6: ( '#beckon' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:126:8: '#beckon'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:126:6: ( '#seduce' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:126:8: '#seduce'
             {
-            match("#beckon"); 
+            match("#seduce"); 
 
 
             }
@@ -2602,10 +2605,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT126() throws RecognitionException {
         try {
             int _type = T126;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:127:6: ( '#startage' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:127:8: '#startage'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:127:6: ( '#succubus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:127:8: '#succubus'
             {
-            match("#startage"); 
+            match("#succubus"); 
 
 
             }
@@ -2621,10 +2624,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT127() throws RecognitionException {
         try {
             int _type = T127;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:128:6: ( '#maxage' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:128:8: '#maxage'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:128:6: ( '#beckon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:128:8: '#beckon'
             {
-            match("#maxage"); 
+            match("#beckon"); 
 
 
             }
@@ -2640,10 +2643,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT128() throws RecognitionException {
         try {
             int _type = T128;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:129:6: ( '#older' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:129:8: '#older'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:129:6: ( '#startage' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:129:8: '#startage'
             {
-            match("#older"); 
+            match("#startage"); 
 
 
             }
@@ -2659,10 +2662,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT129() throws RecognitionException {
         try {
             int _type = T129;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:130:6: ( '#healer' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:130:8: '#healer'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:130:6: ( '#maxage' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:130:8: '#maxage'
             {
-            match("#healer"); 
+            match("#maxage"); 
 
 
             }
@@ -2678,10 +2681,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT130() throws RecognitionException {
         try {
             int _type = T130;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:131:6: ( '#startaff' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:131:8: '#startaff'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:131:6: ( '#older' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:131:8: '#older'
             {
-            match("#startaff"); 
+            match("#older"); 
 
 
             }
@@ -2697,10 +2700,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT131() throws RecognitionException {
         try {
             int _type = T131;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:132:6: ( '#supplybonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:132:8: '#supplybonus'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:132:6: ( '#healer' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:132:8: '#healer'
             {
-            match("#supplybonus"); 
+            match("#healer"); 
 
 
             }
@@ -2716,10 +2719,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT132() throws RecognitionException {
         try {
             int _type = T132;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:133:6: ( '#uwdamage' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:133:8: '#uwdamage'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:133:6: ( '#startaff' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:133:8: '#startaff'
             {
-            match("#uwdamage"); 
+            match("#startaff"); 
 
 
             }
@@ -2735,10 +2738,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT133() throws RecognitionException {
         try {
             int _type = T133;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:134:6: ( '#coldpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:134:8: '#coldpower'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:134:6: ( '#supplybonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:134:8: '#supplybonus'
             {
-            match("#coldpower"); 
+            match("#supplybonus"); 
 
 
             }
@@ -2754,10 +2757,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT134() throws RecognitionException {
         try {
             int _type = T134;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:135:6: ( '#firepower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:135:8: '#firepower'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:135:6: ( '#uwdamage' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:135:8: '#uwdamage'
             {
-            match("#firepower"); 
+            match("#uwdamage"); 
 
 
             }
@@ -2773,10 +2776,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT135() throws RecognitionException {
         try {
             int _type = T135;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:136:6: ( '#stormpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:136:8: '#stormpower'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:136:6: ( '#coldpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:136:8: '#coldpower'
             {
-            match("#stormpower"); 
+            match("#coldpower"); 
 
 
             }
@@ -2792,10 +2795,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT136() throws RecognitionException {
         try {
             int _type = T136;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:137:6: ( '#darkpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:137:8: '#darkpower'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:137:6: ( '#firepower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:137:8: '#firepower'
             {
-            match("#darkpower"); 
+            match("#firepower"); 
 
 
             }
@@ -2811,10 +2814,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT137() throws RecognitionException {
         try {
             int _type = T137;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:138:6: ( '#springpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:138:8: '#springpower'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:138:6: ( '#stormpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:138:8: '#stormpower'
             {
-            match("#springpower"); 
+            match("#stormpower"); 
 
 
             }
@@ -2830,10 +2833,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT138() throws RecognitionException {
         try {
             int _type = T138;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:139:6: ( '#summerpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:139:8: '#summerpower'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:139:6: ( '#darkpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:139:8: '#darkpower'
             {
-            match("#summerpower"); 
+            match("#darkpower"); 
 
 
             }
@@ -2849,10 +2852,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT139() throws RecognitionException {
         try {
             int _type = T139;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:140:6: ( '#fallpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:140:8: '#fallpower'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:140:6: ( '#springpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:140:8: '#springpower'
             {
-            match("#fallpower"); 
+            match("#springpower"); 
 
 
             }
@@ -2868,10 +2871,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT140() throws RecognitionException {
         try {
             int _type = T140;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:141:6: ( '#winterpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:141:8: '#winterpower'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:141:6: ( '#summerpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:141:8: '#summerpower'
             {
-            match("#winterpower"); 
+            match("#summerpower"); 
 
 
             }
@@ -2887,10 +2890,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT141() throws RecognitionException {
         try {
             int _type = T141;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:142:6: ( '#ambidextrous' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:142:8: '#ambidextrous'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:142:6: ( '#fallpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:142:8: '#fallpower'
             {
-            match("#ambidextrous"); 
+            match("#fallpower"); 
 
 
             }
@@ -2906,10 +2909,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT142() throws RecognitionException {
         try {
             int _type = T142;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:143:6: ( '#banefireshield' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:143:8: '#banefireshield'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:143:6: ( '#winterpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:143:8: '#winterpower'
             {
-            match("#banefireshield"); 
+            match("#winterpower"); 
 
 
             }
@@ -2925,10 +2928,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT143() throws RecognitionException {
         try {
             int _type = T143;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:144:6: ( '#berserk' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:144:8: '#berserk'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:144:6: ( '#ambidextrous' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:144:8: '#ambidextrous'
             {
-            match("#berserk"); 
+            match("#ambidextrous"); 
 
 
             }
@@ -2944,10 +2947,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT144() throws RecognitionException {
         try {
             int _type = T144;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:145:6: ( '#standard' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:145:8: '#standard'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:145:6: ( '#banefireshield' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:145:8: '#banefireshield'
             {
-            match("#standard"); 
+            match("#banefireshield"); 
 
 
             }
@@ -2963,10 +2966,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT145() throws RecognitionException {
         try {
             int _type = T145;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:146:6: ( '#animalawe' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:146:8: '#animalawe'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:146:6: ( '#berserk' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:146:8: '#berserk'
             {
-            match("#animalawe"); 
+            match("#berserk"); 
 
 
             }
@@ -2982,10 +2985,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT146() throws RecognitionException {
         try {
             int _type = T146;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:147:6: ( '#awe' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:147:8: '#awe'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:147:6: ( '#standard' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:147:8: '#standard'
             {
-            match("#awe"); 
+            match("#standard"); 
 
 
             }
@@ -3001,10 +3004,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT147() throws RecognitionException {
         try {
             int _type = T147;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:148:6: ( '#fear' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:148:8: '#fear'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:148:6: ( '#animalawe' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:148:8: '#animalawe'
             {
-            match("#fear"); 
+            match("#animalawe"); 
 
 
             }
@@ -3020,10 +3023,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT148() throws RecognitionException {
         try {
             int _type = T148;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:149:6: ( '#regeneration' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:149:8: '#regeneration'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:149:6: ( '#awe' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:149:8: '#awe'
             {
-            match("#regeneration"); 
+            match("#awe"); 
 
 
             }
@@ -3039,10 +3042,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT149() throws RecognitionException {
         try {
             int _type = T149;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:150:6: ( '#reinvigoration' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:150:8: '#reinvigoration'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:150:6: ( '#fear' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:150:8: '#fear'
             {
-            match("#reinvigoration"); 
+            match("#fear"); 
 
 
             }
@@ -3058,10 +3061,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT150() throws RecognitionException {
         try {
             int _type = T150;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:151:6: ( '#fireshield' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:151:8: '#fireshield'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:151:6: ( '#regeneration' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:151:8: '#regeneration'
             {
-            match("#fireshield"); 
+            match("#regeneration"); 
 
 
             }
@@ -3077,10 +3080,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT151() throws RecognitionException {
         try {
             int _type = T151;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:152:6: ( '#iceprot' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:152:8: '#iceprot'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:152:6: ( '#reinvigoration' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:152:8: '#reinvigoration'
             {
-            match("#iceprot"); 
+            match("#reinvigoration"); 
 
 
             }
@@ -3096,10 +3099,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT152() throws RecognitionException {
         try {
             int _type = T152;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:153:6: ( '#poisoncloud' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:153:8: '#poisoncloud'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:153:6: ( '#fireshield' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:153:8: '#fireshield'
             {
-            match("#poisoncloud"); 
+            match("#fireshield"); 
 
 
             }
@@ -3115,10 +3118,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT153() throws RecognitionException {
         try {
             int _type = T153;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:154:6: ( '#diseasecloud' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:154:8: '#diseasecloud'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:154:6: ( '#iceprot' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:154:8: '#iceprot'
             {
-            match("#diseasecloud"); 
+            match("#iceprot"); 
 
 
             }
@@ -3134,10 +3137,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT154() throws RecognitionException {
         try {
             int _type = T154;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:155:6: ( '#bloodvengeance' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:155:8: '#bloodvengeance'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:155:6: ( '#poisoncloud' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:155:8: '#poisoncloud'
             {
-            match("#bloodvengeance"); 
+            match("#poisoncloud"); 
 
 
             }
@@ -3153,10 +3156,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT155() throws RecognitionException {
         try {
             int _type = T155;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:156:6: ( '#castledef' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:156:8: '#castledef'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:156:6: ( '#diseasecloud' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:156:8: '#diseasecloud'
             {
-            match("#castledef"); 
+            match("#diseasecloud"); 
 
 
             }
@@ -3172,10 +3175,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT156() throws RecognitionException {
         try {
             int _type = T156;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:157:6: ( '#siegebonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:157:8: '#siegebonus'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:157:6: ( '#bloodvengeance' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:157:8: '#bloodvengeance'
             {
-            match("#siegebonus"); 
+            match("#bloodvengeance"); 
 
 
             }
@@ -3191,10 +3194,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT157() throws RecognitionException {
         try {
             int _type = T157;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:158:6: ( '#patrolbonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:158:8: '#patrolbonus'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:158:6: ( '#castledef' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:158:8: '#castledef'
             {
-            match("#patrolbonus"); 
+            match("#castledef"); 
 
 
             }
@@ -3210,10 +3213,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT158() throws RecognitionException {
         try {
             int _type = T158;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:159:6: ( '#pillagebonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:159:8: '#pillagebonus'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:159:6: ( '#siegebonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:159:8: '#siegebonus'
             {
-            match("#pillagebonus"); 
+            match("#siegebonus"); 
 
 
             }
@@ -3229,10 +3232,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT159() throws RecognitionException {
         try {
             int _type = T159;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:160:6: ( '#researchbonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:160:8: '#researchbonus'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:160:6: ( '#patrolbonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:160:8: '#patrolbonus'
             {
-            match("#researchbonus"); 
+            match("#patrolbonus"); 
 
 
             }
@@ -3248,10 +3251,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT160() throws RecognitionException {
         try {
             int _type = T160;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:161:6: ( '#forgebonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:161:8: '#forgebonus'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:161:6: ( '#pillagebonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:161:8: '#pillagebonus'
             {
-            match("#forgebonus"); 
+            match("#pillagebonus"); 
 
 
             }
@@ -3267,10 +3270,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT161() throws RecognitionException {
         try {
             int _type = T161;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:162:6: ( '#douse' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:162:8: '#douse'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:162:6: ( '#researchbonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:162:8: '#researchbonus'
             {
-            match("#douse"); 
+            match("#researchbonus"); 
 
 
             }
@@ -3286,10 +3289,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT162() throws RecognitionException {
         try {
             int _type = T162;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:163:6: ( '#nobadevents' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:163:8: '#nobadevents'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:163:6: ( '#forgebonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:163:8: '#forgebonus'
             {
-            match("#nobadevents"); 
+            match("#forgebonus"); 
 
 
             }
@@ -3305,10 +3308,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT163() throws RecognitionException {
         try {
             int _type = T163;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:164:6: ( '#incunrest' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:164:8: '#incunrest'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:164:6: ( '#douse' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:164:8: '#douse'
             {
-            match("#incunrest"); 
+            match("#douse"); 
 
 
             }
@@ -3324,10 +3327,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT164() throws RecognitionException {
         try {
             int _type = T164;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:165:6: ( '#spreaddom' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:165:8: '#spreaddom'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:165:6: ( '#nobadevents' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:165:8: '#nobadevents'
             {
-            match("#spreaddom"); 
+            match("#nobadevents"); 
 
 
             }
@@ -3343,10 +3346,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT165() throws RecognitionException {
         try {
             int _type = T165;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:166:6: ( '#leper' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:166:8: '#leper'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:166:6: ( '#incunrest' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:166:8: '#incunrest'
             {
-            match("#leper"); 
+            match("#incunrest"); 
 
 
             }
@@ -3362,10 +3365,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT166() throws RecognitionException {
         try {
             int _type = T166;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:167:6: ( '#popkill' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:167:8: '#popkill'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:167:6: ( '#spreaddom' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:167:8: '#spreaddom'
             {
-            match("#popkill"); 
+            match("#spreaddom"); 
 
 
             }
@@ -3381,10 +3384,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT167() throws RecognitionException {
         try {
             int _type = T167;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:168:6: ( '#heretic' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:168:8: '#heretic'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:168:6: ( '#leper' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:168:8: '#leper'
             {
-            match("#heretic"); 
+            match("#leper"); 
 
 
             }
@@ -3400,10 +3403,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT168() throws RecognitionException {
         try {
             int _type = T168;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:169:6: ( '#itemslots' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:169:8: '#itemslots'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:169:6: ( '#popkill' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:169:8: '#popkill'
             {
-            match("#itemslots"); 
+            match("#popkill"); 
 
 
             }
@@ -3419,10 +3422,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT169() throws RecognitionException {
         try {
             int _type = T169;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:170:6: ( '#nametype' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:170:8: '#nametype'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:170:6: ( '#heretic' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:170:8: '#heretic'
             {
-            match("#nametype"); 
+            match("#heretic"); 
 
 
             }
@@ -3438,10 +3441,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT170() throws RecognitionException {
         try {
             int _type = T170;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:171:6: ( '#magicskill' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:171:8: '#magicskill'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:171:6: ( '#itemslots' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:171:8: '#itemslots'
             {
-            match("#magicskill"); 
+            match("#itemslots"); 
 
 
             }
@@ -3457,10 +3460,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT171() throws RecognitionException {
         try {
             int _type = T171;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:172:6: ( '#custommagic' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:172:8: '#custommagic'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:172:6: ( '#nametype' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:172:8: '#nametype'
             {
-            match("#custommagic"); 
+            match("#nametype"); 
 
 
             }
@@ -3476,10 +3479,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT172() throws RecognitionException {
         try {
             int _type = T172;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:173:6: ( '#magicboost' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:173:8: '#magicboost'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:173:6: ( '#magicskill' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:173:8: '#magicskill'
             {
-            match("#magicboost"); 
+            match("#magicskill"); 
 
 
             }
@@ -3495,10 +3498,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT173() throws RecognitionException {
         try {
             int _type = T173;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:174:6: ( '#gemprod' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:174:8: '#gemprod'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:174:6: ( '#custommagic' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:174:8: '#custommagic'
             {
-            match("#gemprod"); 
+            match("#custommagic"); 
 
 
             }
@@ -3514,10 +3517,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT174() throws RecognitionException {
         try {
             int _type = T174;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:175:6: ( '#clear' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:175:8: '#clear'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:175:6: ( '#magicboost' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:175:8: '#magicboost'
             {
-            match("#clear"); 
+            match("#magicboost"); 
 
 
             }
@@ -3533,10 +3536,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT175() throws RecognitionException {
         try {
             int _type = T175;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:176:6: ( '#clearmagic' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:176:8: '#clearmagic'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:176:6: ( '#gemprod' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:176:8: '#gemprod'
             {
-            match("#clearmagic"); 
+            match("#gemprod"); 
 
 
             }
@@ -3552,10 +3555,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT176() throws RecognitionException {
         try {
             int _type = T176;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:177:6: ( '#clearspec' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:177:8: '#clearspec'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:177:6: ( '#clear' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:177:8: '#clear'
             {
-            match("#clearspec"); 
+            match("#clear"); 
 
 
             }
@@ -3571,10 +3574,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT177() throws RecognitionException {
         try {
             int _type = T177;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:178:6: ( '#female' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:178:8: '#female'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:178:6: ( '#clearmagic' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:178:8: '#clearmagic'
             {
-            match("#female"); 
+            match("#clearmagic"); 
 
 
             }
@@ -3590,10 +3593,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT178() throws RecognitionException {
         try {
             int _type = T178;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:179:6: ( '#mounted' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:179:8: '#mounted'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:179:6: ( '#clearspec' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:179:8: '#clearspec'
             {
-            match("#mounted"); 
+            match("#clearspec"); 
 
 
             }
@@ -3609,10 +3612,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT179() throws RecognitionException {
         try {
             int _type = T179;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:180:6: ( '#holy' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:180:8: '#holy'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:180:6: ( '#female' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:180:8: '#female'
             {
-            match("#holy"); 
+            match("#female"); 
 
 
             }
@@ -3628,10 +3631,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT180() throws RecognitionException {
         try {
             int _type = T180;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:181:6: ( '#animal' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:181:8: '#animal'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:181:6: ( '#mounted' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:181:8: '#mounted'
             {
-            match("#animal"); 
+            match("#mounted"); 
 
 
             }
@@ -3647,10 +3650,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT181() throws RecognitionException {
         try {
             int _type = T181;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:182:6: ( '#undead' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:182:8: '#undead'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:182:6: ( '#holy' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:182:8: '#holy'
             {
-            match("#undead"); 
+            match("#holy"); 
 
 
             }
@@ -3666,10 +3669,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT182() throws RecognitionException {
         try {
             int _type = T182;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:183:6: ( '#demon' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:183:8: '#demon'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:183:6: ( '#animal' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:183:8: '#animal'
             {
-            match("#demon"); 
+            match("#animal"); 
 
 
             }
@@ -3685,10 +3688,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT183() throws RecognitionException {
         try {
             int _type = T183;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:184:6: ( '#magicbeing' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:184:8: '#magicbeing'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:184:6: ( '#undead' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:184:8: '#undead'
             {
-            match("#magicbeing"); 
+            match("#undead"); 
 
 
             }
@@ -3704,10 +3707,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT184() throws RecognitionException {
         try {
             int _type = T184;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:185:6: ( '#stonebeing' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:185:8: '#stonebeing'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:185:6: ( '#demon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:185:8: '#demon'
             {
-            match("#stonebeing"); 
+            match("#demon"); 
 
 
             }
@@ -3723,10 +3726,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT185() throws RecognitionException {
         try {
             int _type = T185;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:186:6: ( '#inanimate' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:186:8: '#inanimate'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:186:6: ( '#magicbeing' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:186:8: '#magicbeing'
             {
-            match("#inanimate"); 
+            match("#magicbeing"); 
 
 
             }
@@ -3742,10 +3745,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT186() throws RecognitionException {
         try {
             int _type = T186;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:187:6: ( '#coldblood' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:187:8: '#coldblood'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:187:6: ( '#stonebeing' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:187:8: '#stonebeing'
             {
-            match("#coldblood"); 
+            match("#stonebeing"); 
 
 
             }
@@ -3761,10 +3764,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT187() throws RecognitionException {
         try {
             int _type = T187;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:188:6: ( '#immortal' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:188:8: '#immortal'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:188:6: ( '#inanimate' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:188:8: '#inanimate'
             {
-            match("#immortal"); 
+            match("#inanimate"); 
 
 
             }
@@ -3780,10 +3783,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT188() throws RecognitionException {
         try {
             int _type = T188;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:189:6: ( '#blind' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:189:8: '#blind'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:189:6: ( '#coldblood' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:189:8: '#coldblood'
             {
-            match("#blind"); 
+            match("#coldblood"); 
 
 
             }
@@ -3799,10 +3802,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT189() throws RecognitionException {
         try {
             int _type = T189;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:190:6: ( '#unique' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:190:8: '#unique'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:190:6: ( '#coldblooded' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:190:8: '#coldblooded'
             {
-            match("#unique"); 
+            match("#coldblooded"); 
 
 
             }
@@ -3818,10 +3821,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT190() throws RecognitionException {
         try {
             int _type = T190;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:191:6: ( '#immobile' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:191:8: '#immobile'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:191:6: ( '#immortal' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:191:8: '#immortal'
             {
-            match("#immobile"); 
+            match("#immortal"); 
 
 
             }
@@ -3837,10 +3840,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT191() throws RecognitionException {
         try {
             int _type = T191;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:192:6: ( '#aquatic' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:192:8: '#aquatic'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:192:6: ( '#blind' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:192:8: '#blind'
             {
-            match("#aquatic"); 
+            match("#blind"); 
 
 
             }
@@ -3856,10 +3859,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT192() throws RecognitionException {
         try {
             int _type = T192;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:193:6: ( '#amphibian' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:193:8: '#amphibian'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:193:6: ( '#unique' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:193:8: '#unique'
             {
-            match("#amphibian"); 
+            match("#unique"); 
 
 
             }
@@ -3875,10 +3878,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT193() throws RecognitionException {
         try {
             int _type = T193;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:194:6: ( '#pooramphibian' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:194:8: '#pooramphibian'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:194:6: ( '#immobile' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:194:8: '#immobile'
             {
-            match("#pooramphibian"); 
+            match("#immobile"); 
 
 
             }
@@ -3894,10 +3897,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT194() throws RecognitionException {
         try {
             int _type = T194;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:195:6: ( '#flying' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:195:8: '#flying'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:195:6: ( '#aquatic' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:195:8: '#aquatic'
             {
-            match("#flying"); 
+            match("#aquatic"); 
 
 
             }
@@ -3913,10 +3916,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT195() throws RecognitionException {
         try {
             int _type = T195;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:196:6: ( '#stormimmune' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:196:8: '#stormimmune'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:196:6: ( '#amphibian' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:196:8: '#amphibian'
             {
-            match("#stormimmune"); 
+            match("#amphibian"); 
 
 
             }
@@ -3932,10 +3935,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT196() throws RecognitionException {
         try {
             int _type = T196;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:197:6: ( '#sailing' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:197:8: '#sailing'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:197:6: ( '#pooramphibian' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:197:8: '#pooramphibian'
             {
-            match("#sailing"); 
+            match("#pooramphibian"); 
 
 
             }
@@ -3951,10 +3954,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT197() throws RecognitionException {
         try {
             int _type = T197;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:198:6: ( '#forestsurvival' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:198:8: '#forestsurvival'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:198:6: ( '#flying' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:198:8: '#flying'
             {
-            match("#forestsurvival"); 
+            match("#flying"); 
 
 
             }
@@ -3970,10 +3973,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT198() throws RecognitionException {
         try {
             int _type = T198;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:199:6: ( '#mountainsurvival' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:199:8: '#mountainsurvival'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:199:6: ( '#stormimmune' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:199:8: '#stormimmune'
             {
-            match("#mountainsurvival"); 
+            match("#stormimmune"); 
 
 
             }
@@ -3989,10 +3992,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT199() throws RecognitionException {
         try {
             int _type = T199;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:200:6: ( '#swampsurvival' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:200:8: '#swampsurvival'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:200:6: ( '#sailing' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:200:8: '#sailing'
             {
-            match("#swampsurvival"); 
+            match("#sailing"); 
 
 
             }
@@ -4008,10 +4011,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT200() throws RecognitionException {
         try {
             int _type = T200;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:201:6: ( '#wastesurvival' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:201:8: '#wastesurvival'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:201:6: ( '#forestsurvival' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:201:8: '#forestsurvival'
             {
-            match("#wastesurvival"); 
+            match("#forestsurvival"); 
 
 
             }
@@ -4027,10 +4030,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT201() throws RecognitionException {
         try {
             int _type = T201;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:202:6: ( '#illusion' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:202:8: '#illusion'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:202:6: ( '#mountainsurvival' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:202:8: '#mountainsurvival'
             {
-            match("#illusion"); 
+            match("#mountainsurvival"); 
 
 
             }
@@ -4046,10 +4049,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT202() throws RecognitionException {
         try {
             int _type = T202;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:203:6: ( '#spy' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:203:8: '#spy'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:203:6: ( '#swampsurvival' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:203:8: '#swampsurvival'
             {
-            match("#spy"); 
+            match("#swampsurvival"); 
 
 
             }
@@ -4065,10 +4068,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT203() throws RecognitionException {
         try {
             int _type = T203;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:204:6: ( '#assassin' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:204:8: '#assassin'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:204:6: ( '#wastesurvival' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:204:8: '#wastesurvival'
             {
-            match("#assassin"); 
+            match("#wastesurvival"); 
 
 
             }
@@ -4084,10 +4087,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT204() throws RecognitionException {
         try {
             int _type = T204;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:205:6: ( '#heal' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:205:8: '#heal'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:205:6: ( '#illusion' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:205:8: '#illusion'
             {
-            match("#heal"); 
+            match("#illusion"); 
 
 
             }
@@ -4103,10 +4106,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT205() throws RecognitionException {
         try {
             int _type = T205;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:206:6: ( '#noheal' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:206:8: '#noheal'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:206:6: ( '#spy' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:206:8: '#spy'
             {
-            match("#noheal"); 
+            match("#spy"); 
 
 
             }
@@ -4122,10 +4125,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT206() throws RecognitionException {
         try {
             int _type = T206;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:207:6: ( '#neednoteat' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:207:8: '#neednoteat'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:207:6: ( '#assassin' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:207:8: '#assassin'
             {
-            match("#neednoteat"); 
+            match("#assassin"); 
 
 
             }
@@ -4141,10 +4144,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT207() throws RecognitionException {
         try {
             int _type = T207;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:208:6: ( '#ethereal' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:208:8: '#ethereal'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:208:6: ( '#heal' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:208:8: '#heal'
             {
-            match("#ethereal"); 
+            match("#heal"); 
 
 
             }
@@ -4160,10 +4163,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT208() throws RecognitionException {
         try {
             int _type = T208;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:209:6: ( '#trample' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:209:8: '#trample'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:209:6: ( '#noheal' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:209:8: '#noheal'
             {
-            match("#trample"); 
+            match("#noheal"); 
 
 
             }
@@ -4179,10 +4182,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT209() throws RecognitionException {
         try {
             int _type = T209;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:210:6: ( '#entangle' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:210:8: '#entangle'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:210:6: ( '#neednoteat' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:210:8: '#neednoteat'
             {
-            match("#entangle"); 
+            match("#neednoteat"); 
 
 
             }
@@ -4198,10 +4201,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT210() throws RecognitionException {
         try {
             int _type = T210;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:211:6: ( '#eyeloss' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:211:8: '#eyeloss'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:211:6: ( '#ethereal' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:211:8: '#ethereal'
             {
-            match("#eyeloss"); 
+            match("#ethereal"); 
 
 
             }
@@ -4217,10 +4220,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT211() throws RecognitionException {
         try {
             int _type = T211;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:212:6: ( '#horrormark' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:212:8: '#horrormark'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:212:6: ( '#trample' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:212:8: '#trample'
             {
-            match("#horrormark"); 
+            match("#trample"); 
 
 
             }
@@ -4236,10 +4239,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT212() throws RecognitionException {
         try {
             int _type = T212;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:213:6: ( '#poisonarmor' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:213:8: '#poisonarmor'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:213:6: ( '#entangle' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:213:8: '#entangle'
             {
-            match("#poisonarmor"); 
+            match("#entangle"); 
 
 
             }
@@ -4255,10 +4258,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT213() throws RecognitionException {
         try {
             int _type = T213;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:214:6: ( '#inquisitor' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:214:8: '#inquisitor'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:214:6: ( '#eyeloss' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:214:8: '#eyeloss'
             {
-            match("#inquisitor"); 
+            match("#eyeloss"); 
 
 
             }
@@ -4274,10 +4277,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT214() throws RecognitionException {
         try {
             int _type = T214;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:215:6: ( '#noitem' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:215:8: '#noitem'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:215:6: ( '#horrormark' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:215:8: '#horrormark'
             {
-            match("#noitem"); 
+            match("#horrormark"); 
 
 
             }
@@ -4293,10 +4296,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT215() throws RecognitionException {
         try {
             int _type = T215;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:216:6: ( '#noleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:216:8: '#noleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:216:6: ( '#poisonarmor' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:216:8: '#poisonarmor'
             {
-            match("#noleader"); 
+            match("#poisonarmor"); 
 
 
             }
@@ -4312,10 +4315,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT216() throws RecognitionException {
         try {
             int _type = T216;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:217:6: ( '#poorleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:217:8: '#poorleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:217:6: ( '#inquisitor' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:217:8: '#inquisitor'
             {
-            match("#poorleader"); 
+            match("#inquisitor"); 
 
 
             }
@@ -4331,10 +4334,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT217() throws RecognitionException {
         try {
             int _type = T217;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:218:6: ( '#okleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:218:8: '#okleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:218:6: ( '#noitem' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:218:8: '#noitem'
             {
-            match("#okleader"); 
+            match("#noitem"); 
 
 
             }
@@ -4350,10 +4353,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT218() throws RecognitionException {
         try {
             int _type = T218;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:219:6: ( '#goodleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:219:8: '#goodleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:219:6: ( '#noleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:219:8: '#noleader'
             {
-            match("#goodleader"); 
+            match("#noleader"); 
 
 
             }
@@ -4369,10 +4372,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT219() throws RecognitionException {
         try {
             int _type = T219;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:220:6: ( '#expertleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:220:8: '#expertleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:220:6: ( '#poorleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:220:8: '#poorleader'
             {
-            match("#expertleader"); 
+            match("#poorleader"); 
 
 
             }
@@ -4388,10 +4391,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT220() throws RecognitionException {
         try {
             int _type = T220;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:221:6: ( '#superiorleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:221:8: '#superiorleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:221:6: ( '#okleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:221:8: '#okleader'
             {
-            match("#superiorleader"); 
+            match("#okleader"); 
 
 
             }
@@ -4407,10 +4410,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT221() throws RecognitionException {
         try {
             int _type = T221;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:222:6: ( '#nomagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:222:8: '#nomagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:222:6: ( '#goodleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:222:8: '#goodleader'
             {
-            match("#nomagicleader"); 
+            match("#goodleader"); 
 
 
             }
@@ -4426,10 +4429,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT222() throws RecognitionException {
         try {
             int _type = T222;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:223:6: ( '#poormagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:223:8: '#poormagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:223:6: ( '#expertleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:223:8: '#expertleader'
             {
-            match("#poormagicleader"); 
+            match("#expertleader"); 
 
 
             }
@@ -4445,10 +4448,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT223() throws RecognitionException {
         try {
             int _type = T223;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:224:6: ( '#okmagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:224:8: '#okmagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:224:6: ( '#superiorleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:224:8: '#superiorleader'
             {
-            match("#okmagicleader"); 
+            match("#superiorleader"); 
 
 
             }
@@ -4464,10 +4467,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT224() throws RecognitionException {
         try {
             int _type = T224;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:225:6: ( '#goodmagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:225:8: '#goodmagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:225:6: ( '#nomagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:225:8: '#nomagicleader'
             {
-            match("#goodmagicleader"); 
+            match("#nomagicleader"); 
 
 
             }
@@ -4483,10 +4486,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT225() throws RecognitionException {
         try {
             int _type = T225;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:226:6: ( '#expertmagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:226:8: '#expertmagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:226:6: ( '#poormagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:226:8: '#poormagicleader'
             {
-            match("#expertmagicleader"); 
+            match("#poormagicleader"); 
 
 
             }
@@ -4502,10 +4505,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT226() throws RecognitionException {
         try {
             int _type = T226;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:227:6: ( '#superiormagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:227:8: '#superiormagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:227:6: ( '#okmagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:227:8: '#okmagicleader'
             {
-            match("#superiormagicleader"); 
+            match("#okmagicleader"); 
 
 
             }
@@ -4521,10 +4524,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT227() throws RecognitionException {
         try {
             int _type = T227;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:228:6: ( '#noundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:228:8: '#noundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:228:6: ( '#goodmagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:228:8: '#goodmagicleader'
             {
-            match("#noundeadleader"); 
+            match("#goodmagicleader"); 
 
 
             }
@@ -4540,10 +4543,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT228() throws RecognitionException {
         try {
             int _type = T228;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:229:6: ( '#poorundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:229:8: '#poorundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:229:6: ( '#expertmagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:229:8: '#expertmagicleader'
             {
-            match("#poorundeadleader"); 
+            match("#expertmagicleader"); 
 
 
             }
@@ -4559,10 +4562,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT229() throws RecognitionException {
         try {
             int _type = T229;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:230:6: ( '#okundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:230:8: '#okundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:230:6: ( '#superiormagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:230:8: '#superiormagicleader'
             {
-            match("#okundeadleader"); 
+            match("#superiormagicleader"); 
 
 
             }
@@ -4578,10 +4581,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT230() throws RecognitionException {
         try {
             int _type = T230;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:231:6: ( '#goodundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:231:8: '#goodundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:231:6: ( '#noundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:231:8: '#noundeadleader'
             {
-            match("#goodundeadleader"); 
+            match("#noundeadleader"); 
 
 
             }
@@ -4597,10 +4600,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT231() throws RecognitionException {
         try {
             int _type = T231;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:232:6: ( '#expertundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:232:8: '#expertundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:232:6: ( '#poorundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:232:8: '#poorundeadleader'
             {
-            match("#expertundeadleader"); 
+            match("#poorundeadleader"); 
 
 
             }
@@ -4616,10 +4619,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT232() throws RecognitionException {
         try {
             int _type = T232;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:233:6: ( '#superiorundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:233:8: '#superiorundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:233:6: ( '#okundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:233:8: '#okundeadleader'
             {
-            match("#superiorundeadleader"); 
+            match("#okundeadleader"); 
 
 
             }
@@ -4635,10 +4638,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT233() throws RecognitionException {
         try {
             int _type = T233;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:234:6: ( '#weapon' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:234:8: '#weapon'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:234:6: ( '#goodundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:234:8: '#goodundeadleader'
             {
-            match("#weapon"); 
+            match("#goodundeadleader"); 
 
 
             }
@@ -4654,10 +4657,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT234() throws RecognitionException {
         try {
             int _type = T234;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:235:6: ( '#onebattlespell' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:235:8: '#onebattlespell'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:235:6: ( '#expertundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:235:8: '#expertundeadleader'
             {
-            match("#onebattlespell"); 
+            match("#expertundeadleader"); 
 
 
             }
@@ -4673,10 +4676,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT235() throws RecognitionException {
         try {
             int _type = T235;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:236:6: ( '#firstshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:236:8: '#firstshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:236:6: ( '#superiorundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:236:8: '#superiorundeadleader'
             {
-            match("#firstshape"); 
+            match("#superiorundeadleader"); 
 
 
             }
@@ -4692,10 +4695,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT236() throws RecognitionException {
         try {
             int _type = T236;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:237:6: ( '#secondshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:237:8: '#secondshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:237:6: ( '#weapon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:237:8: '#weapon'
             {
-            match("#secondshape"); 
+            match("#weapon"); 
 
 
             }
@@ -4711,10 +4714,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT237() throws RecognitionException {
         try {
             int _type = T237;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:238:6: ( '#secondtmpshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:238:8: '#secondtmpshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:238:6: ( '#onebattlespell' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:238:8: '#onebattlespell'
             {
-            match("#secondtmpshape"); 
+            match("#onebattlespell"); 
 
 
             }
@@ -4730,10 +4733,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT238() throws RecognitionException {
         try {
             int _type = T238;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:239:6: ( '#shapechange' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:239:8: '#shapechange'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:239:6: ( '#firstshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:239:8: '#firstshape'
             {
-            match("#shapechange"); 
+            match("#firstshape"); 
 
 
             }
@@ -4749,10 +4752,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT239() throws RecognitionException {
         try {
             int _type = T239;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:240:6: ( '#landshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:240:8: '#landshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:240:6: ( '#secondshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:240:8: '#secondshape'
             {
-            match("#landshape"); 
+            match("#secondshape"); 
 
 
             }
@@ -4768,10 +4771,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT240() throws RecognitionException {
         try {
             int _type = T240;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:241:6: ( '#watershape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:241:8: '#watershape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:241:6: ( '#secondtmpshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:241:8: '#secondtmpshape'
             {
-            match("#watershape"); 
+            match("#secondtmpshape"); 
 
 
             }
@@ -4787,10 +4790,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT241() throws RecognitionException {
         try {
             int _type = T241;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:242:6: ( '#forestshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:242:8: '#forestshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:242:6: ( '#shapechange' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:242:8: '#shapechange'
             {
-            match("#forestshape"); 
+            match("#shapechange"); 
 
 
             }
@@ -4806,10 +4809,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT242() throws RecognitionException {
         try {
             int _type = T242;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:243:6: ( '#plainshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:243:8: '#plainshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:243:6: ( '#landshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:243:8: '#landshape'
             {
-            match("#plainshape"); 
+            match("#landshape"); 
 
 
             }
@@ -4825,10 +4828,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT243() throws RecognitionException {
         try {
             int _type = T243;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:244:6: ( '#domsummon' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:244:8: '#domsummon'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:244:6: ( '#watershape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:244:8: '#watershape'
             {
-            match("#domsummon"); 
+            match("#watershape"); 
 
 
             }
@@ -4844,10 +4847,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT244() throws RecognitionException {
         try {
             int _type = T244;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:245:6: ( '#domsummon2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:245:8: '#domsummon2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:245:6: ( '#forestshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:245:8: '#forestshape'
             {
-            match("#domsummon2"); 
+            match("#forestshape"); 
 
 
             }
@@ -4863,10 +4866,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT245() throws RecognitionException {
         try {
             int _type = T245;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:246:6: ( '#domsummon20' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:246:8: '#domsummon20'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:246:6: ( '#plainshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:246:8: '#plainshape'
             {
-            match("#domsummon20"); 
+            match("#plainshape"); 
 
 
             }
@@ -4882,10 +4885,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT246() throws RecognitionException {
         try {
             int _type = T246;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:247:6: ( '#makemonster1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:247:8: '#makemonster1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:247:6: ( '#domsummon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:247:8: '#domsummon'
             {
-            match("#makemonster1"); 
+            match("#domsummon"); 
 
 
             }
@@ -4901,10 +4904,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT247() throws RecognitionException {
         try {
             int _type = T247;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:248:6: ( '#makemonster2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:248:8: '#makemonster2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:248:6: ( '#domsummon2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:248:8: '#domsummon2'
             {
-            match("#makemonster2"); 
+            match("#domsummon2"); 
 
 
             }
@@ -4920,10 +4923,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT248() throws RecognitionException {
         try {
             int _type = T248;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:249:6: ( '#makemonster3' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:249:8: '#makemonster3'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:249:6: ( '#domsummon20' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:249:8: '#domsummon20'
             {
-            match("#makemonster3"); 
+            match("#domsummon20"); 
 
 
             }
@@ -4939,10 +4942,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT249() throws RecognitionException {
         try {
             int _type = T249;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:250:6: ( '#makemonster4' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:250:8: '#makemonster4'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:250:6: ( '#makemonster1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:250:8: '#makemonster1'
             {
-            match("#makemonster4"); 
+            match("#makemonster1"); 
 
 
             }
@@ -4958,10 +4961,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT250() throws RecognitionException {
         try {
             int _type = T250;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:251:6: ( '#makemonster5' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:251:8: '#makemonster5'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:251:6: ( '#makemonster2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:251:8: '#makemonster2'
             {
-            match("#makemonster5"); 
+            match("#makemonster2"); 
 
 
             }
@@ -4977,10 +4980,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT251() throws RecognitionException {
         try {
             int _type = T251;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:252:6: ( '#summon1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:252:8: '#summon1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:252:6: ( '#makemonster3' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:252:8: '#makemonster3'
             {
-            match("#summon1"); 
+            match("#makemonster3"); 
 
 
             }
@@ -4996,10 +4999,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT252() throws RecognitionException {
         try {
             int _type = T252;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:253:6: ( '#summon5' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:253:8: '#summon5'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:253:6: ( '#makemonster4' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:253:8: '#makemonster4'
             {
-            match("#summon5"); 
+            match("#makemonster4"); 
 
 
             }
@@ -5015,10 +5018,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT253() throws RecognitionException {
         try {
             int _type = T253;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:254:6: ( '#heat' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:254:8: '#heat'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:254:6: ( '#makemonster5' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:254:8: '#makemonster5'
             {
-            match("#heat"); 
+            match("#makemonster5"); 
 
 
             }
@@ -5034,10 +5037,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT254() throws RecognitionException {
         try {
             int _type = T254;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:255:6: ( '#school' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:255:8: '#school'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:255:6: ( '#summon1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:255:8: '#summon1'
             {
-            match("#school"); 
+            match("#summon1"); 
 
 
             }
@@ -5053,10 +5056,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT255() throws RecognitionException {
         try {
             int _type = T255;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:256:6: ( '#researchlevel' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:256:8: '#researchlevel'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:256:6: ( '#summon5' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:256:8: '#summon5'
             {
-            match("#researchlevel"); 
+            match("#summon5"); 
 
 
             }
@@ -5072,10 +5075,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT256() throws RecognitionException {
         try {
             int _type = T256;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:257:6: ( '#damage' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:257:8: '#damage'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:257:6: ( '#heat' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:257:8: '#heat'
             {
-            match("#damage"); 
+            match("#heat"); 
 
 
             }
@@ -5091,10 +5094,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT257() throws RecognitionException {
         try {
             int _type = T257;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:258:6: ( '#effect' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:258:8: '#effect'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:258:6: ( '#school' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:258:8: '#school'
             {
-            match("#effect"); 
+            match("#school"); 
 
 
             }
@@ -5110,10 +5113,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT258() throws RecognitionException {
         try {
             int _type = T258;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:259:6: ( '#fatiguecost' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:259:8: '#fatiguecost'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:259:6: ( '#researchlevel' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:259:8: '#researchlevel'
             {
-            match("#fatiguecost"); 
+            match("#researchlevel"); 
 
 
             }
@@ -5129,10 +5132,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT259() throws RecognitionException {
         try {
             int _type = T259;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:260:6: ( '#flightspr' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:260:8: '#flightspr'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:260:6: ( '#damage' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:260:8: '#damage'
             {
-            match("#flightspr"); 
+            match("#damage"); 
 
 
             }
@@ -5148,10 +5151,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT260() throws RecognitionException {
         try {
             int _type = T260;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:261:6: ( '#nreff' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:261:8: '#nreff'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:261:6: ( '#effect' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:261:8: '#effect'
             {
-            match("#nreff"); 
+            match("#effect"); 
 
 
             }
@@ -5167,10 +5170,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT261() throws RecognitionException {
         try {
             int _type = T261;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:262:6: ( '#precision' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:262:8: '#precision'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:262:6: ( '#fatiguecost' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:262:8: '#fatiguecost'
             {
-            match("#precision"); 
+            match("#fatiguecost"); 
 
 
             }
@@ -5186,10 +5189,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT262() throws RecognitionException {
         try {
             int _type = T262;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:263:6: ( '#spec' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:263:8: '#spec'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:263:6: ( '#flightspr' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:263:8: '#flightspr'
             {
-            match("#spec"); 
+            match("#flightspr"); 
 
 
             }
@@ -5205,10 +5208,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT263() throws RecognitionException {
         try {
             int _type = T263;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:264:6: ( '#restricted' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:264:8: '#restricted'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:264:6: ( '#nreff' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:264:8: '#nreff'
             {
-            match("#restricted"); 
+            match("#nreff"); 
 
 
             }
@@ -5224,10 +5227,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT264() throws RecognitionException {
         try {
             int _type = T264;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:265:6: ( '#path' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:265:8: '#path'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:265:6: ( '#precision' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:265:8: '#precision'
             {
-            match("#path"); 
+            match("#precision"); 
 
 
             }
@@ -5243,10 +5246,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT265() throws RecognitionException {
         try {
             int _type = T265;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:266:6: ( '#pathlevel' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:266:8: '#pathlevel'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:266:6: ( '#spec' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:266:8: '#spec'
             {
-            match("#pathlevel"); 
+            match("#spec"); 
 
 
             }
@@ -5262,10 +5265,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT266() throws RecognitionException {
         try {
             int _type = T266;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:267:6: ( '#copyspell' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:267:8: '#copyspell'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:267:6: ( '#restricted' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:267:8: '#restricted'
             {
-            match("#copyspell"); 
+            match("#restricted"); 
 
 
             }
@@ -5281,10 +5284,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT267() throws RecognitionException {
         try {
             int _type = T267;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:268:6: ( '#nextspell' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:268:8: '#nextspell'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:268:6: ( '#path' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:268:8: '#path'
             {
-            match("#nextspell"); 
+            match("#path"); 
 
 
             }
@@ -5300,10 +5303,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT268() throws RecognitionException {
         try {
             int _type = T268;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:269:6: ( '#constlevel' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:269:8: '#constlevel'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:269:6: ( '#pathlevel' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:269:8: '#pathlevel'
             {
-            match("#constlevel"); 
+            match("#pathlevel"); 
 
 
             }
@@ -5319,10 +5322,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT269() throws RecognitionException {
         try {
             int _type = T269;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:270:6: ( '#mainpath' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:270:8: '#mainpath'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:270:6: ( '#copyspell' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:270:8: '#copyspell'
             {
-            match("#mainpath"); 
+            match("#copyspell"); 
 
 
             }
@@ -5338,10 +5341,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT270() throws RecognitionException {
         try {
             int _type = T270;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:271:6: ( '#mainlevel' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:271:8: '#mainlevel'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:271:6: ( '#nextspell' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:271:8: '#nextspell'
             {
-            match("#mainlevel"); 
+            match("#nextspell"); 
 
 
             }
@@ -5357,10 +5360,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT271() throws RecognitionException {
         try {
             int _type = T271;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:272:6: ( '#secondarypath' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:272:8: '#secondarypath'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:272:6: ( '#constlevel' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:272:8: '#constlevel'
             {
-            match("#secondarypath"); 
+            match("#constlevel"); 
 
 
             }
@@ -5376,10 +5379,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT272() throws RecognitionException {
         try {
             int _type = T272;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:273:6: ( '#secondarylevel' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:273:8: '#secondarylevel'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:273:6: ( '#mainpath' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:273:8: '#mainpath'
             {
-            match("#secondarylevel"); 
+            match("#mainpath"); 
 
 
             }
@@ -5395,10 +5398,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT273() throws RecognitionException {
         try {
             int _type = T273;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:274:6: ( '#addname' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:274:8: '#addname'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:274:6: ( '#mainlevel' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:274:8: '#mainlevel'
             {
-            match("#addname"); 
+            match("#mainlevel"); 
 
 
             }
@@ -5414,10 +5417,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT274() throws RecognitionException {
         try {
             int _type = T274;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:275:6: ( '#level' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:275:8: '#level'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:275:6: ( '#secondarypath' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:275:8: '#secondarypath'
             {
-            match("#level"); 
+            match("#secondarypath"); 
 
 
             }
@@ -5433,10 +5436,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT275() throws RecognitionException {
         try {
             int _type = T275;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:276:6: ( '#rarity' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:276:8: '#rarity'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:276:6: ( '#secondarylevel' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:276:8: '#secondarylevel'
             {
-            match("#rarity"); 
+            match("#secondarylevel"); 
 
 
             }
@@ -5452,10 +5455,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT276() throws RecognitionException {
         try {
             int _type = T276;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:277:6: ( '#loc' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:277:8: '#loc'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:277:6: ( '#addname' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:277:8: '#addname'
             {
-            match("#loc"); 
+            match("#addname"); 
 
 
             }
@@ -5471,10 +5474,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT277() throws RecognitionException {
         try {
             int _type = T277;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:278:6: ( '#homemon' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:278:8: '#homemon'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:278:6: ( '#level' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:278:8: '#level'
             {
-            match("#homemon"); 
+            match("#level"); 
 
 
             }
@@ -5490,10 +5493,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT278() throws RecognitionException {
         try {
             int _type = T278;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:279:6: ( '#homecom' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:279:8: '#homecom'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:279:6: ( '#rarity' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:279:8: '#rarity'
             {
-            match("#homecom"); 
+            match("#rarity"); 
 
 
             }
@@ -5509,10 +5512,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT279() throws RecognitionException {
         try {
             int _type = T279;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:280:6: ( '#mon' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:280:8: '#mon'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:280:6: ( '#loc' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:280:8: '#loc'
             {
-            match("#mon"); 
+            match("#loc"); 
 
 
             }
@@ -5528,10 +5531,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT280() throws RecognitionException {
         try {
             int _type = T280;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:281:6: ( '#com' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:281:8: '#com'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:281:6: ( '#homemon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:281:8: '#homemon'
             {
-            match("#com"); 
+            match("#homemon"); 
 
 
             }
@@ -5547,10 +5550,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT281() throws RecognitionException {
         try {
             int _type = T281;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:282:6: ( '#gold' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:282:8: '#gold'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:282:6: ( '#homecom' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:282:8: '#homecom'
             {
-            match("#gold"); 
+            match("#homecom"); 
 
 
             }
@@ -5566,10 +5569,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT282() throws RecognitionException {
         try {
             int _type = T282;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:283:6: ( '#res' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:283:8: '#res'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:283:6: ( '#mon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:283:8: '#mon'
             {
-            match("#res"); 
+            match("#mon"); 
 
 
             }
@@ -5585,10 +5588,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT283() throws RecognitionException {
         try {
             int _type = T283;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:284:6: ( '#incscale' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:284:8: '#incscale'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:284:6: ( '#com' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:284:8: '#com'
             {
-            match("#incscale"); 
+            match("#com"); 
 
 
             }
@@ -5604,10 +5607,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT284() throws RecognitionException {
         try {
             int _type = T284;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:285:6: ( '#decscale' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:285:8: '#decscale'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:285:6: ( '#gold' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:285:8: '#gold'
             {
-            match("#decscale"); 
+            match("#gold"); 
 
 
             }
@@ -5623,10 +5626,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT285() throws RecognitionException {
         try {
             int _type = T285;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:286:6: ( '#gems' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:286:8: '#gems'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:286:6: ( '#res' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:286:8: '#res'
             {
-            match("#gems"); 
+            match("#res"); 
 
 
             }
@@ -5642,10 +5645,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT286() throws RecognitionException {
         try {
             int _type = T286;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:287:6: ( '#epithet' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:287:8: '#epithet'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:287:6: ( '#incscale' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:287:8: '#incscale'
             {
-            match("#epithet"); 
+            match("#incscale"); 
 
 
             }
@@ -5661,10 +5664,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT287() throws RecognitionException {
         try {
             int _type = T287;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:288:6: ( '#summary' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:288:8: '#summary'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:288:6: ( '#decscale' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:288:8: '#decscale'
             {
-            match("#summary"); 
+            match("#decscale"); 
 
 
             }
@@ -5680,10 +5683,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT288() throws RecognitionException {
         try {
             int _type = T288;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:289:6: ( '#brief' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:289:8: '#brief'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:289:6: ( '#gems' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:289:8: '#gems'
             {
-            match("#brief"); 
+            match("#gems"); 
 
 
             }
@@ -5699,10 +5702,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT289() throws RecognitionException {
         try {
             int _type = T289;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:290:6: ( '#flag' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:290:8: '#flag'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:290:6: ( '#epithet' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:290:8: '#epithet'
             {
-            match("#flag"); 
+            match("#epithet"); 
 
 
             }
@@ -5718,10 +5721,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT290() throws RecognitionException {
         try {
             int _type = T290;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:291:6: ( '#mapbackground' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:291:8: '#mapbackground'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:291:6: ( '#summary' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:291:8: '#summary'
             {
-            match("#mapbackground"); 
+            match("#summary"); 
 
 
             }
@@ -5737,10 +5740,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT291() throws RecognitionException {
         try {
             int _type = T291;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:292:6: ( '#startsite' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:292:8: '#startsite'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:292:6: ( '#brief' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:292:8: '#brief'
             {
-            match("#startsite"); 
+            match("#brief"); 
 
 
             }
@@ -5756,10 +5759,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT292() throws RecognitionException {
         try {
             int _type = T292;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:293:6: ( '#era' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:293:8: '#era'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:293:6: ( '#flag' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:293:8: '#flag'
             {
-            match("#era"); 
+            match("#flag"); 
 
 
             }
@@ -5775,10 +5778,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT293() throws RecognitionException {
         try {
             int _type = T293;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:294:6: ( '#labcost' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:294:8: '#labcost'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:294:6: ( '#mapbackground' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:294:8: '#mapbackground'
             {
-            match("#labcost"); 
+            match("#mapbackground"); 
 
 
             }
@@ -5794,10 +5797,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT294() throws RecognitionException {
         try {
             int _type = T294;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:295:6: ( '#templecost' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:295:8: '#templecost'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:295:6: ( '#startsite' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:295:8: '#startsite'
             {
-            match("#templecost"); 
+            match("#startsite"); 
 
 
             }
@@ -5813,10 +5816,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT295() throws RecognitionException {
         try {
             int _type = T295;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:296:6: ( '#templepic' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:296:8: '#templepic'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:296:6: ( '#era' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:296:8: '#era'
             {
-            match("#templepic"); 
+            match("#era"); 
 
 
             }
@@ -5832,10 +5835,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT296() throws RecognitionException {
         try {
             int _type = T296;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:297:6: ( '#startunitnbrs1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:297:8: '#startunitnbrs1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:297:6: ( '#labcost' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:297:8: '#labcost'
             {
-            match("#startunitnbrs1"); 
+            match("#labcost"); 
 
 
             }
@@ -5851,10 +5854,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT297() throws RecognitionException {
         try {
             int _type = T297;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:298:6: ( '#startunitnbrs2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:298:8: '#startunitnbrs2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:298:6: ( '#templecost' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:298:8: '#templecost'
             {
-            match("#startunitnbrs2"); 
+            match("#templecost"); 
 
 
             }
@@ -5870,10 +5873,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT298() throws RecognitionException {
         try {
             int _type = T298;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:299:6: ( '#hero1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:299:8: '#hero1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:299:6: ( '#templepic' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:299:8: '#templepic'
             {
-            match("#hero1"); 
+            match("#templepic"); 
 
 
             }
@@ -5889,10 +5892,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT299() throws RecognitionException {
         try {
             int _type = T299;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:300:6: ( '#hero2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:300:8: '#hero2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:300:6: ( '#startunitnbrs1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:300:8: '#startunitnbrs1'
             {
-            match("#hero2"); 
+            match("#startunitnbrs1"); 
 
 
             }
@@ -5908,10 +5911,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT300() throws RecognitionException {
         try {
             int _type = T300;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:301:6: ( '#hero3' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:301:8: '#hero3'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:301:6: ( '#startunitnbrs2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:301:8: '#startunitnbrs2'
             {
-            match("#hero3"); 
+            match("#startunitnbrs2"); 
 
 
             }
@@ -5927,10 +5930,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT301() throws RecognitionException {
         try {
             int _type = T301;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:302:6: ( '#hero4' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:302:8: '#hero4'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:302:6: ( '#hero1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:302:8: '#hero1'
             {
-            match("#hero4"); 
+            match("#hero1"); 
 
 
             }
@@ -5946,10 +5949,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT302() throws RecognitionException {
         try {
             int _type = T302;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:303:6: ( '#hero5' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:303:8: '#hero5'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:303:6: ( '#hero2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:303:8: '#hero2'
             {
-            match("#hero5"); 
+            match("#hero2"); 
 
 
             }
@@ -5965,10 +5968,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT303() throws RecognitionException {
         try {
             int _type = T303;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:304:6: ( '#hero6' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:304:8: '#hero6'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:304:6: ( '#hero3' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:304:8: '#hero3'
             {
-            match("#hero6"); 
+            match("#hero3"); 
 
 
             }
@@ -5984,10 +5987,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT304() throws RecognitionException {
         try {
             int _type = T304;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:305:6: ( '#multihero1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:305:8: '#multihero1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:305:6: ( '#hero4' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:305:8: '#hero4'
             {
-            match("#multihero1"); 
+            match("#hero4"); 
 
 
             }
@@ -6003,10 +6006,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT305() throws RecognitionException {
         try {
             int _type = T305;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:306:6: ( '#multihero2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:306:8: '#multihero2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:306:6: ( '#hero5' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:306:8: '#hero5'
             {
-            match("#multihero2"); 
+            match("#hero5"); 
 
 
             }
@@ -6022,10 +6025,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT306() throws RecognitionException {
         try {
             int _type = T306;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:307:6: ( '#defmult1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:307:8: '#defmult1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:307:6: ( '#hero6' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:307:8: '#hero6'
             {
-            match("#defmult1"); 
+            match("#hero6"); 
 
 
             }
@@ -6041,10 +6044,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT307() throws RecognitionException {
         try {
             int _type = T307;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:308:6: ( '#defmult1b' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:308:8: '#defmult1b'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:308:6: ( '#multihero1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:308:8: '#multihero1'
             {
-            match("#defmult1b"); 
+            match("#multihero1"); 
 
 
             }
@@ -6060,10 +6063,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT308() throws RecognitionException {
         try {
             int _type = T308;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:309:6: ( '#defmult2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:309:8: '#defmult2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:309:6: ( '#multihero2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:309:8: '#multihero2'
             {
-            match("#defmult2"); 
+            match("#multihero2"); 
 
 
             }
@@ -6079,10 +6082,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT309() throws RecognitionException {
         try {
             int _type = T309;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:310:6: ( '#defmult2b' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:310:8: '#defmult2b'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:310:6: ( '#defmult1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:310:8: '#defmult1'
             {
-            match("#defmult2b"); 
+            match("#defmult1"); 
 
 
             }
@@ -6098,10 +6101,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT310() throws RecognitionException {
         try {
             int _type = T310;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:311:6: ( '#idealcold' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:311:8: '#idealcold'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:311:6: ( '#defmult1b' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:311:8: '#defmult1b'
             {
-            match("#idealcold"); 
+            match("#defmult1b"); 
 
 
             }
@@ -6117,10 +6120,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT311() throws RecognitionException {
         try {
             int _type = T311;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:312:6: ( '#castleprod' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:312:8: '#castleprod'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:312:6: ( '#defmult2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:312:8: '#defmult2'
             {
-            match("#castleprod"); 
+            match("#defmult2"); 
 
 
             }
@@ -6136,10 +6139,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT312() throws RecognitionException {
         try {
             int _type = T312;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:313:6: ( '#domkill' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:313:8: '#domkill'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:313:6: ( '#defmult2b' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:313:8: '#defmult2b'
             {
-            match("#domkill"); 
+            match("#defmult2b"); 
 
 
             }
@@ -6155,10 +6158,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT313() throws RecognitionException {
         try {
             int _type = T313;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:314:6: ( '#domunrest' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:314:8: '#domunrest'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:314:6: ( '#idealcold' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:314:8: '#idealcold'
             {
-            match("#domunrest"); 
+            match("#idealcold"); 
 
 
             }
@@ -6174,10 +6177,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT314() throws RecognitionException {
         try {
             int _type = T314;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:315:6: ( '#startfort' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:315:8: '#startfort'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:315:6: ( '#castleprod' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:315:8: '#castleprod'
             {
-            match("#startfort"); 
+            match("#castleprod"); 
 
 
             }
@@ -6193,10 +6196,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT315() throws RecognitionException {
         try {
             int _type = T315;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:316:6: ( '#defaultfort' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:316:8: '#defaultfort'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:316:6: ( '#domkill' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:316:8: '#domkill'
             {
-            match("#defaultfort"); 
+            match("#domkill"); 
 
 
             }
@@ -6212,10 +6215,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT316() throws RecognitionException {
         try {
             int _type = T316;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:317:6: ( '#farmfort' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:317:8: '#farmfort'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:317:6: ( '#domunrest' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:317:8: '#domunrest'
             {
-            match("#farmfort"); 
+            match("#domunrest"); 
 
 
             }
@@ -6231,10 +6234,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT317() throws RecognitionException {
         try {
             int _type = T317;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:318:6: ( '#mountainfort' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:318:8: '#mountainfort'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:318:6: ( '#startfort' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:318:8: '#startfort'
             {
-            match("#mountainfort"); 
+            match("#startfort"); 
 
 
             }
@@ -6250,10 +6253,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT318() throws RecognitionException {
         try {
             int _type = T318;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:319:6: ( '#forestfort' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:319:8: '#forestfort'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:319:6: ( '#defaultfort' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:319:8: '#defaultfort'
             {
-            match("#forestfort"); 
+            match("#defaultfort"); 
 
 
             }
@@ -6269,10 +6272,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT319() throws RecognitionException {
         try {
             int _type = T319;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:320:6: ( '#swampfort' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:320:8: '#swampfort'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:320:6: ( '#farmfort' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:320:8: '#farmfort'
             {
-            match("#swampfort"); 
+            match("#farmfort"); 
 
 
             }
@@ -6288,10 +6291,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT320() throws RecognitionException {
         try {
             int _type = T320;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:321:6: ( '#uwfort' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:321:8: '#uwfort'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:321:6: ( '#mountainfort' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:321:8: '#mountainfort'
             {
-            match("#uwfort"); 
+            match("#mountainfort"); 
 
 
             }
@@ -6307,10 +6310,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT321() throws RecognitionException {
         try {
             int _type = T321;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:322:6: ( '#deepfort' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:322:8: '#deepfort'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:322:6: ( '#forestfort' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:322:8: '#forestfort'
             {
-            match("#deepfort"); 
+            match("#forestfort"); 
 
 
             }
@@ -6326,10 +6329,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT322() throws RecognitionException {
         try {
             int _type = T322;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:323:6: ( '#clearnation' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:323:8: '#clearnation'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:323:6: ( '#swampfort' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:323:8: '#swampfort'
             {
-            match("#clearnation"); 
+            match("#swampfort"); 
 
 
             }
@@ -6345,10 +6348,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT323() throws RecognitionException {
         try {
             int _type = T323;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:324:6: ( '#clearrec' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:324:8: '#clearrec'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:324:6: ( '#uwfort' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:324:8: '#uwfort'
             {
-            match("#clearrec"); 
+            match("#uwfort"); 
 
 
             }
@@ -6364,10 +6367,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT324() throws RecognitionException {
         try {
             int _type = T324;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:325:6: ( '#clearsites' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:325:8: '#clearsites'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:325:6: ( '#deepfort' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:325:8: '#deepfort'
             {
-            match("#clearsites"); 
+            match("#deepfort"); 
 
 
             }
@@ -6383,10 +6386,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT325() throws RecognitionException {
         try {
             int _type = T325;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:326:6: ( '#uwnation' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:326:8: '#uwnation'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:326:6: ( '#clearnation' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:326:8: '#clearnation'
             {
-            match("#uwnation"); 
+            match("#clearnation"); 
 
 
             }
@@ -6402,10 +6405,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT326() throws RecognitionException {
         try {
             int _type = T326;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:327:6: ( '#bloodnation' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:327:8: '#bloodnation'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:327:6: ( '#clearrec' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:327:8: '#clearrec'
             {
-            match("#bloodnation"); 
+            match("#clearrec"); 
 
 
             }
@@ -6421,10 +6424,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT327() throws RecognitionException {
         try {
             int _type = T327;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:328:6: ( '#nopreach' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:328:8: '#nopreach'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:328:6: ( '#clearsites' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:328:8: '#clearsites'
             {
-            match("#nopreach"); 
+            match("#clearsites"); 
 
 
             }
@@ -6440,10 +6443,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT328() throws RecognitionException {
         try {
             int _type = T328;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:329:6: ( '#dyingdom' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:329:8: '#dyingdom'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:329:6: ( '#uwnation' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:329:8: '#uwnation'
             {
-            match("#dyingdom"); 
+            match("#uwnation"); 
 
 
             }
@@ -6459,10 +6462,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT329() throws RecognitionException {
         try {
             int _type = T329;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:330:6: ( '#sacrificedom' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:330:8: '#sacrificedom'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:330:6: ( '#bloodnation' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:330:8: '#bloodnation'
             {
-            match("#sacrificedom"); 
+            match("#bloodnation"); 
 
 
             }
@@ -6478,10 +6481,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT330() throws RecognitionException {
         try {
             int _type = T330;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:331:6: ( '#nodeathsupply' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:331:8: '#nodeathsupply'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:331:6: ( '#nopreach' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:331:8: '#nopreach'
             {
-            match("#nodeathsupply"); 
+            match("#nopreach"); 
 
 
             }
@@ -6497,10 +6500,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT331() throws RecognitionException {
         try {
             int _type = T331;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:332:6: ( '#autoundead' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:332:8: '#autoundead'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:332:6: ( '#dyingdom' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:332:8: '#dyingdom'
             {
-            match("#autoundead"); 
+            match("#dyingdom"); 
 
 
             }
@@ -6516,10 +6519,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT332() throws RecognitionException {
         try {
             int _type = T332;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:333:6: ( '#zombiereanim' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:333:8: '#zombiereanim'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:333:6: ( '#sacrificedom' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:333:8: '#sacrificedom'
             {
-            match("#zombiereanim"); 
+            match("#sacrificedom"); 
 
 
             }
@@ -6535,10 +6538,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT333() throws RecognitionException {
         try {
             int _type = T333;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:334:6: ( '#horsereanim' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:334:8: '#horsereanim'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:334:6: ( '#nodeathsupply' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:334:8: '#nodeathsupply'
             {
-            match("#horsereanim"); 
+            match("#nodeathsupply"); 
 
 
             }
@@ -6554,10 +6557,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT334() throws RecognitionException {
         try {
             int _type = T334;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:335:6: ( '#wightreanim' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:335:8: '#wightreanim'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:335:6: ( '#autoundead' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:335:8: '#autoundead'
             {
-            match("#wightreanim"); 
+            match("#autoundead"); 
 
 
             }
@@ -6573,10 +6576,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT335() throws RecognitionException {
         try {
             int _type = T335;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:336:6: ( '#manikinreanim' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:336:8: '#manikinreanim'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:336:6: ( '#zombiereanim' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:336:8: '#zombiereanim'
             {
-            match("#manikinreanim"); 
+            match("#zombiereanim"); 
 
 
             }
@@ -6592,10 +6595,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT336() throws RecognitionException {
         try {
             int _type = T336;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:337:6: ( '#tombwyrmreanim' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:337:8: '#tombwyrmreanim'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:337:6: ( '#horsereanim' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:337:8: '#horsereanim'
             {
-            match("#tombwyrmreanim"); 
+            match("#horsereanim"); 
 
 
             }
@@ -6611,10 +6614,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT337() throws RecognitionException {
         try {
             int _type = T337;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:338:6: ( '#startcom' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:338:8: '#startcom'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:338:6: ( '#wightreanim' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:338:8: '#wightreanim'
             {
-            match("#startcom"); 
+            match("#wightreanim"); 
 
 
             }
@@ -6630,10 +6633,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT338() throws RecognitionException {
         try {
             int _type = T338;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:339:6: ( '#startscout' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:339:8: '#startscout'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:339:6: ( '#manikinreanim' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:339:8: '#manikinreanim'
             {
-            match("#startscout"); 
+            match("#manikinreanim"); 
 
 
             }
@@ -6649,10 +6652,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT339() throws RecognitionException {
         try {
             int _type = T339;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:340:6: ( '#startunittype1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:340:8: '#startunittype1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:340:6: ( '#tombwyrmreanim' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:340:8: '#tombwyrmreanim'
             {
-            match("#startunittype1"); 
+            match("#tombwyrmreanim"); 
 
 
             }
@@ -6668,10 +6671,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT340() throws RecognitionException {
         try {
             int _type = T340;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:341:6: ( '#startunittype2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:341:8: '#startunittype2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:341:6: ( '#startcom' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:341:8: '#startcom'
             {
-            match("#startunittype2"); 
+            match("#startcom"); 
 
 
             }
@@ -6687,10 +6690,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT341() throws RecognitionException {
         try {
             int _type = T341;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:342:6: ( '#addrecunit' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:342:8: '#addrecunit'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:342:6: ( '#startscout' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:342:8: '#startscout'
             {
-            match("#addrecunit"); 
+            match("#startscout"); 
 
 
             }
@@ -6706,10 +6709,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT342() throws RecognitionException {
         try {
             int _type = T342;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:343:6: ( '#addreccom' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:343:8: '#addreccom'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:343:6: ( '#startunittype1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:343:8: '#startunittype1'
             {
-            match("#addreccom"); 
+            match("#startunittype1"); 
 
 
             }
@@ -6725,10 +6728,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT343() throws RecognitionException {
         try {
             int _type = T343;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:344:6: ( '#uwunit1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:344:8: '#uwunit1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:344:6: ( '#startunittype2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:344:8: '#startunittype2'
             {
-            match("#uwunit1"); 
+            match("#startunittype2"); 
 
 
             }
@@ -6744,10 +6747,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT344() throws RecognitionException {
         try {
             int _type = T344;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:345:6: ( '#uwunit2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:345:8: '#uwunit2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:345:6: ( '#addrecunit' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:345:8: '#addrecunit'
             {
-            match("#uwunit2"); 
+            match("#addrecunit"); 
 
 
             }
@@ -6763,10 +6766,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT345() throws RecognitionException {
         try {
             int _type = T345;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:346:6: ( '#uwunit3' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:346:8: '#uwunit3'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:346:6: ( '#addreccom' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:346:8: '#addreccom'
             {
-            match("#uwunit3"); 
+            match("#addreccom"); 
 
 
             }
@@ -6782,10 +6785,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT346() throws RecognitionException {
         try {
             int _type = T346;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:347:6: ( '#uwunit4' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:347:8: '#uwunit4'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:347:6: ( '#uwunit1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:347:8: '#uwunit1'
             {
-            match("#uwunit4"); 
+            match("#uwunit1"); 
 
 
             }
@@ -6801,10 +6804,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT347() throws RecognitionException {
         try {
             int _type = T347;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:348:6: ( '#uwunit5' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:348:8: '#uwunit5'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:348:6: ( '#uwunit2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:348:8: '#uwunit2'
             {
-            match("#uwunit5"); 
+            match("#uwunit2"); 
 
 
             }
@@ -6820,10 +6823,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT348() throws RecognitionException {
         try {
             int _type = T348;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:349:6: ( '#uwcom1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:349:8: '#uwcom1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:349:6: ( '#uwunit3' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:349:8: '#uwunit3'
             {
-            match("#uwcom1"); 
+            match("#uwunit3"); 
 
 
             }
@@ -6839,10 +6842,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT349() throws RecognitionException {
         try {
             int _type = T349;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:350:6: ( '#uwcom2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:350:8: '#uwcom2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:350:6: ( '#uwunit4' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:350:8: '#uwunit4'
             {
-            match("#uwcom2"); 
+            match("#uwunit4"); 
 
 
             }
@@ -6858,10 +6861,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT350() throws RecognitionException {
         try {
             int _type = T350;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:351:6: ( '#uwcom3' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:351:8: '#uwcom3'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:351:6: ( '#uwunit5' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:351:8: '#uwunit5'
             {
-            match("#uwcom3"); 
+            match("#uwunit5"); 
 
 
             }
@@ -6877,10 +6880,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT351() throws RecognitionException {
         try {
             int _type = T351;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:352:6: ( '#uwcom4' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:352:8: '#uwcom4'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:352:6: ( '#uwcom1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:352:8: '#uwcom1'
             {
-            match("#uwcom4"); 
+            match("#uwcom1"); 
 
 
             }
@@ -6896,10 +6899,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT352() throws RecognitionException {
         try {
             int _type = T352;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:353:6: ( '#uwcom5' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:353:8: '#uwcom5'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:353:6: ( '#uwcom2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:353:8: '#uwcom2'
             {
-            match("#uwcom5"); 
+            match("#uwcom2"); 
 
 
             }
@@ -6915,10 +6918,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT353() throws RecognitionException {
         try {
             int _type = T353;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:354:6: ( '#defcom1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:354:8: '#defcom1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:354:6: ( '#uwcom3' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:354:8: '#uwcom3'
             {
-            match("#defcom1"); 
+            match("#uwcom3"); 
 
 
             }
@@ -6934,10 +6937,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT354() throws RecognitionException {
         try {
             int _type = T354;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:355:6: ( '#defcom2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:355:8: '#defcom2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:355:6: ( '#uwcom4' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:355:8: '#uwcom4'
             {
-            match("#defcom2"); 
+            match("#uwcom4"); 
 
 
             }
@@ -6953,10 +6956,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT355() throws RecognitionException {
         try {
             int _type = T355;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:356:6: ( '#defunit1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:356:8: '#defunit1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:356:6: ( '#uwcom5' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:356:8: '#uwcom5'
             {
-            match("#defunit1"); 
+            match("#uwcom5"); 
 
 
             }
@@ -6972,10 +6975,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT356() throws RecognitionException {
         try {
             int _type = T356;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:357:6: ( '#defunit1b' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:357:8: '#defunit1b'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:357:6: ( '#defcom1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:357:8: '#defcom1'
             {
-            match("#defunit1b"); 
+            match("#defcom1"); 
 
 
             }
@@ -6991,10 +6994,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT357() throws RecognitionException {
         try {
             int _type = T357;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:358:6: ( '#defunit2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:358:8: '#defunit2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:358:6: ( '#defcom2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:358:8: '#defcom2'
             {
-            match("#defunit2"); 
+            match("#defcom2"); 
 
 
             }
@@ -7010,10 +7013,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT358() throws RecognitionException {
         try {
             int _type = T358;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:359:6: ( '#defunit2b' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:359:8: '#defunit2b'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:359:6: ( '#defunit1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:359:8: '#defunit1'
             {
-            match("#defunit2b"); 
+            match("#defunit1"); 
 
 
             }
@@ -7029,10 +7032,10 @@ public class InternalDmLexer extends Lexer {
     public final void mT359() throws RecognitionException {
         try {
             int _type = T359;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:360:6: ( '#color' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:360:8: '#color'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:360:6: ( '#defunit1b' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:360:8: '#defunit1b'
             {
-            match("#color"); 
+            match("#defunit1b"); 
 
 
             }
@@ -7044,14 +7047,71 @@ public class InternalDmLexer extends Lexer {
     }
     // $ANTLR end T359
 
+    // $ANTLR start T360
+    public final void mT360() throws RecognitionException {
+        try {
+            int _type = T360;
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:361:6: ( '#defunit2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:361:8: '#defunit2'
+            {
+            match("#defunit2"); 
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T360
+
+    // $ANTLR start T361
+    public final void mT361() throws RecognitionException {
+        try {
+            int _type = T361;
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:362:6: ( '#defunit2b' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:362:8: '#defunit2b'
+            {
+            match("#defunit2b"); 
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T361
+
+    // $ANTLR start T362
+    public final void mT362() throws RecognitionException {
+        try {
+            int _type = T362;
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:363:6: ( '#color' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:363:8: '#color'
+            {
+            match("#color"); 
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T362
+
     // $ANTLR start RULE_INT
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21659:10: ( ( '-' )? ( '0' .. '9' )+ )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21659:12: ( '-' )? ( '0' .. '9' )+
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21746:10: ( ( '-' )? ( '0' .. '9' )+ )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21746:12: ( '-' )? ( '0' .. '9' )+
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21659:12: ( '-' )?
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21746:12: ( '-' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -7060,7 +7120,7 @@ public class InternalDmLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21659:12: '-'
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21746:12: '-'
                     {
                     match('-'); 
 
@@ -7069,7 +7129,7 @@ public class InternalDmLexer extends Lexer {
 
             }
 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21659:17: ( '0' .. '9' )+
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21746:17: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -7083,7 +7143,7 @@ public class InternalDmLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21659:18: '0' .. '9'
+            	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21746:18: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -7113,10 +7173,10 @@ public class InternalDmLexer extends Lexer {
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -7128,16 +7188,16 @@ public class InternalDmLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("21661:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 5, 0, input);
+                    new NoViableAltException("21748:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 5, 0, input);
 
                 throw nvae;
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop3:
                     do {
                         int alt3=3;
@@ -7153,7 +7213,7 @@ public class InternalDmLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -7170,7 +7230,7 @@ public class InternalDmLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:62: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -7196,10 +7256,10 @@ public class InternalDmLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -7215,7 +7275,7 @@ public class InternalDmLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -7232,7 +7292,7 @@ public class InternalDmLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21661:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21748:129: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -7274,10 +7334,10 @@ public class InternalDmLexer extends Lexer {
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:17: ( ( RULE_SL_COMMENT | ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+ ) ~ ( ( '#' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )* )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:19: ( RULE_SL_COMMENT | ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+ ) ~ ( ( '#' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )*
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:17: ( ( RULE_SL_COMMENT | ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+ ) ~ ( ( '#' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )* )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:19: ( RULE_SL_COMMENT | ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+ ) ~ ( ( '#' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )*
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:19: ( RULE_SL_COMMENT | ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+ )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:19: ( RULE_SL_COMMENT | ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+ )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -7289,22 +7349,22 @@ public class InternalDmLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("21663:19: ( RULE_SL_COMMENT | ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+ )", 10, 0, input);
+                    new NoViableAltException("21750:19: ( RULE_SL_COMMENT | ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+ )", 10, 0, input);
 
                 throw nvae;
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:20: RULE_SL_COMMENT
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:20: RULE_SL_COMMENT
                     {
                     mRULE_SL_COMMENT(); 
 
                     }
                     break;
                 case 2 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:36: ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:36: ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:36: ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:36: ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+
                     int cnt9=0;
                     loop9:
                     do {
@@ -7312,9 +7372,9 @@ public class InternalDmLexer extends Lexer {
                         alt9 = dfa9.predict(input);
                         switch (alt9) {
                     	case 1 :
-                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:37: ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n'
+                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:37: ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n'
                     	    {
-                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:37: ( ' ' )*
+                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:37: ( ' ' )*
                     	    loop6:
                     	    do {
                     	        int alt6=2;
@@ -7327,7 +7387,7 @@ public class InternalDmLexer extends Lexer {
 
                     	        switch (alt6) {
                     	    	case 1 :
-                    	    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:37: ' '
+                    	    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:37: ' '
                     	    	    {
                     	    	    match(' '); 
 
@@ -7339,7 +7399,7 @@ public class InternalDmLexer extends Lexer {
                     	        }
                     	    } while (true);
 
-                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:42: ( '\\t' )*
+                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:42: ( '\\t' )*
                     	    loop7:
                     	    do {
                     	        int alt7=2;
@@ -7352,7 +7412,7 @@ public class InternalDmLexer extends Lexer {
 
                     	        switch (alt7) {
                     	    	case 1 :
-                    	    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:42: '\\t'
+                    	    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:42: '\\t'
                     	    	    {
                     	    	    match('\t'); 
 
@@ -7364,7 +7424,7 @@ public class InternalDmLexer extends Lexer {
                     	        }
                     	    } while (true);
 
-                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:48: ( '\\r' )?
+                    	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:48: ( '\\r' )?
                     	    int alt8=2;
                     	    int LA8_0 = input.LA(1);
 
@@ -7373,7 +7433,7 @@ public class InternalDmLexer extends Lexer {
                     	    }
                     	    switch (alt8) {
                     	        case 1 :
-                    	            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:48: '\\r'
+                    	            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:48: '\\r'
                     	            {
                     	            match('\r'); 
 
@@ -7412,7 +7472,7 @@ public class InternalDmLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:81: (~ ( ( '\\r' | '\\n' ) ) )*
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:81: (~ ( ( '\\r' | '\\n' ) ) )*
             loop11:
             do {
                 int alt11=2;
@@ -7425,7 +7485,7 @@ public class InternalDmLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21663:81: ~ ( ( '\\r' | '\\n' ) )
+            	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21750:81: ~ ( ( '\\r' | '\\n' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -7460,8 +7520,8 @@ public class InternalDmLexer extends Lexer {
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21665:17: ( '-' ~ ( '0' .. '9' ) (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21665:19: '-' ~ ( '0' .. '9' ) (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21752:17: ( '-' ~ ( '0' .. '9' ) (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21752:19: '-' ~ ( '0' .. '9' ) (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match('-'); 
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='/')||(input.LA(1)>=':' && input.LA(1)<='\uFFFE') ) {
@@ -7474,7 +7534,7 @@ public class InternalDmLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21665:35: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21752:35: (~ ( ( '\\n' | '\\r' ) ) )*
             loop12:
             do {
                 int alt12=2;
@@ -7487,7 +7547,7 @@ public class InternalDmLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21665:35: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21752:35: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -7508,7 +7568,7 @@ public class InternalDmLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21665:51: ( ( '\\r' )? '\\n' )?
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21752:51: ( ( '\\r' )? '\\n' )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -7517,9 +7577,9 @@ public class InternalDmLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21665:52: ( '\\r' )? '\\n'
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21752:52: ( '\\r' )? '\\n'
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21665:52: ( '\\r' )?
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21752:52: ( '\\r' )?
                     int alt13=2;
                     int LA13_0 = input.LA(1);
 
@@ -7528,7 +7588,7 @@ public class InternalDmLexer extends Lexer {
                     }
                     switch (alt13) {
                         case 1 :
-                            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21665:52: '\\r'
+                            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21752:52: '\\r'
                             {
                             match('\r'); 
 
@@ -7558,10 +7618,10 @@ public class InternalDmLexer extends Lexer {
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21667:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21667:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21754:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21754:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21667:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21754:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt15=0;
             loop15:
             do {
@@ -7611,8 +7671,8 @@ public class InternalDmLexer extends Lexer {
     // $ANTLR end RULE_WS
 
     public void mTokens() throws RecognitionException {
-        // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:8: ( T9 | T10 | T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | T37 | T38 | T39 | T40 | T41 | T42 | T43 | T44 | T45 | T46 | T47 | T48 | T49 | T50 | T51 | T52 | T53 | T54 | T55 | T56 | T57 | T58 | T59 | T60 | T61 | T62 | T63 | T64 | T65 | T66 | T67 | T68 | T69 | T70 | T71 | T72 | T73 | T74 | T75 | T76 | T77 | T78 | T79 | T80 | T81 | T82 | T83 | T84 | T85 | T86 | T87 | T88 | T89 | T90 | T91 | T92 | T93 | T94 | T95 | T96 | T97 | T98 | T99 | T100 | T101 | T102 | T103 | T104 | T105 | T106 | T107 | T108 | T109 | T110 | T111 | T112 | T113 | T114 | T115 | T116 | T117 | T118 | T119 | T120 | T121 | T122 | T123 | T124 | T125 | T126 | T127 | T128 | T129 | T130 | T131 | T132 | T133 | T134 | T135 | T136 | T137 | T138 | T139 | T140 | T141 | T142 | T143 | T144 | T145 | T146 | T147 | T148 | T149 | T150 | T151 | T152 | T153 | T154 | T155 | T156 | T157 | T158 | T159 | T160 | T161 | T162 | T163 | T164 | T165 | T166 | T167 | T168 | T169 | T170 | T171 | T172 | T173 | T174 | T175 | T176 | T177 | T178 | T179 | T180 | T181 | T182 | T183 | T184 | T185 | T186 | T187 | T188 | T189 | T190 | T191 | T192 | T193 | T194 | T195 | T196 | T197 | T198 | T199 | T200 | T201 | T202 | T203 | T204 | T205 | T206 | T207 | T208 | T209 | T210 | T211 | T212 | T213 | T214 | T215 | T216 | T217 | T218 | T219 | T220 | T221 | T222 | T223 | T224 | T225 | T226 | T227 | T228 | T229 | T230 | T231 | T232 | T233 | T234 | T235 | T236 | T237 | T238 | T239 | T240 | T241 | T242 | T243 | T244 | T245 | T246 | T247 | T248 | T249 | T250 | T251 | T252 | T253 | T254 | T255 | T256 | T257 | T258 | T259 | T260 | T261 | T262 | T263 | T264 | T265 | T266 | T267 | T268 | T269 | T270 | T271 | T272 | T273 | T274 | T275 | T276 | T277 | T278 | T279 | T280 | T281 | T282 | T283 | T284 | T285 | T286 | T287 | T288 | T289 | T290 | T291 | T292 | T293 | T294 | T295 | T296 | T297 | T298 | T299 | T300 | T301 | T302 | T303 | T304 | T305 | T306 | T307 | T308 | T309 | T310 | T311 | T312 | T313 | T314 | T315 | T316 | T317 | T318 | T319 | T320 | T321 | T322 | T323 | T324 | T325 | T326 | T327 | T328 | T329 | T330 | T331 | T332 | T333 | T334 | T335 | T336 | T337 | T338 | T339 | T340 | T341 | T342 | T343 | T344 | T345 | T346 | T347 | T348 | T349 | T350 | T351 | T352 | T353 | T354 | T355 | T356 | T357 | T358 | T359 | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS )
-        int alt16=356;
+        // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:8: ( T9 | T10 | T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | T37 | T38 | T39 | T40 | T41 | T42 | T43 | T44 | T45 | T46 | T47 | T48 | T49 | T50 | T51 | T52 | T53 | T54 | T55 | T56 | T57 | T58 | T59 | T60 | T61 | T62 | T63 | T64 | T65 | T66 | T67 | T68 | T69 | T70 | T71 | T72 | T73 | T74 | T75 | T76 | T77 | T78 | T79 | T80 | T81 | T82 | T83 | T84 | T85 | T86 | T87 | T88 | T89 | T90 | T91 | T92 | T93 | T94 | T95 | T96 | T97 | T98 | T99 | T100 | T101 | T102 | T103 | T104 | T105 | T106 | T107 | T108 | T109 | T110 | T111 | T112 | T113 | T114 | T115 | T116 | T117 | T118 | T119 | T120 | T121 | T122 | T123 | T124 | T125 | T126 | T127 | T128 | T129 | T130 | T131 | T132 | T133 | T134 | T135 | T136 | T137 | T138 | T139 | T140 | T141 | T142 | T143 | T144 | T145 | T146 | T147 | T148 | T149 | T150 | T151 | T152 | T153 | T154 | T155 | T156 | T157 | T158 | T159 | T160 | T161 | T162 | T163 | T164 | T165 | T166 | T167 | T168 | T169 | T170 | T171 | T172 | T173 | T174 | T175 | T176 | T177 | T178 | T179 | T180 | T181 | T182 | T183 | T184 | T185 | T186 | T187 | T188 | T189 | T190 | T191 | T192 | T193 | T194 | T195 | T196 | T197 | T198 | T199 | T200 | T201 | T202 | T203 | T204 | T205 | T206 | T207 | T208 | T209 | T210 | T211 | T212 | T213 | T214 | T215 | T216 | T217 | T218 | T219 | T220 | T221 | T222 | T223 | T224 | T225 | T226 | T227 | T228 | T229 | T230 | T231 | T232 | T233 | T234 | T235 | T236 | T237 | T238 | T239 | T240 | T241 | T242 | T243 | T244 | T245 | T246 | T247 | T248 | T249 | T250 | T251 | T252 | T253 | T254 | T255 | T256 | T257 | T258 | T259 | T260 | T261 | T262 | T263 | T264 | T265 | T266 | T267 | T268 | T269 | T270 | T271 | T272 | T273 | T274 | T275 | T276 | T277 | T278 | T279 | T280 | T281 | T282 | T283 | T284 | T285 | T286 | T287 | T288 | T289 | T290 | T291 | T292 | T293 | T294 | T295 | T296 | T297 | T298 | T299 | T300 | T301 | T302 | T303 | T304 | T305 | T306 | T307 | T308 | T309 | T310 | T311 | T312 | T313 | T314 | T315 | T316 | T317 | T318 | T319 | T320 | T321 | T322 | T323 | T324 | T325 | T326 | T327 | T328 | T329 | T330 | T331 | T332 | T333 | T334 | T335 | T336 | T337 | T338 | T339 | T340 | T341 | T342 | T343 | T344 | T345 | T346 | T347 | T348 | T349 | T350 | T351 | T352 | T353 | T354 | T355 | T356 | T357 | T358 | T359 | T360 | T361 | T362 | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS )
+        int alt16=359;
         alt16 = dfa16.predict(input);
         switch (alt16) {
             case 1 :
@@ -10073,35 +10133,56 @@ public class InternalDmLexer extends Lexer {
                 }
                 break;
             case 352 :
-                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1673: RULE_INT
+                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1673: T360
+                {
+                mT360(); 
+
+                }
+                break;
+            case 353 :
+                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1678: T361
+                {
+                mT361(); 
+
+                }
+                break;
+            case 354 :
+                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1683: T362
+                {
+                mT362(); 
+
+                }
+                break;
+            case 355 :
+                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1688: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 353 :
-                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1682: RULE_STRING
+            case 356 :
+                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1697: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 354 :
-                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1694: RULE_ML_COMMENT
+            case 357 :
+                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1709: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 355 :
-                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1710: RULE_SL_COMMENT
+            case 358 :
+                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1725: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 356 :
-                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1726: RULE_WS
+            case 359 :
+                // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:1:1741: RULE_WS
                 {
                 mRULE_WS(); 
 
@@ -10167,180 +10248,182 @@ public class InternalDmLexer extends Lexer {
             this.transition = DFA9_transition;
         }
         public String getDescription() {
-            return "()+ loopback of 21663:36: ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+";
+            return "()+ loopback of 21750:36: ( ( ' ' )* ( '\\t' )* ( '\\r' )? '\\n' )+";
         }
     }
     static final String DFA16_eotS =
-        "\6\uffff\4\40\25\uffff\1\u008a\1\uffff\1\42\1\uffff\1\42\42\uffff"+
-        "\1\u00c2\100\uffff\1\42\1\uffff\1\u008a\1\uffff\1\u008a\3\42\2\uffff"+
-        "\1\u012c\165\uffff\1\u017c\24\uffff\2\42\32\uffff\1\u019a\35\uffff"+
-        "\1\u01b2\10\uffff\1\u01b9\5\uffff\1\u01c0\2\uffff\1\u01c8\10\uffff"+
-        "\1\u01cf\21\uffff\1\u01e0\13\uffff\1\u01e5\14\uffff\1\u01f0\2\uffff"+
-        "\1\u01f5\16\uffff\1\u0209\33\uffff\1\u0217\46\uffff\1\u022f\34\uffff"+
-        "\1\u024e\123\uffff\1\u027a\1\u027c\1\u027e\1\u0280\1\u0282\34\uffff"+
-        "\1\u0296\4\uffff\1\u029b\14\uffff\1\u02a4\13\uffff\1\u02aa\33\uffff"+
-        "\1\u02bf\2\uffff";
+        "\6\uffff\4\40\25\uffff\1\u008a\1\uffff\1\42\1\uffff\1\42\75\uffff"+
+        "\1\u00e3\45\uffff\1\42\1\uffff\1\u008a\1\uffff\1\u008a\3\42\103"+
+        "\uffff\1\u0158\43\uffff\1\u0179\45\uffff\2\42\10\uffff\1\u0191\1"+
+        "\u0194\7\uffff\1\u0199\15\uffff\1\u01a3\14\uffff\1\u01ac\46\uffff"+
+        "\1\u01ce\24\uffff\1\u01e2\1\uffff\1\u01e5\36\uffff\1\u01fd\14\uffff"+
+        "\1\u0209\20\uffff\1\u0210\11\uffff\1\u021b\26\uffff\1\u0229\1\uffff"+
+        "\1\u022f\111\uffff\1\u026b\47\uffff\1\u027f\32\uffff\1\u028d\1\u028f"+
+        "\1\u0291\1\u0293\1\u0295\21\uffff\1\u02a7\14\uffff\1\u02a9\2\uffff"+
+        "\1\u02ae\12\uffff\1\u02b5\10\uffff\1\u02b8\33\uffff\1\u02cd\2\uffff";
     static final String DFA16_eofS =
-        "\u02c0\uffff";
+        "\u02ce\uffff";
     static final String DFA16_minS =
-        "\1\11\1\141\1\uffff\1\0\2\uffff\2\11\1\12\1\0\2\141\1\146\1\144"+
-        "\2\141\1\143\1\141\1\153\1\141\1\145\3\141\1\143\2\141\1\uffff\1"+
-        "\156\1\145\1\uffff\1\0\1\uffff\1\11\1\uffff\1\11\1\137\1\141\1\155"+
-        "\1\uffff\1\155\2\uffff\1\142\1\145\1\141\1\155\1\145\1\160\2\uffff"+
-        "\1\143\3\uffff\1\155\1\151\2\uffff\1\142\5\uffff\1\144\1\147\1\156"+
-        "\1\144\1\154\1\156\1\141\2\143\1\uffff\1\157\1\141\1\143\1\145\1"+
-        "\uffff\1\145\1\141\1\uffff\1\154\1\155\1\164\1\151\1\145\2\uffff"+
-        "\1\154\2\uffff\1\147\1\163\2\uffff\1\155\3\uffff\1\162\1\154\1\145"+
-        "\2\uffff\1\163\1\141\1\162\1\141\1\154\1\162\1\uffff\1\142\1\156"+
-        "\1\uffff\1\145\1\141\1\155\3\uffff\1\147\1\156\2\uffff\1\151\1\uffff"+
-        "\1\143\1\uffff\1\144\1\143\1\141\1\154\1\uffff\1\0\1\12\1\0\1\uffff"+
-        "\1\0\3\11\2\143\1\141\1\uffff\1\164\2\uffff\1\153\2\uffff\1\153"+
-        "\11\uffff\1\141\4\uffff\1\145\1\154\1\145\3\uffff\1\157\1\155\3"+
-        "\uffff\1\156\1\151\1\142\1\145\2\uffff\1\156\2\uffff\1\156\3\uffff"+
-        "\1\164\1\145\1\uffff\2\156\2\uffff\1\145\1\155\3\uffff\1\164\1\143"+
-        "\1\160\1\145\1\157\1\uffff\1\143\1\uffff\1\61\2\uffff\1\155\1\144"+
-        "\1\uffff\1\160\1\150\1\162\1\153\1\163\1\143\10\uffff\1\160\1\155"+
-        "\1\144\2\uffff\1\171\1\141\1\164\1\147\1\uffff\1\151\1\145\5\uffff"+
-        "\1\145\10\uffff\1\163\2\uffff\1\157\1\uffff\1\145\3\uffff\1\157"+
-        "\4\uffff\1\145\1\uffff\1\156\1\157\3\uffff\1\145\1\154\1\145\1\162"+
-        "\1\uffff\2\0\2\uffff\1\141\1\uffff\1\141\2\uffff\1\155\1\145\1\162"+
-        "\1\156\1\165\1\157\2\uffff\1\150\1\160\2\uffff\1\165\4\uffff\1\151"+
-        "\1\uffff\1\164\2\uffff\1\162\1\uffff\1\162\1\141\1\145\1\uffff\1"+
-        "\143\2\uffff\1\155\1\154\1\164\1\151\1\147\1\155\1\uffff\1\164\1"+
-        "\uffff\1\154\1\162\1\141\1\150\1\153\2\uffff\1\143\1\156\1\151\4"+
-        "\uffff\1\160\1\154\2\uffff\1\143\1\uffff\1\141\2\uffff\1\157\1\151"+
-        "\1\154\1\157\1\142\1\uffff\1\163\1\162\1\154\4\uffff\1\160\2\uffff"+
-        "\1\163\2\uffff\1\142\1\141\2\uffff\1\162\1\uffff\1\144\1\163\1\151"+
-        "\1\155\1\61\1\uffff\1\145\1\uffff\1\143\10\uffff\1\155\2\151\1\154"+
-        "\1\155\1\144\2\uffff\1\155\4\uffff\1\164\1\156\1\154\1\143\1\142"+
-        "\1\157\2\uffff\1\141\1\150\1\141\1\151\1\141\1\171\1\151\1\156\2"+
-        "\uffff\1\151\1\162\1\164\1\144\2\uffff\1\146\12\uffff\1\156\2\uffff"+
-        "\1\145\1\151\6\uffff\1\160\1\155\1\145\4\uffff\1\164\2\uffff\1\162"+
-        "\1\151\1\156\2\164\1\61\12\uffff\1\157\2\uffff\2\164\1\61\3\uffff"+
-        "\1\155\1\154\3\uffff\1\141\1\143\1\145\2\uffff\1\156\1\uffff\1\151"+
-        "\1\145\1\164\2\uffff\1\143\1\156\1\146\3\uffff\1\142\1\157\1\61"+
-        "\4\uffff\2\141\2\uffff\1\141\1\143\1\154\1\145\1\uffff\1\151\4\uffff"+
-        "\1\144\1\146\2\143\2\uffff\1\150\1\61\5\uffff\1\156\2\61\2\uffff"+
-        "\1\157\11\uffff\1\163\1\156\1\162\1\145\2\uffff\1\151\4\uffff\1"+
-        "\162\2\uffff\1\141\4\uffff\1\151\1\uffff\1\162\7\uffff\1\145\7\uffff"+
-        "\2\150\1\164\1\141\5\uffff\1\157\4\142\1\156\1\164\1\146\1\157\1"+
-        "\163\1\164\1\154\1\155\2\uffff\1\171\4\uffff\1\142\1\145\1\154\12"+
-        "\uffff\1\62\1\145\2\uffff\1\61\1\145\1\156\5\uffff\1\145\3\uffff"+
-        "\1\144\1\146\1\60\1\uffff\1\162\4\uffff\1\142\1\171\1\uffff\1\146"+
-        "\1\uffff\1\147\1\151\2\uffff\1\61\1\162\1\160\1\146\11\uffff\1\163"+
-        "\2\145\2\61\1\143\4\uffff\1\164\1\141\2\uffff";
+        "\1\11\1\141\1\uffff\1\0\2\uffff\2\11\1\12\1\0\1\144\3\141\1\146"+
+        "\1\145\2\141\1\143\1\141\1\153\3\141\1\156\1\143\1\141\1\uffff\1"+
+        "\141\1\145\1\uffff\1\0\1\uffff\1\11\1\uffff\1\11\1\155\1\151\2\uffff"+
+        "\1\142\5\uffff\1\144\1\151\1\145\1\164\2\uffff\2\141\1\154\2\162"+
+        "\1\157\1\141\2\143\1\145\1\143\2\uffff\1\141\1\145\1\141\1\160\1"+
+        "\145\2\uffff\1\143\4\uffff\1\162\1\155\3\uffff\1\142\1\155\1\141"+
+        "\1\145\1\155\1\141\1\137\2\uffff\1\155\1\uffff\1\154\1\uffff\1\155"+
+        "\1\144\1\156\1\147\1\156\2\154\2\uffff\1\154\1\145\2\uffff\1\163"+
+        "\1\147\1\156\1\uffff\1\156\1\142\2\uffff\1\144\1\143\1\141\1\155"+
+        "\1\uffff\1\145\2\uffff\1\147\1\uffff\1\163\1\143\1\151\3\uffff\1"+
+        "\154\1\141\1\uffff\1\0\1\12\1\0\1\uffff\1\0\3\11\1\157\1\155\3\uffff"+
+        "\1\156\1\162\1\153\1\163\1\uffff\1\143\1\150\2\uffff\1\147\1\151"+
+        "\4\uffff\2\145\1\164\2\156\4\uffff\1\155\1\145\1\uffff\1\61\1\uffff"+
+        "\1\143\1\145\1\157\1\uffff\1\155\2\uffff\1\143\1\160\1\145\1\154"+
+        "\3\uffff\1\155\1\160\11\uffff\1\145\2\uffff\1\141\2\uffff\1\153"+
+        "\1\uffff\1\141\1\164\1\uffff\1\143\2\uffff\1\143\1\uffff\1\153\1"+
+        "\144\1\uffff\1\160\1\uffff\1\156\2\uffff\1\145\1\uffff\1\156\1\151"+
+        "\1\145\1\uffff\1\142\3\uffff\1\164\3\uffff\1\171\1\144\2\uffff\1"+
+        "\141\1\164\1\145\11\uffff\1\145\2\uffff\1\156\1\157\5\uffff\1\163"+
+        "\1\uffff\1\157\10\uffff\1\157\1\uffff\1\162\1\145\1\uffff\1\145"+
+        "\1\154\2\0\1\162\1\141\1\145\1\uffff\1\141\2\uffff\1\157\1\151\1"+
+        "\143\5\uffff\1\163\1\uffff\1\160\1\uffff\1\150\1\164\2\uffff\1\155"+
+        "\1\141\1\154\1\162\4\uffff\1\151\1\143\1\156\1\160\1\153\2\uffff"+
+        "\1\162\3\uffff\1\157\1\154\1\164\1\151\7\uffff\2\165\1\156\1\157"+
+        "\2\uffff\1\150\1\162\1\155\1\uffff\1\145\1\141\3\uffff\1\141\1\uffff"+
+        "\1\160\1\154\2\uffff\1\164\1\147\1\154\1\143\1\155\2\uffff\1\151"+
+        "\1\163\1\142\1\uffff\1\162\1\154\1\141\2\uffff\1\162\1\uffff\1\163"+
+        "\1\151\1\155\2\uffff\1\142\1\144\2\uffff\1\143\1\61\1\uffff\1\145"+
+        "\1\uffff\1\156\1\154\1\143\4\uffff\1\156\5\uffff\1\164\1\uffff\1"+
+        "\145\2\uffff\1\151\1\141\1\151\1\156\2\uffff\1\171\1\151\2\uffff"+
+        "\1\164\1\144\1\146\1\162\1\164\1\151\1\145\4\uffff\1\155\1\154\1"+
+        "\151\1\155\1\144\1\151\2\uffff\1\155\11\uffff\2\141\2\uffff\1\142"+
+        "\1\157\1\150\1\160\1\uffff\1\145\1\154\3\uffff\1\155\1\145\1\162"+
+        "\1\151\2\164\1\61\2\uffff\1\156\15\uffff\1\141\1\143\1\141\1\146"+
+        "\1\163\2\uffff\1\156\1\uffff\1\143\1\uffff\1\146\3\uffff\1\61\1"+
+        "\142\1\157\2\141\4\uffff\2\154\1\143\1\155\2\164\1\61\5\uffff\1"+
+        "\157\1\151\1\uffff\1\164\1\145\2\uffff\1\156\2\145\1\uffff\1\163"+
+        "\1\157\1\151\4\uffff\1\144\2\143\1\150\1\61\17\uffff\1\150\1\uffff"+
+        "\2\151\10\uffff\1\162\1\uffff\1\141\1\151\3\uffff\1\162\5\uffff"+
+        "\1\145\2\uffff\1\157\2\61\2\uffff\2\156\1\145\2\uffff\1\163\1\162"+
+        "\2\uffff\1\151\1\157\4\uffff\1\150\1\164\1\141\11\uffff\1\164\1"+
+        "\154\1\155\2\uffff\1\171\2\uffff\1\156\4\142\1\157\1\146\1\163\1"+
+        "\164\1\157\2\uffff\1\144\1\142\1\145\1\154\1\156\5\uffff\1\145\1"+
+        "\62\14\uffff\2\145\1\61\1\145\3\uffff\1\144\1\146\1\171\1\142\1"+
+        "\uffff\1\146\1\uffff\1\60\3\uffff\1\162\4\uffff\1\147\1\151\1\160"+
+        "\1\162\1\146\2\uffff\1\61\4\uffff\1\145\1\163\1\145\5\uffff\2\61"+
+        "\1\143\4\uffff\1\164\1\141\2\uffff";
     static final String DFA16_maxS =
-        "\1\71\1\172\1\uffff\1\ufffe\2\uffff\1\40\1\15\1\12\1\ufffe\1\171"+
-        "\1\162\1\171\1\167\1\165\1\167\1\157\1\162\1\156\1\151\1\171\1\165"+
-        "\1\157\1\165\1\164\1\145\1\162\1\uffff\1\167\1\160\1\uffff\1\ufffe"+
-        "\1\uffff\1\40\1\uffff\1\40\1\137\1\163\1\162\1\uffff\1\165\2\uffff"+
-        "\1\165\1\170\1\145\1\155\1\145\1\160\2\uffff\1\164\3\uffff\1\155"+
-        "\1\151\2\uffff\1\160\5\uffff\1\144\1\170\1\163\1\165\1\154\1\156"+
-        "\1\162\1\160\1\151\1\uffff\2\157\1\154\1\171\1\uffff\1\172\1\141"+
-        "\1\uffff\1\157\1\155\1\164\1\160\1\157\2\uffff\1\165\2\uffff\1\156"+
-        "\1\164\2\uffff\1\155\3\uffff\1\162\1\160\1\145\2\uffff\1\163\1\171"+
-        "\1\162\1\155\1\164\1\162\1\uffff\1\156\1\166\1\uffff\1\157\1\161"+
-        "\1\155\3\uffff\1\163\1\162\2\uffff\1\157\1\uffff\1\162\1\uffff\1"+
-        "\162\1\165\2\162\1\uffff\1\ufffe\1\12\1\ufffe\1\uffff\1\ufffe\3"+
-        "\40\1\163\1\143\1\165\1\uffff\1\164\2\uffff\1\153\2\uffff\1\166"+
-        "\11\uffff\1\167\4\uffff\1\145\1\163\1\154\3\uffff\1\157\1\155\3"+
-        "\uffff\1\162\1\151\1\155\1\145\2\uffff\1\156\2\uffff\1\156\3\uffff"+
-        "\1\164\1\145\1\uffff\2\162\2\uffff\1\160\1\155\3\uffff\1\164\1\143"+
-        "\1\164\1\145\1\157\1\uffff\1\143\1\uffff\1\151\2\uffff\1\155\1\144"+
-        "\1\uffff\1\163\2\162\1\160\1\163\1\143\10\uffff\1\160\1\155\1\157"+
-        "\2\uffff\1\171\1\141\1\164\1\151\1\uffff\2\163\5\uffff\1\147\10"+
-        "\uffff\1\165\2\uffff\1\157\1\uffff\1\164\3\uffff\1\157\4\uffff\1"+
-        "\145\1\uffff\1\156\1\157\3\uffff\1\157\1\164\1\145\1\163\1\uffff"+
-        "\2\ufffe\2\uffff\1\157\1\uffff\1\157\2\uffff\1\164\1\145\1\162\1"+
-        "\156\1\165\1\157\2\uffff\1\150\1\166\2\uffff\1\165\4\uffff\1\160"+
-        "\1\uffff\1\164\2\uffff\1\162\1\uffff\1\162\1\141\1\145\1\uffff\1"+
-        "\143\2\uffff\1\155\1\160\1\164\1\151\1\147\1\155\1\uffff\1\164\1"+
-        "\uffff\1\154\1\162\1\157\1\150\1\153\2\uffff\1\143\1\156\1\151\4"+
-        "\uffff\1\160\1\165\2\uffff\1\154\1\uffff\1\165\2\uffff\1\157\1\151"+
-        "\1\154\1\157\1\163\1\uffff\1\163\1\162\1\154\4\uffff\1\163\2\uffff"+
-        "\1\163\2\uffff\1\162\1\141\2\uffff\1\162\1\uffff\1\144\1\163\1\151"+
-        "\1\155\1\66\1\uffff\1\145\1\uffff\1\155\10\uffff\1\155\2\151\1\154"+
-        "\1\155\1\163\2\uffff\1\155\4\uffff\1\164\1\160\1\154\1\143\1\163"+
-        "\1\157\2\uffff\1\145\1\150\1\141\1\160\1\165\1\171\1\151\1\156\2"+
-        "\uffff\2\162\1\164\1\144\2\uffff\1\163\12\uffff\1\156\2\uffff\1"+
-        "\145\1\151\6\uffff\1\164\1\163\1\145\4\uffff\1\164\2\uffff\1\162"+
-        "\1\151\1\166\2\164\1\65\12\uffff\1\157\2\uffff\2\164\1\62\3\uffff"+
-        "\1\155\1\165\3\uffff\1\141\1\165\1\157\2\uffff\1\156\1\uffff\1\151"+
-        "\1\145\1\164\2\uffff\1\151\1\156\1\147\3\uffff\1\155\1\157\1\65"+
-        "\4\uffff\1\167\1\164\2\uffff\1\162\1\160\1\154\1\162\1\uffff\1\160"+
-        "\4\uffff\1\160\1\163\2\143\2\uffff\1\150\1\65\5\uffff\1\156\2\62"+
-        "\2\uffff\1\157\11\uffff\1\163\1\156\1\162\1\145\2\uffff\1\151\4"+
-        "\uffff\1\162\2\uffff\1\141\4\uffff\1\160\1\uffff\1\162\7\uffff\1"+
-        "\151\7\uffff\1\165\1\150\1\164\1\141\5\uffff\1\157\4\142\1\156\1"+
-        "\164\1\163\1\157\1\163\1\164\1\165\1\164\2\uffff\1\171\4\uffff\1"+
-        "\163\1\145\1\154\12\uffff\1\62\1\145\2\uffff\1\62\1\145\1\164\5"+
-        "\uffff\1\160\3\uffff\1\144\1\146\1\60\1\uffff\1\162\4\uffff\1\142"+
-        "\1\171\1\uffff\1\146\1\uffff\1\147\1\162\2\uffff\1\65\1\162\1\160"+
-        "\1\146\11\uffff\1\163\2\145\2\62\1\143\4\uffff\1\164\1\141\2\uffff";
+        "\1\71\1\172\1\uffff\1\ufffe\2\uffff\1\40\1\15\1\12\1\ufffe\1\167"+
+        "\1\162\1\157\1\167\2\171\1\162\1\171\1\157\1\165\1\156\1\165\1\145"+
+        "\1\165\1\167\1\164\1\151\1\uffff\1\162\1\160\1\uffff\1\ufffe\1\uffff"+
+        "\1\40\1\uffff\1\40\1\155\1\151\2\uffff\1\160\5\uffff\1\144\1\160"+
+        "\1\157\1\164\2\uffff\1\155\1\171\1\164\2\162\1\157\1\162\1\151\1"+
+        "\160\1\171\1\154\2\uffff\1\141\1\172\1\157\1\160\1\145\2\uffff\1"+
+        "\164\4\uffff\1\162\1\155\3\uffff\1\165\1\155\1\145\1\170\1\165\1"+
+        "\163\1\137\2\uffff\1\162\1\uffff\1\157\1\uffff\1\155\1\165\1\156"+
+        "\1\170\1\163\1\154\1\165\2\uffff\1\160\1\145\2\uffff\2\163\1\162"+
+        "\1\uffff\1\166\1\156\2\uffff\1\162\1\165\1\161\1\155\1\uffff\1\157"+
+        "\2\uffff\1\156\1\uffff\1\164\1\162\1\157\3\uffff\2\162\1\uffff\1"+
+        "\ufffe\1\12\1\ufffe\1\uffff\1\ufffe\3\40\1\157\1\155\3\uffff\2\162"+
+        "\1\160\1\163\1\uffff\1\143\1\162\2\uffff\1\151\1\163\4\uffff\1\147"+
+        "\1\163\1\164\2\162\4\uffff\1\155\1\160\1\uffff\1\151\1\uffff\1\143"+
+        "\1\145\1\157\1\uffff\1\155\2\uffff\1\143\1\164\1\154\1\163\3\uffff"+
+        "\1\155\1\160\11\uffff\1\145\2\uffff\1\167\2\uffff\1\166\1\uffff"+
+        "\1\165\1\164\1\uffff\1\143\2\uffff\1\163\1\uffff\1\153\1\144\1\uffff"+
+        "\1\163\1\uffff\1\156\2\uffff\1\145\1\uffff\1\156\1\151\1\145\1\uffff"+
+        "\1\155\3\uffff\1\164\3\uffff\1\171\1\157\2\uffff\1\141\2\164\11"+
+        "\uffff\1\145\2\uffff\1\156\1\157\5\uffff\1\165\1\uffff\1\157\10"+
+        "\uffff\1\157\1\uffff\1\163\1\145\1\uffff\1\157\1\164\2\ufffe\1\162"+
+        "\1\141\1\145\1\uffff\1\165\2\uffff\1\157\1\151\1\154\5\uffff\1\163"+
+        "\1\uffff\1\163\1\uffff\1\150\1\164\2\uffff\1\155\1\157\1\154\1\162"+
+        "\4\uffff\1\151\1\143\1\156\1\160\1\153\2\uffff\1\162\3\uffff\1\157"+
+        "\1\154\1\164\1\160\7\uffff\2\165\1\156\1\157\2\uffff\1\150\1\162"+
+        "\1\164\1\uffff\1\145\1\157\3\uffff\1\157\1\uffff\1\166\1\165\2\uffff"+
+        "\1\164\1\147\1\160\1\143\1\155\2\uffff\1\151\2\163\1\uffff\1\162"+
+        "\1\154\1\141\2\uffff\1\162\1\uffff\1\163\1\151\1\155\2\uffff\1\162"+
+        "\1\144\2\uffff\1\155\1\66\1\uffff\1\145\1\uffff\1\160\1\154\1\143"+
+        "\4\uffff\1\156\5\uffff\1\164\1\uffff\1\145\2\uffff\1\162\1\165\1"+
+        "\160\1\156\2\uffff\1\171\1\151\2\uffff\1\164\1\144\1\163\1\162\1"+
+        "\164\1\151\1\145\4\uffff\1\155\1\154\1\151\1\155\1\163\1\151\2\uffff"+
+        "\1\155\11\uffff\1\145\1\141\2\uffff\1\163\1\157\1\150\1\164\1\uffff"+
+        "\1\145\1\154\3\uffff\1\163\1\145\1\162\1\151\2\164\1\65\2\uffff"+
+        "\1\166\15\uffff\1\141\1\165\1\162\2\163\2\uffff\1\156\1\uffff\1"+
+        "\151\1\uffff\1\147\3\uffff\1\65\1\155\1\157\1\167\1\164\4\uffff"+
+        "\1\165\1\154\1\160\1\155\2\164\1\62\5\uffff\1\157\1\151\1\uffff"+
+        "\1\164\1\157\2\uffff\1\156\1\145\1\162\1\uffff\1\163\1\157\1\160"+
+        "\4\uffff\1\160\2\143\1\150\1\65\17\uffff\1\165\1\uffff\2\151\10"+
+        "\uffff\1\162\1\uffff\1\141\1\160\3\uffff\1\162\5\uffff\1\151\2\uffff"+
+        "\1\157\2\62\2\uffff\2\156\1\145\2\uffff\1\163\1\162\2\uffff\1\151"+
+        "\1\157\4\uffff\1\150\1\164\1\141\11\uffff\1\164\1\165\1\164\2\uffff"+
+        "\1\171\2\uffff\1\156\4\142\1\157\2\163\1\164\1\157\2\uffff\1\144"+
+        "\1\163\1\145\1\154\1\164\5\uffff\1\160\1\62\14\uffff\2\145\1\62"+
+        "\1\145\3\uffff\1\144\1\146\1\171\1\142\1\uffff\1\146\1\uffff\1\60"+
+        "\3\uffff\1\162\4\uffff\1\147\1\162\1\160\1\162\1\146\2\uffff\1\65"+
+        "\4\uffff\1\145\1\163\1\145\5\uffff\2\62\1\143\4\uffff\1\164\1\141"+
+        "\2\uffff";
     static final String DFA16_acceptS =
-        "\2\uffff\1\30\1\uffff\1\u0160\1\u0161\25\uffff\1\u0144\2\uffff\1"+
-        "\4\1\uffff\1\u0164\1\uffff\1\u0162\4\uffff\1\u0140\1\uffff\1\57"+
-        "\1\u0091\6\uffff\1\u011c\1\u00f9\1\uffff\1\u00c7\1\u0116\1\13\2"+
-        "\uffff\1\u0143\1\u00b7\1\uffff\1\u008a\1\u00c3\1\134\1\66\1\61\11"+
-        "\uffff\1\u00f6\4\uffff\1\65\2\uffff\1\145\5\uffff\1\u0096\1\u00ea"+
-        "\1\uffff\1\u00e2\1\170\2\uffff\1\u00e1\1\u0148\1\uffff\1\73\1\52"+
-        "\1\u00c8\3\uffff\1\u00a3\1\122\6\uffff\1\26\2\uffff\1\u010c\3\uffff"+
-        "\1\u00c1\1\u00a0\1\u012e\2\uffff\1\56\1\u0118\1\uffff\1\u0086\1"+
-        "\uffff\1\121\4\uffff\1\136\3\uffff\1\u0163\7\uffff\1\u0114\1\uffff"+
-        "\1\u0139\1\u00ae\1\uffff\1\u00f8\1\u0099\1\uffff\1\u0142\1\u009a"+
-        "\1\u00cf\1\u00d5\1\u00db\1\u00c5\1\u013f\1\124\1\u00ce\1\uffff\1"+
-        "\u00c6\1\u0103\1\60\1\u00fc\3\uffff\1\55\1\u00c9\1\32\2\uffff\1"+
-        "\u0085\1\64\1\u00b8\4\uffff\1\u0147\1\167\1\uffff\1\114\1\25\1\uffff"+
-        "\1\1\1\144\1\u010f\2\uffff\1\143\2\uffff\1\162\1\141\2\uffff\1\164"+
-        "\1\u0141\1\u00bc\5\uffff\1\163\1\uffff\1\u00c2\1\uffff\1\137\1\u0094"+
-        "\2\uffff\1\u0111\6\uffff\1\53\1\u00dd\1\u00d7\1\u00d1\1\u0084\1"+
-        "\u0146\1\u00e8\1\u00c0\3\uffff\1\u0110\1\u0104\4\uffff\1\u00fb\2"+
-        "\uffff\1\u008b\1\u00a9\1\u00fa\1\u0083\1\u0134\1\uffff\1\u00e7\1"+
-        "\u011d\1\62\1\u009d\1\u010a\1\3\1\u008f\1\u00cd\1\uffff\1\u00b1"+
-        "\1\50\1\uffff\1\u008d\1\uffff\1\u008c\1\u010b\1\63\1\uffff\1\u00b4"+
-        "\1\165\1\u0087\1\u00ad\1\uffff\1\u00b5\2\uffff\1\u0138\1\u013d\1"+
-        "\174\4\uffff\1\u00ab\2\uffff\1\77\1\106\1\uffff\1\107\1\uffff\1"+
-        "\111\1\113\6\uffff\1\u0133\1\54\2\uffff\1\u0131\1\5\1\uffff\1\u0130"+
-        "\1\33\1\35\1\43\1\uffff\1\37\1\uffff\1\150\1\u00ca\1\uffff\1\71"+
-        "\3\uffff\1\u0109\1\uffff\1\u011a\1\135\6\uffff\1\u00b0\1\uffff\1"+
-        "\u0088\5\uffff\1\u00e6\1\154\3\uffff\1\u0081\1\130\1\127\1\u009c"+
-        "\2\uffff\1\u00a5\1\u0115\1\uffff\1\u0095\1\uffff\1\6\1\u009e\5\uffff"+
-        "\1\u015f\3\uffff\1\u0119\1\123\1\u00ba\1\72\1\uffff\1\u00e3\1\u0098"+
-        "\1\uffff\1\u0113\1\u009b\2\uffff\1\140\1\7\1\uffff\1\u0112\5\uffff"+
-        "\1\u009f\1\uffff\1\u00f5\1\uffff\1\u00cb\1\u0145\1\103\1\112\1\101"+
-        "\1\102\1\100\1\110\6\uffff\1\161\1\u0080\1\uffff\1\41\1\46\1\u00a1"+
-        "\1\51\6\uffff\1\u0105\1\u0106\10\uffff\1\u0117\1\u0082\4\uffff\1"+
-        "\133\1\u00fe\1\uffff\1\u00d8\1\u00de\1\u00d2\1\u0101\1\146\1\u0100"+
-        "\1\u00dc\1\u00d0\1\u00b9\1\u00d6\1\uffff\1\u00fd\1\142\2\uffff\1"+
-        "\155\1\175\1\u00b2\1\24\1\23\1\115\3\uffff\1\176\1\u008e\1\156\1"+
-        "\116\1\uffff\1\u00b6\1\u00b3\6\uffff\1\u0126\1\u0122\1\u0123\1\u0124"+
-        "\1\u0125\1\u0127\1\171\1\u00c4\1\u010e\1\u010d\1\uffff\1\2\1\131"+
-        "\3\uffff\1\16\1\17\1\20\2\uffff\1\75\1\74\1\132\3\uffff\1\u00a2"+
-        "\1\76\1\uffff\1\u00aa\3\uffff\1\177\1\u00bb\3\uffff\1\u0132\1\147"+
-        "\1\u0149\3\uffff\1\22\1\21\1\160\1\117\2\uffff\1\u00bf\1\u0137\4"+
-        "\uffff\1\151\1\uffff\1\u00a7\1\u013a\1\u013b\1\u00a6\4\uffff\1\u013e"+
-        "\1\u0092\2\uffff\1\u0154\1\u0158\1\u0157\1\u0156\1\u0155\3\uffff"+
-        "\1\u0159\1\u015a\1\uffff\1\u00df\1\u00d9\1\u00d3\1\u0089\1\u00ac"+
-        "\1\u014d\1\u014e\1\u00af\1\u00a4\4\uffff\1\u011b\1\u014a\1\uffff"+
-        "\1\172\1\166\1\173\1\10\1\uffff\1\u00f4\1\u00f3\1\uffff\1\34\1\31"+
-        "\1\36\1\42\1\uffff\1\u00e5\1\uffff\1\u00e4\1\u00cc\1\u0090\1\157"+
-        "\1\120\1\u011e\1\u011f\1\uffff\1\152\1\u0102\1\u00a8\1\u013c\1\u012f"+
-        "\1\u0093\1\u0136\4\uffff\1\u0150\1\u0151\1\u0153\1\u0152\1\u014f"+
-        "\15\uffff\1\45\1\40\1\uffff\1\14\1\15\1\u00bd\1\u00e9\3\uffff\1"+
-        "\105\1\104\1\u015c\1\u015b\1\u015e\1\u015d\1\u012b\1\u012a\1\u012d"+
-        "\1\u012c\2\uffff\1\u00be\1\u0135\3\uffff\1\u00da\1\u00d4\1\u00e0"+
-        "\1\47\1\44\1\uffff\1\u00f7\1\u0097\1\27\3\uffff\1\u00eb\1\uffff"+
-        "\1\u0129\1\u0128\1\126\1\125\2\uffff\1\u0108\1\uffff\1\u0107\2\uffff"+
-        "\1\u00ed\1\u00ec\4\uffff\1\153\1\u00ff\1\11\1\12\1\u00ee\1\u00f0"+
-        "\1\u00ef\1\u00f2\1\u00f1\6\uffff\1\u0121\1\u0120\1\u014b\1\u014c"+
-        "\2\uffff\1\70\1\67";
+        "\2\uffff\1\30\1\uffff\1\u0163\1\u0164\25\uffff\1\u0147\2\uffff\1"+
+        "\4\1\uffff\1\u0167\1\uffff\1\u0165\3\uffff\1\u008c\1\u0146\1\uffff"+
+        "\1\61\1\u00ba\1\134\1\66\1\u00c6\4\uffff\1\u0098\1\u00ed\13\uffff"+
+        "\1\65\1\u00f9\5\uffff\1\u0119\1\u011f\1\uffff\1\u00fc\1\13\1\u00ca"+
+        "\1\73\2\uffff\1\52\1\u00cb\1\u014b\7\uffff\1\u0143\1\57\1\uffff"+
+        "\1\u0093\1\uffff\1\145\7\uffff\1\u00e5\1\172\2\uffff\1\u00a5\1\122"+
+        "\3\uffff\1\56\2\uffff\1\26\1\u010f\4\uffff\1\u00a2\1\uffff\1\u00c4"+
+        "\1\u0131\1\uffff\1\u00e4\3\uffff\1\u0088\1\u011b\1\121\2\uffff\1"+
+        "\136\3\uffff\1\u0166\6\uffff\1\u0087\1\u00bb\1\64\4\uffff\1\53\2"+
+        "\uffff\1\u00ab\1\u008d\2\uffff\1\u00fe\1\u0085\1\u00fd\1\u0137\5"+
+        "\uffff\1\141\1\164\1\u00bf\1\u0144\2\uffff\1\166\1\uffff\1\u00c5"+
+        "\3\uffff\1\165\1\uffff\1\u0096\1\137\4\uffff\1\55\1\32\1\u00cc\2"+
+        "\uffff\1\u009c\1\u00d2\1\u0145\1\124\1\u00de\1\u0142\1\u00d1\1\u00d8"+
+        "\1\u00c8\1\uffff\1\60\1\u00ff\1\uffff\1\u00c9\1\u0106\1\uffff\1"+
+        "\u009b\2\uffff\1\u00b0\1\uffff\1\u013c\1\u0117\1\uffff\1\u00fb\2"+
+        "\uffff\1\u0114\1\uffff\1\1\1\uffff\1\144\1\u0112\1\uffff\1\143\3"+
+        "\uffff\1\171\1\uffff\1\u014a\1\25\1\114\1\uffff\1\u00e0\1\u00d4"+
+        "\1\u00da\2\uffff\1\u0107\1\u0113\3\uffff\1\u008f\1\u008e\1\63\1"+
+        "\u010e\1\62\1\u009f\1\u010d\1\u0120\1\u00ea\1\uffff\1\u00b8\1\u00af"+
+        "\2\uffff\1\u0140\1\u013b\1\176\1\u00d0\1\50\1\uffff\1\u00b3\1\uffff"+
+        "\1\u0091\1\3\1\u0086\1\u0149\1\u00c3\1\u00eb\1\167\1\u0089\1\uffff"+
+        "\1\u00b7\2\uffff\1\u00ad\7\uffff\1\u010c\1\uffff\1\6\1\u00a0\3\uffff"+
+        "\1\u0097\1\u011c\1\123\1\72\1\u00bd\1\uffff\1\u009a\1\uffff\1\u00e6"+
+        "\2\uffff\1\u008a\1\u00b2\4\uffff\1\127\1\130\1\u009e\1\u0083\5\uffff"+
+        "\1\154\1\u00e9\1\uffff\1\71\1\u00cd\1\150\4\uffff\1\33\1\35\1\43"+
+        "\1\37\1\u0134\1\5\1\u0133\4\uffff\1\u0136\1\54\3\uffff\1\107\2\uffff"+
+        "\1\113\1\77\1\106\1\uffff\1\111\2\uffff\1\u00a7\1\u0118\5\uffff"+
+        "\1\135\1\u011d\3\uffff\1\u0162\3\uffff\1\140\1\7\1\uffff\1\u0115"+
+        "\3\uffff\1\u0116\1\u009d\2\uffff\1\u00ce\1\u0148\2\uffff\1\u00a1"+
+        "\1\uffff\1\u00f8\3\uffff\1\u00bc\1\u00df\1\u00d3\1\u00d9\1\uffff"+
+        "\1\u0100\1\142\1\u0104\1\146\1\u0103\1\uffff\1\u0090\1\uffff\1\u0080"+
+        "\1\116\4\uffff\1\u011a\1\u0084\2\uffff\1\133\1\u0101\7\uffff\1\u00a3"+
+        "\1\51\1\46\1\41\6\uffff\1\100\1\110\1\uffff\1\103\1\112\1\101\1"+
+        "\102\1\163\1\u0082\1\u00d5\1\u00db\1\u00e1\2\uffff\1\u0109\1\u0108"+
+        "\4\uffff\1\23\2\uffff\1\24\1\177\1\115\7\uffff\1\u00b6\1\u00b9\1"+
+        "\uffff\1\u0111\1\u0110\1\u0125\1\u0128\1\u0129\1\u0126\1\u012a\1"+
+        "\u0127\1\173\1\u00c7\1\74\1\75\1\132\5\uffff\1\22\1\21\1\uffff\1"+
+        "\u014c\1\uffff\1\u0135\1\uffff\1\147\1\u00be\1\u0081\5\uffff\1\u013a"+
+        "\1\u00c2\1\162\1\117\7\uffff\1\17\1\16\1\20\1\2\1\131\2\uffff\1"+
+        "\u00ac\2\uffff\1\u00a4\1\76\3\uffff\1\151\3\uffff\1\u00a9\1\u013d"+
+        "\1\u013e\1\u00a8\5\uffff\1\u0159\1\u0157\1\u015a\1\u015b\1\u0158"+
+        "\1\u0141\1\u0094\1\u008b\1\u00ae\1\u0151\1\u0150\1\u00cf\1\u0092"+
+        "\1\161\1\120\1\uffff\1\u0139\2\uffff\1\u014d\1\u011e\1\174\1\170"+
+        "\1\u00f7\1\u00f6\1\10\1\175\1\uffff\1\31\2\uffff\1\34\1\42\1\36"+
+        "\1\uffff\1\u00e7\1\u00e8\1\u00dc\1\u00e2\1\u00d6\1\uffff\1\u0121"+
+        "\1\u0122\3\uffff\1\u015d\1\u015c\3\uffff\1\u00a6\1\u00b1\2\uffff"+
+        "\1\u0105\1\152\2\uffff\1\u013f\1\u00aa\1\u0095\1\u0132\3\uffff\1"+
+        "\u0152\1\u0153\1\u0155\1\u0154\1\u0156\1\u00ec\1\u00c0\1\160\1\157"+
+        "\3\uffff\1\40\1\45\1\uffff\1\14\1\15\12\uffff\1\156\1\155\5\uffff"+
+        "\1\u00dd\1\u00e3\1\u00d7\1\47\1\44\2\uffff\1\u012e\1\u012d\1\u0130"+
+        "\1\u012f\1\u015f\1\u015e\1\u0161\1\u0160\1\105\1\104\1\u00c1\1\u0138"+
+        "\4\uffff\1\u00fa\1\u0099\1\27\4\uffff\1\u010a\1\uffff\1\u010b\1"+
+        "\uffff\1\u00ee\1\126\1\125\1\uffff\1\u012c\1\u012b\1\u00b5\1\u00b4"+
+        "\5\uffff\1\u00f0\1\u00ef\1\uffff\1\153\1\u0102\1\11\1\12\3\uffff"+
+        "\1\u00f5\1\u00f1\1\u00f4\1\u00f2\1\u00f3\3\uffff\1\u014f\1\u014e"+
+        "\1\u0123\1\u0124\2\uffff\1\70\1\67";
     static final String DFA16_specialS =
-        "\u02c0\uffff}>";
+        "\u02ce\uffff}>";
     static final String[] DFA16_transitionS = {
             "\1\7\1\11\2\uffff\1\10\22\uffff\1\6\1\uffff\1\5\1\1\3\uffff"+
             "\1\5\5\uffff\1\3\1\2\1\uffff\12\4",
-            "\1\15\1\32\1\25\1\12\1\14\1\26\1\20\1\35\1\30\2\uffff\1\27\1"+
-            "\16\1\13\1\22\1\21\1\uffff\1\31\1\17\1\24\1\34\1\36\1\23\2\uffff"+
+            "\1\12\1\34\1\25\1\21\1\16\1\14\1\22\1\35\1\31\2\uffff\1\27\1"+
+            "\23\1\20\1\24\1\13\1\uffff\1\26\1\15\1\17\1\30\1\36\1\32\2\uffff"+
             "\1\33",
             "",
             "\60\37\12\4\uffc5\37",
@@ -10350,32 +10433,32 @@ public class InternalDmLexer extends Lexer {
             "\1\7\1\11\2\uffff\1\10",
             "\1\11",
             "\11\42\1\43\1\11\2\42\1\10\22\42\1\41\2\42\1\uffff\uffdb\42",
-            "\1\46\3\uffff\1\45\3\uffff\1\52\3\uffff\1\51\1\uffff\1\50\4"+
-            "\uffff\1\44\4\uffff\1\47",
-            "\1\56\3\uffff\1\54\11\uffff\1\53\2\uffff\1\55",
-            "\1\62\7\uffff\1\63\1\uffff\1\65\1\uffff\1\61\1\uffff\1\64\1"+
-            "\uffff\1\66\1\uffff\1\60\1\57",
-            "\1\101\10\uffff\1\73\1\70\1\77\1\76\1\72\1\67\1\75\1\100\1\71"+
-            "\1\uffff\1\74",
-            "\1\102\7\uffff\1\103\5\uffff\1\104\2\uffff\1\106\2\uffff\1\105",
-            "\1\111\1\uffff\1\112\1\uffff\1\115\2\uffff\1\114\1\120\2\uffff"+
-            "\1\113\2\uffff\1\117\1\116\3\uffff\1\107\1\110\1\uffff\1\121",
-            "\1\122\1\uffff\1\124\11\uffff\1\123",
-            "\1\125\7\uffff\1\130\2\uffff\1\131\2\uffff\1\126\2\uffff\1\127",
-            "\1\132\1\134\1\uffff\1\133",
-            "\1\136\3\uffff\1\137\3\uffff\1\135",
-            "\1\141\11\uffff\1\140\2\uffff\1\144\2\uffff\1\145\1\uffff\1"+
-            "\142\1\uffff\1\143",
-            "\1\152\6\uffff\1\151\3\uffff\1\147\2\uffff\1\146\5\uffff\1\150",
-            "\1\156\3\uffff\1\155\3\uffff\1\154\2\uffff\1\153\2\uffff\1\157",
-            "\1\161\3\uffff\1\162\11\uffff\1\163\5\uffff\1\160",
-            "\1\164\1\171\7\uffff\1\167\1\166\1\165\5\uffff\1\170",
-            "\1\173\1\uffff\1\174\1\uffff\1\172",
-            "\1\177\3\uffff\1\u0080\6\uffff\1\176\2\uffff\1\u0081\2\uffff"+
-            "\1\175",
+            "\1\56\10\uffff\1\50\1\45\1\54\1\53\1\52\1\44\1\55\1\51\1\47"+
+            "\1\uffff\1\46",
+            "\1\61\7\uffff\1\62\2\uffff\1\63\2\uffff\1\57\2\uffff\1\60",
+            "\1\66\3\uffff\1\64\3\uffff\1\70\2\uffff\1\65\2\uffff\1\67",
+            "\1\73\1\uffff\1\100\1\uffff\1\76\2\uffff\1\103\1\102\2\uffff"+
+            "\1\71\2\uffff\1\77\1\75\3\uffff\1\72\1\74\1\uffff\1\101",
+            "\1\111\7\uffff\1\110\1\uffff\1\106\1\uffff\1\107\1\uffff\1\113"+
+            "\1\uffff\1\112\1\uffff\1\104\1\105",
+            "\1\116\11\uffff\1\121\2\uffff\1\120\2\uffff\1\115\1\uffff\1"+
+            "\114\1\uffff\1\117",
+            "\1\123\3\uffff\1\125\11\uffff\1\122\2\uffff\1\124",
+            "\1\133\3\uffff\1\127\3\uffff\1\134\3\uffff\1\132\1\uffff\1\126"+
+            "\4\uffff\1\130\4\uffff\1\131",
+            "\1\136\1\uffff\1\137\11\uffff\1\135",
+            "\1\142\7\uffff\1\143\5\uffff\1\140\2\uffff\1\141\2\uffff\1\144",
+            "\1\145\1\147\1\uffff\1\146",
+            "\1\154\6\uffff\1\153\3\uffff\1\151\2\uffff\1\150\5\uffff\1\152",
+            "\1\156\1\uffff\1\157\1\uffff\1\155",
+            "\1\161\3\uffff\1\160\11\uffff\1\163\5\uffff\1\162",
+            "\1\164\10\uffff\1\165",
+            "\1\171\1\173\7\uffff\1\172\1\167\1\166\5\uffff\1\170",
+            "\1\176\3\uffff\1\175\3\uffff\1\174",
             "",
-            "\1\u0082\10\uffff\1\u0083",
-            "\1\u0084\11\uffff\1\u0085\1\u0086",
+            "\1\u0081\3\uffff\1\177\6\uffff\1\u0080\2\uffff\1\u0083\2\uffff"+
+            "\1\u0082",
+            "\1\u0085\11\uffff\1\u0084\1\u0086",
             "",
             "\12\u0087\1\u0089\2\u0087\1\u0088\25\u0087\1\u008b\uffdb\u0087",
             "",
@@ -10383,106 +10466,106 @@ public class InternalDmLexer extends Lexer {
             "",
             "\1\u008c\1\11\2\uffff\1\10\22\uffff\1\u008e",
             "\1\u008f",
-            "\1\u0093\1\uffff\1\u0092\1\uffff\1\u0094\1\u0091\6\uffff\1\u0095"+
-            "\5\uffff\1\u0090",
-            "\1\u0097\4\uffff\1\u0096",
-            "",
-            "\1\u0099\7\uffff\1\u0098",
+            "\1\u0090",
             "",
             "",
-            "\1\u009b\1\uffff\1\u009a\3\uffff\1\u009f\1\u00a2\2\uffff\1\u009c"+
-            "\1\u009d\2\uffff\1\u00a0\2\uffff\1\u00a1\1\uffff\1\u009e",
-            "\1\u00a4\21\uffff\1\u00a3\1\u00a5",
-            "\1\u00a6\3\uffff\1\u00a7",
-            "\1\u00a8",
-            "\1\u00a9",
-            "\1\u00aa",
-            "",
-            "",
-            "\1\u00ab\1\u00ad\17\uffff\1\u00ac",
-            "",
-            "",
-            "",
-            "\1\u00ae",
-            "\1\u00af",
-            "",
-            "",
-            "\1\u00b0\12\uffff\1\u00b1\2\uffff\1\u00b2",
+            "\1\u0091\12\uffff\1\u0093\2\uffff\1\u0092",
             "",
             "",
             "",
             "",
             "",
-            "\1\u00b3",
-            "\1\u00b4\1\uffff\1\u00b9\1\uffff\1\u00b6\2\uffff\1\u00b7\1\uffff"+
-            "\1\u00b5\7\uffff\1\u00b8",
-            "\1\u00ba\4\uffff\1\u00bb",
-            "\1\u00bd\11\uffff\1\u00bf\3\uffff\1\u00be\2\uffff\1\u00bc",
+            "\1\u0094",
+            "\1\u0097\5\uffff\1\u0095\1\u0096",
+            "\1\u0099\11\uffff\1\u0098",
+            "\1\u009a",
+            "",
+            "",
+            "\1\u009c\13\uffff\1\u009b",
+            "\1\u009d\7\uffff\1\u009f\17\uffff\1\u009e",
+            "\1\u00a0\5\uffff\1\u00a2\1\uffff\1\u00a1",
+            "\1\u00a3",
+            "\1\u00a4",
+            "\1\u00a5",
+            "\1\u00a6\3\uffff\1\u00a9\11\uffff\1\u00a7\2\uffff\1\u00a8",
+            "\1\u00ab\5\uffff\1\u00aa",
+            "\1\u00ae\11\uffff\1\u00ac\2\uffff\1\u00ad",
+            "\1\u00b1\14\uffff\1\u00af\6\uffff\1\u00b0",
+            "\1\u00b3\1\u00b4\7\uffff\1\u00b2",
+            "",
+            "",
+            "\1\u00b5",
+            "\1\u00b6\24\uffff\1\u00b7",
+            "\1\u00b9\15\uffff\1\u00b8",
+            "\1\u00ba",
+            "\1\u00bb",
+            "",
+            "",
+            "\1\u00bc\1\u00bd\17\uffff\1\u00be",
+            "",
+            "",
+            "",
+            "",
+            "\1\u00bf",
             "\1\u00c0",
-            "\1\u00c1",
-            "\1\u00c4\3\uffff\1\u00c5\11\uffff\1\u00c3\2\uffff\1\u00c6",
-            "\1\u00c9\11\uffff\1\u00c8\2\uffff\1\u00c7",
-            "\1\u00ca\5\uffff\1\u00cb",
-            "",
-            "\1\u00cc",
-            "\1\u00ce\15\uffff\1\u00cd",
-            "\1\u00d0\1\u00d1\7\uffff\1\u00cf",
-            "\1\u00d2\14\uffff\1\u00d4\6\uffff\1\u00d3",
-            "",
-            "\1\u00d6\24\uffff\1\u00d5",
-            "\1\u00d7",
-            "",
-            "\1\u00d9\2\uffff\1\u00d8",
-            "\1\u00da",
-            "\1\u00db",
-            "\1\u00de\5\uffff\1\u00dc\1\u00dd",
-            "\1\u00df\11\uffff\1\u00e0",
-            "",
-            "",
-            "\1\u00e3\1\u00e2\7\uffff\1\u00e1",
-            "",
-            "",
-            "\1\u00e5\6\uffff\1\u00e4",
-            "\1\u00e7\1\u00e6",
-            "",
-            "",
-            "\1\u00e8",
             "",
             "",
             "",
-            "\1\u00e9",
-            "\1\u00ea\1\u00eb\1\u00ec\1\uffff\1\u00ed",
-            "\1\u00ee",
+            "\1\u00c1\1\uffff\1\u00c3\3\uffff\1\u00c9\1\u00c7\2\uffff\1\u00c2"+
+            "\1\u00c8\2\uffff\1\u00c6\2\uffff\1\u00c4\1\uffff\1\u00c5",
+            "\1\u00ca",
+            "\1\u00cb\3\uffff\1\u00cc",
+            "\1\u00ce\21\uffff\1\u00cd\1\u00cf",
+            "\1\u00d0\7\uffff\1\u00d1",
+            "\1\u00d3\1\uffff\1\u00d7\1\uffff\1\u00d6\1\u00d2\6\uffff\1\u00d4"+
+            "\5\uffff\1\u00d5",
+            "\1\u00d8",
             "",
             "",
-            "\1\u00ef",
-            "\1\u00f0\7\uffff\1\u00f1\17\uffff\1\u00f2",
-            "\1\u00f3",
-            "\1\u00f4\13\uffff\1\u00f5",
-            "\1\u00f7\5\uffff\1\u00f8\1\uffff\1\u00f6",
-            "\1\u00f9",
+            "\1\u00d9\4\uffff\1\u00da",
             "",
-            "\1\u00fb\13\uffff\1\u00fa",
-            "\1\u00fc\1\uffff\1\u00fd\5\uffff\1\u00fe",
+            "\1\u00dc\2\uffff\1\u00db",
             "",
-            "\1\u0100\11\uffff\1\u00ff",
-            "\1\u0103\1\uffff\1\u0102\1\u0104\14\uffff\1\u0101",
-            "\1\u0105",
-            "",
+            "\1\u00dd",
+            "\1\u00de\11\uffff\1\u00e1\3\uffff\1\u00e0\2\uffff\1\u00df",
+            "\1\u00e2",
+            "\1\u00e5\1\uffff\1\u00e4\1\uffff\1\u00e6\2\uffff\1\u00e9\1\uffff"+
+            "\1\u00e8\7\uffff\1\u00e7",
+            "\1\u00eb\4\uffff\1\u00ea",
+            "\1\u00ec",
+            "\1\u00ee\1\u00ef\7\uffff\1\u00ed",
             "",
             "",
-            "\1\u0108\1\uffff\1\u0106\11\uffff\1\u0107",
-            "\1\u010a\3\uffff\1\u0109",
+            "\1\u00f1\1\u00f3\1\u00f2\1\uffff\1\u00f0",
+            "\1\u00f4",
             "",
             "",
-            "\1\u010c\5\uffff\1\u010b",
+            "\1\u00f5",
+            "\1\u00f8\1\uffff\1\u00f7\11\uffff\1\u00f6",
+            "\1\u00f9\3\uffff\1\u00fa",
             "",
-            "\1\u010d\16\uffff\1\u010e",
+            "\1\u00fb\1\uffff\1\u00fc\5\uffff\1\u00fd",
+            "\1\u00fe\13\uffff\1\u00ff",
             "",
-            "\1\u010f\4\uffff\1\u0111\10\uffff\1\u0110",
-            "\1\u0113\1\u0116\1\uffff\1\u0114\7\uffff\1\u0115\6\uffff\1\u0112",
-            "\1\u0118\20\uffff\1\u0117",
-            "\1\u011b\1\u0119\4\uffff\1\u011a",
+            "",
+            "\1\u0102\4\uffff\1\u0101\10\uffff\1\u0100",
+            "\1\u0104\1\u0107\1\uffff\1\u0106\7\uffff\1\u0105\6\uffff\1\u0103",
+            "\1\u010b\1\uffff\1\u010a\1\u0109\14\uffff\1\u0108",
+            "\1\u010c",
+            "",
+            "\1\u010d\11\uffff\1\u010e",
+            "",
+            "",
+            "\1\u0110\6\uffff\1\u010f",
+            "",
+            "\1\u0111\1\u0112",
+            "\1\u0113\16\uffff\1\u0114",
+            "\1\u0116\5\uffff\1\u0115",
+            "",
+            "",
+            "",
+            "\1\u0119\1\u0118\4\uffff\1\u0117",
+            "\1\u011b\20\uffff\1\u011a",
             "",
             "\12\u011c\1\u0089\2\u011c\1\u0088\25\u011c\1\u011d\uffdb\u011c",
             "\1\u0089",
@@ -10492,302 +10575,306 @@ public class InternalDmLexer extends Lexer {
             "\1\u008c\1\11\2\uffff\1\10\22\uffff\1\u008e",
             "\1\u008c\1\11\2\uffff\1\10\22\uffff\1\u008d",
             "\1\u008e\1\40\2\uffff\1\40\22\uffff\1\u008e",
-            "\1\u0120\1\u0126\3\uffff\1\u011f\3\uffff\1\u0123\1\u0121\1\u011e"+
-            "\1\uffff\1\u0122\1\uffff\1\u0124\1\u0125",
-            "\1\u0127",
-            "\1\u012b\1\uffff\1\u012a\11\uffff\1\u0129\7\uffff\1\u0128",
-            "",
-            "\1\u012d",
-            "",
-            "",
-            "\1\u012e",
-            "",
-            "",
-            "\1\u0132\7\uffff\1\u0131\1\uffff\1\u012f\1\u0130",
+            "\1\u011e",
+            "\1\u011f",
             "",
             "",
             "",
+            "\1\u0121\3\uffff\1\u0120",
+            "\1\u0122",
+            "\1\u0124\4\uffff\1\u0123",
+            "\1\u0125",
+            "",
+            "\1\u0126",
+            "\1\u0127\11\uffff\1\u0128",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0133\7\uffff\1\u0135\3\uffff\1\u0137\5\uffff\1\u0136\3\uffff"+
-            "\1\u0134",
+            "\1\u0129\1\uffff\1\u012a",
+            "\1\u012c\11\uffff\1\u012b",
             "",
             "",
             "",
             "",
-            "\1\u0138",
-            "\1\u013a\6\uffff\1\u0139",
-            "\1\u013b\6\uffff\1\u013c",
+            "\1\u012d\1\uffff\1\u012e",
+            "\1\u012f\15\uffff\1\u0130",
+            "\1\u0131",
+            "\1\u0133\3\uffff\1\u0132",
+            "\1\u0134\3\uffff\1\u0135",
             "",
             "",
+            "",
+            "",
+            "\1\u0136",
+            "\1\u0138\12\uffff\1\u0137",
+            "",
+            "\1\u0139\1\u013a\62\uffff\1\u013b\3\uffff\1\u013c",
             "",
             "\1\u013d",
             "\1\u013e",
+            "\1\u013f",
+            "",
+            "\1\u0140",
             "",
             "",
-            "",
-            "\1\u0140\3\uffff\1\u013f",
             "\1\u0141",
-            "\1\u0142\12\uffff\1\u0143",
-            "\1\u0144",
-            "",
-            "",
-            "\1\u0145",
-            "",
-            "",
-            "\1\u0146",
+            "\1\u0143\3\uffff\1\u0142",
+            "\1\u0144\6\uffff\1\u0145",
+            "\1\u0146\6\uffff\1\u0147",
             "",
             "",
             "",
-            "\1\u0147",
             "\1\u0148",
-            "",
-            "\1\u014a\3\uffff\1\u0149",
-            "\1\u014c\3\uffff\1\u014b",
-            "",
-            "",
-            "\1\u014e\12\uffff\1\u014d",
-            "\1\u014f",
+            "\1\u0149",
             "",
             "",
             "",
-            "\1\u0150",
-            "\1\u0151",
-            "\1\u0152\3\uffff\1\u0153",
-            "\1\u0154",
-            "\1\u0155",
-            "",
-            "\1\u0156",
-            "",
-            "\1\u0159\1\u0158\62\uffff\1\u015a\3\uffff\1\u0157",
             "",
             "",
-            "\1\u015b",
-            "\1\u015c",
             "",
-            "\1\u015d\2\uffff\1\u015e",
-            "\1\u015f\11\uffff\1\u0160",
-            "\1\u0161",
-            "\1\u0163\4\uffff\1\u0162",
+            "",
+            "",
+            "",
+            "\1\u014a",
+            "",
+            "",
+            "\1\u014c\7\uffff\1\u014e\3\uffff\1\u014f\5\uffff\1\u014b\3\uffff"+
+            "\1\u014d",
+            "",
+            "",
+            "\1\u0152\7\uffff\1\u0153\1\uffff\1\u0150\1\u0151",
+            "",
+            "\1\u0157\1\uffff\1\u0156\11\uffff\1\u0154\7\uffff\1\u0155",
+            "\1\u0159",
+            "",
+            "\1\u015a",
+            "",
+            "",
+            "\1\u015e\1\u015d\3\uffff\1\u0161\3\uffff\1\u0163\1\u015c\1\u0160"+
+            "\1\uffff\1\u0162\1\uffff\1\u015f\1\u015b",
+            "",
             "\1\u0164",
             "\1\u0165",
             "",
+            "\1\u0166\2\uffff\1\u0167",
+            "",
+            "\1\u0168",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0166",
-            "\1\u0167",
-            "\1\u0168\12\uffff\1\u0169",
-            "",
+            "\1\u0169",
             "",
             "\1\u016a",
             "\1\u016b",
             "\1\u016c",
-            "\1\u016d\1\uffff\1\u016e",
             "",
-            "\1\u016f\11\uffff\1\u0170",
-            "\1\u0171\15\uffff\1\u0172",
+            "\1\u016e\12\uffff\1\u016d",
             "",
             "",
             "",
-            "",
-            "",
-            "\1\u0174\1\uffff\1\u0173",
-            "",
+            "\1\u016f",
             "",
             "",
             "",
+            "\1\u0170",
+            "\1\u0171\12\uffff\1\u0172",
             "",
             "",
-            "",
-            "",
-            "\1\u0175\1\uffff\1\u0176",
-            "",
-            "",
-            "\1\u0177",
-            "",
-            "\1\u0178\11\uffff\1\u017a\3\uffff\1\u0179\1\u017b",
-            "",
-            "",
-            "",
-            "\1\u017d",
+            "\1\u0173",
+            "\1\u0174",
+            "\1\u0175\11\uffff\1\u0177\3\uffff\1\u0176\1\u0178",
             "",
             "",
             "",
             "",
-            "\1\u017e",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u017a",
+            "",
+            "",
+            "\1\u017b",
+            "\1\u017c",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u017d\1\uffff\1\u017e",
             "",
             "\1\u017f",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u0180",
             "",
+            "\1\u0181\1\u0182",
+            "\1\u0183",
             "",
-            "",
-            "\1\u0182\11\uffff\1\u0181",
-            "\1\u0183\7\uffff\1\u0184",
-            "\1\u0185",
-            "\1\u0186\1\u0187",
-            "",
+            "\1\u0185\11\uffff\1\u0184",
+            "\1\u0186\7\uffff\1\u0187",
             "\12\u011c\1\u0089\2\u011c\1\u0088\25\u011c\1\u011d\uffdb\u011c",
             "\12\u011c\1\u0089\2\u011c\1\u0088\25\u011c\1\u011d\uffdb\u011c",
+            "\1\u0188",
+            "\1\u0189",
+            "\1\u018a",
+            "",
+            "\1\u018b\12\uffff\1\u018d\1\u018e\7\uffff\1\u018c",
             "",
             "",
-            "\1\u0188\15\uffff\1\u0189",
-            "",
-            "\1\u018a\15\uffff\1\u018b",
-            "",
-            "",
-            "\1\u018d\6\uffff\1\u018c",
-            "\1\u018e",
             "\1\u018f",
             "\1\u0190",
-            "\1\u0191",
-            "\1\u0192",
-            "",
-            "",
-            "\1\u0193",
-            "\1\u0195\5\uffff\1\u0194",
-            "",
-            "",
-            "\1\u0196",
+            "\1\u0193\10\uffff\1\u0192",
             "",
             "",
             "",
             "",
-            "\1\u0198\6\uffff\1\u0197",
             "",
-            "\1\u0199",
+            "\1\u0195",
             "",
+            "\1\u0198\1\uffff\1\u0197\1\u0196",
             "",
+            "\1\u019a",
             "\1\u019b",
             "",
+            "",
             "\1\u019c",
-            "\1\u019d",
-            "\1\u019e",
-            "",
-            "\1\u019f",
-            "",
-            "",
+            "\1\u019e\3\uffff\1\u019f\11\uffff\1\u019d",
             "\1\u01a0",
-            "\1\u01a2\3\uffff\1\u01a1",
-            "\1\u01a3",
+            "\1\u01a1",
+            "",
+            "",
+            "",
+            "",
+            "\1\u01a2",
             "\1\u01a4",
             "\1\u01a5",
             "\1\u01a6",
-            "",
             "\1\u01a7",
             "",
+            "",
             "\1\u01a8",
+            "",
+            "",
+            "",
             "\1\u01a9",
-            "\1\u01ab\3\uffff\1\u01ac\11\uffff\1\u01aa",
-            "\1\u01ad",
-            "\1\u01ae",
+            "\1\u01aa",
+            "\1\u01ab",
+            "\1\u01ad\6\uffff\1\u01ae",
+            "",
+            "",
+            "",
+            "",
+            "",
             "",
             "",
             "\1\u01af",
             "\1\u01b0",
             "\1\u01b1",
-            "",
-            "",
+            "\1\u01b2",
             "",
             "",
             "\1\u01b3",
-            "\1\u01b6\1\u01b4\7\uffff\1\u01b5",
+            "\1\u01b4",
+            "\1\u01b6\6\uffff\1\u01b5",
+            "",
+            "\1\u01b7",
+            "\1\u01b8\15\uffff\1\u01b9",
             "",
             "",
-            "\1\u01b8\10\uffff\1\u01b7",
             "",
-            "\1\u01bc\12\uffff\1\u01bb\1\u01bd\7\uffff\1\u01ba",
+            "\1\u01ba\15\uffff\1\u01bb",
+            "",
+            "\1\u01bd\5\uffff\1\u01bc",
+            "\1\u01be\1\u01bf\7\uffff\1\u01c0",
             "",
             "",
-            "\1\u01be",
-            "\1\u01bf",
             "\1\u01c1",
             "\1\u01c2",
-            "\1\u01c5\6\uffff\1\u01c7\6\uffff\1\u01c4\1\uffff\1\u01c3\1\u01c6",
-            "",
-            "\1\u01c9",
-            "\1\u01ca",
-            "\1\u01cb",
+            "\1\u01c3\3\uffff\1\u01c4",
+            "\1\u01c5",
+            "\1\u01c6",
             "",
             "",
+            "\1\u01c7",
+            "\1\u01c8",
+            "\1\u01cb\6\uffff\1\u01c9\6\uffff\1\u01cd\1\uffff\1\u01ca\1\u01cc",
             "",
-            "",
-            "\1\u01cc\1\uffff\1\u01ce\1\u01cd",
-            "",
-            "",
+            "\1\u01cf",
             "\1\u01d0",
+            "\1\u01d1",
             "",
             "",
-            "\1\u01d1\17\uffff\1\u01d2",
+            "\1\u01d2",
+            "",
             "\1\u01d3",
-            "",
-            "",
             "\1\u01d4",
-            "",
             "\1\u01d5",
-            "\1\u01d6",
-            "\1\u01d7",
+            "",
+            "",
+            "\1\u01d7\17\uffff\1\u01d6",
             "\1\u01d8",
-            "\1\u01da\1\u01db\1\u01dc\1\u01dd\1\u01d9\1\u01de",
-            "",
-            "\1\u01df",
-            "",
-            "\1\u01e1\11\uffff\1\u01e2",
             "",
             "",
+            "\1\u01d9\11\uffff\1\u01da",
+            "\1\u01db\1\u01de\1\u01e0\1\u01dc\1\u01dd\1\u01df",
             "",
+            "\1\u01e1",
             "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u01e3",
-            "\1\u01e4",
+            "\1\u01e4\1\uffff\1\u01e3",
             "\1\u01e6",
             "\1\u01e7",
+            "",
+            "",
+            "",
+            "",
             "\1\u01e8",
-            "\1\u01eb\4\uffff\1\u01e9\11\uffff\1\u01ea",
-            "",
-            "",
-            "\1\u01ec",
             "",
             "",
             "",
             "",
-            "\1\u01ed",
-            "\1\u01ee\1\uffff\1\u01ef",
-            "\1\u01f1",
-            "\1\u01f2",
-            "\1\u01f3\20\uffff\1\u01f4",
+            "",
+            "\1\u01e9",
+            "",
+            "\1\u01ea",
+            "",
+            "",
+            "\1\u01ec\10\uffff\1\u01eb",
+            "\1\u01f1\1\uffff\1\u01ee\1\u01f2\1\uffff\1\u01f0\14\uffff\1"+
+            "\u01ef\1\uffff\1\u01ed",
+            "\1\u01f3\6\uffff\1\u01f4",
+            "\1\u01f5",
+            "",
+            "",
             "\1\u01f6",
+            "\1\u01f7",
             "",
             "",
-            "\1\u01f8\3\uffff\1\u01f7",
+            "\1\u01f8",
             "\1\u01f9",
-            "\1\u01fa",
-            "\1\u01fc\6\uffff\1\u01fb",
-            "\1\u01ff\1\uffff\1\u0202\1\u0201\1\uffff\1\u0200\14\uffff\1"+
-            "\u01fd\1\uffff\1\u01fe",
+            "\1\u01fa\14\uffff\1\u01fb",
+            "\1\u01fc",
+            "\1\u01fe",
+            "\1\u01ff",
+            "\1\u0200",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0201",
+            "\1\u0202",
             "\1\u0203",
             "\1\u0204",
-            "\1\u0205",
-            "",
-            "",
-            "\1\u0207\10\uffff\1\u0206",
+            "\1\u0207\4\uffff\1\u0206\11\uffff\1\u0205",
             "\1\u0208",
+            "",
+            "",
             "\1\u020a",
-            "\1\u020b",
-            "",
-            "",
-            "\1\u020d\14\uffff\1\u020c",
             "",
             "",
             "",
@@ -10797,34 +10884,30 @@ public class InternalDmLexer extends Lexer {
             "",
             "",
             "",
-            "",
-            "\1\u020e",
-            "",
-            "",
-            "\1\u020f",
-            "\1\u0210",
+            "\1\u020b\3\uffff\1\u020c",
+            "\1\u020d",
             "",
             "",
+            "\1\u020e\20\uffff\1\u020f",
+            "\1\u0211",
+            "\1\u0212",
+            "\1\u0213\3\uffff\1\u0214",
             "",
-            "",
-            "",
-            "",
-            "\1\u0211\3\uffff\1\u0212",
-            "\1\u0214\1\u0215\3\uffff\1\u0216\1\u0213",
-            "\1\u0218",
+            "\1\u0215",
+            "\1\u0216",
             "",
             "",
             "",
-            "",
-            "\1\u0219",
-            "",
-            "",
-            "\1\u021a",
-            "\1\u021b",
-            "\1\u021c\7\uffff\1\u021d",
+            "\1\u0218\1\u0219\3\uffff\1\u021a\1\u0217",
+            "\1\u021c",
+            "\1\u021d",
             "\1\u021e",
             "\1\u021f",
-            "\1\u0220\1\u0224\1\u0223\1\u0222\1\u0221",
+            "\1\u0220",
+            "\1\u0222\1\u0225\1\u0221\1\u0223\1\u0224",
+            "",
+            "",
+            "\1\u0226\7\uffff\1\u0227",
             "",
             "",
             "",
@@ -10835,79 +10918,69 @@ public class InternalDmLexer extends Lexer {
             "",
             "",
             "",
-            "\1\u0225",
-            "",
-            "",
-            "\1\u0226",
-            "\1\u0227",
-            "\1\u0228\1\u0229",
             "",
             "",
             "",
-            "\1\u022a",
-            "\1\u022d\1\u022c\7\uffff\1\u022b",
+            "\1\u0228",
+            "\1\u022a\21\uffff\1\u022b",
+            "\1\u022c\1\uffff\1\u022d\16\uffff\1\u022e",
+            "\1\u0231\14\uffff\1\u0230",
+            "\1\u0232",
+            "",
+            "",
+            "\1\u0233",
+            "",
+            "\1\u0234\5\uffff\1\u0235",
+            "",
+            "\1\u0236\1\u0237",
             "",
             "",
             "",
-            "\1\u022e",
-            "\1\u0231\21\uffff\1\u0230",
-            "\1\u0232\11\uffff\1\u0233",
-            "",
-            "",
-            "\1\u0234",
-            "",
-            "\1\u0235",
-            "\1\u0236",
-            "\1\u0237",
-            "",
-            "",
-            "\1\u0239\5\uffff\1\u0238",
-            "\1\u023a",
-            "\1\u023b\1\u023c",
-            "",
-            "",
-            "",
-            "\1\u023d\12\uffff\1\u023e",
-            "\1\u023f",
-            "\1\u0241\3\uffff\1\u0240",
+            "\1\u0239\3\uffff\1\u0238",
+            "\1\u023b\12\uffff\1\u023a",
+            "\1\u023c",
+            "\1\u023d\7\uffff\1\u0241\3\uffff\1\u0242\1\u023e\4\uffff\1\u023f"+
+            "\3\uffff\1\u0240",
+            "\1\u0243\21\uffff\1\u0244\1\u0245",
             "",
             "",
             "",
             "",
-            "\1\u0244\7\uffff\1\u0246\3\uffff\1\u0245\1\u0242\4\uffff\1\u0247"+
-            "\3\uffff\1\u0243",
-            "\1\u0249\21\uffff\1\u024a\1\u0248",
+            "\1\u0248\1\u0246\7\uffff\1\u0247",
+            "\1\u0249",
+            "\1\u024a\14\uffff\1\u024b",
+            "\1\u024c",
+            "\1\u024d",
+            "\1\u024e",
+            "\1\u0250\1\u024f",
             "",
             "",
-            "\1\u024b\1\uffff\1\u024c\16\uffff\1\u024d",
-            "\1\u024f\14\uffff\1\u0250",
+            "",
+            "",
+            "",
             "\1\u0251",
-            "\1\u0253\14\uffff\1\u0252",
+            "\1\u0252",
             "",
-            "\1\u0255\6\uffff\1\u0254",
+            "\1\u0253",
+            "\1\u0255\11\uffff\1\u0254",
             "",
             "",
-            "",
-            "",
-            "\1\u0257\13\uffff\1\u0256",
+            "\1\u0256",
+            "\1\u0257",
             "\1\u0258\14\uffff\1\u0259",
+            "",
             "\1\u025a",
             "\1\u025b",
-            "",
-            "",
-            "\1\u025c",
-            "\1\u0261\1\u025d\1\u025e\1\u0260\1\u025f",
+            "\1\u025c\6\uffff\1\u025d",
             "",
             "",
             "",
             "",
-            "",
+            "\1\u025e\13\uffff\1\u025f",
+            "\1\u0260",
+            "\1\u0261",
             "\1\u0262",
-            "\1\u0263\1\u0264",
-            "\1\u0265\1\u0266",
-            "",
-            "",
-            "\1\u0267",
+            "\1\u0263\1\u0264\1\u0266\1\u0265\1\u0267",
             "",
             "",
             "",
@@ -10917,30 +10990,32 @@ public class InternalDmLexer extends Lexer {
             "",
             "",
             "",
-            "\1\u0268",
-            "\1\u0269",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0268\14\uffff\1\u0269",
+            "",
             "\1\u026a",
-            "\1\u026b",
-            "",
-            "",
             "\1\u026c",
+            "",
+            "",
+            "",
+            "",
             "",
             "",
             "",
             "",
             "\1\u026d",
             "",
-            "",
             "\1\u026e",
+            "\1\u0270\6\uffff\1\u026f",
             "",
             "",
-            "",
-            "",
-            "\1\u026f\6\uffff\1\u0270",
             "",
             "\1\u0271",
-            "",
-            "",
             "",
             "",
             "",
@@ -10949,112 +11024,134 @@ public class InternalDmLexer extends Lexer {
             "\1\u0273\3\uffff\1\u0272",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0275\14\uffff\1\u0274",
-            "\1\u0276",
-            "\1\u0277",
-            "\1\u0278",
-            "",
-            "",
-            "",
+            "\1\u0274",
+            "\1\u0275\1\u0276",
+            "\1\u0277\1\u0278",
             "",
             "",
             "\1\u0279",
+            "\1\u027a",
             "\1\u027b",
+            "",
+            "",
+            "\1\u027c",
             "\1\u027d",
-            "\1\u027f",
+            "",
+            "",
+            "\1\u027e",
+            "\1\u0280",
+            "",
+            "",
+            "",
+            "",
             "\1\u0281",
+            "\1\u0282",
             "\1\u0283",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u0284",
-            "\1\u0286\14\uffff\1\u0285",
-            "\1\u0287",
-            "\1\u0288",
-            "\1\u0289",
-            "\1\u028b\1\u028a\7\uffff\1\u028c",
-            "\1\u028e\6\uffff\1\u028d",
+            "\1\u0287\1\u0285\7\uffff\1\u0286",
+            "\1\u0289\6\uffff\1\u0288",
             "",
             "",
-            "\1\u028f",
+            "\1\u028a",
             "",
             "",
-            "",
-            "",
-            "\1\u0291\11\uffff\1\u0290\6\uffff\1\u0292",
-            "\1\u0293",
+            "\1\u028b",
+            "\1\u028c",
+            "\1\u028e",
+            "\1\u0290",
+            "\1\u0292",
             "\1\u0294",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0295",
-            "\1\u0297",
-            "",
-            "",
-            "\1\u0299\1\u0298",
+            "\1\u0297\14\uffff\1\u0296",
+            "\1\u0298",
+            "\1\u0299",
             "\1\u029a",
-            "\1\u029c\5\uffff\1\u029d",
+            "",
+            "",
+            "\1\u029b",
+            "\1\u029d\11\uffff\1\u029c\6\uffff\1\u029e",
+            "\1\u029f",
+            "\1\u02a0",
+            "\1\u02a2\5\uffff\1\u02a1",
             "",
             "",
             "",
             "",
             "",
-            "\1\u029f\6\uffff\1\u029e\3\uffff\1\u02a0",
-            "",
-            "",
-            "",
-            "\1\u02a1",
-            "\1\u02a2",
-            "\1\u02a3",
-            "",
-            "\1\u02a5",
-            "",
-            "",
-            "",
-            "",
+            "\1\u02a4\6\uffff\1\u02a5\3\uffff\1\u02a3",
             "\1\u02a6",
-            "\1\u02a7",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "",
             "\1\u02a8",
+            "\1\u02aa",
+            "\1\u02ac\1\u02ab",
+            "\1\u02ad",
             "",
-            "\1\u02a9",
-            "\1\u02ab\10\uffff\1\u02ac",
             "",
             "",
-            "\1\u02ad\1\u02af\1\u02ae\1\u02b1\1\u02b0",
+            "\1\u02af",
+            "\1\u02b0",
+            "\1\u02b1",
             "\1\u02b2",
+            "",
             "\1\u02b3",
+            "",
             "\1\u02b4",
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u02b5",
             "\1\u02b6",
+            "",
+            "",
+            "",
+            "",
             "\1\u02b7",
-            "\1\u02b9\1\u02b8",
-            "\1\u02ba\1\u02bb",
+            "\1\u02b9\10\uffff\1\u02ba",
+            "\1\u02bb",
             "\1\u02bc",
-            "",
-            "",
-            "",
-            "",
             "\1\u02bd",
-            "\1\u02be",
+            "",
+            "",
+            "\1\u02bf\1\u02c1\1\u02c2\1\u02c0\1\u02be",
+            "",
+            "",
+            "",
+            "",
+            "\1\u02c3",
+            "\1\u02c4",
+            "\1\u02c5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u02c7\1\u02c6",
+            "\1\u02c8\1\u02c9",
+            "\1\u02ca",
+            "",
+            "",
+            "",
+            "",
+            "\1\u02cb",
+            "\1\u02cc",
             "",
             ""
     };
@@ -11089,7 +11186,7 @@ public class InternalDmLexer extends Lexer {
             this.transition = DFA16_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T9 | T10 | T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | T37 | T38 | T39 | T40 | T41 | T42 | T43 | T44 | T45 | T46 | T47 | T48 | T49 | T50 | T51 | T52 | T53 | T54 | T55 | T56 | T57 | T58 | T59 | T60 | T61 | T62 | T63 | T64 | T65 | T66 | T67 | T68 | T69 | T70 | T71 | T72 | T73 | T74 | T75 | T76 | T77 | T78 | T79 | T80 | T81 | T82 | T83 | T84 | T85 | T86 | T87 | T88 | T89 | T90 | T91 | T92 | T93 | T94 | T95 | T96 | T97 | T98 | T99 | T100 | T101 | T102 | T103 | T104 | T105 | T106 | T107 | T108 | T109 | T110 | T111 | T112 | T113 | T114 | T115 | T116 | T117 | T118 | T119 | T120 | T121 | T122 | T123 | T124 | T125 | T126 | T127 | T128 | T129 | T130 | T131 | T132 | T133 | T134 | T135 | T136 | T137 | T138 | T139 | T140 | T141 | T142 | T143 | T144 | T145 | T146 | T147 | T148 | T149 | T150 | T151 | T152 | T153 | T154 | T155 | T156 | T157 | T158 | T159 | T160 | T161 | T162 | T163 | T164 | T165 | T166 | T167 | T168 | T169 | T170 | T171 | T172 | T173 | T174 | T175 | T176 | T177 | T178 | T179 | T180 | T181 | T182 | T183 | T184 | T185 | T186 | T187 | T188 | T189 | T190 | T191 | T192 | T193 | T194 | T195 | T196 | T197 | T198 | T199 | T200 | T201 | T202 | T203 | T204 | T205 | T206 | T207 | T208 | T209 | T210 | T211 | T212 | T213 | T214 | T215 | T216 | T217 | T218 | T219 | T220 | T221 | T222 | T223 | T224 | T225 | T226 | T227 | T228 | T229 | T230 | T231 | T232 | T233 | T234 | T235 | T236 | T237 | T238 | T239 | T240 | T241 | T242 | T243 | T244 | T245 | T246 | T247 | T248 | T249 | T250 | T251 | T252 | T253 | T254 | T255 | T256 | T257 | T258 | T259 | T260 | T261 | T262 | T263 | T264 | T265 | T266 | T267 | T268 | T269 | T270 | T271 | T272 | T273 | T274 | T275 | T276 | T277 | T278 | T279 | T280 | T281 | T282 | T283 | T284 | T285 | T286 | T287 | T288 | T289 | T290 | T291 | T292 | T293 | T294 | T295 | T296 | T297 | T298 | T299 | T300 | T301 | T302 | T303 | T304 | T305 | T306 | T307 | T308 | T309 | T310 | T311 | T312 | T313 | T314 | T315 | T316 | T317 | T318 | T319 | T320 | T321 | T322 | T323 | T324 | T325 | T326 | T327 | T328 | T329 | T330 | T331 | T332 | T333 | T334 | T335 | T336 | T337 | T338 | T339 | T340 | T341 | T342 | T343 | T344 | T345 | T346 | T347 | T348 | T349 | T350 | T351 | T352 | T353 | T354 | T355 | T356 | T357 | T358 | T359 | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS );";
+            return "1:1: Tokens : ( T9 | T10 | T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | T37 | T38 | T39 | T40 | T41 | T42 | T43 | T44 | T45 | T46 | T47 | T48 | T49 | T50 | T51 | T52 | T53 | T54 | T55 | T56 | T57 | T58 | T59 | T60 | T61 | T62 | T63 | T64 | T65 | T66 | T67 | T68 | T69 | T70 | T71 | T72 | T73 | T74 | T75 | T76 | T77 | T78 | T79 | T80 | T81 | T82 | T83 | T84 | T85 | T86 | T87 | T88 | T89 | T90 | T91 | T92 | T93 | T94 | T95 | T96 | T97 | T98 | T99 | T100 | T101 | T102 | T103 | T104 | T105 | T106 | T107 | T108 | T109 | T110 | T111 | T112 | T113 | T114 | T115 | T116 | T117 | T118 | T119 | T120 | T121 | T122 | T123 | T124 | T125 | T126 | T127 | T128 | T129 | T130 | T131 | T132 | T133 | T134 | T135 | T136 | T137 | T138 | T139 | T140 | T141 | T142 | T143 | T144 | T145 | T146 | T147 | T148 | T149 | T150 | T151 | T152 | T153 | T154 | T155 | T156 | T157 | T158 | T159 | T160 | T161 | T162 | T163 | T164 | T165 | T166 | T167 | T168 | T169 | T170 | T171 | T172 | T173 | T174 | T175 | T176 | T177 | T178 | T179 | T180 | T181 | T182 | T183 | T184 | T185 | T186 | T187 | T188 | T189 | T190 | T191 | T192 | T193 | T194 | T195 | T196 | T197 | T198 | T199 | T200 | T201 | T202 | T203 | T204 | T205 | T206 | T207 | T208 | T209 | T210 | T211 | T212 | T213 | T214 | T215 | T216 | T217 | T218 | T219 | T220 | T221 | T222 | T223 | T224 | T225 | T226 | T227 | T228 | T229 | T230 | T231 | T232 | T233 | T234 | T235 | T236 | T237 | T238 | T239 | T240 | T241 | T242 | T243 | T244 | T245 | T246 | T247 | T248 | T249 | T250 | T251 | T252 | T253 | T254 | T255 | T256 | T257 | T258 | T259 | T260 | T261 | T262 | T263 | T264 | T265 | T266 | T267 | T268 | T269 | T270 | T271 | T272 | T273 | T274 | T275 | T276 | T277 | T278 | T279 | T280 | T281 | T282 | T283 | T284 | T285 | T286 | T287 | T288 | T289 | T290 | T291 | T292 | T293 | T294 | T295 | T296 | T297 | T298 | T299 | T300 | T301 | T302 | T303 | T304 | T305 | T306 | T307 | T308 | T309 | T310 | T311 | T312 | T313 | T314 | T315 | T316 | T317 | T318 | T319 | T320 | T321 | T322 | T323 | T324 | T325 | T326 | T327 | T328 | T329 | T330 | T331 | T332 | T333 | T334 | T335 | T336 | T337 | T338 | T339 | T340 | T341 | T342 | T343 | T344 | T345 | T346 | T347 | T348 | T349 | T350 | T351 | T352 | T353 | T354 | T355 | T356 | T357 | T358 | T359 | T360 | T361 | T362 | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS );";
         }
     }
  

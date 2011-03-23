@@ -4856,9 +4856,31 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_fireres_24_0=	'#fireres' 
+		lv_coldres_24_0=	'#coldresist' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getFireresFireresKeyword_24_0(), "fireres"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getColdresColdresistKeyword_24_0(), "coldres"); 
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = factory.create(grammarAccess.getMonsterInst2Rule().getType().getClassifier());
+	            associateNodeWithAstElement(currentNode, $current);
+	        }
+	        
+	        try {
+	       		set($current, "coldres", true, "#coldresist", lastConsumedNode);
+	        } catch (ValueConverterException vce) {
+				handleValueConverterException(vce);
+	        }
+	    }
+
+)
+)
+    |(
+(
+		lv_fireres_25_0=	'#fireres' 
+    {
+        createLeafNode(grammarAccess.getMonsterInst2Access().getFireresFireresKeyword_25_0(), "fireres"); 
     }
  
 	    {
@@ -4878,9 +4900,31 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_poisonres_25_0=	'#poisonres' 
+		lv_fireres_26_0=	'#fireresist' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getPoisonresPoisonresKeyword_25_0(), "poisonres"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getFireresFireresistKeyword_26_0(), "fireres"); 
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = factory.create(grammarAccess.getMonsterInst2Rule().getType().getClassifier());
+	            associateNodeWithAstElement(currentNode, $current);
+	        }
+	        
+	        try {
+	       		set($current, "fireres", true, "#fireresist", lastConsumedNode);
+	        } catch (ValueConverterException vce) {
+				handleValueConverterException(vce);
+	        }
+	    }
+
+)
+)
+    |(
+(
+		lv_poisonres_27_0=	'#poisonres' 
+    {
+        createLeafNode(grammarAccess.getMonsterInst2Access().getPoisonresPoisonresKeyword_27_0(), "poisonres"); 
     }
  
 	    {
@@ -4900,9 +4944,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_shockres_26_0=	'#shockres' 
+		lv_shockres_28_0=	'#shockres' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getShockresShockresKeyword_26_0(), "shockres"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getShockresShockresKeyword_28_0(), "shockres"); 
     }
  
 	    {
@@ -4922,9 +4966,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_darkvision_27_0=	'#darkvision' 
+		lv_darkvision_29_0=	'#darkvision' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getDarkvisionDarkvisionKeyword_27_0(), "darkvision"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getDarkvisionDarkvisionKeyword_29_0(), "darkvision"); 
     }
  
 	    {
@@ -4944,9 +4988,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_stealthy_28_0=	'#stealthy' 
+		lv_stealthy_30_0=	'#stealthy' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getStealthyStealthyKeyword_28_0(), "stealthy"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getStealthyStealthyKeyword_30_0(), "stealthy"); 
     }
  
 	    {
@@ -4966,9 +5010,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_seduce_29_0=	'#seduce' 
+		lv_seduce_31_0=	'#seduce' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_29_0(), "seduce"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_31_0(), "seduce"); 
     }
  
 	    {
@@ -4988,9 +5032,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_succubus_30_0=	'#succubus' 
+		lv_succubus_32_0=	'#succubus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_30_0(), "succubus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_32_0(), "succubus"); 
     }
  
 	    {
@@ -5010,9 +5054,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_beckon_31_0=	'#beckon' 
+		lv_beckon_33_0=	'#beckon' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_31_0(), "beckon"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_33_0(), "beckon"); 
     }
  
 	    {
@@ -5032,9 +5076,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_startage_32_0=	'#startage' 
+		lv_startage_34_0=	'#startage' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_32_0(), "startage"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_34_0(), "startage"); 
     }
  
 	    {
@@ -5054,9 +5098,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_maxage_33_0=	'#maxage' 
+		lv_maxage_35_0=	'#maxage' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_33_0(), "maxage"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_35_0(), "maxage"); 
     }
  
 	    {
@@ -5076,9 +5120,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_older_34_0=	'#older' 
+		lv_older_36_0=	'#older' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_34_0(), "older"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_36_0(), "older"); 
     }
  
 	    {
@@ -5098,9 +5142,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_healer_35_0=	'#healer' 
+		lv_healer_37_0=	'#healer' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_35_0(), "healer"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_37_0(), "healer"); 
     }
  
 	    {
@@ -5120,9 +5164,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_startaff_36_0=	'#startaff' 
+		lv_startaff_38_0=	'#startaff' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_36_0(), "startaff"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_38_0(), "startaff"); 
     }
  
 	    {
@@ -5142,9 +5186,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_supplybonus_37_0=	'#supplybonus' 
+		lv_supplybonus_39_0=	'#supplybonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_37_0(), "supplybonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_39_0(), "supplybonus"); 
     }
  
 	    {
@@ -5164,9 +5208,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_uwdamage_38_0=	'#uwdamage' 
+		lv_uwdamage_40_0=	'#uwdamage' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_38_0(), "uwdamage"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_40_0(), "uwdamage"); 
     }
  
 	    {
@@ -5186,9 +5230,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_coldpower_39_0=	'#coldpower' 
+		lv_coldpower_41_0=	'#coldpower' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_39_0(), "coldpower"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_41_0(), "coldpower"); 
     }
  
 	    {
@@ -5208,9 +5252,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_firepower_40_0=	'#firepower' 
+		lv_firepower_42_0=	'#firepower' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_40_0(), "firepower"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_42_0(), "firepower"); 
     }
  
 	    {
@@ -5230,9 +5274,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_stormpower_41_0=	'#stormpower' 
+		lv_stormpower_43_0=	'#stormpower' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_41_0(), "stormpower"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_43_0(), "stormpower"); 
     }
  
 	    {
@@ -5252,9 +5296,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_darkpower_42_0=	'#darkpower' 
+		lv_darkpower_44_0=	'#darkpower' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_42_0(), "darkpower"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_44_0(), "darkpower"); 
     }
  
 	    {
@@ -5274,9 +5318,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_springpower_43_0=	'#springpower' 
+		lv_springpower_45_0=	'#springpower' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_43_0(), "springpower"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_45_0(), "springpower"); 
     }
  
 	    {
@@ -5296,9 +5340,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_summerpower_44_0=	'#summerpower' 
+		lv_summerpower_46_0=	'#summerpower' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_44_0(), "summerpower"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_46_0(), "summerpower"); 
     }
  
 	    {
@@ -5318,9 +5362,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_fallpower_45_0=	'#fallpower' 
+		lv_fallpower_47_0=	'#fallpower' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_45_0(), "fallpower"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_47_0(), "fallpower"); 
     }
  
 	    {
@@ -5340,9 +5384,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_winterpower_46_0=	'#winterpower' 
+		lv_winterpower_48_0=	'#winterpower' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_46_0(), "winterpower"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_48_0(), "winterpower"); 
     }
  
 	    {
@@ -5362,9 +5406,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_ambidextrous_47_0=	'#ambidextrous' 
+		lv_ambidextrous_49_0=	'#ambidextrous' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_47_0(), "ambidextrous"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_49_0(), "ambidextrous"); 
     }
  
 	    {
@@ -5384,9 +5428,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_banefireshield_48_0=	'#banefireshield' 
+		lv_banefireshield_50_0=	'#banefireshield' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_48_0(), "banefireshield"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_50_0(), "banefireshield"); 
     }
  
 	    {
@@ -5406,9 +5450,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_berserk_49_0=	'#berserk' 
+		lv_berserk_51_0=	'#berserk' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_49_0(), "berserk"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_51_0(), "berserk"); 
     }
  
 	    {
@@ -5428,9 +5472,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_standard_50_0=	'#standard' 
+		lv_standard_52_0=	'#standard' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_50_0(), "standard"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_52_0(), "standard"); 
     }
  
 	    {
@@ -5450,9 +5494,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_animalawe_51_0=	'#animalawe' 
+		lv_animalawe_53_0=	'#animalawe' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_51_0(), "animalawe"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_53_0(), "animalawe"); 
     }
  
 	    {
@@ -5472,9 +5516,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_awe_52_0=	'#awe' 
+		lv_awe_54_0=	'#awe' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getAweAweKeyword_52_0(), "awe"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getAweAweKeyword_54_0(), "awe"); 
     }
  
 	    {
@@ -5494,9 +5538,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_fear_53_0=	'#fear' 
+		lv_fear_55_0=	'#fear' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getFearFearKeyword_53_0(), "fear"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getFearFearKeyword_55_0(), "fear"); 
     }
  
 	    {
@@ -5516,9 +5560,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_regeneration_54_0=	'#regeneration' 
+		lv_regeneration_56_0=	'#regeneration' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_54_0(), "regeneration"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_56_0(), "regeneration"); 
     }
  
 	    {
@@ -5538,9 +5582,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_reinvigoration_55_0=	'#reinvigoration' 
+		lv_reinvigoration_57_0=	'#reinvigoration' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_55_0(), "reinvigoration"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_57_0(), "reinvigoration"); 
     }
  
 	    {
@@ -5560,9 +5604,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_fireshield_56_0=	'#fireshield' 
+		lv_fireshield_58_0=	'#fireshield' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_56_0(), "fireshield"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_58_0(), "fireshield"); 
     }
  
 	    {
@@ -5582,9 +5626,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_iceprot_57_0=	'#iceprot' 
+		lv_iceprot_59_0=	'#iceprot' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_57_0(), "iceprot"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0(), "iceprot"); 
     }
  
 	    {
@@ -5604,9 +5648,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_poisoncloud_58_0=	'#poisoncloud' 
+		lv_poisoncloud_60_0=	'#poisoncloud' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_58_0(), "poisoncloud"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0(), "poisoncloud"); 
     }
  
 	    {
@@ -5626,9 +5670,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_diseasecloud_59_0=	'#diseasecloud' 
+		lv_diseasecloud_61_0=	'#diseasecloud' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_59_0(), "diseasecloud"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0(), "diseasecloud"); 
     }
  
 	    {
@@ -5648,9 +5692,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_bloodvengeance_60_0=	'#bloodvengeance' 
+		lv_bloodvengeance_62_0=	'#bloodvengeance' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_60_0(), "bloodvengeance"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0(), "bloodvengeance"); 
     }
  
 	    {
@@ -5670,9 +5714,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_castledef_61_0=	'#castledef' 
+		lv_castledef_63_0=	'#castledef' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_61_0(), "castledef"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0(), "castledef"); 
     }
  
 	    {
@@ -5692,9 +5736,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_siegebonus_62_0=	'#siegebonus' 
+		lv_siegebonus_64_0=	'#siegebonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_62_0(), "siegebonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0(), "siegebonus"); 
     }
  
 	    {
@@ -5714,9 +5758,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_patrolbonus_63_0=	'#patrolbonus' 
+		lv_patrolbonus_65_0=	'#patrolbonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_63_0(), "patrolbonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0(), "patrolbonus"); 
     }
  
 	    {
@@ -5736,9 +5780,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_pillagebonus_64_0=	'#pillagebonus' 
+		lv_pillagebonus_66_0=	'#pillagebonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_64_0(), "pillagebonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0(), "pillagebonus"); 
     }
  
 	    {
@@ -5758,9 +5802,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_researchbonus_65_0=	'#researchbonus' 
+		lv_researchbonus_67_0=	'#researchbonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_65_0(), "researchbonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0(), "researchbonus"); 
     }
  
 	    {
@@ -5780,9 +5824,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_forgebonus_66_0=	'#forgebonus' 
+		lv_forgebonus_68_0=	'#forgebonus' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_66_0(), "forgebonus"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0(), "forgebonus"); 
     }
  
 	    {
@@ -5802,9 +5846,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_douse_67_0=	'#douse' 
+		lv_douse_69_0=	'#douse' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_67_0(), "douse"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0(), "douse"); 
     }
  
 	    {
@@ -5824,9 +5868,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_nobadevents_68_0=	'#nobadevents' 
+		lv_nobadevents_70_0=	'#nobadevents' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_68_0(), "nobadevents"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0(), "nobadevents"); 
     }
  
 	    {
@@ -5846,9 +5890,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_incunrest_69_0=	'#incunrest' 
+		lv_incunrest_71_0=	'#incunrest' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_69_0(), "incunrest"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0(), "incunrest"); 
     }
  
 	    {
@@ -5868,9 +5912,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_spreaddom_70_0=	'#spreaddom' 
+		lv_spreaddom_72_0=	'#spreaddom' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_70_0(), "spreaddom"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0(), "spreaddom"); 
     }
  
 	    {
@@ -5890,9 +5934,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_leper_71_0=	'#leper' 
+		lv_leper_73_0=	'#leper' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_71_0(), "leper"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0(), "leper"); 
     }
  
 	    {
@@ -5912,9 +5956,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_popkill_72_0=	'#popkill' 
+		lv_popkill_74_0=	'#popkill' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_72_0(), "popkill"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0(), "popkill"); 
     }
  
 	    {
@@ -5934,9 +5978,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_heretic_73_0=	'#heretic' 
+		lv_heretic_75_0=	'#heretic' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_73_0(), "heretic"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0(), "heretic"); 
     }
  
 	    {
@@ -5956,9 +6000,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_itemslots_74_0=	'#itemslots' 
+		lv_itemslots_76_0=	'#itemslots' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_74_0(), "itemslots"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0(), "itemslots"); 
     }
  
 	    {
@@ -5978,9 +6022,9 @@ ruleMonsterInst2 returns [EObject current=null]
 )
     |(
 (
-		lv_nametype_75_0=	'#nametype' 
+		lv_nametype_77_0=	'#nametype' 
     {
-        createLeafNode(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_75_0(), "nametype"); 
+        createLeafNode(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0(), "nametype"); 
     }
  
 	    {
@@ -6418,9 +6462,31 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_immortal_13_0=	'#immortal' 
+		lv_coldblood_13_0=	'#coldblooded' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_13_0(), "immortal"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodedKeyword_13_0(), "coldblood"); 
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = factory.create(grammarAccess.getMonsterInst4Rule().getType().getClassifier());
+	            associateNodeWithAstElement(currentNode, $current);
+	        }
+	        
+	        try {
+	       		set($current, "coldblood", true, "#coldblooded", lastConsumedNode);
+	        } catch (ValueConverterException vce) {
+				handleValueConverterException(vce);
+	        }
+	    }
+
+)
+)
+    |(
+(
+		lv_immortal_14_0=	'#immortal' 
+    {
+        createLeafNode(grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_14_0(), "immortal"); 
     }
  
 	    {
@@ -6440,9 +6506,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_blind_14_0=	'#blind' 
+		lv_blind_15_0=	'#blind' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_14_0(), "blind"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_15_0(), "blind"); 
     }
  
 	    {
@@ -6462,9 +6528,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_unique_15_0=	'#unique' 
+		lv_unique_16_0=	'#unique' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_15_0(), "unique"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_16_0(), "unique"); 
     }
  
 	    {
@@ -6484,9 +6550,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_immobile_16_0=	'#immobile' 
+		lv_immobile_17_0=	'#immobile' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_16_0(), "immobile"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_17_0(), "immobile"); 
     }
  
 	    {
@@ -6506,9 +6572,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_aquatic_17_0=	'#aquatic' 
+		lv_aquatic_18_0=	'#aquatic' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_17_0(), "aquatic"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_18_0(), "aquatic"); 
     }
  
 	    {
@@ -6528,9 +6594,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_amphibian_18_0=	'#amphibian' 
+		lv_amphibian_19_0=	'#amphibian' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_18_0(), "amphibian"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_19_0(), "amphibian"); 
     }
  
 	    {
@@ -6550,9 +6616,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_pooramphibian_19_0=	'#pooramphibian' 
+		lv_pooramphibian_20_0=	'#pooramphibian' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_19_0(), "pooramphibian"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_20_0(), "pooramphibian"); 
     }
  
 	    {
@@ -6572,9 +6638,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_flying_20_0=	'#flying' 
+		lv_flying_21_0=	'#flying' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_20_0(), "flying"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_21_0(), "flying"); 
     }
  
 	    {
@@ -6594,9 +6660,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_stormimmune_21_0=	'#stormimmune' 
+		lv_stormimmune_22_0=	'#stormimmune' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_21_0(), "stormimmune"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_22_0(), "stormimmune"); 
     }
  
 	    {
@@ -6616,9 +6682,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_sailing_22_0=	'#sailing' 
+		lv_sailing_23_0=	'#sailing' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_22_0(), "sailing"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_23_0(), "sailing"); 
     }
  
 	    {
@@ -6638,9 +6704,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_forestsurvival_23_0=	'#forestsurvival' 
+		lv_forestsurvival_24_0=	'#forestsurvival' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_23_0(), "forestsurvival"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_24_0(), "forestsurvival"); 
     }
  
 	    {
@@ -6660,9 +6726,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_mountainsurvival_24_0=	'#mountainsurvival' 
+		lv_mountainsurvival_25_0=	'#mountainsurvival' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_24_0(), "mountainsurvival"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_25_0(), "mountainsurvival"); 
     }
  
 	    {
@@ -6682,9 +6748,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_swampsurvival_25_0=	'#swampsurvival' 
+		lv_swampsurvival_26_0=	'#swampsurvival' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_25_0(), "swampsurvival"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_26_0(), "swampsurvival"); 
     }
  
 	    {
@@ -6704,9 +6770,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_wastesurvival_26_0=	'#wastesurvival' 
+		lv_wastesurvival_27_0=	'#wastesurvival' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_26_0(), "wastesurvival"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_27_0(), "wastesurvival"); 
     }
  
 	    {
@@ -6726,9 +6792,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_illusion_27_0=	'#illusion' 
+		lv_illusion_28_0=	'#illusion' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_27_0(), "illusion"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_28_0(), "illusion"); 
     }
  
 	    {
@@ -6748,9 +6814,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_spy_28_0=	'#spy' 
+		lv_spy_29_0=	'#spy' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getSpySpyKeyword_28_0(), "spy"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getSpySpyKeyword_29_0(), "spy"); 
     }
  
 	    {
@@ -6770,9 +6836,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_assassin_29_0=	'#assassin' 
+		lv_assassin_30_0=	'#assassin' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_29_0(), "assassin"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_30_0(), "assassin"); 
     }
  
 	    {
@@ -6792,9 +6858,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_heal_30_0=	'#heal' 
+		lv_heal_31_0=	'#heal' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getHealHealKeyword_30_0(), "heal"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getHealHealKeyword_31_0(), "heal"); 
     }
  
 	    {
@@ -6814,9 +6880,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_noheal_31_0=	'#noheal' 
+		lv_noheal_32_0=	'#noheal' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_31_0(), "noheal"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_32_0(), "noheal"); 
     }
  
 	    {
@@ -6836,9 +6902,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_neednoteat_32_0=	'#neednoteat' 
+		lv_neednoteat_33_0=	'#neednoteat' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_32_0(), "neednoteat"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_33_0(), "neednoteat"); 
     }
  
 	    {
@@ -6858,9 +6924,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_ethereal_33_0=	'#ethereal' 
+		lv_ethereal_34_0=	'#ethereal' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_33_0(), "ethereal"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_34_0(), "ethereal"); 
     }
  
 	    {
@@ -6880,9 +6946,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_trample_34_0=	'#trample' 
+		lv_trample_35_0=	'#trample' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_34_0(), "trample"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_35_0(), "trample"); 
     }
  
 	    {
@@ -6902,9 +6968,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_entangle_35_0=	'#entangle' 
+		lv_entangle_36_0=	'#entangle' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_35_0(), "entangle"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_36_0(), "entangle"); 
     }
  
 	    {
@@ -6924,9 +6990,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_eyeloss_36_0=	'#eyeloss' 
+		lv_eyeloss_37_0=	'#eyeloss' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_36_0(), "eyeloss"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_37_0(), "eyeloss"); 
     }
  
 	    {
@@ -6946,9 +7012,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_horrormark_37_0=	'#horrormark' 
+		lv_horrormark_38_0=	'#horrormark' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_37_0(), "horrormark"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_38_0(), "horrormark"); 
     }
  
 	    {
@@ -6968,9 +7034,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_poisonarmor_38_0=	'#poisonarmor' 
+		lv_poisonarmor_39_0=	'#poisonarmor' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_38_0(), "poisonarmor"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_39_0(), "poisonarmor"); 
     }
  
 	    {
@@ -6990,9 +7056,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_inquisitor_39_0=	'#inquisitor' 
+		lv_inquisitor_40_0=	'#inquisitor' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_39_0(), "inquisitor"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_40_0(), "inquisitor"); 
     }
  
 	    {
@@ -7012,9 +7078,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_noitem_40_0=	'#noitem' 
+		lv_noitem_41_0=	'#noitem' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_40_0(), "noitem"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_41_0(), "noitem"); 
     }
  
 	    {
@@ -7034,9 +7100,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_noleader_41_0=	'#noleader' 
+		lv_noleader_42_0=	'#noleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_41_0(), "noleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_42_0(), "noleader"); 
     }
  
 	    {
@@ -7056,9 +7122,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_poorleader_42_0=	'#poorleader' 
+		lv_poorleader_43_0=	'#poorleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_42_0(), "poorleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_43_0(), "poorleader"); 
     }
  
 	    {
@@ -7078,9 +7144,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_okleader_43_0=	'#okleader' 
+		lv_okleader_44_0=	'#okleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_43_0(), "okleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_44_0(), "okleader"); 
     }
  
 	    {
@@ -7100,9 +7166,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_goodleader_44_0=	'#goodleader' 
+		lv_goodleader_45_0=	'#goodleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_44_0(), "goodleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_45_0(), "goodleader"); 
     }
  
 	    {
@@ -7122,9 +7188,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_expertleader_45_0=	'#expertleader' 
+		lv_expertleader_46_0=	'#expertleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_45_0(), "expertleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_46_0(), "expertleader"); 
     }
  
 	    {
@@ -7144,9 +7210,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_superiorleader_46_0=	'#superiorleader' 
+		lv_superiorleader_47_0=	'#superiorleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_46_0(), "superiorleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_47_0(), "superiorleader"); 
     }
  
 	    {
@@ -7166,9 +7232,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_nomagicleader_47_0=	'#nomagicleader' 
+		lv_nomagicleader_48_0=	'#nomagicleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_47_0(), "nomagicleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_48_0(), "nomagicleader"); 
     }
  
 	    {
@@ -7188,9 +7254,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_poormagicleader_48_0=	'#poormagicleader' 
+		lv_poormagicleader_49_0=	'#poormagicleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_48_0(), "poormagicleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_49_0(), "poormagicleader"); 
     }
  
 	    {
@@ -7210,9 +7276,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_okmagicleader_49_0=	'#okmagicleader' 
+		lv_okmagicleader_50_0=	'#okmagicleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_49_0(), "okmagicleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_50_0(), "okmagicleader"); 
     }
  
 	    {
@@ -7232,9 +7298,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_goodmagicleader_50_0=	'#goodmagicleader' 
+		lv_goodmagicleader_51_0=	'#goodmagicleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_50_0(), "goodmagicleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_51_0(), "goodmagicleader"); 
     }
  
 	    {
@@ -7254,9 +7320,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_expertmagicleader_51_0=	'#expertmagicleader' 
+		lv_expertmagicleader_52_0=	'#expertmagicleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_51_0(), "expertmagicleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_52_0(), "expertmagicleader"); 
     }
  
 	    {
@@ -7276,9 +7342,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_superiormagicleader_52_0=	'#superiormagicleader' 
+		lv_superiormagicleader_53_0=	'#superiormagicleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_52_0(), "superiormagicleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_53_0(), "superiormagicleader"); 
     }
  
 	    {
@@ -7298,9 +7364,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_noundeadleader_53_0=	'#noundeadleader' 
+		lv_noundeadleader_54_0=	'#noundeadleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_53_0(), "noundeadleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_54_0(), "noundeadleader"); 
     }
  
 	    {
@@ -7320,9 +7386,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_poorundeadleader_54_0=	'#poorundeadleader' 
+		lv_poorundeadleader_55_0=	'#poorundeadleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_54_0(), "poorundeadleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_55_0(), "poorundeadleader"); 
     }
  
 	    {
@@ -7342,9 +7408,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_okundeadleader_55_0=	'#okundeadleader' 
+		lv_okundeadleader_56_0=	'#okundeadleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_55_0(), "okundeadleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_56_0(), "okundeadleader"); 
     }
  
 	    {
@@ -7364,9 +7430,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_goodundeadleader_56_0=	'#goodundeadleader' 
+		lv_goodundeadleader_57_0=	'#goodundeadleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_56_0(), "goodundeadleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_57_0(), "goodundeadleader"); 
     }
  
 	    {
@@ -7386,9 +7452,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_expertundeadleader_57_0=	'#expertundeadleader' 
+		lv_expertundeadleader_58_0=	'#expertundeadleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_57_0(), "expertundeadleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_58_0(), "expertundeadleader"); 
     }
  
 	    {
@@ -7408,9 +7474,9 @@ ruleMonsterInst4 returns [EObject current=null]
 )
     |(
 (
-		lv_superiorundeadleader_58_0=	'#superiorundeadleader' 
+		lv_superiorundeadleader_59_0=	'#superiorundeadleader' 
     {
-        createLeafNode(grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_58_0(), "superiorundeadleader"); 
+        createLeafNode(grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_59_0(), "superiorundeadleader"); 
     }
  
 	    {

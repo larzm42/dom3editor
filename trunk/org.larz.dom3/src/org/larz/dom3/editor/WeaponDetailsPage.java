@@ -79,13 +79,8 @@ public class WeaponDetailsPage implements IDetailsPage {
 		RANGE (Messages.getString("WeaponDetailsSection.mod.range"), "10"),
 		AMMO (Messages.getString("WeaponDetailsSection.mod.ammo"), "10"),
 		RCOST (Messages.getString("WeaponDetailsSection.mod.rcost"), "10"),
-		SOUND (Messages.getString("WeaponDetailsSection.mod.sound"), "10"),
-		AOE (Messages.getString("WeaponDetailsSection.mod.aoe"), "10"),
-		SECONDARYEFFECT (Messages.getString("WeaponDetailsSection.mod.secondaryeffect"), "10"),
-		SECONDARYEFFECTALWAYS (Messages.getString("WeaponDetailsSection.mod.secondaryeffectalways"), "10"),
-		EXPLSPR (Messages.getString("WeaponDetailsSection.mod.explspr"), "10"),
-		FLYSPR (Messages.getString("WeaponDetailsSection.mod.flyspr"), "10", "10"),
 		TWOHANDED (Messages.getString("WeaponDetailsSection.mod.twohanded")),
+		SOUND (Messages.getString("WeaponDetailsSection.mod.sound"), "10"),
 		ARMORPIERCING (Messages.getString("WeaponDetailsSection.mod.armorpiercing")),
 		ARMORNEGATING (Messages.getString("WeaponDetailsSection.mod.armornegating")),
 		MAGIC (Messages.getString("WeaponDetailsSection.mod.magic")),
@@ -107,12 +102,17 @@ public class WeaponDetailsPage implements IDetailsPage {
 		FIRE (Messages.getString("WeaponDetailsSection.mod.fire")),
 		SHOCK (Messages.getString("WeaponDetailsSection.mod.shock")),
 		POISON (Messages.getString("WeaponDetailsSection.mod.poison")),
+		AOE (Messages.getString("WeaponDetailsSection.mod.aoe"), "10"),
 		BONUS (Messages.getString("WeaponDetailsSection.mod.bonus")),
 		CHARGE (Messages.getString("WeaponDetailsSection.mod.charge")),
 		FLAIL (Messages.getString("WeaponDetailsSection.mod.flail")),
 		NOSTR (Messages.getString("WeaponDetailsSection.mod.nostr")),
 		MRNEGATES (Messages.getString("WeaponDetailsSection.mod.mrnegates")),
-		MRNEGATESEASILY (Messages.getString("WeaponDetailsSection.mod.mrnegateseasily"));
+		MRNEGATESEASILY (Messages.getString("WeaponDetailsSection.mod.mrnegateseasily")),
+		SECONDARYEFFECT (Messages.getString("WeaponDetailsSection.mod.secondaryeffect"), "10"),
+		SECONDARYEFFECTALWAYS (Messages.getString("WeaponDetailsSection.mod.secondaryeffectalways"), "10"),
+		FLYSPR (Messages.getString("WeaponDetailsSection.mod.flyspr"), "10", "10"),
+		EXPLSPR (Messages.getString("WeaponDetailsSection.mod.explspr"), "10");
 		
 		private String label;
 		private String defaultValue;
@@ -168,13 +168,8 @@ public class WeaponDetailsPage implements IDetailsPage {
 		instMap.put(Inst.RANGE, new Inst2Fields());
 		instMap.put(Inst.AMMO, new Inst2Fields());
 		instMap.put(Inst.RCOST, new Inst2Fields());
-		instMap.put(Inst.SOUND, new Inst2Fields());
-		instMap.put(Inst.AOE, new Inst2Fields());
-		instMap.put(Inst.SECONDARYEFFECT, new Inst2Fields());
-		instMap.put(Inst.SECONDARYEFFECTALWAYS, new Inst2Fields());
-		instMap.put(Inst.EXPLSPR, new Inst2Fields());
-		instMap.put(Inst.FLYSPR, new Inst3Fields());
 		instMap.put(Inst.TWOHANDED, new Inst4Fields());
+		instMap.put(Inst.SOUND, new Inst2Fields());
 		instMap.put(Inst.ARMORPIERCING, new Inst4Fields());
 		instMap.put(Inst.ARMORNEGATING, new Inst4Fields());
 		instMap.put(Inst.MAGIC, new Inst4Fields());
@@ -196,12 +191,18 @@ public class WeaponDetailsPage implements IDetailsPage {
 		instMap.put(Inst.FIRE, new Inst4Fields());
 		instMap.put(Inst.SHOCK, new Inst4Fields());
 		instMap.put(Inst.POISON, new Inst4Fields());
+		instMap.put(Inst.AOE, new Inst2Fields());
 		instMap.put(Inst.BONUS, new Inst4Fields());
 		instMap.put(Inst.CHARGE, new Inst4Fields());
 		instMap.put(Inst.FLAIL, new Inst4Fields());
 		instMap.put(Inst.NOSTR, new Inst4Fields());
 		instMap.put(Inst.MRNEGATES, new Inst4Fields());
 		instMap.put(Inst.MRNEGATESEASILY, new Inst4Fields());
+		instMap.put(Inst.SECONDARYEFFECT, new Inst2Fields());
+		instMap.put(Inst.SECONDARYEFFECTALWAYS, new Inst2Fields());
+		instMap.put(Inst.FLYSPR, new Inst3Fields());
+		instMap.put(Inst.EXPLSPR, new Inst2Fields());
+		
 	}
 	
 	/* (non-Javadoc)

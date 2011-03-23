@@ -118,6 +118,7 @@ import org.larz.dom3.dm.dm.impl.SelectItemByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectItemByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectMonsterByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectMonsterByNameImpl;
+import org.larz.dom3.dm.dm.impl.SelectNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectNationImpl;
 import org.larz.dom3.dm.dm.impl.SelectSiteByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectSiteByNameImpl;
@@ -139,6 +140,7 @@ public class SummaryList extends MasterDetailsBlock {
 	private static final Image ITEM_IMAGE = Activator.getImageDescriptor("icons/item.png").createImage();
 	private static final Image NATION_IMAGE = Activator.getImageDescriptor("icons/nation.png").createImage();
 	private static final Image MONSTER_IMAGE = Activator.getImageDescriptor("icons/monster.png").createImage();
+	private static final Image NAME_IMAGE = Activator.getImageDescriptor("icons/name.png").createImage();
 	
 	enum AddTypes {
 		BY_NAME, BY_ID, NEW
@@ -323,6 +325,9 @@ public class SummaryList extends MasterDetailsBlock {
 			}
 			if (element instanceof SelectNation) {
 				return NATION_IMAGE;
+			}
+			if (element instanceof SelectName) {
+				return NAME_IMAGE;
 			}
 			return null;
 		}
@@ -577,6 +582,7 @@ public class SummaryList extends MasterDetailsBlock {
 		detailsPart.registerPage(SelectSiteByIdImpl.class, new SiteDetailsPage(doc, viewer));
 		detailsPart.registerPage(SelectSiteByNameImpl.class, new SiteDetailsPage(doc, viewer));
 		detailsPart.registerPage(NewSiteImpl.class, new SiteDetailsPage(doc, viewer));
+		detailsPart.registerPage(SelectNameImpl.class, new NameDetailsPage(doc, viewer));
 	}
 	
 	public void addArmor(final AddTypes type, final String name, final int id) 

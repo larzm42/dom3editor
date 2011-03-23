@@ -797,8 +797,14 @@
       <elements xsi:type="xtext:Assignment" feature="coldres" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#coldres"/>
       </elements>
+      <elements xsi:type="xtext:Assignment" feature="coldres" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#coldresist"/>
+      </elements>
       <elements xsi:type="xtext:Assignment" feature="fireres" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#fireres"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="fireres" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#fireresist"/>
       </elements>
       <elements xsi:type="xtext:Assignment" feature="poisonres" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#poisonres"/>
@@ -1017,6 +1023,9 @@
       </elements>
       <elements xsi:type="xtext:Assignment" feature="coldblood" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#coldblood"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="coldblood" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#coldblooded"/>
       </elements>
       <elements xsi:type="xtext:Assignment" feature="immortal" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#immortal"/>
