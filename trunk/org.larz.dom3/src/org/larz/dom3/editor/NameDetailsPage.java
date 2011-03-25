@@ -74,6 +74,7 @@ public class NameDetailsPage implements IDetailsPage {
 	private XtextEditor doc;
 	private TableViewer viewer;
 	private TableViewer tv;
+	private TableEditor editor;
 
 	private Text id;
 	private Button clear;
@@ -177,7 +178,7 @@ public class NameDetailsPage implements IDetailsPage {
 		tv.getTable().setHeaderVisible(false); 
 		
 		TableViewerColumn column = new TableViewerColumn(tv,SWT.NONE);
-		column.getColumn().setWidth(40);
+		column.getColumn().setWidth(200);
 		column.setLabelProvider(new ColumnLabelProvider(){
 			@Override
 			public String getText(Object element) {
@@ -187,7 +188,7 @@ public class NameDetailsPage implements IDetailsPage {
 		
 		tv.setInput(input != null ? getNames(input).toArray() : null);
 
-		final TableEditor editor = new TableEditor(tv.getTable());
+		editor = new TableEditor(tv.getTable());
 		//The editor must have the same size as the cell and must
 		//not be any smaller than 50 pixels.
 		editor.horizontalAlignment = SWT.LEFT;
@@ -494,6 +495,12 @@ public class NameDetailsPage implements IDetailsPage {
 	 * @see org.eclipse.ui.forms.IDetailsPage#inputChanged(org.eclipse.jface.viewers.IStructuredSelection)
 	 */
 	public void selectionChanged(IFormPart part, ISelection selection) {
+		Control oldEditor = editor.getEditor();
+		
+		if (oldEditor != null) {
+			oldEditor.dispose();
+		}
+		tv.cancelEditing();
 		IStructuredSelection ssel = (IStructuredSelection)selection;
 		if (ssel.size()==1) {
 			input = (SelectName)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
