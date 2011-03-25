@@ -61,6 +61,11 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     private IWorkbenchAction saveAction;
     private IWorkbenchAction saveAsAction;
     private IWorkbenchAction saveAllAction;
+    private IWorkbenchAction undoAction;
+    private IWorkbenchAction redoAction;
+    private IWorkbenchAction cutAction;
+    private IWorkbenchAction copyAction;
+    private IWorkbenchAction pasteAction;
     private IAction newAction;
 
     /**
@@ -95,7 +100,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         saveAllAction = ActionFactory.SAVE_ALL.create(window);
         register(saveAction);
         
-        newAction = new Action("New") {
+        newAction = new Action("New Mod...") {
 
 			@Override
 			public void run() {
@@ -161,8 +166,16 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         	
 		};
         	
-        
-        
+        undoAction = ActionFactory.UNDO.create(window);
+        register(undoAction);
+        redoAction = ActionFactory.REDO.create(window);
+        register(redoAction);
+        cutAction = ActionFactory.CUT.create(window);
+        register(cutAction);
+        copyAction = ActionFactory.COPY.create(window);
+        register(copyAction);
+        pasteAction = ActionFactory.PASTE.create(window);
+        register(pasteAction);
     }
 
     /* (non-Javadoc)
@@ -170,9 +183,11 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
      */
     protected void fillMenuBar(IMenuManager menuBar) {
         MenuManager fileMenu = new MenuManager("&File", IWorkbenchActionConstants.M_FILE);
+        MenuManager editMenu = new MenuManager("&Edit", IWorkbenchActionConstants.M_EDIT);
         MenuManager helpMenu = new MenuManager("&Help", IWorkbenchActionConstants.M_HELP);
         
         menuBar.add(fileMenu);
+        menuBar.add(editMenu);
         menuBar.add(helpMenu);
         
         // File
@@ -187,6 +202,14 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         fileMenu.add(new Separator());
         fileMenu.add(exitAction);
         fileMenu.add(newAction);
+        
+        // Edit
+        editMenu.add(undoAction);
+        editMenu.add(redoAction);
+        editMenu.add(new Separator());
+        editMenu.add(cutAction);
+        editMenu.add(copyAction);
+        editMenu.add(pasteAction);
         
         // Help
         helpMenu.add(aboutAction);

@@ -56,7 +56,7 @@ import org.eclipse.xtext.ui.editor.XtextEditor;
 
 public class DmXtextEditor extends XtextEditor
 {
-	protected static final String AUTOLINK_PROJECT_NAME = "_AutoLinked_CFGExternalFiles_"; //$NON-NLS-1$
+	protected static final String AUTOLINK_PROJECT_NAME = "_LinkedModFiles_"; //$NON-NLS-1$
 	protected static final String ENCODING_UTF8 = "utf-8"; //$NON-NLS-1$
 
 	private String path;
@@ -86,14 +86,6 @@ public class DmXtextEditor extends XtextEditor
 	 * (from outside the workspace)
 	 *
 	 */
-	/**
-	 * Copyright (c) 2010, Cloudsmith Inc.
-	 * The code, documentation and other materials contained herein have been
-	 * licensed under the Eclipse Public License - v 1.0 by the copyright holder
-	 * listed above, as the Initial Contributor under such license. The text of
-	 * such license is available at www.eclipse.org.
-	 */
-
 	private void createLink(IProject project, IFile linkFile, java.net.URI uri) throws CoreException {
 		IPath path = linkFile.getFullPath();
 
@@ -214,7 +206,7 @@ public class DmXtextEditor extends XtextEditor
 			}
 			if(!project.isOpen()) {
 				project.open(null);
-				project.setHidden(true);
+				//project.setHidden(true);
 			}
 
 			if(newProject)
@@ -232,9 +224,6 @@ public class DmXtextEditor extends XtextEditor
 			}
 			return linkFile;
 
-			// IPath location = new Path(name);
-			// IFile file = project.getFile(location.lastSegment());
-			// file.createLink(location, IResource.NONE, null);
 		}
 		catch(CoreException e) {
 			throw new WrappedException(e);
