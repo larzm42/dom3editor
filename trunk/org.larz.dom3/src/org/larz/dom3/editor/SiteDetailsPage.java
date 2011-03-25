@@ -72,10 +72,14 @@ public class SiteDetailsPage implements IDetailsPage {
 
 	enum Inst {
 		NAME (Messages.getString("SiteDetailsSection.mod.name")),
+		CLEAR (Messages.getString("SiteDetailsSection.mod.clear")),
 		PATH (Messages.getString("SiteDetailsSection.mod.path"), "0"),
 		LEVEL (Messages.getString("SiteDetailsSection.mod.level"), "0"),
 		RARITY (Messages.getString("SiteDetailsSection.mod.rarity"), "0"),
 		LOC (Messages.getString("SiteDetailsSection.mod.loc"), "0"),
+		GEMS1 (Messages.getString("SiteDetailsSection.mod.gems"), "0", "0"),
+		GEMS2 (Messages.getString("SiteDetailsSection.mod.gems"), "0", "0"),
+		GEMS3 (Messages.getString("SiteDetailsSection.mod.gems"), "0", "0"),
 		HOMEMON1 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
 		HOMEMON2 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
 		HOMEMON3 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
@@ -97,11 +101,7 @@ public class SiteDetailsPage implements IDetailsPage {
 		INCSCALE1 (Messages.getString("SiteDetailsSection.mod.incscale"), "0"),
 		INCSCALE2 (Messages.getString("SiteDetailsSection.mod.incscale"), "0"),
 		DECSCALE1 (Messages.getString("SiteDetailsSection.mod.decscale"), "0"),
-		DECSCALE2 (Messages.getString("SiteDetailsSection.mod.decscale"), "0"),
-		GEMS1 (Messages.getString("SiteDetailsSection.mod.gems"), "0", "0"),
-		GEMS2 (Messages.getString("SiteDetailsSection.mod.gems"), "0", "0"),
-		GEMS3 (Messages.getString("SiteDetailsSection.mod.gems"), "0", "0"),
-		CLEAR (Messages.getString("SiteDetailsSection.mod.clear"));
+		DECSCALE2 (Messages.getString("SiteDetailsSection.mod.decscale"), "0");
 		
 		private String label;
 		private String defaultValue;

@@ -75,15 +75,15 @@ public class ItemDetailsPage implements IDetailsPage {
 	enum Inst {
 		NAME (Messages.getString("ItemDetailsSection.mod.name"), ""),
 		DESCR (Messages.getString("ItemDetailsSection.mod.descr"), ""),
-		ARMOR (Messages.getString("ItemDetailsSection.mod.armor"), ""),
 		CONSTLEVEL (Messages.getString("ItemDetailsSection.mod.constlevel"), "0"),
 		MAINPATH (Messages.getString("ItemDetailsSection.mod.mainpath"), "0"),
 		MAINLEVEL (Messages.getString("ItemDetailsSection.mod.mainlevel"), "0"),
 		SECONDARYPATH (Messages.getString("ItemDetailsSection.mod.secondarypath"), "0"),
-		SECONDARYLEVEL (Messages.getString("ItemDetailsSection.mod.secondarylevel"), "0"),
+		SECONDARYLEVEL (Messages.getString("ItemDetailsSection.mod.secondarylevel"), "0"),		
 		COPYSPR (Messages.getString("ItemDetailsSection.mod.copyspr"), "0"),
 		TYPE (Messages.getString("ItemDetailsSection.mod.type"), "0"),
-		WEAPON (Messages.getString("ItemDetailsSection.mod.weapon"), "0");
+		WEAPON (Messages.getString("ItemDetailsSection.mod.weapon"), "0"),
+		ARMOR (Messages.getString("ItemDetailsSection.mod.armor"), "");
 		
 		private String label;
 		private String defaultValue;

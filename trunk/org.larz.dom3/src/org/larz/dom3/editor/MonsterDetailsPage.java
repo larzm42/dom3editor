@@ -858,15 +858,19 @@ public class MonsterDetailsPage implements IDetailsPage {
 			String sprite2 = null;
 			boolean fromZip1 = false;
 			boolean fromZip2 = false;
+			final Format format = new DecimalFormat("0000");
 			if (input instanceof SelectMonsterByName || input instanceof SelectMonsterById) {
 				String str = getSelectMonstername(input);
 				name.setText(str!= null?str:"");
 				name.setEnabled(false);
 
-				final Format format = new DecimalFormat("0000");
 				int id = getSelectMonsterid(input);
 				if (getInst1(Inst.SPR1, input) != null) {
 					sprite1 = getInst1(Inst.SPR1, input);
+				} else if (getInst2(Inst.COPYSPR, input) != null) {
+					Integer copyId = getInst2(Inst.COPYSPR, input);
+					sprite1 = format.format(copyId) + "_1.tga";
+					fromZip1 = true;
 				} else {
 					sprite1 = format.format(id) + "_1.tga";
 					fromZip1 = true;
@@ -874,6 +878,10 @@ public class MonsterDetailsPage implements IDetailsPage {
 
 				if (getInst1(Inst.SPR2, input) != null) {
 					sprite2 = getInst1(Inst.SPR2, input);
+				} else if (getInst2(Inst.COPYSPR, input) != null) {
+					Integer copyId = getInst2(Inst.COPYSPR, input);
+					sprite2 = format.format(copyId) + "_2.tga";
+					fromZip2 = true;
 				} else {
 					sprite2 = format.format(id) + "_2.tga";
 					fromZip2 = true;
@@ -885,10 +893,18 @@ public class MonsterDetailsPage implements IDetailsPage {
 				
 				if (getInst1(Inst.SPR1, input) != null) {
 					sprite1 = getInst1(Inst.SPR1, input);
+				} else if (getInst1(Inst.COPYSPR, input) != null) {
+					String strId = getInst1(Inst.COPYSPR, input);
+					sprite1 = format.format(Integer.parseInt(strId)) + "_1.tga";
+					fromZip1 = true;
 				}
 
 				if (getInst1(Inst.SPR2, input) != null) {
 					sprite2 = getInst1(Inst.SPR2, input);
+				} else if (getInst1(Inst.COPYSPR, input) != null) {
+					String strId = getInst1(Inst.COPYSPR, input);
+					sprite2 = format.format(Integer.parseInt(strId)) + "_2.tga";
+					fromZip2 = true;
 				}
 			}
 			if (sprite1 != null) {
