@@ -89,67 +89,40 @@ public class NationDetailsPage implements IDetailsPage {
 
 	enum Inst {
 		NAME (Messages.getString("NationDetailsSection.mod.name"), ""),
-		EPITHET (Messages.getString("NationDetailsSection.mod.epithet"), ""),
 		DESCR (Messages.getString("NationDetailsSection.mod.descr"), ""),
 		SUMMARY (Messages.getString("NationDetailsSection.mod.summary"), ""),
 		BRIEF (Messages.getString("NationDetailsSection.mod.brief"), ""),
-		FLAG (Messages.getString("NationDetailsSection.mod.flag"), ""),
-		MAPBACKGROUND (Messages.getString("NationDetailsSection.mod.mapbackground"), ""),
-		STARTSITE1 (Messages.getString("NationDetailsSection.mod.startsite"), ""),
-		STARTSITE2 (Messages.getString("NationDetailsSection.mod.startsite"), ""),
-		STARTSITE3 (Messages.getString("NationDetailsSection.mod.startsite"), ""),
-		STARTSITE4 (Messages.getString("NationDetailsSection.mod.startsite"), ""),
+		CLEARNATION (Messages.getString("NationDetailsSection.mod.clearnation")),
+		EPITHET (Messages.getString("NationDetailsSection.mod.epithet"), ""),
 		ERA (Messages.getString("NationDetailsSection.mod.era"), ""),
+		FLAG (Messages.getString("NationDetailsSection.mod.flag"), ""),
 		LABCOST (Messages.getString("NationDetailsSection.mod.labcost"), ""),
 		TEMPLECOST (Messages.getString("NationDetailsSection.mod.templecost"), ""),
 		TEMPLEPIC (Messages.getString("NationDetailsSection.mod.templepic"), ""),
-		STARTUNITNBRS1 (Messages.getString("NationDetailsSection.mod.startunitnbrs1"), ""),
-		STARTUNITNBRS2 (Messages.getString("NationDetailsSection.mod.startunitnbrs2"), ""),
-		HERO1 (Messages.getString("NationDetailsSection.mod.hero1"), ""),
-		HERO2 (Messages.getString("NationDetailsSection.mod.hero2"), ""),
-		HERO3 (Messages.getString("NationDetailsSection.mod.hero3"), ""),
-		HERO4 (Messages.getString("NationDetailsSection.mod.hero4"), ""),
-		HERO5 (Messages.getString("NationDetailsSection.mod.hero5"), ""),
-		HERO6 (Messages.getString("NationDetailsSection.mod.hero6"), ""),
-		MULTIHERO1 (Messages.getString("NationDetailsSection.mod.multihero1"), ""),
-		MULTIHERO2 (Messages.getString("NationDetailsSection.mod.multihero2"), ""),
-		DEFMULT1 (Messages.getString("NationDetailsSection.mod.defmult1"), ""),
-		DEFMULT1B (Messages.getString("NationDetailsSection.mod.defmult1b"), ""),
-		DEFMULT2 (Messages.getString("NationDetailsSection.mod.defmult2"), ""),
-		DEFMULT2B (Messages.getString("NationDetailsSection.mod.defmult2b"), ""),
-		IDEALCOLD (Messages.getString("NationDetailsSection.mod.idealcold"), ""),
-		CASTLEPROD (Messages.getString("NationDetailsSection.mod.castleprod"), ""),
-		DOMKILL (Messages.getString("NationDetailsSection.mod.domkill"), ""),
-		DOMUNREST (Messages.getString("NationDetailsSection.mod.domunrest"), ""),
-		STARTFORT (Messages.getString("NationDetailsSection.mod.startfort"), ""),
-		DEFAULTFORT (Messages.getString("NationDetailsSection.mod.defaultfort"), ""),
-		FARMFORT (Messages.getString("NationDetailsSection.mod.farmfort"), ""),
-		MOUNTAINFORT (Messages.getString("NationDetailsSection.mod.mountainfort"), ""),
-		FORESTFORT (Messages.getString("NationDetailsSection.mod.forestfort"), ""),
-		SWAMPFORT (Messages.getString("NationDetailsSection.mod.swampfort"), ""),
-		UWFORT (Messages.getString("NationDetailsSection.mod.uwfort"), ""),
-		DEEPFORT (Messages.getString("NationDetailsSection.mod.deepfort"), ""),
-		CLEARNATION (Messages.getString("NationDetailsSection.mod.clearnation")),
+		MAPBACKGROUND (Messages.getString("NationDetailsSection.mod.mapbackground"), ""),
 		CLEARREC (Messages.getString("NationDetailsSection.mod.clearrec")),
-		CLEARSITES (Messages.getString("NationDetailsSection.mod.clearsites")),
-		UWNATION (Messages.getString("NationDetailsSection.mod.uwnation")),
-		BLOODNATION (Messages.getString("NationDetailsSection.mod.bloodnation")),
-		NOPREACH (Messages.getString("NationDetailsSection.mod.nopreach")),
-		DYINGDOM (Messages.getString("NationDetailsSection.mod.dyingdom")),
-		SACRIFICEDOM (Messages.getString("NationDetailsSection.mod.sacrificedom")),
-		NODEATHSUPPLY (Messages.getString("NationDetailsSection.mod.nodeathsupply")),
-		AUTOUNDEAD (Messages.getString("NationDetailsSection.mod.autoundead")),
-		ZOMBIEREANIM (Messages.getString("NationDetailsSection.mod.zombiereanim")),
-		HORSEREANIM (Messages.getString("NationDetailsSection.mod.horsereanim")),
-		WIGHTREANIM (Messages.getString("NationDetailsSection.mod.wightreanim")),
-		MANIKINREANIM (Messages.getString("NationDetailsSection.mod.manikinreanim")),
-		TOMBWYRMREANIM (Messages.getString("NationDetailsSection.mod.tombwyrmreanim")),
 		STARTCOM (Messages.getString("NationDetailsSection.mod.startcom"), ""),
 		STARTSCOUT (Messages.getString("NationDetailsSection.mod.startscout"), ""),
 		STARTUNITTYPE1 (Messages.getString("NationDetailsSection.mod.startunittype1"), ""),
+		STARTUNITNBRS1 (Messages.getString("NationDetailsSection.mod.startunitnbrs1"), ""),
 		STARTUNITTYPE2 (Messages.getString("NationDetailsSection.mod.startunittype2"), ""),
-		ADDRECUNIT (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
-		ADDRECCOM (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		STARTUNITNBRS2 (Messages.getString("NationDetailsSection.mod.startunitnbrs2"), ""),
+		ADDRECUNIT1 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECUNIT2 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECUNIT3 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECUNIT4 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECUNIT5 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECUNIT6 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECUNIT7 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECUNIT8 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECCOM1 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECCOM2 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECCOM3 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECCOM4 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECCOM5 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECCOM6 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECCOM7 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECCOM8 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
 		UWUNIT1 (Messages.getString("NationDetailsSection.mod.uwunit1"), ""),
 		UWUNIT2 (Messages.getString("NationDetailsSection.mod.uwunit2"), ""),
 		UWUNIT3 (Messages.getString("NationDetailsSection.mod.uwunit3"), ""),
@@ -160,12 +133,53 @@ public class NationDetailsPage implements IDetailsPage {
 		UWCOM3 (Messages.getString("NationDetailsSection.mod.uwcom3"), ""),
 		UWCOM4 (Messages.getString("NationDetailsSection.mod.uwcom4"), ""),
 		UWCOM5 (Messages.getString("NationDetailsSection.mod.uwcom5"), ""),
+		HERO1 (Messages.getString("NationDetailsSection.mod.hero1"), ""),
+		HERO2 (Messages.getString("NationDetailsSection.mod.hero2"), ""),
+		HERO3 (Messages.getString("NationDetailsSection.mod.hero3"), ""),
+		HERO4 (Messages.getString("NationDetailsSection.mod.hero4"), ""),
+		HERO5 (Messages.getString("NationDetailsSection.mod.hero5"), ""),
+		HERO6 (Messages.getString("NationDetailsSection.mod.hero6"), ""),
+		MULTIHERO1 (Messages.getString("NationDetailsSection.mod.multihero1"), ""),
+		MULTIHERO2 (Messages.getString("NationDetailsSection.mod.multihero2"), ""),
 		DEFCOM1 (Messages.getString("NationDetailsSection.mod.defcom1"), ""),
 		DEFCOM2 (Messages.getString("NationDetailsSection.mod.defcom2"), ""),
 		DEFUNIT1 (Messages.getString("NationDetailsSection.mod.defunit1"), ""),
 		DEFUNIT1B (Messages.getString("NationDetailsSection.mod.defunit1b"), ""),
 		DEFUNIT2 (Messages.getString("NationDetailsSection.mod.defunit2"), ""),
 		DEFUNIT2B (Messages.getString("NationDetailsSection.mod.defunit2b"), ""),
+		DEFMULT1 (Messages.getString("NationDetailsSection.mod.defmult1"), ""),
+		DEFMULT1B (Messages.getString("NationDetailsSection.mod.defmult1b"), ""),
+		DEFMULT2 (Messages.getString("NationDetailsSection.mod.defmult2"), ""),
+		DEFMULT2B (Messages.getString("NationDetailsSection.mod.defmult2b"), ""),
+		CLEARSITES (Messages.getString("NationDetailsSection.mod.clearsites")),
+		STARTSITE1 (Messages.getString("NationDetailsSection.mod.startsite"), ""),
+		STARTSITE2 (Messages.getString("NationDetailsSection.mod.startsite"), ""),
+		STARTSITE3 (Messages.getString("NationDetailsSection.mod.startsite"), ""),
+		STARTSITE4 (Messages.getString("NationDetailsSection.mod.startsite"), ""),
+		UWNATION (Messages.getString("NationDetailsSection.mod.uwnation")),
+		BLOODNATION (Messages.getString("NationDetailsSection.mod.bloodnation")),
+		NOPREACH (Messages.getString("NationDetailsSection.mod.nopreach")),
+		DYINGDOM (Messages.getString("NationDetailsSection.mod.dyingdom")),
+		SACRIFICEDOM (Messages.getString("NationDetailsSection.mod.sacrificedom")),
+		NODEATHSUPPLY (Messages.getString("NationDetailsSection.mod.nodeathsupply")),
+		IDEALCOLD (Messages.getString("NationDetailsSection.mod.idealcold"), ""),
+		CASTLEPROD (Messages.getString("NationDetailsSection.mod.castleprod"), ""),
+		DOMKILL (Messages.getString("NationDetailsSection.mod.domkill"), ""),
+		DOMUNREST (Messages.getString("NationDetailsSection.mod.domunrest"), ""),
+		AUTOUNDEAD (Messages.getString("NationDetailsSection.mod.autoundead")),
+		ZOMBIEREANIM (Messages.getString("NationDetailsSection.mod.zombiereanim")),
+		HORSEREANIM (Messages.getString("NationDetailsSection.mod.horsereanim")),
+		WIGHTREANIM (Messages.getString("NationDetailsSection.mod.wightreanim")),
+		MANIKINREANIM (Messages.getString("NationDetailsSection.mod.manikinreanim")),
+		TOMBWYRMREANIM (Messages.getString("NationDetailsSection.mod.tombwyrmreanim")),
+		STARTFORT (Messages.getString("NationDetailsSection.mod.startfort"), ""),
+		DEFAULTFORT (Messages.getString("NationDetailsSection.mod.defaultfort"), ""),
+		FARMFORT (Messages.getString("NationDetailsSection.mod.farmfort"), ""),
+		MOUNTAINFORT (Messages.getString("NationDetailsSection.mod.mountainfort"), ""),
+		FORESTFORT (Messages.getString("NationDetailsSection.mod.forestfort"), ""),
+		SWAMPFORT (Messages.getString("NationDetailsSection.mod.swampfort"), ""),
+		UWFORT (Messages.getString("NationDetailsSection.mod.uwfort"), ""),
+		DEEPFORT (Messages.getString("NationDetailsSection.mod.deepfort"), ""),
 		COLOR (Messages.getString("NationDetailsSection.mod.color"), "0.0", "0.0", "0.0");
 		
 		private String label;
@@ -287,8 +301,22 @@ public class NationDetailsPage implements IDetailsPage {
 		instMap.put(Inst.STARTSCOUT, new Inst4Fields());
 		instMap.put(Inst.STARTUNITTYPE1, new Inst4Fields());
 		instMap.put(Inst.STARTUNITTYPE2, new Inst4Fields());
-		instMap.put(Inst.ADDRECUNIT, new Inst4Fields());
-		instMap.put(Inst.ADDRECCOM, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT1, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT2, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT3, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT4, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT5, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT6, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT7, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT8, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM1, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM2, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM3, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM4, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM5, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM6, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM7, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM8, new Inst4Fields());
 		instMap.put(Inst.UWUNIT1, new Inst4Fields());
 		instMap.put(Inst.UWUNIT2, new Inst4Fields());
 		instMap.put(Inst.UWUNIT3, new Inst4Fields());
@@ -1400,6 +1428,8 @@ public class NationDetailsPage implements IDetailsPage {
 	}
 	
 	private Object getInst4(Inst inst4, SelectNation nation) {
+		int addreccom = 0;
+		int addrecunit = 0;
 		EList<NationMods> list = nation.getMods();
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst4) {
@@ -1444,24 +1474,212 @@ public class NationDetailsPage implements IDetailsPage {
 						return intVal;
 					}
 					break;
-				case ADDRECUNIT:
+				case ADDRECUNIT1:
 					if (((NationInst4)mod).isAddrecunit()){
-						String strVal = ((NationInst4)mod).getValue1();
-						Integer intVal = ((NationInst4)mod).getValue2();
-						if (strVal != null) {
-							return strVal;
+						addrecunit++;
+						if (addrecunit == 1) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
 						}
-						return intVal;
 					}
 					break;
-				case ADDRECCOM:
-					if (((NationInst4)mod).isAddreccom()){
-						String strVal = ((NationInst4)mod).getValue1();
-						Integer intVal = ((NationInst4)mod).getValue2();
-						if (strVal != null) {
-							return strVal;
+				case ADDRECUNIT2:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 2) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
 						}
-						return intVal;
+					}
+					break;
+				case ADDRECUNIT3:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 3) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECUNIT4:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 4) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECUNIT5:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 5) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECUNIT6:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 6) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECUNIT7:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 7) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECUNIT8:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 8) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM1:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 1) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM2:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 2) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM3:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 3) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM4:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 4) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM5:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 5) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM6:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 6) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM7:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 7) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM8:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 8) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
 					}
 					break;
 				case UWUNIT1:
@@ -1922,6 +2140,8 @@ public class NationDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
+				int addreccom = 0;
+				int addrecunit = 0;
 				SelectNation nationToEdit = input;
 				EList<NationMods> mods = nationToEdit.getMods();
 				for (NationMods mod : mods) {
@@ -1970,21 +2190,195 @@ public class NationDetailsPage implements IDetailsPage {
 								}
 							}
 							break;
-						case ADDRECUNIT:
+						case ADDRECUNIT1:
 							if (((NationInst4)mod).isAddrecunit()){
-								if (newValue != null) {
-									((NationInst4)mod).setValue2(Integer.parseInt(newName));
-								} else {
-									((NationInst4)mod).setValue1(newName);
+								addrecunit++;
+								if (addrecunit == 1) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
 								}
 							}
 							break;
-						case ADDRECCOM:
+						case ADDRECUNIT2:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 2) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECUNIT3:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 3) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECUNIT4:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 4) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECUNIT5:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 5) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECUNIT6:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 6) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECUNIT7:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 7) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECUNIT8:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 8) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECCOM1:
 							if (((NationInst4)mod).isAddreccom()){
-								if (newValue != null) {
-									((NationInst4)mod).setValue2(Integer.parseInt(newName));
-								} else {
-									((NationInst4)mod).setValue1(newName);
+								addreccom++;
+								if (addreccom == 1) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECCOM2:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 2) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECCOM3:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 3) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECCOM4:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 4) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECCOM5:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 5) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECCOM6:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 6) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECCOM7:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 7) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECCOM8:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 8) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
 								}
 							}
 							break;
@@ -2463,10 +2857,52 @@ public class NationDetailsPage implements IDetailsPage {
 				case STARTUNITTYPE2:
 					type.setStartunittype2(true);
 					break;
-				case ADDRECUNIT:
+				case ADDRECUNIT1:
 					type.setAddrecunit(true);
 					break;
-				case ADDRECCOM:
+				case ADDRECUNIT2:
+					type.setAddrecunit(true);
+					break;
+				case ADDRECUNIT3:
+					type.setAddrecunit(true);
+					break;
+				case ADDRECUNIT4:
+					type.setAddrecunit(true);
+					break;
+				case ADDRECUNIT5:
+					type.setAddrecunit(true);
+					break;
+				case ADDRECUNIT6:
+					type.setAddrecunit(true);
+					break;
+				case ADDRECUNIT7:
+					type.setAddrecunit(true);
+					break;
+				case ADDRECUNIT8:
+					type.setAddrecunit(true);
+					break;
+				case ADDRECCOM1:
+					type.setAddreccom(true);
+					break;
+				case ADDRECCOM2:
+					type.setAddreccom(true);
+					break;
+				case ADDRECCOM3:
+					type.setAddreccom(true);
+					break;
+				case ADDRECCOM4:
+					type.setAddreccom(true);
+					break;
+				case ADDRECCOM5:
+					type.setAddreccom(true);
+					break;
+				case ADDRECCOM6:
+					type.setAddreccom(true);
+					break;
+				case ADDRECCOM7:
+					type.setAddreccom(true);
+					break;
+				case ADDRECCOM8:
 					type.setAddreccom(true);
 					break;
 				case UWUNIT1:
@@ -2585,6 +3021,8 @@ public class NationDetailsPage implements IDetailsPage {
 				SelectNation nationToEdit = input;
 				NationMods modToRemove = null;
 				int siteCount = 0;
+				int addreccom = 0;
+				int addrecunit = 0;
 				EList<NationMods> mods = nationToEdit.getMods();
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst1) {
@@ -2908,14 +3346,132 @@ public class NationDetailsPage implements IDetailsPage {
 								modToRemove = mod;
 							}
 							break;
-						case ADDRECUNIT:
+						case ADDRECUNIT1:
 							if (((NationInst4)mod).isAddrecunit()){
-								modToRemove = mod;
+								addrecunit++;
+								if (addrecunit == 1) {
+									modToRemove = mod;
+								}
 							}
 							break;
-						case ADDRECCOM:
+						case ADDRECUNIT2:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 2) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECUNIT3:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 3) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECUNIT4:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 4) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECUNIT5:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 5) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECUNIT6:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 6) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECUNIT7:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 7) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECUNIT8:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 8) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECCOM1:
 							if (((NationInst4)mod).isAddreccom()){
-								modToRemove = mod;
+								addreccom++;
+								if (addreccom == 1) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECCOM2:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 2) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECCOM3:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 3) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECCOM4:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 4) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECCOM5:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 5) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECCOM6:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 6) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECCOM7:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 7) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case ADDRECCOM8:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 8) {
+									modToRemove = mod;
+								}
 							}
 							break;
 						case UWUNIT1:

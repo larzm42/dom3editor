@@ -76,25 +76,25 @@ public class SpellDetailsPage implements IDetailsPage {
 	enum Inst {
 		NAME (Messages.getString("SpellDetailsSection.mod.name"), ""),
 		DESCR (Messages.getString("SpellDetailsSection.mod.descr"), ""),
+		CLEAR (Messages.getString("SpellDetailsSection.mod.clear"), ""),
+		COPYSPELL (Messages.getString("SpellDetailsSection.mod.copyspell"), ""),
 		SCHOOL (Messages.getString("SpellDetailsSection.mod.school"), "0"),
 		RESEARCHLEVEL (Messages.getString("SpellDetailsSection.mod.researchlevel"), "0"),
+		PATH (Messages.getString("SpellDetailsSection.mod.path"), "0", "0"),
+		PATHLEVEL (Messages.getString("SpellDetailsSection.mod.pathlevel"), "0", "0"),
 		AOE (Messages.getString("SpellDetailsSection.mod.aoe"), "0"),
 		DAMAGE (Messages.getString("SpellDetailsSection.mod.damage"), "0"),
 		EFFECT (Messages.getString("SpellDetailsSection.mod.effect"), "0"),
 		FATIGUECOST (Messages.getString("SpellDetailsSection.mod.fatiguecost"), "0"),
 		FLIGHTSPR (Messages.getString("SpellDetailsSection.mod.flightspr"), "0"),
 		EXPLSPR (Messages.getString("SpellDetailsSection.mod.explspr"), "0"),
+		NEXTSPELL (Messages.getString("SpellDetailsSection.mod.nextspell"), ""),
 		NREFF (Messages.getString("SpellDetailsSection.mod.nreff"), "0"),
 		RANGE (Messages.getString("SpellDetailsSection.mod.range"), "0"),
 		PRECISION (Messages.getString("SpellDetailsSection.mod.precision"), "0"),
 		SOUND (Messages.getString("SpellDetailsSection.mod.sound"), "0"),
 		SPEC (Messages.getString("SpellDetailsSection.mod.spec"), "0"),
-		RESTRICTED (Messages.getString("SpellDetailsSection.mod.restricted"), "0"),
-		PATH (Messages.getString("SpellDetailsSection.mod.path"), "0", "0"),
-		PATHLEVEL (Messages.getString("SpellDetailsSection.mod.pathlevel"), "0", "0"),
-		CLEAR (Messages.getString("SpellDetailsSection.mod.clear"), ""),
-		COPYSPELL (Messages.getString("SpellDetailsSection.mod.copyspell"), ""),
-		NEXTSPELL (Messages.getString("SpellDetailsSection.mod.nextspell"), "");
+		RESTRICTED (Messages.getString("SpellDetailsSection.mod.restricted"), "0");
 		
 		private String label;
 		private String defaultValue;
