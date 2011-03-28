@@ -85,6 +85,12 @@ public class AddDialog extends Dialog {
 	}
 	
 	@Override
+	protected void configureShell(Shell shell) {
+		super.configureShell(shell);
+		shell.setText("Add to Mod");
+	}
+
+	@Override
 	protected Point getInitialSize() {
 		return new Point(500, 300);
 	}

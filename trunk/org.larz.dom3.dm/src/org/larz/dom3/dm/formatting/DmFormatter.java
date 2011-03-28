@@ -36,6 +36,10 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getML_COMMENTRule());
 		
 		// General rules
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getDescriptionKeyword_0_1_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getIconKeyword_0_2_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getVersionKeyword_0_3_0());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getDomversionKeyword_0_4_0());
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getPoppergoldKeyword_0_5_0());
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getResourcemultKeyword_0_6_0());
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getDom3ModAccess().getSupplymultKeyword_0_7_0());

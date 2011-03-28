@@ -32,7 +32,9 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.editor.FormEditor;
@@ -61,6 +63,7 @@ public class MasterFormPage extends FormPage {
 	
 	enum General {
 		MODNAME(Messages.getString("ScrolledPropertiesBlock.modname")), 
+		DESC(Messages.getString("ScrolledPropertiesBlock.description")), 
 		ICON(Messages.getString("ScrolledPropertiesBlock.icon")), 
 		VERSION(Messages.getString("ScrolledPropertiesBlock.version")), 
 		DOMVERSION(Messages.getString("ScrolledPropertiesBlock.domversion"));
@@ -128,7 +131,7 @@ public class MasterFormPage extends FormPage {
 		Composite header1 = toolkit.createComposite(expandable);
 		header1.setLayout(new GridLayout(2, true));
 
-		Composite header = toolkit.createComposite(header1);
+		final Composite header = toolkit.createComposite(header1);
 		GridLayout layout = new GridLayout(2, false);
 		layout.marginWidth = 0;
 		layout.marginHeight = 0;
@@ -157,26 +160,39 @@ public class MasterFormPage extends FormPage {
 			GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
 			data.widthHint = 400;
 			modname.setLayoutData(data);
+			if (general.equals(General.DESC)) {
+				modname.addListener(SWT.Modify, new Listener() {			
+					@Override
+					public void handleEvent(Event event) {
+						int currentHeight = modname.getSize().y;
+						int preferredHeight = modname.computeSize(400, SWT.DEFAULT).y;
+						if (currentHeight != preferredHeight) {
+							GridData data = (GridData)modname.getLayoutData();
+							data.heightHint = preferredHeight;
+							header.pack();
+						}
+					}
+				});
+
+			}
 		}
 		
-		String iconPath = getGeneral(General.ICON, doc);
-		
-		String path = ((DmXtextEditor)doc).getPath();
-		path = path.substring(0, path.lastIndexOf('/')+1);
-		if (iconPath.startsWith("./")) {
-			iconPath = iconPath.substring(2);
-		}
-		path += iconPath;
-		
-		final File file = new File(path);
-		
-		try {
-			ImageLoader loader = new ImageLoader() {
-				@Override
-				public InputStream getStream() throws IOException {
-					return new FileInputStream(file);
+		final String iconPath = getGeneral(General.ICON, doc);
+		ImageLoader loader = new ImageLoader() {
+			@Override
+			public InputStream getStream() throws IOException {
+				String path = ((DmXtextEditor)doc).getPath();
+				path = path.substring(0, path.lastIndexOf('/')+1);
+				if (iconPath.startsWith("./")) {
+					path += iconPath.substring(2);
+				} else {
+					path += iconPath;
 				}
-			};
+
+				return new FileInputStream(new File(path));
+			}
+		};
+		try {
 			Image image = new Image(null, ImageConverter.convertToSWT(loader.loadImage()));
 			Label label = toolkit.createLabel(header1, "");
 			
@@ -184,7 +200,7 @@ public class MasterFormPage extends FormPage {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		Composite general2Comp = toolkit.createComposite(header1);
 		layout = new GridLayout(12, false);
 		layout.marginWidth = 0;
@@ -232,9 +248,8 @@ public class MasterFormPage extends FormPage {
 						modname.setText("");
 					}
 				}
-
 			});
-
+			check.setSelection(getGeneral2(general2, doc) != null);
 		}
 
 		block.createContent(managedForm);
@@ -249,6 +264,8 @@ public class MasterFormPage extends FormPage {
 				switch (general) {
 				case MODNAME:
 					return dom3Mod.getModname();
+				case DESC:
+					return dom3Mod.getDesc();
 				case ICON:
 					return dom3Mod.getIcon();
 				case VERSION:
@@ -320,6 +337,9 @@ public class MasterFormPage extends FormPage {
 				switch (general) {
 				case MODNAME:
 					dom3Mod.setModname(newName);
+					break;
+				case DESC:
+					dom3Mod.setDesc(newName);
 					break;
 				case ICON:
 					dom3Mod.setIcon(newName);

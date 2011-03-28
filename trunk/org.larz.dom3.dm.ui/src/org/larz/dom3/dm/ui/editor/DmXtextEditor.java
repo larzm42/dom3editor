@@ -180,6 +180,8 @@ public class DmXtextEditor extends XtextEditor
 				return;
 			}
 			return;
+		} else if (input instanceof IFileEditorInput) {
+			path = ((IFileEditorInput)input).getFile().getLocation().toString();
 		}
 		super.init(site, input);
 	}

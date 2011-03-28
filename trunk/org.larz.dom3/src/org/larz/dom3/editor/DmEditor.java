@@ -99,13 +99,6 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 			return;
 		}
 
-		getSite().getShell().getDisplay().asyncExec
-		(new Runnable() {
-			public void run() {
-				setActivePage(0);
-			}
-		});
-
 		this.addPageChangedListener(new IPageChangedListener() {
 
 			@Override

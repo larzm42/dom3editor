@@ -59,6 +59,12 @@ public class SearchDialog extends Dialog {
 	}
 
 	@Override
+	protected void configureShell(Shell shell) {
+		super.configureShell(shell);
+		shell.setText("Search");
+	}
+
+	@Override
 	protected Point getInitialSize() {
 		return new Point(300, 300);
 	}
