@@ -815,9 +815,6 @@
       <elements xsi:type="xtext:Assignment" feature="darkvision" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#darkvision"/>
       </elements>
-      <elements xsi:type="xtext:Assignment" feature="stealthy" operator="?=">
-        <terminal xsi:type="xtext:Keyword" value="#stealthy"/>
-      </elements>
       <elements xsi:type="xtext:Assignment" feature="seduce" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#seduce"/>
       </elements>
@@ -1239,6 +1236,9 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterInst6"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="stealthy" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#stealthy"/>
+      </elements>
       <elements xsi:type="xtext:Assignment" feature="heat" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#heat"/>
       </elements>

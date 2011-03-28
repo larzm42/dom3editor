@@ -23,7 +23,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_SL_COMMENT", "RULE_ML_COMMENT", "RULE_WS", "'#modname'", "'#description'", "'#icon'", "'#version'", "'#domversion'", "'#poppergold'", "'#resourcemult'", "'#supplymult'", "'#unresthalfinc'", "'#unresthalfres'", "'#eventisrare'", "'#turmoilincome'", "'#turmoilevents'", "'#deathincome'", "'#deathsupply'", "'#deathdeath'", "'#slothincome'", "'#slothresources'", "'#coldincome'", "'#coldsupply'", "'#misfortune'", "'#luckevents'", "'#researchscale'", "'.'", "'#selectarmor'", "'#end'", "'#newarmor'", "'#selectweapon'", "'#newweapon'", "'#selectmonster'", "'#newmonster'", "'#selectspell'", "'#newspell'", "'#selectitem'", "'#newitem'", "'#selectnametype'", "'#selectsite'", "'#newsite'", "'#selectnation'", "'#indepflag'", "'#name'", "'#type'", "'#prot'", "'#def'", "'#enc'", "'#rcost'", "'#dmg'", "'#nratt'", "'#att'", "'#len'", "'#range'", "'#ammo'", "'#sound'", "'#aoe'", "'#secondaryeffect'", "'#secondaryeffectalways'", "'#explspr'", "'#flyspr'", "'#twohanded'", "'#armorpiercing'", "'#armornegating'", "'#magic'", "'#dt_normal'", "'#dt_stun'", "'#dt_paralyze'", "'#dt_poison'", "'#dt_cap'", "'#dt_demon'", "'#dt_demononly'", "'#dt_holy'", "'#dt_magic'", "'#dt_small'", "'#dt_large'", "'#dt_constructonly'", "'#dt_raise'", "'#mind'", "'#cold'", "'#fire'", "'#shock'", "'#poison'", "'#bonus'", "'#charge'", "'#flail'", "'#nostr'", "'#mrnegates'", "'#mrnegateseasily'", "'#spr1'", "'#spr2'", "'#descr'", "'#armor'", "'#speciallook'", "'#ap'", "'#mapmove'", "'#hp'", "'#size'", "'#ressize'", "'#str'", "'#prec'", "'#mr'", "'#mor'", "'#gcost'", "'#pathcost'", "'#startdom'", "'#eyes'", "'#copystats'", "'#copyspr'", "'#restrictedgod'", "'#shatteredsoul'", "'#coldres'", "'#coldresist'", "'#fireres'", "'#fireresist'", "'#poisonres'", "'#shockres'", "'#darkvision'", "'#stealthy'", "'#seduce'", "'#succubus'", "'#beckon'", "'#startage'", "'#maxage'", "'#older'", "'#healer'", "'#startaff'", "'#supplybonus'", "'#uwdamage'", "'#coldpower'", "'#firepower'", "'#stormpower'", "'#darkpower'", "'#springpower'", "'#summerpower'", "'#fallpower'", "'#winterpower'", "'#ambidextrous'", "'#banefireshield'", "'#berserk'", "'#standard'", "'#animalawe'", "'#awe'", "'#fear'", "'#regeneration'", "'#reinvigoration'", "'#fireshield'", "'#iceprot'", "'#poisoncloud'", "'#diseasecloud'", "'#bloodvengeance'", "'#castledef'", "'#siegebonus'", "'#patrolbonus'", "'#pillagebonus'", "'#researchbonus'", "'#forgebonus'", "'#douse'", "'#nobadevents'", "'#incunrest'", "'#spreaddom'", "'#leper'", "'#popkill'", "'#heretic'", "'#itemslots'", "'#nametype'", "'#magicskill'", "'#custommagic'", "'#magicboost'", "'#gemprod'", "'#clear'", "'#clearmagic'", "'#clearspec'", "'#female'", "'#mounted'", "'#holy'", "'#animal'", "'#undead'", "'#demon'", "'#magicbeing'", "'#stonebeing'", "'#inanimate'", "'#coldblood'", "'#coldblooded'", "'#immortal'", "'#blind'", "'#unique'", "'#immobile'", "'#aquatic'", "'#amphibian'", "'#pooramphibian'", "'#flying'", "'#stormimmune'", "'#sailing'", "'#forestsurvival'", "'#mountainsurvival'", "'#swampsurvival'", "'#wastesurvival'", "'#illusion'", "'#spy'", "'#assassin'", "'#heal'", "'#noheal'", "'#neednoteat'", "'#ethereal'", "'#trample'", "'#entangle'", "'#eyeloss'", "'#horrormark'", "'#poisonarmor'", "'#inquisitor'", "'#noitem'", "'#noleader'", "'#poorleader'", "'#okleader'", "'#goodleader'", "'#expertleader'", "'#superiorleader'", "'#nomagicleader'", "'#poormagicleader'", "'#okmagicleader'", "'#goodmagicleader'", "'#expertmagicleader'", "'#superiormagicleader'", "'#noundeadleader'", "'#poorundeadleader'", "'#okundeadleader'", "'#goodundeadleader'", "'#expertundeadleader'", "'#superiorundeadleader'", "'#weapon'", "'#onebattlespell'", "'#firstshape'", "'#secondshape'", "'#secondtmpshape'", "'#shapechange'", "'#landshape'", "'#watershape'", "'#forestshape'", "'#plainshape'", "'#domsummon'", "'#domsummon2'", "'#domsummon20'", "'#makemonster1'", "'#makemonster2'", "'#makemonster3'", "'#makemonster4'", "'#makemonster5'", "'#summon1'", "'#summon5'", "'#heat'", "'#school'", "'#researchlevel'", "'#damage'", "'#effect'", "'#fatiguecost'", "'#flightspr'", "'#nreff'", "'#precision'", "'#spec'", "'#restricted'", "'#path'", "'#pathlevel'", "'#copyspell'", "'#nextspell'", "'#constlevel'", "'#mainpath'", "'#mainlevel'", "'#secondarypath'", "'#secondarylevel'", "'#addname'", "'#level'", "'#rarity'", "'#loc'", "'#homemon'", "'#homecom'", "'#mon'", "'#com'", "'#gold'", "'#res'", "'#incscale'", "'#decscale'", "'#gems'", "'#epithet'", "'#summary'", "'#brief'", "'#flag'", "'#mapbackground'", "'#startsite'", "'#era'", "'#labcost'", "'#templecost'", "'#templepic'", "'#startunitnbrs1'", "'#startunitnbrs2'", "'#hero1'", "'#hero2'", "'#hero3'", "'#hero4'", "'#hero5'", "'#hero6'", "'#multihero1'", "'#multihero2'", "'#defmult1'", "'#defmult1b'", "'#defmult2'", "'#defmult2b'", "'#idealcold'", "'#castleprod'", "'#domkill'", "'#domunrest'", "'#startfort'", "'#defaultfort'", "'#farmfort'", "'#mountainfort'", "'#forestfort'", "'#swampfort'", "'#uwfort'", "'#deepfort'", "'#clearnation'", "'#clearrec'", "'#clearsites'", "'#uwnation'", "'#bloodnation'", "'#nopreach'", "'#dyingdom'", "'#sacrificedom'", "'#nodeathsupply'", "'#autoundead'", "'#zombiereanim'", "'#horsereanim'", "'#wightreanim'", "'#manikinreanim'", "'#tombwyrmreanim'", "'#startcom'", "'#startscout'", "'#startunittype1'", "'#startunittype2'", "'#addrecunit'", "'#addreccom'", "'#uwunit1'", "'#uwunit2'", "'#uwunit3'", "'#uwunit4'", "'#uwunit5'", "'#uwcom1'", "'#uwcom2'", "'#uwcom3'", "'#uwcom4'", "'#uwcom5'", "'#defcom1'", "'#defcom2'", "'#defunit1'", "'#defunit1b'", "'#defunit2'", "'#defunit2b'", "'#color'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_SL_COMMENT", "RULE_ML_COMMENT", "RULE_WS", "'#modname'", "'#description'", "'#icon'", "'#version'", "'#domversion'", "'#poppergold'", "'#resourcemult'", "'#supplymult'", "'#unresthalfinc'", "'#unresthalfres'", "'#eventisrare'", "'#turmoilincome'", "'#turmoilevents'", "'#deathincome'", "'#deathsupply'", "'#deathdeath'", "'#slothincome'", "'#slothresources'", "'#coldincome'", "'#coldsupply'", "'#misfortune'", "'#luckevents'", "'#researchscale'", "'.'", "'#selectarmor'", "'#end'", "'#newarmor'", "'#selectweapon'", "'#newweapon'", "'#selectmonster'", "'#newmonster'", "'#selectspell'", "'#newspell'", "'#selectitem'", "'#newitem'", "'#selectnametype'", "'#selectsite'", "'#newsite'", "'#selectnation'", "'#indepflag'", "'#name'", "'#type'", "'#prot'", "'#def'", "'#enc'", "'#rcost'", "'#dmg'", "'#nratt'", "'#att'", "'#len'", "'#range'", "'#ammo'", "'#sound'", "'#aoe'", "'#secondaryeffect'", "'#secondaryeffectalways'", "'#explspr'", "'#flyspr'", "'#twohanded'", "'#armorpiercing'", "'#armornegating'", "'#magic'", "'#dt_normal'", "'#dt_stun'", "'#dt_paralyze'", "'#dt_poison'", "'#dt_cap'", "'#dt_demon'", "'#dt_demononly'", "'#dt_holy'", "'#dt_magic'", "'#dt_small'", "'#dt_large'", "'#dt_constructonly'", "'#dt_raise'", "'#mind'", "'#cold'", "'#fire'", "'#shock'", "'#poison'", "'#bonus'", "'#charge'", "'#flail'", "'#nostr'", "'#mrnegates'", "'#mrnegateseasily'", "'#spr1'", "'#spr2'", "'#descr'", "'#armor'", "'#speciallook'", "'#ap'", "'#mapmove'", "'#hp'", "'#size'", "'#ressize'", "'#str'", "'#prec'", "'#mr'", "'#mor'", "'#gcost'", "'#pathcost'", "'#startdom'", "'#eyes'", "'#copystats'", "'#copyspr'", "'#restrictedgod'", "'#shatteredsoul'", "'#coldres'", "'#coldresist'", "'#fireres'", "'#fireresist'", "'#poisonres'", "'#shockres'", "'#darkvision'", "'#seduce'", "'#succubus'", "'#beckon'", "'#startage'", "'#maxage'", "'#older'", "'#healer'", "'#startaff'", "'#supplybonus'", "'#uwdamage'", "'#coldpower'", "'#firepower'", "'#stormpower'", "'#darkpower'", "'#springpower'", "'#summerpower'", "'#fallpower'", "'#winterpower'", "'#ambidextrous'", "'#banefireshield'", "'#berserk'", "'#standard'", "'#animalawe'", "'#awe'", "'#fear'", "'#regeneration'", "'#reinvigoration'", "'#fireshield'", "'#iceprot'", "'#poisoncloud'", "'#diseasecloud'", "'#bloodvengeance'", "'#castledef'", "'#siegebonus'", "'#patrolbonus'", "'#pillagebonus'", "'#researchbonus'", "'#forgebonus'", "'#douse'", "'#nobadevents'", "'#incunrest'", "'#spreaddom'", "'#leper'", "'#popkill'", "'#heretic'", "'#itemslots'", "'#nametype'", "'#magicskill'", "'#custommagic'", "'#magicboost'", "'#gemprod'", "'#clear'", "'#clearmagic'", "'#clearspec'", "'#female'", "'#mounted'", "'#holy'", "'#animal'", "'#undead'", "'#demon'", "'#magicbeing'", "'#stonebeing'", "'#inanimate'", "'#coldblood'", "'#coldblooded'", "'#immortal'", "'#blind'", "'#unique'", "'#immobile'", "'#aquatic'", "'#amphibian'", "'#pooramphibian'", "'#flying'", "'#stormimmune'", "'#sailing'", "'#forestsurvival'", "'#mountainsurvival'", "'#swampsurvival'", "'#wastesurvival'", "'#illusion'", "'#spy'", "'#assassin'", "'#heal'", "'#noheal'", "'#neednoteat'", "'#ethereal'", "'#trample'", "'#entangle'", "'#eyeloss'", "'#horrormark'", "'#poisonarmor'", "'#inquisitor'", "'#noitem'", "'#noleader'", "'#poorleader'", "'#okleader'", "'#goodleader'", "'#expertleader'", "'#superiorleader'", "'#nomagicleader'", "'#poormagicleader'", "'#okmagicleader'", "'#goodmagicleader'", "'#expertmagicleader'", "'#superiormagicleader'", "'#noundeadleader'", "'#poorundeadleader'", "'#okundeadleader'", "'#goodundeadleader'", "'#expertundeadleader'", "'#superiorundeadleader'", "'#weapon'", "'#onebattlespell'", "'#firstshape'", "'#secondshape'", "'#secondtmpshape'", "'#shapechange'", "'#landshape'", "'#watershape'", "'#forestshape'", "'#plainshape'", "'#domsummon'", "'#domsummon2'", "'#domsummon20'", "'#makemonster1'", "'#makemonster2'", "'#makemonster3'", "'#makemonster4'", "'#makemonster5'", "'#summon1'", "'#summon5'", "'#stealthy'", "'#heat'", "'#school'", "'#researchlevel'", "'#damage'", "'#effect'", "'#fatiguecost'", "'#flightspr'", "'#nreff'", "'#precision'", "'#spec'", "'#restricted'", "'#path'", "'#pathlevel'", "'#copyspell'", "'#nextspell'", "'#constlevel'", "'#mainpath'", "'#mainlevel'", "'#secondarypath'", "'#secondarylevel'", "'#addname'", "'#level'", "'#rarity'", "'#loc'", "'#homemon'", "'#homecom'", "'#mon'", "'#com'", "'#gold'", "'#res'", "'#incscale'", "'#decscale'", "'#gems'", "'#epithet'", "'#summary'", "'#brief'", "'#flag'", "'#mapbackground'", "'#startsite'", "'#era'", "'#labcost'", "'#templecost'", "'#templepic'", "'#startunitnbrs1'", "'#startunitnbrs2'", "'#hero1'", "'#hero2'", "'#hero3'", "'#hero4'", "'#hero5'", "'#hero6'", "'#multihero1'", "'#multihero2'", "'#defmult1'", "'#defmult1b'", "'#defmult2'", "'#defmult2b'", "'#idealcold'", "'#castleprod'", "'#domkill'", "'#domunrest'", "'#startfort'", "'#defaultfort'", "'#farmfort'", "'#mountainfort'", "'#forestfort'", "'#swampfort'", "'#uwfort'", "'#deepfort'", "'#clearnation'", "'#clearrec'", "'#clearsites'", "'#uwnation'", "'#bloodnation'", "'#nopreach'", "'#dyingdom'", "'#sacrificedom'", "'#nodeathsupply'", "'#autoundead'", "'#zombiereanim'", "'#horsereanim'", "'#wightreanim'", "'#manikinreanim'", "'#tombwyrmreanim'", "'#startcom'", "'#startscout'", "'#startunittype1'", "'#startunittype2'", "'#addrecunit'", "'#addreccom'", "'#uwunit1'", "'#uwunit2'", "'#uwunit3'", "'#uwunit4'", "'#uwunit5'", "'#uwcom1'", "'#uwcom2'", "'#uwcom3'", "'#uwcom4'", "'#uwcom5'", "'#defcom1'", "'#defcom2'", "'#defunit1'", "'#defunit1b'", "'#defunit2'", "'#defunit2b'", "'#color'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_INT=4;
@@ -9922,19 +9922,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             case 168:
             case 169:
             case 170:
-            case 171:
                 {
                 alt10=2;
                 }
                 break;
+            case 171:
             case 172:
             case 173:
             case 174:
-            case 175:
                 {
                 alt10=3;
                 }
                 break;
+            case 175:
             case 176:
             case 177:
             case 178:
@@ -9994,11 +9994,11 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             case 232:
             case 233:
             case 234:
-            case 235:
                 {
                 alt10=4;
                 }
                 break;
+            case 235:
             case 236:
             case 237:
             case 238:
@@ -10018,12 +10018,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             case 252:
             case 253:
             case 254:
-            case 255:
                 {
                 alt10=5;
                 }
                 break;
             case 85:
+            case 255:
             case 256:
                 {
                 alt10=6;
@@ -10432,14 +10432,14 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst2__Alternatives
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3501:1: rule__MonsterInst2__Alternatives : ( ( ( rule__MonsterInst2__SpeciallookAssignment_0 ) ) | ( ( rule__MonsterInst2__ApAssignment_1 ) ) | ( ( rule__MonsterInst2__MapmoveAssignment_2 ) ) | ( ( rule__MonsterInst2__HpAssignment_3 ) ) | ( ( rule__MonsterInst2__ProtAssignment_4 ) ) | ( ( rule__MonsterInst2__SizeAssignment_5 ) ) | ( ( rule__MonsterInst2__RessizeAssignment_6 ) ) | ( ( rule__MonsterInst2__StrAssignment_7 ) ) | ( ( rule__MonsterInst2__EncAssignment_8 ) ) | ( ( rule__MonsterInst2__AttAssignment_9 ) ) | ( ( rule__MonsterInst2__DefAssignment_10 ) ) | ( ( rule__MonsterInst2__PrecAssignment_11 ) ) | ( ( rule__MonsterInst2__MrAssignment_12 ) ) | ( ( rule__MonsterInst2__MorAssignment_13 ) ) | ( ( rule__MonsterInst2__GcostAssignment_14 ) ) | ( ( rule__MonsterInst2__RcostAssignment_15 ) ) | ( ( rule__MonsterInst2__PathcostAssignment_16 ) ) | ( ( rule__MonsterInst2__StartdomAssignment_17 ) ) | ( ( rule__MonsterInst2__EyesAssignment_18 ) ) | ( ( rule__MonsterInst2__CopystatsAssignment_19 ) ) | ( ( rule__MonsterInst2__CopysprAssignment_20 ) ) | ( ( rule__MonsterInst2__RestrictedgodAssignment_21 ) ) | ( ( rule__MonsterInst2__ShatteredsoulAssignment_22 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_23 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_24 ) ) | ( ( rule__MonsterInst2__FireresAssignment_25 ) ) | ( ( rule__MonsterInst2__FireresAssignment_26 ) ) | ( ( rule__MonsterInst2__PoisonresAssignment_27 ) ) | ( ( rule__MonsterInst2__ShockresAssignment_28 ) ) | ( ( rule__MonsterInst2__DarkvisionAssignment_29 ) ) | ( ( rule__MonsterInst2__StealthyAssignment_30 ) ) | ( ( rule__MonsterInst2__SeduceAssignment_31 ) ) | ( ( rule__MonsterInst2__SuccubusAssignment_32 ) ) | ( ( rule__MonsterInst2__BeckonAssignment_33 ) ) | ( ( rule__MonsterInst2__StartageAssignment_34 ) ) | ( ( rule__MonsterInst2__MaxageAssignment_35 ) ) | ( ( rule__MonsterInst2__OlderAssignment_36 ) ) | ( ( rule__MonsterInst2__HealerAssignment_37 ) ) | ( ( rule__MonsterInst2__StartaffAssignment_38 ) ) | ( ( rule__MonsterInst2__SupplybonusAssignment_39 ) ) | ( ( rule__MonsterInst2__UwdamageAssignment_40 ) ) | ( ( rule__MonsterInst2__ColdpowerAssignment_41 ) ) | ( ( rule__MonsterInst2__FirepowerAssignment_42 ) ) | ( ( rule__MonsterInst2__StormpowerAssignment_43 ) ) | ( ( rule__MonsterInst2__DarkpowerAssignment_44 ) ) | ( ( rule__MonsterInst2__SpringpowerAssignment_45 ) ) | ( ( rule__MonsterInst2__SummerpowerAssignment_46 ) ) | ( ( rule__MonsterInst2__FallpowerAssignment_47 ) ) | ( ( rule__MonsterInst2__WinterpowerAssignment_48 ) ) | ( ( rule__MonsterInst2__AmbidextrousAssignment_49 ) ) | ( ( rule__MonsterInst2__BanefireshieldAssignment_50 ) ) | ( ( rule__MonsterInst2__BerserkAssignment_51 ) ) | ( ( rule__MonsterInst2__StandardAssignment_52 ) ) | ( ( rule__MonsterInst2__AnimalaweAssignment_53 ) ) | ( ( rule__MonsterInst2__AweAssignment_54 ) ) | ( ( rule__MonsterInst2__FearAssignment_55 ) ) | ( ( rule__MonsterInst2__RegenerationAssignment_56 ) ) | ( ( rule__MonsterInst2__ReinvigorationAssignment_57 ) ) | ( ( rule__MonsterInst2__FireshieldAssignment_58 ) ) | ( ( rule__MonsterInst2__IceprotAssignment_59 ) ) | ( ( rule__MonsterInst2__PoisoncloudAssignment_60 ) ) | ( ( rule__MonsterInst2__DiseasecloudAssignment_61 ) ) | ( ( rule__MonsterInst2__BloodvengeanceAssignment_62 ) ) | ( ( rule__MonsterInst2__CastledefAssignment_63 ) ) | ( ( rule__MonsterInst2__SiegebonusAssignment_64 ) ) | ( ( rule__MonsterInst2__PatrolbonusAssignment_65 ) ) | ( ( rule__MonsterInst2__PillagebonusAssignment_66 ) ) | ( ( rule__MonsterInst2__ResearchbonusAssignment_67 ) ) | ( ( rule__MonsterInst2__ForgebonusAssignment_68 ) ) | ( ( rule__MonsterInst2__DouseAssignment_69 ) ) | ( ( rule__MonsterInst2__NobadeventsAssignment_70 ) ) | ( ( rule__MonsterInst2__IncunrestAssignment_71 ) ) | ( ( rule__MonsterInst2__SpreaddomAssignment_72 ) ) | ( ( rule__MonsterInst2__LeperAssignment_73 ) ) | ( ( rule__MonsterInst2__PopkillAssignment_74 ) ) | ( ( rule__MonsterInst2__HereticAssignment_75 ) ) | ( ( rule__MonsterInst2__ItemslotsAssignment_76 ) ) | ( ( rule__MonsterInst2__NametypeAssignment_77 ) ) );
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3501:1: rule__MonsterInst2__Alternatives : ( ( ( rule__MonsterInst2__SpeciallookAssignment_0 ) ) | ( ( rule__MonsterInst2__ApAssignment_1 ) ) | ( ( rule__MonsterInst2__MapmoveAssignment_2 ) ) | ( ( rule__MonsterInst2__HpAssignment_3 ) ) | ( ( rule__MonsterInst2__ProtAssignment_4 ) ) | ( ( rule__MonsterInst2__SizeAssignment_5 ) ) | ( ( rule__MonsterInst2__RessizeAssignment_6 ) ) | ( ( rule__MonsterInst2__StrAssignment_7 ) ) | ( ( rule__MonsterInst2__EncAssignment_8 ) ) | ( ( rule__MonsterInst2__AttAssignment_9 ) ) | ( ( rule__MonsterInst2__DefAssignment_10 ) ) | ( ( rule__MonsterInst2__PrecAssignment_11 ) ) | ( ( rule__MonsterInst2__MrAssignment_12 ) ) | ( ( rule__MonsterInst2__MorAssignment_13 ) ) | ( ( rule__MonsterInst2__GcostAssignment_14 ) ) | ( ( rule__MonsterInst2__RcostAssignment_15 ) ) | ( ( rule__MonsterInst2__PathcostAssignment_16 ) ) | ( ( rule__MonsterInst2__StartdomAssignment_17 ) ) | ( ( rule__MonsterInst2__EyesAssignment_18 ) ) | ( ( rule__MonsterInst2__CopystatsAssignment_19 ) ) | ( ( rule__MonsterInst2__CopysprAssignment_20 ) ) | ( ( rule__MonsterInst2__RestrictedgodAssignment_21 ) ) | ( ( rule__MonsterInst2__ShatteredsoulAssignment_22 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_23 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_24 ) ) | ( ( rule__MonsterInst2__FireresAssignment_25 ) ) | ( ( rule__MonsterInst2__FireresAssignment_26 ) ) | ( ( rule__MonsterInst2__PoisonresAssignment_27 ) ) | ( ( rule__MonsterInst2__ShockresAssignment_28 ) ) | ( ( rule__MonsterInst2__DarkvisionAssignment_29 ) ) | ( ( rule__MonsterInst2__SeduceAssignment_30 ) ) | ( ( rule__MonsterInst2__SuccubusAssignment_31 ) ) | ( ( rule__MonsterInst2__BeckonAssignment_32 ) ) | ( ( rule__MonsterInst2__StartageAssignment_33 ) ) | ( ( rule__MonsterInst2__MaxageAssignment_34 ) ) | ( ( rule__MonsterInst2__OlderAssignment_35 ) ) | ( ( rule__MonsterInst2__HealerAssignment_36 ) ) | ( ( rule__MonsterInst2__StartaffAssignment_37 ) ) | ( ( rule__MonsterInst2__SupplybonusAssignment_38 ) ) | ( ( rule__MonsterInst2__UwdamageAssignment_39 ) ) | ( ( rule__MonsterInst2__ColdpowerAssignment_40 ) ) | ( ( rule__MonsterInst2__FirepowerAssignment_41 ) ) | ( ( rule__MonsterInst2__StormpowerAssignment_42 ) ) | ( ( rule__MonsterInst2__DarkpowerAssignment_43 ) ) | ( ( rule__MonsterInst2__SpringpowerAssignment_44 ) ) | ( ( rule__MonsterInst2__SummerpowerAssignment_45 ) ) | ( ( rule__MonsterInst2__FallpowerAssignment_46 ) ) | ( ( rule__MonsterInst2__WinterpowerAssignment_47 ) ) | ( ( rule__MonsterInst2__AmbidextrousAssignment_48 ) ) | ( ( rule__MonsterInst2__BanefireshieldAssignment_49 ) ) | ( ( rule__MonsterInst2__BerserkAssignment_50 ) ) | ( ( rule__MonsterInst2__StandardAssignment_51 ) ) | ( ( rule__MonsterInst2__AnimalaweAssignment_52 ) ) | ( ( rule__MonsterInst2__AweAssignment_53 ) ) | ( ( rule__MonsterInst2__FearAssignment_54 ) ) | ( ( rule__MonsterInst2__RegenerationAssignment_55 ) ) | ( ( rule__MonsterInst2__ReinvigorationAssignment_56 ) ) | ( ( rule__MonsterInst2__FireshieldAssignment_57 ) ) | ( ( rule__MonsterInst2__IceprotAssignment_58 ) ) | ( ( rule__MonsterInst2__PoisoncloudAssignment_59 ) ) | ( ( rule__MonsterInst2__DiseasecloudAssignment_60 ) ) | ( ( rule__MonsterInst2__BloodvengeanceAssignment_61 ) ) | ( ( rule__MonsterInst2__CastledefAssignment_62 ) ) | ( ( rule__MonsterInst2__SiegebonusAssignment_63 ) ) | ( ( rule__MonsterInst2__PatrolbonusAssignment_64 ) ) | ( ( rule__MonsterInst2__PillagebonusAssignment_65 ) ) | ( ( rule__MonsterInst2__ResearchbonusAssignment_66 ) ) | ( ( rule__MonsterInst2__ForgebonusAssignment_67 ) ) | ( ( rule__MonsterInst2__DouseAssignment_68 ) ) | ( ( rule__MonsterInst2__NobadeventsAssignment_69 ) ) | ( ( rule__MonsterInst2__IncunrestAssignment_70 ) ) | ( ( rule__MonsterInst2__SpreaddomAssignment_71 ) ) | ( ( rule__MonsterInst2__LeperAssignment_72 ) ) | ( ( rule__MonsterInst2__PopkillAssignment_73 ) ) | ( ( rule__MonsterInst2__HereticAssignment_74 ) ) | ( ( rule__MonsterInst2__ItemslotsAssignment_75 ) ) | ( ( rule__MonsterInst2__NametypeAssignment_76 ) ) );
     public final void rule__MonsterInst2__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3505:1: ( ( ( rule__MonsterInst2__SpeciallookAssignment_0 ) ) | ( ( rule__MonsterInst2__ApAssignment_1 ) ) | ( ( rule__MonsterInst2__MapmoveAssignment_2 ) ) | ( ( rule__MonsterInst2__HpAssignment_3 ) ) | ( ( rule__MonsterInst2__ProtAssignment_4 ) ) | ( ( rule__MonsterInst2__SizeAssignment_5 ) ) | ( ( rule__MonsterInst2__RessizeAssignment_6 ) ) | ( ( rule__MonsterInst2__StrAssignment_7 ) ) | ( ( rule__MonsterInst2__EncAssignment_8 ) ) | ( ( rule__MonsterInst2__AttAssignment_9 ) ) | ( ( rule__MonsterInst2__DefAssignment_10 ) ) | ( ( rule__MonsterInst2__PrecAssignment_11 ) ) | ( ( rule__MonsterInst2__MrAssignment_12 ) ) | ( ( rule__MonsterInst2__MorAssignment_13 ) ) | ( ( rule__MonsterInst2__GcostAssignment_14 ) ) | ( ( rule__MonsterInst2__RcostAssignment_15 ) ) | ( ( rule__MonsterInst2__PathcostAssignment_16 ) ) | ( ( rule__MonsterInst2__StartdomAssignment_17 ) ) | ( ( rule__MonsterInst2__EyesAssignment_18 ) ) | ( ( rule__MonsterInst2__CopystatsAssignment_19 ) ) | ( ( rule__MonsterInst2__CopysprAssignment_20 ) ) | ( ( rule__MonsterInst2__RestrictedgodAssignment_21 ) ) | ( ( rule__MonsterInst2__ShatteredsoulAssignment_22 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_23 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_24 ) ) | ( ( rule__MonsterInst2__FireresAssignment_25 ) ) | ( ( rule__MonsterInst2__FireresAssignment_26 ) ) | ( ( rule__MonsterInst2__PoisonresAssignment_27 ) ) | ( ( rule__MonsterInst2__ShockresAssignment_28 ) ) | ( ( rule__MonsterInst2__DarkvisionAssignment_29 ) ) | ( ( rule__MonsterInst2__StealthyAssignment_30 ) ) | ( ( rule__MonsterInst2__SeduceAssignment_31 ) ) | ( ( rule__MonsterInst2__SuccubusAssignment_32 ) ) | ( ( rule__MonsterInst2__BeckonAssignment_33 ) ) | ( ( rule__MonsterInst2__StartageAssignment_34 ) ) | ( ( rule__MonsterInst2__MaxageAssignment_35 ) ) | ( ( rule__MonsterInst2__OlderAssignment_36 ) ) | ( ( rule__MonsterInst2__HealerAssignment_37 ) ) | ( ( rule__MonsterInst2__StartaffAssignment_38 ) ) | ( ( rule__MonsterInst2__SupplybonusAssignment_39 ) ) | ( ( rule__MonsterInst2__UwdamageAssignment_40 ) ) | ( ( rule__MonsterInst2__ColdpowerAssignment_41 ) ) | ( ( rule__MonsterInst2__FirepowerAssignment_42 ) ) | ( ( rule__MonsterInst2__StormpowerAssignment_43 ) ) | ( ( rule__MonsterInst2__DarkpowerAssignment_44 ) ) | ( ( rule__MonsterInst2__SpringpowerAssignment_45 ) ) | ( ( rule__MonsterInst2__SummerpowerAssignment_46 ) ) | ( ( rule__MonsterInst2__FallpowerAssignment_47 ) ) | ( ( rule__MonsterInst2__WinterpowerAssignment_48 ) ) | ( ( rule__MonsterInst2__AmbidextrousAssignment_49 ) ) | ( ( rule__MonsterInst2__BanefireshieldAssignment_50 ) ) | ( ( rule__MonsterInst2__BerserkAssignment_51 ) ) | ( ( rule__MonsterInst2__StandardAssignment_52 ) ) | ( ( rule__MonsterInst2__AnimalaweAssignment_53 ) ) | ( ( rule__MonsterInst2__AweAssignment_54 ) ) | ( ( rule__MonsterInst2__FearAssignment_55 ) ) | ( ( rule__MonsterInst2__RegenerationAssignment_56 ) ) | ( ( rule__MonsterInst2__ReinvigorationAssignment_57 ) ) | ( ( rule__MonsterInst2__FireshieldAssignment_58 ) ) | ( ( rule__MonsterInst2__IceprotAssignment_59 ) ) | ( ( rule__MonsterInst2__PoisoncloudAssignment_60 ) ) | ( ( rule__MonsterInst2__DiseasecloudAssignment_61 ) ) | ( ( rule__MonsterInst2__BloodvengeanceAssignment_62 ) ) | ( ( rule__MonsterInst2__CastledefAssignment_63 ) ) | ( ( rule__MonsterInst2__SiegebonusAssignment_64 ) ) | ( ( rule__MonsterInst2__PatrolbonusAssignment_65 ) ) | ( ( rule__MonsterInst2__PillagebonusAssignment_66 ) ) | ( ( rule__MonsterInst2__ResearchbonusAssignment_67 ) ) | ( ( rule__MonsterInst2__ForgebonusAssignment_68 ) ) | ( ( rule__MonsterInst2__DouseAssignment_69 ) ) | ( ( rule__MonsterInst2__NobadeventsAssignment_70 ) ) | ( ( rule__MonsterInst2__IncunrestAssignment_71 ) ) | ( ( rule__MonsterInst2__SpreaddomAssignment_72 ) ) | ( ( rule__MonsterInst2__LeperAssignment_73 ) ) | ( ( rule__MonsterInst2__PopkillAssignment_74 ) ) | ( ( rule__MonsterInst2__HereticAssignment_75 ) ) | ( ( rule__MonsterInst2__ItemslotsAssignment_76 ) ) | ( ( rule__MonsterInst2__NametypeAssignment_77 ) ) )
-            int alt13=78;
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3505:1: ( ( ( rule__MonsterInst2__SpeciallookAssignment_0 ) ) | ( ( rule__MonsterInst2__ApAssignment_1 ) ) | ( ( rule__MonsterInst2__MapmoveAssignment_2 ) ) | ( ( rule__MonsterInst2__HpAssignment_3 ) ) | ( ( rule__MonsterInst2__ProtAssignment_4 ) ) | ( ( rule__MonsterInst2__SizeAssignment_5 ) ) | ( ( rule__MonsterInst2__RessizeAssignment_6 ) ) | ( ( rule__MonsterInst2__StrAssignment_7 ) ) | ( ( rule__MonsterInst2__EncAssignment_8 ) ) | ( ( rule__MonsterInst2__AttAssignment_9 ) ) | ( ( rule__MonsterInst2__DefAssignment_10 ) ) | ( ( rule__MonsterInst2__PrecAssignment_11 ) ) | ( ( rule__MonsterInst2__MrAssignment_12 ) ) | ( ( rule__MonsterInst2__MorAssignment_13 ) ) | ( ( rule__MonsterInst2__GcostAssignment_14 ) ) | ( ( rule__MonsterInst2__RcostAssignment_15 ) ) | ( ( rule__MonsterInst2__PathcostAssignment_16 ) ) | ( ( rule__MonsterInst2__StartdomAssignment_17 ) ) | ( ( rule__MonsterInst2__EyesAssignment_18 ) ) | ( ( rule__MonsterInst2__CopystatsAssignment_19 ) ) | ( ( rule__MonsterInst2__CopysprAssignment_20 ) ) | ( ( rule__MonsterInst2__RestrictedgodAssignment_21 ) ) | ( ( rule__MonsterInst2__ShatteredsoulAssignment_22 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_23 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_24 ) ) | ( ( rule__MonsterInst2__FireresAssignment_25 ) ) | ( ( rule__MonsterInst2__FireresAssignment_26 ) ) | ( ( rule__MonsterInst2__PoisonresAssignment_27 ) ) | ( ( rule__MonsterInst2__ShockresAssignment_28 ) ) | ( ( rule__MonsterInst2__DarkvisionAssignment_29 ) ) | ( ( rule__MonsterInst2__SeduceAssignment_30 ) ) | ( ( rule__MonsterInst2__SuccubusAssignment_31 ) ) | ( ( rule__MonsterInst2__BeckonAssignment_32 ) ) | ( ( rule__MonsterInst2__StartageAssignment_33 ) ) | ( ( rule__MonsterInst2__MaxageAssignment_34 ) ) | ( ( rule__MonsterInst2__OlderAssignment_35 ) ) | ( ( rule__MonsterInst2__HealerAssignment_36 ) ) | ( ( rule__MonsterInst2__StartaffAssignment_37 ) ) | ( ( rule__MonsterInst2__SupplybonusAssignment_38 ) ) | ( ( rule__MonsterInst2__UwdamageAssignment_39 ) ) | ( ( rule__MonsterInst2__ColdpowerAssignment_40 ) ) | ( ( rule__MonsterInst2__FirepowerAssignment_41 ) ) | ( ( rule__MonsterInst2__StormpowerAssignment_42 ) ) | ( ( rule__MonsterInst2__DarkpowerAssignment_43 ) ) | ( ( rule__MonsterInst2__SpringpowerAssignment_44 ) ) | ( ( rule__MonsterInst2__SummerpowerAssignment_45 ) ) | ( ( rule__MonsterInst2__FallpowerAssignment_46 ) ) | ( ( rule__MonsterInst2__WinterpowerAssignment_47 ) ) | ( ( rule__MonsterInst2__AmbidextrousAssignment_48 ) ) | ( ( rule__MonsterInst2__BanefireshieldAssignment_49 ) ) | ( ( rule__MonsterInst2__BerserkAssignment_50 ) ) | ( ( rule__MonsterInst2__StandardAssignment_51 ) ) | ( ( rule__MonsterInst2__AnimalaweAssignment_52 ) ) | ( ( rule__MonsterInst2__AweAssignment_53 ) ) | ( ( rule__MonsterInst2__FearAssignment_54 ) ) | ( ( rule__MonsterInst2__RegenerationAssignment_55 ) ) | ( ( rule__MonsterInst2__ReinvigorationAssignment_56 ) ) | ( ( rule__MonsterInst2__FireshieldAssignment_57 ) ) | ( ( rule__MonsterInst2__IceprotAssignment_58 ) ) | ( ( rule__MonsterInst2__PoisoncloudAssignment_59 ) ) | ( ( rule__MonsterInst2__DiseasecloudAssignment_60 ) ) | ( ( rule__MonsterInst2__BloodvengeanceAssignment_61 ) ) | ( ( rule__MonsterInst2__CastledefAssignment_62 ) ) | ( ( rule__MonsterInst2__SiegebonusAssignment_63 ) ) | ( ( rule__MonsterInst2__PatrolbonusAssignment_64 ) ) | ( ( rule__MonsterInst2__PillagebonusAssignment_65 ) ) | ( ( rule__MonsterInst2__ResearchbonusAssignment_66 ) ) | ( ( rule__MonsterInst2__ForgebonusAssignment_67 ) ) | ( ( rule__MonsterInst2__DouseAssignment_68 ) ) | ( ( rule__MonsterInst2__NobadeventsAssignment_69 ) ) | ( ( rule__MonsterInst2__IncunrestAssignment_70 ) ) | ( ( rule__MonsterInst2__SpreaddomAssignment_71 ) ) | ( ( rule__MonsterInst2__LeperAssignment_72 ) ) | ( ( rule__MonsterInst2__PopkillAssignment_73 ) ) | ( ( rule__MonsterInst2__HereticAssignment_74 ) ) | ( ( rule__MonsterInst2__ItemslotsAssignment_75 ) ) | ( ( rule__MonsterInst2__NametypeAssignment_76 ) ) )
+            int alt13=77;
             switch ( input.LA(1) ) {
             case 99:
                 {
@@ -10826,14 +10826,9 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 alt13=77;
                 }
                 break;
-            case 171:
-                {
-                alt13=78;
-                }
-                break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("3501:1: rule__MonsterInst2__Alternatives : ( ( ( rule__MonsterInst2__SpeciallookAssignment_0 ) ) | ( ( rule__MonsterInst2__ApAssignment_1 ) ) | ( ( rule__MonsterInst2__MapmoveAssignment_2 ) ) | ( ( rule__MonsterInst2__HpAssignment_3 ) ) | ( ( rule__MonsterInst2__ProtAssignment_4 ) ) | ( ( rule__MonsterInst2__SizeAssignment_5 ) ) | ( ( rule__MonsterInst2__RessizeAssignment_6 ) ) | ( ( rule__MonsterInst2__StrAssignment_7 ) ) | ( ( rule__MonsterInst2__EncAssignment_8 ) ) | ( ( rule__MonsterInst2__AttAssignment_9 ) ) | ( ( rule__MonsterInst2__DefAssignment_10 ) ) | ( ( rule__MonsterInst2__PrecAssignment_11 ) ) | ( ( rule__MonsterInst2__MrAssignment_12 ) ) | ( ( rule__MonsterInst2__MorAssignment_13 ) ) | ( ( rule__MonsterInst2__GcostAssignment_14 ) ) | ( ( rule__MonsterInst2__RcostAssignment_15 ) ) | ( ( rule__MonsterInst2__PathcostAssignment_16 ) ) | ( ( rule__MonsterInst2__StartdomAssignment_17 ) ) | ( ( rule__MonsterInst2__EyesAssignment_18 ) ) | ( ( rule__MonsterInst2__CopystatsAssignment_19 ) ) | ( ( rule__MonsterInst2__CopysprAssignment_20 ) ) | ( ( rule__MonsterInst2__RestrictedgodAssignment_21 ) ) | ( ( rule__MonsterInst2__ShatteredsoulAssignment_22 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_23 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_24 ) ) | ( ( rule__MonsterInst2__FireresAssignment_25 ) ) | ( ( rule__MonsterInst2__FireresAssignment_26 ) ) | ( ( rule__MonsterInst2__PoisonresAssignment_27 ) ) | ( ( rule__MonsterInst2__ShockresAssignment_28 ) ) | ( ( rule__MonsterInst2__DarkvisionAssignment_29 ) ) | ( ( rule__MonsterInst2__StealthyAssignment_30 ) ) | ( ( rule__MonsterInst2__SeduceAssignment_31 ) ) | ( ( rule__MonsterInst2__SuccubusAssignment_32 ) ) | ( ( rule__MonsterInst2__BeckonAssignment_33 ) ) | ( ( rule__MonsterInst2__StartageAssignment_34 ) ) | ( ( rule__MonsterInst2__MaxageAssignment_35 ) ) | ( ( rule__MonsterInst2__OlderAssignment_36 ) ) | ( ( rule__MonsterInst2__HealerAssignment_37 ) ) | ( ( rule__MonsterInst2__StartaffAssignment_38 ) ) | ( ( rule__MonsterInst2__SupplybonusAssignment_39 ) ) | ( ( rule__MonsterInst2__UwdamageAssignment_40 ) ) | ( ( rule__MonsterInst2__ColdpowerAssignment_41 ) ) | ( ( rule__MonsterInst2__FirepowerAssignment_42 ) ) | ( ( rule__MonsterInst2__StormpowerAssignment_43 ) ) | ( ( rule__MonsterInst2__DarkpowerAssignment_44 ) ) | ( ( rule__MonsterInst2__SpringpowerAssignment_45 ) ) | ( ( rule__MonsterInst2__SummerpowerAssignment_46 ) ) | ( ( rule__MonsterInst2__FallpowerAssignment_47 ) ) | ( ( rule__MonsterInst2__WinterpowerAssignment_48 ) ) | ( ( rule__MonsterInst2__AmbidextrousAssignment_49 ) ) | ( ( rule__MonsterInst2__BanefireshieldAssignment_50 ) ) | ( ( rule__MonsterInst2__BerserkAssignment_51 ) ) | ( ( rule__MonsterInst2__StandardAssignment_52 ) ) | ( ( rule__MonsterInst2__AnimalaweAssignment_53 ) ) | ( ( rule__MonsterInst2__AweAssignment_54 ) ) | ( ( rule__MonsterInst2__FearAssignment_55 ) ) | ( ( rule__MonsterInst2__RegenerationAssignment_56 ) ) | ( ( rule__MonsterInst2__ReinvigorationAssignment_57 ) ) | ( ( rule__MonsterInst2__FireshieldAssignment_58 ) ) | ( ( rule__MonsterInst2__IceprotAssignment_59 ) ) | ( ( rule__MonsterInst2__PoisoncloudAssignment_60 ) ) | ( ( rule__MonsterInst2__DiseasecloudAssignment_61 ) ) | ( ( rule__MonsterInst2__BloodvengeanceAssignment_62 ) ) | ( ( rule__MonsterInst2__CastledefAssignment_63 ) ) | ( ( rule__MonsterInst2__SiegebonusAssignment_64 ) ) | ( ( rule__MonsterInst2__PatrolbonusAssignment_65 ) ) | ( ( rule__MonsterInst2__PillagebonusAssignment_66 ) ) | ( ( rule__MonsterInst2__ResearchbonusAssignment_67 ) ) | ( ( rule__MonsterInst2__ForgebonusAssignment_68 ) ) | ( ( rule__MonsterInst2__DouseAssignment_69 ) ) | ( ( rule__MonsterInst2__NobadeventsAssignment_70 ) ) | ( ( rule__MonsterInst2__IncunrestAssignment_71 ) ) | ( ( rule__MonsterInst2__SpreaddomAssignment_72 ) ) | ( ( rule__MonsterInst2__LeperAssignment_73 ) ) | ( ( rule__MonsterInst2__PopkillAssignment_74 ) ) | ( ( rule__MonsterInst2__HereticAssignment_75 ) ) | ( ( rule__MonsterInst2__ItemslotsAssignment_76 ) ) | ( ( rule__MonsterInst2__NametypeAssignment_77 ) ) );", 13, 0, input);
+                    new NoViableAltException("3501:1: rule__MonsterInst2__Alternatives : ( ( ( rule__MonsterInst2__SpeciallookAssignment_0 ) ) | ( ( rule__MonsterInst2__ApAssignment_1 ) ) | ( ( rule__MonsterInst2__MapmoveAssignment_2 ) ) | ( ( rule__MonsterInst2__HpAssignment_3 ) ) | ( ( rule__MonsterInst2__ProtAssignment_4 ) ) | ( ( rule__MonsterInst2__SizeAssignment_5 ) ) | ( ( rule__MonsterInst2__RessizeAssignment_6 ) ) | ( ( rule__MonsterInst2__StrAssignment_7 ) ) | ( ( rule__MonsterInst2__EncAssignment_8 ) ) | ( ( rule__MonsterInst2__AttAssignment_9 ) ) | ( ( rule__MonsterInst2__DefAssignment_10 ) ) | ( ( rule__MonsterInst2__PrecAssignment_11 ) ) | ( ( rule__MonsterInst2__MrAssignment_12 ) ) | ( ( rule__MonsterInst2__MorAssignment_13 ) ) | ( ( rule__MonsterInst2__GcostAssignment_14 ) ) | ( ( rule__MonsterInst2__RcostAssignment_15 ) ) | ( ( rule__MonsterInst2__PathcostAssignment_16 ) ) | ( ( rule__MonsterInst2__StartdomAssignment_17 ) ) | ( ( rule__MonsterInst2__EyesAssignment_18 ) ) | ( ( rule__MonsterInst2__CopystatsAssignment_19 ) ) | ( ( rule__MonsterInst2__CopysprAssignment_20 ) ) | ( ( rule__MonsterInst2__RestrictedgodAssignment_21 ) ) | ( ( rule__MonsterInst2__ShatteredsoulAssignment_22 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_23 ) ) | ( ( rule__MonsterInst2__ColdresAssignment_24 ) ) | ( ( rule__MonsterInst2__FireresAssignment_25 ) ) | ( ( rule__MonsterInst2__FireresAssignment_26 ) ) | ( ( rule__MonsterInst2__PoisonresAssignment_27 ) ) | ( ( rule__MonsterInst2__ShockresAssignment_28 ) ) | ( ( rule__MonsterInst2__DarkvisionAssignment_29 ) ) | ( ( rule__MonsterInst2__SeduceAssignment_30 ) ) | ( ( rule__MonsterInst2__SuccubusAssignment_31 ) ) | ( ( rule__MonsterInst2__BeckonAssignment_32 ) ) | ( ( rule__MonsterInst2__StartageAssignment_33 ) ) | ( ( rule__MonsterInst2__MaxageAssignment_34 ) ) | ( ( rule__MonsterInst2__OlderAssignment_35 ) ) | ( ( rule__MonsterInst2__HealerAssignment_36 ) ) | ( ( rule__MonsterInst2__StartaffAssignment_37 ) ) | ( ( rule__MonsterInst2__SupplybonusAssignment_38 ) ) | ( ( rule__MonsterInst2__UwdamageAssignment_39 ) ) | ( ( rule__MonsterInst2__ColdpowerAssignment_40 ) ) | ( ( rule__MonsterInst2__FirepowerAssignment_41 ) ) | ( ( rule__MonsterInst2__StormpowerAssignment_42 ) ) | ( ( rule__MonsterInst2__DarkpowerAssignment_43 ) ) | ( ( rule__MonsterInst2__SpringpowerAssignment_44 ) ) | ( ( rule__MonsterInst2__SummerpowerAssignment_45 ) ) | ( ( rule__MonsterInst2__FallpowerAssignment_46 ) ) | ( ( rule__MonsterInst2__WinterpowerAssignment_47 ) ) | ( ( rule__MonsterInst2__AmbidextrousAssignment_48 ) ) | ( ( rule__MonsterInst2__BanefireshieldAssignment_49 ) ) | ( ( rule__MonsterInst2__BerserkAssignment_50 ) ) | ( ( rule__MonsterInst2__StandardAssignment_51 ) ) | ( ( rule__MonsterInst2__AnimalaweAssignment_52 ) ) | ( ( rule__MonsterInst2__AweAssignment_53 ) ) | ( ( rule__MonsterInst2__FearAssignment_54 ) ) | ( ( rule__MonsterInst2__RegenerationAssignment_55 ) ) | ( ( rule__MonsterInst2__ReinvigorationAssignment_56 ) ) | ( ( rule__MonsterInst2__FireshieldAssignment_57 ) ) | ( ( rule__MonsterInst2__IceprotAssignment_58 ) ) | ( ( rule__MonsterInst2__PoisoncloudAssignment_59 ) ) | ( ( rule__MonsterInst2__DiseasecloudAssignment_60 ) ) | ( ( rule__MonsterInst2__BloodvengeanceAssignment_61 ) ) | ( ( rule__MonsterInst2__CastledefAssignment_62 ) ) | ( ( rule__MonsterInst2__SiegebonusAssignment_63 ) ) | ( ( rule__MonsterInst2__PatrolbonusAssignment_64 ) ) | ( ( rule__MonsterInst2__PillagebonusAssignment_65 ) ) | ( ( rule__MonsterInst2__ResearchbonusAssignment_66 ) ) | ( ( rule__MonsterInst2__ForgebonusAssignment_67 ) ) | ( ( rule__MonsterInst2__DouseAssignment_68 ) ) | ( ( rule__MonsterInst2__NobadeventsAssignment_69 ) ) | ( ( rule__MonsterInst2__IncunrestAssignment_70 ) ) | ( ( rule__MonsterInst2__SpreaddomAssignment_71 ) ) | ( ( rule__MonsterInst2__LeperAssignment_72 ) ) | ( ( rule__MonsterInst2__PopkillAssignment_73 ) ) | ( ( rule__MonsterInst2__HereticAssignment_74 ) ) | ( ( rule__MonsterInst2__ItemslotsAssignment_75 ) ) | ( ( rule__MonsterInst2__NametypeAssignment_76 ) ) );", 13, 0, input);
 
                 throw nvae;
             }
@@ -11560,23 +11555,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 31 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3686:6: ( ( rule__MonsterInst2__StealthyAssignment_30 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3686:6: ( ( rule__MonsterInst2__SeduceAssignment_30 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3686:6: ( ( rule__MonsterInst2__StealthyAssignment_30 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3687:1: ( rule__MonsterInst2__StealthyAssignment_30 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3686:6: ( ( rule__MonsterInst2__SeduceAssignment_30 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3687:1: ( rule__MonsterInst2__SeduceAssignment_30 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getStealthyAssignment_30()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3688:1: ( rule__MonsterInst2__StealthyAssignment_30 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3688:2: rule__MonsterInst2__StealthyAssignment_30
+                     before(grammarAccess.getMonsterInst2Access().getSeduceAssignment_30()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3688:1: ( rule__MonsterInst2__SeduceAssignment_30 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3688:2: rule__MonsterInst2__SeduceAssignment_30
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__StealthyAssignment_30_in_rule__MonsterInst2__Alternatives8290);
-                    rule__MonsterInst2__StealthyAssignment_30();
+                    pushFollow(FOLLOW_rule__MonsterInst2__SeduceAssignment_30_in_rule__MonsterInst2__Alternatives8290);
+                    rule__MonsterInst2__SeduceAssignment_30();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getStealthyAssignment_30()); 
+                     after(grammarAccess.getMonsterInst2Access().getSeduceAssignment_30()); 
 
                     }
 
@@ -11584,23 +11579,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 32 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3692:6: ( ( rule__MonsterInst2__SeduceAssignment_31 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3692:6: ( ( rule__MonsterInst2__SuccubusAssignment_31 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3692:6: ( ( rule__MonsterInst2__SeduceAssignment_31 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3693:1: ( rule__MonsterInst2__SeduceAssignment_31 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3692:6: ( ( rule__MonsterInst2__SuccubusAssignment_31 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3693:1: ( rule__MonsterInst2__SuccubusAssignment_31 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getSeduceAssignment_31()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3694:1: ( rule__MonsterInst2__SeduceAssignment_31 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3694:2: rule__MonsterInst2__SeduceAssignment_31
+                     before(grammarAccess.getMonsterInst2Access().getSuccubusAssignment_31()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3694:1: ( rule__MonsterInst2__SuccubusAssignment_31 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3694:2: rule__MonsterInst2__SuccubusAssignment_31
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__SeduceAssignment_31_in_rule__MonsterInst2__Alternatives8308);
-                    rule__MonsterInst2__SeduceAssignment_31();
+                    pushFollow(FOLLOW_rule__MonsterInst2__SuccubusAssignment_31_in_rule__MonsterInst2__Alternatives8308);
+                    rule__MonsterInst2__SuccubusAssignment_31();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getSeduceAssignment_31()); 
+                     after(grammarAccess.getMonsterInst2Access().getSuccubusAssignment_31()); 
 
                     }
 
@@ -11608,23 +11603,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 33 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3698:6: ( ( rule__MonsterInst2__SuccubusAssignment_32 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3698:6: ( ( rule__MonsterInst2__BeckonAssignment_32 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3698:6: ( ( rule__MonsterInst2__SuccubusAssignment_32 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3699:1: ( rule__MonsterInst2__SuccubusAssignment_32 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3698:6: ( ( rule__MonsterInst2__BeckonAssignment_32 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3699:1: ( rule__MonsterInst2__BeckonAssignment_32 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getSuccubusAssignment_32()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3700:1: ( rule__MonsterInst2__SuccubusAssignment_32 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3700:2: rule__MonsterInst2__SuccubusAssignment_32
+                     before(grammarAccess.getMonsterInst2Access().getBeckonAssignment_32()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3700:1: ( rule__MonsterInst2__BeckonAssignment_32 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3700:2: rule__MonsterInst2__BeckonAssignment_32
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__SuccubusAssignment_32_in_rule__MonsterInst2__Alternatives8326);
-                    rule__MonsterInst2__SuccubusAssignment_32();
+                    pushFollow(FOLLOW_rule__MonsterInst2__BeckonAssignment_32_in_rule__MonsterInst2__Alternatives8326);
+                    rule__MonsterInst2__BeckonAssignment_32();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getSuccubusAssignment_32()); 
+                     after(grammarAccess.getMonsterInst2Access().getBeckonAssignment_32()); 
 
                     }
 
@@ -11632,23 +11627,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 34 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3704:6: ( ( rule__MonsterInst2__BeckonAssignment_33 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3704:6: ( ( rule__MonsterInst2__StartageAssignment_33 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3704:6: ( ( rule__MonsterInst2__BeckonAssignment_33 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3705:1: ( rule__MonsterInst2__BeckonAssignment_33 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3704:6: ( ( rule__MonsterInst2__StartageAssignment_33 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3705:1: ( rule__MonsterInst2__StartageAssignment_33 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getBeckonAssignment_33()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3706:1: ( rule__MonsterInst2__BeckonAssignment_33 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3706:2: rule__MonsterInst2__BeckonAssignment_33
+                     before(grammarAccess.getMonsterInst2Access().getStartageAssignment_33()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3706:1: ( rule__MonsterInst2__StartageAssignment_33 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3706:2: rule__MonsterInst2__StartageAssignment_33
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__BeckonAssignment_33_in_rule__MonsterInst2__Alternatives8344);
-                    rule__MonsterInst2__BeckonAssignment_33();
+                    pushFollow(FOLLOW_rule__MonsterInst2__StartageAssignment_33_in_rule__MonsterInst2__Alternatives8344);
+                    rule__MonsterInst2__StartageAssignment_33();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getBeckonAssignment_33()); 
+                     after(grammarAccess.getMonsterInst2Access().getStartageAssignment_33()); 
 
                     }
 
@@ -11656,23 +11651,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 35 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3710:6: ( ( rule__MonsterInst2__StartageAssignment_34 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3710:6: ( ( rule__MonsterInst2__MaxageAssignment_34 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3710:6: ( ( rule__MonsterInst2__StartageAssignment_34 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3711:1: ( rule__MonsterInst2__StartageAssignment_34 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3710:6: ( ( rule__MonsterInst2__MaxageAssignment_34 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3711:1: ( rule__MonsterInst2__MaxageAssignment_34 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getStartageAssignment_34()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3712:1: ( rule__MonsterInst2__StartageAssignment_34 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3712:2: rule__MonsterInst2__StartageAssignment_34
+                     before(grammarAccess.getMonsterInst2Access().getMaxageAssignment_34()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3712:1: ( rule__MonsterInst2__MaxageAssignment_34 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3712:2: rule__MonsterInst2__MaxageAssignment_34
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__StartageAssignment_34_in_rule__MonsterInst2__Alternatives8362);
-                    rule__MonsterInst2__StartageAssignment_34();
+                    pushFollow(FOLLOW_rule__MonsterInst2__MaxageAssignment_34_in_rule__MonsterInst2__Alternatives8362);
+                    rule__MonsterInst2__MaxageAssignment_34();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getStartageAssignment_34()); 
+                     after(grammarAccess.getMonsterInst2Access().getMaxageAssignment_34()); 
 
                     }
 
@@ -11680,23 +11675,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 36 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3716:6: ( ( rule__MonsterInst2__MaxageAssignment_35 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3716:6: ( ( rule__MonsterInst2__OlderAssignment_35 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3716:6: ( ( rule__MonsterInst2__MaxageAssignment_35 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3717:1: ( rule__MonsterInst2__MaxageAssignment_35 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3716:6: ( ( rule__MonsterInst2__OlderAssignment_35 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3717:1: ( rule__MonsterInst2__OlderAssignment_35 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getMaxageAssignment_35()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3718:1: ( rule__MonsterInst2__MaxageAssignment_35 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3718:2: rule__MonsterInst2__MaxageAssignment_35
+                     before(grammarAccess.getMonsterInst2Access().getOlderAssignment_35()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3718:1: ( rule__MonsterInst2__OlderAssignment_35 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3718:2: rule__MonsterInst2__OlderAssignment_35
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__MaxageAssignment_35_in_rule__MonsterInst2__Alternatives8380);
-                    rule__MonsterInst2__MaxageAssignment_35();
+                    pushFollow(FOLLOW_rule__MonsterInst2__OlderAssignment_35_in_rule__MonsterInst2__Alternatives8380);
+                    rule__MonsterInst2__OlderAssignment_35();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getMaxageAssignment_35()); 
+                     after(grammarAccess.getMonsterInst2Access().getOlderAssignment_35()); 
 
                     }
 
@@ -11704,23 +11699,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 37 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3722:6: ( ( rule__MonsterInst2__OlderAssignment_36 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3722:6: ( ( rule__MonsterInst2__HealerAssignment_36 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3722:6: ( ( rule__MonsterInst2__OlderAssignment_36 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3723:1: ( rule__MonsterInst2__OlderAssignment_36 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3722:6: ( ( rule__MonsterInst2__HealerAssignment_36 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3723:1: ( rule__MonsterInst2__HealerAssignment_36 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getOlderAssignment_36()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3724:1: ( rule__MonsterInst2__OlderAssignment_36 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3724:2: rule__MonsterInst2__OlderAssignment_36
+                     before(grammarAccess.getMonsterInst2Access().getHealerAssignment_36()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3724:1: ( rule__MonsterInst2__HealerAssignment_36 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3724:2: rule__MonsterInst2__HealerAssignment_36
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__OlderAssignment_36_in_rule__MonsterInst2__Alternatives8398);
-                    rule__MonsterInst2__OlderAssignment_36();
+                    pushFollow(FOLLOW_rule__MonsterInst2__HealerAssignment_36_in_rule__MonsterInst2__Alternatives8398);
+                    rule__MonsterInst2__HealerAssignment_36();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getOlderAssignment_36()); 
+                     after(grammarAccess.getMonsterInst2Access().getHealerAssignment_36()); 
 
                     }
 
@@ -11728,23 +11723,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 38 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3728:6: ( ( rule__MonsterInst2__HealerAssignment_37 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3728:6: ( ( rule__MonsterInst2__StartaffAssignment_37 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3728:6: ( ( rule__MonsterInst2__HealerAssignment_37 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3729:1: ( rule__MonsterInst2__HealerAssignment_37 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3728:6: ( ( rule__MonsterInst2__StartaffAssignment_37 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3729:1: ( rule__MonsterInst2__StartaffAssignment_37 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getHealerAssignment_37()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3730:1: ( rule__MonsterInst2__HealerAssignment_37 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3730:2: rule__MonsterInst2__HealerAssignment_37
+                     before(grammarAccess.getMonsterInst2Access().getStartaffAssignment_37()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3730:1: ( rule__MonsterInst2__StartaffAssignment_37 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3730:2: rule__MonsterInst2__StartaffAssignment_37
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__HealerAssignment_37_in_rule__MonsterInst2__Alternatives8416);
-                    rule__MonsterInst2__HealerAssignment_37();
+                    pushFollow(FOLLOW_rule__MonsterInst2__StartaffAssignment_37_in_rule__MonsterInst2__Alternatives8416);
+                    rule__MonsterInst2__StartaffAssignment_37();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getHealerAssignment_37()); 
+                     after(grammarAccess.getMonsterInst2Access().getStartaffAssignment_37()); 
 
                     }
 
@@ -11752,23 +11747,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 39 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3734:6: ( ( rule__MonsterInst2__StartaffAssignment_38 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3734:6: ( ( rule__MonsterInst2__SupplybonusAssignment_38 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3734:6: ( ( rule__MonsterInst2__StartaffAssignment_38 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3735:1: ( rule__MonsterInst2__StartaffAssignment_38 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3734:6: ( ( rule__MonsterInst2__SupplybonusAssignment_38 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3735:1: ( rule__MonsterInst2__SupplybonusAssignment_38 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getStartaffAssignment_38()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3736:1: ( rule__MonsterInst2__StartaffAssignment_38 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3736:2: rule__MonsterInst2__StartaffAssignment_38
+                     before(grammarAccess.getMonsterInst2Access().getSupplybonusAssignment_38()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3736:1: ( rule__MonsterInst2__SupplybonusAssignment_38 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3736:2: rule__MonsterInst2__SupplybonusAssignment_38
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__StartaffAssignment_38_in_rule__MonsterInst2__Alternatives8434);
-                    rule__MonsterInst2__StartaffAssignment_38();
+                    pushFollow(FOLLOW_rule__MonsterInst2__SupplybonusAssignment_38_in_rule__MonsterInst2__Alternatives8434);
+                    rule__MonsterInst2__SupplybonusAssignment_38();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getStartaffAssignment_38()); 
+                     after(grammarAccess.getMonsterInst2Access().getSupplybonusAssignment_38()); 
 
                     }
 
@@ -11776,23 +11771,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 40 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3740:6: ( ( rule__MonsterInst2__SupplybonusAssignment_39 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3740:6: ( ( rule__MonsterInst2__UwdamageAssignment_39 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3740:6: ( ( rule__MonsterInst2__SupplybonusAssignment_39 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3741:1: ( rule__MonsterInst2__SupplybonusAssignment_39 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3740:6: ( ( rule__MonsterInst2__UwdamageAssignment_39 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3741:1: ( rule__MonsterInst2__UwdamageAssignment_39 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getSupplybonusAssignment_39()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3742:1: ( rule__MonsterInst2__SupplybonusAssignment_39 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3742:2: rule__MonsterInst2__SupplybonusAssignment_39
+                     before(grammarAccess.getMonsterInst2Access().getUwdamageAssignment_39()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3742:1: ( rule__MonsterInst2__UwdamageAssignment_39 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3742:2: rule__MonsterInst2__UwdamageAssignment_39
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__SupplybonusAssignment_39_in_rule__MonsterInst2__Alternatives8452);
-                    rule__MonsterInst2__SupplybonusAssignment_39();
+                    pushFollow(FOLLOW_rule__MonsterInst2__UwdamageAssignment_39_in_rule__MonsterInst2__Alternatives8452);
+                    rule__MonsterInst2__UwdamageAssignment_39();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getSupplybonusAssignment_39()); 
+                     after(grammarAccess.getMonsterInst2Access().getUwdamageAssignment_39()); 
 
                     }
 
@@ -11800,23 +11795,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 41 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3746:6: ( ( rule__MonsterInst2__UwdamageAssignment_40 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3746:6: ( ( rule__MonsterInst2__ColdpowerAssignment_40 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3746:6: ( ( rule__MonsterInst2__UwdamageAssignment_40 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3747:1: ( rule__MonsterInst2__UwdamageAssignment_40 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3746:6: ( ( rule__MonsterInst2__ColdpowerAssignment_40 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3747:1: ( rule__MonsterInst2__ColdpowerAssignment_40 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getUwdamageAssignment_40()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3748:1: ( rule__MonsterInst2__UwdamageAssignment_40 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3748:2: rule__MonsterInst2__UwdamageAssignment_40
+                     before(grammarAccess.getMonsterInst2Access().getColdpowerAssignment_40()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3748:1: ( rule__MonsterInst2__ColdpowerAssignment_40 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3748:2: rule__MonsterInst2__ColdpowerAssignment_40
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__UwdamageAssignment_40_in_rule__MonsterInst2__Alternatives8470);
-                    rule__MonsterInst2__UwdamageAssignment_40();
+                    pushFollow(FOLLOW_rule__MonsterInst2__ColdpowerAssignment_40_in_rule__MonsterInst2__Alternatives8470);
+                    rule__MonsterInst2__ColdpowerAssignment_40();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getUwdamageAssignment_40()); 
+                     after(grammarAccess.getMonsterInst2Access().getColdpowerAssignment_40()); 
 
                     }
 
@@ -11824,23 +11819,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 42 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3752:6: ( ( rule__MonsterInst2__ColdpowerAssignment_41 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3752:6: ( ( rule__MonsterInst2__FirepowerAssignment_41 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3752:6: ( ( rule__MonsterInst2__ColdpowerAssignment_41 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3753:1: ( rule__MonsterInst2__ColdpowerAssignment_41 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3752:6: ( ( rule__MonsterInst2__FirepowerAssignment_41 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3753:1: ( rule__MonsterInst2__FirepowerAssignment_41 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getColdpowerAssignment_41()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3754:1: ( rule__MonsterInst2__ColdpowerAssignment_41 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3754:2: rule__MonsterInst2__ColdpowerAssignment_41
+                     before(grammarAccess.getMonsterInst2Access().getFirepowerAssignment_41()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3754:1: ( rule__MonsterInst2__FirepowerAssignment_41 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3754:2: rule__MonsterInst2__FirepowerAssignment_41
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__ColdpowerAssignment_41_in_rule__MonsterInst2__Alternatives8488);
-                    rule__MonsterInst2__ColdpowerAssignment_41();
+                    pushFollow(FOLLOW_rule__MonsterInst2__FirepowerAssignment_41_in_rule__MonsterInst2__Alternatives8488);
+                    rule__MonsterInst2__FirepowerAssignment_41();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getColdpowerAssignment_41()); 
+                     after(grammarAccess.getMonsterInst2Access().getFirepowerAssignment_41()); 
 
                     }
 
@@ -11848,23 +11843,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 43 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3758:6: ( ( rule__MonsterInst2__FirepowerAssignment_42 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3758:6: ( ( rule__MonsterInst2__StormpowerAssignment_42 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3758:6: ( ( rule__MonsterInst2__FirepowerAssignment_42 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3759:1: ( rule__MonsterInst2__FirepowerAssignment_42 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3758:6: ( ( rule__MonsterInst2__StormpowerAssignment_42 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3759:1: ( rule__MonsterInst2__StormpowerAssignment_42 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getFirepowerAssignment_42()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3760:1: ( rule__MonsterInst2__FirepowerAssignment_42 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3760:2: rule__MonsterInst2__FirepowerAssignment_42
+                     before(grammarAccess.getMonsterInst2Access().getStormpowerAssignment_42()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3760:1: ( rule__MonsterInst2__StormpowerAssignment_42 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3760:2: rule__MonsterInst2__StormpowerAssignment_42
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__FirepowerAssignment_42_in_rule__MonsterInst2__Alternatives8506);
-                    rule__MonsterInst2__FirepowerAssignment_42();
+                    pushFollow(FOLLOW_rule__MonsterInst2__StormpowerAssignment_42_in_rule__MonsterInst2__Alternatives8506);
+                    rule__MonsterInst2__StormpowerAssignment_42();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getFirepowerAssignment_42()); 
+                     after(grammarAccess.getMonsterInst2Access().getStormpowerAssignment_42()); 
 
                     }
 
@@ -11872,23 +11867,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 44 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3764:6: ( ( rule__MonsterInst2__StormpowerAssignment_43 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3764:6: ( ( rule__MonsterInst2__DarkpowerAssignment_43 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3764:6: ( ( rule__MonsterInst2__StormpowerAssignment_43 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3765:1: ( rule__MonsterInst2__StormpowerAssignment_43 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3764:6: ( ( rule__MonsterInst2__DarkpowerAssignment_43 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3765:1: ( rule__MonsterInst2__DarkpowerAssignment_43 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getStormpowerAssignment_43()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3766:1: ( rule__MonsterInst2__StormpowerAssignment_43 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3766:2: rule__MonsterInst2__StormpowerAssignment_43
+                     before(grammarAccess.getMonsterInst2Access().getDarkpowerAssignment_43()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3766:1: ( rule__MonsterInst2__DarkpowerAssignment_43 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3766:2: rule__MonsterInst2__DarkpowerAssignment_43
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__StormpowerAssignment_43_in_rule__MonsterInst2__Alternatives8524);
-                    rule__MonsterInst2__StormpowerAssignment_43();
+                    pushFollow(FOLLOW_rule__MonsterInst2__DarkpowerAssignment_43_in_rule__MonsterInst2__Alternatives8524);
+                    rule__MonsterInst2__DarkpowerAssignment_43();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getStormpowerAssignment_43()); 
+                     after(grammarAccess.getMonsterInst2Access().getDarkpowerAssignment_43()); 
 
                     }
 
@@ -11896,23 +11891,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 45 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3770:6: ( ( rule__MonsterInst2__DarkpowerAssignment_44 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3770:6: ( ( rule__MonsterInst2__SpringpowerAssignment_44 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3770:6: ( ( rule__MonsterInst2__DarkpowerAssignment_44 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3771:1: ( rule__MonsterInst2__DarkpowerAssignment_44 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3770:6: ( ( rule__MonsterInst2__SpringpowerAssignment_44 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3771:1: ( rule__MonsterInst2__SpringpowerAssignment_44 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getDarkpowerAssignment_44()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3772:1: ( rule__MonsterInst2__DarkpowerAssignment_44 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3772:2: rule__MonsterInst2__DarkpowerAssignment_44
+                     before(grammarAccess.getMonsterInst2Access().getSpringpowerAssignment_44()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3772:1: ( rule__MonsterInst2__SpringpowerAssignment_44 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3772:2: rule__MonsterInst2__SpringpowerAssignment_44
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__DarkpowerAssignment_44_in_rule__MonsterInst2__Alternatives8542);
-                    rule__MonsterInst2__DarkpowerAssignment_44();
+                    pushFollow(FOLLOW_rule__MonsterInst2__SpringpowerAssignment_44_in_rule__MonsterInst2__Alternatives8542);
+                    rule__MonsterInst2__SpringpowerAssignment_44();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getDarkpowerAssignment_44()); 
+                     after(grammarAccess.getMonsterInst2Access().getSpringpowerAssignment_44()); 
 
                     }
 
@@ -11920,23 +11915,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 46 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3776:6: ( ( rule__MonsterInst2__SpringpowerAssignment_45 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3776:6: ( ( rule__MonsterInst2__SummerpowerAssignment_45 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3776:6: ( ( rule__MonsterInst2__SpringpowerAssignment_45 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3777:1: ( rule__MonsterInst2__SpringpowerAssignment_45 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3776:6: ( ( rule__MonsterInst2__SummerpowerAssignment_45 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3777:1: ( rule__MonsterInst2__SummerpowerAssignment_45 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getSpringpowerAssignment_45()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3778:1: ( rule__MonsterInst2__SpringpowerAssignment_45 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3778:2: rule__MonsterInst2__SpringpowerAssignment_45
+                     before(grammarAccess.getMonsterInst2Access().getSummerpowerAssignment_45()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3778:1: ( rule__MonsterInst2__SummerpowerAssignment_45 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3778:2: rule__MonsterInst2__SummerpowerAssignment_45
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__SpringpowerAssignment_45_in_rule__MonsterInst2__Alternatives8560);
-                    rule__MonsterInst2__SpringpowerAssignment_45();
+                    pushFollow(FOLLOW_rule__MonsterInst2__SummerpowerAssignment_45_in_rule__MonsterInst2__Alternatives8560);
+                    rule__MonsterInst2__SummerpowerAssignment_45();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getSpringpowerAssignment_45()); 
+                     after(grammarAccess.getMonsterInst2Access().getSummerpowerAssignment_45()); 
 
                     }
 
@@ -11944,23 +11939,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 47 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3782:6: ( ( rule__MonsterInst2__SummerpowerAssignment_46 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3782:6: ( ( rule__MonsterInst2__FallpowerAssignment_46 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3782:6: ( ( rule__MonsterInst2__SummerpowerAssignment_46 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3783:1: ( rule__MonsterInst2__SummerpowerAssignment_46 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3782:6: ( ( rule__MonsterInst2__FallpowerAssignment_46 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3783:1: ( rule__MonsterInst2__FallpowerAssignment_46 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getSummerpowerAssignment_46()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3784:1: ( rule__MonsterInst2__SummerpowerAssignment_46 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3784:2: rule__MonsterInst2__SummerpowerAssignment_46
+                     before(grammarAccess.getMonsterInst2Access().getFallpowerAssignment_46()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3784:1: ( rule__MonsterInst2__FallpowerAssignment_46 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3784:2: rule__MonsterInst2__FallpowerAssignment_46
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__SummerpowerAssignment_46_in_rule__MonsterInst2__Alternatives8578);
-                    rule__MonsterInst2__SummerpowerAssignment_46();
+                    pushFollow(FOLLOW_rule__MonsterInst2__FallpowerAssignment_46_in_rule__MonsterInst2__Alternatives8578);
+                    rule__MonsterInst2__FallpowerAssignment_46();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getSummerpowerAssignment_46()); 
+                     after(grammarAccess.getMonsterInst2Access().getFallpowerAssignment_46()); 
 
                     }
 
@@ -11968,23 +11963,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 48 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3788:6: ( ( rule__MonsterInst2__FallpowerAssignment_47 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3788:6: ( ( rule__MonsterInst2__WinterpowerAssignment_47 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3788:6: ( ( rule__MonsterInst2__FallpowerAssignment_47 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3789:1: ( rule__MonsterInst2__FallpowerAssignment_47 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3788:6: ( ( rule__MonsterInst2__WinterpowerAssignment_47 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3789:1: ( rule__MonsterInst2__WinterpowerAssignment_47 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getFallpowerAssignment_47()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3790:1: ( rule__MonsterInst2__FallpowerAssignment_47 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3790:2: rule__MonsterInst2__FallpowerAssignment_47
+                     before(grammarAccess.getMonsterInst2Access().getWinterpowerAssignment_47()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3790:1: ( rule__MonsterInst2__WinterpowerAssignment_47 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3790:2: rule__MonsterInst2__WinterpowerAssignment_47
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__FallpowerAssignment_47_in_rule__MonsterInst2__Alternatives8596);
-                    rule__MonsterInst2__FallpowerAssignment_47();
+                    pushFollow(FOLLOW_rule__MonsterInst2__WinterpowerAssignment_47_in_rule__MonsterInst2__Alternatives8596);
+                    rule__MonsterInst2__WinterpowerAssignment_47();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getFallpowerAssignment_47()); 
+                     after(grammarAccess.getMonsterInst2Access().getWinterpowerAssignment_47()); 
 
                     }
 
@@ -11992,23 +11987,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 49 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3794:6: ( ( rule__MonsterInst2__WinterpowerAssignment_48 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3794:6: ( ( rule__MonsterInst2__AmbidextrousAssignment_48 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3794:6: ( ( rule__MonsterInst2__WinterpowerAssignment_48 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3795:1: ( rule__MonsterInst2__WinterpowerAssignment_48 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3794:6: ( ( rule__MonsterInst2__AmbidextrousAssignment_48 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3795:1: ( rule__MonsterInst2__AmbidextrousAssignment_48 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getWinterpowerAssignment_48()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3796:1: ( rule__MonsterInst2__WinterpowerAssignment_48 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3796:2: rule__MonsterInst2__WinterpowerAssignment_48
+                     before(grammarAccess.getMonsterInst2Access().getAmbidextrousAssignment_48()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3796:1: ( rule__MonsterInst2__AmbidextrousAssignment_48 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3796:2: rule__MonsterInst2__AmbidextrousAssignment_48
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__WinterpowerAssignment_48_in_rule__MonsterInst2__Alternatives8614);
-                    rule__MonsterInst2__WinterpowerAssignment_48();
+                    pushFollow(FOLLOW_rule__MonsterInst2__AmbidextrousAssignment_48_in_rule__MonsterInst2__Alternatives8614);
+                    rule__MonsterInst2__AmbidextrousAssignment_48();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getWinterpowerAssignment_48()); 
+                     after(grammarAccess.getMonsterInst2Access().getAmbidextrousAssignment_48()); 
 
                     }
 
@@ -12016,23 +12011,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 50 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3800:6: ( ( rule__MonsterInst2__AmbidextrousAssignment_49 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3800:6: ( ( rule__MonsterInst2__BanefireshieldAssignment_49 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3800:6: ( ( rule__MonsterInst2__AmbidextrousAssignment_49 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3801:1: ( rule__MonsterInst2__AmbidextrousAssignment_49 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3800:6: ( ( rule__MonsterInst2__BanefireshieldAssignment_49 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3801:1: ( rule__MonsterInst2__BanefireshieldAssignment_49 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getAmbidextrousAssignment_49()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3802:1: ( rule__MonsterInst2__AmbidextrousAssignment_49 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3802:2: rule__MonsterInst2__AmbidextrousAssignment_49
+                     before(grammarAccess.getMonsterInst2Access().getBanefireshieldAssignment_49()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3802:1: ( rule__MonsterInst2__BanefireshieldAssignment_49 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3802:2: rule__MonsterInst2__BanefireshieldAssignment_49
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__AmbidextrousAssignment_49_in_rule__MonsterInst2__Alternatives8632);
-                    rule__MonsterInst2__AmbidextrousAssignment_49();
+                    pushFollow(FOLLOW_rule__MonsterInst2__BanefireshieldAssignment_49_in_rule__MonsterInst2__Alternatives8632);
+                    rule__MonsterInst2__BanefireshieldAssignment_49();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getAmbidextrousAssignment_49()); 
+                     after(grammarAccess.getMonsterInst2Access().getBanefireshieldAssignment_49()); 
 
                     }
 
@@ -12040,23 +12035,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 51 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3806:6: ( ( rule__MonsterInst2__BanefireshieldAssignment_50 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3806:6: ( ( rule__MonsterInst2__BerserkAssignment_50 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3806:6: ( ( rule__MonsterInst2__BanefireshieldAssignment_50 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3807:1: ( rule__MonsterInst2__BanefireshieldAssignment_50 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3806:6: ( ( rule__MonsterInst2__BerserkAssignment_50 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3807:1: ( rule__MonsterInst2__BerserkAssignment_50 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getBanefireshieldAssignment_50()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3808:1: ( rule__MonsterInst2__BanefireshieldAssignment_50 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3808:2: rule__MonsterInst2__BanefireshieldAssignment_50
+                     before(grammarAccess.getMonsterInst2Access().getBerserkAssignment_50()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3808:1: ( rule__MonsterInst2__BerserkAssignment_50 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3808:2: rule__MonsterInst2__BerserkAssignment_50
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__BanefireshieldAssignment_50_in_rule__MonsterInst2__Alternatives8650);
-                    rule__MonsterInst2__BanefireshieldAssignment_50();
+                    pushFollow(FOLLOW_rule__MonsterInst2__BerserkAssignment_50_in_rule__MonsterInst2__Alternatives8650);
+                    rule__MonsterInst2__BerserkAssignment_50();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getBanefireshieldAssignment_50()); 
+                     after(grammarAccess.getMonsterInst2Access().getBerserkAssignment_50()); 
 
                     }
 
@@ -12064,23 +12059,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 52 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3812:6: ( ( rule__MonsterInst2__BerserkAssignment_51 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3812:6: ( ( rule__MonsterInst2__StandardAssignment_51 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3812:6: ( ( rule__MonsterInst2__BerserkAssignment_51 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3813:1: ( rule__MonsterInst2__BerserkAssignment_51 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3812:6: ( ( rule__MonsterInst2__StandardAssignment_51 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3813:1: ( rule__MonsterInst2__StandardAssignment_51 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getBerserkAssignment_51()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3814:1: ( rule__MonsterInst2__BerserkAssignment_51 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3814:2: rule__MonsterInst2__BerserkAssignment_51
+                     before(grammarAccess.getMonsterInst2Access().getStandardAssignment_51()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3814:1: ( rule__MonsterInst2__StandardAssignment_51 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3814:2: rule__MonsterInst2__StandardAssignment_51
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__BerserkAssignment_51_in_rule__MonsterInst2__Alternatives8668);
-                    rule__MonsterInst2__BerserkAssignment_51();
+                    pushFollow(FOLLOW_rule__MonsterInst2__StandardAssignment_51_in_rule__MonsterInst2__Alternatives8668);
+                    rule__MonsterInst2__StandardAssignment_51();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getBerserkAssignment_51()); 
+                     after(grammarAccess.getMonsterInst2Access().getStandardAssignment_51()); 
 
                     }
 
@@ -12088,23 +12083,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 53 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3818:6: ( ( rule__MonsterInst2__StandardAssignment_52 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3818:6: ( ( rule__MonsterInst2__AnimalaweAssignment_52 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3818:6: ( ( rule__MonsterInst2__StandardAssignment_52 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3819:1: ( rule__MonsterInst2__StandardAssignment_52 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3818:6: ( ( rule__MonsterInst2__AnimalaweAssignment_52 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3819:1: ( rule__MonsterInst2__AnimalaweAssignment_52 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getStandardAssignment_52()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3820:1: ( rule__MonsterInst2__StandardAssignment_52 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3820:2: rule__MonsterInst2__StandardAssignment_52
+                     before(grammarAccess.getMonsterInst2Access().getAnimalaweAssignment_52()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3820:1: ( rule__MonsterInst2__AnimalaweAssignment_52 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3820:2: rule__MonsterInst2__AnimalaweAssignment_52
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__StandardAssignment_52_in_rule__MonsterInst2__Alternatives8686);
-                    rule__MonsterInst2__StandardAssignment_52();
+                    pushFollow(FOLLOW_rule__MonsterInst2__AnimalaweAssignment_52_in_rule__MonsterInst2__Alternatives8686);
+                    rule__MonsterInst2__AnimalaweAssignment_52();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getStandardAssignment_52()); 
+                     after(grammarAccess.getMonsterInst2Access().getAnimalaweAssignment_52()); 
 
                     }
 
@@ -12112,23 +12107,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 54 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3824:6: ( ( rule__MonsterInst2__AnimalaweAssignment_53 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3824:6: ( ( rule__MonsterInst2__AweAssignment_53 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3824:6: ( ( rule__MonsterInst2__AnimalaweAssignment_53 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3825:1: ( rule__MonsterInst2__AnimalaweAssignment_53 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3824:6: ( ( rule__MonsterInst2__AweAssignment_53 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3825:1: ( rule__MonsterInst2__AweAssignment_53 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getAnimalaweAssignment_53()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3826:1: ( rule__MonsterInst2__AnimalaweAssignment_53 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3826:2: rule__MonsterInst2__AnimalaweAssignment_53
+                     before(grammarAccess.getMonsterInst2Access().getAweAssignment_53()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3826:1: ( rule__MonsterInst2__AweAssignment_53 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3826:2: rule__MonsterInst2__AweAssignment_53
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__AnimalaweAssignment_53_in_rule__MonsterInst2__Alternatives8704);
-                    rule__MonsterInst2__AnimalaweAssignment_53();
+                    pushFollow(FOLLOW_rule__MonsterInst2__AweAssignment_53_in_rule__MonsterInst2__Alternatives8704);
+                    rule__MonsterInst2__AweAssignment_53();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getAnimalaweAssignment_53()); 
+                     after(grammarAccess.getMonsterInst2Access().getAweAssignment_53()); 
 
                     }
 
@@ -12136,23 +12131,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 55 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3830:6: ( ( rule__MonsterInst2__AweAssignment_54 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3830:6: ( ( rule__MonsterInst2__FearAssignment_54 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3830:6: ( ( rule__MonsterInst2__AweAssignment_54 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3831:1: ( rule__MonsterInst2__AweAssignment_54 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3830:6: ( ( rule__MonsterInst2__FearAssignment_54 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3831:1: ( rule__MonsterInst2__FearAssignment_54 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getAweAssignment_54()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3832:1: ( rule__MonsterInst2__AweAssignment_54 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3832:2: rule__MonsterInst2__AweAssignment_54
+                     before(grammarAccess.getMonsterInst2Access().getFearAssignment_54()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3832:1: ( rule__MonsterInst2__FearAssignment_54 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3832:2: rule__MonsterInst2__FearAssignment_54
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__AweAssignment_54_in_rule__MonsterInst2__Alternatives8722);
-                    rule__MonsterInst2__AweAssignment_54();
+                    pushFollow(FOLLOW_rule__MonsterInst2__FearAssignment_54_in_rule__MonsterInst2__Alternatives8722);
+                    rule__MonsterInst2__FearAssignment_54();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getAweAssignment_54()); 
+                     after(grammarAccess.getMonsterInst2Access().getFearAssignment_54()); 
 
                     }
 
@@ -12160,23 +12155,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 56 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3836:6: ( ( rule__MonsterInst2__FearAssignment_55 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3836:6: ( ( rule__MonsterInst2__RegenerationAssignment_55 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3836:6: ( ( rule__MonsterInst2__FearAssignment_55 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3837:1: ( rule__MonsterInst2__FearAssignment_55 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3836:6: ( ( rule__MonsterInst2__RegenerationAssignment_55 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3837:1: ( rule__MonsterInst2__RegenerationAssignment_55 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getFearAssignment_55()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3838:1: ( rule__MonsterInst2__FearAssignment_55 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3838:2: rule__MonsterInst2__FearAssignment_55
+                     before(grammarAccess.getMonsterInst2Access().getRegenerationAssignment_55()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3838:1: ( rule__MonsterInst2__RegenerationAssignment_55 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3838:2: rule__MonsterInst2__RegenerationAssignment_55
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__FearAssignment_55_in_rule__MonsterInst2__Alternatives8740);
-                    rule__MonsterInst2__FearAssignment_55();
+                    pushFollow(FOLLOW_rule__MonsterInst2__RegenerationAssignment_55_in_rule__MonsterInst2__Alternatives8740);
+                    rule__MonsterInst2__RegenerationAssignment_55();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getFearAssignment_55()); 
+                     after(grammarAccess.getMonsterInst2Access().getRegenerationAssignment_55()); 
 
                     }
 
@@ -12184,23 +12179,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 57 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3842:6: ( ( rule__MonsterInst2__RegenerationAssignment_56 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3842:6: ( ( rule__MonsterInst2__ReinvigorationAssignment_56 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3842:6: ( ( rule__MonsterInst2__RegenerationAssignment_56 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3843:1: ( rule__MonsterInst2__RegenerationAssignment_56 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3842:6: ( ( rule__MonsterInst2__ReinvigorationAssignment_56 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3843:1: ( rule__MonsterInst2__ReinvigorationAssignment_56 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getRegenerationAssignment_56()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3844:1: ( rule__MonsterInst2__RegenerationAssignment_56 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3844:2: rule__MonsterInst2__RegenerationAssignment_56
+                     before(grammarAccess.getMonsterInst2Access().getReinvigorationAssignment_56()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3844:1: ( rule__MonsterInst2__ReinvigorationAssignment_56 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3844:2: rule__MonsterInst2__ReinvigorationAssignment_56
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__RegenerationAssignment_56_in_rule__MonsterInst2__Alternatives8758);
-                    rule__MonsterInst2__RegenerationAssignment_56();
+                    pushFollow(FOLLOW_rule__MonsterInst2__ReinvigorationAssignment_56_in_rule__MonsterInst2__Alternatives8758);
+                    rule__MonsterInst2__ReinvigorationAssignment_56();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getRegenerationAssignment_56()); 
+                     after(grammarAccess.getMonsterInst2Access().getReinvigorationAssignment_56()); 
 
                     }
 
@@ -12208,23 +12203,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 58 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3848:6: ( ( rule__MonsterInst2__ReinvigorationAssignment_57 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3848:6: ( ( rule__MonsterInst2__FireshieldAssignment_57 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3848:6: ( ( rule__MonsterInst2__ReinvigorationAssignment_57 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3849:1: ( rule__MonsterInst2__ReinvigorationAssignment_57 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3848:6: ( ( rule__MonsterInst2__FireshieldAssignment_57 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3849:1: ( rule__MonsterInst2__FireshieldAssignment_57 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getReinvigorationAssignment_57()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3850:1: ( rule__MonsterInst2__ReinvigorationAssignment_57 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3850:2: rule__MonsterInst2__ReinvigorationAssignment_57
+                     before(grammarAccess.getMonsterInst2Access().getFireshieldAssignment_57()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3850:1: ( rule__MonsterInst2__FireshieldAssignment_57 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3850:2: rule__MonsterInst2__FireshieldAssignment_57
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__ReinvigorationAssignment_57_in_rule__MonsterInst2__Alternatives8776);
-                    rule__MonsterInst2__ReinvigorationAssignment_57();
+                    pushFollow(FOLLOW_rule__MonsterInst2__FireshieldAssignment_57_in_rule__MonsterInst2__Alternatives8776);
+                    rule__MonsterInst2__FireshieldAssignment_57();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getReinvigorationAssignment_57()); 
+                     after(grammarAccess.getMonsterInst2Access().getFireshieldAssignment_57()); 
 
                     }
 
@@ -12232,23 +12227,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 59 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3854:6: ( ( rule__MonsterInst2__FireshieldAssignment_58 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3854:6: ( ( rule__MonsterInst2__IceprotAssignment_58 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3854:6: ( ( rule__MonsterInst2__FireshieldAssignment_58 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3855:1: ( rule__MonsterInst2__FireshieldAssignment_58 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3854:6: ( ( rule__MonsterInst2__IceprotAssignment_58 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3855:1: ( rule__MonsterInst2__IceprotAssignment_58 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getFireshieldAssignment_58()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3856:1: ( rule__MonsterInst2__FireshieldAssignment_58 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3856:2: rule__MonsterInst2__FireshieldAssignment_58
+                     before(grammarAccess.getMonsterInst2Access().getIceprotAssignment_58()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3856:1: ( rule__MonsterInst2__IceprotAssignment_58 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3856:2: rule__MonsterInst2__IceprotAssignment_58
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__FireshieldAssignment_58_in_rule__MonsterInst2__Alternatives8794);
-                    rule__MonsterInst2__FireshieldAssignment_58();
+                    pushFollow(FOLLOW_rule__MonsterInst2__IceprotAssignment_58_in_rule__MonsterInst2__Alternatives8794);
+                    rule__MonsterInst2__IceprotAssignment_58();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getFireshieldAssignment_58()); 
+                     after(grammarAccess.getMonsterInst2Access().getIceprotAssignment_58()); 
 
                     }
 
@@ -12256,23 +12251,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 60 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3860:6: ( ( rule__MonsterInst2__IceprotAssignment_59 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3860:6: ( ( rule__MonsterInst2__PoisoncloudAssignment_59 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3860:6: ( ( rule__MonsterInst2__IceprotAssignment_59 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3861:1: ( rule__MonsterInst2__IceprotAssignment_59 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3860:6: ( ( rule__MonsterInst2__PoisoncloudAssignment_59 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3861:1: ( rule__MonsterInst2__PoisoncloudAssignment_59 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getIceprotAssignment_59()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3862:1: ( rule__MonsterInst2__IceprotAssignment_59 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3862:2: rule__MonsterInst2__IceprotAssignment_59
+                     before(grammarAccess.getMonsterInst2Access().getPoisoncloudAssignment_59()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3862:1: ( rule__MonsterInst2__PoisoncloudAssignment_59 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3862:2: rule__MonsterInst2__PoisoncloudAssignment_59
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__IceprotAssignment_59_in_rule__MonsterInst2__Alternatives8812);
-                    rule__MonsterInst2__IceprotAssignment_59();
+                    pushFollow(FOLLOW_rule__MonsterInst2__PoisoncloudAssignment_59_in_rule__MonsterInst2__Alternatives8812);
+                    rule__MonsterInst2__PoisoncloudAssignment_59();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getIceprotAssignment_59()); 
+                     after(grammarAccess.getMonsterInst2Access().getPoisoncloudAssignment_59()); 
 
                     }
 
@@ -12280,23 +12275,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 61 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3866:6: ( ( rule__MonsterInst2__PoisoncloudAssignment_60 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3866:6: ( ( rule__MonsterInst2__DiseasecloudAssignment_60 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3866:6: ( ( rule__MonsterInst2__PoisoncloudAssignment_60 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3867:1: ( rule__MonsterInst2__PoisoncloudAssignment_60 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3866:6: ( ( rule__MonsterInst2__DiseasecloudAssignment_60 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3867:1: ( rule__MonsterInst2__DiseasecloudAssignment_60 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getPoisoncloudAssignment_60()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3868:1: ( rule__MonsterInst2__PoisoncloudAssignment_60 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3868:2: rule__MonsterInst2__PoisoncloudAssignment_60
+                     before(grammarAccess.getMonsterInst2Access().getDiseasecloudAssignment_60()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3868:1: ( rule__MonsterInst2__DiseasecloudAssignment_60 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3868:2: rule__MonsterInst2__DiseasecloudAssignment_60
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__PoisoncloudAssignment_60_in_rule__MonsterInst2__Alternatives8830);
-                    rule__MonsterInst2__PoisoncloudAssignment_60();
+                    pushFollow(FOLLOW_rule__MonsterInst2__DiseasecloudAssignment_60_in_rule__MonsterInst2__Alternatives8830);
+                    rule__MonsterInst2__DiseasecloudAssignment_60();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getPoisoncloudAssignment_60()); 
+                     after(grammarAccess.getMonsterInst2Access().getDiseasecloudAssignment_60()); 
 
                     }
 
@@ -12304,23 +12299,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 62 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3872:6: ( ( rule__MonsterInst2__DiseasecloudAssignment_61 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3872:6: ( ( rule__MonsterInst2__BloodvengeanceAssignment_61 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3872:6: ( ( rule__MonsterInst2__DiseasecloudAssignment_61 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3873:1: ( rule__MonsterInst2__DiseasecloudAssignment_61 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3872:6: ( ( rule__MonsterInst2__BloodvengeanceAssignment_61 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3873:1: ( rule__MonsterInst2__BloodvengeanceAssignment_61 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getDiseasecloudAssignment_61()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3874:1: ( rule__MonsterInst2__DiseasecloudAssignment_61 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3874:2: rule__MonsterInst2__DiseasecloudAssignment_61
+                     before(grammarAccess.getMonsterInst2Access().getBloodvengeanceAssignment_61()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3874:1: ( rule__MonsterInst2__BloodvengeanceAssignment_61 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3874:2: rule__MonsterInst2__BloodvengeanceAssignment_61
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__DiseasecloudAssignment_61_in_rule__MonsterInst2__Alternatives8848);
-                    rule__MonsterInst2__DiseasecloudAssignment_61();
+                    pushFollow(FOLLOW_rule__MonsterInst2__BloodvengeanceAssignment_61_in_rule__MonsterInst2__Alternatives8848);
+                    rule__MonsterInst2__BloodvengeanceAssignment_61();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getDiseasecloudAssignment_61()); 
+                     after(grammarAccess.getMonsterInst2Access().getBloodvengeanceAssignment_61()); 
 
                     }
 
@@ -12328,23 +12323,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 63 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3878:6: ( ( rule__MonsterInst2__BloodvengeanceAssignment_62 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3878:6: ( ( rule__MonsterInst2__CastledefAssignment_62 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3878:6: ( ( rule__MonsterInst2__BloodvengeanceAssignment_62 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3879:1: ( rule__MonsterInst2__BloodvengeanceAssignment_62 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3878:6: ( ( rule__MonsterInst2__CastledefAssignment_62 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3879:1: ( rule__MonsterInst2__CastledefAssignment_62 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getBloodvengeanceAssignment_62()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3880:1: ( rule__MonsterInst2__BloodvengeanceAssignment_62 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3880:2: rule__MonsterInst2__BloodvengeanceAssignment_62
+                     before(grammarAccess.getMonsterInst2Access().getCastledefAssignment_62()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3880:1: ( rule__MonsterInst2__CastledefAssignment_62 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3880:2: rule__MonsterInst2__CastledefAssignment_62
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__BloodvengeanceAssignment_62_in_rule__MonsterInst2__Alternatives8866);
-                    rule__MonsterInst2__BloodvengeanceAssignment_62();
+                    pushFollow(FOLLOW_rule__MonsterInst2__CastledefAssignment_62_in_rule__MonsterInst2__Alternatives8866);
+                    rule__MonsterInst2__CastledefAssignment_62();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getBloodvengeanceAssignment_62()); 
+                     after(grammarAccess.getMonsterInst2Access().getCastledefAssignment_62()); 
 
                     }
 
@@ -12352,23 +12347,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 64 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3884:6: ( ( rule__MonsterInst2__CastledefAssignment_63 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3884:6: ( ( rule__MonsterInst2__SiegebonusAssignment_63 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3884:6: ( ( rule__MonsterInst2__CastledefAssignment_63 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3885:1: ( rule__MonsterInst2__CastledefAssignment_63 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3884:6: ( ( rule__MonsterInst2__SiegebonusAssignment_63 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3885:1: ( rule__MonsterInst2__SiegebonusAssignment_63 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getCastledefAssignment_63()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3886:1: ( rule__MonsterInst2__CastledefAssignment_63 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3886:2: rule__MonsterInst2__CastledefAssignment_63
+                     before(grammarAccess.getMonsterInst2Access().getSiegebonusAssignment_63()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3886:1: ( rule__MonsterInst2__SiegebonusAssignment_63 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3886:2: rule__MonsterInst2__SiegebonusAssignment_63
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__CastledefAssignment_63_in_rule__MonsterInst2__Alternatives8884);
-                    rule__MonsterInst2__CastledefAssignment_63();
+                    pushFollow(FOLLOW_rule__MonsterInst2__SiegebonusAssignment_63_in_rule__MonsterInst2__Alternatives8884);
+                    rule__MonsterInst2__SiegebonusAssignment_63();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getCastledefAssignment_63()); 
+                     after(grammarAccess.getMonsterInst2Access().getSiegebonusAssignment_63()); 
 
                     }
 
@@ -12376,23 +12371,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 65 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3890:6: ( ( rule__MonsterInst2__SiegebonusAssignment_64 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3890:6: ( ( rule__MonsterInst2__PatrolbonusAssignment_64 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3890:6: ( ( rule__MonsterInst2__SiegebonusAssignment_64 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3891:1: ( rule__MonsterInst2__SiegebonusAssignment_64 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3890:6: ( ( rule__MonsterInst2__PatrolbonusAssignment_64 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3891:1: ( rule__MonsterInst2__PatrolbonusAssignment_64 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getSiegebonusAssignment_64()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3892:1: ( rule__MonsterInst2__SiegebonusAssignment_64 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3892:2: rule__MonsterInst2__SiegebonusAssignment_64
+                     before(grammarAccess.getMonsterInst2Access().getPatrolbonusAssignment_64()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3892:1: ( rule__MonsterInst2__PatrolbonusAssignment_64 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3892:2: rule__MonsterInst2__PatrolbonusAssignment_64
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__SiegebonusAssignment_64_in_rule__MonsterInst2__Alternatives8902);
-                    rule__MonsterInst2__SiegebonusAssignment_64();
+                    pushFollow(FOLLOW_rule__MonsterInst2__PatrolbonusAssignment_64_in_rule__MonsterInst2__Alternatives8902);
+                    rule__MonsterInst2__PatrolbonusAssignment_64();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getSiegebonusAssignment_64()); 
+                     after(grammarAccess.getMonsterInst2Access().getPatrolbonusAssignment_64()); 
 
                     }
 
@@ -12400,23 +12395,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 66 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3896:6: ( ( rule__MonsterInst2__PatrolbonusAssignment_65 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3896:6: ( ( rule__MonsterInst2__PillagebonusAssignment_65 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3896:6: ( ( rule__MonsterInst2__PatrolbonusAssignment_65 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3897:1: ( rule__MonsterInst2__PatrolbonusAssignment_65 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3896:6: ( ( rule__MonsterInst2__PillagebonusAssignment_65 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3897:1: ( rule__MonsterInst2__PillagebonusAssignment_65 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getPatrolbonusAssignment_65()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3898:1: ( rule__MonsterInst2__PatrolbonusAssignment_65 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3898:2: rule__MonsterInst2__PatrolbonusAssignment_65
+                     before(grammarAccess.getMonsterInst2Access().getPillagebonusAssignment_65()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3898:1: ( rule__MonsterInst2__PillagebonusAssignment_65 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3898:2: rule__MonsterInst2__PillagebonusAssignment_65
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__PatrolbonusAssignment_65_in_rule__MonsterInst2__Alternatives8920);
-                    rule__MonsterInst2__PatrolbonusAssignment_65();
+                    pushFollow(FOLLOW_rule__MonsterInst2__PillagebonusAssignment_65_in_rule__MonsterInst2__Alternatives8920);
+                    rule__MonsterInst2__PillagebonusAssignment_65();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getPatrolbonusAssignment_65()); 
+                     after(grammarAccess.getMonsterInst2Access().getPillagebonusAssignment_65()); 
 
                     }
 
@@ -12424,23 +12419,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 67 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3902:6: ( ( rule__MonsterInst2__PillagebonusAssignment_66 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3902:6: ( ( rule__MonsterInst2__ResearchbonusAssignment_66 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3902:6: ( ( rule__MonsterInst2__PillagebonusAssignment_66 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3903:1: ( rule__MonsterInst2__PillagebonusAssignment_66 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3902:6: ( ( rule__MonsterInst2__ResearchbonusAssignment_66 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3903:1: ( rule__MonsterInst2__ResearchbonusAssignment_66 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getPillagebonusAssignment_66()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3904:1: ( rule__MonsterInst2__PillagebonusAssignment_66 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3904:2: rule__MonsterInst2__PillagebonusAssignment_66
+                     before(grammarAccess.getMonsterInst2Access().getResearchbonusAssignment_66()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3904:1: ( rule__MonsterInst2__ResearchbonusAssignment_66 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3904:2: rule__MonsterInst2__ResearchbonusAssignment_66
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__PillagebonusAssignment_66_in_rule__MonsterInst2__Alternatives8938);
-                    rule__MonsterInst2__PillagebonusAssignment_66();
+                    pushFollow(FOLLOW_rule__MonsterInst2__ResearchbonusAssignment_66_in_rule__MonsterInst2__Alternatives8938);
+                    rule__MonsterInst2__ResearchbonusAssignment_66();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getPillagebonusAssignment_66()); 
+                     after(grammarAccess.getMonsterInst2Access().getResearchbonusAssignment_66()); 
 
                     }
 
@@ -12448,23 +12443,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 68 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3908:6: ( ( rule__MonsterInst2__ResearchbonusAssignment_67 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3908:6: ( ( rule__MonsterInst2__ForgebonusAssignment_67 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3908:6: ( ( rule__MonsterInst2__ResearchbonusAssignment_67 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3909:1: ( rule__MonsterInst2__ResearchbonusAssignment_67 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3908:6: ( ( rule__MonsterInst2__ForgebonusAssignment_67 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3909:1: ( rule__MonsterInst2__ForgebonusAssignment_67 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getResearchbonusAssignment_67()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3910:1: ( rule__MonsterInst2__ResearchbonusAssignment_67 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3910:2: rule__MonsterInst2__ResearchbonusAssignment_67
+                     before(grammarAccess.getMonsterInst2Access().getForgebonusAssignment_67()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3910:1: ( rule__MonsterInst2__ForgebonusAssignment_67 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3910:2: rule__MonsterInst2__ForgebonusAssignment_67
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__ResearchbonusAssignment_67_in_rule__MonsterInst2__Alternatives8956);
-                    rule__MonsterInst2__ResearchbonusAssignment_67();
+                    pushFollow(FOLLOW_rule__MonsterInst2__ForgebonusAssignment_67_in_rule__MonsterInst2__Alternatives8956);
+                    rule__MonsterInst2__ForgebonusAssignment_67();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getResearchbonusAssignment_67()); 
+                     after(grammarAccess.getMonsterInst2Access().getForgebonusAssignment_67()); 
 
                     }
 
@@ -12472,23 +12467,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 69 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3914:6: ( ( rule__MonsterInst2__ForgebonusAssignment_68 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3914:6: ( ( rule__MonsterInst2__DouseAssignment_68 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3914:6: ( ( rule__MonsterInst2__ForgebonusAssignment_68 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3915:1: ( rule__MonsterInst2__ForgebonusAssignment_68 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3914:6: ( ( rule__MonsterInst2__DouseAssignment_68 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3915:1: ( rule__MonsterInst2__DouseAssignment_68 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getForgebonusAssignment_68()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3916:1: ( rule__MonsterInst2__ForgebonusAssignment_68 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3916:2: rule__MonsterInst2__ForgebonusAssignment_68
+                     before(grammarAccess.getMonsterInst2Access().getDouseAssignment_68()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3916:1: ( rule__MonsterInst2__DouseAssignment_68 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3916:2: rule__MonsterInst2__DouseAssignment_68
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__ForgebonusAssignment_68_in_rule__MonsterInst2__Alternatives8974);
-                    rule__MonsterInst2__ForgebonusAssignment_68();
+                    pushFollow(FOLLOW_rule__MonsterInst2__DouseAssignment_68_in_rule__MonsterInst2__Alternatives8974);
+                    rule__MonsterInst2__DouseAssignment_68();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getForgebonusAssignment_68()); 
+                     after(grammarAccess.getMonsterInst2Access().getDouseAssignment_68()); 
 
                     }
 
@@ -12496,23 +12491,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 70 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3920:6: ( ( rule__MonsterInst2__DouseAssignment_69 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3920:6: ( ( rule__MonsterInst2__NobadeventsAssignment_69 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3920:6: ( ( rule__MonsterInst2__DouseAssignment_69 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3921:1: ( rule__MonsterInst2__DouseAssignment_69 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3920:6: ( ( rule__MonsterInst2__NobadeventsAssignment_69 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3921:1: ( rule__MonsterInst2__NobadeventsAssignment_69 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getDouseAssignment_69()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3922:1: ( rule__MonsterInst2__DouseAssignment_69 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3922:2: rule__MonsterInst2__DouseAssignment_69
+                     before(grammarAccess.getMonsterInst2Access().getNobadeventsAssignment_69()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3922:1: ( rule__MonsterInst2__NobadeventsAssignment_69 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3922:2: rule__MonsterInst2__NobadeventsAssignment_69
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__DouseAssignment_69_in_rule__MonsterInst2__Alternatives8992);
-                    rule__MonsterInst2__DouseAssignment_69();
+                    pushFollow(FOLLOW_rule__MonsterInst2__NobadeventsAssignment_69_in_rule__MonsterInst2__Alternatives8992);
+                    rule__MonsterInst2__NobadeventsAssignment_69();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getDouseAssignment_69()); 
+                     after(grammarAccess.getMonsterInst2Access().getNobadeventsAssignment_69()); 
 
                     }
 
@@ -12520,23 +12515,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 71 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3926:6: ( ( rule__MonsterInst2__NobadeventsAssignment_70 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3926:6: ( ( rule__MonsterInst2__IncunrestAssignment_70 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3926:6: ( ( rule__MonsterInst2__NobadeventsAssignment_70 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3927:1: ( rule__MonsterInst2__NobadeventsAssignment_70 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3926:6: ( ( rule__MonsterInst2__IncunrestAssignment_70 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3927:1: ( rule__MonsterInst2__IncunrestAssignment_70 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getNobadeventsAssignment_70()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3928:1: ( rule__MonsterInst2__NobadeventsAssignment_70 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3928:2: rule__MonsterInst2__NobadeventsAssignment_70
+                     before(grammarAccess.getMonsterInst2Access().getIncunrestAssignment_70()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3928:1: ( rule__MonsterInst2__IncunrestAssignment_70 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3928:2: rule__MonsterInst2__IncunrestAssignment_70
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__NobadeventsAssignment_70_in_rule__MonsterInst2__Alternatives9010);
-                    rule__MonsterInst2__NobadeventsAssignment_70();
+                    pushFollow(FOLLOW_rule__MonsterInst2__IncunrestAssignment_70_in_rule__MonsterInst2__Alternatives9010);
+                    rule__MonsterInst2__IncunrestAssignment_70();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getNobadeventsAssignment_70()); 
+                     after(grammarAccess.getMonsterInst2Access().getIncunrestAssignment_70()); 
 
                     }
 
@@ -12544,23 +12539,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 72 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3932:6: ( ( rule__MonsterInst2__IncunrestAssignment_71 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3932:6: ( ( rule__MonsterInst2__SpreaddomAssignment_71 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3932:6: ( ( rule__MonsterInst2__IncunrestAssignment_71 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3933:1: ( rule__MonsterInst2__IncunrestAssignment_71 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3932:6: ( ( rule__MonsterInst2__SpreaddomAssignment_71 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3933:1: ( rule__MonsterInst2__SpreaddomAssignment_71 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getIncunrestAssignment_71()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3934:1: ( rule__MonsterInst2__IncunrestAssignment_71 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3934:2: rule__MonsterInst2__IncunrestAssignment_71
+                     before(grammarAccess.getMonsterInst2Access().getSpreaddomAssignment_71()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3934:1: ( rule__MonsterInst2__SpreaddomAssignment_71 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3934:2: rule__MonsterInst2__SpreaddomAssignment_71
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__IncunrestAssignment_71_in_rule__MonsterInst2__Alternatives9028);
-                    rule__MonsterInst2__IncunrestAssignment_71();
+                    pushFollow(FOLLOW_rule__MonsterInst2__SpreaddomAssignment_71_in_rule__MonsterInst2__Alternatives9028);
+                    rule__MonsterInst2__SpreaddomAssignment_71();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getIncunrestAssignment_71()); 
+                     after(grammarAccess.getMonsterInst2Access().getSpreaddomAssignment_71()); 
 
                     }
 
@@ -12568,23 +12563,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 73 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3938:6: ( ( rule__MonsterInst2__SpreaddomAssignment_72 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3938:6: ( ( rule__MonsterInst2__LeperAssignment_72 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3938:6: ( ( rule__MonsterInst2__SpreaddomAssignment_72 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3939:1: ( rule__MonsterInst2__SpreaddomAssignment_72 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3938:6: ( ( rule__MonsterInst2__LeperAssignment_72 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3939:1: ( rule__MonsterInst2__LeperAssignment_72 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getSpreaddomAssignment_72()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3940:1: ( rule__MonsterInst2__SpreaddomAssignment_72 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3940:2: rule__MonsterInst2__SpreaddomAssignment_72
+                     before(grammarAccess.getMonsterInst2Access().getLeperAssignment_72()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3940:1: ( rule__MonsterInst2__LeperAssignment_72 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3940:2: rule__MonsterInst2__LeperAssignment_72
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__SpreaddomAssignment_72_in_rule__MonsterInst2__Alternatives9046);
-                    rule__MonsterInst2__SpreaddomAssignment_72();
+                    pushFollow(FOLLOW_rule__MonsterInst2__LeperAssignment_72_in_rule__MonsterInst2__Alternatives9046);
+                    rule__MonsterInst2__LeperAssignment_72();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getSpreaddomAssignment_72()); 
+                     after(grammarAccess.getMonsterInst2Access().getLeperAssignment_72()); 
 
                     }
 
@@ -12592,23 +12587,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 74 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3944:6: ( ( rule__MonsterInst2__LeperAssignment_73 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3944:6: ( ( rule__MonsterInst2__PopkillAssignment_73 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3944:6: ( ( rule__MonsterInst2__LeperAssignment_73 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3945:1: ( rule__MonsterInst2__LeperAssignment_73 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3944:6: ( ( rule__MonsterInst2__PopkillAssignment_73 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3945:1: ( rule__MonsterInst2__PopkillAssignment_73 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getLeperAssignment_73()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3946:1: ( rule__MonsterInst2__LeperAssignment_73 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3946:2: rule__MonsterInst2__LeperAssignment_73
+                     before(grammarAccess.getMonsterInst2Access().getPopkillAssignment_73()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3946:1: ( rule__MonsterInst2__PopkillAssignment_73 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3946:2: rule__MonsterInst2__PopkillAssignment_73
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__LeperAssignment_73_in_rule__MonsterInst2__Alternatives9064);
-                    rule__MonsterInst2__LeperAssignment_73();
+                    pushFollow(FOLLOW_rule__MonsterInst2__PopkillAssignment_73_in_rule__MonsterInst2__Alternatives9064);
+                    rule__MonsterInst2__PopkillAssignment_73();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getLeperAssignment_73()); 
+                     after(grammarAccess.getMonsterInst2Access().getPopkillAssignment_73()); 
 
                     }
 
@@ -12616,23 +12611,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 75 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3950:6: ( ( rule__MonsterInst2__PopkillAssignment_74 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3950:6: ( ( rule__MonsterInst2__HereticAssignment_74 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3950:6: ( ( rule__MonsterInst2__PopkillAssignment_74 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3951:1: ( rule__MonsterInst2__PopkillAssignment_74 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3950:6: ( ( rule__MonsterInst2__HereticAssignment_74 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3951:1: ( rule__MonsterInst2__HereticAssignment_74 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getPopkillAssignment_74()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3952:1: ( rule__MonsterInst2__PopkillAssignment_74 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3952:2: rule__MonsterInst2__PopkillAssignment_74
+                     before(grammarAccess.getMonsterInst2Access().getHereticAssignment_74()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3952:1: ( rule__MonsterInst2__HereticAssignment_74 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3952:2: rule__MonsterInst2__HereticAssignment_74
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__PopkillAssignment_74_in_rule__MonsterInst2__Alternatives9082);
-                    rule__MonsterInst2__PopkillAssignment_74();
+                    pushFollow(FOLLOW_rule__MonsterInst2__HereticAssignment_74_in_rule__MonsterInst2__Alternatives9082);
+                    rule__MonsterInst2__HereticAssignment_74();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getPopkillAssignment_74()); 
+                     after(grammarAccess.getMonsterInst2Access().getHereticAssignment_74()); 
 
                     }
 
@@ -12640,23 +12635,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 76 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3956:6: ( ( rule__MonsterInst2__HereticAssignment_75 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3956:6: ( ( rule__MonsterInst2__ItemslotsAssignment_75 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3956:6: ( ( rule__MonsterInst2__HereticAssignment_75 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3957:1: ( rule__MonsterInst2__HereticAssignment_75 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3956:6: ( ( rule__MonsterInst2__ItemslotsAssignment_75 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3957:1: ( rule__MonsterInst2__ItemslotsAssignment_75 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getHereticAssignment_75()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3958:1: ( rule__MonsterInst2__HereticAssignment_75 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3958:2: rule__MonsterInst2__HereticAssignment_75
+                     before(grammarAccess.getMonsterInst2Access().getItemslotsAssignment_75()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3958:1: ( rule__MonsterInst2__ItemslotsAssignment_75 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3958:2: rule__MonsterInst2__ItemslotsAssignment_75
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__HereticAssignment_75_in_rule__MonsterInst2__Alternatives9100);
-                    rule__MonsterInst2__HereticAssignment_75();
+                    pushFollow(FOLLOW_rule__MonsterInst2__ItemslotsAssignment_75_in_rule__MonsterInst2__Alternatives9100);
+                    rule__MonsterInst2__ItemslotsAssignment_75();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getHereticAssignment_75()); 
+                     after(grammarAccess.getMonsterInst2Access().getItemslotsAssignment_75()); 
 
                     }
 
@@ -12664,47 +12659,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 77 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3962:6: ( ( rule__MonsterInst2__ItemslotsAssignment_76 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3962:6: ( ( rule__MonsterInst2__NametypeAssignment_76 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3962:6: ( ( rule__MonsterInst2__ItemslotsAssignment_76 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3963:1: ( rule__MonsterInst2__ItemslotsAssignment_76 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3962:6: ( ( rule__MonsterInst2__NametypeAssignment_76 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3963:1: ( rule__MonsterInst2__NametypeAssignment_76 )
                     {
-                     before(grammarAccess.getMonsterInst2Access().getItemslotsAssignment_76()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3964:1: ( rule__MonsterInst2__ItemslotsAssignment_76 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3964:2: rule__MonsterInst2__ItemslotsAssignment_76
+                     before(grammarAccess.getMonsterInst2Access().getNametypeAssignment_76()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3964:1: ( rule__MonsterInst2__NametypeAssignment_76 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3964:2: rule__MonsterInst2__NametypeAssignment_76
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst2__ItemslotsAssignment_76_in_rule__MonsterInst2__Alternatives9118);
-                    rule__MonsterInst2__ItemslotsAssignment_76();
+                    pushFollow(FOLLOW_rule__MonsterInst2__NametypeAssignment_76_in_rule__MonsterInst2__Alternatives9118);
+                    rule__MonsterInst2__NametypeAssignment_76();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst2Access().getItemslotsAssignment_76()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 78 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3968:6: ( ( rule__MonsterInst2__NametypeAssignment_77 ) )
-                    {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3968:6: ( ( rule__MonsterInst2__NametypeAssignment_77 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3969:1: ( rule__MonsterInst2__NametypeAssignment_77 )
-                    {
-                     before(grammarAccess.getMonsterInst2Access().getNametypeAssignment_77()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3970:1: ( rule__MonsterInst2__NametypeAssignment_77 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3970:2: rule__MonsterInst2__NametypeAssignment_77
-                    {
-                    pushFollow(FOLLOW_rule__MonsterInst2__NametypeAssignment_77_in_rule__MonsterInst2__Alternatives9136);
-                    rule__MonsterInst2__NametypeAssignment_77();
-                    _fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getMonsterInst2Access().getNametypeAssignment_77()); 
+                     after(grammarAccess.getMonsterInst2Access().getNametypeAssignment_76()); 
 
                     }
 
@@ -12729,54 +12700,54 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst3__Alternatives
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3979:1: rule__MonsterInst3__Alternatives : ( ( ( rule__MonsterInst3__MagicskillAssignment_0 ) ) | ( ( rule__MonsterInst3__CustommagicAssignment_1 ) ) | ( ( rule__MonsterInst3__MagicboostAssignment_2 ) ) | ( ( rule__MonsterInst3__GemprodAssignment_3 ) ) );
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3973:1: rule__MonsterInst3__Alternatives : ( ( ( rule__MonsterInst3__MagicskillAssignment_0 ) ) | ( ( rule__MonsterInst3__CustommagicAssignment_1 ) ) | ( ( rule__MonsterInst3__MagicboostAssignment_2 ) ) | ( ( rule__MonsterInst3__GemprodAssignment_3 ) ) );
     public final void rule__MonsterInst3__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3983:1: ( ( ( rule__MonsterInst3__MagicskillAssignment_0 ) ) | ( ( rule__MonsterInst3__CustommagicAssignment_1 ) ) | ( ( rule__MonsterInst3__MagicboostAssignment_2 ) ) | ( ( rule__MonsterInst3__GemprodAssignment_3 ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3977:1: ( ( ( rule__MonsterInst3__MagicskillAssignment_0 ) ) | ( ( rule__MonsterInst3__CustommagicAssignment_1 ) ) | ( ( rule__MonsterInst3__MagicboostAssignment_2 ) ) | ( ( rule__MonsterInst3__GemprodAssignment_3 ) ) )
             int alt14=4;
             switch ( input.LA(1) ) {
-            case 172:
+            case 171:
                 {
                 alt14=1;
                 }
                 break;
-            case 173:
+            case 172:
                 {
                 alt14=2;
                 }
                 break;
-            case 174:
+            case 173:
                 {
                 alt14=3;
                 }
                 break;
-            case 175:
+            case 174:
                 {
                 alt14=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("3979:1: rule__MonsterInst3__Alternatives : ( ( ( rule__MonsterInst3__MagicskillAssignment_0 ) ) | ( ( rule__MonsterInst3__CustommagicAssignment_1 ) ) | ( ( rule__MonsterInst3__MagicboostAssignment_2 ) ) | ( ( rule__MonsterInst3__GemprodAssignment_3 ) ) );", 14, 0, input);
+                    new NoViableAltException("3973:1: rule__MonsterInst3__Alternatives : ( ( ( rule__MonsterInst3__MagicskillAssignment_0 ) ) | ( ( rule__MonsterInst3__CustommagicAssignment_1 ) ) | ( ( rule__MonsterInst3__MagicboostAssignment_2 ) ) | ( ( rule__MonsterInst3__GemprodAssignment_3 ) ) );", 14, 0, input);
 
                 throw nvae;
             }
 
             switch (alt14) {
                 case 1 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3984:1: ( ( rule__MonsterInst3__MagicskillAssignment_0 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3978:1: ( ( rule__MonsterInst3__MagicskillAssignment_0 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3984:1: ( ( rule__MonsterInst3__MagicskillAssignment_0 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3985:1: ( rule__MonsterInst3__MagicskillAssignment_0 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3978:1: ( ( rule__MonsterInst3__MagicskillAssignment_0 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3979:1: ( rule__MonsterInst3__MagicskillAssignment_0 )
                     {
                      before(grammarAccess.getMonsterInst3Access().getMagicskillAssignment_0()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3986:1: ( rule__MonsterInst3__MagicskillAssignment_0 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3986:2: rule__MonsterInst3__MagicskillAssignment_0
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3980:1: ( rule__MonsterInst3__MagicskillAssignment_0 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3980:2: rule__MonsterInst3__MagicskillAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst3__MagicskillAssignment_0_in_rule__MonsterInst3__Alternatives9169);
+                    pushFollow(FOLLOW_rule__MonsterInst3__MagicskillAssignment_0_in_rule__MonsterInst3__Alternatives9151);
                     rule__MonsterInst3__MagicskillAssignment_0();
                     _fsp--;
 
@@ -12791,16 +12762,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3990:6: ( ( rule__MonsterInst3__CustommagicAssignment_1 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3984:6: ( ( rule__MonsterInst3__CustommagicAssignment_1 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3990:6: ( ( rule__MonsterInst3__CustommagicAssignment_1 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3991:1: ( rule__MonsterInst3__CustommagicAssignment_1 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3984:6: ( ( rule__MonsterInst3__CustommagicAssignment_1 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3985:1: ( rule__MonsterInst3__CustommagicAssignment_1 )
                     {
                      before(grammarAccess.getMonsterInst3Access().getCustommagicAssignment_1()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3992:1: ( rule__MonsterInst3__CustommagicAssignment_1 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3992:2: rule__MonsterInst3__CustommagicAssignment_1
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3986:1: ( rule__MonsterInst3__CustommagicAssignment_1 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3986:2: rule__MonsterInst3__CustommagicAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst3__CustommagicAssignment_1_in_rule__MonsterInst3__Alternatives9187);
+                    pushFollow(FOLLOW_rule__MonsterInst3__CustommagicAssignment_1_in_rule__MonsterInst3__Alternatives9169);
                     rule__MonsterInst3__CustommagicAssignment_1();
                     _fsp--;
 
@@ -12815,16 +12786,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3996:6: ( ( rule__MonsterInst3__MagicboostAssignment_2 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3990:6: ( ( rule__MonsterInst3__MagicboostAssignment_2 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3996:6: ( ( rule__MonsterInst3__MagicboostAssignment_2 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3997:1: ( rule__MonsterInst3__MagicboostAssignment_2 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3990:6: ( ( rule__MonsterInst3__MagicboostAssignment_2 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3991:1: ( rule__MonsterInst3__MagicboostAssignment_2 )
                     {
                      before(grammarAccess.getMonsterInst3Access().getMagicboostAssignment_2()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3998:1: ( rule__MonsterInst3__MagicboostAssignment_2 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3998:2: rule__MonsterInst3__MagicboostAssignment_2
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3992:1: ( rule__MonsterInst3__MagicboostAssignment_2 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3992:2: rule__MonsterInst3__MagicboostAssignment_2
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst3__MagicboostAssignment_2_in_rule__MonsterInst3__Alternatives9205);
+                    pushFollow(FOLLOW_rule__MonsterInst3__MagicboostAssignment_2_in_rule__MonsterInst3__Alternatives9187);
                     rule__MonsterInst3__MagicboostAssignment_2();
                     _fsp--;
 
@@ -12839,16 +12810,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4002:6: ( ( rule__MonsterInst3__GemprodAssignment_3 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3996:6: ( ( rule__MonsterInst3__GemprodAssignment_3 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4002:6: ( ( rule__MonsterInst3__GemprodAssignment_3 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4003:1: ( rule__MonsterInst3__GemprodAssignment_3 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3996:6: ( ( rule__MonsterInst3__GemprodAssignment_3 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3997:1: ( rule__MonsterInst3__GemprodAssignment_3 )
                     {
                      before(grammarAccess.getMonsterInst3Access().getGemprodAssignment_3()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4004:1: ( rule__MonsterInst3__GemprodAssignment_3 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4004:2: rule__MonsterInst3__GemprodAssignment_3
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3998:1: ( rule__MonsterInst3__GemprodAssignment_3 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:3998:2: rule__MonsterInst3__GemprodAssignment_3
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst3__GemprodAssignment_3_in_rule__MonsterInst3__Alternatives9223);
+                    pushFollow(FOLLOW_rule__MonsterInst3__GemprodAssignment_3_in_rule__MonsterInst3__Alternatives9205);
                     rule__MonsterInst3__GemprodAssignment_3();
                     _fsp--;
 
@@ -12880,334 +12851,334 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__Alternatives
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4013:1: rule__MonsterInst4__Alternatives : ( ( ( rule__MonsterInst4__ClearAssignment_0 ) ) | ( ( rule__MonsterInst4__ClearmagicAssignment_1 ) ) | ( ( rule__MonsterInst4__ClearspecAssignment_2 ) ) | ( ( rule__MonsterInst4__FemaleAssignment_3 ) ) | ( ( rule__MonsterInst4__MountedAssignment_4 ) ) | ( ( rule__MonsterInst4__HolyAssignment_5 ) ) | ( ( rule__MonsterInst4__AnimalAssignment_6 ) ) | ( ( rule__MonsterInst4__UndeadAssignment_7 ) ) | ( ( rule__MonsterInst4__DemonAssignment_8 ) ) | ( ( rule__MonsterInst4__MagicbeingAssignment_9 ) ) | ( ( rule__MonsterInst4__StonebeingAssignment_10 ) ) | ( ( rule__MonsterInst4__InanimateAssignment_11 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_12 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_13 ) ) | ( ( rule__MonsterInst4__ImmortalAssignment_14 ) ) | ( ( rule__MonsterInst4__BlindAssignment_15 ) ) | ( ( rule__MonsterInst4__UniqueAssignment_16 ) ) | ( ( rule__MonsterInst4__ImmobileAssignment_17 ) ) | ( ( rule__MonsterInst4__AquaticAssignment_18 ) ) | ( ( rule__MonsterInst4__AmphibianAssignment_19 ) ) | ( ( rule__MonsterInst4__PooramphibianAssignment_20 ) ) | ( ( rule__MonsterInst4__FlyingAssignment_21 ) ) | ( ( rule__MonsterInst4__StormimmuneAssignment_22 ) ) | ( ( rule__MonsterInst4__SailingAssignment_23 ) ) | ( ( rule__MonsterInst4__ForestsurvivalAssignment_24 ) ) | ( ( rule__MonsterInst4__MountainsurvivalAssignment_25 ) ) | ( ( rule__MonsterInst4__SwampsurvivalAssignment_26 ) ) | ( ( rule__MonsterInst4__WastesurvivalAssignment_27 ) ) | ( ( rule__MonsterInst4__IllusionAssignment_28 ) ) | ( ( rule__MonsterInst4__SpyAssignment_29 ) ) | ( ( rule__MonsterInst4__AssassinAssignment_30 ) ) | ( ( rule__MonsterInst4__HealAssignment_31 ) ) | ( ( rule__MonsterInst4__NohealAssignment_32 ) ) | ( ( rule__MonsterInst4__NeednoteatAssignment_33 ) ) | ( ( rule__MonsterInst4__EtherealAssignment_34 ) ) | ( ( rule__MonsterInst4__TrampleAssignment_35 ) ) | ( ( rule__MonsterInst4__EntangleAssignment_36 ) ) | ( ( rule__MonsterInst4__EyelossAssignment_37 ) ) | ( ( rule__MonsterInst4__HorrormarkAssignment_38 ) ) | ( ( rule__MonsterInst4__PoisonarmorAssignment_39 ) ) | ( ( rule__MonsterInst4__InquisitorAssignment_40 ) ) | ( ( rule__MonsterInst4__NoitemAssignment_41 ) ) | ( ( rule__MonsterInst4__NoleaderAssignment_42 ) ) | ( ( rule__MonsterInst4__PoorleaderAssignment_43 ) ) | ( ( rule__MonsterInst4__OkleaderAssignment_44 ) ) | ( ( rule__MonsterInst4__GoodleaderAssignment_45 ) ) | ( ( rule__MonsterInst4__ExpertleaderAssignment_46 ) ) | ( ( rule__MonsterInst4__SuperiorleaderAssignment_47 ) ) | ( ( rule__MonsterInst4__NomagicleaderAssignment_48 ) ) | ( ( rule__MonsterInst4__PoormagicleaderAssignment_49 ) ) | ( ( rule__MonsterInst4__OkmagicleaderAssignment_50 ) ) | ( ( rule__MonsterInst4__GoodmagicleaderAssignment_51 ) ) | ( ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 ) ) | ( ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 ) ) | ( ( rule__MonsterInst4__NoundeadleaderAssignment_54 ) ) | ( ( rule__MonsterInst4__PoorundeadleaderAssignment_55 ) ) | ( ( rule__MonsterInst4__OkundeadleaderAssignment_56 ) ) | ( ( rule__MonsterInst4__GoodundeadleaderAssignment_57 ) ) | ( ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 ) ) | ( ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 ) ) );
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4007:1: rule__MonsterInst4__Alternatives : ( ( ( rule__MonsterInst4__ClearAssignment_0 ) ) | ( ( rule__MonsterInst4__ClearmagicAssignment_1 ) ) | ( ( rule__MonsterInst4__ClearspecAssignment_2 ) ) | ( ( rule__MonsterInst4__FemaleAssignment_3 ) ) | ( ( rule__MonsterInst4__MountedAssignment_4 ) ) | ( ( rule__MonsterInst4__HolyAssignment_5 ) ) | ( ( rule__MonsterInst4__AnimalAssignment_6 ) ) | ( ( rule__MonsterInst4__UndeadAssignment_7 ) ) | ( ( rule__MonsterInst4__DemonAssignment_8 ) ) | ( ( rule__MonsterInst4__MagicbeingAssignment_9 ) ) | ( ( rule__MonsterInst4__StonebeingAssignment_10 ) ) | ( ( rule__MonsterInst4__InanimateAssignment_11 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_12 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_13 ) ) | ( ( rule__MonsterInst4__ImmortalAssignment_14 ) ) | ( ( rule__MonsterInst4__BlindAssignment_15 ) ) | ( ( rule__MonsterInst4__UniqueAssignment_16 ) ) | ( ( rule__MonsterInst4__ImmobileAssignment_17 ) ) | ( ( rule__MonsterInst4__AquaticAssignment_18 ) ) | ( ( rule__MonsterInst4__AmphibianAssignment_19 ) ) | ( ( rule__MonsterInst4__PooramphibianAssignment_20 ) ) | ( ( rule__MonsterInst4__FlyingAssignment_21 ) ) | ( ( rule__MonsterInst4__StormimmuneAssignment_22 ) ) | ( ( rule__MonsterInst4__SailingAssignment_23 ) ) | ( ( rule__MonsterInst4__ForestsurvivalAssignment_24 ) ) | ( ( rule__MonsterInst4__MountainsurvivalAssignment_25 ) ) | ( ( rule__MonsterInst4__SwampsurvivalAssignment_26 ) ) | ( ( rule__MonsterInst4__WastesurvivalAssignment_27 ) ) | ( ( rule__MonsterInst4__IllusionAssignment_28 ) ) | ( ( rule__MonsterInst4__SpyAssignment_29 ) ) | ( ( rule__MonsterInst4__AssassinAssignment_30 ) ) | ( ( rule__MonsterInst4__HealAssignment_31 ) ) | ( ( rule__MonsterInst4__NohealAssignment_32 ) ) | ( ( rule__MonsterInst4__NeednoteatAssignment_33 ) ) | ( ( rule__MonsterInst4__EtherealAssignment_34 ) ) | ( ( rule__MonsterInst4__TrampleAssignment_35 ) ) | ( ( rule__MonsterInst4__EntangleAssignment_36 ) ) | ( ( rule__MonsterInst4__EyelossAssignment_37 ) ) | ( ( rule__MonsterInst4__HorrormarkAssignment_38 ) ) | ( ( rule__MonsterInst4__PoisonarmorAssignment_39 ) ) | ( ( rule__MonsterInst4__InquisitorAssignment_40 ) ) | ( ( rule__MonsterInst4__NoitemAssignment_41 ) ) | ( ( rule__MonsterInst4__NoleaderAssignment_42 ) ) | ( ( rule__MonsterInst4__PoorleaderAssignment_43 ) ) | ( ( rule__MonsterInst4__OkleaderAssignment_44 ) ) | ( ( rule__MonsterInst4__GoodleaderAssignment_45 ) ) | ( ( rule__MonsterInst4__ExpertleaderAssignment_46 ) ) | ( ( rule__MonsterInst4__SuperiorleaderAssignment_47 ) ) | ( ( rule__MonsterInst4__NomagicleaderAssignment_48 ) ) | ( ( rule__MonsterInst4__PoormagicleaderAssignment_49 ) ) | ( ( rule__MonsterInst4__OkmagicleaderAssignment_50 ) ) | ( ( rule__MonsterInst4__GoodmagicleaderAssignment_51 ) ) | ( ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 ) ) | ( ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 ) ) | ( ( rule__MonsterInst4__NoundeadleaderAssignment_54 ) ) | ( ( rule__MonsterInst4__PoorundeadleaderAssignment_55 ) ) | ( ( rule__MonsterInst4__OkundeadleaderAssignment_56 ) ) | ( ( rule__MonsterInst4__GoodundeadleaderAssignment_57 ) ) | ( ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 ) ) | ( ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 ) ) );
     public final void rule__MonsterInst4__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4017:1: ( ( ( rule__MonsterInst4__ClearAssignment_0 ) ) | ( ( rule__MonsterInst4__ClearmagicAssignment_1 ) ) | ( ( rule__MonsterInst4__ClearspecAssignment_2 ) ) | ( ( rule__MonsterInst4__FemaleAssignment_3 ) ) | ( ( rule__MonsterInst4__MountedAssignment_4 ) ) | ( ( rule__MonsterInst4__HolyAssignment_5 ) ) | ( ( rule__MonsterInst4__AnimalAssignment_6 ) ) | ( ( rule__MonsterInst4__UndeadAssignment_7 ) ) | ( ( rule__MonsterInst4__DemonAssignment_8 ) ) | ( ( rule__MonsterInst4__MagicbeingAssignment_9 ) ) | ( ( rule__MonsterInst4__StonebeingAssignment_10 ) ) | ( ( rule__MonsterInst4__InanimateAssignment_11 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_12 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_13 ) ) | ( ( rule__MonsterInst4__ImmortalAssignment_14 ) ) | ( ( rule__MonsterInst4__BlindAssignment_15 ) ) | ( ( rule__MonsterInst4__UniqueAssignment_16 ) ) | ( ( rule__MonsterInst4__ImmobileAssignment_17 ) ) | ( ( rule__MonsterInst4__AquaticAssignment_18 ) ) | ( ( rule__MonsterInst4__AmphibianAssignment_19 ) ) | ( ( rule__MonsterInst4__PooramphibianAssignment_20 ) ) | ( ( rule__MonsterInst4__FlyingAssignment_21 ) ) | ( ( rule__MonsterInst4__StormimmuneAssignment_22 ) ) | ( ( rule__MonsterInst4__SailingAssignment_23 ) ) | ( ( rule__MonsterInst4__ForestsurvivalAssignment_24 ) ) | ( ( rule__MonsterInst4__MountainsurvivalAssignment_25 ) ) | ( ( rule__MonsterInst4__SwampsurvivalAssignment_26 ) ) | ( ( rule__MonsterInst4__WastesurvivalAssignment_27 ) ) | ( ( rule__MonsterInst4__IllusionAssignment_28 ) ) | ( ( rule__MonsterInst4__SpyAssignment_29 ) ) | ( ( rule__MonsterInst4__AssassinAssignment_30 ) ) | ( ( rule__MonsterInst4__HealAssignment_31 ) ) | ( ( rule__MonsterInst4__NohealAssignment_32 ) ) | ( ( rule__MonsterInst4__NeednoteatAssignment_33 ) ) | ( ( rule__MonsterInst4__EtherealAssignment_34 ) ) | ( ( rule__MonsterInst4__TrampleAssignment_35 ) ) | ( ( rule__MonsterInst4__EntangleAssignment_36 ) ) | ( ( rule__MonsterInst4__EyelossAssignment_37 ) ) | ( ( rule__MonsterInst4__HorrormarkAssignment_38 ) ) | ( ( rule__MonsterInst4__PoisonarmorAssignment_39 ) ) | ( ( rule__MonsterInst4__InquisitorAssignment_40 ) ) | ( ( rule__MonsterInst4__NoitemAssignment_41 ) ) | ( ( rule__MonsterInst4__NoleaderAssignment_42 ) ) | ( ( rule__MonsterInst4__PoorleaderAssignment_43 ) ) | ( ( rule__MonsterInst4__OkleaderAssignment_44 ) ) | ( ( rule__MonsterInst4__GoodleaderAssignment_45 ) ) | ( ( rule__MonsterInst4__ExpertleaderAssignment_46 ) ) | ( ( rule__MonsterInst4__SuperiorleaderAssignment_47 ) ) | ( ( rule__MonsterInst4__NomagicleaderAssignment_48 ) ) | ( ( rule__MonsterInst4__PoormagicleaderAssignment_49 ) ) | ( ( rule__MonsterInst4__OkmagicleaderAssignment_50 ) ) | ( ( rule__MonsterInst4__GoodmagicleaderAssignment_51 ) ) | ( ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 ) ) | ( ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 ) ) | ( ( rule__MonsterInst4__NoundeadleaderAssignment_54 ) ) | ( ( rule__MonsterInst4__PoorundeadleaderAssignment_55 ) ) | ( ( rule__MonsterInst4__OkundeadleaderAssignment_56 ) ) | ( ( rule__MonsterInst4__GoodundeadleaderAssignment_57 ) ) | ( ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 ) ) | ( ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4011:1: ( ( ( rule__MonsterInst4__ClearAssignment_0 ) ) | ( ( rule__MonsterInst4__ClearmagicAssignment_1 ) ) | ( ( rule__MonsterInst4__ClearspecAssignment_2 ) ) | ( ( rule__MonsterInst4__FemaleAssignment_3 ) ) | ( ( rule__MonsterInst4__MountedAssignment_4 ) ) | ( ( rule__MonsterInst4__HolyAssignment_5 ) ) | ( ( rule__MonsterInst4__AnimalAssignment_6 ) ) | ( ( rule__MonsterInst4__UndeadAssignment_7 ) ) | ( ( rule__MonsterInst4__DemonAssignment_8 ) ) | ( ( rule__MonsterInst4__MagicbeingAssignment_9 ) ) | ( ( rule__MonsterInst4__StonebeingAssignment_10 ) ) | ( ( rule__MonsterInst4__InanimateAssignment_11 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_12 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_13 ) ) | ( ( rule__MonsterInst4__ImmortalAssignment_14 ) ) | ( ( rule__MonsterInst4__BlindAssignment_15 ) ) | ( ( rule__MonsterInst4__UniqueAssignment_16 ) ) | ( ( rule__MonsterInst4__ImmobileAssignment_17 ) ) | ( ( rule__MonsterInst4__AquaticAssignment_18 ) ) | ( ( rule__MonsterInst4__AmphibianAssignment_19 ) ) | ( ( rule__MonsterInst4__PooramphibianAssignment_20 ) ) | ( ( rule__MonsterInst4__FlyingAssignment_21 ) ) | ( ( rule__MonsterInst4__StormimmuneAssignment_22 ) ) | ( ( rule__MonsterInst4__SailingAssignment_23 ) ) | ( ( rule__MonsterInst4__ForestsurvivalAssignment_24 ) ) | ( ( rule__MonsterInst4__MountainsurvivalAssignment_25 ) ) | ( ( rule__MonsterInst4__SwampsurvivalAssignment_26 ) ) | ( ( rule__MonsterInst4__WastesurvivalAssignment_27 ) ) | ( ( rule__MonsterInst4__IllusionAssignment_28 ) ) | ( ( rule__MonsterInst4__SpyAssignment_29 ) ) | ( ( rule__MonsterInst4__AssassinAssignment_30 ) ) | ( ( rule__MonsterInst4__HealAssignment_31 ) ) | ( ( rule__MonsterInst4__NohealAssignment_32 ) ) | ( ( rule__MonsterInst4__NeednoteatAssignment_33 ) ) | ( ( rule__MonsterInst4__EtherealAssignment_34 ) ) | ( ( rule__MonsterInst4__TrampleAssignment_35 ) ) | ( ( rule__MonsterInst4__EntangleAssignment_36 ) ) | ( ( rule__MonsterInst4__EyelossAssignment_37 ) ) | ( ( rule__MonsterInst4__HorrormarkAssignment_38 ) ) | ( ( rule__MonsterInst4__PoisonarmorAssignment_39 ) ) | ( ( rule__MonsterInst4__InquisitorAssignment_40 ) ) | ( ( rule__MonsterInst4__NoitemAssignment_41 ) ) | ( ( rule__MonsterInst4__NoleaderAssignment_42 ) ) | ( ( rule__MonsterInst4__PoorleaderAssignment_43 ) ) | ( ( rule__MonsterInst4__OkleaderAssignment_44 ) ) | ( ( rule__MonsterInst4__GoodleaderAssignment_45 ) ) | ( ( rule__MonsterInst4__ExpertleaderAssignment_46 ) ) | ( ( rule__MonsterInst4__SuperiorleaderAssignment_47 ) ) | ( ( rule__MonsterInst4__NomagicleaderAssignment_48 ) ) | ( ( rule__MonsterInst4__PoormagicleaderAssignment_49 ) ) | ( ( rule__MonsterInst4__OkmagicleaderAssignment_50 ) ) | ( ( rule__MonsterInst4__GoodmagicleaderAssignment_51 ) ) | ( ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 ) ) | ( ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 ) ) | ( ( rule__MonsterInst4__NoundeadleaderAssignment_54 ) ) | ( ( rule__MonsterInst4__PoorundeadleaderAssignment_55 ) ) | ( ( rule__MonsterInst4__OkundeadleaderAssignment_56 ) ) | ( ( rule__MonsterInst4__GoodundeadleaderAssignment_57 ) ) | ( ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 ) ) | ( ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 ) ) )
             int alt15=60;
             switch ( input.LA(1) ) {
-            case 176:
+            case 175:
                 {
                 alt15=1;
                 }
                 break;
-            case 177:
+            case 176:
                 {
                 alt15=2;
                 }
                 break;
-            case 178:
+            case 177:
                 {
                 alt15=3;
                 }
                 break;
-            case 179:
+            case 178:
                 {
                 alt15=4;
                 }
                 break;
-            case 180:
+            case 179:
                 {
                 alt15=5;
                 }
                 break;
-            case 181:
+            case 180:
                 {
                 alt15=6;
                 }
                 break;
-            case 182:
+            case 181:
                 {
                 alt15=7;
                 }
                 break;
-            case 183:
+            case 182:
                 {
                 alt15=8;
                 }
                 break;
-            case 184:
+            case 183:
                 {
                 alt15=9;
                 }
                 break;
-            case 185:
+            case 184:
                 {
                 alt15=10;
                 }
                 break;
-            case 186:
+            case 185:
                 {
                 alt15=11;
                 }
                 break;
-            case 187:
+            case 186:
                 {
                 alt15=12;
                 }
                 break;
-            case 188:
+            case 187:
                 {
                 alt15=13;
                 }
                 break;
-            case 189:
+            case 188:
                 {
                 alt15=14;
                 }
                 break;
-            case 190:
+            case 189:
                 {
                 alt15=15;
                 }
                 break;
-            case 191:
+            case 190:
                 {
                 alt15=16;
                 }
                 break;
-            case 192:
+            case 191:
                 {
                 alt15=17;
                 }
                 break;
-            case 193:
+            case 192:
                 {
                 alt15=18;
                 }
                 break;
-            case 194:
+            case 193:
                 {
                 alt15=19;
                 }
                 break;
-            case 195:
+            case 194:
                 {
                 alt15=20;
                 }
                 break;
-            case 196:
+            case 195:
                 {
                 alt15=21;
                 }
                 break;
-            case 197:
+            case 196:
                 {
                 alt15=22;
                 }
                 break;
-            case 198:
+            case 197:
                 {
                 alt15=23;
                 }
                 break;
-            case 199:
+            case 198:
                 {
                 alt15=24;
                 }
                 break;
-            case 200:
+            case 199:
                 {
                 alt15=25;
                 }
                 break;
-            case 201:
+            case 200:
                 {
                 alt15=26;
                 }
                 break;
-            case 202:
+            case 201:
                 {
                 alt15=27;
                 }
                 break;
-            case 203:
+            case 202:
                 {
                 alt15=28;
                 }
                 break;
-            case 204:
+            case 203:
                 {
                 alt15=29;
                 }
                 break;
-            case 205:
+            case 204:
                 {
                 alt15=30;
                 }
                 break;
-            case 206:
+            case 205:
                 {
                 alt15=31;
                 }
                 break;
-            case 207:
+            case 206:
                 {
                 alt15=32;
                 }
                 break;
-            case 208:
+            case 207:
                 {
                 alt15=33;
                 }
                 break;
-            case 209:
+            case 208:
                 {
                 alt15=34;
                 }
                 break;
-            case 210:
+            case 209:
                 {
                 alt15=35;
                 }
                 break;
-            case 211:
+            case 210:
                 {
                 alt15=36;
                 }
                 break;
-            case 212:
+            case 211:
                 {
                 alt15=37;
                 }
                 break;
-            case 213:
+            case 212:
                 {
                 alt15=38;
                 }
                 break;
-            case 214:
+            case 213:
                 {
                 alt15=39;
                 }
                 break;
-            case 215:
+            case 214:
                 {
                 alt15=40;
                 }
                 break;
-            case 216:
+            case 215:
                 {
                 alt15=41;
                 }
                 break;
-            case 217:
+            case 216:
                 {
                 alt15=42;
                 }
                 break;
-            case 218:
+            case 217:
                 {
                 alt15=43;
                 }
                 break;
-            case 219:
+            case 218:
                 {
                 alt15=44;
                 }
                 break;
-            case 220:
+            case 219:
                 {
                 alt15=45;
                 }
                 break;
-            case 221:
+            case 220:
                 {
                 alt15=46;
                 }
                 break;
-            case 222:
+            case 221:
                 {
                 alt15=47;
                 }
                 break;
-            case 223:
+            case 222:
                 {
                 alt15=48;
                 }
                 break;
-            case 224:
+            case 223:
                 {
                 alt15=49;
                 }
                 break;
-            case 225:
+            case 224:
                 {
                 alt15=50;
                 }
                 break;
-            case 226:
+            case 225:
                 {
                 alt15=51;
                 }
                 break;
-            case 227:
+            case 226:
                 {
                 alt15=52;
                 }
                 break;
-            case 228:
+            case 227:
                 {
                 alt15=53;
                 }
                 break;
-            case 229:
+            case 228:
                 {
                 alt15=54;
                 }
                 break;
-            case 230:
+            case 229:
                 {
                 alt15=55;
                 }
                 break;
-            case 231:
+            case 230:
                 {
                 alt15=56;
                 }
                 break;
-            case 232:
+            case 231:
                 {
                 alt15=57;
                 }
                 break;
-            case 233:
+            case 232:
                 {
                 alt15=58;
                 }
                 break;
-            case 234:
+            case 233:
                 {
                 alt15=59;
                 }
                 break;
-            case 235:
+            case 234:
                 {
                 alt15=60;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("4013:1: rule__MonsterInst4__Alternatives : ( ( ( rule__MonsterInst4__ClearAssignment_0 ) ) | ( ( rule__MonsterInst4__ClearmagicAssignment_1 ) ) | ( ( rule__MonsterInst4__ClearspecAssignment_2 ) ) | ( ( rule__MonsterInst4__FemaleAssignment_3 ) ) | ( ( rule__MonsterInst4__MountedAssignment_4 ) ) | ( ( rule__MonsterInst4__HolyAssignment_5 ) ) | ( ( rule__MonsterInst4__AnimalAssignment_6 ) ) | ( ( rule__MonsterInst4__UndeadAssignment_7 ) ) | ( ( rule__MonsterInst4__DemonAssignment_8 ) ) | ( ( rule__MonsterInst4__MagicbeingAssignment_9 ) ) | ( ( rule__MonsterInst4__StonebeingAssignment_10 ) ) | ( ( rule__MonsterInst4__InanimateAssignment_11 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_12 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_13 ) ) | ( ( rule__MonsterInst4__ImmortalAssignment_14 ) ) | ( ( rule__MonsterInst4__BlindAssignment_15 ) ) | ( ( rule__MonsterInst4__UniqueAssignment_16 ) ) | ( ( rule__MonsterInst4__ImmobileAssignment_17 ) ) | ( ( rule__MonsterInst4__AquaticAssignment_18 ) ) | ( ( rule__MonsterInst4__AmphibianAssignment_19 ) ) | ( ( rule__MonsterInst4__PooramphibianAssignment_20 ) ) | ( ( rule__MonsterInst4__FlyingAssignment_21 ) ) | ( ( rule__MonsterInst4__StormimmuneAssignment_22 ) ) | ( ( rule__MonsterInst4__SailingAssignment_23 ) ) | ( ( rule__MonsterInst4__ForestsurvivalAssignment_24 ) ) | ( ( rule__MonsterInst4__MountainsurvivalAssignment_25 ) ) | ( ( rule__MonsterInst4__SwampsurvivalAssignment_26 ) ) | ( ( rule__MonsterInst4__WastesurvivalAssignment_27 ) ) | ( ( rule__MonsterInst4__IllusionAssignment_28 ) ) | ( ( rule__MonsterInst4__SpyAssignment_29 ) ) | ( ( rule__MonsterInst4__AssassinAssignment_30 ) ) | ( ( rule__MonsterInst4__HealAssignment_31 ) ) | ( ( rule__MonsterInst4__NohealAssignment_32 ) ) | ( ( rule__MonsterInst4__NeednoteatAssignment_33 ) ) | ( ( rule__MonsterInst4__EtherealAssignment_34 ) ) | ( ( rule__MonsterInst4__TrampleAssignment_35 ) ) | ( ( rule__MonsterInst4__EntangleAssignment_36 ) ) | ( ( rule__MonsterInst4__EyelossAssignment_37 ) ) | ( ( rule__MonsterInst4__HorrormarkAssignment_38 ) ) | ( ( rule__MonsterInst4__PoisonarmorAssignment_39 ) ) | ( ( rule__MonsterInst4__InquisitorAssignment_40 ) ) | ( ( rule__MonsterInst4__NoitemAssignment_41 ) ) | ( ( rule__MonsterInst4__NoleaderAssignment_42 ) ) | ( ( rule__MonsterInst4__PoorleaderAssignment_43 ) ) | ( ( rule__MonsterInst4__OkleaderAssignment_44 ) ) | ( ( rule__MonsterInst4__GoodleaderAssignment_45 ) ) | ( ( rule__MonsterInst4__ExpertleaderAssignment_46 ) ) | ( ( rule__MonsterInst4__SuperiorleaderAssignment_47 ) ) | ( ( rule__MonsterInst4__NomagicleaderAssignment_48 ) ) | ( ( rule__MonsterInst4__PoormagicleaderAssignment_49 ) ) | ( ( rule__MonsterInst4__OkmagicleaderAssignment_50 ) ) | ( ( rule__MonsterInst4__GoodmagicleaderAssignment_51 ) ) | ( ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 ) ) | ( ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 ) ) | ( ( rule__MonsterInst4__NoundeadleaderAssignment_54 ) ) | ( ( rule__MonsterInst4__PoorundeadleaderAssignment_55 ) ) | ( ( rule__MonsterInst4__OkundeadleaderAssignment_56 ) ) | ( ( rule__MonsterInst4__GoodundeadleaderAssignment_57 ) ) | ( ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 ) ) | ( ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 ) ) );", 15, 0, input);
+                    new NoViableAltException("4007:1: rule__MonsterInst4__Alternatives : ( ( ( rule__MonsterInst4__ClearAssignment_0 ) ) | ( ( rule__MonsterInst4__ClearmagicAssignment_1 ) ) | ( ( rule__MonsterInst4__ClearspecAssignment_2 ) ) | ( ( rule__MonsterInst4__FemaleAssignment_3 ) ) | ( ( rule__MonsterInst4__MountedAssignment_4 ) ) | ( ( rule__MonsterInst4__HolyAssignment_5 ) ) | ( ( rule__MonsterInst4__AnimalAssignment_6 ) ) | ( ( rule__MonsterInst4__UndeadAssignment_7 ) ) | ( ( rule__MonsterInst4__DemonAssignment_8 ) ) | ( ( rule__MonsterInst4__MagicbeingAssignment_9 ) ) | ( ( rule__MonsterInst4__StonebeingAssignment_10 ) ) | ( ( rule__MonsterInst4__InanimateAssignment_11 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_12 ) ) | ( ( rule__MonsterInst4__ColdbloodAssignment_13 ) ) | ( ( rule__MonsterInst4__ImmortalAssignment_14 ) ) | ( ( rule__MonsterInst4__BlindAssignment_15 ) ) | ( ( rule__MonsterInst4__UniqueAssignment_16 ) ) | ( ( rule__MonsterInst4__ImmobileAssignment_17 ) ) | ( ( rule__MonsterInst4__AquaticAssignment_18 ) ) | ( ( rule__MonsterInst4__AmphibianAssignment_19 ) ) | ( ( rule__MonsterInst4__PooramphibianAssignment_20 ) ) | ( ( rule__MonsterInst4__FlyingAssignment_21 ) ) | ( ( rule__MonsterInst4__StormimmuneAssignment_22 ) ) | ( ( rule__MonsterInst4__SailingAssignment_23 ) ) | ( ( rule__MonsterInst4__ForestsurvivalAssignment_24 ) ) | ( ( rule__MonsterInst4__MountainsurvivalAssignment_25 ) ) | ( ( rule__MonsterInst4__SwampsurvivalAssignment_26 ) ) | ( ( rule__MonsterInst4__WastesurvivalAssignment_27 ) ) | ( ( rule__MonsterInst4__IllusionAssignment_28 ) ) | ( ( rule__MonsterInst4__SpyAssignment_29 ) ) | ( ( rule__MonsterInst4__AssassinAssignment_30 ) ) | ( ( rule__MonsterInst4__HealAssignment_31 ) ) | ( ( rule__MonsterInst4__NohealAssignment_32 ) ) | ( ( rule__MonsterInst4__NeednoteatAssignment_33 ) ) | ( ( rule__MonsterInst4__EtherealAssignment_34 ) ) | ( ( rule__MonsterInst4__TrampleAssignment_35 ) ) | ( ( rule__MonsterInst4__EntangleAssignment_36 ) ) | ( ( rule__MonsterInst4__EyelossAssignment_37 ) ) | ( ( rule__MonsterInst4__HorrormarkAssignment_38 ) ) | ( ( rule__MonsterInst4__PoisonarmorAssignment_39 ) ) | ( ( rule__MonsterInst4__InquisitorAssignment_40 ) ) | ( ( rule__MonsterInst4__NoitemAssignment_41 ) ) | ( ( rule__MonsterInst4__NoleaderAssignment_42 ) ) | ( ( rule__MonsterInst4__PoorleaderAssignment_43 ) ) | ( ( rule__MonsterInst4__OkleaderAssignment_44 ) ) | ( ( rule__MonsterInst4__GoodleaderAssignment_45 ) ) | ( ( rule__MonsterInst4__ExpertleaderAssignment_46 ) ) | ( ( rule__MonsterInst4__SuperiorleaderAssignment_47 ) ) | ( ( rule__MonsterInst4__NomagicleaderAssignment_48 ) ) | ( ( rule__MonsterInst4__PoormagicleaderAssignment_49 ) ) | ( ( rule__MonsterInst4__OkmagicleaderAssignment_50 ) ) | ( ( rule__MonsterInst4__GoodmagicleaderAssignment_51 ) ) | ( ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 ) ) | ( ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 ) ) | ( ( rule__MonsterInst4__NoundeadleaderAssignment_54 ) ) | ( ( rule__MonsterInst4__PoorundeadleaderAssignment_55 ) ) | ( ( rule__MonsterInst4__OkundeadleaderAssignment_56 ) ) | ( ( rule__MonsterInst4__GoodundeadleaderAssignment_57 ) ) | ( ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 ) ) | ( ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 ) ) );", 15, 0, input);
 
                 throw nvae;
             }
 
             switch (alt15) {
                 case 1 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4018:1: ( ( rule__MonsterInst4__ClearAssignment_0 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4012:1: ( ( rule__MonsterInst4__ClearAssignment_0 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4018:1: ( ( rule__MonsterInst4__ClearAssignment_0 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4019:1: ( rule__MonsterInst4__ClearAssignment_0 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4012:1: ( ( rule__MonsterInst4__ClearAssignment_0 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4013:1: ( rule__MonsterInst4__ClearAssignment_0 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getClearAssignment_0()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4020:1: ( rule__MonsterInst4__ClearAssignment_0 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4020:2: rule__MonsterInst4__ClearAssignment_0
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4014:1: ( rule__MonsterInst4__ClearAssignment_0 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4014:2: rule__MonsterInst4__ClearAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ClearAssignment_0_in_rule__MonsterInst4__Alternatives9256);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ClearAssignment_0_in_rule__MonsterInst4__Alternatives9238);
                     rule__MonsterInst4__ClearAssignment_0();
                     _fsp--;
 
@@ -13222,16 +13193,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4024:6: ( ( rule__MonsterInst4__ClearmagicAssignment_1 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4018:6: ( ( rule__MonsterInst4__ClearmagicAssignment_1 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4024:6: ( ( rule__MonsterInst4__ClearmagicAssignment_1 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4025:1: ( rule__MonsterInst4__ClearmagicAssignment_1 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4018:6: ( ( rule__MonsterInst4__ClearmagicAssignment_1 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4019:1: ( rule__MonsterInst4__ClearmagicAssignment_1 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getClearmagicAssignment_1()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4026:1: ( rule__MonsterInst4__ClearmagicAssignment_1 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4026:2: rule__MonsterInst4__ClearmagicAssignment_1
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4020:1: ( rule__MonsterInst4__ClearmagicAssignment_1 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4020:2: rule__MonsterInst4__ClearmagicAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ClearmagicAssignment_1_in_rule__MonsterInst4__Alternatives9274);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ClearmagicAssignment_1_in_rule__MonsterInst4__Alternatives9256);
                     rule__MonsterInst4__ClearmagicAssignment_1();
                     _fsp--;
 
@@ -13246,16 +13217,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4030:6: ( ( rule__MonsterInst4__ClearspecAssignment_2 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4024:6: ( ( rule__MonsterInst4__ClearspecAssignment_2 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4030:6: ( ( rule__MonsterInst4__ClearspecAssignment_2 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4031:1: ( rule__MonsterInst4__ClearspecAssignment_2 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4024:6: ( ( rule__MonsterInst4__ClearspecAssignment_2 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4025:1: ( rule__MonsterInst4__ClearspecAssignment_2 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getClearspecAssignment_2()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4032:1: ( rule__MonsterInst4__ClearspecAssignment_2 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4032:2: rule__MonsterInst4__ClearspecAssignment_2
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4026:1: ( rule__MonsterInst4__ClearspecAssignment_2 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4026:2: rule__MonsterInst4__ClearspecAssignment_2
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ClearspecAssignment_2_in_rule__MonsterInst4__Alternatives9292);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ClearspecAssignment_2_in_rule__MonsterInst4__Alternatives9274);
                     rule__MonsterInst4__ClearspecAssignment_2();
                     _fsp--;
 
@@ -13270,16 +13241,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4036:6: ( ( rule__MonsterInst4__FemaleAssignment_3 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4030:6: ( ( rule__MonsterInst4__FemaleAssignment_3 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4036:6: ( ( rule__MonsterInst4__FemaleAssignment_3 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4037:1: ( rule__MonsterInst4__FemaleAssignment_3 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4030:6: ( ( rule__MonsterInst4__FemaleAssignment_3 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4031:1: ( rule__MonsterInst4__FemaleAssignment_3 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getFemaleAssignment_3()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4038:1: ( rule__MonsterInst4__FemaleAssignment_3 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4038:2: rule__MonsterInst4__FemaleAssignment_3
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4032:1: ( rule__MonsterInst4__FemaleAssignment_3 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4032:2: rule__MonsterInst4__FemaleAssignment_3
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__FemaleAssignment_3_in_rule__MonsterInst4__Alternatives9310);
+                    pushFollow(FOLLOW_rule__MonsterInst4__FemaleAssignment_3_in_rule__MonsterInst4__Alternatives9292);
                     rule__MonsterInst4__FemaleAssignment_3();
                     _fsp--;
 
@@ -13294,16 +13265,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4042:6: ( ( rule__MonsterInst4__MountedAssignment_4 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4036:6: ( ( rule__MonsterInst4__MountedAssignment_4 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4042:6: ( ( rule__MonsterInst4__MountedAssignment_4 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4043:1: ( rule__MonsterInst4__MountedAssignment_4 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4036:6: ( ( rule__MonsterInst4__MountedAssignment_4 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4037:1: ( rule__MonsterInst4__MountedAssignment_4 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getMountedAssignment_4()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4044:1: ( rule__MonsterInst4__MountedAssignment_4 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4044:2: rule__MonsterInst4__MountedAssignment_4
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4038:1: ( rule__MonsterInst4__MountedAssignment_4 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4038:2: rule__MonsterInst4__MountedAssignment_4
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__MountedAssignment_4_in_rule__MonsterInst4__Alternatives9328);
+                    pushFollow(FOLLOW_rule__MonsterInst4__MountedAssignment_4_in_rule__MonsterInst4__Alternatives9310);
                     rule__MonsterInst4__MountedAssignment_4();
                     _fsp--;
 
@@ -13318,16 +13289,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4048:6: ( ( rule__MonsterInst4__HolyAssignment_5 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4042:6: ( ( rule__MonsterInst4__HolyAssignment_5 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4048:6: ( ( rule__MonsterInst4__HolyAssignment_5 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4049:1: ( rule__MonsterInst4__HolyAssignment_5 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4042:6: ( ( rule__MonsterInst4__HolyAssignment_5 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4043:1: ( rule__MonsterInst4__HolyAssignment_5 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getHolyAssignment_5()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4050:1: ( rule__MonsterInst4__HolyAssignment_5 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4050:2: rule__MonsterInst4__HolyAssignment_5
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4044:1: ( rule__MonsterInst4__HolyAssignment_5 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4044:2: rule__MonsterInst4__HolyAssignment_5
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__HolyAssignment_5_in_rule__MonsterInst4__Alternatives9346);
+                    pushFollow(FOLLOW_rule__MonsterInst4__HolyAssignment_5_in_rule__MonsterInst4__Alternatives9328);
                     rule__MonsterInst4__HolyAssignment_5();
                     _fsp--;
 
@@ -13342,16 +13313,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4054:6: ( ( rule__MonsterInst4__AnimalAssignment_6 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4048:6: ( ( rule__MonsterInst4__AnimalAssignment_6 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4054:6: ( ( rule__MonsterInst4__AnimalAssignment_6 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4055:1: ( rule__MonsterInst4__AnimalAssignment_6 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4048:6: ( ( rule__MonsterInst4__AnimalAssignment_6 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4049:1: ( rule__MonsterInst4__AnimalAssignment_6 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getAnimalAssignment_6()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4056:1: ( rule__MonsterInst4__AnimalAssignment_6 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4056:2: rule__MonsterInst4__AnimalAssignment_6
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4050:1: ( rule__MonsterInst4__AnimalAssignment_6 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4050:2: rule__MonsterInst4__AnimalAssignment_6
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__AnimalAssignment_6_in_rule__MonsterInst4__Alternatives9364);
+                    pushFollow(FOLLOW_rule__MonsterInst4__AnimalAssignment_6_in_rule__MonsterInst4__Alternatives9346);
                     rule__MonsterInst4__AnimalAssignment_6();
                     _fsp--;
 
@@ -13366,16 +13337,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4060:6: ( ( rule__MonsterInst4__UndeadAssignment_7 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4054:6: ( ( rule__MonsterInst4__UndeadAssignment_7 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4060:6: ( ( rule__MonsterInst4__UndeadAssignment_7 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4061:1: ( rule__MonsterInst4__UndeadAssignment_7 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4054:6: ( ( rule__MonsterInst4__UndeadAssignment_7 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4055:1: ( rule__MonsterInst4__UndeadAssignment_7 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getUndeadAssignment_7()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4062:1: ( rule__MonsterInst4__UndeadAssignment_7 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4062:2: rule__MonsterInst4__UndeadAssignment_7
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4056:1: ( rule__MonsterInst4__UndeadAssignment_7 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4056:2: rule__MonsterInst4__UndeadAssignment_7
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__UndeadAssignment_7_in_rule__MonsterInst4__Alternatives9382);
+                    pushFollow(FOLLOW_rule__MonsterInst4__UndeadAssignment_7_in_rule__MonsterInst4__Alternatives9364);
                     rule__MonsterInst4__UndeadAssignment_7();
                     _fsp--;
 
@@ -13390,16 +13361,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 9 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4066:6: ( ( rule__MonsterInst4__DemonAssignment_8 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4060:6: ( ( rule__MonsterInst4__DemonAssignment_8 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4066:6: ( ( rule__MonsterInst4__DemonAssignment_8 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4067:1: ( rule__MonsterInst4__DemonAssignment_8 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4060:6: ( ( rule__MonsterInst4__DemonAssignment_8 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4061:1: ( rule__MonsterInst4__DemonAssignment_8 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getDemonAssignment_8()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4068:1: ( rule__MonsterInst4__DemonAssignment_8 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4068:2: rule__MonsterInst4__DemonAssignment_8
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4062:1: ( rule__MonsterInst4__DemonAssignment_8 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4062:2: rule__MonsterInst4__DemonAssignment_8
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__DemonAssignment_8_in_rule__MonsterInst4__Alternatives9400);
+                    pushFollow(FOLLOW_rule__MonsterInst4__DemonAssignment_8_in_rule__MonsterInst4__Alternatives9382);
                     rule__MonsterInst4__DemonAssignment_8();
                     _fsp--;
 
@@ -13414,16 +13385,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 10 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4072:6: ( ( rule__MonsterInst4__MagicbeingAssignment_9 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4066:6: ( ( rule__MonsterInst4__MagicbeingAssignment_9 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4072:6: ( ( rule__MonsterInst4__MagicbeingAssignment_9 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4073:1: ( rule__MonsterInst4__MagicbeingAssignment_9 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4066:6: ( ( rule__MonsterInst4__MagicbeingAssignment_9 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4067:1: ( rule__MonsterInst4__MagicbeingAssignment_9 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getMagicbeingAssignment_9()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4074:1: ( rule__MonsterInst4__MagicbeingAssignment_9 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4074:2: rule__MonsterInst4__MagicbeingAssignment_9
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4068:1: ( rule__MonsterInst4__MagicbeingAssignment_9 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4068:2: rule__MonsterInst4__MagicbeingAssignment_9
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__MagicbeingAssignment_9_in_rule__MonsterInst4__Alternatives9418);
+                    pushFollow(FOLLOW_rule__MonsterInst4__MagicbeingAssignment_9_in_rule__MonsterInst4__Alternatives9400);
                     rule__MonsterInst4__MagicbeingAssignment_9();
                     _fsp--;
 
@@ -13438,16 +13409,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 11 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4078:6: ( ( rule__MonsterInst4__StonebeingAssignment_10 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4072:6: ( ( rule__MonsterInst4__StonebeingAssignment_10 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4078:6: ( ( rule__MonsterInst4__StonebeingAssignment_10 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4079:1: ( rule__MonsterInst4__StonebeingAssignment_10 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4072:6: ( ( rule__MonsterInst4__StonebeingAssignment_10 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4073:1: ( rule__MonsterInst4__StonebeingAssignment_10 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getStonebeingAssignment_10()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4080:1: ( rule__MonsterInst4__StonebeingAssignment_10 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4080:2: rule__MonsterInst4__StonebeingAssignment_10
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4074:1: ( rule__MonsterInst4__StonebeingAssignment_10 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4074:2: rule__MonsterInst4__StonebeingAssignment_10
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__StonebeingAssignment_10_in_rule__MonsterInst4__Alternatives9436);
+                    pushFollow(FOLLOW_rule__MonsterInst4__StonebeingAssignment_10_in_rule__MonsterInst4__Alternatives9418);
                     rule__MonsterInst4__StonebeingAssignment_10();
                     _fsp--;
 
@@ -13462,16 +13433,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 12 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4084:6: ( ( rule__MonsterInst4__InanimateAssignment_11 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4078:6: ( ( rule__MonsterInst4__InanimateAssignment_11 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4084:6: ( ( rule__MonsterInst4__InanimateAssignment_11 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4085:1: ( rule__MonsterInst4__InanimateAssignment_11 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4078:6: ( ( rule__MonsterInst4__InanimateAssignment_11 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4079:1: ( rule__MonsterInst4__InanimateAssignment_11 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getInanimateAssignment_11()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4086:1: ( rule__MonsterInst4__InanimateAssignment_11 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4086:2: rule__MonsterInst4__InanimateAssignment_11
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4080:1: ( rule__MonsterInst4__InanimateAssignment_11 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4080:2: rule__MonsterInst4__InanimateAssignment_11
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__InanimateAssignment_11_in_rule__MonsterInst4__Alternatives9454);
+                    pushFollow(FOLLOW_rule__MonsterInst4__InanimateAssignment_11_in_rule__MonsterInst4__Alternatives9436);
                     rule__MonsterInst4__InanimateAssignment_11();
                     _fsp--;
 
@@ -13486,16 +13457,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 13 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4090:6: ( ( rule__MonsterInst4__ColdbloodAssignment_12 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4084:6: ( ( rule__MonsterInst4__ColdbloodAssignment_12 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4090:6: ( ( rule__MonsterInst4__ColdbloodAssignment_12 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4091:1: ( rule__MonsterInst4__ColdbloodAssignment_12 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4084:6: ( ( rule__MonsterInst4__ColdbloodAssignment_12 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4085:1: ( rule__MonsterInst4__ColdbloodAssignment_12 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getColdbloodAssignment_12()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4092:1: ( rule__MonsterInst4__ColdbloodAssignment_12 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4092:2: rule__MonsterInst4__ColdbloodAssignment_12
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4086:1: ( rule__MonsterInst4__ColdbloodAssignment_12 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4086:2: rule__MonsterInst4__ColdbloodAssignment_12
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ColdbloodAssignment_12_in_rule__MonsterInst4__Alternatives9472);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ColdbloodAssignment_12_in_rule__MonsterInst4__Alternatives9454);
                     rule__MonsterInst4__ColdbloodAssignment_12();
                     _fsp--;
 
@@ -13510,16 +13481,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 14 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4096:6: ( ( rule__MonsterInst4__ColdbloodAssignment_13 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4090:6: ( ( rule__MonsterInst4__ColdbloodAssignment_13 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4096:6: ( ( rule__MonsterInst4__ColdbloodAssignment_13 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4097:1: ( rule__MonsterInst4__ColdbloodAssignment_13 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4090:6: ( ( rule__MonsterInst4__ColdbloodAssignment_13 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4091:1: ( rule__MonsterInst4__ColdbloodAssignment_13 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getColdbloodAssignment_13()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4098:1: ( rule__MonsterInst4__ColdbloodAssignment_13 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4098:2: rule__MonsterInst4__ColdbloodAssignment_13
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4092:1: ( rule__MonsterInst4__ColdbloodAssignment_13 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4092:2: rule__MonsterInst4__ColdbloodAssignment_13
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ColdbloodAssignment_13_in_rule__MonsterInst4__Alternatives9490);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ColdbloodAssignment_13_in_rule__MonsterInst4__Alternatives9472);
                     rule__MonsterInst4__ColdbloodAssignment_13();
                     _fsp--;
 
@@ -13534,16 +13505,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 15 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4102:6: ( ( rule__MonsterInst4__ImmortalAssignment_14 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4096:6: ( ( rule__MonsterInst4__ImmortalAssignment_14 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4102:6: ( ( rule__MonsterInst4__ImmortalAssignment_14 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4103:1: ( rule__MonsterInst4__ImmortalAssignment_14 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4096:6: ( ( rule__MonsterInst4__ImmortalAssignment_14 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4097:1: ( rule__MonsterInst4__ImmortalAssignment_14 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getImmortalAssignment_14()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4104:1: ( rule__MonsterInst4__ImmortalAssignment_14 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4104:2: rule__MonsterInst4__ImmortalAssignment_14
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4098:1: ( rule__MonsterInst4__ImmortalAssignment_14 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4098:2: rule__MonsterInst4__ImmortalAssignment_14
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ImmortalAssignment_14_in_rule__MonsterInst4__Alternatives9508);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ImmortalAssignment_14_in_rule__MonsterInst4__Alternatives9490);
                     rule__MonsterInst4__ImmortalAssignment_14();
                     _fsp--;
 
@@ -13558,16 +13529,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 16 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4108:6: ( ( rule__MonsterInst4__BlindAssignment_15 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4102:6: ( ( rule__MonsterInst4__BlindAssignment_15 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4108:6: ( ( rule__MonsterInst4__BlindAssignment_15 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4109:1: ( rule__MonsterInst4__BlindAssignment_15 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4102:6: ( ( rule__MonsterInst4__BlindAssignment_15 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4103:1: ( rule__MonsterInst4__BlindAssignment_15 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getBlindAssignment_15()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4110:1: ( rule__MonsterInst4__BlindAssignment_15 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4110:2: rule__MonsterInst4__BlindAssignment_15
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4104:1: ( rule__MonsterInst4__BlindAssignment_15 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4104:2: rule__MonsterInst4__BlindAssignment_15
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__BlindAssignment_15_in_rule__MonsterInst4__Alternatives9526);
+                    pushFollow(FOLLOW_rule__MonsterInst4__BlindAssignment_15_in_rule__MonsterInst4__Alternatives9508);
                     rule__MonsterInst4__BlindAssignment_15();
                     _fsp--;
 
@@ -13582,16 +13553,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 17 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4114:6: ( ( rule__MonsterInst4__UniqueAssignment_16 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4108:6: ( ( rule__MonsterInst4__UniqueAssignment_16 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4114:6: ( ( rule__MonsterInst4__UniqueAssignment_16 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4115:1: ( rule__MonsterInst4__UniqueAssignment_16 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4108:6: ( ( rule__MonsterInst4__UniqueAssignment_16 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4109:1: ( rule__MonsterInst4__UniqueAssignment_16 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getUniqueAssignment_16()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4116:1: ( rule__MonsterInst4__UniqueAssignment_16 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4116:2: rule__MonsterInst4__UniqueAssignment_16
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4110:1: ( rule__MonsterInst4__UniqueAssignment_16 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4110:2: rule__MonsterInst4__UniqueAssignment_16
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__UniqueAssignment_16_in_rule__MonsterInst4__Alternatives9544);
+                    pushFollow(FOLLOW_rule__MonsterInst4__UniqueAssignment_16_in_rule__MonsterInst4__Alternatives9526);
                     rule__MonsterInst4__UniqueAssignment_16();
                     _fsp--;
 
@@ -13606,16 +13577,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 18 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4120:6: ( ( rule__MonsterInst4__ImmobileAssignment_17 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4114:6: ( ( rule__MonsterInst4__ImmobileAssignment_17 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4120:6: ( ( rule__MonsterInst4__ImmobileAssignment_17 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4121:1: ( rule__MonsterInst4__ImmobileAssignment_17 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4114:6: ( ( rule__MonsterInst4__ImmobileAssignment_17 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4115:1: ( rule__MonsterInst4__ImmobileAssignment_17 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getImmobileAssignment_17()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4122:1: ( rule__MonsterInst4__ImmobileAssignment_17 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4122:2: rule__MonsterInst4__ImmobileAssignment_17
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4116:1: ( rule__MonsterInst4__ImmobileAssignment_17 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4116:2: rule__MonsterInst4__ImmobileAssignment_17
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ImmobileAssignment_17_in_rule__MonsterInst4__Alternatives9562);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ImmobileAssignment_17_in_rule__MonsterInst4__Alternatives9544);
                     rule__MonsterInst4__ImmobileAssignment_17();
                     _fsp--;
 
@@ -13630,16 +13601,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 19 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4126:6: ( ( rule__MonsterInst4__AquaticAssignment_18 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4120:6: ( ( rule__MonsterInst4__AquaticAssignment_18 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4126:6: ( ( rule__MonsterInst4__AquaticAssignment_18 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4127:1: ( rule__MonsterInst4__AquaticAssignment_18 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4120:6: ( ( rule__MonsterInst4__AquaticAssignment_18 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4121:1: ( rule__MonsterInst4__AquaticAssignment_18 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getAquaticAssignment_18()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4128:1: ( rule__MonsterInst4__AquaticAssignment_18 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4128:2: rule__MonsterInst4__AquaticAssignment_18
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4122:1: ( rule__MonsterInst4__AquaticAssignment_18 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4122:2: rule__MonsterInst4__AquaticAssignment_18
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__AquaticAssignment_18_in_rule__MonsterInst4__Alternatives9580);
+                    pushFollow(FOLLOW_rule__MonsterInst4__AquaticAssignment_18_in_rule__MonsterInst4__Alternatives9562);
                     rule__MonsterInst4__AquaticAssignment_18();
                     _fsp--;
 
@@ -13654,16 +13625,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 20 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4132:6: ( ( rule__MonsterInst4__AmphibianAssignment_19 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4126:6: ( ( rule__MonsterInst4__AmphibianAssignment_19 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4132:6: ( ( rule__MonsterInst4__AmphibianAssignment_19 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4133:1: ( rule__MonsterInst4__AmphibianAssignment_19 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4126:6: ( ( rule__MonsterInst4__AmphibianAssignment_19 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4127:1: ( rule__MonsterInst4__AmphibianAssignment_19 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getAmphibianAssignment_19()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4134:1: ( rule__MonsterInst4__AmphibianAssignment_19 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4134:2: rule__MonsterInst4__AmphibianAssignment_19
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4128:1: ( rule__MonsterInst4__AmphibianAssignment_19 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4128:2: rule__MonsterInst4__AmphibianAssignment_19
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__AmphibianAssignment_19_in_rule__MonsterInst4__Alternatives9598);
+                    pushFollow(FOLLOW_rule__MonsterInst4__AmphibianAssignment_19_in_rule__MonsterInst4__Alternatives9580);
                     rule__MonsterInst4__AmphibianAssignment_19();
                     _fsp--;
 
@@ -13678,16 +13649,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 21 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4138:6: ( ( rule__MonsterInst4__PooramphibianAssignment_20 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4132:6: ( ( rule__MonsterInst4__PooramphibianAssignment_20 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4138:6: ( ( rule__MonsterInst4__PooramphibianAssignment_20 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4139:1: ( rule__MonsterInst4__PooramphibianAssignment_20 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4132:6: ( ( rule__MonsterInst4__PooramphibianAssignment_20 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4133:1: ( rule__MonsterInst4__PooramphibianAssignment_20 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getPooramphibianAssignment_20()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4140:1: ( rule__MonsterInst4__PooramphibianAssignment_20 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4140:2: rule__MonsterInst4__PooramphibianAssignment_20
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4134:1: ( rule__MonsterInst4__PooramphibianAssignment_20 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4134:2: rule__MonsterInst4__PooramphibianAssignment_20
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__PooramphibianAssignment_20_in_rule__MonsterInst4__Alternatives9616);
+                    pushFollow(FOLLOW_rule__MonsterInst4__PooramphibianAssignment_20_in_rule__MonsterInst4__Alternatives9598);
                     rule__MonsterInst4__PooramphibianAssignment_20();
                     _fsp--;
 
@@ -13702,16 +13673,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 22 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4144:6: ( ( rule__MonsterInst4__FlyingAssignment_21 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4138:6: ( ( rule__MonsterInst4__FlyingAssignment_21 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4144:6: ( ( rule__MonsterInst4__FlyingAssignment_21 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4145:1: ( rule__MonsterInst4__FlyingAssignment_21 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4138:6: ( ( rule__MonsterInst4__FlyingAssignment_21 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4139:1: ( rule__MonsterInst4__FlyingAssignment_21 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getFlyingAssignment_21()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4146:1: ( rule__MonsterInst4__FlyingAssignment_21 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4146:2: rule__MonsterInst4__FlyingAssignment_21
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4140:1: ( rule__MonsterInst4__FlyingAssignment_21 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4140:2: rule__MonsterInst4__FlyingAssignment_21
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__FlyingAssignment_21_in_rule__MonsterInst4__Alternatives9634);
+                    pushFollow(FOLLOW_rule__MonsterInst4__FlyingAssignment_21_in_rule__MonsterInst4__Alternatives9616);
                     rule__MonsterInst4__FlyingAssignment_21();
                     _fsp--;
 
@@ -13726,16 +13697,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 23 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4150:6: ( ( rule__MonsterInst4__StormimmuneAssignment_22 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4144:6: ( ( rule__MonsterInst4__StormimmuneAssignment_22 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4150:6: ( ( rule__MonsterInst4__StormimmuneAssignment_22 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4151:1: ( rule__MonsterInst4__StormimmuneAssignment_22 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4144:6: ( ( rule__MonsterInst4__StormimmuneAssignment_22 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4145:1: ( rule__MonsterInst4__StormimmuneAssignment_22 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getStormimmuneAssignment_22()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4152:1: ( rule__MonsterInst4__StormimmuneAssignment_22 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4152:2: rule__MonsterInst4__StormimmuneAssignment_22
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4146:1: ( rule__MonsterInst4__StormimmuneAssignment_22 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4146:2: rule__MonsterInst4__StormimmuneAssignment_22
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__StormimmuneAssignment_22_in_rule__MonsterInst4__Alternatives9652);
+                    pushFollow(FOLLOW_rule__MonsterInst4__StormimmuneAssignment_22_in_rule__MonsterInst4__Alternatives9634);
                     rule__MonsterInst4__StormimmuneAssignment_22();
                     _fsp--;
 
@@ -13750,16 +13721,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 24 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4156:6: ( ( rule__MonsterInst4__SailingAssignment_23 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4150:6: ( ( rule__MonsterInst4__SailingAssignment_23 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4156:6: ( ( rule__MonsterInst4__SailingAssignment_23 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4157:1: ( rule__MonsterInst4__SailingAssignment_23 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4150:6: ( ( rule__MonsterInst4__SailingAssignment_23 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4151:1: ( rule__MonsterInst4__SailingAssignment_23 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getSailingAssignment_23()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4158:1: ( rule__MonsterInst4__SailingAssignment_23 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4158:2: rule__MonsterInst4__SailingAssignment_23
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4152:1: ( rule__MonsterInst4__SailingAssignment_23 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4152:2: rule__MonsterInst4__SailingAssignment_23
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__SailingAssignment_23_in_rule__MonsterInst4__Alternatives9670);
+                    pushFollow(FOLLOW_rule__MonsterInst4__SailingAssignment_23_in_rule__MonsterInst4__Alternatives9652);
                     rule__MonsterInst4__SailingAssignment_23();
                     _fsp--;
 
@@ -13774,16 +13745,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 25 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4162:6: ( ( rule__MonsterInst4__ForestsurvivalAssignment_24 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4156:6: ( ( rule__MonsterInst4__ForestsurvivalAssignment_24 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4162:6: ( ( rule__MonsterInst4__ForestsurvivalAssignment_24 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4163:1: ( rule__MonsterInst4__ForestsurvivalAssignment_24 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4156:6: ( ( rule__MonsterInst4__ForestsurvivalAssignment_24 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4157:1: ( rule__MonsterInst4__ForestsurvivalAssignment_24 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getForestsurvivalAssignment_24()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4164:1: ( rule__MonsterInst4__ForestsurvivalAssignment_24 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4164:2: rule__MonsterInst4__ForestsurvivalAssignment_24
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4158:1: ( rule__MonsterInst4__ForestsurvivalAssignment_24 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4158:2: rule__MonsterInst4__ForestsurvivalAssignment_24
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ForestsurvivalAssignment_24_in_rule__MonsterInst4__Alternatives9688);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ForestsurvivalAssignment_24_in_rule__MonsterInst4__Alternatives9670);
                     rule__MonsterInst4__ForestsurvivalAssignment_24();
                     _fsp--;
 
@@ -13798,16 +13769,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 26 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4168:6: ( ( rule__MonsterInst4__MountainsurvivalAssignment_25 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4162:6: ( ( rule__MonsterInst4__MountainsurvivalAssignment_25 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4168:6: ( ( rule__MonsterInst4__MountainsurvivalAssignment_25 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4169:1: ( rule__MonsterInst4__MountainsurvivalAssignment_25 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4162:6: ( ( rule__MonsterInst4__MountainsurvivalAssignment_25 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4163:1: ( rule__MonsterInst4__MountainsurvivalAssignment_25 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getMountainsurvivalAssignment_25()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4170:1: ( rule__MonsterInst4__MountainsurvivalAssignment_25 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4170:2: rule__MonsterInst4__MountainsurvivalAssignment_25
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4164:1: ( rule__MonsterInst4__MountainsurvivalAssignment_25 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4164:2: rule__MonsterInst4__MountainsurvivalAssignment_25
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__MountainsurvivalAssignment_25_in_rule__MonsterInst4__Alternatives9706);
+                    pushFollow(FOLLOW_rule__MonsterInst4__MountainsurvivalAssignment_25_in_rule__MonsterInst4__Alternatives9688);
                     rule__MonsterInst4__MountainsurvivalAssignment_25();
                     _fsp--;
 
@@ -13822,16 +13793,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 27 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4174:6: ( ( rule__MonsterInst4__SwampsurvivalAssignment_26 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4168:6: ( ( rule__MonsterInst4__SwampsurvivalAssignment_26 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4174:6: ( ( rule__MonsterInst4__SwampsurvivalAssignment_26 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4175:1: ( rule__MonsterInst4__SwampsurvivalAssignment_26 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4168:6: ( ( rule__MonsterInst4__SwampsurvivalAssignment_26 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4169:1: ( rule__MonsterInst4__SwampsurvivalAssignment_26 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getSwampsurvivalAssignment_26()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4176:1: ( rule__MonsterInst4__SwampsurvivalAssignment_26 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4176:2: rule__MonsterInst4__SwampsurvivalAssignment_26
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4170:1: ( rule__MonsterInst4__SwampsurvivalAssignment_26 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4170:2: rule__MonsterInst4__SwampsurvivalAssignment_26
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__SwampsurvivalAssignment_26_in_rule__MonsterInst4__Alternatives9724);
+                    pushFollow(FOLLOW_rule__MonsterInst4__SwampsurvivalAssignment_26_in_rule__MonsterInst4__Alternatives9706);
                     rule__MonsterInst4__SwampsurvivalAssignment_26();
                     _fsp--;
 
@@ -13846,16 +13817,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 28 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4180:6: ( ( rule__MonsterInst4__WastesurvivalAssignment_27 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4174:6: ( ( rule__MonsterInst4__WastesurvivalAssignment_27 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4180:6: ( ( rule__MonsterInst4__WastesurvivalAssignment_27 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4181:1: ( rule__MonsterInst4__WastesurvivalAssignment_27 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4174:6: ( ( rule__MonsterInst4__WastesurvivalAssignment_27 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4175:1: ( rule__MonsterInst4__WastesurvivalAssignment_27 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getWastesurvivalAssignment_27()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4182:1: ( rule__MonsterInst4__WastesurvivalAssignment_27 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4182:2: rule__MonsterInst4__WastesurvivalAssignment_27
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4176:1: ( rule__MonsterInst4__WastesurvivalAssignment_27 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4176:2: rule__MonsterInst4__WastesurvivalAssignment_27
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__WastesurvivalAssignment_27_in_rule__MonsterInst4__Alternatives9742);
+                    pushFollow(FOLLOW_rule__MonsterInst4__WastesurvivalAssignment_27_in_rule__MonsterInst4__Alternatives9724);
                     rule__MonsterInst4__WastesurvivalAssignment_27();
                     _fsp--;
 
@@ -13870,16 +13841,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 29 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4186:6: ( ( rule__MonsterInst4__IllusionAssignment_28 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4180:6: ( ( rule__MonsterInst4__IllusionAssignment_28 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4186:6: ( ( rule__MonsterInst4__IllusionAssignment_28 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4187:1: ( rule__MonsterInst4__IllusionAssignment_28 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4180:6: ( ( rule__MonsterInst4__IllusionAssignment_28 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4181:1: ( rule__MonsterInst4__IllusionAssignment_28 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getIllusionAssignment_28()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4188:1: ( rule__MonsterInst4__IllusionAssignment_28 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4188:2: rule__MonsterInst4__IllusionAssignment_28
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4182:1: ( rule__MonsterInst4__IllusionAssignment_28 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4182:2: rule__MonsterInst4__IllusionAssignment_28
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__IllusionAssignment_28_in_rule__MonsterInst4__Alternatives9760);
+                    pushFollow(FOLLOW_rule__MonsterInst4__IllusionAssignment_28_in_rule__MonsterInst4__Alternatives9742);
                     rule__MonsterInst4__IllusionAssignment_28();
                     _fsp--;
 
@@ -13894,16 +13865,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 30 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4192:6: ( ( rule__MonsterInst4__SpyAssignment_29 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4186:6: ( ( rule__MonsterInst4__SpyAssignment_29 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4192:6: ( ( rule__MonsterInst4__SpyAssignment_29 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4193:1: ( rule__MonsterInst4__SpyAssignment_29 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4186:6: ( ( rule__MonsterInst4__SpyAssignment_29 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4187:1: ( rule__MonsterInst4__SpyAssignment_29 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getSpyAssignment_29()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4194:1: ( rule__MonsterInst4__SpyAssignment_29 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4194:2: rule__MonsterInst4__SpyAssignment_29
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4188:1: ( rule__MonsterInst4__SpyAssignment_29 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4188:2: rule__MonsterInst4__SpyAssignment_29
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__SpyAssignment_29_in_rule__MonsterInst4__Alternatives9778);
+                    pushFollow(FOLLOW_rule__MonsterInst4__SpyAssignment_29_in_rule__MonsterInst4__Alternatives9760);
                     rule__MonsterInst4__SpyAssignment_29();
                     _fsp--;
 
@@ -13918,16 +13889,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 31 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4198:6: ( ( rule__MonsterInst4__AssassinAssignment_30 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4192:6: ( ( rule__MonsterInst4__AssassinAssignment_30 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4198:6: ( ( rule__MonsterInst4__AssassinAssignment_30 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4199:1: ( rule__MonsterInst4__AssassinAssignment_30 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4192:6: ( ( rule__MonsterInst4__AssassinAssignment_30 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4193:1: ( rule__MonsterInst4__AssassinAssignment_30 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getAssassinAssignment_30()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4200:1: ( rule__MonsterInst4__AssassinAssignment_30 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4200:2: rule__MonsterInst4__AssassinAssignment_30
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4194:1: ( rule__MonsterInst4__AssassinAssignment_30 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4194:2: rule__MonsterInst4__AssassinAssignment_30
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__AssassinAssignment_30_in_rule__MonsterInst4__Alternatives9796);
+                    pushFollow(FOLLOW_rule__MonsterInst4__AssassinAssignment_30_in_rule__MonsterInst4__Alternatives9778);
                     rule__MonsterInst4__AssassinAssignment_30();
                     _fsp--;
 
@@ -13942,16 +13913,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 32 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4204:6: ( ( rule__MonsterInst4__HealAssignment_31 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4198:6: ( ( rule__MonsterInst4__HealAssignment_31 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4204:6: ( ( rule__MonsterInst4__HealAssignment_31 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4205:1: ( rule__MonsterInst4__HealAssignment_31 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4198:6: ( ( rule__MonsterInst4__HealAssignment_31 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4199:1: ( rule__MonsterInst4__HealAssignment_31 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getHealAssignment_31()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4206:1: ( rule__MonsterInst4__HealAssignment_31 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4206:2: rule__MonsterInst4__HealAssignment_31
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4200:1: ( rule__MonsterInst4__HealAssignment_31 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4200:2: rule__MonsterInst4__HealAssignment_31
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__HealAssignment_31_in_rule__MonsterInst4__Alternatives9814);
+                    pushFollow(FOLLOW_rule__MonsterInst4__HealAssignment_31_in_rule__MonsterInst4__Alternatives9796);
                     rule__MonsterInst4__HealAssignment_31();
                     _fsp--;
 
@@ -13966,16 +13937,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 33 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4210:6: ( ( rule__MonsterInst4__NohealAssignment_32 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4204:6: ( ( rule__MonsterInst4__NohealAssignment_32 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4210:6: ( ( rule__MonsterInst4__NohealAssignment_32 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4211:1: ( rule__MonsterInst4__NohealAssignment_32 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4204:6: ( ( rule__MonsterInst4__NohealAssignment_32 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4205:1: ( rule__MonsterInst4__NohealAssignment_32 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getNohealAssignment_32()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4212:1: ( rule__MonsterInst4__NohealAssignment_32 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4212:2: rule__MonsterInst4__NohealAssignment_32
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4206:1: ( rule__MonsterInst4__NohealAssignment_32 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4206:2: rule__MonsterInst4__NohealAssignment_32
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__NohealAssignment_32_in_rule__MonsterInst4__Alternatives9832);
+                    pushFollow(FOLLOW_rule__MonsterInst4__NohealAssignment_32_in_rule__MonsterInst4__Alternatives9814);
                     rule__MonsterInst4__NohealAssignment_32();
                     _fsp--;
 
@@ -13990,16 +13961,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 34 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4216:6: ( ( rule__MonsterInst4__NeednoteatAssignment_33 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4210:6: ( ( rule__MonsterInst4__NeednoteatAssignment_33 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4216:6: ( ( rule__MonsterInst4__NeednoteatAssignment_33 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4217:1: ( rule__MonsterInst4__NeednoteatAssignment_33 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4210:6: ( ( rule__MonsterInst4__NeednoteatAssignment_33 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4211:1: ( rule__MonsterInst4__NeednoteatAssignment_33 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getNeednoteatAssignment_33()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4218:1: ( rule__MonsterInst4__NeednoteatAssignment_33 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4218:2: rule__MonsterInst4__NeednoteatAssignment_33
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4212:1: ( rule__MonsterInst4__NeednoteatAssignment_33 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4212:2: rule__MonsterInst4__NeednoteatAssignment_33
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__NeednoteatAssignment_33_in_rule__MonsterInst4__Alternatives9850);
+                    pushFollow(FOLLOW_rule__MonsterInst4__NeednoteatAssignment_33_in_rule__MonsterInst4__Alternatives9832);
                     rule__MonsterInst4__NeednoteatAssignment_33();
                     _fsp--;
 
@@ -14014,16 +13985,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 35 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4222:6: ( ( rule__MonsterInst4__EtherealAssignment_34 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4216:6: ( ( rule__MonsterInst4__EtherealAssignment_34 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4222:6: ( ( rule__MonsterInst4__EtherealAssignment_34 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4223:1: ( rule__MonsterInst4__EtherealAssignment_34 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4216:6: ( ( rule__MonsterInst4__EtherealAssignment_34 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4217:1: ( rule__MonsterInst4__EtherealAssignment_34 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getEtherealAssignment_34()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4224:1: ( rule__MonsterInst4__EtherealAssignment_34 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4224:2: rule__MonsterInst4__EtherealAssignment_34
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4218:1: ( rule__MonsterInst4__EtherealAssignment_34 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4218:2: rule__MonsterInst4__EtherealAssignment_34
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__EtherealAssignment_34_in_rule__MonsterInst4__Alternatives9868);
+                    pushFollow(FOLLOW_rule__MonsterInst4__EtherealAssignment_34_in_rule__MonsterInst4__Alternatives9850);
                     rule__MonsterInst4__EtherealAssignment_34();
                     _fsp--;
 
@@ -14038,16 +14009,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 36 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4228:6: ( ( rule__MonsterInst4__TrampleAssignment_35 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4222:6: ( ( rule__MonsterInst4__TrampleAssignment_35 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4228:6: ( ( rule__MonsterInst4__TrampleAssignment_35 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4229:1: ( rule__MonsterInst4__TrampleAssignment_35 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4222:6: ( ( rule__MonsterInst4__TrampleAssignment_35 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4223:1: ( rule__MonsterInst4__TrampleAssignment_35 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getTrampleAssignment_35()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4230:1: ( rule__MonsterInst4__TrampleAssignment_35 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4230:2: rule__MonsterInst4__TrampleAssignment_35
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4224:1: ( rule__MonsterInst4__TrampleAssignment_35 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4224:2: rule__MonsterInst4__TrampleAssignment_35
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__TrampleAssignment_35_in_rule__MonsterInst4__Alternatives9886);
+                    pushFollow(FOLLOW_rule__MonsterInst4__TrampleAssignment_35_in_rule__MonsterInst4__Alternatives9868);
                     rule__MonsterInst4__TrampleAssignment_35();
                     _fsp--;
 
@@ -14062,16 +14033,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 37 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4234:6: ( ( rule__MonsterInst4__EntangleAssignment_36 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4228:6: ( ( rule__MonsterInst4__EntangleAssignment_36 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4234:6: ( ( rule__MonsterInst4__EntangleAssignment_36 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4235:1: ( rule__MonsterInst4__EntangleAssignment_36 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4228:6: ( ( rule__MonsterInst4__EntangleAssignment_36 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4229:1: ( rule__MonsterInst4__EntangleAssignment_36 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getEntangleAssignment_36()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4236:1: ( rule__MonsterInst4__EntangleAssignment_36 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4236:2: rule__MonsterInst4__EntangleAssignment_36
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4230:1: ( rule__MonsterInst4__EntangleAssignment_36 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4230:2: rule__MonsterInst4__EntangleAssignment_36
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__EntangleAssignment_36_in_rule__MonsterInst4__Alternatives9904);
+                    pushFollow(FOLLOW_rule__MonsterInst4__EntangleAssignment_36_in_rule__MonsterInst4__Alternatives9886);
                     rule__MonsterInst4__EntangleAssignment_36();
                     _fsp--;
 
@@ -14086,16 +14057,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 38 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4240:6: ( ( rule__MonsterInst4__EyelossAssignment_37 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4234:6: ( ( rule__MonsterInst4__EyelossAssignment_37 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4240:6: ( ( rule__MonsterInst4__EyelossAssignment_37 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4241:1: ( rule__MonsterInst4__EyelossAssignment_37 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4234:6: ( ( rule__MonsterInst4__EyelossAssignment_37 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4235:1: ( rule__MonsterInst4__EyelossAssignment_37 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getEyelossAssignment_37()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4242:1: ( rule__MonsterInst4__EyelossAssignment_37 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4242:2: rule__MonsterInst4__EyelossAssignment_37
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4236:1: ( rule__MonsterInst4__EyelossAssignment_37 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4236:2: rule__MonsterInst4__EyelossAssignment_37
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__EyelossAssignment_37_in_rule__MonsterInst4__Alternatives9922);
+                    pushFollow(FOLLOW_rule__MonsterInst4__EyelossAssignment_37_in_rule__MonsterInst4__Alternatives9904);
                     rule__MonsterInst4__EyelossAssignment_37();
                     _fsp--;
 
@@ -14110,16 +14081,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 39 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4246:6: ( ( rule__MonsterInst4__HorrormarkAssignment_38 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4240:6: ( ( rule__MonsterInst4__HorrormarkAssignment_38 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4246:6: ( ( rule__MonsterInst4__HorrormarkAssignment_38 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4247:1: ( rule__MonsterInst4__HorrormarkAssignment_38 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4240:6: ( ( rule__MonsterInst4__HorrormarkAssignment_38 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4241:1: ( rule__MonsterInst4__HorrormarkAssignment_38 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getHorrormarkAssignment_38()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4248:1: ( rule__MonsterInst4__HorrormarkAssignment_38 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4248:2: rule__MonsterInst4__HorrormarkAssignment_38
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4242:1: ( rule__MonsterInst4__HorrormarkAssignment_38 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4242:2: rule__MonsterInst4__HorrormarkAssignment_38
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__HorrormarkAssignment_38_in_rule__MonsterInst4__Alternatives9940);
+                    pushFollow(FOLLOW_rule__MonsterInst4__HorrormarkAssignment_38_in_rule__MonsterInst4__Alternatives9922);
                     rule__MonsterInst4__HorrormarkAssignment_38();
                     _fsp--;
 
@@ -14134,16 +14105,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 40 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4252:6: ( ( rule__MonsterInst4__PoisonarmorAssignment_39 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4246:6: ( ( rule__MonsterInst4__PoisonarmorAssignment_39 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4252:6: ( ( rule__MonsterInst4__PoisonarmorAssignment_39 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4253:1: ( rule__MonsterInst4__PoisonarmorAssignment_39 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4246:6: ( ( rule__MonsterInst4__PoisonarmorAssignment_39 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4247:1: ( rule__MonsterInst4__PoisonarmorAssignment_39 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getPoisonarmorAssignment_39()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4254:1: ( rule__MonsterInst4__PoisonarmorAssignment_39 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4254:2: rule__MonsterInst4__PoisonarmorAssignment_39
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4248:1: ( rule__MonsterInst4__PoisonarmorAssignment_39 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4248:2: rule__MonsterInst4__PoisonarmorAssignment_39
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__PoisonarmorAssignment_39_in_rule__MonsterInst4__Alternatives9958);
+                    pushFollow(FOLLOW_rule__MonsterInst4__PoisonarmorAssignment_39_in_rule__MonsterInst4__Alternatives9940);
                     rule__MonsterInst4__PoisonarmorAssignment_39();
                     _fsp--;
 
@@ -14158,16 +14129,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 41 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4258:6: ( ( rule__MonsterInst4__InquisitorAssignment_40 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4252:6: ( ( rule__MonsterInst4__InquisitorAssignment_40 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4258:6: ( ( rule__MonsterInst4__InquisitorAssignment_40 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4259:1: ( rule__MonsterInst4__InquisitorAssignment_40 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4252:6: ( ( rule__MonsterInst4__InquisitorAssignment_40 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4253:1: ( rule__MonsterInst4__InquisitorAssignment_40 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getInquisitorAssignment_40()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4260:1: ( rule__MonsterInst4__InquisitorAssignment_40 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4260:2: rule__MonsterInst4__InquisitorAssignment_40
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4254:1: ( rule__MonsterInst4__InquisitorAssignment_40 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4254:2: rule__MonsterInst4__InquisitorAssignment_40
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__InquisitorAssignment_40_in_rule__MonsterInst4__Alternatives9976);
+                    pushFollow(FOLLOW_rule__MonsterInst4__InquisitorAssignment_40_in_rule__MonsterInst4__Alternatives9958);
                     rule__MonsterInst4__InquisitorAssignment_40();
                     _fsp--;
 
@@ -14182,16 +14153,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 42 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4264:6: ( ( rule__MonsterInst4__NoitemAssignment_41 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4258:6: ( ( rule__MonsterInst4__NoitemAssignment_41 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4264:6: ( ( rule__MonsterInst4__NoitemAssignment_41 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4265:1: ( rule__MonsterInst4__NoitemAssignment_41 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4258:6: ( ( rule__MonsterInst4__NoitemAssignment_41 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4259:1: ( rule__MonsterInst4__NoitemAssignment_41 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getNoitemAssignment_41()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4266:1: ( rule__MonsterInst4__NoitemAssignment_41 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4266:2: rule__MonsterInst4__NoitemAssignment_41
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4260:1: ( rule__MonsterInst4__NoitemAssignment_41 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4260:2: rule__MonsterInst4__NoitemAssignment_41
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__NoitemAssignment_41_in_rule__MonsterInst4__Alternatives9994);
+                    pushFollow(FOLLOW_rule__MonsterInst4__NoitemAssignment_41_in_rule__MonsterInst4__Alternatives9976);
                     rule__MonsterInst4__NoitemAssignment_41();
                     _fsp--;
 
@@ -14206,16 +14177,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 43 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4270:6: ( ( rule__MonsterInst4__NoleaderAssignment_42 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4264:6: ( ( rule__MonsterInst4__NoleaderAssignment_42 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4270:6: ( ( rule__MonsterInst4__NoleaderAssignment_42 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4271:1: ( rule__MonsterInst4__NoleaderAssignment_42 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4264:6: ( ( rule__MonsterInst4__NoleaderAssignment_42 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4265:1: ( rule__MonsterInst4__NoleaderAssignment_42 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getNoleaderAssignment_42()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4272:1: ( rule__MonsterInst4__NoleaderAssignment_42 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4272:2: rule__MonsterInst4__NoleaderAssignment_42
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4266:1: ( rule__MonsterInst4__NoleaderAssignment_42 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4266:2: rule__MonsterInst4__NoleaderAssignment_42
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__NoleaderAssignment_42_in_rule__MonsterInst4__Alternatives10012);
+                    pushFollow(FOLLOW_rule__MonsterInst4__NoleaderAssignment_42_in_rule__MonsterInst4__Alternatives9994);
                     rule__MonsterInst4__NoleaderAssignment_42();
                     _fsp--;
 
@@ -14230,16 +14201,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 44 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4276:6: ( ( rule__MonsterInst4__PoorleaderAssignment_43 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4270:6: ( ( rule__MonsterInst4__PoorleaderAssignment_43 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4276:6: ( ( rule__MonsterInst4__PoorleaderAssignment_43 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4277:1: ( rule__MonsterInst4__PoorleaderAssignment_43 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4270:6: ( ( rule__MonsterInst4__PoorleaderAssignment_43 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4271:1: ( rule__MonsterInst4__PoorleaderAssignment_43 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getPoorleaderAssignment_43()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4278:1: ( rule__MonsterInst4__PoorleaderAssignment_43 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4278:2: rule__MonsterInst4__PoorleaderAssignment_43
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4272:1: ( rule__MonsterInst4__PoorleaderAssignment_43 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4272:2: rule__MonsterInst4__PoorleaderAssignment_43
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__PoorleaderAssignment_43_in_rule__MonsterInst4__Alternatives10030);
+                    pushFollow(FOLLOW_rule__MonsterInst4__PoorleaderAssignment_43_in_rule__MonsterInst4__Alternatives10012);
                     rule__MonsterInst4__PoorleaderAssignment_43();
                     _fsp--;
 
@@ -14254,16 +14225,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 45 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4282:6: ( ( rule__MonsterInst4__OkleaderAssignment_44 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4276:6: ( ( rule__MonsterInst4__OkleaderAssignment_44 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4282:6: ( ( rule__MonsterInst4__OkleaderAssignment_44 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4283:1: ( rule__MonsterInst4__OkleaderAssignment_44 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4276:6: ( ( rule__MonsterInst4__OkleaderAssignment_44 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4277:1: ( rule__MonsterInst4__OkleaderAssignment_44 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getOkleaderAssignment_44()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4284:1: ( rule__MonsterInst4__OkleaderAssignment_44 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4284:2: rule__MonsterInst4__OkleaderAssignment_44
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4278:1: ( rule__MonsterInst4__OkleaderAssignment_44 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4278:2: rule__MonsterInst4__OkleaderAssignment_44
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__OkleaderAssignment_44_in_rule__MonsterInst4__Alternatives10048);
+                    pushFollow(FOLLOW_rule__MonsterInst4__OkleaderAssignment_44_in_rule__MonsterInst4__Alternatives10030);
                     rule__MonsterInst4__OkleaderAssignment_44();
                     _fsp--;
 
@@ -14278,16 +14249,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 46 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4288:6: ( ( rule__MonsterInst4__GoodleaderAssignment_45 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4282:6: ( ( rule__MonsterInst4__GoodleaderAssignment_45 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4288:6: ( ( rule__MonsterInst4__GoodleaderAssignment_45 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4289:1: ( rule__MonsterInst4__GoodleaderAssignment_45 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4282:6: ( ( rule__MonsterInst4__GoodleaderAssignment_45 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4283:1: ( rule__MonsterInst4__GoodleaderAssignment_45 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getGoodleaderAssignment_45()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4290:1: ( rule__MonsterInst4__GoodleaderAssignment_45 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4290:2: rule__MonsterInst4__GoodleaderAssignment_45
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4284:1: ( rule__MonsterInst4__GoodleaderAssignment_45 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4284:2: rule__MonsterInst4__GoodleaderAssignment_45
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__GoodleaderAssignment_45_in_rule__MonsterInst4__Alternatives10066);
+                    pushFollow(FOLLOW_rule__MonsterInst4__GoodleaderAssignment_45_in_rule__MonsterInst4__Alternatives10048);
                     rule__MonsterInst4__GoodleaderAssignment_45();
                     _fsp--;
 
@@ -14302,16 +14273,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 47 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4294:6: ( ( rule__MonsterInst4__ExpertleaderAssignment_46 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4288:6: ( ( rule__MonsterInst4__ExpertleaderAssignment_46 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4294:6: ( ( rule__MonsterInst4__ExpertleaderAssignment_46 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4295:1: ( rule__MonsterInst4__ExpertleaderAssignment_46 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4288:6: ( ( rule__MonsterInst4__ExpertleaderAssignment_46 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4289:1: ( rule__MonsterInst4__ExpertleaderAssignment_46 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getExpertleaderAssignment_46()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4296:1: ( rule__MonsterInst4__ExpertleaderAssignment_46 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4296:2: rule__MonsterInst4__ExpertleaderAssignment_46
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4290:1: ( rule__MonsterInst4__ExpertleaderAssignment_46 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4290:2: rule__MonsterInst4__ExpertleaderAssignment_46
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ExpertleaderAssignment_46_in_rule__MonsterInst4__Alternatives10084);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ExpertleaderAssignment_46_in_rule__MonsterInst4__Alternatives10066);
                     rule__MonsterInst4__ExpertleaderAssignment_46();
                     _fsp--;
 
@@ -14326,16 +14297,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 48 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4300:6: ( ( rule__MonsterInst4__SuperiorleaderAssignment_47 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4294:6: ( ( rule__MonsterInst4__SuperiorleaderAssignment_47 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4300:6: ( ( rule__MonsterInst4__SuperiorleaderAssignment_47 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4301:1: ( rule__MonsterInst4__SuperiorleaderAssignment_47 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4294:6: ( ( rule__MonsterInst4__SuperiorleaderAssignment_47 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4295:1: ( rule__MonsterInst4__SuperiorleaderAssignment_47 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getSuperiorleaderAssignment_47()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4302:1: ( rule__MonsterInst4__SuperiorleaderAssignment_47 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4302:2: rule__MonsterInst4__SuperiorleaderAssignment_47
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4296:1: ( rule__MonsterInst4__SuperiorleaderAssignment_47 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4296:2: rule__MonsterInst4__SuperiorleaderAssignment_47
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__SuperiorleaderAssignment_47_in_rule__MonsterInst4__Alternatives10102);
+                    pushFollow(FOLLOW_rule__MonsterInst4__SuperiorleaderAssignment_47_in_rule__MonsterInst4__Alternatives10084);
                     rule__MonsterInst4__SuperiorleaderAssignment_47();
                     _fsp--;
 
@@ -14350,16 +14321,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 49 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4306:6: ( ( rule__MonsterInst4__NomagicleaderAssignment_48 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4300:6: ( ( rule__MonsterInst4__NomagicleaderAssignment_48 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4306:6: ( ( rule__MonsterInst4__NomagicleaderAssignment_48 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4307:1: ( rule__MonsterInst4__NomagicleaderAssignment_48 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4300:6: ( ( rule__MonsterInst4__NomagicleaderAssignment_48 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4301:1: ( rule__MonsterInst4__NomagicleaderAssignment_48 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getNomagicleaderAssignment_48()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4308:1: ( rule__MonsterInst4__NomagicleaderAssignment_48 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4308:2: rule__MonsterInst4__NomagicleaderAssignment_48
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4302:1: ( rule__MonsterInst4__NomagicleaderAssignment_48 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4302:2: rule__MonsterInst4__NomagicleaderAssignment_48
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__NomagicleaderAssignment_48_in_rule__MonsterInst4__Alternatives10120);
+                    pushFollow(FOLLOW_rule__MonsterInst4__NomagicleaderAssignment_48_in_rule__MonsterInst4__Alternatives10102);
                     rule__MonsterInst4__NomagicleaderAssignment_48();
                     _fsp--;
 
@@ -14374,16 +14345,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 50 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4312:6: ( ( rule__MonsterInst4__PoormagicleaderAssignment_49 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4306:6: ( ( rule__MonsterInst4__PoormagicleaderAssignment_49 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4312:6: ( ( rule__MonsterInst4__PoormagicleaderAssignment_49 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4313:1: ( rule__MonsterInst4__PoormagicleaderAssignment_49 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4306:6: ( ( rule__MonsterInst4__PoormagicleaderAssignment_49 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4307:1: ( rule__MonsterInst4__PoormagicleaderAssignment_49 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getPoormagicleaderAssignment_49()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4314:1: ( rule__MonsterInst4__PoormagicleaderAssignment_49 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4314:2: rule__MonsterInst4__PoormagicleaderAssignment_49
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4308:1: ( rule__MonsterInst4__PoormagicleaderAssignment_49 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4308:2: rule__MonsterInst4__PoormagicleaderAssignment_49
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__PoormagicleaderAssignment_49_in_rule__MonsterInst4__Alternatives10138);
+                    pushFollow(FOLLOW_rule__MonsterInst4__PoormagicleaderAssignment_49_in_rule__MonsterInst4__Alternatives10120);
                     rule__MonsterInst4__PoormagicleaderAssignment_49();
                     _fsp--;
 
@@ -14398,16 +14369,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 51 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4318:6: ( ( rule__MonsterInst4__OkmagicleaderAssignment_50 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4312:6: ( ( rule__MonsterInst4__OkmagicleaderAssignment_50 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4318:6: ( ( rule__MonsterInst4__OkmagicleaderAssignment_50 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4319:1: ( rule__MonsterInst4__OkmagicleaderAssignment_50 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4312:6: ( ( rule__MonsterInst4__OkmagicleaderAssignment_50 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4313:1: ( rule__MonsterInst4__OkmagicleaderAssignment_50 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getOkmagicleaderAssignment_50()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4320:1: ( rule__MonsterInst4__OkmagicleaderAssignment_50 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4320:2: rule__MonsterInst4__OkmagicleaderAssignment_50
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4314:1: ( rule__MonsterInst4__OkmagicleaderAssignment_50 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4314:2: rule__MonsterInst4__OkmagicleaderAssignment_50
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__OkmagicleaderAssignment_50_in_rule__MonsterInst4__Alternatives10156);
+                    pushFollow(FOLLOW_rule__MonsterInst4__OkmagicleaderAssignment_50_in_rule__MonsterInst4__Alternatives10138);
                     rule__MonsterInst4__OkmagicleaderAssignment_50();
                     _fsp--;
 
@@ -14422,16 +14393,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 52 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4324:6: ( ( rule__MonsterInst4__GoodmagicleaderAssignment_51 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4318:6: ( ( rule__MonsterInst4__GoodmagicleaderAssignment_51 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4324:6: ( ( rule__MonsterInst4__GoodmagicleaderAssignment_51 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4325:1: ( rule__MonsterInst4__GoodmagicleaderAssignment_51 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4318:6: ( ( rule__MonsterInst4__GoodmagicleaderAssignment_51 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4319:1: ( rule__MonsterInst4__GoodmagicleaderAssignment_51 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getGoodmagicleaderAssignment_51()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4326:1: ( rule__MonsterInst4__GoodmagicleaderAssignment_51 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4326:2: rule__MonsterInst4__GoodmagicleaderAssignment_51
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4320:1: ( rule__MonsterInst4__GoodmagicleaderAssignment_51 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4320:2: rule__MonsterInst4__GoodmagicleaderAssignment_51
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__GoodmagicleaderAssignment_51_in_rule__MonsterInst4__Alternatives10174);
+                    pushFollow(FOLLOW_rule__MonsterInst4__GoodmagicleaderAssignment_51_in_rule__MonsterInst4__Alternatives10156);
                     rule__MonsterInst4__GoodmagicleaderAssignment_51();
                     _fsp--;
 
@@ -14446,16 +14417,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 53 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4330:6: ( ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4324:6: ( ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4330:6: ( ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4331:1: ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4324:6: ( ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4325:1: ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getExpertmagicleaderAssignment_52()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4332:1: ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4332:2: rule__MonsterInst4__ExpertmagicleaderAssignment_52
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4326:1: ( rule__MonsterInst4__ExpertmagicleaderAssignment_52 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4326:2: rule__MonsterInst4__ExpertmagicleaderAssignment_52
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ExpertmagicleaderAssignment_52_in_rule__MonsterInst4__Alternatives10192);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ExpertmagicleaderAssignment_52_in_rule__MonsterInst4__Alternatives10174);
                     rule__MonsterInst4__ExpertmagicleaderAssignment_52();
                     _fsp--;
 
@@ -14470,16 +14441,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 54 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4336:6: ( ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4330:6: ( ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4336:6: ( ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4337:1: ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4330:6: ( ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4331:1: ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getSuperiormagicleaderAssignment_53()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4338:1: ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4338:2: rule__MonsterInst4__SuperiormagicleaderAssignment_53
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4332:1: ( rule__MonsterInst4__SuperiormagicleaderAssignment_53 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4332:2: rule__MonsterInst4__SuperiormagicleaderAssignment_53
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__SuperiormagicleaderAssignment_53_in_rule__MonsterInst4__Alternatives10210);
+                    pushFollow(FOLLOW_rule__MonsterInst4__SuperiormagicleaderAssignment_53_in_rule__MonsterInst4__Alternatives10192);
                     rule__MonsterInst4__SuperiormagicleaderAssignment_53();
                     _fsp--;
 
@@ -14494,16 +14465,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 55 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4342:6: ( ( rule__MonsterInst4__NoundeadleaderAssignment_54 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4336:6: ( ( rule__MonsterInst4__NoundeadleaderAssignment_54 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4342:6: ( ( rule__MonsterInst4__NoundeadleaderAssignment_54 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4343:1: ( rule__MonsterInst4__NoundeadleaderAssignment_54 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4336:6: ( ( rule__MonsterInst4__NoundeadleaderAssignment_54 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4337:1: ( rule__MonsterInst4__NoundeadleaderAssignment_54 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getNoundeadleaderAssignment_54()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4344:1: ( rule__MonsterInst4__NoundeadleaderAssignment_54 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4344:2: rule__MonsterInst4__NoundeadleaderAssignment_54
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4338:1: ( rule__MonsterInst4__NoundeadleaderAssignment_54 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4338:2: rule__MonsterInst4__NoundeadleaderAssignment_54
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__NoundeadleaderAssignment_54_in_rule__MonsterInst4__Alternatives10228);
+                    pushFollow(FOLLOW_rule__MonsterInst4__NoundeadleaderAssignment_54_in_rule__MonsterInst4__Alternatives10210);
                     rule__MonsterInst4__NoundeadleaderAssignment_54();
                     _fsp--;
 
@@ -14518,16 +14489,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 56 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4348:6: ( ( rule__MonsterInst4__PoorundeadleaderAssignment_55 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4342:6: ( ( rule__MonsterInst4__PoorundeadleaderAssignment_55 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4348:6: ( ( rule__MonsterInst4__PoorundeadleaderAssignment_55 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4349:1: ( rule__MonsterInst4__PoorundeadleaderAssignment_55 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4342:6: ( ( rule__MonsterInst4__PoorundeadleaderAssignment_55 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4343:1: ( rule__MonsterInst4__PoorundeadleaderAssignment_55 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getPoorundeadleaderAssignment_55()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4350:1: ( rule__MonsterInst4__PoorundeadleaderAssignment_55 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4350:2: rule__MonsterInst4__PoorundeadleaderAssignment_55
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4344:1: ( rule__MonsterInst4__PoorundeadleaderAssignment_55 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4344:2: rule__MonsterInst4__PoorundeadleaderAssignment_55
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__PoorundeadleaderAssignment_55_in_rule__MonsterInst4__Alternatives10246);
+                    pushFollow(FOLLOW_rule__MonsterInst4__PoorundeadleaderAssignment_55_in_rule__MonsterInst4__Alternatives10228);
                     rule__MonsterInst4__PoorundeadleaderAssignment_55();
                     _fsp--;
 
@@ -14542,16 +14513,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 57 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4354:6: ( ( rule__MonsterInst4__OkundeadleaderAssignment_56 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4348:6: ( ( rule__MonsterInst4__OkundeadleaderAssignment_56 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4354:6: ( ( rule__MonsterInst4__OkundeadleaderAssignment_56 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4355:1: ( rule__MonsterInst4__OkundeadleaderAssignment_56 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4348:6: ( ( rule__MonsterInst4__OkundeadleaderAssignment_56 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4349:1: ( rule__MonsterInst4__OkundeadleaderAssignment_56 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getOkundeadleaderAssignment_56()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4356:1: ( rule__MonsterInst4__OkundeadleaderAssignment_56 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4356:2: rule__MonsterInst4__OkundeadleaderAssignment_56
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4350:1: ( rule__MonsterInst4__OkundeadleaderAssignment_56 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4350:2: rule__MonsterInst4__OkundeadleaderAssignment_56
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__OkundeadleaderAssignment_56_in_rule__MonsterInst4__Alternatives10264);
+                    pushFollow(FOLLOW_rule__MonsterInst4__OkundeadleaderAssignment_56_in_rule__MonsterInst4__Alternatives10246);
                     rule__MonsterInst4__OkundeadleaderAssignment_56();
                     _fsp--;
 
@@ -14566,16 +14537,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 58 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4360:6: ( ( rule__MonsterInst4__GoodundeadleaderAssignment_57 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4354:6: ( ( rule__MonsterInst4__GoodundeadleaderAssignment_57 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4360:6: ( ( rule__MonsterInst4__GoodundeadleaderAssignment_57 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4361:1: ( rule__MonsterInst4__GoodundeadleaderAssignment_57 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4354:6: ( ( rule__MonsterInst4__GoodundeadleaderAssignment_57 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4355:1: ( rule__MonsterInst4__GoodundeadleaderAssignment_57 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getGoodundeadleaderAssignment_57()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4362:1: ( rule__MonsterInst4__GoodundeadleaderAssignment_57 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4362:2: rule__MonsterInst4__GoodundeadleaderAssignment_57
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4356:1: ( rule__MonsterInst4__GoodundeadleaderAssignment_57 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4356:2: rule__MonsterInst4__GoodundeadleaderAssignment_57
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__GoodundeadleaderAssignment_57_in_rule__MonsterInst4__Alternatives10282);
+                    pushFollow(FOLLOW_rule__MonsterInst4__GoodundeadleaderAssignment_57_in_rule__MonsterInst4__Alternatives10264);
                     rule__MonsterInst4__GoodundeadleaderAssignment_57();
                     _fsp--;
 
@@ -14590,16 +14561,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 59 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4366:6: ( ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4360:6: ( ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4366:6: ( ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4367:1: ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4360:6: ( ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4361:1: ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getExpertundeadleaderAssignment_58()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4368:1: ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4368:2: rule__MonsterInst4__ExpertundeadleaderAssignment_58
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4362:1: ( rule__MonsterInst4__ExpertundeadleaderAssignment_58 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4362:2: rule__MonsterInst4__ExpertundeadleaderAssignment_58
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__ExpertundeadleaderAssignment_58_in_rule__MonsterInst4__Alternatives10300);
+                    pushFollow(FOLLOW_rule__MonsterInst4__ExpertundeadleaderAssignment_58_in_rule__MonsterInst4__Alternatives10282);
                     rule__MonsterInst4__ExpertundeadleaderAssignment_58();
                     _fsp--;
 
@@ -14614,16 +14585,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 60 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4372:6: ( ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4366:6: ( ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4372:6: ( ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4373:1: ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4366:6: ( ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4367:1: ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 )
                     {
                      before(grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderAssignment_59()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4374:1: ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4374:2: rule__MonsterInst4__SuperiorundeadleaderAssignment_59
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4368:1: ( rule__MonsterInst4__SuperiorundeadleaderAssignment_59 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4368:2: rule__MonsterInst4__SuperiorundeadleaderAssignment_59
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst4__SuperiorundeadleaderAssignment_59_in_rule__MonsterInst4__Alternatives10318);
+                    pushFollow(FOLLOW_rule__MonsterInst4__SuperiorundeadleaderAssignment_59_in_rule__MonsterInst4__Alternatives10300);
                     rule__MonsterInst4__SuperiorundeadleaderAssignment_59();
                     _fsp--;
 
@@ -14655,134 +14626,134 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__Alternatives
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4383:1: rule__MonsterInst5__Alternatives : ( ( ( rule__MonsterInst5__WeaponAssignment_0 ) ) | ( ( rule__MonsterInst5__OnebattlespellAssignment_1 ) ) | ( ( rule__MonsterInst5__FirstshapeAssignment_2 ) ) | ( ( rule__MonsterInst5__SecondshapeAssignment_3 ) ) | ( ( rule__MonsterInst5__SecondtmpshapeAssignment_4 ) ) | ( ( rule__MonsterInst5__ShapechangeAssignment_5 ) ) | ( ( rule__MonsterInst5__LandshapeAssignment_6 ) ) | ( ( rule__MonsterInst5__WatershapeAssignment_7 ) ) | ( ( rule__MonsterInst5__ForestshapeAssignment_8 ) ) | ( ( rule__MonsterInst5__PlainshapeAssignment_9 ) ) | ( ( rule__MonsterInst5__DomsummonAssignment_10 ) ) | ( ( rule__MonsterInst5__Domsummon2Assignment_11 ) ) | ( ( rule__MonsterInst5__Domsummon20Assignment_12 ) ) | ( ( rule__MonsterInst5__Makemonster1Assignment_13 ) ) | ( ( rule__MonsterInst5__Makemonster2Assignment_14 ) ) | ( ( rule__MonsterInst5__Makemonster3Assignment_15 ) ) | ( ( rule__MonsterInst5__Makemonster4Assignment_16 ) ) | ( ( rule__MonsterInst5__Makemonster5Assignment_17 ) ) | ( ( rule__MonsterInst5__Summon1Assignment_18 ) ) | ( ( rule__MonsterInst5__Summon5Assignment_19 ) ) );
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4377:1: rule__MonsterInst5__Alternatives : ( ( ( rule__MonsterInst5__WeaponAssignment_0 ) ) | ( ( rule__MonsterInst5__OnebattlespellAssignment_1 ) ) | ( ( rule__MonsterInst5__FirstshapeAssignment_2 ) ) | ( ( rule__MonsterInst5__SecondshapeAssignment_3 ) ) | ( ( rule__MonsterInst5__SecondtmpshapeAssignment_4 ) ) | ( ( rule__MonsterInst5__ShapechangeAssignment_5 ) ) | ( ( rule__MonsterInst5__LandshapeAssignment_6 ) ) | ( ( rule__MonsterInst5__WatershapeAssignment_7 ) ) | ( ( rule__MonsterInst5__ForestshapeAssignment_8 ) ) | ( ( rule__MonsterInst5__PlainshapeAssignment_9 ) ) | ( ( rule__MonsterInst5__DomsummonAssignment_10 ) ) | ( ( rule__MonsterInst5__Domsummon2Assignment_11 ) ) | ( ( rule__MonsterInst5__Domsummon20Assignment_12 ) ) | ( ( rule__MonsterInst5__Makemonster1Assignment_13 ) ) | ( ( rule__MonsterInst5__Makemonster2Assignment_14 ) ) | ( ( rule__MonsterInst5__Makemonster3Assignment_15 ) ) | ( ( rule__MonsterInst5__Makemonster4Assignment_16 ) ) | ( ( rule__MonsterInst5__Makemonster5Assignment_17 ) ) | ( ( rule__MonsterInst5__Summon1Assignment_18 ) ) | ( ( rule__MonsterInst5__Summon5Assignment_19 ) ) );
     public final void rule__MonsterInst5__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4387:1: ( ( ( rule__MonsterInst5__WeaponAssignment_0 ) ) | ( ( rule__MonsterInst5__OnebattlespellAssignment_1 ) ) | ( ( rule__MonsterInst5__FirstshapeAssignment_2 ) ) | ( ( rule__MonsterInst5__SecondshapeAssignment_3 ) ) | ( ( rule__MonsterInst5__SecondtmpshapeAssignment_4 ) ) | ( ( rule__MonsterInst5__ShapechangeAssignment_5 ) ) | ( ( rule__MonsterInst5__LandshapeAssignment_6 ) ) | ( ( rule__MonsterInst5__WatershapeAssignment_7 ) ) | ( ( rule__MonsterInst5__ForestshapeAssignment_8 ) ) | ( ( rule__MonsterInst5__PlainshapeAssignment_9 ) ) | ( ( rule__MonsterInst5__DomsummonAssignment_10 ) ) | ( ( rule__MonsterInst5__Domsummon2Assignment_11 ) ) | ( ( rule__MonsterInst5__Domsummon20Assignment_12 ) ) | ( ( rule__MonsterInst5__Makemonster1Assignment_13 ) ) | ( ( rule__MonsterInst5__Makemonster2Assignment_14 ) ) | ( ( rule__MonsterInst5__Makemonster3Assignment_15 ) ) | ( ( rule__MonsterInst5__Makemonster4Assignment_16 ) ) | ( ( rule__MonsterInst5__Makemonster5Assignment_17 ) ) | ( ( rule__MonsterInst5__Summon1Assignment_18 ) ) | ( ( rule__MonsterInst5__Summon5Assignment_19 ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4381:1: ( ( ( rule__MonsterInst5__WeaponAssignment_0 ) ) | ( ( rule__MonsterInst5__OnebattlespellAssignment_1 ) ) | ( ( rule__MonsterInst5__FirstshapeAssignment_2 ) ) | ( ( rule__MonsterInst5__SecondshapeAssignment_3 ) ) | ( ( rule__MonsterInst5__SecondtmpshapeAssignment_4 ) ) | ( ( rule__MonsterInst5__ShapechangeAssignment_5 ) ) | ( ( rule__MonsterInst5__LandshapeAssignment_6 ) ) | ( ( rule__MonsterInst5__WatershapeAssignment_7 ) ) | ( ( rule__MonsterInst5__ForestshapeAssignment_8 ) ) | ( ( rule__MonsterInst5__PlainshapeAssignment_9 ) ) | ( ( rule__MonsterInst5__DomsummonAssignment_10 ) ) | ( ( rule__MonsterInst5__Domsummon2Assignment_11 ) ) | ( ( rule__MonsterInst5__Domsummon20Assignment_12 ) ) | ( ( rule__MonsterInst5__Makemonster1Assignment_13 ) ) | ( ( rule__MonsterInst5__Makemonster2Assignment_14 ) ) | ( ( rule__MonsterInst5__Makemonster3Assignment_15 ) ) | ( ( rule__MonsterInst5__Makemonster4Assignment_16 ) ) | ( ( rule__MonsterInst5__Makemonster5Assignment_17 ) ) | ( ( rule__MonsterInst5__Summon1Assignment_18 ) ) | ( ( rule__MonsterInst5__Summon5Assignment_19 ) ) )
             int alt16=20;
             switch ( input.LA(1) ) {
-            case 236:
+            case 235:
                 {
                 alt16=1;
                 }
                 break;
-            case 237:
+            case 236:
                 {
                 alt16=2;
                 }
                 break;
-            case 238:
+            case 237:
                 {
                 alt16=3;
                 }
                 break;
-            case 239:
+            case 238:
                 {
                 alt16=4;
                 }
                 break;
-            case 240:
+            case 239:
                 {
                 alt16=5;
                 }
                 break;
-            case 241:
+            case 240:
                 {
                 alt16=6;
                 }
                 break;
-            case 242:
+            case 241:
                 {
                 alt16=7;
                 }
                 break;
-            case 243:
+            case 242:
                 {
                 alt16=8;
                 }
                 break;
-            case 244:
+            case 243:
                 {
                 alt16=9;
                 }
                 break;
-            case 245:
+            case 244:
                 {
                 alt16=10;
                 }
                 break;
-            case 246:
+            case 245:
                 {
                 alt16=11;
                 }
                 break;
-            case 247:
+            case 246:
                 {
                 alt16=12;
                 }
                 break;
-            case 248:
+            case 247:
                 {
                 alt16=13;
                 }
                 break;
-            case 249:
+            case 248:
                 {
                 alt16=14;
                 }
                 break;
-            case 250:
+            case 249:
                 {
                 alt16=15;
                 }
                 break;
-            case 251:
+            case 250:
                 {
                 alt16=16;
                 }
                 break;
-            case 252:
+            case 251:
                 {
                 alt16=17;
                 }
                 break;
-            case 253:
+            case 252:
                 {
                 alt16=18;
                 }
                 break;
-            case 254:
+            case 253:
                 {
                 alt16=19;
                 }
                 break;
-            case 255:
+            case 254:
                 {
                 alt16=20;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("4383:1: rule__MonsterInst5__Alternatives : ( ( ( rule__MonsterInst5__WeaponAssignment_0 ) ) | ( ( rule__MonsterInst5__OnebattlespellAssignment_1 ) ) | ( ( rule__MonsterInst5__FirstshapeAssignment_2 ) ) | ( ( rule__MonsterInst5__SecondshapeAssignment_3 ) ) | ( ( rule__MonsterInst5__SecondtmpshapeAssignment_4 ) ) | ( ( rule__MonsterInst5__ShapechangeAssignment_5 ) ) | ( ( rule__MonsterInst5__LandshapeAssignment_6 ) ) | ( ( rule__MonsterInst5__WatershapeAssignment_7 ) ) | ( ( rule__MonsterInst5__ForestshapeAssignment_8 ) ) | ( ( rule__MonsterInst5__PlainshapeAssignment_9 ) ) | ( ( rule__MonsterInst5__DomsummonAssignment_10 ) ) | ( ( rule__MonsterInst5__Domsummon2Assignment_11 ) ) | ( ( rule__MonsterInst5__Domsummon20Assignment_12 ) ) | ( ( rule__MonsterInst5__Makemonster1Assignment_13 ) ) | ( ( rule__MonsterInst5__Makemonster2Assignment_14 ) ) | ( ( rule__MonsterInst5__Makemonster3Assignment_15 ) ) | ( ( rule__MonsterInst5__Makemonster4Assignment_16 ) ) | ( ( rule__MonsterInst5__Makemonster5Assignment_17 ) ) | ( ( rule__MonsterInst5__Summon1Assignment_18 ) ) | ( ( rule__MonsterInst5__Summon5Assignment_19 ) ) );", 16, 0, input);
+                    new NoViableAltException("4377:1: rule__MonsterInst5__Alternatives : ( ( ( rule__MonsterInst5__WeaponAssignment_0 ) ) | ( ( rule__MonsterInst5__OnebattlespellAssignment_1 ) ) | ( ( rule__MonsterInst5__FirstshapeAssignment_2 ) ) | ( ( rule__MonsterInst5__SecondshapeAssignment_3 ) ) | ( ( rule__MonsterInst5__SecondtmpshapeAssignment_4 ) ) | ( ( rule__MonsterInst5__ShapechangeAssignment_5 ) ) | ( ( rule__MonsterInst5__LandshapeAssignment_6 ) ) | ( ( rule__MonsterInst5__WatershapeAssignment_7 ) ) | ( ( rule__MonsterInst5__ForestshapeAssignment_8 ) ) | ( ( rule__MonsterInst5__PlainshapeAssignment_9 ) ) | ( ( rule__MonsterInst5__DomsummonAssignment_10 ) ) | ( ( rule__MonsterInst5__Domsummon2Assignment_11 ) ) | ( ( rule__MonsterInst5__Domsummon20Assignment_12 ) ) | ( ( rule__MonsterInst5__Makemonster1Assignment_13 ) ) | ( ( rule__MonsterInst5__Makemonster2Assignment_14 ) ) | ( ( rule__MonsterInst5__Makemonster3Assignment_15 ) ) | ( ( rule__MonsterInst5__Makemonster4Assignment_16 ) ) | ( ( rule__MonsterInst5__Makemonster5Assignment_17 ) ) | ( ( rule__MonsterInst5__Summon1Assignment_18 ) ) | ( ( rule__MonsterInst5__Summon5Assignment_19 ) ) );", 16, 0, input);
 
                 throw nvae;
             }
 
             switch (alt16) {
                 case 1 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4388:1: ( ( rule__MonsterInst5__WeaponAssignment_0 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4382:1: ( ( rule__MonsterInst5__WeaponAssignment_0 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4388:1: ( ( rule__MonsterInst5__WeaponAssignment_0 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4389:1: ( rule__MonsterInst5__WeaponAssignment_0 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4382:1: ( ( rule__MonsterInst5__WeaponAssignment_0 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4383:1: ( rule__MonsterInst5__WeaponAssignment_0 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getWeaponAssignment_0()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4390:1: ( rule__MonsterInst5__WeaponAssignment_0 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4390:2: rule__MonsterInst5__WeaponAssignment_0
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4384:1: ( rule__MonsterInst5__WeaponAssignment_0 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4384:2: rule__MonsterInst5__WeaponAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__WeaponAssignment_0_in_rule__MonsterInst5__Alternatives10351);
+                    pushFollow(FOLLOW_rule__MonsterInst5__WeaponAssignment_0_in_rule__MonsterInst5__Alternatives10333);
                     rule__MonsterInst5__WeaponAssignment_0();
                     _fsp--;
 
@@ -14797,16 +14768,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4394:6: ( ( rule__MonsterInst5__OnebattlespellAssignment_1 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4388:6: ( ( rule__MonsterInst5__OnebattlespellAssignment_1 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4394:6: ( ( rule__MonsterInst5__OnebattlespellAssignment_1 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4395:1: ( rule__MonsterInst5__OnebattlespellAssignment_1 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4388:6: ( ( rule__MonsterInst5__OnebattlespellAssignment_1 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4389:1: ( rule__MonsterInst5__OnebattlespellAssignment_1 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getOnebattlespellAssignment_1()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4396:1: ( rule__MonsterInst5__OnebattlespellAssignment_1 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4396:2: rule__MonsterInst5__OnebattlespellAssignment_1
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4390:1: ( rule__MonsterInst5__OnebattlespellAssignment_1 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4390:2: rule__MonsterInst5__OnebattlespellAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__OnebattlespellAssignment_1_in_rule__MonsterInst5__Alternatives10369);
+                    pushFollow(FOLLOW_rule__MonsterInst5__OnebattlespellAssignment_1_in_rule__MonsterInst5__Alternatives10351);
                     rule__MonsterInst5__OnebattlespellAssignment_1();
                     _fsp--;
 
@@ -14821,16 +14792,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4400:6: ( ( rule__MonsterInst5__FirstshapeAssignment_2 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4394:6: ( ( rule__MonsterInst5__FirstshapeAssignment_2 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4400:6: ( ( rule__MonsterInst5__FirstshapeAssignment_2 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4401:1: ( rule__MonsterInst5__FirstshapeAssignment_2 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4394:6: ( ( rule__MonsterInst5__FirstshapeAssignment_2 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4395:1: ( rule__MonsterInst5__FirstshapeAssignment_2 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getFirstshapeAssignment_2()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4402:1: ( rule__MonsterInst5__FirstshapeAssignment_2 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4402:2: rule__MonsterInst5__FirstshapeAssignment_2
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4396:1: ( rule__MonsterInst5__FirstshapeAssignment_2 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4396:2: rule__MonsterInst5__FirstshapeAssignment_2
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__FirstshapeAssignment_2_in_rule__MonsterInst5__Alternatives10387);
+                    pushFollow(FOLLOW_rule__MonsterInst5__FirstshapeAssignment_2_in_rule__MonsterInst5__Alternatives10369);
                     rule__MonsterInst5__FirstshapeAssignment_2();
                     _fsp--;
 
@@ -14845,16 +14816,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4406:6: ( ( rule__MonsterInst5__SecondshapeAssignment_3 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4400:6: ( ( rule__MonsterInst5__SecondshapeAssignment_3 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4406:6: ( ( rule__MonsterInst5__SecondshapeAssignment_3 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4407:1: ( rule__MonsterInst5__SecondshapeAssignment_3 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4400:6: ( ( rule__MonsterInst5__SecondshapeAssignment_3 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4401:1: ( rule__MonsterInst5__SecondshapeAssignment_3 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getSecondshapeAssignment_3()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4408:1: ( rule__MonsterInst5__SecondshapeAssignment_3 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4408:2: rule__MonsterInst5__SecondshapeAssignment_3
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4402:1: ( rule__MonsterInst5__SecondshapeAssignment_3 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4402:2: rule__MonsterInst5__SecondshapeAssignment_3
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__SecondshapeAssignment_3_in_rule__MonsterInst5__Alternatives10405);
+                    pushFollow(FOLLOW_rule__MonsterInst5__SecondshapeAssignment_3_in_rule__MonsterInst5__Alternatives10387);
                     rule__MonsterInst5__SecondshapeAssignment_3();
                     _fsp--;
 
@@ -14869,16 +14840,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4412:6: ( ( rule__MonsterInst5__SecondtmpshapeAssignment_4 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4406:6: ( ( rule__MonsterInst5__SecondtmpshapeAssignment_4 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4412:6: ( ( rule__MonsterInst5__SecondtmpshapeAssignment_4 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4413:1: ( rule__MonsterInst5__SecondtmpshapeAssignment_4 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4406:6: ( ( rule__MonsterInst5__SecondtmpshapeAssignment_4 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4407:1: ( rule__MonsterInst5__SecondtmpshapeAssignment_4 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getSecondtmpshapeAssignment_4()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4414:1: ( rule__MonsterInst5__SecondtmpshapeAssignment_4 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4414:2: rule__MonsterInst5__SecondtmpshapeAssignment_4
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4408:1: ( rule__MonsterInst5__SecondtmpshapeAssignment_4 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4408:2: rule__MonsterInst5__SecondtmpshapeAssignment_4
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__SecondtmpshapeAssignment_4_in_rule__MonsterInst5__Alternatives10423);
+                    pushFollow(FOLLOW_rule__MonsterInst5__SecondtmpshapeAssignment_4_in_rule__MonsterInst5__Alternatives10405);
                     rule__MonsterInst5__SecondtmpshapeAssignment_4();
                     _fsp--;
 
@@ -14893,16 +14864,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4418:6: ( ( rule__MonsterInst5__ShapechangeAssignment_5 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4412:6: ( ( rule__MonsterInst5__ShapechangeAssignment_5 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4418:6: ( ( rule__MonsterInst5__ShapechangeAssignment_5 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4419:1: ( rule__MonsterInst5__ShapechangeAssignment_5 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4412:6: ( ( rule__MonsterInst5__ShapechangeAssignment_5 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4413:1: ( rule__MonsterInst5__ShapechangeAssignment_5 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getShapechangeAssignment_5()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4420:1: ( rule__MonsterInst5__ShapechangeAssignment_5 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4420:2: rule__MonsterInst5__ShapechangeAssignment_5
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4414:1: ( rule__MonsterInst5__ShapechangeAssignment_5 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4414:2: rule__MonsterInst5__ShapechangeAssignment_5
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__ShapechangeAssignment_5_in_rule__MonsterInst5__Alternatives10441);
+                    pushFollow(FOLLOW_rule__MonsterInst5__ShapechangeAssignment_5_in_rule__MonsterInst5__Alternatives10423);
                     rule__MonsterInst5__ShapechangeAssignment_5();
                     _fsp--;
 
@@ -14917,16 +14888,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4424:6: ( ( rule__MonsterInst5__LandshapeAssignment_6 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4418:6: ( ( rule__MonsterInst5__LandshapeAssignment_6 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4424:6: ( ( rule__MonsterInst5__LandshapeAssignment_6 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4425:1: ( rule__MonsterInst5__LandshapeAssignment_6 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4418:6: ( ( rule__MonsterInst5__LandshapeAssignment_6 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4419:1: ( rule__MonsterInst5__LandshapeAssignment_6 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getLandshapeAssignment_6()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4426:1: ( rule__MonsterInst5__LandshapeAssignment_6 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4426:2: rule__MonsterInst5__LandshapeAssignment_6
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4420:1: ( rule__MonsterInst5__LandshapeAssignment_6 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4420:2: rule__MonsterInst5__LandshapeAssignment_6
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__LandshapeAssignment_6_in_rule__MonsterInst5__Alternatives10459);
+                    pushFollow(FOLLOW_rule__MonsterInst5__LandshapeAssignment_6_in_rule__MonsterInst5__Alternatives10441);
                     rule__MonsterInst5__LandshapeAssignment_6();
                     _fsp--;
 
@@ -14941,16 +14912,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4430:6: ( ( rule__MonsterInst5__WatershapeAssignment_7 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4424:6: ( ( rule__MonsterInst5__WatershapeAssignment_7 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4430:6: ( ( rule__MonsterInst5__WatershapeAssignment_7 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4431:1: ( rule__MonsterInst5__WatershapeAssignment_7 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4424:6: ( ( rule__MonsterInst5__WatershapeAssignment_7 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4425:1: ( rule__MonsterInst5__WatershapeAssignment_7 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getWatershapeAssignment_7()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4432:1: ( rule__MonsterInst5__WatershapeAssignment_7 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4432:2: rule__MonsterInst5__WatershapeAssignment_7
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4426:1: ( rule__MonsterInst5__WatershapeAssignment_7 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4426:2: rule__MonsterInst5__WatershapeAssignment_7
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__WatershapeAssignment_7_in_rule__MonsterInst5__Alternatives10477);
+                    pushFollow(FOLLOW_rule__MonsterInst5__WatershapeAssignment_7_in_rule__MonsterInst5__Alternatives10459);
                     rule__MonsterInst5__WatershapeAssignment_7();
                     _fsp--;
 
@@ -14965,16 +14936,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 9 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4436:6: ( ( rule__MonsterInst5__ForestshapeAssignment_8 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4430:6: ( ( rule__MonsterInst5__ForestshapeAssignment_8 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4436:6: ( ( rule__MonsterInst5__ForestshapeAssignment_8 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4437:1: ( rule__MonsterInst5__ForestshapeAssignment_8 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4430:6: ( ( rule__MonsterInst5__ForestshapeAssignment_8 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4431:1: ( rule__MonsterInst5__ForestshapeAssignment_8 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getForestshapeAssignment_8()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4438:1: ( rule__MonsterInst5__ForestshapeAssignment_8 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4438:2: rule__MonsterInst5__ForestshapeAssignment_8
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4432:1: ( rule__MonsterInst5__ForestshapeAssignment_8 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4432:2: rule__MonsterInst5__ForestshapeAssignment_8
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__ForestshapeAssignment_8_in_rule__MonsterInst5__Alternatives10495);
+                    pushFollow(FOLLOW_rule__MonsterInst5__ForestshapeAssignment_8_in_rule__MonsterInst5__Alternatives10477);
                     rule__MonsterInst5__ForestshapeAssignment_8();
                     _fsp--;
 
@@ -14989,16 +14960,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 10 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4442:6: ( ( rule__MonsterInst5__PlainshapeAssignment_9 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4436:6: ( ( rule__MonsterInst5__PlainshapeAssignment_9 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4442:6: ( ( rule__MonsterInst5__PlainshapeAssignment_9 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4443:1: ( rule__MonsterInst5__PlainshapeAssignment_9 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4436:6: ( ( rule__MonsterInst5__PlainshapeAssignment_9 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4437:1: ( rule__MonsterInst5__PlainshapeAssignment_9 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getPlainshapeAssignment_9()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4444:1: ( rule__MonsterInst5__PlainshapeAssignment_9 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4444:2: rule__MonsterInst5__PlainshapeAssignment_9
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4438:1: ( rule__MonsterInst5__PlainshapeAssignment_9 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4438:2: rule__MonsterInst5__PlainshapeAssignment_9
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__PlainshapeAssignment_9_in_rule__MonsterInst5__Alternatives10513);
+                    pushFollow(FOLLOW_rule__MonsterInst5__PlainshapeAssignment_9_in_rule__MonsterInst5__Alternatives10495);
                     rule__MonsterInst5__PlainshapeAssignment_9();
                     _fsp--;
 
@@ -15013,16 +14984,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 11 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4448:6: ( ( rule__MonsterInst5__DomsummonAssignment_10 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4442:6: ( ( rule__MonsterInst5__DomsummonAssignment_10 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4448:6: ( ( rule__MonsterInst5__DomsummonAssignment_10 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4449:1: ( rule__MonsterInst5__DomsummonAssignment_10 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4442:6: ( ( rule__MonsterInst5__DomsummonAssignment_10 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4443:1: ( rule__MonsterInst5__DomsummonAssignment_10 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getDomsummonAssignment_10()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4450:1: ( rule__MonsterInst5__DomsummonAssignment_10 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4450:2: rule__MonsterInst5__DomsummonAssignment_10
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4444:1: ( rule__MonsterInst5__DomsummonAssignment_10 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4444:2: rule__MonsterInst5__DomsummonAssignment_10
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__DomsummonAssignment_10_in_rule__MonsterInst5__Alternatives10531);
+                    pushFollow(FOLLOW_rule__MonsterInst5__DomsummonAssignment_10_in_rule__MonsterInst5__Alternatives10513);
                     rule__MonsterInst5__DomsummonAssignment_10();
                     _fsp--;
 
@@ -15037,16 +15008,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 12 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4454:6: ( ( rule__MonsterInst5__Domsummon2Assignment_11 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4448:6: ( ( rule__MonsterInst5__Domsummon2Assignment_11 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4454:6: ( ( rule__MonsterInst5__Domsummon2Assignment_11 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4455:1: ( rule__MonsterInst5__Domsummon2Assignment_11 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4448:6: ( ( rule__MonsterInst5__Domsummon2Assignment_11 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4449:1: ( rule__MonsterInst5__Domsummon2Assignment_11 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getDomsummon2Assignment_11()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4456:1: ( rule__MonsterInst5__Domsummon2Assignment_11 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4456:2: rule__MonsterInst5__Domsummon2Assignment_11
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4450:1: ( rule__MonsterInst5__Domsummon2Assignment_11 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4450:2: rule__MonsterInst5__Domsummon2Assignment_11
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__Domsummon2Assignment_11_in_rule__MonsterInst5__Alternatives10549);
+                    pushFollow(FOLLOW_rule__MonsterInst5__Domsummon2Assignment_11_in_rule__MonsterInst5__Alternatives10531);
                     rule__MonsterInst5__Domsummon2Assignment_11();
                     _fsp--;
 
@@ -15061,16 +15032,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 13 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4460:6: ( ( rule__MonsterInst5__Domsummon20Assignment_12 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4454:6: ( ( rule__MonsterInst5__Domsummon20Assignment_12 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4460:6: ( ( rule__MonsterInst5__Domsummon20Assignment_12 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4461:1: ( rule__MonsterInst5__Domsummon20Assignment_12 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4454:6: ( ( rule__MonsterInst5__Domsummon20Assignment_12 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4455:1: ( rule__MonsterInst5__Domsummon20Assignment_12 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getDomsummon20Assignment_12()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4462:1: ( rule__MonsterInst5__Domsummon20Assignment_12 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4462:2: rule__MonsterInst5__Domsummon20Assignment_12
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4456:1: ( rule__MonsterInst5__Domsummon20Assignment_12 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4456:2: rule__MonsterInst5__Domsummon20Assignment_12
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__Domsummon20Assignment_12_in_rule__MonsterInst5__Alternatives10567);
+                    pushFollow(FOLLOW_rule__MonsterInst5__Domsummon20Assignment_12_in_rule__MonsterInst5__Alternatives10549);
                     rule__MonsterInst5__Domsummon20Assignment_12();
                     _fsp--;
 
@@ -15085,16 +15056,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 14 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4466:6: ( ( rule__MonsterInst5__Makemonster1Assignment_13 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4460:6: ( ( rule__MonsterInst5__Makemonster1Assignment_13 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4466:6: ( ( rule__MonsterInst5__Makemonster1Assignment_13 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4467:1: ( rule__MonsterInst5__Makemonster1Assignment_13 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4460:6: ( ( rule__MonsterInst5__Makemonster1Assignment_13 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4461:1: ( rule__MonsterInst5__Makemonster1Assignment_13 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getMakemonster1Assignment_13()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4468:1: ( rule__MonsterInst5__Makemonster1Assignment_13 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4468:2: rule__MonsterInst5__Makemonster1Assignment_13
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4462:1: ( rule__MonsterInst5__Makemonster1Assignment_13 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4462:2: rule__MonsterInst5__Makemonster1Assignment_13
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__Makemonster1Assignment_13_in_rule__MonsterInst5__Alternatives10585);
+                    pushFollow(FOLLOW_rule__MonsterInst5__Makemonster1Assignment_13_in_rule__MonsterInst5__Alternatives10567);
                     rule__MonsterInst5__Makemonster1Assignment_13();
                     _fsp--;
 
@@ -15109,16 +15080,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 15 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4472:6: ( ( rule__MonsterInst5__Makemonster2Assignment_14 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4466:6: ( ( rule__MonsterInst5__Makemonster2Assignment_14 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4472:6: ( ( rule__MonsterInst5__Makemonster2Assignment_14 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4473:1: ( rule__MonsterInst5__Makemonster2Assignment_14 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4466:6: ( ( rule__MonsterInst5__Makemonster2Assignment_14 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4467:1: ( rule__MonsterInst5__Makemonster2Assignment_14 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getMakemonster2Assignment_14()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4474:1: ( rule__MonsterInst5__Makemonster2Assignment_14 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4474:2: rule__MonsterInst5__Makemonster2Assignment_14
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4468:1: ( rule__MonsterInst5__Makemonster2Assignment_14 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4468:2: rule__MonsterInst5__Makemonster2Assignment_14
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__Makemonster2Assignment_14_in_rule__MonsterInst5__Alternatives10603);
+                    pushFollow(FOLLOW_rule__MonsterInst5__Makemonster2Assignment_14_in_rule__MonsterInst5__Alternatives10585);
                     rule__MonsterInst5__Makemonster2Assignment_14();
                     _fsp--;
 
@@ -15133,16 +15104,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 16 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4478:6: ( ( rule__MonsterInst5__Makemonster3Assignment_15 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4472:6: ( ( rule__MonsterInst5__Makemonster3Assignment_15 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4478:6: ( ( rule__MonsterInst5__Makemonster3Assignment_15 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4479:1: ( rule__MonsterInst5__Makemonster3Assignment_15 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4472:6: ( ( rule__MonsterInst5__Makemonster3Assignment_15 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4473:1: ( rule__MonsterInst5__Makemonster3Assignment_15 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getMakemonster3Assignment_15()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4480:1: ( rule__MonsterInst5__Makemonster3Assignment_15 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4480:2: rule__MonsterInst5__Makemonster3Assignment_15
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4474:1: ( rule__MonsterInst5__Makemonster3Assignment_15 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4474:2: rule__MonsterInst5__Makemonster3Assignment_15
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__Makemonster3Assignment_15_in_rule__MonsterInst5__Alternatives10621);
+                    pushFollow(FOLLOW_rule__MonsterInst5__Makemonster3Assignment_15_in_rule__MonsterInst5__Alternatives10603);
                     rule__MonsterInst5__Makemonster3Assignment_15();
                     _fsp--;
 
@@ -15157,16 +15128,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 17 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4484:6: ( ( rule__MonsterInst5__Makemonster4Assignment_16 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4478:6: ( ( rule__MonsterInst5__Makemonster4Assignment_16 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4484:6: ( ( rule__MonsterInst5__Makemonster4Assignment_16 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4485:1: ( rule__MonsterInst5__Makemonster4Assignment_16 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4478:6: ( ( rule__MonsterInst5__Makemonster4Assignment_16 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4479:1: ( rule__MonsterInst5__Makemonster4Assignment_16 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getMakemonster4Assignment_16()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4486:1: ( rule__MonsterInst5__Makemonster4Assignment_16 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4486:2: rule__MonsterInst5__Makemonster4Assignment_16
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4480:1: ( rule__MonsterInst5__Makemonster4Assignment_16 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4480:2: rule__MonsterInst5__Makemonster4Assignment_16
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__Makemonster4Assignment_16_in_rule__MonsterInst5__Alternatives10639);
+                    pushFollow(FOLLOW_rule__MonsterInst5__Makemonster4Assignment_16_in_rule__MonsterInst5__Alternatives10621);
                     rule__MonsterInst5__Makemonster4Assignment_16();
                     _fsp--;
 
@@ -15181,16 +15152,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 18 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4490:6: ( ( rule__MonsterInst5__Makemonster5Assignment_17 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4484:6: ( ( rule__MonsterInst5__Makemonster5Assignment_17 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4490:6: ( ( rule__MonsterInst5__Makemonster5Assignment_17 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4491:1: ( rule__MonsterInst5__Makemonster5Assignment_17 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4484:6: ( ( rule__MonsterInst5__Makemonster5Assignment_17 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4485:1: ( rule__MonsterInst5__Makemonster5Assignment_17 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getMakemonster5Assignment_17()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4492:1: ( rule__MonsterInst5__Makemonster5Assignment_17 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4492:2: rule__MonsterInst5__Makemonster5Assignment_17
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4486:1: ( rule__MonsterInst5__Makemonster5Assignment_17 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4486:2: rule__MonsterInst5__Makemonster5Assignment_17
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__Makemonster5Assignment_17_in_rule__MonsterInst5__Alternatives10657);
+                    pushFollow(FOLLOW_rule__MonsterInst5__Makemonster5Assignment_17_in_rule__MonsterInst5__Alternatives10639);
                     rule__MonsterInst5__Makemonster5Assignment_17();
                     _fsp--;
 
@@ -15205,16 +15176,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 19 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4496:6: ( ( rule__MonsterInst5__Summon1Assignment_18 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4490:6: ( ( rule__MonsterInst5__Summon1Assignment_18 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4496:6: ( ( rule__MonsterInst5__Summon1Assignment_18 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4497:1: ( rule__MonsterInst5__Summon1Assignment_18 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4490:6: ( ( rule__MonsterInst5__Summon1Assignment_18 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4491:1: ( rule__MonsterInst5__Summon1Assignment_18 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getSummon1Assignment_18()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4498:1: ( rule__MonsterInst5__Summon1Assignment_18 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4498:2: rule__MonsterInst5__Summon1Assignment_18
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4492:1: ( rule__MonsterInst5__Summon1Assignment_18 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4492:2: rule__MonsterInst5__Summon1Assignment_18
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__Summon1Assignment_18_in_rule__MonsterInst5__Alternatives10675);
+                    pushFollow(FOLLOW_rule__MonsterInst5__Summon1Assignment_18_in_rule__MonsterInst5__Alternatives10657);
                     rule__MonsterInst5__Summon1Assignment_18();
                     _fsp--;
 
@@ -15229,16 +15200,16 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 20 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4502:6: ( ( rule__MonsterInst5__Summon5Assignment_19 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4496:6: ( ( rule__MonsterInst5__Summon5Assignment_19 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4502:6: ( ( rule__MonsterInst5__Summon5Assignment_19 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4503:1: ( rule__MonsterInst5__Summon5Assignment_19 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4496:6: ( ( rule__MonsterInst5__Summon5Assignment_19 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4497:1: ( rule__MonsterInst5__Summon5Assignment_19 )
                     {
                      before(grammarAccess.getMonsterInst5Access().getSummon5Assignment_19()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4504:1: ( rule__MonsterInst5__Summon5Assignment_19 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4504:2: rule__MonsterInst5__Summon5Assignment_19
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4498:1: ( rule__MonsterInst5__Summon5Assignment_19 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4498:2: rule__MonsterInst5__Summon5Assignment_19
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst5__Summon5Assignment_19_in_rule__MonsterInst5__Alternatives10693);
+                    pushFollow(FOLLOW_rule__MonsterInst5__Summon5Assignment_19_in_rule__MonsterInst5__Alternatives10675);
                     rule__MonsterInst5__Summon5Assignment_19();
                     _fsp--;
 
@@ -15270,47 +15241,56 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst6__Alternatives
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4513:1: rule__MonsterInst6__Alternatives : ( ( ( rule__MonsterInst6__HeatAssignment_0 ) ) | ( ( rule__MonsterInst6__ColdAssignment_1 ) ) );
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4507:1: rule__MonsterInst6__Alternatives : ( ( ( rule__MonsterInst6__StealthyAssignment_0 ) ) | ( ( rule__MonsterInst6__HeatAssignment_1 ) ) | ( ( rule__MonsterInst6__ColdAssignment_2 ) ) );
     public final void rule__MonsterInst6__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4517:1: ( ( ( rule__MonsterInst6__HeatAssignment_0 ) ) | ( ( rule__MonsterInst6__ColdAssignment_1 ) ) )
-            int alt17=2;
-            int LA17_0 = input.LA(1);
-
-            if ( (LA17_0==256) ) {
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4511:1: ( ( ( rule__MonsterInst6__StealthyAssignment_0 ) ) | ( ( rule__MonsterInst6__HeatAssignment_1 ) ) | ( ( rule__MonsterInst6__ColdAssignment_2 ) ) )
+            int alt17=3;
+            switch ( input.LA(1) ) {
+            case 255:
+                {
                 alt17=1;
-            }
-            else if ( (LA17_0==85) ) {
+                }
+                break;
+            case 256:
+                {
                 alt17=2;
-            }
-            else {
+                }
+                break;
+            case 85:
+                {
+                alt17=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("4513:1: rule__MonsterInst6__Alternatives : ( ( ( rule__MonsterInst6__HeatAssignment_0 ) ) | ( ( rule__MonsterInst6__ColdAssignment_1 ) ) );", 17, 0, input);
+                    new NoViableAltException("4507:1: rule__MonsterInst6__Alternatives : ( ( ( rule__MonsterInst6__StealthyAssignment_0 ) ) | ( ( rule__MonsterInst6__HeatAssignment_1 ) ) | ( ( rule__MonsterInst6__ColdAssignment_2 ) ) );", 17, 0, input);
 
                 throw nvae;
             }
+
             switch (alt17) {
                 case 1 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4518:1: ( ( rule__MonsterInst6__HeatAssignment_0 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4512:1: ( ( rule__MonsterInst6__StealthyAssignment_0 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4518:1: ( ( rule__MonsterInst6__HeatAssignment_0 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4519:1: ( rule__MonsterInst6__HeatAssignment_0 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4512:1: ( ( rule__MonsterInst6__StealthyAssignment_0 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4513:1: ( rule__MonsterInst6__StealthyAssignment_0 )
                     {
-                     before(grammarAccess.getMonsterInst6Access().getHeatAssignment_0()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4520:1: ( rule__MonsterInst6__HeatAssignment_0 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4520:2: rule__MonsterInst6__HeatAssignment_0
+                     before(grammarAccess.getMonsterInst6Access().getStealthyAssignment_0()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4514:1: ( rule__MonsterInst6__StealthyAssignment_0 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4514:2: rule__MonsterInst6__StealthyAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst6__HeatAssignment_0_in_rule__MonsterInst6__Alternatives10726);
-                    rule__MonsterInst6__HeatAssignment_0();
+                    pushFollow(FOLLOW_rule__MonsterInst6__StealthyAssignment_0_in_rule__MonsterInst6__Alternatives10708);
+                    rule__MonsterInst6__StealthyAssignment_0();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst6Access().getHeatAssignment_0()); 
+                     after(grammarAccess.getMonsterInst6Access().getStealthyAssignment_0()); 
 
                     }
 
@@ -15318,23 +15298,47 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4524:6: ( ( rule__MonsterInst6__ColdAssignment_1 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4518:6: ( ( rule__MonsterInst6__HeatAssignment_1 ) )
                     {
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4524:6: ( ( rule__MonsterInst6__ColdAssignment_1 ) )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4525:1: ( rule__MonsterInst6__ColdAssignment_1 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4518:6: ( ( rule__MonsterInst6__HeatAssignment_1 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4519:1: ( rule__MonsterInst6__HeatAssignment_1 )
                     {
-                     before(grammarAccess.getMonsterInst6Access().getColdAssignment_1()); 
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4526:1: ( rule__MonsterInst6__ColdAssignment_1 )
-                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4526:2: rule__MonsterInst6__ColdAssignment_1
+                     before(grammarAccess.getMonsterInst6Access().getHeatAssignment_1()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4520:1: ( rule__MonsterInst6__HeatAssignment_1 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4520:2: rule__MonsterInst6__HeatAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__MonsterInst6__ColdAssignment_1_in_rule__MonsterInst6__Alternatives10744);
-                    rule__MonsterInst6__ColdAssignment_1();
+                    pushFollow(FOLLOW_rule__MonsterInst6__HeatAssignment_1_in_rule__MonsterInst6__Alternatives10726);
+                    rule__MonsterInst6__HeatAssignment_1();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMonsterInst6Access().getColdAssignment_1()); 
+                     after(grammarAccess.getMonsterInst6Access().getHeatAssignment_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4524:6: ( ( rule__MonsterInst6__ColdAssignment_2 ) )
+                    {
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4524:6: ( ( rule__MonsterInst6__ColdAssignment_2 ) )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4525:1: ( rule__MonsterInst6__ColdAssignment_2 )
+                    {
+                     before(grammarAccess.getMonsterInst6Access().getColdAssignment_2()); 
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4526:1: ( rule__MonsterInst6__ColdAssignment_2 )
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:4526:2: rule__MonsterInst6__ColdAssignment_2
+                    {
+                    pushFollow(FOLLOW_rule__MonsterInst6__ColdAssignment_2_in_rule__MonsterInst6__Alternatives10744);
+                    rule__MonsterInst6__ColdAssignment_2();
+                    _fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getMonsterInst6Access().getColdAssignment_2()); 
 
                     }
 
@@ -15506,7 +15510,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 alt19=3;
                 }
                 break;
-            case 176:
+            case 175:
                 {
                 alt19=4;
                 }
@@ -16551,7 +16555,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             if ( (LA26_0==49||(LA26_0>=97 && LA26_0<=98)) ) {
                 alt26=1;
             }
-            else if ( (LA26_0==50||LA26_0==114||LA26_0==236||(LA26_0>=271 && LA26_0<=275)) ) {
+            else if ( (LA26_0==50||LA26_0==114||LA26_0==235||(LA26_0>=271 && LA26_0<=275)) ) {
                 alt26=2;
             }
             else {
@@ -16781,7 +16785,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 alt28=7;
                 }
                 break;
-            case 236:
+            case 235:
                 {
                 alt28=8;
                 }
@@ -17017,7 +17021,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             if ( (LA29_0==276) ) {
                 alt29=1;
             }
-            else if ( (LA29_0==176) ) {
+            else if ( (LA29_0==175) ) {
                 alt29=2;
             }
             else {
@@ -17224,7 +17228,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 alt31=3;
                 }
                 break;
-            case 176:
+            case 175:
                 {
                 alt31=4;
                 }
@@ -29215,7 +29219,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 int alt52=2;
                 int LA52_0 = input.LA(1);
 
-                if ( (LA52_0==49||LA52_0==59||(LA52_0>=61 && LA52_0<=62)||LA52_0==65||LA52_0==97||LA52_0==176||(LA52_0>=257 && LA52_0<=270)) ) {
+                if ( (LA52_0==49||LA52_0==59||(LA52_0>=61 && LA52_0<=62)||LA52_0==65||LA52_0==97||LA52_0==175||(LA52_0>=257 && LA52_0<=270)) ) {
                     alt52=1;
                 }
 
@@ -29539,7 +29543,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 int alt53=2;
                 int LA53_0 = input.LA(1);
 
-                if ( (LA53_0==49||LA53_0==59||(LA53_0>=61 && LA53_0<=62)||LA53_0==65||LA53_0==97||LA53_0==176||(LA53_0>=257 && LA53_0<=270)) ) {
+                if ( (LA53_0==49||LA53_0==59||(LA53_0>=61 && LA53_0<=62)||LA53_0==65||LA53_0==97||LA53_0==175||(LA53_0>=257 && LA53_0<=270)) ) {
                     alt53=1;
                 }
 
@@ -29781,7 +29785,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 int alt54=2;
                 int LA54_0 = input.LA(1);
 
-                if ( (LA54_0==49||LA54_0==59||(LA54_0>=61 && LA54_0<=62)||LA54_0==65||LA54_0==97||LA54_0==176||(LA54_0>=257 && LA54_0<=270)) ) {
+                if ( (LA54_0==49||LA54_0==59||(LA54_0>=61 && LA54_0<=62)||LA54_0==65||LA54_0==97||LA54_0==175||(LA54_0>=257 && LA54_0<=270)) ) {
                     alt54=1;
                 }
 
@@ -30803,7 +30807,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 int alt55=2;
                 int LA55_0 = input.LA(1);
 
-                if ( ((LA55_0>=49 && LA55_0<=50)||(LA55_0>=97 && LA55_0<=98)||LA55_0==114||LA55_0==236||(LA55_0>=271 && LA55_0<=275)) ) {
+                if ( ((LA55_0>=49 && LA55_0<=50)||(LA55_0>=97 && LA55_0<=98)||LA55_0==114||LA55_0==235||(LA55_0>=271 && LA55_0<=275)) ) {
                     alt55=1;
                 }
 
@@ -31127,7 +31131,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 int alt56=2;
                 int LA56_0 = input.LA(1);
 
-                if ( ((LA56_0>=49 && LA56_0<=50)||(LA56_0>=97 && LA56_0<=98)||LA56_0==114||LA56_0==236||(LA56_0>=271 && LA56_0<=275)) ) {
+                if ( ((LA56_0>=49 && LA56_0<=50)||(LA56_0>=97 && LA56_0<=98)||LA56_0==114||LA56_0==235||(LA56_0>=271 && LA56_0<=275)) ) {
                     alt56=1;
                 }
 
@@ -31369,7 +31373,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 int alt57=2;
                 int LA57_0 = input.LA(1);
 
-                if ( ((LA57_0>=49 && LA57_0<=50)||(LA57_0>=97 && LA57_0<=98)||LA57_0==114||LA57_0==236||(LA57_0>=271 && LA57_0<=275)) ) {
+                if ( ((LA57_0>=49 && LA57_0<=50)||(LA57_0>=97 && LA57_0<=98)||LA57_0==114||LA57_0==235||(LA57_0>=271 && LA57_0<=275)) ) {
                     alt57=1;
                 }
 
@@ -32001,7 +32005,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 int alt58=2;
                 int LA58_0 = input.LA(1);
 
-                if ( (LA58_0==176||LA58_0==276) ) {
+                if ( (LA58_0==175||LA58_0==276) ) {
                     alt58=1;
                 }
 
@@ -32479,7 +32483,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 int alt59=2;
                 int LA59_0 = input.LA(1);
 
-                if ( (LA59_0==49||LA59_0==176||LA59_0==267||(LA59_0>=277 && LA59_0<=288)) ) {
+                if ( (LA59_0==49||LA59_0==175||LA59_0==267||(LA59_0>=277 && LA59_0<=288)) ) {
                     alt59=1;
                 }
 
@@ -32803,7 +32807,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 int alt60=2;
                 int LA60_0 = input.LA(1);
 
-                if ( (LA60_0==49||LA60_0==176||LA60_0==267||(LA60_0>=277 && LA60_0<=288)) ) {
+                if ( (LA60_0==49||LA60_0==175||LA60_0==267||(LA60_0>=277 && LA60_0<=288)) ) {
                     alt60=1;
                 }
 
@@ -33127,7 +33131,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                 int alt61=2;
                 int LA61_0 = input.LA(1);
 
-                if ( (LA61_0==49||LA61_0==176||LA61_0==267||(LA61_0>=277 && LA61_0<=288)) ) {
+                if ( (LA61_0==49||LA61_0==175||LA61_0==267||(LA61_0>=277 && LA61_0<=288)) ) {
                     alt61=1;
                 }
 
@@ -45252,30 +45256,30 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     // $ANTLR end rule__MonsterInst2__DarkvisionAssignment_29
 
 
-    // $ANTLR start rule__MonsterInst2__StealthyAssignment_30
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15173:1: rule__MonsterInst2__StealthyAssignment_30 : ( ( '#stealthy' ) ) ;
-    public final void rule__MonsterInst2__StealthyAssignment_30() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__SeduceAssignment_30
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15173:1: rule__MonsterInst2__SeduceAssignment_30 : ( ( '#seduce' ) ) ;
+    public final void rule__MonsterInst2__SeduceAssignment_30() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15177:1: ( ( ( '#stealthy' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15178:1: ( ( '#stealthy' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15177:1: ( ( ( '#seduce' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15178:1: ( ( '#seduce' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15178:1: ( ( '#stealthy' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15179:1: ( '#stealthy' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15178:1: ( ( '#seduce' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15179:1: ( '#seduce' )
             {
-             before(grammarAccess.getMonsterInst2Access().getStealthyStealthyKeyword_30_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15180:1: ( '#stealthy' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15181:1: '#stealthy'
+             before(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_30_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15180:1: ( '#seduce' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15181:1: '#seduce'
             {
-             before(grammarAccess.getMonsterInst2Access().getStealthyStealthyKeyword_30_0()); 
-            match(input,124,FOLLOW_124_in_rule__MonsterInst2__StealthyAssignment_3033854); 
-             after(grammarAccess.getMonsterInst2Access().getStealthyStealthyKeyword_30_0()); 
+             before(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_30_0()); 
+            match(input,124,FOLLOW_124_in_rule__MonsterInst2__SeduceAssignment_3033854); 
+             after(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_30_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getStealthyStealthyKeyword_30_0()); 
+             after(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_30_0()); 
 
             }
 
@@ -45294,33 +45298,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__StealthyAssignment_30
+    // $ANTLR end rule__MonsterInst2__SeduceAssignment_30
 
 
-    // $ANTLR start rule__MonsterInst2__SeduceAssignment_31
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15196:1: rule__MonsterInst2__SeduceAssignment_31 : ( ( '#seduce' ) ) ;
-    public final void rule__MonsterInst2__SeduceAssignment_31() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__SuccubusAssignment_31
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15196:1: rule__MonsterInst2__SuccubusAssignment_31 : ( ( '#succubus' ) ) ;
+    public final void rule__MonsterInst2__SuccubusAssignment_31() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15200:1: ( ( ( '#seduce' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15201:1: ( ( '#seduce' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15200:1: ( ( ( '#succubus' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15201:1: ( ( '#succubus' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15201:1: ( ( '#seduce' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15202:1: ( '#seduce' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15201:1: ( ( '#succubus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15202:1: ( '#succubus' )
             {
-             before(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_31_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15203:1: ( '#seduce' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15204:1: '#seduce'
+             before(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_31_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15203:1: ( '#succubus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15204:1: '#succubus'
             {
-             before(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_31_0()); 
-            match(input,125,FOLLOW_125_in_rule__MonsterInst2__SeduceAssignment_3133898); 
-             after(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_31_0()); 
+             before(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_31_0()); 
+            match(input,125,FOLLOW_125_in_rule__MonsterInst2__SuccubusAssignment_3133898); 
+             after(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_31_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_31_0()); 
+             after(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_31_0()); 
 
             }
 
@@ -45339,33 +45343,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__SeduceAssignment_31
+    // $ANTLR end rule__MonsterInst2__SuccubusAssignment_31
 
 
-    // $ANTLR start rule__MonsterInst2__SuccubusAssignment_32
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15219:1: rule__MonsterInst2__SuccubusAssignment_32 : ( ( '#succubus' ) ) ;
-    public final void rule__MonsterInst2__SuccubusAssignment_32() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__BeckonAssignment_32
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15219:1: rule__MonsterInst2__BeckonAssignment_32 : ( ( '#beckon' ) ) ;
+    public final void rule__MonsterInst2__BeckonAssignment_32() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15223:1: ( ( ( '#succubus' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15224:1: ( ( '#succubus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15223:1: ( ( ( '#beckon' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15224:1: ( ( '#beckon' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15224:1: ( ( '#succubus' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15225:1: ( '#succubus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15224:1: ( ( '#beckon' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15225:1: ( '#beckon' )
             {
-             before(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_32_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15226:1: ( '#succubus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15227:1: '#succubus'
+             before(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_32_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15226:1: ( '#beckon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15227:1: '#beckon'
             {
-             before(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_32_0()); 
-            match(input,126,FOLLOW_126_in_rule__MonsterInst2__SuccubusAssignment_3233942); 
-             after(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_32_0()); 
+             before(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_32_0()); 
+            match(input,126,FOLLOW_126_in_rule__MonsterInst2__BeckonAssignment_3233942); 
+             after(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_32_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_32_0()); 
+             after(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_32_0()); 
 
             }
 
@@ -45384,33 +45388,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__SuccubusAssignment_32
+    // $ANTLR end rule__MonsterInst2__BeckonAssignment_32
 
 
-    // $ANTLR start rule__MonsterInst2__BeckonAssignment_33
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15242:1: rule__MonsterInst2__BeckonAssignment_33 : ( ( '#beckon' ) ) ;
-    public final void rule__MonsterInst2__BeckonAssignment_33() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__StartageAssignment_33
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15242:1: rule__MonsterInst2__StartageAssignment_33 : ( ( '#startage' ) ) ;
+    public final void rule__MonsterInst2__StartageAssignment_33() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15246:1: ( ( ( '#beckon' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15247:1: ( ( '#beckon' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15246:1: ( ( ( '#startage' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15247:1: ( ( '#startage' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15247:1: ( ( '#beckon' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15248:1: ( '#beckon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15247:1: ( ( '#startage' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15248:1: ( '#startage' )
             {
-             before(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_33_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15249:1: ( '#beckon' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15250:1: '#beckon'
+             before(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_33_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15249:1: ( '#startage' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15250:1: '#startage'
             {
-             before(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_33_0()); 
-            match(input,127,FOLLOW_127_in_rule__MonsterInst2__BeckonAssignment_3333986); 
-             after(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_33_0()); 
+             before(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_33_0()); 
+            match(input,127,FOLLOW_127_in_rule__MonsterInst2__StartageAssignment_3333986); 
+             after(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_33_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_33_0()); 
+             after(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_33_0()); 
 
             }
 
@@ -45429,33 +45433,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__BeckonAssignment_33
+    // $ANTLR end rule__MonsterInst2__StartageAssignment_33
 
 
-    // $ANTLR start rule__MonsterInst2__StartageAssignment_34
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15265:1: rule__MonsterInst2__StartageAssignment_34 : ( ( '#startage' ) ) ;
-    public final void rule__MonsterInst2__StartageAssignment_34() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__MaxageAssignment_34
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15265:1: rule__MonsterInst2__MaxageAssignment_34 : ( ( '#maxage' ) ) ;
+    public final void rule__MonsterInst2__MaxageAssignment_34() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15269:1: ( ( ( '#startage' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15270:1: ( ( '#startage' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15269:1: ( ( ( '#maxage' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15270:1: ( ( '#maxage' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15270:1: ( ( '#startage' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15271:1: ( '#startage' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15270:1: ( ( '#maxage' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15271:1: ( '#maxage' )
             {
-             before(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_34_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15272:1: ( '#startage' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15273:1: '#startage'
+             before(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_34_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15272:1: ( '#maxage' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15273:1: '#maxage'
             {
-             before(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_34_0()); 
-            match(input,128,FOLLOW_128_in_rule__MonsterInst2__StartageAssignment_3434030); 
-             after(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_34_0()); 
+             before(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_34_0()); 
+            match(input,128,FOLLOW_128_in_rule__MonsterInst2__MaxageAssignment_3434030); 
+             after(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_34_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_34_0()); 
+             after(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_34_0()); 
 
             }
 
@@ -45474,33 +45478,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__StartageAssignment_34
+    // $ANTLR end rule__MonsterInst2__MaxageAssignment_34
 
 
-    // $ANTLR start rule__MonsterInst2__MaxageAssignment_35
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15288:1: rule__MonsterInst2__MaxageAssignment_35 : ( ( '#maxage' ) ) ;
-    public final void rule__MonsterInst2__MaxageAssignment_35() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__OlderAssignment_35
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15288:1: rule__MonsterInst2__OlderAssignment_35 : ( ( '#older' ) ) ;
+    public final void rule__MonsterInst2__OlderAssignment_35() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15292:1: ( ( ( '#maxage' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15293:1: ( ( '#maxage' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15292:1: ( ( ( '#older' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15293:1: ( ( '#older' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15293:1: ( ( '#maxage' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15294:1: ( '#maxage' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15293:1: ( ( '#older' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15294:1: ( '#older' )
             {
-             before(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_35_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15295:1: ( '#maxage' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15296:1: '#maxage'
+             before(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_35_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15295:1: ( '#older' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15296:1: '#older'
             {
-             before(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_35_0()); 
-            match(input,129,FOLLOW_129_in_rule__MonsterInst2__MaxageAssignment_3534074); 
-             after(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_35_0()); 
+             before(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_35_0()); 
+            match(input,129,FOLLOW_129_in_rule__MonsterInst2__OlderAssignment_3534074); 
+             after(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_35_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_35_0()); 
+             after(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_35_0()); 
 
             }
 
@@ -45519,33 +45523,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__MaxageAssignment_35
+    // $ANTLR end rule__MonsterInst2__OlderAssignment_35
 
 
-    // $ANTLR start rule__MonsterInst2__OlderAssignment_36
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15311:1: rule__MonsterInst2__OlderAssignment_36 : ( ( '#older' ) ) ;
-    public final void rule__MonsterInst2__OlderAssignment_36() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__HealerAssignment_36
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15311:1: rule__MonsterInst2__HealerAssignment_36 : ( ( '#healer' ) ) ;
+    public final void rule__MonsterInst2__HealerAssignment_36() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15315:1: ( ( ( '#older' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15316:1: ( ( '#older' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15315:1: ( ( ( '#healer' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15316:1: ( ( '#healer' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15316:1: ( ( '#older' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15317:1: ( '#older' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15316:1: ( ( '#healer' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15317:1: ( '#healer' )
             {
-             before(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_36_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15318:1: ( '#older' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15319:1: '#older'
+             before(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_36_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15318:1: ( '#healer' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15319:1: '#healer'
             {
-             before(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_36_0()); 
-            match(input,130,FOLLOW_130_in_rule__MonsterInst2__OlderAssignment_3634118); 
-             after(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_36_0()); 
+             before(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_36_0()); 
+            match(input,130,FOLLOW_130_in_rule__MonsterInst2__HealerAssignment_3634118); 
+             after(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_36_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_36_0()); 
+             after(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_36_0()); 
 
             }
 
@@ -45564,33 +45568,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__OlderAssignment_36
+    // $ANTLR end rule__MonsterInst2__HealerAssignment_36
 
 
-    // $ANTLR start rule__MonsterInst2__HealerAssignment_37
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15334:1: rule__MonsterInst2__HealerAssignment_37 : ( ( '#healer' ) ) ;
-    public final void rule__MonsterInst2__HealerAssignment_37() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__StartaffAssignment_37
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15334:1: rule__MonsterInst2__StartaffAssignment_37 : ( ( '#startaff' ) ) ;
+    public final void rule__MonsterInst2__StartaffAssignment_37() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15338:1: ( ( ( '#healer' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15339:1: ( ( '#healer' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15338:1: ( ( ( '#startaff' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15339:1: ( ( '#startaff' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15339:1: ( ( '#healer' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15340:1: ( '#healer' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15339:1: ( ( '#startaff' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15340:1: ( '#startaff' )
             {
-             before(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_37_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15341:1: ( '#healer' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15342:1: '#healer'
+             before(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_37_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15341:1: ( '#startaff' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15342:1: '#startaff'
             {
-             before(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_37_0()); 
-            match(input,131,FOLLOW_131_in_rule__MonsterInst2__HealerAssignment_3734162); 
-             after(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_37_0()); 
+             before(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_37_0()); 
+            match(input,131,FOLLOW_131_in_rule__MonsterInst2__StartaffAssignment_3734162); 
+             after(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_37_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_37_0()); 
+             after(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_37_0()); 
 
             }
 
@@ -45609,33 +45613,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__HealerAssignment_37
+    // $ANTLR end rule__MonsterInst2__StartaffAssignment_37
 
 
-    // $ANTLR start rule__MonsterInst2__StartaffAssignment_38
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15357:1: rule__MonsterInst2__StartaffAssignment_38 : ( ( '#startaff' ) ) ;
-    public final void rule__MonsterInst2__StartaffAssignment_38() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__SupplybonusAssignment_38
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15357:1: rule__MonsterInst2__SupplybonusAssignment_38 : ( ( '#supplybonus' ) ) ;
+    public final void rule__MonsterInst2__SupplybonusAssignment_38() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15361:1: ( ( ( '#startaff' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15362:1: ( ( '#startaff' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15361:1: ( ( ( '#supplybonus' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15362:1: ( ( '#supplybonus' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15362:1: ( ( '#startaff' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15363:1: ( '#startaff' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15362:1: ( ( '#supplybonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15363:1: ( '#supplybonus' )
             {
-             before(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_38_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15364:1: ( '#startaff' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15365:1: '#startaff'
+             before(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_38_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15364:1: ( '#supplybonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15365:1: '#supplybonus'
             {
-             before(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_38_0()); 
-            match(input,132,FOLLOW_132_in_rule__MonsterInst2__StartaffAssignment_3834206); 
-             after(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_38_0()); 
+             before(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_38_0()); 
+            match(input,132,FOLLOW_132_in_rule__MonsterInst2__SupplybonusAssignment_3834206); 
+             after(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_38_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_38_0()); 
+             after(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_38_0()); 
 
             }
 
@@ -45654,33 +45658,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__StartaffAssignment_38
+    // $ANTLR end rule__MonsterInst2__SupplybonusAssignment_38
 
 
-    // $ANTLR start rule__MonsterInst2__SupplybonusAssignment_39
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15380:1: rule__MonsterInst2__SupplybonusAssignment_39 : ( ( '#supplybonus' ) ) ;
-    public final void rule__MonsterInst2__SupplybonusAssignment_39() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__UwdamageAssignment_39
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15380:1: rule__MonsterInst2__UwdamageAssignment_39 : ( ( '#uwdamage' ) ) ;
+    public final void rule__MonsterInst2__UwdamageAssignment_39() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15384:1: ( ( ( '#supplybonus' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15385:1: ( ( '#supplybonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15384:1: ( ( ( '#uwdamage' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15385:1: ( ( '#uwdamage' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15385:1: ( ( '#supplybonus' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15386:1: ( '#supplybonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15385:1: ( ( '#uwdamage' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15386:1: ( '#uwdamage' )
             {
-             before(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_39_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15387:1: ( '#supplybonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15388:1: '#supplybonus'
+             before(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_39_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15387:1: ( '#uwdamage' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15388:1: '#uwdamage'
             {
-             before(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_39_0()); 
-            match(input,133,FOLLOW_133_in_rule__MonsterInst2__SupplybonusAssignment_3934250); 
-             after(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_39_0()); 
+             before(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_39_0()); 
+            match(input,133,FOLLOW_133_in_rule__MonsterInst2__UwdamageAssignment_3934250); 
+             after(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_39_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_39_0()); 
+             after(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_39_0()); 
 
             }
 
@@ -45699,33 +45703,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__SupplybonusAssignment_39
+    // $ANTLR end rule__MonsterInst2__UwdamageAssignment_39
 
 
-    // $ANTLR start rule__MonsterInst2__UwdamageAssignment_40
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15403:1: rule__MonsterInst2__UwdamageAssignment_40 : ( ( '#uwdamage' ) ) ;
-    public final void rule__MonsterInst2__UwdamageAssignment_40() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__ColdpowerAssignment_40
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15403:1: rule__MonsterInst2__ColdpowerAssignment_40 : ( ( '#coldpower' ) ) ;
+    public final void rule__MonsterInst2__ColdpowerAssignment_40() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15407:1: ( ( ( '#uwdamage' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15408:1: ( ( '#uwdamage' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15407:1: ( ( ( '#coldpower' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15408:1: ( ( '#coldpower' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15408:1: ( ( '#uwdamage' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15409:1: ( '#uwdamage' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15408:1: ( ( '#coldpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15409:1: ( '#coldpower' )
             {
-             before(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_40_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15410:1: ( '#uwdamage' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15411:1: '#uwdamage'
+             before(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_40_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15410:1: ( '#coldpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15411:1: '#coldpower'
             {
-             before(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_40_0()); 
-            match(input,134,FOLLOW_134_in_rule__MonsterInst2__UwdamageAssignment_4034294); 
-             after(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_40_0()); 
+             before(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_40_0()); 
+            match(input,134,FOLLOW_134_in_rule__MonsterInst2__ColdpowerAssignment_4034294); 
+             after(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_40_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_40_0()); 
+             after(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_40_0()); 
 
             }
 
@@ -45744,33 +45748,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__UwdamageAssignment_40
+    // $ANTLR end rule__MonsterInst2__ColdpowerAssignment_40
 
 
-    // $ANTLR start rule__MonsterInst2__ColdpowerAssignment_41
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15426:1: rule__MonsterInst2__ColdpowerAssignment_41 : ( ( '#coldpower' ) ) ;
-    public final void rule__MonsterInst2__ColdpowerAssignment_41() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__FirepowerAssignment_41
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15426:1: rule__MonsterInst2__FirepowerAssignment_41 : ( ( '#firepower' ) ) ;
+    public final void rule__MonsterInst2__FirepowerAssignment_41() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15430:1: ( ( ( '#coldpower' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15431:1: ( ( '#coldpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15430:1: ( ( ( '#firepower' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15431:1: ( ( '#firepower' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15431:1: ( ( '#coldpower' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15432:1: ( '#coldpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15431:1: ( ( '#firepower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15432:1: ( '#firepower' )
             {
-             before(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_41_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15433:1: ( '#coldpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15434:1: '#coldpower'
+             before(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_41_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15433:1: ( '#firepower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15434:1: '#firepower'
             {
-             before(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_41_0()); 
-            match(input,135,FOLLOW_135_in_rule__MonsterInst2__ColdpowerAssignment_4134338); 
-             after(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_41_0()); 
+             before(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_41_0()); 
+            match(input,135,FOLLOW_135_in_rule__MonsterInst2__FirepowerAssignment_4134338); 
+             after(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_41_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_41_0()); 
+             after(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_41_0()); 
 
             }
 
@@ -45789,33 +45793,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__ColdpowerAssignment_41
+    // $ANTLR end rule__MonsterInst2__FirepowerAssignment_41
 
 
-    // $ANTLR start rule__MonsterInst2__FirepowerAssignment_42
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15449:1: rule__MonsterInst2__FirepowerAssignment_42 : ( ( '#firepower' ) ) ;
-    public final void rule__MonsterInst2__FirepowerAssignment_42() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__StormpowerAssignment_42
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15449:1: rule__MonsterInst2__StormpowerAssignment_42 : ( ( '#stormpower' ) ) ;
+    public final void rule__MonsterInst2__StormpowerAssignment_42() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15453:1: ( ( ( '#firepower' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15454:1: ( ( '#firepower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15453:1: ( ( ( '#stormpower' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15454:1: ( ( '#stormpower' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15454:1: ( ( '#firepower' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15455:1: ( '#firepower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15454:1: ( ( '#stormpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15455:1: ( '#stormpower' )
             {
-             before(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_42_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15456:1: ( '#firepower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15457:1: '#firepower'
+             before(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_42_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15456:1: ( '#stormpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15457:1: '#stormpower'
             {
-             before(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_42_0()); 
-            match(input,136,FOLLOW_136_in_rule__MonsterInst2__FirepowerAssignment_4234382); 
-             after(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_42_0()); 
+             before(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_42_0()); 
+            match(input,136,FOLLOW_136_in_rule__MonsterInst2__StormpowerAssignment_4234382); 
+             after(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_42_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_42_0()); 
+             after(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_42_0()); 
 
             }
 
@@ -45834,33 +45838,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__FirepowerAssignment_42
+    // $ANTLR end rule__MonsterInst2__StormpowerAssignment_42
 
 
-    // $ANTLR start rule__MonsterInst2__StormpowerAssignment_43
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15472:1: rule__MonsterInst2__StormpowerAssignment_43 : ( ( '#stormpower' ) ) ;
-    public final void rule__MonsterInst2__StormpowerAssignment_43() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__DarkpowerAssignment_43
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15472:1: rule__MonsterInst2__DarkpowerAssignment_43 : ( ( '#darkpower' ) ) ;
+    public final void rule__MonsterInst2__DarkpowerAssignment_43() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15476:1: ( ( ( '#stormpower' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15477:1: ( ( '#stormpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15476:1: ( ( ( '#darkpower' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15477:1: ( ( '#darkpower' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15477:1: ( ( '#stormpower' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15478:1: ( '#stormpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15477:1: ( ( '#darkpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15478:1: ( '#darkpower' )
             {
-             before(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_43_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15479:1: ( '#stormpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15480:1: '#stormpower'
+             before(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_43_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15479:1: ( '#darkpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15480:1: '#darkpower'
             {
-             before(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_43_0()); 
-            match(input,137,FOLLOW_137_in_rule__MonsterInst2__StormpowerAssignment_4334426); 
-             after(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_43_0()); 
+             before(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_43_0()); 
+            match(input,137,FOLLOW_137_in_rule__MonsterInst2__DarkpowerAssignment_4334426); 
+             after(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_43_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_43_0()); 
+             after(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_43_0()); 
 
             }
 
@@ -45879,33 +45883,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__StormpowerAssignment_43
+    // $ANTLR end rule__MonsterInst2__DarkpowerAssignment_43
 
 
-    // $ANTLR start rule__MonsterInst2__DarkpowerAssignment_44
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15495:1: rule__MonsterInst2__DarkpowerAssignment_44 : ( ( '#darkpower' ) ) ;
-    public final void rule__MonsterInst2__DarkpowerAssignment_44() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__SpringpowerAssignment_44
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15495:1: rule__MonsterInst2__SpringpowerAssignment_44 : ( ( '#springpower' ) ) ;
+    public final void rule__MonsterInst2__SpringpowerAssignment_44() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15499:1: ( ( ( '#darkpower' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15500:1: ( ( '#darkpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15499:1: ( ( ( '#springpower' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15500:1: ( ( '#springpower' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15500:1: ( ( '#darkpower' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15501:1: ( '#darkpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15500:1: ( ( '#springpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15501:1: ( '#springpower' )
             {
-             before(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_44_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15502:1: ( '#darkpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15503:1: '#darkpower'
+             before(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_44_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15502:1: ( '#springpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15503:1: '#springpower'
             {
-             before(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_44_0()); 
-            match(input,138,FOLLOW_138_in_rule__MonsterInst2__DarkpowerAssignment_4434470); 
-             after(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_44_0()); 
+             before(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_44_0()); 
+            match(input,138,FOLLOW_138_in_rule__MonsterInst2__SpringpowerAssignment_4434470); 
+             after(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_44_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_44_0()); 
+             after(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_44_0()); 
 
             }
 
@@ -45924,33 +45928,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__DarkpowerAssignment_44
+    // $ANTLR end rule__MonsterInst2__SpringpowerAssignment_44
 
 
-    // $ANTLR start rule__MonsterInst2__SpringpowerAssignment_45
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15518:1: rule__MonsterInst2__SpringpowerAssignment_45 : ( ( '#springpower' ) ) ;
-    public final void rule__MonsterInst2__SpringpowerAssignment_45() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__SummerpowerAssignment_45
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15518:1: rule__MonsterInst2__SummerpowerAssignment_45 : ( ( '#summerpower' ) ) ;
+    public final void rule__MonsterInst2__SummerpowerAssignment_45() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15522:1: ( ( ( '#springpower' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15523:1: ( ( '#springpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15522:1: ( ( ( '#summerpower' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15523:1: ( ( '#summerpower' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15523:1: ( ( '#springpower' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15524:1: ( '#springpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15523:1: ( ( '#summerpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15524:1: ( '#summerpower' )
             {
-             before(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_45_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15525:1: ( '#springpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15526:1: '#springpower'
+             before(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_45_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15525:1: ( '#summerpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15526:1: '#summerpower'
             {
-             before(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_45_0()); 
-            match(input,139,FOLLOW_139_in_rule__MonsterInst2__SpringpowerAssignment_4534514); 
-             after(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_45_0()); 
+             before(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_45_0()); 
+            match(input,139,FOLLOW_139_in_rule__MonsterInst2__SummerpowerAssignment_4534514); 
+             after(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_45_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_45_0()); 
+             after(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_45_0()); 
 
             }
 
@@ -45969,33 +45973,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__SpringpowerAssignment_45
+    // $ANTLR end rule__MonsterInst2__SummerpowerAssignment_45
 
 
-    // $ANTLR start rule__MonsterInst2__SummerpowerAssignment_46
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15541:1: rule__MonsterInst2__SummerpowerAssignment_46 : ( ( '#summerpower' ) ) ;
-    public final void rule__MonsterInst2__SummerpowerAssignment_46() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__FallpowerAssignment_46
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15541:1: rule__MonsterInst2__FallpowerAssignment_46 : ( ( '#fallpower' ) ) ;
+    public final void rule__MonsterInst2__FallpowerAssignment_46() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15545:1: ( ( ( '#summerpower' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15546:1: ( ( '#summerpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15545:1: ( ( ( '#fallpower' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15546:1: ( ( '#fallpower' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15546:1: ( ( '#summerpower' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15547:1: ( '#summerpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15546:1: ( ( '#fallpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15547:1: ( '#fallpower' )
             {
-             before(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_46_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15548:1: ( '#summerpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15549:1: '#summerpower'
+             before(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_46_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15548:1: ( '#fallpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15549:1: '#fallpower'
             {
-             before(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_46_0()); 
-            match(input,140,FOLLOW_140_in_rule__MonsterInst2__SummerpowerAssignment_4634558); 
-             after(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_46_0()); 
+             before(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_46_0()); 
+            match(input,140,FOLLOW_140_in_rule__MonsterInst2__FallpowerAssignment_4634558); 
+             after(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_46_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_46_0()); 
+             after(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_46_0()); 
 
             }
 
@@ -46014,33 +46018,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__SummerpowerAssignment_46
+    // $ANTLR end rule__MonsterInst2__FallpowerAssignment_46
 
 
-    // $ANTLR start rule__MonsterInst2__FallpowerAssignment_47
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15564:1: rule__MonsterInst2__FallpowerAssignment_47 : ( ( '#fallpower' ) ) ;
-    public final void rule__MonsterInst2__FallpowerAssignment_47() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__WinterpowerAssignment_47
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15564:1: rule__MonsterInst2__WinterpowerAssignment_47 : ( ( '#winterpower' ) ) ;
+    public final void rule__MonsterInst2__WinterpowerAssignment_47() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15568:1: ( ( ( '#fallpower' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15569:1: ( ( '#fallpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15568:1: ( ( ( '#winterpower' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15569:1: ( ( '#winterpower' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15569:1: ( ( '#fallpower' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15570:1: ( '#fallpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15569:1: ( ( '#winterpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15570:1: ( '#winterpower' )
             {
-             before(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_47_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15571:1: ( '#fallpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15572:1: '#fallpower'
+             before(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_47_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15571:1: ( '#winterpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15572:1: '#winterpower'
             {
-             before(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_47_0()); 
-            match(input,141,FOLLOW_141_in_rule__MonsterInst2__FallpowerAssignment_4734602); 
-             after(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_47_0()); 
+             before(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_47_0()); 
+            match(input,141,FOLLOW_141_in_rule__MonsterInst2__WinterpowerAssignment_4734602); 
+             after(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_47_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_47_0()); 
+             after(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_47_0()); 
 
             }
 
@@ -46059,33 +46063,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__FallpowerAssignment_47
+    // $ANTLR end rule__MonsterInst2__WinterpowerAssignment_47
 
 
-    // $ANTLR start rule__MonsterInst2__WinterpowerAssignment_48
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15587:1: rule__MonsterInst2__WinterpowerAssignment_48 : ( ( '#winterpower' ) ) ;
-    public final void rule__MonsterInst2__WinterpowerAssignment_48() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__AmbidextrousAssignment_48
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15587:1: rule__MonsterInst2__AmbidextrousAssignment_48 : ( ( '#ambidextrous' ) ) ;
+    public final void rule__MonsterInst2__AmbidextrousAssignment_48() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15591:1: ( ( ( '#winterpower' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15592:1: ( ( '#winterpower' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15591:1: ( ( ( '#ambidextrous' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15592:1: ( ( '#ambidextrous' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15592:1: ( ( '#winterpower' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15593:1: ( '#winterpower' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15592:1: ( ( '#ambidextrous' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15593:1: ( '#ambidextrous' )
             {
-             before(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_48_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15594:1: ( '#winterpower' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15595:1: '#winterpower'
+             before(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_48_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15594:1: ( '#ambidextrous' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15595:1: '#ambidextrous'
             {
-             before(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_48_0()); 
-            match(input,142,FOLLOW_142_in_rule__MonsterInst2__WinterpowerAssignment_4834646); 
-             after(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_48_0()); 
+             before(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_48_0()); 
+            match(input,142,FOLLOW_142_in_rule__MonsterInst2__AmbidextrousAssignment_4834646); 
+             after(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_48_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_48_0()); 
+             after(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_48_0()); 
 
             }
 
@@ -46104,33 +46108,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__WinterpowerAssignment_48
+    // $ANTLR end rule__MonsterInst2__AmbidextrousAssignment_48
 
 
-    // $ANTLR start rule__MonsterInst2__AmbidextrousAssignment_49
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15610:1: rule__MonsterInst2__AmbidextrousAssignment_49 : ( ( '#ambidextrous' ) ) ;
-    public final void rule__MonsterInst2__AmbidextrousAssignment_49() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__BanefireshieldAssignment_49
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15610:1: rule__MonsterInst2__BanefireshieldAssignment_49 : ( ( '#banefireshield' ) ) ;
+    public final void rule__MonsterInst2__BanefireshieldAssignment_49() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15614:1: ( ( ( '#ambidextrous' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15615:1: ( ( '#ambidextrous' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15614:1: ( ( ( '#banefireshield' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15615:1: ( ( '#banefireshield' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15615:1: ( ( '#ambidextrous' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15616:1: ( '#ambidextrous' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15615:1: ( ( '#banefireshield' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15616:1: ( '#banefireshield' )
             {
-             before(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_49_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15617:1: ( '#ambidextrous' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15618:1: '#ambidextrous'
+             before(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_49_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15617:1: ( '#banefireshield' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15618:1: '#banefireshield'
             {
-             before(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_49_0()); 
-            match(input,143,FOLLOW_143_in_rule__MonsterInst2__AmbidextrousAssignment_4934690); 
-             after(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_49_0()); 
+             before(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_49_0()); 
+            match(input,143,FOLLOW_143_in_rule__MonsterInst2__BanefireshieldAssignment_4934690); 
+             after(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_49_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_49_0()); 
+             after(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_49_0()); 
 
             }
 
@@ -46149,33 +46153,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__AmbidextrousAssignment_49
+    // $ANTLR end rule__MonsterInst2__BanefireshieldAssignment_49
 
 
-    // $ANTLR start rule__MonsterInst2__BanefireshieldAssignment_50
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15633:1: rule__MonsterInst2__BanefireshieldAssignment_50 : ( ( '#banefireshield' ) ) ;
-    public final void rule__MonsterInst2__BanefireshieldAssignment_50() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__BerserkAssignment_50
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15633:1: rule__MonsterInst2__BerserkAssignment_50 : ( ( '#berserk' ) ) ;
+    public final void rule__MonsterInst2__BerserkAssignment_50() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15637:1: ( ( ( '#banefireshield' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15638:1: ( ( '#banefireshield' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15637:1: ( ( ( '#berserk' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15638:1: ( ( '#berserk' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15638:1: ( ( '#banefireshield' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15639:1: ( '#banefireshield' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15638:1: ( ( '#berserk' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15639:1: ( '#berserk' )
             {
-             before(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_50_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15640:1: ( '#banefireshield' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15641:1: '#banefireshield'
+             before(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_50_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15640:1: ( '#berserk' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15641:1: '#berserk'
             {
-             before(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_50_0()); 
-            match(input,144,FOLLOW_144_in_rule__MonsterInst2__BanefireshieldAssignment_5034734); 
-             after(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_50_0()); 
+             before(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_50_0()); 
+            match(input,144,FOLLOW_144_in_rule__MonsterInst2__BerserkAssignment_5034734); 
+             after(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_50_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_50_0()); 
+             after(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_50_0()); 
 
             }
 
@@ -46194,33 +46198,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__BanefireshieldAssignment_50
+    // $ANTLR end rule__MonsterInst2__BerserkAssignment_50
 
 
-    // $ANTLR start rule__MonsterInst2__BerserkAssignment_51
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15656:1: rule__MonsterInst2__BerserkAssignment_51 : ( ( '#berserk' ) ) ;
-    public final void rule__MonsterInst2__BerserkAssignment_51() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__StandardAssignment_51
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15656:1: rule__MonsterInst2__StandardAssignment_51 : ( ( '#standard' ) ) ;
+    public final void rule__MonsterInst2__StandardAssignment_51() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15660:1: ( ( ( '#berserk' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15661:1: ( ( '#berserk' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15660:1: ( ( ( '#standard' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15661:1: ( ( '#standard' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15661:1: ( ( '#berserk' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15662:1: ( '#berserk' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15661:1: ( ( '#standard' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15662:1: ( '#standard' )
             {
-             before(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_51_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15663:1: ( '#berserk' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15664:1: '#berserk'
+             before(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_51_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15663:1: ( '#standard' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15664:1: '#standard'
             {
-             before(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_51_0()); 
-            match(input,145,FOLLOW_145_in_rule__MonsterInst2__BerserkAssignment_5134778); 
-             after(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_51_0()); 
+             before(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_51_0()); 
+            match(input,145,FOLLOW_145_in_rule__MonsterInst2__StandardAssignment_5134778); 
+             after(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_51_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_51_0()); 
+             after(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_51_0()); 
 
             }
 
@@ -46239,33 +46243,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__BerserkAssignment_51
+    // $ANTLR end rule__MonsterInst2__StandardAssignment_51
 
 
-    // $ANTLR start rule__MonsterInst2__StandardAssignment_52
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15679:1: rule__MonsterInst2__StandardAssignment_52 : ( ( '#standard' ) ) ;
-    public final void rule__MonsterInst2__StandardAssignment_52() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__AnimalaweAssignment_52
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15679:1: rule__MonsterInst2__AnimalaweAssignment_52 : ( ( '#animalawe' ) ) ;
+    public final void rule__MonsterInst2__AnimalaweAssignment_52() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15683:1: ( ( ( '#standard' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15684:1: ( ( '#standard' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15683:1: ( ( ( '#animalawe' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15684:1: ( ( '#animalawe' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15684:1: ( ( '#standard' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15685:1: ( '#standard' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15684:1: ( ( '#animalawe' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15685:1: ( '#animalawe' )
             {
-             before(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_52_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15686:1: ( '#standard' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15687:1: '#standard'
+             before(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_52_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15686:1: ( '#animalawe' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15687:1: '#animalawe'
             {
-             before(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_52_0()); 
-            match(input,146,FOLLOW_146_in_rule__MonsterInst2__StandardAssignment_5234822); 
-             after(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_52_0()); 
+             before(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_52_0()); 
+            match(input,146,FOLLOW_146_in_rule__MonsterInst2__AnimalaweAssignment_5234822); 
+             after(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_52_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_52_0()); 
+             after(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_52_0()); 
 
             }
 
@@ -46284,33 +46288,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__StandardAssignment_52
+    // $ANTLR end rule__MonsterInst2__AnimalaweAssignment_52
 
 
-    // $ANTLR start rule__MonsterInst2__AnimalaweAssignment_53
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15702:1: rule__MonsterInst2__AnimalaweAssignment_53 : ( ( '#animalawe' ) ) ;
-    public final void rule__MonsterInst2__AnimalaweAssignment_53() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__AweAssignment_53
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15702:1: rule__MonsterInst2__AweAssignment_53 : ( ( '#awe' ) ) ;
+    public final void rule__MonsterInst2__AweAssignment_53() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15706:1: ( ( ( '#animalawe' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15707:1: ( ( '#animalawe' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15706:1: ( ( ( '#awe' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15707:1: ( ( '#awe' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15707:1: ( ( '#animalawe' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15708:1: ( '#animalawe' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15707:1: ( ( '#awe' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15708:1: ( '#awe' )
             {
-             before(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_53_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15709:1: ( '#animalawe' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15710:1: '#animalawe'
+             before(grammarAccess.getMonsterInst2Access().getAweAweKeyword_53_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15709:1: ( '#awe' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15710:1: '#awe'
             {
-             before(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_53_0()); 
-            match(input,147,FOLLOW_147_in_rule__MonsterInst2__AnimalaweAssignment_5334866); 
-             after(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_53_0()); 
+             before(grammarAccess.getMonsterInst2Access().getAweAweKeyword_53_0()); 
+            match(input,147,FOLLOW_147_in_rule__MonsterInst2__AweAssignment_5334866); 
+             after(grammarAccess.getMonsterInst2Access().getAweAweKeyword_53_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_53_0()); 
+             after(grammarAccess.getMonsterInst2Access().getAweAweKeyword_53_0()); 
 
             }
 
@@ -46329,33 +46333,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__AnimalaweAssignment_53
+    // $ANTLR end rule__MonsterInst2__AweAssignment_53
 
 
-    // $ANTLR start rule__MonsterInst2__AweAssignment_54
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15725:1: rule__MonsterInst2__AweAssignment_54 : ( ( '#awe' ) ) ;
-    public final void rule__MonsterInst2__AweAssignment_54() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__FearAssignment_54
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15725:1: rule__MonsterInst2__FearAssignment_54 : ( ( '#fear' ) ) ;
+    public final void rule__MonsterInst2__FearAssignment_54() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15729:1: ( ( ( '#awe' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15730:1: ( ( '#awe' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15729:1: ( ( ( '#fear' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15730:1: ( ( '#fear' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15730:1: ( ( '#awe' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15731:1: ( '#awe' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15730:1: ( ( '#fear' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15731:1: ( '#fear' )
             {
-             before(grammarAccess.getMonsterInst2Access().getAweAweKeyword_54_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15732:1: ( '#awe' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15733:1: '#awe'
+             before(grammarAccess.getMonsterInst2Access().getFearFearKeyword_54_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15732:1: ( '#fear' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15733:1: '#fear'
             {
-             before(grammarAccess.getMonsterInst2Access().getAweAweKeyword_54_0()); 
-            match(input,148,FOLLOW_148_in_rule__MonsterInst2__AweAssignment_5434910); 
-             after(grammarAccess.getMonsterInst2Access().getAweAweKeyword_54_0()); 
+             before(grammarAccess.getMonsterInst2Access().getFearFearKeyword_54_0()); 
+            match(input,148,FOLLOW_148_in_rule__MonsterInst2__FearAssignment_5434910); 
+             after(grammarAccess.getMonsterInst2Access().getFearFearKeyword_54_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getAweAweKeyword_54_0()); 
+             after(grammarAccess.getMonsterInst2Access().getFearFearKeyword_54_0()); 
 
             }
 
@@ -46374,33 +46378,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__AweAssignment_54
+    // $ANTLR end rule__MonsterInst2__FearAssignment_54
 
 
-    // $ANTLR start rule__MonsterInst2__FearAssignment_55
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15748:1: rule__MonsterInst2__FearAssignment_55 : ( ( '#fear' ) ) ;
-    public final void rule__MonsterInst2__FearAssignment_55() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__RegenerationAssignment_55
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15748:1: rule__MonsterInst2__RegenerationAssignment_55 : ( ( '#regeneration' ) ) ;
+    public final void rule__MonsterInst2__RegenerationAssignment_55() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15752:1: ( ( ( '#fear' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15753:1: ( ( '#fear' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15752:1: ( ( ( '#regeneration' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15753:1: ( ( '#regeneration' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15753:1: ( ( '#fear' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15754:1: ( '#fear' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15753:1: ( ( '#regeneration' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15754:1: ( '#regeneration' )
             {
-             before(grammarAccess.getMonsterInst2Access().getFearFearKeyword_55_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15755:1: ( '#fear' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15756:1: '#fear'
+             before(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_55_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15755:1: ( '#regeneration' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15756:1: '#regeneration'
             {
-             before(grammarAccess.getMonsterInst2Access().getFearFearKeyword_55_0()); 
-            match(input,149,FOLLOW_149_in_rule__MonsterInst2__FearAssignment_5534954); 
-             after(grammarAccess.getMonsterInst2Access().getFearFearKeyword_55_0()); 
+             before(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_55_0()); 
+            match(input,149,FOLLOW_149_in_rule__MonsterInst2__RegenerationAssignment_5534954); 
+             after(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_55_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getFearFearKeyword_55_0()); 
+             after(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_55_0()); 
 
             }
 
@@ -46419,33 +46423,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__FearAssignment_55
+    // $ANTLR end rule__MonsterInst2__RegenerationAssignment_55
 
 
-    // $ANTLR start rule__MonsterInst2__RegenerationAssignment_56
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15771:1: rule__MonsterInst2__RegenerationAssignment_56 : ( ( '#regeneration' ) ) ;
-    public final void rule__MonsterInst2__RegenerationAssignment_56() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__ReinvigorationAssignment_56
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15771:1: rule__MonsterInst2__ReinvigorationAssignment_56 : ( ( '#reinvigoration' ) ) ;
+    public final void rule__MonsterInst2__ReinvigorationAssignment_56() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15775:1: ( ( ( '#regeneration' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15776:1: ( ( '#regeneration' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15775:1: ( ( ( '#reinvigoration' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15776:1: ( ( '#reinvigoration' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15776:1: ( ( '#regeneration' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15777:1: ( '#regeneration' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15776:1: ( ( '#reinvigoration' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15777:1: ( '#reinvigoration' )
             {
-             before(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_56_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15778:1: ( '#regeneration' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15779:1: '#regeneration'
+             before(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_56_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15778:1: ( '#reinvigoration' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15779:1: '#reinvigoration'
             {
-             before(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_56_0()); 
-            match(input,150,FOLLOW_150_in_rule__MonsterInst2__RegenerationAssignment_5634998); 
-             after(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_56_0()); 
+             before(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_56_0()); 
+            match(input,150,FOLLOW_150_in_rule__MonsterInst2__ReinvigorationAssignment_5634998); 
+             after(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_56_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_56_0()); 
+             after(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_56_0()); 
 
             }
 
@@ -46464,33 +46468,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__RegenerationAssignment_56
+    // $ANTLR end rule__MonsterInst2__ReinvigorationAssignment_56
 
 
-    // $ANTLR start rule__MonsterInst2__ReinvigorationAssignment_57
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15794:1: rule__MonsterInst2__ReinvigorationAssignment_57 : ( ( '#reinvigoration' ) ) ;
-    public final void rule__MonsterInst2__ReinvigorationAssignment_57() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__FireshieldAssignment_57
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15794:1: rule__MonsterInst2__FireshieldAssignment_57 : ( ( '#fireshield' ) ) ;
+    public final void rule__MonsterInst2__FireshieldAssignment_57() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15798:1: ( ( ( '#reinvigoration' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15799:1: ( ( '#reinvigoration' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15798:1: ( ( ( '#fireshield' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15799:1: ( ( '#fireshield' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15799:1: ( ( '#reinvigoration' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15800:1: ( '#reinvigoration' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15799:1: ( ( '#fireshield' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15800:1: ( '#fireshield' )
             {
-             before(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_57_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15801:1: ( '#reinvigoration' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15802:1: '#reinvigoration'
+             before(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_57_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15801:1: ( '#fireshield' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15802:1: '#fireshield'
             {
-             before(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_57_0()); 
-            match(input,151,FOLLOW_151_in_rule__MonsterInst2__ReinvigorationAssignment_5735042); 
-             after(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_57_0()); 
+             before(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_57_0()); 
+            match(input,151,FOLLOW_151_in_rule__MonsterInst2__FireshieldAssignment_5735042); 
+             after(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_57_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_57_0()); 
+             after(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_57_0()); 
 
             }
 
@@ -46509,33 +46513,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__ReinvigorationAssignment_57
+    // $ANTLR end rule__MonsterInst2__FireshieldAssignment_57
 
 
-    // $ANTLR start rule__MonsterInst2__FireshieldAssignment_58
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15817:1: rule__MonsterInst2__FireshieldAssignment_58 : ( ( '#fireshield' ) ) ;
-    public final void rule__MonsterInst2__FireshieldAssignment_58() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__IceprotAssignment_58
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15817:1: rule__MonsterInst2__IceprotAssignment_58 : ( ( '#iceprot' ) ) ;
+    public final void rule__MonsterInst2__IceprotAssignment_58() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15821:1: ( ( ( '#fireshield' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15822:1: ( ( '#fireshield' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15821:1: ( ( ( '#iceprot' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15822:1: ( ( '#iceprot' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15822:1: ( ( '#fireshield' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15823:1: ( '#fireshield' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15822:1: ( ( '#iceprot' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15823:1: ( '#iceprot' )
             {
-             before(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_58_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15824:1: ( '#fireshield' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15825:1: '#fireshield'
+             before(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_58_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15824:1: ( '#iceprot' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15825:1: '#iceprot'
             {
-             before(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_58_0()); 
-            match(input,152,FOLLOW_152_in_rule__MonsterInst2__FireshieldAssignment_5835086); 
-             after(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_58_0()); 
+             before(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_58_0()); 
+            match(input,152,FOLLOW_152_in_rule__MonsterInst2__IceprotAssignment_5835086); 
+             after(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_58_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_58_0()); 
+             after(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_58_0()); 
 
             }
 
@@ -46554,33 +46558,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__FireshieldAssignment_58
+    // $ANTLR end rule__MonsterInst2__IceprotAssignment_58
 
 
-    // $ANTLR start rule__MonsterInst2__IceprotAssignment_59
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15840:1: rule__MonsterInst2__IceprotAssignment_59 : ( ( '#iceprot' ) ) ;
-    public final void rule__MonsterInst2__IceprotAssignment_59() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__PoisoncloudAssignment_59
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15840:1: rule__MonsterInst2__PoisoncloudAssignment_59 : ( ( '#poisoncloud' ) ) ;
+    public final void rule__MonsterInst2__PoisoncloudAssignment_59() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15844:1: ( ( ( '#iceprot' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15845:1: ( ( '#iceprot' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15844:1: ( ( ( '#poisoncloud' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15845:1: ( ( '#poisoncloud' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15845:1: ( ( '#iceprot' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15846:1: ( '#iceprot' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15845:1: ( ( '#poisoncloud' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15846:1: ( '#poisoncloud' )
             {
-             before(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15847:1: ( '#iceprot' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15848:1: '#iceprot'
+             before(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_59_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15847:1: ( '#poisoncloud' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15848:1: '#poisoncloud'
             {
-             before(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0()); 
-            match(input,153,FOLLOW_153_in_rule__MonsterInst2__IceprotAssignment_5935130); 
-             after(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0()); 
+             before(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_59_0()); 
+            match(input,153,FOLLOW_153_in_rule__MonsterInst2__PoisoncloudAssignment_5935130); 
+             after(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_59_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0()); 
+             after(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_59_0()); 
 
             }
 
@@ -46599,33 +46603,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__IceprotAssignment_59
+    // $ANTLR end rule__MonsterInst2__PoisoncloudAssignment_59
 
 
-    // $ANTLR start rule__MonsterInst2__PoisoncloudAssignment_60
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15863:1: rule__MonsterInst2__PoisoncloudAssignment_60 : ( ( '#poisoncloud' ) ) ;
-    public final void rule__MonsterInst2__PoisoncloudAssignment_60() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__DiseasecloudAssignment_60
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15863:1: rule__MonsterInst2__DiseasecloudAssignment_60 : ( ( '#diseasecloud' ) ) ;
+    public final void rule__MonsterInst2__DiseasecloudAssignment_60() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15867:1: ( ( ( '#poisoncloud' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15868:1: ( ( '#poisoncloud' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15867:1: ( ( ( '#diseasecloud' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15868:1: ( ( '#diseasecloud' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15868:1: ( ( '#poisoncloud' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15869:1: ( '#poisoncloud' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15868:1: ( ( '#diseasecloud' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15869:1: ( '#diseasecloud' )
             {
-             before(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15870:1: ( '#poisoncloud' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15871:1: '#poisoncloud'
+             before(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_60_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15870:1: ( '#diseasecloud' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15871:1: '#diseasecloud'
             {
-             before(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0()); 
-            match(input,154,FOLLOW_154_in_rule__MonsterInst2__PoisoncloudAssignment_6035174); 
-             after(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0()); 
+             before(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_60_0()); 
+            match(input,154,FOLLOW_154_in_rule__MonsterInst2__DiseasecloudAssignment_6035174); 
+             after(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_60_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0()); 
+             after(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_60_0()); 
 
             }
 
@@ -46644,33 +46648,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__PoisoncloudAssignment_60
+    // $ANTLR end rule__MonsterInst2__DiseasecloudAssignment_60
 
 
-    // $ANTLR start rule__MonsterInst2__DiseasecloudAssignment_61
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15886:1: rule__MonsterInst2__DiseasecloudAssignment_61 : ( ( '#diseasecloud' ) ) ;
-    public final void rule__MonsterInst2__DiseasecloudAssignment_61() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__BloodvengeanceAssignment_61
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15886:1: rule__MonsterInst2__BloodvengeanceAssignment_61 : ( ( '#bloodvengeance' ) ) ;
+    public final void rule__MonsterInst2__BloodvengeanceAssignment_61() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15890:1: ( ( ( '#diseasecloud' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15891:1: ( ( '#diseasecloud' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15890:1: ( ( ( '#bloodvengeance' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15891:1: ( ( '#bloodvengeance' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15891:1: ( ( '#diseasecloud' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15892:1: ( '#diseasecloud' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15891:1: ( ( '#bloodvengeance' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15892:1: ( '#bloodvengeance' )
             {
-             before(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15893:1: ( '#diseasecloud' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15894:1: '#diseasecloud'
+             before(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_61_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15893:1: ( '#bloodvengeance' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15894:1: '#bloodvengeance'
             {
-             before(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0()); 
-            match(input,155,FOLLOW_155_in_rule__MonsterInst2__DiseasecloudAssignment_6135218); 
-             after(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0()); 
+             before(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_61_0()); 
+            match(input,155,FOLLOW_155_in_rule__MonsterInst2__BloodvengeanceAssignment_6135218); 
+             after(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_61_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0()); 
+             after(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_61_0()); 
 
             }
 
@@ -46689,33 +46693,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__DiseasecloudAssignment_61
+    // $ANTLR end rule__MonsterInst2__BloodvengeanceAssignment_61
 
 
-    // $ANTLR start rule__MonsterInst2__BloodvengeanceAssignment_62
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15909:1: rule__MonsterInst2__BloodvengeanceAssignment_62 : ( ( '#bloodvengeance' ) ) ;
-    public final void rule__MonsterInst2__BloodvengeanceAssignment_62() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__CastledefAssignment_62
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15909:1: rule__MonsterInst2__CastledefAssignment_62 : ( ( '#castledef' ) ) ;
+    public final void rule__MonsterInst2__CastledefAssignment_62() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15913:1: ( ( ( '#bloodvengeance' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15914:1: ( ( '#bloodvengeance' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15913:1: ( ( ( '#castledef' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15914:1: ( ( '#castledef' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15914:1: ( ( '#bloodvengeance' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15915:1: ( '#bloodvengeance' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15914:1: ( ( '#castledef' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15915:1: ( '#castledef' )
             {
-             before(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15916:1: ( '#bloodvengeance' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15917:1: '#bloodvengeance'
+             before(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_62_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15916:1: ( '#castledef' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15917:1: '#castledef'
             {
-             before(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0()); 
-            match(input,156,FOLLOW_156_in_rule__MonsterInst2__BloodvengeanceAssignment_6235262); 
-             after(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0()); 
+             before(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_62_0()); 
+            match(input,156,FOLLOW_156_in_rule__MonsterInst2__CastledefAssignment_6235262); 
+             after(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_62_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0()); 
+             after(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_62_0()); 
 
             }
 
@@ -46734,33 +46738,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__BloodvengeanceAssignment_62
+    // $ANTLR end rule__MonsterInst2__CastledefAssignment_62
 
 
-    // $ANTLR start rule__MonsterInst2__CastledefAssignment_63
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15932:1: rule__MonsterInst2__CastledefAssignment_63 : ( ( '#castledef' ) ) ;
-    public final void rule__MonsterInst2__CastledefAssignment_63() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__SiegebonusAssignment_63
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15932:1: rule__MonsterInst2__SiegebonusAssignment_63 : ( ( '#siegebonus' ) ) ;
+    public final void rule__MonsterInst2__SiegebonusAssignment_63() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15936:1: ( ( ( '#castledef' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15937:1: ( ( '#castledef' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15936:1: ( ( ( '#siegebonus' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15937:1: ( ( '#siegebonus' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15937:1: ( ( '#castledef' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15938:1: ( '#castledef' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15937:1: ( ( '#siegebonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15938:1: ( '#siegebonus' )
             {
-             before(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15939:1: ( '#castledef' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15940:1: '#castledef'
+             before(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_63_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15939:1: ( '#siegebonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15940:1: '#siegebonus'
             {
-             before(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0()); 
-            match(input,157,FOLLOW_157_in_rule__MonsterInst2__CastledefAssignment_6335306); 
-             after(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0()); 
+             before(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_63_0()); 
+            match(input,157,FOLLOW_157_in_rule__MonsterInst2__SiegebonusAssignment_6335306); 
+             after(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_63_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0()); 
+             after(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_63_0()); 
 
             }
 
@@ -46779,33 +46783,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__CastledefAssignment_63
+    // $ANTLR end rule__MonsterInst2__SiegebonusAssignment_63
 
 
-    // $ANTLR start rule__MonsterInst2__SiegebonusAssignment_64
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15955:1: rule__MonsterInst2__SiegebonusAssignment_64 : ( ( '#siegebonus' ) ) ;
-    public final void rule__MonsterInst2__SiegebonusAssignment_64() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__PatrolbonusAssignment_64
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15955:1: rule__MonsterInst2__PatrolbonusAssignment_64 : ( ( '#patrolbonus' ) ) ;
+    public final void rule__MonsterInst2__PatrolbonusAssignment_64() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15959:1: ( ( ( '#siegebonus' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15960:1: ( ( '#siegebonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15959:1: ( ( ( '#patrolbonus' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15960:1: ( ( '#patrolbonus' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15960:1: ( ( '#siegebonus' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15961:1: ( '#siegebonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15960:1: ( ( '#patrolbonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15961:1: ( '#patrolbonus' )
             {
-             before(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15962:1: ( '#siegebonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15963:1: '#siegebonus'
+             before(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_64_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15962:1: ( '#patrolbonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15963:1: '#patrolbonus'
             {
-             before(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0()); 
-            match(input,158,FOLLOW_158_in_rule__MonsterInst2__SiegebonusAssignment_6435350); 
-             after(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0()); 
+             before(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_64_0()); 
+            match(input,158,FOLLOW_158_in_rule__MonsterInst2__PatrolbonusAssignment_6435350); 
+             after(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_64_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0()); 
+             after(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_64_0()); 
 
             }
 
@@ -46824,33 +46828,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__SiegebonusAssignment_64
+    // $ANTLR end rule__MonsterInst2__PatrolbonusAssignment_64
 
 
-    // $ANTLR start rule__MonsterInst2__PatrolbonusAssignment_65
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15978:1: rule__MonsterInst2__PatrolbonusAssignment_65 : ( ( '#patrolbonus' ) ) ;
-    public final void rule__MonsterInst2__PatrolbonusAssignment_65() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__PillagebonusAssignment_65
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15978:1: rule__MonsterInst2__PillagebonusAssignment_65 : ( ( '#pillagebonus' ) ) ;
+    public final void rule__MonsterInst2__PillagebonusAssignment_65() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15982:1: ( ( ( '#patrolbonus' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15983:1: ( ( '#patrolbonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15982:1: ( ( ( '#pillagebonus' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15983:1: ( ( '#pillagebonus' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15983:1: ( ( '#patrolbonus' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15984:1: ( '#patrolbonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15983:1: ( ( '#pillagebonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15984:1: ( '#pillagebonus' )
             {
-             before(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15985:1: ( '#patrolbonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15986:1: '#patrolbonus'
+             before(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_65_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15985:1: ( '#pillagebonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15986:1: '#pillagebonus'
             {
-             before(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0()); 
-            match(input,159,FOLLOW_159_in_rule__MonsterInst2__PatrolbonusAssignment_6535394); 
-             after(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0()); 
+             before(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_65_0()); 
+            match(input,159,FOLLOW_159_in_rule__MonsterInst2__PillagebonusAssignment_6535394); 
+             after(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_65_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0()); 
+             after(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_65_0()); 
 
             }
 
@@ -46869,33 +46873,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__PatrolbonusAssignment_65
+    // $ANTLR end rule__MonsterInst2__PillagebonusAssignment_65
 
 
-    // $ANTLR start rule__MonsterInst2__PillagebonusAssignment_66
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16001:1: rule__MonsterInst2__PillagebonusAssignment_66 : ( ( '#pillagebonus' ) ) ;
-    public final void rule__MonsterInst2__PillagebonusAssignment_66() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__ResearchbonusAssignment_66
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16001:1: rule__MonsterInst2__ResearchbonusAssignment_66 : ( ( '#researchbonus' ) ) ;
+    public final void rule__MonsterInst2__ResearchbonusAssignment_66() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16005:1: ( ( ( '#pillagebonus' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16006:1: ( ( '#pillagebonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16005:1: ( ( ( '#researchbonus' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16006:1: ( ( '#researchbonus' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16006:1: ( ( '#pillagebonus' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16007:1: ( '#pillagebonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16006:1: ( ( '#researchbonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16007:1: ( '#researchbonus' )
             {
-             before(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16008:1: ( '#pillagebonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16009:1: '#pillagebonus'
+             before(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_66_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16008:1: ( '#researchbonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16009:1: '#researchbonus'
             {
-             before(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0()); 
-            match(input,160,FOLLOW_160_in_rule__MonsterInst2__PillagebonusAssignment_6635438); 
-             after(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0()); 
+             before(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_66_0()); 
+            match(input,160,FOLLOW_160_in_rule__MonsterInst2__ResearchbonusAssignment_6635438); 
+             after(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_66_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0()); 
+             after(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_66_0()); 
 
             }
 
@@ -46914,33 +46918,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__PillagebonusAssignment_66
+    // $ANTLR end rule__MonsterInst2__ResearchbonusAssignment_66
 
 
-    // $ANTLR start rule__MonsterInst2__ResearchbonusAssignment_67
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16024:1: rule__MonsterInst2__ResearchbonusAssignment_67 : ( ( '#researchbonus' ) ) ;
-    public final void rule__MonsterInst2__ResearchbonusAssignment_67() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__ForgebonusAssignment_67
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16024:1: rule__MonsterInst2__ForgebonusAssignment_67 : ( ( '#forgebonus' ) ) ;
+    public final void rule__MonsterInst2__ForgebonusAssignment_67() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16028:1: ( ( ( '#researchbonus' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16029:1: ( ( '#researchbonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16028:1: ( ( ( '#forgebonus' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16029:1: ( ( '#forgebonus' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16029:1: ( ( '#researchbonus' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16030:1: ( '#researchbonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16029:1: ( ( '#forgebonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16030:1: ( '#forgebonus' )
             {
-             before(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16031:1: ( '#researchbonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16032:1: '#researchbonus'
+             before(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_67_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16031:1: ( '#forgebonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16032:1: '#forgebonus'
             {
-             before(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0()); 
-            match(input,161,FOLLOW_161_in_rule__MonsterInst2__ResearchbonusAssignment_6735482); 
-             after(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0()); 
+             before(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_67_0()); 
+            match(input,161,FOLLOW_161_in_rule__MonsterInst2__ForgebonusAssignment_6735482); 
+             after(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_67_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0()); 
+             after(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_67_0()); 
 
             }
 
@@ -46959,33 +46963,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__ResearchbonusAssignment_67
+    // $ANTLR end rule__MonsterInst2__ForgebonusAssignment_67
 
 
-    // $ANTLR start rule__MonsterInst2__ForgebonusAssignment_68
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16047:1: rule__MonsterInst2__ForgebonusAssignment_68 : ( ( '#forgebonus' ) ) ;
-    public final void rule__MonsterInst2__ForgebonusAssignment_68() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__DouseAssignment_68
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16047:1: rule__MonsterInst2__DouseAssignment_68 : ( ( '#douse' ) ) ;
+    public final void rule__MonsterInst2__DouseAssignment_68() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16051:1: ( ( ( '#forgebonus' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16052:1: ( ( '#forgebonus' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16051:1: ( ( ( '#douse' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16052:1: ( ( '#douse' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16052:1: ( ( '#forgebonus' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16053:1: ( '#forgebonus' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16052:1: ( ( '#douse' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16053:1: ( '#douse' )
             {
-             before(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16054:1: ( '#forgebonus' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16055:1: '#forgebonus'
+             before(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_68_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16054:1: ( '#douse' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16055:1: '#douse'
             {
-             before(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0()); 
-            match(input,162,FOLLOW_162_in_rule__MonsterInst2__ForgebonusAssignment_6835526); 
-             after(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0()); 
+             before(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_68_0()); 
+            match(input,162,FOLLOW_162_in_rule__MonsterInst2__DouseAssignment_6835526); 
+             after(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_68_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0()); 
+             after(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_68_0()); 
 
             }
 
@@ -47004,33 +47008,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__ForgebonusAssignment_68
+    // $ANTLR end rule__MonsterInst2__DouseAssignment_68
 
 
-    // $ANTLR start rule__MonsterInst2__DouseAssignment_69
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16070:1: rule__MonsterInst2__DouseAssignment_69 : ( ( '#douse' ) ) ;
-    public final void rule__MonsterInst2__DouseAssignment_69() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__NobadeventsAssignment_69
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16070:1: rule__MonsterInst2__NobadeventsAssignment_69 : ( ( '#nobadevents' ) ) ;
+    public final void rule__MonsterInst2__NobadeventsAssignment_69() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16074:1: ( ( ( '#douse' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16075:1: ( ( '#douse' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16074:1: ( ( ( '#nobadevents' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16075:1: ( ( '#nobadevents' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16075:1: ( ( '#douse' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16076:1: ( '#douse' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16075:1: ( ( '#nobadevents' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16076:1: ( '#nobadevents' )
             {
-             before(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16077:1: ( '#douse' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16078:1: '#douse'
+             before(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_69_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16077:1: ( '#nobadevents' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16078:1: '#nobadevents'
             {
-             before(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0()); 
-            match(input,163,FOLLOW_163_in_rule__MonsterInst2__DouseAssignment_6935570); 
-             after(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0()); 
+             before(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_69_0()); 
+            match(input,163,FOLLOW_163_in_rule__MonsterInst2__NobadeventsAssignment_6935570); 
+             after(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_69_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0()); 
+             after(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_69_0()); 
 
             }
 
@@ -47049,33 +47053,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__DouseAssignment_69
+    // $ANTLR end rule__MonsterInst2__NobadeventsAssignment_69
 
 
-    // $ANTLR start rule__MonsterInst2__NobadeventsAssignment_70
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16093:1: rule__MonsterInst2__NobadeventsAssignment_70 : ( ( '#nobadevents' ) ) ;
-    public final void rule__MonsterInst2__NobadeventsAssignment_70() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__IncunrestAssignment_70
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16093:1: rule__MonsterInst2__IncunrestAssignment_70 : ( ( '#incunrest' ) ) ;
+    public final void rule__MonsterInst2__IncunrestAssignment_70() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16097:1: ( ( ( '#nobadevents' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16098:1: ( ( '#nobadevents' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16097:1: ( ( ( '#incunrest' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16098:1: ( ( '#incunrest' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16098:1: ( ( '#nobadevents' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16099:1: ( '#nobadevents' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16098:1: ( ( '#incunrest' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16099:1: ( '#incunrest' )
             {
-             before(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16100:1: ( '#nobadevents' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16101:1: '#nobadevents'
+             before(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_70_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16100:1: ( '#incunrest' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16101:1: '#incunrest'
             {
-             before(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0()); 
-            match(input,164,FOLLOW_164_in_rule__MonsterInst2__NobadeventsAssignment_7035614); 
-             after(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0()); 
+             before(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_70_0()); 
+            match(input,164,FOLLOW_164_in_rule__MonsterInst2__IncunrestAssignment_7035614); 
+             after(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_70_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0()); 
+             after(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_70_0()); 
 
             }
 
@@ -47094,33 +47098,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__NobadeventsAssignment_70
+    // $ANTLR end rule__MonsterInst2__IncunrestAssignment_70
 
 
-    // $ANTLR start rule__MonsterInst2__IncunrestAssignment_71
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16116:1: rule__MonsterInst2__IncunrestAssignment_71 : ( ( '#incunrest' ) ) ;
-    public final void rule__MonsterInst2__IncunrestAssignment_71() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__SpreaddomAssignment_71
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16116:1: rule__MonsterInst2__SpreaddomAssignment_71 : ( ( '#spreaddom' ) ) ;
+    public final void rule__MonsterInst2__SpreaddomAssignment_71() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16120:1: ( ( ( '#incunrest' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16121:1: ( ( '#incunrest' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16120:1: ( ( ( '#spreaddom' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16121:1: ( ( '#spreaddom' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16121:1: ( ( '#incunrest' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16122:1: ( '#incunrest' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16121:1: ( ( '#spreaddom' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16122:1: ( '#spreaddom' )
             {
-             before(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16123:1: ( '#incunrest' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16124:1: '#incunrest'
+             before(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_71_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16123:1: ( '#spreaddom' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16124:1: '#spreaddom'
             {
-             before(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0()); 
-            match(input,165,FOLLOW_165_in_rule__MonsterInst2__IncunrestAssignment_7135658); 
-             after(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0()); 
+             before(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_71_0()); 
+            match(input,165,FOLLOW_165_in_rule__MonsterInst2__SpreaddomAssignment_7135658); 
+             after(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_71_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0()); 
+             after(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_71_0()); 
 
             }
 
@@ -47139,33 +47143,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__IncunrestAssignment_71
+    // $ANTLR end rule__MonsterInst2__SpreaddomAssignment_71
 
 
-    // $ANTLR start rule__MonsterInst2__SpreaddomAssignment_72
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16139:1: rule__MonsterInst2__SpreaddomAssignment_72 : ( ( '#spreaddom' ) ) ;
-    public final void rule__MonsterInst2__SpreaddomAssignment_72() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__LeperAssignment_72
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16139:1: rule__MonsterInst2__LeperAssignment_72 : ( ( '#leper' ) ) ;
+    public final void rule__MonsterInst2__LeperAssignment_72() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16143:1: ( ( ( '#spreaddom' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16144:1: ( ( '#spreaddom' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16143:1: ( ( ( '#leper' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16144:1: ( ( '#leper' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16144:1: ( ( '#spreaddom' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16145:1: ( '#spreaddom' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16144:1: ( ( '#leper' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16145:1: ( '#leper' )
             {
-             before(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16146:1: ( '#spreaddom' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16147:1: '#spreaddom'
+             before(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_72_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16146:1: ( '#leper' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16147:1: '#leper'
             {
-             before(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0()); 
-            match(input,166,FOLLOW_166_in_rule__MonsterInst2__SpreaddomAssignment_7235702); 
-             after(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0()); 
+             before(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_72_0()); 
+            match(input,166,FOLLOW_166_in_rule__MonsterInst2__LeperAssignment_7235702); 
+             after(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_72_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0()); 
+             after(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_72_0()); 
 
             }
 
@@ -47184,33 +47188,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__SpreaddomAssignment_72
+    // $ANTLR end rule__MonsterInst2__LeperAssignment_72
 
 
-    // $ANTLR start rule__MonsterInst2__LeperAssignment_73
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16162:1: rule__MonsterInst2__LeperAssignment_73 : ( ( '#leper' ) ) ;
-    public final void rule__MonsterInst2__LeperAssignment_73() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__PopkillAssignment_73
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16162:1: rule__MonsterInst2__PopkillAssignment_73 : ( ( '#popkill' ) ) ;
+    public final void rule__MonsterInst2__PopkillAssignment_73() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16166:1: ( ( ( '#leper' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16167:1: ( ( '#leper' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16166:1: ( ( ( '#popkill' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16167:1: ( ( '#popkill' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16167:1: ( ( '#leper' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16168:1: ( '#leper' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16167:1: ( ( '#popkill' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16168:1: ( '#popkill' )
             {
-             before(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16169:1: ( '#leper' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16170:1: '#leper'
+             before(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_73_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16169:1: ( '#popkill' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16170:1: '#popkill'
             {
-             before(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0()); 
-            match(input,167,FOLLOW_167_in_rule__MonsterInst2__LeperAssignment_7335746); 
-             after(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0()); 
+             before(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_73_0()); 
+            match(input,167,FOLLOW_167_in_rule__MonsterInst2__PopkillAssignment_7335746); 
+             after(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_73_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0()); 
+             after(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_73_0()); 
 
             }
 
@@ -47229,33 +47233,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__LeperAssignment_73
+    // $ANTLR end rule__MonsterInst2__PopkillAssignment_73
 
 
-    // $ANTLR start rule__MonsterInst2__PopkillAssignment_74
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16185:1: rule__MonsterInst2__PopkillAssignment_74 : ( ( '#popkill' ) ) ;
-    public final void rule__MonsterInst2__PopkillAssignment_74() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__HereticAssignment_74
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16185:1: rule__MonsterInst2__HereticAssignment_74 : ( ( '#heretic' ) ) ;
+    public final void rule__MonsterInst2__HereticAssignment_74() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16189:1: ( ( ( '#popkill' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16190:1: ( ( '#popkill' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16189:1: ( ( ( '#heretic' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16190:1: ( ( '#heretic' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16190:1: ( ( '#popkill' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16191:1: ( '#popkill' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16190:1: ( ( '#heretic' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16191:1: ( '#heretic' )
             {
-             before(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16192:1: ( '#popkill' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16193:1: '#popkill'
+             before(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_74_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16192:1: ( '#heretic' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16193:1: '#heretic'
             {
-             before(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0()); 
-            match(input,168,FOLLOW_168_in_rule__MonsterInst2__PopkillAssignment_7435790); 
-             after(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0()); 
+             before(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_74_0()); 
+            match(input,168,FOLLOW_168_in_rule__MonsterInst2__HereticAssignment_7435790); 
+             after(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_74_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0()); 
+             after(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_74_0()); 
 
             }
 
@@ -47274,33 +47278,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__PopkillAssignment_74
+    // $ANTLR end rule__MonsterInst2__HereticAssignment_74
 
 
-    // $ANTLR start rule__MonsterInst2__HereticAssignment_75
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16208:1: rule__MonsterInst2__HereticAssignment_75 : ( ( '#heretic' ) ) ;
-    public final void rule__MonsterInst2__HereticAssignment_75() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__ItemslotsAssignment_75
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16208:1: rule__MonsterInst2__ItemslotsAssignment_75 : ( ( '#itemslots' ) ) ;
+    public final void rule__MonsterInst2__ItemslotsAssignment_75() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16212:1: ( ( ( '#heretic' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16213:1: ( ( '#heretic' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16212:1: ( ( ( '#itemslots' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16213:1: ( ( '#itemslots' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16213:1: ( ( '#heretic' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16214:1: ( '#heretic' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16213:1: ( ( '#itemslots' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16214:1: ( '#itemslots' )
             {
-             before(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16215:1: ( '#heretic' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16216:1: '#heretic'
+             before(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_75_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16215:1: ( '#itemslots' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16216:1: '#itemslots'
             {
-             before(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0()); 
-            match(input,169,FOLLOW_169_in_rule__MonsterInst2__HereticAssignment_7535834); 
-             after(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0()); 
+             before(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_75_0()); 
+            match(input,169,FOLLOW_169_in_rule__MonsterInst2__ItemslotsAssignment_7535834); 
+             after(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_75_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0()); 
+             after(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_75_0()); 
 
             }
 
@@ -47319,33 +47323,33 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__HereticAssignment_75
+    // $ANTLR end rule__MonsterInst2__ItemslotsAssignment_75
 
 
-    // $ANTLR start rule__MonsterInst2__ItemslotsAssignment_76
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16231:1: rule__MonsterInst2__ItemslotsAssignment_76 : ( ( '#itemslots' ) ) ;
-    public final void rule__MonsterInst2__ItemslotsAssignment_76() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst2__NametypeAssignment_76
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16231:1: rule__MonsterInst2__NametypeAssignment_76 : ( ( '#nametype' ) ) ;
+    public final void rule__MonsterInst2__NametypeAssignment_76() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16235:1: ( ( ( '#itemslots' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16236:1: ( ( '#itemslots' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16235:1: ( ( ( '#nametype' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16236:1: ( ( '#nametype' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16236:1: ( ( '#itemslots' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16237:1: ( '#itemslots' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16236:1: ( ( '#nametype' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16237:1: ( '#nametype' )
             {
-             before(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16238:1: ( '#itemslots' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16239:1: '#itemslots'
+             before(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_76_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16238:1: ( '#nametype' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16239:1: '#nametype'
             {
-             before(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0()); 
-            match(input,170,FOLLOW_170_in_rule__MonsterInst2__ItemslotsAssignment_7635878); 
-             after(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0()); 
+             before(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_76_0()); 
+            match(input,170,FOLLOW_170_in_rule__MonsterInst2__NametypeAssignment_7635878); 
+             after(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_76_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0()); 
+             after(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_76_0()); 
 
             }
 
@@ -47364,73 +47368,28 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst2__ItemslotsAssignment_76
-
-
-    // $ANTLR start rule__MonsterInst2__NametypeAssignment_77
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16254:1: rule__MonsterInst2__NametypeAssignment_77 : ( ( '#nametype' ) ) ;
-    public final void rule__MonsterInst2__NametypeAssignment_77() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16258:1: ( ( ( '#nametype' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16259:1: ( ( '#nametype' ) )
-            {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16259:1: ( ( '#nametype' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16260:1: ( '#nametype' )
-            {
-             before(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16261:1: ( '#nametype' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16262:1: '#nametype'
-            {
-             before(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0()); 
-            match(input,171,FOLLOW_171_in_rule__MonsterInst2__NametypeAssignment_7735922); 
-             after(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0()); 
-
-            }
-
-             after(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end rule__MonsterInst2__NametypeAssignment_77
+    // $ANTLR end rule__MonsterInst2__NametypeAssignment_76
 
 
     // $ANTLR start rule__MonsterInst3__MagicskillAssignment_0
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16277:1: rule__MonsterInst3__MagicskillAssignment_0 : ( ( '#magicskill' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16254:1: rule__MonsterInst3__MagicskillAssignment_0 : ( ( '#magicskill' ) ) ;
     public final void rule__MonsterInst3__MagicskillAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16281:1: ( ( ( '#magicskill' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16282:1: ( ( '#magicskill' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16258:1: ( ( ( '#magicskill' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16259:1: ( ( '#magicskill' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16282:1: ( ( '#magicskill' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16283:1: ( '#magicskill' )
-            {
-             before(grammarAccess.getMonsterInst3Access().getMagicskillMagicskillKeyword_0_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16284:1: ( '#magicskill' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16285:1: '#magicskill'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16259:1: ( ( '#magicskill' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16260:1: ( '#magicskill' )
             {
              before(grammarAccess.getMonsterInst3Access().getMagicskillMagicskillKeyword_0_0()); 
-            match(input,172,FOLLOW_172_in_rule__MonsterInst3__MagicskillAssignment_035966); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16261:1: ( '#magicskill' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16262:1: '#magicskill'
+            {
+             before(grammarAccess.getMonsterInst3Access().getMagicskillMagicskillKeyword_0_0()); 
+            match(input,171,FOLLOW_171_in_rule__MonsterInst3__MagicskillAssignment_035922); 
              after(grammarAccess.getMonsterInst3Access().getMagicskillMagicskillKeyword_0_0()); 
 
             }
@@ -47458,24 +47417,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst3__CustommagicAssignment_1
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16300:1: rule__MonsterInst3__CustommagicAssignment_1 : ( ( '#custommagic' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16277:1: rule__MonsterInst3__CustommagicAssignment_1 : ( ( '#custommagic' ) ) ;
     public final void rule__MonsterInst3__CustommagicAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16304:1: ( ( ( '#custommagic' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16305:1: ( ( '#custommagic' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16281:1: ( ( ( '#custommagic' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16282:1: ( ( '#custommagic' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16305:1: ( ( '#custommagic' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16306:1: ( '#custommagic' )
-            {
-             before(grammarAccess.getMonsterInst3Access().getCustommagicCustommagicKeyword_1_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16307:1: ( '#custommagic' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16308:1: '#custommagic'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16282:1: ( ( '#custommagic' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16283:1: ( '#custommagic' )
             {
              before(grammarAccess.getMonsterInst3Access().getCustommagicCustommagicKeyword_1_0()); 
-            match(input,173,FOLLOW_173_in_rule__MonsterInst3__CustommagicAssignment_136010); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16284:1: ( '#custommagic' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16285:1: '#custommagic'
+            {
+             before(grammarAccess.getMonsterInst3Access().getCustommagicCustommagicKeyword_1_0()); 
+            match(input,172,FOLLOW_172_in_rule__MonsterInst3__CustommagicAssignment_135966); 
              after(grammarAccess.getMonsterInst3Access().getCustommagicCustommagicKeyword_1_0()); 
 
             }
@@ -47503,24 +47462,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst3__MagicboostAssignment_2
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16323:1: rule__MonsterInst3__MagicboostAssignment_2 : ( ( '#magicboost' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16300:1: rule__MonsterInst3__MagicboostAssignment_2 : ( ( '#magicboost' ) ) ;
     public final void rule__MonsterInst3__MagicboostAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16327:1: ( ( ( '#magicboost' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16328:1: ( ( '#magicboost' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16304:1: ( ( ( '#magicboost' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16305:1: ( ( '#magicboost' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16328:1: ( ( '#magicboost' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16329:1: ( '#magicboost' )
-            {
-             before(grammarAccess.getMonsterInst3Access().getMagicboostMagicboostKeyword_2_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16330:1: ( '#magicboost' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16331:1: '#magicboost'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16305:1: ( ( '#magicboost' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16306:1: ( '#magicboost' )
             {
              before(grammarAccess.getMonsterInst3Access().getMagicboostMagicboostKeyword_2_0()); 
-            match(input,174,FOLLOW_174_in_rule__MonsterInst3__MagicboostAssignment_236054); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16307:1: ( '#magicboost' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16308:1: '#magicboost'
+            {
+             before(grammarAccess.getMonsterInst3Access().getMagicboostMagicboostKeyword_2_0()); 
+            match(input,173,FOLLOW_173_in_rule__MonsterInst3__MagicboostAssignment_236010); 
              after(grammarAccess.getMonsterInst3Access().getMagicboostMagicboostKeyword_2_0()); 
 
             }
@@ -47548,24 +47507,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst3__GemprodAssignment_3
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16346:1: rule__MonsterInst3__GemprodAssignment_3 : ( ( '#gemprod' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16323:1: rule__MonsterInst3__GemprodAssignment_3 : ( ( '#gemprod' ) ) ;
     public final void rule__MonsterInst3__GemprodAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16350:1: ( ( ( '#gemprod' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16351:1: ( ( '#gemprod' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16327:1: ( ( ( '#gemprod' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16328:1: ( ( '#gemprod' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16351:1: ( ( '#gemprod' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16352:1: ( '#gemprod' )
-            {
-             before(grammarAccess.getMonsterInst3Access().getGemprodGemprodKeyword_3_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16353:1: ( '#gemprod' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16354:1: '#gemprod'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16328:1: ( ( '#gemprod' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16329:1: ( '#gemprod' )
             {
              before(grammarAccess.getMonsterInst3Access().getGemprodGemprodKeyword_3_0()); 
-            match(input,175,FOLLOW_175_in_rule__MonsterInst3__GemprodAssignment_336098); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16330:1: ( '#gemprod' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16331:1: '#gemprod'
+            {
+             before(grammarAccess.getMonsterInst3Access().getGemprodGemprodKeyword_3_0()); 
+            match(input,174,FOLLOW_174_in_rule__MonsterInst3__GemprodAssignment_336054); 
              after(grammarAccess.getMonsterInst3Access().getGemprodGemprodKeyword_3_0()); 
 
             }
@@ -47593,24 +47552,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ClearAssignment_0
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16369:1: rule__MonsterInst4__ClearAssignment_0 : ( ( '#clear' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16346:1: rule__MonsterInst4__ClearAssignment_0 : ( ( '#clear' ) ) ;
     public final void rule__MonsterInst4__ClearAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16373:1: ( ( ( '#clear' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16374:1: ( ( '#clear' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16350:1: ( ( ( '#clear' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16351:1: ( ( '#clear' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16374:1: ( ( '#clear' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16375:1: ( '#clear' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getClearClearKeyword_0_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16376:1: ( '#clear' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16377:1: '#clear'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16351:1: ( ( '#clear' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16352:1: ( '#clear' )
             {
              before(grammarAccess.getMonsterInst4Access().getClearClearKeyword_0_0()); 
-            match(input,176,FOLLOW_176_in_rule__MonsterInst4__ClearAssignment_036142); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16353:1: ( '#clear' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16354:1: '#clear'
+            {
+             before(grammarAccess.getMonsterInst4Access().getClearClearKeyword_0_0()); 
+            match(input,175,FOLLOW_175_in_rule__MonsterInst4__ClearAssignment_036098); 
              after(grammarAccess.getMonsterInst4Access().getClearClearKeyword_0_0()); 
 
             }
@@ -47638,24 +47597,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ClearmagicAssignment_1
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16392:1: rule__MonsterInst4__ClearmagicAssignment_1 : ( ( '#clearmagic' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16369:1: rule__MonsterInst4__ClearmagicAssignment_1 : ( ( '#clearmagic' ) ) ;
     public final void rule__MonsterInst4__ClearmagicAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16396:1: ( ( ( '#clearmagic' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16397:1: ( ( '#clearmagic' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16373:1: ( ( ( '#clearmagic' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16374:1: ( ( '#clearmagic' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16397:1: ( ( '#clearmagic' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16398:1: ( '#clearmagic' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getClearmagicClearmagicKeyword_1_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16399:1: ( '#clearmagic' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16400:1: '#clearmagic'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16374:1: ( ( '#clearmagic' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16375:1: ( '#clearmagic' )
             {
              before(grammarAccess.getMonsterInst4Access().getClearmagicClearmagicKeyword_1_0()); 
-            match(input,177,FOLLOW_177_in_rule__MonsterInst4__ClearmagicAssignment_136186); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16376:1: ( '#clearmagic' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16377:1: '#clearmagic'
+            {
+             before(grammarAccess.getMonsterInst4Access().getClearmagicClearmagicKeyword_1_0()); 
+            match(input,176,FOLLOW_176_in_rule__MonsterInst4__ClearmagicAssignment_136142); 
              after(grammarAccess.getMonsterInst4Access().getClearmagicClearmagicKeyword_1_0()); 
 
             }
@@ -47683,24 +47642,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ClearspecAssignment_2
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16415:1: rule__MonsterInst4__ClearspecAssignment_2 : ( ( '#clearspec' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16392:1: rule__MonsterInst4__ClearspecAssignment_2 : ( ( '#clearspec' ) ) ;
     public final void rule__MonsterInst4__ClearspecAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16419:1: ( ( ( '#clearspec' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16420:1: ( ( '#clearspec' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16396:1: ( ( ( '#clearspec' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16397:1: ( ( '#clearspec' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16420:1: ( ( '#clearspec' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16421:1: ( '#clearspec' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getClearspecClearspecKeyword_2_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16422:1: ( '#clearspec' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16423:1: '#clearspec'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16397:1: ( ( '#clearspec' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16398:1: ( '#clearspec' )
             {
              before(grammarAccess.getMonsterInst4Access().getClearspecClearspecKeyword_2_0()); 
-            match(input,178,FOLLOW_178_in_rule__MonsterInst4__ClearspecAssignment_236230); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16399:1: ( '#clearspec' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16400:1: '#clearspec'
+            {
+             before(grammarAccess.getMonsterInst4Access().getClearspecClearspecKeyword_2_0()); 
+            match(input,177,FOLLOW_177_in_rule__MonsterInst4__ClearspecAssignment_236186); 
              after(grammarAccess.getMonsterInst4Access().getClearspecClearspecKeyword_2_0()); 
 
             }
@@ -47728,24 +47687,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__FemaleAssignment_3
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16438:1: rule__MonsterInst4__FemaleAssignment_3 : ( ( '#female' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16415:1: rule__MonsterInst4__FemaleAssignment_3 : ( ( '#female' ) ) ;
     public final void rule__MonsterInst4__FemaleAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16442:1: ( ( ( '#female' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16443:1: ( ( '#female' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16419:1: ( ( ( '#female' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16420:1: ( ( '#female' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16443:1: ( ( '#female' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16444:1: ( '#female' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getFemaleFemaleKeyword_3_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16445:1: ( '#female' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16446:1: '#female'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16420:1: ( ( '#female' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16421:1: ( '#female' )
             {
              before(grammarAccess.getMonsterInst4Access().getFemaleFemaleKeyword_3_0()); 
-            match(input,179,FOLLOW_179_in_rule__MonsterInst4__FemaleAssignment_336274); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16422:1: ( '#female' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16423:1: '#female'
+            {
+             before(grammarAccess.getMonsterInst4Access().getFemaleFemaleKeyword_3_0()); 
+            match(input,178,FOLLOW_178_in_rule__MonsterInst4__FemaleAssignment_336230); 
              after(grammarAccess.getMonsterInst4Access().getFemaleFemaleKeyword_3_0()); 
 
             }
@@ -47773,24 +47732,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__MountedAssignment_4
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16461:1: rule__MonsterInst4__MountedAssignment_4 : ( ( '#mounted' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16438:1: rule__MonsterInst4__MountedAssignment_4 : ( ( '#mounted' ) ) ;
     public final void rule__MonsterInst4__MountedAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16465:1: ( ( ( '#mounted' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16466:1: ( ( '#mounted' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16442:1: ( ( ( '#mounted' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16443:1: ( ( '#mounted' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16466:1: ( ( '#mounted' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16467:1: ( '#mounted' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getMountedMountedKeyword_4_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16468:1: ( '#mounted' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16469:1: '#mounted'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16443:1: ( ( '#mounted' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16444:1: ( '#mounted' )
             {
              before(grammarAccess.getMonsterInst4Access().getMountedMountedKeyword_4_0()); 
-            match(input,180,FOLLOW_180_in_rule__MonsterInst4__MountedAssignment_436318); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16445:1: ( '#mounted' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16446:1: '#mounted'
+            {
+             before(grammarAccess.getMonsterInst4Access().getMountedMountedKeyword_4_0()); 
+            match(input,179,FOLLOW_179_in_rule__MonsterInst4__MountedAssignment_436274); 
              after(grammarAccess.getMonsterInst4Access().getMountedMountedKeyword_4_0()); 
 
             }
@@ -47818,24 +47777,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__HolyAssignment_5
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16484:1: rule__MonsterInst4__HolyAssignment_5 : ( ( '#holy' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16461:1: rule__MonsterInst4__HolyAssignment_5 : ( ( '#holy' ) ) ;
     public final void rule__MonsterInst4__HolyAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16488:1: ( ( ( '#holy' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16489:1: ( ( '#holy' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16465:1: ( ( ( '#holy' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16466:1: ( ( '#holy' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16489:1: ( ( '#holy' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16490:1: ( '#holy' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getHolyHolyKeyword_5_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16491:1: ( '#holy' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16492:1: '#holy'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16466:1: ( ( '#holy' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16467:1: ( '#holy' )
             {
              before(grammarAccess.getMonsterInst4Access().getHolyHolyKeyword_5_0()); 
-            match(input,181,FOLLOW_181_in_rule__MonsterInst4__HolyAssignment_536362); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16468:1: ( '#holy' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16469:1: '#holy'
+            {
+             before(grammarAccess.getMonsterInst4Access().getHolyHolyKeyword_5_0()); 
+            match(input,180,FOLLOW_180_in_rule__MonsterInst4__HolyAssignment_536318); 
              after(grammarAccess.getMonsterInst4Access().getHolyHolyKeyword_5_0()); 
 
             }
@@ -47863,24 +47822,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__AnimalAssignment_6
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16507:1: rule__MonsterInst4__AnimalAssignment_6 : ( ( '#animal' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16484:1: rule__MonsterInst4__AnimalAssignment_6 : ( ( '#animal' ) ) ;
     public final void rule__MonsterInst4__AnimalAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16511:1: ( ( ( '#animal' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16512:1: ( ( '#animal' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16488:1: ( ( ( '#animal' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16489:1: ( ( '#animal' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16512:1: ( ( '#animal' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16513:1: ( '#animal' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getAnimalAnimalKeyword_6_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16514:1: ( '#animal' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16515:1: '#animal'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16489:1: ( ( '#animal' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16490:1: ( '#animal' )
             {
              before(grammarAccess.getMonsterInst4Access().getAnimalAnimalKeyword_6_0()); 
-            match(input,182,FOLLOW_182_in_rule__MonsterInst4__AnimalAssignment_636406); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16491:1: ( '#animal' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16492:1: '#animal'
+            {
+             before(grammarAccess.getMonsterInst4Access().getAnimalAnimalKeyword_6_0()); 
+            match(input,181,FOLLOW_181_in_rule__MonsterInst4__AnimalAssignment_636362); 
              after(grammarAccess.getMonsterInst4Access().getAnimalAnimalKeyword_6_0()); 
 
             }
@@ -47908,24 +47867,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__UndeadAssignment_7
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16530:1: rule__MonsterInst4__UndeadAssignment_7 : ( ( '#undead' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16507:1: rule__MonsterInst4__UndeadAssignment_7 : ( ( '#undead' ) ) ;
     public final void rule__MonsterInst4__UndeadAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16534:1: ( ( ( '#undead' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16535:1: ( ( '#undead' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16511:1: ( ( ( '#undead' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16512:1: ( ( '#undead' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16535:1: ( ( '#undead' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16536:1: ( '#undead' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getUndeadUndeadKeyword_7_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16537:1: ( '#undead' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16538:1: '#undead'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16512:1: ( ( '#undead' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16513:1: ( '#undead' )
             {
              before(grammarAccess.getMonsterInst4Access().getUndeadUndeadKeyword_7_0()); 
-            match(input,183,FOLLOW_183_in_rule__MonsterInst4__UndeadAssignment_736450); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16514:1: ( '#undead' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16515:1: '#undead'
+            {
+             before(grammarAccess.getMonsterInst4Access().getUndeadUndeadKeyword_7_0()); 
+            match(input,182,FOLLOW_182_in_rule__MonsterInst4__UndeadAssignment_736406); 
              after(grammarAccess.getMonsterInst4Access().getUndeadUndeadKeyword_7_0()); 
 
             }
@@ -47953,24 +47912,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__DemonAssignment_8
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16553:1: rule__MonsterInst4__DemonAssignment_8 : ( ( '#demon' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16530:1: rule__MonsterInst4__DemonAssignment_8 : ( ( '#demon' ) ) ;
     public final void rule__MonsterInst4__DemonAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16557:1: ( ( ( '#demon' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16558:1: ( ( '#demon' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16534:1: ( ( ( '#demon' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16535:1: ( ( '#demon' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16558:1: ( ( '#demon' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16559:1: ( '#demon' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getDemonDemonKeyword_8_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16560:1: ( '#demon' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16561:1: '#demon'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16535:1: ( ( '#demon' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16536:1: ( '#demon' )
             {
              before(grammarAccess.getMonsterInst4Access().getDemonDemonKeyword_8_0()); 
-            match(input,184,FOLLOW_184_in_rule__MonsterInst4__DemonAssignment_836494); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16537:1: ( '#demon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16538:1: '#demon'
+            {
+             before(grammarAccess.getMonsterInst4Access().getDemonDemonKeyword_8_0()); 
+            match(input,183,FOLLOW_183_in_rule__MonsterInst4__DemonAssignment_836450); 
              after(grammarAccess.getMonsterInst4Access().getDemonDemonKeyword_8_0()); 
 
             }
@@ -47998,24 +47957,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__MagicbeingAssignment_9
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16576:1: rule__MonsterInst4__MagicbeingAssignment_9 : ( ( '#magicbeing' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16553:1: rule__MonsterInst4__MagicbeingAssignment_9 : ( ( '#magicbeing' ) ) ;
     public final void rule__MonsterInst4__MagicbeingAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16580:1: ( ( ( '#magicbeing' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16581:1: ( ( '#magicbeing' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16557:1: ( ( ( '#magicbeing' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16558:1: ( ( '#magicbeing' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16581:1: ( ( '#magicbeing' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16582:1: ( '#magicbeing' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getMagicbeingMagicbeingKeyword_9_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16583:1: ( '#magicbeing' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16584:1: '#magicbeing'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16558:1: ( ( '#magicbeing' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16559:1: ( '#magicbeing' )
             {
              before(grammarAccess.getMonsterInst4Access().getMagicbeingMagicbeingKeyword_9_0()); 
-            match(input,185,FOLLOW_185_in_rule__MonsterInst4__MagicbeingAssignment_936538); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16560:1: ( '#magicbeing' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16561:1: '#magicbeing'
+            {
+             before(grammarAccess.getMonsterInst4Access().getMagicbeingMagicbeingKeyword_9_0()); 
+            match(input,184,FOLLOW_184_in_rule__MonsterInst4__MagicbeingAssignment_936494); 
              after(grammarAccess.getMonsterInst4Access().getMagicbeingMagicbeingKeyword_9_0()); 
 
             }
@@ -48043,24 +48002,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__StonebeingAssignment_10
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16599:1: rule__MonsterInst4__StonebeingAssignment_10 : ( ( '#stonebeing' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16576:1: rule__MonsterInst4__StonebeingAssignment_10 : ( ( '#stonebeing' ) ) ;
     public final void rule__MonsterInst4__StonebeingAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16603:1: ( ( ( '#stonebeing' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16604:1: ( ( '#stonebeing' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16580:1: ( ( ( '#stonebeing' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16581:1: ( ( '#stonebeing' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16604:1: ( ( '#stonebeing' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16605:1: ( '#stonebeing' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getStonebeingStonebeingKeyword_10_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16606:1: ( '#stonebeing' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16607:1: '#stonebeing'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16581:1: ( ( '#stonebeing' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16582:1: ( '#stonebeing' )
             {
              before(grammarAccess.getMonsterInst4Access().getStonebeingStonebeingKeyword_10_0()); 
-            match(input,186,FOLLOW_186_in_rule__MonsterInst4__StonebeingAssignment_1036582); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16583:1: ( '#stonebeing' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16584:1: '#stonebeing'
+            {
+             before(grammarAccess.getMonsterInst4Access().getStonebeingStonebeingKeyword_10_0()); 
+            match(input,185,FOLLOW_185_in_rule__MonsterInst4__StonebeingAssignment_1036538); 
              after(grammarAccess.getMonsterInst4Access().getStonebeingStonebeingKeyword_10_0()); 
 
             }
@@ -48088,24 +48047,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__InanimateAssignment_11
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16622:1: rule__MonsterInst4__InanimateAssignment_11 : ( ( '#inanimate' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16599:1: rule__MonsterInst4__InanimateAssignment_11 : ( ( '#inanimate' ) ) ;
     public final void rule__MonsterInst4__InanimateAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16626:1: ( ( ( '#inanimate' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16627:1: ( ( '#inanimate' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16603:1: ( ( ( '#inanimate' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16604:1: ( ( '#inanimate' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16627:1: ( ( '#inanimate' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16628:1: ( '#inanimate' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getInanimateInanimateKeyword_11_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16629:1: ( '#inanimate' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16630:1: '#inanimate'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16604:1: ( ( '#inanimate' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16605:1: ( '#inanimate' )
             {
              before(grammarAccess.getMonsterInst4Access().getInanimateInanimateKeyword_11_0()); 
-            match(input,187,FOLLOW_187_in_rule__MonsterInst4__InanimateAssignment_1136626); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16606:1: ( '#inanimate' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16607:1: '#inanimate'
+            {
+             before(grammarAccess.getMonsterInst4Access().getInanimateInanimateKeyword_11_0()); 
+            match(input,186,FOLLOW_186_in_rule__MonsterInst4__InanimateAssignment_1136582); 
              after(grammarAccess.getMonsterInst4Access().getInanimateInanimateKeyword_11_0()); 
 
             }
@@ -48133,24 +48092,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ColdbloodAssignment_12
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16645:1: rule__MonsterInst4__ColdbloodAssignment_12 : ( ( '#coldblood' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16622:1: rule__MonsterInst4__ColdbloodAssignment_12 : ( ( '#coldblood' ) ) ;
     public final void rule__MonsterInst4__ColdbloodAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16649:1: ( ( ( '#coldblood' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16650:1: ( ( '#coldblood' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16626:1: ( ( ( '#coldblood' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16627:1: ( ( '#coldblood' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16650:1: ( ( '#coldblood' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16651:1: ( '#coldblood' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodKeyword_12_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16652:1: ( '#coldblood' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16653:1: '#coldblood'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16627:1: ( ( '#coldblood' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16628:1: ( '#coldblood' )
             {
              before(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodKeyword_12_0()); 
-            match(input,188,FOLLOW_188_in_rule__MonsterInst4__ColdbloodAssignment_1236670); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16629:1: ( '#coldblood' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16630:1: '#coldblood'
+            {
+             before(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodKeyword_12_0()); 
+            match(input,187,FOLLOW_187_in_rule__MonsterInst4__ColdbloodAssignment_1236626); 
              after(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodKeyword_12_0()); 
 
             }
@@ -48178,24 +48137,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ColdbloodAssignment_13
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16668:1: rule__MonsterInst4__ColdbloodAssignment_13 : ( ( '#coldblooded' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16645:1: rule__MonsterInst4__ColdbloodAssignment_13 : ( ( '#coldblooded' ) ) ;
     public final void rule__MonsterInst4__ColdbloodAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16672:1: ( ( ( '#coldblooded' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16673:1: ( ( '#coldblooded' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16649:1: ( ( ( '#coldblooded' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16650:1: ( ( '#coldblooded' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16673:1: ( ( '#coldblooded' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16674:1: ( '#coldblooded' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodedKeyword_13_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16675:1: ( '#coldblooded' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16676:1: '#coldblooded'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16650:1: ( ( '#coldblooded' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16651:1: ( '#coldblooded' )
             {
              before(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodedKeyword_13_0()); 
-            match(input,189,FOLLOW_189_in_rule__MonsterInst4__ColdbloodAssignment_1336714); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16652:1: ( '#coldblooded' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16653:1: '#coldblooded'
+            {
+             before(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodedKeyword_13_0()); 
+            match(input,188,FOLLOW_188_in_rule__MonsterInst4__ColdbloodAssignment_1336670); 
              after(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodedKeyword_13_0()); 
 
             }
@@ -48223,24 +48182,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ImmortalAssignment_14
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16691:1: rule__MonsterInst4__ImmortalAssignment_14 : ( ( '#immortal' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16668:1: rule__MonsterInst4__ImmortalAssignment_14 : ( ( '#immortal' ) ) ;
     public final void rule__MonsterInst4__ImmortalAssignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16695:1: ( ( ( '#immortal' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16696:1: ( ( '#immortal' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16672:1: ( ( ( '#immortal' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16673:1: ( ( '#immortal' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16696:1: ( ( '#immortal' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16697:1: ( '#immortal' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_14_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16698:1: ( '#immortal' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16699:1: '#immortal'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16673:1: ( ( '#immortal' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16674:1: ( '#immortal' )
             {
              before(grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_14_0()); 
-            match(input,190,FOLLOW_190_in_rule__MonsterInst4__ImmortalAssignment_1436758); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16675:1: ( '#immortal' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16676:1: '#immortal'
+            {
+             before(grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_14_0()); 
+            match(input,189,FOLLOW_189_in_rule__MonsterInst4__ImmortalAssignment_1436714); 
              after(grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_14_0()); 
 
             }
@@ -48268,24 +48227,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__BlindAssignment_15
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16714:1: rule__MonsterInst4__BlindAssignment_15 : ( ( '#blind' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16691:1: rule__MonsterInst4__BlindAssignment_15 : ( ( '#blind' ) ) ;
     public final void rule__MonsterInst4__BlindAssignment_15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16718:1: ( ( ( '#blind' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16719:1: ( ( '#blind' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16695:1: ( ( ( '#blind' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16696:1: ( ( '#blind' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16719:1: ( ( '#blind' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16720:1: ( '#blind' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_15_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16721:1: ( '#blind' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16722:1: '#blind'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16696:1: ( ( '#blind' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16697:1: ( '#blind' )
             {
              before(grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_15_0()); 
-            match(input,191,FOLLOW_191_in_rule__MonsterInst4__BlindAssignment_1536802); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16698:1: ( '#blind' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16699:1: '#blind'
+            {
+             before(grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_15_0()); 
+            match(input,190,FOLLOW_190_in_rule__MonsterInst4__BlindAssignment_1536758); 
              after(grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_15_0()); 
 
             }
@@ -48313,24 +48272,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__UniqueAssignment_16
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16737:1: rule__MonsterInst4__UniqueAssignment_16 : ( ( '#unique' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16714:1: rule__MonsterInst4__UniqueAssignment_16 : ( ( '#unique' ) ) ;
     public final void rule__MonsterInst4__UniqueAssignment_16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16741:1: ( ( ( '#unique' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16742:1: ( ( '#unique' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16718:1: ( ( ( '#unique' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16719:1: ( ( '#unique' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16742:1: ( ( '#unique' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16743:1: ( '#unique' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_16_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16744:1: ( '#unique' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16745:1: '#unique'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16719:1: ( ( '#unique' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16720:1: ( '#unique' )
             {
              before(grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_16_0()); 
-            match(input,192,FOLLOW_192_in_rule__MonsterInst4__UniqueAssignment_1636846); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16721:1: ( '#unique' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16722:1: '#unique'
+            {
+             before(grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_16_0()); 
+            match(input,191,FOLLOW_191_in_rule__MonsterInst4__UniqueAssignment_1636802); 
              after(grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_16_0()); 
 
             }
@@ -48358,24 +48317,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ImmobileAssignment_17
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16760:1: rule__MonsterInst4__ImmobileAssignment_17 : ( ( '#immobile' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16737:1: rule__MonsterInst4__ImmobileAssignment_17 : ( ( '#immobile' ) ) ;
     public final void rule__MonsterInst4__ImmobileAssignment_17() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16764:1: ( ( ( '#immobile' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16765:1: ( ( '#immobile' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16741:1: ( ( ( '#immobile' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16742:1: ( ( '#immobile' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16765:1: ( ( '#immobile' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16766:1: ( '#immobile' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_17_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16767:1: ( '#immobile' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16768:1: '#immobile'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16742:1: ( ( '#immobile' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16743:1: ( '#immobile' )
             {
              before(grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_17_0()); 
-            match(input,193,FOLLOW_193_in_rule__MonsterInst4__ImmobileAssignment_1736890); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16744:1: ( '#immobile' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16745:1: '#immobile'
+            {
+             before(grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_17_0()); 
+            match(input,192,FOLLOW_192_in_rule__MonsterInst4__ImmobileAssignment_1736846); 
              after(grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_17_0()); 
 
             }
@@ -48403,24 +48362,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__AquaticAssignment_18
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16783:1: rule__MonsterInst4__AquaticAssignment_18 : ( ( '#aquatic' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16760:1: rule__MonsterInst4__AquaticAssignment_18 : ( ( '#aquatic' ) ) ;
     public final void rule__MonsterInst4__AquaticAssignment_18() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16787:1: ( ( ( '#aquatic' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16788:1: ( ( '#aquatic' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16764:1: ( ( ( '#aquatic' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16765:1: ( ( '#aquatic' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16788:1: ( ( '#aquatic' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16789:1: ( '#aquatic' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_18_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16790:1: ( '#aquatic' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16791:1: '#aquatic'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16765:1: ( ( '#aquatic' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16766:1: ( '#aquatic' )
             {
              before(grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_18_0()); 
-            match(input,194,FOLLOW_194_in_rule__MonsterInst4__AquaticAssignment_1836934); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16767:1: ( '#aquatic' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16768:1: '#aquatic'
+            {
+             before(grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_18_0()); 
+            match(input,193,FOLLOW_193_in_rule__MonsterInst4__AquaticAssignment_1836890); 
              after(grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_18_0()); 
 
             }
@@ -48448,24 +48407,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__AmphibianAssignment_19
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16806:1: rule__MonsterInst4__AmphibianAssignment_19 : ( ( '#amphibian' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16783:1: rule__MonsterInst4__AmphibianAssignment_19 : ( ( '#amphibian' ) ) ;
     public final void rule__MonsterInst4__AmphibianAssignment_19() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16810:1: ( ( ( '#amphibian' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16811:1: ( ( '#amphibian' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16787:1: ( ( ( '#amphibian' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16788:1: ( ( '#amphibian' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16811:1: ( ( '#amphibian' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16812:1: ( '#amphibian' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_19_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16813:1: ( '#amphibian' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16814:1: '#amphibian'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16788:1: ( ( '#amphibian' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16789:1: ( '#amphibian' )
             {
              before(grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_19_0()); 
-            match(input,195,FOLLOW_195_in_rule__MonsterInst4__AmphibianAssignment_1936978); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16790:1: ( '#amphibian' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16791:1: '#amphibian'
+            {
+             before(grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_19_0()); 
+            match(input,194,FOLLOW_194_in_rule__MonsterInst4__AmphibianAssignment_1936934); 
              after(grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_19_0()); 
 
             }
@@ -48493,24 +48452,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__PooramphibianAssignment_20
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16829:1: rule__MonsterInst4__PooramphibianAssignment_20 : ( ( '#pooramphibian' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16806:1: rule__MonsterInst4__PooramphibianAssignment_20 : ( ( '#pooramphibian' ) ) ;
     public final void rule__MonsterInst4__PooramphibianAssignment_20() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16833:1: ( ( ( '#pooramphibian' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16834:1: ( ( '#pooramphibian' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16810:1: ( ( ( '#pooramphibian' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16811:1: ( ( '#pooramphibian' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16834:1: ( ( '#pooramphibian' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16835:1: ( '#pooramphibian' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_20_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16836:1: ( '#pooramphibian' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16837:1: '#pooramphibian'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16811:1: ( ( '#pooramphibian' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16812:1: ( '#pooramphibian' )
             {
              before(grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_20_0()); 
-            match(input,196,FOLLOW_196_in_rule__MonsterInst4__PooramphibianAssignment_2037022); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16813:1: ( '#pooramphibian' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16814:1: '#pooramphibian'
+            {
+             before(grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_20_0()); 
+            match(input,195,FOLLOW_195_in_rule__MonsterInst4__PooramphibianAssignment_2036978); 
              after(grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_20_0()); 
 
             }
@@ -48538,24 +48497,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__FlyingAssignment_21
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16852:1: rule__MonsterInst4__FlyingAssignment_21 : ( ( '#flying' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16829:1: rule__MonsterInst4__FlyingAssignment_21 : ( ( '#flying' ) ) ;
     public final void rule__MonsterInst4__FlyingAssignment_21() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16856:1: ( ( ( '#flying' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16857:1: ( ( '#flying' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16833:1: ( ( ( '#flying' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16834:1: ( ( '#flying' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16857:1: ( ( '#flying' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16858:1: ( '#flying' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_21_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16859:1: ( '#flying' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16860:1: '#flying'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16834:1: ( ( '#flying' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16835:1: ( '#flying' )
             {
              before(grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_21_0()); 
-            match(input,197,FOLLOW_197_in_rule__MonsterInst4__FlyingAssignment_2137066); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16836:1: ( '#flying' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16837:1: '#flying'
+            {
+             before(grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_21_0()); 
+            match(input,196,FOLLOW_196_in_rule__MonsterInst4__FlyingAssignment_2137022); 
              after(grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_21_0()); 
 
             }
@@ -48583,24 +48542,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__StormimmuneAssignment_22
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16875:1: rule__MonsterInst4__StormimmuneAssignment_22 : ( ( '#stormimmune' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16852:1: rule__MonsterInst4__StormimmuneAssignment_22 : ( ( '#stormimmune' ) ) ;
     public final void rule__MonsterInst4__StormimmuneAssignment_22() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16879:1: ( ( ( '#stormimmune' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16880:1: ( ( '#stormimmune' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16856:1: ( ( ( '#stormimmune' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16857:1: ( ( '#stormimmune' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16880:1: ( ( '#stormimmune' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16881:1: ( '#stormimmune' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_22_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16882:1: ( '#stormimmune' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16883:1: '#stormimmune'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16857:1: ( ( '#stormimmune' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16858:1: ( '#stormimmune' )
             {
              before(grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_22_0()); 
-            match(input,198,FOLLOW_198_in_rule__MonsterInst4__StormimmuneAssignment_2237110); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16859:1: ( '#stormimmune' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16860:1: '#stormimmune'
+            {
+             before(grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_22_0()); 
+            match(input,197,FOLLOW_197_in_rule__MonsterInst4__StormimmuneAssignment_2237066); 
              after(grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_22_0()); 
 
             }
@@ -48628,24 +48587,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__SailingAssignment_23
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16898:1: rule__MonsterInst4__SailingAssignment_23 : ( ( '#sailing' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16875:1: rule__MonsterInst4__SailingAssignment_23 : ( ( '#sailing' ) ) ;
     public final void rule__MonsterInst4__SailingAssignment_23() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16902:1: ( ( ( '#sailing' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16903:1: ( ( '#sailing' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16879:1: ( ( ( '#sailing' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16880:1: ( ( '#sailing' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16903:1: ( ( '#sailing' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16904:1: ( '#sailing' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_23_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16905:1: ( '#sailing' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16906:1: '#sailing'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16880:1: ( ( '#sailing' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16881:1: ( '#sailing' )
             {
              before(grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_23_0()); 
-            match(input,199,FOLLOW_199_in_rule__MonsterInst4__SailingAssignment_2337154); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16882:1: ( '#sailing' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16883:1: '#sailing'
+            {
+             before(grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_23_0()); 
+            match(input,198,FOLLOW_198_in_rule__MonsterInst4__SailingAssignment_2337110); 
              after(grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_23_0()); 
 
             }
@@ -48673,24 +48632,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ForestsurvivalAssignment_24
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16921:1: rule__MonsterInst4__ForestsurvivalAssignment_24 : ( ( '#forestsurvival' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16898:1: rule__MonsterInst4__ForestsurvivalAssignment_24 : ( ( '#forestsurvival' ) ) ;
     public final void rule__MonsterInst4__ForestsurvivalAssignment_24() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16925:1: ( ( ( '#forestsurvival' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16926:1: ( ( '#forestsurvival' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16902:1: ( ( ( '#forestsurvival' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16903:1: ( ( '#forestsurvival' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16926:1: ( ( '#forestsurvival' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16927:1: ( '#forestsurvival' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_24_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16928:1: ( '#forestsurvival' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16929:1: '#forestsurvival'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16903:1: ( ( '#forestsurvival' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16904:1: ( '#forestsurvival' )
             {
              before(grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_24_0()); 
-            match(input,200,FOLLOW_200_in_rule__MonsterInst4__ForestsurvivalAssignment_2437198); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16905:1: ( '#forestsurvival' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16906:1: '#forestsurvival'
+            {
+             before(grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_24_0()); 
+            match(input,199,FOLLOW_199_in_rule__MonsterInst4__ForestsurvivalAssignment_2437154); 
              after(grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_24_0()); 
 
             }
@@ -48718,24 +48677,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__MountainsurvivalAssignment_25
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16944:1: rule__MonsterInst4__MountainsurvivalAssignment_25 : ( ( '#mountainsurvival' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16921:1: rule__MonsterInst4__MountainsurvivalAssignment_25 : ( ( '#mountainsurvival' ) ) ;
     public final void rule__MonsterInst4__MountainsurvivalAssignment_25() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16948:1: ( ( ( '#mountainsurvival' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16949:1: ( ( '#mountainsurvival' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16925:1: ( ( ( '#mountainsurvival' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16926:1: ( ( '#mountainsurvival' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16949:1: ( ( '#mountainsurvival' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16950:1: ( '#mountainsurvival' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_25_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16951:1: ( '#mountainsurvival' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16952:1: '#mountainsurvival'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16926:1: ( ( '#mountainsurvival' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16927:1: ( '#mountainsurvival' )
             {
              before(grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_25_0()); 
-            match(input,201,FOLLOW_201_in_rule__MonsterInst4__MountainsurvivalAssignment_2537242); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16928:1: ( '#mountainsurvival' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16929:1: '#mountainsurvival'
+            {
+             before(grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_25_0()); 
+            match(input,200,FOLLOW_200_in_rule__MonsterInst4__MountainsurvivalAssignment_2537198); 
              after(grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_25_0()); 
 
             }
@@ -48763,24 +48722,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__SwampsurvivalAssignment_26
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16967:1: rule__MonsterInst4__SwampsurvivalAssignment_26 : ( ( '#swampsurvival' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16944:1: rule__MonsterInst4__SwampsurvivalAssignment_26 : ( ( '#swampsurvival' ) ) ;
     public final void rule__MonsterInst4__SwampsurvivalAssignment_26() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16971:1: ( ( ( '#swampsurvival' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16972:1: ( ( '#swampsurvival' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16948:1: ( ( ( '#swampsurvival' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16949:1: ( ( '#swampsurvival' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16972:1: ( ( '#swampsurvival' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16973:1: ( '#swampsurvival' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_26_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16974:1: ( '#swampsurvival' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16975:1: '#swampsurvival'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16949:1: ( ( '#swampsurvival' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16950:1: ( '#swampsurvival' )
             {
              before(grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_26_0()); 
-            match(input,202,FOLLOW_202_in_rule__MonsterInst4__SwampsurvivalAssignment_2637286); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16951:1: ( '#swampsurvival' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16952:1: '#swampsurvival'
+            {
+             before(grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_26_0()); 
+            match(input,201,FOLLOW_201_in_rule__MonsterInst4__SwampsurvivalAssignment_2637242); 
              after(grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_26_0()); 
 
             }
@@ -48808,24 +48767,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__WastesurvivalAssignment_27
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16990:1: rule__MonsterInst4__WastesurvivalAssignment_27 : ( ( '#wastesurvival' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16967:1: rule__MonsterInst4__WastesurvivalAssignment_27 : ( ( '#wastesurvival' ) ) ;
     public final void rule__MonsterInst4__WastesurvivalAssignment_27() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16994:1: ( ( ( '#wastesurvival' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16995:1: ( ( '#wastesurvival' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16971:1: ( ( ( '#wastesurvival' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16972:1: ( ( '#wastesurvival' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16995:1: ( ( '#wastesurvival' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16996:1: ( '#wastesurvival' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_27_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16997:1: ( '#wastesurvival' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16998:1: '#wastesurvival'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16972:1: ( ( '#wastesurvival' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16973:1: ( '#wastesurvival' )
             {
              before(grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_27_0()); 
-            match(input,203,FOLLOW_203_in_rule__MonsterInst4__WastesurvivalAssignment_2737330); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16974:1: ( '#wastesurvival' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16975:1: '#wastesurvival'
+            {
+             before(grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_27_0()); 
+            match(input,202,FOLLOW_202_in_rule__MonsterInst4__WastesurvivalAssignment_2737286); 
              after(grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_27_0()); 
 
             }
@@ -48853,24 +48812,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__IllusionAssignment_28
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17013:1: rule__MonsterInst4__IllusionAssignment_28 : ( ( '#illusion' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16990:1: rule__MonsterInst4__IllusionAssignment_28 : ( ( '#illusion' ) ) ;
     public final void rule__MonsterInst4__IllusionAssignment_28() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17017:1: ( ( ( '#illusion' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17018:1: ( ( '#illusion' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16994:1: ( ( ( '#illusion' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16995:1: ( ( '#illusion' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17018:1: ( ( '#illusion' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17019:1: ( '#illusion' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_28_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17020:1: ( '#illusion' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17021:1: '#illusion'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16995:1: ( ( '#illusion' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16996:1: ( '#illusion' )
             {
              before(grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_28_0()); 
-            match(input,204,FOLLOW_204_in_rule__MonsterInst4__IllusionAssignment_2837374); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16997:1: ( '#illusion' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16998:1: '#illusion'
+            {
+             before(grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_28_0()); 
+            match(input,203,FOLLOW_203_in_rule__MonsterInst4__IllusionAssignment_2837330); 
              after(grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_28_0()); 
 
             }
@@ -48898,24 +48857,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__SpyAssignment_29
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17036:1: rule__MonsterInst4__SpyAssignment_29 : ( ( '#spy' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17013:1: rule__MonsterInst4__SpyAssignment_29 : ( ( '#spy' ) ) ;
     public final void rule__MonsterInst4__SpyAssignment_29() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17040:1: ( ( ( '#spy' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17041:1: ( ( '#spy' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17017:1: ( ( ( '#spy' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17018:1: ( ( '#spy' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17041:1: ( ( '#spy' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17042:1: ( '#spy' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getSpySpyKeyword_29_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17043:1: ( '#spy' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17044:1: '#spy'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17018:1: ( ( '#spy' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17019:1: ( '#spy' )
             {
              before(grammarAccess.getMonsterInst4Access().getSpySpyKeyword_29_0()); 
-            match(input,205,FOLLOW_205_in_rule__MonsterInst4__SpyAssignment_2937418); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17020:1: ( '#spy' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17021:1: '#spy'
+            {
+             before(grammarAccess.getMonsterInst4Access().getSpySpyKeyword_29_0()); 
+            match(input,204,FOLLOW_204_in_rule__MonsterInst4__SpyAssignment_2937374); 
              after(grammarAccess.getMonsterInst4Access().getSpySpyKeyword_29_0()); 
 
             }
@@ -48943,24 +48902,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__AssassinAssignment_30
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17059:1: rule__MonsterInst4__AssassinAssignment_30 : ( ( '#assassin' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17036:1: rule__MonsterInst4__AssassinAssignment_30 : ( ( '#assassin' ) ) ;
     public final void rule__MonsterInst4__AssassinAssignment_30() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17063:1: ( ( ( '#assassin' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17064:1: ( ( '#assassin' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17040:1: ( ( ( '#assassin' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17041:1: ( ( '#assassin' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17064:1: ( ( '#assassin' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17065:1: ( '#assassin' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_30_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17066:1: ( '#assassin' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17067:1: '#assassin'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17041:1: ( ( '#assassin' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17042:1: ( '#assassin' )
             {
              before(grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_30_0()); 
-            match(input,206,FOLLOW_206_in_rule__MonsterInst4__AssassinAssignment_3037462); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17043:1: ( '#assassin' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17044:1: '#assassin'
+            {
+             before(grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_30_0()); 
+            match(input,205,FOLLOW_205_in_rule__MonsterInst4__AssassinAssignment_3037418); 
              after(grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_30_0()); 
 
             }
@@ -48988,24 +48947,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__HealAssignment_31
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17082:1: rule__MonsterInst4__HealAssignment_31 : ( ( '#heal' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17059:1: rule__MonsterInst4__HealAssignment_31 : ( ( '#heal' ) ) ;
     public final void rule__MonsterInst4__HealAssignment_31() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17086:1: ( ( ( '#heal' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17087:1: ( ( '#heal' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17063:1: ( ( ( '#heal' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17064:1: ( ( '#heal' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17087:1: ( ( '#heal' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17088:1: ( '#heal' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getHealHealKeyword_31_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17089:1: ( '#heal' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17090:1: '#heal'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17064:1: ( ( '#heal' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17065:1: ( '#heal' )
             {
              before(grammarAccess.getMonsterInst4Access().getHealHealKeyword_31_0()); 
-            match(input,207,FOLLOW_207_in_rule__MonsterInst4__HealAssignment_3137506); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17066:1: ( '#heal' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17067:1: '#heal'
+            {
+             before(grammarAccess.getMonsterInst4Access().getHealHealKeyword_31_0()); 
+            match(input,206,FOLLOW_206_in_rule__MonsterInst4__HealAssignment_3137462); 
              after(grammarAccess.getMonsterInst4Access().getHealHealKeyword_31_0()); 
 
             }
@@ -49033,24 +48992,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__NohealAssignment_32
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17105:1: rule__MonsterInst4__NohealAssignment_32 : ( ( '#noheal' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17082:1: rule__MonsterInst4__NohealAssignment_32 : ( ( '#noheal' ) ) ;
     public final void rule__MonsterInst4__NohealAssignment_32() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17109:1: ( ( ( '#noheal' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17110:1: ( ( '#noheal' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17086:1: ( ( ( '#noheal' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17087:1: ( ( '#noheal' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17110:1: ( ( '#noheal' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17111:1: ( '#noheal' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_32_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17112:1: ( '#noheal' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17113:1: '#noheal'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17087:1: ( ( '#noheal' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17088:1: ( '#noheal' )
             {
              before(grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_32_0()); 
-            match(input,208,FOLLOW_208_in_rule__MonsterInst4__NohealAssignment_3237550); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17089:1: ( '#noheal' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17090:1: '#noheal'
+            {
+             before(grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_32_0()); 
+            match(input,207,FOLLOW_207_in_rule__MonsterInst4__NohealAssignment_3237506); 
              after(grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_32_0()); 
 
             }
@@ -49078,24 +49037,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__NeednoteatAssignment_33
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17128:1: rule__MonsterInst4__NeednoteatAssignment_33 : ( ( '#neednoteat' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17105:1: rule__MonsterInst4__NeednoteatAssignment_33 : ( ( '#neednoteat' ) ) ;
     public final void rule__MonsterInst4__NeednoteatAssignment_33() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17132:1: ( ( ( '#neednoteat' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17133:1: ( ( '#neednoteat' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17109:1: ( ( ( '#neednoteat' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17110:1: ( ( '#neednoteat' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17133:1: ( ( '#neednoteat' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17134:1: ( '#neednoteat' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_33_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17135:1: ( '#neednoteat' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17136:1: '#neednoteat'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17110:1: ( ( '#neednoteat' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17111:1: ( '#neednoteat' )
             {
              before(grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_33_0()); 
-            match(input,209,FOLLOW_209_in_rule__MonsterInst4__NeednoteatAssignment_3337594); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17112:1: ( '#neednoteat' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17113:1: '#neednoteat'
+            {
+             before(grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_33_0()); 
+            match(input,208,FOLLOW_208_in_rule__MonsterInst4__NeednoteatAssignment_3337550); 
              after(grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_33_0()); 
 
             }
@@ -49123,24 +49082,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__EtherealAssignment_34
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17151:1: rule__MonsterInst4__EtherealAssignment_34 : ( ( '#ethereal' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17128:1: rule__MonsterInst4__EtherealAssignment_34 : ( ( '#ethereal' ) ) ;
     public final void rule__MonsterInst4__EtherealAssignment_34() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17155:1: ( ( ( '#ethereal' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17156:1: ( ( '#ethereal' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17132:1: ( ( ( '#ethereal' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17133:1: ( ( '#ethereal' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17156:1: ( ( '#ethereal' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17157:1: ( '#ethereal' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_34_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17158:1: ( '#ethereal' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17159:1: '#ethereal'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17133:1: ( ( '#ethereal' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17134:1: ( '#ethereal' )
             {
              before(grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_34_0()); 
-            match(input,210,FOLLOW_210_in_rule__MonsterInst4__EtherealAssignment_3437638); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17135:1: ( '#ethereal' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17136:1: '#ethereal'
+            {
+             before(grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_34_0()); 
+            match(input,209,FOLLOW_209_in_rule__MonsterInst4__EtherealAssignment_3437594); 
              after(grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_34_0()); 
 
             }
@@ -49168,24 +49127,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__TrampleAssignment_35
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17174:1: rule__MonsterInst4__TrampleAssignment_35 : ( ( '#trample' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17151:1: rule__MonsterInst4__TrampleAssignment_35 : ( ( '#trample' ) ) ;
     public final void rule__MonsterInst4__TrampleAssignment_35() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17178:1: ( ( ( '#trample' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17179:1: ( ( '#trample' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17155:1: ( ( ( '#trample' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17156:1: ( ( '#trample' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17179:1: ( ( '#trample' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17180:1: ( '#trample' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_35_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17181:1: ( '#trample' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17182:1: '#trample'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17156:1: ( ( '#trample' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17157:1: ( '#trample' )
             {
              before(grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_35_0()); 
-            match(input,211,FOLLOW_211_in_rule__MonsterInst4__TrampleAssignment_3537682); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17158:1: ( '#trample' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17159:1: '#trample'
+            {
+             before(grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_35_0()); 
+            match(input,210,FOLLOW_210_in_rule__MonsterInst4__TrampleAssignment_3537638); 
              after(grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_35_0()); 
 
             }
@@ -49213,24 +49172,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__EntangleAssignment_36
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17197:1: rule__MonsterInst4__EntangleAssignment_36 : ( ( '#entangle' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17174:1: rule__MonsterInst4__EntangleAssignment_36 : ( ( '#entangle' ) ) ;
     public final void rule__MonsterInst4__EntangleAssignment_36() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17201:1: ( ( ( '#entangle' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17202:1: ( ( '#entangle' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17178:1: ( ( ( '#entangle' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17179:1: ( ( '#entangle' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17202:1: ( ( '#entangle' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17203:1: ( '#entangle' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_36_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17204:1: ( '#entangle' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17205:1: '#entangle'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17179:1: ( ( '#entangle' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17180:1: ( '#entangle' )
             {
              before(grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_36_0()); 
-            match(input,212,FOLLOW_212_in_rule__MonsterInst4__EntangleAssignment_3637726); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17181:1: ( '#entangle' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17182:1: '#entangle'
+            {
+             before(grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_36_0()); 
+            match(input,211,FOLLOW_211_in_rule__MonsterInst4__EntangleAssignment_3637682); 
              after(grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_36_0()); 
 
             }
@@ -49258,24 +49217,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__EyelossAssignment_37
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17220:1: rule__MonsterInst4__EyelossAssignment_37 : ( ( '#eyeloss' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17197:1: rule__MonsterInst4__EyelossAssignment_37 : ( ( '#eyeloss' ) ) ;
     public final void rule__MonsterInst4__EyelossAssignment_37() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17224:1: ( ( ( '#eyeloss' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17225:1: ( ( '#eyeloss' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17201:1: ( ( ( '#eyeloss' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17202:1: ( ( '#eyeloss' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17225:1: ( ( '#eyeloss' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17226:1: ( '#eyeloss' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_37_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17227:1: ( '#eyeloss' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17228:1: '#eyeloss'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17202:1: ( ( '#eyeloss' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17203:1: ( '#eyeloss' )
             {
              before(grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_37_0()); 
-            match(input,213,FOLLOW_213_in_rule__MonsterInst4__EyelossAssignment_3737770); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17204:1: ( '#eyeloss' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17205:1: '#eyeloss'
+            {
+             before(grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_37_0()); 
+            match(input,212,FOLLOW_212_in_rule__MonsterInst4__EyelossAssignment_3737726); 
              after(grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_37_0()); 
 
             }
@@ -49303,24 +49262,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__HorrormarkAssignment_38
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17243:1: rule__MonsterInst4__HorrormarkAssignment_38 : ( ( '#horrormark' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17220:1: rule__MonsterInst4__HorrormarkAssignment_38 : ( ( '#horrormark' ) ) ;
     public final void rule__MonsterInst4__HorrormarkAssignment_38() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17247:1: ( ( ( '#horrormark' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17248:1: ( ( '#horrormark' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17224:1: ( ( ( '#horrormark' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17225:1: ( ( '#horrormark' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17248:1: ( ( '#horrormark' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17249:1: ( '#horrormark' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_38_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17250:1: ( '#horrormark' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17251:1: '#horrormark'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17225:1: ( ( '#horrormark' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17226:1: ( '#horrormark' )
             {
              before(grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_38_0()); 
-            match(input,214,FOLLOW_214_in_rule__MonsterInst4__HorrormarkAssignment_3837814); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17227:1: ( '#horrormark' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17228:1: '#horrormark'
+            {
+             before(grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_38_0()); 
+            match(input,213,FOLLOW_213_in_rule__MonsterInst4__HorrormarkAssignment_3837770); 
              after(grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_38_0()); 
 
             }
@@ -49348,24 +49307,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__PoisonarmorAssignment_39
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17266:1: rule__MonsterInst4__PoisonarmorAssignment_39 : ( ( '#poisonarmor' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17243:1: rule__MonsterInst4__PoisonarmorAssignment_39 : ( ( '#poisonarmor' ) ) ;
     public final void rule__MonsterInst4__PoisonarmorAssignment_39() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17270:1: ( ( ( '#poisonarmor' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17271:1: ( ( '#poisonarmor' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17247:1: ( ( ( '#poisonarmor' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17248:1: ( ( '#poisonarmor' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17271:1: ( ( '#poisonarmor' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17272:1: ( '#poisonarmor' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_39_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17273:1: ( '#poisonarmor' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17274:1: '#poisonarmor'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17248:1: ( ( '#poisonarmor' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17249:1: ( '#poisonarmor' )
             {
              before(grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_39_0()); 
-            match(input,215,FOLLOW_215_in_rule__MonsterInst4__PoisonarmorAssignment_3937858); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17250:1: ( '#poisonarmor' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17251:1: '#poisonarmor'
+            {
+             before(grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_39_0()); 
+            match(input,214,FOLLOW_214_in_rule__MonsterInst4__PoisonarmorAssignment_3937814); 
              after(grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_39_0()); 
 
             }
@@ -49393,24 +49352,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__InquisitorAssignment_40
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17289:1: rule__MonsterInst4__InquisitorAssignment_40 : ( ( '#inquisitor' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17266:1: rule__MonsterInst4__InquisitorAssignment_40 : ( ( '#inquisitor' ) ) ;
     public final void rule__MonsterInst4__InquisitorAssignment_40() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17293:1: ( ( ( '#inquisitor' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17294:1: ( ( '#inquisitor' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17270:1: ( ( ( '#inquisitor' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17271:1: ( ( '#inquisitor' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17294:1: ( ( '#inquisitor' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17295:1: ( '#inquisitor' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_40_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17296:1: ( '#inquisitor' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17297:1: '#inquisitor'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17271:1: ( ( '#inquisitor' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17272:1: ( '#inquisitor' )
             {
              before(grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_40_0()); 
-            match(input,216,FOLLOW_216_in_rule__MonsterInst4__InquisitorAssignment_4037902); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17273:1: ( '#inquisitor' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17274:1: '#inquisitor'
+            {
+             before(grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_40_0()); 
+            match(input,215,FOLLOW_215_in_rule__MonsterInst4__InquisitorAssignment_4037858); 
              after(grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_40_0()); 
 
             }
@@ -49438,24 +49397,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__NoitemAssignment_41
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17312:1: rule__MonsterInst4__NoitemAssignment_41 : ( ( '#noitem' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17289:1: rule__MonsterInst4__NoitemAssignment_41 : ( ( '#noitem' ) ) ;
     public final void rule__MonsterInst4__NoitemAssignment_41() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17316:1: ( ( ( '#noitem' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17317:1: ( ( '#noitem' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17293:1: ( ( ( '#noitem' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17294:1: ( ( '#noitem' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17317:1: ( ( '#noitem' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17318:1: ( '#noitem' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_41_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17319:1: ( '#noitem' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17320:1: '#noitem'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17294:1: ( ( '#noitem' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17295:1: ( '#noitem' )
             {
              before(grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_41_0()); 
-            match(input,217,FOLLOW_217_in_rule__MonsterInst4__NoitemAssignment_4137946); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17296:1: ( '#noitem' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17297:1: '#noitem'
+            {
+             before(grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_41_0()); 
+            match(input,216,FOLLOW_216_in_rule__MonsterInst4__NoitemAssignment_4137902); 
              after(grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_41_0()); 
 
             }
@@ -49483,24 +49442,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__NoleaderAssignment_42
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17335:1: rule__MonsterInst4__NoleaderAssignment_42 : ( ( '#noleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17312:1: rule__MonsterInst4__NoleaderAssignment_42 : ( ( '#noleader' ) ) ;
     public final void rule__MonsterInst4__NoleaderAssignment_42() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17339:1: ( ( ( '#noleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17340:1: ( ( '#noleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17316:1: ( ( ( '#noleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17317:1: ( ( '#noleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17340:1: ( ( '#noleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17341:1: ( '#noleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_42_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17342:1: ( '#noleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17343:1: '#noleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17317:1: ( ( '#noleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17318:1: ( '#noleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_42_0()); 
-            match(input,218,FOLLOW_218_in_rule__MonsterInst4__NoleaderAssignment_4237990); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17319:1: ( '#noleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17320:1: '#noleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_42_0()); 
+            match(input,217,FOLLOW_217_in_rule__MonsterInst4__NoleaderAssignment_4237946); 
              after(grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_42_0()); 
 
             }
@@ -49528,24 +49487,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__PoorleaderAssignment_43
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17358:1: rule__MonsterInst4__PoorleaderAssignment_43 : ( ( '#poorleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17335:1: rule__MonsterInst4__PoorleaderAssignment_43 : ( ( '#poorleader' ) ) ;
     public final void rule__MonsterInst4__PoorleaderAssignment_43() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17362:1: ( ( ( '#poorleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17363:1: ( ( '#poorleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17339:1: ( ( ( '#poorleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17340:1: ( ( '#poorleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17363:1: ( ( '#poorleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17364:1: ( '#poorleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_43_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17365:1: ( '#poorleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17366:1: '#poorleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17340:1: ( ( '#poorleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17341:1: ( '#poorleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_43_0()); 
-            match(input,219,FOLLOW_219_in_rule__MonsterInst4__PoorleaderAssignment_4338034); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17342:1: ( '#poorleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17343:1: '#poorleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_43_0()); 
+            match(input,218,FOLLOW_218_in_rule__MonsterInst4__PoorleaderAssignment_4337990); 
              after(grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_43_0()); 
 
             }
@@ -49573,24 +49532,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__OkleaderAssignment_44
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17381:1: rule__MonsterInst4__OkleaderAssignment_44 : ( ( '#okleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17358:1: rule__MonsterInst4__OkleaderAssignment_44 : ( ( '#okleader' ) ) ;
     public final void rule__MonsterInst4__OkleaderAssignment_44() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17385:1: ( ( ( '#okleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17386:1: ( ( '#okleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17362:1: ( ( ( '#okleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17363:1: ( ( '#okleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17386:1: ( ( '#okleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17387:1: ( '#okleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_44_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17388:1: ( '#okleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17389:1: '#okleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17363:1: ( ( '#okleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17364:1: ( '#okleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_44_0()); 
-            match(input,220,FOLLOW_220_in_rule__MonsterInst4__OkleaderAssignment_4438078); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17365:1: ( '#okleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17366:1: '#okleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_44_0()); 
+            match(input,219,FOLLOW_219_in_rule__MonsterInst4__OkleaderAssignment_4438034); 
              after(grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_44_0()); 
 
             }
@@ -49618,24 +49577,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__GoodleaderAssignment_45
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17404:1: rule__MonsterInst4__GoodleaderAssignment_45 : ( ( '#goodleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17381:1: rule__MonsterInst4__GoodleaderAssignment_45 : ( ( '#goodleader' ) ) ;
     public final void rule__MonsterInst4__GoodleaderAssignment_45() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17408:1: ( ( ( '#goodleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17409:1: ( ( '#goodleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17385:1: ( ( ( '#goodleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17386:1: ( ( '#goodleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17409:1: ( ( '#goodleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17410:1: ( '#goodleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_45_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17411:1: ( '#goodleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17412:1: '#goodleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17386:1: ( ( '#goodleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17387:1: ( '#goodleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_45_0()); 
-            match(input,221,FOLLOW_221_in_rule__MonsterInst4__GoodleaderAssignment_4538122); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17388:1: ( '#goodleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17389:1: '#goodleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_45_0()); 
+            match(input,220,FOLLOW_220_in_rule__MonsterInst4__GoodleaderAssignment_4538078); 
              after(grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_45_0()); 
 
             }
@@ -49663,24 +49622,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ExpertleaderAssignment_46
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17427:1: rule__MonsterInst4__ExpertleaderAssignment_46 : ( ( '#expertleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17404:1: rule__MonsterInst4__ExpertleaderAssignment_46 : ( ( '#expertleader' ) ) ;
     public final void rule__MonsterInst4__ExpertleaderAssignment_46() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17431:1: ( ( ( '#expertleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17432:1: ( ( '#expertleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17408:1: ( ( ( '#expertleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17409:1: ( ( '#expertleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17432:1: ( ( '#expertleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17433:1: ( '#expertleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_46_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17434:1: ( '#expertleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17435:1: '#expertleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17409:1: ( ( '#expertleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17410:1: ( '#expertleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_46_0()); 
-            match(input,222,FOLLOW_222_in_rule__MonsterInst4__ExpertleaderAssignment_4638166); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17411:1: ( '#expertleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17412:1: '#expertleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_46_0()); 
+            match(input,221,FOLLOW_221_in_rule__MonsterInst4__ExpertleaderAssignment_4638122); 
              after(grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_46_0()); 
 
             }
@@ -49708,24 +49667,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__SuperiorleaderAssignment_47
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17450:1: rule__MonsterInst4__SuperiorleaderAssignment_47 : ( ( '#superiorleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17427:1: rule__MonsterInst4__SuperiorleaderAssignment_47 : ( ( '#superiorleader' ) ) ;
     public final void rule__MonsterInst4__SuperiorleaderAssignment_47() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17454:1: ( ( ( '#superiorleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17455:1: ( ( '#superiorleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17431:1: ( ( ( '#superiorleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17432:1: ( ( '#superiorleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17455:1: ( ( '#superiorleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17456:1: ( '#superiorleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_47_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17457:1: ( '#superiorleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17458:1: '#superiorleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17432:1: ( ( '#superiorleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17433:1: ( '#superiorleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_47_0()); 
-            match(input,223,FOLLOW_223_in_rule__MonsterInst4__SuperiorleaderAssignment_4738210); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17434:1: ( '#superiorleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17435:1: '#superiorleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_47_0()); 
+            match(input,222,FOLLOW_222_in_rule__MonsterInst4__SuperiorleaderAssignment_4738166); 
              after(grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_47_0()); 
 
             }
@@ -49753,24 +49712,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__NomagicleaderAssignment_48
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17473:1: rule__MonsterInst4__NomagicleaderAssignment_48 : ( ( '#nomagicleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17450:1: rule__MonsterInst4__NomagicleaderAssignment_48 : ( ( '#nomagicleader' ) ) ;
     public final void rule__MonsterInst4__NomagicleaderAssignment_48() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17477:1: ( ( ( '#nomagicleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17478:1: ( ( '#nomagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17454:1: ( ( ( '#nomagicleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17455:1: ( ( '#nomagicleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17478:1: ( ( '#nomagicleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17479:1: ( '#nomagicleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_48_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17480:1: ( '#nomagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17481:1: '#nomagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17455:1: ( ( '#nomagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17456:1: ( '#nomagicleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_48_0()); 
-            match(input,224,FOLLOW_224_in_rule__MonsterInst4__NomagicleaderAssignment_4838254); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17457:1: ( '#nomagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17458:1: '#nomagicleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_48_0()); 
+            match(input,223,FOLLOW_223_in_rule__MonsterInst4__NomagicleaderAssignment_4838210); 
              after(grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_48_0()); 
 
             }
@@ -49798,24 +49757,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__PoormagicleaderAssignment_49
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17496:1: rule__MonsterInst4__PoormagicleaderAssignment_49 : ( ( '#poormagicleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17473:1: rule__MonsterInst4__PoormagicleaderAssignment_49 : ( ( '#poormagicleader' ) ) ;
     public final void rule__MonsterInst4__PoormagicleaderAssignment_49() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17500:1: ( ( ( '#poormagicleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17501:1: ( ( '#poormagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17477:1: ( ( ( '#poormagicleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17478:1: ( ( '#poormagicleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17501:1: ( ( '#poormagicleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17502:1: ( '#poormagicleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_49_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17503:1: ( '#poormagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17504:1: '#poormagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17478:1: ( ( '#poormagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17479:1: ( '#poormagicleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_49_0()); 
-            match(input,225,FOLLOW_225_in_rule__MonsterInst4__PoormagicleaderAssignment_4938298); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17480:1: ( '#poormagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17481:1: '#poormagicleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_49_0()); 
+            match(input,224,FOLLOW_224_in_rule__MonsterInst4__PoormagicleaderAssignment_4938254); 
              after(grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_49_0()); 
 
             }
@@ -49843,24 +49802,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__OkmagicleaderAssignment_50
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17519:1: rule__MonsterInst4__OkmagicleaderAssignment_50 : ( ( '#okmagicleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17496:1: rule__MonsterInst4__OkmagicleaderAssignment_50 : ( ( '#okmagicleader' ) ) ;
     public final void rule__MonsterInst4__OkmagicleaderAssignment_50() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17523:1: ( ( ( '#okmagicleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17524:1: ( ( '#okmagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17500:1: ( ( ( '#okmagicleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17501:1: ( ( '#okmagicleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17524:1: ( ( '#okmagicleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17525:1: ( '#okmagicleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_50_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17526:1: ( '#okmagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17527:1: '#okmagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17501:1: ( ( '#okmagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17502:1: ( '#okmagicleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_50_0()); 
-            match(input,226,FOLLOW_226_in_rule__MonsterInst4__OkmagicleaderAssignment_5038342); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17503:1: ( '#okmagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17504:1: '#okmagicleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_50_0()); 
+            match(input,225,FOLLOW_225_in_rule__MonsterInst4__OkmagicleaderAssignment_5038298); 
              after(grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_50_0()); 
 
             }
@@ -49888,24 +49847,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__GoodmagicleaderAssignment_51
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17542:1: rule__MonsterInst4__GoodmagicleaderAssignment_51 : ( ( '#goodmagicleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17519:1: rule__MonsterInst4__GoodmagicleaderAssignment_51 : ( ( '#goodmagicleader' ) ) ;
     public final void rule__MonsterInst4__GoodmagicleaderAssignment_51() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17546:1: ( ( ( '#goodmagicleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17547:1: ( ( '#goodmagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17523:1: ( ( ( '#goodmagicleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17524:1: ( ( '#goodmagicleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17547:1: ( ( '#goodmagicleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17548:1: ( '#goodmagicleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_51_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17549:1: ( '#goodmagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17550:1: '#goodmagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17524:1: ( ( '#goodmagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17525:1: ( '#goodmagicleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_51_0()); 
-            match(input,227,FOLLOW_227_in_rule__MonsterInst4__GoodmagicleaderAssignment_5138386); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17526:1: ( '#goodmagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17527:1: '#goodmagicleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_51_0()); 
+            match(input,226,FOLLOW_226_in_rule__MonsterInst4__GoodmagicleaderAssignment_5138342); 
              after(grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_51_0()); 
 
             }
@@ -49933,24 +49892,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ExpertmagicleaderAssignment_52
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17565:1: rule__MonsterInst4__ExpertmagicleaderAssignment_52 : ( ( '#expertmagicleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17542:1: rule__MonsterInst4__ExpertmagicleaderAssignment_52 : ( ( '#expertmagicleader' ) ) ;
     public final void rule__MonsterInst4__ExpertmagicleaderAssignment_52() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17569:1: ( ( ( '#expertmagicleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17570:1: ( ( '#expertmagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17546:1: ( ( ( '#expertmagicleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17547:1: ( ( '#expertmagicleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17570:1: ( ( '#expertmagicleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17571:1: ( '#expertmagicleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_52_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17572:1: ( '#expertmagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17573:1: '#expertmagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17547:1: ( ( '#expertmagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17548:1: ( '#expertmagicleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_52_0()); 
-            match(input,228,FOLLOW_228_in_rule__MonsterInst4__ExpertmagicleaderAssignment_5238430); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17549:1: ( '#expertmagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17550:1: '#expertmagicleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_52_0()); 
+            match(input,227,FOLLOW_227_in_rule__MonsterInst4__ExpertmagicleaderAssignment_5238386); 
              after(grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_52_0()); 
 
             }
@@ -49978,24 +49937,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__SuperiormagicleaderAssignment_53
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17588:1: rule__MonsterInst4__SuperiormagicleaderAssignment_53 : ( ( '#superiormagicleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17565:1: rule__MonsterInst4__SuperiormagicleaderAssignment_53 : ( ( '#superiormagicleader' ) ) ;
     public final void rule__MonsterInst4__SuperiormagicleaderAssignment_53() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17592:1: ( ( ( '#superiormagicleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17593:1: ( ( '#superiormagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17569:1: ( ( ( '#superiormagicleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17570:1: ( ( '#superiormagicleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17593:1: ( ( '#superiormagicleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17594:1: ( '#superiormagicleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_53_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17595:1: ( '#superiormagicleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17596:1: '#superiormagicleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17570:1: ( ( '#superiormagicleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17571:1: ( '#superiormagicleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_53_0()); 
-            match(input,229,FOLLOW_229_in_rule__MonsterInst4__SuperiormagicleaderAssignment_5338474); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17572:1: ( '#superiormagicleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17573:1: '#superiormagicleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_53_0()); 
+            match(input,228,FOLLOW_228_in_rule__MonsterInst4__SuperiormagicleaderAssignment_5338430); 
              after(grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_53_0()); 
 
             }
@@ -50023,24 +49982,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__NoundeadleaderAssignment_54
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17611:1: rule__MonsterInst4__NoundeadleaderAssignment_54 : ( ( '#noundeadleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17588:1: rule__MonsterInst4__NoundeadleaderAssignment_54 : ( ( '#noundeadleader' ) ) ;
     public final void rule__MonsterInst4__NoundeadleaderAssignment_54() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17615:1: ( ( ( '#noundeadleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17616:1: ( ( '#noundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17592:1: ( ( ( '#noundeadleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17593:1: ( ( '#noundeadleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17616:1: ( ( '#noundeadleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17617:1: ( '#noundeadleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_54_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17618:1: ( '#noundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17619:1: '#noundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17593:1: ( ( '#noundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17594:1: ( '#noundeadleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_54_0()); 
-            match(input,230,FOLLOW_230_in_rule__MonsterInst4__NoundeadleaderAssignment_5438518); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17595:1: ( '#noundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17596:1: '#noundeadleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_54_0()); 
+            match(input,229,FOLLOW_229_in_rule__MonsterInst4__NoundeadleaderAssignment_5438474); 
              after(grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_54_0()); 
 
             }
@@ -50068,24 +50027,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__PoorundeadleaderAssignment_55
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17634:1: rule__MonsterInst4__PoorundeadleaderAssignment_55 : ( ( '#poorundeadleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17611:1: rule__MonsterInst4__PoorundeadleaderAssignment_55 : ( ( '#poorundeadleader' ) ) ;
     public final void rule__MonsterInst4__PoorundeadleaderAssignment_55() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17638:1: ( ( ( '#poorundeadleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17639:1: ( ( '#poorundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17615:1: ( ( ( '#poorundeadleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17616:1: ( ( '#poorundeadleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17639:1: ( ( '#poorundeadleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17640:1: ( '#poorundeadleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_55_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17641:1: ( '#poorundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17642:1: '#poorundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17616:1: ( ( '#poorundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17617:1: ( '#poorundeadleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_55_0()); 
-            match(input,231,FOLLOW_231_in_rule__MonsterInst4__PoorundeadleaderAssignment_5538562); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17618:1: ( '#poorundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17619:1: '#poorundeadleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_55_0()); 
+            match(input,230,FOLLOW_230_in_rule__MonsterInst4__PoorundeadleaderAssignment_5538518); 
              after(grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_55_0()); 
 
             }
@@ -50113,24 +50072,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__OkundeadleaderAssignment_56
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17657:1: rule__MonsterInst4__OkundeadleaderAssignment_56 : ( ( '#okundeadleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17634:1: rule__MonsterInst4__OkundeadleaderAssignment_56 : ( ( '#okundeadleader' ) ) ;
     public final void rule__MonsterInst4__OkundeadleaderAssignment_56() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17661:1: ( ( ( '#okundeadleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17662:1: ( ( '#okundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17638:1: ( ( ( '#okundeadleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17639:1: ( ( '#okundeadleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17662:1: ( ( '#okundeadleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17663:1: ( '#okundeadleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_56_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17664:1: ( '#okundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17665:1: '#okundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17639:1: ( ( '#okundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17640:1: ( '#okundeadleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_56_0()); 
-            match(input,232,FOLLOW_232_in_rule__MonsterInst4__OkundeadleaderAssignment_5638606); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17641:1: ( '#okundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17642:1: '#okundeadleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_56_0()); 
+            match(input,231,FOLLOW_231_in_rule__MonsterInst4__OkundeadleaderAssignment_5638562); 
              after(grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_56_0()); 
 
             }
@@ -50158,24 +50117,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__GoodundeadleaderAssignment_57
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17680:1: rule__MonsterInst4__GoodundeadleaderAssignment_57 : ( ( '#goodundeadleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17657:1: rule__MonsterInst4__GoodundeadleaderAssignment_57 : ( ( '#goodundeadleader' ) ) ;
     public final void rule__MonsterInst4__GoodundeadleaderAssignment_57() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17684:1: ( ( ( '#goodundeadleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17685:1: ( ( '#goodundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17661:1: ( ( ( '#goodundeadleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17662:1: ( ( '#goodundeadleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17685:1: ( ( '#goodundeadleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17686:1: ( '#goodundeadleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_57_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17687:1: ( '#goodundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17688:1: '#goodundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17662:1: ( ( '#goodundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17663:1: ( '#goodundeadleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_57_0()); 
-            match(input,233,FOLLOW_233_in_rule__MonsterInst4__GoodundeadleaderAssignment_5738650); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17664:1: ( '#goodundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17665:1: '#goodundeadleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_57_0()); 
+            match(input,232,FOLLOW_232_in_rule__MonsterInst4__GoodundeadleaderAssignment_5738606); 
              after(grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_57_0()); 
 
             }
@@ -50203,24 +50162,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__ExpertundeadleaderAssignment_58
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17703:1: rule__MonsterInst4__ExpertundeadleaderAssignment_58 : ( ( '#expertundeadleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17680:1: rule__MonsterInst4__ExpertundeadleaderAssignment_58 : ( ( '#expertundeadleader' ) ) ;
     public final void rule__MonsterInst4__ExpertundeadleaderAssignment_58() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17707:1: ( ( ( '#expertundeadleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17708:1: ( ( '#expertundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17684:1: ( ( ( '#expertundeadleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17685:1: ( ( '#expertundeadleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17708:1: ( ( '#expertundeadleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17709:1: ( '#expertundeadleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_58_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17710:1: ( '#expertundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17711:1: '#expertundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17685:1: ( ( '#expertundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17686:1: ( '#expertundeadleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_58_0()); 
-            match(input,234,FOLLOW_234_in_rule__MonsterInst4__ExpertundeadleaderAssignment_5838694); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17687:1: ( '#expertundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17688:1: '#expertundeadleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_58_0()); 
+            match(input,233,FOLLOW_233_in_rule__MonsterInst4__ExpertundeadleaderAssignment_5838650); 
              after(grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_58_0()); 
 
             }
@@ -50248,24 +50207,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst4__SuperiorundeadleaderAssignment_59
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17726:1: rule__MonsterInst4__SuperiorundeadleaderAssignment_59 : ( ( '#superiorundeadleader' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17703:1: rule__MonsterInst4__SuperiorundeadleaderAssignment_59 : ( ( '#superiorundeadleader' ) ) ;
     public final void rule__MonsterInst4__SuperiorundeadleaderAssignment_59() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17730:1: ( ( ( '#superiorundeadleader' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17731:1: ( ( '#superiorundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17707:1: ( ( ( '#superiorundeadleader' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17708:1: ( ( '#superiorundeadleader' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17731:1: ( ( '#superiorundeadleader' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17732:1: ( '#superiorundeadleader' )
-            {
-             before(grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_59_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17733:1: ( '#superiorundeadleader' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17734:1: '#superiorundeadleader'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17708:1: ( ( '#superiorundeadleader' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17709:1: ( '#superiorundeadleader' )
             {
              before(grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_59_0()); 
-            match(input,235,FOLLOW_235_in_rule__MonsterInst4__SuperiorundeadleaderAssignment_5938738); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17710:1: ( '#superiorundeadleader' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17711:1: '#superiorundeadleader'
+            {
+             before(grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_59_0()); 
+            match(input,234,FOLLOW_234_in_rule__MonsterInst4__SuperiorundeadleaderAssignment_5938694); 
              after(grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_59_0()); 
 
             }
@@ -50293,24 +50252,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__WeaponAssignment_0
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17749:1: rule__MonsterInst5__WeaponAssignment_0 : ( ( '#weapon' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17726:1: rule__MonsterInst5__WeaponAssignment_0 : ( ( '#weapon' ) ) ;
     public final void rule__MonsterInst5__WeaponAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17753:1: ( ( ( '#weapon' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17754:1: ( ( '#weapon' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17730:1: ( ( ( '#weapon' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17731:1: ( ( '#weapon' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17754:1: ( ( '#weapon' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17755:1: ( '#weapon' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getWeaponWeaponKeyword_0_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17756:1: ( '#weapon' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17757:1: '#weapon'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17731:1: ( ( '#weapon' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17732:1: ( '#weapon' )
             {
              before(grammarAccess.getMonsterInst5Access().getWeaponWeaponKeyword_0_0()); 
-            match(input,236,FOLLOW_236_in_rule__MonsterInst5__WeaponAssignment_038782); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17733:1: ( '#weapon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17734:1: '#weapon'
+            {
+             before(grammarAccess.getMonsterInst5Access().getWeaponWeaponKeyword_0_0()); 
+            match(input,235,FOLLOW_235_in_rule__MonsterInst5__WeaponAssignment_038738); 
              after(grammarAccess.getMonsterInst5Access().getWeaponWeaponKeyword_0_0()); 
 
             }
@@ -50338,24 +50297,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__OnebattlespellAssignment_1
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17772:1: rule__MonsterInst5__OnebattlespellAssignment_1 : ( ( '#onebattlespell' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17749:1: rule__MonsterInst5__OnebattlespellAssignment_1 : ( ( '#onebattlespell' ) ) ;
     public final void rule__MonsterInst5__OnebattlespellAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17776:1: ( ( ( '#onebattlespell' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17777:1: ( ( '#onebattlespell' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17753:1: ( ( ( '#onebattlespell' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17754:1: ( ( '#onebattlespell' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17777:1: ( ( '#onebattlespell' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17778:1: ( '#onebattlespell' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getOnebattlespellOnebattlespellKeyword_1_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17779:1: ( '#onebattlespell' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17780:1: '#onebattlespell'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17754:1: ( ( '#onebattlespell' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17755:1: ( '#onebattlespell' )
             {
              before(grammarAccess.getMonsterInst5Access().getOnebattlespellOnebattlespellKeyword_1_0()); 
-            match(input,237,FOLLOW_237_in_rule__MonsterInst5__OnebattlespellAssignment_138826); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17756:1: ( '#onebattlespell' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17757:1: '#onebattlespell'
+            {
+             before(grammarAccess.getMonsterInst5Access().getOnebattlespellOnebattlespellKeyword_1_0()); 
+            match(input,236,FOLLOW_236_in_rule__MonsterInst5__OnebattlespellAssignment_138782); 
              after(grammarAccess.getMonsterInst5Access().getOnebattlespellOnebattlespellKeyword_1_0()); 
 
             }
@@ -50383,24 +50342,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__FirstshapeAssignment_2
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17795:1: rule__MonsterInst5__FirstshapeAssignment_2 : ( ( '#firstshape' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17772:1: rule__MonsterInst5__FirstshapeAssignment_2 : ( ( '#firstshape' ) ) ;
     public final void rule__MonsterInst5__FirstshapeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17799:1: ( ( ( '#firstshape' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17800:1: ( ( '#firstshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17776:1: ( ( ( '#firstshape' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17777:1: ( ( '#firstshape' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17800:1: ( ( '#firstshape' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17801:1: ( '#firstshape' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getFirstshapeFirstshapeKeyword_2_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17802:1: ( '#firstshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17803:1: '#firstshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17777:1: ( ( '#firstshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17778:1: ( '#firstshape' )
             {
              before(grammarAccess.getMonsterInst5Access().getFirstshapeFirstshapeKeyword_2_0()); 
-            match(input,238,FOLLOW_238_in_rule__MonsterInst5__FirstshapeAssignment_238870); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17779:1: ( '#firstshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17780:1: '#firstshape'
+            {
+             before(grammarAccess.getMonsterInst5Access().getFirstshapeFirstshapeKeyword_2_0()); 
+            match(input,237,FOLLOW_237_in_rule__MonsterInst5__FirstshapeAssignment_238826); 
              after(grammarAccess.getMonsterInst5Access().getFirstshapeFirstshapeKeyword_2_0()); 
 
             }
@@ -50428,24 +50387,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__SecondshapeAssignment_3
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17818:1: rule__MonsterInst5__SecondshapeAssignment_3 : ( ( '#secondshape' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17795:1: rule__MonsterInst5__SecondshapeAssignment_3 : ( ( '#secondshape' ) ) ;
     public final void rule__MonsterInst5__SecondshapeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17822:1: ( ( ( '#secondshape' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17823:1: ( ( '#secondshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17799:1: ( ( ( '#secondshape' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17800:1: ( ( '#secondshape' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17823:1: ( ( '#secondshape' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17824:1: ( '#secondshape' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getSecondshapeSecondshapeKeyword_3_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17825:1: ( '#secondshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17826:1: '#secondshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17800:1: ( ( '#secondshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17801:1: ( '#secondshape' )
             {
              before(grammarAccess.getMonsterInst5Access().getSecondshapeSecondshapeKeyword_3_0()); 
-            match(input,239,FOLLOW_239_in_rule__MonsterInst5__SecondshapeAssignment_338914); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17802:1: ( '#secondshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17803:1: '#secondshape'
+            {
+             before(grammarAccess.getMonsterInst5Access().getSecondshapeSecondshapeKeyword_3_0()); 
+            match(input,238,FOLLOW_238_in_rule__MonsterInst5__SecondshapeAssignment_338870); 
              after(grammarAccess.getMonsterInst5Access().getSecondshapeSecondshapeKeyword_3_0()); 
 
             }
@@ -50473,24 +50432,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__SecondtmpshapeAssignment_4
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17841:1: rule__MonsterInst5__SecondtmpshapeAssignment_4 : ( ( '#secondtmpshape' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17818:1: rule__MonsterInst5__SecondtmpshapeAssignment_4 : ( ( '#secondtmpshape' ) ) ;
     public final void rule__MonsterInst5__SecondtmpshapeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17845:1: ( ( ( '#secondtmpshape' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17846:1: ( ( '#secondtmpshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17822:1: ( ( ( '#secondtmpshape' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17823:1: ( ( '#secondtmpshape' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17846:1: ( ( '#secondtmpshape' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17847:1: ( '#secondtmpshape' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getSecondtmpshapeSecondtmpshapeKeyword_4_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17848:1: ( '#secondtmpshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17849:1: '#secondtmpshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17823:1: ( ( '#secondtmpshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17824:1: ( '#secondtmpshape' )
             {
              before(grammarAccess.getMonsterInst5Access().getSecondtmpshapeSecondtmpshapeKeyword_4_0()); 
-            match(input,240,FOLLOW_240_in_rule__MonsterInst5__SecondtmpshapeAssignment_438958); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17825:1: ( '#secondtmpshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17826:1: '#secondtmpshape'
+            {
+             before(grammarAccess.getMonsterInst5Access().getSecondtmpshapeSecondtmpshapeKeyword_4_0()); 
+            match(input,239,FOLLOW_239_in_rule__MonsterInst5__SecondtmpshapeAssignment_438914); 
              after(grammarAccess.getMonsterInst5Access().getSecondtmpshapeSecondtmpshapeKeyword_4_0()); 
 
             }
@@ -50518,24 +50477,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__ShapechangeAssignment_5
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17864:1: rule__MonsterInst5__ShapechangeAssignment_5 : ( ( '#shapechange' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17841:1: rule__MonsterInst5__ShapechangeAssignment_5 : ( ( '#shapechange' ) ) ;
     public final void rule__MonsterInst5__ShapechangeAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17868:1: ( ( ( '#shapechange' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17869:1: ( ( '#shapechange' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17845:1: ( ( ( '#shapechange' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17846:1: ( ( '#shapechange' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17869:1: ( ( '#shapechange' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17870:1: ( '#shapechange' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getShapechangeShapechangeKeyword_5_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17871:1: ( '#shapechange' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17872:1: '#shapechange'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17846:1: ( ( '#shapechange' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17847:1: ( '#shapechange' )
             {
              before(grammarAccess.getMonsterInst5Access().getShapechangeShapechangeKeyword_5_0()); 
-            match(input,241,FOLLOW_241_in_rule__MonsterInst5__ShapechangeAssignment_539002); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17848:1: ( '#shapechange' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17849:1: '#shapechange'
+            {
+             before(grammarAccess.getMonsterInst5Access().getShapechangeShapechangeKeyword_5_0()); 
+            match(input,240,FOLLOW_240_in_rule__MonsterInst5__ShapechangeAssignment_538958); 
              after(grammarAccess.getMonsterInst5Access().getShapechangeShapechangeKeyword_5_0()); 
 
             }
@@ -50563,24 +50522,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__LandshapeAssignment_6
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17887:1: rule__MonsterInst5__LandshapeAssignment_6 : ( ( '#landshape' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17864:1: rule__MonsterInst5__LandshapeAssignment_6 : ( ( '#landshape' ) ) ;
     public final void rule__MonsterInst5__LandshapeAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17891:1: ( ( ( '#landshape' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17892:1: ( ( '#landshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17868:1: ( ( ( '#landshape' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17869:1: ( ( '#landshape' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17892:1: ( ( '#landshape' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17893:1: ( '#landshape' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getLandshapeLandshapeKeyword_6_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17894:1: ( '#landshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17895:1: '#landshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17869:1: ( ( '#landshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17870:1: ( '#landshape' )
             {
              before(grammarAccess.getMonsterInst5Access().getLandshapeLandshapeKeyword_6_0()); 
-            match(input,242,FOLLOW_242_in_rule__MonsterInst5__LandshapeAssignment_639046); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17871:1: ( '#landshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17872:1: '#landshape'
+            {
+             before(grammarAccess.getMonsterInst5Access().getLandshapeLandshapeKeyword_6_0()); 
+            match(input,241,FOLLOW_241_in_rule__MonsterInst5__LandshapeAssignment_639002); 
              after(grammarAccess.getMonsterInst5Access().getLandshapeLandshapeKeyword_6_0()); 
 
             }
@@ -50608,24 +50567,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__WatershapeAssignment_7
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17910:1: rule__MonsterInst5__WatershapeAssignment_7 : ( ( '#watershape' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17887:1: rule__MonsterInst5__WatershapeAssignment_7 : ( ( '#watershape' ) ) ;
     public final void rule__MonsterInst5__WatershapeAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17914:1: ( ( ( '#watershape' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17915:1: ( ( '#watershape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17891:1: ( ( ( '#watershape' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17892:1: ( ( '#watershape' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17915:1: ( ( '#watershape' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17916:1: ( '#watershape' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getWatershapeWatershapeKeyword_7_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17917:1: ( '#watershape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17918:1: '#watershape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17892:1: ( ( '#watershape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17893:1: ( '#watershape' )
             {
              before(grammarAccess.getMonsterInst5Access().getWatershapeWatershapeKeyword_7_0()); 
-            match(input,243,FOLLOW_243_in_rule__MonsterInst5__WatershapeAssignment_739090); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17894:1: ( '#watershape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17895:1: '#watershape'
+            {
+             before(grammarAccess.getMonsterInst5Access().getWatershapeWatershapeKeyword_7_0()); 
+            match(input,242,FOLLOW_242_in_rule__MonsterInst5__WatershapeAssignment_739046); 
              after(grammarAccess.getMonsterInst5Access().getWatershapeWatershapeKeyword_7_0()); 
 
             }
@@ -50653,24 +50612,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__ForestshapeAssignment_8
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17933:1: rule__MonsterInst5__ForestshapeAssignment_8 : ( ( '#forestshape' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17910:1: rule__MonsterInst5__ForestshapeAssignment_8 : ( ( '#forestshape' ) ) ;
     public final void rule__MonsterInst5__ForestshapeAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17937:1: ( ( ( '#forestshape' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17938:1: ( ( '#forestshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17914:1: ( ( ( '#forestshape' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17915:1: ( ( '#forestshape' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17938:1: ( ( '#forestshape' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17939:1: ( '#forestshape' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getForestshapeForestshapeKeyword_8_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17940:1: ( '#forestshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17941:1: '#forestshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17915:1: ( ( '#forestshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17916:1: ( '#forestshape' )
             {
              before(grammarAccess.getMonsterInst5Access().getForestshapeForestshapeKeyword_8_0()); 
-            match(input,244,FOLLOW_244_in_rule__MonsterInst5__ForestshapeAssignment_839134); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17917:1: ( '#forestshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17918:1: '#forestshape'
+            {
+             before(grammarAccess.getMonsterInst5Access().getForestshapeForestshapeKeyword_8_0()); 
+            match(input,243,FOLLOW_243_in_rule__MonsterInst5__ForestshapeAssignment_839090); 
              after(grammarAccess.getMonsterInst5Access().getForestshapeForestshapeKeyword_8_0()); 
 
             }
@@ -50698,24 +50657,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__PlainshapeAssignment_9
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17956:1: rule__MonsterInst5__PlainshapeAssignment_9 : ( ( '#plainshape' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17933:1: rule__MonsterInst5__PlainshapeAssignment_9 : ( ( '#plainshape' ) ) ;
     public final void rule__MonsterInst5__PlainshapeAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17960:1: ( ( ( '#plainshape' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17961:1: ( ( '#plainshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17937:1: ( ( ( '#plainshape' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17938:1: ( ( '#plainshape' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17961:1: ( ( '#plainshape' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17962:1: ( '#plainshape' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getPlainshapePlainshapeKeyword_9_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17963:1: ( '#plainshape' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17964:1: '#plainshape'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17938:1: ( ( '#plainshape' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17939:1: ( '#plainshape' )
             {
              before(grammarAccess.getMonsterInst5Access().getPlainshapePlainshapeKeyword_9_0()); 
-            match(input,245,FOLLOW_245_in_rule__MonsterInst5__PlainshapeAssignment_939178); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17940:1: ( '#plainshape' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17941:1: '#plainshape'
+            {
+             before(grammarAccess.getMonsterInst5Access().getPlainshapePlainshapeKeyword_9_0()); 
+            match(input,244,FOLLOW_244_in_rule__MonsterInst5__PlainshapeAssignment_939134); 
              after(grammarAccess.getMonsterInst5Access().getPlainshapePlainshapeKeyword_9_0()); 
 
             }
@@ -50743,24 +50702,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__DomsummonAssignment_10
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17979:1: rule__MonsterInst5__DomsummonAssignment_10 : ( ( '#domsummon' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17956:1: rule__MonsterInst5__DomsummonAssignment_10 : ( ( '#domsummon' ) ) ;
     public final void rule__MonsterInst5__DomsummonAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17983:1: ( ( ( '#domsummon' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17984:1: ( ( '#domsummon' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17960:1: ( ( ( '#domsummon' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17961:1: ( ( '#domsummon' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17984:1: ( ( '#domsummon' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17985:1: ( '#domsummon' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getDomsummonDomsummonKeyword_10_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17986:1: ( '#domsummon' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17987:1: '#domsummon'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17961:1: ( ( '#domsummon' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17962:1: ( '#domsummon' )
             {
              before(grammarAccess.getMonsterInst5Access().getDomsummonDomsummonKeyword_10_0()); 
-            match(input,246,FOLLOW_246_in_rule__MonsterInst5__DomsummonAssignment_1039222); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17963:1: ( '#domsummon' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17964:1: '#domsummon'
+            {
+             before(grammarAccess.getMonsterInst5Access().getDomsummonDomsummonKeyword_10_0()); 
+            match(input,245,FOLLOW_245_in_rule__MonsterInst5__DomsummonAssignment_1039178); 
              after(grammarAccess.getMonsterInst5Access().getDomsummonDomsummonKeyword_10_0()); 
 
             }
@@ -50788,24 +50747,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__Domsummon2Assignment_11
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18002:1: rule__MonsterInst5__Domsummon2Assignment_11 : ( ( '#domsummon2' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17979:1: rule__MonsterInst5__Domsummon2Assignment_11 : ( ( '#domsummon2' ) ) ;
     public final void rule__MonsterInst5__Domsummon2Assignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18006:1: ( ( ( '#domsummon2' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18007:1: ( ( '#domsummon2' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17983:1: ( ( ( '#domsummon2' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17984:1: ( ( '#domsummon2' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18007:1: ( ( '#domsummon2' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18008:1: ( '#domsummon2' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getDomsummon2Domsummon2Keyword_11_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18009:1: ( '#domsummon2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18010:1: '#domsummon2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17984:1: ( ( '#domsummon2' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17985:1: ( '#domsummon2' )
             {
              before(grammarAccess.getMonsterInst5Access().getDomsummon2Domsummon2Keyword_11_0()); 
-            match(input,247,FOLLOW_247_in_rule__MonsterInst5__Domsummon2Assignment_1139266); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17986:1: ( '#domsummon2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17987:1: '#domsummon2'
+            {
+             before(grammarAccess.getMonsterInst5Access().getDomsummon2Domsummon2Keyword_11_0()); 
+            match(input,246,FOLLOW_246_in_rule__MonsterInst5__Domsummon2Assignment_1139222); 
              after(grammarAccess.getMonsterInst5Access().getDomsummon2Domsummon2Keyword_11_0()); 
 
             }
@@ -50833,24 +50792,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__Domsummon20Assignment_12
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18025:1: rule__MonsterInst5__Domsummon20Assignment_12 : ( ( '#domsummon20' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18002:1: rule__MonsterInst5__Domsummon20Assignment_12 : ( ( '#domsummon20' ) ) ;
     public final void rule__MonsterInst5__Domsummon20Assignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18029:1: ( ( ( '#domsummon20' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18030:1: ( ( '#domsummon20' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18006:1: ( ( ( '#domsummon20' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18007:1: ( ( '#domsummon20' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18030:1: ( ( '#domsummon20' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18031:1: ( '#domsummon20' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getDomsummon20Domsummon20Keyword_12_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18032:1: ( '#domsummon20' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18033:1: '#domsummon20'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18007:1: ( ( '#domsummon20' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18008:1: ( '#domsummon20' )
             {
              before(grammarAccess.getMonsterInst5Access().getDomsummon20Domsummon20Keyword_12_0()); 
-            match(input,248,FOLLOW_248_in_rule__MonsterInst5__Domsummon20Assignment_1239310); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18009:1: ( '#domsummon20' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18010:1: '#domsummon20'
+            {
+             before(grammarAccess.getMonsterInst5Access().getDomsummon20Domsummon20Keyword_12_0()); 
+            match(input,247,FOLLOW_247_in_rule__MonsterInst5__Domsummon20Assignment_1239266); 
              after(grammarAccess.getMonsterInst5Access().getDomsummon20Domsummon20Keyword_12_0()); 
 
             }
@@ -50878,24 +50837,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__Makemonster1Assignment_13
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18048:1: rule__MonsterInst5__Makemonster1Assignment_13 : ( ( '#makemonster1' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18025:1: rule__MonsterInst5__Makemonster1Assignment_13 : ( ( '#makemonster1' ) ) ;
     public final void rule__MonsterInst5__Makemonster1Assignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18052:1: ( ( ( '#makemonster1' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18053:1: ( ( '#makemonster1' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18029:1: ( ( ( '#makemonster1' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18030:1: ( ( '#makemonster1' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18053:1: ( ( '#makemonster1' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18054:1: ( '#makemonster1' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getMakemonster1Makemonster1Keyword_13_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18055:1: ( '#makemonster1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18056:1: '#makemonster1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18030:1: ( ( '#makemonster1' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18031:1: ( '#makemonster1' )
             {
              before(grammarAccess.getMonsterInst5Access().getMakemonster1Makemonster1Keyword_13_0()); 
-            match(input,249,FOLLOW_249_in_rule__MonsterInst5__Makemonster1Assignment_1339354); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18032:1: ( '#makemonster1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18033:1: '#makemonster1'
+            {
+             before(grammarAccess.getMonsterInst5Access().getMakemonster1Makemonster1Keyword_13_0()); 
+            match(input,248,FOLLOW_248_in_rule__MonsterInst5__Makemonster1Assignment_1339310); 
              after(grammarAccess.getMonsterInst5Access().getMakemonster1Makemonster1Keyword_13_0()); 
 
             }
@@ -50923,24 +50882,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__Makemonster2Assignment_14
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18071:1: rule__MonsterInst5__Makemonster2Assignment_14 : ( ( '#makemonster2' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18048:1: rule__MonsterInst5__Makemonster2Assignment_14 : ( ( '#makemonster2' ) ) ;
     public final void rule__MonsterInst5__Makemonster2Assignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18075:1: ( ( ( '#makemonster2' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18076:1: ( ( '#makemonster2' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18052:1: ( ( ( '#makemonster2' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18053:1: ( ( '#makemonster2' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18076:1: ( ( '#makemonster2' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18077:1: ( '#makemonster2' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getMakemonster2Makemonster2Keyword_14_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18078:1: ( '#makemonster2' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18079:1: '#makemonster2'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18053:1: ( ( '#makemonster2' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18054:1: ( '#makemonster2' )
             {
              before(grammarAccess.getMonsterInst5Access().getMakemonster2Makemonster2Keyword_14_0()); 
-            match(input,250,FOLLOW_250_in_rule__MonsterInst5__Makemonster2Assignment_1439398); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18055:1: ( '#makemonster2' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18056:1: '#makemonster2'
+            {
+             before(grammarAccess.getMonsterInst5Access().getMakemonster2Makemonster2Keyword_14_0()); 
+            match(input,249,FOLLOW_249_in_rule__MonsterInst5__Makemonster2Assignment_1439354); 
              after(grammarAccess.getMonsterInst5Access().getMakemonster2Makemonster2Keyword_14_0()); 
 
             }
@@ -50968,24 +50927,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__Makemonster3Assignment_15
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18094:1: rule__MonsterInst5__Makemonster3Assignment_15 : ( ( '#makemonster3' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18071:1: rule__MonsterInst5__Makemonster3Assignment_15 : ( ( '#makemonster3' ) ) ;
     public final void rule__MonsterInst5__Makemonster3Assignment_15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18098:1: ( ( ( '#makemonster3' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18099:1: ( ( '#makemonster3' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18075:1: ( ( ( '#makemonster3' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18076:1: ( ( '#makemonster3' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18099:1: ( ( '#makemonster3' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18100:1: ( '#makemonster3' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getMakemonster3Makemonster3Keyword_15_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18101:1: ( '#makemonster3' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18102:1: '#makemonster3'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18076:1: ( ( '#makemonster3' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18077:1: ( '#makemonster3' )
             {
              before(grammarAccess.getMonsterInst5Access().getMakemonster3Makemonster3Keyword_15_0()); 
-            match(input,251,FOLLOW_251_in_rule__MonsterInst5__Makemonster3Assignment_1539442); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18078:1: ( '#makemonster3' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18079:1: '#makemonster3'
+            {
+             before(grammarAccess.getMonsterInst5Access().getMakemonster3Makemonster3Keyword_15_0()); 
+            match(input,250,FOLLOW_250_in_rule__MonsterInst5__Makemonster3Assignment_1539398); 
              after(grammarAccess.getMonsterInst5Access().getMakemonster3Makemonster3Keyword_15_0()); 
 
             }
@@ -51013,24 +50972,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__Makemonster4Assignment_16
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18117:1: rule__MonsterInst5__Makemonster4Assignment_16 : ( ( '#makemonster4' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18094:1: rule__MonsterInst5__Makemonster4Assignment_16 : ( ( '#makemonster4' ) ) ;
     public final void rule__MonsterInst5__Makemonster4Assignment_16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18121:1: ( ( ( '#makemonster4' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18122:1: ( ( '#makemonster4' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18098:1: ( ( ( '#makemonster4' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18099:1: ( ( '#makemonster4' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18122:1: ( ( '#makemonster4' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18123:1: ( '#makemonster4' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getMakemonster4Makemonster4Keyword_16_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18124:1: ( '#makemonster4' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18125:1: '#makemonster4'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18099:1: ( ( '#makemonster4' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18100:1: ( '#makemonster4' )
             {
              before(grammarAccess.getMonsterInst5Access().getMakemonster4Makemonster4Keyword_16_0()); 
-            match(input,252,FOLLOW_252_in_rule__MonsterInst5__Makemonster4Assignment_1639486); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18101:1: ( '#makemonster4' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18102:1: '#makemonster4'
+            {
+             before(grammarAccess.getMonsterInst5Access().getMakemonster4Makemonster4Keyword_16_0()); 
+            match(input,251,FOLLOW_251_in_rule__MonsterInst5__Makemonster4Assignment_1639442); 
              after(grammarAccess.getMonsterInst5Access().getMakemonster4Makemonster4Keyword_16_0()); 
 
             }
@@ -51058,24 +51017,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__Makemonster5Assignment_17
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18140:1: rule__MonsterInst5__Makemonster5Assignment_17 : ( ( '#makemonster5' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18117:1: rule__MonsterInst5__Makemonster5Assignment_17 : ( ( '#makemonster5' ) ) ;
     public final void rule__MonsterInst5__Makemonster5Assignment_17() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18144:1: ( ( ( '#makemonster5' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18145:1: ( ( '#makemonster5' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18121:1: ( ( ( '#makemonster5' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18122:1: ( ( '#makemonster5' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18145:1: ( ( '#makemonster5' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18146:1: ( '#makemonster5' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getMakemonster5Makemonster5Keyword_17_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18147:1: ( '#makemonster5' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18148:1: '#makemonster5'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18122:1: ( ( '#makemonster5' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18123:1: ( '#makemonster5' )
             {
              before(grammarAccess.getMonsterInst5Access().getMakemonster5Makemonster5Keyword_17_0()); 
-            match(input,253,FOLLOW_253_in_rule__MonsterInst5__Makemonster5Assignment_1739530); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18124:1: ( '#makemonster5' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18125:1: '#makemonster5'
+            {
+             before(grammarAccess.getMonsterInst5Access().getMakemonster5Makemonster5Keyword_17_0()); 
+            match(input,252,FOLLOW_252_in_rule__MonsterInst5__Makemonster5Assignment_1739486); 
              after(grammarAccess.getMonsterInst5Access().getMakemonster5Makemonster5Keyword_17_0()); 
 
             }
@@ -51103,24 +51062,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__Summon1Assignment_18
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18163:1: rule__MonsterInst5__Summon1Assignment_18 : ( ( '#summon1' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18140:1: rule__MonsterInst5__Summon1Assignment_18 : ( ( '#summon1' ) ) ;
     public final void rule__MonsterInst5__Summon1Assignment_18() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18167:1: ( ( ( '#summon1' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18168:1: ( ( '#summon1' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18144:1: ( ( ( '#summon1' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18145:1: ( ( '#summon1' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18168:1: ( ( '#summon1' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18169:1: ( '#summon1' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getSummon1Summon1Keyword_18_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18170:1: ( '#summon1' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18171:1: '#summon1'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18145:1: ( ( '#summon1' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18146:1: ( '#summon1' )
             {
              before(grammarAccess.getMonsterInst5Access().getSummon1Summon1Keyword_18_0()); 
-            match(input,254,FOLLOW_254_in_rule__MonsterInst5__Summon1Assignment_1839574); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18147:1: ( '#summon1' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18148:1: '#summon1'
+            {
+             before(grammarAccess.getMonsterInst5Access().getSummon1Summon1Keyword_18_0()); 
+            match(input,253,FOLLOW_253_in_rule__MonsterInst5__Summon1Assignment_1839530); 
              after(grammarAccess.getMonsterInst5Access().getSummon1Summon1Keyword_18_0()); 
 
             }
@@ -51148,24 +51107,24 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__MonsterInst5__Summon5Assignment_19
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18186:1: rule__MonsterInst5__Summon5Assignment_19 : ( ( '#summon5' ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18163:1: rule__MonsterInst5__Summon5Assignment_19 : ( ( '#summon5' ) ) ;
     public final void rule__MonsterInst5__Summon5Assignment_19() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18190:1: ( ( ( '#summon5' ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18191:1: ( ( '#summon5' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18167:1: ( ( ( '#summon5' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18168:1: ( ( '#summon5' ) )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18191:1: ( ( '#summon5' ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18192:1: ( '#summon5' )
-            {
-             before(grammarAccess.getMonsterInst5Access().getSummon5Summon5Keyword_19_0()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18193:1: ( '#summon5' )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18194:1: '#summon5'
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18168:1: ( ( '#summon5' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18169:1: ( '#summon5' )
             {
              before(grammarAccess.getMonsterInst5Access().getSummon5Summon5Keyword_19_0()); 
-            match(input,255,FOLLOW_255_in_rule__MonsterInst5__Summon5Assignment_1939618); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18170:1: ( '#summon5' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18171:1: '#summon5'
+            {
+             before(grammarAccess.getMonsterInst5Access().getSummon5Summon5Keyword_19_0()); 
+            match(input,254,FOLLOW_254_in_rule__MonsterInst5__Summon5Assignment_1939574); 
              after(grammarAccess.getMonsterInst5Access().getSummon5Summon5Keyword_19_0()); 
 
             }
@@ -51192,9 +51151,54 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     // $ANTLR end rule__MonsterInst5__Summon5Assignment_19
 
 
-    // $ANTLR start rule__MonsterInst6__HeatAssignment_0
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18209:1: rule__MonsterInst6__HeatAssignment_0 : ( ( '#heat' ) ) ;
-    public final void rule__MonsterInst6__HeatAssignment_0() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst6__StealthyAssignment_0
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18186:1: rule__MonsterInst6__StealthyAssignment_0 : ( ( '#stealthy' ) ) ;
+    public final void rule__MonsterInst6__StealthyAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18190:1: ( ( ( '#stealthy' ) ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18191:1: ( ( '#stealthy' ) )
+            {
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18191:1: ( ( '#stealthy' ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18192:1: ( '#stealthy' )
+            {
+             before(grammarAccess.getMonsterInst6Access().getStealthyStealthyKeyword_0_0()); 
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18193:1: ( '#stealthy' )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18194:1: '#stealthy'
+            {
+             before(grammarAccess.getMonsterInst6Access().getStealthyStealthyKeyword_0_0()); 
+            match(input,255,FOLLOW_255_in_rule__MonsterInst6__StealthyAssignment_039618); 
+             after(grammarAccess.getMonsterInst6Access().getStealthyStealthyKeyword_0_0()); 
+
+            }
+
+             after(grammarAccess.getMonsterInst6Access().getStealthyStealthyKeyword_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__MonsterInst6__StealthyAssignment_0
+
+
+    // $ANTLR start rule__MonsterInst6__HeatAssignment_1
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18209:1: rule__MonsterInst6__HeatAssignment_1 : ( ( '#heat' ) ) ;
+    public final void rule__MonsterInst6__HeatAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -51205,17 +51209,17 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18214:1: ( ( '#heat' ) )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18215:1: ( '#heat' )
             {
-             before(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_0_0()); 
+             before(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_1_0()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18216:1: ( '#heat' )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18217:1: '#heat'
             {
-             before(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_0_0()); 
-            match(input,256,FOLLOW_256_in_rule__MonsterInst6__HeatAssignment_039662); 
-             after(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_0_0()); 
+             before(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_1_0()); 
+            match(input,256,FOLLOW_256_in_rule__MonsterInst6__HeatAssignment_139662); 
+             after(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_1_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_0_0()); 
+             after(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_1_0()); 
 
             }
 
@@ -51234,12 +51238,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst6__HeatAssignment_0
+    // $ANTLR end rule__MonsterInst6__HeatAssignment_1
 
 
-    // $ANTLR start rule__MonsterInst6__ColdAssignment_1
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18232:1: rule__MonsterInst6__ColdAssignment_1 : ( ( '#cold' ) ) ;
-    public final void rule__MonsterInst6__ColdAssignment_1() throws RecognitionException {
+    // $ANTLR start rule__MonsterInst6__ColdAssignment_2
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18232:1: rule__MonsterInst6__ColdAssignment_2 : ( ( '#cold' ) ) ;
+    public final void rule__MonsterInst6__ColdAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -51250,17 +51254,17 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18237:1: ( ( '#cold' ) )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18238:1: ( '#cold' )
             {
-             before(grammarAccess.getMonsterInst6Access().getColdColdKeyword_1_0()); 
+             before(grammarAccess.getMonsterInst6Access().getColdColdKeyword_2_0()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18239:1: ( '#cold' )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18240:1: '#cold'
             {
-             before(grammarAccess.getMonsterInst6Access().getColdColdKeyword_1_0()); 
-            match(input,85,FOLLOW_85_in_rule__MonsterInst6__ColdAssignment_139706); 
-             after(grammarAccess.getMonsterInst6Access().getColdColdKeyword_1_0()); 
+             before(grammarAccess.getMonsterInst6Access().getColdColdKeyword_2_0()); 
+            match(input,85,FOLLOW_85_in_rule__MonsterInst6__ColdAssignment_239706); 
+             after(grammarAccess.getMonsterInst6Access().getColdColdKeyword_2_0()); 
 
             }
 
-             after(grammarAccess.getMonsterInst6Access().getColdColdKeyword_1_0()); 
+             after(grammarAccess.getMonsterInst6Access().getColdColdKeyword_2_0()); 
 
             }
 
@@ -51279,7 +51283,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__MonsterInst6__ColdAssignment_1
+    // $ANTLR end rule__MonsterInst6__ColdAssignment_2
 
 
     // $ANTLR start rule__SelectSpellById__ValueAssignment_1
@@ -52526,7 +52530,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18842:1: '#clear'
             {
              before(grammarAccess.getSpellInst4Access().getClearClearKeyword_0()); 
-            match(input,176,FOLLOW_176_in_rule__SpellInst4__ClearAssignment40883); 
+            match(input,175,FOLLOW_175_in_rule__SpellInst4__ClearAssignment40883); 
              after(grammarAccess.getSpellInst4Access().getClearClearKeyword_0()); 
 
             }
@@ -53379,7 +53383,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19246:1: '#weapon'
             {
              before(grammarAccess.getItemInst2Access().getWeaponWeaponKeyword_7_0()); 
-            match(input,236,FOLLOW_236_in_rule__ItemInst2__WeaponAssignment_741672); 
+            match(input,235,FOLLOW_235_in_rule__ItemInst2__WeaponAssignment_741672); 
              after(grammarAccess.getItemInst2Access().getWeaponWeaponKeyword_7_0()); 
 
             }
@@ -53583,7 +53587,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19337:1: '#clear'
             {
              before(grammarAccess.getNameInst2Access().getClearClearKeyword_0()); 
-            match(input,176,FOLLOW_176_in_rule__NameInst2__ClearAssignment41853); 
+            match(input,175,FOLLOW_175_in_rule__NameInst2__ClearAssignment41853); 
              after(grammarAccess.getNameInst2Access().getClearClearKeyword_0()); 
 
             }
@@ -54637,7 +54641,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19832:1: '#clear'
             {
              before(grammarAccess.getSiteInst4Access().getClearClearKeyword_0()); 
-            match(input,176,FOLLOW_176_in_rule__SiteInst4__ClearAssignment42823); 
+            match(input,175,FOLLOW_175_in_rule__SiteInst4__ClearAssignment42823); 
              after(grammarAccess.getSiteInst4Access().getClearClearKeyword_0()); 
 
             }
@@ -58883,140 +58887,140 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__MonsterInst2__PoisonresAssignment_27_in_rule__MonsterInst2__Alternatives8236 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MonsterInst2__ShockresAssignment_28_in_rule__MonsterInst2__Alternatives8254 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MonsterInst2__DarkvisionAssignment_29_in_rule__MonsterInst2__Alternatives8272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__StealthyAssignment_30_in_rule__MonsterInst2__Alternatives8290 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__SeduceAssignment_31_in_rule__MonsterInst2__Alternatives8308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__SuccubusAssignment_32_in_rule__MonsterInst2__Alternatives8326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__BeckonAssignment_33_in_rule__MonsterInst2__Alternatives8344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__StartageAssignment_34_in_rule__MonsterInst2__Alternatives8362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__MaxageAssignment_35_in_rule__MonsterInst2__Alternatives8380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__OlderAssignment_36_in_rule__MonsterInst2__Alternatives8398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__HealerAssignment_37_in_rule__MonsterInst2__Alternatives8416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__StartaffAssignment_38_in_rule__MonsterInst2__Alternatives8434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__SupplybonusAssignment_39_in_rule__MonsterInst2__Alternatives8452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__UwdamageAssignment_40_in_rule__MonsterInst2__Alternatives8470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__ColdpowerAssignment_41_in_rule__MonsterInst2__Alternatives8488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__FirepowerAssignment_42_in_rule__MonsterInst2__Alternatives8506 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__StormpowerAssignment_43_in_rule__MonsterInst2__Alternatives8524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__DarkpowerAssignment_44_in_rule__MonsterInst2__Alternatives8542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__SpringpowerAssignment_45_in_rule__MonsterInst2__Alternatives8560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__SummerpowerAssignment_46_in_rule__MonsterInst2__Alternatives8578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__FallpowerAssignment_47_in_rule__MonsterInst2__Alternatives8596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__WinterpowerAssignment_48_in_rule__MonsterInst2__Alternatives8614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__AmbidextrousAssignment_49_in_rule__MonsterInst2__Alternatives8632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__BanefireshieldAssignment_50_in_rule__MonsterInst2__Alternatives8650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__BerserkAssignment_51_in_rule__MonsterInst2__Alternatives8668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__StandardAssignment_52_in_rule__MonsterInst2__Alternatives8686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__AnimalaweAssignment_53_in_rule__MonsterInst2__Alternatives8704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__AweAssignment_54_in_rule__MonsterInst2__Alternatives8722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__FearAssignment_55_in_rule__MonsterInst2__Alternatives8740 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__RegenerationAssignment_56_in_rule__MonsterInst2__Alternatives8758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__ReinvigorationAssignment_57_in_rule__MonsterInst2__Alternatives8776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__FireshieldAssignment_58_in_rule__MonsterInst2__Alternatives8794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__IceprotAssignment_59_in_rule__MonsterInst2__Alternatives8812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__PoisoncloudAssignment_60_in_rule__MonsterInst2__Alternatives8830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__DiseasecloudAssignment_61_in_rule__MonsterInst2__Alternatives8848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__BloodvengeanceAssignment_62_in_rule__MonsterInst2__Alternatives8866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__CastledefAssignment_63_in_rule__MonsterInst2__Alternatives8884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__SiegebonusAssignment_64_in_rule__MonsterInst2__Alternatives8902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__PatrolbonusAssignment_65_in_rule__MonsterInst2__Alternatives8920 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__PillagebonusAssignment_66_in_rule__MonsterInst2__Alternatives8938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__ResearchbonusAssignment_67_in_rule__MonsterInst2__Alternatives8956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__ForgebonusAssignment_68_in_rule__MonsterInst2__Alternatives8974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__DouseAssignment_69_in_rule__MonsterInst2__Alternatives8992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__NobadeventsAssignment_70_in_rule__MonsterInst2__Alternatives9010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__IncunrestAssignment_71_in_rule__MonsterInst2__Alternatives9028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__SpreaddomAssignment_72_in_rule__MonsterInst2__Alternatives9046 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__LeperAssignment_73_in_rule__MonsterInst2__Alternatives9064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__PopkillAssignment_74_in_rule__MonsterInst2__Alternatives9082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__HereticAssignment_75_in_rule__MonsterInst2__Alternatives9100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__ItemslotsAssignment_76_in_rule__MonsterInst2__Alternatives9118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst2__NametypeAssignment_77_in_rule__MonsterInst2__Alternatives9136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst3__MagicskillAssignment_0_in_rule__MonsterInst3__Alternatives9169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst3__CustommagicAssignment_1_in_rule__MonsterInst3__Alternatives9187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst3__MagicboostAssignment_2_in_rule__MonsterInst3__Alternatives9205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst3__GemprodAssignment_3_in_rule__MonsterInst3__Alternatives9223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ClearAssignment_0_in_rule__MonsterInst4__Alternatives9256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ClearmagicAssignment_1_in_rule__MonsterInst4__Alternatives9274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ClearspecAssignment_2_in_rule__MonsterInst4__Alternatives9292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__FemaleAssignment_3_in_rule__MonsterInst4__Alternatives9310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__MountedAssignment_4_in_rule__MonsterInst4__Alternatives9328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__HolyAssignment_5_in_rule__MonsterInst4__Alternatives9346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__AnimalAssignment_6_in_rule__MonsterInst4__Alternatives9364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__UndeadAssignment_7_in_rule__MonsterInst4__Alternatives9382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__DemonAssignment_8_in_rule__MonsterInst4__Alternatives9400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__MagicbeingAssignment_9_in_rule__MonsterInst4__Alternatives9418 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__StonebeingAssignment_10_in_rule__MonsterInst4__Alternatives9436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__InanimateAssignment_11_in_rule__MonsterInst4__Alternatives9454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ColdbloodAssignment_12_in_rule__MonsterInst4__Alternatives9472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ColdbloodAssignment_13_in_rule__MonsterInst4__Alternatives9490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ImmortalAssignment_14_in_rule__MonsterInst4__Alternatives9508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__BlindAssignment_15_in_rule__MonsterInst4__Alternatives9526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__UniqueAssignment_16_in_rule__MonsterInst4__Alternatives9544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ImmobileAssignment_17_in_rule__MonsterInst4__Alternatives9562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__AquaticAssignment_18_in_rule__MonsterInst4__Alternatives9580 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__AmphibianAssignment_19_in_rule__MonsterInst4__Alternatives9598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__PooramphibianAssignment_20_in_rule__MonsterInst4__Alternatives9616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__FlyingAssignment_21_in_rule__MonsterInst4__Alternatives9634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__StormimmuneAssignment_22_in_rule__MonsterInst4__Alternatives9652 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__SailingAssignment_23_in_rule__MonsterInst4__Alternatives9670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ForestsurvivalAssignment_24_in_rule__MonsterInst4__Alternatives9688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__MountainsurvivalAssignment_25_in_rule__MonsterInst4__Alternatives9706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__SwampsurvivalAssignment_26_in_rule__MonsterInst4__Alternatives9724 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__WastesurvivalAssignment_27_in_rule__MonsterInst4__Alternatives9742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__IllusionAssignment_28_in_rule__MonsterInst4__Alternatives9760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__SpyAssignment_29_in_rule__MonsterInst4__Alternatives9778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__AssassinAssignment_30_in_rule__MonsterInst4__Alternatives9796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__HealAssignment_31_in_rule__MonsterInst4__Alternatives9814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__NohealAssignment_32_in_rule__MonsterInst4__Alternatives9832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__NeednoteatAssignment_33_in_rule__MonsterInst4__Alternatives9850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__EtherealAssignment_34_in_rule__MonsterInst4__Alternatives9868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__TrampleAssignment_35_in_rule__MonsterInst4__Alternatives9886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__EntangleAssignment_36_in_rule__MonsterInst4__Alternatives9904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__EyelossAssignment_37_in_rule__MonsterInst4__Alternatives9922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__HorrormarkAssignment_38_in_rule__MonsterInst4__Alternatives9940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__PoisonarmorAssignment_39_in_rule__MonsterInst4__Alternatives9958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__InquisitorAssignment_40_in_rule__MonsterInst4__Alternatives9976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__NoitemAssignment_41_in_rule__MonsterInst4__Alternatives9994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__NoleaderAssignment_42_in_rule__MonsterInst4__Alternatives10012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__PoorleaderAssignment_43_in_rule__MonsterInst4__Alternatives10030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__OkleaderAssignment_44_in_rule__MonsterInst4__Alternatives10048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__GoodleaderAssignment_45_in_rule__MonsterInst4__Alternatives10066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ExpertleaderAssignment_46_in_rule__MonsterInst4__Alternatives10084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__SuperiorleaderAssignment_47_in_rule__MonsterInst4__Alternatives10102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__NomagicleaderAssignment_48_in_rule__MonsterInst4__Alternatives10120 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__PoormagicleaderAssignment_49_in_rule__MonsterInst4__Alternatives10138 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__OkmagicleaderAssignment_50_in_rule__MonsterInst4__Alternatives10156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__GoodmagicleaderAssignment_51_in_rule__MonsterInst4__Alternatives10174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ExpertmagicleaderAssignment_52_in_rule__MonsterInst4__Alternatives10192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__SuperiormagicleaderAssignment_53_in_rule__MonsterInst4__Alternatives10210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__NoundeadleaderAssignment_54_in_rule__MonsterInst4__Alternatives10228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__PoorundeadleaderAssignment_55_in_rule__MonsterInst4__Alternatives10246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__OkundeadleaderAssignment_56_in_rule__MonsterInst4__Alternatives10264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__GoodundeadleaderAssignment_57_in_rule__MonsterInst4__Alternatives10282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__ExpertundeadleaderAssignment_58_in_rule__MonsterInst4__Alternatives10300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst4__SuperiorundeadleaderAssignment_59_in_rule__MonsterInst4__Alternatives10318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__WeaponAssignment_0_in_rule__MonsterInst5__Alternatives10351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__OnebattlespellAssignment_1_in_rule__MonsterInst5__Alternatives10369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__FirstshapeAssignment_2_in_rule__MonsterInst5__Alternatives10387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__SecondshapeAssignment_3_in_rule__MonsterInst5__Alternatives10405 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__SecondtmpshapeAssignment_4_in_rule__MonsterInst5__Alternatives10423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__ShapechangeAssignment_5_in_rule__MonsterInst5__Alternatives10441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__LandshapeAssignment_6_in_rule__MonsterInst5__Alternatives10459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__WatershapeAssignment_7_in_rule__MonsterInst5__Alternatives10477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__ForestshapeAssignment_8_in_rule__MonsterInst5__Alternatives10495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__PlainshapeAssignment_9_in_rule__MonsterInst5__Alternatives10513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__DomsummonAssignment_10_in_rule__MonsterInst5__Alternatives10531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__Domsummon2Assignment_11_in_rule__MonsterInst5__Alternatives10549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__Domsummon20Assignment_12_in_rule__MonsterInst5__Alternatives10567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__Makemonster1Assignment_13_in_rule__MonsterInst5__Alternatives10585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__Makemonster2Assignment_14_in_rule__MonsterInst5__Alternatives10603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__Makemonster3Assignment_15_in_rule__MonsterInst5__Alternatives10621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__Makemonster4Assignment_16_in_rule__MonsterInst5__Alternatives10639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__Makemonster5Assignment_17_in_rule__MonsterInst5__Alternatives10657 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__Summon1Assignment_18_in_rule__MonsterInst5__Alternatives10675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst5__Summon5Assignment_19_in_rule__MonsterInst5__Alternatives10693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst6__HeatAssignment_0_in_rule__MonsterInst6__Alternatives10726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterInst6__ColdAssignment_1_in_rule__MonsterInst6__Alternatives10744 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__SeduceAssignment_30_in_rule__MonsterInst2__Alternatives8290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__SuccubusAssignment_31_in_rule__MonsterInst2__Alternatives8308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__BeckonAssignment_32_in_rule__MonsterInst2__Alternatives8326 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__StartageAssignment_33_in_rule__MonsterInst2__Alternatives8344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__MaxageAssignment_34_in_rule__MonsterInst2__Alternatives8362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__OlderAssignment_35_in_rule__MonsterInst2__Alternatives8380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__HealerAssignment_36_in_rule__MonsterInst2__Alternatives8398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__StartaffAssignment_37_in_rule__MonsterInst2__Alternatives8416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__SupplybonusAssignment_38_in_rule__MonsterInst2__Alternatives8434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__UwdamageAssignment_39_in_rule__MonsterInst2__Alternatives8452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__ColdpowerAssignment_40_in_rule__MonsterInst2__Alternatives8470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__FirepowerAssignment_41_in_rule__MonsterInst2__Alternatives8488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__StormpowerAssignment_42_in_rule__MonsterInst2__Alternatives8506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__DarkpowerAssignment_43_in_rule__MonsterInst2__Alternatives8524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__SpringpowerAssignment_44_in_rule__MonsterInst2__Alternatives8542 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__SummerpowerAssignment_45_in_rule__MonsterInst2__Alternatives8560 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__FallpowerAssignment_46_in_rule__MonsterInst2__Alternatives8578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__WinterpowerAssignment_47_in_rule__MonsterInst2__Alternatives8596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__AmbidextrousAssignment_48_in_rule__MonsterInst2__Alternatives8614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__BanefireshieldAssignment_49_in_rule__MonsterInst2__Alternatives8632 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__BerserkAssignment_50_in_rule__MonsterInst2__Alternatives8650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__StandardAssignment_51_in_rule__MonsterInst2__Alternatives8668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__AnimalaweAssignment_52_in_rule__MonsterInst2__Alternatives8686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__AweAssignment_53_in_rule__MonsterInst2__Alternatives8704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__FearAssignment_54_in_rule__MonsterInst2__Alternatives8722 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__RegenerationAssignment_55_in_rule__MonsterInst2__Alternatives8740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__ReinvigorationAssignment_56_in_rule__MonsterInst2__Alternatives8758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__FireshieldAssignment_57_in_rule__MonsterInst2__Alternatives8776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__IceprotAssignment_58_in_rule__MonsterInst2__Alternatives8794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__PoisoncloudAssignment_59_in_rule__MonsterInst2__Alternatives8812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__DiseasecloudAssignment_60_in_rule__MonsterInst2__Alternatives8830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__BloodvengeanceAssignment_61_in_rule__MonsterInst2__Alternatives8848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__CastledefAssignment_62_in_rule__MonsterInst2__Alternatives8866 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__SiegebonusAssignment_63_in_rule__MonsterInst2__Alternatives8884 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__PatrolbonusAssignment_64_in_rule__MonsterInst2__Alternatives8902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__PillagebonusAssignment_65_in_rule__MonsterInst2__Alternatives8920 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__ResearchbonusAssignment_66_in_rule__MonsterInst2__Alternatives8938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__ForgebonusAssignment_67_in_rule__MonsterInst2__Alternatives8956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__DouseAssignment_68_in_rule__MonsterInst2__Alternatives8974 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__NobadeventsAssignment_69_in_rule__MonsterInst2__Alternatives8992 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__IncunrestAssignment_70_in_rule__MonsterInst2__Alternatives9010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__SpreaddomAssignment_71_in_rule__MonsterInst2__Alternatives9028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__LeperAssignment_72_in_rule__MonsterInst2__Alternatives9046 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__PopkillAssignment_73_in_rule__MonsterInst2__Alternatives9064 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__HereticAssignment_74_in_rule__MonsterInst2__Alternatives9082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__ItemslotsAssignment_75_in_rule__MonsterInst2__Alternatives9100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst2__NametypeAssignment_76_in_rule__MonsterInst2__Alternatives9118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst3__MagicskillAssignment_0_in_rule__MonsterInst3__Alternatives9151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst3__CustommagicAssignment_1_in_rule__MonsterInst3__Alternatives9169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst3__MagicboostAssignment_2_in_rule__MonsterInst3__Alternatives9187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst3__GemprodAssignment_3_in_rule__MonsterInst3__Alternatives9205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ClearAssignment_0_in_rule__MonsterInst4__Alternatives9238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ClearmagicAssignment_1_in_rule__MonsterInst4__Alternatives9256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ClearspecAssignment_2_in_rule__MonsterInst4__Alternatives9274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__FemaleAssignment_3_in_rule__MonsterInst4__Alternatives9292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__MountedAssignment_4_in_rule__MonsterInst4__Alternatives9310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__HolyAssignment_5_in_rule__MonsterInst4__Alternatives9328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__AnimalAssignment_6_in_rule__MonsterInst4__Alternatives9346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__UndeadAssignment_7_in_rule__MonsterInst4__Alternatives9364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__DemonAssignment_8_in_rule__MonsterInst4__Alternatives9382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__MagicbeingAssignment_9_in_rule__MonsterInst4__Alternatives9400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__StonebeingAssignment_10_in_rule__MonsterInst4__Alternatives9418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__InanimateAssignment_11_in_rule__MonsterInst4__Alternatives9436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ColdbloodAssignment_12_in_rule__MonsterInst4__Alternatives9454 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ColdbloodAssignment_13_in_rule__MonsterInst4__Alternatives9472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ImmortalAssignment_14_in_rule__MonsterInst4__Alternatives9490 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__BlindAssignment_15_in_rule__MonsterInst4__Alternatives9508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__UniqueAssignment_16_in_rule__MonsterInst4__Alternatives9526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ImmobileAssignment_17_in_rule__MonsterInst4__Alternatives9544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__AquaticAssignment_18_in_rule__MonsterInst4__Alternatives9562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__AmphibianAssignment_19_in_rule__MonsterInst4__Alternatives9580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__PooramphibianAssignment_20_in_rule__MonsterInst4__Alternatives9598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__FlyingAssignment_21_in_rule__MonsterInst4__Alternatives9616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__StormimmuneAssignment_22_in_rule__MonsterInst4__Alternatives9634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__SailingAssignment_23_in_rule__MonsterInst4__Alternatives9652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ForestsurvivalAssignment_24_in_rule__MonsterInst4__Alternatives9670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__MountainsurvivalAssignment_25_in_rule__MonsterInst4__Alternatives9688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__SwampsurvivalAssignment_26_in_rule__MonsterInst4__Alternatives9706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__WastesurvivalAssignment_27_in_rule__MonsterInst4__Alternatives9724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__IllusionAssignment_28_in_rule__MonsterInst4__Alternatives9742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__SpyAssignment_29_in_rule__MonsterInst4__Alternatives9760 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__AssassinAssignment_30_in_rule__MonsterInst4__Alternatives9778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__HealAssignment_31_in_rule__MonsterInst4__Alternatives9796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__NohealAssignment_32_in_rule__MonsterInst4__Alternatives9814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__NeednoteatAssignment_33_in_rule__MonsterInst4__Alternatives9832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__EtherealAssignment_34_in_rule__MonsterInst4__Alternatives9850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__TrampleAssignment_35_in_rule__MonsterInst4__Alternatives9868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__EntangleAssignment_36_in_rule__MonsterInst4__Alternatives9886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__EyelossAssignment_37_in_rule__MonsterInst4__Alternatives9904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__HorrormarkAssignment_38_in_rule__MonsterInst4__Alternatives9922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__PoisonarmorAssignment_39_in_rule__MonsterInst4__Alternatives9940 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__InquisitorAssignment_40_in_rule__MonsterInst4__Alternatives9958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__NoitemAssignment_41_in_rule__MonsterInst4__Alternatives9976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__NoleaderAssignment_42_in_rule__MonsterInst4__Alternatives9994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__PoorleaderAssignment_43_in_rule__MonsterInst4__Alternatives10012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__OkleaderAssignment_44_in_rule__MonsterInst4__Alternatives10030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__GoodleaderAssignment_45_in_rule__MonsterInst4__Alternatives10048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ExpertleaderAssignment_46_in_rule__MonsterInst4__Alternatives10066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__SuperiorleaderAssignment_47_in_rule__MonsterInst4__Alternatives10084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__NomagicleaderAssignment_48_in_rule__MonsterInst4__Alternatives10102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__PoormagicleaderAssignment_49_in_rule__MonsterInst4__Alternatives10120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__OkmagicleaderAssignment_50_in_rule__MonsterInst4__Alternatives10138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__GoodmagicleaderAssignment_51_in_rule__MonsterInst4__Alternatives10156 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ExpertmagicleaderAssignment_52_in_rule__MonsterInst4__Alternatives10174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__SuperiormagicleaderAssignment_53_in_rule__MonsterInst4__Alternatives10192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__NoundeadleaderAssignment_54_in_rule__MonsterInst4__Alternatives10210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__PoorundeadleaderAssignment_55_in_rule__MonsterInst4__Alternatives10228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__OkundeadleaderAssignment_56_in_rule__MonsterInst4__Alternatives10246 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__GoodundeadleaderAssignment_57_in_rule__MonsterInst4__Alternatives10264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__ExpertundeadleaderAssignment_58_in_rule__MonsterInst4__Alternatives10282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst4__SuperiorundeadleaderAssignment_59_in_rule__MonsterInst4__Alternatives10300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__WeaponAssignment_0_in_rule__MonsterInst5__Alternatives10333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__OnebattlespellAssignment_1_in_rule__MonsterInst5__Alternatives10351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__FirstshapeAssignment_2_in_rule__MonsterInst5__Alternatives10369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__SecondshapeAssignment_3_in_rule__MonsterInst5__Alternatives10387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__SecondtmpshapeAssignment_4_in_rule__MonsterInst5__Alternatives10405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__ShapechangeAssignment_5_in_rule__MonsterInst5__Alternatives10423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__LandshapeAssignment_6_in_rule__MonsterInst5__Alternatives10441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__WatershapeAssignment_7_in_rule__MonsterInst5__Alternatives10459 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__ForestshapeAssignment_8_in_rule__MonsterInst5__Alternatives10477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__PlainshapeAssignment_9_in_rule__MonsterInst5__Alternatives10495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__DomsummonAssignment_10_in_rule__MonsterInst5__Alternatives10513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__Domsummon2Assignment_11_in_rule__MonsterInst5__Alternatives10531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__Domsummon20Assignment_12_in_rule__MonsterInst5__Alternatives10549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__Makemonster1Assignment_13_in_rule__MonsterInst5__Alternatives10567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__Makemonster2Assignment_14_in_rule__MonsterInst5__Alternatives10585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__Makemonster3Assignment_15_in_rule__MonsterInst5__Alternatives10603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__Makemonster4Assignment_16_in_rule__MonsterInst5__Alternatives10621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__Makemonster5Assignment_17_in_rule__MonsterInst5__Alternatives10639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__Summon1Assignment_18_in_rule__MonsterInst5__Alternatives10657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst5__Summon5Assignment_19_in_rule__MonsterInst5__Alternatives10675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst6__StealthyAssignment_0_in_rule__MonsterInst6__Alternatives10708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst6__HeatAssignment_1_in_rule__MonsterInst6__Alternatives10726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterInst6__ColdAssignment_2_in_rule__MonsterInst6__Alternatives10744 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectSpellById_in_rule__Spell__Alternatives10777 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectSpellByName_in_rule__Spell__Alternatives10794 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNewSpell_in_rule__Spell__Alternatives10811 = new BitSet(new long[]{0x0000000000000002L});
@@ -59456,31 +59460,31 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__SelectSpellById__Group__0__Impl_in_rule__SelectSpellById__Group__020563 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__SelectSpellById__Group__1_in_rule__SelectSpellById__Group__020566 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_40_in_rule__SelectSpellById__Group__0__Impl20594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__Group__1__Impl_in_rule__SelectSpellById__Group__120625 = new BitSet(new long[]{0x6802000400000000L,0x0000000200000002L,0x0001000000000000L,0x0000000000000000L,0x0000000000007FFEL});
+    public static final BitSet FOLLOW_rule__SelectSpellById__Group__1__Impl_in_rule__SelectSpellById__Group__120625 = new BitSet(new long[]{0x6802000400000000L,0x0000000200000002L,0x0000800000000000L,0x0000000000000000L,0x0000000000007FFEL});
     public static final BitSet FOLLOW_rule__SelectSpellById__Group__2_in_rule__SelectSpellById__Group__120628 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectSpellById__ValueAssignment_1_in_rule__SelectSpellById__Group__1__Impl20655 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectSpellById__Group__2__Impl_in_rule__SelectSpellById__Group__220685 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__SelectSpellById__Group__3_in_rule__SelectSpellById__Group__220688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__ModsAssignment_2_in_rule__SelectSpellById__Group__2__Impl20715 = new BitSet(new long[]{0x6802000000000002L,0x0000000200000002L,0x0001000000000000L,0x0000000000000000L,0x0000000000007FFEL});
+    public static final BitSet FOLLOW_rule__SelectSpellById__ModsAssignment_2_in_rule__SelectSpellById__Group__2__Impl20715 = new BitSet(new long[]{0x6802000000000002L,0x0000000200000002L,0x0000800000000000L,0x0000000000000000L,0x0000000000007FFEL});
     public static final BitSet FOLLOW_rule__SelectSpellById__Group__3__Impl_in_rule__SelectSpellById__Group__320746 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__SelectSpellById__Group__3__Impl20774 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectSpellByName__Group__0__Impl_in_rule__SelectSpellByName__Group__020813 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__SelectSpellByName__Group__1_in_rule__SelectSpellByName__Group__020816 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_40_in_rule__SelectSpellByName__Group__0__Impl20844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__1__Impl_in_rule__SelectSpellByName__Group__120875 = new BitSet(new long[]{0x6802000400000000L,0x0000000200000002L,0x0001000000000000L,0x0000000000000000L,0x0000000000007FFEL});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__1__Impl_in_rule__SelectSpellByName__Group__120875 = new BitSet(new long[]{0x6802000400000000L,0x0000000200000002L,0x0000800000000000L,0x0000000000000000L,0x0000000000007FFEL});
     public static final BitSet FOLLOW_rule__SelectSpellByName__Group__2_in_rule__SelectSpellByName__Group__120878 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectSpellByName__ValueAssignment_1_in_rule__SelectSpellByName__Group__1__Impl20905 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectSpellByName__Group__2__Impl_in_rule__SelectSpellByName__Group__220935 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__SelectSpellByName__Group__3_in_rule__SelectSpellByName__Group__220938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__ModsAssignment_2_in_rule__SelectSpellByName__Group__2__Impl20965 = new BitSet(new long[]{0x6802000000000002L,0x0000000200000002L,0x0001000000000000L,0x0000000000000000L,0x0000000000007FFEL});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__ModsAssignment_2_in_rule__SelectSpellByName__Group__2__Impl20965 = new BitSet(new long[]{0x6802000000000002L,0x0000000200000002L,0x0000800000000000L,0x0000000000000000L,0x0000000000007FFEL});
     public static final BitSet FOLLOW_rule__SelectSpellByName__Group__3__Impl_in_rule__SelectSpellByName__Group__320996 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__SelectSpellByName__Group__3__Impl21024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSpell__Group__0__Impl_in_rule__NewSpell__Group__021063 = new BitSet(new long[]{0x6802000400000000L,0x0000000200000002L,0x0001000000000000L,0x0000000000000000L,0x0000000000007FFEL});
+    public static final BitSet FOLLOW_rule__NewSpell__Group__0__Impl_in_rule__NewSpell__Group__021063 = new BitSet(new long[]{0x6802000400000000L,0x0000000200000002L,0x0000800000000000L,0x0000000000000000L,0x0000000000007FFEL});
     public static final BitSet FOLLOW_rule__NewSpell__Group__1_in_rule__NewSpell__Group__021066 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_41_in_rule__NewSpell__Group__0__Impl21094 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NewSpell__Group__1__Impl_in_rule__NewSpell__Group__121125 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__NewSpell__Group__2_in_rule__NewSpell__Group__121128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSpell__ModsAssignment_1_in_rule__NewSpell__Group__1__Impl21155 = new BitSet(new long[]{0x6802000000000002L,0x0000000200000002L,0x0001000000000000L,0x0000000000000000L,0x0000000000007FFEL});
+    public static final BitSet FOLLOW_rule__NewSpell__ModsAssignment_1_in_rule__NewSpell__Group__1__Impl21155 = new BitSet(new long[]{0x6802000000000002L,0x0000000200000002L,0x0000800000000000L,0x0000000000000000L,0x0000000000007FFEL});
     public static final BitSet FOLLOW_rule__NewSpell__Group__2__Impl_in_rule__NewSpell__Group__221186 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__NewSpell__Group__2__Impl21214 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SpellPattern1__Group__0__Impl_in_rule__SpellPattern1__Group__021251 = new BitSet(new long[]{0x0000000000000020L});
@@ -59509,31 +59513,31 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__SelectItemById__Group__0__Impl_in_rule__SelectItemById__Group__021793 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__SelectItemById__Group__1_in_rule__SelectItemById__Group__021796 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_42_in_rule__SelectItemById__Group__0__Impl21824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemById__Group__1__Impl_in_rule__SelectItemById__Group__121855 = new BitSet(new long[]{0x0006000400000000L,0x0004000600000000L,0x0000000000000000L,0x0000100000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_rule__SelectItemById__Group__1__Impl_in_rule__SelectItemById__Group__121855 = new BitSet(new long[]{0x0006000400000000L,0x0004000600000000L,0x0000000000000000L,0x0000080000000000L,0x00000000000F8000L});
     public static final BitSet FOLLOW_rule__SelectItemById__Group__2_in_rule__SelectItemById__Group__121858 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectItemById__ValueAssignment_1_in_rule__SelectItemById__Group__1__Impl21885 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectItemById__Group__2__Impl_in_rule__SelectItemById__Group__221915 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__SelectItemById__Group__3_in_rule__SelectItemById__Group__221918 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemById__ModsAssignment_2_in_rule__SelectItemById__Group__2__Impl21945 = new BitSet(new long[]{0x0006000000000002L,0x0004000600000000L,0x0000000000000000L,0x0000100000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_rule__SelectItemById__ModsAssignment_2_in_rule__SelectItemById__Group__2__Impl21945 = new BitSet(new long[]{0x0006000000000002L,0x0004000600000000L,0x0000000000000000L,0x0000080000000000L,0x00000000000F8000L});
     public static final BitSet FOLLOW_rule__SelectItemById__Group__3__Impl_in_rule__SelectItemById__Group__321976 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__SelectItemById__Group__3__Impl22004 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectItemByName__Group__0__Impl_in_rule__SelectItemByName__Group__022043 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__SelectItemByName__Group__1_in_rule__SelectItemByName__Group__022046 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_42_in_rule__SelectItemByName__Group__0__Impl22074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__Group__1__Impl_in_rule__SelectItemByName__Group__122105 = new BitSet(new long[]{0x0006000400000000L,0x0004000600000000L,0x0000000000000000L,0x0000100000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__Group__1__Impl_in_rule__SelectItemByName__Group__122105 = new BitSet(new long[]{0x0006000400000000L,0x0004000600000000L,0x0000000000000000L,0x0000080000000000L,0x00000000000F8000L});
     public static final BitSet FOLLOW_rule__SelectItemByName__Group__2_in_rule__SelectItemByName__Group__122108 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectItemByName__ValueAssignment_1_in_rule__SelectItemByName__Group__1__Impl22135 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectItemByName__Group__2__Impl_in_rule__SelectItemByName__Group__222165 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__SelectItemByName__Group__3_in_rule__SelectItemByName__Group__222168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__ModsAssignment_2_in_rule__SelectItemByName__Group__2__Impl22195 = new BitSet(new long[]{0x0006000000000002L,0x0004000600000000L,0x0000000000000000L,0x0000100000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__ModsAssignment_2_in_rule__SelectItemByName__Group__2__Impl22195 = new BitSet(new long[]{0x0006000000000002L,0x0004000600000000L,0x0000000000000000L,0x0000080000000000L,0x00000000000F8000L});
     public static final BitSet FOLLOW_rule__SelectItemByName__Group__3__Impl_in_rule__SelectItemByName__Group__322226 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__SelectItemByName__Group__3__Impl22254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewItem__Group__0__Impl_in_rule__NewItem__Group__022293 = new BitSet(new long[]{0x0006000400000000L,0x0004000600000000L,0x0000000000000000L,0x0000100000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_rule__NewItem__Group__0__Impl_in_rule__NewItem__Group__022293 = new BitSet(new long[]{0x0006000400000000L,0x0004000600000000L,0x0000000000000000L,0x0000080000000000L,0x00000000000F8000L});
     public static final BitSet FOLLOW_rule__NewItem__Group__1_in_rule__NewItem__Group__022296 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_43_in_rule__NewItem__Group__0__Impl22324 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NewItem__Group__1__Impl_in_rule__NewItem__Group__122355 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__NewItem__Group__2_in_rule__NewItem__Group__122358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewItem__ModsAssignment_1_in_rule__NewItem__Group__1__Impl22385 = new BitSet(new long[]{0x0006000000000002L,0x0004000600000000L,0x0000000000000000L,0x0000100000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_rule__NewItem__ModsAssignment_1_in_rule__NewItem__Group__1__Impl22385 = new BitSet(new long[]{0x0006000000000002L,0x0004000600000000L,0x0000000000000000L,0x0000080000000000L,0x00000000000F8000L});
     public static final BitSet FOLLOW_rule__NewItem__Group__2__Impl_in_rule__NewItem__Group__222416 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__NewItem__Group__2__Impl22444 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ItemPattern1__Group__0__Impl_in_rule__ItemPattern1__Group__022481 = new BitSet(new long[]{0x0000000000000020L});
@@ -59549,12 +59553,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__SelectName__Group__0__Impl_in_rule__SelectName__Group__022721 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__SelectName__Group__1_in_rule__SelectName__Group__022724 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_44_in_rule__SelectName__Group__0__Impl22752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectName__Group__1__Impl_in_rule__SelectName__Group__122783 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000000L,0x0001000000000000L,0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__SelectName__Group__1__Impl_in_rule__SelectName__Group__122783 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000000L,0x0000800000000000L,0x0000000000000000L,0x0000000000100000L});
     public static final BitSet FOLLOW_rule__SelectName__Group__2_in_rule__SelectName__Group__122786 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectName__ValueAssignment_1_in_rule__SelectName__Group__1__Impl22813 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectName__Group__2__Impl_in_rule__SelectName__Group__222843 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__SelectName__Group__3_in_rule__SelectName__Group__222846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectName__ModsAssignment_2_in_rule__SelectName__Group__2__Impl22873 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0001000000000000L,0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__SelectName__ModsAssignment_2_in_rule__SelectName__Group__2__Impl22873 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000800000000000L,0x0000000000000000L,0x0000000000100000L});
     public static final BitSet FOLLOW_rule__SelectName__Group__3__Impl_in_rule__SelectName__Group__322904 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__SelectName__Group__3__Impl22932 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NamePattern1__Group__0__Impl_in_rule__NamePattern1__Group__022971 = new BitSet(new long[]{0x0000000000000020L});
@@ -59565,34 +59569,34 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__SelectSiteById__Group__0__Impl_in_rule__SelectSiteById__Group__023091 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__SelectSiteById__Group__1_in_rule__SelectSiteById__Group__023094 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_45_in_rule__SelectSiteById__Group__0__Impl23122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__Group__1__Impl_in_rule__SelectSiteById__Group__123153 = new BitSet(new long[]{0x0002000400000000L,0x0000000000000000L,0x0001000000000000L,0x0000000000000000L,0x00000001FFE00800L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__Group__1__Impl_in_rule__SelectSiteById__Group__123153 = new BitSet(new long[]{0x0002000400000000L,0x0000000000000000L,0x0000800000000000L,0x0000000000000000L,0x00000001FFE00800L});
     public static final BitSet FOLLOW_rule__SelectSiteById__Group__2_in_rule__SelectSiteById__Group__123156 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectSiteById__ValueAssignment_1_in_rule__SelectSiteById__Group__1__Impl23183 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectSiteById__Group__2__Impl_in_rule__SelectSiteById__Group__223213 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__SelectSiteById__Group__3_in_rule__SelectSiteById__Group__223216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__ModsAssignment_2_in_rule__SelectSiteById__Group__2__Impl23243 = new BitSet(new long[]{0x0002000000000002L,0x0000000000000000L,0x0001000000000000L,0x0000000000000000L,0x00000001FFE00800L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__ModsAssignment_2_in_rule__SelectSiteById__Group__2__Impl23243 = new BitSet(new long[]{0x0002000000000002L,0x0000000000000000L,0x0000800000000000L,0x0000000000000000L,0x00000001FFE00800L});
     public static final BitSet FOLLOW_rule__SelectSiteById__Group__3__Impl_in_rule__SelectSiteById__Group__323274 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__SelectSiteById__Group__3__Impl23302 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectSiteByName__Group__0__Impl_in_rule__SelectSiteByName__Group__023341 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__SelectSiteByName__Group__1_in_rule__SelectSiteByName__Group__023344 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_45_in_rule__SelectSiteByName__Group__0__Impl23372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__1__Impl_in_rule__SelectSiteByName__Group__123403 = new BitSet(new long[]{0x0002000400000000L,0x0000000000000000L,0x0001000000000000L,0x0000000000000000L,0x00000001FFE00800L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__1__Impl_in_rule__SelectSiteByName__Group__123403 = new BitSet(new long[]{0x0002000400000000L,0x0000000000000000L,0x0000800000000000L,0x0000000000000000L,0x00000001FFE00800L});
     public static final BitSet FOLLOW_rule__SelectSiteByName__Group__2_in_rule__SelectSiteByName__Group__123406 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectSiteByName__ValueAssignment_1_in_rule__SelectSiteByName__Group__1__Impl23433 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelectSiteByName__Group__2__Impl_in_rule__SelectSiteByName__Group__223463 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__SelectSiteByName__Group__3_in_rule__SelectSiteByName__Group__223466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__ModsAssignment_2_in_rule__SelectSiteByName__Group__2__Impl23493 = new BitSet(new long[]{0x0002000000000002L,0x0000000000000000L,0x0001000000000000L,0x0000000000000000L,0x00000001FFE00800L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__ModsAssignment_2_in_rule__SelectSiteByName__Group__2__Impl23493 = new BitSet(new long[]{0x0002000000000002L,0x0000000000000000L,0x0000800000000000L,0x0000000000000000L,0x00000001FFE00800L});
     public static final BitSet FOLLOW_rule__SelectSiteByName__Group__3__Impl_in_rule__SelectSiteByName__Group__323524 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__SelectSiteByName__Group__3__Impl23552 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NewSite__Group__0__Impl_in_rule__NewSite__Group__023591 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__NewSite__Group__1_in_rule__NewSite__Group__023594 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_46_in_rule__NewSite__Group__0__Impl23622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSite__Group__1__Impl_in_rule__NewSite__Group__123653 = new BitSet(new long[]{0x0002000400000000L,0x0000000000000000L,0x0001000000000000L,0x0000000000000000L,0x00000001FFE00800L});
+    public static final BitSet FOLLOW_rule__NewSite__Group__1__Impl_in_rule__NewSite__Group__123653 = new BitSet(new long[]{0x0002000400000000L,0x0000000000000000L,0x0000800000000000L,0x0000000000000000L,0x00000001FFE00800L});
     public static final BitSet FOLLOW_rule__NewSite__Group__2_in_rule__NewSite__Group__123656 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NewSite__ValueAssignment_1_in_rule__NewSite__Group__1__Impl23683 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NewSite__Group__2__Impl_in_rule__NewSite__Group__223713 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__NewSite__Group__3_in_rule__NewSite__Group__223716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSite__ModsAssignment_2_in_rule__NewSite__Group__2__Impl23743 = new BitSet(new long[]{0x0002000000000002L,0x0000000000000000L,0x0001000000000000L,0x0000000000000000L,0x00000001FFE00800L});
+    public static final BitSet FOLLOW_rule__NewSite__ModsAssignment_2_in_rule__NewSite__Group__2__Impl23743 = new BitSet(new long[]{0x0002000000000002L,0x0000000000000000L,0x0000800000000000L,0x0000000000000000L,0x00000001FFE00800L});
     public static final BitSet FOLLOW_rule__NewSite__Group__3__Impl_in_rule__NewSite__Group__323774 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__NewSite__Group__3__Impl23802 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SitePattern1__Group__0__Impl_in_rule__SitePattern1__Group__023841 = new BitSet(new long[]{0x0000000000000020L});
@@ -59876,140 +59880,140 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_121_in_rule__MonsterInst2__PoisonresAssignment_2733722 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_122_in_rule__MonsterInst2__ShockresAssignment_2833766 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_123_in_rule__MonsterInst2__DarkvisionAssignment_2933810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_124_in_rule__MonsterInst2__StealthyAssignment_3033854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_125_in_rule__MonsterInst2__SeduceAssignment_3133898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_126_in_rule__MonsterInst2__SuccubusAssignment_3233942 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_127_in_rule__MonsterInst2__BeckonAssignment_3333986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_128_in_rule__MonsterInst2__StartageAssignment_3434030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_129_in_rule__MonsterInst2__MaxageAssignment_3534074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_130_in_rule__MonsterInst2__OlderAssignment_3634118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_131_in_rule__MonsterInst2__HealerAssignment_3734162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_132_in_rule__MonsterInst2__StartaffAssignment_3834206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_133_in_rule__MonsterInst2__SupplybonusAssignment_3934250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_134_in_rule__MonsterInst2__UwdamageAssignment_4034294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_135_in_rule__MonsterInst2__ColdpowerAssignment_4134338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_136_in_rule__MonsterInst2__FirepowerAssignment_4234382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_137_in_rule__MonsterInst2__StormpowerAssignment_4334426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_138_in_rule__MonsterInst2__DarkpowerAssignment_4434470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_139_in_rule__MonsterInst2__SpringpowerAssignment_4534514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_140_in_rule__MonsterInst2__SummerpowerAssignment_4634558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_141_in_rule__MonsterInst2__FallpowerAssignment_4734602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_142_in_rule__MonsterInst2__WinterpowerAssignment_4834646 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_143_in_rule__MonsterInst2__AmbidextrousAssignment_4934690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_144_in_rule__MonsterInst2__BanefireshieldAssignment_5034734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_145_in_rule__MonsterInst2__BerserkAssignment_5134778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_146_in_rule__MonsterInst2__StandardAssignment_5234822 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_147_in_rule__MonsterInst2__AnimalaweAssignment_5334866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_148_in_rule__MonsterInst2__AweAssignment_5434910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_149_in_rule__MonsterInst2__FearAssignment_5534954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_150_in_rule__MonsterInst2__RegenerationAssignment_5634998 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_151_in_rule__MonsterInst2__ReinvigorationAssignment_5735042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_152_in_rule__MonsterInst2__FireshieldAssignment_5835086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_153_in_rule__MonsterInst2__IceprotAssignment_5935130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_154_in_rule__MonsterInst2__PoisoncloudAssignment_6035174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_155_in_rule__MonsterInst2__DiseasecloudAssignment_6135218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_156_in_rule__MonsterInst2__BloodvengeanceAssignment_6235262 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_157_in_rule__MonsterInst2__CastledefAssignment_6335306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_158_in_rule__MonsterInst2__SiegebonusAssignment_6435350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__MonsterInst2__PatrolbonusAssignment_6535394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__MonsterInst2__PillagebonusAssignment_6635438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__MonsterInst2__ResearchbonusAssignment_6735482 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_162_in_rule__MonsterInst2__ForgebonusAssignment_6835526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_163_in_rule__MonsterInst2__DouseAssignment_6935570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_164_in_rule__MonsterInst2__NobadeventsAssignment_7035614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_165_in_rule__MonsterInst2__IncunrestAssignment_7135658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_rule__MonsterInst2__SpreaddomAssignment_7235702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_rule__MonsterInst2__LeperAssignment_7335746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_168_in_rule__MonsterInst2__PopkillAssignment_7435790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_169_in_rule__MonsterInst2__HereticAssignment_7535834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_170_in_rule__MonsterInst2__ItemslotsAssignment_7635878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_171_in_rule__MonsterInst2__NametypeAssignment_7735922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_172_in_rule__MonsterInst3__MagicskillAssignment_035966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_173_in_rule__MonsterInst3__CustommagicAssignment_136010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_174_in_rule__MonsterInst3__MagicboostAssignment_236054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_175_in_rule__MonsterInst3__GemprodAssignment_336098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_176_in_rule__MonsterInst4__ClearAssignment_036142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_177_in_rule__MonsterInst4__ClearmagicAssignment_136186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_178_in_rule__MonsterInst4__ClearspecAssignment_236230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_179_in_rule__MonsterInst4__FemaleAssignment_336274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_180_in_rule__MonsterInst4__MountedAssignment_436318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_181_in_rule__MonsterInst4__HolyAssignment_536362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_182_in_rule__MonsterInst4__AnimalAssignment_636406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_183_in_rule__MonsterInst4__UndeadAssignment_736450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_184_in_rule__MonsterInst4__DemonAssignment_836494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_185_in_rule__MonsterInst4__MagicbeingAssignment_936538 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_186_in_rule__MonsterInst4__StonebeingAssignment_1036582 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_187_in_rule__MonsterInst4__InanimateAssignment_1136626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_188_in_rule__MonsterInst4__ColdbloodAssignment_1236670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_189_in_rule__MonsterInst4__ColdbloodAssignment_1336714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_190_in_rule__MonsterInst4__ImmortalAssignment_1436758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_191_in_rule__MonsterInst4__BlindAssignment_1536802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_192_in_rule__MonsterInst4__UniqueAssignment_1636846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_193_in_rule__MonsterInst4__ImmobileAssignment_1736890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_194_in_rule__MonsterInst4__AquaticAssignment_1836934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_195_in_rule__MonsterInst4__AmphibianAssignment_1936978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_196_in_rule__MonsterInst4__PooramphibianAssignment_2037022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_197_in_rule__MonsterInst4__FlyingAssignment_2137066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_198_in_rule__MonsterInst4__StormimmuneAssignment_2237110 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_199_in_rule__MonsterInst4__SailingAssignment_2337154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_200_in_rule__MonsterInst4__ForestsurvivalAssignment_2437198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_201_in_rule__MonsterInst4__MountainsurvivalAssignment_2537242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_202_in_rule__MonsterInst4__SwampsurvivalAssignment_2637286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_203_in_rule__MonsterInst4__WastesurvivalAssignment_2737330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_204_in_rule__MonsterInst4__IllusionAssignment_2837374 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_205_in_rule__MonsterInst4__SpyAssignment_2937418 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_206_in_rule__MonsterInst4__AssassinAssignment_3037462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_207_in_rule__MonsterInst4__HealAssignment_3137506 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_208_in_rule__MonsterInst4__NohealAssignment_3237550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_209_in_rule__MonsterInst4__NeednoteatAssignment_3337594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_210_in_rule__MonsterInst4__EtherealAssignment_3437638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_211_in_rule__MonsterInst4__TrampleAssignment_3537682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_212_in_rule__MonsterInst4__EntangleAssignment_3637726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_213_in_rule__MonsterInst4__EyelossAssignment_3737770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_214_in_rule__MonsterInst4__HorrormarkAssignment_3837814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_215_in_rule__MonsterInst4__PoisonarmorAssignment_3937858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_216_in_rule__MonsterInst4__InquisitorAssignment_4037902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_217_in_rule__MonsterInst4__NoitemAssignment_4137946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_218_in_rule__MonsterInst4__NoleaderAssignment_4237990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_219_in_rule__MonsterInst4__PoorleaderAssignment_4338034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_220_in_rule__MonsterInst4__OkleaderAssignment_4438078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_221_in_rule__MonsterInst4__GoodleaderAssignment_4538122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_222_in_rule__MonsterInst4__ExpertleaderAssignment_4638166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_223_in_rule__MonsterInst4__SuperiorleaderAssignment_4738210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_224_in_rule__MonsterInst4__NomagicleaderAssignment_4838254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_225_in_rule__MonsterInst4__PoormagicleaderAssignment_4938298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_226_in_rule__MonsterInst4__OkmagicleaderAssignment_5038342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_227_in_rule__MonsterInst4__GoodmagicleaderAssignment_5138386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_228_in_rule__MonsterInst4__ExpertmagicleaderAssignment_5238430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_229_in_rule__MonsterInst4__SuperiormagicleaderAssignment_5338474 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_230_in_rule__MonsterInst4__NoundeadleaderAssignment_5438518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_231_in_rule__MonsterInst4__PoorundeadleaderAssignment_5538562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_232_in_rule__MonsterInst4__OkundeadleaderAssignment_5638606 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_233_in_rule__MonsterInst4__GoodundeadleaderAssignment_5738650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_234_in_rule__MonsterInst4__ExpertundeadleaderAssignment_5838694 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_235_in_rule__MonsterInst4__SuperiorundeadleaderAssignment_5938738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_236_in_rule__MonsterInst5__WeaponAssignment_038782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_237_in_rule__MonsterInst5__OnebattlespellAssignment_138826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_238_in_rule__MonsterInst5__FirstshapeAssignment_238870 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_239_in_rule__MonsterInst5__SecondshapeAssignment_338914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_240_in_rule__MonsterInst5__SecondtmpshapeAssignment_438958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_241_in_rule__MonsterInst5__ShapechangeAssignment_539002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_242_in_rule__MonsterInst5__LandshapeAssignment_639046 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_243_in_rule__MonsterInst5__WatershapeAssignment_739090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_244_in_rule__MonsterInst5__ForestshapeAssignment_839134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_245_in_rule__MonsterInst5__PlainshapeAssignment_939178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_246_in_rule__MonsterInst5__DomsummonAssignment_1039222 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_247_in_rule__MonsterInst5__Domsummon2Assignment_1139266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_248_in_rule__MonsterInst5__Domsummon20Assignment_1239310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_249_in_rule__MonsterInst5__Makemonster1Assignment_1339354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_250_in_rule__MonsterInst5__Makemonster2Assignment_1439398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_251_in_rule__MonsterInst5__Makemonster3Assignment_1539442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_252_in_rule__MonsterInst5__Makemonster4Assignment_1639486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_253_in_rule__MonsterInst5__Makemonster5Assignment_1739530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_254_in_rule__MonsterInst5__Summon1Assignment_1839574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_255_in_rule__MonsterInst5__Summon5Assignment_1939618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_256_in_rule__MonsterInst6__HeatAssignment_039662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_rule__MonsterInst6__ColdAssignment_139706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_rule__MonsterInst2__SeduceAssignment_3033854 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_125_in_rule__MonsterInst2__SuccubusAssignment_3133898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_rule__MonsterInst2__BeckonAssignment_3233942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_rule__MonsterInst2__StartageAssignment_3333986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_128_in_rule__MonsterInst2__MaxageAssignment_3434030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_129_in_rule__MonsterInst2__OlderAssignment_3534074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_130_in_rule__MonsterInst2__HealerAssignment_3634118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_131_in_rule__MonsterInst2__StartaffAssignment_3734162 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_132_in_rule__MonsterInst2__SupplybonusAssignment_3834206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_133_in_rule__MonsterInst2__UwdamageAssignment_3934250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_134_in_rule__MonsterInst2__ColdpowerAssignment_4034294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_135_in_rule__MonsterInst2__FirepowerAssignment_4134338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_136_in_rule__MonsterInst2__StormpowerAssignment_4234382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_137_in_rule__MonsterInst2__DarkpowerAssignment_4334426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_138_in_rule__MonsterInst2__SpringpowerAssignment_4434470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_139_in_rule__MonsterInst2__SummerpowerAssignment_4534514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_140_in_rule__MonsterInst2__FallpowerAssignment_4634558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_141_in_rule__MonsterInst2__WinterpowerAssignment_4734602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_142_in_rule__MonsterInst2__AmbidextrousAssignment_4834646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_143_in_rule__MonsterInst2__BanefireshieldAssignment_4934690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_144_in_rule__MonsterInst2__BerserkAssignment_5034734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_145_in_rule__MonsterInst2__StandardAssignment_5134778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_146_in_rule__MonsterInst2__AnimalaweAssignment_5234822 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_147_in_rule__MonsterInst2__AweAssignment_5334866 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_148_in_rule__MonsterInst2__FearAssignment_5434910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_149_in_rule__MonsterInst2__RegenerationAssignment_5534954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_150_in_rule__MonsterInst2__ReinvigorationAssignment_5634998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_151_in_rule__MonsterInst2__FireshieldAssignment_5735042 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_152_in_rule__MonsterInst2__IceprotAssignment_5835086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_153_in_rule__MonsterInst2__PoisoncloudAssignment_5935130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_154_in_rule__MonsterInst2__DiseasecloudAssignment_6035174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_155_in_rule__MonsterInst2__BloodvengeanceAssignment_6135218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_156_in_rule__MonsterInst2__CastledefAssignment_6235262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_157_in_rule__MonsterInst2__SiegebonusAssignment_6335306 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_158_in_rule__MonsterInst2__PatrolbonusAssignment_6435350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_159_in_rule__MonsterInst2__PillagebonusAssignment_6535394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_160_in_rule__MonsterInst2__ResearchbonusAssignment_6635438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_161_in_rule__MonsterInst2__ForgebonusAssignment_6735482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__MonsterInst2__DouseAssignment_6835526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__MonsterInst2__NobadeventsAssignment_6935570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__MonsterInst2__IncunrestAssignment_7035614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_165_in_rule__MonsterInst2__SpreaddomAssignment_7135658 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_rule__MonsterInst2__LeperAssignment_7235702 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_rule__MonsterInst2__PopkillAssignment_7335746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_168_in_rule__MonsterInst2__HereticAssignment_7435790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_rule__MonsterInst2__ItemslotsAssignment_7535834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_170_in_rule__MonsterInst2__NametypeAssignment_7635878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_171_in_rule__MonsterInst3__MagicskillAssignment_035922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_172_in_rule__MonsterInst3__CustommagicAssignment_135966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_173_in_rule__MonsterInst3__MagicboostAssignment_236010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_174_in_rule__MonsterInst3__GemprodAssignment_336054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_175_in_rule__MonsterInst4__ClearAssignment_036098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_176_in_rule__MonsterInst4__ClearmagicAssignment_136142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_177_in_rule__MonsterInst4__ClearspecAssignment_236186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_178_in_rule__MonsterInst4__FemaleAssignment_336230 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_179_in_rule__MonsterInst4__MountedAssignment_436274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_180_in_rule__MonsterInst4__HolyAssignment_536318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_181_in_rule__MonsterInst4__AnimalAssignment_636362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_182_in_rule__MonsterInst4__UndeadAssignment_736406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_183_in_rule__MonsterInst4__DemonAssignment_836450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_184_in_rule__MonsterInst4__MagicbeingAssignment_936494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_185_in_rule__MonsterInst4__StonebeingAssignment_1036538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_186_in_rule__MonsterInst4__InanimateAssignment_1136582 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_187_in_rule__MonsterInst4__ColdbloodAssignment_1236626 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_188_in_rule__MonsterInst4__ColdbloodAssignment_1336670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_189_in_rule__MonsterInst4__ImmortalAssignment_1436714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_190_in_rule__MonsterInst4__BlindAssignment_1536758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_191_in_rule__MonsterInst4__UniqueAssignment_1636802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_192_in_rule__MonsterInst4__ImmobileAssignment_1736846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_193_in_rule__MonsterInst4__AquaticAssignment_1836890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_194_in_rule__MonsterInst4__AmphibianAssignment_1936934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_195_in_rule__MonsterInst4__PooramphibianAssignment_2036978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_196_in_rule__MonsterInst4__FlyingAssignment_2137022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_197_in_rule__MonsterInst4__StormimmuneAssignment_2237066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_198_in_rule__MonsterInst4__SailingAssignment_2337110 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_199_in_rule__MonsterInst4__ForestsurvivalAssignment_2437154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_200_in_rule__MonsterInst4__MountainsurvivalAssignment_2537198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_201_in_rule__MonsterInst4__SwampsurvivalAssignment_2637242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_202_in_rule__MonsterInst4__WastesurvivalAssignment_2737286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_203_in_rule__MonsterInst4__IllusionAssignment_2837330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_204_in_rule__MonsterInst4__SpyAssignment_2937374 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_205_in_rule__MonsterInst4__AssassinAssignment_3037418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_206_in_rule__MonsterInst4__HealAssignment_3137462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_207_in_rule__MonsterInst4__NohealAssignment_3237506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_208_in_rule__MonsterInst4__NeednoteatAssignment_3337550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_209_in_rule__MonsterInst4__EtherealAssignment_3437594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_210_in_rule__MonsterInst4__TrampleAssignment_3537638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_211_in_rule__MonsterInst4__EntangleAssignment_3637682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_212_in_rule__MonsterInst4__EyelossAssignment_3737726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_213_in_rule__MonsterInst4__HorrormarkAssignment_3837770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_214_in_rule__MonsterInst4__PoisonarmorAssignment_3937814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_215_in_rule__MonsterInst4__InquisitorAssignment_4037858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_216_in_rule__MonsterInst4__NoitemAssignment_4137902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_217_in_rule__MonsterInst4__NoleaderAssignment_4237946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_218_in_rule__MonsterInst4__PoorleaderAssignment_4337990 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_219_in_rule__MonsterInst4__OkleaderAssignment_4438034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_220_in_rule__MonsterInst4__GoodleaderAssignment_4538078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_221_in_rule__MonsterInst4__ExpertleaderAssignment_4638122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_222_in_rule__MonsterInst4__SuperiorleaderAssignment_4738166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_223_in_rule__MonsterInst4__NomagicleaderAssignment_4838210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_224_in_rule__MonsterInst4__PoormagicleaderAssignment_4938254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_225_in_rule__MonsterInst4__OkmagicleaderAssignment_5038298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_226_in_rule__MonsterInst4__GoodmagicleaderAssignment_5138342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_227_in_rule__MonsterInst4__ExpertmagicleaderAssignment_5238386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_228_in_rule__MonsterInst4__SuperiormagicleaderAssignment_5338430 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_229_in_rule__MonsterInst4__NoundeadleaderAssignment_5438474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_230_in_rule__MonsterInst4__PoorundeadleaderAssignment_5538518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_231_in_rule__MonsterInst4__OkundeadleaderAssignment_5638562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_232_in_rule__MonsterInst4__GoodundeadleaderAssignment_5738606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_233_in_rule__MonsterInst4__ExpertundeadleaderAssignment_5838650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_234_in_rule__MonsterInst4__SuperiorundeadleaderAssignment_5938694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_235_in_rule__MonsterInst5__WeaponAssignment_038738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_236_in_rule__MonsterInst5__OnebattlespellAssignment_138782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_237_in_rule__MonsterInst5__FirstshapeAssignment_238826 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_238_in_rule__MonsterInst5__SecondshapeAssignment_338870 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_239_in_rule__MonsterInst5__SecondtmpshapeAssignment_438914 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_240_in_rule__MonsterInst5__ShapechangeAssignment_538958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_241_in_rule__MonsterInst5__LandshapeAssignment_639002 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_242_in_rule__MonsterInst5__WatershapeAssignment_739046 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_243_in_rule__MonsterInst5__ForestshapeAssignment_839090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_244_in_rule__MonsterInst5__PlainshapeAssignment_939134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_245_in_rule__MonsterInst5__DomsummonAssignment_1039178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_246_in_rule__MonsterInst5__Domsummon2Assignment_1139222 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_247_in_rule__MonsterInst5__Domsummon20Assignment_1239266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_248_in_rule__MonsterInst5__Makemonster1Assignment_1339310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_249_in_rule__MonsterInst5__Makemonster2Assignment_1439354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_250_in_rule__MonsterInst5__Makemonster3Assignment_1539398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_251_in_rule__MonsterInst5__Makemonster4Assignment_1639442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_252_in_rule__MonsterInst5__Makemonster5Assignment_1739486 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_253_in_rule__MonsterInst5__Summon1Assignment_1839530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_254_in_rule__MonsterInst5__Summon5Assignment_1939574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_255_in_rule__MonsterInst6__StealthyAssignment_039618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_256_in_rule__MonsterInst6__HeatAssignment_139662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_rule__MonsterInst6__ColdAssignment_239706 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__SelectSpellById__ValueAssignment_139745 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSpellMods_in_rule__SelectSpellById__ModsAssignment_239776 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectSpellByName__ValueAssignment_139807 = new BitSet(new long[]{0x0000000000000002L});
@@ -60039,7 +60043,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_266_in_rule__SpellInst2__RestrictedAssignment_1340751 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_267_in_rule__SpellInst3__PathAssignment_040795 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_268_in_rule__SpellInst3__PathlevelAssignment_140839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_176_in_rule__SpellInst4__ClearAssignment40883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_175_in_rule__SpellInst4__ClearAssignment40883 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_269_in_rule__SpellInst5__CopyspellAssignment_040927 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_270_in_rule__SpellInst5__NextspellAssignment_140971 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__SelectItemById__ValueAssignment_141010 = new BitSet(new long[]{0x0000000000000002L});
@@ -60059,12 +60063,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_275_in_rule__ItemInst2__SecondarylevelAssignment_441540 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_114_in_rule__ItemInst2__CopysprAssignment_541584 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_50_in_rule__ItemInst2__TypeAssignment_641628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_236_in_rule__ItemInst2__WeaponAssignment_741672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_235_in_rule__ItemInst2__WeaponAssignment_741672 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__SelectName__ValueAssignment_141711 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNameMods_in_rule__SelectName__ModsAssignment_241742 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__NamePattern1__ValueAssignment_141773 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_276_in_rule__NameInst1__NameAssignment41809 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_176_in_rule__NameInst2__ClearAssignment41853 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_175_in_rule__NameInst2__ClearAssignment41853 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__SelectSiteById__ValueAssignment_141892 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSiteMods_in_rule__SelectSiteById__ModsAssignment_241923 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectSiteByName__ValueAssignment_141954 = new BitSet(new long[]{0x0000000000000002L});
@@ -60089,7 +60093,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_286_in_rule__SiteInst2__IncscaleAssignment_1042691 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_287_in_rule__SiteInst2__DecscaleAssignment_1142735 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_288_in_rule__SiteInst3__GemsAssignment42779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_176_in_rule__SiteInst4__ClearAssignment42823 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_175_in_rule__SiteInst4__ClearAssignment42823 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__SelectNation__ValueAssignment_142862 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNationMods_in_rule__SelectNation__ModsAssignment_242893 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__IndepFlag__ValueAssignment_142924 = new BitSet(new long[]{0x0000000000000002L});

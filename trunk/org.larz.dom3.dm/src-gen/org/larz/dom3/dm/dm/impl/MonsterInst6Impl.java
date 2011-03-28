@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package org.larz.dom3.dm.dm.impl;
 
@@ -22,6 +23,7 @@ import org.larz.dom3.dm.dm.MonsterInst6;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst6Impl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst6Impl#isStealthy <em>Stealthy</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst6Impl#isHeat <em>Heat</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst6Impl#isCold <em>Cold</em>}</li>
  * </ul>
@@ -50,6 +52,26 @@ public class MonsterInst6Impl extends MonsterPattern6Impl implements MonsterInst
    * @ordered
    */
   protected int value = VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isStealthy() <em>Stealthy</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isStealthy()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean STEALTHY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isStealthy() <em>Stealthy</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isStealthy()
+   * @generated
+   * @ordered
+   */
+  protected boolean stealthy = STEALTHY_EDEFAULT;
 
   /**
    * The default value of the '{@link #isHeat() <em>Heat</em>}' attribute.
@@ -140,6 +162,29 @@ public class MonsterInst6Impl extends MonsterPattern6Impl implements MonsterInst
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isStealthy()
+  {
+    return stealthy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStealthy(boolean newStealthy)
+  {
+    boolean oldStealthy = stealthy;
+    stealthy = newStealthy;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST6__STEALTHY, oldStealthy, stealthy));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public boolean isHeat()
   {
     return heat;
@@ -193,6 +238,8 @@ public class MonsterInst6Impl extends MonsterPattern6Impl implements MonsterInst
     {
       case DmPackage.MONSTER_INST6__VALUE:
         return getValue();
+      case DmPackage.MONSTER_INST6__STEALTHY:
+        return isStealthy();
       case DmPackage.MONSTER_INST6__HEAT:
         return isHeat();
       case DmPackage.MONSTER_INST6__COLD:
@@ -213,6 +260,9 @@ public class MonsterInst6Impl extends MonsterPattern6Impl implements MonsterInst
     {
       case DmPackage.MONSTER_INST6__VALUE:
         setValue((Integer)newValue);
+        return;
+      case DmPackage.MONSTER_INST6__STEALTHY:
+        setStealthy((Boolean)newValue);
         return;
       case DmPackage.MONSTER_INST6__HEAT:
         setHeat((Boolean)newValue);
@@ -237,6 +287,9 @@ public class MonsterInst6Impl extends MonsterPattern6Impl implements MonsterInst
       case DmPackage.MONSTER_INST6__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case DmPackage.MONSTER_INST6__STEALTHY:
+        setStealthy(STEALTHY_EDEFAULT);
+        return;
       case DmPackage.MONSTER_INST6__HEAT:
         setHeat(HEAT_EDEFAULT);
         return;
@@ -259,6 +312,8 @@ public class MonsterInst6Impl extends MonsterPattern6Impl implements MonsterInst
     {
       case DmPackage.MONSTER_INST6__VALUE:
         return value != VALUE_EDEFAULT;
+      case DmPackage.MONSTER_INST6__STEALTHY:
+        return stealthy != STEALTHY_EDEFAULT;
       case DmPackage.MONSTER_INST6__HEAT:
         return heat != HEAT_EDEFAULT;
       case DmPackage.MONSTER_INST6__COLD:
@@ -280,6 +335,8 @@ public class MonsterInst6Impl extends MonsterPattern6Impl implements MonsterInst
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (value: ");
     result.append(value);
+    result.append(", stealthy: ");
+    result.append(stealthy);
     result.append(", heat: ");
     result.append(heat);
     result.append(", cold: ");

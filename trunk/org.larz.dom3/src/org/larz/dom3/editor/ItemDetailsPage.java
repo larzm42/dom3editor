@@ -508,7 +508,7 @@ public class ItemDetailsPage implements IDetailsPage {
 				}
 			}
 		}
-		name.getParent().getParent().getParent().layout(true);
+		name.getParent().getParent().getParent().layout(true, true);
 	}
 	
 	private void setItemname(final XtextEditor editor, final String newName) 

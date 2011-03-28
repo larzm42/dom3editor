@@ -24,7 +24,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_SL_COMMENT", "RULE_ML_COMMENT", "RULE_WS", "'#modname'", "'#description'", "'#icon'", "'#version'", "'#domversion'", "'#poppergold'", "'#resourcemult'", "'#supplymult'", "'#unresthalfinc'", "'#unresthalfres'", "'#eventisrare'", "'#turmoilincome'", "'#turmoilevents'", "'#deathincome'", "'#deathsupply'", "'#deathdeath'", "'#slothincome'", "'#slothresources'", "'#coldincome'", "'#coldsupply'", "'#misfortune'", "'#luckevents'", "'#researchscale'", "'#end'", "'.'", "'#selectarmor'", "'#newarmor'", "'#name'", "'#type'", "'#prot'", "'#def'", "'#enc'", "'#rcost'", "'#selectweapon'", "'#newweapon'", "'#dmg'", "'#nratt'", "'#att'", "'#len'", "'#range'", "'#ammo'", "'#sound'", "'#aoe'", "'#secondaryeffect'", "'#secondaryeffectalways'", "'#explspr'", "'#flyspr'", "'#twohanded'", "'#armorpiercing'", "'#armornegating'", "'#magic'", "'#dt_normal'", "'#dt_stun'", "'#dt_paralyze'", "'#dt_poison'", "'#dt_cap'", "'#dt_demon'", "'#dt_demononly'", "'#dt_holy'", "'#dt_magic'", "'#dt_small'", "'#dt_large'", "'#dt_constructonly'", "'#dt_raise'", "'#mind'", "'#cold'", "'#fire'", "'#shock'", "'#poison'", "'#bonus'", "'#charge'", "'#flail'", "'#nostr'", "'#mrnegates'", "'#mrnegateseasily'", "'#selectmonster'", "'#newmonster'", "'#spr1'", "'#spr2'", "'#descr'", "'#armor'", "'#speciallook'", "'#ap'", "'#mapmove'", "'#hp'", "'#size'", "'#ressize'", "'#str'", "'#prec'", "'#mr'", "'#mor'", "'#gcost'", "'#pathcost'", "'#startdom'", "'#eyes'", "'#copystats'", "'#copyspr'", "'#restrictedgod'", "'#shatteredsoul'", "'#coldres'", "'#coldresist'", "'#fireres'", "'#fireresist'", "'#poisonres'", "'#shockres'", "'#darkvision'", "'#stealthy'", "'#seduce'", "'#succubus'", "'#beckon'", "'#startage'", "'#maxage'", "'#older'", "'#healer'", "'#startaff'", "'#supplybonus'", "'#uwdamage'", "'#coldpower'", "'#firepower'", "'#stormpower'", "'#darkpower'", "'#springpower'", "'#summerpower'", "'#fallpower'", "'#winterpower'", "'#ambidextrous'", "'#banefireshield'", "'#berserk'", "'#standard'", "'#animalawe'", "'#awe'", "'#fear'", "'#regeneration'", "'#reinvigoration'", "'#fireshield'", "'#iceprot'", "'#poisoncloud'", "'#diseasecloud'", "'#bloodvengeance'", "'#castledef'", "'#siegebonus'", "'#patrolbonus'", "'#pillagebonus'", "'#researchbonus'", "'#forgebonus'", "'#douse'", "'#nobadevents'", "'#incunrest'", "'#spreaddom'", "'#leper'", "'#popkill'", "'#heretic'", "'#itemslots'", "'#nametype'", "'#magicskill'", "'#custommagic'", "'#magicboost'", "'#gemprod'", "'#clear'", "'#clearmagic'", "'#clearspec'", "'#female'", "'#mounted'", "'#holy'", "'#animal'", "'#undead'", "'#demon'", "'#magicbeing'", "'#stonebeing'", "'#inanimate'", "'#coldblood'", "'#coldblooded'", "'#immortal'", "'#blind'", "'#unique'", "'#immobile'", "'#aquatic'", "'#amphibian'", "'#pooramphibian'", "'#flying'", "'#stormimmune'", "'#sailing'", "'#forestsurvival'", "'#mountainsurvival'", "'#swampsurvival'", "'#wastesurvival'", "'#illusion'", "'#spy'", "'#assassin'", "'#heal'", "'#noheal'", "'#neednoteat'", "'#ethereal'", "'#trample'", "'#entangle'", "'#eyeloss'", "'#horrormark'", "'#poisonarmor'", "'#inquisitor'", "'#noitem'", "'#noleader'", "'#poorleader'", "'#okleader'", "'#goodleader'", "'#expertleader'", "'#superiorleader'", "'#nomagicleader'", "'#poormagicleader'", "'#okmagicleader'", "'#goodmagicleader'", "'#expertmagicleader'", "'#superiormagicleader'", "'#noundeadleader'", "'#poorundeadleader'", "'#okundeadleader'", "'#goodundeadleader'", "'#expertundeadleader'", "'#superiorundeadleader'", "'#weapon'", "'#onebattlespell'", "'#firstshape'", "'#secondshape'", "'#secondtmpshape'", "'#shapechange'", "'#landshape'", "'#watershape'", "'#forestshape'", "'#plainshape'", "'#domsummon'", "'#domsummon2'", "'#domsummon20'", "'#makemonster1'", "'#makemonster2'", "'#makemonster3'", "'#makemonster4'", "'#makemonster5'", "'#summon1'", "'#summon5'", "'#heat'", "'#selectspell'", "'#newspell'", "'#school'", "'#researchlevel'", "'#damage'", "'#effect'", "'#fatiguecost'", "'#flightspr'", "'#nreff'", "'#precision'", "'#spec'", "'#restricted'", "'#path'", "'#pathlevel'", "'#copyspell'", "'#nextspell'", "'#selectitem'", "'#newitem'", "'#constlevel'", "'#mainpath'", "'#mainlevel'", "'#secondarypath'", "'#secondarylevel'", "'#selectnametype'", "'#addname'", "'#selectsite'", "'#newsite'", "'#level'", "'#rarity'", "'#loc'", "'#homemon'", "'#homecom'", "'#mon'", "'#com'", "'#gold'", "'#res'", "'#incscale'", "'#decscale'", "'#gems'", "'#selectnation'", "'#indepflag'", "'#epithet'", "'#summary'", "'#brief'", "'#flag'", "'#mapbackground'", "'#startsite'", "'#era'", "'#labcost'", "'#templecost'", "'#templepic'", "'#startunitnbrs1'", "'#startunitnbrs2'", "'#hero1'", "'#hero2'", "'#hero3'", "'#hero4'", "'#hero5'", "'#hero6'", "'#multihero1'", "'#multihero2'", "'#defmult1'", "'#defmult1b'", "'#defmult2'", "'#defmult2b'", "'#idealcold'", "'#castleprod'", "'#domkill'", "'#domunrest'", "'#startfort'", "'#defaultfort'", "'#farmfort'", "'#mountainfort'", "'#forestfort'", "'#swampfort'", "'#uwfort'", "'#deepfort'", "'#clearnation'", "'#clearrec'", "'#clearsites'", "'#uwnation'", "'#bloodnation'", "'#nopreach'", "'#dyingdom'", "'#sacrificedom'", "'#nodeathsupply'", "'#autoundead'", "'#zombiereanim'", "'#horsereanim'", "'#wightreanim'", "'#manikinreanim'", "'#tombwyrmreanim'", "'#startcom'", "'#startscout'", "'#startunittype1'", "'#startunittype2'", "'#addrecunit'", "'#addreccom'", "'#uwunit1'", "'#uwunit2'", "'#uwunit3'", "'#uwunit4'", "'#uwunit5'", "'#uwcom1'", "'#uwcom2'", "'#uwcom3'", "'#uwcom4'", "'#uwcom5'", "'#defcom1'", "'#defcom2'", "'#defunit1'", "'#defunit1b'", "'#defunit2'", "'#defunit2b'", "'#color'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_SL_COMMENT", "RULE_ML_COMMENT", "RULE_WS", "'#modname'", "'#description'", "'#icon'", "'#version'", "'#domversion'", "'#poppergold'", "'#resourcemult'", "'#supplymult'", "'#unresthalfinc'", "'#unresthalfres'", "'#eventisrare'", "'#turmoilincome'", "'#turmoilevents'", "'#deathincome'", "'#deathsupply'", "'#deathdeath'", "'#slothincome'", "'#slothresources'", "'#coldincome'", "'#coldsupply'", "'#misfortune'", "'#luckevents'", "'#researchscale'", "'#end'", "'.'", "'#selectarmor'", "'#newarmor'", "'#name'", "'#type'", "'#prot'", "'#def'", "'#enc'", "'#rcost'", "'#selectweapon'", "'#newweapon'", "'#dmg'", "'#nratt'", "'#att'", "'#len'", "'#range'", "'#ammo'", "'#sound'", "'#aoe'", "'#secondaryeffect'", "'#secondaryeffectalways'", "'#explspr'", "'#flyspr'", "'#twohanded'", "'#armorpiercing'", "'#armornegating'", "'#magic'", "'#dt_normal'", "'#dt_stun'", "'#dt_paralyze'", "'#dt_poison'", "'#dt_cap'", "'#dt_demon'", "'#dt_demononly'", "'#dt_holy'", "'#dt_magic'", "'#dt_small'", "'#dt_large'", "'#dt_constructonly'", "'#dt_raise'", "'#mind'", "'#cold'", "'#fire'", "'#shock'", "'#poison'", "'#bonus'", "'#charge'", "'#flail'", "'#nostr'", "'#mrnegates'", "'#mrnegateseasily'", "'#selectmonster'", "'#newmonster'", "'#spr1'", "'#spr2'", "'#descr'", "'#armor'", "'#speciallook'", "'#ap'", "'#mapmove'", "'#hp'", "'#size'", "'#ressize'", "'#str'", "'#prec'", "'#mr'", "'#mor'", "'#gcost'", "'#pathcost'", "'#startdom'", "'#eyes'", "'#copystats'", "'#copyspr'", "'#restrictedgod'", "'#shatteredsoul'", "'#coldres'", "'#coldresist'", "'#fireres'", "'#fireresist'", "'#poisonres'", "'#shockres'", "'#darkvision'", "'#seduce'", "'#succubus'", "'#beckon'", "'#startage'", "'#maxage'", "'#older'", "'#healer'", "'#startaff'", "'#supplybonus'", "'#uwdamage'", "'#coldpower'", "'#firepower'", "'#stormpower'", "'#darkpower'", "'#springpower'", "'#summerpower'", "'#fallpower'", "'#winterpower'", "'#ambidextrous'", "'#banefireshield'", "'#berserk'", "'#standard'", "'#animalawe'", "'#awe'", "'#fear'", "'#regeneration'", "'#reinvigoration'", "'#fireshield'", "'#iceprot'", "'#poisoncloud'", "'#diseasecloud'", "'#bloodvengeance'", "'#castledef'", "'#siegebonus'", "'#patrolbonus'", "'#pillagebonus'", "'#researchbonus'", "'#forgebonus'", "'#douse'", "'#nobadevents'", "'#incunrest'", "'#spreaddom'", "'#leper'", "'#popkill'", "'#heretic'", "'#itemslots'", "'#nametype'", "'#magicskill'", "'#custommagic'", "'#magicboost'", "'#gemprod'", "'#clear'", "'#clearmagic'", "'#clearspec'", "'#female'", "'#mounted'", "'#holy'", "'#animal'", "'#undead'", "'#demon'", "'#magicbeing'", "'#stonebeing'", "'#inanimate'", "'#coldblood'", "'#coldblooded'", "'#immortal'", "'#blind'", "'#unique'", "'#immobile'", "'#aquatic'", "'#amphibian'", "'#pooramphibian'", "'#flying'", "'#stormimmune'", "'#sailing'", "'#forestsurvival'", "'#mountainsurvival'", "'#swampsurvival'", "'#wastesurvival'", "'#illusion'", "'#spy'", "'#assassin'", "'#heal'", "'#noheal'", "'#neednoteat'", "'#ethereal'", "'#trample'", "'#entangle'", "'#eyeloss'", "'#horrormark'", "'#poisonarmor'", "'#inquisitor'", "'#noitem'", "'#noleader'", "'#poorleader'", "'#okleader'", "'#goodleader'", "'#expertleader'", "'#superiorleader'", "'#nomagicleader'", "'#poormagicleader'", "'#okmagicleader'", "'#goodmagicleader'", "'#expertmagicleader'", "'#superiormagicleader'", "'#noundeadleader'", "'#poorundeadleader'", "'#okundeadleader'", "'#goodundeadleader'", "'#expertundeadleader'", "'#superiorundeadleader'", "'#weapon'", "'#onebattlespell'", "'#firstshape'", "'#secondshape'", "'#secondtmpshape'", "'#shapechange'", "'#landshape'", "'#watershape'", "'#forestshape'", "'#plainshape'", "'#domsummon'", "'#domsummon2'", "'#domsummon20'", "'#makemonster1'", "'#makemonster2'", "'#makemonster3'", "'#makemonster4'", "'#makemonster5'", "'#summon1'", "'#summon5'", "'#stealthy'", "'#heat'", "'#selectspell'", "'#newspell'", "'#school'", "'#researchlevel'", "'#damage'", "'#effect'", "'#fatiguecost'", "'#flightspr'", "'#nreff'", "'#precision'", "'#spec'", "'#restricted'", "'#path'", "'#pathlevel'", "'#copyspell'", "'#nextspell'", "'#selectitem'", "'#newitem'", "'#constlevel'", "'#mainpath'", "'#mainlevel'", "'#secondarypath'", "'#secondarylevel'", "'#selectnametype'", "'#addname'", "'#selectsite'", "'#newsite'", "'#level'", "'#rarity'", "'#loc'", "'#homemon'", "'#homecom'", "'#mon'", "'#com'", "'#gold'", "'#res'", "'#incscale'", "'#decscale'", "'#gems'", "'#selectnation'", "'#indepflag'", "'#epithet'", "'#summary'", "'#brief'", "'#flag'", "'#mapbackground'", "'#startsite'", "'#era'", "'#labcost'", "'#templecost'", "'#templepic'", "'#startunitnbrs1'", "'#startunitnbrs2'", "'#hero1'", "'#hero2'", "'#hero3'", "'#hero4'", "'#hero5'", "'#hero6'", "'#multihero1'", "'#multihero2'", "'#defmult1'", "'#defmult1b'", "'#defmult2'", "'#defmult2b'", "'#idealcold'", "'#castleprod'", "'#domkill'", "'#domunrest'", "'#startfort'", "'#defaultfort'", "'#farmfort'", "'#mountainfort'", "'#forestfort'", "'#swampfort'", "'#uwfort'", "'#deepfort'", "'#clearnation'", "'#clearrec'", "'#clearsites'", "'#uwnation'", "'#bloodnation'", "'#nopreach'", "'#dyingdom'", "'#sacrificedom'", "'#nodeathsupply'", "'#autoundead'", "'#zombiereanim'", "'#horsereanim'", "'#wightreanim'", "'#manikinreanim'", "'#tombwyrmreanim'", "'#startcom'", "'#startscout'", "'#startunittype1'", "'#startunittype2'", "'#addrecunit'", "'#addreccom'", "'#uwunit1'", "'#uwunit2'", "'#uwunit3'", "'#uwunit4'", "'#uwunit5'", "'#uwcom1'", "'#uwcom2'", "'#uwcom3'", "'#uwcom4'", "'#uwcom5'", "'#defcom1'", "'#defcom2'", "'#defunit1'", "'#defunit1b'", "'#defunit2'", "'#defunit2b'", "'#color'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_INT=5;
@@ -8002,19 +8002,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 159:
             case 160:
             case 161:
-            case 162:
                 {
                 alt22=2;
                 }
                 break;
+            case 162:
             case 163:
             case 164:
             case 165:
-            case 166:
                 {
                 alt22=3;
                 }
                 break;
+            case 166:
             case 167:
             case 168:
             case 169:
@@ -8074,11 +8074,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 223:
             case 224:
             case 225:
-            case 226:
                 {
                 alt22=4;
                 }
                 break;
+            case 226:
             case 227:
             case 228:
             case 229:
@@ -8098,12 +8098,12 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 243:
             case 244:
             case 245:
-            case 246:
                 {
                 alt22=5;
                 }
                 break;
             case 74:
+            case 246:
             case 247:
                 {
                 alt22=6;
@@ -9347,7 +9347,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleMonsterInst2
-    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4323:1: ruleMonsterInst2 returns [EObject current=null] : ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_stealthy_30_0= '#stealthy' ) ) | ( (lv_seduce_31_0= '#seduce' ) ) | ( (lv_succubus_32_0= '#succubus' ) ) | ( (lv_beckon_33_0= '#beckon' ) ) | ( (lv_startage_34_0= '#startage' ) ) | ( (lv_maxage_35_0= '#maxage' ) ) | ( (lv_older_36_0= '#older' ) ) | ( (lv_healer_37_0= '#healer' ) ) | ( (lv_startaff_38_0= '#startaff' ) ) | ( (lv_supplybonus_39_0= '#supplybonus' ) ) | ( (lv_uwdamage_40_0= '#uwdamage' ) ) | ( (lv_coldpower_41_0= '#coldpower' ) ) | ( (lv_firepower_42_0= '#firepower' ) ) | ( (lv_stormpower_43_0= '#stormpower' ) ) | ( (lv_darkpower_44_0= '#darkpower' ) ) | ( (lv_springpower_45_0= '#springpower' ) ) | ( (lv_summerpower_46_0= '#summerpower' ) ) | ( (lv_fallpower_47_0= '#fallpower' ) ) | ( (lv_winterpower_48_0= '#winterpower' ) ) | ( (lv_ambidextrous_49_0= '#ambidextrous' ) ) | ( (lv_banefireshield_50_0= '#banefireshield' ) ) | ( (lv_berserk_51_0= '#berserk' ) ) | ( (lv_standard_52_0= '#standard' ) ) | ( (lv_animalawe_53_0= '#animalawe' ) ) | ( (lv_awe_54_0= '#awe' ) ) | ( (lv_fear_55_0= '#fear' ) ) | ( (lv_regeneration_56_0= '#regeneration' ) ) | ( (lv_reinvigoration_57_0= '#reinvigoration' ) ) | ( (lv_fireshield_58_0= '#fireshield' ) ) | ( (lv_iceprot_59_0= '#iceprot' ) ) | ( (lv_poisoncloud_60_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_61_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_62_0= '#bloodvengeance' ) ) | ( (lv_castledef_63_0= '#castledef' ) ) | ( (lv_siegebonus_64_0= '#siegebonus' ) ) | ( (lv_patrolbonus_65_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_66_0= '#pillagebonus' ) ) | ( (lv_researchbonus_67_0= '#researchbonus' ) ) | ( (lv_forgebonus_68_0= '#forgebonus' ) ) | ( (lv_douse_69_0= '#douse' ) ) | ( (lv_nobadevents_70_0= '#nobadevents' ) ) | ( (lv_incunrest_71_0= '#incunrest' ) ) | ( (lv_spreaddom_72_0= '#spreaddom' ) ) | ( (lv_leper_73_0= '#leper' ) ) | ( (lv_popkill_74_0= '#popkill' ) ) | ( (lv_heretic_75_0= '#heretic' ) ) | ( (lv_itemslots_76_0= '#itemslots' ) ) | ( (lv_nametype_77_0= '#nametype' ) ) ) ;
+    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4323:1: ruleMonsterInst2 returns [EObject current=null] : ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_seduce_30_0= '#seduce' ) ) | ( (lv_succubus_31_0= '#succubus' ) ) | ( (lv_beckon_32_0= '#beckon' ) ) | ( (lv_startage_33_0= '#startage' ) ) | ( (lv_maxage_34_0= '#maxage' ) ) | ( (lv_older_35_0= '#older' ) ) | ( (lv_healer_36_0= '#healer' ) ) | ( (lv_startaff_37_0= '#startaff' ) ) | ( (lv_supplybonus_38_0= '#supplybonus' ) ) | ( (lv_uwdamage_39_0= '#uwdamage' ) ) | ( (lv_coldpower_40_0= '#coldpower' ) ) | ( (lv_firepower_41_0= '#firepower' ) ) | ( (lv_stormpower_42_0= '#stormpower' ) ) | ( (lv_darkpower_43_0= '#darkpower' ) ) | ( (lv_springpower_44_0= '#springpower' ) ) | ( (lv_summerpower_45_0= '#summerpower' ) ) | ( (lv_fallpower_46_0= '#fallpower' ) ) | ( (lv_winterpower_47_0= '#winterpower' ) ) | ( (lv_ambidextrous_48_0= '#ambidextrous' ) ) | ( (lv_banefireshield_49_0= '#banefireshield' ) ) | ( (lv_berserk_50_0= '#berserk' ) ) | ( (lv_standard_51_0= '#standard' ) ) | ( (lv_animalawe_52_0= '#animalawe' ) ) | ( (lv_awe_53_0= '#awe' ) ) | ( (lv_fear_54_0= '#fear' ) ) | ( (lv_regeneration_55_0= '#regeneration' ) ) | ( (lv_reinvigoration_56_0= '#reinvigoration' ) ) | ( (lv_fireshield_57_0= '#fireshield' ) ) | ( (lv_iceprot_58_0= '#iceprot' ) ) | ( (lv_poisoncloud_59_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_60_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_61_0= '#bloodvengeance' ) ) | ( (lv_castledef_62_0= '#castledef' ) ) | ( (lv_siegebonus_63_0= '#siegebonus' ) ) | ( (lv_patrolbonus_64_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_65_0= '#pillagebonus' ) ) | ( (lv_researchbonus_66_0= '#researchbonus' ) ) | ( (lv_forgebonus_67_0= '#forgebonus' ) ) | ( (lv_douse_68_0= '#douse' ) ) | ( (lv_nobadevents_69_0= '#nobadevents' ) ) | ( (lv_incunrest_70_0= '#incunrest' ) ) | ( (lv_spreaddom_71_0= '#spreaddom' ) ) | ( (lv_leper_72_0= '#leper' ) ) | ( (lv_popkill_73_0= '#popkill' ) ) | ( (lv_heretic_74_0= '#heretic' ) ) | ( (lv_itemslots_75_0= '#itemslots' ) ) | ( (lv_nametype_76_0= '#nametype' ) ) ) ;
     public final EObject ruleMonsterInst2() throws RecognitionException {
         EObject current = null;
 
@@ -9381,63 +9381,62 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
         Token lv_poisonres_27_0=null;
         Token lv_shockres_28_0=null;
         Token lv_darkvision_29_0=null;
-        Token lv_stealthy_30_0=null;
-        Token lv_seduce_31_0=null;
-        Token lv_succubus_32_0=null;
-        Token lv_beckon_33_0=null;
-        Token lv_startage_34_0=null;
-        Token lv_maxage_35_0=null;
-        Token lv_older_36_0=null;
-        Token lv_healer_37_0=null;
-        Token lv_startaff_38_0=null;
-        Token lv_supplybonus_39_0=null;
-        Token lv_uwdamage_40_0=null;
-        Token lv_coldpower_41_0=null;
-        Token lv_firepower_42_0=null;
-        Token lv_stormpower_43_0=null;
-        Token lv_darkpower_44_0=null;
-        Token lv_springpower_45_0=null;
-        Token lv_summerpower_46_0=null;
-        Token lv_fallpower_47_0=null;
-        Token lv_winterpower_48_0=null;
-        Token lv_ambidextrous_49_0=null;
-        Token lv_banefireshield_50_0=null;
-        Token lv_berserk_51_0=null;
-        Token lv_standard_52_0=null;
-        Token lv_animalawe_53_0=null;
-        Token lv_awe_54_0=null;
-        Token lv_fear_55_0=null;
-        Token lv_regeneration_56_0=null;
-        Token lv_reinvigoration_57_0=null;
-        Token lv_fireshield_58_0=null;
-        Token lv_iceprot_59_0=null;
-        Token lv_poisoncloud_60_0=null;
-        Token lv_diseasecloud_61_0=null;
-        Token lv_bloodvengeance_62_0=null;
-        Token lv_castledef_63_0=null;
-        Token lv_siegebonus_64_0=null;
-        Token lv_patrolbonus_65_0=null;
-        Token lv_pillagebonus_66_0=null;
-        Token lv_researchbonus_67_0=null;
-        Token lv_forgebonus_68_0=null;
-        Token lv_douse_69_0=null;
-        Token lv_nobadevents_70_0=null;
-        Token lv_incunrest_71_0=null;
-        Token lv_spreaddom_72_0=null;
-        Token lv_leper_73_0=null;
-        Token lv_popkill_74_0=null;
-        Token lv_heretic_75_0=null;
-        Token lv_itemslots_76_0=null;
-        Token lv_nametype_77_0=null;
+        Token lv_seduce_30_0=null;
+        Token lv_succubus_31_0=null;
+        Token lv_beckon_32_0=null;
+        Token lv_startage_33_0=null;
+        Token lv_maxage_34_0=null;
+        Token lv_older_35_0=null;
+        Token lv_healer_36_0=null;
+        Token lv_startaff_37_0=null;
+        Token lv_supplybonus_38_0=null;
+        Token lv_uwdamage_39_0=null;
+        Token lv_coldpower_40_0=null;
+        Token lv_firepower_41_0=null;
+        Token lv_stormpower_42_0=null;
+        Token lv_darkpower_43_0=null;
+        Token lv_springpower_44_0=null;
+        Token lv_summerpower_45_0=null;
+        Token lv_fallpower_46_0=null;
+        Token lv_winterpower_47_0=null;
+        Token lv_ambidextrous_48_0=null;
+        Token lv_banefireshield_49_0=null;
+        Token lv_berserk_50_0=null;
+        Token lv_standard_51_0=null;
+        Token lv_animalawe_52_0=null;
+        Token lv_awe_53_0=null;
+        Token lv_fear_54_0=null;
+        Token lv_regeneration_55_0=null;
+        Token lv_reinvigoration_56_0=null;
+        Token lv_fireshield_57_0=null;
+        Token lv_iceprot_58_0=null;
+        Token lv_poisoncloud_59_0=null;
+        Token lv_diseasecloud_60_0=null;
+        Token lv_bloodvengeance_61_0=null;
+        Token lv_castledef_62_0=null;
+        Token lv_siegebonus_63_0=null;
+        Token lv_patrolbonus_64_0=null;
+        Token lv_pillagebonus_65_0=null;
+        Token lv_researchbonus_66_0=null;
+        Token lv_forgebonus_67_0=null;
+        Token lv_douse_68_0=null;
+        Token lv_nobadevents_69_0=null;
+        Token lv_incunrest_70_0=null;
+        Token lv_spreaddom_71_0=null;
+        Token lv_leper_72_0=null;
+        Token lv_popkill_73_0=null;
+        Token lv_heretic_74_0=null;
+        Token lv_itemslots_75_0=null;
+        Token lv_nametype_76_0=null;
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4328:6: ( ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_stealthy_30_0= '#stealthy' ) ) | ( (lv_seduce_31_0= '#seduce' ) ) | ( (lv_succubus_32_0= '#succubus' ) ) | ( (lv_beckon_33_0= '#beckon' ) ) | ( (lv_startage_34_0= '#startage' ) ) | ( (lv_maxage_35_0= '#maxage' ) ) | ( (lv_older_36_0= '#older' ) ) | ( (lv_healer_37_0= '#healer' ) ) | ( (lv_startaff_38_0= '#startaff' ) ) | ( (lv_supplybonus_39_0= '#supplybonus' ) ) | ( (lv_uwdamage_40_0= '#uwdamage' ) ) | ( (lv_coldpower_41_0= '#coldpower' ) ) | ( (lv_firepower_42_0= '#firepower' ) ) | ( (lv_stormpower_43_0= '#stormpower' ) ) | ( (lv_darkpower_44_0= '#darkpower' ) ) | ( (lv_springpower_45_0= '#springpower' ) ) | ( (lv_summerpower_46_0= '#summerpower' ) ) | ( (lv_fallpower_47_0= '#fallpower' ) ) | ( (lv_winterpower_48_0= '#winterpower' ) ) | ( (lv_ambidextrous_49_0= '#ambidextrous' ) ) | ( (lv_banefireshield_50_0= '#banefireshield' ) ) | ( (lv_berserk_51_0= '#berserk' ) ) | ( (lv_standard_52_0= '#standard' ) ) | ( (lv_animalawe_53_0= '#animalawe' ) ) | ( (lv_awe_54_0= '#awe' ) ) | ( (lv_fear_55_0= '#fear' ) ) | ( (lv_regeneration_56_0= '#regeneration' ) ) | ( (lv_reinvigoration_57_0= '#reinvigoration' ) ) | ( (lv_fireshield_58_0= '#fireshield' ) ) | ( (lv_iceprot_59_0= '#iceprot' ) ) | ( (lv_poisoncloud_60_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_61_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_62_0= '#bloodvengeance' ) ) | ( (lv_castledef_63_0= '#castledef' ) ) | ( (lv_siegebonus_64_0= '#siegebonus' ) ) | ( (lv_patrolbonus_65_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_66_0= '#pillagebonus' ) ) | ( (lv_researchbonus_67_0= '#researchbonus' ) ) | ( (lv_forgebonus_68_0= '#forgebonus' ) ) | ( (lv_douse_69_0= '#douse' ) ) | ( (lv_nobadevents_70_0= '#nobadevents' ) ) | ( (lv_incunrest_71_0= '#incunrest' ) ) | ( (lv_spreaddom_72_0= '#spreaddom' ) ) | ( (lv_leper_73_0= '#leper' ) ) | ( (lv_popkill_74_0= '#popkill' ) ) | ( (lv_heretic_75_0= '#heretic' ) ) | ( (lv_itemslots_76_0= '#itemslots' ) ) | ( (lv_nametype_77_0= '#nametype' ) ) ) )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4329:1: ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_stealthy_30_0= '#stealthy' ) ) | ( (lv_seduce_31_0= '#seduce' ) ) | ( (lv_succubus_32_0= '#succubus' ) ) | ( (lv_beckon_33_0= '#beckon' ) ) | ( (lv_startage_34_0= '#startage' ) ) | ( (lv_maxage_35_0= '#maxage' ) ) | ( (lv_older_36_0= '#older' ) ) | ( (lv_healer_37_0= '#healer' ) ) | ( (lv_startaff_38_0= '#startaff' ) ) | ( (lv_supplybonus_39_0= '#supplybonus' ) ) | ( (lv_uwdamage_40_0= '#uwdamage' ) ) | ( (lv_coldpower_41_0= '#coldpower' ) ) | ( (lv_firepower_42_0= '#firepower' ) ) | ( (lv_stormpower_43_0= '#stormpower' ) ) | ( (lv_darkpower_44_0= '#darkpower' ) ) | ( (lv_springpower_45_0= '#springpower' ) ) | ( (lv_summerpower_46_0= '#summerpower' ) ) | ( (lv_fallpower_47_0= '#fallpower' ) ) | ( (lv_winterpower_48_0= '#winterpower' ) ) | ( (lv_ambidextrous_49_0= '#ambidextrous' ) ) | ( (lv_banefireshield_50_0= '#banefireshield' ) ) | ( (lv_berserk_51_0= '#berserk' ) ) | ( (lv_standard_52_0= '#standard' ) ) | ( (lv_animalawe_53_0= '#animalawe' ) ) | ( (lv_awe_54_0= '#awe' ) ) | ( (lv_fear_55_0= '#fear' ) ) | ( (lv_regeneration_56_0= '#regeneration' ) ) | ( (lv_reinvigoration_57_0= '#reinvigoration' ) ) | ( (lv_fireshield_58_0= '#fireshield' ) ) | ( (lv_iceprot_59_0= '#iceprot' ) ) | ( (lv_poisoncloud_60_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_61_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_62_0= '#bloodvengeance' ) ) | ( (lv_castledef_63_0= '#castledef' ) ) | ( (lv_siegebonus_64_0= '#siegebonus' ) ) | ( (lv_patrolbonus_65_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_66_0= '#pillagebonus' ) ) | ( (lv_researchbonus_67_0= '#researchbonus' ) ) | ( (lv_forgebonus_68_0= '#forgebonus' ) ) | ( (lv_douse_69_0= '#douse' ) ) | ( (lv_nobadevents_70_0= '#nobadevents' ) ) | ( (lv_incunrest_71_0= '#incunrest' ) ) | ( (lv_spreaddom_72_0= '#spreaddom' ) ) | ( (lv_leper_73_0= '#leper' ) ) | ( (lv_popkill_74_0= '#popkill' ) ) | ( (lv_heretic_75_0= '#heretic' ) ) | ( (lv_itemslots_76_0= '#itemslots' ) ) | ( (lv_nametype_77_0= '#nametype' ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4328:6: ( ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_seduce_30_0= '#seduce' ) ) | ( (lv_succubus_31_0= '#succubus' ) ) | ( (lv_beckon_32_0= '#beckon' ) ) | ( (lv_startage_33_0= '#startage' ) ) | ( (lv_maxage_34_0= '#maxage' ) ) | ( (lv_older_35_0= '#older' ) ) | ( (lv_healer_36_0= '#healer' ) ) | ( (lv_startaff_37_0= '#startaff' ) ) | ( (lv_supplybonus_38_0= '#supplybonus' ) ) | ( (lv_uwdamage_39_0= '#uwdamage' ) ) | ( (lv_coldpower_40_0= '#coldpower' ) ) | ( (lv_firepower_41_0= '#firepower' ) ) | ( (lv_stormpower_42_0= '#stormpower' ) ) | ( (lv_darkpower_43_0= '#darkpower' ) ) | ( (lv_springpower_44_0= '#springpower' ) ) | ( (lv_summerpower_45_0= '#summerpower' ) ) | ( (lv_fallpower_46_0= '#fallpower' ) ) | ( (lv_winterpower_47_0= '#winterpower' ) ) | ( (lv_ambidextrous_48_0= '#ambidextrous' ) ) | ( (lv_banefireshield_49_0= '#banefireshield' ) ) | ( (lv_berserk_50_0= '#berserk' ) ) | ( (lv_standard_51_0= '#standard' ) ) | ( (lv_animalawe_52_0= '#animalawe' ) ) | ( (lv_awe_53_0= '#awe' ) ) | ( (lv_fear_54_0= '#fear' ) ) | ( (lv_regeneration_55_0= '#regeneration' ) ) | ( (lv_reinvigoration_56_0= '#reinvigoration' ) ) | ( (lv_fireshield_57_0= '#fireshield' ) ) | ( (lv_iceprot_58_0= '#iceprot' ) ) | ( (lv_poisoncloud_59_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_60_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_61_0= '#bloodvengeance' ) ) | ( (lv_castledef_62_0= '#castledef' ) ) | ( (lv_siegebonus_63_0= '#siegebonus' ) ) | ( (lv_patrolbonus_64_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_65_0= '#pillagebonus' ) ) | ( (lv_researchbonus_66_0= '#researchbonus' ) ) | ( (lv_forgebonus_67_0= '#forgebonus' ) ) | ( (lv_douse_68_0= '#douse' ) ) | ( (lv_nobadevents_69_0= '#nobadevents' ) ) | ( (lv_incunrest_70_0= '#incunrest' ) ) | ( (lv_spreaddom_71_0= '#spreaddom' ) ) | ( (lv_leper_72_0= '#leper' ) ) | ( (lv_popkill_73_0= '#popkill' ) ) | ( (lv_heretic_74_0= '#heretic' ) ) | ( (lv_itemslots_75_0= '#itemslots' ) ) | ( (lv_nametype_76_0= '#nametype' ) ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4329:1: ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_seduce_30_0= '#seduce' ) ) | ( (lv_succubus_31_0= '#succubus' ) ) | ( (lv_beckon_32_0= '#beckon' ) ) | ( (lv_startage_33_0= '#startage' ) ) | ( (lv_maxage_34_0= '#maxage' ) ) | ( (lv_older_35_0= '#older' ) ) | ( (lv_healer_36_0= '#healer' ) ) | ( (lv_startaff_37_0= '#startaff' ) ) | ( (lv_supplybonus_38_0= '#supplybonus' ) ) | ( (lv_uwdamage_39_0= '#uwdamage' ) ) | ( (lv_coldpower_40_0= '#coldpower' ) ) | ( (lv_firepower_41_0= '#firepower' ) ) | ( (lv_stormpower_42_0= '#stormpower' ) ) | ( (lv_darkpower_43_0= '#darkpower' ) ) | ( (lv_springpower_44_0= '#springpower' ) ) | ( (lv_summerpower_45_0= '#summerpower' ) ) | ( (lv_fallpower_46_0= '#fallpower' ) ) | ( (lv_winterpower_47_0= '#winterpower' ) ) | ( (lv_ambidextrous_48_0= '#ambidextrous' ) ) | ( (lv_banefireshield_49_0= '#banefireshield' ) ) | ( (lv_berserk_50_0= '#berserk' ) ) | ( (lv_standard_51_0= '#standard' ) ) | ( (lv_animalawe_52_0= '#animalawe' ) ) | ( (lv_awe_53_0= '#awe' ) ) | ( (lv_fear_54_0= '#fear' ) ) | ( (lv_regeneration_55_0= '#regeneration' ) ) | ( (lv_reinvigoration_56_0= '#reinvigoration' ) ) | ( (lv_fireshield_57_0= '#fireshield' ) ) | ( (lv_iceprot_58_0= '#iceprot' ) ) | ( (lv_poisoncloud_59_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_60_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_61_0= '#bloodvengeance' ) ) | ( (lv_castledef_62_0= '#castledef' ) ) | ( (lv_siegebonus_63_0= '#siegebonus' ) ) | ( (lv_patrolbonus_64_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_65_0= '#pillagebonus' ) ) | ( (lv_researchbonus_66_0= '#researchbonus' ) ) | ( (lv_forgebonus_67_0= '#forgebonus' ) ) | ( (lv_douse_68_0= '#douse' ) ) | ( (lv_nobadevents_69_0= '#nobadevents' ) ) | ( (lv_incunrest_70_0= '#incunrest' ) ) | ( (lv_spreaddom_71_0= '#spreaddom' ) ) | ( (lv_leper_72_0= '#leper' ) ) | ( (lv_popkill_73_0= '#popkill' ) ) | ( (lv_heretic_74_0= '#heretic' ) ) | ( (lv_itemslots_75_0= '#itemslots' ) ) | ( (lv_nametype_76_0= '#nametype' ) ) )
             {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4329:1: ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_stealthy_30_0= '#stealthy' ) ) | ( (lv_seduce_31_0= '#seduce' ) ) | ( (lv_succubus_32_0= '#succubus' ) ) | ( (lv_beckon_33_0= '#beckon' ) ) | ( (lv_startage_34_0= '#startage' ) ) | ( (lv_maxage_35_0= '#maxage' ) ) | ( (lv_older_36_0= '#older' ) ) | ( (lv_healer_37_0= '#healer' ) ) | ( (lv_startaff_38_0= '#startaff' ) ) | ( (lv_supplybonus_39_0= '#supplybonus' ) ) | ( (lv_uwdamage_40_0= '#uwdamage' ) ) | ( (lv_coldpower_41_0= '#coldpower' ) ) | ( (lv_firepower_42_0= '#firepower' ) ) | ( (lv_stormpower_43_0= '#stormpower' ) ) | ( (lv_darkpower_44_0= '#darkpower' ) ) | ( (lv_springpower_45_0= '#springpower' ) ) | ( (lv_summerpower_46_0= '#summerpower' ) ) | ( (lv_fallpower_47_0= '#fallpower' ) ) | ( (lv_winterpower_48_0= '#winterpower' ) ) | ( (lv_ambidextrous_49_0= '#ambidextrous' ) ) | ( (lv_banefireshield_50_0= '#banefireshield' ) ) | ( (lv_berserk_51_0= '#berserk' ) ) | ( (lv_standard_52_0= '#standard' ) ) | ( (lv_animalawe_53_0= '#animalawe' ) ) | ( (lv_awe_54_0= '#awe' ) ) | ( (lv_fear_55_0= '#fear' ) ) | ( (lv_regeneration_56_0= '#regeneration' ) ) | ( (lv_reinvigoration_57_0= '#reinvigoration' ) ) | ( (lv_fireshield_58_0= '#fireshield' ) ) | ( (lv_iceprot_59_0= '#iceprot' ) ) | ( (lv_poisoncloud_60_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_61_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_62_0= '#bloodvengeance' ) ) | ( (lv_castledef_63_0= '#castledef' ) ) | ( (lv_siegebonus_64_0= '#siegebonus' ) ) | ( (lv_patrolbonus_65_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_66_0= '#pillagebonus' ) ) | ( (lv_researchbonus_67_0= '#researchbonus' ) ) | ( (lv_forgebonus_68_0= '#forgebonus' ) ) | ( (lv_douse_69_0= '#douse' ) ) | ( (lv_nobadevents_70_0= '#nobadevents' ) ) | ( (lv_incunrest_71_0= '#incunrest' ) ) | ( (lv_spreaddom_72_0= '#spreaddom' ) ) | ( (lv_leper_73_0= '#leper' ) ) | ( (lv_popkill_74_0= '#popkill' ) ) | ( (lv_heretic_75_0= '#heretic' ) ) | ( (lv_itemslots_76_0= '#itemslots' ) ) | ( (lv_nametype_77_0= '#nametype' ) ) )
-            int alt26=78;
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4329:1: ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_seduce_30_0= '#seduce' ) ) | ( (lv_succubus_31_0= '#succubus' ) ) | ( (lv_beckon_32_0= '#beckon' ) ) | ( (lv_startage_33_0= '#startage' ) ) | ( (lv_maxage_34_0= '#maxage' ) ) | ( (lv_older_35_0= '#older' ) ) | ( (lv_healer_36_0= '#healer' ) ) | ( (lv_startaff_37_0= '#startaff' ) ) | ( (lv_supplybonus_38_0= '#supplybonus' ) ) | ( (lv_uwdamage_39_0= '#uwdamage' ) ) | ( (lv_coldpower_40_0= '#coldpower' ) ) | ( (lv_firepower_41_0= '#firepower' ) ) | ( (lv_stormpower_42_0= '#stormpower' ) ) | ( (lv_darkpower_43_0= '#darkpower' ) ) | ( (lv_springpower_44_0= '#springpower' ) ) | ( (lv_summerpower_45_0= '#summerpower' ) ) | ( (lv_fallpower_46_0= '#fallpower' ) ) | ( (lv_winterpower_47_0= '#winterpower' ) ) | ( (lv_ambidextrous_48_0= '#ambidextrous' ) ) | ( (lv_banefireshield_49_0= '#banefireshield' ) ) | ( (lv_berserk_50_0= '#berserk' ) ) | ( (lv_standard_51_0= '#standard' ) ) | ( (lv_animalawe_52_0= '#animalawe' ) ) | ( (lv_awe_53_0= '#awe' ) ) | ( (lv_fear_54_0= '#fear' ) ) | ( (lv_regeneration_55_0= '#regeneration' ) ) | ( (lv_reinvigoration_56_0= '#reinvigoration' ) ) | ( (lv_fireshield_57_0= '#fireshield' ) ) | ( (lv_iceprot_58_0= '#iceprot' ) ) | ( (lv_poisoncloud_59_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_60_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_61_0= '#bloodvengeance' ) ) | ( (lv_castledef_62_0= '#castledef' ) ) | ( (lv_siegebonus_63_0= '#siegebonus' ) ) | ( (lv_patrolbonus_64_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_65_0= '#pillagebonus' ) ) | ( (lv_researchbonus_66_0= '#researchbonus' ) ) | ( (lv_forgebonus_67_0= '#forgebonus' ) ) | ( (lv_douse_68_0= '#douse' ) ) | ( (lv_nobadevents_69_0= '#nobadevents' ) ) | ( (lv_incunrest_70_0= '#incunrest' ) ) | ( (lv_spreaddom_71_0= '#spreaddom' ) ) | ( (lv_leper_72_0= '#leper' ) ) | ( (lv_popkill_73_0= '#popkill' ) ) | ( (lv_heretic_74_0= '#heretic' ) ) | ( (lv_itemslots_75_0= '#itemslots' ) ) | ( (lv_nametype_76_0= '#nametype' ) ) )
+            int alt26=77;
             switch ( input.LA(1) ) {
             case 90:
                 {
@@ -9824,14 +9823,9 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 alt26=77;
                 }
                 break;
-            case 162:
-                {
-                alt26=78;
-                }
-                break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("4329:1: ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_stealthy_30_0= '#stealthy' ) ) | ( (lv_seduce_31_0= '#seduce' ) ) | ( (lv_succubus_32_0= '#succubus' ) ) | ( (lv_beckon_33_0= '#beckon' ) ) | ( (lv_startage_34_0= '#startage' ) ) | ( (lv_maxage_35_0= '#maxage' ) ) | ( (lv_older_36_0= '#older' ) ) | ( (lv_healer_37_0= '#healer' ) ) | ( (lv_startaff_38_0= '#startaff' ) ) | ( (lv_supplybonus_39_0= '#supplybonus' ) ) | ( (lv_uwdamage_40_0= '#uwdamage' ) ) | ( (lv_coldpower_41_0= '#coldpower' ) ) | ( (lv_firepower_42_0= '#firepower' ) ) | ( (lv_stormpower_43_0= '#stormpower' ) ) | ( (lv_darkpower_44_0= '#darkpower' ) ) | ( (lv_springpower_45_0= '#springpower' ) ) | ( (lv_summerpower_46_0= '#summerpower' ) ) | ( (lv_fallpower_47_0= '#fallpower' ) ) | ( (lv_winterpower_48_0= '#winterpower' ) ) | ( (lv_ambidextrous_49_0= '#ambidextrous' ) ) | ( (lv_banefireshield_50_0= '#banefireshield' ) ) | ( (lv_berserk_51_0= '#berserk' ) ) | ( (lv_standard_52_0= '#standard' ) ) | ( (lv_animalawe_53_0= '#animalawe' ) ) | ( (lv_awe_54_0= '#awe' ) ) | ( (lv_fear_55_0= '#fear' ) ) | ( (lv_regeneration_56_0= '#regeneration' ) ) | ( (lv_reinvigoration_57_0= '#reinvigoration' ) ) | ( (lv_fireshield_58_0= '#fireshield' ) ) | ( (lv_iceprot_59_0= '#iceprot' ) ) | ( (lv_poisoncloud_60_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_61_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_62_0= '#bloodvengeance' ) ) | ( (lv_castledef_63_0= '#castledef' ) ) | ( (lv_siegebonus_64_0= '#siegebonus' ) ) | ( (lv_patrolbonus_65_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_66_0= '#pillagebonus' ) ) | ( (lv_researchbonus_67_0= '#researchbonus' ) ) | ( (lv_forgebonus_68_0= '#forgebonus' ) ) | ( (lv_douse_69_0= '#douse' ) ) | ( (lv_nobadevents_70_0= '#nobadevents' ) ) | ( (lv_incunrest_71_0= '#incunrest' ) ) | ( (lv_spreaddom_72_0= '#spreaddom' ) ) | ( (lv_leper_73_0= '#leper' ) ) | ( (lv_popkill_74_0= '#popkill' ) ) | ( (lv_heretic_75_0= '#heretic' ) ) | ( (lv_itemslots_76_0= '#itemslots' ) ) | ( (lv_nametype_77_0= '#nametype' ) ) )", 26, 0, input);
+                    new NoViableAltException("4329:1: ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_seduce_30_0= '#seduce' ) ) | ( (lv_succubus_31_0= '#succubus' ) ) | ( (lv_beckon_32_0= '#beckon' ) ) | ( (lv_startage_33_0= '#startage' ) ) | ( (lv_maxage_34_0= '#maxage' ) ) | ( (lv_older_35_0= '#older' ) ) | ( (lv_healer_36_0= '#healer' ) ) | ( (lv_startaff_37_0= '#startaff' ) ) | ( (lv_supplybonus_38_0= '#supplybonus' ) ) | ( (lv_uwdamage_39_0= '#uwdamage' ) ) | ( (lv_coldpower_40_0= '#coldpower' ) ) | ( (lv_firepower_41_0= '#firepower' ) ) | ( (lv_stormpower_42_0= '#stormpower' ) ) | ( (lv_darkpower_43_0= '#darkpower' ) ) | ( (lv_springpower_44_0= '#springpower' ) ) | ( (lv_summerpower_45_0= '#summerpower' ) ) | ( (lv_fallpower_46_0= '#fallpower' ) ) | ( (lv_winterpower_47_0= '#winterpower' ) ) | ( (lv_ambidextrous_48_0= '#ambidextrous' ) ) | ( (lv_banefireshield_49_0= '#banefireshield' ) ) | ( (lv_berserk_50_0= '#berserk' ) ) | ( (lv_standard_51_0= '#standard' ) ) | ( (lv_animalawe_52_0= '#animalawe' ) ) | ( (lv_awe_53_0= '#awe' ) ) | ( (lv_fear_54_0= '#fear' ) ) | ( (lv_regeneration_55_0= '#regeneration' ) ) | ( (lv_reinvigoration_56_0= '#reinvigoration' ) ) | ( (lv_fireshield_57_0= '#fireshield' ) ) | ( (lv_iceprot_58_0= '#iceprot' ) ) | ( (lv_poisoncloud_59_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_60_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_61_0= '#bloodvengeance' ) ) | ( (lv_castledef_62_0= '#castledef' ) ) | ( (lv_siegebonus_63_0= '#siegebonus' ) ) | ( (lv_patrolbonus_64_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_65_0= '#pillagebonus' ) ) | ( (lv_researchbonus_66_0= '#researchbonus' ) ) | ( (lv_forgebonus_67_0= '#forgebonus' ) ) | ( (lv_douse_68_0= '#douse' ) ) | ( (lv_nobadevents_69_0= '#nobadevents' ) ) | ( (lv_incunrest_70_0= '#incunrest' ) ) | ( (lv_spreaddom_71_0= '#spreaddom' ) ) | ( (lv_leper_72_0= '#leper' ) ) | ( (lv_popkill_73_0= '#popkill' ) ) | ( (lv_heretic_74_0= '#heretic' ) ) | ( (lv_itemslots_75_0= '#itemslots' ) ) | ( (lv_nametype_76_0= '#nametype' ) ) )", 26, 0, input);
 
                 throw nvae;
             }
@@ -10888,53 +10882,18 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4989:6: ( (lv_stealthy_30_0= '#stealthy' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4989:6: ( (lv_seduce_30_0= '#seduce' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4989:6: ( (lv_stealthy_30_0= '#stealthy' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4990:1: (lv_stealthy_30_0= '#stealthy' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4989:6: ( (lv_seduce_30_0= '#seduce' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4990:1: (lv_seduce_30_0= '#seduce' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4990:1: (lv_stealthy_30_0= '#stealthy' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4991:3: lv_stealthy_30_0= '#stealthy'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4990:1: (lv_seduce_30_0= '#seduce' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4991:3: lv_seduce_30_0= '#seduce'
                     {
-                    lv_stealthy_30_0=(Token)input.LT(1);
+                    lv_seduce_30_0=(Token)input.LT(1);
                     match(input,115,FOLLOW_115_in_ruleMonsterInst29788); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getStealthyStealthyKeyword_30_0(), "stealthy"); 
-                        
-
-                    	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getMonsterInst2Rule().getType().getClassifier());
-                    	            associateNodeWithAstElement(currentNode, current);
-                    	        }
-                    	        
-                    	        try {
-                    	       		set(current, "stealthy", true, "#stealthy", lastConsumedNode);
-                    	        } catch (ValueConverterException vce) {
-                    				handleValueConverterException(vce);
-                    	        }
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 32 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5011:6: ( (lv_seduce_31_0= '#seduce' ) )
-                    {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5011:6: ( (lv_seduce_31_0= '#seduce' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5012:1: (lv_seduce_31_0= '#seduce' )
-                    {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5012:1: (lv_seduce_31_0= '#seduce' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5013:3: lv_seduce_31_0= '#seduce'
-                    {
-                    lv_seduce_31_0=(Token)input.LT(1);
-                    match(input,116,FOLLOW_116_in_ruleMonsterInst29825); 
-
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_31_0(), "seduce"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_30_0(), "seduce"); 
                         
 
                     	        if (current==null) {
@@ -10957,19 +10916,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 33 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5033:6: ( (lv_succubus_32_0= '#succubus' ) )
+                case 32 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5011:6: ( (lv_succubus_31_0= '#succubus' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5033:6: ( (lv_succubus_32_0= '#succubus' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5034:1: (lv_succubus_32_0= '#succubus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5011:6: ( (lv_succubus_31_0= '#succubus' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5012:1: (lv_succubus_31_0= '#succubus' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5034:1: (lv_succubus_32_0= '#succubus' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5035:3: lv_succubus_32_0= '#succubus'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5012:1: (lv_succubus_31_0= '#succubus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5013:3: lv_succubus_31_0= '#succubus'
                     {
-                    lv_succubus_32_0=(Token)input.LT(1);
-                    match(input,117,FOLLOW_117_in_ruleMonsterInst29862); 
+                    lv_succubus_31_0=(Token)input.LT(1);
+                    match(input,116,FOLLOW_116_in_ruleMonsterInst29825); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_32_0(), "succubus"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_31_0(), "succubus"); 
                         
 
                     	        if (current==null) {
@@ -10992,19 +10951,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 34 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5055:6: ( (lv_beckon_33_0= '#beckon' ) )
+                case 33 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5033:6: ( (lv_beckon_32_0= '#beckon' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5055:6: ( (lv_beckon_33_0= '#beckon' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5056:1: (lv_beckon_33_0= '#beckon' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5033:6: ( (lv_beckon_32_0= '#beckon' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5034:1: (lv_beckon_32_0= '#beckon' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5056:1: (lv_beckon_33_0= '#beckon' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5057:3: lv_beckon_33_0= '#beckon'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5034:1: (lv_beckon_32_0= '#beckon' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5035:3: lv_beckon_32_0= '#beckon'
                     {
-                    lv_beckon_33_0=(Token)input.LT(1);
-                    match(input,118,FOLLOW_118_in_ruleMonsterInst29899); 
+                    lv_beckon_32_0=(Token)input.LT(1);
+                    match(input,117,FOLLOW_117_in_ruleMonsterInst29862); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_33_0(), "beckon"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_32_0(), "beckon"); 
                         
 
                     	        if (current==null) {
@@ -11027,19 +10986,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 35 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5077:6: ( (lv_startage_34_0= '#startage' ) )
+                case 34 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5055:6: ( (lv_startage_33_0= '#startage' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5077:6: ( (lv_startage_34_0= '#startage' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5078:1: (lv_startage_34_0= '#startage' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5055:6: ( (lv_startage_33_0= '#startage' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5056:1: (lv_startage_33_0= '#startage' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5078:1: (lv_startage_34_0= '#startage' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5079:3: lv_startage_34_0= '#startage'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5056:1: (lv_startage_33_0= '#startage' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5057:3: lv_startage_33_0= '#startage'
                     {
-                    lv_startage_34_0=(Token)input.LT(1);
-                    match(input,119,FOLLOW_119_in_ruleMonsterInst29936); 
+                    lv_startage_33_0=(Token)input.LT(1);
+                    match(input,118,FOLLOW_118_in_ruleMonsterInst29899); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_34_0(), "startage"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_33_0(), "startage"); 
                         
 
                     	        if (current==null) {
@@ -11062,19 +11021,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 36 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5099:6: ( (lv_maxage_35_0= '#maxage' ) )
+                case 35 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5077:6: ( (lv_maxage_34_0= '#maxage' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5099:6: ( (lv_maxage_35_0= '#maxage' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5100:1: (lv_maxage_35_0= '#maxage' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5077:6: ( (lv_maxage_34_0= '#maxage' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5078:1: (lv_maxage_34_0= '#maxage' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5100:1: (lv_maxage_35_0= '#maxage' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5101:3: lv_maxage_35_0= '#maxage'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5078:1: (lv_maxage_34_0= '#maxage' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5079:3: lv_maxage_34_0= '#maxage'
                     {
-                    lv_maxage_35_0=(Token)input.LT(1);
-                    match(input,120,FOLLOW_120_in_ruleMonsterInst29973); 
+                    lv_maxage_34_0=(Token)input.LT(1);
+                    match(input,119,FOLLOW_119_in_ruleMonsterInst29936); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_35_0(), "maxage"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_34_0(), "maxage"); 
                         
 
                     	        if (current==null) {
@@ -11097,19 +11056,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 37 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5121:6: ( (lv_older_36_0= '#older' ) )
+                case 36 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5099:6: ( (lv_older_35_0= '#older' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5121:6: ( (lv_older_36_0= '#older' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5122:1: (lv_older_36_0= '#older' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5099:6: ( (lv_older_35_0= '#older' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5100:1: (lv_older_35_0= '#older' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5122:1: (lv_older_36_0= '#older' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5123:3: lv_older_36_0= '#older'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5100:1: (lv_older_35_0= '#older' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5101:3: lv_older_35_0= '#older'
                     {
-                    lv_older_36_0=(Token)input.LT(1);
-                    match(input,121,FOLLOW_121_in_ruleMonsterInst210010); 
+                    lv_older_35_0=(Token)input.LT(1);
+                    match(input,120,FOLLOW_120_in_ruleMonsterInst29973); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_36_0(), "older"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_35_0(), "older"); 
                         
 
                     	        if (current==null) {
@@ -11132,19 +11091,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 38 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5143:6: ( (lv_healer_37_0= '#healer' ) )
+                case 37 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5121:6: ( (lv_healer_36_0= '#healer' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5143:6: ( (lv_healer_37_0= '#healer' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5144:1: (lv_healer_37_0= '#healer' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5121:6: ( (lv_healer_36_0= '#healer' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5122:1: (lv_healer_36_0= '#healer' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5144:1: (lv_healer_37_0= '#healer' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5145:3: lv_healer_37_0= '#healer'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5122:1: (lv_healer_36_0= '#healer' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5123:3: lv_healer_36_0= '#healer'
                     {
-                    lv_healer_37_0=(Token)input.LT(1);
-                    match(input,122,FOLLOW_122_in_ruleMonsterInst210047); 
+                    lv_healer_36_0=(Token)input.LT(1);
+                    match(input,121,FOLLOW_121_in_ruleMonsterInst210010); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_37_0(), "healer"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_36_0(), "healer"); 
                         
 
                     	        if (current==null) {
@@ -11167,19 +11126,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 39 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5165:6: ( (lv_startaff_38_0= '#startaff' ) )
+                case 38 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5143:6: ( (lv_startaff_37_0= '#startaff' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5165:6: ( (lv_startaff_38_0= '#startaff' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5166:1: (lv_startaff_38_0= '#startaff' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5143:6: ( (lv_startaff_37_0= '#startaff' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5144:1: (lv_startaff_37_0= '#startaff' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5166:1: (lv_startaff_38_0= '#startaff' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5167:3: lv_startaff_38_0= '#startaff'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5144:1: (lv_startaff_37_0= '#startaff' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5145:3: lv_startaff_37_0= '#startaff'
                     {
-                    lv_startaff_38_0=(Token)input.LT(1);
-                    match(input,123,FOLLOW_123_in_ruleMonsterInst210084); 
+                    lv_startaff_37_0=(Token)input.LT(1);
+                    match(input,122,FOLLOW_122_in_ruleMonsterInst210047); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_38_0(), "startaff"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_37_0(), "startaff"); 
                         
 
                     	        if (current==null) {
@@ -11202,19 +11161,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 40 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5187:6: ( (lv_supplybonus_39_0= '#supplybonus' ) )
+                case 39 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5165:6: ( (lv_supplybonus_38_0= '#supplybonus' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5187:6: ( (lv_supplybonus_39_0= '#supplybonus' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5188:1: (lv_supplybonus_39_0= '#supplybonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5165:6: ( (lv_supplybonus_38_0= '#supplybonus' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5166:1: (lv_supplybonus_38_0= '#supplybonus' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5188:1: (lv_supplybonus_39_0= '#supplybonus' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5189:3: lv_supplybonus_39_0= '#supplybonus'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5166:1: (lv_supplybonus_38_0= '#supplybonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5167:3: lv_supplybonus_38_0= '#supplybonus'
                     {
-                    lv_supplybonus_39_0=(Token)input.LT(1);
-                    match(input,124,FOLLOW_124_in_ruleMonsterInst210121); 
+                    lv_supplybonus_38_0=(Token)input.LT(1);
+                    match(input,123,FOLLOW_123_in_ruleMonsterInst210084); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_39_0(), "supplybonus"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_38_0(), "supplybonus"); 
                         
 
                     	        if (current==null) {
@@ -11237,19 +11196,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 41 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5209:6: ( (lv_uwdamage_40_0= '#uwdamage' ) )
+                case 40 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5187:6: ( (lv_uwdamage_39_0= '#uwdamage' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5209:6: ( (lv_uwdamage_40_0= '#uwdamage' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5210:1: (lv_uwdamage_40_0= '#uwdamage' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5187:6: ( (lv_uwdamage_39_0= '#uwdamage' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5188:1: (lv_uwdamage_39_0= '#uwdamage' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5210:1: (lv_uwdamage_40_0= '#uwdamage' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5211:3: lv_uwdamage_40_0= '#uwdamage'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5188:1: (lv_uwdamage_39_0= '#uwdamage' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5189:3: lv_uwdamage_39_0= '#uwdamage'
                     {
-                    lv_uwdamage_40_0=(Token)input.LT(1);
-                    match(input,125,FOLLOW_125_in_ruleMonsterInst210158); 
+                    lv_uwdamage_39_0=(Token)input.LT(1);
+                    match(input,124,FOLLOW_124_in_ruleMonsterInst210121); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_40_0(), "uwdamage"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_39_0(), "uwdamage"); 
                         
 
                     	        if (current==null) {
@@ -11272,19 +11231,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 42 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5231:6: ( (lv_coldpower_41_0= '#coldpower' ) )
+                case 41 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5209:6: ( (lv_coldpower_40_0= '#coldpower' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5231:6: ( (lv_coldpower_41_0= '#coldpower' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5232:1: (lv_coldpower_41_0= '#coldpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5209:6: ( (lv_coldpower_40_0= '#coldpower' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5210:1: (lv_coldpower_40_0= '#coldpower' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5232:1: (lv_coldpower_41_0= '#coldpower' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5233:3: lv_coldpower_41_0= '#coldpower'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5210:1: (lv_coldpower_40_0= '#coldpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5211:3: lv_coldpower_40_0= '#coldpower'
                     {
-                    lv_coldpower_41_0=(Token)input.LT(1);
-                    match(input,126,FOLLOW_126_in_ruleMonsterInst210195); 
+                    lv_coldpower_40_0=(Token)input.LT(1);
+                    match(input,125,FOLLOW_125_in_ruleMonsterInst210158); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_41_0(), "coldpower"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_40_0(), "coldpower"); 
                         
 
                     	        if (current==null) {
@@ -11307,19 +11266,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 43 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5253:6: ( (lv_firepower_42_0= '#firepower' ) )
+                case 42 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5231:6: ( (lv_firepower_41_0= '#firepower' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5253:6: ( (lv_firepower_42_0= '#firepower' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5254:1: (lv_firepower_42_0= '#firepower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5231:6: ( (lv_firepower_41_0= '#firepower' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5232:1: (lv_firepower_41_0= '#firepower' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5254:1: (lv_firepower_42_0= '#firepower' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5255:3: lv_firepower_42_0= '#firepower'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5232:1: (lv_firepower_41_0= '#firepower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5233:3: lv_firepower_41_0= '#firepower'
                     {
-                    lv_firepower_42_0=(Token)input.LT(1);
-                    match(input,127,FOLLOW_127_in_ruleMonsterInst210232); 
+                    lv_firepower_41_0=(Token)input.LT(1);
+                    match(input,126,FOLLOW_126_in_ruleMonsterInst210195); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_42_0(), "firepower"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_41_0(), "firepower"); 
                         
 
                     	        if (current==null) {
@@ -11342,19 +11301,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 44 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5275:6: ( (lv_stormpower_43_0= '#stormpower' ) )
+                case 43 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5253:6: ( (lv_stormpower_42_0= '#stormpower' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5275:6: ( (lv_stormpower_43_0= '#stormpower' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5276:1: (lv_stormpower_43_0= '#stormpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5253:6: ( (lv_stormpower_42_0= '#stormpower' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5254:1: (lv_stormpower_42_0= '#stormpower' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5276:1: (lv_stormpower_43_0= '#stormpower' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5277:3: lv_stormpower_43_0= '#stormpower'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5254:1: (lv_stormpower_42_0= '#stormpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5255:3: lv_stormpower_42_0= '#stormpower'
                     {
-                    lv_stormpower_43_0=(Token)input.LT(1);
-                    match(input,128,FOLLOW_128_in_ruleMonsterInst210269); 
+                    lv_stormpower_42_0=(Token)input.LT(1);
+                    match(input,127,FOLLOW_127_in_ruleMonsterInst210232); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_43_0(), "stormpower"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_42_0(), "stormpower"); 
                         
 
                     	        if (current==null) {
@@ -11377,19 +11336,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 45 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5297:6: ( (lv_darkpower_44_0= '#darkpower' ) )
+                case 44 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5275:6: ( (lv_darkpower_43_0= '#darkpower' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5297:6: ( (lv_darkpower_44_0= '#darkpower' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5298:1: (lv_darkpower_44_0= '#darkpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5275:6: ( (lv_darkpower_43_0= '#darkpower' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5276:1: (lv_darkpower_43_0= '#darkpower' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5298:1: (lv_darkpower_44_0= '#darkpower' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5299:3: lv_darkpower_44_0= '#darkpower'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5276:1: (lv_darkpower_43_0= '#darkpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5277:3: lv_darkpower_43_0= '#darkpower'
                     {
-                    lv_darkpower_44_0=(Token)input.LT(1);
-                    match(input,129,FOLLOW_129_in_ruleMonsterInst210306); 
+                    lv_darkpower_43_0=(Token)input.LT(1);
+                    match(input,128,FOLLOW_128_in_ruleMonsterInst210269); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_44_0(), "darkpower"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_43_0(), "darkpower"); 
                         
 
                     	        if (current==null) {
@@ -11412,19 +11371,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 46 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5319:6: ( (lv_springpower_45_0= '#springpower' ) )
+                case 45 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5297:6: ( (lv_springpower_44_0= '#springpower' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5319:6: ( (lv_springpower_45_0= '#springpower' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5320:1: (lv_springpower_45_0= '#springpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5297:6: ( (lv_springpower_44_0= '#springpower' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5298:1: (lv_springpower_44_0= '#springpower' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5320:1: (lv_springpower_45_0= '#springpower' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5321:3: lv_springpower_45_0= '#springpower'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5298:1: (lv_springpower_44_0= '#springpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5299:3: lv_springpower_44_0= '#springpower'
                     {
-                    lv_springpower_45_0=(Token)input.LT(1);
-                    match(input,130,FOLLOW_130_in_ruleMonsterInst210343); 
+                    lv_springpower_44_0=(Token)input.LT(1);
+                    match(input,129,FOLLOW_129_in_ruleMonsterInst210306); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_45_0(), "springpower"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_44_0(), "springpower"); 
                         
 
                     	        if (current==null) {
@@ -11447,19 +11406,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 47 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5341:6: ( (lv_summerpower_46_0= '#summerpower' ) )
+                case 46 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5319:6: ( (lv_summerpower_45_0= '#summerpower' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5341:6: ( (lv_summerpower_46_0= '#summerpower' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5342:1: (lv_summerpower_46_0= '#summerpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5319:6: ( (lv_summerpower_45_0= '#summerpower' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5320:1: (lv_summerpower_45_0= '#summerpower' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5342:1: (lv_summerpower_46_0= '#summerpower' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5343:3: lv_summerpower_46_0= '#summerpower'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5320:1: (lv_summerpower_45_0= '#summerpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5321:3: lv_summerpower_45_0= '#summerpower'
                     {
-                    lv_summerpower_46_0=(Token)input.LT(1);
-                    match(input,131,FOLLOW_131_in_ruleMonsterInst210380); 
+                    lv_summerpower_45_0=(Token)input.LT(1);
+                    match(input,130,FOLLOW_130_in_ruleMonsterInst210343); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_46_0(), "summerpower"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_45_0(), "summerpower"); 
                         
 
                     	        if (current==null) {
@@ -11482,19 +11441,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 48 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5363:6: ( (lv_fallpower_47_0= '#fallpower' ) )
+                case 47 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5341:6: ( (lv_fallpower_46_0= '#fallpower' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5363:6: ( (lv_fallpower_47_0= '#fallpower' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5364:1: (lv_fallpower_47_0= '#fallpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5341:6: ( (lv_fallpower_46_0= '#fallpower' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5342:1: (lv_fallpower_46_0= '#fallpower' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5364:1: (lv_fallpower_47_0= '#fallpower' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5365:3: lv_fallpower_47_0= '#fallpower'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5342:1: (lv_fallpower_46_0= '#fallpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5343:3: lv_fallpower_46_0= '#fallpower'
                     {
-                    lv_fallpower_47_0=(Token)input.LT(1);
-                    match(input,132,FOLLOW_132_in_ruleMonsterInst210417); 
+                    lv_fallpower_46_0=(Token)input.LT(1);
+                    match(input,131,FOLLOW_131_in_ruleMonsterInst210380); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_47_0(), "fallpower"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_46_0(), "fallpower"); 
                         
 
                     	        if (current==null) {
@@ -11517,19 +11476,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 49 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5385:6: ( (lv_winterpower_48_0= '#winterpower' ) )
+                case 48 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5363:6: ( (lv_winterpower_47_0= '#winterpower' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5385:6: ( (lv_winterpower_48_0= '#winterpower' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5386:1: (lv_winterpower_48_0= '#winterpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5363:6: ( (lv_winterpower_47_0= '#winterpower' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5364:1: (lv_winterpower_47_0= '#winterpower' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5386:1: (lv_winterpower_48_0= '#winterpower' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5387:3: lv_winterpower_48_0= '#winterpower'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5364:1: (lv_winterpower_47_0= '#winterpower' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5365:3: lv_winterpower_47_0= '#winterpower'
                     {
-                    lv_winterpower_48_0=(Token)input.LT(1);
-                    match(input,133,FOLLOW_133_in_ruleMonsterInst210454); 
+                    lv_winterpower_47_0=(Token)input.LT(1);
+                    match(input,132,FOLLOW_132_in_ruleMonsterInst210417); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_48_0(), "winterpower"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_47_0(), "winterpower"); 
                         
 
                     	        if (current==null) {
@@ -11552,19 +11511,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 50 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5407:6: ( (lv_ambidextrous_49_0= '#ambidextrous' ) )
+                case 49 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5385:6: ( (lv_ambidextrous_48_0= '#ambidextrous' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5407:6: ( (lv_ambidextrous_49_0= '#ambidextrous' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5408:1: (lv_ambidextrous_49_0= '#ambidextrous' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5385:6: ( (lv_ambidextrous_48_0= '#ambidextrous' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5386:1: (lv_ambidextrous_48_0= '#ambidextrous' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5408:1: (lv_ambidextrous_49_0= '#ambidextrous' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5409:3: lv_ambidextrous_49_0= '#ambidextrous'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5386:1: (lv_ambidextrous_48_0= '#ambidextrous' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5387:3: lv_ambidextrous_48_0= '#ambidextrous'
                     {
-                    lv_ambidextrous_49_0=(Token)input.LT(1);
-                    match(input,134,FOLLOW_134_in_ruleMonsterInst210491); 
+                    lv_ambidextrous_48_0=(Token)input.LT(1);
+                    match(input,133,FOLLOW_133_in_ruleMonsterInst210454); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_49_0(), "ambidextrous"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_48_0(), "ambidextrous"); 
                         
 
                     	        if (current==null) {
@@ -11587,19 +11546,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 51 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5429:6: ( (lv_banefireshield_50_0= '#banefireshield' ) )
+                case 50 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5407:6: ( (lv_banefireshield_49_0= '#banefireshield' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5429:6: ( (lv_banefireshield_50_0= '#banefireshield' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5430:1: (lv_banefireshield_50_0= '#banefireshield' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5407:6: ( (lv_banefireshield_49_0= '#banefireshield' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5408:1: (lv_banefireshield_49_0= '#banefireshield' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5430:1: (lv_banefireshield_50_0= '#banefireshield' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5431:3: lv_banefireshield_50_0= '#banefireshield'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5408:1: (lv_banefireshield_49_0= '#banefireshield' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5409:3: lv_banefireshield_49_0= '#banefireshield'
                     {
-                    lv_banefireshield_50_0=(Token)input.LT(1);
-                    match(input,135,FOLLOW_135_in_ruleMonsterInst210528); 
+                    lv_banefireshield_49_0=(Token)input.LT(1);
+                    match(input,134,FOLLOW_134_in_ruleMonsterInst210491); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_50_0(), "banefireshield"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_49_0(), "banefireshield"); 
                         
 
                     	        if (current==null) {
@@ -11622,19 +11581,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 52 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5451:6: ( (lv_berserk_51_0= '#berserk' ) )
+                case 51 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5429:6: ( (lv_berserk_50_0= '#berserk' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5451:6: ( (lv_berserk_51_0= '#berserk' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5452:1: (lv_berserk_51_0= '#berserk' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5429:6: ( (lv_berserk_50_0= '#berserk' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5430:1: (lv_berserk_50_0= '#berserk' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5452:1: (lv_berserk_51_0= '#berserk' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5453:3: lv_berserk_51_0= '#berserk'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5430:1: (lv_berserk_50_0= '#berserk' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5431:3: lv_berserk_50_0= '#berserk'
                     {
-                    lv_berserk_51_0=(Token)input.LT(1);
-                    match(input,136,FOLLOW_136_in_ruleMonsterInst210565); 
+                    lv_berserk_50_0=(Token)input.LT(1);
+                    match(input,135,FOLLOW_135_in_ruleMonsterInst210528); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_51_0(), "berserk"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_50_0(), "berserk"); 
                         
 
                     	        if (current==null) {
@@ -11657,19 +11616,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 53 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5473:6: ( (lv_standard_52_0= '#standard' ) )
+                case 52 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5451:6: ( (lv_standard_51_0= '#standard' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5473:6: ( (lv_standard_52_0= '#standard' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5474:1: (lv_standard_52_0= '#standard' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5451:6: ( (lv_standard_51_0= '#standard' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5452:1: (lv_standard_51_0= '#standard' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5474:1: (lv_standard_52_0= '#standard' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5475:3: lv_standard_52_0= '#standard'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5452:1: (lv_standard_51_0= '#standard' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5453:3: lv_standard_51_0= '#standard'
                     {
-                    lv_standard_52_0=(Token)input.LT(1);
-                    match(input,137,FOLLOW_137_in_ruleMonsterInst210602); 
+                    lv_standard_51_0=(Token)input.LT(1);
+                    match(input,136,FOLLOW_136_in_ruleMonsterInst210565); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_52_0(), "standard"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_51_0(), "standard"); 
                         
 
                     	        if (current==null) {
@@ -11692,19 +11651,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 54 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5495:6: ( (lv_animalawe_53_0= '#animalawe' ) )
+                case 53 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5473:6: ( (lv_animalawe_52_0= '#animalawe' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5495:6: ( (lv_animalawe_53_0= '#animalawe' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5496:1: (lv_animalawe_53_0= '#animalawe' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5473:6: ( (lv_animalawe_52_0= '#animalawe' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5474:1: (lv_animalawe_52_0= '#animalawe' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5496:1: (lv_animalawe_53_0= '#animalawe' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5497:3: lv_animalawe_53_0= '#animalawe'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5474:1: (lv_animalawe_52_0= '#animalawe' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5475:3: lv_animalawe_52_0= '#animalawe'
                     {
-                    lv_animalawe_53_0=(Token)input.LT(1);
-                    match(input,138,FOLLOW_138_in_ruleMonsterInst210639); 
+                    lv_animalawe_52_0=(Token)input.LT(1);
+                    match(input,137,FOLLOW_137_in_ruleMonsterInst210602); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_53_0(), "animalawe"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_52_0(), "animalawe"); 
                         
 
                     	        if (current==null) {
@@ -11727,19 +11686,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 55 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5517:6: ( (lv_awe_54_0= '#awe' ) )
+                case 54 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5495:6: ( (lv_awe_53_0= '#awe' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5517:6: ( (lv_awe_54_0= '#awe' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5518:1: (lv_awe_54_0= '#awe' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5495:6: ( (lv_awe_53_0= '#awe' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5496:1: (lv_awe_53_0= '#awe' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5518:1: (lv_awe_54_0= '#awe' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5519:3: lv_awe_54_0= '#awe'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5496:1: (lv_awe_53_0= '#awe' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5497:3: lv_awe_53_0= '#awe'
                     {
-                    lv_awe_54_0=(Token)input.LT(1);
-                    match(input,139,FOLLOW_139_in_ruleMonsterInst210676); 
+                    lv_awe_53_0=(Token)input.LT(1);
+                    match(input,138,FOLLOW_138_in_ruleMonsterInst210639); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getAweAweKeyword_54_0(), "awe"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getAweAweKeyword_53_0(), "awe"); 
                         
 
                     	        if (current==null) {
@@ -11762,19 +11721,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 56 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5539:6: ( (lv_fear_55_0= '#fear' ) )
+                case 55 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5517:6: ( (lv_fear_54_0= '#fear' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5539:6: ( (lv_fear_55_0= '#fear' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5540:1: (lv_fear_55_0= '#fear' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5517:6: ( (lv_fear_54_0= '#fear' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5518:1: (lv_fear_54_0= '#fear' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5540:1: (lv_fear_55_0= '#fear' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5541:3: lv_fear_55_0= '#fear'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5518:1: (lv_fear_54_0= '#fear' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5519:3: lv_fear_54_0= '#fear'
                     {
-                    lv_fear_55_0=(Token)input.LT(1);
-                    match(input,140,FOLLOW_140_in_ruleMonsterInst210713); 
+                    lv_fear_54_0=(Token)input.LT(1);
+                    match(input,139,FOLLOW_139_in_ruleMonsterInst210676); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getFearFearKeyword_55_0(), "fear"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getFearFearKeyword_54_0(), "fear"); 
                         
 
                     	        if (current==null) {
@@ -11797,19 +11756,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 57 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5561:6: ( (lv_regeneration_56_0= '#regeneration' ) )
+                case 56 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5539:6: ( (lv_regeneration_55_0= '#regeneration' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5561:6: ( (lv_regeneration_56_0= '#regeneration' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5562:1: (lv_regeneration_56_0= '#regeneration' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5539:6: ( (lv_regeneration_55_0= '#regeneration' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5540:1: (lv_regeneration_55_0= '#regeneration' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5562:1: (lv_regeneration_56_0= '#regeneration' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5563:3: lv_regeneration_56_0= '#regeneration'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5540:1: (lv_regeneration_55_0= '#regeneration' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5541:3: lv_regeneration_55_0= '#regeneration'
                     {
-                    lv_regeneration_56_0=(Token)input.LT(1);
-                    match(input,141,FOLLOW_141_in_ruleMonsterInst210750); 
+                    lv_regeneration_55_0=(Token)input.LT(1);
+                    match(input,140,FOLLOW_140_in_ruleMonsterInst210713); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_56_0(), "regeneration"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_55_0(), "regeneration"); 
                         
 
                     	        if (current==null) {
@@ -11832,19 +11791,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 58 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5583:6: ( (lv_reinvigoration_57_0= '#reinvigoration' ) )
+                case 57 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5561:6: ( (lv_reinvigoration_56_0= '#reinvigoration' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5583:6: ( (lv_reinvigoration_57_0= '#reinvigoration' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5584:1: (lv_reinvigoration_57_0= '#reinvigoration' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5561:6: ( (lv_reinvigoration_56_0= '#reinvigoration' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5562:1: (lv_reinvigoration_56_0= '#reinvigoration' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5584:1: (lv_reinvigoration_57_0= '#reinvigoration' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5585:3: lv_reinvigoration_57_0= '#reinvigoration'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5562:1: (lv_reinvigoration_56_0= '#reinvigoration' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5563:3: lv_reinvigoration_56_0= '#reinvigoration'
                     {
-                    lv_reinvigoration_57_0=(Token)input.LT(1);
-                    match(input,142,FOLLOW_142_in_ruleMonsterInst210787); 
+                    lv_reinvigoration_56_0=(Token)input.LT(1);
+                    match(input,141,FOLLOW_141_in_ruleMonsterInst210750); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_57_0(), "reinvigoration"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_56_0(), "reinvigoration"); 
                         
 
                     	        if (current==null) {
@@ -11867,19 +11826,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 59 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5605:6: ( (lv_fireshield_58_0= '#fireshield' ) )
+                case 58 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5583:6: ( (lv_fireshield_57_0= '#fireshield' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5605:6: ( (lv_fireshield_58_0= '#fireshield' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5606:1: (lv_fireshield_58_0= '#fireshield' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5583:6: ( (lv_fireshield_57_0= '#fireshield' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5584:1: (lv_fireshield_57_0= '#fireshield' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5606:1: (lv_fireshield_58_0= '#fireshield' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5607:3: lv_fireshield_58_0= '#fireshield'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5584:1: (lv_fireshield_57_0= '#fireshield' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5585:3: lv_fireshield_57_0= '#fireshield'
                     {
-                    lv_fireshield_58_0=(Token)input.LT(1);
-                    match(input,143,FOLLOW_143_in_ruleMonsterInst210824); 
+                    lv_fireshield_57_0=(Token)input.LT(1);
+                    match(input,142,FOLLOW_142_in_ruleMonsterInst210787); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_58_0(), "fireshield"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_57_0(), "fireshield"); 
                         
 
                     	        if (current==null) {
@@ -11902,19 +11861,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 60 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5627:6: ( (lv_iceprot_59_0= '#iceprot' ) )
+                case 59 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5605:6: ( (lv_iceprot_58_0= '#iceprot' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5627:6: ( (lv_iceprot_59_0= '#iceprot' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5628:1: (lv_iceprot_59_0= '#iceprot' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5605:6: ( (lv_iceprot_58_0= '#iceprot' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5606:1: (lv_iceprot_58_0= '#iceprot' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5628:1: (lv_iceprot_59_0= '#iceprot' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5629:3: lv_iceprot_59_0= '#iceprot'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5606:1: (lv_iceprot_58_0= '#iceprot' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5607:3: lv_iceprot_58_0= '#iceprot'
                     {
-                    lv_iceprot_59_0=(Token)input.LT(1);
-                    match(input,144,FOLLOW_144_in_ruleMonsterInst210861); 
+                    lv_iceprot_58_0=(Token)input.LT(1);
+                    match(input,143,FOLLOW_143_in_ruleMonsterInst210824); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0(), "iceprot"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_58_0(), "iceprot"); 
                         
 
                     	        if (current==null) {
@@ -11937,19 +11896,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 61 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5649:6: ( (lv_poisoncloud_60_0= '#poisoncloud' ) )
+                case 60 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5627:6: ( (lv_poisoncloud_59_0= '#poisoncloud' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5649:6: ( (lv_poisoncloud_60_0= '#poisoncloud' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5650:1: (lv_poisoncloud_60_0= '#poisoncloud' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5627:6: ( (lv_poisoncloud_59_0= '#poisoncloud' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5628:1: (lv_poisoncloud_59_0= '#poisoncloud' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5650:1: (lv_poisoncloud_60_0= '#poisoncloud' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5651:3: lv_poisoncloud_60_0= '#poisoncloud'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5628:1: (lv_poisoncloud_59_0= '#poisoncloud' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5629:3: lv_poisoncloud_59_0= '#poisoncloud'
                     {
-                    lv_poisoncloud_60_0=(Token)input.LT(1);
-                    match(input,145,FOLLOW_145_in_ruleMonsterInst210898); 
+                    lv_poisoncloud_59_0=(Token)input.LT(1);
+                    match(input,144,FOLLOW_144_in_ruleMonsterInst210861); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0(), "poisoncloud"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_59_0(), "poisoncloud"); 
                         
 
                     	        if (current==null) {
@@ -11972,19 +11931,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 62 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5671:6: ( (lv_diseasecloud_61_0= '#diseasecloud' ) )
+                case 61 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5649:6: ( (lv_diseasecloud_60_0= '#diseasecloud' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5671:6: ( (lv_diseasecloud_61_0= '#diseasecloud' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5672:1: (lv_diseasecloud_61_0= '#diseasecloud' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5649:6: ( (lv_diseasecloud_60_0= '#diseasecloud' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5650:1: (lv_diseasecloud_60_0= '#diseasecloud' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5672:1: (lv_diseasecloud_61_0= '#diseasecloud' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5673:3: lv_diseasecloud_61_0= '#diseasecloud'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5650:1: (lv_diseasecloud_60_0= '#diseasecloud' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5651:3: lv_diseasecloud_60_0= '#diseasecloud'
                     {
-                    lv_diseasecloud_61_0=(Token)input.LT(1);
-                    match(input,146,FOLLOW_146_in_ruleMonsterInst210935); 
+                    lv_diseasecloud_60_0=(Token)input.LT(1);
+                    match(input,145,FOLLOW_145_in_ruleMonsterInst210898); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0(), "diseasecloud"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_60_0(), "diseasecloud"); 
                         
 
                     	        if (current==null) {
@@ -12007,19 +11966,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 63 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5693:6: ( (lv_bloodvengeance_62_0= '#bloodvengeance' ) )
+                case 62 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5671:6: ( (lv_bloodvengeance_61_0= '#bloodvengeance' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5693:6: ( (lv_bloodvengeance_62_0= '#bloodvengeance' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5694:1: (lv_bloodvengeance_62_0= '#bloodvengeance' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5671:6: ( (lv_bloodvengeance_61_0= '#bloodvengeance' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5672:1: (lv_bloodvengeance_61_0= '#bloodvengeance' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5694:1: (lv_bloodvengeance_62_0= '#bloodvengeance' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5695:3: lv_bloodvengeance_62_0= '#bloodvengeance'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5672:1: (lv_bloodvengeance_61_0= '#bloodvengeance' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5673:3: lv_bloodvengeance_61_0= '#bloodvengeance'
                     {
-                    lv_bloodvengeance_62_0=(Token)input.LT(1);
-                    match(input,147,FOLLOW_147_in_ruleMonsterInst210972); 
+                    lv_bloodvengeance_61_0=(Token)input.LT(1);
+                    match(input,146,FOLLOW_146_in_ruleMonsterInst210935); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0(), "bloodvengeance"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_61_0(), "bloodvengeance"); 
                         
 
                     	        if (current==null) {
@@ -12042,19 +12001,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 64 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5715:6: ( (lv_castledef_63_0= '#castledef' ) )
+                case 63 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5693:6: ( (lv_castledef_62_0= '#castledef' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5715:6: ( (lv_castledef_63_0= '#castledef' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5716:1: (lv_castledef_63_0= '#castledef' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5693:6: ( (lv_castledef_62_0= '#castledef' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5694:1: (lv_castledef_62_0= '#castledef' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5716:1: (lv_castledef_63_0= '#castledef' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5717:3: lv_castledef_63_0= '#castledef'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5694:1: (lv_castledef_62_0= '#castledef' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5695:3: lv_castledef_62_0= '#castledef'
                     {
-                    lv_castledef_63_0=(Token)input.LT(1);
-                    match(input,148,FOLLOW_148_in_ruleMonsterInst211009); 
+                    lv_castledef_62_0=(Token)input.LT(1);
+                    match(input,147,FOLLOW_147_in_ruleMonsterInst210972); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0(), "castledef"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_62_0(), "castledef"); 
                         
 
                     	        if (current==null) {
@@ -12077,19 +12036,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 65 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5737:6: ( (lv_siegebonus_64_0= '#siegebonus' ) )
+                case 64 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5715:6: ( (lv_siegebonus_63_0= '#siegebonus' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5737:6: ( (lv_siegebonus_64_0= '#siegebonus' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5738:1: (lv_siegebonus_64_0= '#siegebonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5715:6: ( (lv_siegebonus_63_0= '#siegebonus' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5716:1: (lv_siegebonus_63_0= '#siegebonus' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5738:1: (lv_siegebonus_64_0= '#siegebonus' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5739:3: lv_siegebonus_64_0= '#siegebonus'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5716:1: (lv_siegebonus_63_0= '#siegebonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5717:3: lv_siegebonus_63_0= '#siegebonus'
                     {
-                    lv_siegebonus_64_0=(Token)input.LT(1);
-                    match(input,149,FOLLOW_149_in_ruleMonsterInst211046); 
+                    lv_siegebonus_63_0=(Token)input.LT(1);
+                    match(input,148,FOLLOW_148_in_ruleMonsterInst211009); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0(), "siegebonus"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_63_0(), "siegebonus"); 
                         
 
                     	        if (current==null) {
@@ -12112,19 +12071,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 66 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5759:6: ( (lv_patrolbonus_65_0= '#patrolbonus' ) )
+                case 65 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5737:6: ( (lv_patrolbonus_64_0= '#patrolbonus' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5759:6: ( (lv_patrolbonus_65_0= '#patrolbonus' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5760:1: (lv_patrolbonus_65_0= '#patrolbonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5737:6: ( (lv_patrolbonus_64_0= '#patrolbonus' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5738:1: (lv_patrolbonus_64_0= '#patrolbonus' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5760:1: (lv_patrolbonus_65_0= '#patrolbonus' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5761:3: lv_patrolbonus_65_0= '#patrolbonus'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5738:1: (lv_patrolbonus_64_0= '#patrolbonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5739:3: lv_patrolbonus_64_0= '#patrolbonus'
                     {
-                    lv_patrolbonus_65_0=(Token)input.LT(1);
-                    match(input,150,FOLLOW_150_in_ruleMonsterInst211083); 
+                    lv_patrolbonus_64_0=(Token)input.LT(1);
+                    match(input,149,FOLLOW_149_in_ruleMonsterInst211046); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0(), "patrolbonus"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_64_0(), "patrolbonus"); 
                         
 
                     	        if (current==null) {
@@ -12147,19 +12106,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 67 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5781:6: ( (lv_pillagebonus_66_0= '#pillagebonus' ) )
+                case 66 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5759:6: ( (lv_pillagebonus_65_0= '#pillagebonus' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5781:6: ( (lv_pillagebonus_66_0= '#pillagebonus' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5782:1: (lv_pillagebonus_66_0= '#pillagebonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5759:6: ( (lv_pillagebonus_65_0= '#pillagebonus' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5760:1: (lv_pillagebonus_65_0= '#pillagebonus' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5782:1: (lv_pillagebonus_66_0= '#pillagebonus' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5783:3: lv_pillagebonus_66_0= '#pillagebonus'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5760:1: (lv_pillagebonus_65_0= '#pillagebonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5761:3: lv_pillagebonus_65_0= '#pillagebonus'
                     {
-                    lv_pillagebonus_66_0=(Token)input.LT(1);
-                    match(input,151,FOLLOW_151_in_ruleMonsterInst211120); 
+                    lv_pillagebonus_65_0=(Token)input.LT(1);
+                    match(input,150,FOLLOW_150_in_ruleMonsterInst211083); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0(), "pillagebonus"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_65_0(), "pillagebonus"); 
                         
 
                     	        if (current==null) {
@@ -12182,19 +12141,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 68 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5803:6: ( (lv_researchbonus_67_0= '#researchbonus' ) )
+                case 67 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5781:6: ( (lv_researchbonus_66_0= '#researchbonus' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5803:6: ( (lv_researchbonus_67_0= '#researchbonus' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5804:1: (lv_researchbonus_67_0= '#researchbonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5781:6: ( (lv_researchbonus_66_0= '#researchbonus' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5782:1: (lv_researchbonus_66_0= '#researchbonus' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5804:1: (lv_researchbonus_67_0= '#researchbonus' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5805:3: lv_researchbonus_67_0= '#researchbonus'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5782:1: (lv_researchbonus_66_0= '#researchbonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5783:3: lv_researchbonus_66_0= '#researchbonus'
                     {
-                    lv_researchbonus_67_0=(Token)input.LT(1);
-                    match(input,152,FOLLOW_152_in_ruleMonsterInst211157); 
+                    lv_researchbonus_66_0=(Token)input.LT(1);
+                    match(input,151,FOLLOW_151_in_ruleMonsterInst211120); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0(), "researchbonus"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_66_0(), "researchbonus"); 
                         
 
                     	        if (current==null) {
@@ -12217,19 +12176,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 69 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5825:6: ( (lv_forgebonus_68_0= '#forgebonus' ) )
+                case 68 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5803:6: ( (lv_forgebonus_67_0= '#forgebonus' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5825:6: ( (lv_forgebonus_68_0= '#forgebonus' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5826:1: (lv_forgebonus_68_0= '#forgebonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5803:6: ( (lv_forgebonus_67_0= '#forgebonus' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5804:1: (lv_forgebonus_67_0= '#forgebonus' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5826:1: (lv_forgebonus_68_0= '#forgebonus' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5827:3: lv_forgebonus_68_0= '#forgebonus'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5804:1: (lv_forgebonus_67_0= '#forgebonus' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5805:3: lv_forgebonus_67_0= '#forgebonus'
                     {
-                    lv_forgebonus_68_0=(Token)input.LT(1);
-                    match(input,153,FOLLOW_153_in_ruleMonsterInst211194); 
+                    lv_forgebonus_67_0=(Token)input.LT(1);
+                    match(input,152,FOLLOW_152_in_ruleMonsterInst211157); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0(), "forgebonus"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_67_0(), "forgebonus"); 
                         
 
                     	        if (current==null) {
@@ -12252,19 +12211,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 70 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5847:6: ( (lv_douse_69_0= '#douse' ) )
+                case 69 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5825:6: ( (lv_douse_68_0= '#douse' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5847:6: ( (lv_douse_69_0= '#douse' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5848:1: (lv_douse_69_0= '#douse' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5825:6: ( (lv_douse_68_0= '#douse' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5826:1: (lv_douse_68_0= '#douse' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5848:1: (lv_douse_69_0= '#douse' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5849:3: lv_douse_69_0= '#douse'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5826:1: (lv_douse_68_0= '#douse' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5827:3: lv_douse_68_0= '#douse'
                     {
-                    lv_douse_69_0=(Token)input.LT(1);
-                    match(input,154,FOLLOW_154_in_ruleMonsterInst211231); 
+                    lv_douse_68_0=(Token)input.LT(1);
+                    match(input,153,FOLLOW_153_in_ruleMonsterInst211194); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0(), "douse"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_68_0(), "douse"); 
                         
 
                     	        if (current==null) {
@@ -12287,19 +12246,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 71 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5869:6: ( (lv_nobadevents_70_0= '#nobadevents' ) )
+                case 70 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5847:6: ( (lv_nobadevents_69_0= '#nobadevents' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5869:6: ( (lv_nobadevents_70_0= '#nobadevents' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5870:1: (lv_nobadevents_70_0= '#nobadevents' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5847:6: ( (lv_nobadevents_69_0= '#nobadevents' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5848:1: (lv_nobadevents_69_0= '#nobadevents' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5870:1: (lv_nobadevents_70_0= '#nobadevents' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5871:3: lv_nobadevents_70_0= '#nobadevents'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5848:1: (lv_nobadevents_69_0= '#nobadevents' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5849:3: lv_nobadevents_69_0= '#nobadevents'
                     {
-                    lv_nobadevents_70_0=(Token)input.LT(1);
-                    match(input,155,FOLLOW_155_in_ruleMonsterInst211268); 
+                    lv_nobadevents_69_0=(Token)input.LT(1);
+                    match(input,154,FOLLOW_154_in_ruleMonsterInst211231); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0(), "nobadevents"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_69_0(), "nobadevents"); 
                         
 
                     	        if (current==null) {
@@ -12322,19 +12281,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 72 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5891:6: ( (lv_incunrest_71_0= '#incunrest' ) )
+                case 71 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5869:6: ( (lv_incunrest_70_0= '#incunrest' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5891:6: ( (lv_incunrest_71_0= '#incunrest' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5892:1: (lv_incunrest_71_0= '#incunrest' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5869:6: ( (lv_incunrest_70_0= '#incunrest' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5870:1: (lv_incunrest_70_0= '#incunrest' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5892:1: (lv_incunrest_71_0= '#incunrest' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5893:3: lv_incunrest_71_0= '#incunrest'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5870:1: (lv_incunrest_70_0= '#incunrest' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5871:3: lv_incunrest_70_0= '#incunrest'
                     {
-                    lv_incunrest_71_0=(Token)input.LT(1);
-                    match(input,156,FOLLOW_156_in_ruleMonsterInst211305); 
+                    lv_incunrest_70_0=(Token)input.LT(1);
+                    match(input,155,FOLLOW_155_in_ruleMonsterInst211268); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0(), "incunrest"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_70_0(), "incunrest"); 
                         
 
                     	        if (current==null) {
@@ -12357,19 +12316,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 73 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5913:6: ( (lv_spreaddom_72_0= '#spreaddom' ) )
+                case 72 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5891:6: ( (lv_spreaddom_71_0= '#spreaddom' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5913:6: ( (lv_spreaddom_72_0= '#spreaddom' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5914:1: (lv_spreaddom_72_0= '#spreaddom' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5891:6: ( (lv_spreaddom_71_0= '#spreaddom' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5892:1: (lv_spreaddom_71_0= '#spreaddom' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5914:1: (lv_spreaddom_72_0= '#spreaddom' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5915:3: lv_spreaddom_72_0= '#spreaddom'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5892:1: (lv_spreaddom_71_0= '#spreaddom' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5893:3: lv_spreaddom_71_0= '#spreaddom'
                     {
-                    lv_spreaddom_72_0=(Token)input.LT(1);
-                    match(input,157,FOLLOW_157_in_ruleMonsterInst211342); 
+                    lv_spreaddom_71_0=(Token)input.LT(1);
+                    match(input,156,FOLLOW_156_in_ruleMonsterInst211305); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0(), "spreaddom"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_71_0(), "spreaddom"); 
                         
 
                     	        if (current==null) {
@@ -12392,19 +12351,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 74 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5935:6: ( (lv_leper_73_0= '#leper' ) )
+                case 73 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5913:6: ( (lv_leper_72_0= '#leper' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5935:6: ( (lv_leper_73_0= '#leper' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5936:1: (lv_leper_73_0= '#leper' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5913:6: ( (lv_leper_72_0= '#leper' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5914:1: (lv_leper_72_0= '#leper' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5936:1: (lv_leper_73_0= '#leper' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5937:3: lv_leper_73_0= '#leper'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5914:1: (lv_leper_72_0= '#leper' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5915:3: lv_leper_72_0= '#leper'
                     {
-                    lv_leper_73_0=(Token)input.LT(1);
-                    match(input,158,FOLLOW_158_in_ruleMonsterInst211379); 
+                    lv_leper_72_0=(Token)input.LT(1);
+                    match(input,157,FOLLOW_157_in_ruleMonsterInst211342); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0(), "leper"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_72_0(), "leper"); 
                         
 
                     	        if (current==null) {
@@ -12427,19 +12386,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 75 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5957:6: ( (lv_popkill_74_0= '#popkill' ) )
+                case 74 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5935:6: ( (lv_popkill_73_0= '#popkill' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5957:6: ( (lv_popkill_74_0= '#popkill' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5958:1: (lv_popkill_74_0= '#popkill' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5935:6: ( (lv_popkill_73_0= '#popkill' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5936:1: (lv_popkill_73_0= '#popkill' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5958:1: (lv_popkill_74_0= '#popkill' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5959:3: lv_popkill_74_0= '#popkill'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5936:1: (lv_popkill_73_0= '#popkill' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5937:3: lv_popkill_73_0= '#popkill'
                     {
-                    lv_popkill_74_0=(Token)input.LT(1);
-                    match(input,159,FOLLOW_159_in_ruleMonsterInst211416); 
+                    lv_popkill_73_0=(Token)input.LT(1);
+                    match(input,158,FOLLOW_158_in_ruleMonsterInst211379); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0(), "popkill"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_73_0(), "popkill"); 
                         
 
                     	        if (current==null) {
@@ -12462,19 +12421,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 76 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5979:6: ( (lv_heretic_75_0= '#heretic' ) )
+                case 75 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5957:6: ( (lv_heretic_74_0= '#heretic' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5979:6: ( (lv_heretic_75_0= '#heretic' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5980:1: (lv_heretic_75_0= '#heretic' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5957:6: ( (lv_heretic_74_0= '#heretic' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5958:1: (lv_heretic_74_0= '#heretic' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5980:1: (lv_heretic_75_0= '#heretic' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5981:3: lv_heretic_75_0= '#heretic'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5958:1: (lv_heretic_74_0= '#heretic' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5959:3: lv_heretic_74_0= '#heretic'
                     {
-                    lv_heretic_75_0=(Token)input.LT(1);
-                    match(input,160,FOLLOW_160_in_ruleMonsterInst211453); 
+                    lv_heretic_74_0=(Token)input.LT(1);
+                    match(input,159,FOLLOW_159_in_ruleMonsterInst211416); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0(), "heretic"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_74_0(), "heretic"); 
                         
 
                     	        if (current==null) {
@@ -12497,19 +12456,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 77 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6001:6: ( (lv_itemslots_76_0= '#itemslots' ) )
+                case 76 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5979:6: ( (lv_itemslots_75_0= '#itemslots' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6001:6: ( (lv_itemslots_76_0= '#itemslots' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6002:1: (lv_itemslots_76_0= '#itemslots' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5979:6: ( (lv_itemslots_75_0= '#itemslots' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5980:1: (lv_itemslots_75_0= '#itemslots' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6002:1: (lv_itemslots_76_0= '#itemslots' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6003:3: lv_itemslots_76_0= '#itemslots'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5980:1: (lv_itemslots_75_0= '#itemslots' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5981:3: lv_itemslots_75_0= '#itemslots'
                     {
-                    lv_itemslots_76_0=(Token)input.LT(1);
-                    match(input,161,FOLLOW_161_in_ruleMonsterInst211490); 
+                    lv_itemslots_75_0=(Token)input.LT(1);
+                    match(input,160,FOLLOW_160_in_ruleMonsterInst211453); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0(), "itemslots"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_75_0(), "itemslots"); 
                         
 
                     	        if (current==null) {
@@ -12532,19 +12491,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 78 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6023:6: ( (lv_nametype_77_0= '#nametype' ) )
+                case 77 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6001:6: ( (lv_nametype_76_0= '#nametype' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6023:6: ( (lv_nametype_77_0= '#nametype' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6024:1: (lv_nametype_77_0= '#nametype' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6001:6: ( (lv_nametype_76_0= '#nametype' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6002:1: (lv_nametype_76_0= '#nametype' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6024:1: (lv_nametype_77_0= '#nametype' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6025:3: lv_nametype_77_0= '#nametype'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6002:1: (lv_nametype_76_0= '#nametype' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6003:3: lv_nametype_76_0= '#nametype'
                     {
-                    lv_nametype_77_0=(Token)input.LT(1);
-                    match(input,162,FOLLOW_162_in_ruleMonsterInst211527); 
+                    lv_nametype_76_0=(Token)input.LT(1);
+                    match(input,161,FOLLOW_161_in_ruleMonsterInst211490); 
 
-                            createLeafNode(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0(), "nametype"); 
+                            createLeafNode(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_76_0(), "nametype"); 
                         
 
                     	        if (current==null) {
@@ -12590,7 +12549,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleMonsterInst3
-    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6052:1: entryRuleMonsterInst3 returns [EObject current=null] : iv_ruleMonsterInst3= ruleMonsterInst3 EOF ;
+    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6030:1: entryRuleMonsterInst3 returns [EObject current=null] : iv_ruleMonsterInst3= ruleMonsterInst3 EOF ;
     public final EObject entryRuleMonsterInst3() throws RecognitionException {
         EObject current = null;
 
@@ -12598,16 +12557,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6053:2: (iv_ruleMonsterInst3= ruleMonsterInst3 EOF )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6054:2: iv_ruleMonsterInst3= ruleMonsterInst3 EOF
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6031:2: (iv_ruleMonsterInst3= ruleMonsterInst3 EOF )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6032:2: iv_ruleMonsterInst3= ruleMonsterInst3 EOF
             {
              currentNode = createCompositeNode(grammarAccess.getMonsterInst3Rule(), currentNode); 
-            pushFollow(FOLLOW_ruleMonsterInst3_in_entryRuleMonsterInst311576);
+            pushFollow(FOLLOW_ruleMonsterInst3_in_entryRuleMonsterInst311539);
             iv_ruleMonsterInst3=ruleMonsterInst3();
             _fsp--;
 
              current =iv_ruleMonsterInst3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst311586); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst311549); 
 
             }
 
@@ -12625,7 +12584,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleMonsterInst3
-    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6061:1: ruleMonsterInst3 returns [EObject current=null] : ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) ) ;
+    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6039:1: ruleMonsterInst3 returns [EObject current=null] : ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) ) ;
     public final EObject ruleMonsterInst3() throws RecognitionException {
         EObject current = null;
 
@@ -12637,51 +12596,51 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6066:6: ( ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) ) )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6067:1: ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6044:6: ( ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6045:1: ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) )
             {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6067:1: ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6045:1: ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) )
             int alt27=4;
             switch ( input.LA(1) ) {
-            case 163:
+            case 162:
                 {
                 alt27=1;
                 }
                 break;
-            case 164:
+            case 163:
                 {
                 alt27=2;
                 }
                 break;
-            case 165:
+            case 164:
                 {
                 alt27=3;
                 }
                 break;
-            case 166:
+            case 165:
                 {
                 alt27=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("6067:1: ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) )", 27, 0, input);
+                    new NoViableAltException("6045:1: ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) )", 27, 0, input);
 
                 throw nvae;
             }
 
             switch (alt27) {
                 case 1 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6067:2: ( (lv_magicskill_0_0= '#magicskill' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6045:2: ( (lv_magicskill_0_0= '#magicskill' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6067:2: ( (lv_magicskill_0_0= '#magicskill' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6068:1: (lv_magicskill_0_0= '#magicskill' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6045:2: ( (lv_magicskill_0_0= '#magicskill' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6046:1: (lv_magicskill_0_0= '#magicskill' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6068:1: (lv_magicskill_0_0= '#magicskill' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6069:3: lv_magicskill_0_0= '#magicskill'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6046:1: (lv_magicskill_0_0= '#magicskill' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6047:3: lv_magicskill_0_0= '#magicskill'
                     {
                     lv_magicskill_0_0=(Token)input.LT(1);
-                    match(input,163,FOLLOW_163_in_ruleMonsterInst311629); 
+                    match(input,162,FOLLOW_162_in_ruleMonsterInst311592); 
 
                             createLeafNode(grammarAccess.getMonsterInst3Access().getMagicskillMagicskillKeyword_0_0(), "magicskill"); 
                         
@@ -12707,16 +12666,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6089:6: ( (lv_custommagic_1_0= '#custommagic' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6067:6: ( (lv_custommagic_1_0= '#custommagic' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6089:6: ( (lv_custommagic_1_0= '#custommagic' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6090:1: (lv_custommagic_1_0= '#custommagic' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6067:6: ( (lv_custommagic_1_0= '#custommagic' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6068:1: (lv_custommagic_1_0= '#custommagic' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6090:1: (lv_custommagic_1_0= '#custommagic' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6091:3: lv_custommagic_1_0= '#custommagic'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6068:1: (lv_custommagic_1_0= '#custommagic' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6069:3: lv_custommagic_1_0= '#custommagic'
                     {
                     lv_custommagic_1_0=(Token)input.LT(1);
-                    match(input,164,FOLLOW_164_in_ruleMonsterInst311666); 
+                    match(input,163,FOLLOW_163_in_ruleMonsterInst311629); 
 
                             createLeafNode(grammarAccess.getMonsterInst3Access().getCustommagicCustommagicKeyword_1_0(), "custommagic"); 
                         
@@ -12742,16 +12701,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6111:6: ( (lv_magicboost_2_0= '#magicboost' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6089:6: ( (lv_magicboost_2_0= '#magicboost' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6111:6: ( (lv_magicboost_2_0= '#magicboost' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6112:1: (lv_magicboost_2_0= '#magicboost' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6089:6: ( (lv_magicboost_2_0= '#magicboost' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6090:1: (lv_magicboost_2_0= '#magicboost' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6112:1: (lv_magicboost_2_0= '#magicboost' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6113:3: lv_magicboost_2_0= '#magicboost'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6090:1: (lv_magicboost_2_0= '#magicboost' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6091:3: lv_magicboost_2_0= '#magicboost'
                     {
                     lv_magicboost_2_0=(Token)input.LT(1);
-                    match(input,165,FOLLOW_165_in_ruleMonsterInst311703); 
+                    match(input,164,FOLLOW_164_in_ruleMonsterInst311666); 
 
                             createLeafNode(grammarAccess.getMonsterInst3Access().getMagicboostMagicboostKeyword_2_0(), "magicboost"); 
                         
@@ -12777,16 +12736,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6133:6: ( (lv_gemprod_3_0= '#gemprod' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6111:6: ( (lv_gemprod_3_0= '#gemprod' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6133:6: ( (lv_gemprod_3_0= '#gemprod' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6134:1: (lv_gemprod_3_0= '#gemprod' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6111:6: ( (lv_gemprod_3_0= '#gemprod' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6112:1: (lv_gemprod_3_0= '#gemprod' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6134:1: (lv_gemprod_3_0= '#gemprod' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6135:3: lv_gemprod_3_0= '#gemprod'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6112:1: (lv_gemprod_3_0= '#gemprod' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6113:3: lv_gemprod_3_0= '#gemprod'
                     {
                     lv_gemprod_3_0=(Token)input.LT(1);
-                    match(input,166,FOLLOW_166_in_ruleMonsterInst311740); 
+                    match(input,165,FOLLOW_165_in_ruleMonsterInst311703); 
 
                             createLeafNode(grammarAccess.getMonsterInst3Access().getGemprodGemprodKeyword_3_0(), "gemprod"); 
                         
@@ -12834,7 +12793,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleMonsterInst4
-    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6162:1: entryRuleMonsterInst4 returns [EObject current=null] : iv_ruleMonsterInst4= ruleMonsterInst4 EOF ;
+    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6140:1: entryRuleMonsterInst4 returns [EObject current=null] : iv_ruleMonsterInst4= ruleMonsterInst4 EOF ;
     public final EObject entryRuleMonsterInst4() throws RecognitionException {
         EObject current = null;
 
@@ -12842,16 +12801,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6163:2: (iv_ruleMonsterInst4= ruleMonsterInst4 EOF )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6164:2: iv_ruleMonsterInst4= ruleMonsterInst4 EOF
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6141:2: (iv_ruleMonsterInst4= ruleMonsterInst4 EOF )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6142:2: iv_ruleMonsterInst4= ruleMonsterInst4 EOF
             {
              currentNode = createCompositeNode(grammarAccess.getMonsterInst4Rule(), currentNode); 
-            pushFollow(FOLLOW_ruleMonsterInst4_in_entryRuleMonsterInst411789);
+            pushFollow(FOLLOW_ruleMonsterInst4_in_entryRuleMonsterInst411752);
             iv_ruleMonsterInst4=ruleMonsterInst4();
             _fsp--;
 
              current =iv_ruleMonsterInst4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst411799); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst411762); 
 
             }
 
@@ -12869,7 +12828,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleMonsterInst4
-    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6171:1: ruleMonsterInst4 returns [EObject current=null] : ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearmagic_1_0= '#clearmagic' ) ) | ( (lv_clearspec_2_0= '#clearspec' ) ) | ( (lv_female_3_0= '#female' ) ) | ( (lv_mounted_4_0= '#mounted' ) ) | ( (lv_holy_5_0= '#holy' ) ) | ( (lv_animal_6_0= '#animal' ) ) | ( (lv_undead_7_0= '#undead' ) ) | ( (lv_demon_8_0= '#demon' ) ) | ( (lv_magicbeing_9_0= '#magicbeing' ) ) | ( (lv_stonebeing_10_0= '#stonebeing' ) ) | ( (lv_inanimate_11_0= '#inanimate' ) ) | ( (lv_coldblood_12_0= '#coldblood' ) ) | ( (lv_coldblood_13_0= '#coldblooded' ) ) | ( (lv_immortal_14_0= '#immortal' ) ) | ( (lv_blind_15_0= '#blind' ) ) | ( (lv_unique_16_0= '#unique' ) ) | ( (lv_immobile_17_0= '#immobile' ) ) | ( (lv_aquatic_18_0= '#aquatic' ) ) | ( (lv_amphibian_19_0= '#amphibian' ) ) | ( (lv_pooramphibian_20_0= '#pooramphibian' ) ) | ( (lv_flying_21_0= '#flying' ) ) | ( (lv_stormimmune_22_0= '#stormimmune' ) ) | ( (lv_sailing_23_0= '#sailing' ) ) | ( (lv_forestsurvival_24_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_26_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_27_0= '#wastesurvival' ) ) | ( (lv_illusion_28_0= '#illusion' ) ) | ( (lv_spy_29_0= '#spy' ) ) | ( (lv_assassin_30_0= '#assassin' ) ) | ( (lv_heal_31_0= '#heal' ) ) | ( (lv_noheal_32_0= '#noheal' ) ) | ( (lv_neednoteat_33_0= '#neednoteat' ) ) | ( (lv_ethereal_34_0= '#ethereal' ) ) | ( (lv_trample_35_0= '#trample' ) ) | ( (lv_entangle_36_0= '#entangle' ) ) | ( (lv_eyeloss_37_0= '#eyeloss' ) ) | ( (lv_horrormark_38_0= '#horrormark' ) ) | ( (lv_poisonarmor_39_0= '#poisonarmor' ) ) | ( (lv_inquisitor_40_0= '#inquisitor' ) ) | ( (lv_noitem_41_0= '#noitem' ) ) | ( (lv_noleader_42_0= '#noleader' ) ) | ( (lv_poorleader_43_0= '#poorleader' ) ) | ( (lv_okleader_44_0= '#okleader' ) ) | ( (lv_goodleader_45_0= '#goodleader' ) ) | ( (lv_expertleader_46_0= '#expertleader' ) ) | ( (lv_superiorleader_47_0= '#superiorleader' ) ) | ( (lv_nomagicleader_48_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_49_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_50_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_54_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_56_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) ) ) ;
+    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6149:1: ruleMonsterInst4 returns [EObject current=null] : ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearmagic_1_0= '#clearmagic' ) ) | ( (lv_clearspec_2_0= '#clearspec' ) ) | ( (lv_female_3_0= '#female' ) ) | ( (lv_mounted_4_0= '#mounted' ) ) | ( (lv_holy_5_0= '#holy' ) ) | ( (lv_animal_6_0= '#animal' ) ) | ( (lv_undead_7_0= '#undead' ) ) | ( (lv_demon_8_0= '#demon' ) ) | ( (lv_magicbeing_9_0= '#magicbeing' ) ) | ( (lv_stonebeing_10_0= '#stonebeing' ) ) | ( (lv_inanimate_11_0= '#inanimate' ) ) | ( (lv_coldblood_12_0= '#coldblood' ) ) | ( (lv_coldblood_13_0= '#coldblooded' ) ) | ( (lv_immortal_14_0= '#immortal' ) ) | ( (lv_blind_15_0= '#blind' ) ) | ( (lv_unique_16_0= '#unique' ) ) | ( (lv_immobile_17_0= '#immobile' ) ) | ( (lv_aquatic_18_0= '#aquatic' ) ) | ( (lv_amphibian_19_0= '#amphibian' ) ) | ( (lv_pooramphibian_20_0= '#pooramphibian' ) ) | ( (lv_flying_21_0= '#flying' ) ) | ( (lv_stormimmune_22_0= '#stormimmune' ) ) | ( (lv_sailing_23_0= '#sailing' ) ) | ( (lv_forestsurvival_24_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_26_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_27_0= '#wastesurvival' ) ) | ( (lv_illusion_28_0= '#illusion' ) ) | ( (lv_spy_29_0= '#spy' ) ) | ( (lv_assassin_30_0= '#assassin' ) ) | ( (lv_heal_31_0= '#heal' ) ) | ( (lv_noheal_32_0= '#noheal' ) ) | ( (lv_neednoteat_33_0= '#neednoteat' ) ) | ( (lv_ethereal_34_0= '#ethereal' ) ) | ( (lv_trample_35_0= '#trample' ) ) | ( (lv_entangle_36_0= '#entangle' ) ) | ( (lv_eyeloss_37_0= '#eyeloss' ) ) | ( (lv_horrormark_38_0= '#horrormark' ) ) | ( (lv_poisonarmor_39_0= '#poisonarmor' ) ) | ( (lv_inquisitor_40_0= '#inquisitor' ) ) | ( (lv_noitem_41_0= '#noitem' ) ) | ( (lv_noleader_42_0= '#noleader' ) ) | ( (lv_poorleader_43_0= '#poorleader' ) ) | ( (lv_okleader_44_0= '#okleader' ) ) | ( (lv_goodleader_45_0= '#goodleader' ) ) | ( (lv_expertleader_46_0= '#expertleader' ) ) | ( (lv_superiorleader_47_0= '#superiorleader' ) ) | ( (lv_nomagicleader_48_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_49_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_50_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_54_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_56_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) ) ) ;
     public final EObject ruleMonsterInst4() throws RecognitionException {
         EObject current = null;
 
@@ -12937,331 +12896,331 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6176:6: ( ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearmagic_1_0= '#clearmagic' ) ) | ( (lv_clearspec_2_0= '#clearspec' ) ) | ( (lv_female_3_0= '#female' ) ) | ( (lv_mounted_4_0= '#mounted' ) ) | ( (lv_holy_5_0= '#holy' ) ) | ( (lv_animal_6_0= '#animal' ) ) | ( (lv_undead_7_0= '#undead' ) ) | ( (lv_demon_8_0= '#demon' ) ) | ( (lv_magicbeing_9_0= '#magicbeing' ) ) | ( (lv_stonebeing_10_0= '#stonebeing' ) ) | ( (lv_inanimate_11_0= '#inanimate' ) ) | ( (lv_coldblood_12_0= '#coldblood' ) ) | ( (lv_coldblood_13_0= '#coldblooded' ) ) | ( (lv_immortal_14_0= '#immortal' ) ) | ( (lv_blind_15_0= '#blind' ) ) | ( (lv_unique_16_0= '#unique' ) ) | ( (lv_immobile_17_0= '#immobile' ) ) | ( (lv_aquatic_18_0= '#aquatic' ) ) | ( (lv_amphibian_19_0= '#amphibian' ) ) | ( (lv_pooramphibian_20_0= '#pooramphibian' ) ) | ( (lv_flying_21_0= '#flying' ) ) | ( (lv_stormimmune_22_0= '#stormimmune' ) ) | ( (lv_sailing_23_0= '#sailing' ) ) | ( (lv_forestsurvival_24_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_26_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_27_0= '#wastesurvival' ) ) | ( (lv_illusion_28_0= '#illusion' ) ) | ( (lv_spy_29_0= '#spy' ) ) | ( (lv_assassin_30_0= '#assassin' ) ) | ( (lv_heal_31_0= '#heal' ) ) | ( (lv_noheal_32_0= '#noheal' ) ) | ( (lv_neednoteat_33_0= '#neednoteat' ) ) | ( (lv_ethereal_34_0= '#ethereal' ) ) | ( (lv_trample_35_0= '#trample' ) ) | ( (lv_entangle_36_0= '#entangle' ) ) | ( (lv_eyeloss_37_0= '#eyeloss' ) ) | ( (lv_horrormark_38_0= '#horrormark' ) ) | ( (lv_poisonarmor_39_0= '#poisonarmor' ) ) | ( (lv_inquisitor_40_0= '#inquisitor' ) ) | ( (lv_noitem_41_0= '#noitem' ) ) | ( (lv_noleader_42_0= '#noleader' ) ) | ( (lv_poorleader_43_0= '#poorleader' ) ) | ( (lv_okleader_44_0= '#okleader' ) ) | ( (lv_goodleader_45_0= '#goodleader' ) ) | ( (lv_expertleader_46_0= '#expertleader' ) ) | ( (lv_superiorleader_47_0= '#superiorleader' ) ) | ( (lv_nomagicleader_48_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_49_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_50_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_54_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_56_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) ) ) )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6177:1: ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearmagic_1_0= '#clearmagic' ) ) | ( (lv_clearspec_2_0= '#clearspec' ) ) | ( (lv_female_3_0= '#female' ) ) | ( (lv_mounted_4_0= '#mounted' ) ) | ( (lv_holy_5_0= '#holy' ) ) | ( (lv_animal_6_0= '#animal' ) ) | ( (lv_undead_7_0= '#undead' ) ) | ( (lv_demon_8_0= '#demon' ) ) | ( (lv_magicbeing_9_0= '#magicbeing' ) ) | ( (lv_stonebeing_10_0= '#stonebeing' ) ) | ( (lv_inanimate_11_0= '#inanimate' ) ) | ( (lv_coldblood_12_0= '#coldblood' ) ) | ( (lv_coldblood_13_0= '#coldblooded' ) ) | ( (lv_immortal_14_0= '#immortal' ) ) | ( (lv_blind_15_0= '#blind' ) ) | ( (lv_unique_16_0= '#unique' ) ) | ( (lv_immobile_17_0= '#immobile' ) ) | ( (lv_aquatic_18_0= '#aquatic' ) ) | ( (lv_amphibian_19_0= '#amphibian' ) ) | ( (lv_pooramphibian_20_0= '#pooramphibian' ) ) | ( (lv_flying_21_0= '#flying' ) ) | ( (lv_stormimmune_22_0= '#stormimmune' ) ) | ( (lv_sailing_23_0= '#sailing' ) ) | ( (lv_forestsurvival_24_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_26_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_27_0= '#wastesurvival' ) ) | ( (lv_illusion_28_0= '#illusion' ) ) | ( (lv_spy_29_0= '#spy' ) ) | ( (lv_assassin_30_0= '#assassin' ) ) | ( (lv_heal_31_0= '#heal' ) ) | ( (lv_noheal_32_0= '#noheal' ) ) | ( (lv_neednoteat_33_0= '#neednoteat' ) ) | ( (lv_ethereal_34_0= '#ethereal' ) ) | ( (lv_trample_35_0= '#trample' ) ) | ( (lv_entangle_36_0= '#entangle' ) ) | ( (lv_eyeloss_37_0= '#eyeloss' ) ) | ( (lv_horrormark_38_0= '#horrormark' ) ) | ( (lv_poisonarmor_39_0= '#poisonarmor' ) ) | ( (lv_inquisitor_40_0= '#inquisitor' ) ) | ( (lv_noitem_41_0= '#noitem' ) ) | ( (lv_noleader_42_0= '#noleader' ) ) | ( (lv_poorleader_43_0= '#poorleader' ) ) | ( (lv_okleader_44_0= '#okleader' ) ) | ( (lv_goodleader_45_0= '#goodleader' ) ) | ( (lv_expertleader_46_0= '#expertleader' ) ) | ( (lv_superiorleader_47_0= '#superiorleader' ) ) | ( (lv_nomagicleader_48_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_49_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_50_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_54_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_56_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6154:6: ( ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearmagic_1_0= '#clearmagic' ) ) | ( (lv_clearspec_2_0= '#clearspec' ) ) | ( (lv_female_3_0= '#female' ) ) | ( (lv_mounted_4_0= '#mounted' ) ) | ( (lv_holy_5_0= '#holy' ) ) | ( (lv_animal_6_0= '#animal' ) ) | ( (lv_undead_7_0= '#undead' ) ) | ( (lv_demon_8_0= '#demon' ) ) | ( (lv_magicbeing_9_0= '#magicbeing' ) ) | ( (lv_stonebeing_10_0= '#stonebeing' ) ) | ( (lv_inanimate_11_0= '#inanimate' ) ) | ( (lv_coldblood_12_0= '#coldblood' ) ) | ( (lv_coldblood_13_0= '#coldblooded' ) ) | ( (lv_immortal_14_0= '#immortal' ) ) | ( (lv_blind_15_0= '#blind' ) ) | ( (lv_unique_16_0= '#unique' ) ) | ( (lv_immobile_17_0= '#immobile' ) ) | ( (lv_aquatic_18_0= '#aquatic' ) ) | ( (lv_amphibian_19_0= '#amphibian' ) ) | ( (lv_pooramphibian_20_0= '#pooramphibian' ) ) | ( (lv_flying_21_0= '#flying' ) ) | ( (lv_stormimmune_22_0= '#stormimmune' ) ) | ( (lv_sailing_23_0= '#sailing' ) ) | ( (lv_forestsurvival_24_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_26_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_27_0= '#wastesurvival' ) ) | ( (lv_illusion_28_0= '#illusion' ) ) | ( (lv_spy_29_0= '#spy' ) ) | ( (lv_assassin_30_0= '#assassin' ) ) | ( (lv_heal_31_0= '#heal' ) ) | ( (lv_noheal_32_0= '#noheal' ) ) | ( (lv_neednoteat_33_0= '#neednoteat' ) ) | ( (lv_ethereal_34_0= '#ethereal' ) ) | ( (lv_trample_35_0= '#trample' ) ) | ( (lv_entangle_36_0= '#entangle' ) ) | ( (lv_eyeloss_37_0= '#eyeloss' ) ) | ( (lv_horrormark_38_0= '#horrormark' ) ) | ( (lv_poisonarmor_39_0= '#poisonarmor' ) ) | ( (lv_inquisitor_40_0= '#inquisitor' ) ) | ( (lv_noitem_41_0= '#noitem' ) ) | ( (lv_noleader_42_0= '#noleader' ) ) | ( (lv_poorleader_43_0= '#poorleader' ) ) | ( (lv_okleader_44_0= '#okleader' ) ) | ( (lv_goodleader_45_0= '#goodleader' ) ) | ( (lv_expertleader_46_0= '#expertleader' ) ) | ( (lv_superiorleader_47_0= '#superiorleader' ) ) | ( (lv_nomagicleader_48_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_49_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_50_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_54_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_56_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6155:1: ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearmagic_1_0= '#clearmagic' ) ) | ( (lv_clearspec_2_0= '#clearspec' ) ) | ( (lv_female_3_0= '#female' ) ) | ( (lv_mounted_4_0= '#mounted' ) ) | ( (lv_holy_5_0= '#holy' ) ) | ( (lv_animal_6_0= '#animal' ) ) | ( (lv_undead_7_0= '#undead' ) ) | ( (lv_demon_8_0= '#demon' ) ) | ( (lv_magicbeing_9_0= '#magicbeing' ) ) | ( (lv_stonebeing_10_0= '#stonebeing' ) ) | ( (lv_inanimate_11_0= '#inanimate' ) ) | ( (lv_coldblood_12_0= '#coldblood' ) ) | ( (lv_coldblood_13_0= '#coldblooded' ) ) | ( (lv_immortal_14_0= '#immortal' ) ) | ( (lv_blind_15_0= '#blind' ) ) | ( (lv_unique_16_0= '#unique' ) ) | ( (lv_immobile_17_0= '#immobile' ) ) | ( (lv_aquatic_18_0= '#aquatic' ) ) | ( (lv_amphibian_19_0= '#amphibian' ) ) | ( (lv_pooramphibian_20_0= '#pooramphibian' ) ) | ( (lv_flying_21_0= '#flying' ) ) | ( (lv_stormimmune_22_0= '#stormimmune' ) ) | ( (lv_sailing_23_0= '#sailing' ) ) | ( (lv_forestsurvival_24_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_26_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_27_0= '#wastesurvival' ) ) | ( (lv_illusion_28_0= '#illusion' ) ) | ( (lv_spy_29_0= '#spy' ) ) | ( (lv_assassin_30_0= '#assassin' ) ) | ( (lv_heal_31_0= '#heal' ) ) | ( (lv_noheal_32_0= '#noheal' ) ) | ( (lv_neednoteat_33_0= '#neednoteat' ) ) | ( (lv_ethereal_34_0= '#ethereal' ) ) | ( (lv_trample_35_0= '#trample' ) ) | ( (lv_entangle_36_0= '#entangle' ) ) | ( (lv_eyeloss_37_0= '#eyeloss' ) ) | ( (lv_horrormark_38_0= '#horrormark' ) ) | ( (lv_poisonarmor_39_0= '#poisonarmor' ) ) | ( (lv_inquisitor_40_0= '#inquisitor' ) ) | ( (lv_noitem_41_0= '#noitem' ) ) | ( (lv_noleader_42_0= '#noleader' ) ) | ( (lv_poorleader_43_0= '#poorleader' ) ) | ( (lv_okleader_44_0= '#okleader' ) ) | ( (lv_goodleader_45_0= '#goodleader' ) ) | ( (lv_expertleader_46_0= '#expertleader' ) ) | ( (lv_superiorleader_47_0= '#superiorleader' ) ) | ( (lv_nomagicleader_48_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_49_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_50_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_54_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_56_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) ) )
             {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6177:1: ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearmagic_1_0= '#clearmagic' ) ) | ( (lv_clearspec_2_0= '#clearspec' ) ) | ( (lv_female_3_0= '#female' ) ) | ( (lv_mounted_4_0= '#mounted' ) ) | ( (lv_holy_5_0= '#holy' ) ) | ( (lv_animal_6_0= '#animal' ) ) | ( (lv_undead_7_0= '#undead' ) ) | ( (lv_demon_8_0= '#demon' ) ) | ( (lv_magicbeing_9_0= '#magicbeing' ) ) | ( (lv_stonebeing_10_0= '#stonebeing' ) ) | ( (lv_inanimate_11_0= '#inanimate' ) ) | ( (lv_coldblood_12_0= '#coldblood' ) ) | ( (lv_coldblood_13_0= '#coldblooded' ) ) | ( (lv_immortal_14_0= '#immortal' ) ) | ( (lv_blind_15_0= '#blind' ) ) | ( (lv_unique_16_0= '#unique' ) ) | ( (lv_immobile_17_0= '#immobile' ) ) | ( (lv_aquatic_18_0= '#aquatic' ) ) | ( (lv_amphibian_19_0= '#amphibian' ) ) | ( (lv_pooramphibian_20_0= '#pooramphibian' ) ) | ( (lv_flying_21_0= '#flying' ) ) | ( (lv_stormimmune_22_0= '#stormimmune' ) ) | ( (lv_sailing_23_0= '#sailing' ) ) | ( (lv_forestsurvival_24_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_26_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_27_0= '#wastesurvival' ) ) | ( (lv_illusion_28_0= '#illusion' ) ) | ( (lv_spy_29_0= '#spy' ) ) | ( (lv_assassin_30_0= '#assassin' ) ) | ( (lv_heal_31_0= '#heal' ) ) | ( (lv_noheal_32_0= '#noheal' ) ) | ( (lv_neednoteat_33_0= '#neednoteat' ) ) | ( (lv_ethereal_34_0= '#ethereal' ) ) | ( (lv_trample_35_0= '#trample' ) ) | ( (lv_entangle_36_0= '#entangle' ) ) | ( (lv_eyeloss_37_0= '#eyeloss' ) ) | ( (lv_horrormark_38_0= '#horrormark' ) ) | ( (lv_poisonarmor_39_0= '#poisonarmor' ) ) | ( (lv_inquisitor_40_0= '#inquisitor' ) ) | ( (lv_noitem_41_0= '#noitem' ) ) | ( (lv_noleader_42_0= '#noleader' ) ) | ( (lv_poorleader_43_0= '#poorleader' ) ) | ( (lv_okleader_44_0= '#okleader' ) ) | ( (lv_goodleader_45_0= '#goodleader' ) ) | ( (lv_expertleader_46_0= '#expertleader' ) ) | ( (lv_superiorleader_47_0= '#superiorleader' ) ) | ( (lv_nomagicleader_48_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_49_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_50_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_54_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_56_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6155:1: ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearmagic_1_0= '#clearmagic' ) ) | ( (lv_clearspec_2_0= '#clearspec' ) ) | ( (lv_female_3_0= '#female' ) ) | ( (lv_mounted_4_0= '#mounted' ) ) | ( (lv_holy_5_0= '#holy' ) ) | ( (lv_animal_6_0= '#animal' ) ) | ( (lv_undead_7_0= '#undead' ) ) | ( (lv_demon_8_0= '#demon' ) ) | ( (lv_magicbeing_9_0= '#magicbeing' ) ) | ( (lv_stonebeing_10_0= '#stonebeing' ) ) | ( (lv_inanimate_11_0= '#inanimate' ) ) | ( (lv_coldblood_12_0= '#coldblood' ) ) | ( (lv_coldblood_13_0= '#coldblooded' ) ) | ( (lv_immortal_14_0= '#immortal' ) ) | ( (lv_blind_15_0= '#blind' ) ) | ( (lv_unique_16_0= '#unique' ) ) | ( (lv_immobile_17_0= '#immobile' ) ) | ( (lv_aquatic_18_0= '#aquatic' ) ) | ( (lv_amphibian_19_0= '#amphibian' ) ) | ( (lv_pooramphibian_20_0= '#pooramphibian' ) ) | ( (lv_flying_21_0= '#flying' ) ) | ( (lv_stormimmune_22_0= '#stormimmune' ) ) | ( (lv_sailing_23_0= '#sailing' ) ) | ( (lv_forestsurvival_24_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_26_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_27_0= '#wastesurvival' ) ) | ( (lv_illusion_28_0= '#illusion' ) ) | ( (lv_spy_29_0= '#spy' ) ) | ( (lv_assassin_30_0= '#assassin' ) ) | ( (lv_heal_31_0= '#heal' ) ) | ( (lv_noheal_32_0= '#noheal' ) ) | ( (lv_neednoteat_33_0= '#neednoteat' ) ) | ( (lv_ethereal_34_0= '#ethereal' ) ) | ( (lv_trample_35_0= '#trample' ) ) | ( (lv_entangle_36_0= '#entangle' ) ) | ( (lv_eyeloss_37_0= '#eyeloss' ) ) | ( (lv_horrormark_38_0= '#horrormark' ) ) | ( (lv_poisonarmor_39_0= '#poisonarmor' ) ) | ( (lv_inquisitor_40_0= '#inquisitor' ) ) | ( (lv_noitem_41_0= '#noitem' ) ) | ( (lv_noleader_42_0= '#noleader' ) ) | ( (lv_poorleader_43_0= '#poorleader' ) ) | ( (lv_okleader_44_0= '#okleader' ) ) | ( (lv_goodleader_45_0= '#goodleader' ) ) | ( (lv_expertleader_46_0= '#expertleader' ) ) | ( (lv_superiorleader_47_0= '#superiorleader' ) ) | ( (lv_nomagicleader_48_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_49_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_50_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_54_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_56_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) ) )
             int alt28=60;
             switch ( input.LA(1) ) {
-            case 167:
+            case 166:
                 {
                 alt28=1;
                 }
                 break;
-            case 168:
+            case 167:
                 {
                 alt28=2;
                 }
                 break;
-            case 169:
+            case 168:
                 {
                 alt28=3;
                 }
                 break;
-            case 170:
+            case 169:
                 {
                 alt28=4;
                 }
                 break;
-            case 171:
+            case 170:
                 {
                 alt28=5;
                 }
                 break;
-            case 172:
+            case 171:
                 {
                 alt28=6;
                 }
                 break;
-            case 173:
+            case 172:
                 {
                 alt28=7;
                 }
                 break;
-            case 174:
+            case 173:
                 {
                 alt28=8;
                 }
                 break;
-            case 175:
+            case 174:
                 {
                 alt28=9;
                 }
                 break;
-            case 176:
+            case 175:
                 {
                 alt28=10;
                 }
                 break;
-            case 177:
+            case 176:
                 {
                 alt28=11;
                 }
                 break;
-            case 178:
+            case 177:
                 {
                 alt28=12;
                 }
                 break;
-            case 179:
+            case 178:
                 {
                 alt28=13;
                 }
                 break;
-            case 180:
+            case 179:
                 {
                 alt28=14;
                 }
                 break;
-            case 181:
+            case 180:
                 {
                 alt28=15;
                 }
                 break;
-            case 182:
+            case 181:
                 {
                 alt28=16;
                 }
                 break;
-            case 183:
+            case 182:
                 {
                 alt28=17;
                 }
                 break;
-            case 184:
+            case 183:
                 {
                 alt28=18;
                 }
                 break;
-            case 185:
+            case 184:
                 {
                 alt28=19;
                 }
                 break;
-            case 186:
+            case 185:
                 {
                 alt28=20;
                 }
                 break;
-            case 187:
+            case 186:
                 {
                 alt28=21;
                 }
                 break;
-            case 188:
+            case 187:
                 {
                 alt28=22;
                 }
                 break;
-            case 189:
+            case 188:
                 {
                 alt28=23;
                 }
                 break;
-            case 190:
+            case 189:
                 {
                 alt28=24;
                 }
                 break;
-            case 191:
+            case 190:
                 {
                 alt28=25;
                 }
                 break;
-            case 192:
+            case 191:
                 {
                 alt28=26;
                 }
                 break;
-            case 193:
+            case 192:
                 {
                 alt28=27;
                 }
                 break;
-            case 194:
+            case 193:
                 {
                 alt28=28;
                 }
                 break;
-            case 195:
+            case 194:
                 {
                 alt28=29;
                 }
                 break;
-            case 196:
+            case 195:
                 {
                 alt28=30;
                 }
                 break;
-            case 197:
+            case 196:
                 {
                 alt28=31;
                 }
                 break;
-            case 198:
+            case 197:
                 {
                 alt28=32;
                 }
                 break;
-            case 199:
+            case 198:
                 {
                 alt28=33;
                 }
                 break;
-            case 200:
+            case 199:
                 {
                 alt28=34;
                 }
                 break;
-            case 201:
+            case 200:
                 {
                 alt28=35;
                 }
                 break;
-            case 202:
+            case 201:
                 {
                 alt28=36;
                 }
                 break;
-            case 203:
+            case 202:
                 {
                 alt28=37;
                 }
                 break;
-            case 204:
+            case 203:
                 {
                 alt28=38;
                 }
                 break;
-            case 205:
+            case 204:
                 {
                 alt28=39;
                 }
                 break;
-            case 206:
+            case 205:
                 {
                 alt28=40;
                 }
                 break;
-            case 207:
+            case 206:
                 {
                 alt28=41;
                 }
                 break;
-            case 208:
+            case 207:
                 {
                 alt28=42;
                 }
                 break;
-            case 209:
+            case 208:
                 {
                 alt28=43;
                 }
                 break;
-            case 210:
+            case 209:
                 {
                 alt28=44;
                 }
                 break;
-            case 211:
+            case 210:
                 {
                 alt28=45;
                 }
                 break;
-            case 212:
+            case 211:
                 {
                 alt28=46;
                 }
                 break;
-            case 213:
+            case 212:
                 {
                 alt28=47;
                 }
                 break;
-            case 214:
+            case 213:
                 {
                 alt28=48;
                 }
                 break;
-            case 215:
+            case 214:
                 {
                 alt28=49;
                 }
                 break;
-            case 216:
+            case 215:
                 {
                 alt28=50;
                 }
                 break;
-            case 217:
+            case 216:
                 {
                 alt28=51;
                 }
                 break;
-            case 218:
+            case 217:
                 {
                 alt28=52;
                 }
                 break;
-            case 219:
+            case 218:
                 {
                 alt28=53;
                 }
                 break;
-            case 220:
+            case 219:
                 {
                 alt28=54;
                 }
                 break;
-            case 221:
+            case 220:
                 {
                 alt28=55;
                 }
                 break;
-            case 222:
+            case 221:
                 {
                 alt28=56;
                 }
                 break;
-            case 223:
+            case 222:
                 {
                 alt28=57;
                 }
                 break;
-            case 224:
+            case 223:
                 {
                 alt28=58;
                 }
                 break;
-            case 225:
+            case 224:
                 {
                 alt28=59;
                 }
                 break;
-            case 226:
+            case 225:
                 {
                 alt28=60;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("6177:1: ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearmagic_1_0= '#clearmagic' ) ) | ( (lv_clearspec_2_0= '#clearspec' ) ) | ( (lv_female_3_0= '#female' ) ) | ( (lv_mounted_4_0= '#mounted' ) ) | ( (lv_holy_5_0= '#holy' ) ) | ( (lv_animal_6_0= '#animal' ) ) | ( (lv_undead_7_0= '#undead' ) ) | ( (lv_demon_8_0= '#demon' ) ) | ( (lv_magicbeing_9_0= '#magicbeing' ) ) | ( (lv_stonebeing_10_0= '#stonebeing' ) ) | ( (lv_inanimate_11_0= '#inanimate' ) ) | ( (lv_coldblood_12_0= '#coldblood' ) ) | ( (lv_coldblood_13_0= '#coldblooded' ) ) | ( (lv_immortal_14_0= '#immortal' ) ) | ( (lv_blind_15_0= '#blind' ) ) | ( (lv_unique_16_0= '#unique' ) ) | ( (lv_immobile_17_0= '#immobile' ) ) | ( (lv_aquatic_18_0= '#aquatic' ) ) | ( (lv_amphibian_19_0= '#amphibian' ) ) | ( (lv_pooramphibian_20_0= '#pooramphibian' ) ) | ( (lv_flying_21_0= '#flying' ) ) | ( (lv_stormimmune_22_0= '#stormimmune' ) ) | ( (lv_sailing_23_0= '#sailing' ) ) | ( (lv_forestsurvival_24_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_26_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_27_0= '#wastesurvival' ) ) | ( (lv_illusion_28_0= '#illusion' ) ) | ( (lv_spy_29_0= '#spy' ) ) | ( (lv_assassin_30_0= '#assassin' ) ) | ( (lv_heal_31_0= '#heal' ) ) | ( (lv_noheal_32_0= '#noheal' ) ) | ( (lv_neednoteat_33_0= '#neednoteat' ) ) | ( (lv_ethereal_34_0= '#ethereal' ) ) | ( (lv_trample_35_0= '#trample' ) ) | ( (lv_entangle_36_0= '#entangle' ) ) | ( (lv_eyeloss_37_0= '#eyeloss' ) ) | ( (lv_horrormark_38_0= '#horrormark' ) ) | ( (lv_poisonarmor_39_0= '#poisonarmor' ) ) | ( (lv_inquisitor_40_0= '#inquisitor' ) ) | ( (lv_noitem_41_0= '#noitem' ) ) | ( (lv_noleader_42_0= '#noleader' ) ) | ( (lv_poorleader_43_0= '#poorleader' ) ) | ( (lv_okleader_44_0= '#okleader' ) ) | ( (lv_goodleader_45_0= '#goodleader' ) ) | ( (lv_expertleader_46_0= '#expertleader' ) ) | ( (lv_superiorleader_47_0= '#superiorleader' ) ) | ( (lv_nomagicleader_48_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_49_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_50_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_54_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_56_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) ) )", 28, 0, input);
+                    new NoViableAltException("6155:1: ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearmagic_1_0= '#clearmagic' ) ) | ( (lv_clearspec_2_0= '#clearspec' ) ) | ( (lv_female_3_0= '#female' ) ) | ( (lv_mounted_4_0= '#mounted' ) ) | ( (lv_holy_5_0= '#holy' ) ) | ( (lv_animal_6_0= '#animal' ) ) | ( (lv_undead_7_0= '#undead' ) ) | ( (lv_demon_8_0= '#demon' ) ) | ( (lv_magicbeing_9_0= '#magicbeing' ) ) | ( (lv_stonebeing_10_0= '#stonebeing' ) ) | ( (lv_inanimate_11_0= '#inanimate' ) ) | ( (lv_coldblood_12_0= '#coldblood' ) ) | ( (lv_coldblood_13_0= '#coldblooded' ) ) | ( (lv_immortal_14_0= '#immortal' ) ) | ( (lv_blind_15_0= '#blind' ) ) | ( (lv_unique_16_0= '#unique' ) ) | ( (lv_immobile_17_0= '#immobile' ) ) | ( (lv_aquatic_18_0= '#aquatic' ) ) | ( (lv_amphibian_19_0= '#amphibian' ) ) | ( (lv_pooramphibian_20_0= '#pooramphibian' ) ) | ( (lv_flying_21_0= '#flying' ) ) | ( (lv_stormimmune_22_0= '#stormimmune' ) ) | ( (lv_sailing_23_0= '#sailing' ) ) | ( (lv_forestsurvival_24_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_26_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_27_0= '#wastesurvival' ) ) | ( (lv_illusion_28_0= '#illusion' ) ) | ( (lv_spy_29_0= '#spy' ) ) | ( (lv_assassin_30_0= '#assassin' ) ) | ( (lv_heal_31_0= '#heal' ) ) | ( (lv_noheal_32_0= '#noheal' ) ) | ( (lv_neednoteat_33_0= '#neednoteat' ) ) | ( (lv_ethereal_34_0= '#ethereal' ) ) | ( (lv_trample_35_0= '#trample' ) ) | ( (lv_entangle_36_0= '#entangle' ) ) | ( (lv_eyeloss_37_0= '#eyeloss' ) ) | ( (lv_horrormark_38_0= '#horrormark' ) ) | ( (lv_poisonarmor_39_0= '#poisonarmor' ) ) | ( (lv_inquisitor_40_0= '#inquisitor' ) ) | ( (lv_noitem_41_0= '#noitem' ) ) | ( (lv_noleader_42_0= '#noleader' ) ) | ( (lv_poorleader_43_0= '#poorleader' ) ) | ( (lv_okleader_44_0= '#okleader' ) ) | ( (lv_goodleader_45_0= '#goodleader' ) ) | ( (lv_expertleader_46_0= '#expertleader' ) ) | ( (lv_superiorleader_47_0= '#superiorleader' ) ) | ( (lv_nomagicleader_48_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_49_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_50_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_54_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_56_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) ) )", 28, 0, input);
 
                 throw nvae;
             }
 
             switch (alt28) {
                 case 1 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6177:2: ( (lv_clear_0_0= '#clear' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6155:2: ( (lv_clear_0_0= '#clear' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6177:2: ( (lv_clear_0_0= '#clear' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6178:1: (lv_clear_0_0= '#clear' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6155:2: ( (lv_clear_0_0= '#clear' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6156:1: (lv_clear_0_0= '#clear' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6178:1: (lv_clear_0_0= '#clear' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6179:3: lv_clear_0_0= '#clear'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6156:1: (lv_clear_0_0= '#clear' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6157:3: lv_clear_0_0= '#clear'
                     {
                     lv_clear_0_0=(Token)input.LT(1);
-                    match(input,167,FOLLOW_167_in_ruleMonsterInst411842); 
+                    match(input,166,FOLLOW_166_in_ruleMonsterInst411805); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getClearClearKeyword_0_0(), "clear"); 
                         
@@ -13287,16 +13246,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6199:6: ( (lv_clearmagic_1_0= '#clearmagic' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6177:6: ( (lv_clearmagic_1_0= '#clearmagic' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6199:6: ( (lv_clearmagic_1_0= '#clearmagic' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6200:1: (lv_clearmagic_1_0= '#clearmagic' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6177:6: ( (lv_clearmagic_1_0= '#clearmagic' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6178:1: (lv_clearmagic_1_0= '#clearmagic' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6200:1: (lv_clearmagic_1_0= '#clearmagic' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6201:3: lv_clearmagic_1_0= '#clearmagic'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6178:1: (lv_clearmagic_1_0= '#clearmagic' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6179:3: lv_clearmagic_1_0= '#clearmagic'
                     {
                     lv_clearmagic_1_0=(Token)input.LT(1);
-                    match(input,168,FOLLOW_168_in_ruleMonsterInst411879); 
+                    match(input,167,FOLLOW_167_in_ruleMonsterInst411842); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getClearmagicClearmagicKeyword_1_0(), "clearmagic"); 
                         
@@ -13322,16 +13281,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6221:6: ( (lv_clearspec_2_0= '#clearspec' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6199:6: ( (lv_clearspec_2_0= '#clearspec' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6221:6: ( (lv_clearspec_2_0= '#clearspec' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6222:1: (lv_clearspec_2_0= '#clearspec' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6199:6: ( (lv_clearspec_2_0= '#clearspec' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6200:1: (lv_clearspec_2_0= '#clearspec' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6222:1: (lv_clearspec_2_0= '#clearspec' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6223:3: lv_clearspec_2_0= '#clearspec'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6200:1: (lv_clearspec_2_0= '#clearspec' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6201:3: lv_clearspec_2_0= '#clearspec'
                     {
                     lv_clearspec_2_0=(Token)input.LT(1);
-                    match(input,169,FOLLOW_169_in_ruleMonsterInst411916); 
+                    match(input,168,FOLLOW_168_in_ruleMonsterInst411879); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getClearspecClearspecKeyword_2_0(), "clearspec"); 
                         
@@ -13357,16 +13316,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6243:6: ( (lv_female_3_0= '#female' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6221:6: ( (lv_female_3_0= '#female' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6243:6: ( (lv_female_3_0= '#female' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6244:1: (lv_female_3_0= '#female' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6221:6: ( (lv_female_3_0= '#female' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6222:1: (lv_female_3_0= '#female' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6244:1: (lv_female_3_0= '#female' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6245:3: lv_female_3_0= '#female'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6222:1: (lv_female_3_0= '#female' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6223:3: lv_female_3_0= '#female'
                     {
                     lv_female_3_0=(Token)input.LT(1);
-                    match(input,170,FOLLOW_170_in_ruleMonsterInst411953); 
+                    match(input,169,FOLLOW_169_in_ruleMonsterInst411916); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getFemaleFemaleKeyword_3_0(), "female"); 
                         
@@ -13392,16 +13351,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6265:6: ( (lv_mounted_4_0= '#mounted' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6243:6: ( (lv_mounted_4_0= '#mounted' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6265:6: ( (lv_mounted_4_0= '#mounted' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6266:1: (lv_mounted_4_0= '#mounted' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6243:6: ( (lv_mounted_4_0= '#mounted' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6244:1: (lv_mounted_4_0= '#mounted' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6266:1: (lv_mounted_4_0= '#mounted' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6267:3: lv_mounted_4_0= '#mounted'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6244:1: (lv_mounted_4_0= '#mounted' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6245:3: lv_mounted_4_0= '#mounted'
                     {
                     lv_mounted_4_0=(Token)input.LT(1);
-                    match(input,171,FOLLOW_171_in_ruleMonsterInst411990); 
+                    match(input,170,FOLLOW_170_in_ruleMonsterInst411953); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getMountedMountedKeyword_4_0(), "mounted"); 
                         
@@ -13427,16 +13386,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6287:6: ( (lv_holy_5_0= '#holy' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6265:6: ( (lv_holy_5_0= '#holy' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6287:6: ( (lv_holy_5_0= '#holy' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6288:1: (lv_holy_5_0= '#holy' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6265:6: ( (lv_holy_5_0= '#holy' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6266:1: (lv_holy_5_0= '#holy' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6288:1: (lv_holy_5_0= '#holy' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6289:3: lv_holy_5_0= '#holy'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6266:1: (lv_holy_5_0= '#holy' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6267:3: lv_holy_5_0= '#holy'
                     {
                     lv_holy_5_0=(Token)input.LT(1);
-                    match(input,172,FOLLOW_172_in_ruleMonsterInst412027); 
+                    match(input,171,FOLLOW_171_in_ruleMonsterInst411990); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getHolyHolyKeyword_5_0(), "holy"); 
                         
@@ -13462,16 +13421,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6309:6: ( (lv_animal_6_0= '#animal' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6287:6: ( (lv_animal_6_0= '#animal' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6309:6: ( (lv_animal_6_0= '#animal' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6310:1: (lv_animal_6_0= '#animal' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6287:6: ( (lv_animal_6_0= '#animal' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6288:1: (lv_animal_6_0= '#animal' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6310:1: (lv_animal_6_0= '#animal' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6311:3: lv_animal_6_0= '#animal'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6288:1: (lv_animal_6_0= '#animal' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6289:3: lv_animal_6_0= '#animal'
                     {
                     lv_animal_6_0=(Token)input.LT(1);
-                    match(input,173,FOLLOW_173_in_ruleMonsterInst412064); 
+                    match(input,172,FOLLOW_172_in_ruleMonsterInst412027); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getAnimalAnimalKeyword_6_0(), "animal"); 
                         
@@ -13497,16 +13456,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6331:6: ( (lv_undead_7_0= '#undead' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6309:6: ( (lv_undead_7_0= '#undead' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6331:6: ( (lv_undead_7_0= '#undead' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6332:1: (lv_undead_7_0= '#undead' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6309:6: ( (lv_undead_7_0= '#undead' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6310:1: (lv_undead_7_0= '#undead' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6332:1: (lv_undead_7_0= '#undead' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6333:3: lv_undead_7_0= '#undead'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6310:1: (lv_undead_7_0= '#undead' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6311:3: lv_undead_7_0= '#undead'
                     {
                     lv_undead_7_0=(Token)input.LT(1);
-                    match(input,174,FOLLOW_174_in_ruleMonsterInst412101); 
+                    match(input,173,FOLLOW_173_in_ruleMonsterInst412064); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getUndeadUndeadKeyword_7_0(), "undead"); 
                         
@@ -13532,16 +13491,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6353:6: ( (lv_demon_8_0= '#demon' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6331:6: ( (lv_demon_8_0= '#demon' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6353:6: ( (lv_demon_8_0= '#demon' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6354:1: (lv_demon_8_0= '#demon' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6331:6: ( (lv_demon_8_0= '#demon' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6332:1: (lv_demon_8_0= '#demon' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6354:1: (lv_demon_8_0= '#demon' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6355:3: lv_demon_8_0= '#demon'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6332:1: (lv_demon_8_0= '#demon' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6333:3: lv_demon_8_0= '#demon'
                     {
                     lv_demon_8_0=(Token)input.LT(1);
-                    match(input,175,FOLLOW_175_in_ruleMonsterInst412138); 
+                    match(input,174,FOLLOW_174_in_ruleMonsterInst412101); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getDemonDemonKeyword_8_0(), "demon"); 
                         
@@ -13567,16 +13526,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6375:6: ( (lv_magicbeing_9_0= '#magicbeing' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6353:6: ( (lv_magicbeing_9_0= '#magicbeing' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6375:6: ( (lv_magicbeing_9_0= '#magicbeing' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6376:1: (lv_magicbeing_9_0= '#magicbeing' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6353:6: ( (lv_magicbeing_9_0= '#magicbeing' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6354:1: (lv_magicbeing_9_0= '#magicbeing' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6376:1: (lv_magicbeing_9_0= '#magicbeing' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6377:3: lv_magicbeing_9_0= '#magicbeing'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6354:1: (lv_magicbeing_9_0= '#magicbeing' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6355:3: lv_magicbeing_9_0= '#magicbeing'
                     {
                     lv_magicbeing_9_0=(Token)input.LT(1);
-                    match(input,176,FOLLOW_176_in_ruleMonsterInst412175); 
+                    match(input,175,FOLLOW_175_in_ruleMonsterInst412138); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getMagicbeingMagicbeingKeyword_9_0(), "magicbeing"); 
                         
@@ -13602,16 +13561,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6397:6: ( (lv_stonebeing_10_0= '#stonebeing' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6375:6: ( (lv_stonebeing_10_0= '#stonebeing' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6397:6: ( (lv_stonebeing_10_0= '#stonebeing' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6398:1: (lv_stonebeing_10_0= '#stonebeing' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6375:6: ( (lv_stonebeing_10_0= '#stonebeing' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6376:1: (lv_stonebeing_10_0= '#stonebeing' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6398:1: (lv_stonebeing_10_0= '#stonebeing' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6399:3: lv_stonebeing_10_0= '#stonebeing'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6376:1: (lv_stonebeing_10_0= '#stonebeing' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6377:3: lv_stonebeing_10_0= '#stonebeing'
                     {
                     lv_stonebeing_10_0=(Token)input.LT(1);
-                    match(input,177,FOLLOW_177_in_ruleMonsterInst412212); 
+                    match(input,176,FOLLOW_176_in_ruleMonsterInst412175); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getStonebeingStonebeingKeyword_10_0(), "stonebeing"); 
                         
@@ -13637,16 +13596,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6419:6: ( (lv_inanimate_11_0= '#inanimate' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6397:6: ( (lv_inanimate_11_0= '#inanimate' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6419:6: ( (lv_inanimate_11_0= '#inanimate' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6420:1: (lv_inanimate_11_0= '#inanimate' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6397:6: ( (lv_inanimate_11_0= '#inanimate' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6398:1: (lv_inanimate_11_0= '#inanimate' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6420:1: (lv_inanimate_11_0= '#inanimate' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6421:3: lv_inanimate_11_0= '#inanimate'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6398:1: (lv_inanimate_11_0= '#inanimate' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6399:3: lv_inanimate_11_0= '#inanimate'
                     {
                     lv_inanimate_11_0=(Token)input.LT(1);
-                    match(input,178,FOLLOW_178_in_ruleMonsterInst412249); 
+                    match(input,177,FOLLOW_177_in_ruleMonsterInst412212); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getInanimateInanimateKeyword_11_0(), "inanimate"); 
                         
@@ -13672,16 +13631,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6441:6: ( (lv_coldblood_12_0= '#coldblood' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6419:6: ( (lv_coldblood_12_0= '#coldblood' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6441:6: ( (lv_coldblood_12_0= '#coldblood' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6442:1: (lv_coldblood_12_0= '#coldblood' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6419:6: ( (lv_coldblood_12_0= '#coldblood' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6420:1: (lv_coldblood_12_0= '#coldblood' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6442:1: (lv_coldblood_12_0= '#coldblood' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6443:3: lv_coldblood_12_0= '#coldblood'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6420:1: (lv_coldblood_12_0= '#coldblood' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6421:3: lv_coldblood_12_0= '#coldblood'
                     {
                     lv_coldblood_12_0=(Token)input.LT(1);
-                    match(input,179,FOLLOW_179_in_ruleMonsterInst412286); 
+                    match(input,178,FOLLOW_178_in_ruleMonsterInst412249); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodKeyword_12_0(), "coldblood"); 
                         
@@ -13707,16 +13666,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6463:6: ( (lv_coldblood_13_0= '#coldblooded' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6441:6: ( (lv_coldblood_13_0= '#coldblooded' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6463:6: ( (lv_coldblood_13_0= '#coldblooded' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6464:1: (lv_coldblood_13_0= '#coldblooded' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6441:6: ( (lv_coldblood_13_0= '#coldblooded' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6442:1: (lv_coldblood_13_0= '#coldblooded' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6464:1: (lv_coldblood_13_0= '#coldblooded' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6465:3: lv_coldblood_13_0= '#coldblooded'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6442:1: (lv_coldblood_13_0= '#coldblooded' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6443:3: lv_coldblood_13_0= '#coldblooded'
                     {
                     lv_coldblood_13_0=(Token)input.LT(1);
-                    match(input,180,FOLLOW_180_in_ruleMonsterInst412323); 
+                    match(input,179,FOLLOW_179_in_ruleMonsterInst412286); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodedKeyword_13_0(), "coldblood"); 
                         
@@ -13742,16 +13701,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6485:6: ( (lv_immortal_14_0= '#immortal' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6463:6: ( (lv_immortal_14_0= '#immortal' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6485:6: ( (lv_immortal_14_0= '#immortal' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6486:1: (lv_immortal_14_0= '#immortal' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6463:6: ( (lv_immortal_14_0= '#immortal' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6464:1: (lv_immortal_14_0= '#immortal' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6486:1: (lv_immortal_14_0= '#immortal' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6487:3: lv_immortal_14_0= '#immortal'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6464:1: (lv_immortal_14_0= '#immortal' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6465:3: lv_immortal_14_0= '#immortal'
                     {
                     lv_immortal_14_0=(Token)input.LT(1);
-                    match(input,181,FOLLOW_181_in_ruleMonsterInst412360); 
+                    match(input,180,FOLLOW_180_in_ruleMonsterInst412323); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_14_0(), "immortal"); 
                         
@@ -13777,16 +13736,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6507:6: ( (lv_blind_15_0= '#blind' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6485:6: ( (lv_blind_15_0= '#blind' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6507:6: ( (lv_blind_15_0= '#blind' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6508:1: (lv_blind_15_0= '#blind' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6485:6: ( (lv_blind_15_0= '#blind' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6486:1: (lv_blind_15_0= '#blind' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6508:1: (lv_blind_15_0= '#blind' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6509:3: lv_blind_15_0= '#blind'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6486:1: (lv_blind_15_0= '#blind' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6487:3: lv_blind_15_0= '#blind'
                     {
                     lv_blind_15_0=(Token)input.LT(1);
-                    match(input,182,FOLLOW_182_in_ruleMonsterInst412397); 
+                    match(input,181,FOLLOW_181_in_ruleMonsterInst412360); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_15_0(), "blind"); 
                         
@@ -13812,16 +13771,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6529:6: ( (lv_unique_16_0= '#unique' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6507:6: ( (lv_unique_16_0= '#unique' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6529:6: ( (lv_unique_16_0= '#unique' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6530:1: (lv_unique_16_0= '#unique' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6507:6: ( (lv_unique_16_0= '#unique' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6508:1: (lv_unique_16_0= '#unique' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6530:1: (lv_unique_16_0= '#unique' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6531:3: lv_unique_16_0= '#unique'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6508:1: (lv_unique_16_0= '#unique' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6509:3: lv_unique_16_0= '#unique'
                     {
                     lv_unique_16_0=(Token)input.LT(1);
-                    match(input,183,FOLLOW_183_in_ruleMonsterInst412434); 
+                    match(input,182,FOLLOW_182_in_ruleMonsterInst412397); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_16_0(), "unique"); 
                         
@@ -13847,16 +13806,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6551:6: ( (lv_immobile_17_0= '#immobile' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6529:6: ( (lv_immobile_17_0= '#immobile' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6551:6: ( (lv_immobile_17_0= '#immobile' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6552:1: (lv_immobile_17_0= '#immobile' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6529:6: ( (lv_immobile_17_0= '#immobile' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6530:1: (lv_immobile_17_0= '#immobile' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6552:1: (lv_immobile_17_0= '#immobile' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6553:3: lv_immobile_17_0= '#immobile'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6530:1: (lv_immobile_17_0= '#immobile' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6531:3: lv_immobile_17_0= '#immobile'
                     {
                     lv_immobile_17_0=(Token)input.LT(1);
-                    match(input,184,FOLLOW_184_in_ruleMonsterInst412471); 
+                    match(input,183,FOLLOW_183_in_ruleMonsterInst412434); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_17_0(), "immobile"); 
                         
@@ -13882,16 +13841,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6573:6: ( (lv_aquatic_18_0= '#aquatic' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6551:6: ( (lv_aquatic_18_0= '#aquatic' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6573:6: ( (lv_aquatic_18_0= '#aquatic' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6574:1: (lv_aquatic_18_0= '#aquatic' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6551:6: ( (lv_aquatic_18_0= '#aquatic' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6552:1: (lv_aquatic_18_0= '#aquatic' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6574:1: (lv_aquatic_18_0= '#aquatic' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6575:3: lv_aquatic_18_0= '#aquatic'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6552:1: (lv_aquatic_18_0= '#aquatic' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6553:3: lv_aquatic_18_0= '#aquatic'
                     {
                     lv_aquatic_18_0=(Token)input.LT(1);
-                    match(input,185,FOLLOW_185_in_ruleMonsterInst412508); 
+                    match(input,184,FOLLOW_184_in_ruleMonsterInst412471); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_18_0(), "aquatic"); 
                         
@@ -13917,16 +13876,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6595:6: ( (lv_amphibian_19_0= '#amphibian' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6573:6: ( (lv_amphibian_19_0= '#amphibian' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6595:6: ( (lv_amphibian_19_0= '#amphibian' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6596:1: (lv_amphibian_19_0= '#amphibian' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6573:6: ( (lv_amphibian_19_0= '#amphibian' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6574:1: (lv_amphibian_19_0= '#amphibian' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6596:1: (lv_amphibian_19_0= '#amphibian' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6597:3: lv_amphibian_19_0= '#amphibian'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6574:1: (lv_amphibian_19_0= '#amphibian' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6575:3: lv_amphibian_19_0= '#amphibian'
                     {
                     lv_amphibian_19_0=(Token)input.LT(1);
-                    match(input,186,FOLLOW_186_in_ruleMonsterInst412545); 
+                    match(input,185,FOLLOW_185_in_ruleMonsterInst412508); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_19_0(), "amphibian"); 
                         
@@ -13952,16 +13911,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6617:6: ( (lv_pooramphibian_20_0= '#pooramphibian' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6595:6: ( (lv_pooramphibian_20_0= '#pooramphibian' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6617:6: ( (lv_pooramphibian_20_0= '#pooramphibian' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6618:1: (lv_pooramphibian_20_0= '#pooramphibian' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6595:6: ( (lv_pooramphibian_20_0= '#pooramphibian' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6596:1: (lv_pooramphibian_20_0= '#pooramphibian' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6618:1: (lv_pooramphibian_20_0= '#pooramphibian' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6619:3: lv_pooramphibian_20_0= '#pooramphibian'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6596:1: (lv_pooramphibian_20_0= '#pooramphibian' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6597:3: lv_pooramphibian_20_0= '#pooramphibian'
                     {
                     lv_pooramphibian_20_0=(Token)input.LT(1);
-                    match(input,187,FOLLOW_187_in_ruleMonsterInst412582); 
+                    match(input,186,FOLLOW_186_in_ruleMonsterInst412545); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_20_0(), "pooramphibian"); 
                         
@@ -13987,16 +13946,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6639:6: ( (lv_flying_21_0= '#flying' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6617:6: ( (lv_flying_21_0= '#flying' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6639:6: ( (lv_flying_21_0= '#flying' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6640:1: (lv_flying_21_0= '#flying' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6617:6: ( (lv_flying_21_0= '#flying' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6618:1: (lv_flying_21_0= '#flying' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6640:1: (lv_flying_21_0= '#flying' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6641:3: lv_flying_21_0= '#flying'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6618:1: (lv_flying_21_0= '#flying' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6619:3: lv_flying_21_0= '#flying'
                     {
                     lv_flying_21_0=(Token)input.LT(1);
-                    match(input,188,FOLLOW_188_in_ruleMonsterInst412619); 
+                    match(input,187,FOLLOW_187_in_ruleMonsterInst412582); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_21_0(), "flying"); 
                         
@@ -14022,16 +13981,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6661:6: ( (lv_stormimmune_22_0= '#stormimmune' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6639:6: ( (lv_stormimmune_22_0= '#stormimmune' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6661:6: ( (lv_stormimmune_22_0= '#stormimmune' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6662:1: (lv_stormimmune_22_0= '#stormimmune' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6639:6: ( (lv_stormimmune_22_0= '#stormimmune' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6640:1: (lv_stormimmune_22_0= '#stormimmune' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6662:1: (lv_stormimmune_22_0= '#stormimmune' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6663:3: lv_stormimmune_22_0= '#stormimmune'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6640:1: (lv_stormimmune_22_0= '#stormimmune' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6641:3: lv_stormimmune_22_0= '#stormimmune'
                     {
                     lv_stormimmune_22_0=(Token)input.LT(1);
-                    match(input,189,FOLLOW_189_in_ruleMonsterInst412656); 
+                    match(input,188,FOLLOW_188_in_ruleMonsterInst412619); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_22_0(), "stormimmune"); 
                         
@@ -14057,16 +14016,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6683:6: ( (lv_sailing_23_0= '#sailing' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6661:6: ( (lv_sailing_23_0= '#sailing' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6683:6: ( (lv_sailing_23_0= '#sailing' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6684:1: (lv_sailing_23_0= '#sailing' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6661:6: ( (lv_sailing_23_0= '#sailing' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6662:1: (lv_sailing_23_0= '#sailing' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6684:1: (lv_sailing_23_0= '#sailing' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6685:3: lv_sailing_23_0= '#sailing'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6662:1: (lv_sailing_23_0= '#sailing' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6663:3: lv_sailing_23_0= '#sailing'
                     {
                     lv_sailing_23_0=(Token)input.LT(1);
-                    match(input,190,FOLLOW_190_in_ruleMonsterInst412693); 
+                    match(input,189,FOLLOW_189_in_ruleMonsterInst412656); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_23_0(), "sailing"); 
                         
@@ -14092,16 +14051,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6705:6: ( (lv_forestsurvival_24_0= '#forestsurvival' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6683:6: ( (lv_forestsurvival_24_0= '#forestsurvival' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6705:6: ( (lv_forestsurvival_24_0= '#forestsurvival' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6706:1: (lv_forestsurvival_24_0= '#forestsurvival' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6683:6: ( (lv_forestsurvival_24_0= '#forestsurvival' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6684:1: (lv_forestsurvival_24_0= '#forestsurvival' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6706:1: (lv_forestsurvival_24_0= '#forestsurvival' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6707:3: lv_forestsurvival_24_0= '#forestsurvival'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6684:1: (lv_forestsurvival_24_0= '#forestsurvival' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6685:3: lv_forestsurvival_24_0= '#forestsurvival'
                     {
                     lv_forestsurvival_24_0=(Token)input.LT(1);
-                    match(input,191,FOLLOW_191_in_ruleMonsterInst412730); 
+                    match(input,190,FOLLOW_190_in_ruleMonsterInst412693); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_24_0(), "forestsurvival"); 
                         
@@ -14127,16 +14086,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6727:6: ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6705:6: ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6727:6: ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6728:1: (lv_mountainsurvival_25_0= '#mountainsurvival' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6705:6: ( (lv_mountainsurvival_25_0= '#mountainsurvival' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6706:1: (lv_mountainsurvival_25_0= '#mountainsurvival' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6728:1: (lv_mountainsurvival_25_0= '#mountainsurvival' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6729:3: lv_mountainsurvival_25_0= '#mountainsurvival'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6706:1: (lv_mountainsurvival_25_0= '#mountainsurvival' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6707:3: lv_mountainsurvival_25_0= '#mountainsurvival'
                     {
                     lv_mountainsurvival_25_0=(Token)input.LT(1);
-                    match(input,192,FOLLOW_192_in_ruleMonsterInst412767); 
+                    match(input,191,FOLLOW_191_in_ruleMonsterInst412730); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_25_0(), "mountainsurvival"); 
                         
@@ -14162,16 +14121,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6749:6: ( (lv_swampsurvival_26_0= '#swampsurvival' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6727:6: ( (lv_swampsurvival_26_0= '#swampsurvival' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6749:6: ( (lv_swampsurvival_26_0= '#swampsurvival' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6750:1: (lv_swampsurvival_26_0= '#swampsurvival' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6727:6: ( (lv_swampsurvival_26_0= '#swampsurvival' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6728:1: (lv_swampsurvival_26_0= '#swampsurvival' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6750:1: (lv_swampsurvival_26_0= '#swampsurvival' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6751:3: lv_swampsurvival_26_0= '#swampsurvival'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6728:1: (lv_swampsurvival_26_0= '#swampsurvival' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6729:3: lv_swampsurvival_26_0= '#swampsurvival'
                     {
                     lv_swampsurvival_26_0=(Token)input.LT(1);
-                    match(input,193,FOLLOW_193_in_ruleMonsterInst412804); 
+                    match(input,192,FOLLOW_192_in_ruleMonsterInst412767); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_26_0(), "swampsurvival"); 
                         
@@ -14197,16 +14156,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6771:6: ( (lv_wastesurvival_27_0= '#wastesurvival' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6749:6: ( (lv_wastesurvival_27_0= '#wastesurvival' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6771:6: ( (lv_wastesurvival_27_0= '#wastesurvival' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6772:1: (lv_wastesurvival_27_0= '#wastesurvival' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6749:6: ( (lv_wastesurvival_27_0= '#wastesurvival' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6750:1: (lv_wastesurvival_27_0= '#wastesurvival' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6772:1: (lv_wastesurvival_27_0= '#wastesurvival' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6773:3: lv_wastesurvival_27_0= '#wastesurvival'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6750:1: (lv_wastesurvival_27_0= '#wastesurvival' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6751:3: lv_wastesurvival_27_0= '#wastesurvival'
                     {
                     lv_wastesurvival_27_0=(Token)input.LT(1);
-                    match(input,194,FOLLOW_194_in_ruleMonsterInst412841); 
+                    match(input,193,FOLLOW_193_in_ruleMonsterInst412804); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_27_0(), "wastesurvival"); 
                         
@@ -14232,16 +14191,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6793:6: ( (lv_illusion_28_0= '#illusion' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6771:6: ( (lv_illusion_28_0= '#illusion' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6793:6: ( (lv_illusion_28_0= '#illusion' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6794:1: (lv_illusion_28_0= '#illusion' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6771:6: ( (lv_illusion_28_0= '#illusion' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6772:1: (lv_illusion_28_0= '#illusion' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6794:1: (lv_illusion_28_0= '#illusion' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6795:3: lv_illusion_28_0= '#illusion'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6772:1: (lv_illusion_28_0= '#illusion' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6773:3: lv_illusion_28_0= '#illusion'
                     {
                     lv_illusion_28_0=(Token)input.LT(1);
-                    match(input,195,FOLLOW_195_in_ruleMonsterInst412878); 
+                    match(input,194,FOLLOW_194_in_ruleMonsterInst412841); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_28_0(), "illusion"); 
                         
@@ -14267,16 +14226,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6815:6: ( (lv_spy_29_0= '#spy' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6793:6: ( (lv_spy_29_0= '#spy' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6815:6: ( (lv_spy_29_0= '#spy' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6816:1: (lv_spy_29_0= '#spy' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6793:6: ( (lv_spy_29_0= '#spy' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6794:1: (lv_spy_29_0= '#spy' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6816:1: (lv_spy_29_0= '#spy' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6817:3: lv_spy_29_0= '#spy'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6794:1: (lv_spy_29_0= '#spy' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6795:3: lv_spy_29_0= '#spy'
                     {
                     lv_spy_29_0=(Token)input.LT(1);
-                    match(input,196,FOLLOW_196_in_ruleMonsterInst412915); 
+                    match(input,195,FOLLOW_195_in_ruleMonsterInst412878); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getSpySpyKeyword_29_0(), "spy"); 
                         
@@ -14302,16 +14261,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6837:6: ( (lv_assassin_30_0= '#assassin' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6815:6: ( (lv_assassin_30_0= '#assassin' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6837:6: ( (lv_assassin_30_0= '#assassin' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6838:1: (lv_assassin_30_0= '#assassin' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6815:6: ( (lv_assassin_30_0= '#assassin' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6816:1: (lv_assassin_30_0= '#assassin' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6838:1: (lv_assassin_30_0= '#assassin' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6839:3: lv_assassin_30_0= '#assassin'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6816:1: (lv_assassin_30_0= '#assassin' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6817:3: lv_assassin_30_0= '#assassin'
                     {
                     lv_assassin_30_0=(Token)input.LT(1);
-                    match(input,197,FOLLOW_197_in_ruleMonsterInst412952); 
+                    match(input,196,FOLLOW_196_in_ruleMonsterInst412915); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_30_0(), "assassin"); 
                         
@@ -14337,16 +14296,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6859:6: ( (lv_heal_31_0= '#heal' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6837:6: ( (lv_heal_31_0= '#heal' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6859:6: ( (lv_heal_31_0= '#heal' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6860:1: (lv_heal_31_0= '#heal' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6837:6: ( (lv_heal_31_0= '#heal' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6838:1: (lv_heal_31_0= '#heal' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6860:1: (lv_heal_31_0= '#heal' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6861:3: lv_heal_31_0= '#heal'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6838:1: (lv_heal_31_0= '#heal' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6839:3: lv_heal_31_0= '#heal'
                     {
                     lv_heal_31_0=(Token)input.LT(1);
-                    match(input,198,FOLLOW_198_in_ruleMonsterInst412989); 
+                    match(input,197,FOLLOW_197_in_ruleMonsterInst412952); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getHealHealKeyword_31_0(), "heal"); 
                         
@@ -14372,16 +14331,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6881:6: ( (lv_noheal_32_0= '#noheal' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6859:6: ( (lv_noheal_32_0= '#noheal' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6881:6: ( (lv_noheal_32_0= '#noheal' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6882:1: (lv_noheal_32_0= '#noheal' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6859:6: ( (lv_noheal_32_0= '#noheal' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6860:1: (lv_noheal_32_0= '#noheal' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6882:1: (lv_noheal_32_0= '#noheal' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6883:3: lv_noheal_32_0= '#noheal'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6860:1: (lv_noheal_32_0= '#noheal' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6861:3: lv_noheal_32_0= '#noheal'
                     {
                     lv_noheal_32_0=(Token)input.LT(1);
-                    match(input,199,FOLLOW_199_in_ruleMonsterInst413026); 
+                    match(input,198,FOLLOW_198_in_ruleMonsterInst412989); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_32_0(), "noheal"); 
                         
@@ -14407,16 +14366,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 34 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6903:6: ( (lv_neednoteat_33_0= '#neednoteat' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6881:6: ( (lv_neednoteat_33_0= '#neednoteat' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6903:6: ( (lv_neednoteat_33_0= '#neednoteat' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6904:1: (lv_neednoteat_33_0= '#neednoteat' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6881:6: ( (lv_neednoteat_33_0= '#neednoteat' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6882:1: (lv_neednoteat_33_0= '#neednoteat' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6904:1: (lv_neednoteat_33_0= '#neednoteat' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6905:3: lv_neednoteat_33_0= '#neednoteat'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6882:1: (lv_neednoteat_33_0= '#neednoteat' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6883:3: lv_neednoteat_33_0= '#neednoteat'
                     {
                     lv_neednoteat_33_0=(Token)input.LT(1);
-                    match(input,200,FOLLOW_200_in_ruleMonsterInst413063); 
+                    match(input,199,FOLLOW_199_in_ruleMonsterInst413026); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_33_0(), "neednoteat"); 
                         
@@ -14442,16 +14401,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 35 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6925:6: ( (lv_ethereal_34_0= '#ethereal' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6903:6: ( (lv_ethereal_34_0= '#ethereal' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6925:6: ( (lv_ethereal_34_0= '#ethereal' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6926:1: (lv_ethereal_34_0= '#ethereal' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6903:6: ( (lv_ethereal_34_0= '#ethereal' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6904:1: (lv_ethereal_34_0= '#ethereal' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6926:1: (lv_ethereal_34_0= '#ethereal' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6927:3: lv_ethereal_34_0= '#ethereal'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6904:1: (lv_ethereal_34_0= '#ethereal' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6905:3: lv_ethereal_34_0= '#ethereal'
                     {
                     lv_ethereal_34_0=(Token)input.LT(1);
-                    match(input,201,FOLLOW_201_in_ruleMonsterInst413100); 
+                    match(input,200,FOLLOW_200_in_ruleMonsterInst413063); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_34_0(), "ethereal"); 
                         
@@ -14477,16 +14436,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 36 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6947:6: ( (lv_trample_35_0= '#trample' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6925:6: ( (lv_trample_35_0= '#trample' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6947:6: ( (lv_trample_35_0= '#trample' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6948:1: (lv_trample_35_0= '#trample' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6925:6: ( (lv_trample_35_0= '#trample' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6926:1: (lv_trample_35_0= '#trample' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6948:1: (lv_trample_35_0= '#trample' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6949:3: lv_trample_35_0= '#trample'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6926:1: (lv_trample_35_0= '#trample' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6927:3: lv_trample_35_0= '#trample'
                     {
                     lv_trample_35_0=(Token)input.LT(1);
-                    match(input,202,FOLLOW_202_in_ruleMonsterInst413137); 
+                    match(input,201,FOLLOW_201_in_ruleMonsterInst413100); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_35_0(), "trample"); 
                         
@@ -14512,16 +14471,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 37 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6969:6: ( (lv_entangle_36_0= '#entangle' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6947:6: ( (lv_entangle_36_0= '#entangle' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6969:6: ( (lv_entangle_36_0= '#entangle' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6970:1: (lv_entangle_36_0= '#entangle' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6947:6: ( (lv_entangle_36_0= '#entangle' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6948:1: (lv_entangle_36_0= '#entangle' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6970:1: (lv_entangle_36_0= '#entangle' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6971:3: lv_entangle_36_0= '#entangle'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6948:1: (lv_entangle_36_0= '#entangle' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6949:3: lv_entangle_36_0= '#entangle'
                     {
                     lv_entangle_36_0=(Token)input.LT(1);
-                    match(input,203,FOLLOW_203_in_ruleMonsterInst413174); 
+                    match(input,202,FOLLOW_202_in_ruleMonsterInst413137); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_36_0(), "entangle"); 
                         
@@ -14547,16 +14506,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 38 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6991:6: ( (lv_eyeloss_37_0= '#eyeloss' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6969:6: ( (lv_eyeloss_37_0= '#eyeloss' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6991:6: ( (lv_eyeloss_37_0= '#eyeloss' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6992:1: (lv_eyeloss_37_0= '#eyeloss' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6969:6: ( (lv_eyeloss_37_0= '#eyeloss' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6970:1: (lv_eyeloss_37_0= '#eyeloss' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6992:1: (lv_eyeloss_37_0= '#eyeloss' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6993:3: lv_eyeloss_37_0= '#eyeloss'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6970:1: (lv_eyeloss_37_0= '#eyeloss' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6971:3: lv_eyeloss_37_0= '#eyeloss'
                     {
                     lv_eyeloss_37_0=(Token)input.LT(1);
-                    match(input,204,FOLLOW_204_in_ruleMonsterInst413211); 
+                    match(input,203,FOLLOW_203_in_ruleMonsterInst413174); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_37_0(), "eyeloss"); 
                         
@@ -14582,16 +14541,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 39 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7013:6: ( (lv_horrormark_38_0= '#horrormark' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6991:6: ( (lv_horrormark_38_0= '#horrormark' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7013:6: ( (lv_horrormark_38_0= '#horrormark' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7014:1: (lv_horrormark_38_0= '#horrormark' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6991:6: ( (lv_horrormark_38_0= '#horrormark' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6992:1: (lv_horrormark_38_0= '#horrormark' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7014:1: (lv_horrormark_38_0= '#horrormark' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7015:3: lv_horrormark_38_0= '#horrormark'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6992:1: (lv_horrormark_38_0= '#horrormark' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6993:3: lv_horrormark_38_0= '#horrormark'
                     {
                     lv_horrormark_38_0=(Token)input.LT(1);
-                    match(input,205,FOLLOW_205_in_ruleMonsterInst413248); 
+                    match(input,204,FOLLOW_204_in_ruleMonsterInst413211); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_38_0(), "horrormark"); 
                         
@@ -14617,16 +14576,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 40 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7035:6: ( (lv_poisonarmor_39_0= '#poisonarmor' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7013:6: ( (lv_poisonarmor_39_0= '#poisonarmor' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7035:6: ( (lv_poisonarmor_39_0= '#poisonarmor' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7036:1: (lv_poisonarmor_39_0= '#poisonarmor' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7013:6: ( (lv_poisonarmor_39_0= '#poisonarmor' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7014:1: (lv_poisonarmor_39_0= '#poisonarmor' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7036:1: (lv_poisonarmor_39_0= '#poisonarmor' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7037:3: lv_poisonarmor_39_0= '#poisonarmor'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7014:1: (lv_poisonarmor_39_0= '#poisonarmor' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7015:3: lv_poisonarmor_39_0= '#poisonarmor'
                     {
                     lv_poisonarmor_39_0=(Token)input.LT(1);
-                    match(input,206,FOLLOW_206_in_ruleMonsterInst413285); 
+                    match(input,205,FOLLOW_205_in_ruleMonsterInst413248); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_39_0(), "poisonarmor"); 
                         
@@ -14652,16 +14611,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 41 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7057:6: ( (lv_inquisitor_40_0= '#inquisitor' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7035:6: ( (lv_inquisitor_40_0= '#inquisitor' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7057:6: ( (lv_inquisitor_40_0= '#inquisitor' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7058:1: (lv_inquisitor_40_0= '#inquisitor' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7035:6: ( (lv_inquisitor_40_0= '#inquisitor' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7036:1: (lv_inquisitor_40_0= '#inquisitor' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7058:1: (lv_inquisitor_40_0= '#inquisitor' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7059:3: lv_inquisitor_40_0= '#inquisitor'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7036:1: (lv_inquisitor_40_0= '#inquisitor' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7037:3: lv_inquisitor_40_0= '#inquisitor'
                     {
                     lv_inquisitor_40_0=(Token)input.LT(1);
-                    match(input,207,FOLLOW_207_in_ruleMonsterInst413322); 
+                    match(input,206,FOLLOW_206_in_ruleMonsterInst413285); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_40_0(), "inquisitor"); 
                         
@@ -14687,16 +14646,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 42 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7079:6: ( (lv_noitem_41_0= '#noitem' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7057:6: ( (lv_noitem_41_0= '#noitem' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7079:6: ( (lv_noitem_41_0= '#noitem' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7080:1: (lv_noitem_41_0= '#noitem' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7057:6: ( (lv_noitem_41_0= '#noitem' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7058:1: (lv_noitem_41_0= '#noitem' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7080:1: (lv_noitem_41_0= '#noitem' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7081:3: lv_noitem_41_0= '#noitem'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7058:1: (lv_noitem_41_0= '#noitem' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7059:3: lv_noitem_41_0= '#noitem'
                     {
                     lv_noitem_41_0=(Token)input.LT(1);
-                    match(input,208,FOLLOW_208_in_ruleMonsterInst413359); 
+                    match(input,207,FOLLOW_207_in_ruleMonsterInst413322); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_41_0(), "noitem"); 
                         
@@ -14722,16 +14681,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 43 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7101:6: ( (lv_noleader_42_0= '#noleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7079:6: ( (lv_noleader_42_0= '#noleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7101:6: ( (lv_noleader_42_0= '#noleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7102:1: (lv_noleader_42_0= '#noleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7079:6: ( (lv_noleader_42_0= '#noleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7080:1: (lv_noleader_42_0= '#noleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7102:1: (lv_noleader_42_0= '#noleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7103:3: lv_noleader_42_0= '#noleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7080:1: (lv_noleader_42_0= '#noleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7081:3: lv_noleader_42_0= '#noleader'
                     {
                     lv_noleader_42_0=(Token)input.LT(1);
-                    match(input,209,FOLLOW_209_in_ruleMonsterInst413396); 
+                    match(input,208,FOLLOW_208_in_ruleMonsterInst413359); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_42_0(), "noleader"); 
                         
@@ -14757,16 +14716,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 44 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7123:6: ( (lv_poorleader_43_0= '#poorleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7101:6: ( (lv_poorleader_43_0= '#poorleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7123:6: ( (lv_poorleader_43_0= '#poorleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7124:1: (lv_poorleader_43_0= '#poorleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7101:6: ( (lv_poorleader_43_0= '#poorleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7102:1: (lv_poorleader_43_0= '#poorleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7124:1: (lv_poorleader_43_0= '#poorleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7125:3: lv_poorleader_43_0= '#poorleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7102:1: (lv_poorleader_43_0= '#poorleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7103:3: lv_poorleader_43_0= '#poorleader'
                     {
                     lv_poorleader_43_0=(Token)input.LT(1);
-                    match(input,210,FOLLOW_210_in_ruleMonsterInst413433); 
+                    match(input,209,FOLLOW_209_in_ruleMonsterInst413396); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_43_0(), "poorleader"); 
                         
@@ -14792,16 +14751,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 45 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7145:6: ( (lv_okleader_44_0= '#okleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7123:6: ( (lv_okleader_44_0= '#okleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7145:6: ( (lv_okleader_44_0= '#okleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7146:1: (lv_okleader_44_0= '#okleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7123:6: ( (lv_okleader_44_0= '#okleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7124:1: (lv_okleader_44_0= '#okleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7146:1: (lv_okleader_44_0= '#okleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7147:3: lv_okleader_44_0= '#okleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7124:1: (lv_okleader_44_0= '#okleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7125:3: lv_okleader_44_0= '#okleader'
                     {
                     lv_okleader_44_0=(Token)input.LT(1);
-                    match(input,211,FOLLOW_211_in_ruleMonsterInst413470); 
+                    match(input,210,FOLLOW_210_in_ruleMonsterInst413433); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_44_0(), "okleader"); 
                         
@@ -14827,16 +14786,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 46 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7167:6: ( (lv_goodleader_45_0= '#goodleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7145:6: ( (lv_goodleader_45_0= '#goodleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7167:6: ( (lv_goodleader_45_0= '#goodleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7168:1: (lv_goodleader_45_0= '#goodleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7145:6: ( (lv_goodleader_45_0= '#goodleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7146:1: (lv_goodleader_45_0= '#goodleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7168:1: (lv_goodleader_45_0= '#goodleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7169:3: lv_goodleader_45_0= '#goodleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7146:1: (lv_goodleader_45_0= '#goodleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7147:3: lv_goodleader_45_0= '#goodleader'
                     {
                     lv_goodleader_45_0=(Token)input.LT(1);
-                    match(input,212,FOLLOW_212_in_ruleMonsterInst413507); 
+                    match(input,211,FOLLOW_211_in_ruleMonsterInst413470); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_45_0(), "goodleader"); 
                         
@@ -14862,16 +14821,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 47 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7189:6: ( (lv_expertleader_46_0= '#expertleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7167:6: ( (lv_expertleader_46_0= '#expertleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7189:6: ( (lv_expertleader_46_0= '#expertleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7190:1: (lv_expertleader_46_0= '#expertleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7167:6: ( (lv_expertleader_46_0= '#expertleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7168:1: (lv_expertleader_46_0= '#expertleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7190:1: (lv_expertleader_46_0= '#expertleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7191:3: lv_expertleader_46_0= '#expertleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7168:1: (lv_expertleader_46_0= '#expertleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7169:3: lv_expertleader_46_0= '#expertleader'
                     {
                     lv_expertleader_46_0=(Token)input.LT(1);
-                    match(input,213,FOLLOW_213_in_ruleMonsterInst413544); 
+                    match(input,212,FOLLOW_212_in_ruleMonsterInst413507); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_46_0(), "expertleader"); 
                         
@@ -14897,16 +14856,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 48 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7211:6: ( (lv_superiorleader_47_0= '#superiorleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7189:6: ( (lv_superiorleader_47_0= '#superiorleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7211:6: ( (lv_superiorleader_47_0= '#superiorleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7212:1: (lv_superiorleader_47_0= '#superiorleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7189:6: ( (lv_superiorleader_47_0= '#superiorleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7190:1: (lv_superiorleader_47_0= '#superiorleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7212:1: (lv_superiorleader_47_0= '#superiorleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7213:3: lv_superiorleader_47_0= '#superiorleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7190:1: (lv_superiorleader_47_0= '#superiorleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7191:3: lv_superiorleader_47_0= '#superiorleader'
                     {
                     lv_superiorleader_47_0=(Token)input.LT(1);
-                    match(input,214,FOLLOW_214_in_ruleMonsterInst413581); 
+                    match(input,213,FOLLOW_213_in_ruleMonsterInst413544); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_47_0(), "superiorleader"); 
                         
@@ -14932,16 +14891,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 49 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7233:6: ( (lv_nomagicleader_48_0= '#nomagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7211:6: ( (lv_nomagicleader_48_0= '#nomagicleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7233:6: ( (lv_nomagicleader_48_0= '#nomagicleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7234:1: (lv_nomagicleader_48_0= '#nomagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7211:6: ( (lv_nomagicleader_48_0= '#nomagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7212:1: (lv_nomagicleader_48_0= '#nomagicleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7234:1: (lv_nomagicleader_48_0= '#nomagicleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7235:3: lv_nomagicleader_48_0= '#nomagicleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7212:1: (lv_nomagicleader_48_0= '#nomagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7213:3: lv_nomagicleader_48_0= '#nomagicleader'
                     {
                     lv_nomagicleader_48_0=(Token)input.LT(1);
-                    match(input,215,FOLLOW_215_in_ruleMonsterInst413618); 
+                    match(input,214,FOLLOW_214_in_ruleMonsterInst413581); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_48_0(), "nomagicleader"); 
                         
@@ -14967,16 +14926,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 50 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7255:6: ( (lv_poormagicleader_49_0= '#poormagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7233:6: ( (lv_poormagicleader_49_0= '#poormagicleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7255:6: ( (lv_poormagicleader_49_0= '#poormagicleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7256:1: (lv_poormagicleader_49_0= '#poormagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7233:6: ( (lv_poormagicleader_49_0= '#poormagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7234:1: (lv_poormagicleader_49_0= '#poormagicleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7256:1: (lv_poormagicleader_49_0= '#poormagicleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7257:3: lv_poormagicleader_49_0= '#poormagicleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7234:1: (lv_poormagicleader_49_0= '#poormagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7235:3: lv_poormagicleader_49_0= '#poormagicleader'
                     {
                     lv_poormagicleader_49_0=(Token)input.LT(1);
-                    match(input,216,FOLLOW_216_in_ruleMonsterInst413655); 
+                    match(input,215,FOLLOW_215_in_ruleMonsterInst413618); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_49_0(), "poormagicleader"); 
                         
@@ -15002,16 +14961,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 51 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7277:6: ( (lv_okmagicleader_50_0= '#okmagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7255:6: ( (lv_okmagicleader_50_0= '#okmagicleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7277:6: ( (lv_okmagicleader_50_0= '#okmagicleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7278:1: (lv_okmagicleader_50_0= '#okmagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7255:6: ( (lv_okmagicleader_50_0= '#okmagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7256:1: (lv_okmagicleader_50_0= '#okmagicleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7278:1: (lv_okmagicleader_50_0= '#okmagicleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7279:3: lv_okmagicleader_50_0= '#okmagicleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7256:1: (lv_okmagicleader_50_0= '#okmagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7257:3: lv_okmagicleader_50_0= '#okmagicleader'
                     {
                     lv_okmagicleader_50_0=(Token)input.LT(1);
-                    match(input,217,FOLLOW_217_in_ruleMonsterInst413692); 
+                    match(input,216,FOLLOW_216_in_ruleMonsterInst413655); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_50_0(), "okmagicleader"); 
                         
@@ -15037,16 +14996,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 52 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7299:6: ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7277:6: ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7299:6: ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7300:1: (lv_goodmagicleader_51_0= '#goodmagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7277:6: ( (lv_goodmagicleader_51_0= '#goodmagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7278:1: (lv_goodmagicleader_51_0= '#goodmagicleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7300:1: (lv_goodmagicleader_51_0= '#goodmagicleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7301:3: lv_goodmagicleader_51_0= '#goodmagicleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7278:1: (lv_goodmagicleader_51_0= '#goodmagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7279:3: lv_goodmagicleader_51_0= '#goodmagicleader'
                     {
                     lv_goodmagicleader_51_0=(Token)input.LT(1);
-                    match(input,218,FOLLOW_218_in_ruleMonsterInst413729); 
+                    match(input,217,FOLLOW_217_in_ruleMonsterInst413692); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_51_0(), "goodmagicleader"); 
                         
@@ -15072,16 +15031,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 53 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7321:6: ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7299:6: ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7321:6: ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7322:1: (lv_expertmagicleader_52_0= '#expertmagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7299:6: ( (lv_expertmagicleader_52_0= '#expertmagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7300:1: (lv_expertmagicleader_52_0= '#expertmagicleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7322:1: (lv_expertmagicleader_52_0= '#expertmagicleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7323:3: lv_expertmagicleader_52_0= '#expertmagicleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7300:1: (lv_expertmagicleader_52_0= '#expertmagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7301:3: lv_expertmagicleader_52_0= '#expertmagicleader'
                     {
                     lv_expertmagicleader_52_0=(Token)input.LT(1);
-                    match(input,219,FOLLOW_219_in_ruleMonsterInst413766); 
+                    match(input,218,FOLLOW_218_in_ruleMonsterInst413729); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_52_0(), "expertmagicleader"); 
                         
@@ -15107,16 +15066,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 54 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7343:6: ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7321:6: ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7343:6: ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7344:1: (lv_superiormagicleader_53_0= '#superiormagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7321:6: ( (lv_superiormagicleader_53_0= '#superiormagicleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7322:1: (lv_superiormagicleader_53_0= '#superiormagicleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7344:1: (lv_superiormagicleader_53_0= '#superiormagicleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7345:3: lv_superiormagicleader_53_0= '#superiormagicleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7322:1: (lv_superiormagicleader_53_0= '#superiormagicleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7323:3: lv_superiormagicleader_53_0= '#superiormagicleader'
                     {
                     lv_superiormagicleader_53_0=(Token)input.LT(1);
-                    match(input,220,FOLLOW_220_in_ruleMonsterInst413803); 
+                    match(input,219,FOLLOW_219_in_ruleMonsterInst413766); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_53_0(), "superiormagicleader"); 
                         
@@ -15142,16 +15101,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 55 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7365:6: ( (lv_noundeadleader_54_0= '#noundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7343:6: ( (lv_noundeadleader_54_0= '#noundeadleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7365:6: ( (lv_noundeadleader_54_0= '#noundeadleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7366:1: (lv_noundeadleader_54_0= '#noundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7343:6: ( (lv_noundeadleader_54_0= '#noundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7344:1: (lv_noundeadleader_54_0= '#noundeadleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7366:1: (lv_noundeadleader_54_0= '#noundeadleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7367:3: lv_noundeadleader_54_0= '#noundeadleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7344:1: (lv_noundeadleader_54_0= '#noundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7345:3: lv_noundeadleader_54_0= '#noundeadleader'
                     {
                     lv_noundeadleader_54_0=(Token)input.LT(1);
-                    match(input,221,FOLLOW_221_in_ruleMonsterInst413840); 
+                    match(input,220,FOLLOW_220_in_ruleMonsterInst413803); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_54_0(), "noundeadleader"); 
                         
@@ -15177,16 +15136,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 56 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7387:6: ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7365:6: ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7387:6: ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7388:1: (lv_poorundeadleader_55_0= '#poorundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7365:6: ( (lv_poorundeadleader_55_0= '#poorundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7366:1: (lv_poorundeadleader_55_0= '#poorundeadleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7388:1: (lv_poorundeadleader_55_0= '#poorundeadleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7389:3: lv_poorundeadleader_55_0= '#poorundeadleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7366:1: (lv_poorundeadleader_55_0= '#poorundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7367:3: lv_poorundeadleader_55_0= '#poorundeadleader'
                     {
                     lv_poorundeadleader_55_0=(Token)input.LT(1);
-                    match(input,222,FOLLOW_222_in_ruleMonsterInst413877); 
+                    match(input,221,FOLLOW_221_in_ruleMonsterInst413840); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_55_0(), "poorundeadleader"); 
                         
@@ -15212,16 +15171,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 57 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7409:6: ( (lv_okundeadleader_56_0= '#okundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7387:6: ( (lv_okundeadleader_56_0= '#okundeadleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7409:6: ( (lv_okundeadleader_56_0= '#okundeadleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7410:1: (lv_okundeadleader_56_0= '#okundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7387:6: ( (lv_okundeadleader_56_0= '#okundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7388:1: (lv_okundeadleader_56_0= '#okundeadleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7410:1: (lv_okundeadleader_56_0= '#okundeadleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7411:3: lv_okundeadleader_56_0= '#okundeadleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7388:1: (lv_okundeadleader_56_0= '#okundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7389:3: lv_okundeadleader_56_0= '#okundeadleader'
                     {
                     lv_okundeadleader_56_0=(Token)input.LT(1);
-                    match(input,223,FOLLOW_223_in_ruleMonsterInst413914); 
+                    match(input,222,FOLLOW_222_in_ruleMonsterInst413877); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_56_0(), "okundeadleader"); 
                         
@@ -15247,16 +15206,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 58 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7431:6: ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7409:6: ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7431:6: ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7432:1: (lv_goodundeadleader_57_0= '#goodundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7409:6: ( (lv_goodundeadleader_57_0= '#goodundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7410:1: (lv_goodundeadleader_57_0= '#goodundeadleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7432:1: (lv_goodundeadleader_57_0= '#goodundeadleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7433:3: lv_goodundeadleader_57_0= '#goodundeadleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7410:1: (lv_goodundeadleader_57_0= '#goodundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7411:3: lv_goodundeadleader_57_0= '#goodundeadleader'
                     {
                     lv_goodundeadleader_57_0=(Token)input.LT(1);
-                    match(input,224,FOLLOW_224_in_ruleMonsterInst413951); 
+                    match(input,223,FOLLOW_223_in_ruleMonsterInst413914); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_57_0(), "goodundeadleader"); 
                         
@@ -15282,16 +15241,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 59 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7453:6: ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7431:6: ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7453:6: ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7454:1: (lv_expertundeadleader_58_0= '#expertundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7431:6: ( (lv_expertundeadleader_58_0= '#expertundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7432:1: (lv_expertundeadleader_58_0= '#expertundeadleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7454:1: (lv_expertundeadleader_58_0= '#expertundeadleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7455:3: lv_expertundeadleader_58_0= '#expertundeadleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7432:1: (lv_expertundeadleader_58_0= '#expertundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7433:3: lv_expertundeadleader_58_0= '#expertundeadleader'
                     {
                     lv_expertundeadleader_58_0=(Token)input.LT(1);
-                    match(input,225,FOLLOW_225_in_ruleMonsterInst413988); 
+                    match(input,224,FOLLOW_224_in_ruleMonsterInst413951); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_58_0(), "expertundeadleader"); 
                         
@@ -15317,16 +15276,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 60 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7475:6: ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7453:6: ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7475:6: ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7476:1: (lv_superiorundeadleader_59_0= '#superiorundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7453:6: ( (lv_superiorundeadleader_59_0= '#superiorundeadleader' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7454:1: (lv_superiorundeadleader_59_0= '#superiorundeadleader' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7476:1: (lv_superiorundeadleader_59_0= '#superiorundeadleader' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7477:3: lv_superiorundeadleader_59_0= '#superiorundeadleader'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7454:1: (lv_superiorundeadleader_59_0= '#superiorundeadleader' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7455:3: lv_superiorundeadleader_59_0= '#superiorundeadleader'
                     {
                     lv_superiorundeadleader_59_0=(Token)input.LT(1);
-                    match(input,226,FOLLOW_226_in_ruleMonsterInst414025); 
+                    match(input,225,FOLLOW_225_in_ruleMonsterInst413988); 
 
                             createLeafNode(grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_59_0(), "superiorundeadleader"); 
                         
@@ -15374,7 +15333,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleMonsterInst5
-    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7504:1: entryRuleMonsterInst5 returns [EObject current=null] : iv_ruleMonsterInst5= ruleMonsterInst5 EOF ;
+    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7482:1: entryRuleMonsterInst5 returns [EObject current=null] : iv_ruleMonsterInst5= ruleMonsterInst5 EOF ;
     public final EObject entryRuleMonsterInst5() throws RecognitionException {
         EObject current = null;
 
@@ -15382,16 +15341,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7505:2: (iv_ruleMonsterInst5= ruleMonsterInst5 EOF )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7506:2: iv_ruleMonsterInst5= ruleMonsterInst5 EOF
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7483:2: (iv_ruleMonsterInst5= ruleMonsterInst5 EOF )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7484:2: iv_ruleMonsterInst5= ruleMonsterInst5 EOF
             {
              currentNode = createCompositeNode(grammarAccess.getMonsterInst5Rule(), currentNode); 
-            pushFollow(FOLLOW_ruleMonsterInst5_in_entryRuleMonsterInst514074);
+            pushFollow(FOLLOW_ruleMonsterInst5_in_entryRuleMonsterInst514037);
             iv_ruleMonsterInst5=ruleMonsterInst5();
             _fsp--;
 
              current =iv_ruleMonsterInst5; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst514084); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst514047); 
 
             }
 
@@ -15409,7 +15368,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleMonsterInst5
-    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7513:1: ruleMonsterInst5 returns [EObject current=null] : ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_onebattlespell_1_0= '#onebattlespell' ) ) | ( (lv_firstshape_2_0= '#firstshape' ) ) | ( (lv_secondshape_3_0= '#secondshape' ) ) | ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) ) | ( (lv_shapechange_5_0= '#shapechange' ) ) | ( (lv_landshape_6_0= '#landshape' ) ) | ( (lv_watershape_7_0= '#watershape' ) ) | ( (lv_forestshape_8_0= '#forestshape' ) ) | ( (lv_plainshape_9_0= '#plainshape' ) ) | ( (lv_domsummon_10_0= '#domsummon' ) ) | ( (lv_domsummon2_11_0= '#domsummon2' ) ) | ( (lv_domsummon20_12_0= '#domsummon20' ) ) | ( (lv_makemonster1_13_0= '#makemonster1' ) ) | ( (lv_makemonster2_14_0= '#makemonster2' ) ) | ( (lv_makemonster3_15_0= '#makemonster3' ) ) | ( (lv_makemonster4_16_0= '#makemonster4' ) ) | ( (lv_makemonster5_17_0= '#makemonster5' ) ) | ( (lv_summon1_18_0= '#summon1' ) ) | ( (lv_summon5_19_0= '#summon5' ) ) ) ;
+    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7491:1: ruleMonsterInst5 returns [EObject current=null] : ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_onebattlespell_1_0= '#onebattlespell' ) ) | ( (lv_firstshape_2_0= '#firstshape' ) ) | ( (lv_secondshape_3_0= '#secondshape' ) ) | ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) ) | ( (lv_shapechange_5_0= '#shapechange' ) ) | ( (lv_landshape_6_0= '#landshape' ) ) | ( (lv_watershape_7_0= '#watershape' ) ) | ( (lv_forestshape_8_0= '#forestshape' ) ) | ( (lv_plainshape_9_0= '#plainshape' ) ) | ( (lv_domsummon_10_0= '#domsummon' ) ) | ( (lv_domsummon2_11_0= '#domsummon2' ) ) | ( (lv_domsummon20_12_0= '#domsummon20' ) ) | ( (lv_makemonster1_13_0= '#makemonster1' ) ) | ( (lv_makemonster2_14_0= '#makemonster2' ) ) | ( (lv_makemonster3_15_0= '#makemonster3' ) ) | ( (lv_makemonster4_16_0= '#makemonster4' ) ) | ( (lv_makemonster5_17_0= '#makemonster5' ) ) | ( (lv_summon1_18_0= '#summon1' ) ) | ( (lv_summon5_19_0= '#summon5' ) ) ) ;
     public final EObject ruleMonsterInst5() throws RecognitionException {
         EObject current = null;
 
@@ -15437,131 +15396,131 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7518:6: ( ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_onebattlespell_1_0= '#onebattlespell' ) ) | ( (lv_firstshape_2_0= '#firstshape' ) ) | ( (lv_secondshape_3_0= '#secondshape' ) ) | ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) ) | ( (lv_shapechange_5_0= '#shapechange' ) ) | ( (lv_landshape_6_0= '#landshape' ) ) | ( (lv_watershape_7_0= '#watershape' ) ) | ( (lv_forestshape_8_0= '#forestshape' ) ) | ( (lv_plainshape_9_0= '#plainshape' ) ) | ( (lv_domsummon_10_0= '#domsummon' ) ) | ( (lv_domsummon2_11_0= '#domsummon2' ) ) | ( (lv_domsummon20_12_0= '#domsummon20' ) ) | ( (lv_makemonster1_13_0= '#makemonster1' ) ) | ( (lv_makemonster2_14_0= '#makemonster2' ) ) | ( (lv_makemonster3_15_0= '#makemonster3' ) ) | ( (lv_makemonster4_16_0= '#makemonster4' ) ) | ( (lv_makemonster5_17_0= '#makemonster5' ) ) | ( (lv_summon1_18_0= '#summon1' ) ) | ( (lv_summon5_19_0= '#summon5' ) ) ) )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7519:1: ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_onebattlespell_1_0= '#onebattlespell' ) ) | ( (lv_firstshape_2_0= '#firstshape' ) ) | ( (lv_secondshape_3_0= '#secondshape' ) ) | ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) ) | ( (lv_shapechange_5_0= '#shapechange' ) ) | ( (lv_landshape_6_0= '#landshape' ) ) | ( (lv_watershape_7_0= '#watershape' ) ) | ( (lv_forestshape_8_0= '#forestshape' ) ) | ( (lv_plainshape_9_0= '#plainshape' ) ) | ( (lv_domsummon_10_0= '#domsummon' ) ) | ( (lv_domsummon2_11_0= '#domsummon2' ) ) | ( (lv_domsummon20_12_0= '#domsummon20' ) ) | ( (lv_makemonster1_13_0= '#makemonster1' ) ) | ( (lv_makemonster2_14_0= '#makemonster2' ) ) | ( (lv_makemonster3_15_0= '#makemonster3' ) ) | ( (lv_makemonster4_16_0= '#makemonster4' ) ) | ( (lv_makemonster5_17_0= '#makemonster5' ) ) | ( (lv_summon1_18_0= '#summon1' ) ) | ( (lv_summon5_19_0= '#summon5' ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7496:6: ( ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_onebattlespell_1_0= '#onebattlespell' ) ) | ( (lv_firstshape_2_0= '#firstshape' ) ) | ( (lv_secondshape_3_0= '#secondshape' ) ) | ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) ) | ( (lv_shapechange_5_0= '#shapechange' ) ) | ( (lv_landshape_6_0= '#landshape' ) ) | ( (lv_watershape_7_0= '#watershape' ) ) | ( (lv_forestshape_8_0= '#forestshape' ) ) | ( (lv_plainshape_9_0= '#plainshape' ) ) | ( (lv_domsummon_10_0= '#domsummon' ) ) | ( (lv_domsummon2_11_0= '#domsummon2' ) ) | ( (lv_domsummon20_12_0= '#domsummon20' ) ) | ( (lv_makemonster1_13_0= '#makemonster1' ) ) | ( (lv_makemonster2_14_0= '#makemonster2' ) ) | ( (lv_makemonster3_15_0= '#makemonster3' ) ) | ( (lv_makemonster4_16_0= '#makemonster4' ) ) | ( (lv_makemonster5_17_0= '#makemonster5' ) ) | ( (lv_summon1_18_0= '#summon1' ) ) | ( (lv_summon5_19_0= '#summon5' ) ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7497:1: ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_onebattlespell_1_0= '#onebattlespell' ) ) | ( (lv_firstshape_2_0= '#firstshape' ) ) | ( (lv_secondshape_3_0= '#secondshape' ) ) | ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) ) | ( (lv_shapechange_5_0= '#shapechange' ) ) | ( (lv_landshape_6_0= '#landshape' ) ) | ( (lv_watershape_7_0= '#watershape' ) ) | ( (lv_forestshape_8_0= '#forestshape' ) ) | ( (lv_plainshape_9_0= '#plainshape' ) ) | ( (lv_domsummon_10_0= '#domsummon' ) ) | ( (lv_domsummon2_11_0= '#domsummon2' ) ) | ( (lv_domsummon20_12_0= '#domsummon20' ) ) | ( (lv_makemonster1_13_0= '#makemonster1' ) ) | ( (lv_makemonster2_14_0= '#makemonster2' ) ) | ( (lv_makemonster3_15_0= '#makemonster3' ) ) | ( (lv_makemonster4_16_0= '#makemonster4' ) ) | ( (lv_makemonster5_17_0= '#makemonster5' ) ) | ( (lv_summon1_18_0= '#summon1' ) ) | ( (lv_summon5_19_0= '#summon5' ) ) )
             {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7519:1: ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_onebattlespell_1_0= '#onebattlespell' ) ) | ( (lv_firstshape_2_0= '#firstshape' ) ) | ( (lv_secondshape_3_0= '#secondshape' ) ) | ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) ) | ( (lv_shapechange_5_0= '#shapechange' ) ) | ( (lv_landshape_6_0= '#landshape' ) ) | ( (lv_watershape_7_0= '#watershape' ) ) | ( (lv_forestshape_8_0= '#forestshape' ) ) | ( (lv_plainshape_9_0= '#plainshape' ) ) | ( (lv_domsummon_10_0= '#domsummon' ) ) | ( (lv_domsummon2_11_0= '#domsummon2' ) ) | ( (lv_domsummon20_12_0= '#domsummon20' ) ) | ( (lv_makemonster1_13_0= '#makemonster1' ) ) | ( (lv_makemonster2_14_0= '#makemonster2' ) ) | ( (lv_makemonster3_15_0= '#makemonster3' ) ) | ( (lv_makemonster4_16_0= '#makemonster4' ) ) | ( (lv_makemonster5_17_0= '#makemonster5' ) ) | ( (lv_summon1_18_0= '#summon1' ) ) | ( (lv_summon5_19_0= '#summon5' ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7497:1: ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_onebattlespell_1_0= '#onebattlespell' ) ) | ( (lv_firstshape_2_0= '#firstshape' ) ) | ( (lv_secondshape_3_0= '#secondshape' ) ) | ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) ) | ( (lv_shapechange_5_0= '#shapechange' ) ) | ( (lv_landshape_6_0= '#landshape' ) ) | ( (lv_watershape_7_0= '#watershape' ) ) | ( (lv_forestshape_8_0= '#forestshape' ) ) | ( (lv_plainshape_9_0= '#plainshape' ) ) | ( (lv_domsummon_10_0= '#domsummon' ) ) | ( (lv_domsummon2_11_0= '#domsummon2' ) ) | ( (lv_domsummon20_12_0= '#domsummon20' ) ) | ( (lv_makemonster1_13_0= '#makemonster1' ) ) | ( (lv_makemonster2_14_0= '#makemonster2' ) ) | ( (lv_makemonster3_15_0= '#makemonster3' ) ) | ( (lv_makemonster4_16_0= '#makemonster4' ) ) | ( (lv_makemonster5_17_0= '#makemonster5' ) ) | ( (lv_summon1_18_0= '#summon1' ) ) | ( (lv_summon5_19_0= '#summon5' ) ) )
             int alt29=20;
             switch ( input.LA(1) ) {
-            case 227:
+            case 226:
                 {
                 alt29=1;
                 }
                 break;
-            case 228:
+            case 227:
                 {
                 alt29=2;
                 }
                 break;
-            case 229:
+            case 228:
                 {
                 alt29=3;
                 }
                 break;
-            case 230:
+            case 229:
                 {
                 alt29=4;
                 }
                 break;
-            case 231:
+            case 230:
                 {
                 alt29=5;
                 }
                 break;
-            case 232:
+            case 231:
                 {
                 alt29=6;
                 }
                 break;
-            case 233:
+            case 232:
                 {
                 alt29=7;
                 }
                 break;
-            case 234:
+            case 233:
                 {
                 alt29=8;
                 }
                 break;
-            case 235:
+            case 234:
                 {
                 alt29=9;
                 }
                 break;
-            case 236:
+            case 235:
                 {
                 alt29=10;
                 }
                 break;
-            case 237:
+            case 236:
                 {
                 alt29=11;
                 }
                 break;
-            case 238:
+            case 237:
                 {
                 alt29=12;
                 }
                 break;
-            case 239:
+            case 238:
                 {
                 alt29=13;
                 }
                 break;
-            case 240:
+            case 239:
                 {
                 alt29=14;
                 }
                 break;
-            case 241:
+            case 240:
                 {
                 alt29=15;
                 }
                 break;
-            case 242:
+            case 241:
                 {
                 alt29=16;
                 }
                 break;
-            case 243:
+            case 242:
                 {
                 alt29=17;
                 }
                 break;
-            case 244:
+            case 243:
                 {
                 alt29=18;
                 }
                 break;
-            case 245:
+            case 244:
                 {
                 alt29=19;
                 }
                 break;
-            case 246:
+            case 245:
                 {
                 alt29=20;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("7519:1: ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_onebattlespell_1_0= '#onebattlespell' ) ) | ( (lv_firstshape_2_0= '#firstshape' ) ) | ( (lv_secondshape_3_0= '#secondshape' ) ) | ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) ) | ( (lv_shapechange_5_0= '#shapechange' ) ) | ( (lv_landshape_6_0= '#landshape' ) ) | ( (lv_watershape_7_0= '#watershape' ) ) | ( (lv_forestshape_8_0= '#forestshape' ) ) | ( (lv_plainshape_9_0= '#plainshape' ) ) | ( (lv_domsummon_10_0= '#domsummon' ) ) | ( (lv_domsummon2_11_0= '#domsummon2' ) ) | ( (lv_domsummon20_12_0= '#domsummon20' ) ) | ( (lv_makemonster1_13_0= '#makemonster1' ) ) | ( (lv_makemonster2_14_0= '#makemonster2' ) ) | ( (lv_makemonster3_15_0= '#makemonster3' ) ) | ( (lv_makemonster4_16_0= '#makemonster4' ) ) | ( (lv_makemonster5_17_0= '#makemonster5' ) ) | ( (lv_summon1_18_0= '#summon1' ) ) | ( (lv_summon5_19_0= '#summon5' ) ) )", 29, 0, input);
+                    new NoViableAltException("7497:1: ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_onebattlespell_1_0= '#onebattlespell' ) ) | ( (lv_firstshape_2_0= '#firstshape' ) ) | ( (lv_secondshape_3_0= '#secondshape' ) ) | ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) ) | ( (lv_shapechange_5_0= '#shapechange' ) ) | ( (lv_landshape_6_0= '#landshape' ) ) | ( (lv_watershape_7_0= '#watershape' ) ) | ( (lv_forestshape_8_0= '#forestshape' ) ) | ( (lv_plainshape_9_0= '#plainshape' ) ) | ( (lv_domsummon_10_0= '#domsummon' ) ) | ( (lv_domsummon2_11_0= '#domsummon2' ) ) | ( (lv_domsummon20_12_0= '#domsummon20' ) ) | ( (lv_makemonster1_13_0= '#makemonster1' ) ) | ( (lv_makemonster2_14_0= '#makemonster2' ) ) | ( (lv_makemonster3_15_0= '#makemonster3' ) ) | ( (lv_makemonster4_16_0= '#makemonster4' ) ) | ( (lv_makemonster5_17_0= '#makemonster5' ) ) | ( (lv_summon1_18_0= '#summon1' ) ) | ( (lv_summon5_19_0= '#summon5' ) ) )", 29, 0, input);
 
                 throw nvae;
             }
 
             switch (alt29) {
                 case 1 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7519:2: ( (lv_weapon_0_0= '#weapon' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7497:2: ( (lv_weapon_0_0= '#weapon' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7519:2: ( (lv_weapon_0_0= '#weapon' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7520:1: (lv_weapon_0_0= '#weapon' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7497:2: ( (lv_weapon_0_0= '#weapon' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7498:1: (lv_weapon_0_0= '#weapon' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7520:1: (lv_weapon_0_0= '#weapon' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7521:3: lv_weapon_0_0= '#weapon'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7498:1: (lv_weapon_0_0= '#weapon' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7499:3: lv_weapon_0_0= '#weapon'
                     {
                     lv_weapon_0_0=(Token)input.LT(1);
-                    match(input,227,FOLLOW_227_in_ruleMonsterInst514127); 
+                    match(input,226,FOLLOW_226_in_ruleMonsterInst514090); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getWeaponWeaponKeyword_0_0(), "weapon"); 
                         
@@ -15587,16 +15546,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7541:6: ( (lv_onebattlespell_1_0= '#onebattlespell' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7519:6: ( (lv_onebattlespell_1_0= '#onebattlespell' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7541:6: ( (lv_onebattlespell_1_0= '#onebattlespell' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7542:1: (lv_onebattlespell_1_0= '#onebattlespell' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7519:6: ( (lv_onebattlespell_1_0= '#onebattlespell' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7520:1: (lv_onebattlespell_1_0= '#onebattlespell' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7542:1: (lv_onebattlespell_1_0= '#onebattlespell' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7543:3: lv_onebattlespell_1_0= '#onebattlespell'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7520:1: (lv_onebattlespell_1_0= '#onebattlespell' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7521:3: lv_onebattlespell_1_0= '#onebattlespell'
                     {
                     lv_onebattlespell_1_0=(Token)input.LT(1);
-                    match(input,228,FOLLOW_228_in_ruleMonsterInst514164); 
+                    match(input,227,FOLLOW_227_in_ruleMonsterInst514127); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getOnebattlespellOnebattlespellKeyword_1_0(), "onebattlespell"); 
                         
@@ -15622,16 +15581,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7563:6: ( (lv_firstshape_2_0= '#firstshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7541:6: ( (lv_firstshape_2_0= '#firstshape' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7563:6: ( (lv_firstshape_2_0= '#firstshape' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7564:1: (lv_firstshape_2_0= '#firstshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7541:6: ( (lv_firstshape_2_0= '#firstshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7542:1: (lv_firstshape_2_0= '#firstshape' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7564:1: (lv_firstshape_2_0= '#firstshape' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7565:3: lv_firstshape_2_0= '#firstshape'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7542:1: (lv_firstshape_2_0= '#firstshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7543:3: lv_firstshape_2_0= '#firstshape'
                     {
                     lv_firstshape_2_0=(Token)input.LT(1);
-                    match(input,229,FOLLOW_229_in_ruleMonsterInst514201); 
+                    match(input,228,FOLLOW_228_in_ruleMonsterInst514164); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getFirstshapeFirstshapeKeyword_2_0(), "firstshape"); 
                         
@@ -15657,16 +15616,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7585:6: ( (lv_secondshape_3_0= '#secondshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7563:6: ( (lv_secondshape_3_0= '#secondshape' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7585:6: ( (lv_secondshape_3_0= '#secondshape' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7586:1: (lv_secondshape_3_0= '#secondshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7563:6: ( (lv_secondshape_3_0= '#secondshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7564:1: (lv_secondshape_3_0= '#secondshape' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7586:1: (lv_secondshape_3_0= '#secondshape' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7587:3: lv_secondshape_3_0= '#secondshape'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7564:1: (lv_secondshape_3_0= '#secondshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7565:3: lv_secondshape_3_0= '#secondshape'
                     {
                     lv_secondshape_3_0=(Token)input.LT(1);
-                    match(input,230,FOLLOW_230_in_ruleMonsterInst514238); 
+                    match(input,229,FOLLOW_229_in_ruleMonsterInst514201); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getSecondshapeSecondshapeKeyword_3_0(), "secondshape"); 
                         
@@ -15692,16 +15651,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7607:6: ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7585:6: ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7607:6: ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7608:1: (lv_secondtmpshape_4_0= '#secondtmpshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7585:6: ( (lv_secondtmpshape_4_0= '#secondtmpshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7586:1: (lv_secondtmpshape_4_0= '#secondtmpshape' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7608:1: (lv_secondtmpshape_4_0= '#secondtmpshape' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7609:3: lv_secondtmpshape_4_0= '#secondtmpshape'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7586:1: (lv_secondtmpshape_4_0= '#secondtmpshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7587:3: lv_secondtmpshape_4_0= '#secondtmpshape'
                     {
                     lv_secondtmpshape_4_0=(Token)input.LT(1);
-                    match(input,231,FOLLOW_231_in_ruleMonsterInst514275); 
+                    match(input,230,FOLLOW_230_in_ruleMonsterInst514238); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getSecondtmpshapeSecondtmpshapeKeyword_4_0(), "secondtmpshape"); 
                         
@@ -15727,16 +15686,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7629:6: ( (lv_shapechange_5_0= '#shapechange' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7607:6: ( (lv_shapechange_5_0= '#shapechange' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7629:6: ( (lv_shapechange_5_0= '#shapechange' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7630:1: (lv_shapechange_5_0= '#shapechange' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7607:6: ( (lv_shapechange_5_0= '#shapechange' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7608:1: (lv_shapechange_5_0= '#shapechange' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7630:1: (lv_shapechange_5_0= '#shapechange' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7631:3: lv_shapechange_5_0= '#shapechange'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7608:1: (lv_shapechange_5_0= '#shapechange' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7609:3: lv_shapechange_5_0= '#shapechange'
                     {
                     lv_shapechange_5_0=(Token)input.LT(1);
-                    match(input,232,FOLLOW_232_in_ruleMonsterInst514312); 
+                    match(input,231,FOLLOW_231_in_ruleMonsterInst514275); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getShapechangeShapechangeKeyword_5_0(), "shapechange"); 
                         
@@ -15762,16 +15721,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7651:6: ( (lv_landshape_6_0= '#landshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7629:6: ( (lv_landshape_6_0= '#landshape' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7651:6: ( (lv_landshape_6_0= '#landshape' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7652:1: (lv_landshape_6_0= '#landshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7629:6: ( (lv_landshape_6_0= '#landshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7630:1: (lv_landshape_6_0= '#landshape' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7652:1: (lv_landshape_6_0= '#landshape' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7653:3: lv_landshape_6_0= '#landshape'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7630:1: (lv_landshape_6_0= '#landshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7631:3: lv_landshape_6_0= '#landshape'
                     {
                     lv_landshape_6_0=(Token)input.LT(1);
-                    match(input,233,FOLLOW_233_in_ruleMonsterInst514349); 
+                    match(input,232,FOLLOW_232_in_ruleMonsterInst514312); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getLandshapeLandshapeKeyword_6_0(), "landshape"); 
                         
@@ -15797,16 +15756,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7673:6: ( (lv_watershape_7_0= '#watershape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7651:6: ( (lv_watershape_7_0= '#watershape' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7673:6: ( (lv_watershape_7_0= '#watershape' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7674:1: (lv_watershape_7_0= '#watershape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7651:6: ( (lv_watershape_7_0= '#watershape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7652:1: (lv_watershape_7_0= '#watershape' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7674:1: (lv_watershape_7_0= '#watershape' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7675:3: lv_watershape_7_0= '#watershape'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7652:1: (lv_watershape_7_0= '#watershape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7653:3: lv_watershape_7_0= '#watershape'
                     {
                     lv_watershape_7_0=(Token)input.LT(1);
-                    match(input,234,FOLLOW_234_in_ruleMonsterInst514386); 
+                    match(input,233,FOLLOW_233_in_ruleMonsterInst514349); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getWatershapeWatershapeKeyword_7_0(), "watershape"); 
                         
@@ -15832,16 +15791,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7695:6: ( (lv_forestshape_8_0= '#forestshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7673:6: ( (lv_forestshape_8_0= '#forestshape' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7695:6: ( (lv_forestshape_8_0= '#forestshape' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7696:1: (lv_forestshape_8_0= '#forestshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7673:6: ( (lv_forestshape_8_0= '#forestshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7674:1: (lv_forestshape_8_0= '#forestshape' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7696:1: (lv_forestshape_8_0= '#forestshape' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7697:3: lv_forestshape_8_0= '#forestshape'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7674:1: (lv_forestshape_8_0= '#forestshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7675:3: lv_forestshape_8_0= '#forestshape'
                     {
                     lv_forestshape_8_0=(Token)input.LT(1);
-                    match(input,235,FOLLOW_235_in_ruleMonsterInst514423); 
+                    match(input,234,FOLLOW_234_in_ruleMonsterInst514386); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getForestshapeForestshapeKeyword_8_0(), "forestshape"); 
                         
@@ -15867,16 +15826,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7717:6: ( (lv_plainshape_9_0= '#plainshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7695:6: ( (lv_plainshape_9_0= '#plainshape' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7717:6: ( (lv_plainshape_9_0= '#plainshape' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7718:1: (lv_plainshape_9_0= '#plainshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7695:6: ( (lv_plainshape_9_0= '#plainshape' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7696:1: (lv_plainshape_9_0= '#plainshape' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7718:1: (lv_plainshape_9_0= '#plainshape' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7719:3: lv_plainshape_9_0= '#plainshape'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7696:1: (lv_plainshape_9_0= '#plainshape' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7697:3: lv_plainshape_9_0= '#plainshape'
                     {
                     lv_plainshape_9_0=(Token)input.LT(1);
-                    match(input,236,FOLLOW_236_in_ruleMonsterInst514460); 
+                    match(input,235,FOLLOW_235_in_ruleMonsterInst514423); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getPlainshapePlainshapeKeyword_9_0(), "plainshape"); 
                         
@@ -15902,16 +15861,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7739:6: ( (lv_domsummon_10_0= '#domsummon' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7717:6: ( (lv_domsummon_10_0= '#domsummon' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7739:6: ( (lv_domsummon_10_0= '#domsummon' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7740:1: (lv_domsummon_10_0= '#domsummon' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7717:6: ( (lv_domsummon_10_0= '#domsummon' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7718:1: (lv_domsummon_10_0= '#domsummon' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7740:1: (lv_domsummon_10_0= '#domsummon' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7741:3: lv_domsummon_10_0= '#domsummon'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7718:1: (lv_domsummon_10_0= '#domsummon' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7719:3: lv_domsummon_10_0= '#domsummon'
                     {
                     lv_domsummon_10_0=(Token)input.LT(1);
-                    match(input,237,FOLLOW_237_in_ruleMonsterInst514497); 
+                    match(input,236,FOLLOW_236_in_ruleMonsterInst514460); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getDomsummonDomsummonKeyword_10_0(), "domsummon"); 
                         
@@ -15937,16 +15896,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7761:6: ( (lv_domsummon2_11_0= '#domsummon2' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7739:6: ( (lv_domsummon2_11_0= '#domsummon2' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7761:6: ( (lv_domsummon2_11_0= '#domsummon2' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7762:1: (lv_domsummon2_11_0= '#domsummon2' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7739:6: ( (lv_domsummon2_11_0= '#domsummon2' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7740:1: (lv_domsummon2_11_0= '#domsummon2' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7762:1: (lv_domsummon2_11_0= '#domsummon2' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7763:3: lv_domsummon2_11_0= '#domsummon2'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7740:1: (lv_domsummon2_11_0= '#domsummon2' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7741:3: lv_domsummon2_11_0= '#domsummon2'
                     {
                     lv_domsummon2_11_0=(Token)input.LT(1);
-                    match(input,238,FOLLOW_238_in_ruleMonsterInst514534); 
+                    match(input,237,FOLLOW_237_in_ruleMonsterInst514497); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getDomsummon2Domsummon2Keyword_11_0(), "domsummon2"); 
                         
@@ -15972,16 +15931,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7783:6: ( (lv_domsummon20_12_0= '#domsummon20' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7761:6: ( (lv_domsummon20_12_0= '#domsummon20' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7783:6: ( (lv_domsummon20_12_0= '#domsummon20' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7784:1: (lv_domsummon20_12_0= '#domsummon20' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7761:6: ( (lv_domsummon20_12_0= '#domsummon20' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7762:1: (lv_domsummon20_12_0= '#domsummon20' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7784:1: (lv_domsummon20_12_0= '#domsummon20' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7785:3: lv_domsummon20_12_0= '#domsummon20'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7762:1: (lv_domsummon20_12_0= '#domsummon20' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7763:3: lv_domsummon20_12_0= '#domsummon20'
                     {
                     lv_domsummon20_12_0=(Token)input.LT(1);
-                    match(input,239,FOLLOW_239_in_ruleMonsterInst514571); 
+                    match(input,238,FOLLOW_238_in_ruleMonsterInst514534); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getDomsummon20Domsummon20Keyword_12_0(), "domsummon20"); 
                         
@@ -16007,16 +15966,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7805:6: ( (lv_makemonster1_13_0= '#makemonster1' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7783:6: ( (lv_makemonster1_13_0= '#makemonster1' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7805:6: ( (lv_makemonster1_13_0= '#makemonster1' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7806:1: (lv_makemonster1_13_0= '#makemonster1' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7783:6: ( (lv_makemonster1_13_0= '#makemonster1' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7784:1: (lv_makemonster1_13_0= '#makemonster1' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7806:1: (lv_makemonster1_13_0= '#makemonster1' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7807:3: lv_makemonster1_13_0= '#makemonster1'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7784:1: (lv_makemonster1_13_0= '#makemonster1' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7785:3: lv_makemonster1_13_0= '#makemonster1'
                     {
                     lv_makemonster1_13_0=(Token)input.LT(1);
-                    match(input,240,FOLLOW_240_in_ruleMonsterInst514608); 
+                    match(input,239,FOLLOW_239_in_ruleMonsterInst514571); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getMakemonster1Makemonster1Keyword_13_0(), "makemonster1"); 
                         
@@ -16042,16 +16001,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7827:6: ( (lv_makemonster2_14_0= '#makemonster2' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7805:6: ( (lv_makemonster2_14_0= '#makemonster2' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7827:6: ( (lv_makemonster2_14_0= '#makemonster2' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7828:1: (lv_makemonster2_14_0= '#makemonster2' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7805:6: ( (lv_makemonster2_14_0= '#makemonster2' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7806:1: (lv_makemonster2_14_0= '#makemonster2' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7828:1: (lv_makemonster2_14_0= '#makemonster2' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7829:3: lv_makemonster2_14_0= '#makemonster2'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7806:1: (lv_makemonster2_14_0= '#makemonster2' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7807:3: lv_makemonster2_14_0= '#makemonster2'
                     {
                     lv_makemonster2_14_0=(Token)input.LT(1);
-                    match(input,241,FOLLOW_241_in_ruleMonsterInst514645); 
+                    match(input,240,FOLLOW_240_in_ruleMonsterInst514608); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getMakemonster2Makemonster2Keyword_14_0(), "makemonster2"); 
                         
@@ -16077,16 +16036,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7849:6: ( (lv_makemonster3_15_0= '#makemonster3' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7827:6: ( (lv_makemonster3_15_0= '#makemonster3' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7849:6: ( (lv_makemonster3_15_0= '#makemonster3' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7850:1: (lv_makemonster3_15_0= '#makemonster3' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7827:6: ( (lv_makemonster3_15_0= '#makemonster3' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7828:1: (lv_makemonster3_15_0= '#makemonster3' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7850:1: (lv_makemonster3_15_0= '#makemonster3' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7851:3: lv_makemonster3_15_0= '#makemonster3'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7828:1: (lv_makemonster3_15_0= '#makemonster3' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7829:3: lv_makemonster3_15_0= '#makemonster3'
                     {
                     lv_makemonster3_15_0=(Token)input.LT(1);
-                    match(input,242,FOLLOW_242_in_ruleMonsterInst514682); 
+                    match(input,241,FOLLOW_241_in_ruleMonsterInst514645); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getMakemonster3Makemonster3Keyword_15_0(), "makemonster3"); 
                         
@@ -16112,16 +16071,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7871:6: ( (lv_makemonster4_16_0= '#makemonster4' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7849:6: ( (lv_makemonster4_16_0= '#makemonster4' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7871:6: ( (lv_makemonster4_16_0= '#makemonster4' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7872:1: (lv_makemonster4_16_0= '#makemonster4' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7849:6: ( (lv_makemonster4_16_0= '#makemonster4' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7850:1: (lv_makemonster4_16_0= '#makemonster4' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7872:1: (lv_makemonster4_16_0= '#makemonster4' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7873:3: lv_makemonster4_16_0= '#makemonster4'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7850:1: (lv_makemonster4_16_0= '#makemonster4' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7851:3: lv_makemonster4_16_0= '#makemonster4'
                     {
                     lv_makemonster4_16_0=(Token)input.LT(1);
-                    match(input,243,FOLLOW_243_in_ruleMonsterInst514719); 
+                    match(input,242,FOLLOW_242_in_ruleMonsterInst514682); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getMakemonster4Makemonster4Keyword_16_0(), "makemonster4"); 
                         
@@ -16147,16 +16106,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7893:6: ( (lv_makemonster5_17_0= '#makemonster5' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7871:6: ( (lv_makemonster5_17_0= '#makemonster5' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7893:6: ( (lv_makemonster5_17_0= '#makemonster5' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7894:1: (lv_makemonster5_17_0= '#makemonster5' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7871:6: ( (lv_makemonster5_17_0= '#makemonster5' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7872:1: (lv_makemonster5_17_0= '#makemonster5' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7894:1: (lv_makemonster5_17_0= '#makemonster5' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7895:3: lv_makemonster5_17_0= '#makemonster5'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7872:1: (lv_makemonster5_17_0= '#makemonster5' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7873:3: lv_makemonster5_17_0= '#makemonster5'
                     {
                     lv_makemonster5_17_0=(Token)input.LT(1);
-                    match(input,244,FOLLOW_244_in_ruleMonsterInst514756); 
+                    match(input,243,FOLLOW_243_in_ruleMonsterInst514719); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getMakemonster5Makemonster5Keyword_17_0(), "makemonster5"); 
                         
@@ -16182,16 +16141,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7915:6: ( (lv_summon1_18_0= '#summon1' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7893:6: ( (lv_summon1_18_0= '#summon1' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7915:6: ( (lv_summon1_18_0= '#summon1' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7916:1: (lv_summon1_18_0= '#summon1' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7893:6: ( (lv_summon1_18_0= '#summon1' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7894:1: (lv_summon1_18_0= '#summon1' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7916:1: (lv_summon1_18_0= '#summon1' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7917:3: lv_summon1_18_0= '#summon1'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7894:1: (lv_summon1_18_0= '#summon1' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7895:3: lv_summon1_18_0= '#summon1'
                     {
                     lv_summon1_18_0=(Token)input.LT(1);
-                    match(input,245,FOLLOW_245_in_ruleMonsterInst514793); 
+                    match(input,244,FOLLOW_244_in_ruleMonsterInst514756); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getSummon1Summon1Keyword_18_0(), "summon1"); 
                         
@@ -16217,16 +16176,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7937:6: ( (lv_summon5_19_0= '#summon5' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7915:6: ( (lv_summon5_19_0= '#summon5' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7937:6: ( (lv_summon5_19_0= '#summon5' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7938:1: (lv_summon5_19_0= '#summon5' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7915:6: ( (lv_summon5_19_0= '#summon5' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7916:1: (lv_summon5_19_0= '#summon5' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7938:1: (lv_summon5_19_0= '#summon5' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7939:3: lv_summon5_19_0= '#summon5'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7916:1: (lv_summon5_19_0= '#summon5' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7917:3: lv_summon5_19_0= '#summon5'
                     {
                     lv_summon5_19_0=(Token)input.LT(1);
-                    match(input,246,FOLLOW_246_in_ruleMonsterInst514830); 
+                    match(input,245,FOLLOW_245_in_ruleMonsterInst514793); 
 
                             createLeafNode(grammarAccess.getMonsterInst5Access().getSummon5Summon5Keyword_19_0(), "summon5"); 
                         
@@ -16274,7 +16233,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleMonsterInst6
-    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7966:1: entryRuleMonsterInst6 returns [EObject current=null] : iv_ruleMonsterInst6= ruleMonsterInst6 EOF ;
+    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7944:1: entryRuleMonsterInst6 returns [EObject current=null] : iv_ruleMonsterInst6= ruleMonsterInst6 EOF ;
     public final EObject entryRuleMonsterInst6() throws RecognitionException {
         EObject current = null;
 
@@ -16282,16 +16241,16 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7967:2: (iv_ruleMonsterInst6= ruleMonsterInst6 EOF )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7968:2: iv_ruleMonsterInst6= ruleMonsterInst6 EOF
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7945:2: (iv_ruleMonsterInst6= ruleMonsterInst6 EOF )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7946:2: iv_ruleMonsterInst6= ruleMonsterInst6 EOF
             {
              currentNode = createCompositeNode(grammarAccess.getMonsterInst6Rule(), currentNode); 
-            pushFollow(FOLLOW_ruleMonsterInst6_in_entryRuleMonsterInst614879);
+            pushFollow(FOLLOW_ruleMonsterInst6_in_entryRuleMonsterInst614842);
             iv_ruleMonsterInst6=ruleMonsterInst6();
             _fsp--;
 
              current =iv_ruleMonsterInst6; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst614889); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst614852); 
 
             }
 
@@ -16309,49 +16268,94 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleMonsterInst6
-    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7975:1: ruleMonsterInst6 returns [EObject current=null] : ( ( (lv_heat_0_0= '#heat' ) ) | ( (lv_cold_1_0= '#cold' ) ) ) ;
+    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7953:1: ruleMonsterInst6 returns [EObject current=null] : ( ( (lv_stealthy_0_0= '#stealthy' ) ) | ( (lv_heat_1_0= '#heat' ) ) | ( (lv_cold_2_0= '#cold' ) ) ) ;
     public final EObject ruleMonsterInst6() throws RecognitionException {
         EObject current = null;
 
-        Token lv_heat_0_0=null;
-        Token lv_cold_1_0=null;
+        Token lv_stealthy_0_0=null;
+        Token lv_heat_1_0=null;
+        Token lv_cold_2_0=null;
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7980:6: ( ( ( (lv_heat_0_0= '#heat' ) ) | ( (lv_cold_1_0= '#cold' ) ) ) )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7981:1: ( ( (lv_heat_0_0= '#heat' ) ) | ( (lv_cold_1_0= '#cold' ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7958:6: ( ( ( (lv_stealthy_0_0= '#stealthy' ) ) | ( (lv_heat_1_0= '#heat' ) ) | ( (lv_cold_2_0= '#cold' ) ) ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7959:1: ( ( (lv_stealthy_0_0= '#stealthy' ) ) | ( (lv_heat_1_0= '#heat' ) ) | ( (lv_cold_2_0= '#cold' ) ) )
             {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7981:1: ( ( (lv_heat_0_0= '#heat' ) ) | ( (lv_cold_1_0= '#cold' ) ) )
-            int alt30=2;
-            int LA30_0 = input.LA(1);
-
-            if ( (LA30_0==247) ) {
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7959:1: ( ( (lv_stealthy_0_0= '#stealthy' ) ) | ( (lv_heat_1_0= '#heat' ) ) | ( (lv_cold_2_0= '#cold' ) ) )
+            int alt30=3;
+            switch ( input.LA(1) ) {
+            case 246:
+                {
                 alt30=1;
-            }
-            else if ( (LA30_0==74) ) {
+                }
+                break;
+            case 247:
+                {
                 alt30=2;
-            }
-            else {
+                }
+                break;
+            case 74:
+                {
+                alt30=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("7981:1: ( ( (lv_heat_0_0= '#heat' ) ) | ( (lv_cold_1_0= '#cold' ) ) )", 30, 0, input);
+                    new NoViableAltException("7959:1: ( ( (lv_stealthy_0_0= '#stealthy' ) ) | ( (lv_heat_1_0= '#heat' ) ) | ( (lv_cold_2_0= '#cold' ) ) )", 30, 0, input);
 
                 throw nvae;
             }
+
             switch (alt30) {
                 case 1 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7981:2: ( (lv_heat_0_0= '#heat' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7959:2: ( (lv_stealthy_0_0= '#stealthy' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7981:2: ( (lv_heat_0_0= '#heat' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7982:1: (lv_heat_0_0= '#heat' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7959:2: ( (lv_stealthy_0_0= '#stealthy' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7960:1: (lv_stealthy_0_0= '#stealthy' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7982:1: (lv_heat_0_0= '#heat' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7983:3: lv_heat_0_0= '#heat'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7960:1: (lv_stealthy_0_0= '#stealthy' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7961:3: lv_stealthy_0_0= '#stealthy'
                     {
-                    lv_heat_0_0=(Token)input.LT(1);
+                    lv_stealthy_0_0=(Token)input.LT(1);
+                    match(input,246,FOLLOW_246_in_ruleMonsterInst614895); 
+
+                            createLeafNode(grammarAccess.getMonsterInst6Access().getStealthyStealthyKeyword_0_0(), "stealthy"); 
+                        
+
+                    	        if (current==null) {
+                    	            current = factory.create(grammarAccess.getMonsterInst6Rule().getType().getClassifier());
+                    	            associateNodeWithAstElement(currentNode, current);
+                    	        }
+                    	        
+                    	        try {
+                    	       		set(current, "stealthy", true, "#stealthy", lastConsumedNode);
+                    	        } catch (ValueConverterException vce) {
+                    				handleValueConverterException(vce);
+                    	        }
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7981:6: ( (lv_heat_1_0= '#heat' ) )
+                    {
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7981:6: ( (lv_heat_1_0= '#heat' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7982:1: (lv_heat_1_0= '#heat' )
+                    {
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7982:1: (lv_heat_1_0= '#heat' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7983:3: lv_heat_1_0= '#heat'
+                    {
+                    lv_heat_1_0=(Token)input.LT(1);
                     match(input,247,FOLLOW_247_in_ruleMonsterInst614932); 
 
-                            createLeafNode(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_0_0(), "heat"); 
+                            createLeafNode(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_1_0(), "heat"); 
                         
 
                     	        if (current==null) {
@@ -16374,19 +16378,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 2 :
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8003:6: ( (lv_cold_1_0= '#cold' ) )
+                case 3 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8003:6: ( (lv_cold_2_0= '#cold' ) )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8003:6: ( (lv_cold_1_0= '#cold' ) )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8004:1: (lv_cold_1_0= '#cold' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8003:6: ( (lv_cold_2_0= '#cold' ) )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8004:1: (lv_cold_2_0= '#cold' )
                     {
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8004:1: (lv_cold_1_0= '#cold' )
-                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8005:3: lv_cold_1_0= '#cold'
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8004:1: (lv_cold_2_0= '#cold' )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8005:3: lv_cold_2_0= '#cold'
                     {
-                    lv_cold_1_0=(Token)input.LT(1);
+                    lv_cold_2_0=(Token)input.LT(1);
                     match(input,74,FOLLOW_74_in_ruleMonsterInst614969); 
 
-                            createLeafNode(grammarAccess.getMonsterInst6Access().getColdColdKeyword_1_0(), "cold"); 
+                            createLeafNode(grammarAccess.getMonsterInst6Access().getColdColdKeyword_2_0(), "cold"); 
                         
 
                     	        if (current==null) {
@@ -16683,7 +16687,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 int alt32=2;
                 int LA32_0 = input.LA(1);
 
-                if ( (LA32_0==36||LA32_0==48||(LA32_0>=50 && LA32_0<=51)||LA32_0==54||LA32_0==88||LA32_0==167||(LA32_0>=250 && LA32_0<=263)) ) {
+                if ( (LA32_0==36||LA32_0==48||(LA32_0>=50 && LA32_0<=51)||LA32_0==54||LA32_0==88||LA32_0==166||(LA32_0>=250 && LA32_0<=263)) ) {
                     alt32=1;
                 }
 
@@ -16853,7 +16857,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 int alt33=2;
                 int LA33_0 = input.LA(1);
 
-                if ( (LA33_0==36||LA33_0==48||(LA33_0>=50 && LA33_0<=51)||LA33_0==54||LA33_0==88||LA33_0==167||(LA33_0>=250 && LA33_0<=263)) ) {
+                if ( (LA33_0==36||LA33_0==48||(LA33_0>=50 && LA33_0<=51)||LA33_0==54||LA33_0==88||LA33_0==166||(LA33_0>=250 && LA33_0<=263)) ) {
                     alt33=1;
                 }
 
@@ -16989,7 +16993,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 int alt34=2;
                 int LA34_0 = input.LA(1);
 
-                if ( (LA34_0==36||LA34_0==48||(LA34_0>=50 && LA34_0<=51)||LA34_0==54||LA34_0==88||LA34_0==167||(LA34_0>=250 && LA34_0<=263)) ) {
+                if ( (LA34_0==36||LA34_0==48||(LA34_0>=50 && LA34_0<=51)||LA34_0==54||LA34_0==88||LA34_0==166||(LA34_0>=250 && LA34_0<=263)) ) {
                     alt34=1;
                 }
 
@@ -17153,7 +17157,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 alt35=3;
                 }
                 break;
-            case 167:
+            case 166:
                 {
                 alt35=4;
                 }
@@ -18959,7 +18963,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9153:3: lv_clear_0_0= '#clear'
             {
             lv_clear_0_0=(Token)input.LT(1);
-            match(input,167,FOLLOW_167_in_ruleSpellInst417258); 
+            match(input,166,FOLLOW_166_in_ruleSpellInst417258); 
 
                     createLeafNode(grammarAccess.getSpellInst4Access().getClearClearKeyword_0(), "clear"); 
                 
@@ -19410,7 +19414,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 int alt42=2;
                 int LA42_0 = input.LA(1);
 
-                if ( ((LA42_0>=36 && LA42_0<=37)||(LA42_0>=88 && LA42_0<=89)||LA42_0==105||LA42_0==227||(LA42_0>=266 && LA42_0<=270)) ) {
+                if ( ((LA42_0>=36 && LA42_0<=37)||(LA42_0>=88 && LA42_0<=89)||LA42_0==105||LA42_0==226||(LA42_0>=266 && LA42_0<=270)) ) {
                     alt42=1;
                 }
 
@@ -19580,7 +19584,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 int alt43=2;
                 int LA43_0 = input.LA(1);
 
-                if ( ((LA43_0>=36 && LA43_0<=37)||(LA43_0>=88 && LA43_0<=89)||LA43_0==105||LA43_0==227||(LA43_0>=266 && LA43_0<=270)) ) {
+                if ( ((LA43_0>=36 && LA43_0<=37)||(LA43_0>=88 && LA43_0<=89)||LA43_0==105||LA43_0==226||(LA43_0>=266 && LA43_0<=270)) ) {
                     alt43=1;
                 }
 
@@ -19716,7 +19720,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 int alt44=2;
                 int LA44_0 = input.LA(1);
 
-                if ( ((LA44_0>=36 && LA44_0<=37)||(LA44_0>=88 && LA44_0<=89)||LA44_0==105||LA44_0==227||(LA44_0>=266 && LA44_0<=270)) ) {
+                if ( ((LA44_0>=36 && LA44_0<=37)||(LA44_0>=88 && LA44_0<=89)||LA44_0==105||LA44_0==226||(LA44_0>=266 && LA44_0<=270)) ) {
                     alt44=1;
                 }
 
@@ -19848,7 +19852,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             if ( (LA45_0==36||(LA45_0>=88 && LA45_0<=89)) ) {
                 alt45=1;
             }
-            else if ( (LA45_0==37||LA45_0==105||LA45_0==227||(LA45_0>=266 && LA45_0<=270)) ) {
+            else if ( (LA45_0==37||LA45_0==105||LA45_0==226||(LA45_0>=266 && LA45_0<=270)) ) {
                 alt45=2;
             }
             else {
@@ -20448,7 +20452,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 alt47=7;
                 }
                 break;
-            case 227:
+            case 226:
                 {
                 alt47=8;
                 }
@@ -20716,7 +20720,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9924:3: lv_weapon_7_0= '#weapon'
                     {
                     lv_weapon_7_0=(Token)input.LT(1);
-                    match(input,227,FOLLOW_227_in_ruleItemInst218809); 
+                    match(input,226,FOLLOW_226_in_ruleItemInst218809); 
 
                             createLeafNode(grammarAccess.getItemInst2Access().getWeaponWeaponKeyword_7_0(), "weapon"); 
                         
@@ -20938,7 +20942,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 int alt48=2;
                 int LA48_0 = input.LA(1);
 
-                if ( (LA48_0==167||LA48_0==272) ) {
+                if ( (LA48_0==166||LA48_0==272) ) {
                     alt48=1;
                 }
 
@@ -21070,7 +21074,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             if ( (LA49_0==272) ) {
                 alt49=1;
             }
-            else if ( (LA49_0==167) ) {
+            else if ( (LA49_0==166) ) {
                 alt49=2;
             }
             else {
@@ -21485,7 +21489,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10253:3: lv_clear_0_0= '#clear'
             {
             lv_clear_0_0=(Token)input.LT(1);
-            match(input,167,FOLLOW_167_in_ruleNameInst219558); 
+            match(input,166,FOLLOW_166_in_ruleNameInst219558); 
 
                     createLeafNode(grammarAccess.getNameInst2Access().getClearClearKeyword_0(), "clear"); 
                 
@@ -21778,7 +21782,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 int alt51=2;
                 int LA51_0 = input.LA(1);
 
-                if ( (LA51_0==36||LA51_0==167||LA51_0==260||(LA51_0>=275 && LA51_0<=286)) ) {
+                if ( (LA51_0==36||LA51_0==166||LA51_0==260||(LA51_0>=275 && LA51_0<=286)) ) {
                     alt51=1;
                 }
 
@@ -21948,7 +21952,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 int alt52=2;
                 int LA52_0 = input.LA(1);
 
-                if ( (LA52_0==36||LA52_0==167||LA52_0==260||(LA52_0>=275 && LA52_0<=286)) ) {
+                if ( (LA52_0==36||LA52_0==166||LA52_0==260||(LA52_0>=275 && LA52_0<=286)) ) {
                     alt52=1;
                 }
 
@@ -22118,7 +22122,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 int alt53=2;
                 int LA53_0 = input.LA(1);
 
-                if ( (LA53_0==36||LA53_0==167||LA53_0==260||(LA53_0>=275 && LA53_0<=286)) ) {
+                if ( (LA53_0==36||LA53_0==166||LA53_0==260||(LA53_0>=275 && LA53_0<=286)) ) {
                     alt53=1;
                 }
 
@@ -22276,7 +22280,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 alt54=3;
                 }
                 break;
-            case 167:
+            case 166:
                 {
                 alt54=4;
                 }
@@ -23668,7 +23672,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11246:3: lv_clear_0_0= '#clear'
             {
             lv_clear_0_0=(Token)input.LT(1);
-            match(input,167,FOLLOW_167_in_ruleSiteInst421545); 
+            match(input,166,FOLLOW_166_in_ruleSiteInst421545); 
 
                     createLeafNode(grammarAccess.getSiteInst4Access().getClearClearKeyword_0(), "clear"); 
                 
@@ -29029,15 +29033,15 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_159_in_ruleMonsterInst211416 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_160_in_ruleMonsterInst211453 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_161_in_ruleMonsterInst211490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_162_in_ruleMonsterInst211527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst3_in_entryRuleMonsterInst311576 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst311586 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst3_in_entryRuleMonsterInst311539 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst311549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_ruleMonsterInst311592 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_163_in_ruleMonsterInst311629 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_164_in_ruleMonsterInst311666 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_165_in_ruleMonsterInst311703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_ruleMonsterInst311740 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst4_in_entryRuleMonsterInst411789 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst411799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst4_in_entryRuleMonsterInst411752 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst411762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_ruleMonsterInst411805 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_167_in_ruleMonsterInst411842 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_168_in_ruleMonsterInst411879 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_169_in_ruleMonsterInst411916 = new BitSet(new long[]{0x0000000000000002L});
@@ -29097,9 +29101,9 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_223_in_ruleMonsterInst413914 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_224_in_ruleMonsterInst413951 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_225_in_ruleMonsterInst413988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_226_in_ruleMonsterInst414025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst5_in_entryRuleMonsterInst514074 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst514084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst5_in_entryRuleMonsterInst514037 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst514047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_226_in_ruleMonsterInst514090 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_227_in_ruleMonsterInst514127 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_228_in_ruleMonsterInst514164 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_229_in_ruleMonsterInst514201 = new BitSet(new long[]{0x0000000000000002L});
@@ -29119,9 +29123,9 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_243_in_ruleMonsterInst514719 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_244_in_ruleMonsterInst514756 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_245_in_ruleMonsterInst514793 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_246_in_ruleMonsterInst514830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst6_in_entryRuleMonsterInst614879 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst614889 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst6_in_entryRuleMonsterInst614842 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst614852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_246_in_ruleMonsterInst614895 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_247_in_ruleMonsterInst614932 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_74_in_ruleMonsterInst614969 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSpell_in_entryRuleSpell15018 = new BitSet(new long[]{0x0000000000000000L});
@@ -29132,19 +29136,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleSelectSpellById_in_entryRuleSelectSpellById15164 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSelectSpellById15174 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_248_in_ruleSelectSpellById15209 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectSpellById15226 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000008000000000L,0xFC00000000000000L,0x00000000000000FFL});
-    public static final BitSet FOLLOW_ruleSpellMods_in_ruleSelectSpellById15252 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000008000000000L,0xFC00000000000000L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectSpellById15226 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000004000000000L,0xFC00000000000000L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_ruleSpellMods_in_ruleSelectSpellById15252 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000004000000000L,0xFC00000000000000L,0x00000000000000FFL});
     public static final BitSet FOLLOW_32_in_ruleSelectSpellById15263 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectSpellByName_in_entryRuleSelectSpellByName15299 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSelectSpellByName15309 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_248_in_ruleSelectSpellByName15344 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectSpellByName15361 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000008000000000L,0xFC00000000000000L,0x00000000000000FFL});
-    public static final BitSet FOLLOW_ruleSpellMods_in_ruleSelectSpellByName15387 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000008000000000L,0xFC00000000000000L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectSpellByName15361 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000004000000000L,0xFC00000000000000L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_ruleSpellMods_in_ruleSelectSpellByName15387 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000004000000000L,0xFC00000000000000L,0x00000000000000FFL});
     public static final BitSet FOLLOW_32_in_ruleSelectSpellByName15398 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNewSpell_in_entryRuleNewSpell15434 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNewSpell15444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_249_in_ruleNewSpell15479 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000008000000000L,0xFC00000000000000L,0x00000000000000FFL});
-    public static final BitSet FOLLOW_ruleSpellMods_in_ruleNewSpell15500 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000008000000000L,0xFC00000000000000L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_249_in_ruleNewSpell15479 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000004000000000L,0xFC00000000000000L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_ruleSpellMods_in_ruleNewSpell15500 = new BitSet(new long[]{0x004D001100000000L,0x0000000001000000L,0x0000004000000000L,0xFC00000000000000L,0x00000000000000FFL});
     public static final BitSet FOLLOW_32_in_ruleNewSpell15511 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSpellMods_in_entryRuleSpellMods15547 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSpellMods15557 = new BitSet(new long[]{0x0000000000000002L});
@@ -29200,7 +29204,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_261_in_ruleSpellInst317157 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSpellInst4_in_entryRuleSpellInst417206 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst417216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_ruleSpellInst417258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_ruleSpellInst417258 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSpellInst5_in_entryRuleSpellInst517306 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst517316 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_262_in_ruleSpellInst517359 = new BitSet(new long[]{0x0000000000000002L});
@@ -29213,19 +29217,19 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleSelectItemById_in_entryRuleSelectItemById17591 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSelectItemById17601 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_264_in_ruleSelectItemById17636 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectItemById17653 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000800000000L,0x0000000000007C00L});
-    public static final BitSet FOLLOW_ruleItemMods_in_ruleSelectItemById17679 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000800000000L,0x0000000000007C00L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectItemById17653 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000400000000L,0x0000000000007C00L});
+    public static final BitSet FOLLOW_ruleItemMods_in_ruleSelectItemById17679 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000400000000L,0x0000000000007C00L});
     public static final BitSet FOLLOW_32_in_ruleSelectItemById17690 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectItemByName_in_entryRuleSelectItemByName17726 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSelectItemByName17736 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_264_in_ruleSelectItemByName17771 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectItemByName17788 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000800000000L,0x0000000000007C00L});
-    public static final BitSet FOLLOW_ruleItemMods_in_ruleSelectItemByName17814 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000800000000L,0x0000000000007C00L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectItemByName17788 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000400000000L,0x0000000000007C00L});
+    public static final BitSet FOLLOW_ruleItemMods_in_ruleSelectItemByName17814 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000400000000L,0x0000000000007C00L});
     public static final BitSet FOLLOW_32_in_ruleSelectItemByName17825 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNewItem_in_entryRuleNewItem17861 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNewItem17871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_265_in_ruleNewItem17906 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000800000000L,0x0000000000007C00L});
-    public static final BitSet FOLLOW_ruleItemMods_in_ruleNewItem17927 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000800000000L,0x0000000000007C00L});
+    public static final BitSet FOLLOW_265_in_ruleNewItem17906 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000400000000L,0x0000000000007C00L});
+    public static final BitSet FOLLOW_ruleItemMods_in_ruleNewItem17927 = new BitSet(new long[]{0x0000003100000000L,0x0000020003000000L,0x0000000000000000L,0x0000000400000000L,0x0000000000007C00L});
     public static final BitSet FOLLOW_32_in_ruleNewItem17938 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleItemMods_in_entryRuleItemMods17974 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleItemMods17984 = new BitSet(new long[]{0x0000000000000002L});
@@ -29253,15 +29257,15 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_270_in_ruleItemInst218698 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_105_in_ruleItemInst218735 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_ruleItemInst218772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_227_in_ruleItemInst218809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_226_in_ruleItemInst218809 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleName_in_entryRuleName18858 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleName18868 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectName_in_ruleName18914 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectName_in_entryRuleSelectName18948 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSelectName18958 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_271_in_ruleSelectName18993 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectName19010 = new BitSet(new long[]{0x0000000100000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x0000000000010000L});
-    public static final BitSet FOLLOW_ruleNameMods_in_ruleSelectName19036 = new BitSet(new long[]{0x0000000100000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectName19010 = new BitSet(new long[]{0x0000000100000000L,0x0000000000000000L,0x0000004000000000L,0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_ruleNameMods_in_ruleSelectName19036 = new BitSet(new long[]{0x0000000100000000L,0x0000000000000000L,0x0000004000000000L,0x0000000000000000L,0x0000000000010000L});
     public static final BitSet FOLLOW_32_in_ruleSelectName19047 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNameMods_in_entryRuleNameMods19083 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNameMods19093 = new BitSet(new long[]{0x0000000000000002L});
@@ -29279,7 +29283,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_272_in_ruleNameInst119458 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNameInst2_in_entryRuleNameInst219506 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNameInst219516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_ruleNameInst219558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_ruleNameInst219558 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSite_in_entryRuleSite19606 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSite19616 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectSiteById_in_ruleSite19663 = new BitSet(new long[]{0x0000000000000002L});
@@ -29288,20 +29292,20 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleSelectSiteById_in_entryRuleSelectSiteById19752 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSelectSiteById19762 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_273_in_ruleSelectSiteById19797 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectSiteById19814 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x000000007FF80010L});
-    public static final BitSet FOLLOW_ruleSiteMods_in_ruleSelectSiteById19840 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x000000007FF80010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectSiteById19814 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000004000000000L,0x0000000000000000L,0x000000007FF80010L});
+    public static final BitSet FOLLOW_ruleSiteMods_in_ruleSelectSiteById19840 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000004000000000L,0x0000000000000000L,0x000000007FF80010L});
     public static final BitSet FOLLOW_32_in_ruleSelectSiteById19851 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectSiteByName_in_entryRuleSelectSiteByName19887 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSelectSiteByName19897 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_273_in_ruleSelectSiteByName19932 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectSiteByName19949 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x000000007FF80010L});
-    public static final BitSet FOLLOW_ruleSiteMods_in_ruleSelectSiteByName19975 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x000000007FF80010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectSiteByName19949 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000004000000000L,0x0000000000000000L,0x000000007FF80010L});
+    public static final BitSet FOLLOW_ruleSiteMods_in_ruleSelectSiteByName19975 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000004000000000L,0x0000000000000000L,0x000000007FF80010L});
     public static final BitSet FOLLOW_32_in_ruleSelectSiteByName19986 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNewSite_in_entryRuleNewSite20022 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNewSite20032 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_274_in_ruleNewSite20067 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNewSite20084 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x000000007FF80010L});
-    public static final BitSet FOLLOW_ruleSiteMods_in_ruleNewSite20110 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x000000007FF80010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNewSite20084 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000004000000000L,0x0000000000000000L,0x000000007FF80010L});
+    public static final BitSet FOLLOW_ruleSiteMods_in_ruleNewSite20110 = new BitSet(new long[]{0x0000001100000000L,0x0000000000000000L,0x0000004000000000L,0x0000000000000000L,0x000000007FF80010L});
     public static final BitSet FOLLOW_32_in_ruleNewSite20121 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSiteMods_in_entryRuleSiteMods20157 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSiteMods20167 = new BitSet(new long[]{0x0000000000000002L});
@@ -29347,7 +29351,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_286_in_ruleSiteInst321445 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSiteInst4_in_entryRuleSiteInst421493 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSiteInst421503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_ruleSiteInst421545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_ruleSiteInst421545 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNation_in_entryRuleNation21593 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNation21603 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectNation_in_ruleNation21650 = new BitSet(new long[]{0x0000000000000002L});

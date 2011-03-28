@@ -158,7 +158,7 @@ public class NewDialog extends Dialog {
 		final String version = versionText.getText();
 		super.okPressed();
 		FileDialog dialog = new FileDialog(getParentShell(), SWT.SAVE);
-		dialog.setFilterExtensions(new String[]{"dm"});
+		dialog.setFilterExtensions(new String[]{"*.dm"});
 		dialog.open();
 		String[] names =  dialog.getFileNames();
 		String filterPath =  System.getProperty("user.home"); //$NON-NLS-1$

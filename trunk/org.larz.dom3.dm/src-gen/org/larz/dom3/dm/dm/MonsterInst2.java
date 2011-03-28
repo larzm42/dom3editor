@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package org.larz.dom3.dm.dm;
 
@@ -43,7 +44,6 @@ package org.larz.dom3.dm.dm;
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isPoisonres <em>Poisonres</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isShockres <em>Shockres</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isDarkvision <em>Darkvision</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isStealthy <em>Stealthy</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isSeduce <em>Seduce</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isSuccubus <em>Succubus</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isBeckon <em>Beckon</em>}</li>
@@ -853,32 +853,6 @@ public interface MonsterInst2 extends MonsterPattern2
    * @generated
    */
   void setDarkvision(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Stealthy</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Stealthy</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Stealthy</em>' attribute.
-   * @see #setStealthy(boolean)
-   * @see org.larz.dom3.dm.dm.DmPackage#getMonsterInst2_Stealthy()
-   * @model
-   * @generated
-   */
-  boolean isStealthy();
-
-  /**
-   * Sets the value of the '{@link org.larz.dom3.dm.dm.MonsterInst2#isStealthy <em>Stealthy</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Stealthy</em>' attribute.
-   * @see #isStealthy()
-   * @generated
-   */
-  void setStealthy(boolean value);
 
   /**
    * Returns the value of the '<em><b>Seduce</b></em>' attribute.

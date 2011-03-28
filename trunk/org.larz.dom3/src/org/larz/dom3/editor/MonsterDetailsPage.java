@@ -1242,7 +1242,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 					break;
 				case STEALTHY:
 					if (monsterDB.stealthy != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stealthy));
+						((Inst6Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stealthy));
 						Inst.STEALTHY.defaultValue = monsterDB.stealthy.toString();
 					}
 					break;
@@ -2207,11 +2207,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 						return Integer.valueOf(((MonsterInst2)mod).getValue());
 					}
 					break;
-				case STEALTHY:
-					if (((MonsterInst2)mod).isStealthy()){
-						return Integer.valueOf(((MonsterInst2)mod).getValue());
-					}
-					break;
 				case SEDUCE:
 					if (((MonsterInst2)mod).isSeduce()){
 						return Integer.valueOf(((MonsterInst2)mod).getValue());
@@ -3069,6 +3064,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 						return Integer.valueOf(((MonsterInst6)mod).getValue());
 					}
 					break;
+				case STEALTHY:
+					if (((MonsterInst6)mod).isStealthy()){
+						return Integer.valueOf(((MonsterInst6)mod).getValue());
+					}
+					break;
 				}
 			}
 		}
@@ -3293,11 +3293,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 							break;
 						case DARKVISION:
 							if (((MonsterInst2)mod).isDarkvision()){
-								((MonsterInst2)mod).setValue(Integer.parseInt(newName));
-							}
-							break;
-						case STEALTHY:
-							if (((MonsterInst2)mod).isStealthy()){
 								((MonsterInst2)mod).setValue(Integer.parseInt(newName));
 							}
 							break;
@@ -3900,6 +3895,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 								((MonsterInst6)mod).setValue("".equals(newName) ? 0 : Integer.parseInt(newName));
 							}
 							break;
+						case STEALTHY:
+							if (((MonsterInst6)mod).isStealthy()){
+								((MonsterInst6)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
 						}
 					}
 				}
@@ -4056,9 +4056,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 					break;
 				case DARKVISION:
 					type.setDarkvision(true);
-					break;
-				case STEALTHY:
-					type.setStealthy(true);
 					break;
 				case SEDUCE:
 					type.setSeduce(true);
@@ -4582,6 +4579,9 @@ public class MonsterDetailsPage implements IDetailsPage {
 				case COLD:
 					type.setCold(true);
 					break;
+				case STEALTHY:
+					type.setStealthy(true);
+					break;
 				}
 				type.setValue(Integer.valueOf(newName));
 				mods.add(type);
@@ -4793,11 +4793,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 							break;
 						case DARKVISION:
 							if (((MonsterInst2)mod).isDarkvision()){
-								modToRemove = mod;
-							}
-							break;
-						case STEALTHY:
-							if (((MonsterInst2)mod).isStealthy()){
 								modToRemove = mod;
 							}
 							break;
@@ -5501,6 +5496,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 							break;
 						case COLD:
 							if (((MonsterInst6)mod).isCold()){
+								modToRemove = mod;
+							}
+							break;
+						case STEALTHY:
+							if (((MonsterInst6)mod).isStealthy()){
 								modToRemove = mod;
 							}
 							break;

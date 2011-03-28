@@ -191,7 +191,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/poisonres"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/shockres"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/darkvision"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/stealthy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/seduce"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/succubus"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/beckon"/>
@@ -335,6 +334,7 @@
     </genClasses>
     <genClasses ecoreClass="Dm.ecore#//MonsterInst6">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst6/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst6/stealthy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst6/heat"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst6/cold"/>
     </genClasses>

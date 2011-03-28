@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package org.larz.dom3.dm.dm;
 
@@ -15,6 +16,7 @@ package org.larz.dom3.dm.dm;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst6#getValue <em>Value</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.MonsterInst6#isStealthy <em>Stealthy</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst6#isHeat <em>Heat</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst6#isCold <em>Cold</em>}</li>
  * </ul>
@@ -51,6 +53,32 @@ public interface MonsterInst6 extends MonsterPattern6
    * @generated
    */
   void setValue(int value);
+
+  /**
+   * Returns the value of the '<em><b>Stealthy</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Stealthy</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Stealthy</em>' attribute.
+   * @see #setStealthy(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getMonsterInst6_Stealthy()
+   * @model
+   * @generated
+   */
+  boolean isStealthy();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.MonsterInst6#isStealthy <em>Stealthy</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Stealthy</em>' attribute.
+   * @see #isStealthy()
+   * @generated
+   */
+  void setStealthy(boolean value);
 
   /**
    * Returns the value of the '<em><b>Heat</b></em>' attribute.

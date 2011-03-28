@@ -37,14 +37,11 @@ public class ActionWiper implements IStartup, IPerspectiveListener
 			"org.eclipse.ui.edit.text.actionSet.navigation",
 			"org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo",
 			"org.eclipse.update.ui.softwareUpdates",
+			"org.eclipse.ui.edit.text.actionSet.openExternalFile",
+			"org.eclipse.ui.actionSet.openFiles",
 			"org.eclipse.ui.edit.text.actionSet.annotationNavigation"
-													// "org.eclipse.ui.edit.text.actionSet.presentation",
-													// "org.eclipse.ui.edit.text.actionSet.openExternalFile",
-													// "org.eclipse.ui.edit.text.actionSet.annotationNavigation",
-													// "org.eclipse.ui.edit.text.actionSet.navigation",
-													// "org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo",
-													// "org.eclipse.update.ui.softwareUpdates"
-													};
+//			"org.eclipse.ui.edit.text.actionSet.presentation",
+			};
 
 	public void earlyStartup()
 	{

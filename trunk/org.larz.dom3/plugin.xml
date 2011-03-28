@@ -27,11 +27,37 @@
             name="Dom3 Editor">
          <property
                name="windowImages"
-               value="icons/alt_window_16.png,icons/alt_window_32.png">
+               value="icons/alt_window_16.png,icons/alt_window_32.png,icons/alt_window_48.png,icons/alt_window_64.png,icons/alt_window_128.png">
          </property>
          <property
                name="appName"
                value="Dom3 Editor">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/alt_about.png">
+         </property>
+         <property
+               name="aboutText"
+               value="This is the Dominions 3 Editor.
+
+Release 0.8 - March 29th, 2011.">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
          </property>
       </product>
    </extension>
