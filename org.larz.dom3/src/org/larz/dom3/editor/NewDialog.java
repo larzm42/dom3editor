@@ -28,7 +28,6 @@ import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.IShellProvider;
-import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -47,8 +46,6 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
-import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
-import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 
 /**
  * @author lamoor
@@ -166,8 +163,6 @@ public class NewDialog extends Dialog {
 		if (names != null) {
 			filterPath =  dialog.getFilterPath();
 
-			int numberOfFilesNotFound =  0;
-			StringBuffer notFound =  new StringBuffer();
 			for (int i =  0; i < names.length; i++) {
 				IFileStore fileStore =  EFS.getLocalFileSystem().getStore(new Path(filterPath));
 				if (!names[i].endsWith(".dm")) {
@@ -191,18 +186,12 @@ public class NewDialog extends Dialog {
 							IDE.openEditorOnFileStore(page, fileStore);
 						}
 					} catch (PartInitException e) {
-						String msg =  NLS.bind(IDEWorkbenchMessages.OpenLocalFileAction_message_errorOnOpen, fileStore.getName());
-						IDEWorkbenchPlugin.log(msg,e.getStatus());
-						MessageDialog.open(MessageDialog.ERROR,getParentShell(), IDEWorkbenchMessages.OpenLocalFileAction_title, msg, SWT.SHEET);
+						MessageDialog.open(MessageDialog.ERROR, getParentShell(), "Open File Error", "Couldn't open file: " + fileStore.getName(), SWT.SHEET);
 					} catch (IOException e) {
 						e.printStackTrace();
 					} catch (CoreException e) {
 						e.printStackTrace();
 					}
-				} else {
-					if (++numberOfFilesNotFound > 1)
-						notFound.append('\n');
-					notFound.append(fileStore.getName());
 				}
 			}
 

@@ -666,10 +666,10 @@ public class Database {
 			monster.siegebonus = rs.getInt("sge");
 			monster.patrolbonus = rs.getInt("ptrl");
 			monster.pillagebonus = rs.getInt("pllg");
-//			monster.researchbonus = rs.getInt("researchbonus");
-//			monster.forgebonus = rs.getInt("forgebonus");
-//			monster.douse = rs.getInt("douse");
-//			monster.nobadevents = rs.getInt("nobadevents");
+			monster.researchbonus = rs.getInt("research");
+			monster.forgebonus = rs.getInt("forge");
+			monster.douse = rs.getInt("douse");
+			monster.nobadevents = rs.getInt("luck");
 //			monster.incunrest = rs.getInt("incunrest");
 //			monster.spreaddom = rs.getInt("spreaddom");
 //			monster.leper = rs.getInt("leper");
@@ -719,8 +719,71 @@ public class Database {
 			slots |= footmask;
 			slots |= miscmask;
 			monster.itemslots = slots;
+			
 //			monster.nametype = rs.getInt("nametype");
-//			monster.magicskill = rs.getInt("magicskill") == 1;
+			
+			String F = rs.getString("F");
+			String W = rs.getString("W");
+			String A = rs.getString("A");
+			String E = rs.getString("E");
+			String S = rs.getString("S");
+			String D = rs.getString("D");
+			String N = rs.getString("N");
+			String B = rs.getString("B");
+			String H = rs.getString("H");
+
+			List<Integer[]> magicSkill = new ArrayList<Integer[]>();
+			if (F != null && !F.equals("")) {
+				magicSkill.add(new Integer[]{Integer.valueOf(F), Integer.valueOf(0)});
+			}
+			if (W != null && !W.equals("")) {
+				magicSkill.add(new Integer[]{Integer.valueOf(W), Integer.valueOf(2)});
+			}
+			if (A != null && !A.equals("")) {
+				magicSkill.add(new Integer[]{Integer.valueOf(A), Integer.valueOf(1)});
+			}
+			if (E != null && !E.equals("")) {
+				magicSkill.add(new Integer[]{Integer.valueOf(E), Integer.valueOf(3)});
+			}
+			if (S != null && !S.equals("")) {
+				magicSkill.add(new Integer[]{Integer.valueOf(S), Integer.valueOf(4)});
+			}
+			if (D != null && !D.equals("")) {
+				magicSkill.add(new Integer[]{Integer.valueOf(D), Integer.valueOf(5)});
+			}
+			if (N != null && !N.equals("")) {
+				magicSkill.add(new Integer[]{Integer.valueOf(N), Integer.valueOf(6)});
+			}
+			if (B != null && !B.equals("")) {
+				magicSkill.add(new Integer[]{Integer.valueOf(B), Integer.valueOf(7)});
+			}
+			if (H != null && !H.equals("")) {
+				magicSkill.add(new Integer[]{Integer.valueOf(H), Integer.valueOf(8)});
+			}
+			
+			int magicCount = 0;
+			for (Integer[] magArray : magicSkill) {
+				magicCount ++;
+				switch (magicCount) {
+				case 1:
+					monster.magicskilllevel1 = magArray[0];
+					monster.magicskillpath1 = magArray[1];
+					break;
+				case 2:
+					monster.magicskilllevel2 = magArray[0];
+					monster.magicskillpath2 = magArray[1];
+					break;
+				case 3:
+					monster.magicskilllevel3 = magArray[0];
+					monster.magicskillpath3 = magArray[1];
+					break;
+				case 4:
+					monster.magicskilllevel4 = magArray[0];
+					monster.magicskillpath4 = magArray[1];
+					break;
+				}
+			}
+			
 //			monster.custommagic = rs.getInt("custommagic") == 1;
 //			monster.magicboost = rs.getInt("magicboost") == 1;
 //			monster.gemprod = rs.getInt("gemprod") == 1;
