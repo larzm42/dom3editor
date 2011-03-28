@@ -15,15 +15,6 @@
  */
 package org.larz.dom3;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
-import org.eclipse.core.filesystem.EFS;
-import org.eclipse.core.filesystem.IFileInfo;
-import org.eclipse.core.filesystem.IFileStore;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.ICoolBarManager;
@@ -33,21 +24,14 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.ToolBarContributionItem;
 import org.eclipse.jface.action.ToolBarManager;
-import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.IWorkbenchActionConstants;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
-import org.eclipse.ui.ide.IDE;
-import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
-import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
+import org.larz.dom3.editor.NewDialog;
 
 /**
  * @author lamoor
@@ -104,66 +88,9 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 
 			@Override
 			public void run() {
-				FileDialog dialog = new FileDialog(window.getShell(), SWT.SAVE);
-				dialog.setFilterExtensions(new String[]{"dm"});
+				NewDialog dialog = new NewDialog(window.getShell());
 				dialog.open();
-				String[] names =  dialog.getFileNames();
-				String filterPath =  System.getProperty("user.home"); //$NON-NLS-1$
-
-				if (names != null) {
-					filterPath =  dialog.getFilterPath();
-
-					int numberOfFilesNotFound =  0;
-					StringBuffer notFound =  new StringBuffer();
-					for (int i =  0; i < names.length; i++) {
-						IFileStore fileStore =  EFS.getLocalFileSystem().getStore(new Path(filterPath));
-						if (!names[i].endsWith(".dm")) {
-							names[i] += ".dm";
-						}
-						fileStore =  fileStore.getChild(names[i]);
-						IFileInfo fetchInfo = fileStore.fetchInfo();
-						if (!fetchInfo.isDirectory() && !fetchInfo.exists()) {
-							IWorkbenchPage page =  window.getActivePage();
-							try {
-								File newFile = fileStore.toLocalFile(0, null);
-								if (!newFile.exists()) {
-									newFile.createNewFile();
-									FileWriter out = new FileWriter(newFile);
-									out.write("#modname \"My Mod\"\n");
-									out.write("#description \"This is my mod\"\n");
-									out.write("#icon \"./DeadlySeasMod.tga\"\n");
-									out.write("#version 0.1\n");
-									out.write("#domversion 3.26\n");
-									out.flush();
-									out.close();
-									
-									IDE.openEditorOnFileStore(page, fileStore);
-								}
-							} catch (PartInitException e) {
-								String msg =  NLS.bind(IDEWorkbenchMessages.OpenLocalFileAction_message_errorOnOpen, fileStore.getName());
-								IDEWorkbenchPlugin.log(msg,e.getStatus());
-								MessageDialog.open(MessageDialog.ERROR,window.getShell(), IDEWorkbenchMessages.OpenLocalFileAction_title, msg, SWT.SHEET);
-							} catch (IOException e) {
-								e.printStackTrace();
-							} catch (CoreException e) {
-								e.printStackTrace();
-							}
-						} else {
-							if (++numberOfFilesNotFound > 1)
-								notFound.append('\n');
-							notFound.append(fileStore.getName());
-						}
-					}
-
-//					if (numberOfFilesNotFound > 0) {
-//						String msgFmt =  numberOfFilesNotFound == 1 ? IDEWorkbenchMessages.OpenLocalFileAction_message_fileNotFound : IDEWorkbenchMessages.OpenLocalFileAction_message_filesNotFound;
-//						String msg =  NLS.bind(msgFmt, notFound.toString());
-//						MessageDialog.open(MessageDialog.ERROR, window.getShell(), IDEWorkbenchMessages.OpenLocalFileAction_title, msg, SWT.SHEET);
-//					}
-				}
-
 			}
-        	
 		};
         	
         undoAction = ActionFactory.UNDO.create(window);
@@ -220,7 +147,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
      */
     protected void fillCoolBar(ICoolBarManager coolBar) {
         IToolBarManager toolbar = new ToolBarManager(SWT.FLAT | SWT.RIGHT);
-        coolBar.add(new ToolBarContributionItem(toolbar, "main"));   
+        coolBar.add(new ToolBarContributionItem(toolbar, "main"));
         toolbar.add(saveAction);
         toolbar.add(saveAllAction);
         coolBar.setLockLayout(true);
