@@ -100,7 +100,6 @@ public class ItemDetailsPage implements IDetailsPage {
 	class Inst1Fields implements InstFields {
 		private Button check;
 		private Text value;
-		private Label defaultLabel;
 	}
 	
 	class Inst2Fields implements InstFields {
@@ -488,11 +487,6 @@ public class ItemDetailsPage implements IDetailsPage {
 						Inst.SECONDARYLEVEL.defaultValue = itemDB.secondarylevel.toString();
 					}
 					break;
-				case COPYSPR:
-					if (itemDB.copyspr != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.copyspr.toString()));
-						Inst.COPYSPR.defaultValue = itemDB.copyspr.toString();
-					}break;
 				case TYPE:
 					if (itemDB.type != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.type.toString()));

@@ -218,7 +218,10 @@ public class MonsterDetailsPage implements IDetailsPage {
 		HERETIC (Messages.getString("MonsterDetailsSection.mod.heretic"), "10"),
 		ITEMSLOTS (Messages.getString("MonsterDetailsSection.mod.itemslots"), "10"),
 		NOITEM (Messages.getString("MonsterDetailsSection.mod.noitem")),
-		MAGICSKILL (Messages.getString("MonsterDetailsSection.mod.magicskill"), "10", "10"),
+		MAGICSKILL1 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
+		MAGICSKILL2 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
+		MAGICSKILL3 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
+		MAGICSKILL4 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
 		CUSTOMMAGIC (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
 		MAGICBOOST (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
 		GEMPROD (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
@@ -406,7 +409,10 @@ public class MonsterDetailsPage implements IDetailsPage {
 		instMap.put(Inst.HERETIC, new Inst2Fields());
 		instMap.put(Inst.ITEMSLOTS, new Inst2Fields());
 		instMap.put(Inst.NAMETYPE, new Inst2Fields());
-		instMap.put(Inst.MAGICSKILL, new Inst3Fields());
+		instMap.put(Inst.MAGICSKILL1, new Inst3Fields());
+		instMap.put(Inst.MAGICSKILL2, new Inst3Fields());
+		instMap.put(Inst.MAGICSKILL3, new Inst3Fields());
+		instMap.put(Inst.MAGICSKILL4, new Inst3Fields());
 		instMap.put(Inst.CUSTOMMAGIC, new Inst3Fields());
 		instMap.put(Inst.MAGICBOOST, new Inst3Fields());
 		instMap.put(Inst.GEMPROD, new Inst3Fields());
@@ -1540,9 +1546,21 @@ public class MonsterDetailsPage implements IDetailsPage {
 						Inst.NAMETYPE.defaultValue = monsterDB.nametype.toString();
 					}
 					break;
-				case MAGICSKILL:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskill1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskill1) : "");
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskill2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskill2) : "");
+				case MAGICSKILL1:
+					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskillpath1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath1) : "");
+					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskilllevel1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel1) : "");
+					break;
+				case MAGICSKILL2:
+					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskillpath2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath2) : "");
+					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskilllevel2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel2) : "");
+					break;
+				case MAGICSKILL3:
+					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskillpath3 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath3) : "");
+					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskilllevel3 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel3) : "");
+					break;
+				case MAGICSKILL4:
+					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskillpath4 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath4) : "");
+					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskilllevel4 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel4) : "");
 					break;
 				case CUSTOMMAGIC:
 					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.custommagic1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagic1) : "");
@@ -2459,13 +2477,41 @@ public class MonsterDetailsPage implements IDetailsPage {
 	}
 	
 	private Integer[] getInst3(Inst inst3, Monster monster) {
+		int magicSkillCount = 0;
 		EList<MonsterMods> list = monster.getMods();
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst3) {
 				switch (inst3) {
-				case MAGICSKILL:
+				case MAGICSKILL1:
 					if (((MonsterInst3)mod).isMagicskill()) {
-						return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						magicSkillCount++;
+						if (magicSkillCount == 1) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICSKILL2:
+					if (((MonsterInst3)mod).isMagicskill()) {
+						magicSkillCount++;
+						if (magicSkillCount == 2) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICSKILL3:
+					if (((MonsterInst3)mod).isMagicskill()) {
+						magicSkillCount++;
+						if (magicSkillCount == 3) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICSKILL4:
+					if (((MonsterInst3)mod).isMagicskill()) {
+						magicSkillCount++;
+						if (magicSkillCount == 4) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
 					}
 					break;
 				case CUSTOMMAGIC:
@@ -3555,18 +3601,61 @@ public class MonsterDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
+				int magicSkillCount = 0;
 				Monster monsterToEdit = input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst3) {
 						switch (inst3) {
-						case MAGICSKILL:
+						case MAGICSKILL1:
 							if (((MonsterInst3)mod).isMagicskill()) {
-								if (value1 != null) {
-									((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+								magicSkillCount++;
+								if (magicSkillCount == 1) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
 								}
-								if (value2 != null) {
-									((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+							}
+							break;
+						case MAGICSKILL2:
+							if (((MonsterInst3)mod).isMagicskill()) {
+								magicSkillCount++;
+								if (magicSkillCount == 2) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICSKILL3:
+							if (((MonsterInst3)mod).isMagicskill()) {
+								magicSkillCount++;
+								if (magicSkillCount == 3) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICSKILL4:
+							if (((MonsterInst3)mod).isMagicskill()) {
+								magicSkillCount++;
+								if (magicSkillCount == 4) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
 								}
 							}
 							break;
@@ -4225,7 +4314,16 @@ public class MonsterDetailsPage implements IDetailsPage {
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				MonsterInst3 type = DmFactory.eINSTANCE.createMonsterInst3();
 				switch (inst) {
-				case MAGICSKILL:
+				case MAGICSKILL1:
+					type.setMagicskill(true);
+					break;
+				case MAGICSKILL2:
+					type.setMagicskill(true);
+					break;
+				case MAGICSKILL3:
+					type.setMagicskill(true);
+					break;
+				case MAGICSKILL4:
 					type.setMagicskill(true);
 					break;
 				case CUSTOMMAGIC:
@@ -4605,6 +4703,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
+				int magicSkillCount = 0;
 				Monster monsterToEdit = input;
 				MonsterMods modToRemove = null;
 				int armorCount = 0;
@@ -5035,9 +5134,36 @@ public class MonsterDetailsPage implements IDetailsPage {
 					}
 					if (mod instanceof MonsterInst3) {
 						switch (inst2) {
-						case MAGICSKILL:
+						case MAGICSKILL1:
 							if (((MonsterInst3)mod).isMagicskill()){
-								modToRemove = mod;
+								magicSkillCount++;
+								if (magicSkillCount == 1) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case MAGICSKILL2:
+							if (((MonsterInst3)mod).isMagicskill()){
+								magicSkillCount++;
+								if (magicSkillCount == 2) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case MAGICSKILL3:
+							if (((MonsterInst3)mod).isMagicskill()){
+								magicSkillCount++;
+								if (magicSkillCount == 3) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case MAGICSKILL4:
+							if (((MonsterInst3)mod).isMagicskill()){
+								magicSkillCount++;
+								if (magicSkillCount == 4) {
+									modToRemove = mod;
+								}
 							}
 							break;
 						case CUSTOMMAGIC:

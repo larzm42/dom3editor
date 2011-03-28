@@ -18,14 +18,12 @@ package org.larz.dom3.db;
 public class ItemDB {
 	public Integer id;
 	public String name;
-	public String descr;
 	public String armor;
 	public Integer constlevel;
 	public Integer mainpath;
 	public Integer mainlevel;
 	public Integer secondarypath;
 	public Integer secondarylevel;
-	public Integer copyspr;
 	public Integer type;
 	public Integer weapon;
 }

@@ -28,7 +28,6 @@ import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.ToolBarContributionItem;
 import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.ISharedImages;
@@ -40,8 +39,6 @@ import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.ui.ide.IDE;
-import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
-import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.larz.dom3.editor.NewDialog;
 
 /**
@@ -127,9 +124,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 						try {
 							IDE.openEditorOnFileStore(window.getActivePage(), fileStore);
 						} catch (PartInitException e) {
-							String msg =  NLS.bind(IDEWorkbenchMessages.OpenLocalFileAction_message_errorOnOpen, fileStore.getName());
-							IDEWorkbenchPlugin.log(msg,e.getStatus());
-							MessageDialog.open(MessageDialog.ERROR, window.getShell(), IDEWorkbenchMessages.OpenLocalFileAction_title, msg, SWT.SHEET);
+							MessageDialog.open(MessageDialog.ERROR, window.getShell(), "Open File Error", "Couldn't open file: " + fileStore.getName(), SWT.SHEET);
 						}
 					}
 
