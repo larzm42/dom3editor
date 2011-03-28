@@ -142,7 +142,7 @@ public class MasterFormPage extends FormPage {
 		for (final General general : General.values()) {
 			toolkit.createLabel(header, general.label); //$NON-NLS-1$
 			
-			final Text modname = toolkit.createText(header, getGeneral(general, doc), SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
+			final Text modname = toolkit.createText(header, getGeneral(general, doc), (general.equals(General.DESC) ? SWT.MULTI | SWT.WRAP : SWT.SINGLE) | SWT.BORDER); //$NON-NLS-1$
 			modname.addFocusListener(new FocusAdapter() {
 				@Override
 				public void focusLost(FocusEvent e) {

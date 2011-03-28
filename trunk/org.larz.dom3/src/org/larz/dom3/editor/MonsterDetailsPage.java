@@ -356,7 +356,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		instMap.put(Inst.POISONRES, new Inst2Fields());
 		instMap.put(Inst.SHOCKRES, new Inst2Fields());
 		instMap.put(Inst.DARKVISION, new Inst2Fields());
-		instMap.put(Inst.STEALTHY, new Inst2Fields());
+		instMap.put(Inst.STEALTHY, new Inst6Fields());
 		instMap.put(Inst.SEDUCE, new Inst2Fields());
 		instMap.put(Inst.SUCCUBUS, new Inst2Fields());
 		instMap.put(Inst.BECKON, new Inst2Fields());
