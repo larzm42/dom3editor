@@ -2,15 +2,19 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.larz.dom3
 Bundle-SymbolicName: org.larz.dom3; singleton:=true
-Bundle-Version: 0.1
+Bundle-Version: 0.8
 Bundle-Activator: org.larz.dom3.Activator
-Require-Bundle: org.larz.dom3.dm.ui,
- org.eclipse.ui.forms
+Require-Bundle: org.larz.dom3.dm,
+ org.larz.dom3.dm.ui,
+ org.eclipse.xtext.ui,
+ org.eclipse.jdt.core,
+ org.eclipse.ui.forms,
+ org.eclipse.ui.ide,
+ org.eclipse.core.filesystem
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: Larz
 Bundle-ClassPath: .,
  lib/hsqldb.jar,
  lib/imageio_tga_1.1.0.jar,
- lib/sprites.zip,
- src/
+ lib/sprites.zip

@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package org.larz.dom3.dm.dm.impl;
 
@@ -50,7 +51,6 @@ import org.larz.dom3.dm.dm.MonsterInst2;
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isPoisonres <em>Poisonres</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isShockres <em>Shockres</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isDarkvision <em>Darkvision</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isStealthy <em>Stealthy</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isSeduce <em>Seduce</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isSuccubus <em>Succubus</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isBeckon <em>Beckon</em>}</li>
@@ -684,26 +684,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
    * @ordered
    */
   protected boolean darkvision = DARKVISION_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isStealthy() <em>Stealthy</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isStealthy()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean STEALTHY_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isStealthy() <em>Stealthy</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isStealthy()
-   * @generated
-   * @ordered
-   */
-  protected boolean stealthy = STEALTHY_EDEFAULT;
 
   /**
    * The default value of the '{@link #isSeduce() <em>Seduce</em>}' attribute.
@@ -2338,29 +2318,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isStealthy()
-  {
-    return stealthy;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStealthy(boolean newStealthy)
-  {
-    boolean oldStealthy = stealthy;
-    stealthy = newStealthy;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST2__STEALTHY, oldStealthy, stealthy));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public boolean isSeduce()
   {
     return seduce;
@@ -3505,8 +3462,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
         return isShockres();
       case DmPackage.MONSTER_INST2__DARKVISION:
         return isDarkvision();
-      case DmPackage.MONSTER_INST2__STEALTHY:
-        return isStealthy();
       case DmPackage.MONSTER_INST2__SEDUCE:
         return isSeduce();
       case DmPackage.MONSTER_INST2__SUCCUBUS:
@@ -3701,9 +3656,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
         return;
       case DmPackage.MONSTER_INST2__DARKVISION:
         setDarkvision((Boolean)newValue);
-        return;
-      case DmPackage.MONSTER_INST2__STEALTHY:
-        setStealthy((Boolean)newValue);
         return;
       case DmPackage.MONSTER_INST2__SEDUCE:
         setSeduce((Boolean)newValue);
@@ -3947,9 +3899,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
       case DmPackage.MONSTER_INST2__DARKVISION:
         setDarkvision(DARKVISION_EDEFAULT);
         return;
-      case DmPackage.MONSTER_INST2__STEALTHY:
-        setStealthy(STEALTHY_EDEFAULT);
-        return;
       case DmPackage.MONSTER_INST2__SEDUCE:
         setSeduce(SEDUCE_EDEFAULT);
         return;
@@ -4163,8 +4112,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
         return shockres != SHOCKRES_EDEFAULT;
       case DmPackage.MONSTER_INST2__DARKVISION:
         return darkvision != DARKVISION_EDEFAULT;
-      case DmPackage.MONSTER_INST2__STEALTHY:
-        return stealthy != STEALTHY_EDEFAULT;
       case DmPackage.MONSTER_INST2__SEDUCE:
         return seduce != SEDUCE_EDEFAULT;
       case DmPackage.MONSTER_INST2__SUCCUBUS:
@@ -4332,8 +4279,6 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
     result.append(shockres);
     result.append(", darkvision: ");
     result.append(darkvision);
-    result.append(", stealthy: ");
-    result.append(stealthy);
     result.append(", seduce: ");
     result.append(seduce);
     result.append(", succubus: ");

@@ -2,20 +2,17 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.larz.dom3.dm.ui
 Bundle-Vendor: Larz
-Bundle-Version: 0.1
+Bundle-Version: 0.8
 Bundle-SymbolicName: org.larz.dom3.dm.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.larz.dom3.dm;visibility:=reexport,
- org.eclipse.xtext.ui;visibility:=reexport,
- org.eclipse.ui.ide;visibility:=reexport,
+Require-Bundle: org.larz.dom3.dm,
+ org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.builder,
- org.eclipse.core.filesystem;visibility:=reexport,
- org.apache.log4j,
- org.eclipse.ui.editors;resolution:=optional,
- org.eclipse.ui;resolution:=optional,
- org.antlr.runtime;resolution:=optional
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+ org.eclipse.core.filesystem,
+ org.eclipse.ui.ide,
+ org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.larz.dom3.dm.ui.contentassist.antlr,
  org.larz.dom3.dm.ui.editor,
  org.larz.dom3.dm.ui.internal

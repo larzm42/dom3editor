@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Dom3 Editor" uid="dom3ed" id="org.larz.dom3.product" application="org.larz.dom3.application" version="0.1" useFeatures="false" includeLaunchers="true">
+<product name="Dom3 Editor" uid="dom3editor" id="org.larz.dom3.product" application="org.larz.dom3.application" version="0.8" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="/org.larz.dom3/icons/alt_about.gif"/>
+      <image path="/org.larz.dom3/icons/alt_about.png"/>
       <text>
-         This is about Dom3Editor.
+         This is the Dominions 3 Editor.
+
+Release 0.8 - March 29th, 2011.
       </text>
    </aboutInfo>
 
@@ -17,11 +19,13 @@
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="icons/alt_window_16.gif" i32="icons/alt_window_32.gif"/>
+   <windowImages i16="/org.larz.dom3/icons/alt_window_16.png" i32="/org.larz.dom3/icons/alt_window_32.png" i48="/org.larz.dom3/icons/alt_window_48.png" i64="/org.larz.dom3/icons/alt_window_64.png" i128="/org.larz.dom3/icons/alt_window_128.png"/>
 
    <splash
       location="org.larz.dom3"
-      startupProgressRect="5,275,445,15" />
+      startupProgressRect="5,275,445,15"
+      startupMessageRect="7,252,445,20"
+      startupForegroundColor="000000" />
    <launcher name="dom3editor">
       <linux icon="/org.larz.dom3/icons/alt_launcher.xpm"/>
       <macosx icon="/org.larz.dom3/icons/alt_launcher.icns"/>
@@ -41,6 +45,9 @@
 
    <license>
         <url>http://www.gnu.org/licenses/gpl.txt</url>
+        <text>
+   The GPL license goes here.
+         </text>
    </license>
 
    <plugins>
@@ -49,9 +56,7 @@
       <plugin id="com.ibm.icu"/>
       <plugin id="org.antlr.runtime"/>
       <plugin id="org.aopalliance"/>
-      <plugin id="org.apache.commons.cli"/>
       <plugin id="org.apache.commons.lang"/>
-      <plugin id="org.apache.commons.logging"/>
       <plugin id="org.apache.log4j"/>
       <plugin id="org.eclipse.compare.core"/>
       <plugin id="org.eclipse.core.commands"/>
@@ -80,9 +85,6 @@
       <plugin id="org.eclipse.emf.ecore.xmi"/>
       <plugin id="org.eclipse.emf.edit"/>
       <plugin id="org.eclipse.emf.edit.ui"/>
-      <plugin id="org.eclipse.emf.mwe.core"/>
-      <plugin id="org.eclipse.emf.mwe.utils"/>
-      <plugin id="org.eclipse.emf.mwe2.runtime"/>
       <plugin id="org.eclipse.equinox.app"/>
       <plugin id="org.eclipse.equinox.common"/>
       <plugin id="org.eclipse.equinox.p2.core"/>
@@ -113,12 +115,8 @@
       <plugin id="org.eclipse.ui.win32" fragment="true"/>
       <plugin id="org.eclipse.ui.workbench"/>
       <plugin id="org.eclipse.ui.workbench.texteditor"/>
-      <plugin id="org.eclipse.xpand"/>
-      <plugin id="org.eclipse.xtend"/>
-      <plugin id="org.eclipse.xtend.typesystem.emf"/>
       <plugin id="org.eclipse.xtext"/>
       <plugin id="org.eclipse.xtext.builder"/>
-      <plugin id="org.eclipse.xtext.generator"/>
       <plugin id="org.eclipse.xtext.logging" fragment="true"/>
       <plugin id="org.eclipse.xtext.ui"/>
       <plugin id="org.eclipse.xtext.ui.shared"/>

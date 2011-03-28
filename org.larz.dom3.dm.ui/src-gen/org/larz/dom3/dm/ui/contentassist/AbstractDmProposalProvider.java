@@ -428,9 +428,6 @@ public class AbstractDmProposalProvider extends AbstractJavaBasedContentProposal
 	public void completeMonsterInst2_Darkvision(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void completeMonsterInst2_Stealthy(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
 	public void completeMonsterInst2_Seduce(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
@@ -819,6 +816,9 @@ public class AbstractDmProposalProvider extends AbstractJavaBasedContentProposal
 		// subclasses may override
 	}
 	public void completeMonsterInst5_Summon5(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+	public void completeMonsterInst6_Stealthy(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
 	public void completeMonsterInst6_Heat(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {

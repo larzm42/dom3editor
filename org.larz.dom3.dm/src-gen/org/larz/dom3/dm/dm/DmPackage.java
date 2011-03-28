@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package org.larz.dom3.dm.dm;
 
@@ -1969,22 +1970,13 @@ public interface DmPackage extends EPackage
   int MONSTER_INST2__DARKVISION = MONSTER_PATTERN2_FEATURE_COUNT + 28;
 
   /**
-   * The feature id for the '<em><b>Stealthy</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MONSTER_INST2__STEALTHY = MONSTER_PATTERN2_FEATURE_COUNT + 29;
-
-  /**
    * The feature id for the '<em><b>Seduce</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__SEDUCE = MONSTER_PATTERN2_FEATURE_COUNT + 30;
+  int MONSTER_INST2__SEDUCE = MONSTER_PATTERN2_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Succubus</b></em>' attribute.
@@ -1993,7 +1985,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__SUCCUBUS = MONSTER_PATTERN2_FEATURE_COUNT + 31;
+  int MONSTER_INST2__SUCCUBUS = MONSTER_PATTERN2_FEATURE_COUNT + 30;
 
   /**
    * The feature id for the '<em><b>Beckon</b></em>' attribute.
@@ -2002,7 +1994,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__BECKON = MONSTER_PATTERN2_FEATURE_COUNT + 32;
+  int MONSTER_INST2__BECKON = MONSTER_PATTERN2_FEATURE_COUNT + 31;
 
   /**
    * The feature id for the '<em><b>Startage</b></em>' attribute.
@@ -2011,7 +2003,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__STARTAGE = MONSTER_PATTERN2_FEATURE_COUNT + 33;
+  int MONSTER_INST2__STARTAGE = MONSTER_PATTERN2_FEATURE_COUNT + 32;
 
   /**
    * The feature id for the '<em><b>Maxage</b></em>' attribute.
@@ -2020,7 +2012,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__MAXAGE = MONSTER_PATTERN2_FEATURE_COUNT + 34;
+  int MONSTER_INST2__MAXAGE = MONSTER_PATTERN2_FEATURE_COUNT + 33;
 
   /**
    * The feature id for the '<em><b>Older</b></em>' attribute.
@@ -2029,7 +2021,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__OLDER = MONSTER_PATTERN2_FEATURE_COUNT + 35;
+  int MONSTER_INST2__OLDER = MONSTER_PATTERN2_FEATURE_COUNT + 34;
 
   /**
    * The feature id for the '<em><b>Healer</b></em>' attribute.
@@ -2038,7 +2030,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__HEALER = MONSTER_PATTERN2_FEATURE_COUNT + 36;
+  int MONSTER_INST2__HEALER = MONSTER_PATTERN2_FEATURE_COUNT + 35;
 
   /**
    * The feature id for the '<em><b>Startaff</b></em>' attribute.
@@ -2047,7 +2039,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__STARTAFF = MONSTER_PATTERN2_FEATURE_COUNT + 37;
+  int MONSTER_INST2__STARTAFF = MONSTER_PATTERN2_FEATURE_COUNT + 36;
 
   /**
    * The feature id for the '<em><b>Supplybonus</b></em>' attribute.
@@ -2056,7 +2048,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__SUPPLYBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 38;
+  int MONSTER_INST2__SUPPLYBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 37;
 
   /**
    * The feature id for the '<em><b>Uwdamage</b></em>' attribute.
@@ -2065,7 +2057,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__UWDAMAGE = MONSTER_PATTERN2_FEATURE_COUNT + 39;
+  int MONSTER_INST2__UWDAMAGE = MONSTER_PATTERN2_FEATURE_COUNT + 38;
 
   /**
    * The feature id for the '<em><b>Coldpower</b></em>' attribute.
@@ -2074,7 +2066,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__COLDPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 40;
+  int MONSTER_INST2__COLDPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 39;
 
   /**
    * The feature id for the '<em><b>Firepower</b></em>' attribute.
@@ -2083,7 +2075,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__FIREPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 41;
+  int MONSTER_INST2__FIREPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 40;
 
   /**
    * The feature id for the '<em><b>Stormpower</b></em>' attribute.
@@ -2092,7 +2084,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__STORMPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 42;
+  int MONSTER_INST2__STORMPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 41;
 
   /**
    * The feature id for the '<em><b>Darkpower</b></em>' attribute.
@@ -2101,7 +2093,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__DARKPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 43;
+  int MONSTER_INST2__DARKPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 42;
 
   /**
    * The feature id for the '<em><b>Springpower</b></em>' attribute.
@@ -2110,7 +2102,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__SPRINGPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 44;
+  int MONSTER_INST2__SPRINGPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 43;
 
   /**
    * The feature id for the '<em><b>Summerpower</b></em>' attribute.
@@ -2119,7 +2111,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__SUMMERPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 45;
+  int MONSTER_INST2__SUMMERPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 44;
 
   /**
    * The feature id for the '<em><b>Fallpower</b></em>' attribute.
@@ -2128,7 +2120,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__FALLPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 46;
+  int MONSTER_INST2__FALLPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 45;
 
   /**
    * The feature id for the '<em><b>Winterpower</b></em>' attribute.
@@ -2137,7 +2129,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__WINTERPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 47;
+  int MONSTER_INST2__WINTERPOWER = MONSTER_PATTERN2_FEATURE_COUNT + 46;
 
   /**
    * The feature id for the '<em><b>Ambidextrous</b></em>' attribute.
@@ -2146,7 +2138,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__AMBIDEXTROUS = MONSTER_PATTERN2_FEATURE_COUNT + 48;
+  int MONSTER_INST2__AMBIDEXTROUS = MONSTER_PATTERN2_FEATURE_COUNT + 47;
 
   /**
    * The feature id for the '<em><b>Banefireshield</b></em>' attribute.
@@ -2155,7 +2147,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__BANEFIRESHIELD = MONSTER_PATTERN2_FEATURE_COUNT + 49;
+  int MONSTER_INST2__BANEFIRESHIELD = MONSTER_PATTERN2_FEATURE_COUNT + 48;
 
   /**
    * The feature id for the '<em><b>Berserk</b></em>' attribute.
@@ -2164,7 +2156,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__BERSERK = MONSTER_PATTERN2_FEATURE_COUNT + 50;
+  int MONSTER_INST2__BERSERK = MONSTER_PATTERN2_FEATURE_COUNT + 49;
 
   /**
    * The feature id for the '<em><b>Standard</b></em>' attribute.
@@ -2173,7 +2165,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__STANDARD = MONSTER_PATTERN2_FEATURE_COUNT + 51;
+  int MONSTER_INST2__STANDARD = MONSTER_PATTERN2_FEATURE_COUNT + 50;
 
   /**
    * The feature id for the '<em><b>Animalawe</b></em>' attribute.
@@ -2182,7 +2174,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__ANIMALAWE = MONSTER_PATTERN2_FEATURE_COUNT + 52;
+  int MONSTER_INST2__ANIMALAWE = MONSTER_PATTERN2_FEATURE_COUNT + 51;
 
   /**
    * The feature id for the '<em><b>Awe</b></em>' attribute.
@@ -2191,7 +2183,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__AWE = MONSTER_PATTERN2_FEATURE_COUNT + 53;
+  int MONSTER_INST2__AWE = MONSTER_PATTERN2_FEATURE_COUNT + 52;
 
   /**
    * The feature id for the '<em><b>Fear</b></em>' attribute.
@@ -2200,7 +2192,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__FEAR = MONSTER_PATTERN2_FEATURE_COUNT + 54;
+  int MONSTER_INST2__FEAR = MONSTER_PATTERN2_FEATURE_COUNT + 53;
 
   /**
    * The feature id for the '<em><b>Regeneration</b></em>' attribute.
@@ -2209,7 +2201,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__REGENERATION = MONSTER_PATTERN2_FEATURE_COUNT + 55;
+  int MONSTER_INST2__REGENERATION = MONSTER_PATTERN2_FEATURE_COUNT + 54;
 
   /**
    * The feature id for the '<em><b>Reinvigoration</b></em>' attribute.
@@ -2218,7 +2210,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__REINVIGORATION = MONSTER_PATTERN2_FEATURE_COUNT + 56;
+  int MONSTER_INST2__REINVIGORATION = MONSTER_PATTERN2_FEATURE_COUNT + 55;
 
   /**
    * The feature id for the '<em><b>Fireshield</b></em>' attribute.
@@ -2227,7 +2219,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__FIRESHIELD = MONSTER_PATTERN2_FEATURE_COUNT + 57;
+  int MONSTER_INST2__FIRESHIELD = MONSTER_PATTERN2_FEATURE_COUNT + 56;
 
   /**
    * The feature id for the '<em><b>Iceprot</b></em>' attribute.
@@ -2236,7 +2228,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__ICEPROT = MONSTER_PATTERN2_FEATURE_COUNT + 58;
+  int MONSTER_INST2__ICEPROT = MONSTER_PATTERN2_FEATURE_COUNT + 57;
 
   /**
    * The feature id for the '<em><b>Poisoncloud</b></em>' attribute.
@@ -2245,7 +2237,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__POISONCLOUD = MONSTER_PATTERN2_FEATURE_COUNT + 59;
+  int MONSTER_INST2__POISONCLOUD = MONSTER_PATTERN2_FEATURE_COUNT + 58;
 
   /**
    * The feature id for the '<em><b>Diseasecloud</b></em>' attribute.
@@ -2254,7 +2246,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__DISEASECLOUD = MONSTER_PATTERN2_FEATURE_COUNT + 60;
+  int MONSTER_INST2__DISEASECLOUD = MONSTER_PATTERN2_FEATURE_COUNT + 59;
 
   /**
    * The feature id for the '<em><b>Bloodvengeance</b></em>' attribute.
@@ -2263,7 +2255,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__BLOODVENGEANCE = MONSTER_PATTERN2_FEATURE_COUNT + 61;
+  int MONSTER_INST2__BLOODVENGEANCE = MONSTER_PATTERN2_FEATURE_COUNT + 60;
 
   /**
    * The feature id for the '<em><b>Castledef</b></em>' attribute.
@@ -2272,7 +2264,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__CASTLEDEF = MONSTER_PATTERN2_FEATURE_COUNT + 62;
+  int MONSTER_INST2__CASTLEDEF = MONSTER_PATTERN2_FEATURE_COUNT + 61;
 
   /**
    * The feature id for the '<em><b>Siegebonus</b></em>' attribute.
@@ -2281,7 +2273,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__SIEGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 63;
+  int MONSTER_INST2__SIEGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 62;
 
   /**
    * The feature id for the '<em><b>Patrolbonus</b></em>' attribute.
@@ -2290,7 +2282,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__PATROLBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 64;
+  int MONSTER_INST2__PATROLBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 63;
 
   /**
    * The feature id for the '<em><b>Pillagebonus</b></em>' attribute.
@@ -2299,7 +2291,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__PILLAGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 65;
+  int MONSTER_INST2__PILLAGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 64;
 
   /**
    * The feature id for the '<em><b>Researchbonus</b></em>' attribute.
@@ -2308,7 +2300,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__RESEARCHBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 66;
+  int MONSTER_INST2__RESEARCHBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 65;
 
   /**
    * The feature id for the '<em><b>Forgebonus</b></em>' attribute.
@@ -2317,7 +2309,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__FORGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 67;
+  int MONSTER_INST2__FORGEBONUS = MONSTER_PATTERN2_FEATURE_COUNT + 66;
 
   /**
    * The feature id for the '<em><b>Douse</b></em>' attribute.
@@ -2326,7 +2318,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__DOUSE = MONSTER_PATTERN2_FEATURE_COUNT + 68;
+  int MONSTER_INST2__DOUSE = MONSTER_PATTERN2_FEATURE_COUNT + 67;
 
   /**
    * The feature id for the '<em><b>Nobadevents</b></em>' attribute.
@@ -2335,7 +2327,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__NOBADEVENTS = MONSTER_PATTERN2_FEATURE_COUNT + 69;
+  int MONSTER_INST2__NOBADEVENTS = MONSTER_PATTERN2_FEATURE_COUNT + 68;
 
   /**
    * The feature id for the '<em><b>Incunrest</b></em>' attribute.
@@ -2344,7 +2336,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__INCUNREST = MONSTER_PATTERN2_FEATURE_COUNT + 70;
+  int MONSTER_INST2__INCUNREST = MONSTER_PATTERN2_FEATURE_COUNT + 69;
 
   /**
    * The feature id for the '<em><b>Spreaddom</b></em>' attribute.
@@ -2353,7 +2345,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__SPREADDOM = MONSTER_PATTERN2_FEATURE_COUNT + 71;
+  int MONSTER_INST2__SPREADDOM = MONSTER_PATTERN2_FEATURE_COUNT + 70;
 
   /**
    * The feature id for the '<em><b>Leper</b></em>' attribute.
@@ -2362,7 +2354,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__LEPER = MONSTER_PATTERN2_FEATURE_COUNT + 72;
+  int MONSTER_INST2__LEPER = MONSTER_PATTERN2_FEATURE_COUNT + 71;
 
   /**
    * The feature id for the '<em><b>Popkill</b></em>' attribute.
@@ -2371,7 +2363,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__POPKILL = MONSTER_PATTERN2_FEATURE_COUNT + 73;
+  int MONSTER_INST2__POPKILL = MONSTER_PATTERN2_FEATURE_COUNT + 72;
 
   /**
    * The feature id for the '<em><b>Heretic</b></em>' attribute.
@@ -2380,7 +2372,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__HERETIC = MONSTER_PATTERN2_FEATURE_COUNT + 74;
+  int MONSTER_INST2__HERETIC = MONSTER_PATTERN2_FEATURE_COUNT + 73;
 
   /**
    * The feature id for the '<em><b>Itemslots</b></em>' attribute.
@@ -2389,7 +2381,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__ITEMSLOTS = MONSTER_PATTERN2_FEATURE_COUNT + 75;
+  int MONSTER_INST2__ITEMSLOTS = MONSTER_PATTERN2_FEATURE_COUNT + 74;
 
   /**
    * The feature id for the '<em><b>Nametype</b></em>' attribute.
@@ -2398,7 +2390,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2__NAMETYPE = MONSTER_PATTERN2_FEATURE_COUNT + 76;
+  int MONSTER_INST2__NAMETYPE = MONSTER_PATTERN2_FEATURE_COUNT + 75;
 
   /**
    * The number of structural features of the '<em>Monster Inst2</em>' class.
@@ -2407,7 +2399,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST2_FEATURE_COUNT = MONSTER_PATTERN2_FEATURE_COUNT + 77;
+  int MONSTER_INST2_FEATURE_COUNT = MONSTER_PATTERN2_FEATURE_COUNT + 76;
 
   /**
    * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.MonsterInst3Impl <em>Monster Inst3</em>}' class.
@@ -3269,13 +3261,22 @@ public interface DmPackage extends EPackage
   int MONSTER_INST6__VALUE = MONSTER_PATTERN6_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Stealthy</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONSTER_INST6__STEALTHY = MONSTER_PATTERN6_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Heat</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MONSTER_INST6__HEAT = MONSTER_PATTERN6_FEATURE_COUNT + 1;
+  int MONSTER_INST6__HEAT = MONSTER_PATTERN6_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Cold</b></em>' attribute.
@@ -3284,7 +3285,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST6__COLD = MONSTER_PATTERN6_FEATURE_COUNT + 2;
+  int MONSTER_INST6__COLD = MONSTER_PATTERN6_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Monster Inst6</em>' class.
@@ -3293,7 +3294,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONSTER_INST6_FEATURE_COUNT = MONSTER_PATTERN6_FEATURE_COUNT + 3;
+  int MONSTER_INST6_FEATURE_COUNT = MONSTER_PATTERN6_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.SpellImpl <em>Spell</em>}' class.
@@ -7676,17 +7677,6 @@ public interface DmPackage extends EPackage
   EAttribute getMonsterInst2_Darkvision();
 
   /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.MonsterInst2#isStealthy <em>Stealthy</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Stealthy</em>'.
-   * @see org.larz.dom3.dm.dm.MonsterInst2#isStealthy()
-   * @see #getMonsterInst2()
-   * @generated
-   */
-  EAttribute getMonsterInst2_Stealthy();
-
-  /**
    * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.MonsterInst2#isSeduce <em>Seduce</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -9210,6 +9200,17 @@ public interface DmPackage extends EPackage
    * @generated
    */
   EAttribute getMonsterInst6_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.MonsterInst6#isStealthy <em>Stealthy</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Stealthy</em>'.
+   * @see org.larz.dom3.dm.dm.MonsterInst6#isStealthy()
+   * @see #getMonsterInst6()
+   * @generated
+   */
+  EAttribute getMonsterInst6_Stealthy();
 
   /**
    * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.MonsterInst6#isHeat <em>Heat</em>}'.

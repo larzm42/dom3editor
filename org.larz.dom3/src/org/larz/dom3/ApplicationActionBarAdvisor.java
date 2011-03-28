@@ -15,6 +15,9 @@
  */
 package org.larz.dom3;
 
+import org.eclipse.core.filesystem.EFS;
+import org.eclipse.core.filesystem.IFileStore;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.ICoolBarManager;
@@ -24,13 +27,21 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.ToolBarContributionItem;
 import org.eclipse.jface.action.ToolBarManager;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
+import org.eclipse.ui.ide.IDE;
+import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
+import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.larz.dom3.editor.NewDialog;
 
 /**
@@ -51,6 +62,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     private IWorkbenchAction copyAction;
     private IWorkbenchAction pasteAction;
     private IAction newAction;
+    private IAction openAction;
 
     /**
      * @param configurer
@@ -85,15 +97,48 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         register(saveAction);
         
         newAction = new Action("New Mod...") {
-
 			@Override
 			public void run() {
 				NewDialog dialog = new NewDialog(window.getShell());
 				dialog.open();
 			}
 		};
-        	
-        undoAction = ActionFactory.UNDO.create(window);
+		ISharedImages sharedImages = window.getWorkbench().getSharedImages();
+		newAction.setImageDescriptor(sharedImages.getImageDescriptor(ISharedImages.IMG_TOOL_NEW_WIZARD));
+		
+        openAction = new Action("Open Mod...") {
+			@Override
+			public void run() {
+				FileDialog dialog = new FileDialog(window.getShell(), SWT.OPEN);
+				dialog.setFilterExtensions(new String[]{"*.dm"});
+				dialog.open();
+				String[] names =  dialog.getFileNames();
+				String filterPath =  System.getProperty("user.home"); //$NON-NLS-1$
+
+				if (names != null) {
+					filterPath =  dialog.getFilterPath();
+
+					for (int i =  0; i < names.length; i++) {
+						IFileStore fileStore =  EFS.getLocalFileSystem().getStore(new Path(filterPath));
+						if (!names[i].endsWith(".dm")) {
+							names[i] += ".dm";
+						}
+						fileStore =  fileStore.getChild(names[i]);
+						try {
+							IDE.openEditorOnFileStore(window.getActivePage(), fileStore);
+						} catch (PartInitException e) {
+							String msg =  NLS.bind(IDEWorkbenchMessages.OpenLocalFileAction_message_errorOnOpen, fileStore.getName());
+							IDEWorkbenchPlugin.log(msg,e.getStatus());
+							MessageDialog.open(MessageDialog.ERROR, window.getShell(), IDEWorkbenchMessages.OpenLocalFileAction_title, msg, SWT.SHEET);
+						}
+					}
+
+				}
+			}
+		};
+		openAction.setImageDescriptor(sharedImages.getImageDescriptor(ISharedImages.IMG_OBJ_FOLDER));
+        
+		undoAction = ActionFactory.UNDO.create(window);
         register(undoAction);
         redoAction = ActionFactory.REDO.create(window);
         register(redoAction);
@@ -118,7 +163,9 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         menuBar.add(helpMenu);
         
         // File
-       // fileMenu.removeAll();
+        fileMenu.add(new Separator());
+        fileMenu.add(newAction);
+        fileMenu.add(openAction);
         fileMenu.add(new Separator());
         fileMenu.add(closeAction);
         fileMenu.add(closeAllAction);        
@@ -128,7 +175,6 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         fileMenu.add(saveAllAction);
         fileMenu.add(new Separator());
         fileMenu.add(exitAction);
-        fileMenu.add(newAction);
         
         // Edit
         editMenu.add(undoAction);
@@ -140,6 +186,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         
         // Help
         helpMenu.add(aboutAction);
+        
     }
 
     /* (non-Javadoc)
@@ -148,6 +195,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     protected void fillCoolBar(ICoolBarManager coolBar) {
         IToolBarManager toolbar = new ToolBarManager(SWT.FLAT | SWT.RIGHT);
         coolBar.add(new ToolBarContributionItem(toolbar, "main"));
+        toolbar.add(newAction);
+        toolbar.add(openAction);
         toolbar.add(saveAction);
         toolbar.add(saveAllAction);
         coolBar.setLockLayout(true);

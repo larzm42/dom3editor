@@ -183,9 +183,9 @@ public class MasterFormPage extends FormPage {
 			public InputStream getStream() throws IOException {
 				String path = ((DmXtextEditor)doc).getPath();
 				path = path.substring(0, path.lastIndexOf('/')+1);
-				if (iconPath.startsWith("./")) {
+				if (iconPath != null && iconPath.startsWith("./")) {
 					path += iconPath.substring(2);
-				} else {
+				} else if (iconPath != null){
 					path += iconPath;
 				}
 
