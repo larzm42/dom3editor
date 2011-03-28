@@ -247,7 +247,6 @@ MonsterInst2:
 	poisonres?='#poisonres' |
 	shockres?='#shockres' |
 	darkvision?='#darkvision' |
-	stealthy?='#stealthy' |
 	seduce?='#seduce' |
 	succubus?='#succubus' |
 	beckon?='#beckon' |
@@ -387,6 +386,7 @@ MonsterInst5:
 	summon5?='#summon5';
 
 MonsterInst6:
+	stealthy?='#stealthy' |
 	heat?='#heat' |
 	cold?='#cold';
 
