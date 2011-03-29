@@ -596,9 +596,9 @@ public class Database {
 			//monster.spr1 = rs.getString("spr1");
 			//monster.spr2 = rs.getString("spr2");
 			//monster.descr = rs.getString("descr");
-			monster.armor1 = rs.getString("helmet");
-			monster.armor2 = rs.getString("armor");
-			monster.armor3 = rs.getString("shield");
+			monster.armor1 = Integer.toString(rs.getInt("helmet"));
+			monster.armor2 = Integer.toString(rs.getInt("armor"));
+			monster.armor3 = Integer.toString(rs.getInt("shield"));
 			//monster.speciallook = rs.getInt("speciallook");
 			monster.ap = rs.getInt("ap");
 			monster.mapmove = rs.getInt("map");
@@ -846,10 +846,10 @@ public class Database {
 //			monster.goodundeadleader = rs.getInt("goodundeadleader") == 1;
 //			monster.expertundeadleader = rs.getInt("expertundeadleader") == 1;
 //			monster.superiorundeadleader = rs.getInt("superiorundeadleader") == 1;
-			monster.weapon1 = rs.getString("wpn1");
-			monster.weapon2 = rs.getString("wpn2");
-			monster.weapon3 = rs.getString("wpn3");
-			monster.weapon4 = rs.getString("wpn4");
+			monster.weapon1 = Integer.toString(rs.getInt("wpn1"));
+			monster.weapon2 = Integer.toString(rs.getInt("wpn2"));
+			monster.weapon3 = Integer.toString(rs.getInt("wpn3"));
+			monster.weapon4 = Integer.toString(rs.getInt("wpn4"));
 //			monster.onebattlespell = rs.getString("onebattlespell");
 //			monster.firstshape = rs.getString("firstshape");
 //			monster.secondshape = rs.getString("secondshape");

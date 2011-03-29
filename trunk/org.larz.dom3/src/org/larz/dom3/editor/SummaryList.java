@@ -23,6 +23,7 @@ import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -55,10 +56,12 @@ import org.eclipse.ui.forms.editor.FormPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.xtext.resource.DefaultLocationInFileProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
+import org.eclipse.xtext.util.TextLocation;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.Activator;
 import org.larz.dom3.db.Database;
@@ -130,6 +133,7 @@ import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class SummaryList extends MasterDetailsBlock {
 	private FormPage page;
+	private DmEditor editor;
 	private XtextEditor doc;
 	public TableViewer viewer;
 	
@@ -146,11 +150,12 @@ public class SummaryList extends MasterDetailsBlock {
 		BY_NAME, BY_ID, NEW
 	}
 	
-	public SummaryList(FormPage page, XtextEditor doc) {
+	public SummaryList(FormPage page, DmEditor editor, XtextEditor doc) {
 		this.page = page;
 		this.doc = doc;
-		
+		this.editor = editor;
 	}
+	
 	/**
 	 * @param id
 	 * @param title
@@ -501,12 +506,18 @@ public class SummaryList extends MasterDetailsBlock {
 
 		MenuManager menuManager = new MenuManager();
 		Menu menu = menuManager.createContextMenu(viewer.getTable());
+		menuManager.add(new Action("Go To Source") {
+			@Override
+			public void run() {
+				gotoSource();
+			}
+		});
+		menuManager.add(new Separator());
 		menuManager.add(new Action("Delete") {
 			@Override
 			public void run() {
 				deleteNode();
 			}
-			
 		});
 		viewer.getTable().setMenu(menu);
 		
@@ -935,16 +946,36 @@ public class SummaryList extends MasterDetailsBlock {
 			final AbstractElement element = ((AbstractElementWrapper)ssel.getFirstElement()).getElement();
 			IXtextDocument document = ((XtextEditor)doc).getDocument();
 			IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-			documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+			documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 				@Override
 				public void process(XtextResource resource) {        
 					Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-					
+
 					EList<AbstractElement> elements = dom3Mod.getElements();
 					elements.remove(element);
-					}  
-				},
-				document);
+				}  
+			},
+			document);
+			viewer.refresh();
+		}
+	}
+
+	public void gotoSource() {
+		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+		if (ssel.size()==1) {
+			final AbstractElement element = ((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+			IXtextDocument document = ((XtextEditor)doc).getDocument();
+			IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
+			documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				@Override
+				public void process(XtextResource resource) {  
+					editor.setActivePage(1);
+					DefaultLocationInFileProvider prov = new DefaultLocationInFileProvider();
+					TextLocation loc = prov.getLocation(element);
+					((XtextEditor)doc).selectAndReveal(loc.getOffset(), loc.getLength());
+				}  
+			},
+			document);
 			viewer.refresh();
 		}
 		
