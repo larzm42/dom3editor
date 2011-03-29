@@ -108,6 +108,12 @@ public class ItemDetailsPage implements IDetailsPage {
 		private Label defaultLabel;
 	}
 	
+	class Inst3Fields implements InstFields {
+		private Button check;
+		private Text value;
+		private Label defaultLabel;
+	}
+	
 	EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
 	
 	public ItemDetailsPage(XtextEditor doc, TableViewer viewer) {
@@ -119,7 +125,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		instMap.put(Inst.MAINLEVEL, new Inst2Fields());
 		instMap.put(Inst.SECONDARYPATH, new Inst2Fields());
 		instMap.put(Inst.SECONDARYLEVEL, new Inst2Fields());
-		instMap.put(Inst.COPYSPR, new Inst2Fields());
+		instMap.put(Inst.COPYSPR, new Inst3Fields());
 		instMap.put(Inst.TYPE, new Inst2Fields());
 		instMap.put(Inst.WEAPON, new Inst2Fields());
 	}
@@ -280,11 +286,11 @@ public class ItemDetailsPage implements IDetailsPage {
 			});
 
 			Text myValue1 = null;
-			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields) {
+			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields || field instanceof Inst3Fields) {
 				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 				myValue1 = value;
 				
-				if (field instanceof Inst2Fields) {
+				if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
 					value.addVerifyListener(new VerifyListener() {
 						
 						@Override
@@ -336,7 +342,7 @@ public class ItemDetailsPage implements IDetailsPage {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 					gd.widthHint = 160;
 					gd.horizontalSpan = 4;
-				} else if (field instanceof Inst2Fields) {
+				} else if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 					gd.widthHint = 30;
 				}
@@ -346,11 +352,11 @@ public class ItemDetailsPage implements IDetailsPage {
 				
 			Label defaultLabel1 = null;
 			
-			if (field instanceof Inst2Fields) {
+			if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
 				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel1.setEnabled(false);
 			}
-			if (field instanceof Inst2Fields) {
+			if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 				gd.horizontalSpan = 3;
 				defaultLabel1.setLayoutData(gd);
@@ -363,6 +369,10 @@ public class ItemDetailsPage implements IDetailsPage {
 				((Inst2Fields)field).check = check;
 				((Inst2Fields)field).value = myValue1;
 				((Inst2Fields)field).defaultLabel = defaultLabel1;
+			} else if (field instanceof Inst3Fields) {
+				((Inst3Fields)field).check = check;
+				((Inst3Fields)field).value = myValue1;
+				((Inst3Fields)field).defaultLabel = defaultLabel1;
 			}
 
 			isRight = !isRight;
