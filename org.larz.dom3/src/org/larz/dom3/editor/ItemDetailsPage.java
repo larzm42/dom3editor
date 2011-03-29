@@ -57,6 +57,7 @@ import org.larz.dom3.dm.dm.DmFactory;
 import org.larz.dom3.dm.dm.Item;
 import org.larz.dom3.dm.dm.ItemInst1;
 import org.larz.dom3.dm.dm.ItemInst2;
+import org.larz.dom3.dm.dm.ItemInst3;
 import org.larz.dom3.dm.dm.ItemMods;
 import org.larz.dom3.dm.dm.SelectItemById;
 import org.larz.dom3.dm.dm.SelectItemByName;
@@ -277,6 +278,8 @@ public class ItemDetailsPage implements IDetailsPage {
 							addInst1(key, doc, key.defaultValue);
 						} else if (field instanceof Inst2Fields) {
 							addInst2(key, doc, key.defaultValue);
+						} else if (field instanceof Inst3Fields) {
+							addInst3(key, doc, key.defaultValue);
 						}
 					} else {
 						removeInst(key, doc);
@@ -321,6 +324,8 @@ public class ItemDetailsPage implements IDetailsPage {
 							setInst1(key, doc, value.getText());
 						} else if (field instanceof Inst2Fields) {
 							setInst2(key, doc, value.getText());
+						} else if (field instanceof Inst3Fields) {
+							setInst3(key, doc, value.getText());
 						}
 					}			
 				});
@@ -332,6 +337,8 @@ public class ItemDetailsPage implements IDetailsPage {
 								setInst1(key, doc, value.getText());
 							} else if (field instanceof Inst2Fields) {
 								setInst2(key, doc, value.getText());
+							} else if (field instanceof Inst3Fields) {
+								setInst3(key, doc, value.getText());
 							}
 						}
 					}
@@ -457,6 +464,20 @@ public class ItemDetailsPage implements IDetailsPage {
 					((Inst2Fields)fields.getValue()).value.setText("");
 					((Inst2Fields)fields.getValue()).value.setEnabled(false);
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
+				}
+			}
+			Object val3 = getInst3(fields.getKey(), input);
+			if (val3 != null) {
+				if (fields.getValue() instanceof Inst3Fields) {
+					((Inst3Fields)fields.getValue()).value.setText(val3.toString());
+					((Inst3Fields)fields.getValue()).value.setEnabled(true);
+					((Inst3Fields)fields.getValue()).check.setSelection(true);
+				}
+			} else {
+				if (fields.getValue() instanceof Inst3Fields) {
+					((Inst3Fields)fields.getValue()).value.setText("");
+					((Inst3Fields)fields.getValue()).value.setEnabled(false);
+					((Inst3Fields)fields.getValue()).check.setSelection(false);
 				}
 			}
 			if (input instanceof Item) {
@@ -645,11 +666,6 @@ public class ItemDetailsPage implements IDetailsPage {
 						return Integer.valueOf(((ItemInst2)mod).getValue());
 					}
 					break;
-				case COPYSPR:
-					if (((ItemInst2)mod).isCopyspr()){
-						return Integer.valueOf(((ItemInst2)mod).getValue());
-					}
-					break;
 				case TYPE:
 					if (((ItemInst2)mod).isType()){
 						return Integer.valueOf(((ItemInst2)mod).getValue());
@@ -666,6 +682,27 @@ public class ItemDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
+	private Object getInst3(Inst inst2, Item item) {
+		EList<ItemMods> list = item.getMods();
+		for (ItemMods mod : list) {
+			if (mod instanceof ItemInst3) {
+				switch (inst2) {
+				case COPYSPR:
+					if (((ItemInst3)mod).isCopyspr()){
+						String strVal = ((ItemInst3)mod).getValue1();
+						Integer intVal = ((ItemInst3)mod).getValue2();
+						if (strVal != null) {
+							return strVal;
+						}
+						return intVal;
+					}
+					break;
+				}
+			}
+		}
+		return null;
+	}
+
 	private void setInst1(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
@@ -747,11 +784,6 @@ public class ItemDetailsPage implements IDetailsPage {
 								((ItemInst2)mod).setValue(Integer.parseInt(newName));
 							}
 							break;
-						case COPYSPR:
-							if (((ItemInst2)mod).isCopyspr()){
-								((ItemInst2)mod).setValue(Integer.parseInt(newName));
-							}
-							break;
 						case TYPE:
 							if (((ItemInst2)mod).isType()){
 								((ItemInst2)mod).setValue(Integer.parseInt(newName));
@@ -760,6 +792,51 @@ public class ItemDetailsPage implements IDetailsPage {
 						case WEAPON:
 							if (((ItemInst2)mod).isWeapon()){
 								((ItemInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						}
+					}
+				}
+
+			}  
+		},
+		myDocument);
+
+		viewer.refresh();
+		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+		if (ssel.size()==1) {
+			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+		} else {
+			input = null;
+		}
+	}
+
+	private void setInst3(final Inst inst2, final XtextEditor editor, final String newName) 
+	{
+		final IXtextDocument myDocument = editor.getDocument();
+		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+			@Override
+			public void process(XtextResource resource) {
+				Item itemToEdit = input;
+				EList<ItemMods> mods = itemToEdit.getMods();
+				for (ItemMods mod : mods) {
+					if (mod instanceof ItemInst3) {
+						Integer newValue = null;
+						try {
+							newValue = Integer.valueOf(newName);
+						} catch (NumberFormatException e) {
+							// is not a number
+						}
+
+						switch (inst2) {
+						case COPYSPR:
+							if (((ItemInst3)mod).isCopyspr()){
+								if (newValue != null) {
+									((ItemInst3)mod).setValue2(Integer.parseInt(newName));
+								} else {
+									((ItemInst3)mod).setValue1(newName);
+								}
 							}
 							break;
 						}
@@ -841,9 +918,6 @@ public class ItemDetailsPage implements IDetailsPage {
 				case SECONDARYLEVEL:
 					type.setSecondarylevel(true);
 					break;
-				case COPYSPR:
-					type.setCopyspr(true);
-					break;
 				case TYPE:
 					type.setType(true);
 					break;
@@ -870,6 +944,46 @@ public class ItemDetailsPage implements IDetailsPage {
 		}
 	}
 	
+	private void addInst3(final Inst inst, final XtextEditor editor, final String newName) 
+	{
+		final IXtextDocument myDocument = editor.getDocument();
+		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+			@Override
+			public void process(XtextResource resource) {
+				Item itemToEdit = input;
+				EList<ItemMods> mods = itemToEdit.getMods();
+				ItemInst3 type = DmFactory.eINSTANCE.createItemInst3();
+				switch (inst) {
+				case COPYSPR:
+					type.setCopyspr(true);
+					break;
+				}
+				Integer newValue = null;
+				try {
+					newValue = Integer.valueOf(newName);
+				} catch (NumberFormatException e) {
+					// is not a number
+				}
+				if (newValue != null) {
+					type.setValue2(Integer.valueOf(newName));
+				} else {
+					type.setValue1(newName);
+				}
+				mods.add(type);
+			}  
+		},
+		myDocument);
+
+		viewer.refresh();
+		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+		if (ssel.size()==1) {
+			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+		} else {
+			input = null;
+		}
+	}
+
 	private void removeInst(final Inst inst2, final XtextEditor editor) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
@@ -922,11 +1036,6 @@ public class ItemDetailsPage implements IDetailsPage {
 								modToRemove = mod;
 							}
 							break;
-						case COPYSPR:
-							if (((ItemInst2)mod).isCopyspr()){
-								modToRemove = mod;
-							}
-							break;
 						case TYPE:
 							if (((ItemInst2)mod).isType()){
 								modToRemove = mod;
@@ -934,6 +1043,15 @@ public class ItemDetailsPage implements IDetailsPage {
 							break;
 						case WEAPON:
 							if (((ItemInst2)mod).isWeapon()){
+								modToRemove = mod;
+							}
+							break;
+						}
+					}
+					if (mod instanceof ItemInst3) {
+						switch (inst2) {
+						case COPYSPR:
+							if (((ItemInst3)mod).isCopyspr()){
 								modToRemove = mod;
 							}
 							break;

@@ -85,6 +85,10 @@ public class MonsterDetailsPage implements IDetailsPage {
 	private Text name;
 	private Text descr;
 	private Button descCheck;
+	private Text spr1;
+	private Button spr1Check;
+	private Text spr2;
+	private Button spr2Check;
 	private Label sprite1Label;
 	private Label sprite2Label;
 
@@ -289,6 +293,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 	class Inst1Fields implements InstFields {
 		private Button check;
 		private Text value;
+		private Label defaultLabel;
 	}
 	
 	class Inst2Fields implements InstFields {
@@ -313,6 +318,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 	class Inst5Fields implements InstFields {
 		private Button check;
 		private Text value;
+		private Label defaultLabel;
 	}
 	
 	class Inst6Fields implements InstFields {
@@ -326,8 +332,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 	public MonsterDetailsPage(XtextEditor doc, TableViewer viewer) {
 		this.doc = doc;
 		this.viewer = viewer;
-		instMap.put(Inst.SPR1, new Inst1Fields());
-		instMap.put(Inst.SPR2, new Inst1Fields());
+		//instMap.put(Inst.SPR1, new Inst1Fields());
+		//instMap.put(Inst.SPR2, new Inst1Fields());
 		instMap.put(Inst.ARMOR1, new Inst1Fields());
 		instMap.put(Inst.ARMOR2, new Inst1Fields());
 		instMap.put(Inst.ARMOR3, new Inst1Fields());
@@ -541,7 +547,10 @@ public class MonsterDetailsPage implements IDetailsPage {
 		client.setLayout(glayout);
 		
 		final Composite nameComp = toolkit.createComposite(client);
-		nameComp.setLayout(new GridLayout(2, false));
+		glayout = new GridLayout(2, false);
+		glayout.marginHeight = 0;
+		glayout.marginWidth = 0;
+		nameComp.setLayout(glayout);
 		GridData gd = new GridData(SWT.DEFAULT, SWT.FILL, false, false);
 		gd.horizontalSpan = 2;
 		nameComp.setLayoutData(gd);
@@ -628,6 +637,74 @@ public class MonsterDetailsPage implements IDetailsPage {
 		sprite1Label = new Label(spriteComp, SWT.NONE);
 		sprite2Label = new Label(spriteComp, SWT.NONE);
 		
+		spr1Check = toolkit.createButton(nameComp, Messages.getString("MonsterDetailsSection.mod.spr1"), SWT.CHECK);
+
+		spr1 = toolkit.createText(nameComp, null, SWT.BORDER); //$NON-NLS-1$
+		spr1.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				setInst1(Inst.SPR1, doc, spr1.getText());
+			}			
+		});
+		spr1.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.character == '\r') {
+					setInst1(Inst.SPR1, doc, spr1.getText());
+				}
+			}
+			
+		});
+		spr1.setLayoutData(new GridData(500, SWT.DEFAULT));
+		spr1Check.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (spr1Check.getSelection()) {
+					addInst1(Inst.SPR1, doc, "");
+					spr1.setEnabled(true);
+					spr1.setText("");
+				} else {
+					removeInst2(Inst.SPR1, doc);
+					spr1.setEnabled(false);
+					spr1.setText("");
+				}
+			}
+		});
+
+		spr2Check = toolkit.createButton(nameComp, Messages.getString("MonsterDetailsSection.mod.spr2"), SWT.CHECK);
+
+		spr2 = toolkit.createText(nameComp, null, SWT.BORDER); //$NON-NLS-1$
+		spr2.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				setInst1(Inst.SPR2, doc, spr2.getText());
+			}			
+		});
+		spr2.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.character == '\r') {
+					setInst1(Inst.SPR2, doc, spr2.getText());
+				}
+			}
+			
+		});
+		spr2.setLayoutData(new GridData(500, SWT.DEFAULT));
+		spr2Check.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (spr2Check.getSelection()) {
+					addInst1(Inst.SPR2, doc, "");
+					spr2.setEnabled(true);
+					spr2.setText("");
+				} else {
+					removeInst2(Inst.SPR2, doc);
+					spr2.setEnabled(false);
+					spr2.setText("");
+				}
+			}
+		});
+
 		Composite leftColumn = toolkit.createComposite(client);
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
@@ -646,7 +723,20 @@ public class MonsterDetailsPage implements IDetailsPage {
 		for (final Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			final Inst key = fields.getKey();
 			final InstFields field = fields.getValue();
-			final Button check = toolkit.createButton(isRight?rightColumn:leftColumn, key.label, SWT.CHECK);
+			Composite checkParent;
+			if (field instanceof Inst4Fields) {
+				checkParent = toolkit.createComposite(isRight?rightColumn:leftColumn);
+				glayout = new GridLayout(2, false);
+				glayout.marginHeight = 0;
+				glayout.marginWidth = 0;
+				checkParent.setLayout(glayout);
+				gd = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
+				gd.horizontalSpan = 3;
+				checkParent.setLayoutData(gd);
+			} else {
+				checkParent = isRight?rightColumn:leftColumn;
+			}
+			final Button check = toolkit.createButton(checkParent, key.label, SWT.CHECK);
 			check.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
@@ -670,12 +760,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 				}
 
 			});
-
-			if (field instanceof Inst4Fields) {
-				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-				gd.horizontalSpan = 2;
-				check.setLayoutData(gd);
-			}
 
 			Text myValue1 = null;
 			Text myValue2 = null;
@@ -744,14 +828,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 				value.setEnabled(false);
 				if (field instanceof Inst1Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.widthHint = 160;
-					gd.horizontalSpan = 4;
+					gd.widthHint = 140;
+					gd.horizontalSpan = 3;
 				} else if (field instanceof Inst2Fields ||	field instanceof Inst3Fields || field instanceof Inst6Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 					gd.widthHint = 30;
 				} else if (field instanceof Inst5Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.horizontalSpan = 4;
+					gd.widthHint = 30;
 				}
 				value.setLayoutData(gd);
 				
@@ -759,15 +843,24 @@ public class MonsterDetailsPage implements IDetailsPage {
 				
 			Label defaultLabel1 = null;
 			
-			if (field instanceof Inst2Fields || field instanceof Inst3Fields|| field instanceof Inst4Fields || field instanceof Inst6Fields) {
+			if (field instanceof Inst1Fields || field instanceof Inst2Fields || field instanceof Inst3Fields || field instanceof Inst5Fields || field instanceof Inst6Fields) {
 				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel1.setEnabled(false);
 			}
-			if (field instanceof Inst2Fields || field instanceof Inst6Fields) {
-				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-				gd.horizontalSpan = 3;
+			if (field instanceof Inst4Fields) {
+				defaultLabel1 = toolkit.createLabel(checkParent, "");
+				defaultLabel1.setEnabled(false);
+			}
+			if (field instanceof Inst2Fields || field instanceof Inst5Fields || field instanceof Inst6Fields) {
+				gd = new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false);
+				defaultLabel1.setLayoutData(gd);
+				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
+			} else if (field instanceof Inst1Fields || field instanceof Inst3Fields) {
+				gd = new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false);
 				defaultLabel1.setLayoutData(gd);
 			} else if (field instanceof Inst4Fields) {
+				gd = new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false);
+				defaultLabel1.setLayoutData(gd);
 				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 			}
 
@@ -812,7 +905,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 					}
 				});
 				value.setEnabled(false);
-				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				gd = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
 				gd.widthHint = 30;
 				value.setLayoutData(gd);
 				
@@ -823,6 +916,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 			if (field instanceof Inst1Fields) {
 				((Inst1Fields)field).check = check;
 				((Inst1Fields)field).value = myValue1;
+				((Inst1Fields)field).defaultLabel = defaultLabel1;
 			} else if (field instanceof Inst2Fields) {
 				((Inst2Fields)field).check = check;
 				((Inst2Fields)field).value = myValue1;
@@ -839,6 +933,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 			} else if (field instanceof Inst5Fields) {
 				((Inst5Fields)field).check = check;
 				((Inst5Fields)field).value = myValue1;
+				((Inst5Fields)field).defaultLabel = defaultLabel1;
 			} else if (field instanceof Inst6Fields) {
 				((Inst6Fields)field).check = check;
 				((Inst6Fields)field).value = myValue1;
@@ -847,13 +942,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 
 			isRight = !isRight;
 		}
-
-		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 	}
 	
 	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
 		Label spacer = toolkit.createLabel(parent, ""); //$NON-NLS-1$
-		GridData gd = new GridData();
+		GridData gd = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
 		gd.horizontalSpan = span;
 		spacer.setLayoutData(gd);
 	}
@@ -988,6 +1081,26 @@ public class MonsterDetailsPage implements IDetailsPage {
 				descCheck.setSelection(false);
 			}
 
+			String spr1Text = getInst1(Inst.SPR1, input);
+			if (spr1Text != null) {
+				spr1.setText(spr1Text);
+				spr1.setEnabled(true);
+				spr1Check.setSelection(true);
+			} else {
+				spr1.setText("");
+				spr1.setEnabled(false);
+				spr1Check.setSelection(false);
+			}
+			String spr2Text = getInst1(Inst.SPR2, input);
+			if (spr2Text != null) {
+				spr2.setText(spr2Text);
+				spr2.setEnabled(true);
+				spr2Check.setSelection(true);
+			} else {
+				spr2.setText("");
+				spr2.setEnabled(false);
+				spr2Check.setSelection(false);
+			}
 		}
 		MonsterDB monsterDB = new MonsterDB();
 		if (input instanceof SelectMonsterById) {
@@ -1078,6 +1191,48 @@ public class MonsterDetailsPage implements IDetailsPage {
 			}
 			if (input instanceof SelectMonsterByName || input instanceof SelectMonsterById) {
 				switch (fields.getKey()) {
+				case WEAPON1:
+					if (monsterDB.weapon1 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon1));
+						Inst.WEAPON1.defaultValue = monsterDB.weapon1;
+					}
+					break;
+				case WEAPON2:
+					if (monsterDB.weapon2 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon2));
+						Inst.WEAPON2.defaultValue = monsterDB.weapon2;
+					}
+					break;
+				case WEAPON3:
+					if (monsterDB.weapon3 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon3));
+						Inst.WEAPON3.defaultValue = monsterDB.weapon3;
+					}
+					break;
+				case WEAPON4:
+					if (monsterDB.weapon4 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon4));
+						Inst.WEAPON4.defaultValue = monsterDB.weapon4;
+					}
+					break;
+				case ARMOR1:
+					if (monsterDB.armor1 != null) {
+						((Inst1Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor1));
+						Inst.ARMOR1.defaultValue = monsterDB.armor1;
+					}
+					break;
+				case ARMOR2:
+					if (monsterDB.armor2 != null) {
+						((Inst1Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor2));
+						Inst.ARMOR2.defaultValue = monsterDB.armor2;
+					}
+					break;
+				case ARMOR3:
+					if (monsterDB.armor3 != null) {
+						((Inst1Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor3));
+						Inst.ARMOR3.defaultValue = monsterDB.armor3;
+					}
+					break;
 				case SPECIALLOOK:
 					if (monsterDB.speciallook != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.speciallook));

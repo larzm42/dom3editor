@@ -179,6 +179,11 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 		});
 	}
 	
+	@Override
+	public void setActivePage(int index) {
+		super.setActivePage(index);
+	}
+	
 	/**
 	 * This is how the framework determines which interfaces we implement.
 	 */

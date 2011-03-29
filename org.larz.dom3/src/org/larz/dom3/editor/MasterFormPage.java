@@ -37,7 +37,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.IManagedForm;
-import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.editor.FormPage;
 import org.eclipse.ui.forms.events.ExpansionAdapter;
 import org.eclipse.ui.forms.events.ExpansionEvent;
@@ -104,9 +103,9 @@ public class MasterFormPage extends FormPage {
 	 * @param editor
 	 * @param doc
 	 */
-	public MasterFormPage(FormEditor editor, XtextEditor doc) {
+	public MasterFormPage(DmEditor editor, XtextEditor doc) {
 		super(editor, "MasterDetails", Messages.getString("MasterDetailsPage.details.label")); //$NON-NLS-1$ //$NON-NLS-2$
-		block = new SummaryList(this, doc);
+		block = new SummaryList(this, editor, doc);
 		this.doc = doc;
 	}
 	
@@ -158,14 +157,14 @@ public class MasterFormPage extends FormPage {
 				}
 			});
 			GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
-			data.widthHint = 400;
+			data.widthHint = 380;
 			modname.setLayoutData(data);
 			if (general.equals(General.DESC)) {
 				modname.addListener(SWT.Modify, new Listener() {			
 					@Override
 					public void handleEvent(Event event) {
 						int currentHeight = modname.getSize().y;
-						int preferredHeight = modname.computeSize(400, SWT.DEFAULT).y;
+						int preferredHeight = modname.computeSize(380, SWT.DEFAULT).y;
 						if (currentHeight != preferredHeight) {
 							GridData data = (GridData)modname.getLayoutData();
 							data.heightHint = preferredHeight;
@@ -202,7 +201,7 @@ public class MasterFormPage extends FormPage {
 		}
 
 		Composite general2Comp = toolkit.createComposite(header1);
-		layout = new GridLayout(12, false);
+		layout = new GridLayout(18, false);
 		layout.marginWidth = 0;
 		layout.marginHeight = 0;
 		general2Comp.setLayout(layout);
@@ -212,6 +211,8 @@ public class MasterFormPage extends FormPage {
 		
 		for (final General2 general2 : General2.values()) {
 			final Button check = toolkit.createButton(general2Comp, general2.label, SWT.CHECK);
+			GridData data = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
+			check.setLayoutData(data);
 
 			final Text modname = toolkit.createText(general2Comp, getGeneral2(general2, doc) != null ? getGeneral2(general2, doc).toString() : null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 			modname.addFocusListener(new FocusAdapter() {
@@ -228,7 +229,7 @@ public class MasterFormPage extends FormPage {
 					}
 				}
 			});
-			GridData data = new GridData(SWT.FILL, SWT.DEFAULT, true, false);
+			data = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
 			data.widthHint = 30;
 			modname.setLayoutData(data);
 			if (getGeneral2(general2, doc) == null) {
@@ -250,6 +251,11 @@ public class MasterFormPage extends FormPage {
 				}
 			});
 			check.setSelection(getGeneral2(general2, doc) != null);
+			
+			Label space = toolkit.createLabel(general2Comp, "");
+			gd = new GridData(SWT.DEFAULT, SWT.DEFAULT, false, false);
+			gd.widthHint = 10;
+			space.setLayoutData(gd);
 		}
 
 		block.createContent(managedForm);
