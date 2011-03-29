@@ -163,6 +163,7 @@ WeaponInst4:
 	(charge?='#charge') |
 	(flail?='#flail') |
 	(nostr?='#nostr') |
+	(nostr?='#nostrength') |
 	(mrnegates?='#mrnegates') |
 	(mrnegateseasily?='#mrnegateseasily');
 	
@@ -483,13 +484,17 @@ NewItem:
 	'#end';
 
 ItemMods:
-	ItemPattern1 | ItemPattern2;
+	ItemPattern1 | ItemPattern2 | ItemPattern3;
 	
 ItemPattern1:
 	ItemInst1 value=STRING;
 
 ItemPattern2:
 	ItemInst2 value=INT;
+	
+ItemPattern3:
+	ItemInst3 (value1=STRING | value2=INT);
+
 
 ItemInst1:
 	name?='#name' |
@@ -502,9 +507,11 @@ ItemInst2:
 	mainlevel?='#mainlevel' |
 	secondarypath?='#secondarypath' |
 	secondarylevel?='#secondarylevel' |
-	copyspr?='#copyspr' |
 	type?='#type' |
 	weapon?='#weapon';
+	
+ItemInst3:
+	copyspr?='#copyspr';
 
 
 /**************/
