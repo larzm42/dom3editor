@@ -644,6 +644,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 			@Override
 			public void focusLost(FocusEvent e) {
 				setInst1(Inst.SPR1, doc, spr1.getText());
+				sprite1Label.setImage(getSprite(spr1.getText(), false));
+				sprite1Label.getParent().layout(true, true);
 			}			
 		});
 		spr1.addKeyListener(new KeyAdapter() {
@@ -651,6 +653,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
 					setInst1(Inst.SPR1, doc, spr1.getText());
+					sprite1Label.setImage(getSprite(spr1.getText(), false));
+					sprite1Label.getParent().layout(true, true);
 				}
 			}
 			
@@ -678,6 +682,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 			@Override
 			public void focusLost(FocusEvent e) {
 				setInst1(Inst.SPR2, doc, spr2.getText());
+				sprite2Label.setImage(getSprite(spr2.getText(), false));
+				sprite2Label.getParent().layout(true, true);
 			}			
 		});
 		spr2.addKeyListener(new KeyAdapter() {
@@ -685,6 +691,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
 					setInst1(Inst.SPR2, doc, spr2.getText());
+					sprite2Label.setImage(getSprite(spr2.getText(), false));
+					sprite2Label.getParent().layout(true, true);
 				}
 			}
 			
@@ -951,6 +959,33 @@ public class MonsterDetailsPage implements IDetailsPage {
 		spacer.setLayoutData(gd);
 	}
 	
+	private Image getSprite(final String sprite, final boolean fromZip) {
+		ImageLoader loader1 = new ImageLoader() {
+			@Override
+			public InputStream getStream() throws IOException {
+				if (fromZip) {
+					return ImageLoader.class.getClassLoader().getResource(sprite).openStream();							
+				} else {
+					String path = ((DmXtextEditor)doc).getPath();
+					path = path.substring(0, path.lastIndexOf('/')+1);
+					if (sprite.startsWith("./")) {
+						path += sprite.substring(2);
+					} else {
+						path += sprite;
+					}
+					
+					return new FileInputStream(new File(path));
+				}
+			}
+		};
+		try {
+			return new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public void update() {
 		if (input != null) {
 			String sprite1 = null;
@@ -1007,62 +1042,12 @@ public class MonsterDetailsPage implements IDetailsPage {
 				}
 			}
 			if (sprite1 != null) {
-				final String finalName1 = sprite1;
-				final boolean finalFromZip = fromZip1;
-				ImageLoader loader1 = new ImageLoader() {
-					@Override
-					public InputStream getStream() throws IOException {
-						if (finalFromZip) {
-							return ImageLoader.class.getClassLoader().getResource(finalName1).openStream();							
-						} else {
-							String path = ((DmXtextEditor)doc).getPath();
-							path = path.substring(0, path.lastIndexOf('/')+1);
-							if (finalName1.startsWith("./")) {
-								path += finalName1.substring(2);
-							} else {
-								path += finalName1;
-							}
-							
-							return new FileInputStream(new File(path));
-						}
-					}
-				};
-				try {
-					Image image1 = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
-					sprite1Label.setImage(image1);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				sprite1Label.setImage(getSprite(sprite1, fromZip1));
 			} else {
 				sprite1Label.setImage(null);
 			}
 			if (sprite2 != null) {
-				final String finalName2 = sprite2;
-				final boolean finalFromZip = fromZip2;
-				ImageLoader loader2 = new ImageLoader() {
-					@Override
-					public InputStream getStream() throws IOException {
-						if (finalFromZip) {
-							return ImageLoader.class.getClassLoader().getResource(finalName2).openStream();							
-						} else {
-							String path = ((DmXtextEditor)doc).getPath();
-							path = path.substring(0, path.lastIndexOf('/')+1);
-							if (finalName2.startsWith("./")) {
-								path += finalName2.substring(2);
-							} else {
-								path += finalName2;
-							}
-							
-							return new FileInputStream(new File(path));
-						}
-					}
-				};
-				try {
-					Image image2 = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader2.loadImage())));
-					sprite2Label.setImage(image2);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				sprite2Label.setImage(getSprite(sprite2, fromZip2));
 			} else {
 				sprite2Label.setImage(null);
 			}
