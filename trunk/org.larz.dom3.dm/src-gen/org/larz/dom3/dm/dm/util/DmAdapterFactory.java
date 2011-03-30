@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm.util;
 
@@ -394,6 +393,11 @@ public class DmAdapterFactory extends AdapterFactoryImpl
         return createItemPattern2Adapter();
       }
       @Override
+      public Adapter caseItemPattern3(ItemPattern3 object)
+      {
+        return createItemPattern3Adapter();
+      }
+      @Override
       public Adapter caseItemInst1(ItemInst1 object)
       {
         return createItemInst1Adapter();
@@ -402,6 +406,11 @@ public class DmAdapterFactory extends AdapterFactoryImpl
       public Adapter caseItemInst2(ItemInst2 object)
       {
         return createItemInst2Adapter();
+      }
+      @Override
+      public Adapter caseItemInst3(ItemInst3 object)
+      {
+        return createItemInst3Adapter();
       }
       @Override
       public Adapter caseName(Name object)
@@ -1541,6 +1550,21 @@ public class DmAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.larz.dom3.dm.dm.ItemPattern3 <em>Item Pattern3</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.larz.dom3.dm.dm.ItemPattern3
+   * @generated
+   */
+  public Adapter createItemPattern3Adapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.larz.dom3.dm.dm.ItemInst1 <em>Item Inst1</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1566,6 +1590,21 @@ public class DmAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createItemInst2Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.larz.dom3.dm.dm.ItemInst3 <em>Item Inst3</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.larz.dom3.dm.dm.ItemInst3
+   * @generated
+   */
+  public Adapter createItemInst3Adapter()
   {
     return null;
   }

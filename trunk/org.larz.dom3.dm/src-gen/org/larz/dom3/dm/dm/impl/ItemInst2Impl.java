@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm.impl;
 
@@ -28,7 +27,6 @@ import org.larz.dom3.dm.dm.ItemInst2;
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst2Impl#isMainlevel <em>Mainlevel</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst2Impl#isSecondarypath <em>Secondarypath</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst2Impl#isSecondarylevel <em>Secondarylevel</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst2Impl#isCopyspr <em>Copyspr</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst2Impl#isType <em>Type</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst2Impl#isWeapon <em>Weapon</em>}</li>
  * </ul>
@@ -157,26 +155,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
    * @ordered
    */
   protected boolean secondarylevel = SECONDARYLEVEL_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isCopyspr() <em>Copyspr</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isCopyspr()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean COPYSPR_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isCopyspr() <em>Copyspr</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isCopyspr()
-   * @generated
-   * @ordered
-   */
-  protected boolean copyspr = COPYSPR_EDEFAULT;
 
   /**
    * The default value of the '{@link #isType() <em>Type</em>}' attribute.
@@ -382,29 +360,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isCopyspr()
-  {
-    return copyspr;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCopyspr(boolean newCopyspr)
-  {
-    boolean oldCopyspr = copyspr;
-    copyspr = newCopyspr;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.ITEM_INST2__COPYSPR, oldCopyspr, copyspr));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public boolean isType()
   {
     return type;
@@ -468,8 +423,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
         return isSecondarypath();
       case DmPackage.ITEM_INST2__SECONDARYLEVEL:
         return isSecondarylevel();
-      case DmPackage.ITEM_INST2__COPYSPR:
-        return isCopyspr();
       case DmPackage.ITEM_INST2__TYPE:
         return isType();
       case DmPackage.ITEM_INST2__WEAPON:
@@ -505,9 +458,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
         return;
       case DmPackage.ITEM_INST2__SECONDARYLEVEL:
         setSecondarylevel((Boolean)newValue);
-        return;
-      case DmPackage.ITEM_INST2__COPYSPR:
-        setCopyspr((Boolean)newValue);
         return;
       case DmPackage.ITEM_INST2__TYPE:
         setType((Boolean)newValue);
@@ -547,9 +497,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
       case DmPackage.ITEM_INST2__SECONDARYLEVEL:
         setSecondarylevel(SECONDARYLEVEL_EDEFAULT);
         return;
-      case DmPackage.ITEM_INST2__COPYSPR:
-        setCopyspr(COPYSPR_EDEFAULT);
-        return;
       case DmPackage.ITEM_INST2__TYPE:
         setType(TYPE_EDEFAULT);
         return;
@@ -582,8 +529,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
         return secondarypath != SECONDARYPATH_EDEFAULT;
       case DmPackage.ITEM_INST2__SECONDARYLEVEL:
         return secondarylevel != SECONDARYLEVEL_EDEFAULT;
-      case DmPackage.ITEM_INST2__COPYSPR:
-        return copyspr != COPYSPR_EDEFAULT;
       case DmPackage.ITEM_INST2__TYPE:
         return type != TYPE_EDEFAULT;
       case DmPackage.ITEM_INST2__WEAPON:
@@ -615,8 +560,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
     result.append(secondarypath);
     result.append(", secondarylevel: ");
     result.append(secondarylevel);
-    result.append(", copyspr: ");
-    result.append(copyspr);
     result.append(", type: ");
     result.append(type);
     result.append(", weapon: ");

@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm.util;
 
@@ -625,6 +624,14 @@ public class DmSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DmPackage.ITEM_PATTERN3:
+      {
+        ItemPattern3 itemPattern3 = (ItemPattern3)theEObject;
+        T result = caseItemPattern3(itemPattern3);
+        if (result == null) result = caseItemMods(itemPattern3);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DmPackage.ITEM_INST1:
       {
         ItemInst1 itemInst1 = (ItemInst1)theEObject;
@@ -640,6 +647,15 @@ public class DmSwitch<T>
         T result = caseItemInst2(itemInst2);
         if (result == null) result = caseItemPattern2(itemInst2);
         if (result == null) result = caseItemMods(itemInst2);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DmPackage.ITEM_INST3:
+      {
+        ItemInst3 itemInst3 = (ItemInst3)theEObject;
+        T result = caseItemInst3(itemInst3);
+        if (result == null) result = caseItemPattern3(itemInst3);
+        if (result == null) result = caseItemMods(itemInst3);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1942,6 +1958,22 @@ public class DmSwitch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Item Pattern3</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item Pattern3</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItemPattern3(ItemPattern3 object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Item Inst1</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1969,6 +2001,22 @@ public class DmSwitch<T>
    * @generated
    */
   public T caseItemInst2(ItemInst2 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Item Inst3</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item Inst3</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItemInst3(ItemInst3 object)
   {
     return null;
   }

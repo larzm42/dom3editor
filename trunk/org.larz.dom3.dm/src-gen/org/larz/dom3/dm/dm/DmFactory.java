@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm;
 
@@ -594,6 +593,15 @@ public interface DmFactory extends EFactory
   ItemPattern2 createItemPattern2();
 
   /**
+   * Returns a new object of class '<em>Item Pattern3</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Pattern3</em>'.
+   * @generated
+   */
+  ItemPattern3 createItemPattern3();
+
+  /**
    * Returns a new object of class '<em>Item Inst1</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -610,6 +618,15 @@ public interface DmFactory extends EFactory
    * @generated
    */
   ItemInst2 createItemInst2();
+
+  /**
+   * Returns a new object of class '<em>Item Inst3</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Inst3</em>'.
+   * @generated
+   */
+  ItemInst3 createItemInst3();
 
   /**
    * Returns a new object of class '<em>Name</em>'.

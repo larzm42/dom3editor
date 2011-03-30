@@ -63,6 +63,7 @@ public class DmParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSpellInst5Access().getAlternatives(), "rule__SpellInst5__Alternatives");
 					put(grammarAccess.getItemAccess().getAlternatives(), "rule__Item__Alternatives");
 					put(grammarAccess.getItemModsAccess().getAlternatives(), "rule__ItemMods__Alternatives");
+					put(grammarAccess.getItemPattern3Access().getAlternatives_1(), "rule__ItemPattern3__Alternatives_1");
 					put(grammarAccess.getItemInst1Access().getAlternatives(), "rule__ItemInst1__Alternatives");
 					put(grammarAccess.getItemInst2Access().getAlternatives(), "rule__ItemInst2__Alternatives");
 					put(grammarAccess.getNameModsAccess().getAlternatives(), "rule__NameMods__Alternatives");
@@ -133,6 +134,7 @@ public class DmParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNewItemAccess().getGroup(), "rule__NewItem__Group__0");
 					put(grammarAccess.getItemPattern1Access().getGroup(), "rule__ItemPattern1__Group__0");
 					put(grammarAccess.getItemPattern2Access().getGroup(), "rule__ItemPattern2__Group__0");
+					put(grammarAccess.getItemPattern3Access().getGroup(), "rule__ItemPattern3__Group__0");
 					put(grammarAccess.getSelectNameAccess().getGroup(), "rule__SelectName__Group__0");
 					put(grammarAccess.getNamePattern1Access().getGroup(), "rule__NamePattern1__Group__0");
 					put(grammarAccess.getSelectSiteByIdAccess().getGroup(), "rule__SelectSiteById__Group__0");
@@ -238,8 +240,9 @@ public class DmParser extends AbstractContentAssistParser {
 					put(grammarAccess.getWeaponInst4Access().getChargeAssignment_23(), "rule__WeaponInst4__ChargeAssignment_23");
 					put(grammarAccess.getWeaponInst4Access().getFlailAssignment_24(), "rule__WeaponInst4__FlailAssignment_24");
 					put(grammarAccess.getWeaponInst4Access().getNostrAssignment_25(), "rule__WeaponInst4__NostrAssignment_25");
-					put(grammarAccess.getWeaponInst4Access().getMrnegatesAssignment_26(), "rule__WeaponInst4__MrnegatesAssignment_26");
-					put(grammarAccess.getWeaponInst4Access().getMrnegateseasilyAssignment_27(), "rule__WeaponInst4__MrnegateseasilyAssignment_27");
+					put(grammarAccess.getWeaponInst4Access().getNostrAssignment_26(), "rule__WeaponInst4__NostrAssignment_26");
+					put(grammarAccess.getWeaponInst4Access().getMrnegatesAssignment_27(), "rule__WeaponInst4__MrnegatesAssignment_27");
+					put(grammarAccess.getWeaponInst4Access().getMrnegateseasilyAssignment_28(), "rule__WeaponInst4__MrnegateseasilyAssignment_28");
 					put(grammarAccess.getSelectMonsterByIdAccess().getValueAssignment_1(), "rule__SelectMonsterById__ValueAssignment_1");
 					put(grammarAccess.getSelectMonsterByIdAccess().getModsAssignment_2(), "rule__SelectMonsterById__ModsAssignment_2");
 					put(grammarAccess.getSelectMonsterByNameAccess().getValueAssignment_1(), "rule__SelectMonsterByName__ValueAssignment_1");
@@ -461,6 +464,8 @@ public class DmParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNewItemAccess().getModsAssignment_1(), "rule__NewItem__ModsAssignment_1");
 					put(grammarAccess.getItemPattern1Access().getValueAssignment_1(), "rule__ItemPattern1__ValueAssignment_1");
 					put(grammarAccess.getItemPattern2Access().getValueAssignment_1(), "rule__ItemPattern2__ValueAssignment_1");
+					put(grammarAccess.getItemPattern3Access().getValue1Assignment_1_0(), "rule__ItemPattern3__Value1Assignment_1_0");
+					put(grammarAccess.getItemPattern3Access().getValue2Assignment_1_1(), "rule__ItemPattern3__Value2Assignment_1_1");
 					put(grammarAccess.getItemInst1Access().getNameAssignment_0(), "rule__ItemInst1__NameAssignment_0");
 					put(grammarAccess.getItemInst1Access().getDescrAssignment_1(), "rule__ItemInst1__DescrAssignment_1");
 					put(grammarAccess.getItemInst1Access().getArmorAssignment_2(), "rule__ItemInst1__ArmorAssignment_2");
@@ -469,9 +474,9 @@ public class DmParser extends AbstractContentAssistParser {
 					put(grammarAccess.getItemInst2Access().getMainlevelAssignment_2(), "rule__ItemInst2__MainlevelAssignment_2");
 					put(grammarAccess.getItemInst2Access().getSecondarypathAssignment_3(), "rule__ItemInst2__SecondarypathAssignment_3");
 					put(grammarAccess.getItemInst2Access().getSecondarylevelAssignment_4(), "rule__ItemInst2__SecondarylevelAssignment_4");
-					put(grammarAccess.getItemInst2Access().getCopysprAssignment_5(), "rule__ItemInst2__CopysprAssignment_5");
-					put(grammarAccess.getItemInst2Access().getTypeAssignment_6(), "rule__ItemInst2__TypeAssignment_6");
-					put(grammarAccess.getItemInst2Access().getWeaponAssignment_7(), "rule__ItemInst2__WeaponAssignment_7");
+					put(grammarAccess.getItemInst2Access().getTypeAssignment_5(), "rule__ItemInst2__TypeAssignment_5");
+					put(grammarAccess.getItemInst2Access().getWeaponAssignment_6(), "rule__ItemInst2__WeaponAssignment_6");
+					put(grammarAccess.getItemInst3Access().getCopysprAssignment(), "rule__ItemInst3__CopysprAssignment");
 					put(grammarAccess.getSelectNameAccess().getValueAssignment_1(), "rule__SelectName__ValueAssignment_1");
 					put(grammarAccess.getSelectNameAccess().getModsAssignment_2(), "rule__SelectName__ModsAssignment_2");
 					put(grammarAccess.getNamePattern1Access().getValueAssignment_1(), "rule__NamePattern1__ValueAssignment_1");

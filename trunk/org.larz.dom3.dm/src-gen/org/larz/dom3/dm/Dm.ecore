@@ -406,6 +406,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ItemMods"/>
   <eClassifiers xsi:type="ecore:EClass" name="ItemPattern1" eSuperTypes="#//ItemMods"/>
   <eClassifiers xsi:type="ecore:EClass" name="ItemPattern2" eSuperTypes="#//ItemMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemPattern3" eSuperTypes="#//ItemMods"/>
   <eClassifiers xsi:type="ecore:EClass" name="ItemInst1" eSuperTypes="#//ItemPattern1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -419,9 +420,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainlevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="secondarypath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="secondarylevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="copyspr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weapon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemInst3" eSuperTypes="#//ItemPattern3">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="copyspr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Name" eSuperTypes="#//AbstractElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SelectName" eSuperTypes="#//Name">

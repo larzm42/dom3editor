@@ -1232,10 +1232,12 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFlailFlailKeyword_24_0 = (Keyword)cFlailAssignment_24.eContents().get(0);
 		private final Assignment cNostrAssignment_25 = (Assignment)cAlternatives.eContents().get(25);
 		private final Keyword cNostrNostrKeyword_25_0 = (Keyword)cNostrAssignment_25.eContents().get(0);
-		private final Assignment cMrnegatesAssignment_26 = (Assignment)cAlternatives.eContents().get(26);
-		private final Keyword cMrnegatesMrnegatesKeyword_26_0 = (Keyword)cMrnegatesAssignment_26.eContents().get(0);
-		private final Assignment cMrnegateseasilyAssignment_27 = (Assignment)cAlternatives.eContents().get(27);
-		private final Keyword cMrnegateseasilyMrnegateseasilyKeyword_27_0 = (Keyword)cMrnegateseasilyAssignment_27.eContents().get(0);
+		private final Assignment cNostrAssignment_26 = (Assignment)cAlternatives.eContents().get(26);
+		private final Keyword cNostrNostrengthKeyword_26_0 = (Keyword)cNostrAssignment_26.eContents().get(0);
+		private final Assignment cMrnegatesAssignment_27 = (Assignment)cAlternatives.eContents().get(27);
+		private final Keyword cMrnegatesMrnegatesKeyword_27_0 = (Keyword)cMrnegatesAssignment_27.eContents().get(0);
+		private final Assignment cMrnegateseasilyAssignment_28 = (Assignment)cAlternatives.eContents().get(28);
+		private final Keyword cMrnegateseasilyMrnegateseasilyKeyword_28_0 = (Keyword)cMrnegateseasilyAssignment_28.eContents().get(0);
 		
 		//WeaponInst4:
 		//	twohanded?="#twohanded" | armorpiercing?="#armorpiercing" | armornegating?="#armornegating" | magic?="#magic" |
@@ -1243,8 +1245,8 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//	dt_cap?="#dt_cap" | dt_demon?="#dt_demon" | dt_demononly?="#dt_demononly" | dt_holy?="#dt_holy" |
 		//	dt_magic?="#dt_magic" | dt_small?="#dt_small" | dt_large?="#dt_large" | dt_constructonly?="#dt_constructonly" |
 		//	dt_raise?="#dt_raise" | mind?="#mind" | cold?="#cold" | fire?="#fire" | shock?="#shock" | poison?="#poison" |
-		//	bonus?="#bonus" | charge?="#charge" | flail?="#flail" | nostr?="#nostr" | mrnegates?="#mrnegates" |
-		//	mrnegateseasily?="#mrnegateseasily";
+		//	bonus?="#bonus" | charge?="#charge" | flail?="#flail" | nostr?="#nostr" | nostr?="#nostrength" |
+		//	mrnegates?="#mrnegates" | mrnegateseasily?="#mrnegateseasily";
 		public ParserRule getRule() { return rule; }
 
 		//twohanded?="#twohanded" | armorpiercing?="#armorpiercing" | armornegating?="#armornegating" | magic?="#magic" |
@@ -1252,7 +1254,8 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//dt_cap?="#dt_cap" | dt_demon?="#dt_demon" | dt_demononly?="#dt_demononly" | dt_holy?="#dt_holy" | dt_magic?="#dt_magic"
 		//| dt_small?="#dt_small" | dt_large?="#dt_large" | dt_constructonly?="#dt_constructonly" | dt_raise?="#dt_raise" |
 		//mind?="#mind" | cold?="#cold" | fire?="#fire" | shock?="#shock" | poison?="#poison" | bonus?="#bonus" |
-		//charge?="#charge" | flail?="#flail" | nostr?="#nostr" | mrnegates?="#mrnegates" | mrnegateseasily?="#mrnegateseasily"
+		//charge?="#charge" | flail?="#flail" | nostr?="#nostr" | nostr?="#nostrength" | mrnegates?="#mrnegates" |
+		//mrnegateseasily?="#mrnegateseasily"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//twohanded?="#twohanded"
@@ -1411,17 +1414,23 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//"#nostr"
 		public Keyword getNostrNostrKeyword_25_0() { return cNostrNostrKeyword_25_0; }
 
+		//nostr?="#nostrength"
+		public Assignment getNostrAssignment_26() { return cNostrAssignment_26; }
+
+		//"#nostrength"
+		public Keyword getNostrNostrengthKeyword_26_0() { return cNostrNostrengthKeyword_26_0; }
+
 		//mrnegates?="#mrnegates"
-		public Assignment getMrnegatesAssignment_26() { return cMrnegatesAssignment_26; }
+		public Assignment getMrnegatesAssignment_27() { return cMrnegatesAssignment_27; }
 
 		//"#mrnegates"
-		public Keyword getMrnegatesMrnegatesKeyword_26_0() { return cMrnegatesMrnegatesKeyword_26_0; }
+		public Keyword getMrnegatesMrnegatesKeyword_27_0() { return cMrnegatesMrnegatesKeyword_27_0; }
 
 		//mrnegateseasily?="#mrnegateseasily"
-		public Assignment getMrnegateseasilyAssignment_27() { return cMrnegateseasilyAssignment_27; }
+		public Assignment getMrnegateseasilyAssignment_28() { return cMrnegateseasilyAssignment_28; }
 
 		//"#mrnegateseasily"
-		public Keyword getMrnegateseasilyMrnegateseasilyKeyword_27_0() { return cMrnegateseasilyMrnegateseasilyKeyword_27_0; }
+		public Keyword getMrnegateseasilyMrnegateseasilyKeyword_28_0() { return cMrnegateseasilyMrnegateseasilyKeyword_28_0; }
 	}
 
 	public class MonsterElements extends AbstractParserRuleElementFinder {
@@ -3881,12 +3890,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cItemPattern1ParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cItemPattern2ParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cItemPattern3ParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//ItemMods:
-		//	ItemPattern1 | ItemPattern2;
+		//	ItemPattern1 | ItemPattern2 | ItemPattern3;
 		public ParserRule getRule() { return rule; }
 
-		//ItemPattern1 | ItemPattern2
+		//ItemPattern1 | ItemPattern2 | ItemPattern3
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ItemPattern1
@@ -3894,6 +3904,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ItemPattern2
 		public RuleCall getItemPattern2ParserRuleCall_1() { return cItemPattern2ParserRuleCall_1; }
+
+		//ItemPattern3
+		public RuleCall getItemPattern3ParserRuleCall_2() { return cItemPattern3ParserRuleCall_2; }
 	}
 
 	public class ItemPattern1Elements extends AbstractParserRuleElementFinder {
@@ -3942,6 +3955,42 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+	}
+
+	public class ItemPattern3Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ItemPattern3");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cItemInst3ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cValue1Assignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cValue1STRINGTerminalRuleCall_1_0_0 = (RuleCall)cValue1Assignment_1_0.eContents().get(0);
+		private final Assignment cValue2Assignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cValue2INTTerminalRuleCall_1_1_0 = (RuleCall)cValue2Assignment_1_1.eContents().get(0);
+		
+		//ItemPattern3:
+		//	ItemInst3 (value1=STRING | value2=INT);
+		public ParserRule getRule() { return rule; }
+
+		//ItemInst3 (value1=STRING | value2=INT)
+		public Group getGroup() { return cGroup; }
+
+		//ItemInst3
+		public RuleCall getItemInst3ParserRuleCall_0() { return cItemInst3ParserRuleCall_0; }
+
+		//value1=STRING | value2=INT
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//value1=STRING
+		public Assignment getValue1Assignment_1_0() { return cValue1Assignment_1_0; }
+
+		//STRING
+		public RuleCall getValue1STRINGTerminalRuleCall_1_0_0() { return cValue1STRINGTerminalRuleCall_1_0_0; }
+
+		//value2=INT
+		public Assignment getValue2Assignment_1_1() { return cValue2Assignment_1_1; }
+
+		//INT
+		public RuleCall getValue2INTTerminalRuleCall_1_1_0() { return cValue2INTTerminalRuleCall_1_1_0; }
 	}
 
 	public class ItemInst1Elements extends AbstractParserRuleElementFinder {
@@ -3993,20 +4042,18 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSecondarypathSecondarypathKeyword_3_0 = (Keyword)cSecondarypathAssignment_3.eContents().get(0);
 		private final Assignment cSecondarylevelAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
 		private final Keyword cSecondarylevelSecondarylevelKeyword_4_0 = (Keyword)cSecondarylevelAssignment_4.eContents().get(0);
-		private final Assignment cCopysprAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final Keyword cCopysprCopysprKeyword_5_0 = (Keyword)cCopysprAssignment_5.eContents().get(0);
-		private final Assignment cTypeAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final Keyword cTypeTypeKeyword_6_0 = (Keyword)cTypeAssignment_6.eContents().get(0);
-		private final Assignment cWeaponAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
-		private final Keyword cWeaponWeaponKeyword_7_0 = (Keyword)cWeaponAssignment_7.eContents().get(0);
+		private final Assignment cTypeAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final Keyword cTypeTypeKeyword_5_0 = (Keyword)cTypeAssignment_5.eContents().get(0);
+		private final Assignment cWeaponAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final Keyword cWeaponWeaponKeyword_6_0 = (Keyword)cWeaponAssignment_6.eContents().get(0);
 		
 		//ItemInst2:
 		//	constlevel?="#constlevel" | mainpath?="#mainpath" | mainlevel?="#mainlevel" | secondarypath?="#secondarypath" |
-		//	secondarylevel?="#secondarylevel" | copyspr?="#copyspr" | type?="#type" | weapon?="#weapon";
+		//	secondarylevel?="#secondarylevel" | type?="#type" | weapon?="#weapon";
 		public ParserRule getRule() { return rule; }
 
 		//constlevel?="#constlevel" | mainpath?="#mainpath" | mainlevel?="#mainlevel" | secondarypath?="#secondarypath" |
-		//secondarylevel?="#secondarylevel" | copyspr?="#copyspr" | type?="#type" | weapon?="#weapon"
+		//secondarylevel?="#secondarylevel" | type?="#type" | weapon?="#weapon"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//constlevel?="#constlevel"
@@ -4039,23 +4086,33 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//"#secondarylevel"
 		public Keyword getSecondarylevelSecondarylevelKeyword_4_0() { return cSecondarylevelSecondarylevelKeyword_4_0; }
 
-		//copyspr?="#copyspr"
-		public Assignment getCopysprAssignment_5() { return cCopysprAssignment_5; }
-
-		//"#copyspr"
-		public Keyword getCopysprCopysprKeyword_5_0() { return cCopysprCopysprKeyword_5_0; }
-
 		//type?="#type"
-		public Assignment getTypeAssignment_6() { return cTypeAssignment_6; }
+		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
 
 		//"#type"
-		public Keyword getTypeTypeKeyword_6_0() { return cTypeTypeKeyword_6_0; }
+		public Keyword getTypeTypeKeyword_5_0() { return cTypeTypeKeyword_5_0; }
 
 		//weapon?="#weapon"
-		public Assignment getWeaponAssignment_7() { return cWeaponAssignment_7; }
+		public Assignment getWeaponAssignment_6() { return cWeaponAssignment_6; }
 
 		//"#weapon"
-		public Keyword getWeaponWeaponKeyword_7_0() { return cWeaponWeaponKeyword_7_0; }
+		public Keyword getWeaponWeaponKeyword_6_0() { return cWeaponWeaponKeyword_6_0; }
+	}
+
+	public class ItemInst3Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ItemInst3");
+		private final Assignment cCopysprAssignment = (Assignment)rule.eContents().get(1);
+		private final Keyword cCopysprCopysprKeyword_0 = (Keyword)cCopysprAssignment.eContents().get(0);
+		
+		//ItemInst3:
+		//	copyspr?="#copyspr";
+		public ParserRule getRule() { return rule; }
+
+		//copyspr?="#copyspr"
+		public Assignment getCopysprAssignment() { return cCopysprAssignment; }
+
+		//"#copyspr"
+		public Keyword getCopysprCopysprKeyword_0() { return cCopysprCopysprKeyword_0; }
 	}
 
 	public class NameElements extends AbstractParserRuleElementFinder {
@@ -5642,8 +5699,10 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	private ItemModsElements pItemMods;
 	private ItemPattern1Elements pItemPattern1;
 	private ItemPattern2Elements pItemPattern2;
+	private ItemPattern3Elements pItemPattern3;
 	private ItemInst1Elements pItemInst1;
 	private ItemInst2Elements pItemInst2;
+	private ItemInst3Elements pItemInst3;
 	private NameElements pName;
 	private SelectNameElements pSelectName;
 	private NameModsElements pNameMods;
@@ -5953,8 +6012,8 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	//	dt_cap?="#dt_cap" | dt_demon?="#dt_demon" | dt_demononly?="#dt_demononly" | dt_holy?="#dt_holy" |
 	//	dt_magic?="#dt_magic" | dt_small?="#dt_small" | dt_large?="#dt_large" | dt_constructonly?="#dt_constructonly" |
 	//	dt_raise?="#dt_raise" | mind?="#mind" | cold?="#cold" | fire?="#fire" | shock?="#shock" | poison?="#poison" |
-	//	bonus?="#bonus" | charge?="#charge" | flail?="#flail" | nostr?="#nostr" | mrnegates?="#mrnegates" |
-	//	mrnegateseasily?="#mrnegateseasily";
+	//	bonus?="#bonus" | charge?="#charge" | flail?="#flail" | nostr?="#nostr" | nostr?="#nostrength" |
+	//	mrnegates?="#mrnegates" | mrnegateseasily?="#mrnegateseasily";
 	public WeaponInst4Elements getWeaponInst4Access() {
 		return (pWeaponInst4 != null) ? pWeaponInst4 : (pWeaponInst4 = new WeaponInst4Elements());
 	}
@@ -6362,7 +6421,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ItemMods:
-	//	ItemPattern1 | ItemPattern2;
+	//	ItemPattern1 | ItemPattern2 | ItemPattern3;
 	public ItemModsElements getItemModsAccess() {
 		return (pItemMods != null) ? pItemMods : (pItemMods = new ItemModsElements());
 	}
@@ -6391,6 +6450,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		return getItemPattern2Access().getRule();
 	}
 
+	//ItemPattern3:
+	//	ItemInst3 (value1=STRING | value2=INT);
+	public ItemPattern3Elements getItemPattern3Access() {
+		return (pItemPattern3 != null) ? pItemPattern3 : (pItemPattern3 = new ItemPattern3Elements());
+	}
+	
+	public ParserRule getItemPattern3Rule() {
+		return getItemPattern3Access().getRule();
+	}
+
 	//ItemInst1:
 	//	name?="#name" | descr?="#descr" | armor?="#armor";
 	public ItemInst1Elements getItemInst1Access() {
@@ -6403,13 +6472,23 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ItemInst2:
 	//	constlevel?="#constlevel" | mainpath?="#mainpath" | mainlevel?="#mainlevel" | secondarypath?="#secondarypath" |
-	//	secondarylevel?="#secondarylevel" | copyspr?="#copyspr" | type?="#type" | weapon?="#weapon";
+	//	secondarylevel?="#secondarylevel" | type?="#type" | weapon?="#weapon";
 	public ItemInst2Elements getItemInst2Access() {
 		return (pItemInst2 != null) ? pItemInst2 : (pItemInst2 = new ItemInst2Elements());
 	}
 	
 	public ParserRule getItemInst2Rule() {
 		return getItemInst2Access().getRule();
+	}
+
+	//ItemInst3:
+	//	copyspr?="#copyspr";
+	public ItemInst3Elements getItemInst3Access() {
+		return (pItemInst3 != null) ? pItemInst3 : (pItemInst3 = new ItemInst3Elements());
+	}
+	
+	public ParserRule getItemInst3Rule() {
+		return getItemInst3Access().getRule();
 	}
 
 	/// ************** / / * Name Mods * / / ************** / Name:
