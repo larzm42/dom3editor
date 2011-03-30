@@ -829,39 +829,39 @@ public class NationDetailsPage implements IDetailsPage {
 		spacer.setLayoutData(gd);
 	}
 	
+	private Image getSprite(String sprite) {
+		if (sprite != null) {
+			final String finalName1 = sprite;
+			ImageLoader loader1 = new ImageLoader() {
+				@Override
+				public InputStream getStream() throws IOException {
+					String path = ((DmXtextEditor)doc).getPath();
+					path = path.substring(0, path.lastIndexOf('/')+1);
+					if (finalName1.startsWith("./")) {
+						path += finalName1.substring(2);
+					} else {
+						path += finalName1;
+					}
+
+					return new FileInputStream(new File(path));
+				}
+			};
+			try {
+				return new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+	
 	public void update() {
 		if (input != null) {
 			String str = getInst1(Inst.NAME, input);
 			name.setText(str!= null?str:"");
 			name.setEnabled(false);
 
-			String sprite = getInst1(Inst.FLAG, input);
-
-			if (sprite != null) {
-				final String finalName1 = sprite;
-				ImageLoader loader1 = new ImageLoader() {
-					@Override
-					public InputStream getStream() throws IOException {
-						String path = ((DmXtextEditor)doc).getPath();
-						path = path.substring(0, path.lastIndexOf('/')+1);
-						if (finalName1.startsWith("./")) {
-							path += finalName1.substring(2);
-						} else {
-							path += finalName1;
-						}
-
-						return new FileInputStream(new File(path));
-					}
-				};
-				try {
-					Image image1 = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
-					spriteLabel.setImage(image1);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			} else {
-				spriteLabel.setImage(null);
-			}
+			spriteLabel.setImage(getSprite(getInst1(Inst.FLAG, input)));
 			
 			String description = getInst1(Inst.DESCR, input);
 			final FormToolkit toolkit = mform.getToolkit();
@@ -1898,6 +1898,8 @@ public class NationDetailsPage implements IDetailsPage {
 						case FLAG:
 							if (((NationInst1)mod).isFlag()) {
 								((NationInst1)mod).setValue(newName);
+								spriteLabel.setImage(getSprite(newName));
+								spriteLabel.getParent().layout(true, true);
 							}
 							break;
 						case MAPBACKGROUND:
