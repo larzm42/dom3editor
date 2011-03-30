@@ -8,23 +8,23 @@ package org.larz.dom3.dm.dm;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Weapon Inst3</b></em>'.
+ * A representation of the model object '<em><b>Item Inst3</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.larz.dom3.dm.dm.WeaponInst3#getValue1 <em>Value1</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.WeaponInst3#getValue2 <em>Value2</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.WeaponInst3#isFlyspr <em>Flyspr</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.ItemInst3#getValue1 <em>Value1</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.ItemInst3#getValue2 <em>Value2</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.ItemInst3#isCopyspr <em>Copyspr</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.larz.dom3.dm.dm.DmPackage#getWeaponInst3()
+ * @see org.larz.dom3.dm.dm.DmPackage#getItemInst3()
  * @model
  * @generated
  */
-public interface WeaponInst3 extends WeaponPattern3
+public interface ItemInst3 extends ItemPattern3
 {
   /**
    * Returns the value of the '<em><b>Value1</b></em>' attribute.
@@ -35,22 +35,22 @@ public interface WeaponInst3 extends WeaponPattern3
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value1</em>' attribute.
-   * @see #setValue1(int)
-   * @see org.larz.dom3.dm.dm.DmPackage#getWeaponInst3_Value1()
+   * @see #setValue1(String)
+   * @see org.larz.dom3.dm.dm.DmPackage#getItemInst3_Value1()
    * @model
    * @generated
    */
-  int getValue1();
+  String getValue1();
 
   /**
-   * Sets the value of the '{@link org.larz.dom3.dm.dm.WeaponInst3#getValue1 <em>Value1</em>}' attribute.
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.ItemInst3#getValue1 <em>Value1</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value1</em>' attribute.
    * @see #getValue1()
    * @generated
    */
-  void setValue1(int value);
+  void setValue1(String value);
 
   /**
    * Returns the value of the '<em><b>Value2</b></em>' attribute.
@@ -62,14 +62,14 @@ public interface WeaponInst3 extends WeaponPattern3
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value2</em>' attribute.
    * @see #setValue2(int)
-   * @see org.larz.dom3.dm.dm.DmPackage#getWeaponInst3_Value2()
+   * @see org.larz.dom3.dm.dm.DmPackage#getItemInst3_Value2()
    * @model
    * @generated
    */
   int getValue2();
 
   /**
-   * Sets the value of the '{@link org.larz.dom3.dm.dm.WeaponInst3#getValue2 <em>Value2</em>}' attribute.
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.ItemInst3#getValue2 <em>Value2</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value2</em>' attribute.
@@ -79,29 +79,29 @@ public interface WeaponInst3 extends WeaponPattern3
   void setValue2(int value);
 
   /**
-   * Returns the value of the '<em><b>Flyspr</b></em>' attribute.
+   * Returns the value of the '<em><b>Copyspr</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Flyspr</em>' attribute isn't clear,
+   * If the meaning of the '<em>Copyspr</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Flyspr</em>' attribute.
-   * @see #setFlyspr(boolean)
-   * @see org.larz.dom3.dm.dm.DmPackage#getWeaponInst3_Flyspr()
+   * @return the value of the '<em>Copyspr</em>' attribute.
+   * @see #setCopyspr(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getItemInst3_Copyspr()
    * @model
    * @generated
    */
-  boolean isFlyspr();
+  boolean isCopyspr();
 
   /**
-   * Sets the value of the '{@link org.larz.dom3.dm.dm.WeaponInst3#isFlyspr <em>Flyspr</em>}' attribute.
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.ItemInst3#isCopyspr <em>Copyspr</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Flyspr</em>' attribute.
-   * @see #isFlyspr()
+   * @param value the new value of the '<em>Copyspr</em>' attribute.
+   * @see #isCopyspr()
    * @generated
    */
-  void setFlyspr(boolean value);
+  void setCopyspr(boolean value);
 
-} // WeaponInst3
+} // ItemInst3

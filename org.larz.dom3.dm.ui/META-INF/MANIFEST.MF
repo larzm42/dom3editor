@@ -11,7 +11,10 @@ Require-Bundle: org.larz.dom3.dm,
  org.eclipse.xtext.builder,
  org.eclipse.core.filesystem,
  org.eclipse.ui.ide,
- org.apache.log4j
+ org.apache.log4j,
+ org.eclipse.ui.editors,
+ org.eclipse.ui,
+ org.antlr.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.larz.dom3.dm.ui.contentassist.antlr,
  org.larz.dom3.dm.ui.editor,

@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm;
 
@@ -21,7 +20,6 @@ package org.larz.dom3.dm.dm;
  *   <li>{@link org.larz.dom3.dm.dm.ItemInst2#isMainlevel <em>Mainlevel</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.ItemInst2#isSecondarypath <em>Secondarypath</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.ItemInst2#isSecondarylevel <em>Secondarylevel</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.ItemInst2#isCopyspr <em>Copyspr</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.ItemInst2#isType <em>Type</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.ItemInst2#isWeapon <em>Weapon</em>}</li>
  * </ul>
@@ -188,32 +186,6 @@ public interface ItemInst2 extends ItemPattern2
    * @generated
    */
   void setSecondarylevel(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Copyspr</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Copyspr</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Copyspr</em>' attribute.
-   * @see #setCopyspr(boolean)
-   * @see org.larz.dom3.dm.dm.DmPackage#getItemInst2_Copyspr()
-   * @model
-   * @generated
-   */
-  boolean isCopyspr();
-
-  /**
-   * Sets the value of the '{@link org.larz.dom3.dm.dm.ItemInst2#isCopyspr <em>Copyspr</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Copyspr</em>' attribute.
-   * @see #isCopyspr()
-   * @generated
-   */
-  void setCopyspr(boolean value);
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.

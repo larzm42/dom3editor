@@ -404,6 +404,7 @@
     <genClasses ecoreClass="Dm.ecore#//ItemMods"/>
     <genClasses ecoreClass="Dm.ecore#//ItemPattern1"/>
     <genClasses ecoreClass="Dm.ecore#//ItemPattern2"/>
+    <genClasses ecoreClass="Dm.ecore#//ItemPattern3"/>
     <genClasses ecoreClass="Dm.ecore#//ItemInst1">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst1/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst1/name"/>
@@ -417,9 +418,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst2/mainlevel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst2/secondarypath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst2/secondarylevel"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst2/copyspr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst2/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst2/weapon"/>
+    </genClasses>
+    <genClasses ecoreClass="Dm.ecore#//ItemInst3">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst3/value1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst3/value2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//ItemInst3/copyspr"/>
     </genClasses>
     <genClasses ecoreClass="Dm.ecore#//Name"/>
     <genClasses ecoreClass="Dm.ecore#//SelectName">

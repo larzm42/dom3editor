@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package org.larz.dom3.dm.dm.impl;
 
@@ -131,8 +130,10 @@ public class DmFactoryImpl extends EFactoryImpl implements DmFactory
       case DmPackage.ITEM_MODS: return createItemMods();
       case DmPackage.ITEM_PATTERN1: return createItemPattern1();
       case DmPackage.ITEM_PATTERN2: return createItemPattern2();
+      case DmPackage.ITEM_PATTERN3: return createItemPattern3();
       case DmPackage.ITEM_INST1: return createItemInst1();
       case DmPackage.ITEM_INST2: return createItemInst2();
+      case DmPackage.ITEM_INST3: return createItemInst3();
       case DmPackage.NAME: return createName();
       case DmPackage.SELECT_NAME: return createSelectName();
       case DmPackage.NAME_MODS: return createNameMods();
@@ -870,6 +871,17 @@ public class DmFactoryImpl extends EFactoryImpl implements DmFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ItemPattern3 createItemPattern3()
+  {
+    ItemPattern3Impl itemPattern3 = new ItemPattern3Impl();
+    return itemPattern3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ItemInst1 createItemInst1()
   {
     ItemInst1Impl itemInst1 = new ItemInst1Impl();
@@ -885,6 +897,17 @@ public class DmFactoryImpl extends EFactoryImpl implements DmFactory
   {
     ItemInst2Impl itemInst2 = new ItemInst2Impl();
     return itemInst2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ItemInst3 createItemInst3()
+  {
+    ItemInst3Impl itemInst3 = new ItemInst3Impl();
+    return itemInst3;
   }
 
   /**
