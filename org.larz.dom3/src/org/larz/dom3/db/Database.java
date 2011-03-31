@@ -208,6 +208,35 @@ public class Database {
 		return list;
 	}
 	
+	public static List<IDNameDB> getAllSpell() {
+		List<IDNameDB> list = new ArrayList<IDNameDB>();
+		try {
+			Connection con = getConnection();
+
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT \"Spell #\", \"Spell Name\" FROM \"Spells\"");
+
+			while (rs.next())
+			{
+				IDNameDB spell = new IDNameDB();
+				spell.id = rs.getInt("Spell #");
+				spell.name = rs.getString("Spell Name");
+				list.add(spell);
+			}
+
+			statement.close();
+			con.close();
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 	public static ArmorDB getArmor(int id) {
 		ArmorDB armor = new ArmorDB();
 		try {
@@ -350,6 +379,36 @@ public class Database {
 			ex.printStackTrace();
 		}
 		return site;
+	}
+	
+	public static SpellDB getSpell(int id) {
+		SpellDB spell = new SpellDB();
+		try {
+			Connection con = getConnection();
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * FROM \"Spells\" where \"Spell #\"="+id);
+			spell = getSpellDB(rs);
+			statement.close();
+			con.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return spell;
+	}
+
+	public static SpellDB getSpell(String name) {
+		SpellDB spell = new SpellDB();
+		try {
+			Connection con = getConnection();
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * FROM \"Spells\" where \"Spell Name\" = '"+getSafeString(name)+"'");
+			spell = getSpellDB(rs);
+			statement.close();
+			con.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return spell;
 	}
 	
 	public static NationDB getNation(int id) {
@@ -973,6 +1032,43 @@ public class Database {
 		return armorName;
 	}
 	
+	private static SpellDB getSpellDB(ResultSet rs) throws SQLException {
+		SpellDB spell = new SpellDB();
+		if (rs.next()) {
+			spell.id = rs.getInt("Spell #");
+			spell.name = rs.getString("Spell Name");
+			int school = rs.getInt("School");
+			if (school == 255) school = -1;
+			spell.school = school;
+			spell.researchlevel = rs.getInt("Rlevel");
+			int path1 = rs.getInt("Path1");
+			if (path1 != 255) {
+				spell.path1 = path1;
+			}
+			int path2 = rs.getInt("Path2");
+			if (path2 != 255) {
+				spell.path2 = path2;
+			}
+			int level1 = rs.getInt("Level1");
+			if (level1 != 255) {
+				spell.pathlevel1 = level1;
+			}
+			int level2 = rs.getInt("Level2");
+			if (level2 != 255) {
+				spell.pathlevel2 = level2;
+			}
+			spell.fatiguecost = rs.getInt("Fatigue");
+			spell.aoe = rs.getInt("Area");
+			spell.effect = rs.getInt("Effect");
+			spell.range = rs.getInt("Range");
+			spell.precision = rs.getInt("Precision");
+			spell.damage = rs.getInt("Damage");
+			spell.nreff = rs.getInt("Number");
+			spell.spec = rs.getInt("Special");
+		}
+		return spell;
+	}
+
 	public static String getWeaponName(int id) {
 		String armorName = null;
 		try {
@@ -1048,6 +1144,31 @@ public class Database {
 		return armorName;
 	}
 	
+	public static String getSpellName(int id) {
+		String spellName = null;
+		try {
+			Connection con = getConnection();
+
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT \"Spell Name\" FROM \"Spells\" where \"Spell #\"="+id);
+
+			while (rs.next()) {			
+				spellName = rs.getString("Spell Name");
+			}
+
+			statement.close();
+			con.close();
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return spellName;
+	}
+	
 	public static ItemDB getItem(int id) {
 		ItemDB item = new ItemDB();
 		try {
@@ -1077,7 +1198,6 @@ public class Database {
 		}
 		return item;
 	}
-	
 	
 	public static String getNationName(int id) {
 		String armorName = null;

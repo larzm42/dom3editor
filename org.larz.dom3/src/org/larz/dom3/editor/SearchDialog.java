@@ -134,6 +134,9 @@ public class SearchDialog extends Dialog {
 			case NATION:
 				viewer.setInput(Database.getAllNation().toArray());
 				break;
+			case SPELL:
+				viewer.setInput(Database.getAllSpell().toArray());
+				break;
 			}
 		} else {
 			int startId = 0;
