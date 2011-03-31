@@ -258,7 +258,7 @@ public class SummaryList extends MasterDetailsBlock {
 			} else if (element instanceof SelectSpellByName) {
 				return Messages.format("ScrolledPropertiesBlock.spell.single.fmt", ((SelectSpellByName)element).getValue());
 			} else if (element instanceof SelectSpellById) {
-				return Messages.format("ScrolledPropertiesBlock.spell.single.fmt", ((SelectSpellById)element).getValue());
+				return Messages.format("ScrolledPropertiesBlock.spell.double.fmt", ((SelectSpellById)element).getValue(), Database.getSpellName(((SelectSpellById)element).getValue()));
 			} else if (element instanceof NewSpell) {
 				EList<SpellMods> list = ((Spell)element).getMods();
 				for (SpellMods mod : list) {

@@ -51,6 +51,8 @@ import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
+import org.larz.dom3.db.Database;
+import org.larz.dom3.db.SpellDB;
 import org.larz.dom3.dm.dm.DmFactory;
 import org.larz.dom3.dm.dm.SelectSpellById;
 import org.larz.dom3.dm.dm.SelectSpellByName;
@@ -80,8 +82,10 @@ public class SpellDetailsPage implements IDetailsPage {
 		COPYSPELL (Messages.getString("SpellDetailsSection.mod.copyspell"), ""),
 		SCHOOL (Messages.getString("SpellDetailsSection.mod.school"), "0"),
 		RESEARCHLEVEL (Messages.getString("SpellDetailsSection.mod.researchlevel"), "0"),
-		PATH (Messages.getString("SpellDetailsSection.mod.path"), "0", "0"),
-		PATHLEVEL (Messages.getString("SpellDetailsSection.mod.pathlevel"), "0", "0"),
+		PATH1 (Messages.getString("SpellDetailsSection.mod.path"), "0", "0"),
+		PATH2 (Messages.getString("SpellDetailsSection.mod.path"), "0", "0"),
+		PATHLEVEL1 (Messages.getString("SpellDetailsSection.mod.pathlevel"), "0", "0"),
+		PATHLEVEL2 (Messages.getString("SpellDetailsSection.mod.pathlevel"), "0", "0"),
 		AOE (Messages.getString("SpellDetailsSection.mod.aoe"), "0"),
 		DAMAGE (Messages.getString("SpellDetailsSection.mod.damage"), "0"),
 		EFFECT (Messages.getString("SpellDetailsSection.mod.effect"), "0"),
@@ -126,12 +130,15 @@ public class SpellDetailsPage implements IDetailsPage {
 	class Inst2Fields implements InstFields {
 		private Button check;
 		private Text value;
+		private Label defaultLabel;
 	}
 	
 	class Inst3Fields implements InstFields {
 		private Button check;
 		private Text value1;
+		private Label defaultLabel1;
 		private Text value2;
+		private Label defaultLabel2;
 	}
 	
 	class Inst4Fields implements InstFields {
@@ -162,8 +169,10 @@ public class SpellDetailsPage implements IDetailsPage {
 		instMap.put(Inst.SOUND, new Inst2Fields());
 		instMap.put(Inst.SPEC, new Inst2Fields());
 		instMap.put(Inst.RESTRICTED, new Inst2Fields());	
-		instMap.put(Inst.PATH, new Inst3Fields());	
-		instMap.put(Inst.PATHLEVEL, new Inst3Fields());	
+		instMap.put(Inst.PATH1, new Inst3Fields());	
+		instMap.put(Inst.PATH2, new Inst3Fields());	
+		instMap.put(Inst.PATHLEVEL1, new Inst3Fields());	
+		instMap.put(Inst.PATHLEVEL2, new Inst3Fields());	
 		instMap.put(Inst.CLEAR, new Inst4Fields());	
 		instMap.put(Inst.COPYSPELL, new Inst5Fields());	
 		instMap.put(Inst.NEXTSPELL, new Inst5Fields());	
@@ -210,7 +219,10 @@ public class SpellDetailsPage implements IDetailsPage {
 		client.setLayout(glayout);
 		
 		final Composite nameComp = toolkit.createComposite(client);
-		nameComp.setLayout(new GridLayout(2, false));
+		glayout = new GridLayout(2, false);
+		glayout.marginHeight = 0;
+		glayout.marginWidth = 0;
+		nameComp.setLayout(glayout);
 		GridData gd = new GridData(SWT.DEFAULT, SWT.FILL, false, false);
 		gd.horizontalSpan = 2;
 		nameComp.setLayoutData(gd);
@@ -414,13 +426,16 @@ public class SpellDetailsPage implements IDetailsPage {
 				
 			Label defaultLabel1 = null;
 			
-			if (field instanceof Inst2Fields || field instanceof Inst3Fields|| field instanceof Inst4Fields) {
+			if (field instanceof Inst2Fields || field instanceof Inst3Fields || field instanceof Inst4Fields) {
 				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel1.setEnabled(false);
 			}
 			if (field instanceof Inst2Fields) {
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 				gd.horizontalSpan = 3;
+				defaultLabel1.setLayoutData(gd);
+			} else if (field instanceof Inst3Fields) {
+				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 				defaultLabel1.setLayoutData(gd);
 			} else if (field instanceof Inst4Fields) {
 				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
@@ -444,7 +459,7 @@ public class SpellDetailsPage implements IDetailsPage {
 					public void widgetSelected(SelectionEvent e) {
 						if (check.getSelection()) {
 							value.setEnabled(true);
-							value.setText(key.defaultValue);
+							value.setText(key.defaultValue2);
 						} else {
 							value.setEnabled(false);
 							value.setText("");
@@ -481,13 +496,13 @@ public class SpellDetailsPage implements IDetailsPage {
 			} else if (field instanceof Inst2Fields) {
 				((Inst2Fields)field).check = check;
 				((Inst2Fields)field).value = myValue1;
-				//((Inst2Fields)field).defaultLabel = defaultLabel1;
+				((Inst2Fields)field).defaultLabel = defaultLabel1;
 			} else if (field instanceof Inst3Fields) {
 				((Inst3Fields)field).check = check;
 				((Inst3Fields)field).value1 = myValue1;
-				//((Inst3Fields)field).defaultLabel1 = defaultLabel1;
+				((Inst3Fields)field).defaultLabel1 = defaultLabel1;
 				((Inst3Fields)field).value2 = myValue2;
-				//((Inst3Fields)field).defaultLabel2 = defaultLabel2;
+				((Inst3Fields)field).defaultLabel2 = defaultLabel2;
 			} else if (field instanceof Inst4Fields) {
 				((Inst4Fields)field).check = check;
 				//((Inst4Fields)field).defaultLabel = defaultLabel1;
@@ -537,6 +552,12 @@ public class SpellDetailsPage implements IDetailsPage {
 				descCheck.setSelection(false);
 			}
 
+		}
+		SpellDB spellDB = new SpellDB();
+		if (input instanceof SelectSpellById) {
+			spellDB = Database.getSpell(((SelectSpellById)input).getValue());
+		} else if (input instanceof SelectSpellByName) {
+			spellDB = Database.getSpell(((SelectSpellByName)input).getValue());
 		}
 		for (Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			String val1 = getInst1(fields.getKey(), input);
@@ -605,17 +626,104 @@ public class SpellDetailsPage implements IDetailsPage {
 					((Inst5Fields)fields.getValue()).check.setSelection(false);
 				}
 			}
-//			if (input instanceof SelectSpellByName || input instanceof SelectSpellById) {
-//				switch (fields.getKey()) {
-//				case SPECIALLOOK:
-//					if (spellDB.speciallook != null) {
-//						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.speciallook));
-//						Inst.SPECIALLOOK.defaultValue = spellDB.speciallook.toString();
-//					}
-//					break;
-//				}
-//			}
+			if (input instanceof SelectSpellByName || input instanceof SelectSpellById) {
+				switch (fields.getKey()) {
+				case SCHOOL:
+					if (spellDB.school != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.school));
+						Inst.SCHOOL.defaultValue = spellDB.school.toString();
+					}
+					break;
+				case RESEARCHLEVEL:
+					if (spellDB.researchlevel != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.researchlevel));
+						Inst.RESEARCHLEVEL.defaultValue = spellDB.researchlevel.toString();
+					}
+					break;
+				case PATH1:
+					if (spellDB.path1 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", 0));
+						Inst.PATH1.defaultValue = "0";
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.path1));
+						Inst.PATH1.defaultValue2 = spellDB.path1.toString();
+					}
+					break;
+				case PATH2:
+					if (spellDB.path2 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", 1));
+						Inst.PATH2.defaultValue = "1";
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.path2));
+						Inst.PATH2.defaultValue2 = spellDB.path2.toString();
+					}
+					break;
+				case PATHLEVEL1:
+					if (spellDB.pathlevel1 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", 0));
+						Inst.PATHLEVEL1.defaultValue = "0";
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.pathlevel1));
+						Inst.PATHLEVEL1.defaultValue2 = spellDB.pathlevel1.toString();
+					}
+					break;
+				case PATHLEVEL2:
+					if (spellDB.pathlevel2 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", 1));
+						Inst.PATHLEVEL2.defaultValue = "1";
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.pathlevel2));
+						Inst.PATHLEVEL2.defaultValue2 = spellDB.pathlevel2.toString();
+					}
+					break;
+				case AOE:
+					if (spellDB.aoe != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.aoe));
+						Inst.AOE.defaultValue = spellDB.aoe.toString();
+					}
+					break;
+				case DAMAGE:
+					if (spellDB.damage != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.damage));
+						Inst.DAMAGE.defaultValue = spellDB.damage.toString();
+					}
+					break;
+				case EFFECT:
+					if (spellDB.effect != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.effect));
+						Inst.EFFECT.defaultValue = spellDB.effect.toString();
+					}
+					break;
+				case FATIGUECOST:
+					if (spellDB.fatiguecost != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.fatiguecost));
+						Inst.FATIGUECOST.defaultValue = spellDB.fatiguecost.toString();
+					}
+					break;
+				case NREFF:
+					if (spellDB.nreff != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.nreff));
+						Inst.NREFF.defaultValue = spellDB.nreff.toString();
+					}
+					break;
+				case RANGE:
+					if (spellDB.range != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.range));
+						Inst.RANGE.defaultValue = spellDB.range.toString();
+					}
+					break;
+				case PRECISION:
+					if (spellDB.precision != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.precision));
+						Inst.PRECISION.defaultValue = spellDB.precision.toString();
+					}
+					break;
+				case SPEC:
+					if (spellDB.spec != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.spec));
+						Inst.SPEC.defaultValue = spellDB.spec.toString();
+					}
+					break;
+				}
+			}
 		}
+		name.getParent().getParent().getParent().layout(true, true);
 	}
 	
 	private String getSelectSpellname(Spell spell) {
@@ -623,7 +731,7 @@ public class SpellDetailsPage implements IDetailsPage {
 			return ((SelectSpellByName)spell).getValue();
 		} else {
 			int id = ((SelectSpellById)spell).getValue();
-			return "Spell: " + id;
+			return Database.getSpellName(id);
 		}
 	}
 	
@@ -805,17 +913,41 @@ public class SpellDetailsPage implements IDetailsPage {
 	
 	private Integer[] getInst3(Inst inst3, Spell spell) {
 		EList<SpellMods> list = spell.getMods();
+		int pathCount = 0;
+		int pathLevelCount = 0;
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst3) {
 				switch (inst3) {
-				case PATH:
+				case PATH1:
 					if (((SpellInst3)mod).isPath()) {
-						return new Integer[]{Integer.valueOf(((SpellInst3)mod).getValue1()), Integer.valueOf(((SpellInst3)mod).getValue2())};
+						pathCount++;
+						if (pathCount == 1) {
+							return new Integer[]{Integer.valueOf(((SpellInst3)mod).getValue1()), Integer.valueOf(((SpellInst3)mod).getValue2())};
+						}
 					}
 					break;
-				case PATHLEVEL:
+				case PATH2:
+					if (((SpellInst3)mod).isPath()) {
+						pathCount++;
+						if (pathCount == 2) {
+							return new Integer[]{Integer.valueOf(((SpellInst3)mod).getValue1()), Integer.valueOf(((SpellInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case PATHLEVEL1:
 					if (((SpellInst3)mod).isPathlevel()) {
-						return new Integer[]{Integer.valueOf(((SpellInst3)mod).getValue1()), Integer.valueOf(((SpellInst3)mod).getValue2())};
+						pathLevelCount++;
+						if (pathLevelCount == 1) {
+							return new Integer[]{Integer.valueOf(((SpellInst3)mod).getValue1()), Integer.valueOf(((SpellInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case PATHLEVEL2:
+					if (((SpellInst3)mod).isPathlevel()) {
+						pathLevelCount++;
+						if (pathLevelCount == 2) {
+							return new Integer[]{Integer.valueOf(((SpellInst3)mod).getValue1()), Integer.valueOf(((SpellInst3)mod).getValue2())};
+						}
 					}
 					break;
 				}
@@ -1017,27 +1149,61 @@ public class SpellDetailsPage implements IDetailsPage {
 			@Override
 			public void process(XtextResource resource) {
 				Spell spellToEdit = input;
+				int pathCount = 0;
+				int pathLevelCount = 0;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst3) {
 						switch (inst3) {
-						case PATH:
+						case PATH1:
 							if (((SpellInst3)mod).isPath()) {
-								if (value1 != null) {
-									((SpellInst3)mod).setValue1(Integer.parseInt(value1));
-								}
-								if (value2 != null) {
-									((SpellInst3)mod).setValue2(Integer.parseInt(value2));
+								pathCount++;
+								if (pathCount == 1) {
+									if (value1 != null) {
+										((SpellInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((SpellInst3)mod).setValue2(Integer.parseInt(value2));
+									}
 								}
 							}
 							break;
-						case PATHLEVEL:
-							if (((SpellInst3)mod).isPathlevel()) {
-								if (value1 != null) {
-									((SpellInst3)mod).setValue1(Integer.parseInt(value1));
+						case PATH2:
+							if (((SpellInst3)mod).isPath()) {
+								pathCount++;
+								if (pathCount == 2) {
+									if (value1 != null) {
+										((SpellInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((SpellInst3)mod).setValue2(Integer.parseInt(value2));
+									}
 								}
-								if (value2 != null) {
-									((SpellInst3)mod).setValue2(Integer.parseInt(value2));
+							}
+							break;
+						case PATHLEVEL1:
+							if (((SpellInst3)mod).isPathlevel()) {
+								pathLevelCount++;
+								if (pathLevelCount == 1) {
+									if (value1 != null) {
+										((SpellInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((SpellInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case PATHLEVEL2:
+							if (((SpellInst3)mod).isPathlevel()) {
+								pathLevelCount++;
+								if (pathLevelCount == 2) {
+									if (value1 != null) {
+										((SpellInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((SpellInst3)mod).setValue2(Integer.parseInt(value2));
+									}
 								}
 							}
 							break;
@@ -1225,10 +1391,16 @@ public class SpellDetailsPage implements IDetailsPage {
 				EList<SpellMods> mods = spellToEdit.getMods();
 				SpellInst3 type = DmFactory.eINSTANCE.createSpellInst3();
 				switch (inst) {
-				case PATH:
+				case PATH1:
 					type.setPath(true);
 					break;
-				case PATHLEVEL:
+				case PATH2:
+					type.setPath(true);
+					break;
+				case PATHLEVEL1:
+					type.setPathlevel(true);
+					break;
+				case PATHLEVEL2:
 					type.setPathlevel(true);
 					break;
 				}
@@ -1329,6 +1501,8 @@ public class SpellDetailsPage implements IDetailsPage {
 			public void process(XtextResource resource) {
 				Spell spellToEdit = input;
 				SpellMods modToRemove = null;
+				int pathCount = 0;
+				int pathLevelCount = 0;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst1) {
@@ -1356,14 +1530,36 @@ public class SpellDetailsPage implements IDetailsPage {
 					}
 					if (mod instanceof SpellInst3) {
 						switch (inst2) {
-						case PATH:
+						case PATH1:
 							if (((SpellInst3)mod).isPath()){
-								modToRemove = mod;
+								pathCount++;
+								if (pathCount == 1) {
+									modToRemove = mod;
+								}
 							}
 							break;
-						case PATHLEVEL:
+						case PATH2:
+							if (((SpellInst3)mod).isPath()){
+								pathCount++;
+								if (pathCount == 2) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case PATHLEVEL1:
 							if (((SpellInst3)mod).isPathlevel()){
-								modToRemove = mod;
+								pathLevelCount++;
+								if (pathLevelCount == 1) {
+									modToRemove = mod;
+								}
+							}
+							break;
+						case PATHLEVEL2:
+							if (((SpellInst3)mod).isPathlevel()){
+								pathLevelCount++;
+								if (pathLevelCount == 2) {
+									modToRemove = mod;
+								}
 							}
 							break;
 						}
