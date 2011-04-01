@@ -378,7 +378,10 @@ public class NationDetailsPage implements IDetailsPage {
 		client.setLayout(glayout);
 		
 		Composite nameComp = toolkit.createComposite(client);
-		nameComp.setLayout(new GridLayout(2, false));
+		glayout = new GridLayout(2, false);
+		glayout.marginHeight = 0;
+		glayout.marginWidth = 0;
+		nameComp.setLayout(glayout);
 		GridData gd = new GridData(SWT.DEFAULT, SWT.FILL, false, false);
 		gd.horizontalSpan = 2;
 		nameComp.setLayoutData(gd);
@@ -408,7 +411,7 @@ public class NationDetailsPage implements IDetailsPage {
 		
 		descrCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.descr"), SWT.CHECK);
 
-		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
+		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		descr.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
@@ -459,7 +462,7 @@ public class NationDetailsPage implements IDetailsPage {
 
 		summaryCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.summary"), SWT.CHECK);
 
-		summary = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
+		summary = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		summary.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
@@ -510,7 +513,7 @@ public class NationDetailsPage implements IDetailsPage {
 
 		briefCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.brief"), SWT.CHECK);
 
-		brief = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
+		brief = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		brief.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
