@@ -91,9 +91,6 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 			int index = addPage(sourcePage, getEditorInput());
 			setPageText(index, Messages.getString("MasterDetailsPage.source.label"));
 
-			// Hack to get errors to show
-			((XtextEditor)sourcePage).doRevertToSaved();
-
 		} catch (CoreException e1) {
 			e1.printStackTrace();
 			return;

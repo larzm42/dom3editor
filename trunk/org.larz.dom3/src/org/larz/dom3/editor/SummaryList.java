@@ -161,6 +161,7 @@ public class SummaryList extends MasterDetailsBlock {
 	 * @param title
 	 */
 	class MasterContentProvider implements IStructuredContentProvider {
+		
 		public Object[] getElements(Object inputElement) {
 			IXtextDocument document = ((XtextEditor)doc).getDocument();
 			AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -957,6 +958,7 @@ public class SummaryList extends MasterDetailsBlock {
 			},
 			document);
 			viewer.refresh();
+			viewer.setSelection(null);
 		}
 	}
 

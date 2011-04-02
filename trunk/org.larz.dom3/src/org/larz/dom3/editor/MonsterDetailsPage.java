@@ -29,6 +29,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
@@ -42,6 +43,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
@@ -4191,256 +4193,259 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
-			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
-				EList<MonsterMods> mods = monsterToEdit.getMods();
-				MonsterInst2 type = DmFactory.eINSTANCE.createMonsterInst2();
-				switch (inst) {
-				case SPECIALLOOK:
-					type.setSpeciallook(true);
-					break;
-				case AP:
-					type.setAp(true);
-					break;
-				case MAPMOVE:
-					type.setMapmove(true);
-					break;
-				case HP:
-					type.setHp(true);
-					break;
-				case PROT:
-					type.setProt(true);
-					break;
-				case SIZE:
-					type.setSize(true);
-					break;
-				case RESSIZE:
-					type.setRessize(true);
-					break;
-				case STR:
-					type.setStr(true);
-					break;
-				case ENC:
-					type.setEnc(true);
-					break;
-				case ATT:
-					type.setAtt(true);
-					break;
-				case DEF:
-					type.setDef(true);
-					break;
-				case PREC:
-					type.setPrec(true);
-					break;
-				case MR:
-					type.setMr(true);
-					break;
-				case MOR:
-					type.setMor(true);
-					break;
-				case GCOST:
-					type.setGcost(true);
-					break;
-				case RCOST:
-					type.setRcost(true);
-					break;
-				case PATHCOST:
-					type.setPathcost(true);
-					break;
-				case STARTDOM:
-					type.setStartdom(true);
-					break;
-				case EYES:
-					type.setEyes(true);
-					break;
-				case COPYSTATS:
-					type.setCopystats(true);
-					break;
-				case COPYSPR:
-					type.setCopyspr(true);
-					break;
-				case RESTRICTEDGOD:
-					type.setRestrictedgod(true);
-					break;
-				case SHATTEREDSOUL:
-					type.setShatteredsoul(true);
-					break;
-				case COLDRES:
-					type.setColdres(true);
-					break;
-				case FIRERES:
-					type.setFireres(true);
-					break;
-				case POISONRES:
-					type.setPoisonres(true);
-					break;
-				case SHOCKRES:
-					type.setShockres(true);
-					break;
-				case DARKVISION:
-					type.setDarkvision(true);
-					break;
-				case SEDUCE:
-					type.setSeduce(true);
-					break;
-				case SUCCUBUS:
-					type.setSuccubus(true);
-					break;
-				case BECKON:
-					type.setBeckon(true);
-					break;
-				case STARTAGE:
-					type.setStartage(true);
-					break;
-				case MAXAGE:
-					type.setMaxage(true);
-					break;
-				case OLDER:
-					type.setOlder(true);
-					break;
-				case HEALER:
-					type.setHealer(true);
-					break;
-				case STARTAFF:
-					type.setStartaff(true);
-					break;
-				case SUPPLYBONUS:
-					type.setSupplybonus(true);
-					break;
-				case UWDAMAGE:
-					type.setUwdamage(true);
-					break;
-				case COLDPOWER:
-					type.setColdpower(true);
-					break;
-				case FIREPOWER:
-					type.setFirepower(true);
-					break;
-				case STORMPOWER:
-					type.setStormpower(true);
-					break;
-				case DARKPOWER:
-					type.setDarkpower(true);
-					break;
-				case SPRINGPOWER:
-					type.setSpringpower(true);
-					break;
-				case SUMMERPOWER:
-					type.setSummerpower(true);
-					break;
-				case FALLPOWER:
-					type.setFallpower(true);
-					break;
-				case WINTERPOWER:
-					type.setWinterpower(true);
-					break;
-				case AMBIDEXTROUS:
-					type.setAmbidextrous(true);
-					break;
-				case BANEFIRESHIELD:
-					type.setBanefireshield(true);
-					break;
-				case BERSERK:
-					type.setBerserk(true);
-					break;
-				case STANDARD:
-					type.setStandard(true);
-					break;
-				case ANIMALAWE:
-					type.setAnimalawe(true);
-					break;
-				case AWE:
-					type.setAwe(true);
-					break;
-				case FEAR:
-					type.setFear(true);
-					break;
-				case REGENERATION:
-					type.setRegeneration(true);
-					break;
-				case REINVIGORATION:
-					type.setReinvigoration(true);
-					break;
-				case FIRESHIELD:
-					type.setFireshield(true);
-					break;
-				case ICEPROT:
-					type.setIceprot(true);
-					break;
-				case POISONCLOUD:
-					type.setPoisoncloud(true);
-					break;
-				case DISEASECLOUD:
-					type.setDiseasecloud(true);
-					break;
-				case BLOODVENGEANCE:
-					type.setBloodvengeance(true);
-					break;
-				case CASTLEDEF:
-					type.setCastledef(true);
-					break;
-				case SIEGEBONUS:
-					type.setSiegebonus(true);
-					break;
-				case PATROLBONUS:
-					type.setPatrolbonus(true);
-					break;
-				case PILLAGEBONUS:
-					type.setPillagebonus(true);
-					break;
-				case RESEARCHBONUS:
-					type.setResearchbonus(true);
-					break;
-				case FORGEBONUS:
-					type.setForgebonus(true);
-					break;
-				case DOUSE:
-					type.setDouse(true);
-					break;
-				case NOBADEVENTS:
-					type.setNobadevents(true);
-					break;
-				case INCUNREST:
-					type.setIncunrest(true);
-					break;
-				case SPREADDOM:
-					type.setSpreaddom(true);
-					break;
-				case LEPER:
-					type.setLeper(true);
-					break;
-				case POPKILL:
-					type.setPopkill(true);
-					break;
-				case HERETIC:
-					type.setHeretic(true);
-					break;
-				case ITEMSLOTS:
-					type.setItemslots(true);
-					break;
-				case NAMETYPE:
-					type.setNametype(true);
-					break;				
-				}
-				type.setValue(Integer.valueOf(newName));
-				mods.add(type);
-			}  
-		},
-		myDocument);
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				 documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource state) throws Exception {
+						EList<MonsterMods> mods = input.getMods();
+						MonsterInst2 type = DmFactory.eINSTANCE.createMonsterInst2();
+						switch (inst) {
+						case SPECIALLOOK:
+							type.setSpeciallook(true);
+							break;
+						case AP:
+							type.setAp(true);
+							break;
+						case MAPMOVE:
+							type.setMapmove(true);
+							break;
+						case HP:
+							type.setHp(true);
+							break;
+						case PROT:
+							type.setProt(true);
+							break;
+						case SIZE:
+							type.setSize(true);
+							break;
+						case RESSIZE:
+							type.setRessize(true);
+							break;
+						case STR:
+							type.setStr(true);
+							break;
+						case ENC:
+							type.setEnc(true);
+							break;
+						case ATT:
+							type.setAtt(true);
+							break;
+						case DEF:
+							type.setDef(true);
+							break;
+						case PREC:
+							type.setPrec(true);
+							break;
+						case MR:
+							type.setMr(true);
+							break;
+						case MOR:
+							type.setMor(true);
+							break;
+						case GCOST:
+							type.setGcost(true);
+							break;
+						case RCOST:
+							type.setRcost(true);
+							break;
+						case PATHCOST:
+							type.setPathcost(true);
+							break;
+						case STARTDOM:
+							type.setStartdom(true);
+							break;
+						case EYES:
+							type.setEyes(true);
+							break;
+						case COPYSTATS:
+							type.setCopystats(true);
+							break;
+						case COPYSPR:
+							type.setCopyspr(true);
+							break;
+						case RESTRICTEDGOD:
+							type.setRestrictedgod(true);
+							break;
+						case SHATTEREDSOUL:
+							type.setShatteredsoul(true);
+							break;
+						case COLDRES:
+							type.setColdres(true);
+							break;
+						case FIRERES:
+							type.setFireres(true);
+							break;
+						case POISONRES:
+							type.setPoisonres(true);
+							break;
+						case SHOCKRES:
+							type.setShockres(true);
+							break;
+						case DARKVISION:
+							type.setDarkvision(true);
+							break;
+						case SEDUCE:
+							type.setSeduce(true);
+							break;
+						case SUCCUBUS:
+							type.setSuccubus(true);
+							break;
+						case BECKON:
+							type.setBeckon(true);
+							break;
+						case STARTAGE:
+							type.setStartage(true);
+							break;
+						case MAXAGE:
+							type.setMaxage(true);
+							break;
+						case OLDER:
+							type.setOlder(true);
+							break;
+						case HEALER:
+							type.setHealer(true);
+							break;
+						case STARTAFF:
+							type.setStartaff(true);
+							break;
+						case SUPPLYBONUS:
+							type.setSupplybonus(true);
+							break;
+						case UWDAMAGE:
+							type.setUwdamage(true);
+							break;
+						case COLDPOWER:
+							type.setColdpower(true);
+							break;
+						case FIREPOWER:
+							type.setFirepower(true);
+							break;
+						case STORMPOWER:
+							type.setStormpower(true);
+							break;
+						case DARKPOWER:
+							type.setDarkpower(true);
+							break;
+						case SPRINGPOWER:
+							type.setSpringpower(true);
+							break;
+						case SUMMERPOWER:
+							type.setSummerpower(true);
+							break;
+						case FALLPOWER:
+							type.setFallpower(true);
+							break;
+						case WINTERPOWER:
+							type.setWinterpower(true);
+							break;
+						case AMBIDEXTROUS:
+							type.setAmbidextrous(true);
+							break;
+						case BANEFIRESHIELD:
+							type.setBanefireshield(true);
+							break;
+						case BERSERK:
+							type.setBerserk(true);
+							break;
+						case STANDARD:
+							type.setStandard(true);
+							break;
+						case ANIMALAWE:
+							type.setAnimalawe(true);
+							break;
+						case AWE:
+							type.setAwe(true);
+							break;
+						case FEAR:
+							type.setFear(true);
+							break;
+						case REGENERATION:
+							type.setRegeneration(true);
+							break;
+						case REINVIGORATION:
+							type.setReinvigoration(true);
+							break;
+						case FIRESHIELD:
+							type.setFireshield(true);
+							break;
+						case ICEPROT:
+							type.setIceprot(true);
+							break;
+						case POISONCLOUD:
+							type.setPoisoncloud(true);
+							break;
+						case DISEASECLOUD:
+							type.setDiseasecloud(true);
+							break;
+						case BLOODVENGEANCE:
+							type.setBloodvengeance(true);
+							break;
+						case CASTLEDEF:
+							type.setCastledef(true);
+							break;
+						case SIEGEBONUS:
+							type.setSiegebonus(true);
+							break;
+						case PATROLBONUS:
+							type.setPatrolbonus(true);
+							break;
+						case PILLAGEBONUS:
+							type.setPillagebonus(true);
+							break;
+						case RESEARCHBONUS:
+							type.setResearchbonus(true);
+							break;
+						case FORGEBONUS:
+							type.setForgebonus(true);
+							break;
+						case DOUSE:
+							type.setDouse(true);
+							break;
+						case NOBADEVENTS:
+							type.setNobadevents(true);
+							break;
+						case INCUNREST:
+							type.setIncunrest(true);
+							break;
+						case SPREADDOM:
+							type.setSpreaddom(true);
+							break;
+						case LEPER:
+							type.setLeper(true);
+							break;
+						case POPKILL:
+							type.setPopkill(true);
+							break;
+						case HERETIC:
+							type.setHeretic(true);
+							break;
+						case ITEMSLOTS:
+							type.setItemslots(true);
+							break;
+						case NAMETYPE:
+							type.setNametype(true);
+							break;				
+						}
+						type.setValue(Integer.valueOf(newName));
+						mods.add(type);	
+					}  
+				},
+				myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
 	}
 	
 	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) 
