@@ -48,7 +48,6 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IURIEditorInput;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.FileStoreEditorInput;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.IDocumentProvider;
@@ -99,29 +98,6 @@ public class DmXtextEditor extends XtextEditor
 				folder.create(true, true, null);
 		}
 		linkFile.createLink(uri, IResource.ALLOW_MISSING_LOCAL, null);
-	}
-
-	@Override
-	public void dispose() {
-		// Unlink the input if it was linked
-		IEditorInput input = getEditorInput();
-		if(input instanceof IFileEditorInput) {
-			IFile file = ((IFileEditorInput) input).getFile();
-			if(file.isLinked()) {
-				file.getProject().getName().equals(AUTOLINK_PROJECT_NAME);
-				try {
-					// if the editor is disposed because workbench is shutting down, it is NOT a good
-					// idea to delete the link
-					if(PlatformUI.isWorkbenchRunning() && !PlatformUI.getWorkbench().isClosing())
-						file.delete(true, null);
-				}
-				catch(CoreException e) {
-					// Nothing to do really, it will be recreated/refreshed later if ever used - some garbage may stay behind...
-					//Logger.getInstance().logException(e);
-				}
-			}
-		}
-		super.dispose();
 	}
 
 	/**
@@ -254,7 +230,7 @@ public class DmXtextEditor extends XtextEditor
 				dialog.setFilterPath(oldPath.toOSString());
 			}
 
-			dialog.setFilterExtensions(new String[] { "*.b3", "*.*" }); //$NON-NLS-1$ //$NON-NLS-2$
+			dialog.setFilterExtensions(new String[] { "*.dm", "*.*" }); //$NON-NLS-1$ //$NON-NLS-2$
 			String path = dialog.open();
 			if(path == null) {
 				if(progressMonitor != null)
@@ -265,8 +241,8 @@ public class DmXtextEditor extends XtextEditor
 			// Check whether file exists and if so, confirm overwrite
 			final File localFile = new File(path);
 			if(localFile.exists()) {
-				MessageDialog overwriteDialog = new MessageDialog(shell, "zzz", null, path +
-						"zzz", MessageDialog.WARNING, new String[] {
+				MessageDialog overwriteDialog = new MessageDialog(shell, "File Exists", null, path +
+						" already exists. Do you wish to overwrite? ", MessageDialog.WARNING, new String[] {
 						IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL }, 1); // 'No' is the default
 				if(overwriteDialog.open() != Window.OK) {
 					if(progressMonitor != null) {
@@ -281,10 +257,7 @@ public class DmXtextEditor extends XtextEditor
 				fileStore = EFS.getStore(localFile.toURI());
 			}
 			catch(CoreException ex) {
-				//Logger.getInstance().logException(ex);
-				//String title = Messages.WMLEditor_2;
-				//String msg = Messages.WMLEditor_3 + ex.getMessage();
-				MessageDialog.openError(shell, "title", "msg");
+				MessageDialog.openError(shell, "Error", "Couldn't write file. " + ex.getMessage());
 				return;
 			}
 
@@ -313,12 +286,9 @@ public class DmXtextEditor extends XtextEditor
 
 			}
 			catch(CoreException x) {
-				//Logger.getInstance().logException(x);
 				final IStatus status = x.getStatus();
 				if(status == null || status.getSeverity() != IStatus.CANCEL) {
-					//String title = Messages.WMLEditor_4;
-					//String msg = Messages.WMLEditor_5 + x.getMessage();
-					MessageDialog.openError(shell, "title", "msg");
+					MessageDialog.openError(shell, "Error", "Couldn't write file. " + x.getMessage());
 				}
 			}
 			finally {

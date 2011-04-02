@@ -15,6 +15,8 @@
  */
 package org.larz.dom3;
 
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
@@ -48,4 +50,18 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
         configurer.setShowCoolBar(true);
         configurer.setShowStatusLine(false);
     }
+    
+	@Override  
+	public boolean preWindowShellClose() {  
+		try {  
+			// save the full workspace before quit  
+			ResourcesPlugin.getWorkspace().save(true, null);  
+		} catch (final CoreException e) {  
+			// log exception, if required  
+			e.printStackTrace();
+		}  
+
+		return true;  
+	}  
+
 }
