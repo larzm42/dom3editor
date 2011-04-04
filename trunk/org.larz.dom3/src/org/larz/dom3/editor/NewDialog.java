@@ -28,6 +28,7 @@ import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.IShellProvider;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -168,23 +169,30 @@ public class NewDialog extends Dialog {
 				if (!names[i].endsWith(".dm")) {
 					names[i] += ".dm";
 				}
-				fileStore =  fileStore.getChild(names[i]);
+				fileStore = fileStore.getChild(names[i]);
 				IFileInfo fetchInfo = fileStore.fetchInfo();
-				if (!fetchInfo.isDirectory() && !fetchInfo.exists()) {
+				if (fetchInfo.exists()) {
+					MessageDialog overwriteDialog = new MessageDialog(getParentShell(), "File Exists", null, fetchInfo.getName() +
+							" already exists. Do you wish to overwrite? ", MessageDialog.WARNING, new String[] {
+							IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL }, 1); // 'No' is the default
+					if(overwriteDialog.open() != Window.OK) {
+						return;
+					}
+				}
+				if (!fetchInfo.isDirectory()) {
 					IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 					try {
 						File newFile = fileStore.toLocalFile(0, null);
-						if (!newFile.exists()) {
-							newFile.createNewFile();
-							FileWriter out = new FileWriter(newFile);
-							out.write("#modname \"" + name + "\"\n");
-							out.write("#description \"" + description + "\"\n");
-							out.write("#version " + version + "\n");
-							out.flush();
-							out.close();
-							
-							IDE.openEditorOnFileStore(page, fileStore);
-						}
+
+						newFile.createNewFile();
+						FileWriter out = new FileWriter(newFile);
+						out.write("#modname \"" + name + "\"\n");
+						out.write("#description \"" + description + "\"\n");
+						out.write("#version " + version + "\n");
+						out.flush();
+						out.close();
+
+						IDE.openEditorOnFileStore(page, fileStore);
 					} catch (PartInitException e) {
 						MessageDialog.open(MessageDialog.ERROR, getParentShell(), "Open File Error", "Couldn't open file: " + fileStore.getName(), SWT.SHEET);
 					} catch (IOException e) {

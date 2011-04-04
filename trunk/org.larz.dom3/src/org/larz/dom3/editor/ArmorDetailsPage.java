@@ -23,6 +23,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
@@ -35,6 +36,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.IDetailsPage;
@@ -197,7 +199,7 @@ public class ArmorDetailsPage implements IDetailsPage {
 					} else {
 						value.setEnabled(false);
 						value.setText("");
-						removeInst2(key, doc, input);
+						removeInst(key, doc, input);
 					}
 				}
 
@@ -450,103 +452,109 @@ public class ArmorDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void addInst2(final Inst2 inst2, final XtextEditor editor, final Armor armor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+	private void addInst2(final Inst2 inst2, final XtextEditor editor, final Armor armor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
-			public void process(XtextResource resource) {
-				Armor armorToEdit = input;
-				EList<ArmorMods> mods = armorToEdit.getMods();
-				ArmorInst2 type = DmFactory.eINSTANCE.createArmorInst2();
-				switch (inst2) {
-				case TYPE:
-					type.setType(true);
-					break;
-				case PROT:
-					type.setProt(true);
-					break;
-				case DEF:
-					type.setDef(true);
-					break;
-				case ENC:
-					type.setEnc(true);
-					break;
-				case RCOST:
-					type.setRcost(true);
-					break;
-				}
-				type.setValue(Integer.valueOf(newName));
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Armor)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void removeInst2(final Inst2 inst2, final XtextEditor editor, final Armor armor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Armor armorToEdit = input;
-				ArmorMods modToRemove = null;
-				EList<ArmorMods> mods = armorToEdit.getMods();
-				for (ArmorMods mod : mods) {
-					if (mod instanceof ArmorInst2) {
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<ArmorMods> mods = input.getMods();
+						ArmorInst2 type = DmFactory.eINSTANCE.createArmorInst2();
 						switch (inst2) {
 						case TYPE:
-							if (((ArmorInst2)mod).isType()) {
-								modToRemove = mod;
-							}
+							type.setType(true);
 							break;
 						case PROT:
-							if (((ArmorInst2)mod).isProt()) {
-								modToRemove = mod;
-							}
+							type.setProt(true);
 							break;
 						case DEF:
-							if (((ArmorInst2)mod).isDef()) {
-								modToRemove = mod;
-							}
+							type.setDef(true);
 							break;
 						case ENC:
-							if (((ArmorInst2)mod).isEnc()) {
-								modToRemove = mod;
-							}
+							type.setEnc(true);
 							break;
 						case RCOST:
-							if (((ArmorInst2)mod).isRcost()) {
-								modToRemove = mod;
-							}
+							type.setRcost(true);
 							break;
 						}
-					}
-				}
-				if (modToRemove != null) {
-					mods.remove(modToRemove);
-				}
-			}  
-		},
-		myDocument);
+						type.setValue(Integer.valueOf(newName));
+						mods.add(type);
+					}  
+				},
+				myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Armor)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Armor)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void removeInst(final Inst2 inst2, final XtextEditor editor, final Armor armor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						ArmorMods modToRemove = null;
+						EList<ArmorMods> mods = input.getMods();
+						for (ArmorMods mod : mods) {
+							if (mod instanceof ArmorInst2) {
+								switch (inst2) {
+								case TYPE:
+									if (((ArmorInst2)mod).isType()) {
+										modToRemove = mod;
+									}
+									break;
+								case PROT:
+									if (((ArmorInst2)mod).isProt()) {
+										modToRemove = mod;
+									}
+									break;
+								case DEF:
+									if (((ArmorInst2)mod).isDef()) {
+										modToRemove = mod;
+									}
+									break;
+								case ENC:
+									if (((ArmorInst2)mod).isEnc()) {
+										modToRemove = mod;
+									}
+									break;
+								case RCOST:
+									if (((ArmorInst2)mod).isRcost()) {
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+						}
+						if (modToRemove != null) {
+							mods.remove(modToRemove);
+						}
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Armor)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
 	}
 
 	/* (non-Javadoc)

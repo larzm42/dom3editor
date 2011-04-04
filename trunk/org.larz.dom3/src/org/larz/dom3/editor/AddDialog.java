@@ -298,6 +298,7 @@ public class AddDialog extends Dialog {
 		}
 		if (add == TypeToAdd.NATION) {
 			newArmor[add.ordinal()].setEnabled(false);
+			nameText[add.ordinal()].setEnabled(false);
 		}
 
 	}

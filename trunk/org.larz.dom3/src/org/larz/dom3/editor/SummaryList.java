@@ -20,8 +20,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.action.IMenuListener;
-import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -36,16 +34,22 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.DetailsPart;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IDetailsPageProvider;
@@ -356,8 +360,8 @@ public class SummaryList extends MasterDetailsBlock {
 		layout.marginHeight = 2;
 		client.setLayout(layout);
 		
-		Composite comboComp = new Composite(client, SWT.NONE);
-		comboComp.setLayout(new GridLayout(2, false));
+		Composite comboComp = toolkit.createComposite(client, SWT.NONE);
+		comboComp.setLayout(new GridLayout(4, false));
 		toolkit.createLabel(comboComp, "Show:");
 		final Combo listFilter = new Combo(comboComp, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(listFilter, true, true);
@@ -374,6 +378,9 @@ public class SummaryList extends MasterDetailsBlock {
 		GridData gd = new GridData(SWT.FILL, SWT.DEFAULT, true, false);
 		gd.horizontalSpan = 2;
 		comboComp.setLayoutData(gd);
+		
+		final Text searchText = toolkit.createText(comboComp, "", SWT.BORDER);
+		final Button search = toolkit.createButton(comboComp, "Search", SWT.PUSH);
 
 		Table t = toolkit.createTable(client, SWT.NULL);
 		gd = new GridData(GridData.FILL_BOTH);
@@ -387,59 +394,62 @@ public class SummaryList extends MasterDetailsBlock {
 		b.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				AddDialog dialog = new AddDialog(parent.getShell());
-				dialog.open();
-				if (dialog.getReturnCode() == Window.OK) {
-					if (dialog.type != null) {
-						AddTypes type = null;
-						String name = null;
-						int id = 0;
-						if (!dialog.select) {
-							type = AddTypes.NEW;
-							name = dialog.name;
-							if (dialog.id != null && !dialog.id.isEmpty()) {
-								id = Integer.valueOf(dialog.id);
+				BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+					@Override
+					public void run() {
+						final AddDialog dialog = new AddDialog(parent.getShell());
+						dialog.open();
+						if (dialog.getReturnCode() == Window.OK) {
+							if (dialog.type != null) {
+								AddTypes type = null;
+								String name = null;
+								int id = 0;
+								if (!dialog.select) {
+									type = AddTypes.NEW;
+									name = dialog.name;
+									if (dialog.id != null && !dialog.id.isEmpty()) {
+										id = Integer.valueOf(dialog.id);
+									}
+								} else {
+									if (dialog.id != null && !dialog.id.isEmpty()) {
+										type = AddTypes.BY_ID;
+										id = Integer.valueOf(dialog.id);
+									} else if (dialog.name != null && !dialog.name.isEmpty()) {
+										type = AddTypes.BY_NAME;
+										name = dialog.name;
+									}
+								}
+								switch (dialog.type) {
+								case ARMOR:
+									addArmor(type, name, id);
+									break;
+								case WEAPON:
+									addWeapon(type, name, id);
+									break;
+								case MONSTER:
+									addMonster(type, name, id);
+									break;
+								case SPELL:
+									addSpell(type, name, id);
+									break;
+								case ITEM:
+									addItem(type, name, id);
+									break;
+								case NAME:
+									addName(type, name, id);
+									break;
+								case SITE:
+									addSite(type, name, id);
+									break;
+								case NATION:
+									addNation(type, name, id);
+									break;
+								}
 							}
-						} else {
-							if (dialog.id != null && !dialog.id.isEmpty()) {
-								type = AddTypes.BY_ID;
-								id = Integer.valueOf(dialog.id);
-							} else if (dialog.name != null && !dialog.name.isEmpty()) {
-								type = AddTypes.BY_NAME;
-								name = dialog.name;
-							}
-						}
-						switch (dialog.type) {
-						case ARMOR:
-							addArmor(type, name, id);
-							break;
-						case WEAPON:
-							addWeapon(type, name, id);
-							break;
-						case MONSTER:
-							addMonster(type, name, id);
-							break;
-						case SPELL:
-							addSpell(type, name, id);
-							break;
-						case ITEM:
-							addItem(type, name, id);
-							break;
-						case NAME:
-							addName(type, name, id);
-							break;
-						case SITE:
-							addSite(type, name, id);
-							break;
-						case NATION:
-							addNation(type, name, id);
-							break;
 						}
 					}
-					
-				}
+				});
 			}
-			
 		});
 		
 		section.setClient(client);
@@ -505,6 +515,39 @@ public class SummaryList extends MasterDetailsBlock {
 			
 		});
 
+		final SelectionListener searchListener = new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (searchText.getText() != null && searchText.getText().length() > 0) {
+					StringBuffer buffer = new StringBuffer(searchText.getText().toLowerCase());
+					IStructuredSelection selection = (IStructuredSelection)viewer.getSelection();
+					Object[] elements = ((IStructuredContentProvider)viewer.getContentProvider()).getElements(null);
+					boolean started = false;
+					for (Object element : elements) {
+						if (!started && !selection.isEmpty()) {
+							if (selection.getFirstElement().equals(element)) {
+								started = true;
+							}
+						} else
+						if (((ITableLabelProvider)viewer.getLabelProvider()).getColumnText(element, 0).toLowerCase().contains(buffer)) {
+							viewer.reveal(element);
+							viewer.setSelection(new StructuredSelection(element));
+							break;
+						}
+					}
+				}
+			}
+		};
+		search.addSelectionListener(searchListener);
+		searchText.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.character == '\r') {
+					searchListener.widgetSelected(null);
+				}
+			}
+		});
+
 		MenuManager menuManager = new MenuManager();
 		Menu menu = menuManager.createContextMenu(viewer.getTable());
 		menuManager.add(new Action("Go To Source") {
@@ -522,12 +565,6 @@ public class SummaryList extends MasterDetailsBlock {
 		});
 		viewer.getTable().setMenu(menu);
 		
-		// Set menu enablement
-		menuManager.addMenuListener(new IMenuListener() {
-			public void menuAboutToShow(IMenuManager menuManager) {
-			}
-		});
-
 	}
 		
 	@Override
@@ -597,15 +634,14 @@ public class SummaryList extends MasterDetailsBlock {
 		detailsPart.registerPage(SelectNameImpl.class, new NameDetailsPage(doc, viewer));
 	}
 	
-	public void addArmor(final AddTypes type, final String name, final int id) 
-	{
+	public void addArmor(final AddTypes type, final String name, final int id) {
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {        
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				
+
 				EList<AbstractElement> elements = dom3Mod.getElements();
 				switch (type) {
 				case BY_ID:
@@ -629,18 +665,18 @@ public class SummaryList extends MasterDetailsBlock {
 					elements.add(newArmor);
 					break;
 				}
-				}  
-			},
-			document);
+			}  
+		},
+		document);
 		viewer.refresh();
-		
+
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
 			public AbstractElement[] exec(XtextResource resource) {             
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				EList<AbstractElement> list = dom3Mod.getElements();
 				return list.toArray(new AbstractElement[list.size()]);
-				} 
-			});
+			} 
+		});
 
 		viewer.setSelection(new StructuredSelection(new AbstractElementWrapper(null, elements.length)), true);
 	}
@@ -942,24 +978,29 @@ public class SummaryList extends MasterDetailsBlock {
 	}
 	
 	public void deleteNode() {
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			final AbstractElement element = ((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-			IXtextDocument document = ((XtextEditor)doc).getDocument();
-			IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-			documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
-				@Override
-				public void process(XtextResource resource) {        
-					Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					final AbstractElement element = ((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+					IXtextDocument document = ((XtextEditor)doc).getDocument();
+					IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
+					documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+						@Override
+						public void process(XtextResource resource) {        
+							Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 
-					EList<AbstractElement> elements = dom3Mod.getElements();
-					elements.remove(element);
-				}  
-			},
-			document);
-			viewer.refresh();
-			viewer.setSelection(null);
-		}
+							EList<AbstractElement> elements = dom3Mod.getElements();
+							elements.remove(element);
+						}  
+					},
+					document);
+					viewer.refresh();
+					viewer.setSelection(null);
+				}
+			}
+		});
 	}
 
 	public void gotoSource() {
