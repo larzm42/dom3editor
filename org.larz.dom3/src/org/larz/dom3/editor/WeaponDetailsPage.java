@@ -23,6 +23,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
@@ -35,6 +36,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.IDetailsPage;
@@ -305,7 +307,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 							addInst4(key, doc);
 						}
 					} else {
-						removeInst2(key, doc);
+						removeInst(key, doc);
 					}
 				}
 
@@ -1204,462 +1206,474 @@ public class WeaponDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
-			public void process(XtextResource resource) {
-				Weapon weaponToEdit = input;
-				EList<WeaponMods> mods = weaponToEdit.getMods();
-				WeaponInst2 type = DmFactory.eINSTANCE.createWeaponInst2();
-				switch (inst) {
-				case DMG:
-					type.setDmg(true);
-					break;
-				case NRATT:
-					type.setNratt(true);
-					break;
-				case ATT:
-					type.setAtt(true);
-					break;
-				case DEF:
-					type.setDef(true);
-					break;
-				case LEN:
-					type.setLen(true);
-					break;
-				case RANGE:
-					type.setRange(true);
-					break;
-				case AMMO:
-					type.setAmmo(true);
-					break;
-				case RCOST:
-					type.setRcost(true);
-					break;
-				case SOUND:
-					type.setSound(true);
-					break;
-				case AOE:
-					type.setAoe(true);
-					break;
-				case SECONDARYEFFECT:
-					type.setSecondaryeffect(true);
-					break;
-				case SECONDARYEFFECTALWAYS:
-					type.setSecondaryeffectalways(true);
-					break;
-				case EXPLSPR:
-					type.setExplspr(true);
-					break;
-				}
-				type.setValue(Integer.valueOf(newName));
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Weapon weaponToEdit = input;
-				EList<WeaponMods> mods = weaponToEdit.getMods();
-				WeaponInst3 type = DmFactory.eINSTANCE.createWeaponInst3();
-				switch (inst) {
-				case FLYSPR:
-					type.setFlyspr(true);
-					break;
-				}
-				type.setValue1(Integer.valueOf(newName1));
-				type.setValue2(Integer.valueOf(newName2));
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst4(final Inst inst, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Weapon weaponToEdit = input;
-				EList<WeaponMods> mods = weaponToEdit.getMods();
-				WeaponInst4 type = DmFactory.eINSTANCE.createWeaponInst4();
-				switch (inst) {
-				case TWOHANDED:
-					type.setTwohanded(true);
-					break;
-				case ARMORPIERCING:
-					type.setArmorpiercing(true);
-					break;
-				case ARMORNEGATING:
-					type.setArmornegating(true);
-					break;
-				case MAGIC:
-					type.setMagic(true);
-					break;
-				case DT_NORMAL:
-					type.setDt_normal(true);
-					break;
-				case DT_STUN:
-					type.setDt_stun(true);
-					break;
-				case DT_PARALYZE:
-					type.setDt_paralyze(true);
-					break;
-				case DT_POISON:
-					type.setDt_poison(true);
-					break;
-				case DT_CAP:
-					type.setDt_cap(true);
-					break;
-				case DT_DEMON:
-					type.setDt_demon(true);
-					break;
-				case DT_DEMONONLY:
-					type.setDt_demononly(true);
-					break;
-				case DT_HOLY:
-					type.setDt_holy(true);
-					break;
-				case DT_MAGIC:
-					type.setDt_magic(true);
-					break;
-				case DT_SMALL:
-					type.setDt_small(true);
-					break;
-				case DT_LARGE:
-					type.setDt_large(true);
-					break;
-				case DT_CONSTRUCTONLY:
-					type.setDt_constructonly(true);
-					break;
-				case DT_RAISE:
-					type.setDt_raise(true);
-					break;
-				case MIND:
-					type.setMind(true);
-					break;
-				case COLD:
-					type.setCold(true);
-					break;
-				case FIRE:
-					type.setFire(true);
-					break;
-				case SHOCK:
-					type.setShock(true);
-					break;
-				case POISON:
-					type.setPoison(true);
-					break;
-				case BONUS:
-					type.setBonus(true);
-					break;
-				case CHARGE:
-					type.setCharge(true);
-					break;
-				case FLAIL:
-					type.setFlail(true);
-					break;
-				case NOSTR:
-					type.setNostr(true);
-					break;
-				case MRNEGATES:
-					type.setMrnegates(true);
-					break;
-				case MRNEGATESEASILY:
-					type.setMrnegateseasily(true);
-					break;
-				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void removeInst2(final Inst inst2, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Weapon weaponToEdit = input;
-				WeaponMods modToRemove = null;
-				EList<WeaponMods> mods = weaponToEdit.getMods();
-				for (WeaponMods mod : mods) {
-					if (mod instanceof WeaponInst2) {
-						switch (inst2) {
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<WeaponMods> mods = input.getMods();
+						WeaponInst2 type = DmFactory.eINSTANCE.createWeaponInst2();
+						switch (inst) {
 						case DMG:
-							if (((WeaponInst2)mod).isDmg()) {
-								modToRemove = mod;
-							}
+							type.setDmg(true);
 							break;
 						case NRATT:
-							if (((WeaponInst2)mod).isNratt()) {
-								modToRemove = mod;
-							}
+							type.setNratt(true);
 							break;
 						case ATT:
-							if (((WeaponInst2)mod).isAtt()) {
-								modToRemove = mod;
-							}
+							type.setAtt(true);
 							break;
 						case DEF:
-							if (((WeaponInst2)mod).isDef()) {
-								modToRemove = mod;
-							}
+							type.setDef(true);
 							break;
 						case LEN:
-							if (((WeaponInst2)mod).isLen()) {
-								modToRemove = mod;
-							}
+							type.setLen(true);
 							break;
 						case RANGE:
-							if (((WeaponInst2)mod).isRange()) {
-								modToRemove = mod;
-							}
+							type.setRange(true);
 							break;
 						case AMMO:
-							if (((WeaponInst2)mod).isAmmo()) {
-								modToRemove = mod;
-							}
+							type.setAmmo(true);
 							break;
 						case RCOST:
-							if (((WeaponInst2)mod).isRcost()) {
-								modToRemove = mod;
-							}
+							type.setRcost(true);
 							break;
 						case SOUND:
-							if (((WeaponInst2)mod).isSound()) {
-								modToRemove = mod;
-							}
+							type.setSound(true);
 							break;
 						case AOE:
-							if (((WeaponInst2)mod).isAoe()) {
-								modToRemove = mod;
-							}
+							type.setAoe(true);
 							break;
 						case SECONDARYEFFECT:
-							if (((WeaponInst2)mod).isSecondaryeffect()) {
-								modToRemove = mod;
-							}
+							type.setSecondaryeffect(true);
 							break;
 						case SECONDARYEFFECTALWAYS:
-							if (((WeaponInst2)mod).isSecondaryeffectalways()) {
-								modToRemove = mod;
-							}
+							type.setSecondaryeffectalways(true);
 							break;
 						case EXPLSPR:
-							if (((WeaponInst2)mod).isExplspr()) {
-								modToRemove = mod;
-							}
+							type.setExplspr(true);
 							break;
 						}
-					}
-					if (mod instanceof WeaponInst3) {
-						switch (inst2) {
+						type.setValue(Integer.valueOf(newName));
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<WeaponMods> mods = input.getMods();
+						WeaponInst3 type = DmFactory.eINSTANCE.createWeaponInst3();
+						switch (inst) {
 						case FLYSPR:
-							if (((WeaponInst3)mod).isFlyspr()) {
-								modToRemove = mod;
-							}
+							type.setFlyspr(true);
 							break;
 						}
-					}
-					if (mod instanceof WeaponInst4) {
-						switch (inst2) {
+						type.setValue1(Integer.valueOf(newName1));
+						type.setValue2(Integer.valueOf(newName2));
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst4(final Inst inst, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<WeaponMods> mods = input.getMods();
+						WeaponInst4 type = DmFactory.eINSTANCE.createWeaponInst4();
+						switch (inst) {
 						case TWOHANDED:
-							if (((WeaponInst4)mod).isTwohanded()) {
-								modToRemove = mod;
-							}
+							type.setTwohanded(true);
 							break;
 						case ARMORPIERCING:
-							if (((WeaponInst4)mod).isArmorpiercing()) {
-								modToRemove = mod;
-							}
+							type.setArmorpiercing(true);
 							break;
 						case ARMORNEGATING:
-							if (((WeaponInst4)mod).isArmornegating()) {
-								modToRemove = mod;
-							}
+							type.setArmornegating(true);
 							break;
 						case MAGIC:
-							if (((WeaponInst4)mod).isMagic()) {
-								modToRemove = mod;
-							}
+							type.setMagic(true);
 							break;
 						case DT_NORMAL:
-							if (((WeaponInst4)mod).isDt_normal()) {
-								modToRemove = mod;
-							}
+							type.setDt_normal(true);
 							break;
 						case DT_STUN:
-							if (((WeaponInst4)mod).isDt_stun()) {
-								modToRemove = mod;
-							}
+							type.setDt_stun(true);
 							break;
 						case DT_PARALYZE:
-							if (((WeaponInst4)mod).isDt_paralyze()) {
-								modToRemove = mod;
-							}
+							type.setDt_paralyze(true);
 							break;
 						case DT_POISON:
-							if (((WeaponInst4)mod).isDt_poison()) {
-								modToRemove = mod;
-							}
+							type.setDt_poison(true);
 							break;
 						case DT_CAP:
-							if (((WeaponInst4)mod).isDt_cap()) {
-								modToRemove = mod;
-							}
+							type.setDt_cap(true);
 							break;
 						case DT_DEMON:
-							if (((WeaponInst4)mod).isDt_demon()) {
-								modToRemove = mod;
-							}
+							type.setDt_demon(true);
 							break;
 						case DT_DEMONONLY:
-							if (((WeaponInst4)mod).isDt_demononly()) {
-								modToRemove = mod;
-							}
+							type.setDt_demononly(true);
 							break;
 						case DT_HOLY:
-							if (((WeaponInst4)mod).isDt_holy()) {
-								modToRemove = mod;
-							}
+							type.setDt_holy(true);
 							break;
 						case DT_MAGIC:
-							if (((WeaponInst4)mod).isDt_magic()) {
-								modToRemove = mod;
-							}
+							type.setDt_magic(true);
 							break;
 						case DT_SMALL:
-							if (((WeaponInst4)mod).isDt_small()) {
-								modToRemove = mod;
-							}
+							type.setDt_small(true);
 							break;
 						case DT_LARGE:
-							if (((WeaponInst4)mod).isDt_large()) {
-								modToRemove = mod;
-							}
+							type.setDt_large(true);
 							break;
 						case DT_CONSTRUCTONLY:
-							if (((WeaponInst4)mod).isDt_constructonly()) {
-								modToRemove = mod;
-							}
+							type.setDt_constructonly(true);
 							break;
 						case DT_RAISE:
-							if (((WeaponInst4)mod).isDt_raise()) {
-								modToRemove = mod;
-							}
+							type.setDt_raise(true);
 							break;
 						case MIND:
-							if (((WeaponInst4)mod).isMind()) {
-								modToRemove = mod;
-							}
+							type.setMind(true);
 							break;
 						case COLD:
-							if (((WeaponInst4)mod).isCold()) {
-								modToRemove = mod;
-							}
+							type.setCold(true);
 							break;
 						case FIRE:
-							if (((WeaponInst4)mod).isFire()) {
-								modToRemove = mod;
-							}
+							type.setFire(true);
 							break;
 						case SHOCK:
-							if (((WeaponInst4)mod).isShock()) {
-								modToRemove = mod;
-							}
+							type.setShock(true);
 							break;
 						case POISON:
-							if (((WeaponInst4)mod).isPoison()) {
-								modToRemove = mod;
-							}
+							type.setPoison(true);
 							break;
 						case BONUS:
-							if (((WeaponInst4)mod).isBonus()) {
-								modToRemove = mod;
-							}
+							type.setBonus(true);
 							break;
 						case CHARGE:
-							if (((WeaponInst4)mod).isCharge()) {
-								modToRemove = mod;
-							}
+							type.setCharge(true);
 							break;
 						case FLAIL:
-							if (((WeaponInst4)mod).isFlail()) {
-								modToRemove = mod;
-							}
+							type.setFlail(true);
 							break;
 						case NOSTR:
-							if (((WeaponInst4)mod).isNostr()) {
-								modToRemove = mod;
-							}
+							type.setNostr(true);
 							break;
 						case MRNEGATES:
-							if (((WeaponInst4)mod).isMrnegates()) {
-								modToRemove = mod;
-							}
+							type.setMrnegates(true);
 							break;
 						case MRNEGATESEASILY:
-							if (((WeaponInst4)mod).isMrnegateseasily()) {
-								modToRemove = mod;
-							}
+							type.setMrnegateseasily(true);
 							break;
 						}
-					}
-					
-				}
-				if (modToRemove != null) {
-					mods.remove(modToRemove);
-				}
-			}  
-		},
-		myDocument);
+						mods.add(type);
+					}  
+				},
+				myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void removeInst(final Inst inst2, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						WeaponMods modToRemove = null;
+						EList<WeaponMods> mods = input.getMods();
+						for (WeaponMods mod : mods) {
+							if (mod instanceof WeaponInst2) {
+								switch (inst2) {
+								case DMG:
+									if (((WeaponInst2)mod).isDmg()) {
+										modToRemove = mod;
+									}
+									break;
+								case NRATT:
+									if (((WeaponInst2)mod).isNratt()) {
+										modToRemove = mod;
+									}
+									break;
+								case ATT:
+									if (((WeaponInst2)mod).isAtt()) {
+										modToRemove = mod;
+									}
+									break;
+								case DEF:
+									if (((WeaponInst2)mod).isDef()) {
+										modToRemove = mod;
+									}
+									break;
+								case LEN:
+									if (((WeaponInst2)mod).isLen()) {
+										modToRemove = mod;
+									}
+									break;
+								case RANGE:
+									if (((WeaponInst2)mod).isRange()) {
+										modToRemove = mod;
+									}
+									break;
+								case AMMO:
+									if (((WeaponInst2)mod).isAmmo()) {
+										modToRemove = mod;
+									}
+									break;
+								case RCOST:
+									if (((WeaponInst2)mod).isRcost()) {
+										modToRemove = mod;
+									}
+									break;
+								case SOUND:
+									if (((WeaponInst2)mod).isSound()) {
+										modToRemove = mod;
+									}
+									break;
+								case AOE:
+									if (((WeaponInst2)mod).isAoe()) {
+										modToRemove = mod;
+									}
+									break;
+								case SECONDARYEFFECT:
+									if (((WeaponInst2)mod).isSecondaryeffect()) {
+										modToRemove = mod;
+									}
+									break;
+								case SECONDARYEFFECTALWAYS:
+									if (((WeaponInst2)mod).isSecondaryeffectalways()) {
+										modToRemove = mod;
+									}
+									break;
+								case EXPLSPR:
+									if (((WeaponInst2)mod).isExplspr()) {
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof WeaponInst3) {
+								switch (inst2) {
+								case FLYSPR:
+									if (((WeaponInst3)mod).isFlyspr()) {
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof WeaponInst4) {
+								switch (inst2) {
+								case TWOHANDED:
+									if (((WeaponInst4)mod).isTwohanded()) {
+										modToRemove = mod;
+									}
+									break;
+								case ARMORPIERCING:
+									if (((WeaponInst4)mod).isArmorpiercing()) {
+										modToRemove = mod;
+									}
+									break;
+								case ARMORNEGATING:
+									if (((WeaponInst4)mod).isArmornegating()) {
+										modToRemove = mod;
+									}
+									break;
+								case MAGIC:
+									if (((WeaponInst4)mod).isMagic()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_NORMAL:
+									if (((WeaponInst4)mod).isDt_normal()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_STUN:
+									if (((WeaponInst4)mod).isDt_stun()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_PARALYZE:
+									if (((WeaponInst4)mod).isDt_paralyze()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_POISON:
+									if (((WeaponInst4)mod).isDt_poison()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_CAP:
+									if (((WeaponInst4)mod).isDt_cap()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_DEMON:
+									if (((WeaponInst4)mod).isDt_demon()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_DEMONONLY:
+									if (((WeaponInst4)mod).isDt_demononly()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_HOLY:
+									if (((WeaponInst4)mod).isDt_holy()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_MAGIC:
+									if (((WeaponInst4)mod).isDt_magic()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_SMALL:
+									if (((WeaponInst4)mod).isDt_small()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_LARGE:
+									if (((WeaponInst4)mod).isDt_large()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_CONSTRUCTONLY:
+									if (((WeaponInst4)mod).isDt_constructonly()) {
+										modToRemove = mod;
+									}
+									break;
+								case DT_RAISE:
+									if (((WeaponInst4)mod).isDt_raise()) {
+										modToRemove = mod;
+									}
+									break;
+								case MIND:
+									if (((WeaponInst4)mod).isMind()) {
+										modToRemove = mod;
+									}
+									break;
+								case COLD:
+									if (((WeaponInst4)mod).isCold()) {
+										modToRemove = mod;
+									}
+									break;
+								case FIRE:
+									if (((WeaponInst4)mod).isFire()) {
+										modToRemove = mod;
+									}
+									break;
+								case SHOCK:
+									if (((WeaponInst4)mod).isShock()) {
+										modToRemove = mod;
+									}
+									break;
+								case POISON:
+									if (((WeaponInst4)mod).isPoison()) {
+										modToRemove = mod;
+									}
+									break;
+								case BONUS:
+									if (((WeaponInst4)mod).isBonus()) {
+										modToRemove = mod;
+									}
+									break;
+								case CHARGE:
+									if (((WeaponInst4)mod).isCharge()) {
+										modToRemove = mod;
+									}
+									break;
+								case FLAIL:
+									if (((WeaponInst4)mod).isFlail()) {
+										modToRemove = mod;
+									}
+									break;
+								case NOSTR:
+									if (((WeaponInst4)mod).isNostr()) {
+										modToRemove = mod;
+									}
+									break;
+								case MRNEGATES:
+									if (((WeaponInst4)mod).isMrnegates()) {
+										modToRemove = mod;
+									}
+									break;
+								case MRNEGATESEASILY:
+									if (((WeaponInst4)mod).isMrnegateseasily()) {
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+
+						}
+						if (modToRemove != null) {
+							mods.remove(modToRemove);
+						}
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
 	}
 
 	/* (non-Javadoc)

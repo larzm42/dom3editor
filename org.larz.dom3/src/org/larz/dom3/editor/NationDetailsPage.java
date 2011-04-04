@@ -27,6 +27,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
@@ -40,6 +41,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
@@ -79,6 +81,7 @@ public class NationDetailsPage implements IDetailsPage {
 	private TableViewer viewer;
 
 	private Text name;
+	private Button nameCheck;
 	private Text descr;
 	private Button descrCheck;
 	private Text summary;
@@ -386,7 +389,7 @@ public class NationDetailsPage implements IDetailsPage {
 		gd.horizontalSpan = 2;
 		nameComp.setLayoutData(gd);
 		
-		toolkit.createLabel(nameComp, Messages.getString("NationDetailsSection.mod.name")); //$NON-NLS-1$
+		nameCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.name"), SWT.CHECK); //$NON-NLS-1$
 		
 		name = toolkit.createText(nameComp, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 		name.addFocusListener(new FocusAdapter() {
@@ -408,7 +411,21 @@ public class NationDetailsPage implements IDetailsPage {
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.widthHint = 500;
 		name.setLayoutData(gd);
-		
+		nameCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (nameCheck.getSelection()) {
+					addInst1(Inst.NAME, doc, "");
+					name.setEnabled(true);
+					name.setText("");
+				} else {
+					removeInst(Inst.NAME, doc);
+					name.setEnabled(false);
+					name.setText("");
+				}
+			}
+		});
+
 		descrCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.descr"), SWT.CHECK);
 
 		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
@@ -862,12 +879,21 @@ public class NationDetailsPage implements IDetailsPage {
 		if (input != null) {
 			String str = getInst1(Inst.NAME, input);
 			name.setText(str!= null?str:"");
-			name.setEnabled(false);
+			String nameString = getInst1(Inst.NAME, input);
+			final FormToolkit toolkit = mform.getToolkit();
+			if (nameString != null) {
+				name.setText(nameString);
+				name.setEnabled(true);
+				nameCheck.setSelection(true);
+			} else {
+				name.setText("");
+				name.setEnabled(false);
+				nameCheck.setSelection(false);
+			}
 
 			spriteLabel.setImage(getSprite(getInst1(Inst.FLAG, input)));
 			
 			String description = getInst1(Inst.DESCR, input);
-			final FormToolkit toolkit = mform.getToolkit();
 			if (description != null) {
 				descr.setText(description);
 				descr.setEnabled(true);
@@ -2590,1001 +2616,1027 @@ public class NationDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
-			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
-				EList<NationMods> mods = nationToEdit.getMods();
-				NationInst1 type = DmFactory.eINSTANCE.createNationInst1();
-				switch (inst) {
-				case EPITHET:
-					type.setEpithet(true);
-					break;
-				case DESCR:
-					type.setDescr(true);
-					break;
-				case SUMMARY:
-					type.setSummary(true);
-					break;
-				case BRIEF:
-					type.setBrief(true);
-					break;
-				case FLAG:
-					type.setFlag(true);
-					break;
-				case MAPBACKGROUND:
-					type.setMapbackground(true);
-					break;
-				case STARTSITE1:
-					type.setStartsite(true);
-					break;
-				case STARTSITE2:
-					type.setStartsite(true);
-					break;
-				case STARTSITE3:
-					type.setStartsite(true);
-					break;
-				case STARTSITE4:
-					type.setStartsite(true);
-					break;
-				}
-				type.setValue(newName);
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
-				EList<NationMods> mods = nationToEdit.getMods();
-				NationInst2 type = DmFactory.eINSTANCE.createNationInst2();
-				switch (inst) {
-				case ERA:
-					type.setEra(true);
-					break;
-				case LABCOST:
-					type.setLabcost(true);
-					break;
-				case TEMPLECOST:
-					type.setTemplecost(true);
-					break;
-				case TEMPLEPIC:
-					type.setTemplepic(true);
-					break;
-				case STARTUNITNBRS1:
-					type.setStartunitnbrs1(true);
-					break;
-				case STARTUNITNBRS2:
-					type.setStartunitnbrs2(true);
-					break;
-				case HERO1:
-					type.setHero1(true);
-					break;
-				case HERO2:
-					type.setHero2(true);
-					break;
-				case HERO3:
-					type.setHero3(true);
-					break;
-				case HERO4:
-					type.setHero4(true);
-					break;
-				case HERO5:
-					type.setHero5(true);
-					break;
-				case HERO6:
-					type.setHero6(true);
-					break;
-				case MULTIHERO1:
-					type.setMultihero1(true);
-					break;
-				case MULTIHERO2:
-					type.setMultihero2(true);
-					break;
-				case DEFMULT1:
-					type.setDefmult1(true);
-					break;
-				case DEFMULT1B:
-					type.setDefmult1b(true);
-					break;
-				case DEFMULT2:
-					type.setDefmult2(true);
-					break;
-				case DEFMULT2B:
-					type.setDefmult2b(true);
-					break;
-				case IDEALCOLD:
-					type.setIdealcold(true);
-					break;
-				case CASTLEPROD:
-					type.setCastleprod(true);
-					break;
-				case DOMKILL:
-					type.setDomkill(true);
-					break;
-				case DOMUNREST:
-					type.setDomunrest(true);
-					break;
-				case STARTFORT:
-					type.setStartfort(true);
-					break;
-				case DEFAULTFORT:
-					type.setDefaultfort(true);
-					break;
-				case FARMFORT:
-					type.setFarmfort(true);
-					break;
-				case MOUNTAINFORT:
-					type.setMountainfort(true);
-					break;
-				case FORESTFORT:
-					type.setForestfort(true);
-					break;
-				case SWAMPFORT:
-					type.setSwampfort(true);
-					break;
-				case UWFORT:
-					type.setUwfort(true);
-					break;
-				case DEEPFORT:
-					type.setDeepfort(true);
-					break;
-				}
-				try {
-					type.setValue(Integer.valueOf(newName));
-				} catch (NumberFormatException e) {
-					e.printStackTrace();
-				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst3(final Inst inst, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
-				EList<NationMods> mods = nationToEdit.getMods();
-				NationInst3 type = DmFactory.eINSTANCE.createNationInst3();
-				switch (inst) {
-				case CLEARNATION:
-					type.setClearnation(true);
-					break;
-				case CLEARREC:
-					type.setClearrec(true);
-					break;
-				case CLEARSITES:
-					type.setClearsites(true);
-					break;
-				case UWNATION:
-					type.setUwnation(true);
-					break;
-				case BLOODNATION:
-					type.setBloodnation(true);
-					break;
-				case NOPREACH:
-					type.setNopreach(true);
-					break;
-				case DYINGDOM:
-					type.setDyingdom(true);
-					break;
-				case SACRIFICEDOM:
-					type.setSacrificedom(true);
-					break;
-				case NODEATHSUPPLY:
-					type.setNodeathsupply(true);
-					break;
-				case AUTOUNDEAD:
-					type.setAutoundead(true);
-					break;
-				case ZOMBIEREANIM:
-					type.setZombiereanim(true);
-					break;
-				case HORSEREANIM:
-					type.setHorsereanim(true);
-					break;
-				case WIGHTREANIM:
-					type.setWightreanim(true);
-					break;
-				case MANIKINREANIM:
-					type.setManikinreanim(true);
-					break;
-				case TOMBWYRMREANIM:
-					type.setTombwyrmreanim(true);
-					break;
-				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst4(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
-				EList<NationMods> mods = nationToEdit.getMods();
-				NationInst4 type = DmFactory.eINSTANCE.createNationInst4();
-				switch (inst) {
-				case STARTCOM:
-					type.setStartcom(true);
-					break;
-				case STARTSCOUT:
-					type.setStartscout(true);
-					break;
-				case STARTUNITTYPE1:
-					type.setStartunittype1(true);
-					break;
-				case STARTUNITTYPE2:
-					type.setStartunittype2(true);
-					break;
-				case ADDRECUNIT1:
-					type.setAddrecunit(true);
-					break;
-				case ADDRECUNIT2:
-					type.setAddrecunit(true);
-					break;
-				case ADDRECUNIT3:
-					type.setAddrecunit(true);
-					break;
-				case ADDRECUNIT4:
-					type.setAddrecunit(true);
-					break;
-				case ADDRECUNIT5:
-					type.setAddrecunit(true);
-					break;
-				case ADDRECUNIT6:
-					type.setAddrecunit(true);
-					break;
-				case ADDRECUNIT7:
-					type.setAddrecunit(true);
-					break;
-				case ADDRECUNIT8:
-					type.setAddrecunit(true);
-					break;
-				case ADDRECCOM1:
-					type.setAddreccom(true);
-					break;
-				case ADDRECCOM2:
-					type.setAddreccom(true);
-					break;
-				case ADDRECCOM3:
-					type.setAddreccom(true);
-					break;
-				case ADDRECCOM4:
-					type.setAddreccom(true);
-					break;
-				case ADDRECCOM5:
-					type.setAddreccom(true);
-					break;
-				case ADDRECCOM6:
-					type.setAddreccom(true);
-					break;
-				case ADDRECCOM7:
-					type.setAddreccom(true);
-					break;
-				case ADDRECCOM8:
-					type.setAddreccom(true);
-					break;
-				case UWUNIT1:
-					type.setUwunit1(true);
-					break;
-				case UWUNIT2:
-					type.setUwunit2(true);
-					break;
-				case UWUNIT3:
-					type.setUwunit3(true);
-					break;
-				case UWUNIT4:
-					type.setUwunit4(true);
-					break;
-				case UWUNIT5:
-					type.setUwunit5(true);
-					break;
-				case UWCOM1:
-					type.setUwcom1(true);
-					break;
-				case UWCOM2:
-					type.setUwcom2(true);
-					break;
-				case UWCOM3:
-					type.setUwcom3(true);
-					break;
-				case UWCOM4:
-					type.setUwcom4(true);
-					break;
-				case UWCOM5:
-					type.setUwcom5(true);
-					break;
-				case DEFCOM1:
-					type.setDefcom1(true);
-					break;
-				case DEFCOM2:
-					type.setDefcom2(true);
-					break;
-				case DEFUNIT1:
-					type.setDefunit1(true);
-					break;
-				case DEFUNIT1B:
-					type.setDefunit1b(true);
-					break;
-				case DEFUNIT2:
-					type.setDefunit2(true);
-					break;
-				case DEFUNIT2B:
-					type.setDefunit2b(true);
-					break;
-				}
-				Integer newValue = null;
-				try {
-					newValue = Integer.valueOf(newName);
-				} catch (NumberFormatException e) {
-					// is not a number
-				}
-				if (newValue != null) {
-					type.setValue2(Integer.valueOf(newName));
-				} else {
-					type.setValue1(newName);
-				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst5(final Inst inst, final XtextEditor editor, final String newName1, final String newName2, final String newName3) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
-				EList<NationMods> mods = nationToEdit.getMods();
-				NationInst5 type = DmFactory.eINSTANCE.createNationInst5();
-				switch (inst) {
-				case COLOR:
-					type.setColor(true);
-					break;
-				}
-				type.setValue1(newName1);
-				type.setValue2(newName2);
-				type.setValue3(newName3);
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void removeInst(final Inst inst, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
-				NationMods modToRemove = null;
-				int siteCount = 0;
-				int addreccom = 0;
-				int addrecunit = 0;
-				EList<NationMods> mods = nationToEdit.getMods();
-				for (NationMods mod : mods) {
-					if (mod instanceof NationInst1) {
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<NationMods> mods = input.getMods();
+						NationInst1 type = DmFactory.eINSTANCE.createNationInst1();
 						switch (inst) {
+						case NAME:
+							type.setName(true);
+							break;
 						case EPITHET:
-							if (((NationInst1)mod).isEpithet()){
-								modToRemove = mod;
-							}
+							type.setEpithet(true);
 							break;
 						case DESCR:
-							if (((NationInst1)mod).isDescr()){
-								modToRemove = mod;
-							}
+							type.setDescr(true);
 							break;
 						case SUMMARY:
-							if (((NationInst1)mod).isSummary()){
-								modToRemove = mod;
-							}
+							type.setSummary(true);
 							break;
 						case BRIEF:
-							if (((NationInst1)mod).isBrief()){
-								modToRemove = mod;
-							}
+							type.setBrief(true);
 							break;
 						case FLAG:
-							if (((NationInst1)mod).isFlag()){
-								modToRemove = mod;
-							}
+							type.setFlag(true);
 							break;
 						case MAPBACKGROUND:
-							if (((NationInst1)mod).isMapbackground()){
-								modToRemove = mod;
-							}
+							type.setMapbackground(true);
 							break;
 						case STARTSITE1:
-							if (((NationInst1)mod).isStartsite()){
-								siteCount++;
-								if (siteCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setStartsite(true);
 							break;
 						case STARTSITE2:
-							if (((NationInst1)mod).isStartsite()){
-								siteCount++;
-								if (siteCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setStartsite(true);
 							break;
 						case STARTSITE3:
-							if (((NationInst1)mod).isStartsite()){
-								siteCount++;
-								if (siteCount == 3) {
-									modToRemove = mod;
-								}
-							}
+							type.setStartsite(true);
 							break;
 						case STARTSITE4:
-							if (((NationInst1)mod).isStartsite()){
-								siteCount++;
-								if (siteCount == 4) {
-									modToRemove = mod;
-								}
-							}
+							type.setStartsite(true);
 							break;
 						}
-					}
-					if (mod instanceof NationInst2) {
+						type.setValue(newName);
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<NationMods> mods = input.getMods();
+						NationInst2 type = DmFactory.eINSTANCE.createNationInst2();
 						switch (inst) {
 						case ERA:
-							if (((NationInst2)mod).isEra()){
-								modToRemove = mod;
-							}
+							type.setEra(true);
 							break;
 						case LABCOST:
-							if (((NationInst2)mod).isLabcost()){
-								modToRemove = mod;
-							}
+							type.setLabcost(true);
 							break;
 						case TEMPLECOST:
-							if (((NationInst2)mod).isTemplecost()){
-								modToRemove = mod;
-							}
+							type.setTemplecost(true);
 							break;
 						case TEMPLEPIC:
-							if (((NationInst2)mod).isTemplepic()){
-								modToRemove = mod;
-							}
+							type.setTemplepic(true);
 							break;
 						case STARTUNITNBRS1:
-							if (((NationInst2)mod).isStartunitnbrs1()){
-								modToRemove = mod;
-							}
+							type.setStartunitnbrs1(true);
 							break;
 						case STARTUNITNBRS2:
-							if (((NationInst2)mod).isStartunitnbrs2()){
-								modToRemove = mod;
-							}
+							type.setStartunitnbrs2(true);
 							break;
 						case HERO1:
-							if (((NationInst2)mod).isHero1()){
-								modToRemove = mod;
-							}
+							type.setHero1(true);
 							break;
 						case HERO2:
-							if (((NationInst2)mod).isHero2()){
-								modToRemove = mod;
-							}
+							type.setHero2(true);
 							break;
 						case HERO3:
-							if (((NationInst2)mod).isHero3()){
-								modToRemove = mod;
-							}
+							type.setHero3(true);
 							break;
 						case HERO4:
-							if (((NationInst2)mod).isHero4()){
-								modToRemove = mod;
-							}
+							type.setHero4(true);
 							break;
 						case HERO5:
-							if (((NationInst2)mod).isHero5()){
-								modToRemove = mod;
-							}
+							type.setHero5(true);
 							break;
 						case HERO6:
-							if (((NationInst2)mod).isHero6()){
-								modToRemove = mod;
-							}
+							type.setHero6(true);
 							break;
 						case MULTIHERO1:
-							if (((NationInst2)mod).isMultihero1()){
-								modToRemove = mod;
-							}
+							type.setMultihero1(true);
 							break;
 						case MULTIHERO2:
-							if (((NationInst2)mod).isMultihero2()){
-								modToRemove = mod;
-							}
+							type.setMultihero2(true);
 							break;
 						case DEFMULT1:
-							if (((NationInst2)mod).isDefmult1()){
-								modToRemove = mod;
-							}
+							type.setDefmult1(true);
 							break;
 						case DEFMULT1B:
-							if (((NationInst2)mod).isDefmult1b()){
-								modToRemove = mod;
-							}
+							type.setDefmult1b(true);
 							break;
 						case DEFMULT2:
-							if (((NationInst2)mod).isDefmult2()){
-								modToRemove = mod;
-							}
+							type.setDefmult2(true);
 							break;
 						case DEFMULT2B:
-							if (((NationInst2)mod).isDefmult2b()){
-								modToRemove = mod;
-							}
+							type.setDefmult2b(true);
 							break;
 						case IDEALCOLD:
-							if (((NationInst2)mod).isIdealcold()){
-								modToRemove = mod;
-							}
+							type.setIdealcold(true);
 							break;
 						case CASTLEPROD:
-							if (((NationInst2)mod).isCastleprod()){
-								modToRemove = mod;
-							}
+							type.setCastleprod(true);
 							break;
 						case DOMKILL:
-							if (((NationInst2)mod).isDomkill()){
-								modToRemove = mod;
-							}
+							type.setDomkill(true);
 							break;
 						case DOMUNREST:
-							if (((NationInst2)mod).isDomunrest()){
-								modToRemove = mod;
-							}
+							type.setDomunrest(true);
 							break;
 						case STARTFORT:
-							if (((NationInst2)mod).isStartfort()){
-								modToRemove = mod;
-							}
+							type.setStartfort(true);
 							break;
 						case DEFAULTFORT:
-							if (((NationInst2)mod).isDefaultfort()){
-								modToRemove = mod;
-							}
+							type.setDefaultfort(true);
 							break;
 						case FARMFORT:
-							if (((NationInst2)mod).isFarmfort()){
-								modToRemove = mod;
-							}
+							type.setFarmfort(true);
 							break;
 						case MOUNTAINFORT:
-							if (((NationInst2)mod).isMountainfort()){
-								modToRemove = mod;
-							}
+							type.setMountainfort(true);
 							break;
 						case FORESTFORT:
-							if (((NationInst2)mod).isForestfort()){
-								modToRemove = mod;
-							}
+							type.setForestfort(true);
 							break;
 						case SWAMPFORT:
-							if (((NationInst2)mod).isSwampfort()){
-								modToRemove = mod;
-							}
+							type.setSwampfort(true);
 							break;
 						case UWFORT:
-							if (((NationInst2)mod).isUwfort()){
-								modToRemove = mod;
-							}
+							type.setUwfort(true);
 							break;
 						case DEEPFORT:
-							if (((NationInst2)mod).isDeepfort()){
-								modToRemove = mod;
-							}
+							type.setDeepfort(true);
 							break;
 						}
-					}
-					if (mod instanceof NationInst3) {
+						try {
+							type.setValue(Integer.valueOf(newName));
+						} catch (NumberFormatException e) {
+							e.printStackTrace();
+						}
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst3(final Inst inst, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<NationMods> mods = input.getMods();
+						NationInst3 type = DmFactory.eINSTANCE.createNationInst3();
 						switch (inst) {
 						case CLEARNATION:
-							if (((NationInst3)mod).isClearnation()){
-								modToRemove = mod;
-							}
+							type.setClearnation(true);
 							break;
 						case CLEARREC:
-							if (((NationInst3)mod).isClearrec()){
-								modToRemove = mod;
-							}
+							type.setClearrec(true);
 							break;
 						case CLEARSITES:
-							if (((NationInst3)mod).isClearsites()){
-								modToRemove = mod;
-							}
+							type.setClearsites(true);
 							break;
 						case UWNATION:
-							if (((NationInst3)mod).isUwnation()){
-								modToRemove = mod;
-							}
+							type.setUwnation(true);
 							break;
 						case BLOODNATION:
-							if (((NationInst3)mod).isBloodnation()){
-								modToRemove = mod;
-							}
+							type.setBloodnation(true);
 							break;
 						case NOPREACH:
-							if (((NationInst3)mod).isNopreach()){
-								modToRemove = mod;
-							}
+							type.setNopreach(true);
 							break;
 						case DYINGDOM:
-							if (((NationInst3)mod).isDyingdom()){
-								modToRemove = mod;
-							}
+							type.setDyingdom(true);
 							break;
 						case SACRIFICEDOM:
-							if (((NationInst3)mod).isSacrificedom()){
-								modToRemove = mod;
-							}
+							type.setSacrificedom(true);
 							break;
 						case NODEATHSUPPLY:
-							if (((NationInst3)mod).isNodeathsupply()){
-								modToRemove = mod;
-							}
+							type.setNodeathsupply(true);
 							break;
 						case AUTOUNDEAD:
-							if (((NationInst3)mod).isAutoundead()){
-								modToRemove = mod;
-							}
+							type.setAutoundead(true);
 							break;
 						case ZOMBIEREANIM:
-							if (((NationInst3)mod).isZombiereanim()){
-								modToRemove = mod;
-							}
+							type.setZombiereanim(true);
 							break;
 						case HORSEREANIM:
-							if (((NationInst3)mod).isHorsereanim()){
-								modToRemove = mod;
-							}
+							type.setHorsereanim(true);
 							break;
 						case WIGHTREANIM:
-							if (((NationInst3)mod).isWightreanim()){
-								modToRemove = mod;
-							}
+							type.setWightreanim(true);
 							break;
 						case MANIKINREANIM:
-							if (((NationInst3)mod).isManikinreanim()){
-								modToRemove = mod;
-							}
+							type.setManikinreanim(true);
 							break;
 						case TOMBWYRMREANIM:
-							if (((NationInst3)mod).isTombwyrmreanim()){
-								modToRemove = mod;
-							}
+							type.setTombwyrmreanim(true);
 							break;
 						}
-					}
-					if (mod instanceof NationInst4) {
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst4(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<NationMods> mods = input.getMods();
+						NationInst4 type = DmFactory.eINSTANCE.createNationInst4();
 						switch (inst) {
 						case STARTCOM:
-							if (((NationInst4)mod).isStartcom()){
-								modToRemove = mod;
-							}
+							type.setStartcom(true);
 							break;
 						case STARTSCOUT:
-							if (((NationInst4)mod).isStartscout()){
-								modToRemove = mod;
-							}
+							type.setStartscout(true);
 							break;
 						case STARTUNITTYPE1:
-							if (((NationInst4)mod).isStartunittype1()){
-								modToRemove = mod;
-							}
+							type.setStartunittype1(true);
 							break;
 						case STARTUNITTYPE2:
-							if (((NationInst4)mod).isStartunittype2()){
-								modToRemove = mod;
-							}
+							type.setStartunittype2(true);
 							break;
 						case ADDRECUNIT1:
-							if (((NationInst4)mod).isAddrecunit()){
-								addrecunit++;
-								if (addrecunit == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddrecunit(true);
 							break;
 						case ADDRECUNIT2:
-							if (((NationInst4)mod).isAddrecunit()){
-								addrecunit++;
-								if (addrecunit == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddrecunit(true);
 							break;
 						case ADDRECUNIT3:
-							if (((NationInst4)mod).isAddrecunit()){
-								addrecunit++;
-								if (addrecunit == 3) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddrecunit(true);
 							break;
 						case ADDRECUNIT4:
-							if (((NationInst4)mod).isAddrecunit()){
-								addrecunit++;
-								if (addrecunit == 4) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddrecunit(true);
 							break;
 						case ADDRECUNIT5:
-							if (((NationInst4)mod).isAddrecunit()){
-								addrecunit++;
-								if (addrecunit == 5) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddrecunit(true);
 							break;
 						case ADDRECUNIT6:
-							if (((NationInst4)mod).isAddrecunit()){
-								addrecunit++;
-								if (addrecunit == 6) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddrecunit(true);
 							break;
 						case ADDRECUNIT7:
-							if (((NationInst4)mod).isAddrecunit()){
-								addrecunit++;
-								if (addrecunit == 7) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddrecunit(true);
 							break;
 						case ADDRECUNIT8:
-							if (((NationInst4)mod).isAddrecunit()){
-								addrecunit++;
-								if (addrecunit == 8) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddrecunit(true);
 							break;
 						case ADDRECCOM1:
-							if (((NationInst4)mod).isAddreccom()){
-								addreccom++;
-								if (addreccom == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddreccom(true);
 							break;
 						case ADDRECCOM2:
-							if (((NationInst4)mod).isAddreccom()){
-								addreccom++;
-								if (addreccom == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddreccom(true);
 							break;
 						case ADDRECCOM3:
-							if (((NationInst4)mod).isAddreccom()){
-								addreccom++;
-								if (addreccom == 3) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddreccom(true);
 							break;
 						case ADDRECCOM4:
-							if (((NationInst4)mod).isAddreccom()){
-								addreccom++;
-								if (addreccom == 4) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddreccom(true);
 							break;
 						case ADDRECCOM5:
-							if (((NationInst4)mod).isAddreccom()){
-								addreccom++;
-								if (addreccom == 5) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddreccom(true);
 							break;
 						case ADDRECCOM6:
-							if (((NationInst4)mod).isAddreccom()){
-								addreccom++;
-								if (addreccom == 6) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddreccom(true);
 							break;
 						case ADDRECCOM7:
-							if (((NationInst4)mod).isAddreccom()){
-								addreccom++;
-								if (addreccom == 7) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddreccom(true);
 							break;
 						case ADDRECCOM8:
-							if (((NationInst4)mod).isAddreccom()){
-								addreccom++;
-								if (addreccom == 8) {
-									modToRemove = mod;
-								}
-							}
+							type.setAddreccom(true);
 							break;
 						case UWUNIT1:
-							if (((NationInst4)mod).isUwunit1()){
-								modToRemove = mod;
-							}
+							type.setUwunit1(true);
 							break;
 						case UWUNIT2:
-							if (((NationInst4)mod).isUwunit2()){
-								modToRemove = mod;
-							}
+							type.setUwunit2(true);
 							break;
 						case UWUNIT3:
-							if (((NationInst4)mod).isUwunit3()){
-								modToRemove = mod;
-							}
+							type.setUwunit3(true);
 							break;
 						case UWUNIT4:
-							if (((NationInst4)mod).isUwunit4()){
-								modToRemove = mod;
-							}
+							type.setUwunit4(true);
 							break;
 						case UWUNIT5:
-							if (((NationInst4)mod).isUwunit5()){
-								modToRemove = mod;
-							}
+							type.setUwunit5(true);
 							break;
 						case UWCOM1:
-							if (((NationInst4)mod).isUwcom1()){
-								modToRemove = mod;
-							}
+							type.setUwcom1(true);
 							break;
 						case UWCOM2:
-							if (((NationInst4)mod).isUwcom2()){
-								modToRemove = mod;
-							}
+							type.setUwcom2(true);
 							break;
 						case UWCOM3:
-							if (((NationInst4)mod).isUwcom3()){
-								modToRemove = mod;
-							}
+							type.setUwcom3(true);
 							break;
 						case UWCOM4:
-							if (((NationInst4)mod).isUwcom4()){
-								modToRemove = mod;
-							}
+							type.setUwcom4(true);
 							break;
 						case UWCOM5:
-							if (((NationInst4)mod).isUwcom5()){
-								modToRemove = mod;
-							}
+							type.setUwcom5(true);
 							break;
 						case DEFCOM1:
-							if (((NationInst4)mod).isDefcom1()){
-								modToRemove = mod;
-							}
+							type.setDefcom1(true);
 							break;
 						case DEFCOM2:
-							if (((NationInst4)mod).isDefcom2()){
-								modToRemove = mod;
-							}
+							type.setDefcom2(true);
 							break;
 						case DEFUNIT1:
-							if (((NationInst4)mod).isDefunit1()){
-								modToRemove = mod;
-							}
+							type.setDefunit1(true);
 							break;
 						case DEFUNIT1B:
-							if (((NationInst4)mod).isDefunit1b()){
-								modToRemove = mod;
-							}
+							type.setDefunit1b(true);
 							break;
 						case DEFUNIT2:
-							if (((NationInst4)mod).isDefunit2()){
-								modToRemove = mod;
-							}
+							type.setDefunit2(true);
 							break;
 						case DEFUNIT2B:
-							if (((NationInst4)mod).isDefunit2b()){
-								modToRemove = mod;
-							}
+							type.setDefunit2b(true);
 							break;
 						}
-					}
-					if (mod instanceof NationInst5) {
+						Integer newValue = null;
+						try {
+							newValue = Integer.valueOf(newName);
+						} catch (NumberFormatException e) {
+							// is not a number
+						}
+						if (newValue != null) {
+							type.setValue2(Integer.valueOf(newName));
+						} else {
+							type.setValue1(newName);
+						}
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst5(final Inst inst, final XtextEditor editor, final String newName1, final String newName2, final String newName3) { 
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<NationMods> mods = input.getMods();
+						NationInst5 type = DmFactory.eINSTANCE.createNationInst5();
 						switch (inst) {
 						case COLOR:
-							if (((NationInst5)mod).isColor()){
-								modToRemove = mod;
-							}
+							type.setColor(true);
 							break;
 						}
-					}
-				}
-				if (modToRemove != null) {
-					mods.remove(modToRemove);
-				}
-			}  
-		},
-		myDocument);
+						type.setValue1(newName1);
+						type.setValue2(newName2);
+						type.setValue3(newName3);
+						mods.add(type);
+					}  
+				},
+				myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void removeInst(final Inst inst, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						NationMods modToRemove = null;
+						int siteCount = 0;
+						int addreccom = 0;
+						int addrecunit = 0;
+						EList<NationMods> mods = input.getMods();
+						for (NationMods mod : mods) {
+							if (mod instanceof NationInst1) {
+								switch (inst) {
+								case NAME:
+									if (((NationInst1)mod).isName()){
+										modToRemove = mod;
+									}
+									break;
+								case EPITHET:
+									if (((NationInst1)mod).isEpithet()){
+										modToRemove = mod;
+									}
+									break;
+								case DESCR:
+									if (((NationInst1)mod).isDescr()){
+										modToRemove = mod;
+									}
+									break;
+								case SUMMARY:
+									if (((NationInst1)mod).isSummary()){
+										modToRemove = mod;
+									}
+									break;
+								case BRIEF:
+									if (((NationInst1)mod).isBrief()){
+										modToRemove = mod;
+									}
+									break;
+								case FLAG:
+									if (((NationInst1)mod).isFlag()){
+										modToRemove = mod;
+									}
+									break;
+								case MAPBACKGROUND:
+									if (((NationInst1)mod).isMapbackground()){
+										modToRemove = mod;
+									}
+									break;
+								case STARTSITE1:
+									if (((NationInst1)mod).isStartsite()){
+										siteCount++;
+										if (siteCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case STARTSITE2:
+									if (((NationInst1)mod).isStartsite()){
+										siteCount++;
+										if (siteCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case STARTSITE3:
+									if (((NationInst1)mod).isStartsite()){
+										siteCount++;
+										if (siteCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case STARTSITE4:
+									if (((NationInst1)mod).isStartsite()){
+										siteCount++;
+										if (siteCount == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								}
+							}
+							if (mod instanceof NationInst2) {
+								switch (inst) {
+								case ERA:
+									if (((NationInst2)mod).isEra()){
+										modToRemove = mod;
+									}
+									break;
+								case LABCOST:
+									if (((NationInst2)mod).isLabcost()){
+										modToRemove = mod;
+									}
+									break;
+								case TEMPLECOST:
+									if (((NationInst2)mod).isTemplecost()){
+										modToRemove = mod;
+									}
+									break;
+								case TEMPLEPIC:
+									if (((NationInst2)mod).isTemplepic()){
+										modToRemove = mod;
+									}
+									break;
+								case STARTUNITNBRS1:
+									if (((NationInst2)mod).isStartunitnbrs1()){
+										modToRemove = mod;
+									}
+									break;
+								case STARTUNITNBRS2:
+									if (((NationInst2)mod).isStartunitnbrs2()){
+										modToRemove = mod;
+									}
+									break;
+								case HERO1:
+									if (((NationInst2)mod).isHero1()){
+										modToRemove = mod;
+									}
+									break;
+								case HERO2:
+									if (((NationInst2)mod).isHero2()){
+										modToRemove = mod;
+									}
+									break;
+								case HERO3:
+									if (((NationInst2)mod).isHero3()){
+										modToRemove = mod;
+									}
+									break;
+								case HERO4:
+									if (((NationInst2)mod).isHero4()){
+										modToRemove = mod;
+									}
+									break;
+								case HERO5:
+									if (((NationInst2)mod).isHero5()){
+										modToRemove = mod;
+									}
+									break;
+								case HERO6:
+									if (((NationInst2)mod).isHero6()){
+										modToRemove = mod;
+									}
+									break;
+								case MULTIHERO1:
+									if (((NationInst2)mod).isMultihero1()){
+										modToRemove = mod;
+									}
+									break;
+								case MULTIHERO2:
+									if (((NationInst2)mod).isMultihero2()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFMULT1:
+									if (((NationInst2)mod).isDefmult1()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFMULT1B:
+									if (((NationInst2)mod).isDefmult1b()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFMULT2:
+									if (((NationInst2)mod).isDefmult2()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFMULT2B:
+									if (((NationInst2)mod).isDefmult2b()){
+										modToRemove = mod;
+									}
+									break;
+								case IDEALCOLD:
+									if (((NationInst2)mod).isIdealcold()){
+										modToRemove = mod;
+									}
+									break;
+								case CASTLEPROD:
+									if (((NationInst2)mod).isCastleprod()){
+										modToRemove = mod;
+									}
+									break;
+								case DOMKILL:
+									if (((NationInst2)mod).isDomkill()){
+										modToRemove = mod;
+									}
+									break;
+								case DOMUNREST:
+									if (((NationInst2)mod).isDomunrest()){
+										modToRemove = mod;
+									}
+									break;
+								case STARTFORT:
+									if (((NationInst2)mod).isStartfort()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFAULTFORT:
+									if (((NationInst2)mod).isDefaultfort()){
+										modToRemove = mod;
+									}
+									break;
+								case FARMFORT:
+									if (((NationInst2)mod).isFarmfort()){
+										modToRemove = mod;
+									}
+									break;
+								case MOUNTAINFORT:
+									if (((NationInst2)mod).isMountainfort()){
+										modToRemove = mod;
+									}
+									break;
+								case FORESTFORT:
+									if (((NationInst2)mod).isForestfort()){
+										modToRemove = mod;
+									}
+									break;
+								case SWAMPFORT:
+									if (((NationInst2)mod).isSwampfort()){
+										modToRemove = mod;
+									}
+									break;
+								case UWFORT:
+									if (((NationInst2)mod).isUwfort()){
+										modToRemove = mod;
+									}
+									break;
+								case DEEPFORT:
+									if (((NationInst2)mod).isDeepfort()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof NationInst3) {
+								switch (inst) {
+								case CLEARNATION:
+									if (((NationInst3)mod).isClearnation()){
+										modToRemove = mod;
+									}
+									break;
+								case CLEARREC:
+									if (((NationInst3)mod).isClearrec()){
+										modToRemove = mod;
+									}
+									break;
+								case CLEARSITES:
+									if (((NationInst3)mod).isClearsites()){
+										modToRemove = mod;
+									}
+									break;
+								case UWNATION:
+									if (((NationInst3)mod).isUwnation()){
+										modToRemove = mod;
+									}
+									break;
+								case BLOODNATION:
+									if (((NationInst3)mod).isBloodnation()){
+										modToRemove = mod;
+									}
+									break;
+								case NOPREACH:
+									if (((NationInst3)mod).isNopreach()){
+										modToRemove = mod;
+									}
+									break;
+								case DYINGDOM:
+									if (((NationInst3)mod).isDyingdom()){
+										modToRemove = mod;
+									}
+									break;
+								case SACRIFICEDOM:
+									if (((NationInst3)mod).isSacrificedom()){
+										modToRemove = mod;
+									}
+									break;
+								case NODEATHSUPPLY:
+									if (((NationInst3)mod).isNodeathsupply()){
+										modToRemove = mod;
+									}
+									break;
+								case AUTOUNDEAD:
+									if (((NationInst3)mod).isAutoundead()){
+										modToRemove = mod;
+									}
+									break;
+								case ZOMBIEREANIM:
+									if (((NationInst3)mod).isZombiereanim()){
+										modToRemove = mod;
+									}
+									break;
+								case HORSEREANIM:
+									if (((NationInst3)mod).isHorsereanim()){
+										modToRemove = mod;
+									}
+									break;
+								case WIGHTREANIM:
+									if (((NationInst3)mod).isWightreanim()){
+										modToRemove = mod;
+									}
+									break;
+								case MANIKINREANIM:
+									if (((NationInst3)mod).isManikinreanim()){
+										modToRemove = mod;
+									}
+									break;
+								case TOMBWYRMREANIM:
+									if (((NationInst3)mod).isTombwyrmreanim()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof NationInst4) {
+								switch (inst) {
+								case STARTCOM:
+									if (((NationInst4)mod).isStartcom()){
+										modToRemove = mod;
+									}
+									break;
+								case STARTSCOUT:
+									if (((NationInst4)mod).isStartscout()){
+										modToRemove = mod;
+									}
+									break;
+								case STARTUNITTYPE1:
+									if (((NationInst4)mod).isStartunittype1()){
+										modToRemove = mod;
+									}
+									break;
+								case STARTUNITTYPE2:
+									if (((NationInst4)mod).isStartunittype2()){
+										modToRemove = mod;
+									}
+									break;
+								case ADDRECUNIT1:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT2:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT3:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT4:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT5:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 5) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT6:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 6) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT7:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 7) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT8:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 8) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM1:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM2:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM3:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM4:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM5:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 5) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM6:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 6) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM7:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 7) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM8:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 8) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case UWUNIT1:
+									if (((NationInst4)mod).isUwunit1()){
+										modToRemove = mod;
+									}
+									break;
+								case UWUNIT2:
+									if (((NationInst4)mod).isUwunit2()){
+										modToRemove = mod;
+									}
+									break;
+								case UWUNIT3:
+									if (((NationInst4)mod).isUwunit3()){
+										modToRemove = mod;
+									}
+									break;
+								case UWUNIT4:
+									if (((NationInst4)mod).isUwunit4()){
+										modToRemove = mod;
+									}
+									break;
+								case UWUNIT5:
+									if (((NationInst4)mod).isUwunit5()){
+										modToRemove = mod;
+									}
+									break;
+								case UWCOM1:
+									if (((NationInst4)mod).isUwcom1()){
+										modToRemove = mod;
+									}
+									break;
+								case UWCOM2:
+									if (((NationInst4)mod).isUwcom2()){
+										modToRemove = mod;
+									}
+									break;
+								case UWCOM3:
+									if (((NationInst4)mod).isUwcom3()){
+										modToRemove = mod;
+									}
+									break;
+								case UWCOM4:
+									if (((NationInst4)mod).isUwcom4()){
+										modToRemove = mod;
+									}
+									break;
+								case UWCOM5:
+									if (((NationInst4)mod).isUwcom5()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFCOM1:
+									if (((NationInst4)mod).isDefcom1()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFCOM2:
+									if (((NationInst4)mod).isDefcom2()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFUNIT1:
+									if (((NationInst4)mod).isDefunit1()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFUNIT1B:
+									if (((NationInst4)mod).isDefunit1b()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFUNIT2:
+									if (((NationInst4)mod).isDefunit2()){
+										modToRemove = mod;
+									}
+									break;
+								case DEFUNIT2B:
+									if (((NationInst4)mod).isDefunit2b()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof NationInst5) {
+								switch (inst) {
+								case COLOR:
+									if (((NationInst5)mod).isColor()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+						}
+						if (modToRemove != null) {
+							mods.remove(modToRemove);
+						}
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
 	}
 
 	/* (non-Javadoc)

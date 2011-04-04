@@ -623,7 +623,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 					descr.setBackground(toolkit.getColors().getBackground());
 					descr.setText("");
 				} else {
-					removeInst2(Inst.DESCR, doc);
+					removeInst(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
 					descr.setText("");
@@ -670,7 +670,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 					spr1.setEnabled(true);
 					spr1.setText("");
 				} else {
-					removeInst2(Inst.SPR1, doc);
+					removeInst(Inst.SPR1, doc);
 					spr1.setEnabled(false);
 					spr1.setText("");
 				}
@@ -708,7 +708,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 					spr2.setEnabled(true);
 					spr2.setText("");
 				} else {
-					removeInst2(Inst.SPR2, doc);
+					removeInst(Inst.SPR2, doc);
 					spr2.setEnabled(false);
 					spr2.setText("");
 				}
@@ -765,7 +765,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 							addInst6(key, doc, key.defaultValue);
 						}
 					} else {
-						removeInst2(key, doc);
+						removeInst(key, doc);
 					}
 				}
 
@@ -4148,49 +4148,52 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
-			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
-				EList<MonsterMods> mods = monsterToEdit.getMods();
-				MonsterInst1 type = DmFactory.eINSTANCE.createMonsterInst1();
-				switch (inst) {
-				case SPR1:
-					type.setSpr1(true);
-					break;
-				case SPR2:
-					type.setSpr2(true);
-					break;
-				case DESCR:
-					type.setDescr(true);
-					break;
-				case ARMOR1:
-					type.setArmor(true);
-					break;
-				case ARMOR2:
-					type.setArmor(true);
-					break;
-				case ARMOR3:
-					type.setArmor(true);
-					break;
-				}
-				type.setValue(newName);
-				mods.add(type);
-			}  
-		},
-		myDocument);
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<MonsterMods> mods = input.getMods();
+						MonsterInst1 type = DmFactory.eINSTANCE.createMonsterInst1();
+						switch (inst) {
+						case SPR1:
+							type.setSpr1(true);
+							break;
+						case SPR2:
+							type.setSpr2(true);
+							break;
+						case DESCR:
+							type.setDescr(true);
+							break;
+						case ARMOR1:
+							type.setArmor(true);
+							break;
+						case ARMOR2:
+							type.setArmor(true);
+							break;
+						case ARMOR3:
+							type.setArmor(true);
+							break;
+						}
+						type.setValue(newName);
+						mods.add(type);
+					}  
+				},
+				myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
 	}
 	
 	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) {
@@ -4448,1350 +4451,1365 @@ public class MonsterDetailsPage implements IDetailsPage {
 		});
 	}
 	
-	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
-			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
-				EList<MonsterMods> mods = monsterToEdit.getMods();
-				MonsterInst3 type = DmFactory.eINSTANCE.createMonsterInst3();
-				switch (inst) {
-				case MAGICSKILL1:
-					type.setMagicskill(true);
-					break;
-				case MAGICSKILL2:
-					type.setMagicskill(true);
-					break;
-				case MAGICSKILL3:
-					type.setMagicskill(true);
-					break;
-				case MAGICSKILL4:
-					type.setMagicskill(true);
-					break;
-				case CUSTOMMAGIC:
-					type.setCustommagic(true);
-					break;
-				case MAGICBOOST:
-					type.setMagicboost(true);
-					break;
-				case GEMPROD:
-					type.setGemprod(true);
-					break;
-				}
-				type.setValue1(Integer.valueOf(newName1));
-				type.setValue2(Integer.valueOf(newName2));
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst4(final Inst inst, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
-				EList<MonsterMods> mods = monsterToEdit.getMods();
-				MonsterInst4 type = DmFactory.eINSTANCE.createMonsterInst4();
-				switch (inst) {
-				case CLEAR:
-					type.setClear(true);
-					break;
-				case CLEARMAGIC:
-					type.setClearmagic(true);
-					break;
-				case CLEARSPEC:
-					type.setClearspec(true);
-					break;
-				case FEMALE:
-					type.setFemale(true);
-					break;
-				case MOUNTED:
-					type.setMounted(true);
-					break;
-				case HOLY:
-					type.setHoly(true);
-					break;
-				case ANIMAL:
-					type.setAnimal(true);
-					break;
-				case UNDEAD:
-					type.setUndead(true);
-					break;
-				case DEMON:
-					type.setDemon(true);
-					break;
-				case MAGICBEING:
-					type.setMagicbeing(true);
-					break;
-				case STONEBEING:
-					type.setStonebeing(true);
-					break;
-				case INANIMATE:
-					type.setInanimate(true);
-					break;
-				case COLDBLOOD:
-					type.setColdblood(true);
-					break;
-				case IMMORTAL:
-					type.setImmortal(true);
-					break;
-				case BLIND:
-					type.setBlind(true);
-					break;
-				case UNIQUE:
-					type.setUnique(true);
-					break;
-				case IMMOBILE:
-					type.setImmobile(true);
-					break;
-				case AQUATIC:
-					type.setAquatic(true);
-					break;
-				case AMPHIBIAN:
-					type.setAmphibian(true);
-					break;
-				case POORAMPHIBIAN:
-					type.setPooramphibian(true);
-					break;
-				case FLYING:
-					type.setFlying(true);
-					break;
-				case STORMIMMUNE:
-					type.setStormimmune(true);
-					break;
-				case SAILING:
-					type.setSailing(true);
-					break;
-				case FORESTSURVIVAL:
-					type.setForestsurvival(true);
-					break;
-				case MOUNTAINSURVIVAL:
-					type.setMountainsurvival(true);
-					break;
-				case SWAMPSURVIVAL:
-					type.setSwampsurvival(true);
-					break;
-				case WASTESURVIVAL:
-					type.setWastesurvival(true);
-					break;
-				case ILLUSION:
-					type.setIllusion(true);
-					break;
-				case SPY:
-					type.setSpy(true);
-					break;
-				case ASSASSIN:
-					type.setAssassin(true);
-					break;
-				case HEAL:
-					type.setHeal(true);
-					break;
-				case NOHEAL:
-					type.setNoheal(true);
-					break;
-				case NEEDNOTEAT:
-					type.setNeednoteat(true);
-					break;
-				case ETHEREAL:
-					type.setEthereal(true);
-					break;
-				case TRAMPLE:
-					type.setTrample(true);
-					break;
-				case ENTANGLE:
-					type.setEntangle(true);
-					break;
-				case EYELOSS:
-					type.setEyeloss(true);
-					break;
-				case HORRORMARK:
-					type.setHorrormark(true);
-					break;
-				case POISONARMOR:
-					type.setPoisonarmor(true);
-					break;
-				case INQUISITOR:
-					type.setInquisitor(true);
-					break;
-				case NOITEM:
-					type.setNoitem(true);
-					break;
-				case NOLEADER:
-					type.setNoleader(true);
-					break;
-				case POORLEADER:
-					type.setPoorleader(true);
-					break;
-				case OKLEADER:
-					type.setOkleader(true);
-					break;
-				case GOODLEADER:
-					type.setGoodleader(true);
-					break;
-				case EXPERTLEADER:
-					type.setExpertleader(true);
-					break;
-				case SUPERIORLEADER:
-					type.setSuperiorleader(true);
-					break;
-				case NOMAGICLEADER:
-					type.setNomagicleader(true);
-					break;
-				case POORMAGICLEADER:
-					type.setPoormagicleader(true);
-					break;
-				case OKMAGICLEADER:
-					type.setOkmagicleader(true);
-					break;
-				case GOODMAGICLEADER:
-					type.setGoodmagicleader(true);
-					break;
-				case EXPERTMAGICLEADER:
-					type.setExpertmagicleader(true);
-					break;
-				case SUPERIORMAGICLEADER:
-					type.setSuperiormagicleader(true);
-					break;
-				case NOUNDEADLEADER:
-					type.setNoundeadleader(true);
-					break;
-				case POORUNDEADLEADER:
-					type.setPoorundeadleader(true);
-					break;
-				case OKUNDEADLEADER:
-					type.setOkundeadleader(true);
-					break;
-				case GOODUNDEADLEADER:
-					type.setGoodundeadleader(true);
-					break;
-				case EXPERTUNDEADLEADER:
-					type.setExpertundeadleader(true);
-					break;
-				case SUPERIORUNDEADLEADER:
-					type.setSuperiorundeadleader(true);
-					break;				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst5(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
-				EList<MonsterMods> mods = monsterToEdit.getMods();
-				MonsterInst5 type = DmFactory.eINSTANCE.createMonsterInst5();
-				switch (inst) {
-				case WEAPON1:
-					type.setWeapon(true);
-					break;
-				case WEAPON2:
-					type.setWeapon(true);
-					break;
-				case WEAPON3:
-					type.setWeapon(true);
-					break;
-				case WEAPON4:
-					type.setWeapon(true);
-					break;
-				case ONEBATTLESPELL:
-					type.setOnebattlespell(true);
-					break;
-				case FIRSTSHAPE:
-					type.setFirstshape(true);
-					break;
-				case SECONDSHAPE:
-					type.setSecondshape(true);
-					break;
-				case SECONDTMPSHAPE:
-					type.setSecondtmpshape(true);
-					break;
-				case SHAPECHANGE:
-					type.setShapechange(true);
-					break;
-				case LANDSHAPE:
-					type.setLandshape(true);
-					break;
-				case WATERSHAPE:
-					type.setWatershape(true);
-					break;
-				case FORESTSHAPE:
-					type.setForestshape(true);
-					break;
-				case PLAINSHAPE:
-					type.setPlainshape(true);
-					break;
-				case DOMSUMMON:
-					type.setDomsummon(true);
-					break;
-				case DOMSUMMON2:
-					type.setDomsummon2(true);
-					break;
-				case DOMSUMMON20:
-					type.setDomsummon20(true);
-					break;
-				case MAKEMONSTER1:
-					type.setMakemonster1(true);
-					break;
-				case MAKEMONSTER2:
-					type.setMakemonster2(true);
-					break;
-				case MAKEMONSTER3:
-					type.setMakemonster3(true);
-					break;
-				case MAKEMONSTER4:
-					type.setMakemonster4(true);
-					break;
-				case MAKEMONSTER5:
-					type.setMakemonster5(true);
-					break;
-				case SUMMON1:
-					type.setSummon1(true);
-					break;
-				case SUMMON5:
-					type.setSummon5(true);
-					break;
-				}
-				Integer newValue = null;
-				try {
-					newValue = Integer.valueOf(newName);
-				} catch (NumberFormatException e) {
-					// is not a number
-				}
-				if (newValue != null) {
-					type.setValue2(Integer.valueOf(newName));
-				} else {
-					type.setValue1(newName);
-				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst6(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
-				EList<MonsterMods> mods = monsterToEdit.getMods();
-				MonsterInst6 type = DmFactory.eINSTANCE.createMonsterInst6();
-				switch (inst) {
-				case HEAT:
-					type.setHeat(true);
-					break;
-				case COLD:
-					type.setCold(true);
-					break;
-				case STEALTHY:
-					type.setStealthy(true);
-					break;
-				}
-				type.setValue(Integer.valueOf(newName));
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void removeInst2(final Inst inst2, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				int magicSkillCount = 0;
-				Monster monsterToEdit = input;
-				MonsterMods modToRemove = null;
-				int armorCount = 0;
-				int weaponCount = 0;
-				EList<MonsterMods> mods = monsterToEdit.getMods();
-				for (MonsterMods mod : mods) {
-					if (mod instanceof MonsterInst1) {
-						switch (inst2) {
-						case SPR1:
-							if (((MonsterInst1)mod).isSpr1()){
-								modToRemove = mod;
-							}
-							break;
-						case SPR2:
-							if (((MonsterInst1)mod).isSpr2()){
-								modToRemove = mod;
-							}
-							break;
-						case DESCR:
-							if (((MonsterInst1)mod).isDescr()){
-								modToRemove = mod;
-							}
-							break;
-						case ARMOR1:
-							if (((MonsterInst1)mod).isArmor()){
-								armorCount++;
-								if (armorCount == 1) {
-									modToRemove = mod;
-								}
-							}
-							break;						
-						case ARMOR2:
-							if (((MonsterInst1)mod).isArmor()){
-								armorCount++;
-								if (armorCount == 2) {
-									modToRemove = mod;
-								}
-							}
-							break;						
-						case ARMOR3:
-							if (((MonsterInst1)mod).isArmor()){
-								armorCount++;
-								if (armorCount == 3) {
-									modToRemove = mod;
-								}
-							}
-							break;						
-						}
-					}
-					if (mod instanceof MonsterInst2) {
-						switch (inst2) {
-						case SPECIALLOOK:
-							if (((MonsterInst2)mod).isSpeciallook()){
-								modToRemove = mod;
-							}
-							break;
-						case AP:
-							if (((MonsterInst2)mod).isAp()){
-								modToRemove = mod;
-							}
-							break;
-						case MAPMOVE:
-							if (((MonsterInst2)mod).isMapmove()){
-								modToRemove = mod;
-							}
-							break;
-						case HP:
-							if (((MonsterInst2)mod).isHp()){
-								modToRemove = mod;
-							}
-							break;
-						case PROT:
-							if (((MonsterInst2)mod).isProt()){
-								modToRemove = mod;
-							}
-							break;
-						case SIZE:
-							if (((MonsterInst2)mod).isSize()){
-								modToRemove = mod;
-							}
-							break;
-						case RESSIZE:
-							if (((MonsterInst2)mod).isRessize()){
-								modToRemove = mod;
-							}
-							break;
-						case STR:
-							if (((MonsterInst2)mod).isStr()){
-								modToRemove = mod;
-							}
-							break;
-						case ENC:
-							if (((MonsterInst2)mod).isEnc()){
-								modToRemove = mod;
-							}
-							break;
-						case ATT:
-							if (((MonsterInst2)mod).isAtt()){
-								modToRemove = mod;
-							}
-							break;
-						case DEF:
-							if (((MonsterInst2)mod).isDef()){
-								modToRemove = mod;
-							}
-							break;
-						case PREC:
-							if (((MonsterInst2)mod).isPrec()){
-								modToRemove = mod;
-							}
-							break;
-						case MR:
-							if (((MonsterInst2)mod).isMr()){
-								modToRemove = mod;
-							}
-							break;
-						case MOR:
-							if (((MonsterInst2)mod).isMor()){
-								modToRemove = mod;
-							}
-							break;
-						case GCOST:
-							if (((MonsterInst2)mod).isGcost()){
-								modToRemove = mod;
-							}
-							break;
-						case RCOST:
-							if (((MonsterInst2)mod).isRcost()){
-								modToRemove = mod;
-							}
-							break;
-						case PATHCOST:
-							if (((MonsterInst2)mod).isPathcost()){
-								modToRemove = mod;
-							}
-							break;
-						case STARTDOM:
-							if (((MonsterInst2)mod).isStartdom()){
-								modToRemove = mod;
-							}
-							break;
-						case EYES:
-							if (((MonsterInst2)mod).isEyes()){
-								modToRemove = mod;
-							}
-							break;
-						case COPYSTATS:
-							if (((MonsterInst2)mod).isCopystats()){
-								modToRemove = mod;
-							}
-							break;
-						case COPYSPR:
-							if (((MonsterInst2)mod).isCopyspr()){
-								modToRemove = mod;
-							}
-							break;
-						case RESTRICTEDGOD:
-							if (((MonsterInst2)mod).isRestrictedgod()){
-								modToRemove = mod;
-							}
-							break;
-						case SHATTEREDSOUL:
-							if (((MonsterInst2)mod).isShatteredsoul()){
-								modToRemove = mod;
-							}
-							break;
-						case COLDRES:
-							if (((MonsterInst2)mod).isColdres()){
-								modToRemove = mod;
-							}
-							break;
-						case FIRERES:
-							if (((MonsterInst2)mod).isFireres()){
-								modToRemove = mod;
-							}
-							break;
-						case POISONRES:
-							if (((MonsterInst2)mod).isPoisonres()){
-								modToRemove = mod;
-							}
-							break;
-						case SHOCKRES:
-							if (((MonsterInst2)mod).isShockres()){
-								modToRemove = mod;
-							}
-							break;
-						case DARKVISION:
-							if (((MonsterInst2)mod).isDarkvision()){
-								modToRemove = mod;
-							}
-							break;
-						case SEDUCE:
-							if (((MonsterInst2)mod).isSeduce()){
-								modToRemove = mod;
-							}
-							break;
-						case SUCCUBUS:
-							if (((MonsterInst2)mod).isSuccubus()){
-								modToRemove = mod;
-							}
-							break;
-						case BECKON:
-							if (((MonsterInst2)mod).isBeckon()){
-								modToRemove = mod;
-							}
-							break;
-						case STARTAGE:
-							if (((MonsterInst2)mod).isStartage()){
-								modToRemove = mod;
-							}
-							break;
-						case MAXAGE:
-							if (((MonsterInst2)mod).isMaxage()){
-								modToRemove = mod;
-							}
-							break;
-						case OLDER:
-							if (((MonsterInst2)mod).isOlder()){
-								modToRemove = mod;
-							}
-							break;
-						case HEALER:
-							if (((MonsterInst2)mod).isHealer()){
-								modToRemove = mod;
-							}
-							break;
-						case STARTAFF:
-							if (((MonsterInst2)mod).isStartaff()){
-								modToRemove = mod;
-							}
-							break;
-						case SUPPLYBONUS:
-							if (((MonsterInst2)mod).isSupplybonus()){
-								modToRemove = mod;
-							}
-							break;
-						case UWDAMAGE:
-							if (((MonsterInst2)mod).isUwdamage()){
-								modToRemove = mod;
-							}
-							break;
-						case COLDPOWER:
-							if (((MonsterInst2)mod).isColdpower()){
-								modToRemove = mod;
-							}
-							break;
-						case FIREPOWER:
-							if (((MonsterInst2)mod).isFirepower()){
-								modToRemove = mod;
-							}
-							break;
-						case STORMPOWER:
-							if (((MonsterInst2)mod).isStormpower()){
-								modToRemove = mod;
-							}
-							break;
-						case DARKPOWER:
-							if (((MonsterInst2)mod).isDarkpower()){
-								modToRemove = mod;
-							}
-							break;
-						case SPRINGPOWER:
-							if (((MonsterInst2)mod).isSpringpower()){
-								modToRemove = mod;
-							}
-							break;
-						case SUMMERPOWER:
-							if (((MonsterInst2)mod).isSummerpower()){
-								modToRemove = mod;
-							}
-							break;
-						case FALLPOWER:
-							if (((MonsterInst2)mod).isFallpower()){
-								modToRemove = mod;
-							}
-							break;
-						case WINTERPOWER:
-							if (((MonsterInst2)mod).isWinterpower()){
-								modToRemove = mod;
-							}
-							break;
-						case AMBIDEXTROUS:
-							if (((MonsterInst2)mod).isAmbidextrous()){
-								modToRemove = mod;
-							}
-							break;
-						case BANEFIRESHIELD:
-							if (((MonsterInst2)mod).isBanefireshield()){
-								modToRemove = mod;
-							}
-							break;
-						case BERSERK:
-							if (((MonsterInst2)mod).isBerserk()){
-								modToRemove = mod;
-							}
-							break;
-						case STANDARD:
-							if (((MonsterInst2)mod).isStandard()){
-								modToRemove = mod;
-							}
-							break;
-						case ANIMALAWE:
-							if (((MonsterInst2)mod).isAnimalawe()){
-								modToRemove = mod;
-							}
-							break;
-						case AWE:
-							if (((MonsterInst2)mod).isAwe()){
-								modToRemove = mod;
-							}
-							break;
-						case FEAR:
-							if (((MonsterInst2)mod).isFear()){
-								modToRemove = mod;
-							}
-							break;
-						case REGENERATION:
-							if (((MonsterInst2)mod).isRegeneration()){
-								modToRemove = mod;
-							}
-							break;
-						case REINVIGORATION:
-							if (((MonsterInst2)mod).isReinvigoration()){
-								modToRemove = mod;
-							}
-							break;
-						case FIRESHIELD:
-							if (((MonsterInst2)mod).isFireshield()){
-								modToRemove = mod;
-							}
-							break;
-						case ICEPROT:
-							if (((MonsterInst2)mod).isIceprot()){
-								modToRemove = mod;
-							}
-							break;
-						case POISONCLOUD:
-							if (((MonsterInst2)mod).isPoisoncloud()){
-								modToRemove = mod;
-							}
-							break;
-						case DISEASECLOUD:
-							if (((MonsterInst2)mod).isDiseasecloud()){
-								modToRemove = mod;
-							}
-							break;
-						case BLOODVENGEANCE:
-							if (((MonsterInst2)mod).isBloodvengeance()){
-								modToRemove = mod;
-							}
-							break;
-						case CASTLEDEF:
-							if (((MonsterInst2)mod).isCastledef()){
-								modToRemove = mod;
-							}
-							break;
-						case SIEGEBONUS:
-							if (((MonsterInst2)mod).isSiegebonus()){
-								modToRemove = mod;
-							}
-							break;
-						case PATROLBONUS:
-							if (((MonsterInst2)mod).isPatrolbonus()){
-								modToRemove = mod;
-							}
-							break;
-						case PILLAGEBONUS:
-							if (((MonsterInst2)mod).isPillagebonus()){
-								modToRemove = mod;
-							}
-							break;
-						case RESEARCHBONUS:
-							if (((MonsterInst2)mod).isResearchbonus()){
-								modToRemove = mod;
-							}
-							break;
-						case FORGEBONUS:
-							if (((MonsterInst2)mod).isForgebonus()){
-								modToRemove = mod;
-							}
-							break;
-						case DOUSE:
-							if (((MonsterInst2)mod).isDouse()){
-								modToRemove = mod;
-							}
-							break;
-						case NOBADEVENTS:
-							if (((MonsterInst2)mod).isNobadevents()){
-								modToRemove = mod;
-							}
-							break;
-						case INCUNREST:
-							if (((MonsterInst2)mod).isIncunrest()){
-								modToRemove = mod;
-							}
-							break;
-						case SPREADDOM:
-							if (((MonsterInst2)mod).isSpreaddom()){
-								modToRemove = mod;
-							}
-							break;
-						case LEPER:
-							if (((MonsterInst2)mod).isLeper()){
-								modToRemove = mod;
-							}
-							break;
-						case POPKILL:
-							if (((MonsterInst2)mod).isPopkill()){
-								modToRemove = mod;
-							}
-							break;
-						case HERETIC:
-							if (((MonsterInst2)mod).isHeretic()){
-								modToRemove = mod;
-							}
-							break;
-						case ITEMSLOTS:
-							if (((MonsterInst2)mod).isItemslots()){
-								modToRemove = mod;
-							}
-							break;
-						case NAMETYPE:
-							if (((MonsterInst2)mod).isNametype()){
-								modToRemove = mod;
-							}
-							break;
-						}
-					}
-					if (mod instanceof MonsterInst3) {
-						switch (inst2) {
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<MonsterMods> mods = input.getMods();
+						MonsterInst3 type = DmFactory.eINSTANCE.createMonsterInst3();
+						switch (inst) {
 						case MAGICSKILL1:
-							if (((MonsterInst3)mod).isMagicskill()){
-								magicSkillCount++;
-								if (magicSkillCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setMagicskill(true);
 							break;
 						case MAGICSKILL2:
-							if (((MonsterInst3)mod).isMagicskill()){
-								magicSkillCount++;
-								if (magicSkillCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setMagicskill(true);
 							break;
 						case MAGICSKILL3:
-							if (((MonsterInst3)mod).isMagicskill()){
-								magicSkillCount++;
-								if (magicSkillCount == 3) {
-									modToRemove = mod;
-								}
-							}
+							type.setMagicskill(true);
 							break;
 						case MAGICSKILL4:
-							if (((MonsterInst3)mod).isMagicskill()){
-								magicSkillCount++;
-								if (magicSkillCount == 4) {
-									modToRemove = mod;
-								}
-							}
+							type.setMagicskill(true);
 							break;
 						case CUSTOMMAGIC:
-							if (((MonsterInst3)mod).isCustommagic()){
-								modToRemove = mod;
-							}
+							type.setCustommagic(true);
 							break;
 						case MAGICBOOST:
-							if (((MonsterInst3)mod).isMagicboost()){
-								modToRemove = mod;
-							}
+							type.setMagicboost(true);
 							break;
 						case GEMPROD:
-							if (((MonsterInst3)mod).isGemprod()){
-								modToRemove = mod;
-							}
+							type.setGemprod(true);
 							break;
 						}
-					}
-					if (mod instanceof MonsterInst4) {
-						switch (inst2) {
+						type.setValue1(Integer.valueOf(newName1));
+						type.setValue2(Integer.valueOf(newName2));
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst4(final Inst inst, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<MonsterMods> mods = input.getMods();
+						MonsterInst4 type = DmFactory.eINSTANCE.createMonsterInst4();
+						switch (inst) {
 						case CLEAR:
-							if (((MonsterInst4)mod).isClear()){
-								modToRemove = mod;
-							}
+							type.setClear(true);
 							break;
 						case CLEARMAGIC:
-							if (((MonsterInst4)mod).isClearmagic()){
-								modToRemove = mod;
-							}
+							type.setClearmagic(true);
 							break;
 						case CLEARSPEC:
-							if (((MonsterInst4)mod).isClearspec()){
-								modToRemove = mod;
-							}
+							type.setClearspec(true);
 							break;
 						case FEMALE:
-							if (((MonsterInst4)mod).isFemale()){
-								modToRemove = mod;
-							}
+							type.setFemale(true);
 							break;
 						case MOUNTED:
-							if (((MonsterInst4)mod).isMounted()){
-								modToRemove = mod;
-							}
+							type.setMounted(true);
 							break;
 						case HOLY:
-							if (((MonsterInst4)mod).isHoly()){
-								modToRemove = mod;
-							}
+							type.setHoly(true);
 							break;
 						case ANIMAL:
-							if (((MonsterInst4)mod).isAnimal()){
-								modToRemove = mod;
-							}
+							type.setAnimal(true);
 							break;
 						case UNDEAD:
-							if (((MonsterInst4)mod).isUndead()){
-								modToRemove = mod;
-							}
+							type.setUndead(true);
 							break;
 						case DEMON:
-							if (((MonsterInst4)mod).isDemon()){
-								modToRemove = mod;
-							}
+							type.setDemon(true);
 							break;
 						case MAGICBEING:
-							if (((MonsterInst4)mod).isMagicbeing()){
-								modToRemove = mod;
-							}
+							type.setMagicbeing(true);
 							break;
 						case STONEBEING:
-							if (((MonsterInst4)mod).isStonebeing()){
-								modToRemove = mod;
-							}
+							type.setStonebeing(true);
 							break;
 						case INANIMATE:
-							if (((MonsterInst4)mod).isInanimate()){
-								modToRemove = mod;
-							}
+							type.setInanimate(true);
 							break;
 						case COLDBLOOD:
-							if (((MonsterInst4)mod).isColdblood()){
-								modToRemove = mod;
-							}
+							type.setColdblood(true);
 							break;
 						case IMMORTAL:
-							if (((MonsterInst4)mod).isImmortal()){
-								modToRemove = mod;
-							}
+							type.setImmortal(true);
 							break;
 						case BLIND:
-							if (((MonsterInst4)mod).isBlind()){
-								modToRemove = mod;
-							}
+							type.setBlind(true);
 							break;
 						case UNIQUE:
-							if (((MonsterInst4)mod).isUnique()){
-								modToRemove = mod;
-							}
+							type.setUnique(true);
 							break;
 						case IMMOBILE:
-							if (((MonsterInst4)mod).isImmobile()){
-								modToRemove = mod;
-							}
+							type.setImmobile(true);
 							break;
 						case AQUATIC:
-							if (((MonsterInst4)mod).isAquatic()){
-								modToRemove = mod;
-							}
+							type.setAquatic(true);
 							break;
 						case AMPHIBIAN:
-							if (((MonsterInst4)mod).isAmphibian()){
-								modToRemove = mod;
-							}
+							type.setAmphibian(true);
 							break;
 						case POORAMPHIBIAN:
-							if (((MonsterInst4)mod).isPooramphibian()){
-								modToRemove = mod;
-							}
+							type.setPooramphibian(true);
 							break;
 						case FLYING:
-							if (((MonsterInst4)mod).isFlying()){
-								modToRemove = mod;
-							}
+							type.setFlying(true);
 							break;
 						case STORMIMMUNE:
-							if (((MonsterInst4)mod).isStormimmune()){
-								modToRemove = mod;
-							}
+							type.setStormimmune(true);
 							break;
 						case SAILING:
-							if (((MonsterInst4)mod).isSailing()){
-								modToRemove = mod;
-							}
+							type.setSailing(true);
 							break;
 						case FORESTSURVIVAL:
-							if (((MonsterInst4)mod).isForestsurvival()){
-								modToRemove = mod;
-							}
+							type.setForestsurvival(true);
 							break;
 						case MOUNTAINSURVIVAL:
-							if (((MonsterInst4)mod).isMountainsurvival()){
-								modToRemove = mod;
-							}
+							type.setMountainsurvival(true);
 							break;
 						case SWAMPSURVIVAL:
-							if (((MonsterInst4)mod).isSwampsurvival()){
-								modToRemove = mod;
-							}
+							type.setSwampsurvival(true);
 							break;
 						case WASTESURVIVAL:
-							if (((MonsterInst4)mod).isWastesurvival()){
-								modToRemove = mod;
-							}
+							type.setWastesurvival(true);
 							break;
 						case ILLUSION:
-							if (((MonsterInst4)mod).isIllusion()){
-								modToRemove = mod;
-							}
+							type.setIllusion(true);
 							break;
 						case SPY:
-							if (((MonsterInst4)mod).isSpy()){
-								modToRemove = mod;
-							}
+							type.setSpy(true);
 							break;
 						case ASSASSIN:
-							if (((MonsterInst4)mod).isAssassin()){
-								modToRemove = mod;
-							}
+							type.setAssassin(true);
 							break;
 						case HEAL:
-							if (((MonsterInst4)mod).isHeal()){
-								modToRemove = mod;
-							}
+							type.setHeal(true);
 							break;
 						case NOHEAL:
-							if (((MonsterInst4)mod).isNoheal()){
-								modToRemove = mod;
-							}
+							type.setNoheal(true);
 							break;
 						case NEEDNOTEAT:
-							if (((MonsterInst4)mod).isNeednoteat()){
-								modToRemove = mod;
-							}
+							type.setNeednoteat(true);
 							break;
 						case ETHEREAL:
-							if (((MonsterInst4)mod).isEthereal()){
-								modToRemove = mod;
-							}
+							type.setEthereal(true);
 							break;
 						case TRAMPLE:
-							if (((MonsterInst4)mod).isTrample()){
-								modToRemove = mod;
-							}
+							type.setTrample(true);
 							break;
 						case ENTANGLE:
-							if (((MonsterInst4)mod).isEntangle()){
-								modToRemove = mod;
-							}
+							type.setEntangle(true);
 							break;
 						case EYELOSS:
-							if (((MonsterInst4)mod).isEyeloss()){
-								modToRemove = mod;
-							}
+							type.setEyeloss(true);
 							break;
 						case HORRORMARK:
-							if (((MonsterInst4)mod).isHorrormark()){
-								modToRemove = mod;
-							}
+							type.setHorrormark(true);
 							break;
 						case POISONARMOR:
-							if (((MonsterInst4)mod).isPoisonarmor()){
-								modToRemove = mod;
-							}
+							type.setPoisonarmor(true);
 							break;
 						case INQUISITOR:
-							if (((MonsterInst4)mod).isInquisitor()){
-								modToRemove = mod;
-							}
+							type.setInquisitor(true);
 							break;
 						case NOITEM:
-							if (((MonsterInst4)mod).isNoitem()){
-								modToRemove = mod;
-							}
+							type.setNoitem(true);
 							break;
 						case NOLEADER:
-							if (((MonsterInst4)mod).isNoleader()){
-								modToRemove = mod;
-							}
+							type.setNoleader(true);
 							break;
 						case POORLEADER:
-							if (((MonsterInst4)mod).isPoorleader()){
-								modToRemove = mod;
-							}
+							type.setPoorleader(true);
 							break;
 						case OKLEADER:
-							if (((MonsterInst4)mod).isOkleader()){
-								modToRemove = mod;
-							}
+							type.setOkleader(true);
 							break;
 						case GOODLEADER:
-							if (((MonsterInst4)mod).isGoodleader()){
-								modToRemove = mod;
-							}
+							type.setGoodleader(true);
 							break;
 						case EXPERTLEADER:
-							if (((MonsterInst4)mod).isExpertleader()){
-								modToRemove = mod;
-							}
+							type.setExpertleader(true);
 							break;
 						case SUPERIORLEADER:
-							if (((MonsterInst4)mod).isSuperiorleader()){
-								modToRemove = mod;
-							}
+							type.setSuperiorleader(true);
 							break;
 						case NOMAGICLEADER:
-							if (((MonsterInst4)mod).isNomagicleader()){
-								modToRemove = mod;
-							}
+							type.setNomagicleader(true);
 							break;
 						case POORMAGICLEADER:
-							if (((MonsterInst4)mod).isPoormagicleader()){
-								modToRemove = mod;
-							}
+							type.setPoormagicleader(true);
 							break;
 						case OKMAGICLEADER:
-							if (((MonsterInst4)mod).isOkmagicleader()){
-								modToRemove = mod;
-							}
+							type.setOkmagicleader(true);
 							break;
 						case GOODMAGICLEADER:
-							if (((MonsterInst4)mod).isGoodmagicleader()){
-								modToRemove = mod;
-							}
+							type.setGoodmagicleader(true);
 							break;
 						case EXPERTMAGICLEADER:
-							if (((MonsterInst4)mod).isExpertmagicleader()){
-								modToRemove = mod;
-							}
+							type.setExpertmagicleader(true);
 							break;
 						case SUPERIORMAGICLEADER:
-							if (((MonsterInst4)mod).isSuperiormagicleader()){
-								modToRemove = mod;
-							}
+							type.setSuperiormagicleader(true);
 							break;
 						case NOUNDEADLEADER:
-							if (((MonsterInst4)mod).isNoundeadleader()){
-								modToRemove = mod;
-							}
+							type.setNoundeadleader(true);
 							break;
 						case POORUNDEADLEADER:
-							if (((MonsterInst4)mod).isPoorundeadleader()){
-								modToRemove = mod;
-							}
+							type.setPoorundeadleader(true);
 							break;
 						case OKUNDEADLEADER:
-							if (((MonsterInst4)mod).isOkundeadleader()){
-								modToRemove = mod;
-							}
+							type.setOkundeadleader(true);
 							break;
 						case GOODUNDEADLEADER:
-							if (((MonsterInst4)mod).isGoodundeadleader()){
-								modToRemove = mod;
-							}
+							type.setGoodundeadleader(true);
 							break;
 						case EXPERTUNDEADLEADER:
-							if (((MonsterInst4)mod).isExpertundeadleader()){
-								modToRemove = mod;
-							}
+							type.setExpertundeadleader(true);
 							break;
 						case SUPERIORUNDEADLEADER:
-							if (((MonsterInst4)mod).isSuperiorundeadleader()){
-								modToRemove = mod;
-							}
-							break;
-						}
-					}
-					if (mod instanceof MonsterInst5) {
-						switch (inst2) {
+							type.setSuperiorundeadleader(true);
+							break;				}
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+
+	private void addInst5(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<MonsterMods> mods = input.getMods();
+						MonsterInst5 type = DmFactory.eINSTANCE.createMonsterInst5();
+						switch (inst) {
 						case WEAPON1:
-							if (((MonsterInst5)mod).isWeapon()){
-								weaponCount++;
-								if (weaponCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setWeapon(true);
 							break;
 						case WEAPON2:
-							if (((MonsterInst5)mod).isWeapon()){
-								weaponCount++;
-								if (weaponCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setWeapon(true);
 							break;
 						case WEAPON3:
-							if (((MonsterInst5)mod).isWeapon()){
-								weaponCount++;
-								if (weaponCount == 3) {
-									modToRemove = mod;
-								}
-							}
+							type.setWeapon(true);
 							break;
 						case WEAPON4:
-							if (((MonsterInst5)mod).isWeapon()){
-								weaponCount++;
-								if (weaponCount == 4) {
-									modToRemove = mod;
-								}
-							}
+							type.setWeapon(true);
 							break;
 						case ONEBATTLESPELL:
-							if (((MonsterInst5)mod).isOnebattlespell()){
-								modToRemove = mod;
-							}
+							type.setOnebattlespell(true);
 							break;
 						case FIRSTSHAPE:
-							if (((MonsterInst5)mod).isFirstshape()){
-								modToRemove = mod;
-							}
+							type.setFirstshape(true);
 							break;
 						case SECONDSHAPE:
-							if (((MonsterInst5)mod).isSecondshape()){
-								modToRemove = mod;
-							}
+							type.setSecondshape(true);
 							break;
 						case SECONDTMPSHAPE:
-							if (((MonsterInst5)mod).isSecondtmpshape()){
-								modToRemove = mod;
-							}
+							type.setSecondtmpshape(true);
 							break;
 						case SHAPECHANGE:
-							if (((MonsterInst5)mod).isShapechange()){
-								modToRemove = mod;
-							}
+							type.setShapechange(true);
 							break;
 						case LANDSHAPE:
-							if (((MonsterInst5)mod).isLandshape()){
-								modToRemove = mod;
-							}
+							type.setLandshape(true);
 							break;
 						case WATERSHAPE:
-							if (((MonsterInst5)mod).isWatershape()){
-								modToRemove = mod;
-							}
+							type.setWatershape(true);
 							break;
 						case FORESTSHAPE:
-							if (((MonsterInst5)mod).isForestshape()){
-								modToRemove = mod;
-							}
+							type.setForestshape(true);
 							break;
 						case PLAINSHAPE:
-							if (((MonsterInst5)mod).isPlainshape()){
-								modToRemove = mod;
-							}
+							type.setPlainshape(true);
 							break;
 						case DOMSUMMON:
-							if (((MonsterInst5)mod).isDomsummon()){
-								modToRemove = mod;
-							}
+							type.setDomsummon(true);
 							break;
 						case DOMSUMMON2:
-							if (((MonsterInst5)mod).isDomsummon2()){
-								modToRemove = mod;
-							}
+							type.setDomsummon2(true);
 							break;
 						case DOMSUMMON20:
-							if (((MonsterInst5)mod).isDomsummon20()){
-								modToRemove = mod;
-							}
+							type.setDomsummon20(true);
 							break;
 						case MAKEMONSTER1:
-							if (((MonsterInst5)mod).isMakemonster1()){
-								modToRemove = mod;
-							}
+							type.setMakemonster1(true);
 							break;
 						case MAKEMONSTER2:
-							if (((MonsterInst5)mod).isMakemonster2()){
-								modToRemove = mod;
-							}
+							type.setMakemonster2(true);
 							break;
 						case MAKEMONSTER3:
-							if (((MonsterInst5)mod).isMakemonster3()){
-								modToRemove = mod;
-							}
+							type.setMakemonster3(true);
 							break;
 						case MAKEMONSTER4:
-							if (((MonsterInst5)mod).isMakemonster4()){
-								modToRemove = mod;
-							}
+							type.setMakemonster4(true);
 							break;
 						case MAKEMONSTER5:
-							if (((MonsterInst5)mod).isMakemonster5()){
-								modToRemove = mod;
-							}
+							type.setMakemonster5(true);
 							break;
 						case SUMMON1:
-							if (((MonsterInst5)mod).isSummon1()){
-								modToRemove = mod;
-							}
+							type.setSummon1(true);
 							break;
 						case SUMMON5:
-							if (((MonsterInst5)mod).isSummon5()){
-								modToRemove = mod;
-							}
+							type.setSummon5(true);
 							break;
 						}
-					}
-					if (mod instanceof MonsterInst6) {
-						switch (inst2) {
+						Integer newValue = null;
+						try {
+							newValue = Integer.valueOf(newName);
+						} catch (NumberFormatException e) {
+							// is not a number
+						}
+						if (newValue != null) {
+							type.setValue2(Integer.valueOf(newName));
+						} else {
+							type.setValue1(newName);
+						}
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst6(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<MonsterMods> mods = input.getMods();
+						MonsterInst6 type = DmFactory.eINSTANCE.createMonsterInst6();
+						switch (inst) {
 						case HEAT:
-							if (((MonsterInst6)mod).isHeat()){
-								modToRemove = mod;
-							}
+							type.setHeat(true);
 							break;
 						case COLD:
-							if (((MonsterInst6)mod).isCold()){
-								modToRemove = mod;
-							}
+							type.setCold(true);
 							break;
 						case STEALTHY:
-							if (((MonsterInst6)mod).isStealthy()){
-								modToRemove = mod;
-							}
+							type.setStealthy(true);
 							break;
 						}
-					}
-				}
-				if (modToRemove != null) {
-					mods.remove(modToRemove);
-				}
-			}  
-		},
-		myDocument);
+						type.setValue(Integer.valueOf(newName));
+						mods.add(type);
+					}  
+				},
+				myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void removeInst(final Inst inst2, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						int magicSkillCount = 0;
+						MonsterMods modToRemove = null;
+						int armorCount = 0;
+						int weaponCount = 0;
+						EList<MonsterMods> mods = input.getMods();
+						for (MonsterMods mod : mods) {
+							if (mod instanceof MonsterInst1) {
+								switch (inst2) {
+								case SPR1:
+									if (((MonsterInst1)mod).isSpr1()){
+										modToRemove = mod;
+									}
+									break;
+								case SPR2:
+									if (((MonsterInst1)mod).isSpr2()){
+										modToRemove = mod;
+									}
+									break;
+								case DESCR:
+									if (((MonsterInst1)mod).isDescr()){
+										modToRemove = mod;
+									}
+									break;
+								case ARMOR1:
+									if (((MonsterInst1)mod).isArmor()){
+										armorCount++;
+										if (armorCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;						
+								case ARMOR2:
+									if (((MonsterInst1)mod).isArmor()){
+										armorCount++;
+										if (armorCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;						
+								case ARMOR3:
+									if (((MonsterInst1)mod).isArmor()){
+										armorCount++;
+										if (armorCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;						
+								}
+							}
+							if (mod instanceof MonsterInst2) {
+								switch (inst2) {
+								case SPECIALLOOK:
+									if (((MonsterInst2)mod).isSpeciallook()){
+										modToRemove = mod;
+									}
+									break;
+								case AP:
+									if (((MonsterInst2)mod).isAp()){
+										modToRemove = mod;
+									}
+									break;
+								case MAPMOVE:
+									if (((MonsterInst2)mod).isMapmove()){
+										modToRemove = mod;
+									}
+									break;
+								case HP:
+									if (((MonsterInst2)mod).isHp()){
+										modToRemove = mod;
+									}
+									break;
+								case PROT:
+									if (((MonsterInst2)mod).isProt()){
+										modToRemove = mod;
+									}
+									break;
+								case SIZE:
+									if (((MonsterInst2)mod).isSize()){
+										modToRemove = mod;
+									}
+									break;
+								case RESSIZE:
+									if (((MonsterInst2)mod).isRessize()){
+										modToRemove = mod;
+									}
+									break;
+								case STR:
+									if (((MonsterInst2)mod).isStr()){
+										modToRemove = mod;
+									}
+									break;
+								case ENC:
+									if (((MonsterInst2)mod).isEnc()){
+										modToRemove = mod;
+									}
+									break;
+								case ATT:
+									if (((MonsterInst2)mod).isAtt()){
+										modToRemove = mod;
+									}
+									break;
+								case DEF:
+									if (((MonsterInst2)mod).isDef()){
+										modToRemove = mod;
+									}
+									break;
+								case PREC:
+									if (((MonsterInst2)mod).isPrec()){
+										modToRemove = mod;
+									}
+									break;
+								case MR:
+									if (((MonsterInst2)mod).isMr()){
+										modToRemove = mod;
+									}
+									break;
+								case MOR:
+									if (((MonsterInst2)mod).isMor()){
+										modToRemove = mod;
+									}
+									break;
+								case GCOST:
+									if (((MonsterInst2)mod).isGcost()){
+										modToRemove = mod;
+									}
+									break;
+								case RCOST:
+									if (((MonsterInst2)mod).isRcost()){
+										modToRemove = mod;
+									}
+									break;
+								case PATHCOST:
+									if (((MonsterInst2)mod).isPathcost()){
+										modToRemove = mod;
+									}
+									break;
+								case STARTDOM:
+									if (((MonsterInst2)mod).isStartdom()){
+										modToRemove = mod;
+									}
+									break;
+								case EYES:
+									if (((MonsterInst2)mod).isEyes()){
+										modToRemove = mod;
+									}
+									break;
+								case COPYSTATS:
+									if (((MonsterInst2)mod).isCopystats()){
+										modToRemove = mod;
+									}
+									break;
+								case COPYSPR:
+									if (((MonsterInst2)mod).isCopyspr()){
+										modToRemove = mod;
+									}
+									break;
+								case RESTRICTEDGOD:
+									if (((MonsterInst2)mod).isRestrictedgod()){
+										modToRemove = mod;
+									}
+									break;
+								case SHATTEREDSOUL:
+									if (((MonsterInst2)mod).isShatteredsoul()){
+										modToRemove = mod;
+									}
+									break;
+								case COLDRES:
+									if (((MonsterInst2)mod).isColdres()){
+										modToRemove = mod;
+									}
+									break;
+								case FIRERES:
+									if (((MonsterInst2)mod).isFireres()){
+										modToRemove = mod;
+									}
+									break;
+								case POISONRES:
+									if (((MonsterInst2)mod).isPoisonres()){
+										modToRemove = mod;
+									}
+									break;
+								case SHOCKRES:
+									if (((MonsterInst2)mod).isShockres()){
+										modToRemove = mod;
+									}
+									break;
+								case DARKVISION:
+									if (((MonsterInst2)mod).isDarkvision()){
+										modToRemove = mod;
+									}
+									break;
+								case SEDUCE:
+									if (((MonsterInst2)mod).isSeduce()){
+										modToRemove = mod;
+									}
+									break;
+								case SUCCUBUS:
+									if (((MonsterInst2)mod).isSuccubus()){
+										modToRemove = mod;
+									}
+									break;
+								case BECKON:
+									if (((MonsterInst2)mod).isBeckon()){
+										modToRemove = mod;
+									}
+									break;
+								case STARTAGE:
+									if (((MonsterInst2)mod).isStartage()){
+										modToRemove = mod;
+									}
+									break;
+								case MAXAGE:
+									if (((MonsterInst2)mod).isMaxage()){
+										modToRemove = mod;
+									}
+									break;
+								case OLDER:
+									if (((MonsterInst2)mod).isOlder()){
+										modToRemove = mod;
+									}
+									break;
+								case HEALER:
+									if (((MonsterInst2)mod).isHealer()){
+										modToRemove = mod;
+									}
+									break;
+								case STARTAFF:
+									if (((MonsterInst2)mod).isStartaff()){
+										modToRemove = mod;
+									}
+									break;
+								case SUPPLYBONUS:
+									if (((MonsterInst2)mod).isSupplybonus()){
+										modToRemove = mod;
+									}
+									break;
+								case UWDAMAGE:
+									if (((MonsterInst2)mod).isUwdamage()){
+										modToRemove = mod;
+									}
+									break;
+								case COLDPOWER:
+									if (((MonsterInst2)mod).isColdpower()){
+										modToRemove = mod;
+									}
+									break;
+								case FIREPOWER:
+									if (((MonsterInst2)mod).isFirepower()){
+										modToRemove = mod;
+									}
+									break;
+								case STORMPOWER:
+									if (((MonsterInst2)mod).isStormpower()){
+										modToRemove = mod;
+									}
+									break;
+								case DARKPOWER:
+									if (((MonsterInst2)mod).isDarkpower()){
+										modToRemove = mod;
+									}
+									break;
+								case SPRINGPOWER:
+									if (((MonsterInst2)mod).isSpringpower()){
+										modToRemove = mod;
+									}
+									break;
+								case SUMMERPOWER:
+									if (((MonsterInst2)mod).isSummerpower()){
+										modToRemove = mod;
+									}
+									break;
+								case FALLPOWER:
+									if (((MonsterInst2)mod).isFallpower()){
+										modToRemove = mod;
+									}
+									break;
+								case WINTERPOWER:
+									if (((MonsterInst2)mod).isWinterpower()){
+										modToRemove = mod;
+									}
+									break;
+								case AMBIDEXTROUS:
+									if (((MonsterInst2)mod).isAmbidextrous()){
+										modToRemove = mod;
+									}
+									break;
+								case BANEFIRESHIELD:
+									if (((MonsterInst2)mod).isBanefireshield()){
+										modToRemove = mod;
+									}
+									break;
+								case BERSERK:
+									if (((MonsterInst2)mod).isBerserk()){
+										modToRemove = mod;
+									}
+									break;
+								case STANDARD:
+									if (((MonsterInst2)mod).isStandard()){
+										modToRemove = mod;
+									}
+									break;
+								case ANIMALAWE:
+									if (((MonsterInst2)mod).isAnimalawe()){
+										modToRemove = mod;
+									}
+									break;
+								case AWE:
+									if (((MonsterInst2)mod).isAwe()){
+										modToRemove = mod;
+									}
+									break;
+								case FEAR:
+									if (((MonsterInst2)mod).isFear()){
+										modToRemove = mod;
+									}
+									break;
+								case REGENERATION:
+									if (((MonsterInst2)mod).isRegeneration()){
+										modToRemove = mod;
+									}
+									break;
+								case REINVIGORATION:
+									if (((MonsterInst2)mod).isReinvigoration()){
+										modToRemove = mod;
+									}
+									break;
+								case FIRESHIELD:
+									if (((MonsterInst2)mod).isFireshield()){
+										modToRemove = mod;
+									}
+									break;
+								case ICEPROT:
+									if (((MonsterInst2)mod).isIceprot()){
+										modToRemove = mod;
+									}
+									break;
+								case POISONCLOUD:
+									if (((MonsterInst2)mod).isPoisoncloud()){
+										modToRemove = mod;
+									}
+									break;
+								case DISEASECLOUD:
+									if (((MonsterInst2)mod).isDiseasecloud()){
+										modToRemove = mod;
+									}
+									break;
+								case BLOODVENGEANCE:
+									if (((MonsterInst2)mod).isBloodvengeance()){
+										modToRemove = mod;
+									}
+									break;
+								case CASTLEDEF:
+									if (((MonsterInst2)mod).isCastledef()){
+										modToRemove = mod;
+									}
+									break;
+								case SIEGEBONUS:
+									if (((MonsterInst2)mod).isSiegebonus()){
+										modToRemove = mod;
+									}
+									break;
+								case PATROLBONUS:
+									if (((MonsterInst2)mod).isPatrolbonus()){
+										modToRemove = mod;
+									}
+									break;
+								case PILLAGEBONUS:
+									if (((MonsterInst2)mod).isPillagebonus()){
+										modToRemove = mod;
+									}
+									break;
+								case RESEARCHBONUS:
+									if (((MonsterInst2)mod).isResearchbonus()){
+										modToRemove = mod;
+									}
+									break;
+								case FORGEBONUS:
+									if (((MonsterInst2)mod).isForgebonus()){
+										modToRemove = mod;
+									}
+									break;
+								case DOUSE:
+									if (((MonsterInst2)mod).isDouse()){
+										modToRemove = mod;
+									}
+									break;
+								case NOBADEVENTS:
+									if (((MonsterInst2)mod).isNobadevents()){
+										modToRemove = mod;
+									}
+									break;
+								case INCUNREST:
+									if (((MonsterInst2)mod).isIncunrest()){
+										modToRemove = mod;
+									}
+									break;
+								case SPREADDOM:
+									if (((MonsterInst2)mod).isSpreaddom()){
+										modToRemove = mod;
+									}
+									break;
+								case LEPER:
+									if (((MonsterInst2)mod).isLeper()){
+										modToRemove = mod;
+									}
+									break;
+								case POPKILL:
+									if (((MonsterInst2)mod).isPopkill()){
+										modToRemove = mod;
+									}
+									break;
+								case HERETIC:
+									if (((MonsterInst2)mod).isHeretic()){
+										modToRemove = mod;
+									}
+									break;
+								case ITEMSLOTS:
+									if (((MonsterInst2)mod).isItemslots()){
+										modToRemove = mod;
+									}
+									break;
+								case NAMETYPE:
+									if (((MonsterInst2)mod).isNametype()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof MonsterInst3) {
+								switch (inst2) {
+								case MAGICSKILL1:
+									if (((MonsterInst3)mod).isMagicskill()){
+										magicSkillCount++;
+										if (magicSkillCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICSKILL2:
+									if (((MonsterInst3)mod).isMagicskill()){
+										magicSkillCount++;
+										if (magicSkillCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICSKILL3:
+									if (((MonsterInst3)mod).isMagicskill()){
+										magicSkillCount++;
+										if (magicSkillCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICSKILL4:
+									if (((MonsterInst3)mod).isMagicskill()){
+										magicSkillCount++;
+										if (magicSkillCount == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case CUSTOMMAGIC:
+									if (((MonsterInst3)mod).isCustommagic()){
+										modToRemove = mod;
+									}
+									break;
+								case MAGICBOOST:
+									if (((MonsterInst3)mod).isMagicboost()){
+										modToRemove = mod;
+									}
+									break;
+								case GEMPROD:
+									if (((MonsterInst3)mod).isGemprod()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof MonsterInst4) {
+								switch (inst2) {
+								case CLEAR:
+									if (((MonsterInst4)mod).isClear()){
+										modToRemove = mod;
+									}
+									break;
+								case CLEARMAGIC:
+									if (((MonsterInst4)mod).isClearmagic()){
+										modToRemove = mod;
+									}
+									break;
+								case CLEARSPEC:
+									if (((MonsterInst4)mod).isClearspec()){
+										modToRemove = mod;
+									}
+									break;
+								case FEMALE:
+									if (((MonsterInst4)mod).isFemale()){
+										modToRemove = mod;
+									}
+									break;
+								case MOUNTED:
+									if (((MonsterInst4)mod).isMounted()){
+										modToRemove = mod;
+									}
+									break;
+								case HOLY:
+									if (((MonsterInst4)mod).isHoly()){
+										modToRemove = mod;
+									}
+									break;
+								case ANIMAL:
+									if (((MonsterInst4)mod).isAnimal()){
+										modToRemove = mod;
+									}
+									break;
+								case UNDEAD:
+									if (((MonsterInst4)mod).isUndead()){
+										modToRemove = mod;
+									}
+									break;
+								case DEMON:
+									if (((MonsterInst4)mod).isDemon()){
+										modToRemove = mod;
+									}
+									break;
+								case MAGICBEING:
+									if (((MonsterInst4)mod).isMagicbeing()){
+										modToRemove = mod;
+									}
+									break;
+								case STONEBEING:
+									if (((MonsterInst4)mod).isStonebeing()){
+										modToRemove = mod;
+									}
+									break;
+								case INANIMATE:
+									if (((MonsterInst4)mod).isInanimate()){
+										modToRemove = mod;
+									}
+									break;
+								case COLDBLOOD:
+									if (((MonsterInst4)mod).isColdblood()){
+										modToRemove = mod;
+									}
+									break;
+								case IMMORTAL:
+									if (((MonsterInst4)mod).isImmortal()){
+										modToRemove = mod;
+									}
+									break;
+								case BLIND:
+									if (((MonsterInst4)mod).isBlind()){
+										modToRemove = mod;
+									}
+									break;
+								case UNIQUE:
+									if (((MonsterInst4)mod).isUnique()){
+										modToRemove = mod;
+									}
+									break;
+								case IMMOBILE:
+									if (((MonsterInst4)mod).isImmobile()){
+										modToRemove = mod;
+									}
+									break;
+								case AQUATIC:
+									if (((MonsterInst4)mod).isAquatic()){
+										modToRemove = mod;
+									}
+									break;
+								case AMPHIBIAN:
+									if (((MonsterInst4)mod).isAmphibian()){
+										modToRemove = mod;
+									}
+									break;
+								case POORAMPHIBIAN:
+									if (((MonsterInst4)mod).isPooramphibian()){
+										modToRemove = mod;
+									}
+									break;
+								case FLYING:
+									if (((MonsterInst4)mod).isFlying()){
+										modToRemove = mod;
+									}
+									break;
+								case STORMIMMUNE:
+									if (((MonsterInst4)mod).isStormimmune()){
+										modToRemove = mod;
+									}
+									break;
+								case SAILING:
+									if (((MonsterInst4)mod).isSailing()){
+										modToRemove = mod;
+									}
+									break;
+								case FORESTSURVIVAL:
+									if (((MonsterInst4)mod).isForestsurvival()){
+										modToRemove = mod;
+									}
+									break;
+								case MOUNTAINSURVIVAL:
+									if (((MonsterInst4)mod).isMountainsurvival()){
+										modToRemove = mod;
+									}
+									break;
+								case SWAMPSURVIVAL:
+									if (((MonsterInst4)mod).isSwampsurvival()){
+										modToRemove = mod;
+									}
+									break;
+								case WASTESURVIVAL:
+									if (((MonsterInst4)mod).isWastesurvival()){
+										modToRemove = mod;
+									}
+									break;
+								case ILLUSION:
+									if (((MonsterInst4)mod).isIllusion()){
+										modToRemove = mod;
+									}
+									break;
+								case SPY:
+									if (((MonsterInst4)mod).isSpy()){
+										modToRemove = mod;
+									}
+									break;
+								case ASSASSIN:
+									if (((MonsterInst4)mod).isAssassin()){
+										modToRemove = mod;
+									}
+									break;
+								case HEAL:
+									if (((MonsterInst4)mod).isHeal()){
+										modToRemove = mod;
+									}
+									break;
+								case NOHEAL:
+									if (((MonsterInst4)mod).isNoheal()){
+										modToRemove = mod;
+									}
+									break;
+								case NEEDNOTEAT:
+									if (((MonsterInst4)mod).isNeednoteat()){
+										modToRemove = mod;
+									}
+									break;
+								case ETHEREAL:
+									if (((MonsterInst4)mod).isEthereal()){
+										modToRemove = mod;
+									}
+									break;
+								case TRAMPLE:
+									if (((MonsterInst4)mod).isTrample()){
+										modToRemove = mod;
+									}
+									break;
+								case ENTANGLE:
+									if (((MonsterInst4)mod).isEntangle()){
+										modToRemove = mod;
+									}
+									break;
+								case EYELOSS:
+									if (((MonsterInst4)mod).isEyeloss()){
+										modToRemove = mod;
+									}
+									break;
+								case HORRORMARK:
+									if (((MonsterInst4)mod).isHorrormark()){
+										modToRemove = mod;
+									}
+									break;
+								case POISONARMOR:
+									if (((MonsterInst4)mod).isPoisonarmor()){
+										modToRemove = mod;
+									}
+									break;
+								case INQUISITOR:
+									if (((MonsterInst4)mod).isInquisitor()){
+										modToRemove = mod;
+									}
+									break;
+								case NOITEM:
+									if (((MonsterInst4)mod).isNoitem()){
+										modToRemove = mod;
+									}
+									break;
+								case NOLEADER:
+									if (((MonsterInst4)mod).isNoleader()){
+										modToRemove = mod;
+									}
+									break;
+								case POORLEADER:
+									if (((MonsterInst4)mod).isPoorleader()){
+										modToRemove = mod;
+									}
+									break;
+								case OKLEADER:
+									if (((MonsterInst4)mod).isOkleader()){
+										modToRemove = mod;
+									}
+									break;
+								case GOODLEADER:
+									if (((MonsterInst4)mod).isGoodleader()){
+										modToRemove = mod;
+									}
+									break;
+								case EXPERTLEADER:
+									if (((MonsterInst4)mod).isExpertleader()){
+										modToRemove = mod;
+									}
+									break;
+								case SUPERIORLEADER:
+									if (((MonsterInst4)mod).isSuperiorleader()){
+										modToRemove = mod;
+									}
+									break;
+								case NOMAGICLEADER:
+									if (((MonsterInst4)mod).isNomagicleader()){
+										modToRemove = mod;
+									}
+									break;
+								case POORMAGICLEADER:
+									if (((MonsterInst4)mod).isPoormagicleader()){
+										modToRemove = mod;
+									}
+									break;
+								case OKMAGICLEADER:
+									if (((MonsterInst4)mod).isOkmagicleader()){
+										modToRemove = mod;
+									}
+									break;
+								case GOODMAGICLEADER:
+									if (((MonsterInst4)mod).isGoodmagicleader()){
+										modToRemove = mod;
+									}
+									break;
+								case EXPERTMAGICLEADER:
+									if (((MonsterInst4)mod).isExpertmagicleader()){
+										modToRemove = mod;
+									}
+									break;
+								case SUPERIORMAGICLEADER:
+									if (((MonsterInst4)mod).isSuperiormagicleader()){
+										modToRemove = mod;
+									}
+									break;
+								case NOUNDEADLEADER:
+									if (((MonsterInst4)mod).isNoundeadleader()){
+										modToRemove = mod;
+									}
+									break;
+								case POORUNDEADLEADER:
+									if (((MonsterInst4)mod).isPoorundeadleader()){
+										modToRemove = mod;
+									}
+									break;
+								case OKUNDEADLEADER:
+									if (((MonsterInst4)mod).isOkundeadleader()){
+										modToRemove = mod;
+									}
+									break;
+								case GOODUNDEADLEADER:
+									if (((MonsterInst4)mod).isGoodundeadleader()){
+										modToRemove = mod;
+									}
+									break;
+								case EXPERTUNDEADLEADER:
+									if (((MonsterInst4)mod).isExpertundeadleader()){
+										modToRemove = mod;
+									}
+									break;
+								case SUPERIORUNDEADLEADER:
+									if (((MonsterInst4)mod).isSuperiorundeadleader()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof MonsterInst5) {
+								switch (inst2) {
+								case WEAPON1:
+									if (((MonsterInst5)mod).isWeapon()){
+										weaponCount++;
+										if (weaponCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case WEAPON2:
+									if (((MonsterInst5)mod).isWeapon()){
+										weaponCount++;
+										if (weaponCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case WEAPON3:
+									if (((MonsterInst5)mod).isWeapon()){
+										weaponCount++;
+										if (weaponCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case WEAPON4:
+									if (((MonsterInst5)mod).isWeapon()){
+										weaponCount++;
+										if (weaponCount == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ONEBATTLESPELL:
+									if (((MonsterInst5)mod).isOnebattlespell()){
+										modToRemove = mod;
+									}
+									break;
+								case FIRSTSHAPE:
+									if (((MonsterInst5)mod).isFirstshape()){
+										modToRemove = mod;
+									}
+									break;
+								case SECONDSHAPE:
+									if (((MonsterInst5)mod).isSecondshape()){
+										modToRemove = mod;
+									}
+									break;
+								case SECONDTMPSHAPE:
+									if (((MonsterInst5)mod).isSecondtmpshape()){
+										modToRemove = mod;
+									}
+									break;
+								case SHAPECHANGE:
+									if (((MonsterInst5)mod).isShapechange()){
+										modToRemove = mod;
+									}
+									break;
+								case LANDSHAPE:
+									if (((MonsterInst5)mod).isLandshape()){
+										modToRemove = mod;
+									}
+									break;
+								case WATERSHAPE:
+									if (((MonsterInst5)mod).isWatershape()){
+										modToRemove = mod;
+									}
+									break;
+								case FORESTSHAPE:
+									if (((MonsterInst5)mod).isForestshape()){
+										modToRemove = mod;
+									}
+									break;
+								case PLAINSHAPE:
+									if (((MonsterInst5)mod).isPlainshape()){
+										modToRemove = mod;
+									}
+									break;
+								case DOMSUMMON:
+									if (((MonsterInst5)mod).isDomsummon()){
+										modToRemove = mod;
+									}
+									break;
+								case DOMSUMMON2:
+									if (((MonsterInst5)mod).isDomsummon2()){
+										modToRemove = mod;
+									}
+									break;
+								case DOMSUMMON20:
+									if (((MonsterInst5)mod).isDomsummon20()){
+										modToRemove = mod;
+									}
+									break;
+								case MAKEMONSTER1:
+									if (((MonsterInst5)mod).isMakemonster1()){
+										modToRemove = mod;
+									}
+									break;
+								case MAKEMONSTER2:
+									if (((MonsterInst5)mod).isMakemonster2()){
+										modToRemove = mod;
+									}
+									break;
+								case MAKEMONSTER3:
+									if (((MonsterInst5)mod).isMakemonster3()){
+										modToRemove = mod;
+									}
+									break;
+								case MAKEMONSTER4:
+									if (((MonsterInst5)mod).isMakemonster4()){
+										modToRemove = mod;
+									}
+									break;
+								case MAKEMONSTER5:
+									if (((MonsterInst5)mod).isMakemonster5()){
+										modToRemove = mod;
+									}
+									break;
+								case SUMMON1:
+									if (((MonsterInst5)mod).isSummon1()){
+										modToRemove = mod;
+									}
+									break;
+								case SUMMON5:
+									if (((MonsterInst5)mod).isSummon5()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof MonsterInst6) {
+								switch (inst2) {
+								case HEAT:
+									if (((MonsterInst6)mod).isHeat()){
+										modToRemove = mod;
+									}
+									break;
+								case COLD:
+									if (((MonsterInst6)mod).isCold()){
+										modToRemove = mod;
+									}
+									break;
+								case STEALTHY:
+									if (((MonsterInst6)mod).isStealthy()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+						}
+						if (modToRemove != null) {
+							mods.remove(modToRemove);
+						}
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
 	}
 
 	/* (non-Javadoc)

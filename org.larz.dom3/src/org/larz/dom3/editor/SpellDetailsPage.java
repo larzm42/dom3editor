@@ -23,6 +23,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
@@ -35,6 +36,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
@@ -293,7 +295,7 @@ public class SpellDetailsPage implements IDetailsPage {
 					descr.setBackground(toolkit.getColors().getBackground());
 					descr.setText("");
 				} else {
-					removeInst2(Inst.DESCR, doc);
+					removeInst(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
 					descr.setText("");
@@ -336,7 +338,7 @@ public class SpellDetailsPage implements IDetailsPage {
 							addInst5(key, doc, key.defaultValue);
 						}
 					} else {
-						removeInst2(key, doc);
+						removeInst(key, doc);
 					}
 				}
 
@@ -1278,330 +1280,348 @@ public class SpellDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
-			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
-				EList<SpellMods> mods = spellToEdit.getMods();
-				SpellInst1 type = DmFactory.eINSTANCE.createSpellInst1();
-				switch (inst) {
-				case NAME:
-					type.setName(true);
-					break;
-				case DESCR:
-					type.setDescr(true);
-					break;
-				}
-				type.setValue(newName);
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
-				EList<SpellMods> mods = spellToEdit.getMods();
-				SpellInst2 type = DmFactory.eINSTANCE.createSpellInst2();
-				switch (inst) {
-				case SCHOOL:
-					type.setSchool(true);
-					break;
-				case RESEARCHLEVEL:
-					type.setResearchlevel(true);
-					break;
-				case AOE:
-					type.setAoe(true);
-					break;
-				case DAMAGE:
-					type.setDamage(true);
-					break;
-				case EFFECT:
-					type.setEffect(true);
-					break;
-				case FATIGUECOST:
-					type.setFatiguecost(true);
-					break;
-				case FLIGHTSPR:
-					type.setFlightspr(true);
-					break;
-				case EXPLSPR:
-					type.setExplspr(true);
-					break;
-				case NREFF:
-					type.setNreff(true);
-					break;
-				case RANGE:
-					type.setRange(true);
-					break;
-				case PRECISION:
-					type.setPrecision(true);
-					break;
-				case SOUND:
-					type.setSound(true);
-					break;
-				case SPEC:
-					type.setSpec(true);
-					break;
-				case RESTRICTED:
-					type.setRestricted(true);
-					break;
-				}
-				type.setValue(Integer.valueOf(newName));
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
-				EList<SpellMods> mods = spellToEdit.getMods();
-				SpellInst3 type = DmFactory.eINSTANCE.createSpellInst3();
-				switch (inst) {
-				case PATH1:
-					type.setPath(true);
-					break;
-				case PATH2:
-					type.setPath(true);
-					break;
-				case PATHLEVEL1:
-					type.setPathlevel(true);
-					break;
-				case PATHLEVEL2:
-					type.setPathlevel(true);
-					break;
-				}
-				type.setValue1(Integer.valueOf(newName1));
-				type.setValue2(Integer.valueOf(newName2));
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst4(final Inst inst, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
-				EList<SpellMods> mods = spellToEdit.getMods();
-				SpellInst4 type = DmFactory.eINSTANCE.createSpellInst4();
-				switch (inst) {
-				case CLEAR:
-					type.setClear(true);
-					break;
-				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst5(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
-				EList<SpellMods> mods = spellToEdit.getMods();
-				SpellInst5 type = DmFactory.eINSTANCE.createSpellInst5();
-				switch (inst) {
-				case COPYSPELL:
-					type.setCopyspell(true);
-					break;
-				case NEXTSPELL:
-					type.setNextspell(true);
-					break;
-				}
-				Integer newValue = null;
-				try {
-					newValue = Integer.valueOf(newName);
-				} catch (NumberFormatException e) {
-					// is not a number
-				}
-				if (newValue != null) {
-					type.setValue2(Integer.valueOf(newName));
-				} else {
-					type.setValue1(newName);
-				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void removeInst2(final Inst inst2, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
-				SpellMods modToRemove = null;
-				int pathCount = 0;
-				int pathLevelCount = 0;
-				EList<SpellMods> mods = spellToEdit.getMods();
-				for (SpellMods mod : mods) {
-					if (mod instanceof SpellInst1) {
-						switch (inst2) {
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<SpellMods> mods = input.getMods();
+						SpellInst1 type = DmFactory.eINSTANCE.createSpellInst1();
+						switch (inst) {
 						case NAME:
-							if (((SpellInst1)mod).isName()){
-								modToRemove = mod;
-							}
+							type.setName(true);
 							break;
 						case DESCR:
-							if (((SpellInst1)mod).isDescr()){
-								modToRemove = mod;
-							}
+							type.setDescr(true);
 							break;
 						}
-					}
-					if (mod instanceof SpellInst2) {
-						switch (inst2) {
+						type.setValue(newName);
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<SpellMods> mods = input.getMods();
+						SpellInst2 type = DmFactory.eINSTANCE.createSpellInst2();
+						switch (inst) {
 						case SCHOOL:
-							if (((SpellInst2)mod).isSchool()){
-								modToRemove = mod;
-							}
+							type.setSchool(true);
+							break;
+						case RESEARCHLEVEL:
+							type.setResearchlevel(true);
+							break;
+						case AOE:
+							type.setAoe(true);
+							break;
+						case DAMAGE:
+							type.setDamage(true);
+							break;
+						case EFFECT:
+							type.setEffect(true);
+							break;
+						case FATIGUECOST:
+							type.setFatiguecost(true);
+							break;
+						case FLIGHTSPR:
+							type.setFlightspr(true);
+							break;
+						case EXPLSPR:
+							type.setExplspr(true);
+							break;
+						case NREFF:
+							type.setNreff(true);
+							break;
+						case RANGE:
+							type.setRange(true);
+							break;
+						case PRECISION:
+							type.setPrecision(true);
+							break;
+						case SOUND:
+							type.setSound(true);
+							break;
+						case SPEC:
+							type.setSpec(true);
+							break;
+						case RESTRICTED:
+							type.setRestricted(true);
 							break;
 						}
-					}
-					if (mod instanceof SpellInst3) {
-						switch (inst2) {
+						type.setValue(Integer.valueOf(newName));
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<SpellMods> mods = input.getMods();
+						SpellInst3 type = DmFactory.eINSTANCE.createSpellInst3();
+						switch (inst) {
 						case PATH1:
-							if (((SpellInst3)mod).isPath()){
-								pathCount++;
-								if (pathCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setPath(true);
 							break;
 						case PATH2:
-							if (((SpellInst3)mod).isPath()){
-								pathCount++;
-								if (pathCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setPath(true);
 							break;
 						case PATHLEVEL1:
-							if (((SpellInst3)mod).isPathlevel()){
-								pathLevelCount++;
-								if (pathLevelCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setPathlevel(true);
 							break;
 						case PATHLEVEL2:
-							if (((SpellInst3)mod).isPathlevel()){
-								pathLevelCount++;
-								if (pathLevelCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setPathlevel(true);
 							break;
 						}
-					}
-					if (mod instanceof SpellInst4) {
-						switch (inst2) {
+						type.setValue1(Integer.valueOf(newName1));
+						type.setValue2(Integer.valueOf(newName2));
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst4(final Inst inst, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<SpellMods> mods = input.getMods();
+						SpellInst4 type = DmFactory.eINSTANCE.createSpellInst4();
+						switch (inst) {
 						case CLEAR:
-							if (((SpellInst4)mod).isClear()){
-								modToRemove = mod;
-							}
+							type.setClear(true);
 							break;
 						}
-					}
-					if (mod instanceof SpellInst5) {
-						switch (inst2) {
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst5(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<SpellMods> mods = input.getMods();
+						SpellInst5 type = DmFactory.eINSTANCE.createSpellInst5();
+						switch (inst) {
 						case COPYSPELL:
-							if (((SpellInst5)mod).isCopyspell()){
-								modToRemove = mod;
-							}
+							type.setCopyspell(true);
 							break;
 						case NEXTSPELL:
-							if (((SpellInst5)mod).isNextspell()){
-								modToRemove = mod;
-							}
+							type.setNextspell(true);
 							break;
 						}
-					}
-				}
-				if (modToRemove != null) {
-					mods.remove(modToRemove);
-				}
-			}  
-		},
-		myDocument);
+						Integer newValue = null;
+						try {
+							newValue = Integer.valueOf(newName);
+						} catch (NumberFormatException e) {
+							// is not a number
+						}
+						if (newValue != null) {
+							type.setValue2(Integer.valueOf(newName));
+						} else {
+							type.setValue1(newName);
+						}
+						mods.add(type);
+					}  
+				},
+				myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void removeInst(final Inst inst2, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						SpellMods modToRemove = null;
+						int pathCount = 0;
+						int pathLevelCount = 0;
+						EList<SpellMods> mods = input.getMods();
+						for (SpellMods mod : mods) {
+							if (mod instanceof SpellInst1) {
+								switch (inst2) {
+								case NAME:
+									if (((SpellInst1)mod).isName()){
+										modToRemove = mod;
+									}
+									break;
+								case DESCR:
+									if (((SpellInst1)mod).isDescr()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof SpellInst2) {
+								switch (inst2) {
+								case SCHOOL:
+									if (((SpellInst2)mod).isSchool()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof SpellInst3) {
+								switch (inst2) {
+								case PATH1:
+									if (((SpellInst3)mod).isPath()){
+										pathCount++;
+										if (pathCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case PATH2:
+									if (((SpellInst3)mod).isPath()){
+										pathCount++;
+										if (pathCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case PATHLEVEL1:
+									if (((SpellInst3)mod).isPathlevel()){
+										pathLevelCount++;
+										if (pathLevelCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case PATHLEVEL2:
+									if (((SpellInst3)mod).isPathlevel()){
+										pathLevelCount++;
+										if (pathLevelCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								}
+							}
+							if (mod instanceof SpellInst4) {
+								switch (inst2) {
+								case CLEAR:
+									if (((SpellInst4)mod).isClear()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof SpellInst5) {
+								switch (inst2) {
+								case COPYSPELL:
+									if (((SpellInst5)mod).isCopyspell()){
+										modToRemove = mod;
+									}
+									break;
+								case NEXTSPELL:
+									if (((SpellInst5)mod).isNextspell()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+						}
+						if (modToRemove != null) {
+							mods.remove(modToRemove);
+						}
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
 	}
 
 	/* (non-Javadoc)

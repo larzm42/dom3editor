@@ -29,6 +29,8 @@ import org.eclipse.jface.action.ToolBarContributionItem;
 import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbenchActionConstants;
@@ -96,41 +98,52 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         newAction = new Action("New Mod...") {
 			@Override
 			public void run() {
-				NewDialog dialog = new NewDialog(window.getShell());
-				dialog.open();
+				BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+					@Override
+					public void run() {
+						NewDialog dialog = new NewDialog(window.getShell());
+						dialog.open();
+					}
+				});
 			}
 		};
 		ISharedImages sharedImages = window.getWorkbench().getSharedImages();
 		newAction.setImageDescriptor(sharedImages.getImageDescriptor(ISharedImages.IMG_TOOL_NEW_WIZARD));
 		
         openAction = new Action("Open Mod...") {
-			@Override
-			public void run() {
-				FileDialog dialog = new FileDialog(window.getShell(), SWT.OPEN);
-				dialog.setFilterExtensions(new String[]{"*.dm"});
-				dialog.open();
-				String[] names =  dialog.getFileNames();
-				String filterPath =  System.getProperty("user.home"); //$NON-NLS-1$
+        	@Override
+        	public void run() {
+        		BusyIndicator.showWhile(Display.getCurrent(), new Runnable() {
+        			@Override
+        			public void run() {
+        				FileDialog dialog = new FileDialog(window.getShell(), SWT.OPEN);
+        				dialog.setFilterExtensions(new String[]{"*.dm"});
+        				dialog.open();
+        				String[] names =  dialog.getFileNames();
+        				String filterPath =  System.getProperty("user.home"); //$NON-NLS-1$
 
-				if (names != null) {
-					filterPath =  dialog.getFilterPath();
+        				if (names != null) {
+        					filterPath =  dialog.getFilterPath();
 
-					for (int i =  0; i < names.length; i++) {
-						IFileStore fileStore =  EFS.getLocalFileSystem().getStore(new Path(filterPath));
-						if (!names[i].endsWith(".dm")) {
-							names[i] += ".dm";
-						}
-						fileStore =  fileStore.getChild(names[i]);
-						try {
-							IDE.openEditorOnFileStore(window.getActivePage(), fileStore);
-						} catch (PartInitException e) {
-							MessageDialog.open(MessageDialog.ERROR, window.getShell(), "Open File Error", "Couldn't open file: " + fileStore.getName(), SWT.SHEET);
-						}
-					}
+        					for (int i =  0; i < names.length; i++) {
+        						IFileStore fileStore =  EFS.getLocalFileSystem().getStore(new Path(filterPath));
+        						if (!names[i].endsWith(".dm")) {
+        							names[i] += ".dm";
+        						}
+        						fileStore =  fileStore.getChild(names[i]);
 
-				}
-			}
-		};
+        						try {
+        							IDE.openEditorOnFileStore(window.getActivePage(), fileStore);
+        						} catch (PartInitException e) {
+        							MessageDialog.open(MessageDialog.ERROR, window.getShell(), "Open File Error", "Couldn't open file: " + fileStore.getName(), SWT.SHEET);
+        						}
+        					}
+
+        				}
+        			}
+        		});
+        	}
+        };
 		openAction.setImageDescriptor(sharedImages.getImageDescriptor(ISharedImages.IMG_OBJ_FOLDER));
         
 		undoAction = ActionFactory.UNDO.create(window);

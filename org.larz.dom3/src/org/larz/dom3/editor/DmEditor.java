@@ -29,6 +29,8 @@ import org.eclipse.jface.dialogs.IPageChangedListener;
 import org.eclipse.jface.dialogs.PageChangedEvent;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.swt.custom.BusyIndicator;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
@@ -66,114 +68,120 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 	@Override
 	public void addPages() {
 		IExtensionPoint ep = RegistryFactory.getRegistry().getExtensionPoint("org.eclipse.ui.editors");
-		IExtension[ ] extensions = ep.getExtensions();
-		IExtension ex;
-		final MasterFormPage masterDetailsPage;
-		IConfigurationElement confElem = null;
-		for (int i = 0; i < extensions.length; i++) {
-			ex = extensions[i];
-			if (ex.getContributor().getName().equals("org.larz.dom3.dm.ui")) {
-				for (IConfigurationElement c : ex.getConfigurationElements()) {
-					if (c.getName().equals("editor")) {
-						confElem = c;
-						break;
-					}
-				}
-			}
-		}
-		try {
-			// create the xtext editor
-			sourcePage = (IEditorPart) confElem.createExecutableExtension("class");
-
-			masterDetailsPage = new MasterFormPage(this, (XtextEditor)sourcePage);
-			addPage(masterDetailsPage);
-
-			int index = addPage(sourcePage, getEditorInput());
-			setPageText(index, Messages.getString("MasterDetailsPage.source.label"));
-
-		} catch (CoreException e1) {
-			e1.printStackTrace();
-			return;
-		}
-
-		this.addPageChangedListener(new IPageChangedListener() {
-
+		final IExtension[ ] extensions = ep.getExtensions();
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			
 			@Override
-			public void pageChanged(PageChangedEvent event) {
-				if (masterDetailsPage.block != null && masterDetailsPage.block.viewer != null) {
-					masterDetailsPage.block.viewer.refresh();
-					if (((SummaryList)masterDetailsPage.block).getDetailsPart() != null) {
-						if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() != null) {
-							if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ArmorDetailsPage) {
-								((ArmorDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-								Object one = ((ArmorDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-								if (one != two) {
-									masterDetailsPage.block.viewer.setSelection(null);
-								}
-							} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof WeaponDetailsPage) {
-								((WeaponDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-								Object one = ((WeaponDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-								if (one != two) {
-									masterDetailsPage.block.viewer.setSelection(null);
-								}
-							} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof MonsterDetailsPage) {
-								((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-								Object one = ((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-								if (one != two) {
-									masterDetailsPage.block.viewer.setSelection(null);
-								}
-							} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof NationDetailsPage) {
-								((NationDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-								Object one = ((NationDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-								if (one != two) {
-									masterDetailsPage.block.viewer.setSelection(null);
-								}
-							} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SpellDetailsPage) {
-								((SpellDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-								Object one = ((SpellDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-								if (one != two) {
-									masterDetailsPage.block.viewer.setSelection(null);
-								}
-							} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ItemDetailsPage) {
-								((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-								Object one = ((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-								if (one != two) {
-									masterDetailsPage.block.viewer.setSelection(null);
-								}
-							} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SiteDetailsPage) {
-								((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-								Object one = ((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-								if (one != two) {
-									masterDetailsPage.block.viewer.setSelection(null);
-								}
-							} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof NameDetailsPage) {
-								((NameDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-								Object one = ((NameDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-								Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-								if (one != two) {
-									masterDetailsPage.block.viewer.setSelection(null);
-								}
+			public void run() {
+				IExtension ex;
+				final MasterFormPage masterDetailsPage;
+				IConfigurationElement confElem = null;
+				for (int i = 0; i < extensions.length; i++) {
+					ex = extensions[i];
+					if (ex.getContributor().getName().equals("org.larz.dom3.dm.ui")) {
+						for (IConfigurationElement c : ex.getConfigurationElements()) {
+							if (c.getName().equals("editor")) {
+								confElem = c;
+								break;
 							}
 						}
 					}
 				}
+				try {
+					// create the xtext editor
+					sourcePage = (IEditorPart) confElem.createExecutableExtension("class");
+
+					masterDetailsPage = new MasterFormPage(DmEditor.this, (XtextEditor)sourcePage);
+					addPage(masterDetailsPage);
+
+					int index = addPage(sourcePage, getEditorInput());
+					setPageText(index, Messages.getString("MasterDetailsPage.source.label"));
+
+					DmEditor.this.addPageChangedListener(new IPageChangedListener() {
+
+						@Override
+						public void pageChanged(PageChangedEvent event) {
+							if (masterDetailsPage.block != null && masterDetailsPage.block.viewer != null) {
+								masterDetailsPage.block.viewer.refresh();
+								if (((SummaryList)masterDetailsPage.block).getDetailsPart() != null) {
+									if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() != null) {
+										if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ArmorDetailsPage) {
+											((ArmorDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+											Object one = ((ArmorDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+											if (one != two) {
+												masterDetailsPage.block.viewer.setSelection(null);
+											}
+										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof WeaponDetailsPage) {
+											((WeaponDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+											Object one = ((WeaponDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+											if (one != two) {
+												masterDetailsPage.block.viewer.setSelection(null);
+											}
+										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof MonsterDetailsPage) {
+											((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+											Object one = ((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+											if (one != two) {
+												masterDetailsPage.block.viewer.setSelection(null);
+											}
+										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof NationDetailsPage) {
+											((NationDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+											Object one = ((NationDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+											if (one != two) {
+												masterDetailsPage.block.viewer.setSelection(null);
+											}
+										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SpellDetailsPage) {
+											((SpellDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+											Object one = ((SpellDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+											if (one != two) {
+												masterDetailsPage.block.viewer.setSelection(null);
+											}
+										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ItemDetailsPage) {
+											((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+											Object one = ((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+											if (one != two) {
+												masterDetailsPage.block.viewer.setSelection(null);
+											}
+										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SiteDetailsPage) {
+											((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+											Object one = ((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+											if (one != two) {
+												masterDetailsPage.block.viewer.setSelection(null);
+											}
+										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof NameDetailsPage) {
+											((NameDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+											Object one = ((NameDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+											if (one != two) {
+												masterDetailsPage.block.viewer.setSelection(null);
+											}
+										}
+									}
+								}
+							}
+						}
+					});
+				} catch (CoreException e1) {
+					e1.printStackTrace();
+					return;
+				}
 			}
 		});
+
 	}
 	
 	@Override

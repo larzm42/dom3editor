@@ -23,6 +23,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
@@ -35,6 +36,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
@@ -856,222 +858,234 @@ public class ItemDetailsPage implements IDetailsPage {
 		}
 	}
 
-	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
-			public void process(XtextResource resource) {
-				Item itemToEdit = input;
-				EList<ItemMods> mods = itemToEdit.getMods();
-				ItemInst1 type = DmFactory.eINSTANCE.createItemInst1();
-				switch (inst) {
-				case NAME:
-					type.setName(true);
-					break;
-				case DESCR:
-					type.setDescr(true);
-					break;
-				case ARMOR:
-					type.setArmor(true);
-					break;
-				}
-				type.setValue(newName);
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Item itemToEdit = input;
-				EList<ItemMods> mods = itemToEdit.getMods();
-				ItemInst2 type = DmFactory.eINSTANCE.createItemInst2();
-				switch (inst) {
-				case CONSTLEVEL:
-					type.setConstlevel(true);
-					break;
-				case MAINPATH:
-					type.setMainpath(true);
-					break;
-				case MAINLEVEL:
-					type.setMainlevel(true);
-					break;
-				case SECONDARYPATH:
-					type.setSecondarypath(true);
-					break;
-				case SECONDARYLEVEL:
-					type.setSecondarylevel(true);
-					break;
-				case TYPE:
-					type.setType(true);
-					break;
-				case WEAPON:
-					type.setWeapon(true);
-					break;
-				}
-				try {
-					type.setValue(Integer.valueOf(newName));
-				} catch (NumberFormatException e) {
-					e.printStackTrace();
-				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst3(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Item itemToEdit = input;
-				EList<ItemMods> mods = itemToEdit.getMods();
-				ItemInst3 type = DmFactory.eINSTANCE.createItemInst3();
-				switch (inst) {
-				case COPYSPR:
-					type.setCopyspr(true);
-					break;
-				}
-				Integer newValue = null;
-				try {
-					newValue = Integer.valueOf(newName);
-				} catch (NumberFormatException e) {
-					// is not a number
-				}
-				if (newValue != null) {
-					type.setValue2(Integer.valueOf(newName));
-				} else {
-					type.setValue1(newName);
-				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-
-	private void removeInst(final Inst inst2, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Item itemToEdit = input;
-				ItemMods modToRemove = null;
-				EList<ItemMods> mods = itemToEdit.getMods();
-				for (ItemMods mod : mods) {
-					if (mod instanceof ItemInst1) {
-						switch (inst2) {
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<ItemMods> mods = input.getMods();
+						ItemInst1 type = DmFactory.eINSTANCE.createItemInst1();
+						switch (inst) {
+						case NAME:
+							type.setName(true);
+							break;
 						case DESCR:
-							if (((ItemInst1)mod).isDescr()){
-								modToRemove = mod;
-							}
+							type.setDescr(true);
 							break;
 						case ARMOR:
-							if (((ItemInst1)mod).isArmor()){
-								modToRemove = mod;
-							}
+							type.setArmor(true);
 							break;
 						}
-					}
-					if (mod instanceof ItemInst2) {
-						switch (inst2) {
+						type.setValue(newName);
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<ItemMods> mods = input.getMods();
+						ItemInst2 type = DmFactory.eINSTANCE.createItemInst2();
+						switch (inst) {
 						case CONSTLEVEL:
-							if (((ItemInst2)mod).isConstlevel()){
-								modToRemove = mod;
-							}
+							type.setConstlevel(true);
 							break;
 						case MAINPATH:
-							if (((ItemInst2)mod).isMainpath()){
-								modToRemove = mod;
-							}
+							type.setMainpath(true);
 							break;
 						case MAINLEVEL:
-							if (((ItemInst2)mod).isMainlevel()){
-								modToRemove = mod;
-							}
+							type.setMainlevel(true);
 							break;
 						case SECONDARYPATH:
-							if (((ItemInst2)mod).isSecondarypath()){
-								modToRemove = mod;
-							}
+							type.setSecondarypath(true);
 							break;
 						case SECONDARYLEVEL:
-							if (((ItemInst2)mod).isSecondarylevel()){
-								modToRemove = mod;
-							}
+							type.setSecondarylevel(true);
 							break;
 						case TYPE:
-							if (((ItemInst2)mod).isType()){
-								modToRemove = mod;
-							}
+							type.setType(true);
 							break;
 						case WEAPON:
-							if (((ItemInst2)mod).isWeapon()){
-								modToRemove = mod;
-							}
+							type.setWeapon(true);
 							break;
 						}
-					}
-					if (mod instanceof ItemInst3) {
-						switch (inst2) {
-						case COPYSPR:
-							if (((ItemInst3)mod).isCopyspr()){
-								modToRemove = mod;
-							}
-							break;
+						try {
+							type.setValue(Integer.valueOf(newName));
+						} catch (NumberFormatException e) {
+							e.printStackTrace();
 						}
-					}
-				}
-				if (modToRemove != null) {
-					mods.remove(modToRemove);
-				}
-			}  
-		},
-		myDocument);
+						mods.add(type);
+					}  
+				},
+				myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst3(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<ItemMods> mods = input.getMods();
+						ItemInst3 type = DmFactory.eINSTANCE.createItemInst3();
+						switch (inst) {
+						case COPYSPR:
+							type.setCopyspr(true);
+							break;
+						}
+						Integer newValue = null;
+						try {
+							newValue = Integer.valueOf(newName);
+						} catch (NumberFormatException e) {
+							// is not a number
+						}
+						if (newValue != null) {
+							type.setValue2(Integer.valueOf(newName));
+						} else {
+							type.setValue1(newName);
+						}
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+
+	private void removeInst(final Inst inst2, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						ItemMods modToRemove = null;
+						EList<ItemMods> mods = input.getMods();
+						for (ItemMods mod : mods) {
+							if (mod instanceof ItemInst1) {
+								switch (inst2) {
+								case DESCR:
+									if (((ItemInst1)mod).isDescr()){
+										modToRemove = mod;
+									}
+									break;
+								case ARMOR:
+									if (((ItemInst1)mod).isArmor()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof ItemInst2) {
+								switch (inst2) {
+								case CONSTLEVEL:
+									if (((ItemInst2)mod).isConstlevel()){
+										modToRemove = mod;
+									}
+									break;
+								case MAINPATH:
+									if (((ItemInst2)mod).isMainpath()){
+										modToRemove = mod;
+									}
+									break;
+								case MAINLEVEL:
+									if (((ItemInst2)mod).isMainlevel()){
+										modToRemove = mod;
+									}
+									break;
+								case SECONDARYPATH:
+									if (((ItemInst2)mod).isSecondarypath()){
+										modToRemove = mod;
+									}
+									break;
+								case SECONDARYLEVEL:
+									if (((ItemInst2)mod).isSecondarylevel()){
+										modToRemove = mod;
+									}
+									break;
+								case TYPE:
+									if (((ItemInst2)mod).isType()){
+										modToRemove = mod;
+									}
+									break;
+								case WEAPON:
+									if (((ItemInst2)mod).isWeapon()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof ItemInst3) {
+								switch (inst2) {
+								case COPYSPR:
+									if (((ItemInst3)mod).isCopyspr()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+						}
+						if (modToRemove != null) {
+							mods.remove(modToRemove);
+						}
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
 	}
 
 	/* (non-Javadoc)

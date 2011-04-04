@@ -23,6 +23,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
@@ -35,6 +36,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.IDetailsPage;
@@ -1323,480 +1325,495 @@ public class SiteDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
-			public void process(XtextResource resource) {
-				Site siteToEdit = input;
-				EList<SiteMods> mods = siteToEdit.getMods();
-				SiteInst1 type = DmFactory.eINSTANCE.createSiteInst1();
-				switch (inst) {
-				case NAME:
-					type.setName(true);
-					break;
-				}
-				type.setValue(newName);
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Site siteToEdit = input;
-				EList<SiteMods> mods = siteToEdit.getMods();
-				SiteInst2 type = DmFactory.eINSTANCE.createSiteInst2();
-				switch (inst) {
-				case PATH:
-					type.setPath(true);
-					break;
-				case LEVEL:
-					type.setLevel(true);
-					break;
-				case RARITY:
-					type.setRarity(true);
-					break;
-				case LOC:
-					type.setLoc(true);
-					break;
-				case HOMEMON1:
-					type.setHomemon(true);
-					break;
-				case HOMEMON2:
-					type.setHomemon(true);
-					break;
-				case HOMEMON3:
-					type.setHomemon(true);
-					break;
-				case HOMECOM1:
-					type.setHomecom(true);
-					break;
-				case HOMECOM2:
-					type.setHomecom(true);
-					break;
-				case HOMECOM3:
-					type.setHomecom(true);
-					break;
-				case MON1:
-					type.setMon(true);
-					break;
-				case MON2:
-					type.setMon(true);
-					break;
-				case MON3:
-					type.setMon(true);
-					break;
-				case MON4:
-					type.setMon(true);
-					break;
-				case MON5:
-					type.setMon(true);
-					break;
-				case COM1:
-					type.setCom(true);
-					break;
-				case COM2:
-					type.setCom(true);
-					break;
-				case COM3:
-					type.setCom(true);
-					break;
-				case COM4:
-					type.setCom(true);
-					break;
-				case COM5:
-					type.setCom(true);
-					break;
-				case GOLD:
-					type.setGold(true);
-					break;
-				case RES:
-					type.setRes(true);
-					break;
-				case INCSCALE1:
-					type.setIncscale(true);
-					break;
-				case INCSCALE2:
-					type.setIncscale(true);
-					break;
-				case DECSCALE1:
-					type.setDecscale(true);
-					break;
-				case DECSCALE2:
-					type.setDecscale(true);
-					break;
-				}
-				type.setValue(Integer.valueOf(newName));
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Site siteToEdit = input;
-				EList<SiteMods> mods = siteToEdit.getMods();
-				SiteInst3 type = DmFactory.eINSTANCE.createSiteInst3();
-				switch (inst) {
-				case GEMS1:
-					type.setGems(true);
-					break;
-				case GEMS2:
-					type.setGems(true);
-					break;
-				case GEMS3:
-					type.setGems(true);
-					break;
-				}
-				type.setValue1(Integer.valueOf(newName1));
-				type.setValue2(Integer.valueOf(newName2));
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void addInst4(final Inst inst, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Site siteToEdit = input;
-				EList<SiteMods> mods = siteToEdit.getMods();
-				SiteInst4 type = DmFactory.eINSTANCE.createSiteInst4();
-				switch (inst) {
-				case CLEAR:
-					type.setClear(true);
-					break;
-				}
-				mods.add(type);
-			}  
-		},
-		myDocument);
-
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-	}
-	
-	private void removeInst(final Inst inst, final XtextEditor editor) 
-	{
-		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
-			@Override
-			public void process(XtextResource resource) {
-				Site siteToEdit = input;
-				int homeMonCount = 0;
-				int homeComCount = 0;
-				int monCount = 0;
-				int comCount = 0;
-				int inscaleCount = 0;
-				int descaleCount = 0;
-				int gemCount = 0;
-				SiteMods modToRemove = null;
-				EList<SiteMods> mods = siteToEdit.getMods();
-				for (SiteMods mod : mods) {
-					if (mod instanceof SiteInst1) {
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<SiteMods> mods = input.getMods();
+						SiteInst1 type = DmFactory.eINSTANCE.createSiteInst1();
 						switch (inst) {
 						case NAME:
-							if (((SiteInst1)mod).isName()){
-								modToRemove = mod;
-							}
+							type.setName(true);
 							break;
 						}
-					}
-					if (mod instanceof SiteInst2) {
+						type.setValue(newName);
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+
+	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<SiteMods> mods = input.getMods();
+						SiteInst2 type = DmFactory.eINSTANCE.createSiteInst2();
 						switch (inst) {
 						case PATH:
-							if (((SiteInst2)mod).isPath()){
-								modToRemove = mod;
-							}
+							type.setPath(true);
 							break;
 						case LEVEL:
-							if (((SiteInst2)mod).isLevel()){
-								modToRemove = mod;
-							}
+							type.setLevel(true);
 							break;
 						case RARITY:
-							if (((SiteInst2)mod).isRarity()){
-								modToRemove = mod;
-							}
+							type.setRarity(true);
 							break;
 						case LOC:
-							if (((SiteInst2)mod).isLoc()){
-								modToRemove = mod;
-							}
+							type.setLoc(true);
 							break;
 						case HOMEMON1:
-							if (((SiteInst2)mod).isHomemon()){
-								homeMonCount++;
-								if (homeMonCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setHomemon(true);
 							break;
 						case HOMEMON2:
-							if (((SiteInst2)mod).isHomemon()){
-								homeMonCount++;
-								if (homeMonCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setHomemon(true);
 							break;
 						case HOMEMON3:
-							if (((SiteInst2)mod).isHomemon()){
-								homeMonCount++;
-								if (homeMonCount == 3) {
-									modToRemove = mod;
-								}
-							}
+							type.setHomemon(true);
 							break;
 						case HOMECOM1:
-							if (((SiteInst2)mod).isHomecom()){
-								homeComCount++;
-								if (homeComCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setHomecom(true);
 							break;
 						case HOMECOM2:
-							if (((SiteInst2)mod).isHomecom()){
-								homeComCount++;
-								if (homeComCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setHomecom(true);
 							break;
 						case HOMECOM3:
-							if (((SiteInst2)mod).isHomecom()){
-								homeComCount++;
-								if (homeComCount == 3) {
-									modToRemove = mod;
-								}
-							}
+							type.setHomecom(true);
 							break;
 						case MON1:
-							if (((SiteInst2)mod).isMon()){
-								monCount++;
-								if (monCount == 1) {									
-									modToRemove = mod;
-								}
-							}
+							type.setMon(true);
 							break;
 						case MON2:
-							if (((SiteInst2)mod).isMon()){
-								monCount++;
-								if (monCount == 2) {									
-									modToRemove = mod;
-								}
-							}
+							type.setMon(true);
 							break;
 						case MON3:
-							if (((SiteInst2)mod).isMon()){
-								monCount++;
-								if (monCount == 3) {									
-									modToRemove = mod;
-								}
-							}
+							type.setMon(true);
 							break;
 						case MON4:
-							if (((SiteInst2)mod).isMon()){
-								monCount++;
-								if (monCount == 4) {									
-									modToRemove = mod;
-								}
-							}
+							type.setMon(true);
 							break;
 						case MON5:
-							if (((SiteInst2)mod).isMon()){
-								monCount++;
-								if (monCount == 5) {									
-									modToRemove = mod;
-								}
-							}
+							type.setMon(true);
 							break;
 						case COM1:
-							if (((SiteInst2)mod).isCom()){
-								comCount++;
-								if (comCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setCom(true);
 							break;
 						case COM2:
-							if (((SiteInst2)mod).isCom()){
-								comCount++;
-								if (comCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setCom(true);
 							break;
 						case COM3:
-							if (((SiteInst2)mod).isCom()){
-								comCount++;
-								if (comCount == 3) {
-									modToRemove = mod;
-								}
-							}
+							type.setCom(true);
 							break;
 						case COM4:
-							if (((SiteInst2)mod).isCom()){
-								comCount++;
-								if (comCount == 4) {
-									modToRemove = mod;
-								}
-							}
+							type.setCom(true);
 							break;
 						case COM5:
-							if (((SiteInst2)mod).isCom()){
-								comCount++;
-								if (comCount == 5) {
-									modToRemove = mod;
-								}
-							}
+							type.setCom(true);
 							break;
 						case GOLD:
-							if (((SiteInst2)mod).isGold()){
-								modToRemove = mod;
-							}
+							type.setGold(true);
 							break;
 						case RES:
-							if (((SiteInst2)mod).isRes()){
-								modToRemove = mod;
-							}
+							type.setRes(true);
 							break;
 						case INCSCALE1:
-							if (((SiteInst2)mod).isIncscale()){
-								inscaleCount++;
-								if (inscaleCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setIncscale(true);
 							break;
 						case INCSCALE2:
-							if (((SiteInst2)mod).isIncscale()){
-								inscaleCount++;
-								if (inscaleCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setIncscale(true);
 							break;
 						case DECSCALE1:
-							if (((SiteInst2)mod).isDecscale()){
-								descaleCount++;
-								if (descaleCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setDecscale(true);
 							break;
 						case DECSCALE2:
-							if (((SiteInst2)mod).isDecscale()){
-								descaleCount++;
-								if (descaleCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setDecscale(true);
 							break;
 						}
-					}
-					if (mod instanceof SiteInst3) {
+						type.setValue(Integer.valueOf(newName));
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<SiteMods> mods = input.getMods();
+						SiteInst3 type = DmFactory.eINSTANCE.createSiteInst3();
 						switch (inst) {
 						case GEMS1:
-							if (((SiteInst3)mod).isGems()){
-								gemCount++;
-								if (gemCount == 1) {
-									modToRemove = mod;
-								}
-							}
+							type.setGems(true);
 							break;
 						case GEMS2:
-							if (((SiteInst3)mod).isGems()){
-								gemCount++;
-								if (gemCount == 2) {
-									modToRemove = mod;
-								}
-							}
+							type.setGems(true);
 							break;
 						case GEMS3:
-							if (((SiteInst3)mod).isGems()){
-								gemCount++;
-								if (gemCount == 3) {
-									modToRemove = mod;
-								}
-							}
+							type.setGems(true);
 							break;
 						}
-					}
-					if (mod instanceof SiteInst4) {
+						type.setValue1(Integer.valueOf(newName1));
+						type.setValue2(Integer.valueOf(newName2));
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void addInst4(final Inst inst, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<SiteMods> mods = input.getMods();
+						SiteInst4 type = DmFactory.eINSTANCE.createSiteInst4();
 						switch (inst) {
 						case CLEAR:
-							if (((SiteInst4)mod).isClear()){
-								modToRemove = mod;
-							}
+							type.setClear(true);
 							break;
 						}
-					}
-				}
-				if (modToRemove != null) {
-					mods.remove(modToRemove);
-				}
-			}  
-		},
-		myDocument);
+						mods.add(type);
+					}  
+				},
+				myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
+	}
+	
+	private void removeInst(final Inst inst, final XtextEditor editor) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						int homeMonCount = 0;
+						int homeComCount = 0;
+						int monCount = 0;
+						int comCount = 0;
+						int inscaleCount = 0;
+						int descaleCount = 0;
+						int gemCount = 0;
+						SiteMods modToRemove = null;
+						EList<SiteMods> mods = input.getMods();
+						for (SiteMods mod : mods) {
+							if (mod instanceof SiteInst1) {
+								switch (inst) {
+								case NAME:
+									if (((SiteInst1)mod).isName()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+							if (mod instanceof SiteInst2) {
+								switch (inst) {
+								case PATH:
+									if (((SiteInst2)mod).isPath()){
+										modToRemove = mod;
+									}
+									break;
+								case LEVEL:
+									if (((SiteInst2)mod).isLevel()){
+										modToRemove = mod;
+									}
+									break;
+								case RARITY:
+									if (((SiteInst2)mod).isRarity()){
+										modToRemove = mod;
+									}
+									break;
+								case LOC:
+									if (((SiteInst2)mod).isLoc()){
+										modToRemove = mod;
+									}
+									break;
+								case HOMEMON1:
+									if (((SiteInst2)mod).isHomemon()){
+										homeMonCount++;
+										if (homeMonCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMEMON2:
+									if (((SiteInst2)mod).isHomemon()){
+										homeMonCount++;
+										if (homeMonCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMEMON3:
+									if (((SiteInst2)mod).isHomemon()){
+										homeMonCount++;
+										if (homeMonCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMECOM1:
+									if (((SiteInst2)mod).isHomecom()){
+										homeComCount++;
+										if (homeComCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMECOM2:
+									if (((SiteInst2)mod).isHomecom()){
+										homeComCount++;
+										if (homeComCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMECOM3:
+									if (((SiteInst2)mod).isHomecom()){
+										homeComCount++;
+										if (homeComCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MON1:
+									if (((SiteInst2)mod).isMon()){
+										monCount++;
+										if (monCount == 1) {									
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MON2:
+									if (((SiteInst2)mod).isMon()){
+										monCount++;
+										if (monCount == 2) {									
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MON3:
+									if (((SiteInst2)mod).isMon()){
+										monCount++;
+										if (monCount == 3) {									
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MON4:
+									if (((SiteInst2)mod).isMon()){
+										monCount++;
+										if (monCount == 4) {									
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MON5:
+									if (((SiteInst2)mod).isMon()){
+										monCount++;
+										if (monCount == 5) {									
+											modToRemove = mod;
+										}
+									}
+									break;
+								case COM1:
+									if (((SiteInst2)mod).isCom()){
+										comCount++;
+										if (comCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case COM2:
+									if (((SiteInst2)mod).isCom()){
+										comCount++;
+										if (comCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case COM3:
+									if (((SiteInst2)mod).isCom()){
+										comCount++;
+										if (comCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case COM4:
+									if (((SiteInst2)mod).isCom()){
+										comCount++;
+										if (comCount == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case COM5:
+									if (((SiteInst2)mod).isCom()){
+										comCount++;
+										if (comCount == 5) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GOLD:
+									if (((SiteInst2)mod).isGold()){
+										modToRemove = mod;
+									}
+									break;
+								case RES:
+									if (((SiteInst2)mod).isRes()){
+										modToRemove = mod;
+									}
+									break;
+								case INCSCALE1:
+									if (((SiteInst2)mod).isIncscale()){
+										inscaleCount++;
+										if (inscaleCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case INCSCALE2:
+									if (((SiteInst2)mod).isIncscale()){
+										inscaleCount++;
+										if (inscaleCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case DECSCALE1:
+									if (((SiteInst2)mod).isDecscale()){
+										descaleCount++;
+										if (descaleCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case DECSCALE2:
+									if (((SiteInst2)mod).isDecscale()){
+										descaleCount++;
+										if (descaleCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								}
+							}
+							if (mod instanceof SiteInst3) {
+								switch (inst) {
+								case GEMS1:
+									if (((SiteInst3)mod).isGems()){
+										gemCount++;
+										if (gemCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GEMS2:
+									if (((SiteInst3)mod).isGems()){
+										gemCount++;
+										if (gemCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GEMS3:
+									if (((SiteInst3)mod).isGems()){
+										gemCount++;
+										if (gemCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								}
+							}
+							if (mod instanceof SiteInst4) {
+								switch (inst) {
+								case CLEAR:
+									if (((SiteInst4)mod).isClear()){
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
+						}
+						if (modToRemove != null) {
+							mods.remove(modToRemove);
+						}
+					}  
+				},
+				myDocument);
+
+				viewer.refresh();
+				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
+				if (ssel.size()==1) {
+					input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
+				} else {
+					input = null;
+				}
+			}
+		});
 	}
 
 	/* (non-Javadoc)
