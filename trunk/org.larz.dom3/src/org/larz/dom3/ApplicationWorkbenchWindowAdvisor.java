@@ -17,6 +17,10 @@ package org.larz.dom3;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.RegistryFactory;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
@@ -49,8 +53,30 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
         IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
         configurer.setShowCoolBar(true);
         configurer.setShowStatusLine(false);
+        
+        // Load in some classes needed later
+		IExtensionPoint ep = RegistryFactory.getRegistry().getExtensionPoint("org.eclipse.ui.editors");
+		final IExtension[ ] extensions = ep.getExtensions();
+		IConfigurationElement confElem = null;
+		for (int i = 0; i < extensions.length; i++) {
+			IExtension ex = extensions[i];
+			if (ex.getContributor().getName().equals("org.larz.dom3.dm.ui")) {
+				for (IConfigurationElement c : ex.getConfigurationElements()) {
+					if (c.getName().equals("editor")) {
+						confElem = c;
+						break;
+					}
+				}
+			}
+		}
+		try {
+			// create the xtext editor
+			confElem.createExecutableExtension("class");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
-    
+
 	@Override  
 	public boolean preWindowShellClose() {  
 		try {  

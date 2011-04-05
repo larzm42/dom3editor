@@ -174,7 +174,10 @@ public class ItemDetailsPage implements IDetailsPage {
 		client.setLayout(glayout);
 		
 		Composite nameComp = toolkit.createComposite(client);
-		nameComp.setLayout(new GridLayout(2, false));
+		glayout = new GridLayout(2, false);
+		glayout.marginHeight = 0;
+		glayout.marginWidth = 0;
+		nameComp.setLayout(glayout);
 		GridData gd = new GridData(SWT.DEFAULT, SWT.FILL, false, false);
 		gd.horizontalSpan = 2;
 		nameComp.setLayoutData(gd);
