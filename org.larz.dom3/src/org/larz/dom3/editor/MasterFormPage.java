@@ -177,27 +177,29 @@ public class MasterFormPage extends FormPage {
 		}
 		
 		final String iconPath = getGeneral(General.ICON, doc);
-		ImageLoader loader = new ImageLoader() {
-			@Override
-			public InputStream getStream() throws IOException {
-				String path = ((DmXtextEditor)doc).getPath();
-				path = path.substring(0, path.lastIndexOf('/')+1);
-				if (iconPath != null && iconPath.startsWith("./")) {
-					path += iconPath.substring(2);
-				} else if (iconPath != null){
-					path += iconPath;
-				}
+		if (iconPath != null && iconPath.length() > 0) {
+			ImageLoader loader = new ImageLoader() {
+				@Override
+				public InputStream getStream() throws IOException {
+					String path = ((DmXtextEditor)doc).getPath();
+					path = path.substring(0, path.lastIndexOf('/')+1);
+					if (iconPath != null && iconPath.startsWith("./")) {
+						path += iconPath.substring(2);
+					} else if (iconPath != null){
+						path += iconPath;
+					}
 
-				return new FileInputStream(new File(path));
+					return new FileInputStream(new File(path));
+				}
+			};
+			try {
+				Image image = new Image(null, ImageConverter.convertToSWT(loader.loadImage()));
+				Label label = toolkit.createLabel(header1, "");
+				
+				label.setImage(image);			
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		};
-		try {
-			Image image = new Image(null, ImageConverter.convertToSWT(loader.loadImage()));
-			Label label = toolkit.createLabel(header1, "");
-			
-			label.setImage(image);			
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 
 		Composite general2Comp = toolkit.createComposite(header1);
