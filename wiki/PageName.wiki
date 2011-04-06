@@ -2,12 +2,13 @@
 
 = Getting Started =
 
-This page will describe the basic features of dom3editor.
+This page describes the basic features of dom3editor and how to create a mod.
 
 
-= Details =
+== Create a Mod ==
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+To create a new mod select the "New Mod..." option under the File menu or click the New Mod icon in the toolbar. Then fill in the dialog with a name, description and version number for your mod. When clicking OK, you will be asked for a file name to save the mod in. Thats it! You now have a new mod.
+
+== Add Content ==
+
+You will now see a blank screen like this:
