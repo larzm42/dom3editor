@@ -379,7 +379,7 @@ public class SiteDetailsPage implements IDetailsPage {
 				defaultLabel1.setEnabled(false);
 			}
 			if (field instanceof Inst2Fields) {
-				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
 				gd.horizontalSpan = 3;
 				defaultLabel1.setLayoutData(gd);
 			} else if (field instanceof Inst4Fields) {
