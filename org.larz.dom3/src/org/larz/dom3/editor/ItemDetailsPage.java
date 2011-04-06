@@ -367,9 +367,7 @@ public class ItemDetailsPage implements IDetailsPage {
 			if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
 				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel1.setEnabled(false);
-			}
-			if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
-				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
 				gd.horizontalSpan = 3;
 				defaultLabel1.setLayoutData(gd);
 			}

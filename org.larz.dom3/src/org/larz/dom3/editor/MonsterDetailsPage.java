@@ -862,14 +862,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 				defaultLabel1.setEnabled(false);
 			}
 			if (field instanceof Inst2Fields || field instanceof Inst5Fields || field instanceof Inst6Fields) {
-				gd = new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false);
+				gd = new GridData(SWT.BEGINNING, SWT.CENTER, false, false);
 				defaultLabel1.setLayoutData(gd);
 				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 			} else if (field instanceof Inst1Fields || field instanceof Inst3Fields) {
-				gd = new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false);
+				gd = new GridData(SWT.BEGINNING, SWT.CENTER, false, false);
 				defaultLabel1.setLayoutData(gd);
 			} else if (field instanceof Inst4Fields) {
-				gd = new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false);
+				gd = new GridData(SWT.BEGINNING, SWT.CENTER, false, false);
 				defaultLabel1.setLayoutData(gd);
 				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 			}

@@ -118,6 +118,8 @@ public class NationDetailsPage implements IDetailsPage {
 		ADDRECUNIT6 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECUNIT7 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECUNIT8 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECUNIT9 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECUNIT10 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECCOM1 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
 		ADDRECCOM2 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
 		ADDRECCOM3 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
@@ -312,6 +314,8 @@ public class NationDetailsPage implements IDetailsPage {
 		instMap.put(Inst.ADDRECUNIT6, new Inst4Fields());
 		instMap.put(Inst.ADDRECUNIT7, new Inst4Fields());
 		instMap.put(Inst.ADDRECUNIT8, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT9, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT10, new Inst4Fields());
 		instMap.put(Inst.ADDRECCOM1, new Inst4Fields());
 		instMap.put(Inst.ADDRECCOM2, new Inst4Fields());
 		instMap.put(Inst.ADDRECCOM3, new Inst4Fields());
@@ -710,7 +714,7 @@ public class NationDetailsPage implements IDetailsPage {
 				defaultLabel1.setEnabled(false);
 			}
 			if (field instanceof Inst2Fields || field instanceof Inst4Fields) {
-				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
 				gd.horizontalSpan = 3;
 				defaultLabel1.setLayoutData(gd);
 			} else if (field instanceof Inst3Fields) {
@@ -1607,6 +1611,32 @@ public class NationDetailsPage implements IDetailsPage {
 						}
 					}
 					break;
+				case ADDRECUNIT9:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 9) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECUNIT10:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 10) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
 				case ADDRECCOM1:
 					if (((NationInst4)mod).isAddreccom()){
 						addreccom++;
@@ -2317,6 +2347,30 @@ public class NationDetailsPage implements IDetailsPage {
 								}
 							}
 							break;
+						case ADDRECUNIT9:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 9) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
+						case ADDRECUNIT10:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 10) {
+									if (newValue != null) {
+										((NationInst4)mod).setValue2(Integer.parseInt(newName));
+									} else {
+										((NationInst4)mod).setValue1(newName);
+									}
+								}
+							}
+							break;
 						case ADDRECCOM1:
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
@@ -2925,6 +2979,12 @@ public class NationDetailsPage implements IDetailsPage {
 						case ADDRECUNIT8:
 							type.setAddrecunit(true);
 							break;
+						case ADDRECUNIT9:
+							type.setAddrecunit(true);
+							break;
+						case ADDRECUNIT10:
+							type.setAddrecunit(true);
+							break;
 						case ADDRECCOM1:
 							type.setAddreccom(true);
 							break;
@@ -3461,6 +3521,22 @@ public class NationDetailsPage implements IDetailsPage {
 									if (((NationInst4)mod).isAddrecunit()){
 										addrecunit++;
 										if (addrecunit == 8) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT9:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 9) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT10:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 10) {
 											modToRemove = mod;
 										}
 									}
