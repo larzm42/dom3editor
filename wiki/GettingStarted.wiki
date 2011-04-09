@@ -14,16 +14,14 @@ To create a new mod select the "New Mod..." option under the File menu or click 
 You will now see a blank screen like this:
 
 
-You can either modify an existing object in the game or add new content. Let's modify an existing weapon. To add modifications click on the Add... button. You will see this dialog.
+You can either modify an existing object in the game or add new content. Let's modify an existing weapon. To add modifications click on the Add... button. You will see this dialog:
 
 
 From here you can select the type of object you want to work with. Let's modify an existing weapon in the game. So, choose weapon from the list. Then you have two choices; Select Weapon or New Weapon. Select selects an existing weapon, New will create a new weapon. Leave Select chosen. Now there are two text entry fields to the right of that. When selecting a weapon to modify you can either select it by name or id. If you don't remember the specific name or id you can press the Search button to the right of the text field you want to use. Lets select a weapon by id so press the search button to the right of the id field. You get a dialog like this:
 
 
-Choose any weapon you like from the list and hit OK. The correct field gets filled in and you can hit OK again to add it to your mod.
+Choose any weapon you like from the list and hit OK. The correct field gets filled in and you can hit OK again to add it to your mod. Your object has now been added to the main screen. It will look something like this:
 
 
-You object has now been added to the main screen. It will look something like this:
-
-
-As you can see I chose the Rod of Death to modify. 
+== Modify Content ==
+As you can see I chose the Rod of Death to modify. It shows up in the list of objects on the left and the details show up on the right. 
