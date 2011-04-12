@@ -13,15 +13,22 @@ To create a new mod select the "New Mod..." option under the File menu or click 
 
 You will now see a blank screen like this:
 
+http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/blank.png
 
 You can either modify an existing object in the game or add new content. Let's modify an existing weapon. To add modifications click on the Add... button. You will see this dialog:
 
+http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/addDialog.png
 
 From here you can select the type of object you want to work with. Let's modify an existing weapon in the game. So, choose weapon from the list. Then you have two choices; Select Weapon or New Weapon. Select selects an existing weapon, New will create a new weapon. Leave Select chosen. Now there are two text entry fields to the right of that. When selecting a weapon to modify you can either select it by name or id. If you don't remember the specific name or id you can press the Search button to the right of the text field you want to use. Lets select a weapon by id so press the search button to the right of the id field. You get a dialog like this:
 
+http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/searchDialog.png
 
 Choose any weapon you like from the list and hit OK. The correct field gets filled in and you can hit OK again to add it to your mod. Your object has now been added to the main screen. It will look something like this:
 
+http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/weapon.png
+
 
 == Modify Content ==
-As you can see I chose the Rod of Death to modify. It shows up in the list of objects on the left and the details show up on the right. 
+As you can see I chose the Rod of Death to modify. It shows up in the list of objects on the left and the details show up on the right. Every object you add will show up in this list. If the list starts getting long, you can filter what types of objects are displayed by choosing one from the "Show" dropdown. Also, you can search the list for an item by typing a term in the search box.
+
+The details of the object are displayed on the left side of the screen. Most properties have a checkbox, then maybe a text entry or two depending on the property being modified. You will need to consult the modding manual for details on what the different properties control and what values they accept.
