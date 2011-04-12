@@ -43,6 +43,14 @@ http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/source1.png
 
 You can make changes directly to the source or switch back to the details view.
 
+== Browsing a Mod ==
+
+dom3editor is also useful for browsing existing mods to see what has changed. Here is an example of the Conceptual Balance Mod loaded into the editor. 
+
+http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/cbm.png
+
+I have selected the Gorgon. As you can see, the only thing changed about the gorgon is that the cost in gold has gone up from 50 to 150. You can click on the changed object (filtering or searching as needed) to see what has changed and what the default values are. 
+
 == Conclusion ==
 
 You can now create and edit a Dominions 3 mod file. Thanks for taking a look at the dom3editor project.
