@@ -31,4 +31,14 @@ http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/weapon.png
 == Modify Content ==
 As you can see I chose the Rod of Death to modify. It shows up in the list of objects on the left and the details show up on the right. Every object you add will show up in this list. If the list starts getting long, you can filter what types of objects are displayed by choosing one from the "Show" dropdown. Also, you can search the list for an item by typing a term in the search box.
 
-The details of the object are displayed on the left side of the screen. Most properties have a checkbox, then maybe a text entry or two depending on the property being modified. You will need to consult the modding manual for details on what the different properties control and what values they accept.
+The details of the object are displayed on the left side of the screen. Most properties have a checkbox, then maybe a text entry or two depending on the property being modified. You will need to consult the modding manual for details on what the different properties control and what values they accept. A number of fields also have a value to the right of them in brackets. This is the default value for that property if you are modding an existing object. If you are creating an existing object there will be no defaults.
+
+So, let's say we want the Rod of Death to be longer then it currently is. As you can see, the "len" field has a default value of 1. To change this check the box next to len and enter a new value. Like this:
+
+http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/weapon2.png
+
+To verify that we have changed the length of the Rod of Death we can look at the source for our new mod. To see the source for the mod you can either select the "Source" tab at the bottom of the window, or, if you have a large mod and want to jump to a specific place, select an object in the table, right click "Go To Source". You will see source like this:
+
+http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/source1.png
+
+You can make changes directly to the source or switch back to the details view.
