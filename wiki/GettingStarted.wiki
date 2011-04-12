@@ -13,7 +13,7 @@ To create a new mod select the "New Mod..." option under the File menu or click 
 
 You will now see a blank screen like this:
 
-http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/blank.png
+http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/blank_screen.png
 
 You can either modify an existing object in the game or add new content. Let's modify an existing weapon. To add modifications click on the Add... button. You will see this dialog:
 
