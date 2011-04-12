@@ -42,3 +42,7 @@ To verify that we have changed the length of the Rod of Death we can look at the
 http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/source1.png
 
 You can make changes directly to the source or switch back to the details view.
+
+== Conclusion ==
+
+You can now create and edit a Dominions 3 mod file. Thanks for taking a look at the dom3editor project.
