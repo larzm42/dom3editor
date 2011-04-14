@@ -1247,20 +1247,28 @@ public class SpellDetailsPage implements IDetailsPage {
 						switch (inst2) {
 						case COPYSPELL:
 							if (((SpellInst5)mod).isCopyspell()){
+								mods.remove(mod);
+								SpellInst5 newMod = DmFactory.eINSTANCE.createSpellInst5();
+								newMod.setCopyspell(true);
 								if (newValue != null) {
-									((SpellInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((SpellInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case NEXTSPELL:
 							if (((SpellInst5)mod).isNextspell()){
+								mods.remove(mod);
+								SpellInst5 newMod = DmFactory.eINSTANCE.createSpellInst5();
+								newMod.setNextspell(true);
 								if (newValue != null) {
-									((SpellInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((SpellInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						}

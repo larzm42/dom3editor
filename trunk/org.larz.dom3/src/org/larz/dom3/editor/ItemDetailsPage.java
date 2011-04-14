@@ -842,11 +842,15 @@ public class ItemDetailsPage implements IDetailsPage {
 						switch (inst2) {
 						case COPYSPR:
 							if (((ItemInst3)mod).isCopyspr()){
+								mods.remove(mod);
+								ItemInst3 newMod = DmFactory.eINSTANCE.createItemInst3();
+								newMod.setCopyspr(true);
 								if (newValue != null) {
-									((ItemInst3)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((ItemInst3)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						}
