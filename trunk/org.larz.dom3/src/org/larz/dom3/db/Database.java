@@ -852,15 +852,15 @@ public class Database {
 			monster.female = rs.getInt("female") == 1;
 			monster.mounted = rs.getInt("mount") == 1;
 			monster.holy = rs.getInt("holy") == 1;
-//			monster.animal = rs.getInt("animal") == 1;
-//			monster.undead = rs.getInt("undead") == 1;
-//			monster.demon = rs.getInt("demon") == 1;
-//			monster.magicbeing = rs.getInt("magicbeing") == 1;
-//			monster.stonebeing = rs.getInt("stonebeing") == 1;
-//			monster.inanimate = rs.getInt("inanimate") == 1;
-//			monster.coldblood = rs.getInt("coldblood") == 1;
-//			monster.immortal = rs.getInt("immortal") == 1;
-//			monster.blind = rs.getInt("blind") == 1;
+			monster.animal = rs.getInt("animal") == 1;
+			monster.undead = rs.getInt("undead") == 1;
+			monster.demon = rs.getInt("demon") == 1;
+			monster.magicbeing = rs.getInt("mgcbng") == 1;
+			monster.stonebeing = rs.getInt("stone") == 1;
+			monster.inanimate = rs.getInt("lifeless") == 1;
+			monster.coldblood = rs.getInt("cldbld") == 1;
+			monster.immortal = rs.getInt("imm") == 1;
+			monster.blind = rs.getInt("blind") == 1;
 			monster.unique = rs.getInt("unique") == 1;
 //			monster.immobile = rs.getInt("immobile") == 1;
 			monster.aquatic = rs.getInt("aquatic") == 1;
@@ -874,49 +874,99 @@ public class Database {
 			monster.swampsurvival = rs.getInt("swamp") == 1;
 			monster.wastesurvival = rs.getInt("waste") == 1;
 //			monster.illusion = rs.getInt("illusion") == 1;
-//			monster.spy = rs.getInt("spy") == 1;
-//			monster.assassin = rs.getInt("assassin") == 1;
-//			monster.heal = rs.getInt("heal") == 1;
+			monster.spy = rs.getInt("spy") == 1;
+			monster.assassin = rs.getInt("assassin") == 1;
+			monster.heal = rs.getInt("heal") == 1;
 			monster.noheal = rs.getInt("noheal") == 1;
 			monster.neednoteat = rs.getInt("noeat") == 1;
 			monster.ethereal = rs.getInt("eth") == 1;
-//			monster.trample = rs.getInt("trample") == 1;
+			monster.trample = rs.getInt("trmpl") == 1;
 //			monster.entangle = rs.getInt("entangle") == 1;
-//			monster.eyeloss = rs.getInt("eyeloss") == 1;
+			monster.eyeloss = rs.getInt("eyeloss") == 1;
 //			monster.horrormark = rs.getInt("horrormark") == 1;
 //			monster.poisonarmor = rs.getInt("poisonarmor") == 1;
 			monster.inquisitor = rs.getInt("inq") == 1;
 //			monster.noitem = rs.getInt("noitem") == 1;
-//			monster.noleader = rs.getInt("noleader") == 1;
-//			monster.poorleader = rs.getInt("poorleader") == 1;
-//			monster.okleader = rs.getInt("okleader") == 1;
-//			monster.goodleader = rs.getInt("goodleader") == 1;
-//			monster.expertleader = rs.getInt("expertleader") == 1;
-//			monster.superiorleader = rs.getInt("superiorleader") == 1;
-//			monster.nomagicleader = rs.getInt("nomagicleader") == 1;
-//			monster.poormagicleader = rs.getInt("poormagicleader") == 1;
-//			monster.okmagicleader = rs.getInt("okmagicleader") == 1;
-//			monster.goodmagicleader = rs.getInt("goodmagicleader") == 1;
-//			monster.expertmagicleader = rs.getInt("expertmagicleader") == 1;
-//			monster.superiormagicleader = rs.getInt("superiormagicleader") == 1;
-//			monster.noundeadleader = rs.getInt("noundeadleader") == 1;
-//			monster.poorundeadleader = rs.getInt("poorundeadleader") == 1;
-//			monster.okundeadleader = rs.getInt("okundeadleader") == 1;
-//			monster.goodundeadleader = rs.getInt("goodundeadleader") == 1;
-//			monster.expertundeadleader = rs.getInt("expertundeadleader") == 1;
-//			monster.superiorundeadleader = rs.getInt("superiorundeadleader") == 1;
+			
+			int normalLeadership = rs.getInt("ldr-n");
+			switch (normalLeadership) {
+			case 0:
+				monster.noleader = true;
+				break;
+			case 10:
+				monster.poorleader = true;
+				break;
+			case 40:
+				monster.okleader = true;
+				break;
+			case 80:
+				monster.goodleader = true;
+				break;
+			case 120:
+				monster.expertleader = true;
+				break;
+			case 160:
+				monster.superiorleader = true;
+				break;
+			}
+			int magicLeadership = rs.getInt("ldr-m");
+			switch (magicLeadership) {
+			case 0:
+				monster.nomagicleader = true;
+				break;
+			case 10:
+				monster.poormagicleader = true;
+				break;
+			case 40:
+				monster.okmagicleader = true;
+				break;
+			case 80:
+				monster.goodmagicleader = true;
+				break;
+			case 120:
+				monster.expertmagicleader = true;
+				break;
+			case 160:
+				monster.superiormagicleader = true;
+				break;
+			}
+			int undeadLeadership = rs.getInt("ldr-u");
+			switch (undeadLeadership) {
+			case 0:
+				monster.noundeadleader = true;
+				break;
+			case 10:
+				monster.poorundeadleader = true;
+				break;
+			case 40:
+				monster.okundeadleader = true;
+				break;
+			case 80:
+				monster.goodundeadleader = true;
+				break;
+			case 120:
+				monster.expertundeadleader = true;
+				break;
+			case 160:
+				monster.superiorundeadleader = true;
+				break;
+			}
+			
 			monster.weapon1 = Integer.toString(rs.getInt("wpn1"));
 			monster.weapon2 = Integer.toString(rs.getInt("wpn2"));
 			monster.weapon3 = Integer.toString(rs.getInt("wpn3"));
 			monster.weapon4 = Integer.toString(rs.getInt("wpn4"));
+			
 //			monster.onebattlespell = rs.getString("onebattlespell");
-//			monster.firstshape = rs.getString("firstshape");
-//			monster.secondshape = rs.getString("secondshape");
-//			monster.secondtmpshape = rs.getString("secondtmpshape");
-//			monster.shapechange = rs.getString("shapechange");
-//			monster.landshape = rs.getString("landshape");
-//			monster.watershape = rs.getString("watershape");
-//			monster.forestshape = rs.getString("forestshape");
+			
+			monster.firstshape = rs.getString("1stshp");
+			monster.secondshape = rs.getString("2ndshp");
+			monster.secondtmpshape = rs.getString("tmp2nd");
+			monster.shapechange = rs.getString("shpchng");
+			monster.landshape = rs.getString("lshape");
+			monster.watershape = rs.getString("sshape");
+			monster.forestshape = rs.getString("fshape");
+			
 //			monster.plainshape = rs.getString("plainshape");
 //			monster.domsummon = rs.getString("domsummon");
 //			monster.domsummon2 = rs.getString("domsummon2");
