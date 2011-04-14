@@ -1178,30 +1178,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 			}
 			if (input instanceof SelectMonsterByName || input instanceof SelectMonsterById) {
 				switch (fields.getKey()) {
-				case WEAPON1:
-					if (monsterDB.weapon1 != null) {
-						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon1));
-						Inst.WEAPON1.defaultValue = monsterDB.weapon1;
-					}
-					break;
-				case WEAPON2:
-					if (monsterDB.weapon2 != null) {
-						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon2));
-						Inst.WEAPON2.defaultValue = monsterDB.weapon2;
-					}
-					break;
-				case WEAPON3:
-					if (monsterDB.weapon3 != null) {
-						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon3));
-						Inst.WEAPON3.defaultValue = monsterDB.weapon3;
-					}
-					break;
-				case WEAPON4:
-					if (monsterDB.weapon4 != null) {
-						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon4));
-						Inst.WEAPON4.defaultValue = monsterDB.weapon4;
-					}
-					break;
 				case ARMOR1:
 					if (monsterDB.armor1 != null) {
 						((Inst1Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor1));
@@ -2068,6 +2044,138 @@ public class MonsterDetailsPage implements IDetailsPage {
 					if (monsterDB.superiorundeadleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.superiorundeadleader));
 						Inst.SUPERIORUNDEADLEADER.defaultValue = monsterDB.superiorundeadleader.toString();
+					}
+					break;
+				case WEAPON1:
+					if (monsterDB.weapon1 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon1));
+						Inst.WEAPON1.defaultValue = monsterDB.weapon1;
+					}
+					break;
+				case WEAPON2:
+					if (monsterDB.weapon2 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon2));
+						Inst.WEAPON2.defaultValue = monsterDB.weapon2;
+					}
+					break;
+				case WEAPON3:
+					if (monsterDB.weapon3 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon3));
+						Inst.WEAPON3.defaultValue = monsterDB.weapon3;
+					}
+					break;
+				case WEAPON4:
+					if (monsterDB.weapon4 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon4));
+						Inst.WEAPON4.defaultValue = monsterDB.weapon4;
+					}
+					break;
+				case FIRSTSHAPE:
+					if (monsterDB.firstshape != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.firstshape));
+						Inst.FIRSTSHAPE.defaultValue = monsterDB.firstshape;
+					}
+					break;
+				case SECONDSHAPE:
+					if (monsterDB.secondshape != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.secondshape));
+						Inst.SECONDSHAPE.defaultValue = monsterDB.secondshape;
+					}
+					break;
+				case SECONDTMPSHAPE:
+					if (monsterDB.secondtmpshape != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.secondtmpshape));
+						Inst.SECONDTMPSHAPE.defaultValue = monsterDB.secondtmpshape;
+					}
+					break;
+				case SHAPECHANGE:
+					if (monsterDB.shapechange != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.shapechange));
+						Inst.SHAPECHANGE.defaultValue = monsterDB.shapechange;
+					}
+					break;
+				case LANDSHAPE:
+					if (monsterDB.landshape != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.landshape));
+						Inst.LANDSHAPE.defaultValue = monsterDB.landshape;
+					}
+					break;
+				case WATERSHAPE:
+					if (monsterDB.watershape != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.watershape));
+						Inst.WATERSHAPE.defaultValue = monsterDB.watershape;
+					}
+					break;
+				case FORESTSHAPE:
+					if (monsterDB.forestshape != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.forestshape));
+						Inst.FORESTSHAPE.defaultValue = monsterDB.forestshape;
+					}
+					break;
+				case PLAINSHAPE:
+					if (monsterDB.plainshape != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.plainshape));
+						Inst.PLAINSHAPE.defaultValue = monsterDB.plainshape;
+					}
+					break;
+				case DOMSUMMON:
+					if (monsterDB.domsummon != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.domsummon));
+						Inst.DOMSUMMON.defaultValue = monsterDB.domsummon;
+					}
+					break;
+				case DOMSUMMON2:
+					if (monsterDB.domsummon2 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.domsummon2));
+						Inst.DOMSUMMON2.defaultValue = monsterDB.domsummon2;
+					}
+					break;
+				case DOMSUMMON20:
+					if (monsterDB.domsummon20 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.domsummon20));
+						Inst.DOMSUMMON20.defaultValue = monsterDB.domsummon20;
+					}
+					break;
+				case MAKEMONSTER1:
+					if (monsterDB.makemonster1 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster1));
+						Inst.MAKEMONSTER1.defaultValue = monsterDB.makemonster1;
+					}
+					break;
+				case MAKEMONSTER2:
+					if (monsterDB.makemonster2 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster2));
+						Inst.MAKEMONSTER2.defaultValue = monsterDB.makemonster2;
+					}
+					break;
+				case MAKEMONSTER3:
+					if (monsterDB.makemonster3 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster3));
+						Inst.MAKEMONSTER3.defaultValue = monsterDB.makemonster3;
+					}
+					break;
+				case MAKEMONSTER4:
+					if (monsterDB.makemonster4 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster4));
+						Inst.MAKEMONSTER4.defaultValue = monsterDB.makemonster4;
+					}
+					break;
+				case MAKEMONSTER5:
+					if (monsterDB.makemonster5 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster5));
+						Inst.MAKEMONSTER5.defaultValue = monsterDB.makemonster5;
+					}
+					break;
+				case SUMMON1:
+					if (monsterDB.summon1 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.summon1));
+						Inst.SUMMON1.defaultValue = monsterDB.summon1;
+					}
+					break;
+				case SUMMON5:
+					if (monsterDB.summon5 != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.summon5));
+						Inst.SUMMON5.defaultValue = monsterDB.summon5;
 					}
 					break;
 				}
@@ -3872,11 +3980,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 							if (((MonsterInst5)mod).isWeapon()){
 								weaponCount++;
 								if (weaponCount == 1) {
+									mods.remove(mod);
+									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+									newMod.setWeapon(true);
 									if (newValue != null) {
-										((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+										newMod.setValue2(Integer.parseInt(newName));
 									} else {
-										((MonsterInst5)mod).setValue1(newName);
+										newMod.setValue1(newName);
 									}
+									mods.add(newMod);
 								}
 							}
 							break;
@@ -3884,11 +3996,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 							if (((MonsterInst5)mod).isWeapon()){
 								weaponCount++;
 								if (weaponCount == 2) {
+									mods.remove(mod);
+									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+									newMod.setWeapon(true);
 									if (newValue != null) {
-										((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+										newMod.setValue2(Integer.parseInt(newName));
 									} else {
-										((MonsterInst5)mod).setValue1(newName);
+										newMod.setValue1(newName);
 									}
+									mods.add(newMod);
 								}
 							}
 							break;
@@ -3896,11 +4012,15 @@ public class MonsterDetailsPage implements IDetailsPage {
 							if (((MonsterInst5)mod).isWeapon()){
 								weaponCount++;
 								if (weaponCount == 3) {
+									mods.remove(mod);
+									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+									newMod.setWeapon(true);
 									if (newValue != null) {
-										((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+										newMod.setValue2(Integer.parseInt(newName));
 									} else {
-										((MonsterInst5)mod).setValue1(newName);
+										newMod.setValue1(newName);
 									}
+									mods.add(newMod);
 								}
 							}
 							break;
@@ -3908,183 +4028,263 @@ public class MonsterDetailsPage implements IDetailsPage {
 							if (((MonsterInst5)mod).isWeapon()){
 								weaponCount++;
 								if (weaponCount == 4) {
+									mods.remove(mod);
+									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+									newMod.setWeapon(true);
 									if (newValue != null) {
-										((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+										newMod.setValue2(Integer.parseInt(newName));
 									} else {
-										((MonsterInst5)mod).setValue1(newName);
+										newMod.setValue1(newName);
 									}
+									mods.add(newMod);
 								}
 							}
 							break;
 						case ONEBATTLESPELL:
 							if (((MonsterInst5)mod).isOnebattlespell()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setOnebattlespell(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case FIRSTSHAPE:
 							if (((MonsterInst5)mod).isFirstshape()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setFirstshape(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case SECONDSHAPE:
 							if (((MonsterInst5)mod).isSecondshape()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setSecondshape(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case SECONDTMPSHAPE:
 							if (((MonsterInst5)mod).isSecondtmpshape()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setSecondtmpshape(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case SHAPECHANGE:
 							if (((MonsterInst5)mod).isShapechange()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setShapechange(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case LANDSHAPE:
 							if (((MonsterInst5)mod).isLandshape()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setLandshape(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case WATERSHAPE:
 							if (((MonsterInst5)mod).isWatershape()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setWatershape(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case FORESTSHAPE:
 							if (((MonsterInst5)mod).isForestshape()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setForestshape(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case PLAINSHAPE:
 							if (((MonsterInst5)mod).isPlainshape()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setPlainshape(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case DOMSUMMON:
 							if (((MonsterInst5)mod).isDomsummon()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setDomsummon(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case DOMSUMMON2:
 							if (((MonsterInst5)mod).isDomsummon2()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setDomsummon2(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case DOMSUMMON20:
 							if (((MonsterInst5)mod).isDomsummon20()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setDomsummon20(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case MAKEMONSTER1:
 							if (((MonsterInst5)mod).isMakemonster1()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setMakemonster1(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case MAKEMONSTER2:
 							if (((MonsterInst5)mod).isMakemonster2()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setMakemonster2(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case MAKEMONSTER3:
 							if (((MonsterInst5)mod).isMakemonster3()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setMakemonster3(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case MAKEMONSTER4:
 							if (((MonsterInst5)mod).isMakemonster4()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setMakemonster4(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case MAKEMONSTER5:
 							if (((MonsterInst5)mod).isMakemonster5()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setMakemonster5(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case SUMMON1:
 							if (((MonsterInst5)mod).isSummon1()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setSummon1(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						case SUMMON5:
 							if (((MonsterInst5)mod).isSummon5()){
+								mods.remove(mod);
+								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+								newMod.setSummon5(true);
 								if (newValue != null) {
-									((MonsterInst5)mod).setValue2(Integer.parseInt(newName));
+									newMod.setValue2(Integer.parseInt(newName));
 								} else {
-									((MonsterInst5)mod).setValue1(newName);
+									newMod.setValue1(newName);
 								}
+								mods.add(newMod);
 							}
 							break;
 						}
