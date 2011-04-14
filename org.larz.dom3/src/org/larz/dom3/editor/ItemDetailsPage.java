@@ -103,6 +103,7 @@ public class ItemDetailsPage implements IDetailsPage {
 	class Inst1Fields implements InstFields {
 		private Button check;
 		private Text value;
+		private Label defaultLabel;
 	}
 	
 	class Inst2Fields implements InstFields {
@@ -353,7 +354,7 @@ public class ItemDetailsPage implements IDetailsPage {
 				if (field instanceof Inst1Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 					gd.widthHint = 160;
-					gd.horizontalSpan = 4;
+					gd.horizontalSpan = 3;
 				} else if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 					gd.widthHint = 30;
@@ -364,17 +365,23 @@ public class ItemDetailsPage implements IDetailsPage {
 				
 			Label defaultLabel1 = null;
 			
-			if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
+			if (field instanceof Inst1Fields) {
+				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+				defaultLabel1.setEnabled(false);
+				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
+				defaultLabel1.setLayoutData(gd);
+			} else if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
 				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel1.setEnabled(false);
 				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
 				gd.horizontalSpan = 3;
 				defaultLabel1.setLayoutData(gd);
-			}
+			} 
 
 			if (field instanceof Inst1Fields) {
 				((Inst1Fields)field).check = check;
 				((Inst1Fields)field).value = myValue1;
+				((Inst1Fields)field).defaultLabel = defaultLabel1;
 			} else if (field instanceof Inst2Fields) {
 				((Inst2Fields)field).check = check;
 				((Inst2Fields)field).value = myValue1;
@@ -487,7 +494,7 @@ public class ItemDetailsPage implements IDetailsPage {
 				switch (fields.getKey()) {
 				case ARMOR:
 					if (itemDB.armor != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.armor));
+						((Inst1Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.armor));
 						Inst.ARMOR.defaultValue = itemDB.armor;
 					}
 					break;
