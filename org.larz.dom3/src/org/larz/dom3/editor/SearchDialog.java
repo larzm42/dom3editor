@@ -137,10 +137,19 @@ public class SearchDialog extends Dialog {
 			case SPELL:
 				viewer.setInput(Database.getAllSpell().toArray());
 				break;
+			case NAME:
+				List<IDNameDB> ids = new ArrayList<IDNameDB>();
+				for (int i = 100; i <= 200; i++) {
+					IDNameDB armorDB = new IDNameDB();
+					armorDB.id = i;
+					ids.add(armorDB);
+				}
+				viewer.setInput(ids.toArray());
+				break;
 			}
 		} else {
 			int startId = 0;
-			int endId = 0;
+			int endId = -1;
 			switch (type) {
 			case ARMOR:
 				startId = 200;

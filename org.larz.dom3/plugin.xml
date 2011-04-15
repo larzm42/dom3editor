@@ -39,9 +39,7 @@
          </property>
          <property
                name="aboutText"
-               value="This is the Dominions 3 Editor.
-
-Release 0.8 - March 29th, 2011.">
+               value="This is the Dominions 3 Editor.&#10;&#10;Release 0.8.1 - April 15th, 2011.">
          </property>
          <property
                name="startupForegroundColor"
@@ -71,7 +69,21 @@ Release 0.8 - March 29th, 2011.">
             name="Dm Editor">
       </editor>
    </extension>
-	<extension
+   <extension point="org.eclipse.ui.editorActions"> 
+      <editorContribution 
+            id="org.larz.dom3.editor.DmEditor.contribution" 
+            targetID="org.larz.dom3.editor.DmEditor">
+         <action
+            id="org.eclipse.ui.articles.action.contribution.editor.action1" 
+            label="Fix ID Numbers" 
+            icon="icons/fix.png"
+            tooltip="Fix ID Numbers"
+            toolbarPath="Normal/additions"
+            class="org.larz.dom3.editor.EditorActionDelegate"> 
+         </action>
+      </editorContribution>
+   </extension>
+   <extension
          point="org.eclipse.ui.startup">
       <startup
             class="org.larz.dom3.ActionWiper">

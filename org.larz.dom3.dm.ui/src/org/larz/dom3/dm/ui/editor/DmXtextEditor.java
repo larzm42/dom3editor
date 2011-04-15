@@ -36,7 +36,10 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
+import org.eclipse.jface.action.GroupMarker;
+import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.Window;
@@ -47,10 +50,12 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IURIEditorInput;
+import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.FileStoreEditorInput;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.IDocumentProvider;
+import org.eclipse.ui.texteditor.ITextEditorActionConstants;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 
 public class DmXtextEditor extends XtextEditor
@@ -107,7 +112,32 @@ public class DmXtextEditor extends XtextEditor
 	 */
 	@Override
 	protected void editorContextMenuAboutToShow(IMenuManager menu) {
-		super.editorContextMenuAboutToShow(menu);
+		menu.add(new Separator(ITextEditorActionConstants.GROUP_UNDO));
+		menu.add(new GroupMarker(ITextEditorActionConstants.GROUP_SAVE));
+		menu.add(new Separator(ITextEditorActionConstants.GROUP_COPY));
+		menu.add(new Separator(ITextEditorActionConstants.GROUP_PRINT));
+		menu.add(new Separator(ITextEditorActionConstants.GROUP_EDIT));
+		menu.add(new Separator(ITextEditorActionConstants.GROUP_FIND));
+		menu.add(new Separator(IWorkbenchActionConstants.GROUP_ADD));
+		menu.add(new Separator(ITextEditorActionConstants.GROUP_REST));
+		menu.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
+
+		if (isEditable()) {
+			addAction(menu, ITextEditorActionConstants.GROUP_UNDO, ITextEditorActionConstants.UNDO);
+			addAction(menu, ITextEditorActionConstants.GROUP_UNDO, ITextEditorActionConstants.REVERT_TO_SAVED);
+			addAction(menu, ITextEditorActionConstants.GROUP_SAVE, ITextEditorActionConstants.SAVE);
+			addAction(menu, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.CUT);
+			addAction(menu, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.COPY);
+			addAction(menu, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.PASTE);
+		} else {
+			addAction(menu, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.COPY);
+		}
+		
+		IAction preferencesAction= getAction(ITextEditorActionConstants.CONTEXT_PREFERENCES);
+		menu.appendToGroup(IWorkbenchActionConstants.MB_ADDITIONS, new Separator(ITextEditorActionConstants.GROUP_SETTINGS));
+		menu.appendToGroup(ITextEditorActionConstants.GROUP_SETTINGS, preferencesAction);
+
+		menu.appendToGroup(ITextEditorActionConstants.GROUP_SAVE, new Separator(ITextEditorActionConstants.GROUP_OPEN));
 	}
 
 	private IFile getWorkspaceFile(IFileStore fileStore) {

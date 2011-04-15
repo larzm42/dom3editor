@@ -15,6 +15,11 @@
  */
 package org.larz.dom3.editor;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -23,6 +28,7 @@ import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.RegistryFactory;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.dialogs.IPageChangedListener;
@@ -36,12 +42,37 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.ide.IGotoMarker;
+import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
+import org.eclipse.xtext.ui.editor.model.IXtextDocument;
+import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
+import org.eclipse.xtext.util.concurrent.IUnitOfWork;
+import org.larz.dom3.dm.dm.AbstractElement;
+import org.larz.dom3.dm.dm.Dom3Mod;
+import org.larz.dom3.dm.dm.Item;
+import org.larz.dom3.dm.dm.ItemInst2;
+import org.larz.dom3.dm.dm.ItemMods;
+import org.larz.dom3.dm.dm.Monster;
+import org.larz.dom3.dm.dm.MonsterInst5;
+import org.larz.dom3.dm.dm.MonsterMods;
+import org.larz.dom3.dm.dm.NationInst2;
+import org.larz.dom3.dm.dm.NationInst4;
+import org.larz.dom3.dm.dm.NationMods;
+import org.larz.dom3.dm.dm.NewArmor;
+import org.larz.dom3.dm.dm.NewMonster;
+import org.larz.dom3.dm.dm.NewSite;
+import org.larz.dom3.dm.dm.NewWeapon;
+import org.larz.dom3.dm.dm.SelectNation;
+import org.larz.dom3.dm.dm.Site;
+import org.larz.dom3.dm.dm.SiteInst2;
+import org.larz.dom3.dm.dm.SiteMods;
+import org.larz.dom3.dm.ui.internal.DmActivator;
 
 
 public class DmEditor extends FormEditor implements IMenuListener, IViewerProvider, IGotoMarker {
 	
 	protected IEditorPart sourcePage;
+	protected MasterFormPage masterDetailsPage;
 	
 	/**
 	 * This keeps track of the active content viewer, which may be either one of the viewers in the pages or the content outline viewer.
@@ -74,7 +105,6 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 			@Override
 			public void run() {
 				IExtension ex;
-				final MasterFormPage masterDetailsPage;
 				IConfigurationElement confElem = null;
 				for (int i = 0; i < extensions.length; i++) {
 					ex = extensions[i];
@@ -101,78 +131,7 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 
 						@Override
 						public void pageChanged(PageChangedEvent event) {
-							if (masterDetailsPage.block != null && masterDetailsPage.block.viewer != null) {
-								masterDetailsPage.block.viewer.refresh();
-								if (((SummaryList)masterDetailsPage.block).getDetailsPart() != null) {
-									if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() != null) {
-										if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ArmorDetailsPage) {
-											((ArmorDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-											Object one = ((ArmorDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-											if (one != two) {
-												masterDetailsPage.block.viewer.setSelection(null);
-											}
-										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof WeaponDetailsPage) {
-											((WeaponDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-											Object one = ((WeaponDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-											if (one != two) {
-												masterDetailsPage.block.viewer.setSelection(null);
-											}
-										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof MonsterDetailsPage) {
-											((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-											Object one = ((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-											if (one != two) {
-												masterDetailsPage.block.viewer.setSelection(null);
-											}
-										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof NationDetailsPage) {
-											((NationDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-											Object one = ((NationDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-											if (one != two) {
-												masterDetailsPage.block.viewer.setSelection(null);
-											}
-										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SpellDetailsPage) {
-											((SpellDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-											Object one = ((SpellDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-											if (one != two) {
-												masterDetailsPage.block.viewer.setSelection(null);
-											}
-										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ItemDetailsPage) {
-											((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-											Object one = ((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-											if (one != two) {
-												masterDetailsPage.block.viewer.setSelection(null);
-											}
-										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SiteDetailsPage) {
-											((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-											Object one = ((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-											if (one != two) {
-												masterDetailsPage.block.viewer.setSelection(null);
-											}
-										} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof NameDetailsPage) {
-											((NameDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
-
-											Object one = ((NameDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
-											Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
-											if (one != two) {
-												masterDetailsPage.block.viewer.setSelection(null);
-											}
-										}
-									}
-								}
-							}
+							refresh();
 						}
 					});
 				} catch (CoreException e1) {
@@ -181,6 +140,82 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 				}
 			}
 		});
+
+	}
+	
+	private void refresh() {
+		if (masterDetailsPage.block != null && masterDetailsPage.block.viewer != null) {
+			masterDetailsPage.block.viewer.refresh();
+			if (((SummaryList)masterDetailsPage.block).getDetailsPart() != null) {
+				if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() != null) {
+					if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ArmorDetailsPage) {
+						((ArmorDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+						Object one = ((ArmorDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+						if (one != two) {
+							masterDetailsPage.block.viewer.setSelection(null);
+						}
+					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof WeaponDetailsPage) {
+						((WeaponDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+						Object one = ((WeaponDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+						if (one != two) {
+							masterDetailsPage.block.viewer.setSelection(null);
+						}
+					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof MonsterDetailsPage) {
+						((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+						Object one = ((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+						if (one != two) {
+							masterDetailsPage.block.viewer.setSelection(null);
+						}
+					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof NationDetailsPage) {
+						((NationDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+						Object one = ((NationDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+						if (one != two) {
+							masterDetailsPage.block.viewer.setSelection(null);
+						}
+					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SpellDetailsPage) {
+						((SpellDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+						Object one = ((SpellDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+						if (one != two) {
+							masterDetailsPage.block.viewer.setSelection(null);
+						}
+					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ItemDetailsPage) {
+						((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+						Object one = ((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+						if (one != two) {
+							masterDetailsPage.block.viewer.setSelection(null);
+						}
+					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SiteDetailsPage) {
+						((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+						Object one = ((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+						if (one != two) {
+							masterDetailsPage.block.viewer.setSelection(null);
+						}
+					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof NameDetailsPage) {
+						((NameDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
+
+						Object one = ((NameDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
+						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
+						if (one != two) {
+							masterDetailsPage.block.viewer.setSelection(null);
+						}
+					}
+				}
+			}
+		}
 
 	}
 	
@@ -255,6 +290,245 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 	 */
 	public void menuAboutToShow(IMenuManager menuManager) {
 		((IMenuListener)getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
+	}
+	
+	public void fixIdNumbers() {
+		final IXtextDocument myDocument = ((XtextEditor)sourcePage).getDocument();
+		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+			@Override
+			public void process(XtextResource resource) {
+				// Fix Armor IDs
+				Set<Integer> armorIds = new HashSet<Integer>();
+				List<NewArmor> armorsToFix = new ArrayList<NewArmor>();
+				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
+				EList<AbstractElement> elements = dom3Mod.getElements();
+				for (AbstractElement element : elements) {
+					if (element instanceof NewArmor) {
+						if (armorIds.contains(((NewArmor)element).getValue()) ||
+							((NewArmor)element).getValue() < 200 ||
+							((NewArmor)element).getValue() > 399) {
+							armorsToFix.add((NewArmor)element);
+						} else {
+							armorIds.add(((NewArmor)element).getValue());
+						}
+					}
+				}
+				for (NewArmor armor : armorsToFix) {
+					for (int i = 200; i < 400; i++) {
+						if (!armorIds.contains(i)) {
+							armor.setValue(i);
+							break;
+						}
+					}
+				}
+
+				// Fix Weapon IDs
+				Set<Integer> weaponIds = new HashSet<Integer>();
+				List<NewWeapon> weaponsToFix = new ArrayList<NewWeapon>();
+				for (AbstractElement element : elements) {
+					if (element instanceof NewWeapon) {
+						if (weaponIds.contains(((NewWeapon)element).getValue()) ||
+							((NewWeapon)element).getValue() < 600 ||
+							((NewWeapon)element).getValue() > 999) {
+							weaponsToFix.add((NewWeapon)element);
+						} else {
+							weaponIds.add(((NewWeapon)element).getValue());
+						}
+					}
+				}
+				for (NewWeapon weapon : weaponsToFix) {
+					int oldValue = weapon.getValue();
+					for (int i = 600; i < 999; i++) {
+						if (!weaponIds.contains(i)) {
+							// Change the weapon id
+							weapon.setValue(i);
+							
+							// Need to change references to this weapon as well
+							boolean foundWeapon = false;
+							for (AbstractElement element : elements) {
+								if (element instanceof NewWeapon) {
+									if (((NewWeapon)element).getValue() == i) {
+										foundWeapon = true;
+									}
+								}
+								if (foundWeapon) {
+									if (element instanceof Monster) {
+										EList<MonsterMods> mods = ((Monster)element).getMods();
+										for (MonsterMods mod : mods) {
+											if (mod instanceof MonsterInst5 && ((MonsterInst5)mod).isWeapon()) {
+												if (((MonsterInst5)mod).getValue2() == oldValue) {
+													((MonsterInst5)mod).setValue2(i);
+												}
+											}
+										}
+									} else if (element instanceof Item) {
+										EList<ItemMods> mods = ((Item)element).getMods();
+										for (ItemMods mod : mods) {
+											if (mod instanceof ItemInst2 && ((ItemInst2)mod).isWeapon()) {
+												if (((ItemInst2)mod).getValue() == oldValue) {
+													((ItemInst2)mod).setValue(i);
+												}
+											}
+										}
+									}
+								}
+							}
+							break;
+						}
+					}
+				}
+
+				// Fix Monster IDs
+				Set<Integer> monsterIds = new HashSet<Integer>();
+				List<NewMonster> monstersToFix = new ArrayList<NewMonster>();
+				for (AbstractElement element : elements) {
+					if (element instanceof NewMonster) {
+						if (monsterIds.contains(((NewMonster)element).getValue()) ||
+							((NewMonster)element).getValue() < 2200 ||
+							((NewMonster)element).getValue() > 2999) {
+							monstersToFix.add((NewMonster)element);
+						} else {
+							monsterIds.add(((NewMonster)element).getValue());
+						}
+					}
+				}
+				for (NewMonster monster : monstersToFix) {
+					int oldValue = monster.getValue();
+					for (int i = 2200; i < 2999; i++) {
+						if (!monsterIds.contains(i)) {
+							monster.setValue(i);
+
+							// Need to change references to this monster as well
+							boolean foundMonster = false;
+							for (AbstractElement element : elements) {
+								if (element instanceof NewMonster) {
+									if (((NewMonster)element).getValue() == i) {
+										foundMonster = true;
+									}
+								}
+								if (foundMonster) {
+									if (element instanceof Monster) {
+										EList<MonsterMods> mods = ((Monster)element).getMods();
+										for (MonsterMods mod : mods) {
+											if (mod instanceof MonsterInst5 && 
+											   (((MonsterInst5)mod).isFirstshape() ||
+												((MonsterInst5)mod).isSecondshape() ||
+												((MonsterInst5)mod).isSecondtmpshape() ||
+												((MonsterInst5)mod).isShapechange() ||
+												((MonsterInst5)mod).isLandshape() ||
+												((MonsterInst5)mod).isForestshape() ||
+												((MonsterInst5)mod).isWatershape() ||
+												((MonsterInst5)mod).isPlainshape() ||
+												((MonsterInst5)mod).isDomsummon() ||
+												((MonsterInst5)mod).isDomsummon2() ||
+												((MonsterInst5)mod).isDomsummon20() ||
+												((MonsterInst5)mod).isMakemonster1() ||
+												((MonsterInst5)mod).isMakemonster2() ||
+												((MonsterInst5)mod).isMakemonster3() ||
+												((MonsterInst5)mod).isMakemonster4() ||
+												((MonsterInst5)mod).isMakemonster5() ||
+												((MonsterInst5)mod).isSummon1() ||
+												((MonsterInst5)mod).isSummon5())) {
+												if (((MonsterInst5)mod).getValue2() == oldValue) {
+													((MonsterInst5)mod).setValue2(i);
+												}
+											}
+										}
+									} else if (element instanceof Site) {
+										EList<SiteMods> mods = ((Site)element).getMods();
+										for (SiteMods mod : mods) {
+											if (mod instanceof SiteInst2 && 
+											   (((SiteInst2)mod).isHomecom() ||
+												((SiteInst2)mod).isHomemon() ||
+												((SiteInst2)mod).isCom() ||
+												((SiteInst2)mod).isMon() )) {
+												if (((SiteInst2)mod).getValue() == oldValue) {
+													((SiteInst2)mod).setValue(i);
+												}
+											}
+										}
+									} else if (element instanceof SelectNation) {
+										EList<NationMods> mods = ((SelectNation)element).getMods();
+										for (NationMods mod : mods) {
+											if (mod instanceof NationInst4 && 
+											   (((NationInst4)mod).isStartcom() ||
+												((NationInst4)mod).isStartscout() ||
+												((NationInst4)mod).isStartunittype1() ||
+												((NationInst4)mod).isStartunittype2() ||
+												((NationInst4)mod).isAddrecunit() ||
+												((NationInst4)mod).isAddreccom() ||
+												((NationInst4)mod).isUwunit1() ||
+												((NationInst4)mod).isUwunit2() ||
+												((NationInst4)mod).isUwunit3() ||
+												((NationInst4)mod).isUwunit4() ||
+												((NationInst4)mod).isUwunit5() ||
+												((NationInst4)mod).isUwcom1() ||
+												((NationInst4)mod).isUwcom2() ||
+												((NationInst4)mod).isUwcom3() ||
+												((NationInst4)mod).isUwcom4() ||
+												((NationInst4)mod).isUwcom5() ||
+												((NationInst4)mod).isDefcom1() ||
+												((NationInst4)mod).isDefcom2() ||
+												((NationInst4)mod).isDefunit1() ||
+												((NationInst4)mod).isDefunit1b() ||
+												((NationInst4)mod).isDefunit2() ||
+												((NationInst4)mod).isDefunit2b() ||
+												((NationInst4)mod).isAddrecunit() ||
+												((NationInst4)mod).isAddrecunit() )) {
+												if (((NationInst4)mod).getValue2() == oldValue) {
+													((NationInst4)mod).setValue2(i);
+												}
+											}
+											if (mod instanceof NationInst2 && 
+											   (((NationInst2)mod).isHero1() ||
+											    ((NationInst2)mod).isHero2() ||
+											    ((NationInst2)mod).isHero3() ||
+											    ((NationInst2)mod).isHero4() ||
+											    ((NationInst2)mod).isHero5() ||
+											    ((NationInst2)mod).isHero6() ||
+											    ((NationInst2)mod).isMultihero1() ||
+												((NationInst2)mod).isMultihero2() )) {
+												if (((NationInst2)mod).getValue() == oldValue) {
+													((NationInst2)mod).setValue(i);
+												}
+											}
+										}
+									}
+								}
+							}
+							break;
+						}
+					}
+				}
+
+				// Fix Site IDs
+				Set<Integer> siteIds = new HashSet<Integer>();
+				List<NewSite> sitesToFix = new ArrayList<NewSite>();
+				for (AbstractElement element : elements) {
+					if (element instanceof NewSite) {
+						if (siteIds.contains(((NewSite)element).getValue()) ||
+							((NewSite)element).getValue() < 750 ||
+							((NewSite)element).getValue() > 999) {
+							sitesToFix.add((NewSite)element);
+						} else {
+							siteIds.add(((NewSite)element).getValue());
+						}
+					}
+				}
+				for (NewSite site : sitesToFix) {
+					for (int i = 750; i < 999; i++) {
+						if (!siteIds.contains(i)) {
+							site.setValue(i);
+							break;
+						}
+					}
+				}
+			}
+		},
+		myDocument);
+		
+		refresh();
 	}
 
 }

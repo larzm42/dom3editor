@@ -200,7 +200,7 @@ public class SummaryList extends MasterDetailsBlock {
 				for (ArmorMods mod : list) {
 					if (mod instanceof ArmorInst1) {
 						if (((ArmorInst1)mod).isName()) {
-							return Messages.format("ScrolledPropertiesBlock.armor.single.fmt", ((ArmorInst1)mod).getValue());
+							return Messages.format("ScrolledPropertiesBlock.armor.double.fmt", ((ArmorInst1)mod).getValue(), ((NewArmor)element).getValue());
 						}
 					}
 				}
@@ -214,7 +214,7 @@ public class SummaryList extends MasterDetailsBlock {
 				for (WeaponMods mod : list) {
 					if (mod instanceof WeaponInst1) {
 						if (((WeaponInst1)mod).isName()) {
-							return Messages.format("ScrolledPropertiesBlock.weapon.single.fmt", ((WeaponInst1)mod).getValue());
+							return Messages.format("ScrolledPropertiesBlock.weapon.double.fmt", ((WeaponInst1)mod).getValue(), ((NewWeapon)element).getValue());
 						}
 					}
 				}
@@ -228,7 +228,7 @@ public class SummaryList extends MasterDetailsBlock {
 				for (MonsterMods mod : list) {
 					if (mod instanceof MonsterInst1) {
 						if (((MonsterInst1)mod).isName()) {
-							return Messages.format("ScrolledPropertiesBlock.monster.single.fmt", ((MonsterInst1)mod).getValue());
+							return Messages.format("ScrolledPropertiesBlock.monster.double.fmt", ((MonsterInst1)mod).getValue(), ((NewMonster)element).getValue());
 						}
 					}
 				}
@@ -255,7 +255,7 @@ public class SummaryList extends MasterDetailsBlock {
 				for (SiteMods mod : list) {
 					if (mod instanceof SiteInst1) {
 						if (((SiteInst1)mod).isName()) {
-							return Messages.format("ScrolledPropertiesBlock.site.single.fmt", ((SiteInst1)mod).getValue());
+							return Messages.format("ScrolledPropertiesBlock.site.double.fmt", ((SiteInst1)mod).getValue(), ((NewSite)element).getValue());
 						}
 					}
 				}
@@ -291,7 +291,7 @@ public class SummaryList extends MasterDetailsBlock {
 				for (NationMods mod : list) {
 					if (mod instanceof NationInst1) {
 						if (((NationInst1)mod).isName()) {
-							return Messages.format("ScrolledPropertiesBlock.nation.single.fmt", ((NationInst1)mod).getValue());
+							return Messages.format("ScrolledPropertiesBlock.nation.double.fmt", ((NationInst1)mod).getValue(), ((SelectNation)element).getValue());
 						}
 					}
 				}
