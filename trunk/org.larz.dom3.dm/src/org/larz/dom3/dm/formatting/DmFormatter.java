@@ -62,15 +62,15 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		// Armor rules
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectArmorByIdRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectArmorByIdRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectArmorByIdAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectArmorByIdAccess().getEndKeyword_4());
 		
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectArmorByNameRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectArmorByNameRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectArmorByNameAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectArmorByNameAccess().getEndKeyword_4());
 
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getNewArmorRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getNewArmorRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewArmorAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewArmorAccess().getEndKeyword_4());
 		
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getArmorPattern1Rule());
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getArmorPattern1Rule());
@@ -80,15 +80,15 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		// Weapon rules
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectWeaponByIdRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectWeaponByIdRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectWeaponByIdAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectWeaponByIdAccess().getEndKeyword_4());
 		
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectWeaponByNameRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectWeaponByNameRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectWeaponByNameAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectWeaponByNameAccess().getEndKeyword_4());
 
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getNewWeaponRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getNewWeaponRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewWeaponAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewWeaponAccess().getEndKeyword_4());
 		
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getWeaponPattern1Rule());
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getWeaponPattern1Rule());
@@ -102,15 +102,15 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		// Monster rules
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectMonsterByIdRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectMonsterByIdRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectMonsterByIdAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectMonsterByIdAccess().getEndKeyword_4());
 		
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectMonsterByNameRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectMonsterByNameRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectMonsterByNameAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectMonsterByNameAccess().getEndKeyword_4());
 
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getNewMonsterRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getNewMonsterRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewMonsterAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewMonsterAccess().getEndKeyword_4());
 		
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getMonsterPattern1Rule());
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getMonsterPattern1Rule());
@@ -126,15 +126,15 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		// Item rules
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectItemByIdRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectItemByIdRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectItemByIdAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectItemByIdAccess().getEndKeyword_4());
 		
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectItemByNameRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectItemByNameRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectItemByNameAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectItemByNameAccess().getEndKeyword_4());
 
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getNewItemRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getNewItemRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewItemAccess().getEndKeyword_2());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewItemAccess().getEndKeyword_3());
 		
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getItemPattern1Rule());
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getItemPattern1Rule());
@@ -144,15 +144,15 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		// Site rules
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectSiteByIdRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectSiteByIdRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectSiteByIdAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectSiteByIdAccess().getEndKeyword_4());
 		
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectSiteByNameRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectSiteByNameRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectSiteByNameAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectSiteByNameAccess().getEndKeyword_4());
 
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getNewSiteRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getNewSiteRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewSiteAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewSiteAccess().getEndKeyword_4());
 		
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSitePattern1Rule());
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getSitePattern1Rule());
@@ -166,15 +166,15 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		// Spell rules
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectSpellByIdRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectSpellByIdRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectSpellByIdAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectSpellByIdAccess().getEndKeyword_4());
 		
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectSpellByNameRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectSpellByNameRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectSpellByNameAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectSpellByNameAccess().getEndKeyword_4());
 
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getNewSpellRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getNewSpellRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewSpellAccess().getEndKeyword_2());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNewSpellAccess().getEndKeyword_3());
 		
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSpellPattern1Rule());
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getSpellPattern1Rule());
@@ -190,7 +190,7 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		// Nation rules
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectNationRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectNationRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectNationAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectNationAccess().getEndKeyword_4());
 		
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNationPattern1Rule());
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getNationPattern1Rule());
@@ -206,7 +206,7 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		// Name rules
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectNameRule());
 		c.setLinewrap(1, 1, 2).after(((DmGrammarAccess)getGrammarAccess()).getSelectNameRule());
-		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectNameAccess().getEndKeyword_3());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getSelectNameAccess().getEndKeyword_4());
 		
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getNamePattern1Rule());
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getNamePattern1Rule());

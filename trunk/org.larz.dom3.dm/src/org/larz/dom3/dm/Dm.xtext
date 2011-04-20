@@ -8,8 +8,8 @@ Dom3Mod:
 	(('#modname' modname=STRING) &
 	('#description' desc=STRING)? &
 	('#icon' icon=STRING)? &
-	('#version' version=VersionNum)? &
-	('#domversion' domversion=VersionNum)? &
+	('#version' version=DecimalValue)? &
+	('#domversion' domversion=DecimalValue)? &
 	('#poppergold' poppergold=INT)? &
 	('#resourcemult' resourcemult=INT)? &
 	('#supplymult' supplymult=INT)? &
@@ -33,10 +33,7 @@ Dom3Mod:
 
 AbstractElement:
 	 Armor | Weapon | Monster | Spell | Item | Name | Site | Nation;
-	
-VersionNum:
-	INT ('.' INT)*;
-	
+		
 	
 /**************/
 /* Armor Mods */
@@ -45,17 +42,17 @@ Armor:
 	SelectArmorById | SelectArmorByName | NewArmor;
 	
 SelectArmorById:
-	'#selectarmor' value=INT
+	'#selectarmor' value=INT (FREE_FORM_COMMENT)*
 	mods+=ArmorMods*
 	'#end';
 	
 SelectArmorByName:
-	'#selectarmor' value=STRING
+	'#selectarmor' value=STRING (FREE_FORM_COMMENT)*
 	mods+=ArmorMods*
 	'#end';
 	
 NewArmor:
-	'#newarmor' value=INT
+	'#newarmor' value=INT (FREE_FORM_COMMENT)*
 	mods+=ArmorMods*
 	'#end';
 	
@@ -63,10 +60,10 @@ ArmorMods:
 	ArmorPattern1 | ArmorPattern2;
 	
 ArmorPattern1:
-	ArmorInst1 value=STRING;
+	ArmorInst1 value=STRING (FREE_FORM_COMMENT)*;
 
 ArmorPattern2:
-	ArmorInst2 value=INT;
+	ArmorInst2 value=INT (FREE_FORM_COMMENT)*;
 	
 ArmorInst1:
 	name?='#name';
@@ -86,17 +83,17 @@ Weapon:
 	SelectWeaponById | SelectWeaponByName | NewWeapon ;
 	
 SelectWeaponById:
-	'#selectweapon' value=INT
+	'#selectweapon' value=INT (FREE_FORM_COMMENT)*
 	mods+=WeaponMods*
 	'#end';
 	
 SelectWeaponByName:
-	'#selectweapon' value=STRING
+	'#selectweapon' value=STRING (FREE_FORM_COMMENT)*
 	mods+=WeaponMods*
 	'#end';
 	
 NewWeapon:
-	'#newweapon' value=INT
+	'#newweapon' value=INT (FREE_FORM_COMMENT)*
 	mods+=WeaponMods*
 	'#end';
 
@@ -104,16 +101,16 @@ WeaponMods:
 	WeaponPattern1 | WeaponPattern2 | WeaponPattern3 | WeaponPattern4;
 	
 WeaponPattern1:
-	WeaponInst1 value=STRING;
+	WeaponInst1 value=STRING (FREE_FORM_COMMENT)*;
 
 WeaponPattern2:
-	WeaponInst2 value=INT;
+	WeaponInst2 value=INT (FREE_FORM_COMMENT)*;
 
 WeaponPattern3:
-	WeaponInst3 value1=INT value2=INT;
+	WeaponInst3 value1=INT value2=INT (FREE_FORM_COMMENT)*;
 
 WeaponPattern4:
-	WeaponInst4;
+	WeaponInst4 (FREE_FORM_COMMENT)*;
 
 WeaponInst1:
 	name?='#name';
@@ -175,17 +172,17 @@ Monster:
 	SelectMonsterById | SelectMonsterByName | NewMonster;
 
 SelectMonsterById:
-	'#selectmonster' value=INT
+	'#selectmonster' value=INT (FREE_FORM_COMMENT)*
 	mods+=MonsterMods*
 	'#end';
 	
 SelectMonsterByName:
-	'#selectmonster' value=STRING
+	'#selectmonster' value=STRING (FREE_FORM_COMMENT)*
 	mods+=MonsterMods*
 	'#end';
 	
 NewMonster:
-	'#newmonster' value=INT
+	'#newmonster' value=INT (FREE_FORM_COMMENT)*
 	mods+=MonsterMods*
 	'#end';
 
@@ -193,22 +190,22 @@ MonsterMods:
 	MonsterPattern1 | MonsterPattern2 | MonsterPattern3 | MonsterPattern4 | MonsterPattern5 | MonsterPattern6;
 	
 MonsterPattern1:
-	MonsterInst1 value=STRING;
+	MonsterInst1 value=STRING (FREE_FORM_COMMENT)*;
 
 MonsterPattern2:
-	MonsterInst2 value=INT;
+	MonsterInst2 value=INT (FREE_FORM_COMMENT)*;
 
 MonsterPattern3:
-	MonsterInst3 value1=INT value2=INT;
+	MonsterInst3 value1=INT value2=INT (FREE_FORM_COMMENT)*;
 
 MonsterPattern4:
-	MonsterInst4;
+	MonsterInst4 (FREE_FORM_COMMENT)*;
 	
 MonsterPattern5:
-	MonsterInst5 (value1=STRING | value2=INT);
+	MonsterInst5 (value1=STRING | value2=INT) (FREE_FORM_COMMENT)*;
 
 MonsterPattern6:
-	MonsterInst6 (value=INT)?;
+	MonsterInst6 (value=INT)? (FREE_FORM_COMMENT)*;
 
 MonsterInst1:
 	name?='#name' |
@@ -398,17 +395,17 @@ Spell:
 	SelectSpellById | SelectSpellByName | NewSpell;
 	
 SelectSpellById:
-	'#selectspell' value=INT
+	'#selectspell' value=INT (FREE_FORM_COMMENT)*
 	mods+=SpellMods*
 	'#end';
 	
 SelectSpellByName:
-	'#selectspell' value=STRING
+	'#selectspell' value=STRING (FREE_FORM_COMMENT)*
 	mods+=SpellMods*
 	'#end';
 	
 NewSpell:
-	'#newspell'
+	'#newspell' (FREE_FORM_COMMENT)*
 	mods+=SpellMods*
 	'#end';
 
@@ -416,19 +413,19 @@ SpellMods:
 	SpellPattern1 | SpellPattern2 | SpellPattern3 | SpellPattern4 |SpellPattern5;
 	
 SpellPattern1:
-	SpellInst1 value=STRING;
+	SpellInst1 value=STRING (FREE_FORM_COMMENT)*;
 
 SpellPattern2:
-	SpellInst2 value=INT;
+	SpellInst2 value=INT (FREE_FORM_COMMENT)*;
 
 SpellPattern3:
-	SpellInst3 value1=INT value2=INT;
+	SpellInst3 value1=INT value2=INT (FREE_FORM_COMMENT)*;
 
 SpellPattern4:
-	SpellInst4;
+	SpellInst4 (FREE_FORM_COMMENT)*;
 
 SpellPattern5:
-	SpellInst5 (value1=STRING | value2=INT);
+	SpellInst5 (value1=STRING | value2=INT) (FREE_FORM_COMMENT)*;
 
 SpellInst1:
 	name?='#name' |
@@ -469,17 +466,17 @@ Item:
 	SelectItemById | SelectItemByName | NewItem;
 	
 SelectItemById:
-	'#selectitem' value=INT
+	'#selectitem' value=INT (FREE_FORM_COMMENT)*
 	mods+=ItemMods*
 	'#end';
 	
 SelectItemByName:
-	'#selectitem' value=STRING
+	'#selectitem' value=STRING (FREE_FORM_COMMENT)*
 	mods+=ItemMods*
 	'#end';
 	
 NewItem:
-	'#newitem'
+	'#newitem' (FREE_FORM_COMMENT)*
 	mods+=ItemMods*
 	'#end';
 
@@ -487,13 +484,13 @@ ItemMods:
 	ItemPattern1 | ItemPattern2 | ItemPattern3;
 	
 ItemPattern1:
-	ItemInst1 value=STRING;
+	ItemInst1 value=STRING (FREE_FORM_COMMENT)*;
 
 ItemPattern2:
-	ItemInst2 value=INT;
+	ItemInst2 value=INT (FREE_FORM_COMMENT)*;
 	
 ItemPattern3:
-	ItemInst3 (value1=STRING | value2=INT);
+	ItemInst3 (value1=STRING | value2=INT) (FREE_FORM_COMMENT)*;
 
 
 ItemInst1:
@@ -521,7 +518,7 @@ Name:
 	SelectName;
 	
 SelectName:
-	'#selectnametype' value=INT
+	'#selectnametype' value=INT (FREE_FORM_COMMENT)*
 	mods+=NameMods*
 	'#end';
 	
@@ -529,10 +526,10 @@ NameMods:
 	NamePattern1 | NamePattern2;
 	
 NamePattern1:
-	NameInst1 value=STRING;
+	NameInst1 value=STRING (FREE_FORM_COMMENT)*;
 
 NamePattern2:
-	NameInst2;
+	NameInst2 (FREE_FORM_COMMENT)*;
 
 NameInst1:
 	name?='#addname';
@@ -548,17 +545,17 @@ Site:
 	SelectSiteById | SelectSiteByName | NewSite;
 	
 SelectSiteById:
-	'#selectsite' value=INT
+	'#selectsite' value=INT (FREE_FORM_COMMENT)*
 	mods+=SiteMods*
 	'#end';
 	
 SelectSiteByName:
-	'#selectsite' value=STRING
+	'#selectsite' value=STRING (FREE_FORM_COMMENT)*
 	mods+=SiteMods*
 	'#end';
 	
 NewSite:
-	'#newsite' value=INT
+	'#newsite' value=INT (FREE_FORM_COMMENT)*
 	mods+=SiteMods*
 	'#end';
 
@@ -566,16 +563,16 @@ SiteMods:
 	SitePattern1 | SitePattern2 | SitePattern3 | SitePattern4;
 	
 SitePattern1:
-	SiteInst1 value=STRING;
+	SiteInst1 value=STRING (FREE_FORM_COMMENT)*;
 
 SitePattern2:
-	SiteInst2 value=INT;
+	SiteInst2 value=INT (FREE_FORM_COMMENT)*;
 
 SitePattern3:
-	SiteInst3 value1=INT value2=INT;
+	SiteInst3 value1=INT value2=INT (FREE_FORM_COMMENT)*;
 
 SitePattern4:
-	SiteInst4;
+	SiteInst4 (FREE_FORM_COMMENT)*;
 
 SiteInst1:
 	name?='#name';
@@ -608,33 +605,31 @@ Nation:
 	SelectNation | IndepFlag;
 	
 SelectNation:
-	'#selectnation' value=INT
+	'#selectnation' value=INT (FREE_FORM_COMMENT)*
 	mods+=NationMods*
 	'#end';
 	
 IndepFlag:
-	'#indepflag' value=STRING;
+	'#indepflag' value=STRING (FREE_FORM_COMMENT)*;
 
 NationMods:
-	NationPattern1 | NationPattern2 | NationPattern3 | NationPattern4 | NationPattern5 ;
+	NationPattern1 | NationPattern2 | NationPattern3 | NationPattern4 | NationPattern5;
 	
 NationPattern1:
-	NationInst1 value=STRING;
+	NationInst1 value=STRING (FREE_FORM_COMMENT)*;
 
 NationPattern2:
-	NationInst2 value=INT;
+	NationInst2 value=INT (FREE_FORM_COMMENT)*;
 
 NationPattern3:
-	NationInst3;
+	NationInst3 (FREE_FORM_COMMENT)*;
 
 NationPattern4:
-	NationInst4 (value1=STRING | value2=INT);
+	NationInst4 (value1=STRING | value2=INT) (FREE_FORM_COMMENT)*;
 
 NationPattern5:
-	NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue;
+	NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue (FREE_FORM_COMMENT)*;
 	
-DecimalValue:
-	INT ('.' INT);
 
 NationInst1:
 	name?='#name' |
@@ -722,6 +717,8 @@ NationInst4:
 NationInst5:
 	color?='#color';
 
+DecimalValue:
+	INT ('.' INT)*;
 
 /*************/
 /* Terminals */
@@ -732,11 +729,15 @@ terminal STRING	:
 	'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
 	"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'"; 
 			
+terminal FREE_FORM_COMMENT:
+	('a'..'z'|'A'..'Z'|'0'..'9'|'('|')'|'['|']'|',')+;
+	
 terminal ML_COMMENT:
-	(SL_COMMENT | (' '* '\t'* '\r'? '\n')+) !('#'|'\r'|'\n') !('\r'|'\n')*;
+	(SL_COMMENT | (' '* '\t'* ('\r'|'\n'))+) !('#'|'\r'|'\n') !('\r'|'\n')*;
 
 terminal SL_COMMENT: 
-	'-' !('0'..'9') !('\n'|'\r')* ('\r'? '\n')?;
+	'-' !('0'..'9') !('\n'|'\r')* ('\r'|'\n')?;
 	
 terminal WS:
-	(' '|'\t'|'\r'|'\n')+;
+	(' '|'\t'|'\r'|'\n')+;	
+	

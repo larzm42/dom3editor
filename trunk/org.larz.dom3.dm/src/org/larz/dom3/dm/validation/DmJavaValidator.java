@@ -15,6 +15,8 @@
  */
 package org.larz.dom3.dm.validation;
 
+import java.text.MessageFormat;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.larz.dom3.dm.dm.AbstractElement;
@@ -24,8 +26,16 @@ import org.larz.dom3.dm.dm.NewArmor;
 import org.larz.dom3.dm.dm.NewMonster;
 import org.larz.dom3.dm.dm.NewSite;
 import org.larz.dom3.dm.dm.NewWeapon;
+import org.larz.dom3.dm.dm.SelectArmorById;
+import org.larz.dom3.dm.dm.SelectArmorByName;
+import org.larz.dom3.dm.dm.SelectMonsterById;
+import org.larz.dom3.dm.dm.SelectMonsterByName;
 import org.larz.dom3.dm.dm.SelectName;
 import org.larz.dom3.dm.dm.SelectNation;
+import org.larz.dom3.dm.dm.SelectSiteById;
+import org.larz.dom3.dm.dm.SelectSiteByName;
+import org.larz.dom3.dm.dm.SelectWeaponById;
+import org.larz.dom3.dm.dm.SelectWeaponByName;
  
 
 public class DmJavaValidator extends AbstractDmJavaValidator {
@@ -43,9 +53,9 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	public final static int MAX_NATION_ID = 94;
 
 	@Check
-	public void checkArmorIds(NewArmor armor) {
+	public void checkNewArmorIds(NewArmor armor) {
 		if (armor.getValue() < MIN_ARMOR_ID || armor.getValue() > MAX_ARMOR_ID) {
-			warning("Armor ID must be between " + MIN_ARMOR_ID + " and " + MAX_ARMOR_ID + ".", armor, DmPackage.NEW_ARMOR__VALUE);
+			warning(MessageFormat.format("Armor ID must be between {0} and {1}.", MIN_ARMOR_ID, MAX_ARMOR_ID), armor, DmPackage.NEW_ARMOR__VALUE);
 			return;
 		}
 		Dom3Mod mod = (Dom3Mod)armor.eContainer();
@@ -54,7 +64,35 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 			if (element instanceof NewArmor) {
 				NewArmor newArmor = (NewArmor)element;
 				if (!armor.equals(newArmor) && armor.getValue() == newArmor.getValue()) {
-					warning("Duplicate Armor ID", element, DmPackage.NEW_ARMOR__VALUE);
+					warning(MessageFormat.format("Duplicate New Armor ID: {0}", armor.getValue()), element, DmPackage.NEW_ARMOR__VALUE);
+				}
+			}
+		}
+	}
+
+	@Check
+	public void checkSelectArmorIds(SelectArmorById armor) {
+		Dom3Mod mod = (Dom3Mod)armor.eContainer();
+		EList<AbstractElement> elements = mod.getElements();
+		for (AbstractElement element : elements) {
+			if (element instanceof SelectArmorById) {
+				SelectArmorById newArmor = (SelectArmorById)element;
+				if (!armor.equals(newArmor) && armor.getValue() == newArmor.getValue()) {
+					warning(MessageFormat.format("Duplicate Select Armor ID: {0}", armor.getValue()), element, DmPackage.SELECT_ARMOR_BY_ID__VALUE);
+				}
+			}
+		}
+	}
+
+	@Check
+	public void checkSelectArmorNames(SelectArmorByName armor) {
+		Dom3Mod mod = (Dom3Mod)armor.eContainer();
+		EList<AbstractElement> elements = mod.getElements();
+		for (AbstractElement element : elements) {
+			if (element instanceof SelectArmorByName) {
+				SelectArmorByName newArmor = (SelectArmorByName)element;
+				if (!armor.equals(newArmor) && armor.getValue().equals(newArmor.getValue())) {
+					warning(MessageFormat.format("Duplicate Select Armor Name: {0}", armor.getValue()), element, DmPackage.SELECT_ARMOR_BY_NAME__VALUE);
 				}
 			}
 		}
@@ -63,7 +101,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check
 	public void checkWeaponIds(NewWeapon weapon) {
 		if (weapon.getValue() < MIN_WEAPON_ID || weapon.getValue() > MAX_WEAPON_ID) {
-			warning("Weapon ID must be between " + MIN_WEAPON_ID + " and " + MAX_WEAPON_ID + ".", weapon, DmPackage.NEW_WEAPON__VALUE);
+			warning(MessageFormat.format("Weapon ID must be between {0} and {1}.", MIN_WEAPON_ID, MAX_WEAPON_ID), weapon, DmPackage.NEW_WEAPON__VALUE);
 			return;
 		}
 		Dom3Mod mod = (Dom3Mod)weapon.eContainer();
@@ -72,7 +110,35 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 			if (element instanceof NewWeapon) {
 				NewWeapon newWeapon = (NewWeapon)element;
 				if (!weapon.equals(newWeapon) && weapon.getValue() == newWeapon.getValue()) {
-					warning("Duplicate Weapon ID", element, DmPackage.NEW_WEAPON__VALUE);
+					warning(MessageFormat.format("Duplicate New Weapon ID: {0}", weapon.getValue()), element, DmPackage.NEW_WEAPON__VALUE);
+				}
+			}
+		}
+	}
+
+	@Check
+	public void checkSelectWeaponIds(SelectWeaponById weapon) {
+		Dom3Mod mod = (Dom3Mod)weapon.eContainer();
+		EList<AbstractElement> elements = mod.getElements();
+		for (AbstractElement element : elements) {
+			if (element instanceof SelectWeaponById) {
+				SelectWeaponById newWeapon = (SelectWeaponById)element;
+				if (!weapon.equals(newWeapon) && weapon.getValue() == newWeapon.getValue()) {
+					warning(MessageFormat.format("Duplicate Select Weapon ID: {0}", weapon.getValue()), element, DmPackage.SELECT_WEAPON_BY_ID__VALUE);
+				}
+			}
+		}
+	}
+
+	@Check
+	public void checkSelectWeaponNames(SelectWeaponByName weapon) {
+		Dom3Mod mod = (Dom3Mod)weapon.eContainer();
+		EList<AbstractElement> elements = mod.getElements();
+		for (AbstractElement element : elements) {
+			if (element instanceof SelectWeaponByName) {
+				SelectWeaponByName newWeapon = (SelectWeaponByName)element;
+				if (!weapon.equals(newWeapon) && weapon.getValue().equals(newWeapon.getValue())) {
+					warning(MessageFormat.format("Duplicate Select Weapon Name: {0}", weapon.getValue()), element, DmPackage.SELECT_WEAPON_BY_NAME__VALUE);
 				}
 			}
 		}
@@ -81,7 +147,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check
 	public void checkMonsterIds(NewMonster monster) {
 		if (monster.getValue() < MIN_MONSTER_ID || monster.getValue() > MAX_MONSTER_ID) {
-			warning("Unit ID must be between " + MIN_MONSTER_ID + " and " + MAX_MONSTER_ID + ".", monster, DmPackage.NEW_MONSTER__VALUE);
+			warning(MessageFormat.format("Unit ID must be between {0} and {1}.", MIN_MONSTER_ID, MAX_MONSTER_ID), monster, DmPackage.NEW_MONSTER__VALUE);
 			return;
 		}
 		Dom3Mod mod = (Dom3Mod)monster.eContainer();
@@ -90,7 +156,35 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 			if (element instanceof NewMonster) {
 				NewMonster newMonster = (NewMonster)element;
 				if (!monster.equals(newMonster) && monster.getValue() == newMonster.getValue()) {
-					warning("Duplicate Unit ID", element, DmPackage.NEW_MONSTER__VALUE);
+					warning(MessageFormat.format("Duplicate New Unit ID : {0}", monster.getValue()), element, DmPackage.NEW_MONSTER__VALUE);
+				}
+			}
+		}
+	}
+
+	@Check
+	public void checkSelectMonsterIds(SelectMonsterById monster) {
+		Dom3Mod mod = (Dom3Mod)monster.eContainer();
+		EList<AbstractElement> elements = mod.getElements();
+		for (AbstractElement element : elements) {
+			if (element instanceof SelectMonsterById) {
+				SelectMonsterById newMonster = (SelectMonsterById)element;
+				if (!monster.equals(newMonster) && monster.getValue() == newMonster.getValue()) {
+					warning(MessageFormat.format("Duplicate Select Unit ID: {0}", monster.getValue()), element, DmPackage.SELECT_MONSTER_BY_ID__VALUE);
+				}
+			}
+		}
+	}
+
+	@Check
+	public void checkSelectMonsterNames(SelectMonsterByName monster) {
+		Dom3Mod mod = (Dom3Mod)monster.eContainer();
+		EList<AbstractElement> elements = mod.getElements();
+		for (AbstractElement element : elements) {
+			if (element instanceof SelectMonsterByName) {
+				SelectMonsterByName newMonster = (SelectMonsterByName)element;
+				if (!monster.equals(newMonster) && monster.getValue().equals(newMonster.getValue())) {
+					warning(MessageFormat.format("Duplicate Select Unit ID: {0}", monster.getValue()), element, DmPackage.SELECT_MONSTER_BY_NAME__VALUE);
 				}
 			}
 		}
@@ -99,7 +193,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check
 	public void checkNameIds(SelectName name) {
 		if (name.getValue() < MIN_NAME_ID || name.getValue() > MAX_NAME_ID) {
-			warning("Nametype ID must be between " + MIN_NAME_ID + " and " + MAX_NAME_ID + ".", name, DmPackage.SELECT_NAME__VALUE);
+			warning(MessageFormat.format("Nametype ID must be between {0} and {1}.", MIN_NAME_ID, MAX_NAME_ID), name, DmPackage.SELECT_NAME__VALUE);
 			return;
 		}
 	}
@@ -107,7 +201,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check
 	public void checkSiteIds(NewSite site) {
 		if (site.getValue() < MIN_SITE_ID || site.getValue() > MAX_SITE_ID) {
-			warning("Site ID must be between " + MIN_SITE_ID + " and " + MAX_SITE_ID + ".", site, DmPackage.NEW_SITE__VALUE);
+			warning(MessageFormat.format("Site ID must be between {0} and {1}.", MIN_SITE_ID, MAX_SITE_ID), site, DmPackage.NEW_SITE__VALUE);
 			return;
 		}
 		Dom3Mod mod = (Dom3Mod)site.eContainer();
@@ -116,7 +210,35 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 			if (element instanceof NewSite) {
 				NewSite newSite = (NewSite)element;
 				if (!site.equals(newSite) && site.getValue() == newSite.getValue()) {
-					warning("Duplicate Site ID", element, DmPackage.NEW_SITE__VALUE);
+					warning(MessageFormat.format("Duplicate New Site ID: {0}", site.getValue()), element, DmPackage.NEW_SITE__VALUE);
+				}
+			}
+		}
+	}
+
+	@Check
+	public void checkSelectSiteIds(SelectSiteById site) {
+		Dom3Mod mod = (Dom3Mod)site.eContainer();
+		EList<AbstractElement> elements = mod.getElements();
+		for (AbstractElement element : elements) {
+			if (element instanceof SelectSiteById) {
+				SelectSiteById newSite = (SelectSiteById)element;
+				if (!site.equals(newSite) && site.getValue() == newSite.getValue()) {
+					warning(MessageFormat.format("Duplicate Select Site ID: {0}", site.getValue()), element, DmPackage.SELECT_SITE_BY_ID__VALUE);
+				}
+			}
+		}
+	}
+
+	@Check
+	public void checkSelectSiteNames(SelectSiteByName site) {
+		Dom3Mod mod = (Dom3Mod)site.eContainer();
+		EList<AbstractElement> elements = mod.getElements();
+		for (AbstractElement element : elements) {
+			if (element instanceof SelectSiteByName) {
+				SelectSiteByName newSite = (SelectSiteByName)element;
+				if (!site.equals(newSite) && site.getValue().equals(newSite.getValue())) {
+					warning(MessageFormat.format("Duplicate Select Site Name: {0}", site.getValue()), element, DmPackage.SELECT_SITE_BY_NAME__VALUE);
 				}
 			}
 		}
@@ -125,8 +247,18 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check
 	public void checkNationIds(SelectNation nation) {
 		if (nation.getValue() < MIN_NATION_ID || nation.getValue() > MAX_NATION_ID) {
-			warning("Nation ID must be between " + MIN_NATION_ID + " and " + MAX_NATION_ID + ".", nation, DmPackage.SELECT_NATION__VALUE);
+			warning(MessageFormat.format("Nation ID must be between {0} and {1}.", MIN_NATION_ID, MAX_NATION_ID), nation, DmPackage.SELECT_NATION__VALUE);
 			return;
+		}
+		Dom3Mod mod = (Dom3Mod)nation.eContainer();
+		EList<AbstractElement> elements = mod.getElements();
+		for (AbstractElement element : elements) {
+			if (element instanceof SelectNation) {
+				SelectNation newNation = (SelectNation)element;
+				if (!nation.equals(newNation) && nation.getValue() == newNation.getValue()) {
+					warning(MessageFormat.format("Duplicate Select Nation: {0}", nation.getValue()), element, DmPackage.SELECT_NATION__VALUE);
+				}
+			}
 		}
 	}
 }
