@@ -19,8 +19,6 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.BusyIndicator;
@@ -39,9 +37,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.IDetailsPage;
-import org.eclipse.ui.forms.IFormPart;
-import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
@@ -62,12 +57,7 @@ import org.larz.dom3.dm.dm.SelectArmorById;
 import org.larz.dom3.dm.dm.SelectArmorByName;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
-public class ArmorDetailsPage implements IDetailsPage {
-	private IManagedForm mform;
-	private Armor input;
-	private XtextEditor doc;
-	private TableViewer viewer;
-
+public class ArmorDetailsPage extends AbstractDetailsPage {
 	private Text name;
 
 	enum Inst2 {
@@ -93,30 +83,15 @@ public class ArmorDetailsPage implements IDetailsPage {
 		private Label defaultLabel;
 	}
 	
-	EnumMap<Inst2, Inst2Fields> inst2Map = new EnumMap<Inst2, Inst2Fields>(Inst2.class);
+	private EnumMap<Inst2, Inst2Fields> inst2Map = new EnumMap<Inst2, Inst2Fields>(Inst2.class);
 	
 	public ArmorDetailsPage(XtextEditor doc, TableViewer viewer) {
-		this.doc = doc;
-		this.viewer = viewer;
+		super(doc, viewer);
 		inst2Map.put(Inst2.TYPE, new Inst2Fields());
 		inst2Map.put(Inst2.PROT, new Inst2Fields());
 		inst2Map.put(Inst2.DEF, new Inst2Fields());
 		inst2Map.put(Inst2.ENC, new Inst2Fields());
 		inst2Map.put(Inst2.RCOST, new Inst2Fields());
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#initialize(org.eclipse.ui.forms.IManagedForm)
-	 */
-	public void initialize(IManagedForm mform) {
-		this.mform = mform;
-	}
-	
-	/**
-	 * @return
-	 */
-	public Armor getInput() {
-		return input;
 	}
 	
 	/* (non-Javadoc)
@@ -156,14 +131,14 @@ public class ArmorDetailsPage implements IDetailsPage {
 		name.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setArmorname(doc, input, name.getText());
+				setArmorname(doc, name.getText());
 			}			
 		});
 		name.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setArmorname(doc, input, name.getText());
+					setArmorname(doc, name.getText());
 				}
 			}
 			
@@ -195,11 +170,13 @@ public class ArmorDetailsPage implements IDetailsPage {
 					if (check.getSelection()) {
 						value.setEnabled(true);
 						value.setText(key.defaultValue);
-						addInst2(key, doc, input, key.defaultValue);
+						addInst2(key, doc, key.defaultValue);
+						check.setFont(boldFont);
 					} else {
 						value.setEnabled(false);
 						value.setText("");
-						removeInst(key, doc, input);
+						removeInst(key, doc);
+						check.setFont(normalFont);
 					}
 				}
 
@@ -207,14 +184,14 @@ public class ArmorDetailsPage implements IDetailsPage {
 			value.addFocusListener(new FocusAdapter() {
 				@Override
 				public void focusLost(FocusEvent e) {
-					setInst2(key, doc, input, value.getText());
+					setInst2(key, doc, value.getText());
 				}			
 			});
 			value.addKeyListener(new KeyAdapter() {
 				@Override
 				public void keyPressed(KeyEvent e) {
 					if (e.character == '\r') {
-						setInst2(key, doc, input, value.getText());
+						setInst2(key, doc, value.getText());
 					}
 				}
 				
@@ -231,21 +208,14 @@ public class ArmorDetailsPage implements IDetailsPage {
 		createSpacer(toolkit, client, 2);
 	}
 	
-	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
-		Label spacer = toolkit.createLabel(parent, ""); //$NON-NLS-1$
-		GridData gd = new GridData();
-		gd.horizontalSpan = span;
-		spacer.setLayoutData(gd);
-	}
-	
 	public void update() {
 		if (input != null) {
 			if (input instanceof SelectArmorByName || input instanceof SelectArmorById) {
-				String str = getSelectArmorname(input);
+				String str = getSelectArmorname((Armor)input);
 				name.setText(str!= null?str:"");
 				name.setEnabled(false);
 			} else {
-				String str = getArmorname(input);
+				String str = getArmorname((Armor)input);
 				name.setText(str!=null?str:"");
 			}
 		}
@@ -256,15 +226,17 @@ public class ArmorDetailsPage implements IDetailsPage {
 			armorDB = Database.getArmor(((SelectArmorByName)input).getValue());
 		}
 		for (Map.Entry<Inst2, Inst2Fields> fields : inst2Map.entrySet()) {
-			Integer val = getInst2(fields.getKey(), input);
+			Integer val = getInst2(fields.getKey(), (Armor)input);
 			if (val != null) {
 				fields.getValue().value.setText(val.toString());
 				fields.getValue().value.setEnabled(true);
 				fields.getValue().check.setSelection(true);
+				fields.getValue().check.setFont(boldFont);
 			} else {
 				fields.getValue().value.setText("");
 				fields.getValue().value.setEnabled(false);
 				fields.getValue().check.setSelection(false);
+				fields.getValue().check.setFont(normalFont);
 			}
 			if (input instanceof SelectArmorByName || input instanceof SelectArmorById) {
 				switch (fields.getKey()) {
@@ -325,14 +297,14 @@ public class ArmorDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void setArmorname(final XtextEditor editor, final Armor armor, final String newName) 
+	private void setArmorname(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Armor armorToEdit = input;
+				Armor armorToEdit = (Armor)input;
 				EList<ArmorMods> mods = armorToEdit.getMods();
 				boolean nameSet = false;
 				for (ArmorMods mod : mods) {
@@ -353,13 +325,7 @@ public class ArmorDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Armor)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private Integer getInst2(Inst2 inst2, Armor armor) {
@@ -398,14 +364,14 @@ public class ArmorDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private void setInst2(final Inst2 inst2, final XtextEditor editor, final Armor armor, final String newName) 
+	private void setInst2(final Inst2 inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Armor armorToEdit = input;
+				Armor armorToEdit = (Armor)input;
 				EList<ArmorMods> mods = armorToEdit.getMods();
 				for (ArmorMods mod : mods) {
 					if (mod instanceof ArmorInst2) {
@@ -443,16 +409,10 @@ public class ArmorDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Armor)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
-	private void addInst2(final Inst2 inst2, final XtextEditor editor, final Armor armor, final String newName) {
+	private void addInst2(final Inst2 inst2, final XtextEditor editor, final String newName) {
 		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
 			public void run() {
@@ -461,7 +421,7 @@ public class ArmorDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<ArmorMods> mods = input.getMods();
+						EList<ArmorMods> mods = ((Armor)input).getMods();
 						ArmorInst2 type = DmFactory.eINSTANCE.createArmorInst2();
 						switch (inst2) {
 						case TYPE:
@@ -486,18 +446,12 @@ public class ArmorDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Armor)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
 	
-	private void removeInst(final Inst2 inst2, final XtextEditor editor, final Armor armor) {
+	private void removeInst(final Inst2 inst2, final XtextEditor editor) {
 		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
 			public void run() {
@@ -507,7 +461,7 @@ public class ArmorDetailsPage implements IDetailsPage {
 					@Override
 					public void process(XtextResource resource) {
 						ArmorMods modToRemove = null;
-						EList<ArmorMods> mods = input.getMods();
+						EList<ArmorMods> mods = ((Armor)input).getMods();
 						for (ArmorMods mod : mods) {
 							if (mod instanceof ArmorInst2) {
 								switch (inst2) {
@@ -546,67 +500,9 @@ public class ArmorDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Armor)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
-
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#inputChanged(org.eclipse.jface.viewers.IStructuredSelection)
-	 */
-	public void selectionChanged(IFormPart part, ISelection selection) {
-		IStructuredSelection ssel = (IStructuredSelection)selection;
-		if (ssel.size()==1) {
-			input = (Armor)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-		update();
-	}
 	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#commit()
-	 */
-	public void commit(boolean onSave) {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#setFocus()
-	 */
-	public void setFocus() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#dispose()
-	 */
-	public void dispose() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#isDirty()
-	 */
-	public boolean isDirty() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#isStale()
-	 */
-	public boolean isStale() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#refresh()
-	 */
-	public void refresh() {
-		update();
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#setFormInput(java.lang.Object)
-	 */
-	public boolean setFormInput(Object input) {
-		return false;
-	}
 }

@@ -19,14 +19,17 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.Format;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.compress.archivers.zip.ZipFile;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.BusyIndicator;
@@ -48,9 +51,9 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.IDetailsPage;
-import org.eclipse.ui.forms.IFormPart;
-import org.eclipse.ui.forms.IManagedForm;
+import org.eclipse.ui.forms.events.ExpansionAdapter;
+import org.eclipse.ui.forms.events.ExpansionEvent;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
@@ -60,6 +63,7 @@ import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
+import org.larz.dom3.Activator;
 import org.larz.dom3.db.Database;
 import org.larz.dom3.db.MonsterDB;
 import org.larz.dom3.dm.dm.DmFactory;
@@ -78,11 +82,8 @@ import org.larz.dom3.dm.ui.internal.DmActivator;
 import org.larz.dom3.image.ImageConverter;
 import org.larz.dom3.image.ImageLoader;
 
-public class MonsterDetailsPage implements IDetailsPage {
-	private IManagedForm mform;
-	private Monster input;
-	private XtextEditor doc;
-	private TableViewer viewer;
+public class MonsterDetailsPage extends AbstractDetailsPage {
+	private static Map<String, Image> spriteMap = new HashMap<String, Image>();
 
 	private Text name;
 	private Text descr;
@@ -329,13 +330,10 @@ public class MonsterDetailsPage implements IDetailsPage {
 		private Label defaultLabel;
 	}
 	
-	EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
+	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
 	
 	public MonsterDetailsPage(XtextEditor doc, TableViewer viewer) {
-		this.doc = doc;
-		this.viewer = viewer;
-		//instMap.put(Inst.SPR1, new Inst1Fields());
-		//instMap.put(Inst.SPR2, new Inst1Fields());
+		super(doc, viewer);
 		instMap.put(Inst.ARMOR1, new Inst1Fields());
 		instMap.put(Inst.ARMOR2, new Inst1Fields());
 		instMap.put(Inst.ARMOR3, new Inst1Fields());
@@ -509,20 +507,6 @@ public class MonsterDetailsPage implements IDetailsPage {
 	}
 	
 	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#initialize(org.eclipse.ui.forms.IManagedForm)
-	 */
-	public void initialize(IManagedForm mform) {
-		this.mform = mform;
-	}
-	
-	/**
-	 * @return
-	 */
-	public Monster getInput() {
-		return input;
-	}
-	
-	/* (non-Javadoc)
 	 * @see org.eclipse.ui.forms.IDetailsPage#createContents(org.eclipse.swt.widgets.Composite)
 	 */
 	public void createContents(Composite parent) {
@@ -622,11 +606,13 @@ public class MonsterDetailsPage implements IDetailsPage {
 					descr.setEnabled(true);
 					descr.setBackground(toolkit.getColors().getBackground());
 					descr.setText("");
+					descCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
 					descr.setText("");
+					descCheck.setFont(normalFont);
 				}
 			}
 		});
@@ -669,10 +655,12 @@ public class MonsterDetailsPage implements IDetailsPage {
 					addInst1(Inst.SPR1, doc, "");
 					spr1.setEnabled(true);
 					spr1.setText("");
+					spr1Check.setFont(boldFont);
 				} else {
 					removeInst(Inst.SPR1, doc);
 					spr1.setEnabled(false);
 					spr1.setText("");
+					spr1Check.setFont(normalFont);
 				}
 			}
 		});
@@ -707,31 +695,128 @@ public class MonsterDetailsPage implements IDetailsPage {
 					addInst1(Inst.SPR2, doc, "");
 					spr2.setEnabled(true);
 					spr2.setText("");
+					spr2Check.setFont(boldFont);
 				} else {
 					removeInst(Inst.SPR2, doc);
 					spr2.setEnabled(false);
 					spr2.setText("");
+					spr2Check.setFont(normalFont);
 				}
 			}
 		});
 
-		Composite leftColumn = toolkit.createComposite(client);
-		glayout = new GridLayout(5, false);
-		glayout.marginHeight = 0;
-		glayout.marginWidth = 0;
-		leftColumn.setLayout(glayout);
-		leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		
-		Composite rightColumn = toolkit.createComposite(client);
-		glayout = new GridLayout(5, false);
-		glayout.marginHeight = 0;
-		glayout.marginWidth = 0;
-		rightColumn.setLayout(glayout);
-		rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-
+		Composite leftColumn = null;
+		Composite rightColumn = null;
 		boolean isRight = false;
 		for (final Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			final Inst key = fields.getKey();
+			
+			if (key.equals(Inst.SPECIALLOOK) || 
+				key.equals(Inst.CLEAR) || 
+				key.equals(Inst.RESTRICTEDGOD) || 
+				key.equals(Inst.IMMOBILE) || 
+				key.equals(Inst.COLDRES) || 
+				key.equals(Inst.STEALTHY) || 
+				key.equals(Inst.STARTAGE) || 
+				key.equals(Inst.HEALER) || 
+				key.equals(Inst.COLDPOWER) || 
+				key.equals(Inst.AMBIDEXTROUS) || 
+				key.equals(Inst.CASTLEDEF) || 
+				key.equals(Inst.ITEMSLOTS) || 
+				key.equals(Inst.MAGICSKILL1) || 
+				key.equals(Inst.FIRSTSHAPE) || 
+				key.equals(Inst.DOMSUMMON) || 
+				key.equals(Inst.NAMETYPE) || 
+				key.equals(Inst.NOLEADER)) {
+				
+				final Section expandable = toolkit.createSection(client, ExpandableComposite.TWISTIE|ExpandableComposite.EXPANDED);
+				switch (key) {
+				case SPECIALLOOK:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.basic"));
+					break;
+				case CLEAR:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.clearing"));
+					break;
+				case RESTRICTEDGOD:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.type"));
+					break;
+				case IMMOBILE:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.movement"));
+					break;
+				case COLDRES:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.resistance"));
+					break;
+				case STEALTHY:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.stealth"));
+					break;
+				case STARTAGE:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.age"));
+					break;
+				case HEALER:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.healing"));
+					break;
+				case COLDPOWER:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.element"));
+					break;
+				case AMBIDEXTROUS:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.combat"));
+					break;
+				case CASTLEDEF:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.noncombat"));
+					break;
+				case ITEMSLOTS:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.items"));
+					break;
+				case MAGICSKILL1:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.magic"));
+					break;
+				case FIRSTSHAPE:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.shapes"));
+					break;
+				case DOMSUMMON:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.summons"));
+					break;
+				case NAMETYPE:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.names"));
+					break;
+				case NOLEADER:
+					expandable.setText(Messages.getString("MonsterDetailsSection.mod.section.leadership"));
+					break;
+				}
+				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+				gd.horizontalSpan = 2;
+				expandable.setLayoutData(gd);
+				expandable.addExpansionListener(new ExpansionAdapter() {
+					public void expansionStateChanged(ExpansionEvent e) {
+						mform.getForm().reflow(true);
+					}
+				});
+				
+				Composite header1 = toolkit.createComposite(expandable, SWT.BORDER);
+				header1.setLayout(new GridLayout(2, true));
+				expandable.setClient(header1);
+				if (key.equals(Inst.SPECIALLOOK)) {
+					expandable.setExpanded(true);
+				} else {
+					expandable.setExpanded(false);					
+				}
+
+				leftColumn = toolkit.createComposite(header1);
+				glayout = new GridLayout(5, false);
+				glayout.marginHeight = 0;
+				glayout.marginWidth = 0;
+				leftColumn.setLayout(glayout);
+				leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+				
+				rightColumn = toolkit.createComposite(header1);
+				glayout = new GridLayout(5, false);
+				glayout.marginHeight = 0;
+				glayout.marginWidth = 0;
+				rightColumn.setLayout(glayout);
+				rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+				isRight = false;
+			}
+
 			final InstFields field = fields.getValue();
 			Composite checkParent;
 			if (field instanceof Inst4Fields) {
@@ -751,6 +836,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
+						check.setFont(boldFont);
 						if (field instanceof Inst1Fields) {
 							addInst1(key, doc, key.defaultValue);
 						} else if (field instanceof Inst2Fields) {
@@ -766,6 +852,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 						}
 					} else {
 						removeInst(key, doc);
+						check.setFont(normalFont);
 					}
 				}
 
@@ -954,19 +1041,16 @@ public class MonsterDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
-		Label spacer = toolkit.createLabel(parent, ""); //$NON-NLS-1$
-		GridData gd = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
-		gd.horizontalSpan = span;
-		spacer.setLayoutData(gd);
-	}
-	
 	private Image getSprite(final String sprite, final boolean fromZip) {
 		ImageLoader loader1 = new ImageLoader() {
 			@Override
 			public InputStream getStream() throws IOException {
 				if (fromZip) {
-					return ImageLoader.class.getClassLoader().getResource(sprite).openStream();							
+					Path path = new Path("$nl$/lib/sprites.zip");
+					URL url = FileLocator.find(Activator.getDefault().getBundle(), path, null);
+					String dbPath = FileLocator.toFileURL(url).getPath();
+					ZipFile zipFile = new ZipFile(new File(dbPath));
+					return zipFile.getInputStream(zipFile.getEntry(sprite));
 				} else {
 					String path = ((DmXtextEditor)doc).getPath();
 					path = path.substring(0, path.lastIndexOf('/')+1);
@@ -981,7 +1065,18 @@ public class MonsterDetailsPage implements IDetailsPage {
 			}
 		};
 		try {
-			return new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
+			Image image = null;
+			if (fromZip) {
+				if (spriteMap.get(sprite) != null) {
+					image = spriteMap.get(sprite);
+				} else {
+					image = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
+					spriteMap.put(sprite, image);
+				}
+			} else {
+				image = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
+			}
+			return image;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -996,11 +1091,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 			boolean fromZip2 = false;
 			final Format format = new DecimalFormat("0000");
 			if (input instanceof SelectMonsterByName || input instanceof SelectMonsterById) {
-				String str = getSelectMonstername(input);
+				String str = getSelectMonstername((Monster)input);
 				name.setText(str!= null?str:"");
 				name.setEnabled(false);
 
-				int id = getSelectMonsterid(input);
+				int id = getSelectMonsterid((Monster)input);
 				if (getInst1(Inst.SPR1, input) != null) {
 					sprite1 = getInst1(Inst.SPR1, input);
 				} else if (getInst2(Inst.COPYSPR, input) != null) {
@@ -1061,11 +1156,13 @@ public class MonsterDetailsPage implements IDetailsPage {
 				descr.setEnabled(true);
 				descr.setBackground(toolkit.getColors().getBackground());
 				descCheck.setSelection(true);
+				descCheck.setFont(boldFont);
 			} else {
 				descr.setText("");
 				descr.setEnabled(false);
 				descr.setBackground(toolkit.getColors().getInactiveBackground());
 				descCheck.setSelection(false);
+				descCheck.setFont(normalFont);
 			}
 
 			String spr1Text = getInst1(Inst.SPR1, input);
@@ -1073,20 +1170,24 @@ public class MonsterDetailsPage implements IDetailsPage {
 				spr1.setText(spr1Text);
 				spr1.setEnabled(true);
 				spr1Check.setSelection(true);
+				spr1Check.setFont(boldFont);
 			} else {
 				spr1.setText("");
 				spr1.setEnabled(false);
 				spr1Check.setSelection(false);
+				spr1Check.setFont(normalFont);
 			}
 			String spr2Text = getInst1(Inst.SPR2, input);
 			if (spr2Text != null) {
 				spr2.setText(spr2Text);
 				spr2.setEnabled(true);
 				spr2Check.setSelection(true);
+				spr2Check.setFont(boldFont);
 			} else {
 				spr2.setText("");
 				spr2.setEnabled(false);
 				spr2Check.setSelection(false);
+				spr2Check.setFont(normalFont);
 			}
 		}
 		MonsterDB monsterDB = new MonsterDB();
@@ -1102,12 +1203,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 					((Inst1Fields)fields.getValue()).value.setText(val1);
 					((Inst1Fields)fields.getValue()).value.setEnabled(true);
 					((Inst1Fields)fields.getValue()).check.setSelection(true);
+					((Inst1Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst1Fields) {
 					((Inst1Fields)fields.getValue()).value.setText("");
 					((Inst1Fields)fields.getValue()).value.setEnabled(false);
 					((Inst1Fields)fields.getValue()).check.setSelection(false);
+					((Inst1Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Integer val = getInst2(fields.getKey(), input);
@@ -1116,12 +1219,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 					((Inst2Fields)fields.getValue()).value.setText(val.toString());
 					((Inst2Fields)fields.getValue()).value.setEnabled(true);
 					((Inst2Fields)fields.getValue()).check.setSelection(true);
+					((Inst2Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst2Fields) {
 					((Inst2Fields)fields.getValue()).value.setText("");
 					((Inst2Fields)fields.getValue()).value.setEnabled(false);
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
+					((Inst2Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Integer[] vals = getInst3(fields.getKey(), input);
@@ -1132,6 +1237,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setText(vals[1].toString());
 					((Inst3Fields)fields.getValue()).value2.setEnabled(true);
 					((Inst3Fields)fields.getValue()).check.setSelection(true);
+					((Inst3Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst3Fields) {
@@ -1140,12 +1246,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setText("");
 					((Inst3Fields)fields.getValue()).value2.setEnabled(false);
 					((Inst3Fields)fields.getValue()).check.setSelection(false);
+					((Inst3Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Boolean isVal = getInst4(fields.getKey(), input);
 			if (isVal != null) {
 				if (fields.getValue() instanceof Inst4Fields) {
 					((Inst4Fields)fields.getValue()).check.setSelection(isVal);
+					((Inst4Fields)fields.getValue()).check.setFont(isVal ? boldFont : normalFont);
 				}
 			}
 			Object val5 = getInst5(fields.getKey(), input);
@@ -1154,12 +1262,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 					((Inst5Fields)fields.getValue()).value.setText(val5.toString());
 					((Inst5Fields)fields.getValue()).value.setEnabled(true);
 					((Inst5Fields)fields.getValue()).check.setSelection(true);
+					((Inst5Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst5Fields) {
 					((Inst5Fields)fields.getValue()).value.setText("");
 					((Inst5Fields)fields.getValue()).value.setEnabled(false);
 					((Inst5Fields)fields.getValue()).check.setSelection(false);
+					((Inst5Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Integer val6 = getInst6(fields.getKey(), input);
@@ -1168,12 +1278,14 @@ public class MonsterDetailsPage implements IDetailsPage {
 					((Inst6Fields)fields.getValue()).value.setText(val6.equals(Integer.valueOf(0)) ? "" : val6.toString());
 					((Inst6Fields)fields.getValue()).value.setEnabled(true);
 					((Inst6Fields)fields.getValue()).check.setSelection(true);
+					((Inst6Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst6Fields) {
 					((Inst6Fields)fields.getValue()).value.setText("");
 					((Inst6Fields)fields.getValue()).value.setEnabled(false);
 					((Inst6Fields)fields.getValue()).check.setSelection(false);
+					((Inst6Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			if (input instanceof SelectMonsterByName || input instanceof SelectMonsterById) {
@@ -2181,6 +2293,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				}
 			}
 		}
+		name.getParent().getParent().layout(true, true);
 	}
 	
 	private String getSelectMonstername(Monster monster) {
@@ -2207,7 +2320,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
+				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				boolean nameSet = false;
 				for (MonsterMods mod : mods) {
@@ -2228,13 +2341,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setMonsterdescr(final XtextEditor editor, final String newName) 
@@ -2244,7 +2351,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
+				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				boolean nameSet = false;
 				for (MonsterMods mod : mods) {
@@ -2265,17 +2372,11 @@ public class MonsterDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
-	private String getInst1(Inst inst2, Monster monster) {
-		EList<MonsterMods> list = monster.getMods();
+	private String getInst1(Inst inst2, Object monster) {
+		EList<MonsterMods> list = ((Monster)monster).getMods();
 		int armorCount = 0;
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst1) {
@@ -2330,8 +2431,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer getInst2(Inst inst2, Monster monster) {
-		EList<MonsterMods> list = monster.getMods();
+	private Integer getInst2(Inst inst2, Object monster) {
+		EList<MonsterMods> list = ((Monster)monster).getMods();
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst2) {
 				switch (inst2) {
@@ -2726,9 +2827,9 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer[] getInst3(Inst inst3, Monster monster) {
+	private Integer[] getInst3(Inst inst3, Object monster) {
 		int magicSkillCount = 0;
-		EList<MonsterMods> list = monster.getMods();
+		EList<MonsterMods> list = ((Monster)monster).getMods();
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst3) {
 				switch (inst3) {
@@ -2785,8 +2886,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Boolean getInst4(Inst inst4, Monster monster) {
-		EList<MonsterMods> list = monster.getMods();
+	private Boolean getInst4(Inst inst4, Object monster) {
+		EList<MonsterMods> list = ((Monster)monster).getMods();
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst4) {
 				switch (inst4) {
@@ -3091,8 +3192,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return Boolean.FALSE;
 	}
 	
-	private Object getInst5(Inst inst2, Monster monster) {
-		EList<MonsterMods> list = monster.getMods();
+	private Object getInst5(Inst inst2, Object monster) {
+		EList<MonsterMods> list = ((Monster)monster).getMods();
 		int weaponCount = 0;
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst5) {
@@ -3345,8 +3446,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer getInst6(Inst inst2, Monster monster) {
-		EList<MonsterMods> list = monster.getMods();
+	private Integer getInst6(Inst inst2, Object monster) {
+		EList<MonsterMods> list = ((Monster)monster).getMods();
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst6) {
 				switch (inst2) {
@@ -3378,7 +3479,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
+				Monster monsterToEdit = (Monster)input;
 				int armorCount = 0;
 				EList<MonsterMods> mods = monsterToEdit.getMods();				
 				for (MonsterMods mod : mods) {
@@ -3431,13 +3532,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
@@ -3447,7 +3542,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
+				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst2) {
@@ -3835,13 +3930,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
@@ -3852,7 +3941,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 			@Override
 			public void process(XtextResource resource) {
 				int magicSkillCount = 0;
-				Monster monsterToEdit = input;
+				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst3) {
@@ -3947,13 +4036,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 	
 	private void setInst5(final Inst inst2, final XtextEditor editor, final String newName) 
@@ -3963,7 +4046,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
+				Monster monsterToEdit = (Monster)input;
 				int weaponCount = 0;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
@@ -4295,13 +4378,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst6(final Inst inst2, final XtextEditor editor, final String newName) 
@@ -4311,7 +4388,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Monster monsterToEdit = input;
+				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst6) {
@@ -4339,13 +4416,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
@@ -4357,7 +4428,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<MonsterMods> mods = input.getMods();
+						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst1 type = DmFactory.eINSTANCE.createMonsterInst1();
 						switch (inst) {
 						case SPR1:
@@ -4385,13 +4456,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -4405,7 +4470,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				 documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource state) throws Exception {
-						EList<MonsterMods> mods = input.getMods();
+						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst2 type = DmFactory.eINSTANCE.createMonsterInst2();
 						switch (inst) {
 						case SPECIALLOOK:
@@ -4640,13 +4705,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+					updateSelection();
 			}
 		});
 	}
@@ -4660,7 +4719,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<MonsterMods> mods = input.getMods();
+						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst3 type = DmFactory.eINSTANCE.createMonsterInst3();
 						switch (inst) {
 						case MAGICSKILL1:
@@ -4692,13 +4751,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -4712,7 +4765,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<MonsterMods> mods = input.getMods();
+						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst4 type = DmFactory.eINSTANCE.createMonsterInst4();
 						switch (inst) {
 						case CLEAR:
@@ -4897,13 +4950,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -4917,7 +4964,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<MonsterMods> mods = input.getMods();
+						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst5 type = DmFactory.eINSTANCE.createMonsterInst5();
 						switch (inst) {
 						case WEAPON1:
@@ -5006,13 +5053,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -5026,7 +5067,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<MonsterMods> mods = input.getMods();
+						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst6 type = DmFactory.eINSTANCE.createMonsterInst6();
 						switch (inst) {
 						case HEAT:
@@ -5045,13 +5086,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -5069,7 +5104,7 @@ public class MonsterDetailsPage implements IDetailsPage {
 						MonsterMods modToRemove = null;
 						int armorCount = 0;
 						int weaponCount = 0;
-						EList<MonsterMods> mods = input.getMods();
+						EList<MonsterMods> mods = ((Monster)input).getMods();
 						for (MonsterMods mod : mods) {
 							if (mod instanceof MonsterInst1) {
 								switch (inst2) {
@@ -6001,67 +6036,8 @@ public class MonsterDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
-	}
-
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#inputChanged(org.eclipse.jface.viewers.IStructuredSelection)
-	 */
-	public void selectionChanged(IFormPart part, ISelection selection) {
-		IStructuredSelection ssel = (IStructuredSelection)selection;
-		if (ssel.size()==1) {
-			input = (Monster)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-		update();
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#commit()
-	 */
-	public void commit(boolean onSave) {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#setFocus()
-	 */
-	public void setFocus() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#dispose()
-	 */
-	public void dispose() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#isDirty()
-	 */
-	public boolean isDirty() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#isStale()
-	 */
-	public boolean isStale() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#refresh()
-	 */
-	public void refresh() {
-		update();
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#setFormInput(java.lang.Object)
-	 */
-	public boolean setFormInput(Object input) {
-		return false;
 	}
 }

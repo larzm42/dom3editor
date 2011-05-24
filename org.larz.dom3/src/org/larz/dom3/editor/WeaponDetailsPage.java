@@ -19,8 +19,6 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.BusyIndicator;
@@ -39,9 +37,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.IDetailsPage;
-import org.eclipse.ui.forms.IFormPart;
-import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
@@ -64,12 +59,7 @@ import org.larz.dom3.dm.dm.WeaponInst4;
 import org.larz.dom3.dm.dm.WeaponMods;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
-public class WeaponDetailsPage implements IDetailsPage {
-	private IManagedForm mform;
-	private Weapon input;
-	private XtextEditor doc;
-	private TableViewer viewer;
-
+public class WeaponDetailsPage extends AbstractDetailsPage {
 	private Text name;
 
 	enum Inst {
@@ -157,11 +147,10 @@ public class WeaponDetailsPage implements IDetailsPage {
 		private Label defaultLabel;
 	}
 
-	EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
+	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
 	
 	public WeaponDetailsPage(XtextEditor doc, TableViewer viewer) {
-		this.doc = doc;
-		this.viewer = viewer;
+		super(doc, viewer);
 		instMap.put(Inst.DMG, new Inst2Fields());
 		instMap.put(Inst.NRATT, new Inst2Fields());
 		instMap.put(Inst.ATT, new Inst2Fields());
@@ -205,20 +194,6 @@ public class WeaponDetailsPage implements IDetailsPage {
 		instMap.put(Inst.FLYSPR, new Inst3Fields());
 		instMap.put(Inst.EXPLSPR, new Inst2Fields());
 		
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#initialize(org.eclipse.ui.forms.IManagedForm)
-	 */
-	public void initialize(IManagedForm mform) {
-		this.mform = mform;
-	}
-	
-	/**
-	 * @return
-	 */
-	public Weapon getInput() {
-		return input;
 	}
 	
 	/* (non-Javadoc)
@@ -299,6 +274,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
+						check.setFont(boldFont);
 						if (field instanceof Inst2Fields) {
 							addInst2(key, doc, key.defaultValue);
 						} else if (field instanceof Inst3Fields) {
@@ -308,6 +284,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 						}
 					} else {
 						removeInst(key, doc);
+						check.setFont(normalFont);
 					}
 				}
 
@@ -452,13 +429,6 @@ public class WeaponDetailsPage implements IDetailsPage {
 		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 	}
 	
-	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
-		Label spacer = toolkit.createLabel(parent, ""); //$NON-NLS-1$
-		GridData gd = new GridData();
-		gd.horizontalSpan = span;
-		spacer.setLayoutData(gd);
-	}
-	
 	public void update() {
 		if (input != null) {
 			if (input instanceof SelectWeaponByName || input instanceof SelectWeaponById) {
@@ -483,12 +453,14 @@ public class WeaponDetailsPage implements IDetailsPage {
 					((Inst2Fields)fields.getValue()).value.setText(val.toString());
 					((Inst2Fields)fields.getValue()).value.setEnabled(true);
 					((Inst2Fields)fields.getValue()).check.setSelection(true);
+					((Inst2Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst2Fields) {
 					((Inst2Fields)fields.getValue()).value.setText("");
 					((Inst2Fields)fields.getValue()).value.setEnabled(false);
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
+					((Inst2Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Integer[] vals = getInst3(fields.getKey(), input);
@@ -499,6 +471,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setText(vals[1].toString());
 					((Inst3Fields)fields.getValue()).value2.setEnabled(true);
 					((Inst3Fields)fields.getValue()).check.setSelection(true);
+					((Inst3Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst3Fields) {
@@ -507,12 +480,14 @@ public class WeaponDetailsPage implements IDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setText("");
 					((Inst3Fields)fields.getValue()).value2.setEnabled(false);
 					((Inst3Fields)fields.getValue()).check.setSelection(false);
+					((Inst3Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Boolean isVal = getInst4(fields.getKey(), input);
 			if (isVal != null) {
 				if (fields.getValue() instanceof Inst4Fields) {
 					((Inst4Fields)fields.getValue()).check.setSelection(isVal);
+					((Inst4Fields)fields.getValue()).check.setFont(isVal? boldFont : normalFont);
 				}
 			}
 			if (input instanceof SelectWeaponByName || input instanceof SelectWeaponById) {
@@ -772,8 +747,8 @@ public class WeaponDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private String getWeaponname(Weapon weapon) {
-		EList<WeaponMods> list = weapon.getMods();
+	private String getWeaponname(Object weapon) {
+		EList<WeaponMods> list = ((Weapon)weapon).getMods();
 		for (WeaponMods mod : list) {
 			if (mod instanceof WeaponInst1) {
 				if (((WeaponInst1)mod).isName()) {
@@ -784,7 +759,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private String getSelectWeaponname(Weapon weapon) {
+	private String getSelectWeaponname(Object weapon) {
 		if (weapon instanceof SelectWeaponByName) {
 			return ((SelectWeaponByName)weapon).getValue();
 		} else {
@@ -800,7 +775,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Weapon weaponToEdit = input;
+				Weapon weaponToEdit = (Weapon)input;
 				EList<WeaponMods> mods = weaponToEdit.getMods();
 				boolean nameSet = false;
 				for (WeaponMods mod : mods) {
@@ -821,17 +796,11 @@ public class WeaponDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
-	private Integer getInst2(Inst inst2, Weapon weapon) {
-		EList<WeaponMods> list = weapon.getMods();
+	private Integer getInst2(Inst inst2, Object weapon) {
+		EList<WeaponMods> list = ((Weapon)weapon).getMods();
 		for (WeaponMods mod : list) {
 			if (mod instanceof WeaponInst2) {
 				switch (inst2) {
@@ -906,8 +875,8 @@ public class WeaponDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer[] getInst3(Inst inst3, Weapon weapon) {
-		EList<WeaponMods> list = weapon.getMods();
+	private Integer[] getInst3(Inst inst3, Object weapon) {
+		EList<WeaponMods> list = ((Weapon)weapon).getMods();
 		for (WeaponMods mod : list) {
 			if (mod instanceof WeaponInst3) {
 				switch (inst3) {
@@ -922,8 +891,8 @@ public class WeaponDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Boolean getInst4(Inst inst4, Weapon weapon) {
-		EList<WeaponMods> list = weapon.getMods();
+	private Boolean getInst4(Inst inst4, Object weapon) {
+		EList<WeaponMods> list = ((Weapon)weapon).getMods();
 		for (WeaponMods mod : list) {
 			if (mod instanceof WeaponInst4) {
 				switch (inst4) {
@@ -1080,7 +1049,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Weapon weaponToEdit = input;
+				Weapon weaponToEdit = (Weapon)input;
 				EList<WeaponMods> mods = weaponToEdit.getMods();
 				for (WeaponMods mod : mods) {
 					if (mod instanceof WeaponInst2) {
@@ -1158,13 +1127,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
@@ -1174,7 +1137,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Weapon weaponToEdit = input;
+				Weapon weaponToEdit = (Weapon)input;
 				EList<WeaponMods> mods = weaponToEdit.getMods();
 				for (WeaponMods mod : mods) {
 					if (mod instanceof WeaponInst3) {
@@ -1197,13 +1160,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) {
@@ -1215,7 +1172,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<WeaponMods> mods = input.getMods();
+						EList<WeaponMods> mods = ((Weapon)input).getMods();
 						WeaponInst2 type = DmFactory.eINSTANCE.createWeaponInst2();
 						switch (inst) {
 						case DMG:
@@ -1264,13 +1221,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1284,7 +1235,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<WeaponMods> mods = input.getMods();
+						EList<WeaponMods> mods = ((Weapon)input).getMods();
 						WeaponInst3 type = DmFactory.eINSTANCE.createWeaponInst3();
 						switch (inst) {
 						case FLYSPR:
@@ -1298,13 +1249,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1318,7 +1263,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<WeaponMods> mods = input.getMods();
+						EList<WeaponMods> mods = ((Weapon)input).getMods();
 						WeaponInst4 type = DmFactory.eINSTANCE.createWeaponInst4();
 						switch (inst) {
 						case TWOHANDED:
@@ -1411,13 +1356,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1432,7 +1371,7 @@ public class WeaponDetailsPage implements IDetailsPage {
 					@Override
 					public void process(XtextResource resource) {
 						WeaponMods modToRemove = null;
-						EList<WeaponMods> mods = input.getMods();
+						EList<WeaponMods> mods = ((Weapon)input).getMods();
 						for (WeaponMods mod : mods) {
 							if (mod instanceof WeaponInst2) {
 								switch (inst2) {
@@ -1665,67 +1604,9 @@ public class WeaponDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#inputChanged(org.eclipse.jface.viewers.IStructuredSelection)
-	 */
-	public void selectionChanged(IFormPart part, ISelection selection) {
-		IStructuredSelection ssel = (IStructuredSelection)selection;
-		if (ssel.size()==1) {
-			input = (Weapon)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-		update();
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#commit()
-	 */
-	public void commit(boolean onSave) {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#setFocus()
-	 */
-	public void setFocus() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#dispose()
-	 */
-	public void dispose() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#isDirty()
-	 */
-	public boolean isDirty() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#isStale()
-	 */
-	public boolean isStale() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#refresh()
-	 */
-	public void refresh() {
-		update();
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#setFormInput(java.lang.Object)
-	 */
-	public boolean setFormInput(Object input) {
-		return false;
-	}
 }

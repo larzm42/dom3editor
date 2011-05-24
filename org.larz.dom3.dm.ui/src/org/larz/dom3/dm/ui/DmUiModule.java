@@ -16,10 +16,12 @@
 package org.larz.dom3.dm.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.parser.antlr.ISyntaxErrorMessageProvider;
 import org.eclipse.xtext.parsetree.reconstr.impl.DefaultCommentAssociater;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.larz.dom3.dm.ui.comment.DmCommentAssociater;
 import org.larz.dom3.dm.ui.editor.DmXtextEditor;
+import org.larz.dom3.dm.ui.syntax.DmSyntaxErrorMessageProvider;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -35,5 +37,8 @@ public class DmUiModule extends org.larz.dom3.dm.ui.AbstractDmUiModule {
 	public Class<? extends DefaultCommentAssociater> bindCommentAssociater()
 	{
 		return DmCommentAssociater.class;
+	}
+	public Class<? extends ISyntaxErrorMessageProvider> bindISyntaxErrorMessageProvider() {
+		return DmSyntaxErrorMessageProvider.class;
 	}
 }

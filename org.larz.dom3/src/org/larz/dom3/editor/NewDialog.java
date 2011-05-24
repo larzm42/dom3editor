@@ -48,10 +48,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 
-/**
- * @author lamoor
- *
- */
 public class NewDialog extends Dialog {
 	public boolean select;
 	public Text modName;
@@ -78,7 +74,7 @@ public class NewDialog extends Dialog {
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		shell.setText("New Mod");
+		shell.setText(Messages.getString("NewDialog.title"));
 	}
 
 	@Override
@@ -95,7 +91,7 @@ public class NewDialog extends Dialog {
 		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
 		Label name = new Label(composite, SWT.NONE);
-		name.setText("Name:");
+		name.setText(Messages.getString("NewDialog.name"));
 		modName = new Text(composite, SWT.BORDER);
 		modName.setLayoutData(new GridData(100, SWT.DEFAULT));
 		modName.addModifyListener(new ModifyListener() {
@@ -105,7 +101,7 @@ public class NewDialog extends Dialog {
 			}
 		});
 		Label desc = new Label(composite, SWT.NONE);
-		desc.setText("Description:");
+		desc.setText(Messages.getString("NewDialog.desc"));
 		descText = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.WRAP);
 		descText.setLayoutData(new GridData(400, SWT.DEFAULT));
 		descText.addListener(SWT.Modify, new Listener() {			
@@ -122,7 +118,7 @@ public class NewDialog extends Dialog {
 			}
 		});
 		Label version = new Label(composite, SWT.NONE);
-		version.setText("Version:");
+		version.setText(Messages.getString("NewDialog.version"));
 		versionText = new Text(composite, SWT.BORDER);
 		versionText.setLayoutData(new GridData(100, SWT.DEFAULT));
 		versionText.addModifyListener(new ModifyListener() {
@@ -172,8 +168,8 @@ public class NewDialog extends Dialog {
 				fileStore = fileStore.getChild(names[i]);
 				IFileInfo fetchInfo = fileStore.fetchInfo();
 				if (fetchInfo.exists()) {
-					MessageDialog overwriteDialog = new MessageDialog(getParentShell(), "File Exists", null, fetchInfo.getName() +
-							" already exists. Do you wish to overwrite? ", MessageDialog.WARNING, new String[] {
+					MessageDialog overwriteDialog = new MessageDialog(getParentShell(), Messages.getString("NewDialog.save.fileExists.title"), null, 
+							Messages.format("NewDialog.save.fileExists.fmt", fetchInfo.getName()), MessageDialog.WARNING, new String[] {
 							IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL }, 1); // 'No' is the default
 					if(overwriteDialog.open() != Window.OK) {
 						return;
@@ -194,7 +190,7 @@ public class NewDialog extends Dialog {
 
 						IDE.openEditorOnFileStore(page, fileStore);
 					} catch (PartInitException e) {
-						MessageDialog.open(MessageDialog.ERROR, getParentShell(), "Open File Error", "Couldn't open file: " + fileStore.getName(), SWT.SHEET);
+						MessageDialog.open(MessageDialog.ERROR, getParentShell(), Messages.getString("NewDialog.save.openError.title"), Messages.format("NewDialog.save.openError.fmt", fileStore.getName()), SWT.SHEET);
 					} catch (IOException e) {
 						e.printStackTrace();
 					} catch (CoreException e) {

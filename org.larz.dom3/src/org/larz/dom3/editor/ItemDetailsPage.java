@@ -19,8 +19,6 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.BusyIndicator;
@@ -41,9 +39,6 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.IDetailsPage;
-import org.eclipse.ui.forms.IFormPart;
-import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
@@ -65,12 +60,7 @@ import org.larz.dom3.dm.dm.SelectItemById;
 import org.larz.dom3.dm.dm.SelectItemByName;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
-public class ItemDetailsPage implements IDetailsPage {
-	private IManagedForm mform;
-	private Item input;
-	private XtextEditor doc;
-	private TableViewer viewer;
-
+public class ItemDetailsPage extends AbstractDetailsPage {
 	private Text name;
 	private Text descr;
 	private Button descrCheck;
@@ -118,11 +108,10 @@ public class ItemDetailsPage implements IDetailsPage {
 		private Label defaultLabel;
 	}
 	
-	EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
+	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
 	
 	public ItemDetailsPage(XtextEditor doc, TableViewer viewer) {
-		this.doc = doc;
-		this.viewer = viewer;
+		super(doc, viewer);
 		instMap.put(Inst.ARMOR, new Inst1Fields());
 		instMap.put(Inst.CONSTLEVEL, new Inst2Fields());
 		instMap.put(Inst.MAINPATH, new Inst2Fields());
@@ -132,20 +121,6 @@ public class ItemDetailsPage implements IDetailsPage {
 		instMap.put(Inst.COPYSPR, new Inst3Fields());
 		instMap.put(Inst.TYPE, new Inst2Fields());
 		instMap.put(Inst.WEAPON, new Inst2Fields());
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#initialize(org.eclipse.ui.forms.IManagedForm)
-	 */
-	public void initialize(IManagedForm mform) {
-		this.mform = mform;
-	}
-	
-	/**
-	 * @return
-	 */
-	public Item getInput() {
-		return input;
 	}
 	
 	/* (non-Javadoc)
@@ -248,11 +223,13 @@ public class ItemDetailsPage implements IDetailsPage {
 					descr.setEnabled(true);
 					descr.setBackground(toolkit.getColors().getBackground());
 					descr.setText("");
+					descrCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
 					descr.setText("");
+					descrCheck.setFont(normalFont);
 				}
 			}
 		});
@@ -280,6 +257,7 @@ public class ItemDetailsPage implements IDetailsPage {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
+						check.setFont(boldFont);
 						if (field instanceof Inst1Fields) {
 							addInst1(key, doc, key.defaultValue);
 						} else if (field instanceof Inst2Fields) {
@@ -289,6 +267,7 @@ public class ItemDetailsPage implements IDetailsPage {
 						}
 					} else {
 						removeInst(key, doc);
+						check.setFont(normalFont);
 					}
 				}
 
@@ -398,13 +377,6 @@ public class ItemDetailsPage implements IDetailsPage {
 		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 	}
 	
-	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
-		Label spacer = toolkit.createLabel(parent, ""); //$NON-NLS-1$
-		GridData gd = new GridData();
-		gd.horizontalSpan = span;
-		spacer.setLayoutData(gd);
-	}
-	
 	private String getSelectItemname(Item item) {
 		if (item instanceof SelectItemByName) {
 			return ((SelectItemByName)item).getValue();
@@ -418,26 +390,28 @@ public class ItemDetailsPage implements IDetailsPage {
 	public void update() {
 		if (input != null) {
 			if (input instanceof SelectItemByName || input instanceof SelectItemById) {
-				String str = getSelectItemname(input);
+				String str = getSelectItemname((Item)input);
 				name.setText(str!= null?str:"");
 				name.setEnabled(false);
 			} else {
-				String str = getInst1(Inst.NAME, input);
+				String str = getInst1(Inst.NAME, (Item)input);
 				name.setText(str!=null?str:"");
 			}
 			
-			String description = getInst1(Inst.DESCR, input);
+			String description = getInst1(Inst.DESCR, (Item)input);
 			final FormToolkit toolkit = mform.getToolkit();
 			if (description != null) {
 				descr.setText(description);
 				descr.setEnabled(true);
 				descr.setBackground(toolkit.getColors().getBackground());
 				descrCheck.setSelection(true);
+				descrCheck.setFont(boldFont);
 			} else {
 				descr.setText("");
 				descr.setEnabled(false);
 				descr.setBackground(toolkit.getColors().getInactiveBackground());
 				descrCheck.setSelection(false);
+				descrCheck.setFont(normalFont);
 			}
 
 		}
@@ -448,46 +422,52 @@ public class ItemDetailsPage implements IDetailsPage {
 			itemDB = Database.getItem(((SelectItemByName)input).getValue());
 		}
 		for (Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
-			String val1 = getInst1(fields.getKey(), input);
+			String val1 = getInst1(fields.getKey(), (Item)input);
 			if (val1 != null) {
 				if (fields.getValue() instanceof Inst1Fields) {
 					((Inst1Fields)fields.getValue()).value.setText(val1);
 					((Inst1Fields)fields.getValue()).value.setEnabled(true);
 					((Inst1Fields)fields.getValue()).check.setSelection(true);
+					((Inst1Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst1Fields) {
 					((Inst1Fields)fields.getValue()).value.setText("");
 					((Inst1Fields)fields.getValue()).value.setEnabled(false);
 					((Inst1Fields)fields.getValue()).check.setSelection(false);
+					((Inst1Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
-			Integer val = getInst2(fields.getKey(), input);
+			Integer val = getInst2(fields.getKey(), (Item)input);
 			if (val != null) {
 				if (fields.getValue() instanceof Inst2Fields) {
 					((Inst2Fields)fields.getValue()).value.setText(val.toString());
 					((Inst2Fields)fields.getValue()).value.setEnabled(true);
 					((Inst2Fields)fields.getValue()).check.setSelection(true);
+					((Inst2Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst2Fields) {
 					((Inst2Fields)fields.getValue()).value.setText("");
 					((Inst2Fields)fields.getValue()).value.setEnabled(false);
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
+					((Inst2Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
-			Object val3 = getInst3(fields.getKey(), input);
+			Object val3 = getInst3(fields.getKey(), (Item)input);
 			if (val3 != null) {
 				if (fields.getValue() instanceof Inst3Fields) {
 					((Inst3Fields)fields.getValue()).value.setText(val3.toString());
 					((Inst3Fields)fields.getValue()).value.setEnabled(true);
 					((Inst3Fields)fields.getValue()).check.setSelection(true);
+					((Inst3Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst3Fields) {
 					((Inst3Fields)fields.getValue()).value.setText("");
 					((Inst3Fields)fields.getValue()).value.setEnabled(false);
 					((Inst3Fields)fields.getValue()).check.setSelection(false);
+					((Inst3Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			if (input instanceof Item) {
@@ -553,7 +533,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Item itemToEdit = input;
+				Item itemToEdit = (Item)input;
 				EList<ItemMods> mods = itemToEdit.getMods();
 				boolean nameSet = false;
 				for (ItemMods mod : mods) {
@@ -574,13 +554,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 	
 	private void setItemdescr(final XtextEditor editor, final String newName) 
@@ -590,7 +564,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Item itemToEdit = input;
+				Item itemToEdit = (Item)input;
 				EList<ItemMods> mods = itemToEdit.getMods();
 				boolean nameSet = false;
 				for (ItemMods mod : mods) {
@@ -611,13 +585,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private String getInst1(Inst inst2, Item item) {
@@ -720,7 +688,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Item itemToEdit = input;
+				Item itemToEdit = (Item)input;
 				EList<ItemMods> mods = itemToEdit.getMods();				
 				for (ItemMods mod : mods) {
 					if (mod instanceof ItemInst1) {
@@ -748,13 +716,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
@@ -764,7 +726,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Item itemToEdit = input;
+				Item itemToEdit = (Item)input;
 				EList<ItemMods> mods = itemToEdit.getMods();
 				for (ItemMods mod : mods) {
 					if (mod instanceof ItemInst2) {
@@ -812,13 +774,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst3(final Inst inst2, final XtextEditor editor, final String newName) 
@@ -828,7 +784,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Item itemToEdit = input;
+				Item itemToEdit = (Item)input;
 				EList<ItemMods> mods = itemToEdit.getMods();
 				for (ItemMods mod : mods) {
 					if (mod instanceof ItemInst3) {
@@ -861,13 +817,7 @@ public class ItemDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
@@ -879,7 +829,7 @@ public class ItemDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<ItemMods> mods = input.getMods();
+						EList<ItemMods> mods = ((Item)input).getMods();
 						ItemInst1 type = DmFactory.eINSTANCE.createItemInst1();
 						switch (inst) {
 						case NAME:
@@ -898,13 +848,7 @@ public class ItemDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -918,7 +862,7 @@ public class ItemDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<ItemMods> mods = input.getMods();
+						EList<ItemMods> mods = ((Item)input).getMods();
 						ItemInst2 type = DmFactory.eINSTANCE.createItemInst2();
 						switch (inst) {
 						case CONSTLEVEL:
@@ -953,13 +897,7 @@ public class ItemDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -973,7 +911,7 @@ public class ItemDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<ItemMods> mods = input.getMods();
+						EList<ItemMods> mods = ((Item)input).getMods();
 						ItemInst3 type = DmFactory.eINSTANCE.createItemInst3();
 						switch (inst) {
 						case COPYSPR:
@@ -996,13 +934,7 @@ public class ItemDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1017,7 +949,7 @@ public class ItemDetailsPage implements IDetailsPage {
 					@Override
 					public void process(XtextResource resource) {
 						ItemMods modToRemove = null;
-						EList<ItemMods> mods = input.getMods();
+						EList<ItemMods> mods = ((Item)input).getMods();
 						for (ItemMods mod : mods) {
 							if (mod instanceof ItemInst1) {
 								switch (inst2) {
@@ -1089,67 +1021,9 @@ public class ItemDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#inputChanged(org.eclipse.jface.viewers.IStructuredSelection)
-	 */
-	public void selectionChanged(IFormPart part, ISelection selection) {
-		IStructuredSelection ssel = (IStructuredSelection)selection;
-		if (ssel.size()==1) {
-			input = (Item)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-		update();
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#commit()
-	 */
-	public void commit(boolean onSave) {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#setFocus()
-	 */
-	public void setFocus() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#dispose()
-	 */
-	public void dispose() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#isDirty()
-	 */
-	public boolean isDirty() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#isStale()
-	 */
-	public boolean isStale() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#refresh()
-	 */
-	public void refresh() {
-		update();
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#setFormInput(java.lang.Object)
-	 */
-	public boolean setFormInput(Object input) {
-		return false;
-	}
 }

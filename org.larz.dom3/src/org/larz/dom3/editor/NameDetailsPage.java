@@ -51,9 +51,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
-import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
@@ -70,34 +68,19 @@ import org.larz.dom3.dm.dm.NameMods;
 import org.larz.dom3.dm.dm.SelectName;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
-public class NameDetailsPage implements IDetailsPage {
-	private IManagedForm mform;
-	private SelectName input;
-	private XtextEditor doc;
-	private TableViewer viewer;
+public class NameDetailsPage extends AbstractDetailsPage {
 	private TableViewer tv;
 	private TableEditor editor;
 
 	private Text id;
 	private Button clear;
 
-	public NameDetailsPage(XtextEditor doc, TableViewer viewer) {
-		this.doc = doc;
-		this.viewer = viewer;
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#initialize(org.eclipse.ui.forms.IManagedForm)
-	 */
-	public void initialize(IManagedForm mform) {
-		this.mform = mform;
-	}
-	
 	/**
-	 * @return
+	 * @param doc
+	 * @param viewer
 	 */
-	public SelectName getInput() {
-		return input;
+	public NameDetailsPage(XtextEditor doc, TableViewer viewer) {
+		super(doc, viewer);
 	}
 	
 	/* (non-Javadoc)
@@ -137,14 +120,14 @@ public class NameDetailsPage implements IDetailsPage {
 		id.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				setNameId(doc, input, id.getText());
+				setNameId(doc, id.getText());
 			}			
 		});
 		id.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
-					setNameId(doc, input, id.getText());
+					setNameId(doc, id.getText());
 				}
 			}
 			
@@ -160,8 +143,10 @@ public class NameDetailsPage implements IDetailsPage {
 			public void widgetSelected(SelectionEvent e) {
 				if (clear.getSelection()) {
 					addClear(doc, input);
+					clear.setFont(boldFont);
 				} else {
 					removeClear(doc);
+					clear.setFont(normalFont);
 				}
 			}
 
@@ -188,7 +173,7 @@ public class NameDetailsPage implements IDetailsPage {
 			}
 		});
 		
-		tv.setInput(input != null ? getNames(input).toArray() : null);
+		tv.setInput(input != null ? getNames((SelectName)input).toArray() : null);
 
 		editor = new TableEditor(tv.getTable());
 		//The editor must have the same size as the cell and must
@@ -246,8 +231,8 @@ public class NameDetailsPage implements IDetailsPage {
 		menuManager.add(new Action("Delete") {
 			@Override
 			public void run() {
-				removeInst2(doc, input, tv.getTable().getSelectionIndex());
-				tv.setInput(input != null ? getNames(input).toArray() : null);
+				removeInst2(doc, tv.getTable().getSelectionIndex());
+				tv.setInput(input != null ? getNames((SelectName)input).toArray() : null);
 				tv.refresh();
 			}
 			
@@ -270,12 +255,13 @@ public class NameDetailsPage implements IDetailsPage {
 
 	public void update() {
 		if (input != null) {
-			String str = getNameId(input);
+			String str = getNameId((SelectName)input);
 			id.setText(str!=null?str:"");
 			
-			clear.setSelection(getClear(input));
-			
-			tv.setInput(input != null ? getNames(input).toArray() : null);
+			clear.setSelection(getClear((SelectName)input));
+			clear.setFont(getClear((SelectName)input)? boldFont : normalFont);
+
+			tv.setInput(input != null ? getNames((SelectName)input).toArray() : null);
 		}
 	}
 	
@@ -283,26 +269,20 @@ public class NameDetailsPage implements IDetailsPage {
 		return Integer.toString(name.getValue());
 	}
 	
-	private void setNameId(final XtextEditor editor, final SelectName armor, final String newName) 
+	private void setNameId(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectName armorToEdit = input;
+				SelectName armorToEdit = (SelectName)input;
 				armorToEdit.setValue(Integer.parseInt(newName));
 			}  
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectName)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private Boolean getClear(SelectName armor) {
@@ -317,7 +297,7 @@ public class NameDetailsPage implements IDetailsPage {
 		return Boolean.FALSE;
 	}
 	
-	private void addClear(final XtextEditor editor, final SelectName armor) {
+	private void addClear(final XtextEditor editor, final Object armor) {
 		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
 			public void run() {
@@ -326,7 +306,7 @@ public class NameDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<NameMods> mods = input.getMods();
+						EList<NameMods> mods = ((SelectName)input).getMods();
 						NameInst2 type = DmFactory.eINSTANCE.createNameInst2();
 						type.setClear(true);
 						mods.add(type);
@@ -334,13 +314,7 @@ public class NameDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (SelectName)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -355,7 +329,7 @@ public class NameDetailsPage implements IDetailsPage {
 					@Override
 					public void process(XtextResource resource) {
 						NameMods modToRemove = null;
-						EList<NameMods> mods = input.getMods();
+						EList<NameMods> mods = ((SelectName)input).getMods();
 						for (NameMods mod : mods) {
 							if (mod instanceof NameInst2) {
 								if (((NameInst2)mod).isClear()) {
@@ -371,21 +345,15 @@ public class NameDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (SelectName)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
 
 	
-	private List<NameInst1> getNames(SelectName armor) {
+	private List<NameInst1> getNames(SelectName name) {
 		List<NameInst1> nameList = new ArrayList<NameInst1>();
-		EList<NameMods> list = armor.getMods();
+		EList<NameMods> list = name.getMods();
 		for (NameMods mod : list) {
 			if (mod instanceof NameInst1) {
 				if (((NameInst1)mod).isName()) {
@@ -403,7 +371,7 @@ public class NameDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectName armorToEdit = input;
+				SelectName armorToEdit = (SelectName)input;
 				int counter = 0;
 				EList<NameMods> mods = armorToEdit.getMods();
 				for (NameMods mod : mods) {
@@ -422,23 +390,17 @@ public class NameDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectName)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
-	private NameInst1 addInst2(final XtextEditor editor, final SelectName armor, final String newName) 
+	private NameInst1 addInst2(final XtextEditor editor, final Object armor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		NameInst1 inst1 = documentEditor.process(  new IUnitOfWork<NameInst1, XtextResource>() {     
 			@Override
 			public NameInst1 exec(XtextResource resource) {
-				SelectName armorToEdit = input;
+				SelectName armorToEdit = (SelectName)input;
 				EList<NameMods> mods = armorToEdit.getMods();
 				NameInst1 type = DmFactory.eINSTANCE.createNameInst1();
 				type.setName(true);
@@ -449,26 +411,20 @@ public class NameDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		tv.setInput(input != null ? getNames(input).toArray() : null);
+		tv.setInput(input != null ? getNames((SelectName)input).toArray() : null);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectName)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 		return inst1;
 	}
 	
-	private void removeInst2(final XtextEditor editor, final SelectName armor, final int row) 
+	private void removeInst2(final XtextEditor editor, final int row) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
 		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectName armorToEdit = input;
+				SelectName armorToEdit = (SelectName)input;
 				NameMods modToRemove = null;
 				int counter = 0;
 				EList<NameMods> mods = armorToEdit.getMods();
@@ -490,13 +446,7 @@ public class NameDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectName)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	/* (non-Javadoc)
@@ -518,43 +468,4 @@ public class NameDetailsPage implements IDetailsPage {
 		update();
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#commit()
-	 */
-	public void commit(boolean onSave) {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#setFocus()
-	 */
-	public void setFocus() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#dispose()
-	 */
-	public void dispose() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#isDirty()
-	 */
-	public boolean isDirty() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#isStale()
-	 */
-	public boolean isStale() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#refresh()
-	 */
-	public void refresh() {
-		update();
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#setFormInput(java.lang.Object)
-	 */
-	public boolean setFormInput(Object input) {
-		return false;
-	}
 }
