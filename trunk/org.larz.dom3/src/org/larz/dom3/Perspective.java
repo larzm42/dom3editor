@@ -17,16 +17,17 @@ package org.larz.dom3;
 
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
+import org.eclipse.ui.IPlaceholderFolderLayout;
 
-/**
- * @author lamoor
- *
- */
 public class Perspective implements IPerspectiveFactory {
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.ui.IPerspectiveFactory#createInitialLayout(org.eclipse.ui.IPageLayout)
 	 */
 	public void createInitialLayout(IPageLayout layout) {
+		IPlaceholderFolderLayout placeholderFolder = layout.createPlaceholderFolder("DmProblemsFolder", IPageLayout.RIGHT, 0.75f, IPageLayout.ID_EDITOR_AREA);
+
+		placeholderFolder.addPlaceholder("org.eclipse.ui.views.ProblemView");
+
 	}
 }

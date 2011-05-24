@@ -37,10 +37,6 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.PageBook;
 import org.larz.dom3.db.IDNameDB;
 
-/**
- * @author lamoor
- *
- */
 public class AddDialog extends Dialog {
 	public enum TypeToAdd {
 		WEAPON(Messages.getString("AddDialog.typelist.weapon")),
@@ -87,7 +83,7 @@ public class AddDialog extends Dialog {
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		shell.setText("Add to Mod");
+		shell.setText(Messages.getString("AddDialog.title"));
 	}
 
 	@Override

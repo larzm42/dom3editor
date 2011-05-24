@@ -19,8 +19,6 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.BusyIndicator;
@@ -39,9 +37,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.IDetailsPage;
-import org.eclipse.ui.forms.IFormPart;
-import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
@@ -64,12 +59,7 @@ import org.larz.dom3.dm.dm.SiteInst4;
 import org.larz.dom3.dm.dm.SiteMods;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
-public class SiteDetailsPage implements IDetailsPage {
-	private IManagedForm mform;
-	private Site input;
-	private XtextEditor doc;
-	private TableViewer viewer;
-
+public class SiteDetailsPage extends AbstractDetailsPage {
 	private Text name;
 
 	enum Inst {
@@ -151,11 +141,10 @@ public class SiteDetailsPage implements IDetailsPage {
 		private Label defaultLabel;
 	}
 
-	EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
+	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
 	
 	public SiteDetailsPage(XtextEditor doc, TableViewer viewer) {
-		this.doc = doc;
-		this.viewer = viewer;
+		super(doc, viewer);
 		instMap.put(Inst.PATH, new Inst2Fields());
 		instMap.put(Inst.PATH, new Inst2Fields());
 		instMap.put(Inst.LEVEL, new Inst2Fields());
@@ -187,20 +176,6 @@ public class SiteDetailsPage implements IDetailsPage {
 		instMap.put(Inst.GEMS2, new Inst3Fields());
 		instMap.put(Inst.GEMS3, new Inst3Fields());
 		instMap.put(Inst.CLEAR, new Inst4Fields());
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#initialize(org.eclipse.ui.forms.IManagedForm)
-	 */
-	public void initialize(IManagedForm mform) {
-		this.mform = mform;
-	}
-	
-	/**
-	 * @return
-	 */
-	public Site getInput() {
-		return input;
 	}
 	
 	/* (non-Javadoc)
@@ -281,6 +256,7 @@ public class SiteDetailsPage implements IDetailsPage {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
+						check.setFont(boldFont);
 						if (field instanceof Inst1Fields) {
 							addInst1(key, doc, key.defaultValue);
 						} else if (field instanceof Inst2Fields) {
@@ -292,6 +268,7 @@ public class SiteDetailsPage implements IDetailsPage {
 						}
 					} else {
 						removeInst(key, doc);
+						check.setFont(normalFont);
 					}
 				}
 
@@ -459,13 +436,6 @@ public class SiteDetailsPage implements IDetailsPage {
 		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 	}
 	
-	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
-		Label spacer = toolkit.createLabel(parent, ""); //$NON-NLS-1$
-		GridData gd = new GridData();
-		gd.horizontalSpan = span;
-		spacer.setLayoutData(gd);
-	}
-	
 	public void update() {
 		if (input != null) {
 			if (input instanceof SelectSiteByName || input instanceof SelectSiteById) {
@@ -491,12 +461,14 @@ public class SiteDetailsPage implements IDetailsPage {
 					((Inst1Fields)fields.getValue()).value.setText(val1);
 					((Inst1Fields)fields.getValue()).value.setEnabled(true);
 					((Inst1Fields)fields.getValue()).check.setSelection(true);
+					((Inst1Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst1Fields) {
 					((Inst1Fields)fields.getValue()).value.setText("");
 					((Inst1Fields)fields.getValue()).value.setEnabled(false);
 					((Inst1Fields)fields.getValue()).check.setSelection(false);
+					((Inst1Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Integer val = getInst2(fields.getKey(), input);
@@ -505,12 +477,14 @@ public class SiteDetailsPage implements IDetailsPage {
 					((Inst2Fields)fields.getValue()).value.setText(val.toString());
 					((Inst2Fields)fields.getValue()).value.setEnabled(true);
 					((Inst2Fields)fields.getValue()).check.setSelection(true);
+					((Inst2Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst2Fields) {
 					((Inst2Fields)fields.getValue()).value.setText("");
 					((Inst2Fields)fields.getValue()).value.setEnabled(false);
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
+					((Inst2Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Integer[] vals = getInst3(fields.getKey(), input);
@@ -521,6 +495,7 @@ public class SiteDetailsPage implements IDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setText(vals[1].toString());
 					((Inst3Fields)fields.getValue()).value2.setEnabled(true);
 					((Inst3Fields)fields.getValue()).check.setSelection(true);
+					((Inst3Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst3Fields) {
@@ -529,12 +504,14 @@ public class SiteDetailsPage implements IDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setText("");
 					((Inst3Fields)fields.getValue()).value2.setEnabled(false);
 					((Inst3Fields)fields.getValue()).check.setSelection(false);
+					((Inst3Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Boolean isVal = getInst4(fields.getKey(), input);
 			if (isVal != null) {
 				if (fields.getValue() instanceof Inst4Fields) {
 					((Inst4Fields)fields.getValue()).check.setSelection(isVal);
+					((Inst4Fields)fields.getValue()).check.setFont(isVal ? boldFont : normalFont);
 				}
 			}
 			if (input instanceof SelectSiteByName || input instanceof SelectSiteById) {
@@ -676,7 +653,7 @@ public class SiteDetailsPage implements IDetailsPage {
 		}
 	}
 	
-	private String getSelectSitename(Site site) {
+	private String getSelectSitename(Object site) {
 		if (site instanceof SelectSiteByName) {
 			return ((SelectSiteByName)site).getValue();
 		} else {
@@ -692,7 +669,7 @@ public class SiteDetailsPage implements IDetailsPage {
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Site siteToEdit = input;
+				Site siteToEdit = (Site)input;
 				EList<SiteMods> mods = siteToEdit.getMods();
 				boolean nameSet = false;
 				for (SiteMods mod : mods) {
@@ -713,17 +690,11 @@ public class SiteDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
-	private String getInst1(Inst inst2, Site site) {
-		EList<SiteMods> list = site.getMods();
+	private String getInst1(Inst inst2, Object site) {
+		EList<SiteMods> list = ((Site)site).getMods();
 		for (SiteMods mod : list) {
 			if (mod instanceof SiteInst1) {
 				switch (inst2) {
@@ -738,8 +709,8 @@ public class SiteDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer getInst2(Inst inst2, Site site) {
-		EList<SiteMods> list = site.getMods();
+	private Integer getInst2(Inst inst2, Object site) {
+		EList<SiteMods> list = ((Site)site).getMods();
 		int homeMonCount = 0;
 		int homeComCount = 0;
 		int monCount = 0;
@@ -945,8 +916,8 @@ public class SiteDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer[] getInst3(Inst inst3, Site site) {
-		EList<SiteMods> list = site.getMods();
+	private Integer[] getInst3(Inst inst3, Object site) {
+		EList<SiteMods> list = ((Site)site).getMods();
 		int gemCount = 0;
 		for (SiteMods mod : list) {
 			if (mod instanceof SiteInst3) {
@@ -981,8 +952,8 @@ public class SiteDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Boolean getInst4(Inst inst4, Site site) {
-		EList<SiteMods> list = site.getMods();
+	private Boolean getInst4(Inst inst4, Object site) {
+		EList<SiteMods> list = ((Site)site).getMods();
 		for (SiteMods mod : list) {
 			if (mod instanceof SiteInst4) {
 				switch (inst4) {
@@ -1004,7 +975,7 @@ public class SiteDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Site siteToEdit = input;
+				Site siteToEdit = (Site)input;
 				EList<SiteMods> mods = siteToEdit.getMods();				
 				for (SiteMods mod : mods) {
 					if (mod instanceof SiteInst1) {
@@ -1022,13 +993,7 @@ public class SiteDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
@@ -1038,7 +1003,7 @@ public class SiteDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Site siteToEdit = input;
+				Site siteToEdit = (Site)input;
 				int homeMonCount = 0;
 				int homeComCount = 0;
 				int monCount = 0;
@@ -1247,13 +1212,7 @@ public class SiteDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
@@ -1263,7 +1222,7 @@ public class SiteDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Site siteToEdit = input;
+				Site siteToEdit = (Site)input;
 				int gemCount = 0;
 				EList<SiteMods> mods = siteToEdit.getMods();
 				for (SiteMods mod : mods) {
@@ -1316,13 +1275,7 @@ public class SiteDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 	
 	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
@@ -1334,7 +1287,7 @@ public class SiteDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<SiteMods> mods = input.getMods();
+						EList<SiteMods> mods = ((Site)input).getMods();
 						SiteInst1 type = DmFactory.eINSTANCE.createSiteInst1();
 						switch (inst) {
 						case NAME:
@@ -1347,13 +1300,7 @@ public class SiteDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1367,7 +1314,7 @@ public class SiteDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<SiteMods> mods = input.getMods();
+						EList<SiteMods> mods = ((Site)input).getMods();
 						SiteInst2 type = DmFactory.eINSTANCE.createSiteInst2();
 						switch (inst) {
 						case PATH:
@@ -1455,13 +1402,7 @@ public class SiteDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1475,7 +1416,7 @@ public class SiteDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<SiteMods> mods = input.getMods();
+						EList<SiteMods> mods = ((Site)input).getMods();
 						SiteInst3 type = DmFactory.eINSTANCE.createSiteInst3();
 						switch (inst) {
 						case GEMS1:
@@ -1495,13 +1436,7 @@ public class SiteDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1515,7 +1450,7 @@ public class SiteDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<SiteMods> mods = input.getMods();
+						EList<SiteMods> mods = ((Site)input).getMods();
 						SiteInst4 type = DmFactory.eINSTANCE.createSiteInst4();
 						switch (inst) {
 						case CLEAR:
@@ -1527,13 +1462,7 @@ public class SiteDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1555,7 +1484,7 @@ public class SiteDetailsPage implements IDetailsPage {
 						int descaleCount = 0;
 						int gemCount = 0;
 						SiteMods modToRemove = null;
-						EList<SiteMods> mods = input.getMods();
+						EList<SiteMods> mods = ((Site)input).getMods();
 						for (SiteMods mod : mods) {
 							if (mod instanceof SiteInst1) {
 								switch (inst) {
@@ -1805,67 +1734,9 @@ public class SiteDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#inputChanged(org.eclipse.jface.viewers.IStructuredSelection)
-	 */
-	public void selectionChanged(IFormPart part, ISelection selection) {
-		IStructuredSelection ssel = (IStructuredSelection)selection;
-		if (ssel.size()==1) {
-			input = (Site)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-		update();
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#commit()
-	 */
-	public void commit(boolean onSave) {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#setFocus()
-	 */
-	public void setFocus() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#dispose()
-	 */
-	public void dispose() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#isDirty()
-	 */
-	public boolean isDirty() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#isStale()
-	 */
-	public boolean isStale() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#refresh()
-	 */
-	public void refresh() {
-		update();
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#setFormInput(java.lang.Object)
-	 */
-	public boolean setFormInput(Object input) {
-		return false;
-	}
 }

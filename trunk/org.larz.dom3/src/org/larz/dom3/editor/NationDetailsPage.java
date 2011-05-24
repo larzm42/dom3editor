@@ -23,8 +23,6 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.BusyIndicator;
@@ -46,9 +44,9 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.IDetailsPage;
-import org.eclipse.ui.forms.IFormPart;
-import org.eclipse.ui.forms.IManagedForm;
+import org.eclipse.ui.forms.events.ExpansionAdapter;
+import org.eclipse.ui.forms.events.ExpansionEvent;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
@@ -61,7 +59,6 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.db.Database;
 import org.larz.dom3.db.NationDB;
 import org.larz.dom3.dm.dm.DmFactory;
-import org.larz.dom3.dm.dm.Nation;
 import org.larz.dom3.dm.dm.NationInst1;
 import org.larz.dom3.dm.dm.NationInst2;
 import org.larz.dom3.dm.dm.NationInst3;
@@ -74,12 +71,7 @@ import org.larz.dom3.dm.ui.internal.DmActivator;
 import org.larz.dom3.image.ImageConverter;
 import org.larz.dom3.image.ImageLoader;
 
-public class NationDetailsPage implements IDetailsPage {
-	private IManagedForm mform;
-	private SelectNation input;
-	private XtextEditor doc;
-	private TableViewer viewer;
-
+public class NationDetailsPage extends AbstractDetailsPage {
 	private Text name;
 	private Button nameCheck;
 	private Text descr;
@@ -245,11 +237,10 @@ public class NationDetailsPage implements IDetailsPage {
 		private Text value3;
 	}
 
-	EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
+	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
 	
 	public NationDetailsPage(XtextEditor doc, TableViewer viewer) {
-		this.doc = doc;
-		this.viewer = viewer;
+		super(doc, viewer);
 		instMap.put(Inst.EPITHET, new Inst1Fields());
 		instMap.put(Inst.FLAG, new Inst1Fields());
 		instMap.put(Inst.MAPBACKGROUND, new Inst1Fields());
@@ -345,20 +336,6 @@ public class NationDetailsPage implements IDetailsPage {
 	}
 	
 	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#initialize(org.eclipse.ui.forms.IManagedForm)
-	 */
-	public void initialize(IManagedForm mform) {
-		this.mform = mform;
-	}
-	
-	/**
-	 * @return
-	 */
-	public Nation getInput() {
-		return input;
-	}
-	
-	/* (non-Javadoc)
 	 * @see org.eclipse.ui.forms.IDetailsPage#createContents(org.eclipse.swt.widgets.Composite)
 	 */
 	public void createContents(Composite parent) {
@@ -422,10 +399,12 @@ public class NationDetailsPage implements IDetailsPage {
 					addInst1(Inst.NAME, doc, "");
 					name.setEnabled(true);
 					name.setText("");
+					nameCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.NAME, doc);
 					name.setEnabled(false);
 					name.setText("");
+					nameCheck.setFont(normalFont);
 				}
 			}
 		});
@@ -472,11 +451,13 @@ public class NationDetailsPage implements IDetailsPage {
 					descr.setEnabled(true);
 					descr.setBackground(toolkit.getColors().getBackground());
 					descr.setText("");
+					descrCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
 					descr.setText("");
+					descrCheck.setFont(normalFont);
 				}
 			}
 		});
@@ -523,11 +504,13 @@ public class NationDetailsPage implements IDetailsPage {
 					summary.setEnabled(true);
 					summary.setBackground(toolkit.getColors().getBackground());
 					summary.setText("");
+					summaryCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.SUMMARY, doc);
 					summary.setEnabled(false);
 					summary.setBackground(toolkit.getColors().getInactiveBackground());
 					summary.setText("");
+					summaryCheck.setFont(normalFont);
 				}
 			}
 		});
@@ -574,40 +557,86 @@ public class NationDetailsPage implements IDetailsPage {
 					brief.setEnabled(true);
 					brief.setBackground(toolkit.getColors().getBackground());
 					brief.setText("");
+					briefCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.BRIEF, doc);
 					brief.setEnabled(false);
 					brief.setBackground(toolkit.getColors().getInactiveBackground());
 					brief.setText("");
+					briefCheck.setFont(normalFont);
 				}
 			}
 		});
 
 		spriteLabel = new Label(nameComp, SWT.NONE);
 
-		Composite leftColumn = toolkit.createComposite(client);
-		glayout = new GridLayout(5, false);
-		glayout.marginHeight = 0;
-		glayout.marginWidth = 0;
-		leftColumn.setLayout(glayout);
-		leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		
-		Composite rightColumn = toolkit.createComposite(client);
-		glayout = new GridLayout(5, false);
-		glayout.marginHeight = 0;
-		glayout.marginWidth = 0;
-		rightColumn.setLayout(glayout);
-		rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-
+		Composite leftColumn = null;
+		Composite rightColumn = null;
 		boolean isRight = false;
 		for (final Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			final Inst key = fields.getKey();
+			
+			if (key.equals(Inst.CLEARNATION) || 
+				key.equals(Inst.CLEARREC) || 
+				key.equals(Inst.CLEARSITES) || 
+				key.equals(Inst.STARTFORT)) {
+
+				final Section expandable = toolkit.createSection(client, ExpandableComposite.TWISTIE|ExpandableComposite.EXPANDED);
+				switch (key) {
+				case CLEARNATION:
+					expandable.setText(Messages.getString("NationDetailsSection.mod.section.general"));
+					break;
+				case CLEARREC:
+					expandable.setText(Messages.getString("NationDetailsSection.mod.section.units"));
+					break;
+				case CLEARSITES:
+					expandable.setText(Messages.getString("NationDetailsSection.mod.section.sites"));
+					break;
+				case STARTFORT:
+					expandable.setText(Messages.getString("NationDetailsSection.mod.section.forts"));
+					break;
+				}
+				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+				gd.horizontalSpan = 2;
+				expandable.setLayoutData(gd);
+				expandable.addExpansionListener(new ExpansionAdapter() {
+					public void expansionStateChanged(ExpansionEvent e) {
+						mform.getForm().reflow(true);
+					}
+				});
+
+				Composite header1 = toolkit.createComposite(expandable, SWT.BORDER);
+				header1.setLayout(new GridLayout(2, true));
+				expandable.setClient(header1);
+				if (key.equals(Inst.CLEARNATION)) {
+					expandable.setExpanded(true);
+				} else {
+					expandable.setExpanded(false);					
+				}
+
+				leftColumn = toolkit.createComposite(header1);
+				glayout = new GridLayout(5, false);
+				glayout.marginHeight = 0;
+				glayout.marginWidth = 0;
+				leftColumn.setLayout(glayout);
+				leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+
+				rightColumn = toolkit.createComposite(header1);
+				glayout = new GridLayout(5, false);
+				glayout.marginHeight = 0;
+				glayout.marginWidth = 0;
+				rightColumn.setLayout(glayout);
+				rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+				isRight = false;
+			}
+
 			final InstFields field = fields.getValue();
 			final Button check = toolkit.createButton(isRight?rightColumn:leftColumn, key.label, SWT.CHECK);
 			check.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
+						check.setFont(boldFont);
 						if (field instanceof Inst1Fields) {
 							addInst1(key, doc, key.defaultValue);
 						} else if (field instanceof Inst2Fields) {
@@ -621,6 +650,7 @@ public class NationDetailsPage implements IDetailsPage {
 						}
 					} else {
 						removeInst(key, doc);
+						check.setFont(normalFont);
 					}
 				}
 
@@ -846,13 +876,6 @@ public class NationDetailsPage implements IDetailsPage {
 		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 	}
 	
-	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
-		Label spacer = toolkit.createLabel(parent, ""); //$NON-NLS-1$
-		GridData gd = new GridData();
-		gd.horizontalSpan = span;
-		spacer.setLayoutData(gd);
-	}
-	
 	private Image getSprite(String sprite) {
 		if (sprite != null) {
 			final String finalName1 = sprite;
@@ -889,10 +912,12 @@ public class NationDetailsPage implements IDetailsPage {
 				name.setText(nameString);
 				name.setEnabled(true);
 				nameCheck.setSelection(true);
+				nameCheck.setFont(boldFont);
 			} else {
 				name.setText("");
 				name.setEnabled(false);
 				nameCheck.setSelection(false);
+				nameCheck.setFont(normalFont);
 			}
 
 			spriteLabel.setImage(getSprite(getInst1(Inst.FLAG, input)));
@@ -903,11 +928,13 @@ public class NationDetailsPage implements IDetailsPage {
 				descr.setEnabled(true);
 				descr.setBackground(toolkit.getColors().getBackground());
 				descrCheck.setSelection(true);
+				descrCheck.setFont(boldFont);
 			} else {
 				descr.setText("");
 				descr.setEnabled(false);
 				descr.setBackground(toolkit.getColors().getInactiveBackground());
 				descrCheck.setSelection(false);
+				descrCheck.setFont(normalFont);
 			}
 
 			String summaryStr = getInst1(Inst.SUMMARY, input);
@@ -916,11 +943,13 @@ public class NationDetailsPage implements IDetailsPage {
 				summary.setEnabled(true);
 				summary.setBackground(toolkit.getColors().getBackground());
 				summaryCheck.setSelection(true);
+				summaryCheck.setFont(boldFont);
 			} else {
 				summary.setText("");
 				summary.setEnabled(false);
 				summary.setBackground(toolkit.getColors().getInactiveBackground());
 				summaryCheck.setSelection(false);
+				summaryCheck.setFont(normalFont);
 			}
 
 			String briefStr = getInst1(Inst.BRIEF, input);
@@ -929,11 +958,13 @@ public class NationDetailsPage implements IDetailsPage {
 				brief.setEnabled(true);
 				brief.setBackground(toolkit.getColors().getBackground());
 				briefCheck.setSelection(true);
+				briefCheck.setFont(boldFont);
 			} else {
 				brief.setText("");
 				brief.setEnabled(false);
 				brief.setBackground(toolkit.getColors().getInactiveBackground());
 				briefCheck.setSelection(false);
+				briefCheck.setFont(normalFont);
 			}
 		}
 		NationDB nationDB = new NationDB();
@@ -947,12 +978,14 @@ public class NationDetailsPage implements IDetailsPage {
 					((Inst1Fields)fields.getValue()).value.setText(val1);
 					((Inst1Fields)fields.getValue()).value.setEnabled(true);
 					((Inst1Fields)fields.getValue()).check.setSelection(true);
+					((Inst1Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst1Fields) {
 					((Inst1Fields)fields.getValue()).value.setText("");
 					((Inst1Fields)fields.getValue()).value.setEnabled(false);
 					((Inst1Fields)fields.getValue()).check.setSelection(false);
+					((Inst1Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Integer val = getInst2(fields.getKey(), input);
@@ -961,12 +994,14 @@ public class NationDetailsPage implements IDetailsPage {
 					((Inst2Fields)fields.getValue()).value.setText(val.toString());
 					((Inst2Fields)fields.getValue()).value.setEnabled(true);
 					((Inst2Fields)fields.getValue()).check.setSelection(true);
+					((Inst2Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst2Fields) {
 					((Inst2Fields)fields.getValue()).value.setText("");
 					((Inst2Fields)fields.getValue()).value.setEnabled(false);
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
+					((Inst2Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Boolean isVal = getInst3(fields.getKey(), input);
@@ -981,12 +1016,14 @@ public class NationDetailsPage implements IDetailsPage {
 					((Inst4Fields)fields.getValue()).value.setText(val4.toString());
 					((Inst4Fields)fields.getValue()).value.setEnabled(true);
 					((Inst4Fields)fields.getValue()).check.setSelection(true);
+					((Inst4Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst4Fields) {
 					((Inst4Fields)fields.getValue()).value.setText("");
 					((Inst4Fields)fields.getValue()).value.setEnabled(false);
 					((Inst4Fields)fields.getValue()).check.setSelection(false);
+					((Inst4Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Double[] val5 = getInst5(fields.getKey(), input);
@@ -999,6 +1036,7 @@ public class NationDetailsPage implements IDetailsPage {
 					((Inst5Fields)fields.getValue()).value3.setText(val5[2] != null ? val5[2].toString() : "");
 					((Inst5Fields)fields.getValue()).value3.setEnabled(true);
 					((Inst5Fields)fields.getValue()).check.setSelection(true);
+					((Inst5Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst5Fields) {
@@ -1009,6 +1047,7 @@ public class NationDetailsPage implements IDetailsPage {
 					((Inst5Fields)fields.getValue()).value3.setText("");
 					((Inst5Fields)fields.getValue()).value3.setEnabled(false);
 					((Inst5Fields)fields.getValue()).check.setSelection(false);
+					((Inst5Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			if (input instanceof SelectNation) {
@@ -1058,6 +1097,7 @@ public class NationDetailsPage implements IDetailsPage {
 				}
 			}
 		}
+		name.getParent().getParent().layout(true, true);
 	}
 	
 	private void setNationname(final XtextEditor editor, final String newName) 
@@ -1067,7 +1107,7 @@ public class NationDetailsPage implements IDetailsPage {
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
+				SelectNation nationToEdit = (SelectNation)input;
 				EList<NationMods> mods = nationToEdit.getMods();
 				boolean nameSet = false;
 				for (NationMods mod : mods) {
@@ -1088,13 +1128,7 @@ public class NationDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 	
 	private void setNationdescr(final XtextEditor editor, final String newName) 
@@ -1104,7 +1138,7 @@ public class NationDetailsPage implements IDetailsPage {
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
+				SelectNation nationToEdit = (SelectNation)input;
 				EList<NationMods> mods = nationToEdit.getMods();
 				boolean nameSet = false;
 				for (NationMods mod : mods) {
@@ -1125,17 +1159,11 @@ public class NationDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
-	private String getInst1(Inst inst2, SelectNation nation) {
-		EList<NationMods> list = nation.getMods();
+	private String getInst1(Inst inst2, Object nation) {
+		EList<NationMods> list = ((SelectNation)nation).getMods();
 		int siteCount = 0;
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst1) {
@@ -1213,8 +1241,8 @@ public class NationDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer getInst2(Inst inst2, SelectNation nation) {
-		EList<NationMods> list = nation.getMods();
+	private Integer getInst2(Inst inst2, Object nation) {
+		EList<NationMods> list = ((SelectNation)nation).getMods();
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst2) {
 				switch (inst2) {
@@ -1374,8 +1402,8 @@ public class NationDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Boolean getInst3(Inst inst3, SelectNation nation) {
-		EList<NationMods> list = nation.getMods();
+	private Boolean getInst3(Inst inst3, Object nation) {
+		EList<NationMods> list = ((SelectNation)nation).getMods();
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst3) {
 				switch (inst3) {
@@ -1460,10 +1488,10 @@ public class NationDetailsPage implements IDetailsPage {
 		return Boolean.FALSE;
 	}
 	
-	private Object getInst4(Inst inst4, SelectNation nation) {
+	private Object getInst4(Inst inst4, Object nation) {
 		int addreccom = 0;
 		int addrecunit = 0;
-		EList<NationMods> list = nation.getMods();
+		EList<NationMods> list = ((SelectNation)nation).getMods();
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst4) {
 				switch (inst4) {
@@ -1907,8 +1935,8 @@ public class NationDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Double[] getInst5(Inst inst5, SelectNation nation) {
-		EList<NationMods> list = nation.getMods();
+	private Double[] getInst5(Inst inst5, Object nation) {
+		EList<NationMods> list = ((SelectNation)nation).getMods();
 		for (NationMods mod : list) {
 			if (mod instanceof NationInst5) {
 				switch (inst5) {
@@ -1933,7 +1961,7 @@ public class NationDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
+				SelectNation nationToEdit = (SelectNation)input;
 				int siteCount = 0;
 				EList<NationMods> mods = nationToEdit.getMods();				
 				for (NationMods mod : mods) {
@@ -2006,13 +2034,7 @@ public class NationDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
@@ -2022,7 +2044,7 @@ public class NationDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
+				SelectNation nationToEdit = (SelectNation)input;
 				EList<NationMods> mods = nationToEdit.getMods();
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst2) {
@@ -2185,13 +2207,7 @@ public class NationDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst4(final Inst inst2, final XtextEditor editor, final String newName) 
@@ -2203,7 +2219,7 @@ public class NationDetailsPage implements IDetailsPage {
 			public void process(XtextResource resource) {
 				int addreccom = 0;
 				int addrecunit = 0;
-				SelectNation nationToEdit = input;
+				SelectNation nationToEdit = (SelectNation)input;
 				EList<NationMods> mods = nationToEdit.getMods();
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst4) {
@@ -2771,13 +2787,7 @@ public class NationDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 	
 	private void setInst5(final Inst inst5, final XtextEditor editor, final String value1, final String value2, final String value3) 
@@ -2787,7 +2797,7 @@ public class NationDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				SelectNation nationToEdit = input;
+				SelectNation nationToEdit = (SelectNation)input;
 				EList<NationMods> mods = nationToEdit.getMods();
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst5) {
@@ -2813,13 +2823,7 @@ public class NationDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 	
 	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
@@ -2831,7 +2835,7 @@ public class NationDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<NationMods> mods = input.getMods();
+						EList<NationMods> mods = ((SelectNation)input).getMods();
 						NationInst1 type = DmFactory.eINSTANCE.createNationInst1();
 						switch (inst) {
 						case NAME:
@@ -2874,13 +2878,7 @@ public class NationDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -2894,7 +2892,7 @@ public class NationDetailsPage implements IDetailsPage {
 				documentEditor.process(new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<NationMods> mods = input.getMods();
+						EList<NationMods> mods = ((SelectNation)input).getMods();
 						NationInst2 type = DmFactory.eINSTANCE.createNationInst2();
 						switch (inst) {
 						case ERA:
@@ -2998,13 +2996,7 @@ public class NationDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -3018,7 +3010,7 @@ public class NationDetailsPage implements IDetailsPage {
 				documentEditor.process(new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<NationMods> mods = input.getMods();
+						EList<NationMods> mods = ((SelectNation)input).getMods();
 						NationInst3 type = DmFactory.eINSTANCE.createNationInst3();
 						switch (inst) {
 						case CLEARNATION:
@@ -3072,13 +3064,7 @@ public class NationDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -3092,7 +3078,7 @@ public class NationDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<NationMods> mods = input.getMods();
+						EList<NationMods> mods = ((SelectNation)input).getMods();
 						NationInst4 type = DmFactory.eINSTANCE.createNationInst4();
 						switch (inst) {
 						case STARTCOM:
@@ -3226,13 +3212,7 @@ public class NationDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -3246,7 +3226,7 @@ public class NationDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<NationMods> mods = input.getMods();
+						EList<NationMods> mods = ((SelectNation)input).getMods();
 						NationInst5 type = DmFactory.eINSTANCE.createNationInst5();
 						switch (inst) {
 						case COLOR:
@@ -3261,13 +3241,7 @@ public class NationDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -3285,7 +3259,7 @@ public class NationDetailsPage implements IDetailsPage {
 						int siteCount = 0;
 						int addreccom = 0;
 						int addrecunit = 0;
-						EList<NationMods> mods = input.getMods();
+						EList<NationMods> mods = ((SelectNation)input).getMods();
 						for (NationMods mod : mods) {
 							if (mod instanceof NationInst1) {
 								switch (inst) {
@@ -3856,67 +3830,9 @@ public class NationDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#inputChanged(org.eclipse.jface.viewers.IStructuredSelection)
-	 */
-	public void selectionChanged(IFormPart part, ISelection selection) {
-		IStructuredSelection ssel = (IStructuredSelection)selection;
-		if (ssel.size()==1) {
-			input = (SelectNation)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-		update();
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#commit()
-	 */
-	public void commit(boolean onSave) {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#setFocus()
-	 */
-	public void setFocus() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#dispose()
-	 */
-	public void dispose() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#isDirty()
-	 */
-	public boolean isDirty() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#isStale()
-	 */
-	public boolean isStale() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#refresh()
-	 */
-	public void refresh() {
-		update();
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#setFormInput(java.lang.Object)
-	 */
-	public boolean setFormInput(Object input) {
-		return false;
-	}
 }

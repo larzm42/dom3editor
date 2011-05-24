@@ -21,20 +21,22 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.RegistryFactory;
-import org.eclipse.emf.common.ui.viewer.IViewerProvider;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.dialogs.IPageChangedListener;
 import org.eclipse.jface.dialogs.PageChangedEvent;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
@@ -43,10 +45,18 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.resource.XtextSyntaxDiagnostic;
+import org.eclipse.xtext.ui.MarkerTypes;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
+import org.eclipse.xtext.ui.editor.model.XtextDocumentUtil;
 import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
+import org.eclipse.xtext.ui.editor.validation.MarkerCreator;
+import org.eclipse.xtext.ui.editor.validation.MarkerIssueProcessor;
+import org.eclipse.xtext.ui.editor.validation.ValidationJob;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
+import org.eclipse.xtext.validation.CheckMode;
+import org.eclipse.xtext.validation.IResourceValidator;
 import org.larz.dom3.dm.dm.AbstractElement;
 import org.larz.dom3.dm.dm.Dom3Mod;
 import org.larz.dom3.dm.dm.Item;
@@ -62,37 +72,27 @@ import org.larz.dom3.dm.dm.NewArmor;
 import org.larz.dom3.dm.dm.NewMonster;
 import org.larz.dom3.dm.dm.NewSite;
 import org.larz.dom3.dm.dm.NewWeapon;
+import org.larz.dom3.dm.dm.SelectArmorById;
+import org.larz.dom3.dm.dm.SelectArmorByName;
+import org.larz.dom3.dm.dm.SelectMonsterById;
+import org.larz.dom3.dm.dm.SelectMonsterByName;
+import org.larz.dom3.dm.dm.SelectName;
 import org.larz.dom3.dm.dm.SelectNation;
+import org.larz.dom3.dm.dm.SelectWeaponById;
+import org.larz.dom3.dm.dm.SelectWeaponByName;
 import org.larz.dom3.dm.dm.Site;
 import org.larz.dom3.dm.dm.SiteInst2;
 import org.larz.dom3.dm.dm.SiteMods;
+import org.larz.dom3.dm.dm.Spell;
+import org.larz.dom3.dm.dm.SpellInst2;
+import org.larz.dom3.dm.dm.SpellMods;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
-
-public class DmEditor extends FormEditor implements IMenuListener, IViewerProvider, IGotoMarker {
+public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 	
 	protected IEditorPart sourcePage;
 	protected MasterFormPage masterDetailsPage;
 	
-	/**
-	 * This keeps track of the active content viewer, which may be either one of the viewers in the pages or the content outline viewer.
-	 */
-	protected Viewer currentViewer;
-
-	/**
-	 * This creates a model editor.
-	 */
-	public DmEditor() {
-		super();
-	}
-
-	/**
-	 * This returns the viewer as required by the {@link IViewerProvider} interface.
-	 */
-	public Viewer getViewer() {
-		return currentViewer;
-	}
-
 	/**
 	 * This is the method used by the framework to install your own controls.
 	 */
@@ -127,12 +127,23 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 					int index = addPage(sourcePage, getEditorInput());
 					setPageText(index, Messages.getString("MasterDetailsPage.source.label"));
 
+					getSite().setSelectionProvider(((XtextEditor)sourcePage).getSelectionProvider());
+					
 					DmEditor.this.addPageChangedListener(new IPageChangedListener() {
-
 						@Override
 						public void pageChanged(PageChangedEvent event) {
 							refresh();
 						}
+					});
+					
+					final IXtextDocument document = ((XtextEditor)sourcePage).getDocument();
+					document.readOnly(new IUnitOfWork.Void<XtextResource>(){       
+						public void process(XtextResource resource) { 
+							resource.eAdapters().add(new SyntaxAdapter());
+							Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
+							EList<Adapter> eAdapters = dom3Mod.eAdapters();
+							eAdapters.add(new ValidationAdapter());
+						} 
 					});
 				} catch (CoreException e1) {
 					e1.printStackTrace();
@@ -141,6 +152,77 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 			}
 		});
 
+	}
+	
+	private class SyntaxAdapter extends EContentAdapter {
+		@SuppressWarnings("rawtypes")
+		@Override
+		public void notifyChanged(Notification notification) {
+			if (notification.getNewValue() instanceof ArrayList) {
+				ArrayList list = (ArrayList)notification.getNewValue();
+				if (list != null && list.size() > 0) {
+					for (Object object : list) {
+						if (object instanceof XtextSyntaxDiagnostic) {
+							try {
+								((XtextEditor)sourcePage).getResource().deleteMarkers(MarkerTypes.ANY_VALIDATION, true, IResource.DEPTH_INFINITE);
+							} catch (CoreException e) {
+								e.printStackTrace();
+							}
+						}
+					}
+				}
+			}
+			final IXtextDocument document = ((XtextEditor)sourcePage).getDocument();
+			if (document != null) {
+				document.readOnly(new IUnitOfWork.Void<XtextResource>(){       
+					public void process(XtextResource resource) { 
+						if (resource.getContents() != null && resource.getContents().size() > 0) {
+							Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
+							EList<Adapter> eAdapters = dom3Mod.eAdapters();
+							for (Adapter adapter : eAdapters) {
+								if (adapter instanceof ValidationAdapter) {
+									return;
+								}
+							}
+							eAdapters.add(new ValidationAdapter());
+						}
+					} 
+				});
+			}
+		}
+	}
+	
+	private class ValidationAdapter extends EContentAdapter {
+		@Override
+		public void notifyChanged(Notification notification) {
+			if (notification.getNewValue() instanceof NewArmor ||
+				notification.getNewValue() instanceof SelectArmorById || 
+				notification.getNewValue() instanceof SelectArmorByName ||
+				notification.getNewValue() instanceof NewWeapon ||
+				notification.getNewValue() instanceof SelectWeaponById ||
+				notification.getNewValue() instanceof SelectWeaponByName ||
+				notification.getNewValue() instanceof NewMonster ||
+				notification.getNewValue() instanceof SelectMonsterById ||
+				notification.getNewValue() instanceof SelectMonsterByName ||
+				notification.getNewValue() instanceof SelectName ||
+				notification.getNewValue() instanceof NewSite ||
+				notification.getNewValue() instanceof SelectNation) {
+				
+				runValidation();
+			}
+		}
+	}
+	
+	private void runValidation() {
+		IResourceValidator resourceValidator = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IResourceValidator.class);
+		MarkerCreator markerCreator = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(MarkerCreator.class);
+		XtextEditor xtextEditor = ((XtextEditor)sourcePage);
+		if (xtextEditor != null) {
+			MarkerIssueProcessor markerIssueProcessor = new MarkerIssueProcessor(xtextEditor.getResource(),	markerCreator);
+			IXtextDocument xtextDocument = XtextDocumentUtil.get(xtextEditor);
+			ValidationJob validationJob = new ValidationJob(resourceValidator, xtextDocument, markerIssueProcessor, CheckMode.EXPENSIVE_ONLY);
+			validationJob.schedule();
+		}
 	}
 	
 	private void refresh() {
@@ -494,6 +576,16 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 												}
 											}
 										}
+									} else if (element instanceof Spell) {
+										EList<SpellMods> mods = ((Spell)element).getMods();
+										for (SpellMods mod : mods) {
+											if (mod instanceof SpellInst2 && 
+											   (((SpellInst2)mod).isDamage() )) {
+												if (((SpellInst2)mod).getValue() == oldValue) {
+													((SpellInst2)mod).setValue(i);
+												}
+											}
+										}
 									}
 								}
 							}
@@ -527,6 +619,8 @@ public class DmEditor extends FormEditor implements IMenuListener, IViewerProvid
 			}
 		},
 		myDocument);
+		
+		runValidation();
 		
 		refresh();
 	}

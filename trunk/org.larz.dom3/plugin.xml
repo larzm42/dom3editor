@@ -14,7 +14,7 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            name="RCP Perspective"
+            name="Dom3Editor Perspective"
             class="org.larz.dom3.Perspective"
             id="org.larz.dom3.perspective">
       </perspective>
@@ -39,7 +39,7 @@
          </property>
          <property
                name="aboutText"
-               value="This is the Dominions 3 Editor.&#10;&#10;Release 0.8.1 - April 15th, 2011.">
+               value="This is the Dominions 3 Editor.&#10;&#10;Release 0.9.0 - May?, 2011.">
          </property>
          <property
                name="startupForegroundColor"
@@ -79,7 +79,19 @@
             icon="icons/fix.png"
             tooltip="Fix ID Numbers"
             toolbarPath="Normal/additions"
-            class="org.larz.dom3.editor.EditorActionDelegate"> 
+            class="org.larz.dom3.editor.EditorActionFixIds"> 
+         </action>
+      </editorContribution>
+      <editorContribution 
+            id="org.larz.dom3.editor.DmEditor.contribution" 
+            targetID="org.larz.dom3.editor.DmEditor">
+         <action
+            id="org.eclipse.ui.articles.action.contribution.editor.action2" 
+            label="Show Problems" 
+            icon="icons/problems_view.gif"
+            tooltip="Show Problems"
+            toolbarPath="Normal/additions"
+            class="org.larz.dom3.editor.EditorActionProblems"> 
          </action>
       </editorContribution>
    </extension>

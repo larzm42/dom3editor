@@ -43,10 +43,6 @@ import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.ui.ide.IDE;
 import org.larz.dom3.editor.NewDialog;
 
-/**
- * @author lamoor
- *
- */
 public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     private IWorkbenchAction closeAction;
     private IWorkbenchAction closeAllAction;

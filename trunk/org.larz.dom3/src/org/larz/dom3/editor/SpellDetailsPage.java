@@ -19,8 +19,6 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.BusyIndicator;
@@ -41,9 +39,6 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.IDetailsPage;
-import org.eclipse.ui.forms.IFormPart;
-import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
@@ -67,12 +62,7 @@ import org.larz.dom3.dm.dm.SpellInst5;
 import org.larz.dom3.dm.dm.SpellMods;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
-public class SpellDetailsPage implements IDetailsPage {
-	private IManagedForm mform;
-	private Spell input;
-	private XtextEditor doc;
-	private TableViewer viewer;
-
+public class SpellDetailsPage extends AbstractDetailsPage {
 	private Text name;
 	private Text descr;
 	private Button descCheck;
@@ -152,11 +142,10 @@ public class SpellDetailsPage implements IDetailsPage {
 		private Text value;
 	}
 	
-	EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
+	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
 	
 	public SpellDetailsPage(XtextEditor doc, TableViewer viewer) {
-		this.doc = doc;
-		this.viewer = viewer;
+		super(doc, viewer);
 		instMap.put(Inst.SCHOOL, new Inst2Fields());
 		instMap.put(Inst.RESEARCHLEVEL, new Inst2Fields());
 		instMap.put(Inst.AOE, new Inst2Fields());
@@ -178,20 +167,6 @@ public class SpellDetailsPage implements IDetailsPage {
 		instMap.put(Inst.CLEAR, new Inst4Fields());	
 		instMap.put(Inst.COPYSPELL, new Inst5Fields());	
 		instMap.put(Inst.NEXTSPELL, new Inst5Fields());	
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#initialize(org.eclipse.ui.forms.IManagedForm)
-	 */
-	public void initialize(IManagedForm mform) {
-		this.mform = mform;
-	}
-	
-	/**
-	 * @return
-	 */
-	public Spell getInput() {
-		return input;
 	}
 	
 	/* (non-Javadoc)
@@ -294,11 +269,13 @@ public class SpellDetailsPage implements IDetailsPage {
 					descr.setEnabled(true);
 					descr.setBackground(toolkit.getColors().getBackground());
 					descr.setText("");
+					descCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
 					descr.setText("");
+					descCheck.setFont(normalFont);
 				}
 			}
 		});
@@ -326,6 +303,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
+						check.setFont(boldFont);
 						if (field instanceof Inst1Fields) {
 							addInst1(key, doc, key.defaultValue);
 						} else if (field instanceof Inst2Fields) {
@@ -339,6 +317,7 @@ public class SpellDetailsPage implements IDetailsPage {
 						}
 					} else {
 						removeInst(key, doc);
+						check.setFont(normalFont);
 					}
 				}
 
@@ -519,25 +498,15 @@ public class SpellDetailsPage implements IDetailsPage {
 		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 	}
 	
-	private void createSpacer(FormToolkit toolkit, Composite parent, int span) {
-		Label spacer = toolkit.createLabel(parent, ""); //$NON-NLS-1$
-		GridData gd = new GridData();
-		gd.horizontalSpan = span;
-		spacer.setLayoutData(gd);
-	}
-	
 	public void update() {
 		if (input != null) {
 			if (input instanceof SelectSpellByName || input instanceof SelectSpellById) {
 				String str = getSelectSpellname(input);
 				name.setText(str!= null?str:"");
 				name.setEnabled(false);
-
-				
 			} else {
 				String str = getInst1(Inst.NAME, input);
 				name.setText(str!=null?str:"");
-				
 			}
 			
 			String description = getInst1(Inst.DESCR, input);
@@ -547,11 +516,13 @@ public class SpellDetailsPage implements IDetailsPage {
 				descr.setEnabled(true);
 				descr.setBackground(toolkit.getColors().getBackground());
 				descCheck.setSelection(true);
+				descCheck.setFont(boldFont);
 			} else {
 				descr.setText("");
 				descr.setEnabled(false);
 				descr.setBackground(toolkit.getColors().getInactiveBackground());
 				descCheck.setSelection(false);
+				descCheck.setFont(normalFont);
 			}
 
 		}
@@ -568,12 +539,14 @@ public class SpellDetailsPage implements IDetailsPage {
 					((Inst1Fields)fields.getValue()).value.setText(val1);
 					((Inst1Fields)fields.getValue()).value.setEnabled(true);
 					((Inst1Fields)fields.getValue()).check.setSelection(true);
+					((Inst1Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst1Fields) {
 					((Inst1Fields)fields.getValue()).value.setText("");
 					((Inst1Fields)fields.getValue()).value.setEnabled(false);
 					((Inst1Fields)fields.getValue()).check.setSelection(false);
+					((Inst1Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Integer val = getInst2(fields.getKey(), input);
@@ -582,12 +555,14 @@ public class SpellDetailsPage implements IDetailsPage {
 					((Inst2Fields)fields.getValue()).value.setText(val.toString());
 					((Inst2Fields)fields.getValue()).value.setEnabled(true);
 					((Inst2Fields)fields.getValue()).check.setSelection(true);
+					((Inst2Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst2Fields) {
 					((Inst2Fields)fields.getValue()).value.setText("");
 					((Inst2Fields)fields.getValue()).value.setEnabled(false);
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
+					((Inst2Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Integer[] vals = getInst3(fields.getKey(), input);
@@ -598,6 +573,7 @@ public class SpellDetailsPage implements IDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setText(vals[1].toString());
 					((Inst3Fields)fields.getValue()).value2.setEnabled(true);
 					((Inst3Fields)fields.getValue()).check.setSelection(true);
+					((Inst3Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst3Fields) {
@@ -606,12 +582,14 @@ public class SpellDetailsPage implements IDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setText("");
 					((Inst3Fields)fields.getValue()).value2.setEnabled(false);
 					((Inst3Fields)fields.getValue()).check.setSelection(false);
+					((Inst3Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Boolean isVal = getInst4(fields.getKey(), input);
 			if (isVal != null) {
 				if (fields.getValue() instanceof Inst4Fields) {
 					((Inst4Fields)fields.getValue()).check.setSelection(isVal);
+					((Inst4Fields)fields.getValue()).check.setFont(isVal ? boldFont : normalFont);
 				}
 			}
 			Object val5 = getInst5(fields.getKey(), input);
@@ -620,12 +598,14 @@ public class SpellDetailsPage implements IDetailsPage {
 					((Inst5Fields)fields.getValue()).value.setText(val5.toString());
 					((Inst5Fields)fields.getValue()).value.setEnabled(true);
 					((Inst5Fields)fields.getValue()).check.setSelection(true);
+					((Inst5Fields)fields.getValue()).check.setFont(boldFont);
 				}
 			} else {
 				if (fields.getValue() instanceof Inst5Fields) {
 					((Inst5Fields)fields.getValue()).value.setText("");
 					((Inst5Fields)fields.getValue()).value.setEnabled(false);
 					((Inst5Fields)fields.getValue()).check.setSelection(false);
+					((Inst5Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			if (input instanceof SelectSpellByName || input instanceof SelectSpellById) {
@@ -728,7 +708,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		name.getParent().getParent().getParent().layout(true, true);
 	}
 	
-	private String getSelectSpellname(Spell spell) {
+	private String getSelectSpellname(Object spell) {
 		if (spell instanceof SelectSpellByName) {
 			return ((SelectSpellByName)spell).getValue();
 		} else {
@@ -744,7 +724,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
+				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				boolean nameSet = false;
 				for (SpellMods mod : mods) {
@@ -765,13 +745,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setSpelldescr(final XtextEditor editor, final String newName) 
@@ -781,7 +755,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
+				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				boolean nameSet = false;
 				for (SpellMods mod : mods) {
@@ -802,17 +776,11 @@ public class SpellDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
-	private String getInst1(Inst inst2, Spell spell) {
-		EList<SpellMods> list = spell.getMods();
+	private String getInst1(Inst inst2, Object spell) {
+		EList<SpellMods> list = ((Spell)spell).getMods();
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst1) {
 				switch (inst2) {
@@ -832,8 +800,8 @@ public class SpellDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer getInst2(Inst inst2, Spell spell) {
-		EList<SpellMods> list = spell.getMods();
+	private Integer getInst2(Inst inst2, Object spell) {
+		EList<SpellMods> list = ((Spell)spell).getMods();
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst2) {
 				switch (inst2) {
@@ -913,8 +881,8 @@ public class SpellDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Integer[] getInst3(Inst inst3, Spell spell) {
-		EList<SpellMods> list = spell.getMods();
+	private Integer[] getInst3(Inst inst3, Object spell) {
+		EList<SpellMods> list = ((Spell)spell).getMods();
 		int pathCount = 0;
 		int pathLevelCount = 0;
 		for (SpellMods mod : list) {
@@ -958,8 +926,8 @@ public class SpellDetailsPage implements IDetailsPage {
 		return null;
 	}
 	
-	private Boolean getInst4(Inst inst4, Spell spell) {
-		EList<SpellMods> list = spell.getMods();
+	private Boolean getInst4(Inst inst4, Object spell) {
+		EList<SpellMods> list = ((Spell)spell).getMods();
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst4) {
 				switch (inst4) {
@@ -974,8 +942,8 @@ public class SpellDetailsPage implements IDetailsPage {
 		return Boolean.FALSE;
 	}
 	
-	private Object getInst5(Inst inst2, Spell spell) {
-		EList<SpellMods> list = spell.getMods();
+	private Object getInst5(Inst inst2, Object spell) {
+		EList<SpellMods> list = ((Spell)spell).getMods();
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst5) {
 				switch (inst2) {
@@ -1012,7 +980,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
+				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();				
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst1) {
@@ -1035,13 +1003,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
@@ -1051,7 +1013,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
+				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst2) {
@@ -1134,13 +1096,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
@@ -1150,7 +1106,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
+				Spell spellToEdit = (Spell)input;
 				int pathCount = 0;
 				int pathLevelCount = 0;
 				EList<SpellMods> mods = spellToEdit.getMods();
@@ -1217,13 +1173,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 	
 	private void setInst5(final Inst inst2, final XtextEditor editor, final String newName) 
@@ -1233,7 +1183,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 			@Override
 			public void process(XtextResource resource) {
-				Spell spellToEdit = input;
+				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst5) {
@@ -1279,13 +1229,7 @@ public class SpellDetailsPage implements IDetailsPage {
 		},
 		myDocument);
 
-		viewer.refresh();
-		IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
+		updateSelection();
 	}
 
 	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
@@ -1297,7 +1241,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<SpellMods> mods = input.getMods();
+						EList<SpellMods> mods = ((Spell)input).getMods();
 						SpellInst1 type = DmFactory.eINSTANCE.createSpellInst1();
 						switch (inst) {
 						case NAME:
@@ -1313,13 +1257,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1333,7 +1271,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<SpellMods> mods = input.getMods();
+						EList<SpellMods> mods = ((Spell)input).getMods();
 						SpellInst2 type = DmFactory.eINSTANCE.createSpellInst2();
 						switch (inst) {
 						case SCHOOL:
@@ -1385,13 +1323,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1405,7 +1337,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<SpellMods> mods = input.getMods();
+						EList<SpellMods> mods = ((Spell)input).getMods();
 						SpellInst3 type = DmFactory.eINSTANCE.createSpellInst3();
 						switch (inst) {
 						case PATH1:
@@ -1428,13 +1360,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1448,7 +1374,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<SpellMods> mods = input.getMods();
+						EList<SpellMods> mods = ((Spell)input).getMods();
 						SpellInst4 type = DmFactory.eINSTANCE.createSpellInst4();
 						switch (inst) {
 						case CLEAR:
@@ -1460,13 +1386,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1480,7 +1400,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
 					@Override
 					public void process(XtextResource resource) {
-						EList<SpellMods> mods = input.getMods();
+						EList<SpellMods> mods = ((Spell)input).getMods();
 						SpellInst5 type = DmFactory.eINSTANCE.createSpellInst5();
 						switch (inst) {
 						case COPYSPELL:
@@ -1506,13 +1426,7 @@ public class SpellDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
@@ -1529,7 +1443,7 @@ public class SpellDetailsPage implements IDetailsPage {
 						SpellMods modToRemove = null;
 						int pathCount = 0;
 						int pathLevelCount = 0;
-						EList<SpellMods> mods = input.getMods();
+						EList<SpellMods> mods = ((Spell)input).getMods();
 						for (SpellMods mod : mods) {
 							if (mod instanceof SpellInst1) {
 								switch (inst2) {
@@ -1621,67 +1535,9 @@ public class SpellDetailsPage implements IDetailsPage {
 				},
 				myDocument);
 
-				viewer.refresh();
-				IStructuredSelection ssel = (IStructuredSelection)viewer.getSelection();
-				if (ssel.size()==1) {
-					input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-				} else {
-					input = null;
-				}
+				updateSelection();
 			}
 		});
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#inputChanged(org.eclipse.jface.viewers.IStructuredSelection)
-	 */
-	public void selectionChanged(IFormPart part, ISelection selection) {
-		IStructuredSelection ssel = (IStructuredSelection)selection;
-		if (ssel.size()==1) {
-			input = (Spell)((AbstractElementWrapper)ssel.getFirstElement()).getElement();
-		} else {
-			input = null;
-		}
-		update();
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#commit()
-	 */
-	public void commit(boolean onSave) {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#setFocus()
-	 */
-	public void setFocus() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#dispose()
-	 */
-	public void dispose() {
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#isDirty()
-	 */
-	public boolean isDirty() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#isStale()
-	 */
-	public boolean isStale() {
-		return false;
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IDetailsPage#refresh()
-	 */
-	public void refresh() {
-		update();
-	}
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.forms.IFormPart#setFormInput(java.lang.Object)
-	 */
-	public boolean setFormInput(Object input) {
-		return false;
-	}
 }

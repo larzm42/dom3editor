@@ -15,21 +15,15 @@
  */
 package org.larz.dom3;
 
+import org.eclipse.ui.application.IWorkbenchConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 
-/**
- * @author lamoor
- *
- */
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
-
 	private static final String PERSPECTIVE_ID = "org.larz.dom3.perspective"; //$NON-NLS-1$
 
-    /* (non-Javadoc)
-     * @see org.eclipse.ui.application.WorkbenchAdvisor#createWorkbenchWindowAdvisor(org.eclipse.ui.application.IWorkbenchWindowConfigurer)
-     */
+	@Override
     public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
         return new ApplicationWorkbenchWindowAdvisor(configurer);
     }
@@ -40,4 +34,17 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	public String getInitialWindowPerspectiveId() {
 		return PERSPECTIVE_ID;
 	}
+
+	@Override
+	public void initialize(IWorkbenchConfigurer configurer) {
+		configurer.declareImage( 
+				"IMG_OBJS_ERROR_PATH", //IDEInternalWorkbenchImages.IMG_OBJS_ERROR_PATH,
+				Activator.getImageDescriptor("icons/error_tsk.gif"), 
+				true ); 
+		configurer.declareImage( 
+				"IMG_OBJS_WARNING_PATH", //IDEInternalWorkbenchImages.IMG_OBJS_WARNING_PATH, 
+				Activator.getImageDescriptor("icons/warn_tsk.gif"), 
+				true ); 
+	}
+	
 }

@@ -56,8 +56,8 @@ Workflow {
 
 			// java-based API for validation 
 			fragment = validation.JavaValidatorFragment {
-				composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
-				composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+//				composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
+//				composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 				// registerForImportedPackages = true
 			}
 
@@ -66,23 +66,23 @@ Workflow {
 			// fragment = exporting.SimpleNamesFragment {}
 
 			// scoping and exporting API 
-			fragment = scoping.ImportNamespacesScopingFragment {}
-			fragment = exporting.QualifiedNamesFragment {}
-			fragment = builder.BuilderIntegrationFragment {}
+//			fragment = scoping.ImportNamespacesScopingFragment {}
+//			fragment = exporting.QualifiedNamesFragment {}
+//			fragment = builder.BuilderIntegrationFragment {}
 
 			// formatter API 
 			fragment = formatting.FormatterFragment {}
 
 			// labeling API 
-			fragment = labeling.LabelProviderFragment {}
+//			fragment = labeling.LabelProviderFragment {}
 
 			// outline API 
-			fragment = outline.TransformerFragment {}
-			fragment = outline.OutlineNodeAdapterFactoryFragment {}
-			fragment = outline.QuickOutlineFragment {}
+//			fragment = outline.TransformerFragment {}
+//			fragment = outline.OutlineNodeAdapterFactoryFragment {}
+//			fragment = outline.QuickOutlineFragment {}
 
 			// quickfix API 
-			fragment = quickfix.QuickfixProviderFragment {}
+//			fragment = quickfix.QuickfixProviderFragment {}
 
 			// content assist API  
 			fragment = contentAssist.JavaBasedContentAssistFragment {}
