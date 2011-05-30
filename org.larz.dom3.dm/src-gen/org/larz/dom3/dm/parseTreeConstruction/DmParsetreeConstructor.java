@@ -50,7 +50,7 @@ protected class ThisRootNode extends RootToken {
 			case 16: return new WeaponPattern1_Group(this, this, 16, inst);
 			case 17: return new WeaponPattern2_Group(this, this, 17, inst);
 			case 18: return new WeaponPattern3_Group(this, this, 18, inst);
-			case 19: return new WeaponPattern4_WeaponInst4ParserRuleCall(this, this, 19, inst);
+			case 19: return new WeaponPattern4_Group(this, this, 19, inst);
 			case 20: return new WeaponInst1_NameAssignment(this, this, 20, inst);
 			case 21: return new WeaponInst2_Alternatives(this, this, 21, inst);
 			case 22: return new WeaponInst3_FlysprAssignment(this, this, 22, inst);
@@ -63,7 +63,7 @@ protected class ThisRootNode extends RootToken {
 			case 29: return new MonsterPattern1_Group(this, this, 29, inst);
 			case 30: return new MonsterPattern2_Group(this, this, 30, inst);
 			case 31: return new MonsterPattern3_Group(this, this, 31, inst);
-			case 32: return new MonsterPattern4_MonsterInst4ParserRuleCall(this, this, 32, inst);
+			case 32: return new MonsterPattern4_Group(this, this, 32, inst);
 			case 33: return new MonsterPattern5_Group(this, this, 33, inst);
 			case 34: return new MonsterPattern6_Group(this, this, 34, inst);
 			case 35: return new MonsterInst1_Alternatives(this, this, 35, inst);
@@ -80,7 +80,7 @@ protected class ThisRootNode extends RootToken {
 			case 46: return new SpellPattern1_Group(this, this, 46, inst);
 			case 47: return new SpellPattern2_Group(this, this, 47, inst);
 			case 48: return new SpellPattern3_Group(this, this, 48, inst);
-			case 49: return new SpellPattern4_SpellInst4ParserRuleCall(this, this, 49, inst);
+			case 49: return new SpellPattern4_Group(this, this, 49, inst);
 			case 50: return new SpellPattern5_Group(this, this, 50, inst);
 			case 51: return new SpellInst1_Alternatives(this, this, 51, inst);
 			case 52: return new SpellInst2_Alternatives(this, this, 52, inst);
@@ -102,7 +102,7 @@ protected class ThisRootNode extends RootToken {
 			case 68: return new SelectName_Group(this, this, 68, inst);
 			case 69: return new NameMods_Alternatives(this, this, 69, inst);
 			case 70: return new NamePattern1_Group(this, this, 70, inst);
-			case 71: return new NamePattern2_NameInst2ParserRuleCall(this, this, 71, inst);
+			case 71: return new NamePattern2_Group(this, this, 71, inst);
 			case 72: return new NameInst1_NameAssignment(this, this, 72, inst);
 			case 73: return new NameInst2_ClearAssignment(this, this, 73, inst);
 			case 74: return new Site_Alternatives(this, this, 74, inst);
@@ -113,7 +113,7 @@ protected class ThisRootNode extends RootToken {
 			case 79: return new SitePattern1_Group(this, this, 79, inst);
 			case 80: return new SitePattern2_Group(this, this, 80, inst);
 			case 81: return new SitePattern3_Group(this, this, 81, inst);
-			case 82: return new SitePattern4_SiteInst4ParserRuleCall(this, this, 82, inst);
+			case 82: return new SitePattern4_Group(this, this, 82, inst);
 			case 83: return new SiteInst1_NameAssignment(this, this, 83, inst);
 			case 84: return new SiteInst2_Alternatives(this, this, 84, inst);
 			case 85: return new SiteInst3_GemsAssignment(this, this, 85, inst);
@@ -124,7 +124,7 @@ protected class ThisRootNode extends RootToken {
 			case 90: return new NationMods_Alternatives(this, this, 90, inst);
 			case 91: return new NationPattern1_Group(this, this, 91, inst);
 			case 92: return new NationPattern2_Group(this, this, 92, inst);
-			case 93: return new NationPattern3_NationInst3ParserRuleCall(this, this, 93, inst);
+			case 93: return new NationPattern3_Group(this, this, 93, inst);
 			case 94: return new NationPattern4_Group(this, this, 94, inst);
 			case 95: return new NationPattern5_Group(this, this, 95, inst);
 			case 96: return new NationInst1_Alternatives(this, this, 96, inst);
@@ -141,19 +141,19 @@ protected class ThisRootNode extends RootToken {
 /************ begin Rule Dom3Mod ****************
  *
  * Dom3Mod:
- * 	("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=VersionNum)?
- * 	& ("#domversion" domversion=VersionNum)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
- * 	("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres" unresthalfres=INT)? &
- * 	("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents" turmoilevents=INT)? &
- * 	("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
- * 	("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome" coldincome=INT)? &
- * 	("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)? &
- * 	("#researchscale" researchscale=INT)? & "#end"?) elements+=AbstractElement*;
+ * 	("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version"
+ * 	version=DecimalValue)? & ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult"
+ * 	resourcemult=INT)? & ("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres"
+ * 	unresthalfres=INT)? & ("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents"
+ * 	turmoilevents=INT)? & ("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath"
+ * 	deathdeath=INT)? & ("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome"
+ * 	coldincome=INT)? & ("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)?
+ * 	& ("#researchscale" researchscale=INT)? & "#end"?) elements+=AbstractElement*;
  *
  **/
 
-// ("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=VersionNum)? &
-// ("#domversion" domversion=VersionNum)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
+// ("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=DecimalValue)?
+// & ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
 // ("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres" unresthalfres=INT)? &
 // ("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents" turmoilevents=INT)? &
 // ("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
@@ -189,8 +189,8 @@ protected class Dom3Mod_Group extends GroupToken {
 
 }
 
-// "#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=VersionNum)? &
-// ("#domversion" domversion=VersionNum)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
+// "#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=DecimalValue)?
+// & ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
 // ("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres" unresthalfres=INT)? &
 // ("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents" turmoilevents=INT)? &
 // ("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
@@ -477,7 +477,7 @@ protected class Dom3Mod_IconAssignment_0_2_1 extends AssignmentToken  {
 }
 
 
-// ("#version" version=VersionNum)?
+// ("#version" version=DecimalValue)?
 protected class Dom3Mod_Group_0_3 extends GroupToken {
 	
 	public Dom3Mod_Group_0_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -523,7 +523,7 @@ protected class Dom3Mod_VersionKeyword_0_3_0 extends KeywordToken  {
 
 }
 
-// version=VersionNum
+// version=DecimalValue
 protected class Dom3Mod_VersionAssignment_0_3_1 extends AssignmentToken  {
 	
 	public Dom3Mod_VersionAssignment_0_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -547,9 +547,9 @@ protected class Dom3Mod_VersionAssignment_0_3_1 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("version",false)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("version");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getDom3ModAccess().getVersionVersionNumParserRuleCall_0_3_1_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getDom3ModAccess().getVersionDecimalValueParserRuleCall_0_3_1_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getDom3ModAccess().getVersionVersionNumParserRuleCall_0_3_1_0();
+			element = grammarAccess.getDom3ModAccess().getVersionDecimalValueParserRuleCall_0_3_1_0();
 			return obj;
 		}
 		return null;
@@ -558,7 +558,7 @@ protected class Dom3Mod_VersionAssignment_0_3_1 extends AssignmentToken  {
 }
 
 
-// ("#domversion" domversion=VersionNum)?
+// ("#domversion" domversion=DecimalValue)?
 protected class Dom3Mod_Group_0_4 extends GroupToken {
 	
 	public Dom3Mod_Group_0_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -605,7 +605,7 @@ protected class Dom3Mod_DomversionKeyword_0_4_0 extends KeywordToken  {
 
 }
 
-// domversion=VersionNum
+// domversion=DecimalValue
 protected class Dom3Mod_DomversionAssignment_0_4_1 extends AssignmentToken  {
 	
 	public Dom3Mod_DomversionAssignment_0_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -629,9 +629,9 @@ protected class Dom3Mod_DomversionAssignment_0_4_1 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("domversion",false)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("domversion");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getDom3ModAccess().getDomversionVersionNumParserRuleCall_0_4_1_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getDom3ModAccess().getDomversionDecimalValueParserRuleCall_0_4_1_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getDom3ModAccess().getDomversionVersionNumParserRuleCall_0_4_1_0();
+			element = grammarAccess.getDom3ModAccess().getDomversionDecimalValueParserRuleCall_0_4_1_0();
 			return obj;
 		}
 		return null;
@@ -2707,7 +2707,6 @@ protected class AbstractElement_NationParserRuleCall_7 extends RuleCallToken {
 /************ end Rule AbstractElement ****************/
 
 
-
 /************ begin Rule Armor ****************
  *
  * / ************** / / * Armor Mods * / / ************** / Armor:
@@ -2863,11 +2862,11 @@ protected class Armor_NewArmorParserRuleCall_2 extends RuleCallToken {
 /************ begin Rule SelectArmorById ****************
  *
  * SelectArmorById:
- * 	"#selectarmor" value=INT mods+=ArmorMods* "#end";
+ * 	"#selectarmor" value=INT FREE_FORM_COMMENT* mods+=ArmorMods* "#end";
  *
  **/
 
-// "#selectarmor" value=INT mods+=ArmorMods* "#end"
+// "#selectarmor" value=INT FREE_FORM_COMMENT* mods+=ArmorMods* "#end"
 protected class SelectArmorById_Group extends GroupToken {
 	
 	public SelectArmorById_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2882,7 +2881,7 @@ protected class SelectArmorById_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectArmorById_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectArmorById_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2952,15 +2951,15 @@ protected class SelectArmorById_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=ArmorMods*
-protected class SelectArmorById_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectArmorById_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectArmorById_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectArmorById_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectArmorByIdAccess().getModsAssignment_2();
+		return grammarAccess.getSelectArmorByIdAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -2979,7 +2978,7 @@ protected class SelectArmorById_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getArmorModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectArmorByIdAccess().getModsArmorModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectArmorByIdAccess().getModsArmorModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -2991,7 +2990,7 @@ protected class SelectArmorById_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectArmorById_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectArmorById_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectArmorById_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -2999,21 +2998,21 @@ protected class SelectArmorById_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectArmorById_EndKeyword_3 extends KeywordToken  {
+protected class SelectArmorById_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectArmorById_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectArmorById_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectArmorByIdAccess().getEndKeyword_3();
+		return grammarAccess.getSelectArmorByIdAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectArmorById_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectArmorById_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectArmorById_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -3028,11 +3027,11 @@ protected class SelectArmorById_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule SelectArmorByName ****************
  *
  * SelectArmorByName:
- * 	"#selectarmor" value=STRING mods+=ArmorMods* "#end";
+ * 	"#selectarmor" value=STRING FREE_FORM_COMMENT* mods+=ArmorMods* "#end";
  *
  **/
 
-// "#selectarmor" value=STRING mods+=ArmorMods* "#end"
+// "#selectarmor" value=STRING FREE_FORM_COMMENT* mods+=ArmorMods* "#end"
 protected class SelectArmorByName_Group extends GroupToken {
 	
 	public SelectArmorByName_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3047,7 +3046,7 @@ protected class SelectArmorByName_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectArmorByName_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectArmorByName_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -3117,15 +3116,15 @@ protected class SelectArmorByName_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=ArmorMods*
-protected class SelectArmorByName_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectArmorByName_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectArmorByName_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectArmorByName_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectArmorByNameAccess().getModsAssignment_2();
+		return grammarAccess.getSelectArmorByNameAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -3144,7 +3143,7 @@ protected class SelectArmorByName_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getArmorModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectArmorByNameAccess().getModsArmorModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectArmorByNameAccess().getModsArmorModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -3156,7 +3155,7 @@ protected class SelectArmorByName_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectArmorByName_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectArmorByName_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectArmorByName_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -3164,21 +3163,21 @@ protected class SelectArmorByName_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectArmorByName_EndKeyword_3 extends KeywordToken  {
+protected class SelectArmorByName_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectArmorByName_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectArmorByName_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectArmorByNameAccess().getEndKeyword_3();
+		return grammarAccess.getSelectArmorByNameAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectArmorByName_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectArmorByName_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectArmorByName_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -3193,11 +3192,11 @@ protected class SelectArmorByName_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule NewArmor ****************
  *
  * NewArmor:
- * 	"#newarmor" value=INT mods+=ArmorMods* "#end";
+ * 	"#newarmor" value=INT FREE_FORM_COMMENT* mods+=ArmorMods* "#end";
  *
  **/
 
-// "#newarmor" value=INT mods+=ArmorMods* "#end"
+// "#newarmor" value=INT FREE_FORM_COMMENT* mods+=ArmorMods* "#end"
 protected class NewArmor_Group extends GroupToken {
 	
 	public NewArmor_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3212,7 +3211,7 @@ protected class NewArmor_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewArmor_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewArmor_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -3282,15 +3281,15 @@ protected class NewArmor_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=ArmorMods*
-protected class NewArmor_ModsAssignment_2 extends AssignmentToken  {
+protected class NewArmor_ModsAssignment_3 extends AssignmentToken  {
 	
-	public NewArmor_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewArmor_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getNewArmorAccess().getModsAssignment_2();
+		return grammarAccess.getNewArmorAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -3309,7 +3308,7 @@ protected class NewArmor_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getArmorModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getNewArmorAccess().getModsArmorModsParserRuleCall_2_0(); 
+				element = grammarAccess.getNewArmorAccess().getModsArmorModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -3321,7 +3320,7 @@ protected class NewArmor_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new NewArmor_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new NewArmor_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new NewArmor_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -3329,21 +3328,21 @@ protected class NewArmor_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class NewArmor_EndKeyword_3 extends KeywordToken  {
+protected class NewArmor_EndKeyword_4 extends KeywordToken  {
 	
-	public NewArmor_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewArmor_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getNewArmorAccess().getEndKeyword_3();
+		return grammarAccess.getNewArmorAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewArmor_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewArmor_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new NewArmor_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -3472,11 +3471,11 @@ protected class ArmorMods_ArmorPattern2ParserRuleCall_1 extends RuleCallToken {
 /************ begin Rule ArmorPattern1 ****************
  *
  * ArmorPattern1:
- * 	ArmorInst1 value=STRING;
+ * 	ArmorInst1 value=STRING FREE_FORM_COMMENT*;
  *
  **/
 
-// ArmorInst1 value=STRING
+// ArmorInst1 value=STRING FREE_FORM_COMMENT*
 protected class ArmorPattern1_Group extends GroupToken {
 	
 	public ArmorPattern1_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3580,11 +3579,11 @@ protected class ArmorPattern1_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule ArmorPattern2 ****************
  *
  * ArmorPattern2:
- * 	ArmorInst2 value=INT;
+ * 	ArmorInst2 value=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// ArmorInst2 value=INT
+// ArmorInst2 value=INT FREE_FORM_COMMENT*
 protected class ArmorPattern2_Group extends GroupToken {
 	
 	public ArmorPattern2_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4094,11 +4093,11 @@ protected class Weapon_NewWeaponParserRuleCall_2 extends RuleCallToken {
 /************ begin Rule SelectWeaponById ****************
  *
  * SelectWeaponById:
- * 	"#selectweapon" value=INT mods+=WeaponMods* "#end";
+ * 	"#selectweapon" value=INT FREE_FORM_COMMENT* mods+=WeaponMods* "#end";
  *
  **/
 
-// "#selectweapon" value=INT mods+=WeaponMods* "#end"
+// "#selectweapon" value=INT FREE_FORM_COMMENT* mods+=WeaponMods* "#end"
 protected class SelectWeaponById_Group extends GroupToken {
 	
 	public SelectWeaponById_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4113,7 +4112,7 @@ protected class SelectWeaponById_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectWeaponById_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectWeaponById_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4183,15 +4182,15 @@ protected class SelectWeaponById_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=WeaponMods*
-protected class SelectWeaponById_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectWeaponById_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectWeaponById_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectWeaponById_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectWeaponByIdAccess().getModsAssignment_2();
+		return grammarAccess.getSelectWeaponByIdAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -4210,7 +4209,7 @@ protected class SelectWeaponById_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getWeaponModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectWeaponByIdAccess().getModsWeaponModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectWeaponByIdAccess().getModsWeaponModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -4222,7 +4221,7 @@ protected class SelectWeaponById_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectWeaponById_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectWeaponById_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectWeaponById_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -4230,21 +4229,21 @@ protected class SelectWeaponById_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectWeaponById_EndKeyword_3 extends KeywordToken  {
+protected class SelectWeaponById_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectWeaponById_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectWeaponById_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectWeaponByIdAccess().getEndKeyword_3();
+		return grammarAccess.getSelectWeaponByIdAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectWeaponById_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectWeaponById_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectWeaponById_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -4259,11 +4258,11 @@ protected class SelectWeaponById_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule SelectWeaponByName ****************
  *
  * SelectWeaponByName:
- * 	"#selectweapon" value=STRING mods+=WeaponMods* "#end";
+ * 	"#selectweapon" value=STRING FREE_FORM_COMMENT* mods+=WeaponMods* "#end";
  *
  **/
 
-// "#selectweapon" value=STRING mods+=WeaponMods* "#end"
+// "#selectweapon" value=STRING FREE_FORM_COMMENT* mods+=WeaponMods* "#end"
 protected class SelectWeaponByName_Group extends GroupToken {
 	
 	public SelectWeaponByName_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4278,7 +4277,7 @@ protected class SelectWeaponByName_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectWeaponByName_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectWeaponByName_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4348,15 +4347,15 @@ protected class SelectWeaponByName_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=WeaponMods*
-protected class SelectWeaponByName_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectWeaponByName_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectWeaponByName_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectWeaponByName_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectWeaponByNameAccess().getModsAssignment_2();
+		return grammarAccess.getSelectWeaponByNameAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -4375,7 +4374,7 @@ protected class SelectWeaponByName_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getWeaponModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectWeaponByNameAccess().getModsWeaponModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectWeaponByNameAccess().getModsWeaponModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -4387,7 +4386,7 @@ protected class SelectWeaponByName_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectWeaponByName_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectWeaponByName_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectWeaponByName_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -4395,21 +4394,21 @@ protected class SelectWeaponByName_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectWeaponByName_EndKeyword_3 extends KeywordToken  {
+protected class SelectWeaponByName_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectWeaponByName_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectWeaponByName_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectWeaponByNameAccess().getEndKeyword_3();
+		return grammarAccess.getSelectWeaponByNameAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectWeaponByName_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectWeaponByName_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectWeaponByName_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -4424,11 +4423,11 @@ protected class SelectWeaponByName_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule NewWeapon ****************
  *
  * NewWeapon:
- * 	"#newweapon" value=INT mods+=WeaponMods* "#end";
+ * 	"#newweapon" value=INT FREE_FORM_COMMENT* mods+=WeaponMods* "#end";
  *
  **/
 
-// "#newweapon" value=INT mods+=WeaponMods* "#end"
+// "#newweapon" value=INT FREE_FORM_COMMENT* mods+=WeaponMods* "#end"
 protected class NewWeapon_Group extends GroupToken {
 	
 	public NewWeapon_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4443,7 +4442,7 @@ protected class NewWeapon_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewWeapon_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewWeapon_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4513,15 +4512,15 @@ protected class NewWeapon_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=WeaponMods*
-protected class NewWeapon_ModsAssignment_2 extends AssignmentToken  {
+protected class NewWeapon_ModsAssignment_3 extends AssignmentToken  {
 	
-	public NewWeapon_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewWeapon_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getNewWeaponAccess().getModsAssignment_2();
+		return grammarAccess.getNewWeaponAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -4540,7 +4539,7 @@ protected class NewWeapon_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getWeaponModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getNewWeaponAccess().getModsWeaponModsParserRuleCall_2_0(); 
+				element = grammarAccess.getNewWeaponAccess().getModsWeaponModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -4552,7 +4551,7 @@ protected class NewWeapon_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new NewWeapon_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new NewWeapon_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new NewWeapon_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -4560,21 +4559,21 @@ protected class NewWeapon_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class NewWeapon_EndKeyword_3 extends KeywordToken  {
+protected class NewWeapon_EndKeyword_4 extends KeywordToken  {
 	
-	public NewWeapon_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewWeapon_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getNewWeaponAccess().getEndKeyword_3();
+		return grammarAccess.getNewWeaponAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewWeapon_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewWeapon_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new NewWeapon_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -4751,7 +4750,7 @@ protected class WeaponMods_WeaponPattern4ParserRuleCall_3 extends RuleCallToken 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new WeaponPattern4_WeaponInst4ParserRuleCall(this, this, 0, inst);
+			case 0: return new WeaponPattern4_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4760,7 +4759,7 @@ protected class WeaponMods_WeaponPattern4ParserRuleCall_3 extends RuleCallToken 
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getWeaponInst4Rule().getType().getClassifier())
 			return null;
-		if(checkForRecursion(WeaponPattern4_WeaponInst4ParserRuleCall.class, eObjectConsumer)) return null;
+		if(checkForRecursion(WeaponPattern4_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -4779,11 +4778,11 @@ protected class WeaponMods_WeaponPattern4ParserRuleCall_3 extends RuleCallToken 
 /************ begin Rule WeaponPattern1 ****************
  *
  * WeaponPattern1:
- * 	WeaponInst1 value=STRING;
+ * 	WeaponInst1 value=STRING FREE_FORM_COMMENT*;
  *
  **/
 
-// WeaponInst1 value=STRING
+// WeaponInst1 value=STRING FREE_FORM_COMMENT*
 protected class WeaponPattern1_Group extends GroupToken {
 	
 	public WeaponPattern1_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4887,11 +4886,11 @@ protected class WeaponPattern1_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule WeaponPattern2 ****************
  *
  * WeaponPattern2:
- * 	WeaponInst2 value=INT;
+ * 	WeaponInst2 value=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// WeaponInst2 value=INT
+// WeaponInst2 value=INT FREE_FORM_COMMENT*
 protected class WeaponPattern2_Group extends GroupToken {
 	
 	public WeaponPattern2_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4995,11 +4994,11 @@ protected class WeaponPattern2_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule WeaponPattern3 ****************
  *
  * WeaponPattern3:
- * 	WeaponInst3 value1=INT value2=INT;
+ * 	WeaponInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// WeaponInst3 value1=INT value2=INT
+// WeaponInst3 value1=INT value2=INT FREE_FORM_COMMENT*
 protected class WeaponPattern3_Group extends GroupToken {
 	
 	public WeaponPattern3_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5137,20 +5136,49 @@ protected class WeaponPattern3_Value2Assignment_2 extends AssignmentToken  {
 /************ begin Rule WeaponPattern4 ****************
  *
  * WeaponPattern4:
- * 	WeaponInst4;
+ * 	WeaponInst4 FREE_FORM_COMMENT*;
  *
  **/
 
-// WeaponInst4
-protected class WeaponPattern4_WeaponInst4ParserRuleCall extends RuleCallToken {
+// WeaponInst4 FREE_FORM_COMMENT*
+protected class WeaponPattern4_Group extends GroupToken {
 	
-	public WeaponPattern4_WeaponInst4ParserRuleCall(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public WeaponPattern4_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getWeaponPattern4Access().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new WeaponPattern4_WeaponInst4ParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getWeaponInst4Rule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// WeaponInst4
+protected class WeaponPattern4_WeaponInst4ParserRuleCall_0 extends RuleCallToken {
+	
+	public WeaponPattern4_WeaponInst4ParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getWeaponPattern4Access().getWeaponInst4ParserRuleCall();
+		return grammarAccess.getWeaponPattern4Access().getWeaponInst4ParserRuleCall_0();
 	}
 
     @Override
@@ -5163,8 +5191,6 @@ protected class WeaponPattern4_WeaponInst4ParserRuleCall extends RuleCallToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getWeaponInst4Rule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(WeaponInst4_Alternatives.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -5176,6 +5202,7 @@ protected class WeaponPattern4_WeaponInst4ParserRuleCall extends RuleCallToken {
 		}	
 	}	
 }
+
 
 /************ end Rule WeaponPattern4 ****************/
 
@@ -6947,11 +6974,11 @@ protected class Monster_NewMonsterParserRuleCall_2 extends RuleCallToken {
 /************ begin Rule SelectMonsterById ****************
  *
  * SelectMonsterById:
- * 	"#selectmonster" value=INT mods+=MonsterMods* "#end";
+ * 	"#selectmonster" value=INT FREE_FORM_COMMENT* mods+=MonsterMods* "#end";
  *
  **/
 
-// "#selectmonster" value=INT mods+=MonsterMods* "#end"
+// "#selectmonster" value=INT FREE_FORM_COMMENT* mods+=MonsterMods* "#end"
 protected class SelectMonsterById_Group extends GroupToken {
 	
 	public SelectMonsterById_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6966,7 +6993,7 @@ protected class SelectMonsterById_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectMonsterById_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectMonsterById_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -7036,15 +7063,15 @@ protected class SelectMonsterById_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=MonsterMods*
-protected class SelectMonsterById_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectMonsterById_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectMonsterById_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectMonsterById_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectMonsterByIdAccess().getModsAssignment_2();
+		return grammarAccess.getSelectMonsterByIdAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -7063,7 +7090,7 @@ protected class SelectMonsterById_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getMonsterModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectMonsterByIdAccess().getModsMonsterModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectMonsterByIdAccess().getModsMonsterModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -7075,7 +7102,7 @@ protected class SelectMonsterById_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectMonsterById_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectMonsterById_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectMonsterById_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -7083,21 +7110,21 @@ protected class SelectMonsterById_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectMonsterById_EndKeyword_3 extends KeywordToken  {
+protected class SelectMonsterById_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectMonsterById_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectMonsterById_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectMonsterByIdAccess().getEndKeyword_3();
+		return grammarAccess.getSelectMonsterByIdAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectMonsterById_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectMonsterById_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectMonsterById_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -7112,11 +7139,11 @@ protected class SelectMonsterById_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule SelectMonsterByName ****************
  *
  * SelectMonsterByName:
- * 	"#selectmonster" value=STRING mods+=MonsterMods* "#end";
+ * 	"#selectmonster" value=STRING FREE_FORM_COMMENT* mods+=MonsterMods* "#end";
  *
  **/
 
-// "#selectmonster" value=STRING mods+=MonsterMods* "#end"
+// "#selectmonster" value=STRING FREE_FORM_COMMENT* mods+=MonsterMods* "#end"
 protected class SelectMonsterByName_Group extends GroupToken {
 	
 	public SelectMonsterByName_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7131,7 +7158,7 @@ protected class SelectMonsterByName_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectMonsterByName_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectMonsterByName_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -7201,15 +7228,15 @@ protected class SelectMonsterByName_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=MonsterMods*
-protected class SelectMonsterByName_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectMonsterByName_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectMonsterByName_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectMonsterByName_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectMonsterByNameAccess().getModsAssignment_2();
+		return grammarAccess.getSelectMonsterByNameAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -7228,7 +7255,7 @@ protected class SelectMonsterByName_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getMonsterModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectMonsterByNameAccess().getModsMonsterModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectMonsterByNameAccess().getModsMonsterModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -7240,7 +7267,7 @@ protected class SelectMonsterByName_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectMonsterByName_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectMonsterByName_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectMonsterByName_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -7248,21 +7275,21 @@ protected class SelectMonsterByName_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectMonsterByName_EndKeyword_3 extends KeywordToken  {
+protected class SelectMonsterByName_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectMonsterByName_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectMonsterByName_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectMonsterByNameAccess().getEndKeyword_3();
+		return grammarAccess.getSelectMonsterByNameAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectMonsterByName_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectMonsterByName_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectMonsterByName_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -7277,11 +7304,11 @@ protected class SelectMonsterByName_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule NewMonster ****************
  *
  * NewMonster:
- * 	"#newmonster" value=INT mods+=MonsterMods* "#end";
+ * 	"#newmonster" value=INT FREE_FORM_COMMENT* mods+=MonsterMods* "#end";
  *
  **/
 
-// "#newmonster" value=INT mods+=MonsterMods* "#end"
+// "#newmonster" value=INT FREE_FORM_COMMENT* mods+=MonsterMods* "#end"
 protected class NewMonster_Group extends GroupToken {
 	
 	public NewMonster_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7296,7 +7323,7 @@ protected class NewMonster_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewMonster_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewMonster_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -7366,15 +7393,15 @@ protected class NewMonster_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=MonsterMods*
-protected class NewMonster_ModsAssignment_2 extends AssignmentToken  {
+protected class NewMonster_ModsAssignment_3 extends AssignmentToken  {
 	
-	public NewMonster_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewMonster_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getNewMonsterAccess().getModsAssignment_2();
+		return grammarAccess.getNewMonsterAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -7393,7 +7420,7 @@ protected class NewMonster_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getMonsterModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getNewMonsterAccess().getModsMonsterModsParserRuleCall_2_0(); 
+				element = grammarAccess.getNewMonsterAccess().getModsMonsterModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -7405,7 +7432,7 @@ protected class NewMonster_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new NewMonster_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new NewMonster_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new NewMonster_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -7413,21 +7440,21 @@ protected class NewMonster_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class NewMonster_EndKeyword_3 extends KeywordToken  {
+protected class NewMonster_EndKeyword_4 extends KeywordToken  {
 	
-	public NewMonster_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewMonster_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getNewMonsterAccess().getEndKeyword_3();
+		return grammarAccess.getNewMonsterAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewMonster_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewMonster_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new NewMonster_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -7608,7 +7635,7 @@ protected class MonsterMods_MonsterPattern4ParserRuleCall_3 extends RuleCallToke
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MonsterPattern4_MonsterInst4ParserRuleCall(this, this, 0, inst);
+			case 0: return new MonsterPattern4_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -7617,7 +7644,7 @@ protected class MonsterMods_MonsterPattern4ParserRuleCall_3 extends RuleCallToke
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getMonsterInst4Rule().getType().getClassifier())
 			return null;
-		if(checkForRecursion(MonsterPattern4_MonsterInst4ParserRuleCall.class, eObjectConsumer)) return null;
+		if(checkForRecursion(MonsterPattern4_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -7708,11 +7735,11 @@ protected class MonsterMods_MonsterPattern6ParserRuleCall_5 extends RuleCallToke
 /************ begin Rule MonsterPattern1 ****************
  *
  * MonsterPattern1:
- * 	MonsterInst1 value=STRING;
+ * 	MonsterInst1 value=STRING FREE_FORM_COMMENT*;
  *
  **/
 
-// MonsterInst1 value=STRING
+// MonsterInst1 value=STRING FREE_FORM_COMMENT*
 protected class MonsterPattern1_Group extends GroupToken {
 	
 	public MonsterPattern1_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7816,11 +7843,11 @@ protected class MonsterPattern1_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule MonsterPattern2 ****************
  *
  * MonsterPattern2:
- * 	MonsterInst2 value=INT;
+ * 	MonsterInst2 value=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// MonsterInst2 value=INT
+// MonsterInst2 value=INT FREE_FORM_COMMENT*
 protected class MonsterPattern2_Group extends GroupToken {
 	
 	public MonsterPattern2_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7924,11 +7951,11 @@ protected class MonsterPattern2_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule MonsterPattern3 ****************
  *
  * MonsterPattern3:
- * 	MonsterInst3 value1=INT value2=INT;
+ * 	MonsterInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// MonsterInst3 value1=INT value2=INT
+// MonsterInst3 value1=INT value2=INT FREE_FORM_COMMENT*
 protected class MonsterPattern3_Group extends GroupToken {
 	
 	public MonsterPattern3_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8066,20 +8093,49 @@ protected class MonsterPattern3_Value2Assignment_2 extends AssignmentToken  {
 /************ begin Rule MonsterPattern4 ****************
  *
  * MonsterPattern4:
- * 	MonsterInst4;
+ * 	MonsterInst4 FREE_FORM_COMMENT*;
  *
  **/
 
-// MonsterInst4
-protected class MonsterPattern4_MonsterInst4ParserRuleCall extends RuleCallToken {
+// MonsterInst4 FREE_FORM_COMMENT*
+protected class MonsterPattern4_Group extends GroupToken {
 	
-	public MonsterPattern4_MonsterInst4ParserRuleCall(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MonsterPattern4_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getMonsterPattern4Access().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MonsterPattern4_MonsterInst4ParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMonsterInst4Rule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// MonsterInst4
+protected class MonsterPattern4_MonsterInst4ParserRuleCall_0 extends RuleCallToken {
+	
+	public MonsterPattern4_MonsterInst4ParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getMonsterPattern4Access().getMonsterInst4ParserRuleCall();
+		return grammarAccess.getMonsterPattern4Access().getMonsterInst4ParserRuleCall_0();
 	}
 
     @Override
@@ -8092,8 +8148,6 @@ protected class MonsterPattern4_MonsterInst4ParserRuleCall extends RuleCallToken
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getMonsterInst4Rule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(MonsterInst4_Alternatives.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -8106,17 +8160,18 @@ protected class MonsterPattern4_MonsterInst4ParserRuleCall extends RuleCallToken
 	}	
 }
 
+
 /************ end Rule MonsterPattern4 ****************/
 
 
 /************ begin Rule MonsterPattern5 ****************
  *
  * MonsterPattern5:
- * 	MonsterInst5 (value1=STRING | value2=INT);
+ * 	MonsterInst5 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
  *
  **/
 
-// MonsterInst5 (value1=STRING | value2=INT)
+// MonsterInst5 (value1=STRING | value2=INT) FREE_FORM_COMMENT*
 protected class MonsterPattern5_Group extends GroupToken {
 	
 	public MonsterPattern5_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8278,11 +8333,11 @@ protected class MonsterPattern5_Value2Assignment_1_1 extends AssignmentToken  {
 /************ begin Rule MonsterPattern6 ****************
  *
  * MonsterPattern6:
- * 	MonsterInst6 value=INT?;
+ * 	MonsterInst6 value=INT? FREE_FORM_COMMENT*;
  *
  **/
 
-// MonsterInst6 value=INT?
+// MonsterInst6 value=INT? FREE_FORM_COMMENT*
 protected class MonsterPattern6_Group extends GroupToken {
 	
 	public MonsterPattern6_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14591,11 +14646,11 @@ protected class Spell_NewSpellParserRuleCall_2 extends RuleCallToken {
 /************ begin Rule SelectSpellById ****************
  *
  * SelectSpellById:
- * 	"#selectspell" value=INT mods+=SpellMods* "#end";
+ * 	"#selectspell" value=INT FREE_FORM_COMMENT* mods+=SpellMods* "#end";
  *
  **/
 
-// "#selectspell" value=INT mods+=SpellMods* "#end"
+// "#selectspell" value=INT FREE_FORM_COMMENT* mods+=SpellMods* "#end"
 protected class SelectSpellById_Group extends GroupToken {
 	
 	public SelectSpellById_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14610,7 +14665,7 @@ protected class SelectSpellById_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectSpellById_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectSpellById_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -14680,15 +14735,15 @@ protected class SelectSpellById_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=SpellMods*
-protected class SelectSpellById_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectSpellById_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectSpellById_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectSpellById_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectSpellByIdAccess().getModsAssignment_2();
+		return grammarAccess.getSelectSpellByIdAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -14707,7 +14762,7 @@ protected class SelectSpellById_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getSpellModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectSpellByIdAccess().getModsSpellModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectSpellByIdAccess().getModsSpellModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -14719,7 +14774,7 @@ protected class SelectSpellById_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectSpellById_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectSpellById_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectSpellById_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -14727,21 +14782,21 @@ protected class SelectSpellById_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectSpellById_EndKeyword_3 extends KeywordToken  {
+protected class SelectSpellById_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectSpellById_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectSpellById_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectSpellByIdAccess().getEndKeyword_3();
+		return grammarAccess.getSelectSpellByIdAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectSpellById_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectSpellById_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectSpellById_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -14756,11 +14811,11 @@ protected class SelectSpellById_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule SelectSpellByName ****************
  *
  * SelectSpellByName:
- * 	"#selectspell" value=STRING mods+=SpellMods* "#end";
+ * 	"#selectspell" value=STRING FREE_FORM_COMMENT* mods+=SpellMods* "#end";
  *
  **/
 
-// "#selectspell" value=STRING mods+=SpellMods* "#end"
+// "#selectspell" value=STRING FREE_FORM_COMMENT* mods+=SpellMods* "#end"
 protected class SelectSpellByName_Group extends GroupToken {
 	
 	public SelectSpellByName_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14775,7 +14830,7 @@ protected class SelectSpellByName_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectSpellByName_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectSpellByName_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -14845,15 +14900,15 @@ protected class SelectSpellByName_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=SpellMods*
-protected class SelectSpellByName_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectSpellByName_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectSpellByName_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectSpellByName_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectSpellByNameAccess().getModsAssignment_2();
+		return grammarAccess.getSelectSpellByNameAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -14872,7 +14927,7 @@ protected class SelectSpellByName_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getSpellModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectSpellByNameAccess().getModsSpellModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectSpellByNameAccess().getModsSpellModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -14884,7 +14939,7 @@ protected class SelectSpellByName_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectSpellByName_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectSpellByName_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectSpellByName_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -14892,21 +14947,21 @@ protected class SelectSpellByName_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectSpellByName_EndKeyword_3 extends KeywordToken  {
+protected class SelectSpellByName_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectSpellByName_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectSpellByName_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectSpellByNameAccess().getEndKeyword_3();
+		return grammarAccess.getSelectSpellByNameAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectSpellByName_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectSpellByName_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectSpellByName_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -14921,11 +14976,11 @@ protected class SelectSpellByName_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule NewSpell ****************
  *
  * NewSpell:
- * 	"#newspell" mods+=SpellMods* "#end";
+ * 	"#newspell" FREE_FORM_COMMENT* mods+=SpellMods* "#end";
  *
  **/
 
-// "#newspell" mods+=SpellMods* "#end"
+// "#newspell" FREE_FORM_COMMENT* mods+=SpellMods* "#end"
 protected class NewSpell_Group extends GroupToken {
 	
 	public NewSpell_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14940,7 +14995,7 @@ protected class NewSpell_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewSpell_EndKeyword_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewSpell_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -14976,15 +15031,15 @@ protected class NewSpell_NewspellKeyword_0 extends KeywordToken  {
 }
 
 // mods+=SpellMods*
-protected class NewSpell_ModsAssignment_1 extends AssignmentToken  {
+protected class NewSpell_ModsAssignment_2 extends AssignmentToken  {
 	
-	public NewSpell_ModsAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewSpell_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getNewSpellAccess().getModsAssignment_1();
+		return grammarAccess.getNewSpellAccess().getModsAssignment_2();
 	}
 
     @Override
@@ -15003,7 +15058,7 @@ protected class NewSpell_ModsAssignment_1 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getSpellModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getNewSpellAccess().getModsSpellModsParserRuleCall_1_0(); 
+				element = grammarAccess.getNewSpellAccess().getModsSpellModsParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -15015,7 +15070,7 @@ protected class NewSpell_ModsAssignment_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new NewSpell_ModsAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new NewSpell_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new NewSpell_NewspellKeyword_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -15023,21 +15078,21 @@ protected class NewSpell_ModsAssignment_1 extends AssignmentToken  {
 }
 
 // "#end"
-protected class NewSpell_EndKeyword_2 extends KeywordToken  {
+protected class NewSpell_EndKeyword_3 extends KeywordToken  {
 	
-	public NewSpell_EndKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewSpell_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getNewSpellAccess().getEndKeyword_2();
+		return grammarAccess.getNewSpellAccess().getEndKeyword_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewSpell_ModsAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewSpell_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new NewSpell_NewspellKeyword_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -15216,7 +15271,7 @@ protected class SpellMods_SpellPattern4ParserRuleCall_3 extends RuleCallToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SpellPattern4_SpellInst4ParserRuleCall(this, this, 0, inst);
+			case 0: return new SpellPattern4_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -15225,7 +15280,7 @@ protected class SpellMods_SpellPattern4ParserRuleCall_3 extends RuleCallToken {
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getSpellInst4Rule().getType().getClassifier())
 			return null;
-		if(checkForRecursion(SpellPattern4_SpellInst4ParserRuleCall.class, eObjectConsumer)) return null;
+		if(checkForRecursion(SpellPattern4_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -15280,11 +15335,11 @@ protected class SpellMods_SpellPattern5ParserRuleCall_4 extends RuleCallToken {
 /************ begin Rule SpellPattern1 ****************
  *
  * SpellPattern1:
- * 	SpellInst1 value=STRING;
+ * 	SpellInst1 value=STRING FREE_FORM_COMMENT*;
  *
  **/
 
-// SpellInst1 value=STRING
+// SpellInst1 value=STRING FREE_FORM_COMMENT*
 protected class SpellPattern1_Group extends GroupToken {
 	
 	public SpellPattern1_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15388,11 +15443,11 @@ protected class SpellPattern1_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule SpellPattern2 ****************
  *
  * SpellPattern2:
- * 	SpellInst2 value=INT;
+ * 	SpellInst2 value=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// SpellInst2 value=INT
+// SpellInst2 value=INT FREE_FORM_COMMENT*
 protected class SpellPattern2_Group extends GroupToken {
 	
 	public SpellPattern2_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15496,11 +15551,11 @@ protected class SpellPattern2_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule SpellPattern3 ****************
  *
  * SpellPattern3:
- * 	SpellInst3 value1=INT value2=INT;
+ * 	SpellInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// SpellInst3 value1=INT value2=INT
+// SpellInst3 value1=INT value2=INT FREE_FORM_COMMENT*
 protected class SpellPattern3_Group extends GroupToken {
 	
 	public SpellPattern3_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15638,20 +15693,49 @@ protected class SpellPattern3_Value2Assignment_2 extends AssignmentToken  {
 /************ begin Rule SpellPattern4 ****************
  *
  * SpellPattern4:
- * 	SpellInst4;
+ * 	SpellInst4 FREE_FORM_COMMENT*;
  *
  **/
 
-// SpellInst4
-protected class SpellPattern4_SpellInst4ParserRuleCall extends RuleCallToken {
+// SpellInst4 FREE_FORM_COMMENT*
+protected class SpellPattern4_Group extends GroupToken {
 	
-	public SpellPattern4_SpellInst4ParserRuleCall(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SpellPattern4_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getSpellPattern4Access().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new SpellPattern4_SpellInst4ParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getSpellInst4Rule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// SpellInst4
+protected class SpellPattern4_SpellInst4ParserRuleCall_0 extends RuleCallToken {
+	
+	public SpellPattern4_SpellInst4ParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getSpellPattern4Access().getSpellInst4ParserRuleCall();
+		return grammarAccess.getSpellPattern4Access().getSpellInst4ParserRuleCall_0();
 	}
 
     @Override
@@ -15664,8 +15748,6 @@ protected class SpellPattern4_SpellInst4ParserRuleCall extends RuleCallToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getSpellInst4Rule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(SpellInst4_ClearAssignment.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -15678,17 +15760,18 @@ protected class SpellPattern4_SpellInst4ParserRuleCall extends RuleCallToken {
 	}	
 }
 
+
 /************ end Rule SpellPattern4 ****************/
 
 
 /************ begin Rule SpellPattern5 ****************
  *
  * SpellPattern5:
- * 	SpellInst5 (value1=STRING | value2=INT);
+ * 	SpellInst5 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
  *
  **/
 
-// SpellInst5 (value1=STRING | value2=INT)
+// SpellInst5 (value1=STRING | value2=INT) FREE_FORM_COMMENT*
 protected class SpellPattern5_Group extends GroupToken {
 	
 	public SpellPattern5_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16887,11 +16970,11 @@ protected class Item_NewItemParserRuleCall_2 extends RuleCallToken {
 /************ begin Rule SelectItemById ****************
  *
  * SelectItemById:
- * 	"#selectitem" value=INT mods+=ItemMods* "#end";
+ * 	"#selectitem" value=INT FREE_FORM_COMMENT* mods+=ItemMods* "#end";
  *
  **/
 
-// "#selectitem" value=INT mods+=ItemMods* "#end"
+// "#selectitem" value=INT FREE_FORM_COMMENT* mods+=ItemMods* "#end"
 protected class SelectItemById_Group extends GroupToken {
 	
 	public SelectItemById_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16906,7 +16989,7 @@ protected class SelectItemById_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectItemById_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectItemById_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -16976,15 +17059,15 @@ protected class SelectItemById_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=ItemMods*
-protected class SelectItemById_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectItemById_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectItemById_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectItemById_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectItemByIdAccess().getModsAssignment_2();
+		return grammarAccess.getSelectItemByIdAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -17003,7 +17086,7 @@ protected class SelectItemById_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getItemModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectItemByIdAccess().getModsItemModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectItemByIdAccess().getModsItemModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -17015,7 +17098,7 @@ protected class SelectItemById_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectItemById_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectItemById_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectItemById_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -17023,21 +17106,21 @@ protected class SelectItemById_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectItemById_EndKeyword_3 extends KeywordToken  {
+protected class SelectItemById_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectItemById_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectItemById_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectItemByIdAccess().getEndKeyword_3();
+		return grammarAccess.getSelectItemByIdAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectItemById_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectItemById_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectItemById_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -17052,11 +17135,11 @@ protected class SelectItemById_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule SelectItemByName ****************
  *
  * SelectItemByName:
- * 	"#selectitem" value=STRING mods+=ItemMods* "#end";
+ * 	"#selectitem" value=STRING FREE_FORM_COMMENT* mods+=ItemMods* "#end";
  *
  **/
 
-// "#selectitem" value=STRING mods+=ItemMods* "#end"
+// "#selectitem" value=STRING FREE_FORM_COMMENT* mods+=ItemMods* "#end"
 protected class SelectItemByName_Group extends GroupToken {
 	
 	public SelectItemByName_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17071,7 +17154,7 @@ protected class SelectItemByName_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectItemByName_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectItemByName_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -17141,15 +17224,15 @@ protected class SelectItemByName_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=ItemMods*
-protected class SelectItemByName_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectItemByName_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectItemByName_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectItemByName_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectItemByNameAccess().getModsAssignment_2();
+		return grammarAccess.getSelectItemByNameAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -17168,7 +17251,7 @@ protected class SelectItemByName_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getItemModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectItemByNameAccess().getModsItemModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectItemByNameAccess().getModsItemModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -17180,7 +17263,7 @@ protected class SelectItemByName_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectItemByName_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectItemByName_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectItemByName_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -17188,21 +17271,21 @@ protected class SelectItemByName_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectItemByName_EndKeyword_3 extends KeywordToken  {
+protected class SelectItemByName_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectItemByName_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectItemByName_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectItemByNameAccess().getEndKeyword_3();
+		return grammarAccess.getSelectItemByNameAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectItemByName_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectItemByName_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectItemByName_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -17217,11 +17300,11 @@ protected class SelectItemByName_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule NewItem ****************
  *
  * NewItem:
- * 	"#newitem" mods+=ItemMods* "#end";
+ * 	"#newitem" FREE_FORM_COMMENT* mods+=ItemMods* "#end";
  *
  **/
 
-// "#newitem" mods+=ItemMods* "#end"
+// "#newitem" FREE_FORM_COMMENT* mods+=ItemMods* "#end"
 protected class NewItem_Group extends GroupToken {
 	
 	public NewItem_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17236,7 +17319,7 @@ protected class NewItem_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewItem_EndKeyword_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewItem_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -17272,15 +17355,15 @@ protected class NewItem_NewitemKeyword_0 extends KeywordToken  {
 }
 
 // mods+=ItemMods*
-protected class NewItem_ModsAssignment_1 extends AssignmentToken  {
+protected class NewItem_ModsAssignment_2 extends AssignmentToken  {
 	
-	public NewItem_ModsAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewItem_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getNewItemAccess().getModsAssignment_1();
+		return grammarAccess.getNewItemAccess().getModsAssignment_2();
 	}
 
     @Override
@@ -17299,7 +17382,7 @@ protected class NewItem_ModsAssignment_1 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getItemModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getNewItemAccess().getModsItemModsParserRuleCall_1_0(); 
+				element = grammarAccess.getNewItemAccess().getModsItemModsParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -17311,7 +17394,7 @@ protected class NewItem_ModsAssignment_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new NewItem_ModsAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new NewItem_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new NewItem_NewitemKeyword_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -17319,21 +17402,21 @@ protected class NewItem_ModsAssignment_1 extends AssignmentToken  {
 }
 
 // "#end"
-protected class NewItem_EndKeyword_2 extends KeywordToken  {
+protected class NewItem_EndKeyword_3 extends KeywordToken  {
 	
-	public NewItem_EndKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewItem_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getNewItemAccess().getEndKeyword_2();
+		return grammarAccess.getNewItemAccess().getEndKeyword_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewItem_ModsAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewItem_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new NewItem_NewitemKeyword_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -17500,11 +17583,11 @@ protected class ItemMods_ItemPattern3ParserRuleCall_2 extends RuleCallToken {
 /************ begin Rule ItemPattern1 ****************
  *
  * ItemPattern1:
- * 	ItemInst1 value=STRING;
+ * 	ItemInst1 value=STRING FREE_FORM_COMMENT*;
  *
  **/
 
-// ItemInst1 value=STRING
+// ItemInst1 value=STRING FREE_FORM_COMMENT*
 protected class ItemPattern1_Group extends GroupToken {
 	
 	public ItemPattern1_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17608,11 +17691,11 @@ protected class ItemPattern1_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule ItemPattern2 ****************
  *
  * ItemPattern2:
- * 	ItemInst2 value=INT;
+ * 	ItemInst2 value=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// ItemInst2 value=INT
+// ItemInst2 value=INT FREE_FORM_COMMENT*
 protected class ItemPattern2_Group extends GroupToken {
 	
 	public ItemPattern2_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17716,11 +17799,11 @@ protected class ItemPattern2_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule ItemPattern3 ****************
  *
  * ItemPattern3:
- * 	ItemInst3 (value1=STRING | value2=INT);
+ * 	ItemInst3 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
  *
  **/
 
-// ItemInst3 (value1=STRING | value2=INT)
+// ItemInst3 (value1=STRING | value2=INT) FREE_FORM_COMMENT*
 protected class ItemPattern3_Group extends GroupToken {
 	
 	public ItemPattern3_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -18393,11 +18476,11 @@ protected class Name_SelectNameParserRuleCall extends RuleCallToken {
 /************ begin Rule SelectName ****************
  *
  * SelectName:
- * 	"#selectnametype" value=INT mods+=NameMods* "#end";
+ * 	"#selectnametype" value=INT FREE_FORM_COMMENT* mods+=NameMods* "#end";
  *
  **/
 
-// "#selectnametype" value=INT mods+=NameMods* "#end"
+// "#selectnametype" value=INT FREE_FORM_COMMENT* mods+=NameMods* "#end"
 protected class SelectName_Group extends GroupToken {
 	
 	public SelectName_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -18412,7 +18495,7 @@ protected class SelectName_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectName_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectName_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -18482,15 +18565,15 @@ protected class SelectName_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=NameMods*
-protected class SelectName_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectName_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectName_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectName_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectNameAccess().getModsAssignment_2();
+		return grammarAccess.getSelectNameAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -18509,7 +18592,7 @@ protected class SelectName_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getNameModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectNameAccess().getModsNameModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectNameAccess().getModsNameModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -18521,7 +18604,7 @@ protected class SelectName_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectName_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectName_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectName_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -18529,21 +18612,21 @@ protected class SelectName_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectName_EndKeyword_3 extends KeywordToken  {
+protected class SelectName_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectName_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectName_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectNameAccess().getEndKeyword_3();
+		return grammarAccess.getSelectNameAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectName_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectName_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectName_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -18644,7 +18727,7 @@ protected class NameMods_NamePattern2ParserRuleCall_1 extends RuleCallToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NamePattern2_NameInst2ParserRuleCall(this, this, 0, inst);
+			case 0: return new NamePattern2_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -18653,7 +18736,7 @@ protected class NameMods_NamePattern2ParserRuleCall_1 extends RuleCallToken {
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getNameInst2Rule().getType().getClassifier())
 			return null;
-		if(checkForRecursion(NamePattern2_NameInst2ParserRuleCall.class, eObjectConsumer)) return null;
+		if(checkForRecursion(NamePattern2_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -18672,11 +18755,11 @@ protected class NameMods_NamePattern2ParserRuleCall_1 extends RuleCallToken {
 /************ begin Rule NamePattern1 ****************
  *
  * NamePattern1:
- * 	NameInst1 value=STRING;
+ * 	NameInst1 value=STRING FREE_FORM_COMMENT*;
  *
  **/
 
-// NameInst1 value=STRING
+// NameInst1 value=STRING FREE_FORM_COMMENT*
 protected class NamePattern1_Group extends GroupToken {
 	
 	public NamePattern1_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -18780,20 +18863,49 @@ protected class NamePattern1_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule NamePattern2 ****************
  *
  * NamePattern2:
- * 	NameInst2;
+ * 	NameInst2 FREE_FORM_COMMENT*;
  *
  **/
 
-// NameInst2
-protected class NamePattern2_NameInst2ParserRuleCall extends RuleCallToken {
+// NameInst2 FREE_FORM_COMMENT*
+protected class NamePattern2_Group extends GroupToken {
 	
-	public NamePattern2_NameInst2ParserRuleCall(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NamePattern2_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getNamePattern2Access().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new NamePattern2_NameInst2ParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getNameInst2Rule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// NameInst2
+protected class NamePattern2_NameInst2ParserRuleCall_0 extends RuleCallToken {
+	
+	public NamePattern2_NameInst2ParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getNamePattern2Access().getNameInst2ParserRuleCall();
+		return grammarAccess.getNamePattern2Access().getNameInst2ParserRuleCall_0();
 	}
 
     @Override
@@ -18806,8 +18918,6 @@ protected class NamePattern2_NameInst2ParserRuleCall extends RuleCallToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getNameInst2Rule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(NameInst2_ClearAssignment.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -18819,6 +18929,7 @@ protected class NamePattern2_NameInst2ParserRuleCall extends RuleCallToken {
 		}	
 	}	
 }
+
 
 /************ end Rule NamePattern2 ****************/
 
@@ -19068,11 +19179,11 @@ protected class Site_NewSiteParserRuleCall_2 extends RuleCallToken {
 /************ begin Rule SelectSiteById ****************
  *
  * SelectSiteById:
- * 	"#selectsite" value=INT mods+=SiteMods* "#end";
+ * 	"#selectsite" value=INT FREE_FORM_COMMENT* mods+=SiteMods* "#end";
  *
  **/
 
-// "#selectsite" value=INT mods+=SiteMods* "#end"
+// "#selectsite" value=INT FREE_FORM_COMMENT* mods+=SiteMods* "#end"
 protected class SelectSiteById_Group extends GroupToken {
 	
 	public SelectSiteById_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -19087,7 +19198,7 @@ protected class SelectSiteById_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectSiteById_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectSiteById_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -19157,15 +19268,15 @@ protected class SelectSiteById_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=SiteMods*
-protected class SelectSiteById_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectSiteById_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectSiteById_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectSiteById_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectSiteByIdAccess().getModsAssignment_2();
+		return grammarAccess.getSelectSiteByIdAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -19184,7 +19295,7 @@ protected class SelectSiteById_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getSiteModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectSiteByIdAccess().getModsSiteModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectSiteByIdAccess().getModsSiteModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -19196,7 +19307,7 @@ protected class SelectSiteById_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectSiteById_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectSiteById_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectSiteById_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -19204,21 +19315,21 @@ protected class SelectSiteById_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectSiteById_EndKeyword_3 extends KeywordToken  {
+protected class SelectSiteById_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectSiteById_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectSiteById_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectSiteByIdAccess().getEndKeyword_3();
+		return grammarAccess.getSelectSiteByIdAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectSiteById_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectSiteById_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectSiteById_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -19233,11 +19344,11 @@ protected class SelectSiteById_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule SelectSiteByName ****************
  *
  * SelectSiteByName:
- * 	"#selectsite" value=STRING mods+=SiteMods* "#end";
+ * 	"#selectsite" value=STRING FREE_FORM_COMMENT* mods+=SiteMods* "#end";
  *
  **/
 
-// "#selectsite" value=STRING mods+=SiteMods* "#end"
+// "#selectsite" value=STRING FREE_FORM_COMMENT* mods+=SiteMods* "#end"
 protected class SelectSiteByName_Group extends GroupToken {
 	
 	public SelectSiteByName_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -19252,7 +19363,7 @@ protected class SelectSiteByName_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectSiteByName_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectSiteByName_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -19322,15 +19433,15 @@ protected class SelectSiteByName_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=SiteMods*
-protected class SelectSiteByName_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectSiteByName_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectSiteByName_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectSiteByName_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectSiteByNameAccess().getModsAssignment_2();
+		return grammarAccess.getSelectSiteByNameAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -19349,7 +19460,7 @@ protected class SelectSiteByName_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getSiteModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectSiteByNameAccess().getModsSiteModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectSiteByNameAccess().getModsSiteModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -19361,7 +19472,7 @@ protected class SelectSiteByName_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectSiteByName_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectSiteByName_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectSiteByName_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -19369,21 +19480,21 @@ protected class SelectSiteByName_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectSiteByName_EndKeyword_3 extends KeywordToken  {
+protected class SelectSiteByName_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectSiteByName_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectSiteByName_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectSiteByNameAccess().getEndKeyword_3();
+		return grammarAccess.getSelectSiteByNameAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectSiteByName_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectSiteByName_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectSiteByName_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -19398,11 +19509,11 @@ protected class SelectSiteByName_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule NewSite ****************
  *
  * NewSite:
- * 	"#newsite" value=INT mods+=SiteMods* "#end";
+ * 	"#newsite" value=INT FREE_FORM_COMMENT* mods+=SiteMods* "#end";
  *
  **/
 
-// "#newsite" value=INT mods+=SiteMods* "#end"
+// "#newsite" value=INT FREE_FORM_COMMENT* mods+=SiteMods* "#end"
 protected class NewSite_Group extends GroupToken {
 	
 	public NewSite_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -19417,7 +19528,7 @@ protected class NewSite_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewSite_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewSite_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -19487,15 +19598,15 @@ protected class NewSite_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=SiteMods*
-protected class NewSite_ModsAssignment_2 extends AssignmentToken  {
+protected class NewSite_ModsAssignment_3 extends AssignmentToken  {
 	
-	public NewSite_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewSite_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getNewSiteAccess().getModsAssignment_2();
+		return grammarAccess.getNewSiteAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -19514,7 +19625,7 @@ protected class NewSite_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getSiteModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getNewSiteAccess().getModsSiteModsParserRuleCall_2_0(); 
+				element = grammarAccess.getNewSiteAccess().getModsSiteModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -19526,7 +19637,7 @@ protected class NewSite_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new NewSite_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new NewSite_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new NewSite_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -19534,21 +19645,21 @@ protected class NewSite_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class NewSite_EndKeyword_3 extends KeywordToken  {
+protected class NewSite_EndKeyword_4 extends KeywordToken  {
 	
-	public NewSite_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NewSite_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getNewSiteAccess().getEndKeyword_3();
+		return grammarAccess.getNewSiteAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NewSite_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new NewSite_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new NewSite_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -19725,7 +19836,7 @@ protected class SiteMods_SitePattern4ParserRuleCall_3 extends RuleCallToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SitePattern4_SiteInst4ParserRuleCall(this, this, 0, inst);
+			case 0: return new SitePattern4_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -19734,7 +19845,7 @@ protected class SiteMods_SitePattern4ParserRuleCall_3 extends RuleCallToken {
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getSiteInst4Rule().getType().getClassifier())
 			return null;
-		if(checkForRecursion(SitePattern4_SiteInst4ParserRuleCall.class, eObjectConsumer)) return null;
+		if(checkForRecursion(SitePattern4_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -19753,11 +19864,11 @@ protected class SiteMods_SitePattern4ParserRuleCall_3 extends RuleCallToken {
 /************ begin Rule SitePattern1 ****************
  *
  * SitePattern1:
- * 	SiteInst1 value=STRING;
+ * 	SiteInst1 value=STRING FREE_FORM_COMMENT*;
  *
  **/
 
-// SiteInst1 value=STRING
+// SiteInst1 value=STRING FREE_FORM_COMMENT*
 protected class SitePattern1_Group extends GroupToken {
 	
 	public SitePattern1_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -19861,11 +19972,11 @@ protected class SitePattern1_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule SitePattern2 ****************
  *
  * SitePattern2:
- * 	SiteInst2 value=INT;
+ * 	SiteInst2 value=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// SiteInst2 value=INT
+// SiteInst2 value=INT FREE_FORM_COMMENT*
 protected class SitePattern2_Group extends GroupToken {
 	
 	public SitePattern2_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -19969,11 +20080,11 @@ protected class SitePattern2_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule SitePattern3 ****************
  *
  * SitePattern3:
- * 	SiteInst3 value1=INT value2=INT;
+ * 	SiteInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// SiteInst3 value1=INT value2=INT
+// SiteInst3 value1=INT value2=INT FREE_FORM_COMMENT*
 protected class SitePattern3_Group extends GroupToken {
 	
 	public SitePattern3_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -20111,20 +20222,49 @@ protected class SitePattern3_Value2Assignment_2 extends AssignmentToken  {
 /************ begin Rule SitePattern4 ****************
  *
  * SitePattern4:
- * 	SiteInst4;
+ * 	SiteInst4 FREE_FORM_COMMENT*;
  *
  **/
 
-// SiteInst4
-protected class SitePattern4_SiteInst4ParserRuleCall extends RuleCallToken {
+// SiteInst4 FREE_FORM_COMMENT*
+protected class SitePattern4_Group extends GroupToken {
 	
-	public SitePattern4_SiteInst4ParserRuleCall(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SitePattern4_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getSitePattern4Access().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new SitePattern4_SiteInst4ParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getSiteInst4Rule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// SiteInst4
+protected class SitePattern4_SiteInst4ParserRuleCall_0 extends RuleCallToken {
+	
+	public SitePattern4_SiteInst4ParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getSitePattern4Access().getSiteInst4ParserRuleCall();
+		return grammarAccess.getSitePattern4Access().getSiteInst4ParserRuleCall_0();
 	}
 
     @Override
@@ -20137,8 +20277,6 @@ protected class SitePattern4_SiteInst4ParserRuleCall extends RuleCallToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getSiteInst4Rule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(SiteInst4_ClearAssignment.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -20150,6 +20288,7 @@ protected class SitePattern4_SiteInst4ParserRuleCall extends RuleCallToken {
 		}	
 	}	
 }
+
 
 /************ end Rule SitePattern4 ****************/
 
@@ -20855,11 +20994,11 @@ protected class Nation_IndepFlagParserRuleCall_1 extends RuleCallToken {
 /************ begin Rule SelectNation ****************
  *
  * SelectNation:
- * 	"#selectnation" value=INT mods+=NationMods* "#end";
+ * 	"#selectnation" value=INT FREE_FORM_COMMENT* mods+=NationMods* "#end";
  *
  **/
 
-// "#selectnation" value=INT mods+=NationMods* "#end"
+// "#selectnation" value=INT FREE_FORM_COMMENT* mods+=NationMods* "#end"
 protected class SelectNation_Group extends GroupToken {
 	
 	public SelectNation_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -20874,7 +21013,7 @@ protected class SelectNation_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectNation_EndKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectNation_EndKeyword_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -20944,15 +21083,15 @@ protected class SelectNation_ValueAssignment_1 extends AssignmentToken  {
 }
 
 // mods+=NationMods*
-protected class SelectNation_ModsAssignment_2 extends AssignmentToken  {
+protected class SelectNation_ModsAssignment_3 extends AssignmentToken  {
 	
-	public SelectNation_ModsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectNation_ModsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSelectNationAccess().getModsAssignment_2();
+		return grammarAccess.getSelectNationAccess().getModsAssignment_3();
 	}
 
     @Override
@@ -20971,7 +21110,7 @@ protected class SelectNation_ModsAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getNationModsRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSelectNationAccess().getModsNationModsParserRuleCall_2_0(); 
+				element = grammarAccess.getSelectNationAccess().getModsNationModsParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -20983,7 +21122,7 @@ protected class SelectNation_ModsAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new SelectNation_ModsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new SelectNation_ModsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
 			case 1: return new SelectNation_ValueAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
@@ -20991,21 +21130,21 @@ protected class SelectNation_ModsAssignment_2 extends AssignmentToken  {
 }
 
 // "#end"
-protected class SelectNation_EndKeyword_3 extends KeywordToken  {
+protected class SelectNation_EndKeyword_4 extends KeywordToken  {
 	
-	public SelectNation_EndKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SelectNation_EndKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getSelectNationAccess().getEndKeyword_3();
+		return grammarAccess.getSelectNationAccess().getEndKeyword_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SelectNation_ModsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SelectNation_ModsAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new SelectNation_ValueAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -21020,11 +21159,11 @@ protected class SelectNation_EndKeyword_3 extends KeywordToken  {
 /************ begin Rule IndepFlag ****************
  *
  * IndepFlag:
- * 	"#indepflag" value=STRING;
+ * 	"#indepflag" value=STRING FREE_FORM_COMMENT*;
  *
  **/
 
-// "#indepflag" value=STRING
+// "#indepflag" value=STRING FREE_FORM_COMMENT*
 protected class IndepFlag_Group extends GroupToken {
 	
 	public IndepFlag_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -21243,7 +21382,7 @@ protected class NationMods_NationPattern3ParserRuleCall_2 extends RuleCallToken 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new NationPattern3_NationInst3ParserRuleCall(this, this, 0, inst);
+			case 0: return new NationPattern3_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -21252,7 +21391,7 @@ protected class NationMods_NationPattern3ParserRuleCall_2 extends RuleCallToken 
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getNationInst3Rule().getType().getClassifier())
 			return null;
-		if(checkForRecursion(NationPattern3_NationInst3ParserRuleCall.class, eObjectConsumer)) return null;
+		if(checkForRecursion(NationPattern3_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -21343,11 +21482,11 @@ protected class NationMods_NationPattern5ParserRuleCall_4 extends RuleCallToken 
 /************ begin Rule NationPattern1 ****************
  *
  * NationPattern1:
- * 	NationInst1 value=STRING;
+ * 	NationInst1 value=STRING FREE_FORM_COMMENT*;
  *
  **/
 
-// NationInst1 value=STRING
+// NationInst1 value=STRING FREE_FORM_COMMENT*
 protected class NationPattern1_Group extends GroupToken {
 	
 	public NationPattern1_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -21451,11 +21590,11 @@ protected class NationPattern1_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule NationPattern2 ****************
  *
  * NationPattern2:
- * 	NationInst2 value=INT;
+ * 	NationInst2 value=INT FREE_FORM_COMMENT*;
  *
  **/
 
-// NationInst2 value=INT
+// NationInst2 value=INT FREE_FORM_COMMENT*
 protected class NationPattern2_Group extends GroupToken {
 	
 	public NationPattern2_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -21559,20 +21698,49 @@ protected class NationPattern2_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule NationPattern3 ****************
  *
  * NationPattern3:
- * 	NationInst3;
+ * 	NationInst3 FREE_FORM_COMMENT*;
  *
  **/
 
-// NationInst3
-protected class NationPattern3_NationInst3ParserRuleCall extends RuleCallToken {
+// NationInst3 FREE_FORM_COMMENT*
+protected class NationPattern3_Group extends GroupToken {
 	
-	public NationPattern3_NationInst3ParserRuleCall(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public NationPattern3_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getNationPattern3Access().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new NationPattern3_NationInst3ParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getNationInst3Rule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// NationInst3
+protected class NationPattern3_NationInst3ParserRuleCall_0 extends RuleCallToken {
+	
+	public NationPattern3_NationInst3ParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getNationPattern3Access().getNationInst3ParserRuleCall();
+		return grammarAccess.getNationPattern3Access().getNationInst3ParserRuleCall_0();
 	}
 
     @Override
@@ -21585,8 +21753,6 @@ protected class NationPattern3_NationInst3ParserRuleCall extends RuleCallToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getNationInst3Rule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(NationInst3_Alternatives.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -21599,17 +21765,18 @@ protected class NationPattern3_NationInst3ParserRuleCall extends RuleCallToken {
 	}	
 }
 
+
 /************ end Rule NationPattern3 ****************/
 
 
 /************ begin Rule NationPattern4 ****************
  *
  * NationPattern4:
- * 	NationInst4 (value1=STRING | value2=INT);
+ * 	NationInst4 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
  *
  **/
 
-// NationInst4 (value1=STRING | value2=INT)
+// NationInst4 (value1=STRING | value2=INT) FREE_FORM_COMMENT*
 protected class NationPattern4_Group extends GroupToken {
 	
 	public NationPattern4_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -21771,11 +21938,11 @@ protected class NationPattern4_Value2Assignment_1_1 extends AssignmentToken  {
 /************ begin Rule NationPattern5 ****************
  *
  * NationPattern5:
- * 	NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue;
+ * 	NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue FREE_FORM_COMMENT*;
  *
  **/
 
-// NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue
+// NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue FREE_FORM_COMMENT*
 protected class NationPattern5_Group extends GroupToken {
 	
 	public NationPattern5_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -21942,7 +22109,6 @@ protected class NationPattern5_Value3Assignment_3 extends AssignmentToken  {
 
 
 /************ end Rule NationPattern5 ****************/
-
 
 
 /************ begin Rule NationInst1 ****************
@@ -24727,5 +24893,6 @@ protected class NationInst5_ColorAssignment extends AssignmentToken  {
 }
 
 /************ end Rule NationInst5 ****************/
+
 
 }

@@ -7,31 +7,30 @@ package org.larz.dom3.dm.parser.antlr.internal;
 import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
-T9 : '#modname' ;
-T10 : '#description' ;
-T11 : '#icon' ;
-T12 : '#version' ;
-T13 : '#domversion' ;
-T14 : '#poppergold' ;
-T15 : '#resourcemult' ;
-T16 : '#supplymult' ;
-T17 : '#unresthalfinc' ;
-T18 : '#unresthalfres' ;
-T19 : '#eventisrare' ;
-T20 : '#turmoilincome' ;
-T21 : '#turmoilevents' ;
-T22 : '#deathincome' ;
-T23 : '#deathsupply' ;
-T24 : '#deathdeath' ;
-T25 : '#slothincome' ;
-T26 : '#slothresources' ;
-T27 : '#coldincome' ;
-T28 : '#coldsupply' ;
-T29 : '#misfortune' ;
-T30 : '#luckevents' ;
-T31 : '#researchscale' ;
-T32 : '#end' ;
-T33 : '.' ;
+T10 : '#modname' ;
+T11 : '#description' ;
+T12 : '#icon' ;
+T13 : '#version' ;
+T14 : '#domversion' ;
+T15 : '#poppergold' ;
+T16 : '#resourcemult' ;
+T17 : '#supplymult' ;
+T18 : '#unresthalfinc' ;
+T19 : '#unresthalfres' ;
+T20 : '#eventisrare' ;
+T21 : '#turmoilincome' ;
+T22 : '#turmoilevents' ;
+T23 : '#deathincome' ;
+T24 : '#deathsupply' ;
+T25 : '#deathdeath' ;
+T26 : '#slothincome' ;
+T27 : '#slothresources' ;
+T28 : '#coldincome' ;
+T29 : '#coldsupply' ;
+T30 : '#misfortune' ;
+T31 : '#luckevents' ;
+T32 : '#researchscale' ;
+T33 : '#end' ;
 T34 : '#selectarmor' ;
 T35 : '#newarmor' ;
 T36 : '#name' ;
@@ -362,20 +361,24 @@ T360 : '#defunit1b' ;
 T361 : '#defunit2' ;
 T362 : '#defunit2b' ;
 T363 : '#color' ;
+T364 : '.' ;
 
-// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13805
+// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13970
 RULE_INT : '-'? ('0'..'9')+;
 
-// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13807
+// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13972
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 
-// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13809
-RULE_ML_COMMENT : (RULE_SL_COMMENT|(' '* '\t'* '\r'? '\n')+) ~(('#'|'\r'|'\n')) ~(('\r'|'\n'))*;
+// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13974
+RULE_FREE_FORM_COMMENT : ('a'..'z'|'A'..'Z'|'0'..'9'|'('|')'|'['|']'|',')+;
 
-// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13811
-RULE_SL_COMMENT : '-' ~('0'..'9') ~(('\n'|'\r'))* ('\r'? '\n')?;
+// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13976
+RULE_ML_COMMENT : (RULE_SL_COMMENT|(' '* '\t'* ('\r'|'\n'))+) ~(('#'|'\r'|'\n')) ~(('\r'|'\n'))*;
 
-// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13813
+// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13978
+RULE_SL_COMMENT : ('-' ~('0'..'9') ~(('\n'|'\r'))* ('\r'|'\n')?|'//' ~(('\n'|'\r'))* ('\r'|'\n')?);
+
+// $ANTLR src "../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g" 13980
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
 
