@@ -15,139 +15,139 @@
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Keyword" value="#modname"/>
           <elements xsi:type="xtext:Assignment" feature="modname" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#description"/>
           <elements xsi:type="xtext:Assignment" feature="desc" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#icon"/>
           <elements xsi:type="xtext:Assignment" feature="icon" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#version"/>
           <elements xsi:type="xtext:Assignment" feature="version" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.101"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#domversion"/>
           <elements xsi:type="xtext:Assignment" feature="domversion" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.101"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#poppergold"/>
           <elements xsi:type="xtext:Assignment" feature="poppergold" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#resourcemult"/>
           <elements xsi:type="xtext:Assignment" feature="resourcemult" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#supplymult"/>
           <elements xsi:type="xtext:Assignment" feature="supplymult" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#unresthalfinc"/>
           <elements xsi:type="xtext:Assignment" feature="unresthalfinc" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#unresthalfres"/>
           <elements xsi:type="xtext:Assignment" feature="unresthalfres" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#eventisrare"/>
           <elements xsi:type="xtext:Assignment" feature="eventisrare" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#turmoilincome"/>
           <elements xsi:type="xtext:Assignment" feature="turmoilincome" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#turmoilevents"/>
           <elements xsi:type="xtext:Assignment" feature="turmoilevents" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#deathincome"/>
           <elements xsi:type="xtext:Assignment" feature="deathincome" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#deathsupply"/>
           <elements xsi:type="xtext:Assignment" feature="deathsupply" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#deathdeath"/>
           <elements xsi:type="xtext:Assignment" feature="deathdeath" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#slothincome"/>
           <elements xsi:type="xtext:Assignment" feature="slothincome" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#slothresources"/>
           <elements xsi:type="xtext:Assignment" feature="slothresources" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#coldincome"/>
           <elements xsi:type="xtext:Assignment" feature="coldincome" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#coldsupply"/>
           <elements xsi:type="xtext:Assignment" feature="coldsupply" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#misfortune"/>
           <elements xsi:type="xtext:Assignment" feature="misfortune" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#luckevents"/>
           <elements xsi:type="xtext:Assignment" feature="luckevents" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="#researchscale"/>
           <elements xsi:type="xtext:Assignment" feature="researchscale" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" cardinality="?" value="#end"/>
@@ -162,26 +162,14 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//AbstractElement"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.3"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.12"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.25"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.42"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.57"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.68"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.75"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.88"/>
-    </alternatives>
-  </rules>
-  <rules xsi:type="xtext:ParserRule" name="VersionNum">
-    <type metamodel="//@metamodelDeclarations.0">
-      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </type>
-    <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.103"/>
-      <elements xsi:type="xtext:Group" cardinality="*">
-        <elements xsi:type="xtext:Keyword" value="."/>
-        <elements xsi:type="xtext:RuleCall" rule="//@rules.103"/>
-      </elements>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.41"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.56"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.67"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.74"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.87"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="Armor">
@@ -189,9 +177,9 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Armor"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.3"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.4"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.5"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.6"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SelectArmorById">
@@ -201,10 +189,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectarmor"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -216,10 +205,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectarmor"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -231,10 +221,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#newarmor"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -244,8 +235,8 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ArmorMods"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.7"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.8"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.9"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ArmorPattern1">
@@ -253,10 +244,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ArmorPattern1"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.10"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.9"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ArmorPattern2">
@@ -264,10 +256,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ArmorPattern2"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.10"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ArmorInst1">
@@ -305,9 +298,9 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Weapon"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.12"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.13"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.14"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.15"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SelectWeaponById">
@@ -317,10 +310,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectweapon"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -332,10 +326,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectweapon"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -347,10 +342,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#newweapon"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -360,10 +356,10 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponMods"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.16"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.17"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.18"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.19"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.20"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="WeaponPattern1">
@@ -371,10 +367,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponPattern1"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.21"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.20"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="WeaponPattern2">
@@ -382,10 +379,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponPattern2"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.21"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="WeaponPattern3">
@@ -393,20 +391,24 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponPattern3"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
       <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
       <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="WeaponPattern4">
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//WeaponPattern4"/>
     </type>
-    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
+    </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="WeaponInst1">
     <type metamodel="//@metamodelDeclarations.1">
@@ -569,9 +571,9 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Monster"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.25"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.26"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.27"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.28"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SelectMonsterById">
@@ -581,10 +583,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectmonster"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.28"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -596,10 +599,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectmonster"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.28"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -611,10 +615,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#newmonster"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.28"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -624,12 +629,12 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterMods"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.29"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.30"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.31"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.32"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.33"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.34"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.35"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MonsterPattern1">
@@ -637,10 +642,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern1"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.35"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MonsterPattern2">
@@ -648,10 +654,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern2"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.37"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MonsterPattern3">
@@ -659,35 +666,40 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern3"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.38"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.37"/>
       <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
       <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MonsterPattern4">
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern4"/>
     </type>
-    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.39"/>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.38"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
+    </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MonsterPattern5">
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern5"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.40"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.39"/>
       <elements xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
         </elements>
+        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
+        </elements>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MonsterPattern6">
@@ -695,10 +707,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//MonsterPattern6"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.41"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.40"/>
       <elements xsi:type="xtext:Assignment" cardinality="?" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MonsterInst1">
@@ -1255,9 +1268,9 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Spell"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.42"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.43"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.44"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.45"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SelectSpellById">
@@ -1267,10 +1280,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectspell"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.46"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.45"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1282,10 +1296,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectspell"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.46"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.45"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1296,8 +1311,9 @@
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#newspell"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.46"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.45"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1307,11 +1323,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellMods"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.46"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.47"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.48"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.49"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.50"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.51"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SpellPattern1">
@@ -1319,10 +1335,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellPattern1"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.52"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.51"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SpellPattern2">
@@ -1330,10 +1347,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellPattern2"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.53"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.52"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SpellPattern3">
@@ -1341,35 +1359,40 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellPattern3"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.54"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.53"/>
       <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
       <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SpellPattern4">
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellPattern4"/>
     </type>
-    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.55"/>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.54"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
+    </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SpellPattern5">
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SpellPattern5"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.56"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.55"/>
       <elements xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
         </elements>
+        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
+        </elements>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SpellInst1">
@@ -1473,9 +1496,9 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Item"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.57"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.58"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.59"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.60"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SelectItemById">
@@ -1485,10 +1508,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectitem"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.61"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.60"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1500,10 +1524,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectitem"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.61"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.60"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1514,8 +1539,9 @@
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#newitem"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.61"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.60"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1525,9 +1551,9 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ItemMods"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.61"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.62"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.63"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.64"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ItemPattern1">
@@ -1535,10 +1561,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ItemPattern1"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.65"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.64"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ItemPattern2">
@@ -1546,10 +1573,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ItemPattern2"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.66"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.65"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ItemPattern3">
@@ -1557,15 +1585,16 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//ItemPattern3"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.67"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.66"/>
       <elements xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
         </elements>
+        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
+        </elements>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ItemInst1">
@@ -1624,7 +1653,7 @@
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Name"/>
     </type>
-    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.69"/>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.68"/>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SelectName">
     <type metamodel="//@metamodelDeclarations.1">
@@ -1633,10 +1662,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectnametype"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.70"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.69"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1646,8 +1676,8 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NameMods"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.70"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.71"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.72"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NamePattern1">
@@ -1655,17 +1685,21 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NamePattern1"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.73"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.72"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NamePattern2">
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NamePattern2"/>
     </type>
-    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.74"/>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.73"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
+    </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NameInst1">
     <type metamodel="//@metamodelDeclarations.1">
@@ -1688,9 +1722,9 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Site"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.75"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.76"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.77"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.78"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SelectSiteById">
@@ -1700,10 +1734,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectsite"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.79"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.78"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1715,10 +1750,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectsite"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.79"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.78"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1730,10 +1766,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#newsite"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.79"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.78"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1743,10 +1780,10 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SiteMods"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.79"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.80"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.81"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.82"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.83"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SitePattern1">
@@ -1754,10 +1791,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SitePattern1"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.84"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.83"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SitePattern2">
@@ -1765,10 +1803,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SitePattern2"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.85"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.84"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SitePattern3">
@@ -1776,20 +1815,24 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SitePattern3"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.86"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.85"/>
       <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
       <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SitePattern4">
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SitePattern4"/>
     </type>
-    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.87"/>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.86"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
+    </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SiteInst1">
     <type metamodel="//@metamodelDeclarations.1">
@@ -1863,8 +1906,8 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//Nation"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.88"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.89"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.90"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SelectNation">
@@ -1874,10 +1917,11 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#selectnation"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="mods" operator="+=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.91"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.90"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value="#end"/>
     </alternatives>
@@ -1889,8 +1933,9 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="#indepflag"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NationMods">
@@ -1898,11 +1943,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationMods"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.91"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.92"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.93"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.94"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.95"/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.96"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NationPattern1">
@@ -1910,10 +1955,11 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationPattern1"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.98"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.96"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NationPattern2">
@@ -1921,32 +1967,37 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationPattern2"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.99"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.97"/>
       <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NationPattern3">
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationPattern3"/>
     </type>
-    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.100"/>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.98"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
+    </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NationPattern4">
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationPattern4"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.101"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.99"/>
       <elements xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.104"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.103"/>
         </elements>
+        <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.102"/>
+        </elements>
       </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NationPattern5">
@@ -1954,28 +2005,17 @@
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//NationPattern5"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.102"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.100"/>
       <elements xsi:type="xtext:Assignment" feature="value1" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.97"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.101"/>
       </elements>
       <elements xsi:type="xtext:Assignment" feature="value2" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.97"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.101"/>
       </elements>
       <elements xsi:type="xtext:Assignment" feature="value3" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.97"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.101"/>
       </elements>
-    </alternatives>
-  </rules>
-  <rules xsi:type="xtext:ParserRule" name="DecimalValue">
-    <type metamodel="//@metamodelDeclarations.0">
-      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </type>
-    <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.103"/>
-      <elements xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="."/>
-        <elements xsi:type="xtext:RuleCall" rule="//@rules.103"/>
-      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.104"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NationInst1">
@@ -2239,6 +2279,18 @@
       <terminal xsi:type="xtext:Keyword" value="#color"/>
     </alternatives>
   </rules>
+  <rules xsi:type="xtext:ParserRule" name="DecimalValue">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.102"/>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.102"/>
+      </elements>
+    </alternatives>
+  </rules>
   <rules xsi:type="xtext:TerminalRule" name="INT">
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -2308,6 +2360,30 @@
       </elements>
     </alternatives>
   </rules>
+  <rules xsi:type="xtext:TerminalRule" name="FREE_FORM_COMMENT">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives" cardinality="+">
+      <elements xsi:type="xtext:CharacterRange">
+        <left value="a"/>
+        <right value="z"/>
+      </elements>
+      <elements xsi:type="xtext:CharacterRange">
+        <left value="A"/>
+        <right value="Z"/>
+      </elements>
+      <elements xsi:type="xtext:CharacterRange">
+        <left value="0"/>
+        <right value="9"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Keyword" value="["/>
+      <elements xsi:type="xtext:Keyword" value="]"/>
+      <elements xsi:type="xtext:Keyword" value=","/>
+    </alternatives>
+  </rules>
   <rules xsi:type="xtext:TerminalRule" name="ML_COMMENT">
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -2318,8 +2394,10 @@
         <elements xsi:type="xtext:Group" cardinality="+">
           <elements xsi:type="xtext:Keyword" cardinality="*" value=" "/>
           <elements xsi:type="xtext:Keyword" cardinality="*" value="&#x9;"/>
-          <elements xsi:type="xtext:Keyword" cardinality="?" value="&#xD;"/>
-          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+            <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+          </elements>
         </elements>
       </elements>
       <elements xsi:type="xtext:NegatedToken">
@@ -2341,23 +2419,38 @@
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </type>
-    <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:Keyword" value="-"/>
-      <elements xsi:type="xtext:NegatedToken">
-        <terminal xsi:type="xtext:CharacterRange">
-          <left value="0"/>
-          <right value="9"/>
-        </terminal>
-      </elements>
-      <elements xsi:type="xtext:NegatedToken" cardinality="*">
-        <terminal xsi:type="xtext:Alternatives">
-          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-"/>
+        <elements xsi:type="xtext:NegatedToken">
+          <terminal xsi:type="xtext:CharacterRange">
+            <left value="0"/>
+            <right value="9"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:NegatedToken" cardinality="*">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+            <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Alternatives" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="&#xD;"/>
-        </terminal>
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+        </elements>
       </elements>
-      <elements xsi:type="xtext:Group" cardinality="?">
-        <elements xsi:type="xtext:Keyword" cardinality="?" value="&#xD;"/>
-        <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="//"/>
+        <elements xsi:type="xtext:NegatedToken" cardinality="*">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+            <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Alternatives" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+        </elements>
       </elements>
     </alternatives>
   </rules>

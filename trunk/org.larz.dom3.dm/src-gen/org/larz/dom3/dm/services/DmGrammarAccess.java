@@ -35,11 +35,11 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_0_3 = (Group)cUnorderedGroup_0.eContents().get(3);
 		private final Keyword cVersionKeyword_0_3_0 = (Keyword)cGroup_0_3.eContents().get(0);
 		private final Assignment cVersionAssignment_0_3_1 = (Assignment)cGroup_0_3.eContents().get(1);
-		private final RuleCall cVersionVersionNumParserRuleCall_0_3_1_0 = (RuleCall)cVersionAssignment_0_3_1.eContents().get(0);
+		private final RuleCall cVersionDecimalValueParserRuleCall_0_3_1_0 = (RuleCall)cVersionAssignment_0_3_1.eContents().get(0);
 		private final Group cGroup_0_4 = (Group)cUnorderedGroup_0.eContents().get(4);
 		private final Keyword cDomversionKeyword_0_4_0 = (Keyword)cGroup_0_4.eContents().get(0);
 		private final Assignment cDomversionAssignment_0_4_1 = (Assignment)cGroup_0_4.eContents().get(1);
-		private final RuleCall cDomversionVersionNumParserRuleCall_0_4_1_0 = (RuleCall)cDomversionAssignment_0_4_1.eContents().get(0);
+		private final RuleCall cDomversionDecimalValueParserRuleCall_0_4_1_0 = (RuleCall)cDomversionAssignment_0_4_1.eContents().get(0);
 		private final Group cGroup_0_5 = (Group)cUnorderedGroup_0.eContents().get(5);
 		private final Keyword cPoppergoldKeyword_0_5_0 = (Keyword)cGroup_0_5.eContents().get(0);
 		private final Assignment cPoppergoldAssignment_0_5_1 = (Assignment)cGroup_0_5.eContents().get(1);
@@ -117,18 +117,18 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cElementsAbstractElementParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//Dom3Mod:
-		//	("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=VersionNum)?
-		//	& ("#domversion" domversion=VersionNum)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
-		//	("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres" unresthalfres=INT)? &
-		//	("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents" turmoilevents=INT)? &
-		//	("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
-		//	("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome" coldincome=INT)? &
-		//	("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)? &
-		//	("#researchscale" researchscale=INT)? & "#end"?) elements+=AbstractElement*;
+		//	("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version"
+		//	version=DecimalValue)? & ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult"
+		//	resourcemult=INT)? & ("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres"
+		//	unresthalfres=INT)? & ("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents"
+		//	turmoilevents=INT)? & ("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath"
+		//	deathdeath=INT)? & ("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome"
+		//	coldincome=INT)? & ("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)?
+		//	& ("#researchscale" researchscale=INT)? & "#end"?) elements+=AbstractElement*;
 		public ParserRule getRule() { return rule; }
 
-		//("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=VersionNum)? &
-		//("#domversion" domversion=VersionNum)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
+		//("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=DecimalValue)?
+		//& ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
 		//("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres" unresthalfres=INT)? &
 		//("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents" turmoilevents=INT)? &
 		//("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
@@ -137,8 +137,8 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//researchscale=INT)? & "#end"?) elements+=AbstractElement*
 		public Group getGroup() { return cGroup; }
 
-		//"#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=VersionNum)? &
-		//("#domversion" domversion=VersionNum)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
+		//"#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=DecimalValue)?
+		//& ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
 		//("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres" unresthalfres=INT)? &
 		//("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents" turmoilevents=INT)? &
 		//("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
@@ -183,29 +183,29 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getIconSTRINGTerminalRuleCall_0_2_1_0() { return cIconSTRINGTerminalRuleCall_0_2_1_0; }
 
-		//("#version" version=VersionNum)?
+		//("#version" version=DecimalValue)?
 		public Group getGroup_0_3() { return cGroup_0_3; }
 
 		//"#version"
 		public Keyword getVersionKeyword_0_3_0() { return cVersionKeyword_0_3_0; }
 
-		//version=VersionNum
+		//version=DecimalValue
 		public Assignment getVersionAssignment_0_3_1() { return cVersionAssignment_0_3_1; }
 
-		//VersionNum
-		public RuleCall getVersionVersionNumParserRuleCall_0_3_1_0() { return cVersionVersionNumParserRuleCall_0_3_1_0; }
+		//DecimalValue
+		public RuleCall getVersionDecimalValueParserRuleCall_0_3_1_0() { return cVersionDecimalValueParserRuleCall_0_3_1_0; }
 
-		//("#domversion" domversion=VersionNum)?
+		//("#domversion" domversion=DecimalValue)?
 		public Group getGroup_0_4() { return cGroup_0_4; }
 
 		//"#domversion"
 		public Keyword getDomversionKeyword_0_4_0() { return cDomversionKeyword_0_4_0; }
 
-		//domversion=VersionNum
+		//domversion=DecimalValue
 		public Assignment getDomversionAssignment_0_4_1() { return cDomversionAssignment_0_4_1; }
 
-		//VersionNum
-		public RuleCall getDomversionVersionNumParserRuleCall_0_4_1_0() { return cDomversionVersionNumParserRuleCall_0_4_1_0; }
+		//DecimalValue
+		public RuleCall getDomversionDecimalValueParserRuleCall_0_4_1_0() { return cDomversionDecimalValueParserRuleCall_0_4_1_0; }
 
 		//("#poppergold" poppergold=INT)?
 		public Group getGroup_0_5() { return cGroup_0_5; }
@@ -477,34 +477,6 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNationParserRuleCall_7() { return cNationParserRuleCall_7; }
 	}
 
-	public class VersionNumElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VersionNum");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		
-		//VersionNum returns ecore::EString:
-		//	INT ("." INT)*;
-		public ParserRule getRule() { return rule; }
-
-		//INT ("." INT)*
-		public Group getGroup() { return cGroup; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
-
-		//("." INT)*
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
-	}
-
 	public class ArmorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Armor");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -535,15 +507,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectarmorKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsArmorModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsArmorModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectArmorById:
-		//	"#selectarmor" value=INT mods+=ArmorMods* "#end";
+		//	"#selectarmor" value=INT FREE_FORM_COMMENT* mods+=ArmorMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectarmor" value=INT mods+=ArmorMods* "#end"
+		//"#selectarmor" value=INT FREE_FORM_COMMENT* mods+=ArmorMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectarmor"
@@ -555,14 +528,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=ArmorMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//ArmorMods
-		public RuleCall getModsArmorModsParserRuleCall_2_0() { return cModsArmorModsParserRuleCall_2_0; }
+		public RuleCall getModsArmorModsParserRuleCall_3_0() { return cModsArmorModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class SelectArmorByNameElements extends AbstractParserRuleElementFinder {
@@ -571,15 +547,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectarmorKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsArmorModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsArmorModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectArmorByName:
-		//	"#selectarmor" value=STRING mods+=ArmorMods* "#end";
+		//	"#selectarmor" value=STRING FREE_FORM_COMMENT* mods+=ArmorMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectarmor" value=STRING mods+=ArmorMods* "#end"
+		//"#selectarmor" value=STRING FREE_FORM_COMMENT* mods+=ArmorMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectarmor"
@@ -591,14 +568,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=ArmorMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//ArmorMods
-		public RuleCall getModsArmorModsParserRuleCall_2_0() { return cModsArmorModsParserRuleCall_2_0; }
+		public RuleCall getModsArmorModsParserRuleCall_3_0() { return cModsArmorModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class NewArmorElements extends AbstractParserRuleElementFinder {
@@ -607,15 +587,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNewarmorKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsArmorModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsArmorModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//NewArmor:
-		//	"#newarmor" value=INT mods+=ArmorMods* "#end";
+		//	"#newarmor" value=INT FREE_FORM_COMMENT* mods+=ArmorMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#newarmor" value=INT mods+=ArmorMods* "#end"
+		//"#newarmor" value=INT FREE_FORM_COMMENT* mods+=ArmorMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#newarmor"
@@ -627,14 +608,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=ArmorMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//ArmorMods
-		public RuleCall getModsArmorModsParserRuleCall_2_0() { return cModsArmorModsParserRuleCall_2_0; }
+		public RuleCall getModsArmorModsParserRuleCall_3_0() { return cModsArmorModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class ArmorModsElements extends AbstractParserRuleElementFinder {
@@ -663,12 +647,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cArmorInst1ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//ArmorPattern1:
-		//	ArmorInst1 value=STRING;
+		//	ArmorInst1 value=STRING FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//ArmorInst1 value=STRING
+		//ArmorInst1 value=STRING FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//ArmorInst1
@@ -679,6 +664,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class ArmorPattern2Elements extends AbstractParserRuleElementFinder {
@@ -687,12 +675,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cArmorInst2ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//ArmorPattern2:
-		//	ArmorInst2 value=INT;
+		//	ArmorInst2 value=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//ArmorInst2 value=INT
+		//ArmorInst2 value=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//ArmorInst2
@@ -703,6 +692,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class ArmorInst1Elements extends AbstractParserRuleElementFinder {
@@ -803,15 +795,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectweaponKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsWeaponModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsWeaponModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectWeaponById:
-		//	"#selectweapon" value=INT mods+=WeaponMods* "#end";
+		//	"#selectweapon" value=INT FREE_FORM_COMMENT* mods+=WeaponMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectweapon" value=INT mods+=WeaponMods* "#end"
+		//"#selectweapon" value=INT FREE_FORM_COMMENT* mods+=WeaponMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectweapon"
@@ -823,14 +816,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=WeaponMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//WeaponMods
-		public RuleCall getModsWeaponModsParserRuleCall_2_0() { return cModsWeaponModsParserRuleCall_2_0; }
+		public RuleCall getModsWeaponModsParserRuleCall_3_0() { return cModsWeaponModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class SelectWeaponByNameElements extends AbstractParserRuleElementFinder {
@@ -839,15 +835,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectweaponKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsWeaponModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsWeaponModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectWeaponByName:
-		//	"#selectweapon" value=STRING mods+=WeaponMods* "#end";
+		//	"#selectweapon" value=STRING FREE_FORM_COMMENT* mods+=WeaponMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectweapon" value=STRING mods+=WeaponMods* "#end"
+		//"#selectweapon" value=STRING FREE_FORM_COMMENT* mods+=WeaponMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectweapon"
@@ -859,14 +856,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=WeaponMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//WeaponMods
-		public RuleCall getModsWeaponModsParserRuleCall_2_0() { return cModsWeaponModsParserRuleCall_2_0; }
+		public RuleCall getModsWeaponModsParserRuleCall_3_0() { return cModsWeaponModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class NewWeaponElements extends AbstractParserRuleElementFinder {
@@ -875,15 +875,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNewweaponKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsWeaponModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsWeaponModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//NewWeapon:
-		//	"#newweapon" value=INT mods+=WeaponMods* "#end";
+		//	"#newweapon" value=INT FREE_FORM_COMMENT* mods+=WeaponMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#newweapon" value=INT mods+=WeaponMods* "#end"
+		//"#newweapon" value=INT FREE_FORM_COMMENT* mods+=WeaponMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#newweapon"
@@ -895,14 +896,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=WeaponMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//WeaponMods
-		public RuleCall getModsWeaponModsParserRuleCall_2_0() { return cModsWeaponModsParserRuleCall_2_0; }
+		public RuleCall getModsWeaponModsParserRuleCall_3_0() { return cModsWeaponModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class WeaponModsElements extends AbstractParserRuleElementFinder {
@@ -939,12 +943,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cWeaponInst1ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//WeaponPattern1:
-		//	WeaponInst1 value=STRING;
+		//	WeaponInst1 value=STRING FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//WeaponInst1 value=STRING
+		//WeaponInst1 value=STRING FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//WeaponInst1
@@ -955,6 +960,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class WeaponPattern2Elements extends AbstractParserRuleElementFinder {
@@ -963,12 +971,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cWeaponInst2ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//WeaponPattern2:
-		//	WeaponInst2 value=INT;
+		//	WeaponInst2 value=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//WeaponInst2 value=INT
+		//WeaponInst2 value=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//WeaponInst2
@@ -979,6 +988,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class WeaponPattern3Elements extends AbstractParserRuleElementFinder {
@@ -989,12 +1001,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValue1INTTerminalRuleCall_1_0 = (RuleCall)cValue1Assignment_1.eContents().get(0);
 		private final Assignment cValue2Assignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValue2INTTerminalRuleCall_2_0 = (RuleCall)cValue2Assignment_2.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//WeaponPattern3:
-		//	WeaponInst3 value1=INT value2=INT;
+		//	WeaponInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//WeaponInst3 value1=INT value2=INT
+		//WeaponInst3 value1=INT value2=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//WeaponInst3
@@ -1011,18 +1024,29 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValue2INTTerminalRuleCall_2_0() { return cValue2INTTerminalRuleCall_2_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_3() { return cFREE_FORM_COMMENTTerminalRuleCall_3; }
 	}
 
 	public class WeaponPattern4Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WeaponPattern4");
-		private final RuleCall cWeaponInst4ParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cWeaponInst4ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//WeaponPattern4:
-		//	WeaponInst4;
+		//	WeaponInst4 FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
+		//WeaponInst4 FREE_FORM_COMMENT*
+		public Group getGroup() { return cGroup; }
+
 		//WeaponInst4
-		public RuleCall getWeaponInst4ParserRuleCall() { return cWeaponInst4ParserRuleCall; }
+		public RuleCall getWeaponInst4ParserRuleCall_0() { return cWeaponInst4ParserRuleCall_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_1() { return cFREE_FORM_COMMENTTerminalRuleCall_1; }
 	}
 
 	public class WeaponInst1Elements extends AbstractParserRuleElementFinder {
@@ -1463,15 +1487,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectmonsterKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsMonsterModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsMonsterModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectMonsterById:
-		//	"#selectmonster" value=INT mods+=MonsterMods* "#end";
+		//	"#selectmonster" value=INT FREE_FORM_COMMENT* mods+=MonsterMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectmonster" value=INT mods+=MonsterMods* "#end"
+		//"#selectmonster" value=INT FREE_FORM_COMMENT* mods+=MonsterMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectmonster"
@@ -1483,14 +1508,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=MonsterMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//MonsterMods
-		public RuleCall getModsMonsterModsParserRuleCall_2_0() { return cModsMonsterModsParserRuleCall_2_0; }
+		public RuleCall getModsMonsterModsParserRuleCall_3_0() { return cModsMonsterModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class SelectMonsterByNameElements extends AbstractParserRuleElementFinder {
@@ -1499,15 +1527,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectmonsterKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsMonsterModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsMonsterModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectMonsterByName:
-		//	"#selectmonster" value=STRING mods+=MonsterMods* "#end";
+		//	"#selectmonster" value=STRING FREE_FORM_COMMENT* mods+=MonsterMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectmonster" value=STRING mods+=MonsterMods* "#end"
+		//"#selectmonster" value=STRING FREE_FORM_COMMENT* mods+=MonsterMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectmonster"
@@ -1519,14 +1548,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=MonsterMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//MonsterMods
-		public RuleCall getModsMonsterModsParserRuleCall_2_0() { return cModsMonsterModsParserRuleCall_2_0; }
+		public RuleCall getModsMonsterModsParserRuleCall_3_0() { return cModsMonsterModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class NewMonsterElements extends AbstractParserRuleElementFinder {
@@ -1535,15 +1567,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNewmonsterKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsMonsterModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsMonsterModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//NewMonster:
-		//	"#newmonster" value=INT mods+=MonsterMods* "#end";
+		//	"#newmonster" value=INT FREE_FORM_COMMENT* mods+=MonsterMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#newmonster" value=INT mods+=MonsterMods* "#end"
+		//"#newmonster" value=INT FREE_FORM_COMMENT* mods+=MonsterMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#newmonster"
@@ -1555,14 +1588,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=MonsterMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//MonsterMods
-		public RuleCall getModsMonsterModsParserRuleCall_2_0() { return cModsMonsterModsParserRuleCall_2_0; }
+		public RuleCall getModsMonsterModsParserRuleCall_3_0() { return cModsMonsterModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class MonsterModsElements extends AbstractParserRuleElementFinder {
@@ -1607,12 +1643,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMonsterInst1ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//MonsterPattern1:
-		//	MonsterInst1 value=STRING;
+		//	MonsterInst1 value=STRING FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//MonsterInst1 value=STRING
+		//MonsterInst1 value=STRING FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//MonsterInst1
@@ -1623,6 +1660,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class MonsterPattern2Elements extends AbstractParserRuleElementFinder {
@@ -1631,12 +1671,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMonsterInst2ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//MonsterPattern2:
-		//	MonsterInst2 value=INT;
+		//	MonsterInst2 value=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//MonsterInst2 value=INT
+		//MonsterInst2 value=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//MonsterInst2
@@ -1647,6 +1688,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class MonsterPattern3Elements extends AbstractParserRuleElementFinder {
@@ -1657,12 +1701,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValue1INTTerminalRuleCall_1_0 = (RuleCall)cValue1Assignment_1.eContents().get(0);
 		private final Assignment cValue2Assignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValue2INTTerminalRuleCall_2_0 = (RuleCall)cValue2Assignment_2.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//MonsterPattern3:
-		//	MonsterInst3 value1=INT value2=INT;
+		//	MonsterInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//MonsterInst3 value1=INT value2=INT
+		//MonsterInst3 value1=INT value2=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//MonsterInst3
@@ -1679,18 +1724,29 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValue2INTTerminalRuleCall_2_0() { return cValue2INTTerminalRuleCall_2_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_3() { return cFREE_FORM_COMMENTTerminalRuleCall_3; }
 	}
 
 	public class MonsterPattern4Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MonsterPattern4");
-		private final RuleCall cMonsterInst4ParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cMonsterInst4ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//MonsterPattern4:
-		//	MonsterInst4;
+		//	MonsterInst4 FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
+		//MonsterInst4 FREE_FORM_COMMENT*
+		public Group getGroup() { return cGroup; }
+
 		//MonsterInst4
-		public RuleCall getMonsterInst4ParserRuleCall() { return cMonsterInst4ParserRuleCall; }
+		public RuleCall getMonsterInst4ParserRuleCall_0() { return cMonsterInst4ParserRuleCall_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_1() { return cFREE_FORM_COMMENTTerminalRuleCall_1; }
 	}
 
 	public class MonsterPattern5Elements extends AbstractParserRuleElementFinder {
@@ -1702,12 +1758,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValue1STRINGTerminalRuleCall_1_0_0 = (RuleCall)cValue1Assignment_1_0.eContents().get(0);
 		private final Assignment cValue2Assignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cValue2INTTerminalRuleCall_1_1_0 = (RuleCall)cValue2Assignment_1_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//MonsterPattern5:
-		//	MonsterInst5 (value1=STRING | value2=INT);
+		//	MonsterInst5 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//MonsterInst5 (value1=STRING | value2=INT)
+		//MonsterInst5 (value1=STRING | value2=INT) FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//MonsterInst5
@@ -1727,6 +1784,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValue2INTTerminalRuleCall_1_1_0() { return cValue2INTTerminalRuleCall_1_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class MonsterPattern6Elements extends AbstractParserRuleElementFinder {
@@ -1735,12 +1795,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMonsterInst6ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//MonsterPattern6:
-		//	MonsterInst6 value=INT?;
+		//	MonsterInst6 value=INT? FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//MonsterInst6 value=INT?
+		//MonsterInst6 value=INT? FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//MonsterInst6
@@ -1751,6 +1812,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class MonsterInst1Elements extends AbstractParserRuleElementFinder {
@@ -3279,15 +3343,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectspellKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsSpellModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsSpellModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectSpellById:
-		//	"#selectspell" value=INT mods+=SpellMods* "#end";
+		//	"#selectspell" value=INT FREE_FORM_COMMENT* mods+=SpellMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectspell" value=INT mods+=SpellMods* "#end"
+		//"#selectspell" value=INT FREE_FORM_COMMENT* mods+=SpellMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectspell"
@@ -3299,14 +3364,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=SpellMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//SpellMods
-		public RuleCall getModsSpellModsParserRuleCall_2_0() { return cModsSpellModsParserRuleCall_2_0; }
+		public RuleCall getModsSpellModsParserRuleCall_3_0() { return cModsSpellModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class SelectSpellByNameElements extends AbstractParserRuleElementFinder {
@@ -3315,15 +3383,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectspellKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsSpellModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsSpellModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectSpellByName:
-		//	"#selectspell" value=STRING mods+=SpellMods* "#end";
+		//	"#selectspell" value=STRING FREE_FORM_COMMENT* mods+=SpellMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectspell" value=STRING mods+=SpellMods* "#end"
+		//"#selectspell" value=STRING FREE_FORM_COMMENT* mods+=SpellMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectspell"
@@ -3335,6 +3404,41 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
+		//mods+=SpellMods*
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
+
+		//SpellMods
+		public RuleCall getModsSpellModsParserRuleCall_3_0() { return cModsSpellModsParserRuleCall_3_0; }
+
+		//"#end"
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
+	}
+
+	public class NewSpellElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NewSpell");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNewspellKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cModsSpellModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
+		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//NewSpell:
+		//	"#newspell" FREE_FORM_COMMENT* mods+=SpellMods* "#end";
+		public ParserRule getRule() { return rule; }
+
+		//"#newspell" FREE_FORM_COMMENT* mods+=SpellMods* "#end"
+		public Group getGroup() { return cGroup; }
+
+		//"#newspell"
+		public Keyword getNewspellKeyword_0() { return cNewspellKeyword_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_1() { return cFREE_FORM_COMMENTTerminalRuleCall_1; }
+
 		//mods+=SpellMods*
 		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
 
@@ -3343,34 +3447,6 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"#end"
 		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
-	}
-
-	public class NewSpellElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NewSpell");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNewspellKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cModsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cModsSpellModsParserRuleCall_1_0 = (RuleCall)cModsAssignment_1.eContents().get(0);
-		private final Keyword cEndKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		
-		//NewSpell:
-		//	"#newspell" mods+=SpellMods* "#end";
-		public ParserRule getRule() { return rule; }
-
-		//"#newspell" mods+=SpellMods* "#end"
-		public Group getGroup() { return cGroup; }
-
-		//"#newspell"
-		public Keyword getNewspellKeyword_0() { return cNewspellKeyword_0; }
-
-		//mods+=SpellMods*
-		public Assignment getModsAssignment_1() { return cModsAssignment_1; }
-
-		//SpellMods
-		public RuleCall getModsSpellModsParserRuleCall_1_0() { return cModsSpellModsParserRuleCall_1_0; }
-
-		//"#end"
-		public Keyword getEndKeyword_2() { return cEndKeyword_2; }
 	}
 
 	public class SpellModsElements extends AbstractParserRuleElementFinder {
@@ -3411,12 +3487,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSpellInst1ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//SpellPattern1:
-		//	SpellInst1 value=STRING;
+		//	SpellInst1 value=STRING FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//SpellInst1 value=STRING
+		//SpellInst1 value=STRING FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//SpellInst1
@@ -3427,6 +3504,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class SpellPattern2Elements extends AbstractParserRuleElementFinder {
@@ -3435,12 +3515,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSpellInst2ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//SpellPattern2:
-		//	SpellInst2 value=INT;
+		//	SpellInst2 value=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//SpellInst2 value=INT
+		//SpellInst2 value=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//SpellInst2
@@ -3451,6 +3532,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class SpellPattern3Elements extends AbstractParserRuleElementFinder {
@@ -3461,12 +3545,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValue1INTTerminalRuleCall_1_0 = (RuleCall)cValue1Assignment_1.eContents().get(0);
 		private final Assignment cValue2Assignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValue2INTTerminalRuleCall_2_0 = (RuleCall)cValue2Assignment_2.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//SpellPattern3:
-		//	SpellInst3 value1=INT value2=INT;
+		//	SpellInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//SpellInst3 value1=INT value2=INT
+		//SpellInst3 value1=INT value2=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//SpellInst3
@@ -3483,18 +3568,29 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValue2INTTerminalRuleCall_2_0() { return cValue2INTTerminalRuleCall_2_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_3() { return cFREE_FORM_COMMENTTerminalRuleCall_3; }
 	}
 
 	public class SpellPattern4Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SpellPattern4");
-		private final RuleCall cSpellInst4ParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cSpellInst4ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//SpellPattern4:
-		//	SpellInst4;
+		//	SpellInst4 FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
+		//SpellInst4 FREE_FORM_COMMENT*
+		public Group getGroup() { return cGroup; }
+
 		//SpellInst4
-		public RuleCall getSpellInst4ParserRuleCall() { return cSpellInst4ParserRuleCall; }
+		public RuleCall getSpellInst4ParserRuleCall_0() { return cSpellInst4ParserRuleCall_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_1() { return cFREE_FORM_COMMENTTerminalRuleCall_1; }
 	}
 
 	public class SpellPattern5Elements extends AbstractParserRuleElementFinder {
@@ -3506,12 +3602,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValue1STRINGTerminalRuleCall_1_0_0 = (RuleCall)cValue1Assignment_1_0.eContents().get(0);
 		private final Assignment cValue2Assignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cValue2INTTerminalRuleCall_1_1_0 = (RuleCall)cValue2Assignment_1_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//SpellPattern5:
-		//	SpellInst5 (value1=STRING | value2=INT);
+		//	SpellInst5 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//SpellInst5 (value1=STRING | value2=INT)
+		//SpellInst5 (value1=STRING | value2=INT) FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//SpellInst5
@@ -3531,6 +3628,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValue2INTTerminalRuleCall_1_1_0() { return cValue2INTTerminalRuleCall_1_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class SpellInst1Elements extends AbstractParserRuleElementFinder {
@@ -3791,15 +3891,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectitemKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsItemModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsItemModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectItemById:
-		//	"#selectitem" value=INT mods+=ItemMods* "#end";
+		//	"#selectitem" value=INT FREE_FORM_COMMENT* mods+=ItemMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectitem" value=INT mods+=ItemMods* "#end"
+		//"#selectitem" value=INT FREE_FORM_COMMENT* mods+=ItemMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectitem"
@@ -3811,14 +3912,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=ItemMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//ItemMods
-		public RuleCall getModsItemModsParserRuleCall_2_0() { return cModsItemModsParserRuleCall_2_0; }
+		public RuleCall getModsItemModsParserRuleCall_3_0() { return cModsItemModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class SelectItemByNameElements extends AbstractParserRuleElementFinder {
@@ -3827,15 +3931,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectitemKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsItemModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsItemModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectItemByName:
-		//	"#selectitem" value=STRING mods+=ItemMods* "#end";
+		//	"#selectitem" value=STRING FREE_FORM_COMMENT* mods+=ItemMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectitem" value=STRING mods+=ItemMods* "#end"
+		//"#selectitem" value=STRING FREE_FORM_COMMENT* mods+=ItemMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectitem"
@@ -3847,6 +3952,41 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
+		//mods+=ItemMods*
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
+
+		//ItemMods
+		public RuleCall getModsItemModsParserRuleCall_3_0() { return cModsItemModsParserRuleCall_3_0; }
+
+		//"#end"
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
+	}
+
+	public class NewItemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NewItem");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNewitemKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cModsItemModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
+		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//NewItem:
+		//	"#newitem" FREE_FORM_COMMENT* mods+=ItemMods* "#end";
+		public ParserRule getRule() { return rule; }
+
+		//"#newitem" FREE_FORM_COMMENT* mods+=ItemMods* "#end"
+		public Group getGroup() { return cGroup; }
+
+		//"#newitem"
+		public Keyword getNewitemKeyword_0() { return cNewitemKeyword_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_1() { return cFREE_FORM_COMMENTTerminalRuleCall_1; }
+
 		//mods+=ItemMods*
 		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
 
@@ -3855,34 +3995,6 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"#end"
 		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
-	}
-
-	public class NewItemElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NewItem");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNewitemKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cModsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cModsItemModsParserRuleCall_1_0 = (RuleCall)cModsAssignment_1.eContents().get(0);
-		private final Keyword cEndKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		
-		//NewItem:
-		//	"#newitem" mods+=ItemMods* "#end";
-		public ParserRule getRule() { return rule; }
-
-		//"#newitem" mods+=ItemMods* "#end"
-		public Group getGroup() { return cGroup; }
-
-		//"#newitem"
-		public Keyword getNewitemKeyword_0() { return cNewitemKeyword_0; }
-
-		//mods+=ItemMods*
-		public Assignment getModsAssignment_1() { return cModsAssignment_1; }
-
-		//ItemMods
-		public RuleCall getModsItemModsParserRuleCall_1_0() { return cModsItemModsParserRuleCall_1_0; }
-
-		//"#end"
-		public Keyword getEndKeyword_2() { return cEndKeyword_2; }
 	}
 
 	public class ItemModsElements extends AbstractParserRuleElementFinder {
@@ -3915,12 +4027,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cItemInst1ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//ItemPattern1:
-		//	ItemInst1 value=STRING;
+		//	ItemInst1 value=STRING FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//ItemInst1 value=STRING
+		//ItemInst1 value=STRING FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//ItemInst1
@@ -3931,6 +4044,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class ItemPattern2Elements extends AbstractParserRuleElementFinder {
@@ -3939,12 +4055,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cItemInst2ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//ItemPattern2:
-		//	ItemInst2 value=INT;
+		//	ItemInst2 value=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//ItemInst2 value=INT
+		//ItemInst2 value=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//ItemInst2
@@ -3955,6 +4072,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class ItemPattern3Elements extends AbstractParserRuleElementFinder {
@@ -3966,12 +4086,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValue1STRINGTerminalRuleCall_1_0_0 = (RuleCall)cValue1Assignment_1_0.eContents().get(0);
 		private final Assignment cValue2Assignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cValue2INTTerminalRuleCall_1_1_0 = (RuleCall)cValue2Assignment_1_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//ItemPattern3:
-		//	ItemInst3 (value1=STRING | value2=INT);
+		//	ItemInst3 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//ItemInst3 (value1=STRING | value2=INT)
+		//ItemInst3 (value1=STRING | value2=INT) FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//ItemInst3
@@ -3991,6 +4112,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValue2INTTerminalRuleCall_1_1_0() { return cValue2INTTerminalRuleCall_1_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class ItemInst1Elements extends AbstractParserRuleElementFinder {
@@ -4133,15 +4257,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectnametypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsNameModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsNameModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectName:
-		//	"#selectnametype" value=INT mods+=NameMods* "#end";
+		//	"#selectnametype" value=INT FREE_FORM_COMMENT* mods+=NameMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectnametype" value=INT mods+=NameMods* "#end"
+		//"#selectnametype" value=INT FREE_FORM_COMMENT* mods+=NameMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectnametype"
@@ -4153,14 +4278,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=NameMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//NameMods
-		public RuleCall getModsNameModsParserRuleCall_2_0() { return cModsNameModsParserRuleCall_2_0; }
+		public RuleCall getModsNameModsParserRuleCall_3_0() { return cModsNameModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class NameModsElements extends AbstractParserRuleElementFinder {
@@ -4189,12 +4317,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameInst1ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//NamePattern1:
-		//	NameInst1 value=STRING;
+		//	NameInst1 value=STRING FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//NameInst1 value=STRING
+		//NameInst1 value=STRING FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//NameInst1
@@ -4205,18 +4334,29 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class NamePattern2Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NamePattern2");
-		private final RuleCall cNameInst2ParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cNameInst2ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//NamePattern2:
-		//	NameInst2;
+		//	NameInst2 FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
+		//NameInst2 FREE_FORM_COMMENT*
+		public Group getGroup() { return cGroup; }
+
 		//NameInst2
-		public RuleCall getNameInst2ParserRuleCall() { return cNameInst2ParserRuleCall; }
+		public RuleCall getNameInst2ParserRuleCall_0() { return cNameInst2ParserRuleCall_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_1() { return cFREE_FORM_COMMENTTerminalRuleCall_1; }
 	}
 
 	public class NameInst1Elements extends AbstractParserRuleElementFinder {
@@ -4281,15 +4421,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectsiteKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsSiteModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsSiteModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectSiteById:
-		//	"#selectsite" value=INT mods+=SiteMods* "#end";
+		//	"#selectsite" value=INT FREE_FORM_COMMENT* mods+=SiteMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectsite" value=INT mods+=SiteMods* "#end"
+		//"#selectsite" value=INT FREE_FORM_COMMENT* mods+=SiteMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectsite"
@@ -4301,14 +4442,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=SiteMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//SiteMods
-		public RuleCall getModsSiteModsParserRuleCall_2_0() { return cModsSiteModsParserRuleCall_2_0; }
+		public RuleCall getModsSiteModsParserRuleCall_3_0() { return cModsSiteModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class SelectSiteByNameElements extends AbstractParserRuleElementFinder {
@@ -4317,15 +4461,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectsiteKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsSiteModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsSiteModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectSiteByName:
-		//	"#selectsite" value=STRING mods+=SiteMods* "#end";
+		//	"#selectsite" value=STRING FREE_FORM_COMMENT* mods+=SiteMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectsite" value=STRING mods+=SiteMods* "#end"
+		//"#selectsite" value=STRING FREE_FORM_COMMENT* mods+=SiteMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectsite"
@@ -4337,14 +4482,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=SiteMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//SiteMods
-		public RuleCall getModsSiteModsParserRuleCall_2_0() { return cModsSiteModsParserRuleCall_2_0; }
+		public RuleCall getModsSiteModsParserRuleCall_3_0() { return cModsSiteModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class NewSiteElements extends AbstractParserRuleElementFinder {
@@ -4353,15 +4501,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNewsiteKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsSiteModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsSiteModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//NewSite:
-		//	"#newsite" value=INT mods+=SiteMods* "#end";
+		//	"#newsite" value=INT FREE_FORM_COMMENT* mods+=SiteMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#newsite" value=INT mods+=SiteMods* "#end"
+		//"#newsite" value=INT FREE_FORM_COMMENT* mods+=SiteMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#newsite"
@@ -4373,14 +4522,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=SiteMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//SiteMods
-		public RuleCall getModsSiteModsParserRuleCall_2_0() { return cModsSiteModsParserRuleCall_2_0; }
+		public RuleCall getModsSiteModsParserRuleCall_3_0() { return cModsSiteModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class SiteModsElements extends AbstractParserRuleElementFinder {
@@ -4417,12 +4569,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSiteInst1ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//SitePattern1:
-		//	SiteInst1 value=STRING;
+		//	SiteInst1 value=STRING FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//SiteInst1 value=STRING
+		//SiteInst1 value=STRING FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//SiteInst1
@@ -4433,6 +4586,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class SitePattern2Elements extends AbstractParserRuleElementFinder {
@@ -4441,12 +4597,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSiteInst2ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//SitePattern2:
-		//	SiteInst2 value=INT;
+		//	SiteInst2 value=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//SiteInst2 value=INT
+		//SiteInst2 value=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//SiteInst2
@@ -4457,6 +4614,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class SitePattern3Elements extends AbstractParserRuleElementFinder {
@@ -4467,12 +4627,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValue1INTTerminalRuleCall_1_0 = (RuleCall)cValue1Assignment_1.eContents().get(0);
 		private final Assignment cValue2Assignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValue2INTTerminalRuleCall_2_0 = (RuleCall)cValue2Assignment_2.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//SitePattern3:
-		//	SiteInst3 value1=INT value2=INT;
+		//	SiteInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//SiteInst3 value1=INT value2=INT
+		//SiteInst3 value1=INT value2=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//SiteInst3
@@ -4489,18 +4650,29 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValue2INTTerminalRuleCall_2_0() { return cValue2INTTerminalRuleCall_2_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_3() { return cFREE_FORM_COMMENTTerminalRuleCall_3; }
 	}
 
 	public class SitePattern4Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SitePattern4");
-		private final RuleCall cSiteInst4ParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cSiteInst4ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//SitePattern4:
-		//	SiteInst4;
+		//	SiteInst4 FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
+		//SiteInst4 FREE_FORM_COMMENT*
+		public Group getGroup() { return cGroup; }
+
 		//SiteInst4
-		public RuleCall getSiteInst4ParserRuleCall() { return cSiteInst4ParserRuleCall; }
+		public RuleCall getSiteInst4ParserRuleCall_0() { return cSiteInst4ParserRuleCall_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_1() { return cFREE_FORM_COMMENTTerminalRuleCall_1; }
 	}
 
 	public class SiteInst1Elements extends AbstractParserRuleElementFinder {
@@ -4687,15 +4859,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectnationKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-		private final Assignment cModsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModsNationModsParserRuleCall_2_0 = (RuleCall)cModsAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cModsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModsNationModsParserRuleCall_3_0 = (RuleCall)cModsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SelectNation:
-		//	"#selectnation" value=INT mods+=NationMods* "#end";
+		//	"#selectnation" value=INT FREE_FORM_COMMENT* mods+=NationMods* "#end";
 		public ParserRule getRule() { return rule; }
 
-		//"#selectnation" value=INT mods+=NationMods* "#end"
+		//"#selectnation" value=INT FREE_FORM_COMMENT* mods+=NationMods* "#end"
 		public Group getGroup() { return cGroup; }
 
 		//"#selectnation"
@@ -4707,14 +4880,17 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
 		//mods+=NationMods*
-		public Assignment getModsAssignment_2() { return cModsAssignment_2; }
+		public Assignment getModsAssignment_3() { return cModsAssignment_3; }
 
 		//NationMods
-		public RuleCall getModsNationModsParserRuleCall_2_0() { return cModsNationModsParserRuleCall_2_0; }
+		public RuleCall getModsNationModsParserRuleCall_3_0() { return cModsNationModsParserRuleCall_3_0; }
 
 		//"#end"
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
 
 	public class IndepFlagElements extends AbstractParserRuleElementFinder {
@@ -4723,12 +4899,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cIndepflagKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//IndepFlag:
-		//	"#indepflag" value=STRING;
+		//	"#indepflag" value=STRING FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//"#indepflag" value=STRING
+		//"#indepflag" value=STRING FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//"#indepflag"
@@ -4739,6 +4916,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class NationModsElements extends AbstractParserRuleElementFinder {
@@ -4779,12 +4959,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNationInst1ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//NationPattern1:
-		//	NationInst1 value=STRING;
+		//	NationInst1 value=STRING FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//NationInst1 value=STRING
+		//NationInst1 value=STRING FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//NationInst1
@@ -4795,6 +4976,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class NationPattern2Elements extends AbstractParserRuleElementFinder {
@@ -4803,12 +4987,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNationInst2ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//NationPattern2:
-		//	NationInst2 value=INT;
+		//	NationInst2 value=INT FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//NationInst2 value=INT
+		//NationInst2 value=INT FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//NationInst2
@@ -4819,18 +5004,29 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class NationPattern3Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NationPattern3");
-		private final RuleCall cNationInst3ParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cNationInst3ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//NationPattern3:
-		//	NationInst3;
+		//	NationInst3 FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
+		//NationInst3 FREE_FORM_COMMENT*
+		public Group getGroup() { return cGroup; }
+
 		//NationInst3
-		public RuleCall getNationInst3ParserRuleCall() { return cNationInst3ParserRuleCall; }
+		public RuleCall getNationInst3ParserRuleCall_0() { return cNationInst3ParserRuleCall_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_1() { return cFREE_FORM_COMMENTTerminalRuleCall_1; }
 	}
 
 	public class NationPattern4Elements extends AbstractParserRuleElementFinder {
@@ -4842,12 +5038,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValue1STRINGTerminalRuleCall_1_0_0 = (RuleCall)cValue1Assignment_1_0.eContents().get(0);
 		private final Assignment cValue2Assignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cValue2INTTerminalRuleCall_1_1_0 = (RuleCall)cValue2Assignment_1_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//NationPattern4:
-		//	NationInst4 (value1=STRING | value2=INT);
+		//	NationInst4 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//NationInst4 (value1=STRING | value2=INT)
+		//NationInst4 (value1=STRING | value2=INT) FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//NationInst4
@@ -4867,6 +5064,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getValue2INTTerminalRuleCall_1_1_0() { return cValue2INTTerminalRuleCall_1_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
 	}
 
 	public class NationPattern5Elements extends AbstractParserRuleElementFinder {
@@ -4879,12 +5079,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValue2DecimalValueParserRuleCall_2_0 = (RuleCall)cValue2Assignment_2.eContents().get(0);
 		private final Assignment cValue3Assignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValue3DecimalValueParserRuleCall_3_0 = (RuleCall)cValue3Assignment_3.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//NationPattern5:
-		//	NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue;
+		//	NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue
+		//NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//NationInst5
@@ -4907,34 +5108,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//DecimalValue
 		public RuleCall getValue3DecimalValueParserRuleCall_3_0() { return cValue3DecimalValueParserRuleCall_3_0; }
-	}
 
-	public class DecimalValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DecimalValue");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		
-		//DecimalValue returns ecore::EString:
-		//	INT ("." INT);
-		public ParserRule getRule() { return rule; }
-
-		//INT ("." INT)
-		public Group getGroup() { return cGroup; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
-
-		//"." INT
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_4() { return cFREE_FORM_COMMENTTerminalRuleCall_4; }
 	}
 
 	public class NationInst1Elements extends AbstractParserRuleElementFinder {
@@ -5633,11 +5809,38 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//"#color"
 		public Keyword getColorColorKeyword_0() { return cColorColorKeyword_0; }
 	}
+
+	public class DecimalValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DecimalValue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//DecimalValue returns ecore::EString:
+		//	INT ("." INT)*;
+		public ParserRule getRule() { return rule; }
+
+		//INT ("." INT)*
+		public Group getGroup() { return cGroup; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
+
+		//("." INT)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
+	}
 	
 	
 	private Dom3ModElements pDom3Mod;
 	private AbstractElementElements pAbstractElement;
-	private VersionNumElements pVersionNum;
 	private ArmorElements pArmor;
 	private SelectArmorByIdElements pSelectArmorById;
 	private SelectArmorByNameElements pSelectArmorByName;
@@ -5732,14 +5935,15 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	private NationPattern3Elements pNationPattern3;
 	private NationPattern4Elements pNationPattern4;
 	private NationPattern5Elements pNationPattern5;
-	private DecimalValueElements pDecimalValue;
 	private NationInst1Elements pNationInst1;
 	private NationInst2Elements pNationInst2;
 	private NationInst3Elements pNationInst3;
 	private NationInst4Elements pNationInst4;
 	private NationInst5Elements pNationInst5;
+	private DecimalValueElements pDecimalValue;
 	private TerminalRule tINT;
 	private TerminalRule tSTRING;
+	private TerminalRule tFREE_FORM_COMMENT;
 	private TerminalRule tML_COMMENT;
 	private TerminalRule tSL_COMMENT;
 	private TerminalRule tWS;
@@ -5758,14 +5962,14 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Dom3Mod:
-	//	("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=VersionNum)?
-	//	& ("#domversion" domversion=VersionNum)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
-	//	("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres" unresthalfres=INT)? &
-	//	("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents" turmoilevents=INT)? &
-	//	("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
-	//	("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome" coldincome=INT)? &
-	//	("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)? &
-	//	("#researchscale" researchscale=INT)? & "#end"?) elements+=AbstractElement*;
+	//	("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version"
+	//	version=DecimalValue)? & ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult"
+	//	resourcemult=INT)? & ("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres"
+	//	unresthalfres=INT)? & ("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents"
+	//	turmoilevents=INT)? & ("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath"
+	//	deathdeath=INT)? & ("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome"
+	//	coldincome=INT)? & ("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)?
+	//	& ("#researchscale" researchscale=INT)? & "#end"?) elements+=AbstractElement*;
 	public Dom3ModElements getDom3ModAccess() {
 		return (pDom3Mod != null) ? pDom3Mod : (pDom3Mod = new Dom3ModElements());
 	}
@@ -5784,16 +5988,6 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractElementAccess().getRule();
 	}
 
-	//VersionNum returns ecore::EString:
-	//	INT ("." INT)*;
-	public VersionNumElements getVersionNumAccess() {
-		return (pVersionNum != null) ? pVersionNum : (pVersionNum = new VersionNumElements());
-	}
-	
-	public ParserRule getVersionNumRule() {
-		return getVersionNumAccess().getRule();
-	}
-
 	/// ************** / / * Armor Mods * / / ************** / Armor:
 	//	SelectArmorById | SelectArmorByName | NewArmor;
 	public ArmorElements getArmorAccess() {
@@ -5805,7 +5999,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectArmorById:
-	//	"#selectarmor" value=INT mods+=ArmorMods* "#end";
+	//	"#selectarmor" value=INT FREE_FORM_COMMENT* mods+=ArmorMods* "#end";
 	public SelectArmorByIdElements getSelectArmorByIdAccess() {
 		return (pSelectArmorById != null) ? pSelectArmorById : (pSelectArmorById = new SelectArmorByIdElements());
 	}
@@ -5815,7 +6009,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectArmorByName:
-	//	"#selectarmor" value=STRING mods+=ArmorMods* "#end";
+	//	"#selectarmor" value=STRING FREE_FORM_COMMENT* mods+=ArmorMods* "#end";
 	public SelectArmorByNameElements getSelectArmorByNameAccess() {
 		return (pSelectArmorByName != null) ? pSelectArmorByName : (pSelectArmorByName = new SelectArmorByNameElements());
 	}
@@ -5825,7 +6019,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NewArmor:
-	//	"#newarmor" value=INT mods+=ArmorMods* "#end";
+	//	"#newarmor" value=INT FREE_FORM_COMMENT* mods+=ArmorMods* "#end";
 	public NewArmorElements getNewArmorAccess() {
 		return (pNewArmor != null) ? pNewArmor : (pNewArmor = new NewArmorElements());
 	}
@@ -5845,7 +6039,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ArmorPattern1:
-	//	ArmorInst1 value=STRING;
+	//	ArmorInst1 value=STRING FREE_FORM_COMMENT*;
 	public ArmorPattern1Elements getArmorPattern1Access() {
 		return (pArmorPattern1 != null) ? pArmorPattern1 : (pArmorPattern1 = new ArmorPattern1Elements());
 	}
@@ -5855,7 +6049,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ArmorPattern2:
-	//	ArmorInst2 value=INT;
+	//	ArmorInst2 value=INT FREE_FORM_COMMENT*;
 	public ArmorPattern2Elements getArmorPattern2Access() {
 		return (pArmorPattern2 != null) ? pArmorPattern2 : (pArmorPattern2 = new ArmorPattern2Elements());
 	}
@@ -5895,7 +6089,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectWeaponById:
-	//	"#selectweapon" value=INT mods+=WeaponMods* "#end";
+	//	"#selectweapon" value=INT FREE_FORM_COMMENT* mods+=WeaponMods* "#end";
 	public SelectWeaponByIdElements getSelectWeaponByIdAccess() {
 		return (pSelectWeaponById != null) ? pSelectWeaponById : (pSelectWeaponById = new SelectWeaponByIdElements());
 	}
@@ -5905,7 +6099,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectWeaponByName:
-	//	"#selectweapon" value=STRING mods+=WeaponMods* "#end";
+	//	"#selectweapon" value=STRING FREE_FORM_COMMENT* mods+=WeaponMods* "#end";
 	public SelectWeaponByNameElements getSelectWeaponByNameAccess() {
 		return (pSelectWeaponByName != null) ? pSelectWeaponByName : (pSelectWeaponByName = new SelectWeaponByNameElements());
 	}
@@ -5915,7 +6109,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NewWeapon:
-	//	"#newweapon" value=INT mods+=WeaponMods* "#end";
+	//	"#newweapon" value=INT FREE_FORM_COMMENT* mods+=WeaponMods* "#end";
 	public NewWeaponElements getNewWeaponAccess() {
 		return (pNewWeapon != null) ? pNewWeapon : (pNewWeapon = new NewWeaponElements());
 	}
@@ -5935,7 +6129,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//WeaponPattern1:
-	//	WeaponInst1 value=STRING;
+	//	WeaponInst1 value=STRING FREE_FORM_COMMENT*;
 	public WeaponPattern1Elements getWeaponPattern1Access() {
 		return (pWeaponPattern1 != null) ? pWeaponPattern1 : (pWeaponPattern1 = new WeaponPattern1Elements());
 	}
@@ -5945,7 +6139,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//WeaponPattern2:
-	//	WeaponInst2 value=INT;
+	//	WeaponInst2 value=INT FREE_FORM_COMMENT*;
 	public WeaponPattern2Elements getWeaponPattern2Access() {
 		return (pWeaponPattern2 != null) ? pWeaponPattern2 : (pWeaponPattern2 = new WeaponPattern2Elements());
 	}
@@ -5955,7 +6149,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//WeaponPattern3:
-	//	WeaponInst3 value1=INT value2=INT;
+	//	WeaponInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
 	public WeaponPattern3Elements getWeaponPattern3Access() {
 		return (pWeaponPattern3 != null) ? pWeaponPattern3 : (pWeaponPattern3 = new WeaponPattern3Elements());
 	}
@@ -5965,7 +6159,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//WeaponPattern4:
-	//	WeaponInst4;
+	//	WeaponInst4 FREE_FORM_COMMENT*;
 	public WeaponPattern4Elements getWeaponPattern4Access() {
 		return (pWeaponPattern4 != null) ? pWeaponPattern4 : (pWeaponPattern4 = new WeaponPattern4Elements());
 	}
@@ -6033,7 +6227,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectMonsterById:
-	//	"#selectmonster" value=INT mods+=MonsterMods* "#end";
+	//	"#selectmonster" value=INT FREE_FORM_COMMENT* mods+=MonsterMods* "#end";
 	public SelectMonsterByIdElements getSelectMonsterByIdAccess() {
 		return (pSelectMonsterById != null) ? pSelectMonsterById : (pSelectMonsterById = new SelectMonsterByIdElements());
 	}
@@ -6043,7 +6237,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectMonsterByName:
-	//	"#selectmonster" value=STRING mods+=MonsterMods* "#end";
+	//	"#selectmonster" value=STRING FREE_FORM_COMMENT* mods+=MonsterMods* "#end";
 	public SelectMonsterByNameElements getSelectMonsterByNameAccess() {
 		return (pSelectMonsterByName != null) ? pSelectMonsterByName : (pSelectMonsterByName = new SelectMonsterByNameElements());
 	}
@@ -6053,7 +6247,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NewMonster:
-	//	"#newmonster" value=INT mods+=MonsterMods* "#end";
+	//	"#newmonster" value=INT FREE_FORM_COMMENT* mods+=MonsterMods* "#end";
 	public NewMonsterElements getNewMonsterAccess() {
 		return (pNewMonster != null) ? pNewMonster : (pNewMonster = new NewMonsterElements());
 	}
@@ -6073,7 +6267,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MonsterPattern1:
-	//	MonsterInst1 value=STRING;
+	//	MonsterInst1 value=STRING FREE_FORM_COMMENT*;
 	public MonsterPattern1Elements getMonsterPattern1Access() {
 		return (pMonsterPattern1 != null) ? pMonsterPattern1 : (pMonsterPattern1 = new MonsterPattern1Elements());
 	}
@@ -6083,7 +6277,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MonsterPattern2:
-	//	MonsterInst2 value=INT;
+	//	MonsterInst2 value=INT FREE_FORM_COMMENT*;
 	public MonsterPattern2Elements getMonsterPattern2Access() {
 		return (pMonsterPattern2 != null) ? pMonsterPattern2 : (pMonsterPattern2 = new MonsterPattern2Elements());
 	}
@@ -6093,7 +6287,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MonsterPattern3:
-	//	MonsterInst3 value1=INT value2=INT;
+	//	MonsterInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
 	public MonsterPattern3Elements getMonsterPattern3Access() {
 		return (pMonsterPattern3 != null) ? pMonsterPattern3 : (pMonsterPattern3 = new MonsterPattern3Elements());
 	}
@@ -6103,7 +6297,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MonsterPattern4:
-	//	MonsterInst4;
+	//	MonsterInst4 FREE_FORM_COMMENT*;
 	public MonsterPattern4Elements getMonsterPattern4Access() {
 		return (pMonsterPattern4 != null) ? pMonsterPattern4 : (pMonsterPattern4 = new MonsterPattern4Elements());
 	}
@@ -6113,7 +6307,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MonsterPattern5:
-	//	MonsterInst5 (value1=STRING | value2=INT);
+	//	MonsterInst5 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
 	public MonsterPattern5Elements getMonsterPattern5Access() {
 		return (pMonsterPattern5 != null) ? pMonsterPattern5 : (pMonsterPattern5 = new MonsterPattern5Elements());
 	}
@@ -6123,7 +6317,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MonsterPattern6:
-	//	MonsterInst6 value=INT?;
+	//	MonsterInst6 value=INT? FREE_FORM_COMMENT*;
 	public MonsterPattern6Elements getMonsterPattern6Access() {
 		return (pMonsterPattern6 != null) ? pMonsterPattern6 : (pMonsterPattern6 = new MonsterPattern6Elements());
 	}
@@ -6239,7 +6433,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectSpellById:
-	//	"#selectspell" value=INT mods+=SpellMods* "#end";
+	//	"#selectspell" value=INT FREE_FORM_COMMENT* mods+=SpellMods* "#end";
 	public SelectSpellByIdElements getSelectSpellByIdAccess() {
 		return (pSelectSpellById != null) ? pSelectSpellById : (pSelectSpellById = new SelectSpellByIdElements());
 	}
@@ -6249,7 +6443,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectSpellByName:
-	//	"#selectspell" value=STRING mods+=SpellMods* "#end";
+	//	"#selectspell" value=STRING FREE_FORM_COMMENT* mods+=SpellMods* "#end";
 	public SelectSpellByNameElements getSelectSpellByNameAccess() {
 		return (pSelectSpellByName != null) ? pSelectSpellByName : (pSelectSpellByName = new SelectSpellByNameElements());
 	}
@@ -6259,7 +6453,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NewSpell:
-	//	"#newspell" mods+=SpellMods* "#end";
+	//	"#newspell" FREE_FORM_COMMENT* mods+=SpellMods* "#end";
 	public NewSpellElements getNewSpellAccess() {
 		return (pNewSpell != null) ? pNewSpell : (pNewSpell = new NewSpellElements());
 	}
@@ -6279,7 +6473,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SpellPattern1:
-	//	SpellInst1 value=STRING;
+	//	SpellInst1 value=STRING FREE_FORM_COMMENT*;
 	public SpellPattern1Elements getSpellPattern1Access() {
 		return (pSpellPattern1 != null) ? pSpellPattern1 : (pSpellPattern1 = new SpellPattern1Elements());
 	}
@@ -6289,7 +6483,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SpellPattern2:
-	//	SpellInst2 value=INT;
+	//	SpellInst2 value=INT FREE_FORM_COMMENT*;
 	public SpellPattern2Elements getSpellPattern2Access() {
 		return (pSpellPattern2 != null) ? pSpellPattern2 : (pSpellPattern2 = new SpellPattern2Elements());
 	}
@@ -6299,7 +6493,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SpellPattern3:
-	//	SpellInst3 value1=INT value2=INT;
+	//	SpellInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
 	public SpellPattern3Elements getSpellPattern3Access() {
 		return (pSpellPattern3 != null) ? pSpellPattern3 : (pSpellPattern3 = new SpellPattern3Elements());
 	}
@@ -6309,7 +6503,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SpellPattern4:
-	//	SpellInst4;
+	//	SpellInst4 FREE_FORM_COMMENT*;
 	public SpellPattern4Elements getSpellPattern4Access() {
 		return (pSpellPattern4 != null) ? pSpellPattern4 : (pSpellPattern4 = new SpellPattern4Elements());
 	}
@@ -6319,7 +6513,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SpellPattern5:
-	//	SpellInst5 (value1=STRING | value2=INT);
+	//	SpellInst5 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
 	public SpellPattern5Elements getSpellPattern5Access() {
 		return (pSpellPattern5 != null) ? pSpellPattern5 : (pSpellPattern5 = new SpellPattern5Elements());
 	}
@@ -6391,7 +6585,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectItemById:
-	//	"#selectitem" value=INT mods+=ItemMods* "#end";
+	//	"#selectitem" value=INT FREE_FORM_COMMENT* mods+=ItemMods* "#end";
 	public SelectItemByIdElements getSelectItemByIdAccess() {
 		return (pSelectItemById != null) ? pSelectItemById : (pSelectItemById = new SelectItemByIdElements());
 	}
@@ -6401,7 +6595,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectItemByName:
-	//	"#selectitem" value=STRING mods+=ItemMods* "#end";
+	//	"#selectitem" value=STRING FREE_FORM_COMMENT* mods+=ItemMods* "#end";
 	public SelectItemByNameElements getSelectItemByNameAccess() {
 		return (pSelectItemByName != null) ? pSelectItemByName : (pSelectItemByName = new SelectItemByNameElements());
 	}
@@ -6411,7 +6605,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NewItem:
-	//	"#newitem" mods+=ItemMods* "#end";
+	//	"#newitem" FREE_FORM_COMMENT* mods+=ItemMods* "#end";
 	public NewItemElements getNewItemAccess() {
 		return (pNewItem != null) ? pNewItem : (pNewItem = new NewItemElements());
 	}
@@ -6431,7 +6625,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ItemPattern1:
-	//	ItemInst1 value=STRING;
+	//	ItemInst1 value=STRING FREE_FORM_COMMENT*;
 	public ItemPattern1Elements getItemPattern1Access() {
 		return (pItemPattern1 != null) ? pItemPattern1 : (pItemPattern1 = new ItemPattern1Elements());
 	}
@@ -6441,7 +6635,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ItemPattern2:
-	//	ItemInst2 value=INT;
+	//	ItemInst2 value=INT FREE_FORM_COMMENT*;
 	public ItemPattern2Elements getItemPattern2Access() {
 		return (pItemPattern2 != null) ? pItemPattern2 : (pItemPattern2 = new ItemPattern2Elements());
 	}
@@ -6451,7 +6645,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ItemPattern3:
-	//	ItemInst3 (value1=STRING | value2=INT);
+	//	ItemInst3 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
 	public ItemPattern3Elements getItemPattern3Access() {
 		return (pItemPattern3 != null) ? pItemPattern3 : (pItemPattern3 = new ItemPattern3Elements());
 	}
@@ -6502,7 +6696,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectName:
-	//	"#selectnametype" value=INT mods+=NameMods* "#end";
+	//	"#selectnametype" value=INT FREE_FORM_COMMENT* mods+=NameMods* "#end";
 	public SelectNameElements getSelectNameAccess() {
 		return (pSelectName != null) ? pSelectName : (pSelectName = new SelectNameElements());
 	}
@@ -6522,7 +6716,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NamePattern1:
-	//	NameInst1 value=STRING;
+	//	NameInst1 value=STRING FREE_FORM_COMMENT*;
 	public NamePattern1Elements getNamePattern1Access() {
 		return (pNamePattern1 != null) ? pNamePattern1 : (pNamePattern1 = new NamePattern1Elements());
 	}
@@ -6532,7 +6726,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NamePattern2:
-	//	NameInst2;
+	//	NameInst2 FREE_FORM_COMMENT*;
 	public NamePattern2Elements getNamePattern2Access() {
 		return (pNamePattern2 != null) ? pNamePattern2 : (pNamePattern2 = new NamePattern2Elements());
 	}
@@ -6572,7 +6766,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectSiteById:
-	//	"#selectsite" value=INT mods+=SiteMods* "#end";
+	//	"#selectsite" value=INT FREE_FORM_COMMENT* mods+=SiteMods* "#end";
 	public SelectSiteByIdElements getSelectSiteByIdAccess() {
 		return (pSelectSiteById != null) ? pSelectSiteById : (pSelectSiteById = new SelectSiteByIdElements());
 	}
@@ -6582,7 +6776,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectSiteByName:
-	//	"#selectsite" value=STRING mods+=SiteMods* "#end";
+	//	"#selectsite" value=STRING FREE_FORM_COMMENT* mods+=SiteMods* "#end";
 	public SelectSiteByNameElements getSelectSiteByNameAccess() {
 		return (pSelectSiteByName != null) ? pSelectSiteByName : (pSelectSiteByName = new SelectSiteByNameElements());
 	}
@@ -6592,7 +6786,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NewSite:
-	//	"#newsite" value=INT mods+=SiteMods* "#end";
+	//	"#newsite" value=INT FREE_FORM_COMMENT* mods+=SiteMods* "#end";
 	public NewSiteElements getNewSiteAccess() {
 		return (pNewSite != null) ? pNewSite : (pNewSite = new NewSiteElements());
 	}
@@ -6612,7 +6806,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SitePattern1:
-	//	SiteInst1 value=STRING;
+	//	SiteInst1 value=STRING FREE_FORM_COMMENT*;
 	public SitePattern1Elements getSitePattern1Access() {
 		return (pSitePattern1 != null) ? pSitePattern1 : (pSitePattern1 = new SitePattern1Elements());
 	}
@@ -6622,7 +6816,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SitePattern2:
-	//	SiteInst2 value=INT;
+	//	SiteInst2 value=INT FREE_FORM_COMMENT*;
 	public SitePattern2Elements getSitePattern2Access() {
 		return (pSitePattern2 != null) ? pSitePattern2 : (pSitePattern2 = new SitePattern2Elements());
 	}
@@ -6632,7 +6826,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SitePattern3:
-	//	SiteInst3 value1=INT value2=INT;
+	//	SiteInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
 	public SitePattern3Elements getSitePattern3Access() {
 		return (pSitePattern3 != null) ? pSitePattern3 : (pSitePattern3 = new SitePattern3Elements());
 	}
@@ -6642,7 +6836,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SitePattern4:
-	//	SiteInst4;
+	//	SiteInst4 FREE_FORM_COMMENT*;
 	public SitePattern4Elements getSitePattern4Access() {
 		return (pSitePattern4 != null) ? pSitePattern4 : (pSitePattern4 = new SitePattern4Elements());
 	}
@@ -6703,7 +6897,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectNation:
-	//	"#selectnation" value=INT mods+=NationMods* "#end";
+	//	"#selectnation" value=INT FREE_FORM_COMMENT* mods+=NationMods* "#end";
 	public SelectNationElements getSelectNationAccess() {
 		return (pSelectNation != null) ? pSelectNation : (pSelectNation = new SelectNationElements());
 	}
@@ -6713,7 +6907,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//IndepFlag:
-	//	"#indepflag" value=STRING;
+	//	"#indepflag" value=STRING FREE_FORM_COMMENT*;
 	public IndepFlagElements getIndepFlagAccess() {
 		return (pIndepFlag != null) ? pIndepFlag : (pIndepFlag = new IndepFlagElements());
 	}
@@ -6733,7 +6927,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NationPattern1:
-	//	NationInst1 value=STRING;
+	//	NationInst1 value=STRING FREE_FORM_COMMENT*;
 	public NationPattern1Elements getNationPattern1Access() {
 		return (pNationPattern1 != null) ? pNationPattern1 : (pNationPattern1 = new NationPattern1Elements());
 	}
@@ -6743,7 +6937,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NationPattern2:
-	//	NationInst2 value=INT;
+	//	NationInst2 value=INT FREE_FORM_COMMENT*;
 	public NationPattern2Elements getNationPattern2Access() {
 		return (pNationPattern2 != null) ? pNationPattern2 : (pNationPattern2 = new NationPattern2Elements());
 	}
@@ -6753,7 +6947,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NationPattern3:
-	//	NationInst3;
+	//	NationInst3 FREE_FORM_COMMENT*;
 	public NationPattern3Elements getNationPattern3Access() {
 		return (pNationPattern3 != null) ? pNationPattern3 : (pNationPattern3 = new NationPattern3Elements());
 	}
@@ -6763,7 +6957,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NationPattern4:
-	//	NationInst4 (value1=STRING | value2=INT);
+	//	NationInst4 (value1=STRING | value2=INT) FREE_FORM_COMMENT*;
 	public NationPattern4Elements getNationPattern4Access() {
 		return (pNationPattern4 != null) ? pNationPattern4 : (pNationPattern4 = new NationPattern4Elements());
 	}
@@ -6773,23 +6967,13 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NationPattern5:
-	//	NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue;
+	//	NationInst5 value1=DecimalValue value2=DecimalValue value3=DecimalValue FREE_FORM_COMMENT*;
 	public NationPattern5Elements getNationPattern5Access() {
 		return (pNationPattern5 != null) ? pNationPattern5 : (pNationPattern5 = new NationPattern5Elements());
 	}
 	
 	public ParserRule getNationPattern5Rule() {
 		return getNationPattern5Access().getRule();
-	}
-
-	//DecimalValue returns ecore::EString:
-	//	INT ("." INT);
-	public DecimalValueElements getDecimalValueAccess() {
-		return (pDecimalValue != null) ? pDecimalValue : (pDecimalValue = new DecimalValueElements());
-	}
-	
-	public ParserRule getDecimalValueRule() {
-		return getDecimalValueAccess().getRule();
 	}
 
 	//NationInst1:
@@ -6859,6 +7043,16 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		return getNationInst5Access().getRule();
 	}
 
+	//DecimalValue returns ecore::EString:
+	//	INT ("." INT)*;
+	public DecimalValueElements getDecimalValueAccess() {
+		return (pDecimalValue != null) ? pDecimalValue : (pDecimalValue = new DecimalValueElements());
+	}
+	
+	public ParserRule getDecimalValueRule() {
+		return getDecimalValueAccess().getRule();
+	}
+
 	/// ************* / / * Terminals * / / ************* / terminal INT returns ecore::EInt:
 	//	"-"? "0".."9"+;
 	public TerminalRule getINTRule() {
@@ -6872,14 +7066,20 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		return (tSTRING != null) ? tSTRING : (tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING"));
 	} 
 
+	//terminal FREE_FORM_COMMENT:
+	//	("a".."z" | "A".."Z" | "0".."9" | "(" | ")" | "[" | "]" | ",")+;
+	public TerminalRule getFREE_FORM_COMMENTRule() {
+		return (tFREE_FORM_COMMENT != null) ? tFREE_FORM_COMMENT : (tFREE_FORM_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "FREE_FORM_COMMENT"));
+	} 
+
 	//terminal ML_COMMENT:
-	//	(SL_COMMENT | (" "* "\t"* "\r"? "\n")+) !("#" | "\r" | "\n") !("\r" | "\n")*;
+	//	(SL_COMMENT | (" "* "\t"* ("\r" | "\n"))+) !("#" | "\r" | "\n") !("\r" | "\n")*;
 	public TerminalRule getML_COMMENTRule() {
 		return (tML_COMMENT != null) ? tML_COMMENT : (tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT"));
 	} 
 
 	//terminal SL_COMMENT:
-	//	"-" !"0".."9" !("\n" | "\r")* ("\r"? "\n")?;
+	//	"-" !"0".."9" !("\n" | "\r")* ("\r" | "\n")? | "//" !("\n" | "\r")* ("\r" | "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
 		return (tSL_COMMENT != null) ? tSL_COMMENT : (tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT"));
 	} 

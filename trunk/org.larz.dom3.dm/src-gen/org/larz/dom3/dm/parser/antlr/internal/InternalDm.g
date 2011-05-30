@@ -230,9 +230,9 @@ ruleDom3Mod returns [EObject current=null]
 (
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getDom3ModAccess().getVersionVersionNumParserRuleCall_0_3_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getDom3ModAccess().getVersionDecimalValueParserRuleCall_0_3_1_0(), currentNode); 
 	    }
-		lv_version_8_0=ruleVersionNum		{
+		lv_version_8_0=ruleDecimalValue		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getDom3ModRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -242,7 +242,7 @@ ruleDom3Mod returns [EObject current=null]
 	       			$current, 
 	       			"version",
 	        		lv_version_8_0, 
-	        		"VersionNum", 
+	        		"DecimalValue", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
 				handleValueConverterException(vce);
@@ -270,9 +270,9 @@ ruleDom3Mod returns [EObject current=null]
 (
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getDom3ModAccess().getDomversionVersionNumParserRuleCall_0_4_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getDom3ModAccess().getDomversionDecimalValueParserRuleCall_0_4_1_0(), currentNode); 
 	    }
-		lv_domversion_10_0=ruleVersionNum		{
+		lv_domversion_10_0=ruleDecimalValue		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getDom3ModRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -282,7 +282,7 @@ ruleDom3Mod returns [EObject current=null]
 	       			$current, 
 	       			"domversion",
 	        		lv_domversion_10_0, 
-	        		"VersionNum", 
+	        		"DecimalValue", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
 				handleValueConverterException(vce);
@@ -1175,49 +1175,6 @@ ruleAbstractElement returns [EObject current=null]
 
 
 
-// Entry rule entryRuleVersionNum
-entryRuleVersionNum returns [String current=null] 
-	:
-	{ currentNode = createCompositeNode(grammarAccess.getVersionNumRule(), currentNode); } 
-	 iv_ruleVersionNum=ruleVersionNum 
-	 { $current=$iv_ruleVersionNum.current.getText(); }  
-	 EOF 
-;
-
-// Rule VersionNum
-ruleVersionNum returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { setCurrentLookahead(); resetLookahead(); 
-    }
-    @after { resetLookahead(); 
-	    lastConsumedNode = currentNode;
-    }:
-(    this_INT_0=RULE_INT    {
-		$current.merge(this_INT_0);
-    }
-
-    { 
-    createLeafNode(grammarAccess.getVersionNumAccess().getINTTerminalRuleCall_0(), null); 
-    }
-(
-	kw='.' 
-    {
-        $current.merge(kw);
-        createLeafNode(grammarAccess.getVersionNumAccess().getFullStopKeyword_1_0(), null); 
-    }
-    this_INT_2=RULE_INT    {
-		$current.merge(this_INT_2);
-    }
-
-    { 
-    createLeafNode(grammarAccess.getVersionNumAccess().getINTTerminalRuleCall_1_1(), null); 
-    }
-)*)
-    ;
-
-
-
-
-
 // Entry rule entryRuleArmor
 entryRuleArmor returns [EObject current=null] 
 	:
@@ -1314,12 +1271,16 @@ ruleSelectArmorById returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectArmorByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectArmorByIdAccess().getModsArmorModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectArmorByIdAccess().getModsArmorModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleArmorMods		{
+		lv_mods_3_0=ruleArmorMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectArmorByIdRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -1328,7 +1289,7 @@ ruleSelectArmorById returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"ArmorMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -1340,7 +1301,7 @@ ruleSelectArmorById returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectArmorByIdAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectArmorByIdAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -1393,12 +1354,16 @@ ruleSelectArmorByName returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectArmorByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectArmorByNameAccess().getModsArmorModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectArmorByNameAccess().getModsArmorModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleArmorMods		{
+		lv_mods_3_0=ruleArmorMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectArmorByNameRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -1407,7 +1372,7 @@ ruleSelectArmorByName returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"ArmorMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -1419,7 +1384,7 @@ ruleSelectArmorByName returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectArmorByNameAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectArmorByNameAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -1472,12 +1437,16 @@ ruleNewArmor returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNewArmorAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getNewArmorAccess().getModsArmorModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getNewArmorAccess().getModsArmorModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleArmorMods		{
+		lv_mods_3_0=ruleArmorMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getNewArmorRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -1486,7 +1455,7 @@ ruleNewArmor returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"ArmorMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -1498,7 +1467,7 @@ ruleNewArmor returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getNewArmorAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getNewArmorAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -1598,7 +1567,11 @@ ruleArmorPattern1 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getArmorPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -1654,7 +1627,11 @@ ruleArmorPattern2 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getArmorPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -1933,12 +1910,16 @@ ruleSelectWeaponById returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectWeaponByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectWeaponByIdAccess().getModsWeaponModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectWeaponByIdAccess().getModsWeaponModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleWeaponMods		{
+		lv_mods_3_0=ruleWeaponMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectWeaponByIdRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -1947,7 +1928,7 @@ ruleSelectWeaponById returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"WeaponMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -1959,7 +1940,7 @@ ruleSelectWeaponById returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectWeaponByIdAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectWeaponByIdAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -2012,12 +1993,16 @@ ruleSelectWeaponByName returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectWeaponByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectWeaponByNameAccess().getModsWeaponModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectWeaponByNameAccess().getModsWeaponModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleWeaponMods		{
+		lv_mods_3_0=ruleWeaponMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectWeaponByNameRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -2026,7 +2011,7 @@ ruleSelectWeaponByName returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"WeaponMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -2038,7 +2023,7 @@ ruleSelectWeaponByName returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectWeaponByNameAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectWeaponByNameAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -2091,12 +2076,16 @@ ruleNewWeapon returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNewWeaponAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getNewWeaponAccess().getModsWeaponModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getNewWeaponAccess().getModsWeaponModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleWeaponMods		{
+		lv_mods_3_0=ruleWeaponMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getNewWeaponRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -2105,7 +2094,7 @@ ruleNewWeapon returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"WeaponMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -2117,7 +2106,7 @@ ruleNewWeapon returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getNewWeaponAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getNewWeaponAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -2237,7 +2226,11 @@ ruleWeaponPattern1 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getWeaponPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -2293,7 +2286,11 @@ ruleWeaponPattern2 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getWeaponPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -2373,7 +2370,11 @@ ruleWeaponPattern3 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getWeaponPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3(), null); 
+    }
+)*)
 ;
 
 
@@ -2396,16 +2397,20 @@ ruleWeaponPattern4 returns [EObject current=null]
     @after { resetLookahead(); 
     	lastConsumedNode = currentNode;
     }:
-
+(
     { 
-        currentNode=createCompositeNode(grammarAccess.getWeaponPattern4Access().getWeaponInst4ParserRuleCall(), currentNode); 
+        currentNode=createCompositeNode(grammarAccess.getWeaponPattern4Access().getWeaponInst4ParserRuleCall_0(), currentNode); 
     }
     this_WeaponInst4_0=ruleWeaponInst4
     { 
         $current = $this_WeaponInst4_0.current; 
         currentNode = currentNode.getParent();
     }
-
+(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getWeaponPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1(), null); 
+    }
+)*)
 ;
 
 
@@ -3564,12 +3569,16 @@ ruleSelectMonsterById returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectMonsterByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectMonsterByIdAccess().getModsMonsterModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectMonsterByIdAccess().getModsMonsterModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleMonsterMods		{
+		lv_mods_3_0=ruleMonsterMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectMonsterByIdRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -3578,7 +3587,7 @@ ruleSelectMonsterById returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"MonsterMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -3590,7 +3599,7 @@ ruleSelectMonsterById returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectMonsterByIdAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectMonsterByIdAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -3643,12 +3652,16 @@ ruleSelectMonsterByName returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectMonsterByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectMonsterByNameAccess().getModsMonsterModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectMonsterByNameAccess().getModsMonsterModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleMonsterMods		{
+		lv_mods_3_0=ruleMonsterMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectMonsterByNameRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -3657,7 +3670,7 @@ ruleSelectMonsterByName returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"MonsterMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -3669,7 +3682,7 @@ ruleSelectMonsterByName returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectMonsterByNameAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectMonsterByNameAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -3722,12 +3735,16 @@ ruleNewMonster returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNewMonsterAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getNewMonsterAccess().getModsMonsterModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getNewMonsterAccess().getModsMonsterModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleMonsterMods		{
+		lv_mods_3_0=ruleMonsterMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getNewMonsterRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -3736,7 +3753,7 @@ ruleNewMonster returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"MonsterMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -3748,7 +3765,7 @@ ruleNewMonster returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getNewMonsterAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getNewMonsterAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -3888,7 +3905,11 @@ ruleMonsterPattern1 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getMonsterPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -3944,7 +3965,11 @@ ruleMonsterPattern2 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getMonsterPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -4024,7 +4049,11 @@ ruleMonsterPattern3 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getMonsterPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3(), null); 
+    }
+)*)
 ;
 
 
@@ -4047,16 +4076,20 @@ ruleMonsterPattern4 returns [EObject current=null]
     @after { resetLookahead(); 
     	lastConsumedNode = currentNode;
     }:
-
+(
     { 
-        currentNode=createCompositeNode(grammarAccess.getMonsterPattern4Access().getMonsterInst4ParserRuleCall(), currentNode); 
+        currentNode=createCompositeNode(grammarAccess.getMonsterPattern4Access().getMonsterInst4ParserRuleCall_0(), currentNode); 
     }
     this_MonsterInst4_0=ruleMonsterInst4
     { 
         $current = $this_MonsterInst4_0.current; 
         currentNode = currentNode.getParent();
     }
-
+(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getMonsterPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1(), null); 
+    }
+)*)
 ;
 
 
@@ -4137,7 +4170,11 @@ ruleMonsterPattern5 returns [EObject current=null]
 	    }
 
 )
-)))
+))(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getMonsterPattern5Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -4193,7 +4230,11 @@ ruleMonsterPattern6 returns [EObject current=null]
 	    }
 
 )
-)?)
+)?(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getMonsterPattern6Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -8146,12 +8187,16 @@ ruleSelectSpellById returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectSpellByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectSpellByIdAccess().getModsSpellModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectSpellByIdAccess().getModsSpellModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleSpellMods		{
+		lv_mods_3_0=ruleSpellMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectSpellByIdRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -8160,7 +8205,7 @@ ruleSelectSpellById returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"SpellMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -8172,7 +8217,7 @@ ruleSelectSpellById returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectSpellByIdAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectSpellByIdAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -8225,12 +8270,16 @@ ruleSelectSpellByName returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectSpellByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectSpellByNameAccess().getModsSpellModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectSpellByNameAccess().getModsSpellModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleSpellMods		{
+		lv_mods_3_0=ruleSpellMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectSpellByNameRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -8239,7 +8288,7 @@ ruleSelectSpellByName returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"SpellMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -8251,7 +8300,7 @@ ruleSelectSpellByName returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectSpellByNameAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectSpellByNameAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -8280,12 +8329,16 @@ ruleNewSpell returns [EObject current=null]
     {
         createLeafNode(grammarAccess.getNewSpellAccess().getNewspellKeyword_0(), null); 
     }
-(
+(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNewSpellAccess().getFREE_FORM_COMMENTTerminalRuleCall_1(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getNewSpellAccess().getModsSpellModsParserRuleCall_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getNewSpellAccess().getModsSpellModsParserRuleCall_2_0(), currentNode); 
 	    }
-		lv_mods_1_0=ruleSpellMods		{
+		lv_mods_2_0=ruleSpellMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getNewSpellRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -8294,7 +8347,7 @@ ruleNewSpell returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_1_0, 
+	        		lv_mods_2_0, 
 	        		"SpellMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -8306,7 +8359,7 @@ ruleNewSpell returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getNewSpellAccess().getEndKeyword_2(), null); 
+        createLeafNode(grammarAccess.getNewSpellAccess().getEndKeyword_3(), null); 
     }
 )
 ;
@@ -8436,7 +8489,11 @@ ruleSpellPattern1 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSpellPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -8492,7 +8549,11 @@ ruleSpellPattern2 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSpellPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -8572,7 +8633,11 @@ ruleSpellPattern3 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSpellPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3(), null); 
+    }
+)*)
 ;
 
 
@@ -8595,16 +8660,20 @@ ruleSpellPattern4 returns [EObject current=null]
     @after { resetLookahead(); 
     	lastConsumedNode = currentNode;
     }:
-
+(
     { 
-        currentNode=createCompositeNode(grammarAccess.getSpellPattern4Access().getSpellInst4ParserRuleCall(), currentNode); 
+        currentNode=createCompositeNode(grammarAccess.getSpellPattern4Access().getSpellInst4ParserRuleCall_0(), currentNode); 
     }
     this_SpellInst4_0=ruleSpellInst4
     { 
         $current = $this_SpellInst4_0.current; 
         currentNode = currentNode.getParent();
     }
-
+(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSpellPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1(), null); 
+    }
+)*)
 ;
 
 
@@ -8685,7 +8754,11 @@ ruleSpellPattern5 returns [EObject current=null]
 	    }
 
 )
-)))
+))(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSpellPattern5Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -9360,12 +9433,16 @@ ruleSelectItemById returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectItemByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectItemByIdAccess().getModsItemModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectItemByIdAccess().getModsItemModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleItemMods		{
+		lv_mods_3_0=ruleItemMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectItemByIdRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -9374,7 +9451,7 @@ ruleSelectItemById returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"ItemMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -9386,7 +9463,7 @@ ruleSelectItemById returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectItemByIdAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectItemByIdAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -9439,12 +9516,16 @@ ruleSelectItemByName returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectItemByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectItemByNameAccess().getModsItemModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectItemByNameAccess().getModsItemModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleItemMods		{
+		lv_mods_3_0=ruleItemMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectItemByNameRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -9453,7 +9534,7 @@ ruleSelectItemByName returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"ItemMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -9465,7 +9546,7 @@ ruleSelectItemByName returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectItemByNameAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectItemByNameAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -9494,12 +9575,16 @@ ruleNewItem returns [EObject current=null]
     {
         createLeafNode(grammarAccess.getNewItemAccess().getNewitemKeyword_0(), null); 
     }
-(
+(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNewItemAccess().getFREE_FORM_COMMENTTerminalRuleCall_1(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getNewItemAccess().getModsItemModsParserRuleCall_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getNewItemAccess().getModsItemModsParserRuleCall_2_0(), currentNode); 
 	    }
-		lv_mods_1_0=ruleItemMods		{
+		lv_mods_2_0=ruleItemMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getNewItemRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -9508,7 +9593,7 @@ ruleNewItem returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_1_0, 
+	        		lv_mods_2_0, 
 	        		"ItemMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -9520,7 +9605,7 @@ ruleNewItem returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getNewItemAccess().getEndKeyword_2(), null); 
+        createLeafNode(grammarAccess.getNewItemAccess().getEndKeyword_3(), null); 
     }
 )
 ;
@@ -9630,7 +9715,11 @@ ruleItemPattern1 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getItemPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -9686,7 +9775,11 @@ ruleItemPattern2 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getItemPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -9767,7 +9860,11 @@ ruleItemPattern3 returns [EObject current=null]
 	    }
 
 )
-)))
+))(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getItemPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -10158,12 +10255,16 @@ ruleSelectName returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectNameAccess().getModsNameModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectNameAccess().getModsNameModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleNameMods		{
+		lv_mods_3_0=ruleNameMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectNameRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -10172,7 +10273,7 @@ ruleSelectName returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"NameMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -10184,7 +10285,7 @@ ruleSelectName returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectNameAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectNameAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -10284,7 +10385,11 @@ ruleNamePattern1 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNamePattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -10307,16 +10412,20 @@ ruleNamePattern2 returns [EObject current=null]
     @after { resetLookahead(); 
     	lastConsumedNode = currentNode;
     }:
-
+(
     { 
-        currentNode=createCompositeNode(grammarAccess.getNamePattern2Access().getNameInst2ParserRuleCall(), currentNode); 
+        currentNode=createCompositeNode(grammarAccess.getNamePattern2Access().getNameInst2ParserRuleCall_0(), currentNode); 
     }
     this_NameInst2_0=ruleNameInst2
     { 
         $current = $this_NameInst2_0.current; 
         currentNode = currentNode.getParent();
     }
-
+(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNamePattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_1(), null); 
+    }
+)*)
 ;
 
 
@@ -10507,12 +10616,16 @@ ruleSelectSiteById returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectSiteByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectSiteByIdAccess().getModsSiteModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectSiteByIdAccess().getModsSiteModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleSiteMods		{
+		lv_mods_3_0=ruleSiteMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectSiteByIdRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -10521,7 +10634,7 @@ ruleSelectSiteById returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"SiteMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -10533,7 +10646,7 @@ ruleSelectSiteById returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectSiteByIdAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectSiteByIdAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -10586,12 +10699,16 @@ ruleSelectSiteByName returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectSiteByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectSiteByNameAccess().getModsSiteModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectSiteByNameAccess().getModsSiteModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleSiteMods		{
+		lv_mods_3_0=ruleSiteMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectSiteByNameRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -10600,7 +10717,7 @@ ruleSelectSiteByName returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"SiteMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -10612,7 +10729,7 @@ ruleSelectSiteByName returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectSiteByNameAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectSiteByNameAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -10665,12 +10782,16 @@ ruleNewSite returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNewSiteAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getNewSiteAccess().getModsSiteModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getNewSiteAccess().getModsSiteModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleSiteMods		{
+		lv_mods_3_0=ruleSiteMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getNewSiteRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -10679,7 +10800,7 @@ ruleNewSite returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"SiteMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -10691,7 +10812,7 @@ ruleNewSite returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getNewSiteAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getNewSiteAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -10811,7 +10932,11 @@ ruleSitePattern1 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSitePattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -10867,7 +10992,11 @@ ruleSitePattern2 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSitePattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -10947,7 +11076,11 @@ ruleSitePattern3 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSitePattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3(), null); 
+    }
+)*)
 ;
 
 
@@ -10970,16 +11103,20 @@ ruleSitePattern4 returns [EObject current=null]
     @after { resetLookahead(); 
     	lastConsumedNode = currentNode;
     }:
-
+(
     { 
-        currentNode=createCompositeNode(grammarAccess.getSitePattern4Access().getSiteInst4ParserRuleCall(), currentNode); 
+        currentNode=createCompositeNode(grammarAccess.getSitePattern4Access().getSiteInst4ParserRuleCall_0(), currentNode); 
     }
     this_SiteInst4_0=ruleSiteInst4
     { 
         $current = $this_SiteInst4_0.current; 
         currentNode = currentNode.getParent();
     }
-
+(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSitePattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1(), null); 
+    }
+)*)
 ;
 
 
@@ -11490,12 +11627,16 @@ ruleSelectNation returns [EObject current=null]
 	    }
 
 )
-)(
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getSelectNationAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getSelectNationAccess().getModsNationModsParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getSelectNationAccess().getModsNationModsParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_mods_2_0=ruleNationMods		{
+		lv_mods_3_0=ruleNationMods		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getSelectNationRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -11504,7 +11645,7 @@ ruleSelectNation returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"mods",
-	        		lv_mods_2_0, 
+	        		lv_mods_3_0, 
 	        		"NationMods", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -11516,7 +11657,7 @@ ruleSelectNation returns [EObject current=null]
 )
 )*	'#end' 
     {
-        createLeafNode(grammarAccess.getSelectNationAccess().getEndKeyword_3(), null); 
+        createLeafNode(grammarAccess.getSelectNationAccess().getEndKeyword_4(), null); 
     }
 )
 ;
@@ -11569,7 +11710,11 @@ ruleIndepFlag returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getIndepFlagAccess().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -11697,7 +11842,11 @@ ruleNationPattern1 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNationPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -11753,7 +11902,11 @@ ruleNationPattern2 returns [EObject current=null]
 	    }
 
 )
-))
+)(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNationPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -11776,16 +11929,20 @@ ruleNationPattern3 returns [EObject current=null]
     @after { resetLookahead(); 
     	lastConsumedNode = currentNode;
     }:
-
+(
     { 
-        currentNode=createCompositeNode(grammarAccess.getNationPattern3Access().getNationInst3ParserRuleCall(), currentNode); 
+        currentNode=createCompositeNode(grammarAccess.getNationPattern3Access().getNationInst3ParserRuleCall_0(), currentNode); 
     }
     this_NationInst3_0=ruleNationInst3
     { 
         $current = $this_NationInst3_0.current; 
         currentNode = currentNode.getParent();
     }
-
+(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNationPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_1(), null); 
+    }
+)*)
 ;
 
 
@@ -11866,7 +12023,11 @@ ruleNationPattern4 returns [EObject current=null]
 	    }
 
 )
-)))
+))(RULE_FREE_FORM_COMMENT
+    { 
+    createLeafNode(grammarAccess.getNationPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_2(), null); 
+    }
+)*)
 ;
 
 
@@ -11970,51 +12131,12 @@ ruleNationPattern5 returns [EObject current=null]
 	    }
 
 )
-))
-;
-
-
-
-
-
-// Entry rule entryRuleDecimalValue
-entryRuleDecimalValue returns [String current=null] 
-	:
-	{ currentNode = createCompositeNode(grammarAccess.getDecimalValueRule(), currentNode); } 
-	 iv_ruleDecimalValue=ruleDecimalValue 
-	 { $current=$iv_ruleDecimalValue.current.getText(); }  
-	 EOF 
-;
-
-// Rule DecimalValue
-ruleDecimalValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { setCurrentLookahead(); resetLookahead(); 
-    }
-    @after { resetLookahead(); 
-	    lastConsumedNode = currentNode;
-    }:
-(    this_INT_0=RULE_INT    {
-		$current.merge(this_INT_0);
-    }
-
+)(RULE_FREE_FORM_COMMENT
     { 
-    createLeafNode(grammarAccess.getDecimalValueAccess().getINTTerminalRuleCall_0(), null); 
+    createLeafNode(grammarAccess.getNationPattern5Access().getFREE_FORM_COMMENTTerminalRuleCall_4(), null); 
     }
-(
-	kw='.' 
-    {
-        $current.merge(kw);
-        createLeafNode(grammarAccess.getDecimalValueAccess().getFullStopKeyword_1_0(), null); 
-    }
-    this_INT_2=RULE_INT    {
-		$current.merge(this_INT_2);
-    }
-
-    { 
-    createLeafNode(grammarAccess.getDecimalValueAccess().getINTTerminalRuleCall_1_1(), null); 
-    }
-))
-    ;
+)*)
+;
 
 
 
@@ -13802,13 +13924,58 @@ ruleNationInst5 returns [EObject current=null]
 
 
 
+// Entry rule entryRuleDecimalValue
+entryRuleDecimalValue returns [String current=null] 
+	:
+	{ currentNode = createCompositeNode(grammarAccess.getDecimalValueRule(), currentNode); } 
+	 iv_ruleDecimalValue=ruleDecimalValue 
+	 { $current=$iv_ruleDecimalValue.current.getText(); }  
+	 EOF 
+;
+
+// Rule DecimalValue
+ruleDecimalValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { setCurrentLookahead(); resetLookahead(); 
+    }
+    @after { resetLookahead(); 
+	    lastConsumedNode = currentNode;
+    }:
+(    this_INT_0=RULE_INT    {
+		$current.merge(this_INT_0);
+    }
+
+    { 
+    createLeafNode(grammarAccess.getDecimalValueAccess().getINTTerminalRuleCall_0(), null); 
+    }
+(
+	kw='.' 
+    {
+        $current.merge(kw);
+        createLeafNode(grammarAccess.getDecimalValueAccess().getFullStopKeyword_1_0(), null); 
+    }
+    this_INT_2=RULE_INT    {
+		$current.merge(this_INT_2);
+    }
+
+    { 
+    createLeafNode(grammarAccess.getDecimalValueAccess().getINTTerminalRuleCall_1_1(), null); 
+    }
+)*)
+    ;
+
+
+
+
+
 RULE_INT : '-'? ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 
-RULE_ML_COMMENT : (RULE_SL_COMMENT|(' '* '\t'* '\r'? '\n')+) ~(('#'|'\r'|'\n')) ~(('\r'|'\n'))*;
+RULE_FREE_FORM_COMMENT : ('a'..'z'|'A'..'Z'|'0'..'9'|'('|')'|'['|']'|',')+;
 
-RULE_SL_COMMENT : '-' ~('0'..'9') ~(('\n'|'\r'))* ('\r'? '\n')?;
+RULE_ML_COMMENT : (RULE_SL_COMMENT|(' '* '\t'* ('\r'|'\n'))+) ~(('#'|'\r'|'\n')) ~(('\r'|'\n'))*;
+
+RULE_SL_COMMENT : ('-' ~('0'..'9') ~(('\n'|'\r'))* ('\r'|'\n')?|'//' ~(('\n'|'\r'))* ('\r'|'\n')?);
 
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
