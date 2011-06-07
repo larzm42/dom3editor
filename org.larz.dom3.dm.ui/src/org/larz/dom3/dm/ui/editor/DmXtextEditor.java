@@ -90,7 +90,7 @@ public class DmXtextEditor extends XtextEditor
 	 * (from outside the workspace)
 	 *
 	 */
-	private void createLink(IProject project, IFile linkFile, java.net.URI uri) throws CoreException {
+	private static void createLink(IProject project, IFile linkFile, java.net.URI uri) throws CoreException {
 		IPath path = linkFile.getFullPath();
 
 		IPath folders = path.removeLastSegments(1).removeFirstSegments(1);
@@ -175,7 +175,6 @@ public class DmXtextEditor extends XtextEditor
 				IFile linkedFile = obtainLink(uri);
 				IFileEditorInput linkedInput = new LinkedFileEditorInput(linkedFile);
 				super.init(site, linkedInput);
-
 			}
 			else {
 				// use EMF URI (readonly) input - will open without validation though...
@@ -183,7 +182,6 @@ public class DmXtextEditor extends XtextEditor
 				// or stored in tmp, and processed as the other linked resources..
 				URIEditorInput uriInput = new URIEditorInput(URI.createURI(uri.toString()), name);
 				super.init(site, uriInput);
-				return;
 			}
 			return;
 		} else if (input instanceof IFileEditorInput) {
@@ -202,7 +200,7 @@ public class DmXtextEditor extends XtextEditor
 	 * @param uri
 	 * @return
 	 */
-	private IFile obtainLink(java.net.URI uri) {
+	public static IFile obtainLink(java.net.URI uri) {
 		try {
 			IWorkspace ws = ResourcesPlugin.getWorkspace();
 			// get, or create project if non existing
@@ -222,7 +220,6 @@ public class DmXtextEditor extends XtextEditor
 
 			// path in project that is the same as the external file's path
 			IFile linkFile = project.getFile(uri.getPath());
-			System.out.println(linkFile);
 			if(linkFile.exists())
 				linkFile.refreshLocal(1, null); // don't know if needed (or should be avoided...)
 			else {

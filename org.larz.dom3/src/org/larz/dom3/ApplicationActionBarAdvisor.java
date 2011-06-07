@@ -15,9 +15,20 @@
  */
 package org.larz.dom3;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.util.ArrayList;
+
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.content.IContentType;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.ICoolBarManager;
@@ -32,15 +43,24 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.ui.IEditorDescriptor;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorRegistry;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
-import org.eclipse.ui.ide.IDE;
+import org.eclipse.ui.ide.FileStoreEditorInput;
+import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
+import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
+import org.eclipse.ui.part.FileEditorInput;
+import org.larz.dom3.dm.ui.editor.DmXtextEditor;
+import org.larz.dom3.dm.ui.editor.LinkedFileEditorInput;
 import org.larz.dom3.editor.NewDialog;
 
 public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
@@ -91,7 +111,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         saveAllAction = ActionFactory.SAVE_ALL.create(window);
         register(saveAction);
         
-        newAction = new Action("New Mod...") {
+        newAction = new Action(Messages.getString("NewMod.action")) {
 			@Override
 			public void run() {
 				BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
@@ -106,7 +126,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		ISharedImages sharedImages = window.getWorkbench().getSharedImages();
 		newAction.setImageDescriptor(sharedImages.getImageDescriptor(ISharedImages.IMG_TOOL_NEW_WIZARD));
 		
-        openAction = new Action("Open Mod...") {
+        openAction = new Action(Messages.getString("OpenMod.action")) {
         	@Override
         	public void run() {
         		BusyIndicator.showWhile(Display.getCurrent(), new Runnable() {
@@ -115,8 +135,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         				FileDialog dialog = new FileDialog(window.getShell(), SWT.OPEN);
         				dialog.setFilterExtensions(new String[]{"*.dm"});
         				dialog.open();
-        				String[] names =  dialog.getFileNames();
-        				String filterPath =  System.getProperty("user.home"); //$NON-NLS-1$
+        				String[] names = dialog.getFileNames();
+        				String filterPath = System.getProperty("user.home"); //$NON-NLS-1$
 
         				if (names != null) {
         					filterPath =  dialog.getFilterPath();
@@ -129,9 +149,11 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         						fileStore =  fileStore.getChild(names[i]);
 
         						try {
-        							IDE.openEditorOnFileStore(window.getActivePage(), fileStore);
+        					        // open the editor on the file
+        					        window.getActivePage().openEditor(getEditorInput(fileStore), getEditorId(fileStore));
+
         						} catch (PartInitException e) {
-        							MessageDialog.open(MessageDialog.ERROR, window.getShell(), "Open File Error", "Couldn't open file: " + fileStore.getName(), SWT.SHEET);
+        							MessageDialog.open(MessageDialog.ERROR, window.getShell(), Messages.getString("OpenFileError.title"), Messages.format("OpenFileError.message", fileStore.getName()), SWT.SHEET);
         						}
         					}
 
@@ -153,7 +175,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         pasteAction = ActionFactory.PASTE.create(window);
         register(pasteAction);
     }
-
+    
     /* (non-Javadoc)
      * @see org.eclipse.ui.application.ActionBarAdvisor#fillMenuBar(org.eclipse.jface.action.IMenuManager)
      */
@@ -205,5 +227,106 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         toolbar.add(saveAllAction);
         coolBar.setLockLayout(true);
     }
+
+	private static IEditorInput getEditorInput(IFileStore fileStore) {
+		IFile workspaceFile = getWorkspaceFile(fileStore);
+		if (workspaceFile != null) {
+			return new FileEditorInput(workspaceFile);
+		}
+
+		URI uri = fileStore.toURI();
+		
+		// Check if this is linkable input
+		if(uri.getScheme().equals("file")) { //$NON-NLS-1$
+			return new LinkedFileEditorInput(DmXtextEditor.obtainLink(uri));
+		}
+		return new FileStoreEditorInput(fileStore);
+	}
+	private static IFile getWorkspaceFile(IFileStore fileStore) {
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		IFile[] files = root.findFilesForLocationURI(fileStore.toURI());
+		files = filterNonExistentFiles(files);
+		if (files == null || files.length == 0)
+			return null;
+
+		// for now only return the first file
+		return files[0];
+	}
+	private static IFile[] filterNonExistentFiles(IFile[] files) {
+		if (files == null)
+			return null;
+
+		int length = files.length;
+		ArrayList<IFile> existentFiles = new ArrayList<IFile>(length);
+		for (int i = 0; i < length; i++) {
+			if (files[i].exists())
+				existentFiles.add(files[i]);
+		}
+		return (IFile[]) existentFiles.toArray(new IFile[existentFiles.size()]);
+	}
+	private static String getEditorId(IFileStore fileStore) throws PartInitException {
+		String name = fileStore.fetchInfo().getName();
+		if (name == null) {
+			throw new IllegalArgumentException();
+		}
+
+		IContentType contentType= null;
+		try {
+			InputStream is = null;
+			try {
+				is = fileStore.openInputStream(EFS.NONE, null);
+				contentType= Platform.getContentTypeManager().findContentTypeFor(is, name);
+			} finally {
+				if (is != null) {
+					is.close();
+				}
+			}
+		} catch (CoreException ex) {
+			// continue without content type
+		} catch (IOException ex) {
+			// continue without content type
+		}
+
+		IEditorRegistry editorReg= PlatformUI.getWorkbench().getEditorRegistry();
+
+		return getEditorDescriptor(name, editorReg, editorReg.getDefaultEditor(name, contentType)).getId();
+	}
+	private static IEditorDescriptor getEditorDescriptor(String name,
+			IEditorRegistry editorReg, IEditorDescriptor defaultDescriptor)
+			throws PartInitException {
+
+		if (defaultDescriptor != null) {
+			return defaultDescriptor;
+		}
+
+		IEditorDescriptor editorDesc = defaultDescriptor;
+
+		// next check the OS for in-place editor (OLE on Win32)
+		if (editorReg.isSystemInPlaceEditorAvailable(name)) {
+			editorDesc = editorReg
+					.findEditor(IEditorRegistry.SYSTEM_INPLACE_EDITOR_ID);
+		}
+
+		// next check with the OS for an external editor
+		if (editorDesc == null
+				&& editorReg.isSystemExternalEditorAvailable(name)) {
+			editorDesc = editorReg
+					.findEditor(IEditorRegistry.SYSTEM_EXTERNAL_EDITOR_ID);
+		}
+
+		// next lookup the default text editor
+		if (editorDesc == null) {
+			editorDesc = editorReg
+					.findEditor(IDEWorkbenchPlugin.DEFAULT_TEXT_EDITOR_ID);
+		}
+
+		// if no valid editor found, bail out
+		if (editorDesc == null) {
+			throw new PartInitException(
+					IDEWorkbenchMessages.IDE_noFileEditorFound);
+		}
+
+		return editorDesc;
+	}
 
 }
