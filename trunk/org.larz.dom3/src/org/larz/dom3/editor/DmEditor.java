@@ -86,6 +86,7 @@ import org.larz.dom3.dm.dm.SiteMods;
 import org.larz.dom3.dm.dm.Spell;
 import org.larz.dom3.dm.dm.SpellInst2;
 import org.larz.dom3.dm.dm.SpellMods;
+import org.larz.dom3.dm.ui.editor.DmXtextEditor;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
@@ -164,12 +165,20 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 					for (Object object : list) {
 						if (object instanceof XtextSyntaxDiagnostic) {
 							try {
-								((XtextEditor)sourcePage).getResource().deleteMarkers(MarkerTypes.ANY_VALIDATION, true, IResource.DEPTH_INFINITE);
+								((XtextEditor)sourcePage).getResource().deleteMarkers(MarkerTypes.EXPENSIVE_VALIDATION, true, IResource.DEPTH_INFINITE);
+								break;
 							} catch (CoreException e) {
 								e.printStackTrace();
 							}
 						}
 					}
+				}
+			}
+			if (notification.getNewValue() instanceof XtextSyntaxDiagnostic) {
+				try {
+					((XtextEditor)sourcePage).getResource().deleteMarkers(MarkerTypes.EXPENSIVE_VALIDATION, true, IResource.DEPTH_INFINITE);
+				} catch (CoreException e) {
+					e.printStackTrace();
 				}
 			}
 			final IXtextDocument document = ((XtextEditor)sourcePage).getDocument();
@@ -312,12 +321,7 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 	@SuppressWarnings("rawtypes")
 	@Override
 	public Object getAdapter(Class key) {
-		if (key.equals(IGotoMarker.class)) {
-			return this;
-		}
-		else {
-			return super.getAdapter(key);
-		}
+		return ((DmXtextEditor)sourcePage).getAdapter(key);
 	}
 
 	/**
