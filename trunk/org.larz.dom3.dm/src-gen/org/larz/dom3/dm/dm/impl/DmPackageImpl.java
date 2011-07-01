@@ -2279,16 +2279,6 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst1_Armor()
-  {
-        return (EAttribute)getMonsterInst1().getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getMonsterInst2()
   {
     if (monsterInst2EClass == null)
@@ -2693,7 +2683,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Coldpower()
+  public EAttribute getMonsterInst2_Homesick()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(39);
   }
@@ -2703,7 +2693,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Firepower()
+  public EAttribute getMonsterInst2_Coldpower()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(40);
   }
@@ -2713,7 +2703,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Stormpower()
+  public EAttribute getMonsterInst2_Firepower()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(41);
   }
@@ -2723,7 +2713,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Darkpower()
+  public EAttribute getMonsterInst2_Stormpower()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(42);
   }
@@ -2733,7 +2723,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Springpower()
+  public EAttribute getMonsterInst2_Darkpower()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(43);
   }
@@ -2743,7 +2733,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Summerpower()
+  public EAttribute getMonsterInst2_Springpower()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(44);
   }
@@ -2753,7 +2743,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Fallpower()
+  public EAttribute getMonsterInst2_Summerpower()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(45);
   }
@@ -2763,7 +2753,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Winterpower()
+  public EAttribute getMonsterInst2_Fallpower()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(46);
   }
@@ -2773,7 +2763,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Ambidextrous()
+  public EAttribute getMonsterInst2_Winterpower()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(47);
   }
@@ -2783,7 +2773,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Banefireshield()
+  public EAttribute getMonsterInst2_Ambidextrous()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(48);
   }
@@ -2793,7 +2783,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Berserk()
+  public EAttribute getMonsterInst2_Banefireshield()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(49);
   }
@@ -2803,7 +2793,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Standard()
+  public EAttribute getMonsterInst2_Berserk()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(50);
   }
@@ -2813,7 +2803,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Animalawe()
+  public EAttribute getMonsterInst2_Standard()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(51);
   }
@@ -2823,7 +2813,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Awe()
+  public EAttribute getMonsterInst2_Animalawe()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(52);
   }
@@ -2833,7 +2823,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Fear()
+  public EAttribute getMonsterInst2_Awe()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(53);
   }
@@ -2843,7 +2833,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Regeneration()
+  public EAttribute getMonsterInst2_Fear()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(54);
   }
@@ -2853,7 +2843,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Reinvigoration()
+  public EAttribute getMonsterInst2_Regeneration()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(55);
   }
@@ -2863,7 +2853,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Fireshield()
+  public EAttribute getMonsterInst2_Reinvigoration()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(56);
   }
@@ -2873,7 +2863,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Iceprot()
+  public EAttribute getMonsterInst2_Fireshield()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(57);
   }
@@ -2883,7 +2873,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Poisoncloud()
+  public EAttribute getMonsterInst2_Iceprot()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(58);
   }
@@ -2893,7 +2883,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Diseasecloud()
+  public EAttribute getMonsterInst2_Poisoncloud()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(59);
   }
@@ -2903,7 +2893,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Bloodvengeance()
+  public EAttribute getMonsterInst2_Diseasecloud()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(60);
   }
@@ -2913,7 +2903,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Castledef()
+  public EAttribute getMonsterInst2_Bloodvengeance()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(61);
   }
@@ -2923,7 +2913,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Siegebonus()
+  public EAttribute getMonsterInst2_Castledef()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(62);
   }
@@ -2933,7 +2923,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Patrolbonus()
+  public EAttribute getMonsterInst2_Siegebonus()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(63);
   }
@@ -2943,7 +2933,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Pillagebonus()
+  public EAttribute getMonsterInst2_Patrolbonus()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(64);
   }
@@ -2953,7 +2943,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Researchbonus()
+  public EAttribute getMonsterInst2_Pillagebonus()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(65);
   }
@@ -2963,7 +2953,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Forgebonus()
+  public EAttribute getMonsterInst2_Researchbonus()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(66);
   }
@@ -2973,7 +2963,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Douse()
+  public EAttribute getMonsterInst2_Forgebonus()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(67);
   }
@@ -2983,7 +2973,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Nobadevents()
+  public EAttribute getMonsterInst2_Douse()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(68);
   }
@@ -2993,7 +2983,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Incunrest()
+  public EAttribute getMonsterInst2_Nobadevents()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(69);
   }
@@ -3003,7 +2993,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Spreaddom()
+  public EAttribute getMonsterInst2_Incunrest()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(70);
   }
@@ -3013,7 +3003,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Leper()
+  public EAttribute getMonsterInst2_Spreaddom()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(71);
   }
@@ -3023,7 +3013,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Popkill()
+  public EAttribute getMonsterInst2_Leper()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(72);
   }
@@ -3033,7 +3023,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Heretic()
+  public EAttribute getMonsterInst2_Popkill()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(73);
   }
@@ -3043,7 +3033,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Itemslots()
+  public EAttribute getMonsterInst2_Heretic()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(74);
   }
@@ -3053,9 +3043,19 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst2_Nametype()
+  public EAttribute getMonsterInst2_Itemslots()
   {
         return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(75);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMonsterInst2_Nametype()
+  {
+        return (EAttribute)getMonsterInst2().getEStructuralFeatures().get(76);
   }
 
   /**
@@ -3161,7 +3161,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Clearmagic()
+  public EAttribute getMonsterInst4_Clearweapons()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(1);
   }
@@ -3171,7 +3171,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Clearspec()
+  public EAttribute getMonsterInst4_Cleararmor()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(2);
   }
@@ -3181,7 +3181,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Female()
+  public EAttribute getMonsterInst4_Clearmagic()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(3);
   }
@@ -3191,7 +3191,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Mounted()
+  public EAttribute getMonsterInst4_Clearspec()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(4);
   }
@@ -3201,7 +3201,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Holy()
+  public EAttribute getMonsterInst4_Female()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(5);
   }
@@ -3211,7 +3211,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Animal()
+  public EAttribute getMonsterInst4_Mounted()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(6);
   }
@@ -3221,7 +3221,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Undead()
+  public EAttribute getMonsterInst4_Holy()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(7);
   }
@@ -3231,7 +3231,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Demon()
+  public EAttribute getMonsterInst4_Animal()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(8);
   }
@@ -3241,7 +3241,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Magicbeing()
+  public EAttribute getMonsterInst4_Undead()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(9);
   }
@@ -3251,7 +3251,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Stonebeing()
+  public EAttribute getMonsterInst4_Demon()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(10);
   }
@@ -3261,7 +3261,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Inanimate()
+  public EAttribute getMonsterInst4_Magicbeing()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(11);
   }
@@ -3271,7 +3271,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Coldblood()
+  public EAttribute getMonsterInst4_Stonebeing()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(12);
   }
@@ -3281,7 +3281,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Immortal()
+  public EAttribute getMonsterInst4_Inanimate()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(13);
   }
@@ -3291,7 +3291,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Blind()
+  public EAttribute getMonsterInst4_Coldblood()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(14);
   }
@@ -3301,7 +3301,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Unique()
+  public EAttribute getMonsterInst4_Immortal()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(15);
   }
@@ -3311,7 +3311,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Immobile()
+  public EAttribute getMonsterInst4_Blind()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(16);
   }
@@ -3321,7 +3321,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Aquatic()
+  public EAttribute getMonsterInst4_Unique()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(17);
   }
@@ -3331,7 +3331,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Amphibian()
+  public EAttribute getMonsterInst4_Immobile()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(18);
   }
@@ -3341,7 +3341,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Pooramphibian()
+  public EAttribute getMonsterInst4_Aquatic()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(19);
   }
@@ -3351,7 +3351,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Flying()
+  public EAttribute getMonsterInst4_Amphibian()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(20);
   }
@@ -3361,7 +3361,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Stormimmune()
+  public EAttribute getMonsterInst4_Pooramphibian()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(21);
   }
@@ -3371,7 +3371,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Sailing()
+  public EAttribute getMonsterInst4_Flying()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(22);
   }
@@ -3381,7 +3381,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Forestsurvival()
+  public EAttribute getMonsterInst4_Stormimmune()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(23);
   }
@@ -3391,7 +3391,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Mountainsurvival()
+  public EAttribute getMonsterInst4_Sailing()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(24);
   }
@@ -3401,7 +3401,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Swampsurvival()
+  public EAttribute getMonsterInst4_Forestsurvival()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(25);
   }
@@ -3411,7 +3411,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Wastesurvival()
+  public EAttribute getMonsterInst4_Mountainsurvival()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(26);
   }
@@ -3421,7 +3421,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Illusion()
+  public EAttribute getMonsterInst4_Swampsurvival()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(27);
   }
@@ -3431,7 +3431,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Spy()
+  public EAttribute getMonsterInst4_Wastesurvival()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(28);
   }
@@ -3441,7 +3441,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Assassin()
+  public EAttribute getMonsterInst4_Illusion()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(29);
   }
@@ -3451,7 +3451,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Heal()
+  public EAttribute getMonsterInst4_Spy()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(30);
   }
@@ -3461,7 +3461,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Noheal()
+  public EAttribute getMonsterInst4_Assassin()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(31);
   }
@@ -3471,7 +3471,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Neednoteat()
+  public EAttribute getMonsterInst4_Heal()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(32);
   }
@@ -3481,7 +3481,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Ethereal()
+  public EAttribute getMonsterInst4_Noheal()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(33);
   }
@@ -3491,7 +3491,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Trample()
+  public EAttribute getMonsterInst4_Neednoteat()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(34);
   }
@@ -3501,7 +3501,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Entangle()
+  public EAttribute getMonsterInst4_Ethereal()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(35);
   }
@@ -3511,7 +3511,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Eyeloss()
+  public EAttribute getMonsterInst4_Trample()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(36);
   }
@@ -3521,7 +3521,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Horrormark()
+  public EAttribute getMonsterInst4_Entangle()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(37);
   }
@@ -3531,7 +3531,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Poisonarmor()
+  public EAttribute getMonsterInst4_Eyeloss()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(38);
   }
@@ -3541,7 +3541,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Inquisitor()
+  public EAttribute getMonsterInst4_Horrormark()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(39);
   }
@@ -3551,7 +3551,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Noitem()
+  public EAttribute getMonsterInst4_Poisonarmor()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(40);
   }
@@ -3561,7 +3561,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Noleader()
+  public EAttribute getMonsterInst4_Inquisitor()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(41);
   }
@@ -3571,7 +3571,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Poorleader()
+  public EAttribute getMonsterInst4_Noitem()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(42);
   }
@@ -3581,7 +3581,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Okleader()
+  public EAttribute getMonsterInst4_Drainimmune()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(43);
   }
@@ -3591,7 +3591,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Goodleader()
+  public EAttribute getMonsterInst4_Noleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(44);
   }
@@ -3601,7 +3601,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Expertleader()
+  public EAttribute getMonsterInst4_Poorleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(45);
   }
@@ -3611,7 +3611,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Superiorleader()
+  public EAttribute getMonsterInst4_Okleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(46);
   }
@@ -3621,7 +3621,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Nomagicleader()
+  public EAttribute getMonsterInst4_Goodleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(47);
   }
@@ -3631,7 +3631,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Poormagicleader()
+  public EAttribute getMonsterInst4_Expertleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(48);
   }
@@ -3641,7 +3641,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Okmagicleader()
+  public EAttribute getMonsterInst4_Superiorleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(49);
   }
@@ -3651,7 +3651,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Goodmagicleader()
+  public EAttribute getMonsterInst4_Nomagicleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(50);
   }
@@ -3661,7 +3661,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Expertmagicleader()
+  public EAttribute getMonsterInst4_Poormagicleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(51);
   }
@@ -3671,7 +3671,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Superiormagicleader()
+  public EAttribute getMonsterInst4_Okmagicleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(52);
   }
@@ -3681,7 +3681,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Noundeadleader()
+  public EAttribute getMonsterInst4_Goodmagicleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(53);
   }
@@ -3691,7 +3691,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Poorundeadleader()
+  public EAttribute getMonsterInst4_Expertmagicleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(54);
   }
@@ -3701,7 +3701,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Okundeadleader()
+  public EAttribute getMonsterInst4_Superiormagicleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(55);
   }
@@ -3711,7 +3711,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Goodundeadleader()
+  public EAttribute getMonsterInst4_Noundeadleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(56);
   }
@@ -3721,7 +3721,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Expertundeadleader()
+  public EAttribute getMonsterInst4_Poorundeadleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(57);
   }
@@ -3731,9 +3731,39 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst4_Superiorundeadleader()
+  public EAttribute getMonsterInst4_Okundeadleader()
   {
         return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(58);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMonsterInst4_Goodundeadleader()
+  {
+        return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(59);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMonsterInst4_Expertundeadleader()
+  {
+        return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(60);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMonsterInst4_Superiorundeadleader()
+  {
+        return (EAttribute)getMonsterInst4().getEStructuralFeatures().get(61);
   }
 
   /**
@@ -3785,7 +3815,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Onebattlespell()
+  public EAttribute getMonsterInst5_Armor()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(3);
   }
@@ -3795,7 +3825,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Firstshape()
+  public EAttribute getMonsterInst5_Onebattlespell()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(4);
   }
@@ -3805,7 +3835,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Secondshape()
+  public EAttribute getMonsterInst5_Firstshape()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(5);
   }
@@ -3815,7 +3845,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Secondtmpshape()
+  public EAttribute getMonsterInst5_Secondshape()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(6);
   }
@@ -3825,7 +3855,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Shapechange()
+  public EAttribute getMonsterInst5_Secondtmpshape()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(7);
   }
@@ -3835,7 +3865,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Landshape()
+  public EAttribute getMonsterInst5_Shapechange()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(8);
   }
@@ -3845,7 +3875,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Watershape()
+  public EAttribute getMonsterInst5_Landshape()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(9);
   }
@@ -3855,7 +3885,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Forestshape()
+  public EAttribute getMonsterInst5_Watershape()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(10);
   }
@@ -3865,7 +3895,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Plainshape()
+  public EAttribute getMonsterInst5_Forestshape()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(11);
   }
@@ -3875,7 +3905,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Domsummon()
+  public EAttribute getMonsterInst5_Plainshape()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(12);
   }
@@ -3885,7 +3915,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Domsummon2()
+  public EAttribute getMonsterInst5_Domsummon()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(13);
   }
@@ -3895,7 +3925,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Domsummon20()
+  public EAttribute getMonsterInst5_Domsummon2()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(14);
   }
@@ -3905,7 +3935,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Makemonster1()
+  public EAttribute getMonsterInst5_Domsummon20()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(15);
   }
@@ -3915,7 +3945,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Makemonster2()
+  public EAttribute getMonsterInst5_Makemonster1()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(16);
   }
@@ -3925,7 +3955,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Makemonster3()
+  public EAttribute getMonsterInst5_Makemonster2()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(17);
   }
@@ -3935,7 +3965,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Makemonster4()
+  public EAttribute getMonsterInst5_Makemonster3()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(18);
   }
@@ -3945,7 +3975,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Makemonster5()
+  public EAttribute getMonsterInst5_Makemonster4()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(19);
   }
@@ -3955,7 +3985,7 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Summon1()
+  public EAttribute getMonsterInst5_Makemonster5()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(20);
   }
@@ -3965,9 +3995,19 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMonsterInst5_Summon5()
+  public EAttribute getMonsterInst5_Summon1()
   {
         return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(21);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMonsterInst5_Summon5()
+  {
+        return (EAttribute)getMonsterInst5().getEStructuralFeatures().get(22);
   }
 
   /**
@@ -5365,6 +5405,136 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getSiteInst2_Heal()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(13);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Curse()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(14);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Disease()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(15);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Horrormark()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(16);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Holyfire()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(17);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Holypower()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(18);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Conjcost()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(19);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Altcost()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(20);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Evocost()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(21);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Constcost()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(22);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Enchcost()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(23);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Thaucost()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(24);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst2_Bloodcost()
+  {
+        return (EAttribute)getSiteInst2().getEStructuralFeatures().get(25);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSiteInst3()
   {
     if (siteInst3EClass == null)
@@ -5426,6 +5596,16 @@ public class DmPackageImpl extends EPackageImpl implements DmPackage
   public EAttribute getSiteInst4_Clear()
   {
         return (EAttribute)getSiteInst4().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSiteInst4_Lab()
+  {
+        return (EAttribute)getSiteInst4().getEStructuralFeatures().get(1);
   }
 
   /**

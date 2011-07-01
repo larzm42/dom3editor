@@ -15,12 +15,14 @@
  */
 package org.larz.dom3.editor;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.EnumMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.viewers.TableViewer;
@@ -34,7 +36,6 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.VerifyEvent;
 import org.eclipse.swt.events.VerifyListener;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -66,10 +67,8 @@ import org.larz.dom3.dm.dm.NationInst4;
 import org.larz.dom3.dm.dm.NationInst5;
 import org.larz.dom3.dm.dm.NationMods;
 import org.larz.dom3.dm.dm.SelectNation;
-import org.larz.dom3.dm.ui.editor.DmXtextEditor;
+import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.dm.ui.internal.DmActivator;
-import org.larz.dom3.image.ImageConverter;
-import org.larz.dom3.image.ImageLoader;
 
 public class NationDetailsPage extends AbstractDetailsPage {
 	private Text name;
@@ -103,23 +102,33 @@ public class NationDetailsPage extends AbstractDetailsPage {
 		STARTUNITTYPE2 (Messages.getString("NationDetailsSection.mod.startunittype2"), ""),
 		STARTUNITNBRS2 (Messages.getString("NationDetailsSection.mod.startunitnbrs2"), ""),
 		ADDRECUNIT1 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
-		ADDRECUNIT2 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
-		ADDRECUNIT3 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
-		ADDRECUNIT4 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
-		ADDRECUNIT5 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
-		ADDRECUNIT6 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
-		ADDRECUNIT7 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
-		ADDRECUNIT8 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
-		ADDRECUNIT9 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
-		ADDRECUNIT10 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECCOM1 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT2 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECCOM2 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT3 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECCOM3 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT4 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECCOM4 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT5 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECCOM5 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT6 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECCOM6 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT7 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECCOM7 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT8 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
 		ADDRECCOM8 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT9 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECCOM9 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT10 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECCOM10 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT11 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECCOM11 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT12 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECCOM12 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT13 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECCOM13 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
+		ADDRECUNIT14 (Messages.getString("NationDetailsSection.mod.addrecunit"), ""),
+		ADDRECCOM14 (Messages.getString("NationDetailsSection.mod.addreccom"), ""),
 		UWUNIT1 (Messages.getString("NationDetailsSection.mod.uwunit1"), ""),
 		UWUNIT2 (Messages.getString("NationDetailsSection.mod.uwunit2"), ""),
 		UWUNIT3 (Messages.getString("NationDetailsSection.mod.uwunit3"), ""),
@@ -228,6 +237,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 	class Inst4Fields implements InstFields {
 		private Button check;
 		private Text value;
+		private Label defaultLabel;
 	}
 	
 	class Inst5Fields implements InstFields {
@@ -238,7 +248,8 @@ public class NationDetailsPage extends AbstractDetailsPage {
 	}
 
 	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
-	
+	private Set<List<Inst>> dynamicFields = new HashSet<List<Inst>>();
+
 	public NationDetailsPage(XtextEditor doc, TableViewer viewer) {
 		super(doc, viewer);
 		instMap.put(Inst.EPITHET, new Inst1Fields());
@@ -307,6 +318,10 @@ public class NationDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.ADDRECUNIT8, new Inst4Fields());
 		instMap.put(Inst.ADDRECUNIT9, new Inst4Fields());
 		instMap.put(Inst.ADDRECUNIT10, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT11, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT12, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT13, new Inst4Fields());
+		instMap.put(Inst.ADDRECUNIT14, new Inst4Fields());
 		instMap.put(Inst.ADDRECCOM1, new Inst4Fields());
 		instMap.put(Inst.ADDRECCOM2, new Inst4Fields());
 		instMap.put(Inst.ADDRECCOM3, new Inst4Fields());
@@ -315,15 +330,21 @@ public class NationDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.ADDRECCOM6, new Inst4Fields());
 		instMap.put(Inst.ADDRECCOM7, new Inst4Fields());
 		instMap.put(Inst.ADDRECCOM8, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM9, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM10, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM11, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM12, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM13, new Inst4Fields());
+		instMap.put(Inst.ADDRECCOM14, new Inst4Fields());
 		instMap.put(Inst.UWUNIT1, new Inst4Fields());
-		instMap.put(Inst.UWUNIT2, new Inst4Fields());
-		instMap.put(Inst.UWUNIT3, new Inst4Fields());
-		instMap.put(Inst.UWUNIT4, new Inst4Fields());
-		instMap.put(Inst.UWUNIT5, new Inst4Fields());
 		instMap.put(Inst.UWCOM1, new Inst4Fields());
+		instMap.put(Inst.UWUNIT2, new Inst4Fields());
 		instMap.put(Inst.UWCOM2, new Inst4Fields());
+		instMap.put(Inst.UWUNIT3, new Inst4Fields());
 		instMap.put(Inst.UWCOM3, new Inst4Fields());
+		instMap.put(Inst.UWUNIT4, new Inst4Fields());
 		instMap.put(Inst.UWCOM4, new Inst4Fields());
+		instMap.put(Inst.UWUNIT5, new Inst4Fields());
 		instMap.put(Inst.UWCOM5, new Inst4Fields());
 		instMap.put(Inst.DEFCOM1, new Inst4Fields());
 		instMap.put(Inst.DEFCOM2, new Inst4Fields());
@@ -333,6 +354,39 @@ public class NationDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.DEFUNIT2B, new Inst4Fields());
 		instMap.put(Inst.COLOR, new Inst5Fields());
 		
+		List<Inst> recUnitList = new ArrayList<Inst>();
+		recUnitList.add(Inst.ADDRECUNIT1);
+		recUnitList.add(Inst.ADDRECUNIT2);
+		recUnitList.add(Inst.ADDRECUNIT3);
+		recUnitList.add(Inst.ADDRECUNIT4);
+		recUnitList.add(Inst.ADDRECUNIT5);
+		recUnitList.add(Inst.ADDRECUNIT6);
+		recUnitList.add(Inst.ADDRECUNIT7);
+		recUnitList.add(Inst.ADDRECUNIT8);
+		recUnitList.add(Inst.ADDRECUNIT9);
+		recUnitList.add(Inst.ADDRECUNIT10);
+		recUnitList.add(Inst.ADDRECUNIT11);
+		recUnitList.add(Inst.ADDRECUNIT12);
+		recUnitList.add(Inst.ADDRECUNIT13);
+		recUnitList.add(Inst.ADDRECUNIT14);
+		dynamicFields.add(recUnitList);
+
+		List<Inst> recComList = new ArrayList<Inst>();
+		recComList.add(Inst.ADDRECCOM1);
+		recComList.add(Inst.ADDRECCOM2);
+		recComList.add(Inst.ADDRECCOM3);
+		recComList.add(Inst.ADDRECCOM4);
+		recComList.add(Inst.ADDRECCOM5);
+		recComList.add(Inst.ADDRECCOM6);
+		recComList.add(Inst.ADDRECCOM7);
+		recComList.add(Inst.ADDRECCOM8);
+		recComList.add(Inst.ADDRECCOM9);
+		recComList.add(Inst.ADDRECCOM10);
+		recComList.add(Inst.ADDRECCOM11);
+		recComList.add(Inst.ADDRECCOM12);
+		recComList.add(Inst.ADDRECCOM13);
+		recComList.add(Inst.ADDRECCOM14);
+		dynamicFields.add(recComList);
 	}
 	
 	/* (non-Javadoc)
@@ -371,7 +425,8 @@ public class NationDetailsPage extends AbstractDetailsPage {
 		nameComp.setLayoutData(gd);
 		
 		nameCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.name"), SWT.CHECK); //$NON-NLS-1$
-		
+		nameCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.NATION_CATEGORY, "name"));
+
 		name = toolkit.createText(nameComp, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 		name.addFocusListener(new FocusAdapter() {
 			@Override
@@ -403,13 +458,14 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				} else {
 					removeInst(Inst.NAME, doc);
 					name.setEnabled(false);
-					name.setText("");
+					name.setText(Database.getNationName(((SelectNation)input).getValue()));
 					nameCheck.setFont(normalFont);
 				}
 			}
 		});
 
 		descrCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.descr"), SWT.CHECK);
+		descrCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.NATION_CATEGORY, "descr"));
 
 		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		descr.addFocusListener(new FocusAdapter() {
@@ -463,6 +519,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 		});
 
 		summaryCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.summary"), SWT.CHECK);
+		summaryCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.NATION_CATEGORY, "summary"));
 
 		summary = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		summary.addFocusListener(new FocusAdapter() {
@@ -516,6 +573,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 		});
 
 		briefCheck = toolkit.createButton(nameComp, Messages.getString("NationDetailsSection.mod.brief"), SWT.CHECK);
+		briefCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.NATION_CATEGORY, "brief"));
 
 		brief = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		brief.addFocusListener(new FocusAdapter() {
@@ -568,7 +626,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 			}
 		});
 
-		spriteLabel = new Label(nameComp, SWT.NONE);
+		spriteLabel = toolkit.createLabel(nameComp, "", SWT.NONE);
 
 		Composite leftColumn = null;
 		Composite rightColumn = null;
@@ -618,6 +676,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				glayout = new GridLayout(5, false);
 				glayout.marginHeight = 0;
 				glayout.marginWidth = 0;
+				glayout.verticalSpacing = 0;
 				leftColumn.setLayout(glayout);
 				leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
@@ -625,13 +684,15 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				glayout = new GridLayout(5, false);
 				glayout.marginHeight = 0;
 				glayout.marginWidth = 0;
+				glayout.verticalSpacing = 0;
 				rightColumn.setLayout(glayout);
 				rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 				isRight = false;
 			}
 
 			final InstFields field = fields.getValue();
-			final Button check = toolkit.createButton(isRight?rightColumn:leftColumn, key.label, SWT.CHECK);
+			final Button check = new DynamicButton(isRight?rightColumn:leftColumn, SWT.CHECK);
+			check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.NATION_CATEGORY, key.label));
 			check.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
@@ -655,12 +716,13 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				}
 
 			});
+			check.setText(key.label);
 
 			Text myValue1 = null;
 			Text myValue2 = null;
 			Text myValue3 = null;
 			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields ||	field instanceof Inst4Fields ||	field instanceof Inst5Fields) {
-				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
+				final Text value = new DynamicText(isRight?rightColumn:leftColumn, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 				myValue1 = value;
 				
 				if (field instanceof Inst2Fields) {
@@ -680,9 +742,44 @@ public class NationDetailsPage extends AbstractDetailsPage {
 						if (check.getSelection()) {
 							value.setEnabled(true);
 							value.setText(key.defaultValue);
+							for (List<Inst> dynamic : dynamicFields) {
+								if (dynamic.contains(key)) {
+									for (final Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
+										if (dynamic.contains(fields.getKey())) {
+											if (Boolean.FALSE.equals(((Inst4Fields)fields.getValue()).value.getData())) {
+												((Inst4Fields)fields.getValue()).value.setData(Boolean.TRUE);
+												((Inst4Fields)fields.getValue()).check.setData(Boolean.TRUE);
+												((Inst4Fields)fields.getValue()).defaultLabel.setData(Boolean.TRUE);
+												break;
+											}
+										}
+									}
+									update();
+									mform.fireSelectionChanged(mform.getParts()[0], viewer.getSelection());
+								}
+							}
 						} else {
 							value.setEnabled(false);
 							value.setText("");
+							for (List<Inst> dynamic : dynamicFields) {
+								if (dynamic.contains(key)) {
+									@SuppressWarnings("rawtypes")
+									List<Map.Entry> entries = Arrays.asList(instMap.entrySet().toArray(new Map.Entry[instMap.entrySet().size()]));
+									Collections.reverse(entries);
+									for (final Map.Entry<Inst, InstFields> fields : entries) {
+										if (!key.equals(fields.getKey()) && dynamic.contains(fields.getKey())) {
+											if (Boolean.TRUE.equals(((Inst4Fields)fields.getValue()).value.getData()) && !((Inst4Fields)fields.getValue()).value.isEnabled()) {
+												((Inst4Fields)fields.getValue()).value.setData(Boolean.FALSE);
+												((Inst4Fields)fields.getValue()).check.setData(Boolean.FALSE);
+												((Inst4Fields)fields.getValue()).defaultLabel.setData(Boolean.FALSE);
+												break;
+											}
+										}
+									}
+									update();
+									mform.fireSelectionChanged(mform.getParts()[0], viewer.getSelection());
+								}
+							}
 						}
 					}
 
@@ -726,21 +823,16 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				} else if (field instanceof Inst2Fields ||	field instanceof Inst4Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 					gd.widthHint = 30;
-				} else if (field instanceof Inst3Fields) {
-					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.horizontalSpan = 2;
 				} else if (field instanceof Inst5Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					//gd.horizontalSpan = 4;
 				}
 				value.setLayoutData(gd);
-				
 			}
 				
 			Label defaultLabel1 = null;
 			
 			if (field instanceof Inst2Fields || field instanceof Inst3Fields || field instanceof Inst4Fields) {
-				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+				defaultLabel1 = new DynamicLabel(isRight?rightColumn:leftColumn, SWT.NONE);
 				defaultLabel1.setEnabled(false);
 			}
 			if (field instanceof Inst2Fields || field instanceof Inst4Fields) {
@@ -750,6 +842,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 			} else if (field instanceof Inst3Fields) {
 				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 				gd.horizontalSpan = 2;
+				gd.heightHint=20;
 				check.setLayoutData(gd);
 				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 			}
@@ -848,6 +941,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				
 				defaultLabel3 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel3.setEnabled(false);
+				
 			}
 			
 			if (field instanceof Inst1Fields) {
@@ -863,6 +957,24 @@ public class NationDetailsPage extends AbstractDetailsPage {
 			} else if (field instanceof Inst4Fields) {
 				((Inst4Fields)field).check = check;
 				((Inst4Fields)field).value = myValue1;
+				((Inst4Fields)field).defaultLabel = defaultLabel1;
+				for (List<Inst> list : dynamicFields) {
+					boolean firstElement = true;
+					for (Inst inst : list) {
+						if (key.equals(inst)) {
+							if (firstElement) {
+								myValue1.setData(Boolean.TRUE);
+								check.setData(Boolean.TRUE);
+								defaultLabel1.setData(Boolean.TRUE);
+							} else {
+								myValue1.setData(Boolean.FALSE);
+								check.setData(Boolean.FALSE);
+								defaultLabel1.setData(Boolean.FALSE);
+							}
+						}
+						firstElement = false;
+					}
+				}
 			} else if (field instanceof Inst5Fields) {
 				((Inst5Fields)field).check = check;
 				((Inst5Fields)field).value1 = myValue1;
@@ -870,58 +982,51 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				((Inst5Fields)field).value3 = myValue3;
 			}
 
+			if (key.equals(Inst.CLEARREC)) {
+				createSpacer(toolkit, rightColumn, 5);
+				isRight = !isRight;
+			}
 			isRight = !isRight;
 		}
 
 		createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 	}
 	
-	private Image getSprite(String sprite) {
-		if (sprite != null) {
-			final String finalName1 = sprite;
-			ImageLoader loader1 = new ImageLoader() {
-				@Override
-				public InputStream getStream() throws IOException {
-					String path = ((DmXtextEditor)doc).getPath();
-					path = path.substring(0, path.lastIndexOf('/')+1);
-					if (finalName1.startsWith("./")) {
-						path += finalName1.substring(2);
-					} else {
-						path += finalName1;
-					}
-
-					return new FileInputStream(new File(path));
-				}
-			};
-			try {
-				return new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		return null;
-	}
-	
 	public void update() {
 		if (input != null) {
-			String str = getInst1(Inst.NAME, input);
-			name.setText(str!= null?str:"");
+			String sprite = null;
+			boolean fromZip = false;
 			String nameString = getInst1(Inst.NAME, input);
-			final FormToolkit toolkit = mform.getToolkit();
 			if (nameString != null) {
 				name.setText(nameString);
 				name.setEnabled(true);
 				nameCheck.setSelection(true);
 				nameCheck.setFont(boldFont);
 			} else {
-				name.setText("");
+				name.setText(Database.getNationName(((SelectNation)input).getValue()));
 				name.setEnabled(false);
 				nameCheck.setSelection(false);
 				nameCheck.setFont(normalFont);
 			}
 
-			spriteLabel.setImage(getSprite(getInst1(Inst.FLAG, input)));
-			
+			if (getInst1(Inst.FLAG, input) != null) {
+				sprite = getInst1(Inst.FLAG, input);
+			} else {
+				sprite = ((SelectNation)input).getValue() + ".png";
+				fromZip = true;
+			}
+
+			if (sprite != null) {
+				if (fromZip) {
+					spriteLabel.setImage(getSpriteFromZip(sprite, "flags"));
+				} else {
+					spriteLabel.setImage(getSprite(sprite));
+				}
+			} else {
+				spriteLabel.setImage(null);
+			}
+
+			final FormToolkit toolkit = mform.getToolkit();
 			String description = getInst1(Inst.DESCR, input);
 			if (description != null) {
 				descr.setText(description);
@@ -971,6 +1076,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 		if (input instanceof SelectNation) {
 			nationDB = Database.getNation(((SelectNation)input).getValue());
 		}
+		Set<List<Inst>> dynamicFirstEmpty = new HashSet<List<Inst>>();
 		for (Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			String val1 = getInst1(fields.getKey(), input);
 			if (val1 != null) {
@@ -1017,6 +1123,16 @@ public class NationDetailsPage extends AbstractDetailsPage {
 					((Inst4Fields)fields.getValue()).value.setEnabled(true);
 					((Inst4Fields)fields.getValue()).check.setSelection(true);
 					((Inst4Fields)fields.getValue()).check.setFont(boldFont);
+					for (List<Inst> dynamic : dynamicFields) {
+						if (dynamic.contains(fields.getKey())) {
+							if (Boolean.FALSE.equals(((Inst4Fields)fields.getValue()).value.getData())) {
+								((Inst4Fields)fields.getValue()).value.setData(Boolean.TRUE);
+								((Inst4Fields)fields.getValue()).check.setData(Boolean.TRUE);
+								((Inst4Fields)fields.getValue()).defaultLabel.setData(Boolean.TRUE);
+								break;
+							}
+						}
+					}
 				}
 			} else {
 				if (fields.getValue() instanceof Inst4Fields) {
@@ -1024,6 +1140,26 @@ public class NationDetailsPage extends AbstractDetailsPage {
 					((Inst4Fields)fields.getValue()).value.setEnabled(false);
 					((Inst4Fields)fields.getValue()).check.setSelection(false);
 					((Inst4Fields)fields.getValue()).check.setFont(normalFont);
+					for (List<Inst> dynamic : dynamicFields) {
+						if (dynamic.contains(fields.getKey())) {
+							if (dynamicFirstEmpty.contains(dynamic)) {
+								if (Boolean.TRUE.equals(((Inst4Fields)fields.getValue()).value.getData())) {
+									((Inst4Fields)fields.getValue()).value.setData(Boolean.FALSE);
+									((Inst4Fields)fields.getValue()).check.setData(Boolean.FALSE);
+									((Inst4Fields)fields.getValue()).defaultLabel.setData(Boolean.FALSE);
+									break;
+								}
+							} else {
+								dynamicFirstEmpty.add(dynamic);
+								if (Boolean.FALSE.equals(((Inst4Fields)fields.getValue()).value.getData())) {
+									((Inst4Fields)fields.getValue()).value.setData(Boolean.TRUE);
+									((Inst4Fields)fields.getValue()).check.setData(Boolean.TRUE);
+									((Inst4Fields)fields.getValue()).defaultLabel.setData(Boolean.TRUE);
+									break;
+								}
+							}
+						}
+					}
 				}
 			}
 			Double[] val5 = getInst5(fields.getKey(), input);
@@ -1665,6 +1801,58 @@ public class NationDetailsPage extends AbstractDetailsPage {
 						}
 					}
 					break;
+				case ADDRECUNIT11:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 11) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECUNIT12:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 12) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECUNIT13:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 13) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECUNIT14:
+					if (((NationInst4)mod).isAddrecunit()){
+						addrecunit++;
+						if (addrecunit == 14) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
 				case ADDRECCOM1:
 					if (((NationInst4)mod).isAddreccom()){
 						addreccom++;
@@ -1760,6 +1948,84 @@ public class NationDetailsPage extends AbstractDetailsPage {
 					if (((NationInst4)mod).isAddreccom()){
 						addreccom++;
 						if (addreccom == 8) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM9:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 9) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM10:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 10) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM11:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 11) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM12:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 12) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM13:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 13) {
+							String strVal = ((NationInst4)mod).getValue1();
+							Integer intVal = ((NationInst4)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ADDRECCOM14:
+					if (((NationInst4)mod).isAddreccom()){
+						addreccom++;
+						if (addreccom == 14) {
 							String strVal = ((NationInst4)mod).getValue1();
 							Integer intVal = ((NationInst4)mod).getValue2();
 							if (strVal != null) {
@@ -2443,6 +2709,70 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								}
 							}
 							break;
+						case ADDRECUNIT11:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 11) {
+									mods.remove(mod);
+									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
+									newMod.setAddrecunit(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ADDRECUNIT12:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 12) {
+									mods.remove(mod);
+									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
+									newMod.setAddrecunit(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ADDRECUNIT13:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 13) {
+									mods.remove(mod);
+									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
+									newMod.setAddrecunit(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ADDRECUNIT14:
+							if (((NationInst4)mod).isAddrecunit()){
+								addrecunit++;
+								if (addrecunit == 14) {
+									mods.remove(mod);
+									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
+									newMod.setAddrecunit(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
 						case ADDRECCOM1:
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
@@ -2559,6 +2889,102 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 8) {
+									mods.remove(mod);
+									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
+									newMod.setAddreccom(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ADDRECCOM9:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 9) {
+									mods.remove(mod);
+									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
+									newMod.setAddreccom(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ADDRECCOM10:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 10) {
+									mods.remove(mod);
+									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
+									newMod.setAddreccom(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ADDRECCOM11:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 11) {
+									mods.remove(mod);
+									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
+									newMod.setAddreccom(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ADDRECCOM12:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 12) {
+									mods.remove(mod);
+									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
+									newMod.setAddreccom(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ADDRECCOM13:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 13) {
+									mods.remove(mod);
+									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
+									newMod.setAddreccom(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ADDRECCOM14:
+							if (((NationInst4)mod).isAddreccom()){
+								addreccom++;
+								if (addreccom == 14) {
 									mods.remove(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
@@ -3123,6 +3549,18 @@ public class NationDetailsPage extends AbstractDetailsPage {
 						case ADDRECUNIT10:
 							type.setAddrecunit(true);
 							break;
+						case ADDRECUNIT11:
+							type.setAddrecunit(true);
+							break;
+						case ADDRECUNIT12:
+							type.setAddrecunit(true);
+							break;
+						case ADDRECUNIT13:
+							type.setAddrecunit(true);
+							break;
+						case ADDRECUNIT14:
+							type.setAddrecunit(true);
+							break;
 						case ADDRECCOM1:
 							type.setAddreccom(true);
 							break;
@@ -3145,6 +3583,24 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							type.setAddreccom(true);
 							break;
 						case ADDRECCOM8:
+							type.setAddreccom(true);
+							break;
+						case ADDRECCOM9:
+							type.setAddreccom(true);
+							break;
+						case ADDRECCOM10:
+							type.setAddreccom(true);
+							break;
+						case ADDRECCOM11:
+							type.setAddreccom(true);
+							break;
+						case ADDRECCOM12:
+							type.setAddreccom(true);
+							break;
+						case ADDRECCOM13:
+							type.setAddreccom(true);
+							break;
+						case ADDRECCOM14:
 							type.setAddreccom(true);
 							break;
 						case UWUNIT1:
@@ -3667,6 +4123,38 @@ public class NationDetailsPage extends AbstractDetailsPage {
 										}
 									}
 									break;
+								case ADDRECUNIT11:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 11) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT12:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 12) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT13:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 13) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECUNIT14:
+									if (((NationInst4)mod).isAddrecunit()){
+										addrecunit++;
+										if (addrecunit == 14) {
+											modToRemove = mod;
+										}
+									}
+									break;
 								case ADDRECCOM1:
 									if (((NationInst4)mod).isAddreccom()){
 										addreccom++;
@@ -3727,6 +4215,54 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									if (((NationInst4)mod).isAddreccom()){
 										addreccom++;
 										if (addreccom == 8) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM9:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 9) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM10:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 10) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM11:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 11) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM12:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 12) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM13:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 13) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case ADDRECCOM14:
+									if (((NationInst4)mod).isAddreccom()){
+										addreccom++;
+										if (addreccom == 14) {
 											modToRemove = mod;
 										}
 									}

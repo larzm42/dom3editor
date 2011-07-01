@@ -26,7 +26,6 @@ import org.larz.dom3.dm.dm.MonsterInst1;
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst1Impl#isSpr1 <em>Spr1</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst1Impl#isSpr2 <em>Spr2</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst1Impl#isDescr <em>Descr</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst1Impl#isArmor <em>Armor</em>}</li>
  * </ul>
  * </p>
  *
@@ -133,26 +132,6 @@ public class MonsterInst1Impl extends MonsterPattern1Impl implements MonsterInst
    * @ordered
    */
   protected boolean descr = DESCR_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isArmor() <em>Armor</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isArmor()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean ARMOR_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isArmor() <em>Armor</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isArmor()
-   * @generated
-   * @ordered
-   */
-  protected boolean armor = ARMOR_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -295,29 +274,6 @@ public class MonsterInst1Impl extends MonsterPattern1Impl implements MonsterInst
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isArmor()
-  {
-    return armor;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setArmor(boolean newArmor)
-  {
-    boolean oldArmor = armor;
-    armor = newArmor;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST1__ARMOR, oldArmor, armor));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -333,8 +289,6 @@ public class MonsterInst1Impl extends MonsterPattern1Impl implements MonsterInst
         return isSpr2();
       case DmPackage.MONSTER_INST1__DESCR:
         return isDescr();
-      case DmPackage.MONSTER_INST1__ARMOR:
-        return isArmor();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -363,9 +317,6 @@ public class MonsterInst1Impl extends MonsterPattern1Impl implements MonsterInst
         return;
       case DmPackage.MONSTER_INST1__DESCR:
         setDescr((Boolean)newValue);
-        return;
-      case DmPackage.MONSTER_INST1__ARMOR:
-        setArmor((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -396,9 +347,6 @@ public class MonsterInst1Impl extends MonsterPattern1Impl implements MonsterInst
       case DmPackage.MONSTER_INST1__DESCR:
         setDescr(DESCR_EDEFAULT);
         return;
-      case DmPackage.MONSTER_INST1__ARMOR:
-        setArmor(ARMOR_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -423,8 +371,6 @@ public class MonsterInst1Impl extends MonsterPattern1Impl implements MonsterInst
         return spr2 != SPR2_EDEFAULT;
       case DmPackage.MONSTER_INST1__DESCR:
         return descr != DESCR_EDEFAULT;
-      case DmPackage.MONSTER_INST1__ARMOR:
-        return armor != ARMOR_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -450,8 +396,6 @@ public class MonsterInst1Impl extends MonsterPattern1Impl implements MonsterInst
     result.append(spr2);
     result.append(", descr: ");
     result.append(descr);
-    result.append(", armor: ");
-    result.append(armor);
     result.append(')');
     return result.toString();
   }

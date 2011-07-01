@@ -19,7 +19,6 @@ package org.larz.dom3.dm.dm;
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst1#isSpr1 <em>Spr1</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst1#isSpr2 <em>Spr2</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst1#isDescr <em>Descr</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.MonsterInst1#isArmor <em>Armor</em>}</li>
  * </ul>
  * </p>
  *
@@ -158,31 +157,5 @@ public interface MonsterInst1 extends MonsterPattern1
    * @generated
    */
   void setDescr(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Armor</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Armor</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Armor</em>' attribute.
-   * @see #setArmor(boolean)
-   * @see org.larz.dom3.dm.dm.DmPackage#getMonsterInst1_Armor()
-   * @model
-   * @generated
-   */
-  boolean isArmor();
-
-  /**
-   * Sets the value of the '{@link org.larz.dom3.dm.dm.MonsterInst1#isArmor <em>Armor</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Armor</em>' attribute.
-   * @see #isArmor()
-   * @generated
-   */
-  void setArmor(boolean value);
 
 } // MonsterInst1

@@ -24,6 +24,7 @@ import org.larz.dom3.dm.dm.MonsterInst5;
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst5Impl#getValue1 <em>Value1</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst5Impl#getValue2 <em>Value2</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst5Impl#isWeapon <em>Weapon</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst5Impl#isArmor <em>Armor</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst5Impl#isOnebattlespell <em>Onebattlespell</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst5Impl#isFirstshape <em>Firstshape</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst5Impl#isSecondshape <em>Secondshape</em>}</li>
@@ -109,6 +110,26 @@ public class MonsterInst5Impl extends MonsterPattern5Impl implements MonsterInst
    * @ordered
    */
   protected boolean weapon = WEAPON_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isArmor() <em>Armor</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isArmor()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ARMOR_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isArmor() <em>Armor</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isArmor()
+   * @generated
+   * @ordered
+   */
+  protected boolean armor = ARMOR_EDEFAULT;
 
   /**
    * The default value of the '{@link #isOnebattlespell() <em>Onebattlespell</em>}' attribute.
@@ -585,6 +606,29 @@ public class MonsterInst5Impl extends MonsterPattern5Impl implements MonsterInst
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isArmor()
+  {
+    return armor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setArmor(boolean newArmor)
+  {
+    boolean oldArmor = armor;
+    armor = newArmor;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST5__ARMOR, oldArmor, armor));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public boolean isOnebattlespell()
   {
     return onebattlespell;
@@ -1033,6 +1077,8 @@ public class MonsterInst5Impl extends MonsterPattern5Impl implements MonsterInst
         return getValue2();
       case DmPackage.MONSTER_INST5__WEAPON:
         return isWeapon();
+      case DmPackage.MONSTER_INST5__ARMOR:
+        return isArmor();
       case DmPackage.MONSTER_INST5__ONEBATTLESPELL:
         return isOnebattlespell();
       case DmPackage.MONSTER_INST5__FIRSTSHAPE:
@@ -1093,6 +1139,9 @@ public class MonsterInst5Impl extends MonsterPattern5Impl implements MonsterInst
         return;
       case DmPackage.MONSTER_INST5__WEAPON:
         setWeapon((Boolean)newValue);
+        return;
+      case DmPackage.MONSTER_INST5__ARMOR:
+        setArmor((Boolean)newValue);
         return;
       case DmPackage.MONSTER_INST5__ONEBATTLESPELL:
         setOnebattlespell((Boolean)newValue);
@@ -1174,6 +1223,9 @@ public class MonsterInst5Impl extends MonsterPattern5Impl implements MonsterInst
       case DmPackage.MONSTER_INST5__WEAPON:
         setWeapon(WEAPON_EDEFAULT);
         return;
+      case DmPackage.MONSTER_INST5__ARMOR:
+        setArmor(ARMOR_EDEFAULT);
+        return;
       case DmPackage.MONSTER_INST5__ONEBATTLESPELL:
         setOnebattlespell(ONEBATTLESPELL_EDEFAULT);
         return;
@@ -1251,6 +1303,8 @@ public class MonsterInst5Impl extends MonsterPattern5Impl implements MonsterInst
         return value2 != VALUE2_EDEFAULT;
       case DmPackage.MONSTER_INST5__WEAPON:
         return weapon != WEAPON_EDEFAULT;
+      case DmPackage.MONSTER_INST5__ARMOR:
+        return armor != ARMOR_EDEFAULT;
       case DmPackage.MONSTER_INST5__ONEBATTLESPELL:
         return onebattlespell != ONEBATTLESPELL_EDEFAULT;
       case DmPackage.MONSTER_INST5__FIRSTSHAPE:
@@ -1310,6 +1364,8 @@ public class MonsterInst5Impl extends MonsterPattern5Impl implements MonsterInst
     result.append(value2);
     result.append(", weapon: ");
     result.append(weapon);
+    result.append(", armor: ");
+    result.append(armor);
     result.append(", onebattlespell: ");
     result.append(onebattlespell);
     result.append(", firstshape: ");

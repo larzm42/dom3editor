@@ -60,6 +60,7 @@ import org.larz.dom3.dm.dm.MonsterInst2;
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isStartaff <em>Startaff</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isSupplybonus <em>Supplybonus</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isUwdamage <em>Uwdamage</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isHomesick <em>Homesick</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isColdpower <em>Coldpower</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isFirepower <em>Firepower</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst2Impl#isStormpower <em>Stormpower</em>}</li>
@@ -883,6 +884,26 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
    * @ordered
    */
   protected boolean uwdamage = UWDAMAGE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isHomesick() <em>Homesick</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHomesick()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean HOMESICK_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isHomesick() <em>Homesick</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHomesick()
+   * @generated
+   * @ordered
+   */
+  protected boolean homesick = HOMESICK_EDEFAULT;
 
   /**
    * The default value of the '{@link #isColdpower() <em>Coldpower</em>}' attribute.
@@ -2547,6 +2568,29 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isHomesick()
+  {
+    return homesick;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHomesick(boolean newHomesick)
+  {
+    boolean oldHomesick = homesick;
+    homesick = newHomesick;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST2__HOMESICK, oldHomesick, homesick));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public boolean isColdpower()
   {
     return coldpower;
@@ -3481,6 +3525,8 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
         return isSupplybonus();
       case DmPackage.MONSTER_INST2__UWDAMAGE:
         return isUwdamage();
+      case DmPackage.MONSTER_INST2__HOMESICK:
+        return isHomesick();
       case DmPackage.MONSTER_INST2__COLDPOWER:
         return isColdpower();
       case DmPackage.MONSTER_INST2__FIREPOWER:
@@ -3685,6 +3731,9 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
         return;
       case DmPackage.MONSTER_INST2__UWDAMAGE:
         setUwdamage((Boolean)newValue);
+        return;
+      case DmPackage.MONSTER_INST2__HOMESICK:
+        setHomesick((Boolean)newValue);
         return;
       case DmPackage.MONSTER_INST2__COLDPOWER:
         setColdpower((Boolean)newValue);
@@ -3928,6 +3977,9 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
       case DmPackage.MONSTER_INST2__UWDAMAGE:
         setUwdamage(UWDAMAGE_EDEFAULT);
         return;
+      case DmPackage.MONSTER_INST2__HOMESICK:
+        setHomesick(HOMESICK_EDEFAULT);
+        return;
       case DmPackage.MONSTER_INST2__COLDPOWER:
         setColdpower(COLDPOWER_EDEFAULT);
         return;
@@ -4131,6 +4183,8 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
         return supplybonus != SUPPLYBONUS_EDEFAULT;
       case DmPackage.MONSTER_INST2__UWDAMAGE:
         return uwdamage != UWDAMAGE_EDEFAULT;
+      case DmPackage.MONSTER_INST2__HOMESICK:
+        return homesick != HOMESICK_EDEFAULT;
       case DmPackage.MONSTER_INST2__COLDPOWER:
         return coldpower != COLDPOWER_EDEFAULT;
       case DmPackage.MONSTER_INST2__FIREPOWER:
@@ -4298,6 +4352,8 @@ public class MonsterInst2Impl extends MonsterPattern2Impl implements MonsterInst
     result.append(supplybonus);
     result.append(", uwdamage: ");
     result.append(uwdamage);
+    result.append(", homesick: ");
+    result.append(homesick);
     result.append(", coldpower: ");
     result.append(coldpower);
     result.append(", firepower: ");

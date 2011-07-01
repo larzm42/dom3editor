@@ -16,15 +16,19 @@
 package org.larz.dom3.editor;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.Format;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.EnumMap;
-import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.compress.archivers.zip.ZipFile;
 import org.eclipse.core.runtime.FileLocator;
@@ -77,15 +81,14 @@ import org.larz.dom3.dm.dm.MonsterInst6;
 import org.larz.dom3.dm.dm.MonsterMods;
 import org.larz.dom3.dm.dm.SelectMonsterById;
 import org.larz.dom3.dm.dm.SelectMonsterByName;
-import org.larz.dom3.dm.ui.editor.DmXtextEditor;
+import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 import org.larz.dom3.image.ImageConverter;
 import org.larz.dom3.image.ImageLoader;
 
 public class MonsterDetailsPage extends AbstractDetailsPage {
-	private static Map<String, Image> spriteMap = new HashMap<String, Image>();
-
 	private Text name;
+	private Button nameCheck;
 	private Text descr;
 	private Button descCheck;
 	private Text spr1;
@@ -127,6 +130,8 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		ARMOR3 (Messages.getString("MonsterDetailsSection.mod.armor"), ""),
 		EYES (Messages.getString("MonsterDetailsSection.mod.eyes"), "10"),
 		CLEAR (Messages.getString("MonsterDetailsSection.mod.clear")),
+		CLEARWEAPONS (Messages.getString("MonsterDetailsSection.mod.clearweapons")),
+		CLEARARMOR (Messages.getString("MonsterDetailsSection.mod.cleararmor")),
 		CLEARMAGIC (Messages.getString("MonsterDetailsSection.mod.clearmagic")),
 		CLEARSPEC (Messages.getString("MonsterDetailsSection.mod.clearspec")),
 		COPYSTATS (Messages.getString("MonsterDetailsSection.mod.copystats"), "10"),
@@ -179,6 +184,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		SUPPLYBONUS (Messages.getString("MonsterDetailsSection.mod.supplybonus"), "10"),
 		NEEDNOTEAT (Messages.getString("MonsterDetailsSection.mod.neednoteat")),
 		UWDAMAGE (Messages.getString("MonsterDetailsSection.mod.uwdamage"), "10"),
+		HOMESICK (Messages.getString("MonsterDetailsSection.mod.homesick"), "10"),
 		COLDPOWER (Messages.getString("MonsterDetailsSection.mod.coldpower"), "10"),
 		FIREPOWER (Messages.getString("MonsterDetailsSection.mod.firepower"), "10"),
 		STORMPOWER (Messages.getString("MonsterDetailsSection.mod.stormpower"), "10"),
@@ -226,13 +232,39 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		ITEMSLOTS (Messages.getString("MonsterDetailsSection.mod.itemslots"), "10"),
 		NOITEM (Messages.getString("MonsterDetailsSection.mod.noitem")),
 		MAGICSKILL1 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
+		CUSTOMMAGIC1 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
 		MAGICSKILL2 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
+		CUSTOMMAGIC2 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
 		MAGICSKILL3 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
+		CUSTOMMAGIC3 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
 		MAGICSKILL4 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
-		CUSTOMMAGIC (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
-		MAGICBOOST (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
-		GEMPROD (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
+		CUSTOMMAGIC4 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
+		MAGICSKILL5 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
+		CUSTOMMAGIC5 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
+		MAGICSKILL6 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
+		CUSTOMMAGIC6 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
+		MAGICSKILL7 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
+		CUSTOMMAGIC7 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
+		MAGICSKILL8 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
+		CUSTOMMAGIC8 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
+		MAGICBOOST1 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
+		GEMPROD1 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
+		MAGICBOOST2 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
+		GEMPROD2 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
+		MAGICBOOST3 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
+		GEMPROD3 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
+		MAGICBOOST4 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
+		GEMPROD4 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
+		MAGICBOOST5 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
+		GEMPROD5 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
+		MAGICBOOST6 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
+		GEMPROD6 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
+		MAGICBOOST7 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
+		GEMPROD7 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
+		MAGICBOOST8 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
+		GEMPROD8 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
 		ONEBATTLESPELL (Messages.getString("MonsterDetailsSection.mod.onebattlespell"), ""),
+		DRAINIMMUNE (Messages.getString("MonsterDetailsSection.mod.drainimmune"), ""),
 		FIRSTSHAPE (Messages.getString("MonsterDetailsSection.mod.firstshape"), ""),
 		SECONDSHAPE (Messages.getString("MonsterDetailsSection.mod.secondshape"), ""),
 		SECONDTMPSHAPE (Messages.getString("MonsterDetailsSection.mod.secondtmpshape"), ""),
@@ -331,12 +363,10 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	}
 	
 	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
+	private Set<List<Inst>> dynamicFields = new HashSet<List<Inst>>();
 	
 	public MonsterDetailsPage(XtextEditor doc, TableViewer viewer) {
 		super(doc, viewer);
-		instMap.put(Inst.ARMOR1, new Inst1Fields());
-		instMap.put(Inst.ARMOR2, new Inst1Fields());
-		instMap.put(Inst.ARMOR3, new Inst1Fields());
 		instMap.put(Inst.SPECIALLOOK, new Inst2Fields());
 		instMap.put(Inst.AP, new Inst2Fields());
 		instMap.put(Inst.MAPMOVE, new Inst2Fields());
@@ -376,6 +406,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.STARTAFF, new Inst2Fields());
 		instMap.put(Inst.SUPPLYBONUS, new Inst2Fields());
 		instMap.put(Inst.UWDAMAGE, new Inst2Fields());
+		instMap.put(Inst.HOMESICK, new Inst2Fields());
 		instMap.put(Inst.COLDPOWER, new Inst2Fields());
 		instMap.put(Inst.FIREPOWER, new Inst2Fields());
 		instMap.put(Inst.STORMPOWER, new Inst2Fields());
@@ -419,10 +450,37 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.MAGICSKILL2, new Inst3Fields());
 		instMap.put(Inst.MAGICSKILL3, new Inst3Fields());
 		instMap.put(Inst.MAGICSKILL4, new Inst3Fields());
-		instMap.put(Inst.CUSTOMMAGIC, new Inst3Fields());
-		instMap.put(Inst.MAGICBOOST, new Inst3Fields());
-		instMap.put(Inst.GEMPROD, new Inst3Fields());
+		instMap.put(Inst.MAGICSKILL5, new Inst3Fields());
+		instMap.put(Inst.MAGICSKILL6, new Inst3Fields());
+		instMap.put(Inst.MAGICSKILL7, new Inst3Fields());
+		instMap.put(Inst.MAGICSKILL8, new Inst3Fields());
+		instMap.put(Inst.CUSTOMMAGIC1, new Inst3Fields());
+		instMap.put(Inst.CUSTOMMAGIC2, new Inst3Fields());
+		instMap.put(Inst.CUSTOMMAGIC3, new Inst3Fields());
+		instMap.put(Inst.CUSTOMMAGIC4, new Inst3Fields());
+		instMap.put(Inst.CUSTOMMAGIC5, new Inst3Fields());
+		instMap.put(Inst.CUSTOMMAGIC6, new Inst3Fields());
+		instMap.put(Inst.CUSTOMMAGIC7, new Inst3Fields());
+		instMap.put(Inst.CUSTOMMAGIC8, new Inst3Fields());
+		instMap.put(Inst.MAGICBOOST1, new Inst3Fields());
+		instMap.put(Inst.MAGICBOOST2, new Inst3Fields());
+		instMap.put(Inst.MAGICBOOST3, new Inst3Fields());
+		instMap.put(Inst.MAGICBOOST4, new Inst3Fields());
+		instMap.put(Inst.MAGICBOOST5, new Inst3Fields());
+		instMap.put(Inst.MAGICBOOST6, new Inst3Fields());
+		instMap.put(Inst.MAGICBOOST7, new Inst3Fields());
+		instMap.put(Inst.MAGICBOOST8, new Inst3Fields());
+		instMap.put(Inst.GEMPROD1, new Inst3Fields());
+		instMap.put(Inst.GEMPROD2, new Inst3Fields());
+		instMap.put(Inst.GEMPROD3, new Inst3Fields());
+		instMap.put(Inst.GEMPROD4, new Inst3Fields());
+		instMap.put(Inst.GEMPROD5, new Inst3Fields());
+		instMap.put(Inst.GEMPROD6, new Inst3Fields());
+		instMap.put(Inst.GEMPROD7, new Inst3Fields());
+		instMap.put(Inst.GEMPROD8, new Inst3Fields());
 		instMap.put(Inst.CLEAR, new Inst4Fields());
+		instMap.put(Inst.CLEARWEAPONS, new Inst4Fields());
+		instMap.put(Inst.CLEARARMOR, new Inst4Fields());
 		instMap.put(Inst.CLEARMAGIC, new Inst4Fields());
 		instMap.put(Inst.CLEARSPEC, new Inst4Fields());
 		instMap.put(Inst.FEMALE, new Inst4Fields());
@@ -463,6 +521,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.POISONARMOR, new Inst4Fields());
 		instMap.put(Inst.INQUISITOR, new Inst4Fields());
 		instMap.put(Inst.NOITEM, new Inst4Fields());
+		instMap.put(Inst.DRAINIMMUNE, new Inst4Fields());
 		instMap.put(Inst.NOLEADER, new Inst4Fields());
 		instMap.put(Inst.POORLEADER, new Inst4Fields());
 		instMap.put(Inst.OKLEADER, new Inst4Fields());
@@ -485,6 +544,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.WEAPON2, new Inst5Fields());
 		instMap.put(Inst.WEAPON3, new Inst5Fields());
 		instMap.put(Inst.WEAPON4, new Inst5Fields());
+		instMap.put(Inst.ARMOR1, new Inst5Fields());
+		instMap.put(Inst.ARMOR2, new Inst5Fields());
+		instMap.put(Inst.ARMOR3, new Inst5Fields());
 		instMap.put(Inst.ONEBATTLESPELL, new Inst5Fields());
 		instMap.put(Inst.FIRSTSHAPE, new Inst5Fields());
 		instMap.put(Inst.SECONDSHAPE, new Inst5Fields());
@@ -504,12 +566,53 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.MAKEMONSTER5, new Inst5Fields());
 		instMap.put(Inst.SUMMON1, new Inst5Fields());
 		instMap.put(Inst.SUMMON5, new Inst5Fields());
+		
+		List<Inst> magicList = new ArrayList<Inst>();
+		magicList.add(Inst.MAGICSKILL1);
+		magicList.add(Inst.MAGICSKILL2);
+		magicList.add(Inst.MAGICSKILL3);
+		magicList.add(Inst.MAGICSKILL4);
+		magicList.add(Inst.MAGICSKILL5);
+		magicList.add(Inst.MAGICSKILL6);
+		magicList.add(Inst.MAGICSKILL7);
+		magicList.add(Inst.MAGICSKILL8);
+		dynamicFields.add(magicList);
+		List<Inst> customList = new ArrayList<Inst>();
+		customList.add(Inst.CUSTOMMAGIC1);
+		customList.add(Inst.CUSTOMMAGIC2);
+		customList.add(Inst.CUSTOMMAGIC3);
+		customList.add(Inst.CUSTOMMAGIC4);
+		customList.add(Inst.CUSTOMMAGIC5);
+		customList.add(Inst.CUSTOMMAGIC6);
+		customList.add(Inst.CUSTOMMAGIC7);
+		customList.add(Inst.CUSTOMMAGIC8);
+		dynamicFields.add(customList);
+		List<Inst> boostList = new ArrayList<Inst>();
+		boostList.add(Inst.MAGICBOOST1);
+		boostList.add(Inst.MAGICBOOST2);
+		boostList.add(Inst.MAGICBOOST3);
+		boostList.add(Inst.MAGICBOOST4);
+		boostList.add(Inst.MAGICBOOST5);
+		boostList.add(Inst.MAGICBOOST6);
+		boostList.add(Inst.MAGICBOOST7);
+		boostList.add(Inst.MAGICBOOST8);
+		dynamicFields.add(boostList);
+		List<Inst> gemList = new ArrayList<Inst>();
+		gemList.add(Inst.GEMPROD1);
+		gemList.add(Inst.GEMPROD2);
+		gemList.add(Inst.GEMPROD3);
+		gemList.add(Inst.GEMPROD4);
+		gemList.add(Inst.GEMPROD5);
+		gemList.add(Inst.GEMPROD6);
+		gemList.add(Inst.GEMPROD7);
+		gemList.add(Inst.GEMPROD8);
+		dynamicFields.add(gemList);
 	}
 	
 	/* (non-Javadoc)
 	 * @see org.eclipse.ui.forms.IDetailsPage#createContents(org.eclipse.swt.widgets.Composite)
 	 */
-	public void createContents(Composite parent) {
+	public void createContents(final Composite parent) {
 		TableWrapLayout layout = new TableWrapLayout();
 		layout.topMargin = 5;
 		layout.leftMargin = 5;
@@ -541,8 +644,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		gd.horizontalSpan = 2;
 		nameComp.setLayoutData(gd);
 		
-		toolkit.createLabel(nameComp, Messages.getString("MonsterDetailsSection.mod.name")); //$NON-NLS-1$
-		
+		nameCheck = toolkit.createButton(nameComp, Messages.getString("MonsterDetailsSection.mod.name"), SWT.CHECK); //$NON-NLS-1$
+		nameCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.MONSTER_CATEGORY, "name"));
+
 		name = toolkit.createText(nameComp, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 		name.addFocusListener(new FocusAdapter() {
 			@Override
@@ -563,8 +667,29 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.widthHint = 500;
 		name.setLayoutData(gd);
-		
+		nameCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (nameCheck.getSelection()) {
+					addInst1(Inst.NAME, doc, "");
+					name.setEnabled(true);
+					name.setText("");
+					nameCheck.setFont(boldFont);
+				} else {
+					removeInst(Inst.NAME, doc);
+					name.setEnabled(false);
+					if (input instanceof SelectMonsterById || input instanceof SelectMonsterByName) {
+						name.setText(getSelectMonstername((Monster)input));
+					} else {
+						name.setText("");
+					}
+					nameCheck.setFont(normalFont);
+				}
+			}
+		});
+
 		descCheck = toolkit.createButton(nameComp, Messages.getString("MonsterDetailsSection.mod.descr"), SWT.CHECK);
+		descCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.MONSTER_CATEGORY, "descr"));
 
 		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		descr.addFocusListener(new FocusAdapter() {
@@ -626,13 +751,14 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		sprite2Label = new Label(spriteComp, SWT.NONE);
 		
 		spr1Check = toolkit.createButton(nameComp, Messages.getString("MonsterDetailsSection.mod.spr1"), SWT.CHECK);
+		spr1Check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.MONSTER_CATEGORY, "spr1"));
 
 		spr1 = toolkit.createText(nameComp, null, SWT.BORDER); //$NON-NLS-1$
 		spr1.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
 				setInst1(Inst.SPR1, doc, spr1.getText());
-				sprite1Label.setImage(getSprite(spr1.getText(), false));
+				sprite1Label.setImage(getSprite(spr1.getText()));
 				sprite1Label.getParent().layout(true, true);
 			}			
 		});
@@ -641,7 +767,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
 					setInst1(Inst.SPR1, doc, spr1.getText());
-					sprite1Label.setImage(getSprite(spr1.getText(), false));
+					sprite1Label.setImage(getSprite(spr1.getText()));
 					sprite1Label.getParent().layout(true, true);
 				}
 			}
@@ -666,13 +792,14 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		});
 
 		spr2Check = toolkit.createButton(nameComp, Messages.getString("MonsterDetailsSection.mod.spr2"), SWT.CHECK);
+		spr2Check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.MONSTER_CATEGORY, "spr2"));
 
 		spr2 = toolkit.createText(nameComp, null, SWT.BORDER); //$NON-NLS-1$
 		spr2.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
 				setInst1(Inst.SPR2, doc, spr2.getText());
-				sprite2Label.setImage(getSprite(spr2.getText(), false));
+				sprite2Label.setImage(getSprite(spr2.getText()));
 				sprite2Label.getParent().layout(true, true);
 			}			
 		});
@@ -681,7 +808,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			public void keyPressed(KeyEvent e) {
 				if (e.character == '\r') {
 					setInst1(Inst.SPR2, doc, spr2.getText());
-					sprite2Label.setImage(getSprite(spr2.getText(), false));
+					sprite2Label.setImage(getSprite(spr2.getText()));
 					sprite2Label.getParent().layout(true, true);
 				}
 			}
@@ -805,6 +932,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				glayout = new GridLayout(5, false);
 				glayout.marginHeight = 0;
 				glayout.marginWidth = 0;
+				glayout.verticalSpacing = 0;
 				leftColumn.setLayout(glayout);
 				leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 				
@@ -812,6 +940,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				glayout = new GridLayout(5, false);
 				glayout.marginHeight = 0;
 				glayout.marginWidth = 0;
+				glayout.verticalSpacing = 0;
 				rightColumn.setLayout(glayout);
 				rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 				isRight = false;
@@ -827,11 +956,14 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				checkParent.setLayout(glayout);
 				gd = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
 				gd.horizontalSpan = 3;
+				gd.heightHint=20;
 				checkParent.setLayoutData(gd);
 			} else {
 				checkParent = isRight?rightColumn:leftColumn;
 			}
-			final Button check = toolkit.createButton(checkParent, key.label, SWT.CHECK);
+			final Button check = new DynamicButton(checkParent, SWT.CHECK);
+			check.setText(key.label);
+			check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.MONSTER_CATEGORY, key.label));
 			check.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
@@ -861,7 +993,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			Text myValue1 = null;
 			Text myValue2 = null;
 			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields ||	field instanceof Inst3Fields ||	field instanceof Inst5Fields || field instanceof Inst6Fields) {
-				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
+				final Text value = new DynamicText(isRight?rightColumn:leftColumn, SWT.SINGLE | SWT.BORDER);
 				myValue1 = value;
 				
 				if (field instanceof Inst2Fields ||	field instanceof Inst3Fields || field instanceof Inst6Fields) {
@@ -881,9 +1013,48 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						if (check.getSelection()) {
 							value.setEnabled(true);
 							value.setText(key.defaultValue);
+							for (List<Inst> dynamic : dynamicFields) {
+								if (dynamic.contains(key)) {
+									for (final Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
+										if (dynamic.contains(fields.getKey())) {
+											if (Boolean.FALSE.equals(((Inst3Fields)fields.getValue()).value1.getData())) {
+												((Inst3Fields)fields.getValue()).value1.setData(Boolean.TRUE);
+												((Inst3Fields)fields.getValue()).value2.setData(Boolean.TRUE);
+												((Inst3Fields)fields.getValue()).check.setData(Boolean.TRUE);
+												((Inst3Fields)fields.getValue()).defaultLabel1.setData(Boolean.TRUE);
+												((Inst3Fields)fields.getValue()).defaultLabel2.setData(Boolean.TRUE);
+												break;
+											}
+										}
+									}
+									update();
+									mform.fireSelectionChanged(mform.getParts()[0], viewer.getSelection());
+								}
+							}
 						} else {
 							value.setEnabled(false);
 							value.setText("");
+							for (List<Inst> dynamic : dynamicFields) {
+								if (dynamic.contains(key)) {
+									@SuppressWarnings("rawtypes")
+									List<Map.Entry> entries = Arrays.asList(instMap.entrySet().toArray(new Map.Entry[instMap.entrySet().size()]));
+									Collections.reverse(entries);
+									for (final Map.Entry<Inst, InstFields> fields : entries) {
+										if (!key.equals(fields.getKey()) && dynamic.contains(fields.getKey())) {
+											if (Boolean.TRUE.equals(((Inst3Fields)fields.getValue()).value1.getData()) && !((Inst3Fields)fields.getValue()).value1.isEnabled()) {
+												((Inst3Fields)fields.getValue()).value1.setData(Boolean.FALSE);
+												((Inst3Fields)fields.getValue()).value2.setData(Boolean.FALSE);
+												((Inst3Fields)fields.getValue()).check.setData(Boolean.FALSE);
+												((Inst3Fields)fields.getValue()).defaultLabel1.setData(Boolean.FALSE);
+												((Inst3Fields)fields.getValue()).defaultLabel2.setData(Boolean.FALSE);
+												break;
+											}
+										}
+									}
+									update();
+									mform.fireSelectionChanged(mform.getParts()[0], viewer.getSelection());
+								}
+							}
 						}
 					}
 
@@ -941,7 +1112,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			Label defaultLabel1 = null;
 			
 			if (field instanceof Inst1Fields || field instanceof Inst2Fields || field instanceof Inst3Fields || field instanceof Inst5Fields || field instanceof Inst6Fields) {
-				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+				defaultLabel1 = new DynamicLabel(isRight?rightColumn:leftColumn, SWT.NONE);
 				defaultLabel1.setEnabled(false);
 			}
 			if (field instanceof Inst4Fields) {
@@ -963,7 +1134,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 
 			Label defaultLabel2 = null;
 			if (field instanceof Inst3Fields) {
-				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
+				final Text value = new DynamicText(isRight?rightColumn:leftColumn, SWT.SINGLE | SWT.BORDER);
 				myValue2 = value;
 				value.addVerifyListener(new VerifyListener() {
 					
@@ -1006,8 +1177,30 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				gd.widthHint = 30;
 				value.setLayoutData(gd);
 				
-				defaultLabel2 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+				defaultLabel2 = new DynamicLabel(isRight?rightColumn:leftColumn, SWT.NONE);
 				defaultLabel2.setEnabled(false);
+
+				for (List<Inst> list : dynamicFields) {
+					boolean firstElement = true;
+					for (Inst inst : list) {
+						if (key.equals(inst)) {
+							if (firstElement) {
+								myValue1.setData(Boolean.TRUE);
+								myValue2.setData(Boolean.TRUE);
+								check.setData(Boolean.TRUE);
+								defaultLabel1.setData(Boolean.TRUE);
+								defaultLabel2.setData(Boolean.TRUE);
+							} else {
+								myValue1.setData(Boolean.FALSE);
+								myValue2.setData(Boolean.FALSE);
+								check.setData(Boolean.FALSE);
+								defaultLabel1.setData(Boolean.FALSE);
+								defaultLabel2.setData(Boolean.FALSE);
+							}
+						}
+						firstElement = false;
+					}
+				}
 			}
 			
 			if (field instanceof Inst1Fields) {
@@ -1041,59 +1234,52 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		}
 	}
 	
-	private Image getSprite(final String sprite, final boolean fromZip) {
+	private Image getSpriteFromZip(final String sprite) {
 		ImageLoader loader1 = new ImageLoader() {
 			@Override
 			public InputStream getStream() throws IOException {
-				if (fromZip) {
-					Path path = new Path("$nl$/lib/sprites.zip");
-					URL url = FileLocator.find(Activator.getDefault().getBundle(), path, null);
-					String dbPath = FileLocator.toFileURL(url).getPath();
-					ZipFile zipFile = new ZipFile(new File(dbPath));
-					return zipFile.getInputStream(zipFile.getEntry(sprite));
-				} else {
-					String path = ((DmXtextEditor)doc).getPath();
-					path = path.substring(0, path.lastIndexOf('/')+1);
-					if (sprite.startsWith("./")) {
-						path += sprite.substring(2);
-					} else {
-						path += sprite;
-					}
-					
-					return new FileInputStream(new File(path));
-				}
+				Path path = new Path("$nl$/lib/sprites.zip");
+				URL url = FileLocator.find(Activator.getDefault().getBundle(), path, null);
+				String dbPath = FileLocator.toFileURL(url).getPath();
+				ZipFile zipFile = new ZipFile(new File(dbPath));
+				return zipFile.getInputStream(zipFile.getEntry(sprite));
 			}
 		};
+		Image image = null;
 		try {
-			Image image = null;
-			if (fromZip) {
-				if (spriteMap.get(sprite) != null) {
-					image = spriteMap.get(sprite);
-				} else {
-					image = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
-					spriteMap.put(sprite, image);
-				}
+			if (spriteMap.get(sprite) != null) {
+				image = spriteMap.get(sprite);
 			} else {
 				image = new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
+				spriteMap.put(sprite, image);
 			}
-			return image;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return image;
 	}
 	
 	public void update() {
 		if (input != null) {
+			String nameString = getInst1(Inst.NAME, (Monster)input);
+
 			String sprite1 = null;
 			String sprite2 = null;
 			boolean fromZip1 = false;
 			boolean fromZip2 = false;
 			final Format format = new DecimalFormat("0000");
 			if (input instanceof SelectMonsterByName || input instanceof SelectMonsterById) {
-				String str = getSelectMonstername((Monster)input);
-				name.setText(str!= null?str:"");
-				name.setEnabled(false);
+				if (nameString != null) {
+					name.setText(nameString);
+					name.setEnabled(true);
+					nameCheck.setSelection(true);
+					nameCheck.setFont(boldFont);
+				} else {
+					name.setText(getSelectMonstername((Monster)input));
+					name.setEnabled(false);
+					nameCheck.setSelection(false);
+					nameCheck.setFont(normalFont);
+				}
 
 				int id = getSelectMonsterid((Monster)input);
 				if (getInst1(Inst.SPR1, input) != null) {
@@ -1119,8 +1305,19 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				}
 				
 			} else {
-				String str = getInst1(Inst.NAME, input);
-				name.setText(str!=null?str:"");
+				if (nameString != null) {
+					name.setText(nameString);
+					name.setEnabled(true);
+					nameCheck.setSelection(true);
+					nameCheck.setFont(boldFont);
+				} else {
+					String str = getMonstername((Monster)input);
+					name.setText(str!=null?str:"");
+					name.setEnabled(false);
+					nameCheck.setSelection(false);
+					nameCheck.setFont(normalFont);
+				}
+				nameCheck.setEnabled(false);
 				
 				if (getInst1(Inst.SPR1, input) != null) {
 					sprite1 = getInst1(Inst.SPR1, input);
@@ -1139,12 +1336,20 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				}
 			}
 			if (sprite1 != null) {
-				sprite1Label.setImage(getSprite(sprite1, fromZip1));
+				if (fromZip1) {
+					sprite1Label.setImage(getSpriteFromZip(sprite1));
+				} else {
+					sprite1Label.setImage(getSprite(sprite1));
+				}
 			} else {
 				sprite1Label.setImage(null);
 			}
 			if (sprite2 != null) {
-				sprite2Label.setImage(getSprite(sprite2, fromZip2));
+				if (fromZip2) {
+					sprite2Label.setImage(getSpriteFromZip(sprite2));
+				} else {
+					sprite2Label.setImage(getSprite(sprite2));
+				}
 			} else {
 				sprite2Label.setImage(null);
 			}
@@ -1196,6 +1401,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		} else if (input instanceof SelectMonsterByName) {
 			monsterDB = Database.getMonster(((SelectMonsterByName)input).getValue());
 		}
+		Set<List<Inst>> dynamicFirstEmpty = new HashSet<List<Inst>>();
 		for (Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			String val1 = getInst1(fields.getKey(), input);
 			if (val1 != null) {
@@ -1238,6 +1444,18 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setEnabled(true);
 					((Inst3Fields)fields.getValue()).check.setSelection(true);
 					((Inst3Fields)fields.getValue()).check.setFont(boldFont);
+					for (List<Inst> dynamic : dynamicFields) {
+						if (dynamic.contains(fields.getKey())) {
+							if (Boolean.FALSE.equals(((Inst3Fields)fields.getValue()).value1.getData())) {
+								((Inst3Fields)fields.getValue()).value1.setData(Boolean.TRUE);
+								((Inst3Fields)fields.getValue()).value2.setData(Boolean.TRUE);
+								((Inst3Fields)fields.getValue()).check.setData(Boolean.TRUE);
+								((Inst3Fields)fields.getValue()).defaultLabel1.setData(Boolean.TRUE);
+								((Inst3Fields)fields.getValue()).defaultLabel2.setData(Boolean.TRUE);
+								break;
+							}
+						}
+					}
 				}
 			} else {
 				if (fields.getValue() instanceof Inst3Fields) {
@@ -1247,6 +1465,30 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setEnabled(false);
 					((Inst3Fields)fields.getValue()).check.setSelection(false);
 					((Inst3Fields)fields.getValue()).check.setFont(normalFont);
+					for (List<Inst> dynamic : dynamicFields) {
+						if (dynamic.contains(fields.getKey())) {
+							if (dynamicFirstEmpty.contains(dynamic)) {
+								if (Boolean.TRUE.equals(((Inst3Fields)fields.getValue()).value1.getData())) {
+									((Inst3Fields)fields.getValue()).value1.setData(Boolean.FALSE);
+									((Inst3Fields)fields.getValue()).value2.setData(Boolean.FALSE);
+									((Inst3Fields)fields.getValue()).check.setData(Boolean.FALSE);
+									((Inst3Fields)fields.getValue()).defaultLabel1.setData(Boolean.FALSE);
+									((Inst3Fields)fields.getValue()).defaultLabel2.setData(Boolean.FALSE);
+									break;
+								}
+							} else {
+								dynamicFirstEmpty.add(dynamic);
+								if (Boolean.FALSE.equals(((Inst3Fields)fields.getValue()).value1.getData())) {
+									((Inst3Fields)fields.getValue()).value1.setData(Boolean.TRUE);
+									((Inst3Fields)fields.getValue()).value2.setData(Boolean.TRUE);
+									((Inst3Fields)fields.getValue()).check.setData(Boolean.TRUE);
+									((Inst3Fields)fields.getValue()).defaultLabel1.setData(Boolean.TRUE);
+									((Inst3Fields)fields.getValue()).defaultLabel2.setData(Boolean.TRUE);
+									break;
+								}
+							}
+						}
+					}
 				}
 			}
 			Boolean isVal = getInst4(fields.getKey(), input);
@@ -1292,19 +1534,19 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				switch (fields.getKey()) {
 				case ARMOR1:
 					if (monsterDB.armor1 != null) {
-						((Inst1Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor1));
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor1));
 						Inst.ARMOR1.defaultValue = monsterDB.armor1;
 					}
 					break;
 				case ARMOR2:
 					if (monsterDB.armor2 != null) {
-						((Inst1Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor2));
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor2));
 						Inst.ARMOR2.defaultValue = monsterDB.armor2;
 					}
 					break;
 				case ARMOR3:
 					if (monsterDB.armor3 != null) {
-						((Inst1Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor3));
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor3));
 						Inst.ARMOR3.defaultValue = monsterDB.armor3;
 					}
 					break;
@@ -1792,15 +2034,15 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskillpath4 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath4) : "");
 					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskilllevel4 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel4) : "");
 					break;
-				case CUSTOMMAGIC:
+				case CUSTOMMAGIC1:
 					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.custommagic1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagic1) : "");
 					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.custommagic2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagic2) : "");
 					break;
-				case MAGICBOOST:
+				case MAGICBOOST1:
 					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicboost1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicboost1) : "");
 					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicboost2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicboost2) : "");
 					break;
-				case GEMPROD:
+				case GEMPROD1:
 					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.gemprod1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.gemprod1) : "");
 					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.gemprod2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.gemprod2) : "");
 					break;
@@ -2313,6 +2555,18 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		}
 	}
 	
+	private String getMonstername(Monster item) {
+		EList<MonsterMods> list = item.getMods();
+		for (MonsterMods mod : list) {
+			if (mod instanceof MonsterInst1) {
+				if (((MonsterInst1)mod).isName()) {
+					return ((MonsterInst1)mod).getValue();
+				}
+			}
+		}
+		return null;
+	}
+	
 	private void setMonstername(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
@@ -2377,7 +2631,6 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 
 	private String getInst1(Inst inst2, Object monster) {
 		EList<MonsterMods> list = ((Monster)monster).getMods();
-		int armorCount = 0;
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst1) {
 				switch (inst2) {
@@ -2399,30 +2652,6 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				case DESCR:
 					if (((MonsterInst1)mod).isDescr()){
 						return ((MonsterInst1)mod).getValue();
-					}
-					break;
-				case ARMOR1:
-					if (((MonsterInst1)mod).isArmor()){
-						armorCount++;
-						if (armorCount == 1) {
-							return ((MonsterInst1)mod).getValue();
-						}
-					}
-					break;
-				case ARMOR2:
-					if (((MonsterInst1)mod).isArmor()){
-						armorCount++;
-						if (armorCount == 2) {
-							return ((MonsterInst1)mod).getValue();
-						}
-					}
-					break;
-				case ARMOR3:
-					if (((MonsterInst1)mod).isArmor()){
-						armorCount++;
-						if (armorCount==3) {
-							return ((MonsterInst1)mod).getValue();
-						}
 					}
 					break;
 				}
@@ -2623,6 +2852,11 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					break;
 				case UWDAMAGE:
 					if (((MonsterInst2)mod).isUwdamage()){
+						return Integer.valueOf(((MonsterInst2)mod).getValue());
+					}
+					break;
+				case HOMESICK:
+					if (((MonsterInst2)mod).isHomesick()){
 						return Integer.valueOf(((MonsterInst2)mod).getValue());
 					}
 					break;
@@ -2829,6 +3063,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	
 	private Integer[] getInst3(Inst inst3, Object monster) {
 		int magicSkillCount = 0;
+		int customMagicCount = 0;
+		int boostCount = 0;
+		int gemProdCount = 0;
 		EList<MonsterMods> list = ((Monster)monster).getMods();
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst3) {
@@ -2865,19 +3102,228 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						}
 					}
 					break;
-				case CUSTOMMAGIC:
+				case MAGICSKILL5:
+					if (((MonsterInst3)mod).isMagicskill()) {
+						magicSkillCount++;
+						if (magicSkillCount == 5) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICSKILL6:
+					if (((MonsterInst3)mod).isMagicskill()) {
+						magicSkillCount++;
+						if (magicSkillCount == 6) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICSKILL7:
+					if (((MonsterInst3)mod).isMagicskill()) {
+						magicSkillCount++;
+						if (magicSkillCount == 7) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICSKILL8:
+					if (((MonsterInst3)mod).isMagicskill()) {
+						magicSkillCount++;
+						if (magicSkillCount == 8) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case CUSTOMMAGIC1:
 					if (((MonsterInst3)mod).isCustommagic()) {
-						return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						customMagicCount++;
+						if (customMagicCount == 1) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
 					}
 					break;
-				case MAGICBOOST:
+				case CUSTOMMAGIC2:
+					if (((MonsterInst3)mod).isCustommagic()) {
+						customMagicCount++;
+						if (customMagicCount == 2) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case CUSTOMMAGIC3:
+					if (((MonsterInst3)mod).isCustommagic()) {
+						customMagicCount++;
+						if (customMagicCount == 3) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case CUSTOMMAGIC4:
+					if (((MonsterInst3)mod).isCustommagic()) {
+						customMagicCount++;
+						if (customMagicCount == 4) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case CUSTOMMAGIC5:
+					if (((MonsterInst3)mod).isCustommagic()) {
+						customMagicCount++;
+						if (customMagicCount == 5) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case CUSTOMMAGIC6:
+					if (((MonsterInst3)mod).isCustommagic()) {
+						customMagicCount++;
+						if (customMagicCount == 6) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case CUSTOMMAGIC7:
+					if (((MonsterInst3)mod).isCustommagic()) {
+						customMagicCount++;
+						if (customMagicCount == 7) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case CUSTOMMAGIC8:
+					if (((MonsterInst3)mod).isCustommagic()) {
+						customMagicCount++;
+						if (customMagicCount == 8) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICBOOST1:
 					if (((MonsterInst3)mod).isMagicboost()) {
-						return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						boostCount++;
+						if (boostCount == 1) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
 					}
 					break;
-				case GEMPROD:
+				case MAGICBOOST2:
+					if (((MonsterInst3)mod).isMagicboost()) {
+						boostCount++;
+						if (boostCount == 2) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICBOOST3:
+					if (((MonsterInst3)mod).isMagicboost()) {
+						boostCount++;
+						if (boostCount == 3) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICBOOST4:
+					if (((MonsterInst3)mod).isMagicboost()) {
+						boostCount++;
+						if (boostCount == 4) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICBOOST5:
+					if (((MonsterInst3)mod).isMagicboost()) {
+						boostCount++;
+						if (boostCount == 5) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICBOOST6:
+					if (((MonsterInst3)mod).isMagicboost()) {
+						boostCount++;
+						if (boostCount == 6) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICBOOST7:
+					if (((MonsterInst3)mod).isMagicboost()) {
+						boostCount++;
+						if (boostCount == 7) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case MAGICBOOST8:
+					if (((MonsterInst3)mod).isMagicboost()) {
+						boostCount++;
+						if (boostCount == 8) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case GEMPROD1:
 					if (((MonsterInst3)mod).isGemprod()) {
-						return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						gemProdCount++;
+						if (gemProdCount == 1) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case GEMPROD2:
+					if (((MonsterInst3)mod).isGemprod()) {
+						gemProdCount++;
+						if (gemProdCount == 2) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case GEMPROD3:
+					if (((MonsterInst3)mod).isGemprod()) {
+						gemProdCount++;
+						if (gemProdCount == 3) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case GEMPROD4:
+					if (((MonsterInst3)mod).isGemprod()) {
+						gemProdCount++;
+						if (gemProdCount == 4) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case GEMPROD5:
+					if (((MonsterInst3)mod).isGemprod()) {
+						gemProdCount++;
+						if (gemProdCount == 5) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case GEMPROD6:
+					if (((MonsterInst3)mod).isGemprod()) {
+						gemProdCount++;
+						if (gemProdCount == 6) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case GEMPROD7:
+					if (((MonsterInst3)mod).isGemprod()) {
+						gemProdCount++;
+						if (gemProdCount == 7) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
+					}
+					break;
+				case GEMPROD8:
+					if (((MonsterInst3)mod).isGemprod()) {
+						gemProdCount++;
+						if (gemProdCount == 8) {
+							return new Integer[]{Integer.valueOf(((MonsterInst3)mod).getValue1()), Integer.valueOf(((MonsterInst3)mod).getValue2())};
+						}
 					}
 					break;
 				}
@@ -2898,6 +3344,16 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					break;
 				case CLEARMAGIC:
 					if (((MonsterInst4)mod).isClearmagic()){
+						return Boolean.TRUE;
+					}
+					break;
+				case CLEARWEAPONS:
+					if (((MonsterInst4)mod).isClearweapons()){
+						return Boolean.TRUE;
+					}
+					break;
+				case CLEARARMOR:
+					if (((MonsterInst4)mod).isCleararmor()){
 						return Boolean.TRUE;
 					}
 					break;
@@ -3096,6 +3552,11 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						return Boolean.TRUE;
 					}
 					break;
+				case DRAINIMMUNE:
+					if (((MonsterInst4)mod).isDrainimmune()){
+						return Boolean.TRUE;
+					}
+					break;
 				case NOLEADER:
 					if (((MonsterInst4)mod).isNoleader()){
 						return Boolean.TRUE;
@@ -3195,6 +3656,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	private Object getInst5(Inst inst2, Object monster) {
 		EList<MonsterMods> list = ((Monster)monster).getMods();
 		int weaponCount = 0;
+		int armorCount = 0;
 		for (MonsterMods mod : list) {
 			if (mod instanceof MonsterInst5) {
 				switch (inst2) {
@@ -3241,6 +3703,45 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					if (((MonsterInst5)mod).isWeapon()){
 						weaponCount ++;
 						if (weaponCount == 4) {
+							String strVal = ((MonsterInst5)mod).getValue1();
+							Integer intVal = ((MonsterInst5)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ARMOR1:
+					if (((MonsterInst5)mod).isArmor()){
+						armorCount ++;
+						if (armorCount == 1) {
+							String strVal = ((MonsterInst5)mod).getValue1();
+							Integer intVal = ((MonsterInst5)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ARMOR2:
+					if (((MonsterInst5)mod).isArmor()){
+						armorCount ++;
+						if (armorCount == 2) {
+							String strVal = ((MonsterInst5)mod).getValue1();
+							Integer intVal = ((MonsterInst5)mod).getValue2();
+							if (strVal != null) {
+								return strVal;
+							}
+							return intVal;
+						}
+					}
+					break;
+				case ARMOR3:
+					if (((MonsterInst5)mod).isArmor()){
+						armorCount ++;
+						if (armorCount == 3) {
 							String strVal = ((MonsterInst5)mod).getValue1();
 							Integer intVal = ((MonsterInst5)mod).getValue2();
 							if (strVal != null) {
@@ -3480,7 +3981,6 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void process(XtextResource resource) {
 				Monster monsterToEdit = (Monster)input;
-				int armorCount = 0;
 				EList<MonsterMods> mods = monsterToEdit.getMods();				
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst1) {
@@ -3498,30 +3998,6 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						case DESCR:
 							if (((MonsterInst1)mod).isDescr()) {
 								((MonsterInst1)mod).setValue(newName);
-							}
-							break;
-						case ARMOR1:
-							if (((MonsterInst1)mod).isArmor()) {
-								armorCount++;
-								if (armorCount == 1) {
-									((MonsterInst1)mod).setValue(newName);
-								}
-							}
-							break;
-						case ARMOR2:
-							if (((MonsterInst1)mod).isArmor()) {
-								armorCount++;
-								if (armorCount == 2) {
-									((MonsterInst1)mod).setValue(newName);
-								}
-							}
-							break;
-						case ARMOR3:
-							if (((MonsterInst1)mod).isArmor()) {
-								armorCount++;
-								if (armorCount == 3) {
-									((MonsterInst1)mod).setValue(newName);
-								}
 							}
 							break;
 						}
@@ -3737,6 +4213,11 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								((MonsterInst2)mod).setValue(Integer.parseInt(newName));
 							}
 							break;
+						case HOMESICK:
+							if (((MonsterInst2)mod).isHomesick()){
+								((MonsterInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
 						case COLDPOWER:
 							if (((MonsterInst2)mod).isColdpower()){
 								((MonsterInst2)mod).setValue(Integer.parseInt(newName));
@@ -3941,6 +4422,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void process(XtextResource resource) {
 				int magicSkillCount = 0;
+				int customMagicCount = 0;
+				int boostCount = 0;
+				int gemProdCount = 0;
 				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
@@ -3998,33 +4482,367 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								}
 							}
 							break;
-						case CUSTOMMAGIC:
+						case MAGICSKILL5:
+							if (((MonsterInst3)mod).isMagicskill()) {
+								magicSkillCount++;
+								if (magicSkillCount == 5) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICSKILL6:
+							if (((MonsterInst3)mod).isMagicskill()) {
+								magicSkillCount++;
+								if (magicSkillCount == 6) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICSKILL7:
+							if (((MonsterInst3)mod).isMagicskill()) {
+								magicSkillCount++;
+								if (magicSkillCount == 7) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICSKILL8:
+							if (((MonsterInst3)mod).isMagicskill()) {
+								magicSkillCount++;
+								if (magicSkillCount == 8) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case CUSTOMMAGIC1:
 							if (((MonsterInst3)mod).isCustommagic()) {
-								if (value1 != null) {
-									((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
-								}
-								if (value2 != null) {
-									((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+								customMagicCount++;
+								if (customMagicCount == 1) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
 								}
 							}
 							break;
-						case MAGICBOOST:
+						case CUSTOMMAGIC2:
+							if (((MonsterInst3)mod).isCustommagic()) {
+								customMagicCount++;
+								if (customMagicCount == 2) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case CUSTOMMAGIC3:
+							if (((MonsterInst3)mod).isCustommagic()) {
+								customMagicCount++;
+								if (customMagicCount == 3) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case CUSTOMMAGIC4:
+							if (((MonsterInst3)mod).isCustommagic()) {
+								customMagicCount++;
+								if (customMagicCount == 4) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case CUSTOMMAGIC5:
+							if (((MonsterInst3)mod).isCustommagic()) {
+								customMagicCount++;
+								if (customMagicCount == 5) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case CUSTOMMAGIC6:
+							if (((MonsterInst3)mod).isCustommagic()) {
+								customMagicCount++;
+								if (customMagicCount == 6) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case CUSTOMMAGIC7:
+							if (((MonsterInst3)mod).isCustommagic()) {
+								customMagicCount++;
+								if (customMagicCount == 7) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case CUSTOMMAGIC8:
+							if (((MonsterInst3)mod).isCustommagic()) {
+								customMagicCount++;
+								if (customMagicCount == 8) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICBOOST1:
 							if (((MonsterInst3)mod).isMagicboost()) {
-								if (value1 != null) {
-									((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
-								}
-								if (value2 != null) {
-									((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+								boostCount++;
+								if (boostCount == 1) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
 								}
 							}
 							break;
-						case GEMPROD:
-							if (((MonsterInst3)mod).isGemprod()) {
-								if (value1 != null) {
-									((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+						case MAGICBOOST2:
+							if (((MonsterInst3)mod).isMagicboost()) {
+								boostCount++;
+								if (boostCount == 2) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
 								}
-								if (value2 != null) {
-									((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+							}
+							break;
+						case MAGICBOOST3:
+							if (((MonsterInst3)mod).isMagicboost()) {
+								boostCount++;
+								if (boostCount == 3) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICBOOST4:
+							if (((MonsterInst3)mod).isMagicboost()) {
+								boostCount++;
+								if (boostCount == 4) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICBOOST5:
+							if (((MonsterInst3)mod).isMagicboost()) {
+								boostCount++;
+								if (boostCount == 5) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICBOOST6:
+							if (((MonsterInst3)mod).isMagicboost()) {
+								boostCount++;
+								if (boostCount == 6) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICBOOST7:
+							if (((MonsterInst3)mod).isMagicboost()) {
+								boostCount++;
+								if (boostCount == 7) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case MAGICBOOST8:
+							if (((MonsterInst3)mod).isMagicboost()) {
+								boostCount++;
+								if (boostCount == 8) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case GEMPROD1:
+							if (((MonsterInst3)mod).isGemprod()) {
+								gemProdCount++;
+								if (gemProdCount == 1) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case GEMPROD2:
+							if (((MonsterInst3)mod).isGemprod()) {
+								gemProdCount++;
+								if (gemProdCount == 2) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case GEMPROD3:
+							if (((MonsterInst3)mod).isGemprod()) {
+								gemProdCount++;
+								if (gemProdCount == 3) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case GEMPROD4:
+							if (((MonsterInst3)mod).isGemprod()) {
+								gemProdCount++;
+								if (gemProdCount == 4) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case GEMPROD5:
+							if (((MonsterInst3)mod).isGemprod()) {
+								gemProdCount++;
+								if (gemProdCount == 5) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case GEMPROD6:
+							if (((MonsterInst3)mod).isGemprod()) {
+								gemProdCount++;
+								if (gemProdCount == 6) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case GEMPROD7:
+							if (((MonsterInst3)mod).isGemprod()) {
+								gemProdCount++;
+								if (gemProdCount == 7) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
+								}
+							}
+							break;
+						case GEMPROD8:
+							if (((MonsterInst3)mod).isGemprod()) {
+								gemProdCount++;
+								if (gemProdCount == 8) {
+									if (value1 != null) {
+										((MonsterInst3)mod).setValue1(Integer.parseInt(value1));
+									}
+									if (value2 != null) {
+										((MonsterInst3)mod).setValue2(Integer.parseInt(value2));
+									}
 								}
 							}
 							break;
@@ -4048,6 +4866,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			public void process(XtextResource resource) {
 				Monster monsterToEdit = (Monster)input;
 				int weaponCount = 0;
+				int armorCount = 0;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst5) {
@@ -4114,6 +4933,54 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									mods.remove(mod);
 									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 									newMod.setWeapon(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ARMOR1:
+							if (((MonsterInst5)mod).isArmor()){
+								armorCount++;
+								if (armorCount == 1) {
+									mods.remove(mod);
+									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+									newMod.setArmor(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ARMOR2:
+							if (((MonsterInst5)mod).isArmor()){
+								armorCount++;
+								if (armorCount == 2) {
+									mods.remove(mod);
+									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+									newMod.setArmor(true);
+									if (newValue != null) {
+										newMod.setValue2(Integer.parseInt(newName));
+									} else {
+										newMod.setValue1(newName);
+									}
+									mods.add(newMod);
+								}
+							}
+							break;
+						case ARMOR3:
+							if (((MonsterInst5)mod).isArmor()){
+								armorCount++;
+								if (armorCount == 3) {
+									mods.remove(mod);
+									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
+									newMod.setArmor(true);
 									if (newValue != null) {
 										newMod.setValue2(Integer.parseInt(newName));
 									} else {
@@ -4431,6 +5298,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst1 type = DmFactory.eINSTANCE.createMonsterInst1();
 						switch (inst) {
+						case NAME:
+							type.setName(true);
+							break;
 						case SPR1:
 							type.setSpr1(true);
 							break;
@@ -4439,15 +5309,6 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							break;
 						case DESCR:
 							type.setDescr(true);
-							break;
-						case ARMOR1:
-							type.setArmor(true);
-							break;
-						case ARMOR2:
-							type.setArmor(true);
-							break;
-						case ARMOR3:
-							type.setArmor(true);
 							break;
 						}
 						type.setValue(newName);
@@ -4586,6 +5447,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							break;
 						case UWDAMAGE:
 							type.setUwdamage(true);
+							break;
+						case HOMESICK:
+							type.setHomesick(true);
 							break;
 						case COLDPOWER:
 							type.setColdpower(true);
@@ -4734,13 +5598,88 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						case MAGICSKILL4:
 							type.setMagicskill(true);
 							break;
-						case CUSTOMMAGIC:
+						case MAGICSKILL5:
+							type.setMagicskill(true);
+							break;
+						case MAGICSKILL6:
+							type.setMagicskill(true);
+							break;
+						case MAGICSKILL7:
+							type.setMagicskill(true);
+							break;
+						case MAGICSKILL8:
+							type.setMagicskill(true);
+							break;
+						case CUSTOMMAGIC1:
 							type.setCustommagic(true);
 							break;
-						case MAGICBOOST:
+						case CUSTOMMAGIC2:
+							type.setCustommagic(true);
+							break;
+						case CUSTOMMAGIC3:
+							type.setCustommagic(true);
+							break;
+						case CUSTOMMAGIC4:
+							type.setCustommagic(true);
+							break;
+						case CUSTOMMAGIC5:
+							type.setCustommagic(true);
+							break;
+						case CUSTOMMAGIC6:
+							type.setCustommagic(true);
+							break;
+						case CUSTOMMAGIC7:
+							type.setCustommagic(true);
+							break;
+						case CUSTOMMAGIC8:
+							type.setCustommagic(true);
+							break;
+						case MAGICBOOST1:
 							type.setMagicboost(true);
 							break;
-						case GEMPROD:
+						case MAGICBOOST2:
+							type.setMagicboost(true);
+							break;
+						case MAGICBOOST3:
+							type.setMagicboost(true);
+							break;
+						case MAGICBOOST4:
+							type.setMagicboost(true);
+							break;
+						case MAGICBOOST5:
+							type.setMagicboost(true);
+							break;
+						case MAGICBOOST6:
+							type.setMagicboost(true);
+							break;
+						case MAGICBOOST7:
+							type.setMagicboost(true);
+							break;
+						case MAGICBOOST8:
+							type.setMagicboost(true);
+							break;
+						case GEMPROD1:
+							type.setGemprod(true);
+							break;
+						case GEMPROD2:
+							type.setGemprod(true);
+							break;
+						case GEMPROD3:
+							type.setGemprod(true);
+							break;
+						case GEMPROD4:
+							type.setGemprod(true);
+							break;
+						case GEMPROD5:
+							type.setGemprod(true);
+							break;
+						case GEMPROD6:
+							type.setGemprod(true);
+							break;
+						case GEMPROD7:
+							type.setGemprod(true);
+							break;
+						case GEMPROD8:
 							type.setGemprod(true);
 							break;
 						}
@@ -4773,6 +5712,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							break;
 						case CLEARMAGIC:
 							type.setClearmagic(true);
+							break;
+						case CLEARWEAPONS:
+							type.setClearweapons(true);
+							break;
+						case CLEARARMOR:
+							type.setCleararmor(true);
 							break;
 						case CLEARSPEC:
 							type.setClearspec(true);
@@ -4891,6 +5836,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						case NOITEM:
 							type.setNoitem(true);
 							break;
+						case DRAINIMMUNE:
+							type.setDrainimmune(true);
+							break;
 						case NOLEADER:
 							type.setNoleader(true);
 							break;
@@ -4978,6 +5926,15 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							break;
 						case WEAPON4:
 							type.setWeapon(true);
+							break;
+						case ARMOR1:
+							type.setArmor(true);
+							break;
+						case ARMOR2:
+							type.setArmor(true);
+							break;
+						case ARMOR3:
+							type.setArmor(true);
 							break;
 						case ONEBATTLESPELL:
 							type.setOnebattlespell(true);
@@ -5101,6 +6058,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					@Override
 					public void process(XtextResource resource) {
 						int magicSkillCount = 0;
+						int customMagicCount = 0;
+						int boostCount = 0;
+						int gemProdCount = 0;
 						MonsterMods modToRemove = null;
 						int armorCount = 0;
 						int weaponCount = 0;
@@ -5108,6 +6068,11 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						for (MonsterMods mod : mods) {
 							if (mod instanceof MonsterInst1) {
 								switch (inst2) {
+								case NAME:
+									if (((MonsterInst1)mod).isName()){
+										modToRemove = mod;
+									}
+									break;
 								case SPR1:
 									if (((MonsterInst1)mod).isSpr1()){
 										modToRemove = mod;
@@ -5123,30 +6088,6 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 										modToRemove = mod;
 									}
 									break;
-								case ARMOR1:
-									if (((MonsterInst1)mod).isArmor()){
-										armorCount++;
-										if (armorCount == 1) {
-											modToRemove = mod;
-										}
-									}
-									break;						
-								case ARMOR2:
-									if (((MonsterInst1)mod).isArmor()){
-										armorCount++;
-										if (armorCount == 2) {
-											modToRemove = mod;
-										}
-									}
-									break;						
-								case ARMOR3:
-									if (((MonsterInst1)mod).isArmor()){
-										armorCount++;
-										if (armorCount == 3) {
-											modToRemove = mod;
-										}
-									}
-									break;						
 								}
 							}
 							if (mod instanceof MonsterInst2) {
@@ -5338,6 +6279,11 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									break;
 								case UWDAMAGE:
 									if (((MonsterInst2)mod).isUwdamage()){
+										modToRemove = mod;
+									}
+									break;
+								case HOMESICK:
+									if (((MonsterInst2)mod).isHomesick()){
 										modToRemove = mod;
 									}
 									break;
@@ -5562,19 +6508,228 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 										}
 									}
 									break;
-								case CUSTOMMAGIC:
+								case MAGICSKILL5:
+									if (((MonsterInst3)mod).isMagicskill()){
+										magicSkillCount++;
+										if (magicSkillCount == 5) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICSKILL6:
+									if (((MonsterInst3)mod).isMagicskill()){
+										magicSkillCount++;
+										if (magicSkillCount == 6) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICSKILL7:
+									if (((MonsterInst3)mod).isMagicskill()){
+										magicSkillCount++;
+										if (magicSkillCount == 7) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICSKILL8:
+									if (((MonsterInst3)mod).isMagicskill()){
+										magicSkillCount++;
+										if (magicSkillCount == 8) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case CUSTOMMAGIC1:
 									if (((MonsterInst3)mod).isCustommagic()){
-										modToRemove = mod;
+										customMagicCount++;
+										if (customMagicCount == 1) {
+											modToRemove = mod;
+										}
 									}
 									break;
-								case MAGICBOOST:
+								case CUSTOMMAGIC2:
+									if (((MonsterInst3)mod).isCustommagic()){
+										customMagicCount++;
+										if (customMagicCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case CUSTOMMAGIC3:
+									if (((MonsterInst3)mod).isCustommagic()){
+										customMagicCount++;
+										if (customMagicCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case CUSTOMMAGIC4:
+									if (((MonsterInst3)mod).isCustommagic()){
+										customMagicCount++;
+										if (customMagicCount == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case CUSTOMMAGIC5:
+									if (((MonsterInst3)mod).isCustommagic()){
+										customMagicCount++;
+										if (customMagicCount == 5) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case CUSTOMMAGIC6:
+									if (((MonsterInst3)mod).isCustommagic()){
+										customMagicCount++;
+										if (customMagicCount == 6) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case CUSTOMMAGIC7:
+									if (((MonsterInst3)mod).isCustommagic()){
+										customMagicCount++;
+										if (customMagicCount == 7) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case CUSTOMMAGIC8:
+									if (((MonsterInst3)mod).isCustommagic()){
+										customMagicCount++;
+										if (customMagicCount == 8) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICBOOST1:
 									if (((MonsterInst3)mod).isMagicboost()){
-										modToRemove = mod;
+										boostCount++;
+										if (boostCount == 1) {
+											modToRemove = mod;
+										}
 									}
 									break;
-								case GEMPROD:
+								case MAGICBOOST2:
+									if (((MonsterInst3)mod).isMagicboost()){
+										boostCount++;
+										if (boostCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICBOOST3:
+									if (((MonsterInst3)mod).isMagicboost()){
+										boostCount++;
+										if (boostCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICBOOST4:
+									if (((MonsterInst3)mod).isMagicboost()){
+										boostCount++;
+										if (boostCount == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICBOOST5:
+									if (((MonsterInst3)mod).isMagicboost()){
+										boostCount++;
+										if (boostCount == 5) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICBOOST6:
+									if (((MonsterInst3)mod).isMagicboost()){
+										boostCount++;
+										if (boostCount == 6) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICBOOST7:
+									if (((MonsterInst3)mod).isMagicboost()){
+										boostCount++;
+										if (boostCount == 7) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MAGICBOOST8:
+									if (((MonsterInst3)mod).isMagicboost()){
+										boostCount++;
+										if (boostCount == 8) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GEMPROD1:
 									if (((MonsterInst3)mod).isGemprod()){
-										modToRemove = mod;
+										gemProdCount++;
+										if (gemProdCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GEMPROD2:
+									if (((MonsterInst3)mod).isGemprod()){
+										gemProdCount++;
+										if (gemProdCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GEMPROD3:
+									if (((MonsterInst3)mod).isGemprod()){
+										gemProdCount++;
+										if (gemProdCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GEMPROD4:
+									if (((MonsterInst3)mod).isGemprod()){
+										gemProdCount++;
+										if (gemProdCount == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GEMPROD5:
+									if (((MonsterInst3)mod).isGemprod()){
+										gemProdCount++;
+										if (gemProdCount == 5) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GEMPROD6:
+									if (((MonsterInst3)mod).isGemprod()){
+										gemProdCount++;
+										if (gemProdCount == 6) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GEMPROD7:
+									if (((MonsterInst3)mod).isGemprod()){
+										gemProdCount++;
+										if (gemProdCount == 7) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case GEMPROD8:
+									if (((MonsterInst3)mod).isGemprod()){
+										gemProdCount++;
+										if (gemProdCount == 8) {
+											modToRemove = mod;
+										}
 									}
 									break;
 								}
@@ -5588,6 +6743,16 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									break;
 								case CLEARMAGIC:
 									if (((MonsterInst4)mod).isClearmagic()){
+										modToRemove = mod;
+									}
+									break;
+								case CLEARWEAPONS:
+									if (((MonsterInst4)mod).isClearweapons()){
+										modToRemove = mod;
+									}
+									break;
+								case CLEARARMOR:
+									if (((MonsterInst4)mod).isCleararmor()){
 										modToRemove = mod;
 									}
 									break;
@@ -5786,6 +6951,11 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 										modToRemove = mod;
 									}
 									break;
+								case DRAINIMMUNE:
+									if (((MonsterInst4)mod).isDrainimmune()){
+										modToRemove = mod;
+									}
+									break;
 								case NOLEADER:
 									if (((MonsterInst4)mod).isNoleader()){
 										modToRemove = mod;
@@ -5912,6 +7082,30 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 										}
 									}
 									break;
+								case ARMOR1:
+									if (((MonsterInst5)mod).isArmor()){
+										armorCount++;
+										if (armorCount == 1) {
+											modToRemove = mod;
+										}
+									}
+									break;						
+								case ARMOR2:
+									if (((MonsterInst5)mod).isArmor()){
+										armorCount++;
+										if (armorCount == 2) {
+											modToRemove = mod;
+										}
+									}
+									break;						
+								case ARMOR3:
+									if (((MonsterInst5)mod).isArmor()){
+										armorCount++;
+										if (armorCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;						
 								case ONEBATTLESPELL:
 									if (((MonsterInst5)mod).isOnebattlespell()){
 										modToRemove = mod;

@@ -53,6 +53,7 @@ package org.larz.dom3.dm.dm;
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isStartaff <em>Startaff</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isSupplybonus <em>Supplybonus</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isUwdamage <em>Uwdamage</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isHomesick <em>Homesick</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isColdpower <em>Coldpower</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isFirepower <em>Firepower</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst2#isStormpower <em>Stormpower</em>}</li>
@@ -1112,6 +1113,32 @@ public interface MonsterInst2 extends MonsterPattern2
    * @generated
    */
   void setUwdamage(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Homesick</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Homesick</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Homesick</em>' attribute.
+   * @see #setHomesick(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getMonsterInst2_Homesick()
+   * @model
+   * @generated
+   */
+  boolean isHomesick();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.MonsterInst2#isHomesick <em>Homesick</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Homesick</em>' attribute.
+   * @see #isHomesick()
+   * @generated
+   */
+  void setHomesick(boolean value);
 
   /**
    * Returns the value of the '<em><b>Coldpower</b></em>' attribute.

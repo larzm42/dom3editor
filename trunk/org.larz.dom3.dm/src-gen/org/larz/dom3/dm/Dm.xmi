@@ -731,9 +731,6 @@
       <elements xsi:type="xtext:Assignment" feature="descr" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#descr"/>
       </elements>
-      <elements xsi:type="xtext:Assignment" feature="armor" operator="?=">
-        <terminal xsi:type="xtext:Keyword" value="#armor"/>
-      </elements>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MonsterInst2">
@@ -860,6 +857,9 @@
       </elements>
       <elements xsi:type="xtext:Assignment" feature="uwdamage" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#uwdamage"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="homesick" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#homesick"/>
       </elements>
       <elements xsi:type="xtext:Assignment" feature="coldpower" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#coldpower"/>
@@ -1001,6 +1001,12 @@
       <elements xsi:type="xtext:Assignment" feature="clear" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#clear"/>
       </elements>
+      <elements xsi:type="xtext:Assignment" feature="clearweapons" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#clearweapons"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="cleararmor" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#cleararmor"/>
+      </elements>
       <elements xsi:type="xtext:Assignment" feature="clearmagic" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#clearmagic"/>
       </elements>
@@ -1124,6 +1130,9 @@
       <elements xsi:type="xtext:Assignment" feature="noitem" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#noitem"/>
       </elements>
+      <elements xsi:type="xtext:Assignment" feature="drainimmune" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#drainimmune"/>
+      </elements>
       <elements xsi:type="xtext:Assignment" feature="noleader" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#noleader"/>
       </elements>
@@ -1187,6 +1196,9 @@
     <alternatives xsi:type="xtext:Alternatives">
       <elements xsi:type="xtext:Assignment" feature="weapon" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#weapon"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="armor" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#armor"/>
       </elements>
       <elements xsi:type="xtext:Assignment" feature="onebattlespell" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#onebattlespell"/>
@@ -1883,6 +1895,45 @@
       <elements xsi:type="xtext:Assignment" feature="decscale" operator="?=">
         <terminal xsi:type="xtext:Keyword" value="#decscale"/>
       </elements>
+      <elements xsi:type="xtext:Assignment" feature="heal" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#heal"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="curse" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#curse"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="disease" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#disease"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="horrormark" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#horrormark"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="holyfire" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#holyfire"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="holypower" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#holypower"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="conjcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#conjcost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="altcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#altcost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="evocost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#evocost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="constcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#constcost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="enchcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#enchcost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="thaucost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#thaucost"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="bloodcost" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#bloodcost"/>
+      </elements>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SiteInst3">
@@ -1897,8 +1948,13 @@
     <type metamodel="//@metamodelDeclarations.1">
       <classifier xsi:type="ecore:EClass" href="http://www.larz.org/dom3/dm/Dm#//SiteInst4"/>
     </type>
-    <alternatives xsi:type="xtext:Assignment" feature="clear" operator="?=">
-      <terminal xsi:type="xtext:Keyword" value="#clear"/>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="clear" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#clear"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="lab" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="#lab"/>
+      </elements>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="Nation">

@@ -60,10 +60,12 @@ import org.larz.dom3.dm.dm.SpellInst3;
 import org.larz.dom3.dm.dm.SpellInst4;
 import org.larz.dom3.dm.dm.SpellInst5;
 import org.larz.dom3.dm.dm.SpellMods;
+import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class SpellDetailsPage extends AbstractDetailsPage {
 	private Text name;
+	private Button nameCheck;
 	private Text descr;
 	private Button descCheck;
 
@@ -197,15 +199,15 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		
 		final Composite nameComp = toolkit.createComposite(client);
 		glayout = new GridLayout(2, false);
-		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
 		nameComp.setLayout(glayout);
 		GridData gd = new GridData(SWT.DEFAULT, SWT.FILL, false, false);
 		gd.horizontalSpan = 2;
 		nameComp.setLayoutData(gd);
 		
-		toolkit.createLabel(nameComp, Messages.getString("SpellDetailsSection.mod.name")); //$NON-NLS-1$
-		
+		nameCheck = toolkit.createButton(nameComp, Messages.getString("SpellDetailsSection.mod.name"), SWT.CHECK); //$NON-NLS-1$
+		nameCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.SPELL_CATEGORY, "name"));
+
 		name = toolkit.createText(nameComp, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 		name.addFocusListener(new FocusAdapter() {
 			@Override
@@ -226,8 +228,29 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.widthHint = 500;
 		name.setLayoutData(gd);
-		
+		nameCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (nameCheck.getSelection()) {
+					addInst1(Inst.NAME, doc, "");
+					name.setEnabled(true);
+					name.setText("");
+					nameCheck.setFont(boldFont);
+				} else {
+					removeInst(Inst.NAME, doc);
+					name.setEnabled(false);
+					if (input instanceof SelectSpellById || input instanceof SelectSpellByName) {
+						name.setText(getSelectSpellname(input));
+					} else {
+						name.setText("");
+					}
+					nameCheck.setFont(normalFont);
+				}
+			}
+		});
+
 		descCheck = toolkit.createButton(nameComp, Messages.getString("SpellDetailsSection.mod.descr"), SWT.CHECK);
+		descCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.SPELL_CATEGORY, "descr"));
 
 		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		descr.addFocusListener(new FocusAdapter() {
@@ -284,6 +307,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
+		glayout.verticalSpacing = 0;
 		leftColumn.setLayout(glayout);
 		leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
@@ -291,6 +315,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
+		glayout.verticalSpacing = 0;
 		rightColumn.setLayout(glayout);
 		rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
@@ -299,6 +324,8 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			final Inst key = fields.getKey();
 			final InstFields field = fields.getValue();
 			final Button check = toolkit.createButton(isRight?rightColumn:leftColumn, key.label, SWT.CHECK);
+			check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.SPELL_CATEGORY, key.label));
+
 			check.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
@@ -500,15 +527,27 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 	
 	public void update() {
 		if (input != null) {
-			if (input instanceof SelectSpellByName || input instanceof SelectSpellById) {
-				String str = getSelectSpellname(input);
-				name.setText(str!= null?str:"");
-				name.setEnabled(false);
+			String nameString = getInst1(Inst.NAME, input);
+			if (nameString != null) {
+				name.setText(nameString);
+				name.setEnabled(true);
+				nameCheck.setSelection(true);
+				nameCheck.setFont(boldFont);
 			} else {
-				String str = getInst1(Inst.NAME, input);
-				name.setText(str!=null?str:"");
+				if (input instanceof SelectSpellByName || input instanceof SelectSpellById) {
+					String str = getSelectSpellname(input);
+					name.setText(str!= null?str:"");
+					name.setEnabled(false);
+				} else {
+					String str = getSpellname((Spell)input);
+					name.setText(str!=null?str:"");
+					nameCheck.setEnabled(false);
+				}
+				name.setEnabled(false);
+				nameCheck.setSelection(false);
+				nameCheck.setFont(normalFont);
 			}
-			
+
 			String description = getInst1(Inst.DESCR, input);
 			final FormToolkit toolkit = mform.getToolkit();
 			if (description != null) {
@@ -715,6 +754,18 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			int id = ((SelectSpellById)spell).getValue();
 			return Database.getSpellName(id);
 		}
+	}
+	
+	private String getSpellname(Spell spell) {
+		EList<SpellMods> list = spell.getMods();
+		for (SpellMods mod : list) {
+			if (mod instanceof SpellInst1) {
+				if (((SpellInst1)mod).isName()) {
+					return ((SpellInst1)mod).getValue();
+				}
+			}
+		}
+		return null;
 	}
 	
 	private void setSpellname(final XtextEditor editor, final String newName) 

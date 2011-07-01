@@ -57,12 +57,15 @@ import org.larz.dom3.dm.dm.WeaponInst2;
 import org.larz.dom3.dm.dm.WeaponInst3;
 import org.larz.dom3.dm.dm.WeaponInst4;
 import org.larz.dom3.dm.dm.WeaponMods;
+import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class WeaponDetailsPage extends AbstractDetailsPage {
 	private Text name;
+	private Button nameCheck;
 
 	enum Inst {
+		NAME (Messages.getString("WeaponDetailsSection.mod.name"), ""), 
 		DMG (Messages.getString("WeaponDetailsSection.mod.dmg"), "4"), 
 		NRATT (Messages.getString("WeaponDetailsSection.mod.nratt"), "1"),
 		ATT (Messages.getString("WeaponDetailsSection.mod.att"), "1"), 
@@ -223,13 +226,16 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 		client.setLayout(glayout);
 		
 		Composite nameComp = toolkit.createComposite(client);
-		nameComp.setLayout(new GridLayout(2, false));
+		glayout = new GridLayout(2, false);
+		glayout.marginWidth = 0;
+		nameComp.setLayout(glayout);
 		GridData gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.horizontalSpan = 2;
 		nameComp.setLayoutData(gd);
 		
-		toolkit.createLabel(nameComp, Messages.getString("WeaponDetailsSection.mod.name")); //$NON-NLS-1$
-		
+		nameCheck = toolkit.createButton(nameComp, Messages.getString("WeaponDetailsSection.mod.name"), SWT.CHECK); //$NON-NLS-1$
+		nameCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.WEAPON_CATEGORY, "name"));
+
 		name = toolkit.createText(nameComp, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 		name.addFocusListener(new FocusAdapter() {
 			@Override
@@ -246,7 +252,27 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 			}
 			
 		});
-		
+		nameCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (nameCheck.getSelection()) {
+					addInst1(Inst.NAME, doc, "");
+					name.setEnabled(true);
+					name.setText("");
+					nameCheck.setFont(boldFont);
+				} else {
+					removeInst(Inst.NAME, doc);
+					name.setEnabled(false);
+					if (input instanceof SelectWeaponById || input instanceof SelectWeaponByName) {
+						name.setText(getSelectWeaponname(input));
+					} else {
+						name.setText("");
+					}
+					nameCheck.setFont(normalFont);
+				}
+			}
+		});
+
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.widthHint = 400;
 		name.setLayoutData(gd);
@@ -255,6 +281,7 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
+		glayout.verticalSpacing = 0;
 		leftColumn.setLayout(glayout);
 		leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
@@ -262,6 +289,7 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
+		glayout.verticalSpacing = 0;
 		rightColumn.setLayout(glayout);
 		rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
@@ -289,6 +317,13 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 				}
 
 			});
+			if (key.label.equals("2ndFx")) {
+				check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.WEAPON_CATEGORY, "secondaryeffect"));
+			} else if (key.label.equals("2ndFxAll")) {
+				check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.WEAPON_CATEGORY, "secondaryeffectalways"));
+			} else {
+				check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.WEAPON_CATEGORY, key.label));
+			}
 
 			Text myValue1 = null;
 			Text myValue2 = null;
@@ -355,6 +390,7 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 			} else if (field instanceof Inst4Fields) {
 				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 				gd.horizontalSpan = 2;
+				gd.heightHint=20;
 				check.setLayoutData(gd);
 				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
 			}
@@ -431,13 +467,25 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 	
 	public void update() {
 		if (input != null) {
-			if (input instanceof SelectWeaponByName || input instanceof SelectWeaponById) {
-				String str = getSelectWeaponname(input);
-				name.setText(str!= null?str:"");
-				name.setEnabled(false);
+			String nameString = getInst1(Inst.NAME, input);
+			if (nameString != null) {
+				name.setText(nameString);
+				name.setEnabled(true);
+				nameCheck.setSelection(true);
+				nameCheck.setFont(boldFont);
 			} else {
-				String str = getWeaponname(input);
-				name.setText(str!=null?str:"");
+				if (input instanceof SelectWeaponByName || input instanceof SelectWeaponById) {
+					String str = getSelectWeaponname(input);
+					name.setText(str!= null?str:"");
+					name.setEnabled(false);
+				} else {
+					String str = getWeaponname(input);
+					name.setText(str!=null?str:"");
+					nameCheck.setEnabled(false);
+				}
+				name.setEnabled(false);
+				nameCheck.setSelection(false);
+				nameCheck.setFont(normalFont);
 			}
 		}
 		WeaponDB weaponDB = new WeaponDB();
@@ -797,6 +845,22 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 		myDocument);
 
 		updateSelection();
+	}
+
+	private String getInst1(Inst inst2, Object weapon) {
+		EList<WeaponMods> list = ((Weapon)weapon).getMods();
+		for (WeaponMods mod : list) {
+			if (mod instanceof WeaponInst1) {
+				switch (inst2) {
+				case NAME:
+					if (((WeaponInst1)mod).isName()){
+						return ((WeaponInst1)mod).getValue();
+					}
+					break;
+				}
+			}
+		}
+		return null;
 	}
 
 	private Integer getInst2(Inst inst2, Object weapon) {
@@ -1163,6 +1227,33 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 		updateSelection();
 	}
 
+	private void addInst1(final Inst inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<WeaponMods> mods = ((Weapon)input).getMods();
+						WeaponInst1 type = DmFactory.eINSTANCE.createWeaponInst1();
+						switch (inst) {
+						case NAME:
+							type.setName(true);
+							break;
+						}
+						type.setValue(newName);
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				updateSelection();
+			}
+		});
+	}
+
 	private void addInst2(final Inst inst, final XtextEditor editor, final String newName) {
 		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
@@ -1373,6 +1464,15 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 						WeaponMods modToRemove = null;
 						EList<WeaponMods> mods = ((Weapon)input).getMods();
 						for (WeaponMods mod : mods) {
+							if (mod instanceof WeaponInst1) {
+								switch (inst2) {
+								case NAME:
+									if (((WeaponInst1)mod).isName()) {
+										modToRemove = mod;
+									}
+									break;
+								}
+							}
 							if (mod instanceof WeaponInst2) {
 								switch (inst2) {
 								case DMG:

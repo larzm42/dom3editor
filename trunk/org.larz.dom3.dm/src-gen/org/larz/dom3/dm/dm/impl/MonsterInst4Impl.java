@@ -22,6 +22,8 @@ import org.larz.dom3.dm.dm.MonsterInst4;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isClear <em>Clear</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isClearweapons <em>Clearweapons</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isCleararmor <em>Cleararmor</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isClearmagic <em>Clearmagic</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isClearspec <em>Clearspec</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isFemale <em>Female</em>}</li>
@@ -62,6 +64,7 @@ import org.larz.dom3.dm.dm.MonsterInst4;
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isPoisonarmor <em>Poisonarmor</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isInquisitor <em>Inquisitor</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isNoitem <em>Noitem</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isDrainimmune <em>Drainimmune</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isNoleader <em>Noleader</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isPoorleader <em>Poorleader</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.MonsterInst4Impl#isOkleader <em>Okleader</em>}</li>
@@ -106,6 +109,46 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
    * @ordered
    */
   protected boolean clear = CLEAR_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isClearweapons() <em>Clearweapons</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isClearweapons()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean CLEARWEAPONS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isClearweapons() <em>Clearweapons</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isClearweapons()
+   * @generated
+   * @ordered
+   */
+  protected boolean clearweapons = CLEARWEAPONS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isCleararmor() <em>Cleararmor</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isCleararmor()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean CLEARARMOR_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isCleararmor() <em>Cleararmor</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isCleararmor()
+   * @generated
+   * @ordered
+   */
+  protected boolean cleararmor = CLEARARMOR_EDEFAULT;
 
   /**
    * The default value of the '{@link #isClearmagic() <em>Clearmagic</em>}' attribute.
@@ -908,6 +951,26 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
   protected boolean noitem = NOITEM_EDEFAULT;
 
   /**
+   * The default value of the '{@link #isDrainimmune() <em>Drainimmune</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDrainimmune()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean DRAINIMMUNE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isDrainimmune() <em>Drainimmune</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDrainimmune()
+   * @generated
+   * @ordered
+   */
+  protected boolean drainimmune = DRAINIMMUNE_EDEFAULT;
+
+  /**
    * The default value of the '{@link #isNoleader() <em>Noleader</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1309,6 +1372,52 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
     clear = newClear;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST4__CLEAR, oldClear, clear));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isClearweapons()
+  {
+    return clearweapons;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setClearweapons(boolean newClearweapons)
+  {
+    boolean oldClearweapons = clearweapons;
+    clearweapons = newClearweapons;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST4__CLEARWEAPONS, oldClearweapons, clearweapons));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isCleararmor()
+  {
+    return cleararmor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCleararmor(boolean newCleararmor)
+  {
+    boolean oldCleararmor = cleararmor;
+    cleararmor = newCleararmor;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST4__CLEARARMOR, oldCleararmor, cleararmor));
   }
 
   /**
@@ -2236,6 +2345,29 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isDrainimmune()
+  {
+    return drainimmune;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDrainimmune(boolean newDrainimmune)
+  {
+    boolean oldDrainimmune = drainimmune;
+    drainimmune = newDrainimmune;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.MONSTER_INST4__DRAINIMMUNE, oldDrainimmune, drainimmune));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public boolean isNoleader()
   {
     return noleader;
@@ -2657,6 +2789,10 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
     {
       case DmPackage.MONSTER_INST4__CLEAR:
         return isClear();
+      case DmPackage.MONSTER_INST4__CLEARWEAPONS:
+        return isClearweapons();
+      case DmPackage.MONSTER_INST4__CLEARARMOR:
+        return isCleararmor();
       case DmPackage.MONSTER_INST4__CLEARMAGIC:
         return isClearmagic();
       case DmPackage.MONSTER_INST4__CLEARSPEC:
@@ -2737,6 +2873,8 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
         return isInquisitor();
       case DmPackage.MONSTER_INST4__NOITEM:
         return isNoitem();
+      case DmPackage.MONSTER_INST4__DRAINIMMUNE:
+        return isDrainimmune();
       case DmPackage.MONSTER_INST4__NOLEADER:
         return isNoleader();
       case DmPackage.MONSTER_INST4__POORLEADER:
@@ -2789,6 +2927,12 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
     {
       case DmPackage.MONSTER_INST4__CLEAR:
         setClear((Boolean)newValue);
+        return;
+      case DmPackage.MONSTER_INST4__CLEARWEAPONS:
+        setClearweapons((Boolean)newValue);
+        return;
+      case DmPackage.MONSTER_INST4__CLEARARMOR:
+        setCleararmor((Boolean)newValue);
         return;
       case DmPackage.MONSTER_INST4__CLEARMAGIC:
         setClearmagic((Boolean)newValue);
@@ -2910,6 +3054,9 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
       case DmPackage.MONSTER_INST4__NOITEM:
         setNoitem((Boolean)newValue);
         return;
+      case DmPackage.MONSTER_INST4__DRAINIMMUNE:
+        setDrainimmune((Boolean)newValue);
+        return;
       case DmPackage.MONSTER_INST4__NOLEADER:
         setNoleader((Boolean)newValue);
         return;
@@ -2980,6 +3127,12 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
     {
       case DmPackage.MONSTER_INST4__CLEAR:
         setClear(CLEAR_EDEFAULT);
+        return;
+      case DmPackage.MONSTER_INST4__CLEARWEAPONS:
+        setClearweapons(CLEARWEAPONS_EDEFAULT);
+        return;
+      case DmPackage.MONSTER_INST4__CLEARARMOR:
+        setCleararmor(CLEARARMOR_EDEFAULT);
         return;
       case DmPackage.MONSTER_INST4__CLEARMAGIC:
         setClearmagic(CLEARMAGIC_EDEFAULT);
@@ -3101,6 +3254,9 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
       case DmPackage.MONSTER_INST4__NOITEM:
         setNoitem(NOITEM_EDEFAULT);
         return;
+      case DmPackage.MONSTER_INST4__DRAINIMMUNE:
+        setDrainimmune(DRAINIMMUNE_EDEFAULT);
+        return;
       case DmPackage.MONSTER_INST4__NOLEADER:
         setNoleader(NOLEADER_EDEFAULT);
         return;
@@ -3171,6 +3327,10 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
     {
       case DmPackage.MONSTER_INST4__CLEAR:
         return clear != CLEAR_EDEFAULT;
+      case DmPackage.MONSTER_INST4__CLEARWEAPONS:
+        return clearweapons != CLEARWEAPONS_EDEFAULT;
+      case DmPackage.MONSTER_INST4__CLEARARMOR:
+        return cleararmor != CLEARARMOR_EDEFAULT;
       case DmPackage.MONSTER_INST4__CLEARMAGIC:
         return clearmagic != CLEARMAGIC_EDEFAULT;
       case DmPackage.MONSTER_INST4__CLEARSPEC:
@@ -3251,6 +3411,8 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
         return inquisitor != INQUISITOR_EDEFAULT;
       case DmPackage.MONSTER_INST4__NOITEM:
         return noitem != NOITEM_EDEFAULT;
+      case DmPackage.MONSTER_INST4__DRAINIMMUNE:
+        return drainimmune != DRAINIMMUNE_EDEFAULT;
       case DmPackage.MONSTER_INST4__NOLEADER:
         return noleader != NOLEADER_EDEFAULT;
       case DmPackage.MONSTER_INST4__POORLEADER:
@@ -3304,6 +3466,10 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (clear: ");
     result.append(clear);
+    result.append(", clearweapons: ");
+    result.append(clearweapons);
+    result.append(", cleararmor: ");
+    result.append(cleararmor);
     result.append(", clearmagic: ");
     result.append(clearmagic);
     result.append(", clearspec: ");
@@ -3384,6 +3550,8 @@ public class MonsterInst4Impl extends MonsterPattern4Impl implements MonsterInst
     result.append(inquisitor);
     result.append(", noitem: ");
     result.append(noitem);
+    result.append(", drainimmune: ");
+    result.append(drainimmune);
     result.append(", noleader: ");
     result.append(noleader);
     result.append(", poorleader: ");

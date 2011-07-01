@@ -194,6 +194,14 @@ public class SummaryList extends MasterDetailsBlock {
 			if (element instanceof SelectArmorByName) {
 				return Messages.format("ScrolledPropertiesBlock.armor.single.fmt", ((SelectArmorByName)element).getValue());
 			} else if (element instanceof SelectArmorById) {
+				EList<ArmorMods> list = ((SelectArmorById)element).getMods();
+				for (ArmorMods mod : list) {
+					if (mod instanceof ArmorInst1) {
+						if (((ArmorInst1)mod).isName()) {
+							return Messages.format("ScrolledPropertiesBlock.armor.double.fmt", ((ArmorInst1)mod).getValue(), ((SelectArmorById)element).getValue());
+						}
+					}
+				}
 				return Messages.format("ScrolledPropertiesBlock.armor.double.fmt", ((SelectArmorById)element).getValue(), Database.getArmorName(((SelectArmorById)element).getValue()));
 			} else if (element instanceof NewArmor) {
 				EList<ArmorMods> list = ((Armor)element).getMods();
@@ -208,6 +216,14 @@ public class SummaryList extends MasterDetailsBlock {
 			} else if (element instanceof SelectWeaponByName) {
 				return Messages.format("ScrolledPropertiesBlock.weapon.single.fmt", ((SelectWeaponByName)element).getValue());
 			} else if (element instanceof SelectWeaponById) {
+				EList<WeaponMods> list = ((SelectWeaponById)element).getMods();
+				for (WeaponMods mod : list) {
+					if (mod instanceof WeaponInst1) {
+						if (((WeaponInst1)mod).isName()) {
+							return Messages.format("ScrolledPropertiesBlock.weapon.double.fmt", ((WeaponInst1)mod).getValue(), ((SelectWeaponById)element).getValue());
+						}
+					}
+				}
 				return Messages.format("ScrolledPropertiesBlock.weapon.double.fmt", ((SelectWeaponById)element).getValue(), Database.getWeaponName(((SelectWeaponById)element).getValue()));
 			} else if (element instanceof NewWeapon) {
 				EList<WeaponMods> list = ((Weapon)element).getMods();
@@ -222,6 +238,14 @@ public class SummaryList extends MasterDetailsBlock {
 			} else if (element instanceof SelectMonsterByName) {
 				return Messages.format("ScrolledPropertiesBlock.monster.single.fmt", ((SelectMonsterByName)element).getValue());
 			} else if (element instanceof SelectMonsterById) {
+				EList<MonsterMods> list = ((SelectMonsterById)element).getMods();
+				for (MonsterMods mod : list) {
+					if (mod instanceof MonsterInst1) {
+						if (((MonsterInst1)mod).isName()) {
+							return Messages.format("ScrolledPropertiesBlock.monster.double.fmt", ((MonsterInst1)mod).getValue(), ((SelectMonsterById)element).getValue());
+						}
+					}
+				}
 				return Messages.format("ScrolledPropertiesBlock.monster.double.fmt", ((SelectMonsterById)element).getValue(), Database.getMonsterName(((SelectMonsterById)element).getValue()));
 			} else if (element instanceof NewMonster) {
 				EList<MonsterMods> list = ((Monster)element).getMods();
@@ -236,6 +260,14 @@ public class SummaryList extends MasterDetailsBlock {
 			} else if (element instanceof SelectItemByName) {
 				return Messages.format("ScrolledPropertiesBlock.item.single.fmt", ((SelectItemByName)element).getValue());
 			} else if (element instanceof SelectItemById) {
+				EList<ItemMods> list = ((SelectItemById)element).getMods();
+				for (ItemMods mod : list) {
+					if (mod instanceof ItemInst1) {
+						if (((ItemInst1)mod).isName()) {
+							return Messages.format("ScrolledPropertiesBlock.item.double.fmt", ((ItemInst1)mod).getValue(), ((SelectItemById)element).getValue());
+						}
+					}
+				}
 				return Messages.format("ScrolledPropertiesBlock.item.double.fmt", ((SelectItemById)element).getValue(), Database.getItemName(((SelectItemById)element).getValue()));
 			} else if (element instanceof NewItem) {
 				EList<ItemMods> list = ((Item)element).getMods();
@@ -249,6 +281,14 @@ public class SummaryList extends MasterDetailsBlock {
 			} else if (element instanceof SelectSiteByName) {
 				return Messages.format("ScrolledPropertiesBlock.site.single.fmt", ((SelectSiteByName)element).getValue());
 			} else if (element instanceof SelectSiteById) {
+				EList<SiteMods> list = ((SelectSiteById)element).getMods();
+				for (SiteMods mod : list) {
+					if (mod instanceof SiteInst1) {
+						if (((SiteInst1)mod).isName()) {
+							return Messages.format("ScrolledPropertiesBlock.site.double.fmt", ((SiteInst1)mod).getValue(), ((SelectSiteById)element).getValue());
+						}
+					}
+				}
 				return Messages.format("ScrolledPropertiesBlock.site.double.fmt", ((SelectSiteById)element).getValue(), Database.getSiteName(((SelectSiteById)element).getValue()));
 			} else if (element instanceof NewSite) {
 				EList<SiteMods> list = ((Site)element).getMods();
@@ -263,6 +303,14 @@ public class SummaryList extends MasterDetailsBlock {
 			} else if (element instanceof SelectSpellByName) {
 				return Messages.format("ScrolledPropertiesBlock.spell.single.fmt", ((SelectSpellByName)element).getValue());
 			} else if (element instanceof SelectSpellById) {
+				EList<SpellMods> list = ((SelectSpellById)element).getMods();
+				for (SpellMods mod : list) {
+					if (mod instanceof SpellInst1) {
+						if (((SpellInst1)mod).isName()) {
+							return Messages.format("ScrolledPropertiesBlock.spell.double.fmt", ((SpellInst1)mod).getValue(), ((SelectSpellById)element).getValue());
+						}
+					}
+				}
 				return Messages.format("ScrolledPropertiesBlock.spell.double.fmt", ((SelectSpellById)element).getValue(), Database.getSpellName(((SelectSpellById)element).getValue()));
 			} else if (element instanceof NewSpell) {
 				EList<SpellMods> list = ((Spell)element).getMods();

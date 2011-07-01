@@ -58,12 +58,15 @@ import org.larz.dom3.dm.dm.ItemInst3;
 import org.larz.dom3.dm.dm.ItemMods;
 import org.larz.dom3.dm.dm.SelectItemById;
 import org.larz.dom3.dm.dm.SelectItemByName;
+import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class ItemDetailsPage extends AbstractDetailsPage {
 	private Text name;
+	private Button nameCheck;
 	private Text descr;
 	private Button descrCheck;
+	private Label spriteLabel;
 
 	enum Inst {
 		NAME (Messages.getString("ItemDetailsSection.mod.name"), ""),
@@ -158,8 +161,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 		gd.horizontalSpan = 2;
 		nameComp.setLayoutData(gd);
 		
-		toolkit.createLabel(nameComp, Messages.getString("ItemDetailsSection.mod.name")); //$NON-NLS-1$
-		
+		nameCheck = toolkit.createButton(nameComp, Messages.getString("ItemDetailsSection.mod.name"), SWT.CHECK); //$NON-NLS-1$
+		nameCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.ITEM_CATEGORY, "name"));
+
 		name = toolkit.createText(nameComp, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 		name.addFocusListener(new FocusAdapter() {
 			@Override
@@ -180,8 +184,29 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.widthHint = 500;
 		name.setLayoutData(gd);
-		
+		nameCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (nameCheck.getSelection()) {
+					addInst1(Inst.NAME, doc, "");
+					name.setEnabled(true);
+					name.setText("");
+					nameCheck.setFont(boldFont);
+				} else {
+					removeInst(Inst.NAME, doc);
+					name.setEnabled(false);
+					if (input instanceof SelectItemById || input instanceof SelectItemByName) {
+						name.setText(getSelectItemname((Item)input));
+					} else {
+						name.setText("");
+					}
+					nameCheck.setFont(normalFont);
+				}
+			}
+		});
+
 		descrCheck = toolkit.createButton(nameComp, Messages.getString("ItemDetailsSection.mod.descr"), SWT.CHECK);
+		descrCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.ITEM_CATEGORY, "descr"));
 
 		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
 		descr.addFocusListener(new FocusAdapter() {
@@ -234,10 +259,13 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 			}
 		});
 
+		spriteLabel = toolkit.createLabel(nameComp, "", SWT.NONE);
+
 		Composite leftColumn = toolkit.createComposite(client);
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
+		glayout.verticalSpacing = 0;
 		leftColumn.setLayout(glayout);
 		leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
@@ -245,6 +273,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
+		glayout.verticalSpacing = 0;
 		rightColumn.setLayout(glayout);
 		rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
@@ -253,6 +282,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 			final Inst key = fields.getKey();
 			final InstFields field = fields.getValue();
 			final Button check = toolkit.createButton(isRight?rightColumn:leftColumn, key.label, SWT.CHECK);
+			check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.ITEM_CATEGORY, key.label));
 			check.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
@@ -278,7 +308,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 				myValue1 = value;
 				
-				if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
+				if (field instanceof Inst2Fields) {
 					value.addVerifyListener(new VerifyListener() {
 						
 						@Override
@@ -387,17 +417,74 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 		return null;
 	}
 	
+	private int getSelectItemid(Item item) {
+		if (item instanceof SelectItemByName) {
+			return Database.getItem(((SelectItemByName) item).getValue()).id;
+		} else {
+			return ((SelectItemById)item).getValue();
+		}
+	}
+	
 	public void update() {
 		if (input != null) {
+			String nameString = getInst1(Inst.NAME, (Item)input);
+			
+			String sprite = null;
 			if (input instanceof SelectItemByName || input instanceof SelectItemById) {
-				String str = getSelectItemname((Item)input);
-				name.setText(str!= null?str:"");
-				name.setEnabled(false);
+				if (nameString != null) {
+					name.setText(nameString);
+					name.setEnabled(true);
+					nameCheck.setSelection(true);
+					nameCheck.setFont(boldFont);
+				} else {
+					name.setText(getSelectItemname((Item)input));
+					name.setEnabled(false);
+					nameCheck.setSelection(false);
+					nameCheck.setFont(normalFont);
+				}
+				
+				int id = getSelectItemid((Item)input);
+				if (getInst3(Inst.COPYSPR, (Item)input) != null) {
+					Object copyId = getInst3(Inst.COPYSPR, (Item)input);
+					if (copyId instanceof Integer) {
+						sprite = "item" + copyId + ".png";
+					} else if (copyId instanceof String) {
+						sprite = "item" + Database.getItem((String)copyId).id + ".png";
+					}
+				} else {
+					sprite = "item" + id + ".png";
+				}
 			} else {
-				String str = getInst1(Inst.NAME, (Item)input);
-				name.setText(str!=null?str:"");
+				if (nameString != null) {
+					name.setText(nameString);
+					name.setEnabled(true);
+					nameCheck.setSelection(true);
+					nameCheck.setFont(boldFont);
+				} else {
+					String str = getItemname((Item)input);
+					name.setText(str!=null?str:"");
+					name.setEnabled(false);
+					nameCheck.setSelection(false);
+					nameCheck.setFont(normalFont);
+				}
+				nameCheck.setEnabled(false);
+				
+				if (getInst3(Inst.COPYSPR, (Item)input) != null) {
+					Object copyId = getInst3(Inst.COPYSPR, (Item)input);
+					if (copyId instanceof Integer) {
+						sprite = "item" + copyId + ".png";
+					} else if (copyId instanceof String) {
+						sprite = "item" + Database.getItem((String)copyId).id + ".png";
+					}
+				}
 			}
 			
+			if (sprite != null) {
+				spriteLabel.setImage(getSpriteFromZip(sprite, "items"));
+			} else {
+				spriteLabel.setImage(null);
+			}
+
 			String description = getInst1(Inst.DESCR, (Item)input);
 			final FormToolkit toolkit = mform.getToolkit();
 			if (description != null) {
@@ -413,7 +500,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				descrCheck.setSelection(false);
 				descrCheck.setFont(normalFont);
 			}
-
+			
 		}
 		ItemDB itemDB = new ItemDB();
 		if (input instanceof SelectItemById) {
@@ -526,6 +613,18 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 		name.getParent().getParent().getParent().layout(true, true);
 	}
 	
+	private String getItemname(Item item) {
+		EList<ItemMods> list = item.getMods();
+		for (ItemMods mod : list) {
+			if (mod instanceof ItemInst1) {
+				if (((ItemInst1)mod).isName()) {
+					return ((ItemInst1)mod).getValue();
+				}
+			}
+		}
+		return null;
+	}
+
 	private void setItemname(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
@@ -953,6 +1052,11 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 						for (ItemMods mod : mods) {
 							if (mod instanceof ItemInst1) {
 								switch (inst2) {
+								case NAME:
+									if (((ItemInst1)mod).isName()){
+										modToRemove = mod;
+									}
+									break;
 								case DESCR:
 									if (((ItemInst1)mod).isDescr()){
 										modToRemove = mod;
