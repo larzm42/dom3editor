@@ -419,7 +419,8 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 	
 	private int getSelectItemid(Item item) {
 		if (item instanceof SelectItemByName) {
-			return Database.getItem(((SelectItemByName) item).getValue()).id;
+			ItemDB itemDB = Database.getItem(((SelectItemByName) item).getValue());
+			return itemDB != null ? itemDB.id : 0;
 		} else {
 			return ((SelectItemById)item).getValue();
 		}
@@ -443,7 +444,6 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					nameCheck.setFont(normalFont);
 				}
 				
-				int id = getSelectItemid((Item)input);
 				if (getInst3(Inst.COPYSPR, (Item)input) != null) {
 					Object copyId = getInst3(Inst.COPYSPR, (Item)input);
 					if (copyId instanceof Integer) {
@@ -452,7 +452,10 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 						sprite = "item" + Database.getItem((String)copyId).id + ".png";
 					}
 				} else {
-					sprite = "item" + id + ".png";
+					int id = getSelectItemid((Item)input);
+					if (id != 0) {
+						sprite = "item" + id + ".png";
+					}
 				}
 			} else {
 				if (nameString != null) {
