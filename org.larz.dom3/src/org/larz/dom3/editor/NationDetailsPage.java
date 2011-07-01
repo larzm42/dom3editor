@@ -1003,7 +1003,8 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				nameCheck.setSelection(true);
 				nameCheck.setFont(boldFont);
 			} else {
-				name.setText(Database.getNationName(((SelectNation)input).getValue()));
+				String nameStr = Database.getNationName(((SelectNation)input).getValue());
+				name.setText(nameStr != null ? nameStr : "");
 				name.setEnabled(false);
 				nameCheck.setSelection(false);
 				nameCheck.setFont(normalFont);
