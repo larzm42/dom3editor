@@ -22,6 +22,7 @@ import org.larz.dom3.dm.dm.SiteInst4;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst4Impl#isClear <em>Clear</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst4Impl#isLab <em>Lab</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +49,26 @@ public class SiteInst4Impl extends SitePattern4Impl implements SiteInst4
    * @ordered
    */
   protected boolean clear = CLEAR_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isLab() <em>Lab</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isLab()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean LAB_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isLab() <em>Lab</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isLab()
+   * @generated
+   * @ordered
+   */
+  protected boolean lab = LAB_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -98,6 +119,29 @@ public class SiteInst4Impl extends SitePattern4Impl implements SiteInst4
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isLab()
+  {
+    return lab;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLab(boolean newLab)
+  {
+    boolean oldLab = lab;
+    lab = newLab;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST4__LAB, oldLab, lab));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -105,6 +149,8 @@ public class SiteInst4Impl extends SitePattern4Impl implements SiteInst4
     {
       case DmPackage.SITE_INST4__CLEAR:
         return isClear();
+      case DmPackage.SITE_INST4__LAB:
+        return isLab();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,6 +167,9 @@ public class SiteInst4Impl extends SitePattern4Impl implements SiteInst4
     {
       case DmPackage.SITE_INST4__CLEAR:
         setClear((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST4__LAB:
+        setLab((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,6 +188,9 @@ public class SiteInst4Impl extends SitePattern4Impl implements SiteInst4
       case DmPackage.SITE_INST4__CLEAR:
         setClear(CLEAR_EDEFAULT);
         return;
+      case DmPackage.SITE_INST4__LAB:
+        setLab(LAB_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -155,6 +207,8 @@ public class SiteInst4Impl extends SitePattern4Impl implements SiteInst4
     {
       case DmPackage.SITE_INST4__CLEAR:
         return clear != CLEAR_EDEFAULT;
+      case DmPackage.SITE_INST4__LAB:
+        return lab != LAB_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -172,6 +226,8 @@ public class SiteInst4Impl extends SitePattern4Impl implements SiteInst4
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (clear: ");
     result.append(clear);
+    result.append(", lab: ");
+    result.append(lab);
     result.append(')');
     return result.toString();
   }

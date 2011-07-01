@@ -15,6 +15,8 @@ package org.larz.dom3.dm.dm;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isClear <em>Clear</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isClearweapons <em>Clearweapons</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isCleararmor <em>Cleararmor</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isClearmagic <em>Clearmagic</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isClearspec <em>Clearspec</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isFemale <em>Female</em>}</li>
@@ -55,6 +57,7 @@ package org.larz.dom3.dm.dm;
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isPoisonarmor <em>Poisonarmor</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isInquisitor <em>Inquisitor</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isNoitem <em>Noitem</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isDrainimmune <em>Drainimmune</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isNoleader <em>Noleader</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isPoorleader <em>Poorleader</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst4#isOkleader <em>Okleader</em>}</li>
@@ -107,6 +110,58 @@ public interface MonsterInst4 extends MonsterPattern4
    * @generated
    */
   void setClear(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Clearweapons</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Clearweapons</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Clearweapons</em>' attribute.
+   * @see #setClearweapons(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getMonsterInst4_Clearweapons()
+   * @model
+   * @generated
+   */
+  boolean isClearweapons();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.MonsterInst4#isClearweapons <em>Clearweapons</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Clearweapons</em>' attribute.
+   * @see #isClearweapons()
+   * @generated
+   */
+  void setClearweapons(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Cleararmor</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Cleararmor</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Cleararmor</em>' attribute.
+   * @see #setCleararmor(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getMonsterInst4_Cleararmor()
+   * @model
+   * @generated
+   */
+  boolean isCleararmor();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.MonsterInst4#isCleararmor <em>Cleararmor</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Cleararmor</em>' attribute.
+   * @see #isCleararmor()
+   * @generated
+   */
+  void setCleararmor(boolean value);
 
   /**
    * Returns the value of the '<em><b>Clearmagic</b></em>' attribute.
@@ -1147,6 +1202,32 @@ public interface MonsterInst4 extends MonsterPattern4
    * @generated
    */
   void setNoitem(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Drainimmune</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Drainimmune</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Drainimmune</em>' attribute.
+   * @see #setDrainimmune(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getMonsterInst4_Drainimmune()
+   * @model
+   * @generated
+   */
+  boolean isDrainimmune();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.MonsterInst4#isDrainimmune <em>Drainimmune</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Drainimmune</em>' attribute.
+   * @see #isDrainimmune()
+   * @generated
+   */
+  void setDrainimmune(boolean value);
 
   /**
    * Returns the value of the '<em><b>Noleader</b></em>' attribute.

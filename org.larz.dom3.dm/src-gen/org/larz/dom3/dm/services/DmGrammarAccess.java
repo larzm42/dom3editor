@@ -1828,14 +1828,12 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSpr2Spr2Keyword_2_0 = (Keyword)cSpr2Assignment_2.eContents().get(0);
 		private final Assignment cDescrAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
 		private final Keyword cDescrDescrKeyword_3_0 = (Keyword)cDescrAssignment_3.eContents().get(0);
-		private final Assignment cArmorAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final Keyword cArmorArmorKeyword_4_0 = (Keyword)cArmorAssignment_4.eContents().get(0);
 		
 		//MonsterInst1:
-		//	name?="#name" | spr1?="#spr1" | spr2?="#spr2" | descr?="#descr" | armor?="#armor";
+		//	name?="#name" | spr1?="#spr1" | spr2?="#spr2" | descr?="#descr";
 		public ParserRule getRule() { return rule; }
 
-		//name?="#name" | spr1?="#spr1" | spr2?="#spr2" | descr?="#descr" | armor?="#armor"
+		//name?="#name" | spr1?="#spr1" | spr2?="#spr2" | descr?="#descr"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//name?="#name"
@@ -1861,12 +1859,6 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"#descr"
 		public Keyword getDescrDescrKeyword_3_0() { return cDescrDescrKeyword_3_0; }
-
-		//armor?="#armor"
-		public Assignment getArmorAssignment_4() { return cArmorAssignment_4; }
-
-		//"#armor"
-		public Keyword getArmorArmorKeyword_4_0() { return cArmorArmorKeyword_4_0; }
 	}
 
 	public class MonsterInst2Elements extends AbstractParserRuleElementFinder {
@@ -1952,80 +1944,82 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSupplybonusSupplybonusKeyword_38_0 = (Keyword)cSupplybonusAssignment_38.eContents().get(0);
 		private final Assignment cUwdamageAssignment_39 = (Assignment)cAlternatives.eContents().get(39);
 		private final Keyword cUwdamageUwdamageKeyword_39_0 = (Keyword)cUwdamageAssignment_39.eContents().get(0);
-		private final Assignment cColdpowerAssignment_40 = (Assignment)cAlternatives.eContents().get(40);
-		private final Keyword cColdpowerColdpowerKeyword_40_0 = (Keyword)cColdpowerAssignment_40.eContents().get(0);
-		private final Assignment cFirepowerAssignment_41 = (Assignment)cAlternatives.eContents().get(41);
-		private final Keyword cFirepowerFirepowerKeyword_41_0 = (Keyword)cFirepowerAssignment_41.eContents().get(0);
-		private final Assignment cStormpowerAssignment_42 = (Assignment)cAlternatives.eContents().get(42);
-		private final Keyword cStormpowerStormpowerKeyword_42_0 = (Keyword)cStormpowerAssignment_42.eContents().get(0);
-		private final Assignment cDarkpowerAssignment_43 = (Assignment)cAlternatives.eContents().get(43);
-		private final Keyword cDarkpowerDarkpowerKeyword_43_0 = (Keyword)cDarkpowerAssignment_43.eContents().get(0);
-		private final Assignment cSpringpowerAssignment_44 = (Assignment)cAlternatives.eContents().get(44);
-		private final Keyword cSpringpowerSpringpowerKeyword_44_0 = (Keyword)cSpringpowerAssignment_44.eContents().get(0);
-		private final Assignment cSummerpowerAssignment_45 = (Assignment)cAlternatives.eContents().get(45);
-		private final Keyword cSummerpowerSummerpowerKeyword_45_0 = (Keyword)cSummerpowerAssignment_45.eContents().get(0);
-		private final Assignment cFallpowerAssignment_46 = (Assignment)cAlternatives.eContents().get(46);
-		private final Keyword cFallpowerFallpowerKeyword_46_0 = (Keyword)cFallpowerAssignment_46.eContents().get(0);
-		private final Assignment cWinterpowerAssignment_47 = (Assignment)cAlternatives.eContents().get(47);
-		private final Keyword cWinterpowerWinterpowerKeyword_47_0 = (Keyword)cWinterpowerAssignment_47.eContents().get(0);
-		private final Assignment cAmbidextrousAssignment_48 = (Assignment)cAlternatives.eContents().get(48);
-		private final Keyword cAmbidextrousAmbidextrousKeyword_48_0 = (Keyword)cAmbidextrousAssignment_48.eContents().get(0);
-		private final Assignment cBanefireshieldAssignment_49 = (Assignment)cAlternatives.eContents().get(49);
-		private final Keyword cBanefireshieldBanefireshieldKeyword_49_0 = (Keyword)cBanefireshieldAssignment_49.eContents().get(0);
-		private final Assignment cBerserkAssignment_50 = (Assignment)cAlternatives.eContents().get(50);
-		private final Keyword cBerserkBerserkKeyword_50_0 = (Keyword)cBerserkAssignment_50.eContents().get(0);
-		private final Assignment cStandardAssignment_51 = (Assignment)cAlternatives.eContents().get(51);
-		private final Keyword cStandardStandardKeyword_51_0 = (Keyword)cStandardAssignment_51.eContents().get(0);
-		private final Assignment cAnimalaweAssignment_52 = (Assignment)cAlternatives.eContents().get(52);
-		private final Keyword cAnimalaweAnimalaweKeyword_52_0 = (Keyword)cAnimalaweAssignment_52.eContents().get(0);
-		private final Assignment cAweAssignment_53 = (Assignment)cAlternatives.eContents().get(53);
-		private final Keyword cAweAweKeyword_53_0 = (Keyword)cAweAssignment_53.eContents().get(0);
-		private final Assignment cFearAssignment_54 = (Assignment)cAlternatives.eContents().get(54);
-		private final Keyword cFearFearKeyword_54_0 = (Keyword)cFearAssignment_54.eContents().get(0);
-		private final Assignment cRegenerationAssignment_55 = (Assignment)cAlternatives.eContents().get(55);
-		private final Keyword cRegenerationRegenerationKeyword_55_0 = (Keyword)cRegenerationAssignment_55.eContents().get(0);
-		private final Assignment cReinvigorationAssignment_56 = (Assignment)cAlternatives.eContents().get(56);
-		private final Keyword cReinvigorationReinvigorationKeyword_56_0 = (Keyword)cReinvigorationAssignment_56.eContents().get(0);
-		private final Assignment cFireshieldAssignment_57 = (Assignment)cAlternatives.eContents().get(57);
-		private final Keyword cFireshieldFireshieldKeyword_57_0 = (Keyword)cFireshieldAssignment_57.eContents().get(0);
-		private final Assignment cIceprotAssignment_58 = (Assignment)cAlternatives.eContents().get(58);
-		private final Keyword cIceprotIceprotKeyword_58_0 = (Keyword)cIceprotAssignment_58.eContents().get(0);
-		private final Assignment cPoisoncloudAssignment_59 = (Assignment)cAlternatives.eContents().get(59);
-		private final Keyword cPoisoncloudPoisoncloudKeyword_59_0 = (Keyword)cPoisoncloudAssignment_59.eContents().get(0);
-		private final Assignment cDiseasecloudAssignment_60 = (Assignment)cAlternatives.eContents().get(60);
-		private final Keyword cDiseasecloudDiseasecloudKeyword_60_0 = (Keyword)cDiseasecloudAssignment_60.eContents().get(0);
-		private final Assignment cBloodvengeanceAssignment_61 = (Assignment)cAlternatives.eContents().get(61);
-		private final Keyword cBloodvengeanceBloodvengeanceKeyword_61_0 = (Keyword)cBloodvengeanceAssignment_61.eContents().get(0);
-		private final Assignment cCastledefAssignment_62 = (Assignment)cAlternatives.eContents().get(62);
-		private final Keyword cCastledefCastledefKeyword_62_0 = (Keyword)cCastledefAssignment_62.eContents().get(0);
-		private final Assignment cSiegebonusAssignment_63 = (Assignment)cAlternatives.eContents().get(63);
-		private final Keyword cSiegebonusSiegebonusKeyword_63_0 = (Keyword)cSiegebonusAssignment_63.eContents().get(0);
-		private final Assignment cPatrolbonusAssignment_64 = (Assignment)cAlternatives.eContents().get(64);
-		private final Keyword cPatrolbonusPatrolbonusKeyword_64_0 = (Keyword)cPatrolbonusAssignment_64.eContents().get(0);
-		private final Assignment cPillagebonusAssignment_65 = (Assignment)cAlternatives.eContents().get(65);
-		private final Keyword cPillagebonusPillagebonusKeyword_65_0 = (Keyword)cPillagebonusAssignment_65.eContents().get(0);
-		private final Assignment cResearchbonusAssignment_66 = (Assignment)cAlternatives.eContents().get(66);
-		private final Keyword cResearchbonusResearchbonusKeyword_66_0 = (Keyword)cResearchbonusAssignment_66.eContents().get(0);
-		private final Assignment cForgebonusAssignment_67 = (Assignment)cAlternatives.eContents().get(67);
-		private final Keyword cForgebonusForgebonusKeyword_67_0 = (Keyword)cForgebonusAssignment_67.eContents().get(0);
-		private final Assignment cDouseAssignment_68 = (Assignment)cAlternatives.eContents().get(68);
-		private final Keyword cDouseDouseKeyword_68_0 = (Keyword)cDouseAssignment_68.eContents().get(0);
-		private final Assignment cNobadeventsAssignment_69 = (Assignment)cAlternatives.eContents().get(69);
-		private final Keyword cNobadeventsNobadeventsKeyword_69_0 = (Keyword)cNobadeventsAssignment_69.eContents().get(0);
-		private final Assignment cIncunrestAssignment_70 = (Assignment)cAlternatives.eContents().get(70);
-		private final Keyword cIncunrestIncunrestKeyword_70_0 = (Keyword)cIncunrestAssignment_70.eContents().get(0);
-		private final Assignment cSpreaddomAssignment_71 = (Assignment)cAlternatives.eContents().get(71);
-		private final Keyword cSpreaddomSpreaddomKeyword_71_0 = (Keyword)cSpreaddomAssignment_71.eContents().get(0);
-		private final Assignment cLeperAssignment_72 = (Assignment)cAlternatives.eContents().get(72);
-		private final Keyword cLeperLeperKeyword_72_0 = (Keyword)cLeperAssignment_72.eContents().get(0);
-		private final Assignment cPopkillAssignment_73 = (Assignment)cAlternatives.eContents().get(73);
-		private final Keyword cPopkillPopkillKeyword_73_0 = (Keyword)cPopkillAssignment_73.eContents().get(0);
-		private final Assignment cHereticAssignment_74 = (Assignment)cAlternatives.eContents().get(74);
-		private final Keyword cHereticHereticKeyword_74_0 = (Keyword)cHereticAssignment_74.eContents().get(0);
-		private final Assignment cItemslotsAssignment_75 = (Assignment)cAlternatives.eContents().get(75);
-		private final Keyword cItemslotsItemslotsKeyword_75_0 = (Keyword)cItemslotsAssignment_75.eContents().get(0);
-		private final Assignment cNametypeAssignment_76 = (Assignment)cAlternatives.eContents().get(76);
-		private final Keyword cNametypeNametypeKeyword_76_0 = (Keyword)cNametypeAssignment_76.eContents().get(0);
+		private final Assignment cHomesickAssignment_40 = (Assignment)cAlternatives.eContents().get(40);
+		private final Keyword cHomesickHomesickKeyword_40_0 = (Keyword)cHomesickAssignment_40.eContents().get(0);
+		private final Assignment cColdpowerAssignment_41 = (Assignment)cAlternatives.eContents().get(41);
+		private final Keyword cColdpowerColdpowerKeyword_41_0 = (Keyword)cColdpowerAssignment_41.eContents().get(0);
+		private final Assignment cFirepowerAssignment_42 = (Assignment)cAlternatives.eContents().get(42);
+		private final Keyword cFirepowerFirepowerKeyword_42_0 = (Keyword)cFirepowerAssignment_42.eContents().get(0);
+		private final Assignment cStormpowerAssignment_43 = (Assignment)cAlternatives.eContents().get(43);
+		private final Keyword cStormpowerStormpowerKeyword_43_0 = (Keyword)cStormpowerAssignment_43.eContents().get(0);
+		private final Assignment cDarkpowerAssignment_44 = (Assignment)cAlternatives.eContents().get(44);
+		private final Keyword cDarkpowerDarkpowerKeyword_44_0 = (Keyword)cDarkpowerAssignment_44.eContents().get(0);
+		private final Assignment cSpringpowerAssignment_45 = (Assignment)cAlternatives.eContents().get(45);
+		private final Keyword cSpringpowerSpringpowerKeyword_45_0 = (Keyword)cSpringpowerAssignment_45.eContents().get(0);
+		private final Assignment cSummerpowerAssignment_46 = (Assignment)cAlternatives.eContents().get(46);
+		private final Keyword cSummerpowerSummerpowerKeyword_46_0 = (Keyword)cSummerpowerAssignment_46.eContents().get(0);
+		private final Assignment cFallpowerAssignment_47 = (Assignment)cAlternatives.eContents().get(47);
+		private final Keyword cFallpowerFallpowerKeyword_47_0 = (Keyword)cFallpowerAssignment_47.eContents().get(0);
+		private final Assignment cWinterpowerAssignment_48 = (Assignment)cAlternatives.eContents().get(48);
+		private final Keyword cWinterpowerWinterpowerKeyword_48_0 = (Keyword)cWinterpowerAssignment_48.eContents().get(0);
+		private final Assignment cAmbidextrousAssignment_49 = (Assignment)cAlternatives.eContents().get(49);
+		private final Keyword cAmbidextrousAmbidextrousKeyword_49_0 = (Keyword)cAmbidextrousAssignment_49.eContents().get(0);
+		private final Assignment cBanefireshieldAssignment_50 = (Assignment)cAlternatives.eContents().get(50);
+		private final Keyword cBanefireshieldBanefireshieldKeyword_50_0 = (Keyword)cBanefireshieldAssignment_50.eContents().get(0);
+		private final Assignment cBerserkAssignment_51 = (Assignment)cAlternatives.eContents().get(51);
+		private final Keyword cBerserkBerserkKeyword_51_0 = (Keyword)cBerserkAssignment_51.eContents().get(0);
+		private final Assignment cStandardAssignment_52 = (Assignment)cAlternatives.eContents().get(52);
+		private final Keyword cStandardStandardKeyword_52_0 = (Keyword)cStandardAssignment_52.eContents().get(0);
+		private final Assignment cAnimalaweAssignment_53 = (Assignment)cAlternatives.eContents().get(53);
+		private final Keyword cAnimalaweAnimalaweKeyword_53_0 = (Keyword)cAnimalaweAssignment_53.eContents().get(0);
+		private final Assignment cAweAssignment_54 = (Assignment)cAlternatives.eContents().get(54);
+		private final Keyword cAweAweKeyword_54_0 = (Keyword)cAweAssignment_54.eContents().get(0);
+		private final Assignment cFearAssignment_55 = (Assignment)cAlternatives.eContents().get(55);
+		private final Keyword cFearFearKeyword_55_0 = (Keyword)cFearAssignment_55.eContents().get(0);
+		private final Assignment cRegenerationAssignment_56 = (Assignment)cAlternatives.eContents().get(56);
+		private final Keyword cRegenerationRegenerationKeyword_56_0 = (Keyword)cRegenerationAssignment_56.eContents().get(0);
+		private final Assignment cReinvigorationAssignment_57 = (Assignment)cAlternatives.eContents().get(57);
+		private final Keyword cReinvigorationReinvigorationKeyword_57_0 = (Keyword)cReinvigorationAssignment_57.eContents().get(0);
+		private final Assignment cFireshieldAssignment_58 = (Assignment)cAlternatives.eContents().get(58);
+		private final Keyword cFireshieldFireshieldKeyword_58_0 = (Keyword)cFireshieldAssignment_58.eContents().get(0);
+		private final Assignment cIceprotAssignment_59 = (Assignment)cAlternatives.eContents().get(59);
+		private final Keyword cIceprotIceprotKeyword_59_0 = (Keyword)cIceprotAssignment_59.eContents().get(0);
+		private final Assignment cPoisoncloudAssignment_60 = (Assignment)cAlternatives.eContents().get(60);
+		private final Keyword cPoisoncloudPoisoncloudKeyword_60_0 = (Keyword)cPoisoncloudAssignment_60.eContents().get(0);
+		private final Assignment cDiseasecloudAssignment_61 = (Assignment)cAlternatives.eContents().get(61);
+		private final Keyword cDiseasecloudDiseasecloudKeyword_61_0 = (Keyword)cDiseasecloudAssignment_61.eContents().get(0);
+		private final Assignment cBloodvengeanceAssignment_62 = (Assignment)cAlternatives.eContents().get(62);
+		private final Keyword cBloodvengeanceBloodvengeanceKeyword_62_0 = (Keyword)cBloodvengeanceAssignment_62.eContents().get(0);
+		private final Assignment cCastledefAssignment_63 = (Assignment)cAlternatives.eContents().get(63);
+		private final Keyword cCastledefCastledefKeyword_63_0 = (Keyword)cCastledefAssignment_63.eContents().get(0);
+		private final Assignment cSiegebonusAssignment_64 = (Assignment)cAlternatives.eContents().get(64);
+		private final Keyword cSiegebonusSiegebonusKeyword_64_0 = (Keyword)cSiegebonusAssignment_64.eContents().get(0);
+		private final Assignment cPatrolbonusAssignment_65 = (Assignment)cAlternatives.eContents().get(65);
+		private final Keyword cPatrolbonusPatrolbonusKeyword_65_0 = (Keyword)cPatrolbonusAssignment_65.eContents().get(0);
+		private final Assignment cPillagebonusAssignment_66 = (Assignment)cAlternatives.eContents().get(66);
+		private final Keyword cPillagebonusPillagebonusKeyword_66_0 = (Keyword)cPillagebonusAssignment_66.eContents().get(0);
+		private final Assignment cResearchbonusAssignment_67 = (Assignment)cAlternatives.eContents().get(67);
+		private final Keyword cResearchbonusResearchbonusKeyword_67_0 = (Keyword)cResearchbonusAssignment_67.eContents().get(0);
+		private final Assignment cForgebonusAssignment_68 = (Assignment)cAlternatives.eContents().get(68);
+		private final Keyword cForgebonusForgebonusKeyword_68_0 = (Keyword)cForgebonusAssignment_68.eContents().get(0);
+		private final Assignment cDouseAssignment_69 = (Assignment)cAlternatives.eContents().get(69);
+		private final Keyword cDouseDouseKeyword_69_0 = (Keyword)cDouseAssignment_69.eContents().get(0);
+		private final Assignment cNobadeventsAssignment_70 = (Assignment)cAlternatives.eContents().get(70);
+		private final Keyword cNobadeventsNobadeventsKeyword_70_0 = (Keyword)cNobadeventsAssignment_70.eContents().get(0);
+		private final Assignment cIncunrestAssignment_71 = (Assignment)cAlternatives.eContents().get(71);
+		private final Keyword cIncunrestIncunrestKeyword_71_0 = (Keyword)cIncunrestAssignment_71.eContents().get(0);
+		private final Assignment cSpreaddomAssignment_72 = (Assignment)cAlternatives.eContents().get(72);
+		private final Keyword cSpreaddomSpreaddomKeyword_72_0 = (Keyword)cSpreaddomAssignment_72.eContents().get(0);
+		private final Assignment cLeperAssignment_73 = (Assignment)cAlternatives.eContents().get(73);
+		private final Keyword cLeperLeperKeyword_73_0 = (Keyword)cLeperAssignment_73.eContents().get(0);
+		private final Assignment cPopkillAssignment_74 = (Assignment)cAlternatives.eContents().get(74);
+		private final Keyword cPopkillPopkillKeyword_74_0 = (Keyword)cPopkillAssignment_74.eContents().get(0);
+		private final Assignment cHereticAssignment_75 = (Assignment)cAlternatives.eContents().get(75);
+		private final Keyword cHereticHereticKeyword_75_0 = (Keyword)cHereticAssignment_75.eContents().get(0);
+		private final Assignment cItemslotsAssignment_76 = (Assignment)cAlternatives.eContents().get(76);
+		private final Keyword cItemslotsItemslotsKeyword_76_0 = (Keyword)cItemslotsAssignment_76.eContents().get(0);
+		private final Assignment cNametypeAssignment_77 = (Assignment)cAlternatives.eContents().get(77);
+		private final Keyword cNametypeNametypeKeyword_77_0 = (Keyword)cNametypeAssignment_77.eContents().get(0);
 		
 		//MonsterInst2:
 		//	speciallook?="#speciallook" | ap?="#ap" | mapmove?="#mapmove" | hp?="#hp" | prot?="#prot" | size?="#size" |
@@ -2035,9 +2029,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//	coldres?="#coldres" | coldres?="#coldresist" | fireres?="#fireres" | fireres?="#fireresist" | poisonres?="#poisonres"
 		//	| shockres?="#shockres" | darkvision?="#darkvision" | seduce?="#seduce" | succubus?="#succubus" | beckon?="#beckon" |
 		//	startage?="#startage" | maxage?="#maxage" | older?="#older" | healer?="#healer" | startaff?="#startaff" |
-		//	supplybonus?="#supplybonus" | uwdamage?="#uwdamage" | coldpower?="#coldpower" | firepower?="#firepower" |
-		//	stormpower?="#stormpower" | darkpower?="#darkpower" | springpower?="#springpower" | summerpower?="#summerpower" |
-		//	fallpower?="#fallpower" | winterpower?="#winterpower" | ambidextrous?="#ambidextrous" |
+		//	supplybonus?="#supplybonus" | uwdamage?="#uwdamage" | homesick?="#homesick" | coldpower?="#coldpower" |
+		//	firepower?="#firepower" | stormpower?="#stormpower" | darkpower?="#darkpower" | springpower?="#springpower" |
+		//	summerpower?="#summerpower" | fallpower?="#fallpower" | winterpower?="#winterpower" | ambidextrous?="#ambidextrous" |
 		//	banefireshield?="#banefireshield" | berserk?="#berserk" | standard?="#standard" | animalawe?="#animalawe" |
 		//	awe?="#awe" | fear?="#fear" | regeneration?="#regeneration" | reinvigoration?="#reinvigoration" |
 		//	fireshield?="#fireshield" | iceprot?="#iceprot" | poisoncloud?="#poisoncloud" | diseasecloud?="#diseasecloud" |
@@ -2054,9 +2048,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//coldres?="#coldres" | coldres?="#coldresist" | fireres?="#fireres" | fireres?="#fireresist" | poisonres?="#poisonres" |
 		//shockres?="#shockres" | darkvision?="#darkvision" | seduce?="#seduce" | succubus?="#succubus" | beckon?="#beckon" |
 		//startage?="#startage" | maxage?="#maxage" | older?="#older" | healer?="#healer" | startaff?="#startaff" |
-		//supplybonus?="#supplybonus" | uwdamage?="#uwdamage" | coldpower?="#coldpower" | firepower?="#firepower" |
-		//stormpower?="#stormpower" | darkpower?="#darkpower" | springpower?="#springpower" | summerpower?="#summerpower" |
-		//fallpower?="#fallpower" | winterpower?="#winterpower" | ambidextrous?="#ambidextrous" |
+		//supplybonus?="#supplybonus" | uwdamage?="#uwdamage" | homesick?="#homesick" | coldpower?="#coldpower" |
+		//firepower?="#firepower" | stormpower?="#stormpower" | darkpower?="#darkpower" | springpower?="#springpower" |
+		//summerpower?="#summerpower" | fallpower?="#fallpower" | winterpower?="#winterpower" | ambidextrous?="#ambidextrous" |
 		//banefireshield?="#banefireshield" | berserk?="#berserk" | standard?="#standard" | animalawe?="#animalawe" | awe?="#awe"
 		//| fear?="#fear" | regeneration?="#regeneration" | reinvigoration?="#reinvigoration" | fireshield?="#fireshield" |
 		//iceprot?="#iceprot" | poisoncloud?="#poisoncloud" | diseasecloud?="#diseasecloud" | bloodvengeance?="#bloodvengeance" |
@@ -2306,227 +2300,233 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//"#uwdamage"
 		public Keyword getUwdamageUwdamageKeyword_39_0() { return cUwdamageUwdamageKeyword_39_0; }
 
+		//homesick?="#homesick"
+		public Assignment getHomesickAssignment_40() { return cHomesickAssignment_40; }
+
+		//"#homesick"
+		public Keyword getHomesickHomesickKeyword_40_0() { return cHomesickHomesickKeyword_40_0; }
+
 		//coldpower?="#coldpower"
-		public Assignment getColdpowerAssignment_40() { return cColdpowerAssignment_40; }
+		public Assignment getColdpowerAssignment_41() { return cColdpowerAssignment_41; }
 
 		//"#coldpower"
-		public Keyword getColdpowerColdpowerKeyword_40_0() { return cColdpowerColdpowerKeyword_40_0; }
+		public Keyword getColdpowerColdpowerKeyword_41_0() { return cColdpowerColdpowerKeyword_41_0; }
 
 		//firepower?="#firepower"
-		public Assignment getFirepowerAssignment_41() { return cFirepowerAssignment_41; }
+		public Assignment getFirepowerAssignment_42() { return cFirepowerAssignment_42; }
 
 		//"#firepower"
-		public Keyword getFirepowerFirepowerKeyword_41_0() { return cFirepowerFirepowerKeyword_41_0; }
+		public Keyword getFirepowerFirepowerKeyword_42_0() { return cFirepowerFirepowerKeyword_42_0; }
 
 		//stormpower?="#stormpower"
-		public Assignment getStormpowerAssignment_42() { return cStormpowerAssignment_42; }
+		public Assignment getStormpowerAssignment_43() { return cStormpowerAssignment_43; }
 
 		//"#stormpower"
-		public Keyword getStormpowerStormpowerKeyword_42_0() { return cStormpowerStormpowerKeyword_42_0; }
+		public Keyword getStormpowerStormpowerKeyword_43_0() { return cStormpowerStormpowerKeyword_43_0; }
 
 		//darkpower?="#darkpower"
-		public Assignment getDarkpowerAssignment_43() { return cDarkpowerAssignment_43; }
+		public Assignment getDarkpowerAssignment_44() { return cDarkpowerAssignment_44; }
 
 		//"#darkpower"
-		public Keyword getDarkpowerDarkpowerKeyword_43_0() { return cDarkpowerDarkpowerKeyword_43_0; }
+		public Keyword getDarkpowerDarkpowerKeyword_44_0() { return cDarkpowerDarkpowerKeyword_44_0; }
 
 		//springpower?="#springpower"
-		public Assignment getSpringpowerAssignment_44() { return cSpringpowerAssignment_44; }
+		public Assignment getSpringpowerAssignment_45() { return cSpringpowerAssignment_45; }
 
 		//"#springpower"
-		public Keyword getSpringpowerSpringpowerKeyword_44_0() { return cSpringpowerSpringpowerKeyword_44_0; }
+		public Keyword getSpringpowerSpringpowerKeyword_45_0() { return cSpringpowerSpringpowerKeyword_45_0; }
 
 		//summerpower?="#summerpower"
-		public Assignment getSummerpowerAssignment_45() { return cSummerpowerAssignment_45; }
+		public Assignment getSummerpowerAssignment_46() { return cSummerpowerAssignment_46; }
 
 		//"#summerpower"
-		public Keyword getSummerpowerSummerpowerKeyword_45_0() { return cSummerpowerSummerpowerKeyword_45_0; }
+		public Keyword getSummerpowerSummerpowerKeyword_46_0() { return cSummerpowerSummerpowerKeyword_46_0; }
 
 		//fallpower?="#fallpower"
-		public Assignment getFallpowerAssignment_46() { return cFallpowerAssignment_46; }
+		public Assignment getFallpowerAssignment_47() { return cFallpowerAssignment_47; }
 
 		//"#fallpower"
-		public Keyword getFallpowerFallpowerKeyword_46_0() { return cFallpowerFallpowerKeyword_46_0; }
+		public Keyword getFallpowerFallpowerKeyword_47_0() { return cFallpowerFallpowerKeyword_47_0; }
 
 		//winterpower?="#winterpower"
-		public Assignment getWinterpowerAssignment_47() { return cWinterpowerAssignment_47; }
+		public Assignment getWinterpowerAssignment_48() { return cWinterpowerAssignment_48; }
 
 		//"#winterpower"
-		public Keyword getWinterpowerWinterpowerKeyword_47_0() { return cWinterpowerWinterpowerKeyword_47_0; }
+		public Keyword getWinterpowerWinterpowerKeyword_48_0() { return cWinterpowerWinterpowerKeyword_48_0; }
 
 		//ambidextrous?="#ambidextrous"
-		public Assignment getAmbidextrousAssignment_48() { return cAmbidextrousAssignment_48; }
+		public Assignment getAmbidextrousAssignment_49() { return cAmbidextrousAssignment_49; }
 
 		//"#ambidextrous"
-		public Keyword getAmbidextrousAmbidextrousKeyword_48_0() { return cAmbidextrousAmbidextrousKeyword_48_0; }
+		public Keyword getAmbidextrousAmbidextrousKeyword_49_0() { return cAmbidextrousAmbidextrousKeyword_49_0; }
 
 		//banefireshield?="#banefireshield"
-		public Assignment getBanefireshieldAssignment_49() { return cBanefireshieldAssignment_49; }
+		public Assignment getBanefireshieldAssignment_50() { return cBanefireshieldAssignment_50; }
 
 		//"#banefireshield"
-		public Keyword getBanefireshieldBanefireshieldKeyword_49_0() { return cBanefireshieldBanefireshieldKeyword_49_0; }
+		public Keyword getBanefireshieldBanefireshieldKeyword_50_0() { return cBanefireshieldBanefireshieldKeyword_50_0; }
 
 		//berserk?="#berserk"
-		public Assignment getBerserkAssignment_50() { return cBerserkAssignment_50; }
+		public Assignment getBerserkAssignment_51() { return cBerserkAssignment_51; }
 
 		//"#berserk"
-		public Keyword getBerserkBerserkKeyword_50_0() { return cBerserkBerserkKeyword_50_0; }
+		public Keyword getBerserkBerserkKeyword_51_0() { return cBerserkBerserkKeyword_51_0; }
 
 		//standard?="#standard"
-		public Assignment getStandardAssignment_51() { return cStandardAssignment_51; }
+		public Assignment getStandardAssignment_52() { return cStandardAssignment_52; }
 
 		//"#standard"
-		public Keyword getStandardStandardKeyword_51_0() { return cStandardStandardKeyword_51_0; }
+		public Keyword getStandardStandardKeyword_52_0() { return cStandardStandardKeyword_52_0; }
 
 		//animalawe?="#animalawe"
-		public Assignment getAnimalaweAssignment_52() { return cAnimalaweAssignment_52; }
+		public Assignment getAnimalaweAssignment_53() { return cAnimalaweAssignment_53; }
 
 		//"#animalawe"
-		public Keyword getAnimalaweAnimalaweKeyword_52_0() { return cAnimalaweAnimalaweKeyword_52_0; }
+		public Keyword getAnimalaweAnimalaweKeyword_53_0() { return cAnimalaweAnimalaweKeyword_53_0; }
 
 		//awe?="#awe"
-		public Assignment getAweAssignment_53() { return cAweAssignment_53; }
+		public Assignment getAweAssignment_54() { return cAweAssignment_54; }
 
 		//"#awe"
-		public Keyword getAweAweKeyword_53_0() { return cAweAweKeyword_53_0; }
+		public Keyword getAweAweKeyword_54_0() { return cAweAweKeyword_54_0; }
 
 		//fear?="#fear"
-		public Assignment getFearAssignment_54() { return cFearAssignment_54; }
+		public Assignment getFearAssignment_55() { return cFearAssignment_55; }
 
 		//"#fear"
-		public Keyword getFearFearKeyword_54_0() { return cFearFearKeyword_54_0; }
+		public Keyword getFearFearKeyword_55_0() { return cFearFearKeyword_55_0; }
 
 		//regeneration?="#regeneration"
-		public Assignment getRegenerationAssignment_55() { return cRegenerationAssignment_55; }
+		public Assignment getRegenerationAssignment_56() { return cRegenerationAssignment_56; }
 
 		//"#regeneration"
-		public Keyword getRegenerationRegenerationKeyword_55_0() { return cRegenerationRegenerationKeyword_55_0; }
+		public Keyword getRegenerationRegenerationKeyword_56_0() { return cRegenerationRegenerationKeyword_56_0; }
 
 		//reinvigoration?="#reinvigoration"
-		public Assignment getReinvigorationAssignment_56() { return cReinvigorationAssignment_56; }
+		public Assignment getReinvigorationAssignment_57() { return cReinvigorationAssignment_57; }
 
 		//"#reinvigoration"
-		public Keyword getReinvigorationReinvigorationKeyword_56_0() { return cReinvigorationReinvigorationKeyword_56_0; }
+		public Keyword getReinvigorationReinvigorationKeyword_57_0() { return cReinvigorationReinvigorationKeyword_57_0; }
 
 		//fireshield?="#fireshield"
-		public Assignment getFireshieldAssignment_57() { return cFireshieldAssignment_57; }
+		public Assignment getFireshieldAssignment_58() { return cFireshieldAssignment_58; }
 
 		//"#fireshield"
-		public Keyword getFireshieldFireshieldKeyword_57_0() { return cFireshieldFireshieldKeyword_57_0; }
+		public Keyword getFireshieldFireshieldKeyword_58_0() { return cFireshieldFireshieldKeyword_58_0; }
 
 		//iceprot?="#iceprot"
-		public Assignment getIceprotAssignment_58() { return cIceprotAssignment_58; }
+		public Assignment getIceprotAssignment_59() { return cIceprotAssignment_59; }
 
 		//"#iceprot"
-		public Keyword getIceprotIceprotKeyword_58_0() { return cIceprotIceprotKeyword_58_0; }
+		public Keyword getIceprotIceprotKeyword_59_0() { return cIceprotIceprotKeyword_59_0; }
 
 		//poisoncloud?="#poisoncloud"
-		public Assignment getPoisoncloudAssignment_59() { return cPoisoncloudAssignment_59; }
+		public Assignment getPoisoncloudAssignment_60() { return cPoisoncloudAssignment_60; }
 
 		//"#poisoncloud"
-		public Keyword getPoisoncloudPoisoncloudKeyword_59_0() { return cPoisoncloudPoisoncloudKeyword_59_0; }
+		public Keyword getPoisoncloudPoisoncloudKeyword_60_0() { return cPoisoncloudPoisoncloudKeyword_60_0; }
 
 		//diseasecloud?="#diseasecloud"
-		public Assignment getDiseasecloudAssignment_60() { return cDiseasecloudAssignment_60; }
+		public Assignment getDiseasecloudAssignment_61() { return cDiseasecloudAssignment_61; }
 
 		//"#diseasecloud"
-		public Keyword getDiseasecloudDiseasecloudKeyword_60_0() { return cDiseasecloudDiseasecloudKeyword_60_0; }
+		public Keyword getDiseasecloudDiseasecloudKeyword_61_0() { return cDiseasecloudDiseasecloudKeyword_61_0; }
 
 		//bloodvengeance?="#bloodvengeance"
-		public Assignment getBloodvengeanceAssignment_61() { return cBloodvengeanceAssignment_61; }
+		public Assignment getBloodvengeanceAssignment_62() { return cBloodvengeanceAssignment_62; }
 
 		//"#bloodvengeance"
-		public Keyword getBloodvengeanceBloodvengeanceKeyword_61_0() { return cBloodvengeanceBloodvengeanceKeyword_61_0; }
+		public Keyword getBloodvengeanceBloodvengeanceKeyword_62_0() { return cBloodvengeanceBloodvengeanceKeyword_62_0; }
 
 		//castledef?="#castledef"
-		public Assignment getCastledefAssignment_62() { return cCastledefAssignment_62; }
+		public Assignment getCastledefAssignment_63() { return cCastledefAssignment_63; }
 
 		//"#castledef"
-		public Keyword getCastledefCastledefKeyword_62_0() { return cCastledefCastledefKeyword_62_0; }
+		public Keyword getCastledefCastledefKeyword_63_0() { return cCastledefCastledefKeyword_63_0; }
 
 		//siegebonus?="#siegebonus"
-		public Assignment getSiegebonusAssignment_63() { return cSiegebonusAssignment_63; }
+		public Assignment getSiegebonusAssignment_64() { return cSiegebonusAssignment_64; }
 
 		//"#siegebonus"
-		public Keyword getSiegebonusSiegebonusKeyword_63_0() { return cSiegebonusSiegebonusKeyword_63_0; }
+		public Keyword getSiegebonusSiegebonusKeyword_64_0() { return cSiegebonusSiegebonusKeyword_64_0; }
 
 		//patrolbonus?="#patrolbonus"
-		public Assignment getPatrolbonusAssignment_64() { return cPatrolbonusAssignment_64; }
+		public Assignment getPatrolbonusAssignment_65() { return cPatrolbonusAssignment_65; }
 
 		//"#patrolbonus"
-		public Keyword getPatrolbonusPatrolbonusKeyword_64_0() { return cPatrolbonusPatrolbonusKeyword_64_0; }
+		public Keyword getPatrolbonusPatrolbonusKeyword_65_0() { return cPatrolbonusPatrolbonusKeyword_65_0; }
 
 		//pillagebonus?="#pillagebonus"
-		public Assignment getPillagebonusAssignment_65() { return cPillagebonusAssignment_65; }
+		public Assignment getPillagebonusAssignment_66() { return cPillagebonusAssignment_66; }
 
 		//"#pillagebonus"
-		public Keyword getPillagebonusPillagebonusKeyword_65_0() { return cPillagebonusPillagebonusKeyword_65_0; }
+		public Keyword getPillagebonusPillagebonusKeyword_66_0() { return cPillagebonusPillagebonusKeyword_66_0; }
 
 		//researchbonus?="#researchbonus"
-		public Assignment getResearchbonusAssignment_66() { return cResearchbonusAssignment_66; }
+		public Assignment getResearchbonusAssignment_67() { return cResearchbonusAssignment_67; }
 
 		//"#researchbonus"
-		public Keyword getResearchbonusResearchbonusKeyword_66_0() { return cResearchbonusResearchbonusKeyword_66_0; }
+		public Keyword getResearchbonusResearchbonusKeyword_67_0() { return cResearchbonusResearchbonusKeyword_67_0; }
 
 		//forgebonus?="#forgebonus"
-		public Assignment getForgebonusAssignment_67() { return cForgebonusAssignment_67; }
+		public Assignment getForgebonusAssignment_68() { return cForgebonusAssignment_68; }
 
 		//"#forgebonus"
-		public Keyword getForgebonusForgebonusKeyword_67_0() { return cForgebonusForgebonusKeyword_67_0; }
+		public Keyword getForgebonusForgebonusKeyword_68_0() { return cForgebonusForgebonusKeyword_68_0; }
 
 		//douse?="#douse"
-		public Assignment getDouseAssignment_68() { return cDouseAssignment_68; }
+		public Assignment getDouseAssignment_69() { return cDouseAssignment_69; }
 
 		//"#douse"
-		public Keyword getDouseDouseKeyword_68_0() { return cDouseDouseKeyword_68_0; }
+		public Keyword getDouseDouseKeyword_69_0() { return cDouseDouseKeyword_69_0; }
 
 		//nobadevents?="#nobadevents"
-		public Assignment getNobadeventsAssignment_69() { return cNobadeventsAssignment_69; }
+		public Assignment getNobadeventsAssignment_70() { return cNobadeventsAssignment_70; }
 
 		//"#nobadevents"
-		public Keyword getNobadeventsNobadeventsKeyword_69_0() { return cNobadeventsNobadeventsKeyword_69_0; }
+		public Keyword getNobadeventsNobadeventsKeyword_70_0() { return cNobadeventsNobadeventsKeyword_70_0; }
 
 		//incunrest?="#incunrest"
-		public Assignment getIncunrestAssignment_70() { return cIncunrestAssignment_70; }
+		public Assignment getIncunrestAssignment_71() { return cIncunrestAssignment_71; }
 
 		//"#incunrest"
-		public Keyword getIncunrestIncunrestKeyword_70_0() { return cIncunrestIncunrestKeyword_70_0; }
+		public Keyword getIncunrestIncunrestKeyword_71_0() { return cIncunrestIncunrestKeyword_71_0; }
 
 		//spreaddom?="#spreaddom"
-		public Assignment getSpreaddomAssignment_71() { return cSpreaddomAssignment_71; }
+		public Assignment getSpreaddomAssignment_72() { return cSpreaddomAssignment_72; }
 
 		//"#spreaddom"
-		public Keyword getSpreaddomSpreaddomKeyword_71_0() { return cSpreaddomSpreaddomKeyword_71_0; }
+		public Keyword getSpreaddomSpreaddomKeyword_72_0() { return cSpreaddomSpreaddomKeyword_72_0; }
 
 		//leper?="#leper"
-		public Assignment getLeperAssignment_72() { return cLeperAssignment_72; }
+		public Assignment getLeperAssignment_73() { return cLeperAssignment_73; }
 
 		//"#leper"
-		public Keyword getLeperLeperKeyword_72_0() { return cLeperLeperKeyword_72_0; }
+		public Keyword getLeperLeperKeyword_73_0() { return cLeperLeperKeyword_73_0; }
 
 		//popkill?="#popkill"
-		public Assignment getPopkillAssignment_73() { return cPopkillAssignment_73; }
+		public Assignment getPopkillAssignment_74() { return cPopkillAssignment_74; }
 
 		//"#popkill"
-		public Keyword getPopkillPopkillKeyword_73_0() { return cPopkillPopkillKeyword_73_0; }
+		public Keyword getPopkillPopkillKeyword_74_0() { return cPopkillPopkillKeyword_74_0; }
 
 		//heretic?="#heretic"
-		public Assignment getHereticAssignment_74() { return cHereticAssignment_74; }
+		public Assignment getHereticAssignment_75() { return cHereticAssignment_75; }
 
 		//"#heretic"
-		public Keyword getHereticHereticKeyword_74_0() { return cHereticHereticKeyword_74_0; }
+		public Keyword getHereticHereticKeyword_75_0() { return cHereticHereticKeyword_75_0; }
 
 		//itemslots?="#itemslots"
-		public Assignment getItemslotsAssignment_75() { return cItemslotsAssignment_75; }
+		public Assignment getItemslotsAssignment_76() { return cItemslotsAssignment_76; }
 
 		//"#itemslots"
-		public Keyword getItemslotsItemslotsKeyword_75_0() { return cItemslotsItemslotsKeyword_75_0; }
+		public Keyword getItemslotsItemslotsKeyword_76_0() { return cItemslotsItemslotsKeyword_76_0; }
 
 		//nametype?="#nametype"
-		public Assignment getNametypeAssignment_76() { return cNametypeAssignment_76; }
+		public Assignment getNametypeAssignment_77() { return cNametypeAssignment_77; }
 
 		//"#nametype"
-		public Keyword getNametypeNametypeKeyword_76_0() { return cNametypeNametypeKeyword_76_0; }
+		public Keyword getNametypeNametypeKeyword_77_0() { return cNametypeNametypeKeyword_77_0; }
 	}
 
 	public class MonsterInst3Elements extends AbstractParserRuleElementFinder {
@@ -2578,157 +2578,165 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cClearAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final Keyword cClearClearKeyword_0_0 = (Keyword)cClearAssignment_0.eContents().get(0);
-		private final Assignment cClearmagicAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final Keyword cClearmagicClearmagicKeyword_1_0 = (Keyword)cClearmagicAssignment_1.eContents().get(0);
-		private final Assignment cClearspecAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final Keyword cClearspecClearspecKeyword_2_0 = (Keyword)cClearspecAssignment_2.eContents().get(0);
-		private final Assignment cFemaleAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final Keyword cFemaleFemaleKeyword_3_0 = (Keyword)cFemaleAssignment_3.eContents().get(0);
-		private final Assignment cMountedAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final Keyword cMountedMountedKeyword_4_0 = (Keyword)cMountedAssignment_4.eContents().get(0);
-		private final Assignment cHolyAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final Keyword cHolyHolyKeyword_5_0 = (Keyword)cHolyAssignment_5.eContents().get(0);
-		private final Assignment cAnimalAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final Keyword cAnimalAnimalKeyword_6_0 = (Keyword)cAnimalAssignment_6.eContents().get(0);
-		private final Assignment cUndeadAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
-		private final Keyword cUndeadUndeadKeyword_7_0 = (Keyword)cUndeadAssignment_7.eContents().get(0);
-		private final Assignment cDemonAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
-		private final Keyword cDemonDemonKeyword_8_0 = (Keyword)cDemonAssignment_8.eContents().get(0);
-		private final Assignment cMagicbeingAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
-		private final Keyword cMagicbeingMagicbeingKeyword_9_0 = (Keyword)cMagicbeingAssignment_9.eContents().get(0);
-		private final Assignment cStonebeingAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
-		private final Keyword cStonebeingStonebeingKeyword_10_0 = (Keyword)cStonebeingAssignment_10.eContents().get(0);
-		private final Assignment cInanimateAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
-		private final Keyword cInanimateInanimateKeyword_11_0 = (Keyword)cInanimateAssignment_11.eContents().get(0);
-		private final Assignment cColdbloodAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
-		private final Keyword cColdbloodColdbloodKeyword_12_0 = (Keyword)cColdbloodAssignment_12.eContents().get(0);
-		private final Assignment cColdbloodAssignment_13 = (Assignment)cAlternatives.eContents().get(13);
-		private final Keyword cColdbloodColdbloodedKeyword_13_0 = (Keyword)cColdbloodAssignment_13.eContents().get(0);
-		private final Assignment cImmortalAssignment_14 = (Assignment)cAlternatives.eContents().get(14);
-		private final Keyword cImmortalImmortalKeyword_14_0 = (Keyword)cImmortalAssignment_14.eContents().get(0);
-		private final Assignment cBlindAssignment_15 = (Assignment)cAlternatives.eContents().get(15);
-		private final Keyword cBlindBlindKeyword_15_0 = (Keyword)cBlindAssignment_15.eContents().get(0);
-		private final Assignment cUniqueAssignment_16 = (Assignment)cAlternatives.eContents().get(16);
-		private final Keyword cUniqueUniqueKeyword_16_0 = (Keyword)cUniqueAssignment_16.eContents().get(0);
-		private final Assignment cImmobileAssignment_17 = (Assignment)cAlternatives.eContents().get(17);
-		private final Keyword cImmobileImmobileKeyword_17_0 = (Keyword)cImmobileAssignment_17.eContents().get(0);
-		private final Assignment cAquaticAssignment_18 = (Assignment)cAlternatives.eContents().get(18);
-		private final Keyword cAquaticAquaticKeyword_18_0 = (Keyword)cAquaticAssignment_18.eContents().get(0);
-		private final Assignment cAmphibianAssignment_19 = (Assignment)cAlternatives.eContents().get(19);
-		private final Keyword cAmphibianAmphibianKeyword_19_0 = (Keyword)cAmphibianAssignment_19.eContents().get(0);
-		private final Assignment cPooramphibianAssignment_20 = (Assignment)cAlternatives.eContents().get(20);
-		private final Keyword cPooramphibianPooramphibianKeyword_20_0 = (Keyword)cPooramphibianAssignment_20.eContents().get(0);
-		private final Assignment cFlyingAssignment_21 = (Assignment)cAlternatives.eContents().get(21);
-		private final Keyword cFlyingFlyingKeyword_21_0 = (Keyword)cFlyingAssignment_21.eContents().get(0);
-		private final Assignment cStormimmuneAssignment_22 = (Assignment)cAlternatives.eContents().get(22);
-		private final Keyword cStormimmuneStormimmuneKeyword_22_0 = (Keyword)cStormimmuneAssignment_22.eContents().get(0);
-		private final Assignment cSailingAssignment_23 = (Assignment)cAlternatives.eContents().get(23);
-		private final Keyword cSailingSailingKeyword_23_0 = (Keyword)cSailingAssignment_23.eContents().get(0);
-		private final Assignment cForestsurvivalAssignment_24 = (Assignment)cAlternatives.eContents().get(24);
-		private final Keyword cForestsurvivalForestsurvivalKeyword_24_0 = (Keyword)cForestsurvivalAssignment_24.eContents().get(0);
-		private final Assignment cMountainsurvivalAssignment_25 = (Assignment)cAlternatives.eContents().get(25);
-		private final Keyword cMountainsurvivalMountainsurvivalKeyword_25_0 = (Keyword)cMountainsurvivalAssignment_25.eContents().get(0);
-		private final Assignment cSwampsurvivalAssignment_26 = (Assignment)cAlternatives.eContents().get(26);
-		private final Keyword cSwampsurvivalSwampsurvivalKeyword_26_0 = (Keyword)cSwampsurvivalAssignment_26.eContents().get(0);
-		private final Assignment cWastesurvivalAssignment_27 = (Assignment)cAlternatives.eContents().get(27);
-		private final Keyword cWastesurvivalWastesurvivalKeyword_27_0 = (Keyword)cWastesurvivalAssignment_27.eContents().get(0);
-		private final Assignment cIllusionAssignment_28 = (Assignment)cAlternatives.eContents().get(28);
-		private final Keyword cIllusionIllusionKeyword_28_0 = (Keyword)cIllusionAssignment_28.eContents().get(0);
-		private final Assignment cSpyAssignment_29 = (Assignment)cAlternatives.eContents().get(29);
-		private final Keyword cSpySpyKeyword_29_0 = (Keyword)cSpyAssignment_29.eContents().get(0);
-		private final Assignment cAssassinAssignment_30 = (Assignment)cAlternatives.eContents().get(30);
-		private final Keyword cAssassinAssassinKeyword_30_0 = (Keyword)cAssassinAssignment_30.eContents().get(0);
-		private final Assignment cHealAssignment_31 = (Assignment)cAlternatives.eContents().get(31);
-		private final Keyword cHealHealKeyword_31_0 = (Keyword)cHealAssignment_31.eContents().get(0);
-		private final Assignment cNohealAssignment_32 = (Assignment)cAlternatives.eContents().get(32);
-		private final Keyword cNohealNohealKeyword_32_0 = (Keyword)cNohealAssignment_32.eContents().get(0);
-		private final Assignment cNeednoteatAssignment_33 = (Assignment)cAlternatives.eContents().get(33);
-		private final Keyword cNeednoteatNeednoteatKeyword_33_0 = (Keyword)cNeednoteatAssignment_33.eContents().get(0);
-		private final Assignment cEtherealAssignment_34 = (Assignment)cAlternatives.eContents().get(34);
-		private final Keyword cEtherealEtherealKeyword_34_0 = (Keyword)cEtherealAssignment_34.eContents().get(0);
-		private final Assignment cTrampleAssignment_35 = (Assignment)cAlternatives.eContents().get(35);
-		private final Keyword cTrampleTrampleKeyword_35_0 = (Keyword)cTrampleAssignment_35.eContents().get(0);
-		private final Assignment cEntangleAssignment_36 = (Assignment)cAlternatives.eContents().get(36);
-		private final Keyword cEntangleEntangleKeyword_36_0 = (Keyword)cEntangleAssignment_36.eContents().get(0);
-		private final Assignment cEyelossAssignment_37 = (Assignment)cAlternatives.eContents().get(37);
-		private final Keyword cEyelossEyelossKeyword_37_0 = (Keyword)cEyelossAssignment_37.eContents().get(0);
-		private final Assignment cHorrormarkAssignment_38 = (Assignment)cAlternatives.eContents().get(38);
-		private final Keyword cHorrormarkHorrormarkKeyword_38_0 = (Keyword)cHorrormarkAssignment_38.eContents().get(0);
-		private final Assignment cPoisonarmorAssignment_39 = (Assignment)cAlternatives.eContents().get(39);
-		private final Keyword cPoisonarmorPoisonarmorKeyword_39_0 = (Keyword)cPoisonarmorAssignment_39.eContents().get(0);
-		private final Assignment cInquisitorAssignment_40 = (Assignment)cAlternatives.eContents().get(40);
-		private final Keyword cInquisitorInquisitorKeyword_40_0 = (Keyword)cInquisitorAssignment_40.eContents().get(0);
-		private final Assignment cNoitemAssignment_41 = (Assignment)cAlternatives.eContents().get(41);
-		private final Keyword cNoitemNoitemKeyword_41_0 = (Keyword)cNoitemAssignment_41.eContents().get(0);
-		private final Assignment cNoleaderAssignment_42 = (Assignment)cAlternatives.eContents().get(42);
-		private final Keyword cNoleaderNoleaderKeyword_42_0 = (Keyword)cNoleaderAssignment_42.eContents().get(0);
-		private final Assignment cPoorleaderAssignment_43 = (Assignment)cAlternatives.eContents().get(43);
-		private final Keyword cPoorleaderPoorleaderKeyword_43_0 = (Keyword)cPoorleaderAssignment_43.eContents().get(0);
-		private final Assignment cOkleaderAssignment_44 = (Assignment)cAlternatives.eContents().get(44);
-		private final Keyword cOkleaderOkleaderKeyword_44_0 = (Keyword)cOkleaderAssignment_44.eContents().get(0);
-		private final Assignment cGoodleaderAssignment_45 = (Assignment)cAlternatives.eContents().get(45);
-		private final Keyword cGoodleaderGoodleaderKeyword_45_0 = (Keyword)cGoodleaderAssignment_45.eContents().get(0);
-		private final Assignment cExpertleaderAssignment_46 = (Assignment)cAlternatives.eContents().get(46);
-		private final Keyword cExpertleaderExpertleaderKeyword_46_0 = (Keyword)cExpertleaderAssignment_46.eContents().get(0);
-		private final Assignment cSuperiorleaderAssignment_47 = (Assignment)cAlternatives.eContents().get(47);
-		private final Keyword cSuperiorleaderSuperiorleaderKeyword_47_0 = (Keyword)cSuperiorleaderAssignment_47.eContents().get(0);
-		private final Assignment cNomagicleaderAssignment_48 = (Assignment)cAlternatives.eContents().get(48);
-		private final Keyword cNomagicleaderNomagicleaderKeyword_48_0 = (Keyword)cNomagicleaderAssignment_48.eContents().get(0);
-		private final Assignment cPoormagicleaderAssignment_49 = (Assignment)cAlternatives.eContents().get(49);
-		private final Keyword cPoormagicleaderPoormagicleaderKeyword_49_0 = (Keyword)cPoormagicleaderAssignment_49.eContents().get(0);
-		private final Assignment cOkmagicleaderAssignment_50 = (Assignment)cAlternatives.eContents().get(50);
-		private final Keyword cOkmagicleaderOkmagicleaderKeyword_50_0 = (Keyword)cOkmagicleaderAssignment_50.eContents().get(0);
-		private final Assignment cGoodmagicleaderAssignment_51 = (Assignment)cAlternatives.eContents().get(51);
-		private final Keyword cGoodmagicleaderGoodmagicleaderKeyword_51_0 = (Keyword)cGoodmagicleaderAssignment_51.eContents().get(0);
-		private final Assignment cExpertmagicleaderAssignment_52 = (Assignment)cAlternatives.eContents().get(52);
-		private final Keyword cExpertmagicleaderExpertmagicleaderKeyword_52_0 = (Keyword)cExpertmagicleaderAssignment_52.eContents().get(0);
-		private final Assignment cSuperiormagicleaderAssignment_53 = (Assignment)cAlternatives.eContents().get(53);
-		private final Keyword cSuperiormagicleaderSuperiormagicleaderKeyword_53_0 = (Keyword)cSuperiormagicleaderAssignment_53.eContents().get(0);
-		private final Assignment cNoundeadleaderAssignment_54 = (Assignment)cAlternatives.eContents().get(54);
-		private final Keyword cNoundeadleaderNoundeadleaderKeyword_54_0 = (Keyword)cNoundeadleaderAssignment_54.eContents().get(0);
-		private final Assignment cPoorundeadleaderAssignment_55 = (Assignment)cAlternatives.eContents().get(55);
-		private final Keyword cPoorundeadleaderPoorundeadleaderKeyword_55_0 = (Keyword)cPoorundeadleaderAssignment_55.eContents().get(0);
-		private final Assignment cOkundeadleaderAssignment_56 = (Assignment)cAlternatives.eContents().get(56);
-		private final Keyword cOkundeadleaderOkundeadleaderKeyword_56_0 = (Keyword)cOkundeadleaderAssignment_56.eContents().get(0);
-		private final Assignment cGoodundeadleaderAssignment_57 = (Assignment)cAlternatives.eContents().get(57);
-		private final Keyword cGoodundeadleaderGoodundeadleaderKeyword_57_0 = (Keyword)cGoodundeadleaderAssignment_57.eContents().get(0);
-		private final Assignment cExpertundeadleaderAssignment_58 = (Assignment)cAlternatives.eContents().get(58);
-		private final Keyword cExpertundeadleaderExpertundeadleaderKeyword_58_0 = (Keyword)cExpertundeadleaderAssignment_58.eContents().get(0);
-		private final Assignment cSuperiorundeadleaderAssignment_59 = (Assignment)cAlternatives.eContents().get(59);
-		private final Keyword cSuperiorundeadleaderSuperiorundeadleaderKeyword_59_0 = (Keyword)cSuperiorundeadleaderAssignment_59.eContents().get(0);
+		private final Assignment cClearweaponsAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cClearweaponsClearweaponsKeyword_1_0 = (Keyword)cClearweaponsAssignment_1.eContents().get(0);
+		private final Assignment cCleararmorAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final Keyword cCleararmorCleararmorKeyword_2_0 = (Keyword)cCleararmorAssignment_2.eContents().get(0);
+		private final Assignment cClearmagicAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final Keyword cClearmagicClearmagicKeyword_3_0 = (Keyword)cClearmagicAssignment_3.eContents().get(0);
+		private final Assignment cClearspecAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final Keyword cClearspecClearspecKeyword_4_0 = (Keyword)cClearspecAssignment_4.eContents().get(0);
+		private final Assignment cFemaleAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final Keyword cFemaleFemaleKeyword_5_0 = (Keyword)cFemaleAssignment_5.eContents().get(0);
+		private final Assignment cMountedAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final Keyword cMountedMountedKeyword_6_0 = (Keyword)cMountedAssignment_6.eContents().get(0);
+		private final Assignment cHolyAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final Keyword cHolyHolyKeyword_7_0 = (Keyword)cHolyAssignment_7.eContents().get(0);
+		private final Assignment cAnimalAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
+		private final Keyword cAnimalAnimalKeyword_8_0 = (Keyword)cAnimalAssignment_8.eContents().get(0);
+		private final Assignment cUndeadAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
+		private final Keyword cUndeadUndeadKeyword_9_0 = (Keyword)cUndeadAssignment_9.eContents().get(0);
+		private final Assignment cDemonAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
+		private final Keyword cDemonDemonKeyword_10_0 = (Keyword)cDemonAssignment_10.eContents().get(0);
+		private final Assignment cMagicbeingAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
+		private final Keyword cMagicbeingMagicbeingKeyword_11_0 = (Keyword)cMagicbeingAssignment_11.eContents().get(0);
+		private final Assignment cStonebeingAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
+		private final Keyword cStonebeingStonebeingKeyword_12_0 = (Keyword)cStonebeingAssignment_12.eContents().get(0);
+		private final Assignment cInanimateAssignment_13 = (Assignment)cAlternatives.eContents().get(13);
+		private final Keyword cInanimateInanimateKeyword_13_0 = (Keyword)cInanimateAssignment_13.eContents().get(0);
+		private final Assignment cColdbloodAssignment_14 = (Assignment)cAlternatives.eContents().get(14);
+		private final Keyword cColdbloodColdbloodKeyword_14_0 = (Keyword)cColdbloodAssignment_14.eContents().get(0);
+		private final Assignment cColdbloodAssignment_15 = (Assignment)cAlternatives.eContents().get(15);
+		private final Keyword cColdbloodColdbloodedKeyword_15_0 = (Keyword)cColdbloodAssignment_15.eContents().get(0);
+		private final Assignment cImmortalAssignment_16 = (Assignment)cAlternatives.eContents().get(16);
+		private final Keyword cImmortalImmortalKeyword_16_0 = (Keyword)cImmortalAssignment_16.eContents().get(0);
+		private final Assignment cBlindAssignment_17 = (Assignment)cAlternatives.eContents().get(17);
+		private final Keyword cBlindBlindKeyword_17_0 = (Keyword)cBlindAssignment_17.eContents().get(0);
+		private final Assignment cUniqueAssignment_18 = (Assignment)cAlternatives.eContents().get(18);
+		private final Keyword cUniqueUniqueKeyword_18_0 = (Keyword)cUniqueAssignment_18.eContents().get(0);
+		private final Assignment cImmobileAssignment_19 = (Assignment)cAlternatives.eContents().get(19);
+		private final Keyword cImmobileImmobileKeyword_19_0 = (Keyword)cImmobileAssignment_19.eContents().get(0);
+		private final Assignment cAquaticAssignment_20 = (Assignment)cAlternatives.eContents().get(20);
+		private final Keyword cAquaticAquaticKeyword_20_0 = (Keyword)cAquaticAssignment_20.eContents().get(0);
+		private final Assignment cAmphibianAssignment_21 = (Assignment)cAlternatives.eContents().get(21);
+		private final Keyword cAmphibianAmphibianKeyword_21_0 = (Keyword)cAmphibianAssignment_21.eContents().get(0);
+		private final Assignment cPooramphibianAssignment_22 = (Assignment)cAlternatives.eContents().get(22);
+		private final Keyword cPooramphibianPooramphibianKeyword_22_0 = (Keyword)cPooramphibianAssignment_22.eContents().get(0);
+		private final Assignment cFlyingAssignment_23 = (Assignment)cAlternatives.eContents().get(23);
+		private final Keyword cFlyingFlyingKeyword_23_0 = (Keyword)cFlyingAssignment_23.eContents().get(0);
+		private final Assignment cStormimmuneAssignment_24 = (Assignment)cAlternatives.eContents().get(24);
+		private final Keyword cStormimmuneStormimmuneKeyword_24_0 = (Keyword)cStormimmuneAssignment_24.eContents().get(0);
+		private final Assignment cSailingAssignment_25 = (Assignment)cAlternatives.eContents().get(25);
+		private final Keyword cSailingSailingKeyword_25_0 = (Keyword)cSailingAssignment_25.eContents().get(0);
+		private final Assignment cForestsurvivalAssignment_26 = (Assignment)cAlternatives.eContents().get(26);
+		private final Keyword cForestsurvivalForestsurvivalKeyword_26_0 = (Keyword)cForestsurvivalAssignment_26.eContents().get(0);
+		private final Assignment cMountainsurvivalAssignment_27 = (Assignment)cAlternatives.eContents().get(27);
+		private final Keyword cMountainsurvivalMountainsurvivalKeyword_27_0 = (Keyword)cMountainsurvivalAssignment_27.eContents().get(0);
+		private final Assignment cSwampsurvivalAssignment_28 = (Assignment)cAlternatives.eContents().get(28);
+		private final Keyword cSwampsurvivalSwampsurvivalKeyword_28_0 = (Keyword)cSwampsurvivalAssignment_28.eContents().get(0);
+		private final Assignment cWastesurvivalAssignment_29 = (Assignment)cAlternatives.eContents().get(29);
+		private final Keyword cWastesurvivalWastesurvivalKeyword_29_0 = (Keyword)cWastesurvivalAssignment_29.eContents().get(0);
+		private final Assignment cIllusionAssignment_30 = (Assignment)cAlternatives.eContents().get(30);
+		private final Keyword cIllusionIllusionKeyword_30_0 = (Keyword)cIllusionAssignment_30.eContents().get(0);
+		private final Assignment cSpyAssignment_31 = (Assignment)cAlternatives.eContents().get(31);
+		private final Keyword cSpySpyKeyword_31_0 = (Keyword)cSpyAssignment_31.eContents().get(0);
+		private final Assignment cAssassinAssignment_32 = (Assignment)cAlternatives.eContents().get(32);
+		private final Keyword cAssassinAssassinKeyword_32_0 = (Keyword)cAssassinAssignment_32.eContents().get(0);
+		private final Assignment cHealAssignment_33 = (Assignment)cAlternatives.eContents().get(33);
+		private final Keyword cHealHealKeyword_33_0 = (Keyword)cHealAssignment_33.eContents().get(0);
+		private final Assignment cNohealAssignment_34 = (Assignment)cAlternatives.eContents().get(34);
+		private final Keyword cNohealNohealKeyword_34_0 = (Keyword)cNohealAssignment_34.eContents().get(0);
+		private final Assignment cNeednoteatAssignment_35 = (Assignment)cAlternatives.eContents().get(35);
+		private final Keyword cNeednoteatNeednoteatKeyword_35_0 = (Keyword)cNeednoteatAssignment_35.eContents().get(0);
+		private final Assignment cEtherealAssignment_36 = (Assignment)cAlternatives.eContents().get(36);
+		private final Keyword cEtherealEtherealKeyword_36_0 = (Keyword)cEtherealAssignment_36.eContents().get(0);
+		private final Assignment cTrampleAssignment_37 = (Assignment)cAlternatives.eContents().get(37);
+		private final Keyword cTrampleTrampleKeyword_37_0 = (Keyword)cTrampleAssignment_37.eContents().get(0);
+		private final Assignment cEntangleAssignment_38 = (Assignment)cAlternatives.eContents().get(38);
+		private final Keyword cEntangleEntangleKeyword_38_0 = (Keyword)cEntangleAssignment_38.eContents().get(0);
+		private final Assignment cEyelossAssignment_39 = (Assignment)cAlternatives.eContents().get(39);
+		private final Keyword cEyelossEyelossKeyword_39_0 = (Keyword)cEyelossAssignment_39.eContents().get(0);
+		private final Assignment cHorrormarkAssignment_40 = (Assignment)cAlternatives.eContents().get(40);
+		private final Keyword cHorrormarkHorrormarkKeyword_40_0 = (Keyword)cHorrormarkAssignment_40.eContents().get(0);
+		private final Assignment cPoisonarmorAssignment_41 = (Assignment)cAlternatives.eContents().get(41);
+		private final Keyword cPoisonarmorPoisonarmorKeyword_41_0 = (Keyword)cPoisonarmorAssignment_41.eContents().get(0);
+		private final Assignment cInquisitorAssignment_42 = (Assignment)cAlternatives.eContents().get(42);
+		private final Keyword cInquisitorInquisitorKeyword_42_0 = (Keyword)cInquisitorAssignment_42.eContents().get(0);
+		private final Assignment cNoitemAssignment_43 = (Assignment)cAlternatives.eContents().get(43);
+		private final Keyword cNoitemNoitemKeyword_43_0 = (Keyword)cNoitemAssignment_43.eContents().get(0);
+		private final Assignment cDrainimmuneAssignment_44 = (Assignment)cAlternatives.eContents().get(44);
+		private final Keyword cDrainimmuneDrainimmuneKeyword_44_0 = (Keyword)cDrainimmuneAssignment_44.eContents().get(0);
+		private final Assignment cNoleaderAssignment_45 = (Assignment)cAlternatives.eContents().get(45);
+		private final Keyword cNoleaderNoleaderKeyword_45_0 = (Keyword)cNoleaderAssignment_45.eContents().get(0);
+		private final Assignment cPoorleaderAssignment_46 = (Assignment)cAlternatives.eContents().get(46);
+		private final Keyword cPoorleaderPoorleaderKeyword_46_0 = (Keyword)cPoorleaderAssignment_46.eContents().get(0);
+		private final Assignment cOkleaderAssignment_47 = (Assignment)cAlternatives.eContents().get(47);
+		private final Keyword cOkleaderOkleaderKeyword_47_0 = (Keyword)cOkleaderAssignment_47.eContents().get(0);
+		private final Assignment cGoodleaderAssignment_48 = (Assignment)cAlternatives.eContents().get(48);
+		private final Keyword cGoodleaderGoodleaderKeyword_48_0 = (Keyword)cGoodleaderAssignment_48.eContents().get(0);
+		private final Assignment cExpertleaderAssignment_49 = (Assignment)cAlternatives.eContents().get(49);
+		private final Keyword cExpertleaderExpertleaderKeyword_49_0 = (Keyword)cExpertleaderAssignment_49.eContents().get(0);
+		private final Assignment cSuperiorleaderAssignment_50 = (Assignment)cAlternatives.eContents().get(50);
+		private final Keyword cSuperiorleaderSuperiorleaderKeyword_50_0 = (Keyword)cSuperiorleaderAssignment_50.eContents().get(0);
+		private final Assignment cNomagicleaderAssignment_51 = (Assignment)cAlternatives.eContents().get(51);
+		private final Keyword cNomagicleaderNomagicleaderKeyword_51_0 = (Keyword)cNomagicleaderAssignment_51.eContents().get(0);
+		private final Assignment cPoormagicleaderAssignment_52 = (Assignment)cAlternatives.eContents().get(52);
+		private final Keyword cPoormagicleaderPoormagicleaderKeyword_52_0 = (Keyword)cPoormagicleaderAssignment_52.eContents().get(0);
+		private final Assignment cOkmagicleaderAssignment_53 = (Assignment)cAlternatives.eContents().get(53);
+		private final Keyword cOkmagicleaderOkmagicleaderKeyword_53_0 = (Keyword)cOkmagicleaderAssignment_53.eContents().get(0);
+		private final Assignment cGoodmagicleaderAssignment_54 = (Assignment)cAlternatives.eContents().get(54);
+		private final Keyword cGoodmagicleaderGoodmagicleaderKeyword_54_0 = (Keyword)cGoodmagicleaderAssignment_54.eContents().get(0);
+		private final Assignment cExpertmagicleaderAssignment_55 = (Assignment)cAlternatives.eContents().get(55);
+		private final Keyword cExpertmagicleaderExpertmagicleaderKeyword_55_0 = (Keyword)cExpertmagicleaderAssignment_55.eContents().get(0);
+		private final Assignment cSuperiormagicleaderAssignment_56 = (Assignment)cAlternatives.eContents().get(56);
+		private final Keyword cSuperiormagicleaderSuperiormagicleaderKeyword_56_0 = (Keyword)cSuperiormagicleaderAssignment_56.eContents().get(0);
+		private final Assignment cNoundeadleaderAssignment_57 = (Assignment)cAlternatives.eContents().get(57);
+		private final Keyword cNoundeadleaderNoundeadleaderKeyword_57_0 = (Keyword)cNoundeadleaderAssignment_57.eContents().get(0);
+		private final Assignment cPoorundeadleaderAssignment_58 = (Assignment)cAlternatives.eContents().get(58);
+		private final Keyword cPoorundeadleaderPoorundeadleaderKeyword_58_0 = (Keyword)cPoorundeadleaderAssignment_58.eContents().get(0);
+		private final Assignment cOkundeadleaderAssignment_59 = (Assignment)cAlternatives.eContents().get(59);
+		private final Keyword cOkundeadleaderOkundeadleaderKeyword_59_0 = (Keyword)cOkundeadleaderAssignment_59.eContents().get(0);
+		private final Assignment cGoodundeadleaderAssignment_60 = (Assignment)cAlternatives.eContents().get(60);
+		private final Keyword cGoodundeadleaderGoodundeadleaderKeyword_60_0 = (Keyword)cGoodundeadleaderAssignment_60.eContents().get(0);
+		private final Assignment cExpertundeadleaderAssignment_61 = (Assignment)cAlternatives.eContents().get(61);
+		private final Keyword cExpertundeadleaderExpertundeadleaderKeyword_61_0 = (Keyword)cExpertundeadleaderAssignment_61.eContents().get(0);
+		private final Assignment cSuperiorundeadleaderAssignment_62 = (Assignment)cAlternatives.eContents().get(62);
+		private final Keyword cSuperiorundeadleaderSuperiorundeadleaderKeyword_62_0 = (Keyword)cSuperiorundeadleaderAssignment_62.eContents().get(0);
 		
 		//MonsterInst4:
-		//	clear?="#clear" | clearmagic?="#clearmagic" | clearspec?="#clearspec" | female?="#female" | mounted?="#mounted" |
-		//	holy?="#holy" | animal?="#animal" | undead?="#undead" | demon?="#demon" | magicbeing?="#magicbeing" |
-		//	stonebeing?="#stonebeing" | inanimate?="#inanimate" | coldblood?="#coldblood" | coldblood?="#coldblooded" |
-		//	immortal?="#immortal" | blind?="#blind" | unique?="#unique" | immobile?="#immobile" | aquatic?="#aquatic" |
-		//	amphibian?="#amphibian" | pooramphibian?="#pooramphibian" | flying?="#flying" | stormimmune?="#stormimmune" |
-		//	sailing?="#sailing" | forestsurvival?="#forestsurvival" | mountainsurvival?="#mountainsurvival" |
-		//	swampsurvival?="#swampsurvival" | wastesurvival?="#wastesurvival" | illusion?="#illusion" | spy?="#spy" |
-		//	assassin?="#assassin" | heal?="#heal" | noheal?="#noheal" | neednoteat?="#neednoteat" | ethereal?="#ethereal" |
-		//	trample?="#trample" | entangle?="#entangle" | eyeloss?="#eyeloss" | horrormark?="#horrormark" |
-		//	poisonarmor?="#poisonarmor" | inquisitor?="#inquisitor" | noitem?="#noitem" | noleader?="#noleader" |
-		//	poorleader?="#poorleader" | okleader?="#okleader" | goodleader?="#goodleader" | expertleader?="#expertleader" |
-		//	superiorleader?="#superiorleader" | nomagicleader?="#nomagicleader" | poormagicleader?="#poormagicleader" |
-		//	okmagicleader?="#okmagicleader" | goodmagicleader?="#goodmagicleader" | expertmagicleader?="#expertmagicleader" |
+		//	clear?="#clear" | clearweapons?="#clearweapons" | cleararmor?="#cleararmor" | clearmagic?="#clearmagic" |
+		//	clearspec?="#clearspec" | female?="#female" | mounted?="#mounted" | holy?="#holy" | animal?="#animal" |
+		//	undead?="#undead" | demon?="#demon" | magicbeing?="#magicbeing" | stonebeing?="#stonebeing" | inanimate?="#inanimate"
+		//	| coldblood?="#coldblood" | coldblood?="#coldblooded" | immortal?="#immortal" | blind?="#blind" | unique?="#unique" |
+		//	immobile?="#immobile" | aquatic?="#aquatic" | amphibian?="#amphibian" | pooramphibian?="#pooramphibian" |
+		//	flying?="#flying" | stormimmune?="#stormimmune" | sailing?="#sailing" | forestsurvival?="#forestsurvival" |
+		//	mountainsurvival?="#mountainsurvival" | swampsurvival?="#swampsurvival" | wastesurvival?="#wastesurvival" |
+		//	illusion?="#illusion" | spy?="#spy" | assassin?="#assassin" | heal?="#heal" | noheal?="#noheal" |
+		//	neednoteat?="#neednoteat" | ethereal?="#ethereal" | trample?="#trample" | entangle?="#entangle" | eyeloss?="#eyeloss"
+		//	| horrormark?="#horrormark" | poisonarmor?="#poisonarmor" | inquisitor?="#inquisitor" | noitem?="#noitem" |
+		//	drainimmune?="#drainimmune" | noleader?="#noleader" | poorleader?="#poorleader" | okleader?="#okleader" |
+		//	goodleader?="#goodleader" | expertleader?="#expertleader" | superiorleader?="#superiorleader" |
+		//	nomagicleader?="#nomagicleader" | poormagicleader?="#poormagicleader" | okmagicleader?="#okmagicleader" |
+		//	goodmagicleader?="#goodmagicleader" | expertmagicleader?="#expertmagicleader" |
 		//	superiormagicleader?="#superiormagicleader" | noundeadleader?="#noundeadleader" |
 		//	poorundeadleader?="#poorundeadleader" | okundeadleader?="#okundeadleader" | goodundeadleader?="#goodundeadleader" |
 		//	expertundeadleader?="#expertundeadleader" | superiorundeadleader?="#superiorundeadleader";
 		public ParserRule getRule() { return rule; }
 
-		//clear?="#clear" | clearmagic?="#clearmagic" | clearspec?="#clearspec" | female?="#female" | mounted?="#mounted" |
-		//holy?="#holy" | animal?="#animal" | undead?="#undead" | demon?="#demon" | magicbeing?="#magicbeing" |
-		//stonebeing?="#stonebeing" | inanimate?="#inanimate" | coldblood?="#coldblood" | coldblood?="#coldblooded" |
-		//immortal?="#immortal" | blind?="#blind" | unique?="#unique" | immobile?="#immobile" | aquatic?="#aquatic" |
-		//amphibian?="#amphibian" | pooramphibian?="#pooramphibian" | flying?="#flying" | stormimmune?="#stormimmune" |
-		//sailing?="#sailing" | forestsurvival?="#forestsurvival" | mountainsurvival?="#mountainsurvival" |
-		//swampsurvival?="#swampsurvival" | wastesurvival?="#wastesurvival" | illusion?="#illusion" | spy?="#spy" |
-		//assassin?="#assassin" | heal?="#heal" | noheal?="#noheal" | neednoteat?="#neednoteat" | ethereal?="#ethereal" |
-		//trample?="#trample" | entangle?="#entangle" | eyeloss?="#eyeloss" | horrormark?="#horrormark" |
-		//poisonarmor?="#poisonarmor" | inquisitor?="#inquisitor" | noitem?="#noitem" | noleader?="#noleader" |
-		//poorleader?="#poorleader" | okleader?="#okleader" | goodleader?="#goodleader" | expertleader?="#expertleader" |
-		//superiorleader?="#superiorleader" | nomagicleader?="#nomagicleader" | poormagicleader?="#poormagicleader" |
-		//okmagicleader?="#okmagicleader" | goodmagicleader?="#goodmagicleader" | expertmagicleader?="#expertmagicleader" |
+		//clear?="#clear" | clearweapons?="#clearweapons" | cleararmor?="#cleararmor" | clearmagic?="#clearmagic" |
+		//clearspec?="#clearspec" | female?="#female" | mounted?="#mounted" | holy?="#holy" | animal?="#animal" |
+		//undead?="#undead" | demon?="#demon" | magicbeing?="#magicbeing" | stonebeing?="#stonebeing" | inanimate?="#inanimate" |
+		//coldblood?="#coldblood" | coldblood?="#coldblooded" | immortal?="#immortal" | blind?="#blind" | unique?="#unique" |
+		//immobile?="#immobile" | aquatic?="#aquatic" | amphibian?="#amphibian" | pooramphibian?="#pooramphibian" |
+		//flying?="#flying" | stormimmune?="#stormimmune" | sailing?="#sailing" | forestsurvival?="#forestsurvival" |
+		//mountainsurvival?="#mountainsurvival" | swampsurvival?="#swampsurvival" | wastesurvival?="#wastesurvival" |
+		//illusion?="#illusion" | spy?="#spy" | assassin?="#assassin" | heal?="#heal" | noheal?="#noheal" |
+		//neednoteat?="#neednoteat" | ethereal?="#ethereal" | trample?="#trample" | entangle?="#entangle" | eyeloss?="#eyeloss" |
+		//horrormark?="#horrormark" | poisonarmor?="#poisonarmor" | inquisitor?="#inquisitor" | noitem?="#noitem" |
+		//drainimmune?="#drainimmune" | noleader?="#noleader" | poorleader?="#poorleader" | okleader?="#okleader" |
+		//goodleader?="#goodleader" | expertleader?="#expertleader" | superiorleader?="#superiorleader" |
+		//nomagicleader?="#nomagicleader" | poormagicleader?="#poormagicleader" | okmagicleader?="#okmagicleader" |
+		//goodmagicleader?="#goodmagicleader" | expertmagicleader?="#expertmagicleader" |
 		//superiormagicleader?="#superiormagicleader" | noundeadleader?="#noundeadleader" | poorundeadleader?="#poorundeadleader"
 		//| okundeadleader?="#okundeadleader" | goodundeadleader?="#goodundeadleader" | expertundeadleader?="#expertundeadleader"
 		//| superiorundeadleader?="#superiorundeadleader"
@@ -2740,359 +2748,377 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//"#clear"
 		public Keyword getClearClearKeyword_0_0() { return cClearClearKeyword_0_0; }
 
+		//clearweapons?="#clearweapons"
+		public Assignment getClearweaponsAssignment_1() { return cClearweaponsAssignment_1; }
+
+		//"#clearweapons"
+		public Keyword getClearweaponsClearweaponsKeyword_1_0() { return cClearweaponsClearweaponsKeyword_1_0; }
+
+		//cleararmor?="#cleararmor"
+		public Assignment getCleararmorAssignment_2() { return cCleararmorAssignment_2; }
+
+		//"#cleararmor"
+		public Keyword getCleararmorCleararmorKeyword_2_0() { return cCleararmorCleararmorKeyword_2_0; }
+
 		//clearmagic?="#clearmagic"
-		public Assignment getClearmagicAssignment_1() { return cClearmagicAssignment_1; }
+		public Assignment getClearmagicAssignment_3() { return cClearmagicAssignment_3; }
 
 		//"#clearmagic"
-		public Keyword getClearmagicClearmagicKeyword_1_0() { return cClearmagicClearmagicKeyword_1_0; }
+		public Keyword getClearmagicClearmagicKeyword_3_0() { return cClearmagicClearmagicKeyword_3_0; }
 
 		//clearspec?="#clearspec"
-		public Assignment getClearspecAssignment_2() { return cClearspecAssignment_2; }
+		public Assignment getClearspecAssignment_4() { return cClearspecAssignment_4; }
 
 		//"#clearspec"
-		public Keyword getClearspecClearspecKeyword_2_0() { return cClearspecClearspecKeyword_2_0; }
+		public Keyword getClearspecClearspecKeyword_4_0() { return cClearspecClearspecKeyword_4_0; }
 
 		//female?="#female"
-		public Assignment getFemaleAssignment_3() { return cFemaleAssignment_3; }
+		public Assignment getFemaleAssignment_5() { return cFemaleAssignment_5; }
 
 		//"#female"
-		public Keyword getFemaleFemaleKeyword_3_0() { return cFemaleFemaleKeyword_3_0; }
+		public Keyword getFemaleFemaleKeyword_5_0() { return cFemaleFemaleKeyword_5_0; }
 
 		//mounted?="#mounted"
-		public Assignment getMountedAssignment_4() { return cMountedAssignment_4; }
+		public Assignment getMountedAssignment_6() { return cMountedAssignment_6; }
 
 		//"#mounted"
-		public Keyword getMountedMountedKeyword_4_0() { return cMountedMountedKeyword_4_0; }
+		public Keyword getMountedMountedKeyword_6_0() { return cMountedMountedKeyword_6_0; }
 
 		//holy?="#holy"
-		public Assignment getHolyAssignment_5() { return cHolyAssignment_5; }
+		public Assignment getHolyAssignment_7() { return cHolyAssignment_7; }
 
 		//"#holy"
-		public Keyword getHolyHolyKeyword_5_0() { return cHolyHolyKeyword_5_0; }
+		public Keyword getHolyHolyKeyword_7_0() { return cHolyHolyKeyword_7_0; }
 
 		//animal?="#animal"
-		public Assignment getAnimalAssignment_6() { return cAnimalAssignment_6; }
+		public Assignment getAnimalAssignment_8() { return cAnimalAssignment_8; }
 
 		//"#animal"
-		public Keyword getAnimalAnimalKeyword_6_0() { return cAnimalAnimalKeyword_6_0; }
+		public Keyword getAnimalAnimalKeyword_8_0() { return cAnimalAnimalKeyword_8_0; }
 
 		//undead?="#undead"
-		public Assignment getUndeadAssignment_7() { return cUndeadAssignment_7; }
+		public Assignment getUndeadAssignment_9() { return cUndeadAssignment_9; }
 
 		//"#undead"
-		public Keyword getUndeadUndeadKeyword_7_0() { return cUndeadUndeadKeyword_7_0; }
+		public Keyword getUndeadUndeadKeyword_9_0() { return cUndeadUndeadKeyword_9_0; }
 
 		//demon?="#demon"
-		public Assignment getDemonAssignment_8() { return cDemonAssignment_8; }
+		public Assignment getDemonAssignment_10() { return cDemonAssignment_10; }
 
 		//"#demon"
-		public Keyword getDemonDemonKeyword_8_0() { return cDemonDemonKeyword_8_0; }
+		public Keyword getDemonDemonKeyword_10_0() { return cDemonDemonKeyword_10_0; }
 
 		//magicbeing?="#magicbeing"
-		public Assignment getMagicbeingAssignment_9() { return cMagicbeingAssignment_9; }
+		public Assignment getMagicbeingAssignment_11() { return cMagicbeingAssignment_11; }
 
 		//"#magicbeing"
-		public Keyword getMagicbeingMagicbeingKeyword_9_0() { return cMagicbeingMagicbeingKeyword_9_0; }
+		public Keyword getMagicbeingMagicbeingKeyword_11_0() { return cMagicbeingMagicbeingKeyword_11_0; }
 
 		//stonebeing?="#stonebeing"
-		public Assignment getStonebeingAssignment_10() { return cStonebeingAssignment_10; }
+		public Assignment getStonebeingAssignment_12() { return cStonebeingAssignment_12; }
 
 		//"#stonebeing"
-		public Keyword getStonebeingStonebeingKeyword_10_0() { return cStonebeingStonebeingKeyword_10_0; }
+		public Keyword getStonebeingStonebeingKeyword_12_0() { return cStonebeingStonebeingKeyword_12_0; }
 
 		//inanimate?="#inanimate"
-		public Assignment getInanimateAssignment_11() { return cInanimateAssignment_11; }
+		public Assignment getInanimateAssignment_13() { return cInanimateAssignment_13; }
 
 		//"#inanimate"
-		public Keyword getInanimateInanimateKeyword_11_0() { return cInanimateInanimateKeyword_11_0; }
+		public Keyword getInanimateInanimateKeyword_13_0() { return cInanimateInanimateKeyword_13_0; }
 
 		//coldblood?="#coldblood"
-		public Assignment getColdbloodAssignment_12() { return cColdbloodAssignment_12; }
+		public Assignment getColdbloodAssignment_14() { return cColdbloodAssignment_14; }
 
 		//"#coldblood"
-		public Keyword getColdbloodColdbloodKeyword_12_0() { return cColdbloodColdbloodKeyword_12_0; }
+		public Keyword getColdbloodColdbloodKeyword_14_0() { return cColdbloodColdbloodKeyword_14_0; }
 
 		//coldblood?="#coldblooded"
-		public Assignment getColdbloodAssignment_13() { return cColdbloodAssignment_13; }
+		public Assignment getColdbloodAssignment_15() { return cColdbloodAssignment_15; }
 
 		//"#coldblooded"
-		public Keyword getColdbloodColdbloodedKeyword_13_0() { return cColdbloodColdbloodedKeyword_13_0; }
+		public Keyword getColdbloodColdbloodedKeyword_15_0() { return cColdbloodColdbloodedKeyword_15_0; }
 
 		//immortal?="#immortal"
-		public Assignment getImmortalAssignment_14() { return cImmortalAssignment_14; }
+		public Assignment getImmortalAssignment_16() { return cImmortalAssignment_16; }
 
 		//"#immortal"
-		public Keyword getImmortalImmortalKeyword_14_0() { return cImmortalImmortalKeyword_14_0; }
+		public Keyword getImmortalImmortalKeyword_16_0() { return cImmortalImmortalKeyword_16_0; }
 
 		//blind?="#blind"
-		public Assignment getBlindAssignment_15() { return cBlindAssignment_15; }
+		public Assignment getBlindAssignment_17() { return cBlindAssignment_17; }
 
 		//"#blind"
-		public Keyword getBlindBlindKeyword_15_0() { return cBlindBlindKeyword_15_0; }
+		public Keyword getBlindBlindKeyword_17_0() { return cBlindBlindKeyword_17_0; }
 
 		//unique?="#unique"
-		public Assignment getUniqueAssignment_16() { return cUniqueAssignment_16; }
+		public Assignment getUniqueAssignment_18() { return cUniqueAssignment_18; }
 
 		//"#unique"
-		public Keyword getUniqueUniqueKeyword_16_0() { return cUniqueUniqueKeyword_16_0; }
+		public Keyword getUniqueUniqueKeyword_18_0() { return cUniqueUniqueKeyword_18_0; }
 
 		//immobile?="#immobile"
-		public Assignment getImmobileAssignment_17() { return cImmobileAssignment_17; }
+		public Assignment getImmobileAssignment_19() { return cImmobileAssignment_19; }
 
 		//"#immobile"
-		public Keyword getImmobileImmobileKeyword_17_0() { return cImmobileImmobileKeyword_17_0; }
+		public Keyword getImmobileImmobileKeyword_19_0() { return cImmobileImmobileKeyword_19_0; }
 
 		//aquatic?="#aquatic"
-		public Assignment getAquaticAssignment_18() { return cAquaticAssignment_18; }
+		public Assignment getAquaticAssignment_20() { return cAquaticAssignment_20; }
 
 		//"#aquatic"
-		public Keyword getAquaticAquaticKeyword_18_0() { return cAquaticAquaticKeyword_18_0; }
+		public Keyword getAquaticAquaticKeyword_20_0() { return cAquaticAquaticKeyword_20_0; }
 
 		//amphibian?="#amphibian"
-		public Assignment getAmphibianAssignment_19() { return cAmphibianAssignment_19; }
+		public Assignment getAmphibianAssignment_21() { return cAmphibianAssignment_21; }
 
 		//"#amphibian"
-		public Keyword getAmphibianAmphibianKeyword_19_0() { return cAmphibianAmphibianKeyword_19_0; }
+		public Keyword getAmphibianAmphibianKeyword_21_0() { return cAmphibianAmphibianKeyword_21_0; }
 
 		//pooramphibian?="#pooramphibian"
-		public Assignment getPooramphibianAssignment_20() { return cPooramphibianAssignment_20; }
+		public Assignment getPooramphibianAssignment_22() { return cPooramphibianAssignment_22; }
 
 		//"#pooramphibian"
-		public Keyword getPooramphibianPooramphibianKeyword_20_0() { return cPooramphibianPooramphibianKeyword_20_0; }
+		public Keyword getPooramphibianPooramphibianKeyword_22_0() { return cPooramphibianPooramphibianKeyword_22_0; }
 
 		//flying?="#flying"
-		public Assignment getFlyingAssignment_21() { return cFlyingAssignment_21; }
+		public Assignment getFlyingAssignment_23() { return cFlyingAssignment_23; }
 
 		//"#flying"
-		public Keyword getFlyingFlyingKeyword_21_0() { return cFlyingFlyingKeyword_21_0; }
+		public Keyword getFlyingFlyingKeyword_23_0() { return cFlyingFlyingKeyword_23_0; }
 
 		//stormimmune?="#stormimmune"
-		public Assignment getStormimmuneAssignment_22() { return cStormimmuneAssignment_22; }
+		public Assignment getStormimmuneAssignment_24() { return cStormimmuneAssignment_24; }
 
 		//"#stormimmune"
-		public Keyword getStormimmuneStormimmuneKeyword_22_0() { return cStormimmuneStormimmuneKeyword_22_0; }
+		public Keyword getStormimmuneStormimmuneKeyword_24_0() { return cStormimmuneStormimmuneKeyword_24_0; }
 
 		//sailing?="#sailing"
-		public Assignment getSailingAssignment_23() { return cSailingAssignment_23; }
+		public Assignment getSailingAssignment_25() { return cSailingAssignment_25; }
 
 		//"#sailing"
-		public Keyword getSailingSailingKeyword_23_0() { return cSailingSailingKeyword_23_0; }
+		public Keyword getSailingSailingKeyword_25_0() { return cSailingSailingKeyword_25_0; }
 
 		//forestsurvival?="#forestsurvival"
-		public Assignment getForestsurvivalAssignment_24() { return cForestsurvivalAssignment_24; }
+		public Assignment getForestsurvivalAssignment_26() { return cForestsurvivalAssignment_26; }
 
 		//"#forestsurvival"
-		public Keyword getForestsurvivalForestsurvivalKeyword_24_0() { return cForestsurvivalForestsurvivalKeyword_24_0; }
+		public Keyword getForestsurvivalForestsurvivalKeyword_26_0() { return cForestsurvivalForestsurvivalKeyword_26_0; }
 
 		//mountainsurvival?="#mountainsurvival"
-		public Assignment getMountainsurvivalAssignment_25() { return cMountainsurvivalAssignment_25; }
+		public Assignment getMountainsurvivalAssignment_27() { return cMountainsurvivalAssignment_27; }
 
 		//"#mountainsurvival"
-		public Keyword getMountainsurvivalMountainsurvivalKeyword_25_0() { return cMountainsurvivalMountainsurvivalKeyword_25_0; }
+		public Keyword getMountainsurvivalMountainsurvivalKeyword_27_0() { return cMountainsurvivalMountainsurvivalKeyword_27_0; }
 
 		//swampsurvival?="#swampsurvival"
-		public Assignment getSwampsurvivalAssignment_26() { return cSwampsurvivalAssignment_26; }
+		public Assignment getSwampsurvivalAssignment_28() { return cSwampsurvivalAssignment_28; }
 
 		//"#swampsurvival"
-		public Keyword getSwampsurvivalSwampsurvivalKeyword_26_0() { return cSwampsurvivalSwampsurvivalKeyword_26_0; }
+		public Keyword getSwampsurvivalSwampsurvivalKeyword_28_0() { return cSwampsurvivalSwampsurvivalKeyword_28_0; }
 
 		//wastesurvival?="#wastesurvival"
-		public Assignment getWastesurvivalAssignment_27() { return cWastesurvivalAssignment_27; }
+		public Assignment getWastesurvivalAssignment_29() { return cWastesurvivalAssignment_29; }
 
 		//"#wastesurvival"
-		public Keyword getWastesurvivalWastesurvivalKeyword_27_0() { return cWastesurvivalWastesurvivalKeyword_27_0; }
+		public Keyword getWastesurvivalWastesurvivalKeyword_29_0() { return cWastesurvivalWastesurvivalKeyword_29_0; }
 
 		//illusion?="#illusion"
-		public Assignment getIllusionAssignment_28() { return cIllusionAssignment_28; }
+		public Assignment getIllusionAssignment_30() { return cIllusionAssignment_30; }
 
 		//"#illusion"
-		public Keyword getIllusionIllusionKeyword_28_0() { return cIllusionIllusionKeyword_28_0; }
+		public Keyword getIllusionIllusionKeyword_30_0() { return cIllusionIllusionKeyword_30_0; }
 
 		//spy?="#spy"
-		public Assignment getSpyAssignment_29() { return cSpyAssignment_29; }
+		public Assignment getSpyAssignment_31() { return cSpyAssignment_31; }
 
 		//"#spy"
-		public Keyword getSpySpyKeyword_29_0() { return cSpySpyKeyword_29_0; }
+		public Keyword getSpySpyKeyword_31_0() { return cSpySpyKeyword_31_0; }
 
 		//assassin?="#assassin"
-		public Assignment getAssassinAssignment_30() { return cAssassinAssignment_30; }
+		public Assignment getAssassinAssignment_32() { return cAssassinAssignment_32; }
 
 		//"#assassin"
-		public Keyword getAssassinAssassinKeyword_30_0() { return cAssassinAssassinKeyword_30_0; }
+		public Keyword getAssassinAssassinKeyword_32_0() { return cAssassinAssassinKeyword_32_0; }
 
 		//heal?="#heal"
-		public Assignment getHealAssignment_31() { return cHealAssignment_31; }
+		public Assignment getHealAssignment_33() { return cHealAssignment_33; }
 
 		//"#heal"
-		public Keyword getHealHealKeyword_31_0() { return cHealHealKeyword_31_0; }
+		public Keyword getHealHealKeyword_33_0() { return cHealHealKeyword_33_0; }
 
 		//noheal?="#noheal"
-		public Assignment getNohealAssignment_32() { return cNohealAssignment_32; }
+		public Assignment getNohealAssignment_34() { return cNohealAssignment_34; }
 
 		//"#noheal"
-		public Keyword getNohealNohealKeyword_32_0() { return cNohealNohealKeyword_32_0; }
+		public Keyword getNohealNohealKeyword_34_0() { return cNohealNohealKeyword_34_0; }
 
 		//neednoteat?="#neednoteat"
-		public Assignment getNeednoteatAssignment_33() { return cNeednoteatAssignment_33; }
+		public Assignment getNeednoteatAssignment_35() { return cNeednoteatAssignment_35; }
 
 		//"#neednoteat"
-		public Keyword getNeednoteatNeednoteatKeyword_33_0() { return cNeednoteatNeednoteatKeyword_33_0; }
+		public Keyword getNeednoteatNeednoteatKeyword_35_0() { return cNeednoteatNeednoteatKeyword_35_0; }
 
 		//ethereal?="#ethereal"
-		public Assignment getEtherealAssignment_34() { return cEtherealAssignment_34; }
+		public Assignment getEtherealAssignment_36() { return cEtherealAssignment_36; }
 
 		//"#ethereal"
-		public Keyword getEtherealEtherealKeyword_34_0() { return cEtherealEtherealKeyword_34_0; }
+		public Keyword getEtherealEtherealKeyword_36_0() { return cEtherealEtherealKeyword_36_0; }
 
 		//trample?="#trample"
-		public Assignment getTrampleAssignment_35() { return cTrampleAssignment_35; }
+		public Assignment getTrampleAssignment_37() { return cTrampleAssignment_37; }
 
 		//"#trample"
-		public Keyword getTrampleTrampleKeyword_35_0() { return cTrampleTrampleKeyword_35_0; }
+		public Keyword getTrampleTrampleKeyword_37_0() { return cTrampleTrampleKeyword_37_0; }
 
 		//entangle?="#entangle"
-		public Assignment getEntangleAssignment_36() { return cEntangleAssignment_36; }
+		public Assignment getEntangleAssignment_38() { return cEntangleAssignment_38; }
 
 		//"#entangle"
-		public Keyword getEntangleEntangleKeyword_36_0() { return cEntangleEntangleKeyword_36_0; }
+		public Keyword getEntangleEntangleKeyword_38_0() { return cEntangleEntangleKeyword_38_0; }
 
 		//eyeloss?="#eyeloss"
-		public Assignment getEyelossAssignment_37() { return cEyelossAssignment_37; }
+		public Assignment getEyelossAssignment_39() { return cEyelossAssignment_39; }
 
 		//"#eyeloss"
-		public Keyword getEyelossEyelossKeyword_37_0() { return cEyelossEyelossKeyword_37_0; }
+		public Keyword getEyelossEyelossKeyword_39_0() { return cEyelossEyelossKeyword_39_0; }
 
 		//horrormark?="#horrormark"
-		public Assignment getHorrormarkAssignment_38() { return cHorrormarkAssignment_38; }
+		public Assignment getHorrormarkAssignment_40() { return cHorrormarkAssignment_40; }
 
 		//"#horrormark"
-		public Keyword getHorrormarkHorrormarkKeyword_38_0() { return cHorrormarkHorrormarkKeyword_38_0; }
+		public Keyword getHorrormarkHorrormarkKeyword_40_0() { return cHorrormarkHorrormarkKeyword_40_0; }
 
 		//poisonarmor?="#poisonarmor"
-		public Assignment getPoisonarmorAssignment_39() { return cPoisonarmorAssignment_39; }
+		public Assignment getPoisonarmorAssignment_41() { return cPoisonarmorAssignment_41; }
 
 		//"#poisonarmor"
-		public Keyword getPoisonarmorPoisonarmorKeyword_39_0() { return cPoisonarmorPoisonarmorKeyword_39_0; }
+		public Keyword getPoisonarmorPoisonarmorKeyword_41_0() { return cPoisonarmorPoisonarmorKeyword_41_0; }
 
 		//inquisitor?="#inquisitor"
-		public Assignment getInquisitorAssignment_40() { return cInquisitorAssignment_40; }
+		public Assignment getInquisitorAssignment_42() { return cInquisitorAssignment_42; }
 
 		//"#inquisitor"
-		public Keyword getInquisitorInquisitorKeyword_40_0() { return cInquisitorInquisitorKeyword_40_0; }
+		public Keyword getInquisitorInquisitorKeyword_42_0() { return cInquisitorInquisitorKeyword_42_0; }
 
 		//noitem?="#noitem"
-		public Assignment getNoitemAssignment_41() { return cNoitemAssignment_41; }
+		public Assignment getNoitemAssignment_43() { return cNoitemAssignment_43; }
 
 		//"#noitem"
-		public Keyword getNoitemNoitemKeyword_41_0() { return cNoitemNoitemKeyword_41_0; }
+		public Keyword getNoitemNoitemKeyword_43_0() { return cNoitemNoitemKeyword_43_0; }
+
+		//drainimmune?="#drainimmune"
+		public Assignment getDrainimmuneAssignment_44() { return cDrainimmuneAssignment_44; }
+
+		//"#drainimmune"
+		public Keyword getDrainimmuneDrainimmuneKeyword_44_0() { return cDrainimmuneDrainimmuneKeyword_44_0; }
 
 		//noleader?="#noleader"
-		public Assignment getNoleaderAssignment_42() { return cNoleaderAssignment_42; }
+		public Assignment getNoleaderAssignment_45() { return cNoleaderAssignment_45; }
 
 		//"#noleader"
-		public Keyword getNoleaderNoleaderKeyword_42_0() { return cNoleaderNoleaderKeyword_42_0; }
+		public Keyword getNoleaderNoleaderKeyword_45_0() { return cNoleaderNoleaderKeyword_45_0; }
 
 		//poorleader?="#poorleader"
-		public Assignment getPoorleaderAssignment_43() { return cPoorleaderAssignment_43; }
+		public Assignment getPoorleaderAssignment_46() { return cPoorleaderAssignment_46; }
 
 		//"#poorleader"
-		public Keyword getPoorleaderPoorleaderKeyword_43_0() { return cPoorleaderPoorleaderKeyword_43_0; }
+		public Keyword getPoorleaderPoorleaderKeyword_46_0() { return cPoorleaderPoorleaderKeyword_46_0; }
 
 		//okleader?="#okleader"
-		public Assignment getOkleaderAssignment_44() { return cOkleaderAssignment_44; }
+		public Assignment getOkleaderAssignment_47() { return cOkleaderAssignment_47; }
 
 		//"#okleader"
-		public Keyword getOkleaderOkleaderKeyword_44_0() { return cOkleaderOkleaderKeyword_44_0; }
+		public Keyword getOkleaderOkleaderKeyword_47_0() { return cOkleaderOkleaderKeyword_47_0; }
 
 		//goodleader?="#goodleader"
-		public Assignment getGoodleaderAssignment_45() { return cGoodleaderAssignment_45; }
+		public Assignment getGoodleaderAssignment_48() { return cGoodleaderAssignment_48; }
 
 		//"#goodleader"
-		public Keyword getGoodleaderGoodleaderKeyword_45_0() { return cGoodleaderGoodleaderKeyword_45_0; }
+		public Keyword getGoodleaderGoodleaderKeyword_48_0() { return cGoodleaderGoodleaderKeyword_48_0; }
 
 		//expertleader?="#expertleader"
-		public Assignment getExpertleaderAssignment_46() { return cExpertleaderAssignment_46; }
+		public Assignment getExpertleaderAssignment_49() { return cExpertleaderAssignment_49; }
 
 		//"#expertleader"
-		public Keyword getExpertleaderExpertleaderKeyword_46_0() { return cExpertleaderExpertleaderKeyword_46_0; }
+		public Keyword getExpertleaderExpertleaderKeyword_49_0() { return cExpertleaderExpertleaderKeyword_49_0; }
 
 		//superiorleader?="#superiorleader"
-		public Assignment getSuperiorleaderAssignment_47() { return cSuperiorleaderAssignment_47; }
+		public Assignment getSuperiorleaderAssignment_50() { return cSuperiorleaderAssignment_50; }
 
 		//"#superiorleader"
-		public Keyword getSuperiorleaderSuperiorleaderKeyword_47_0() { return cSuperiorleaderSuperiorleaderKeyword_47_0; }
+		public Keyword getSuperiorleaderSuperiorleaderKeyword_50_0() { return cSuperiorleaderSuperiorleaderKeyword_50_0; }
 
 		//nomagicleader?="#nomagicleader"
-		public Assignment getNomagicleaderAssignment_48() { return cNomagicleaderAssignment_48; }
+		public Assignment getNomagicleaderAssignment_51() { return cNomagicleaderAssignment_51; }
 
 		//"#nomagicleader"
-		public Keyword getNomagicleaderNomagicleaderKeyword_48_0() { return cNomagicleaderNomagicleaderKeyword_48_0; }
+		public Keyword getNomagicleaderNomagicleaderKeyword_51_0() { return cNomagicleaderNomagicleaderKeyword_51_0; }
 
 		//poormagicleader?="#poormagicleader"
-		public Assignment getPoormagicleaderAssignment_49() { return cPoormagicleaderAssignment_49; }
+		public Assignment getPoormagicleaderAssignment_52() { return cPoormagicleaderAssignment_52; }
 
 		//"#poormagicleader"
-		public Keyword getPoormagicleaderPoormagicleaderKeyword_49_0() { return cPoormagicleaderPoormagicleaderKeyword_49_0; }
+		public Keyword getPoormagicleaderPoormagicleaderKeyword_52_0() { return cPoormagicleaderPoormagicleaderKeyword_52_0; }
 
 		//okmagicleader?="#okmagicleader"
-		public Assignment getOkmagicleaderAssignment_50() { return cOkmagicleaderAssignment_50; }
+		public Assignment getOkmagicleaderAssignment_53() { return cOkmagicleaderAssignment_53; }
 
 		//"#okmagicleader"
-		public Keyword getOkmagicleaderOkmagicleaderKeyword_50_0() { return cOkmagicleaderOkmagicleaderKeyword_50_0; }
+		public Keyword getOkmagicleaderOkmagicleaderKeyword_53_0() { return cOkmagicleaderOkmagicleaderKeyword_53_0; }
 
 		//goodmagicleader?="#goodmagicleader"
-		public Assignment getGoodmagicleaderAssignment_51() { return cGoodmagicleaderAssignment_51; }
+		public Assignment getGoodmagicleaderAssignment_54() { return cGoodmagicleaderAssignment_54; }
 
 		//"#goodmagicleader"
-		public Keyword getGoodmagicleaderGoodmagicleaderKeyword_51_0() { return cGoodmagicleaderGoodmagicleaderKeyword_51_0; }
+		public Keyword getGoodmagicleaderGoodmagicleaderKeyword_54_0() { return cGoodmagicleaderGoodmagicleaderKeyword_54_0; }
 
 		//expertmagicleader?="#expertmagicleader"
-		public Assignment getExpertmagicleaderAssignment_52() { return cExpertmagicleaderAssignment_52; }
+		public Assignment getExpertmagicleaderAssignment_55() { return cExpertmagicleaderAssignment_55; }
 
 		//"#expertmagicleader"
-		public Keyword getExpertmagicleaderExpertmagicleaderKeyword_52_0() { return cExpertmagicleaderExpertmagicleaderKeyword_52_0; }
+		public Keyword getExpertmagicleaderExpertmagicleaderKeyword_55_0() { return cExpertmagicleaderExpertmagicleaderKeyword_55_0; }
 
 		//superiormagicleader?="#superiormagicleader"
-		public Assignment getSuperiormagicleaderAssignment_53() { return cSuperiormagicleaderAssignment_53; }
+		public Assignment getSuperiormagicleaderAssignment_56() { return cSuperiormagicleaderAssignment_56; }
 
 		//"#superiormagicleader"
-		public Keyword getSuperiormagicleaderSuperiormagicleaderKeyword_53_0() { return cSuperiormagicleaderSuperiormagicleaderKeyword_53_0; }
+		public Keyword getSuperiormagicleaderSuperiormagicleaderKeyword_56_0() { return cSuperiormagicleaderSuperiormagicleaderKeyword_56_0; }
 
 		//noundeadleader?="#noundeadleader"
-		public Assignment getNoundeadleaderAssignment_54() { return cNoundeadleaderAssignment_54; }
+		public Assignment getNoundeadleaderAssignment_57() { return cNoundeadleaderAssignment_57; }
 
 		//"#noundeadleader"
-		public Keyword getNoundeadleaderNoundeadleaderKeyword_54_0() { return cNoundeadleaderNoundeadleaderKeyword_54_0; }
+		public Keyword getNoundeadleaderNoundeadleaderKeyword_57_0() { return cNoundeadleaderNoundeadleaderKeyword_57_0; }
 
 		//poorundeadleader?="#poorundeadleader"
-		public Assignment getPoorundeadleaderAssignment_55() { return cPoorundeadleaderAssignment_55; }
+		public Assignment getPoorundeadleaderAssignment_58() { return cPoorundeadleaderAssignment_58; }
 
 		//"#poorundeadleader"
-		public Keyword getPoorundeadleaderPoorundeadleaderKeyword_55_0() { return cPoorundeadleaderPoorundeadleaderKeyword_55_0; }
+		public Keyword getPoorundeadleaderPoorundeadleaderKeyword_58_0() { return cPoorundeadleaderPoorundeadleaderKeyword_58_0; }
 
 		//okundeadleader?="#okundeadleader"
-		public Assignment getOkundeadleaderAssignment_56() { return cOkundeadleaderAssignment_56; }
+		public Assignment getOkundeadleaderAssignment_59() { return cOkundeadleaderAssignment_59; }
 
 		//"#okundeadleader"
-		public Keyword getOkundeadleaderOkundeadleaderKeyword_56_0() { return cOkundeadleaderOkundeadleaderKeyword_56_0; }
+		public Keyword getOkundeadleaderOkundeadleaderKeyword_59_0() { return cOkundeadleaderOkundeadleaderKeyword_59_0; }
 
 		//goodundeadleader?="#goodundeadleader"
-		public Assignment getGoodundeadleaderAssignment_57() { return cGoodundeadleaderAssignment_57; }
+		public Assignment getGoodundeadleaderAssignment_60() { return cGoodundeadleaderAssignment_60; }
 
 		//"#goodundeadleader"
-		public Keyword getGoodundeadleaderGoodundeadleaderKeyword_57_0() { return cGoodundeadleaderGoodundeadleaderKeyword_57_0; }
+		public Keyword getGoodundeadleaderGoodundeadleaderKeyword_60_0() { return cGoodundeadleaderGoodundeadleaderKeyword_60_0; }
 
 		//expertundeadleader?="#expertundeadleader"
-		public Assignment getExpertundeadleaderAssignment_58() { return cExpertundeadleaderAssignment_58; }
+		public Assignment getExpertundeadleaderAssignment_61() { return cExpertundeadleaderAssignment_61; }
 
 		//"#expertundeadleader"
-		public Keyword getExpertundeadleaderExpertundeadleaderKeyword_58_0() { return cExpertundeadleaderExpertundeadleaderKeyword_58_0; }
+		public Keyword getExpertundeadleaderExpertundeadleaderKeyword_61_0() { return cExpertundeadleaderExpertundeadleaderKeyword_61_0; }
 
 		//superiorundeadleader?="#superiorundeadleader"
-		public Assignment getSuperiorundeadleaderAssignment_59() { return cSuperiorundeadleaderAssignment_59; }
+		public Assignment getSuperiorundeadleaderAssignment_62() { return cSuperiorundeadleaderAssignment_62; }
 
 		//"#superiorundeadleader"
-		public Keyword getSuperiorundeadleaderSuperiorundeadleaderKeyword_59_0() { return cSuperiorundeadleaderSuperiorundeadleaderKeyword_59_0; }
+		public Keyword getSuperiorundeadleaderSuperiorundeadleaderKeyword_62_0() { return cSuperiorundeadleaderSuperiorundeadleaderKeyword_62_0; }
 	}
 
 	public class MonsterInst5Elements extends AbstractParserRuleElementFinder {
@@ -3100,59 +3126,61 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cWeaponAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final Keyword cWeaponWeaponKeyword_0_0 = (Keyword)cWeaponAssignment_0.eContents().get(0);
-		private final Assignment cOnebattlespellAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final Keyword cOnebattlespellOnebattlespellKeyword_1_0 = (Keyword)cOnebattlespellAssignment_1.eContents().get(0);
-		private final Assignment cFirstshapeAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final Keyword cFirstshapeFirstshapeKeyword_2_0 = (Keyword)cFirstshapeAssignment_2.eContents().get(0);
-		private final Assignment cSecondshapeAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final Keyword cSecondshapeSecondshapeKeyword_3_0 = (Keyword)cSecondshapeAssignment_3.eContents().get(0);
-		private final Assignment cSecondtmpshapeAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final Keyword cSecondtmpshapeSecondtmpshapeKeyword_4_0 = (Keyword)cSecondtmpshapeAssignment_4.eContents().get(0);
-		private final Assignment cShapechangeAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final Keyword cShapechangeShapechangeKeyword_5_0 = (Keyword)cShapechangeAssignment_5.eContents().get(0);
-		private final Assignment cLandshapeAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final Keyword cLandshapeLandshapeKeyword_6_0 = (Keyword)cLandshapeAssignment_6.eContents().get(0);
-		private final Assignment cWatershapeAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
-		private final Keyword cWatershapeWatershapeKeyword_7_0 = (Keyword)cWatershapeAssignment_7.eContents().get(0);
-		private final Assignment cForestshapeAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
-		private final Keyword cForestshapeForestshapeKeyword_8_0 = (Keyword)cForestshapeAssignment_8.eContents().get(0);
-		private final Assignment cPlainshapeAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
-		private final Keyword cPlainshapePlainshapeKeyword_9_0 = (Keyword)cPlainshapeAssignment_9.eContents().get(0);
-		private final Assignment cDomsummonAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
-		private final Keyword cDomsummonDomsummonKeyword_10_0 = (Keyword)cDomsummonAssignment_10.eContents().get(0);
-		private final Assignment cDomsummon2Assignment_11 = (Assignment)cAlternatives.eContents().get(11);
-		private final Keyword cDomsummon2Domsummon2Keyword_11_0 = (Keyword)cDomsummon2Assignment_11.eContents().get(0);
-		private final Assignment cDomsummon20Assignment_12 = (Assignment)cAlternatives.eContents().get(12);
-		private final Keyword cDomsummon20Domsummon20Keyword_12_0 = (Keyword)cDomsummon20Assignment_12.eContents().get(0);
-		private final Assignment cMakemonster1Assignment_13 = (Assignment)cAlternatives.eContents().get(13);
-		private final Keyword cMakemonster1Makemonster1Keyword_13_0 = (Keyword)cMakemonster1Assignment_13.eContents().get(0);
-		private final Assignment cMakemonster2Assignment_14 = (Assignment)cAlternatives.eContents().get(14);
-		private final Keyword cMakemonster2Makemonster2Keyword_14_0 = (Keyword)cMakemonster2Assignment_14.eContents().get(0);
-		private final Assignment cMakemonster3Assignment_15 = (Assignment)cAlternatives.eContents().get(15);
-		private final Keyword cMakemonster3Makemonster3Keyword_15_0 = (Keyword)cMakemonster3Assignment_15.eContents().get(0);
-		private final Assignment cMakemonster4Assignment_16 = (Assignment)cAlternatives.eContents().get(16);
-		private final Keyword cMakemonster4Makemonster4Keyword_16_0 = (Keyword)cMakemonster4Assignment_16.eContents().get(0);
-		private final Assignment cMakemonster5Assignment_17 = (Assignment)cAlternatives.eContents().get(17);
-		private final Keyword cMakemonster5Makemonster5Keyword_17_0 = (Keyword)cMakemonster5Assignment_17.eContents().get(0);
-		private final Assignment cSummon1Assignment_18 = (Assignment)cAlternatives.eContents().get(18);
-		private final Keyword cSummon1Summon1Keyword_18_0 = (Keyword)cSummon1Assignment_18.eContents().get(0);
-		private final Assignment cSummon5Assignment_19 = (Assignment)cAlternatives.eContents().get(19);
-		private final Keyword cSummon5Summon5Keyword_19_0 = (Keyword)cSummon5Assignment_19.eContents().get(0);
+		private final Assignment cArmorAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cArmorArmorKeyword_1_0 = (Keyword)cArmorAssignment_1.eContents().get(0);
+		private final Assignment cOnebattlespellAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final Keyword cOnebattlespellOnebattlespellKeyword_2_0 = (Keyword)cOnebattlespellAssignment_2.eContents().get(0);
+		private final Assignment cFirstshapeAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final Keyword cFirstshapeFirstshapeKeyword_3_0 = (Keyword)cFirstshapeAssignment_3.eContents().get(0);
+		private final Assignment cSecondshapeAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final Keyword cSecondshapeSecondshapeKeyword_4_0 = (Keyword)cSecondshapeAssignment_4.eContents().get(0);
+		private final Assignment cSecondtmpshapeAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final Keyword cSecondtmpshapeSecondtmpshapeKeyword_5_0 = (Keyword)cSecondtmpshapeAssignment_5.eContents().get(0);
+		private final Assignment cShapechangeAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final Keyword cShapechangeShapechangeKeyword_6_0 = (Keyword)cShapechangeAssignment_6.eContents().get(0);
+		private final Assignment cLandshapeAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final Keyword cLandshapeLandshapeKeyword_7_0 = (Keyword)cLandshapeAssignment_7.eContents().get(0);
+		private final Assignment cWatershapeAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
+		private final Keyword cWatershapeWatershapeKeyword_8_0 = (Keyword)cWatershapeAssignment_8.eContents().get(0);
+		private final Assignment cForestshapeAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
+		private final Keyword cForestshapeForestshapeKeyword_9_0 = (Keyword)cForestshapeAssignment_9.eContents().get(0);
+		private final Assignment cPlainshapeAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
+		private final Keyword cPlainshapePlainshapeKeyword_10_0 = (Keyword)cPlainshapeAssignment_10.eContents().get(0);
+		private final Assignment cDomsummonAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
+		private final Keyword cDomsummonDomsummonKeyword_11_0 = (Keyword)cDomsummonAssignment_11.eContents().get(0);
+		private final Assignment cDomsummon2Assignment_12 = (Assignment)cAlternatives.eContents().get(12);
+		private final Keyword cDomsummon2Domsummon2Keyword_12_0 = (Keyword)cDomsummon2Assignment_12.eContents().get(0);
+		private final Assignment cDomsummon20Assignment_13 = (Assignment)cAlternatives.eContents().get(13);
+		private final Keyword cDomsummon20Domsummon20Keyword_13_0 = (Keyword)cDomsummon20Assignment_13.eContents().get(0);
+		private final Assignment cMakemonster1Assignment_14 = (Assignment)cAlternatives.eContents().get(14);
+		private final Keyword cMakemonster1Makemonster1Keyword_14_0 = (Keyword)cMakemonster1Assignment_14.eContents().get(0);
+		private final Assignment cMakemonster2Assignment_15 = (Assignment)cAlternatives.eContents().get(15);
+		private final Keyword cMakemonster2Makemonster2Keyword_15_0 = (Keyword)cMakemonster2Assignment_15.eContents().get(0);
+		private final Assignment cMakemonster3Assignment_16 = (Assignment)cAlternatives.eContents().get(16);
+		private final Keyword cMakemonster3Makemonster3Keyword_16_0 = (Keyword)cMakemonster3Assignment_16.eContents().get(0);
+		private final Assignment cMakemonster4Assignment_17 = (Assignment)cAlternatives.eContents().get(17);
+		private final Keyword cMakemonster4Makemonster4Keyword_17_0 = (Keyword)cMakemonster4Assignment_17.eContents().get(0);
+		private final Assignment cMakemonster5Assignment_18 = (Assignment)cAlternatives.eContents().get(18);
+		private final Keyword cMakemonster5Makemonster5Keyword_18_0 = (Keyword)cMakemonster5Assignment_18.eContents().get(0);
+		private final Assignment cSummon1Assignment_19 = (Assignment)cAlternatives.eContents().get(19);
+		private final Keyword cSummon1Summon1Keyword_19_0 = (Keyword)cSummon1Assignment_19.eContents().get(0);
+		private final Assignment cSummon5Assignment_20 = (Assignment)cAlternatives.eContents().get(20);
+		private final Keyword cSummon5Summon5Keyword_20_0 = (Keyword)cSummon5Assignment_20.eContents().get(0);
 		
 		//MonsterInst5:
-		//	weapon?="#weapon" | onebattlespell?="#onebattlespell" | firstshape?="#firstshape" | secondshape?="#secondshape" |
-		//	secondtmpshape?="#secondtmpshape" | shapechange?="#shapechange" | landshape?="#landshape" | watershape?="#watershape"
-		//	| forestshape?="#forestshape" | plainshape?="#plainshape" | domsummon?="#domsummon" | domsummon2?="#domsummon2" |
-		//	domsummon20?="#domsummon20" | makemonster1?="#makemonster1" | makemonster2?="#makemonster2" |
-		//	makemonster3?="#makemonster3" | makemonster4?="#makemonster4" | makemonster5?="#makemonster5" | summon1?="#summon1" |
-		//	summon5?="#summon5";
+		//	weapon?="#weapon" | armor?="#armor" | onebattlespell?="#onebattlespell" | firstshape?="#firstshape" |
+		//	secondshape?="#secondshape" | secondtmpshape?="#secondtmpshape" | shapechange?="#shapechange" |
+		//	landshape?="#landshape" | watershape?="#watershape" | forestshape?="#forestshape" | plainshape?="#plainshape" |
+		//	domsummon?="#domsummon" | domsummon2?="#domsummon2" | domsummon20?="#domsummon20" | makemonster1?="#makemonster1" |
+		//	makemonster2?="#makemonster2" | makemonster3?="#makemonster3" | makemonster4?="#makemonster4" |
+		//	makemonster5?="#makemonster5" | summon1?="#summon1" | summon5?="#summon5";
 		public ParserRule getRule() { return rule; }
 
-		//weapon?="#weapon" | onebattlespell?="#onebattlespell" | firstshape?="#firstshape" | secondshape?="#secondshape" |
-		//secondtmpshape?="#secondtmpshape" | shapechange?="#shapechange" | landshape?="#landshape" | watershape?="#watershape" |
-		//forestshape?="#forestshape" | plainshape?="#plainshape" | domsummon?="#domsummon" | domsummon2?="#domsummon2" |
-		//domsummon20?="#domsummon20" | makemonster1?="#makemonster1" | makemonster2?="#makemonster2" |
-		//makemonster3?="#makemonster3" | makemonster4?="#makemonster4" | makemonster5?="#makemonster5" | summon1?="#summon1" |
+		//weapon?="#weapon" | armor?="#armor" | onebattlespell?="#onebattlespell" | firstshape?="#firstshape" |
+		//secondshape?="#secondshape" | secondtmpshape?="#secondtmpshape" | shapechange?="#shapechange" | landshape?="#landshape"
+		//| watershape?="#watershape" | forestshape?="#forestshape" | plainshape?="#plainshape" | domsummon?="#domsummon" |
+		//domsummon2?="#domsummon2" | domsummon20?="#domsummon20" | makemonster1?="#makemonster1" | makemonster2?="#makemonster2"
+		//| makemonster3?="#makemonster3" | makemonster4?="#makemonster4" | makemonster5?="#makemonster5" | summon1?="#summon1" |
 		//summon5?="#summon5"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -3162,119 +3190,125 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//"#weapon"
 		public Keyword getWeaponWeaponKeyword_0_0() { return cWeaponWeaponKeyword_0_0; }
 
+		//armor?="#armor"
+		public Assignment getArmorAssignment_1() { return cArmorAssignment_1; }
+
+		//"#armor"
+		public Keyword getArmorArmorKeyword_1_0() { return cArmorArmorKeyword_1_0; }
+
 		//onebattlespell?="#onebattlespell"
-		public Assignment getOnebattlespellAssignment_1() { return cOnebattlespellAssignment_1; }
+		public Assignment getOnebattlespellAssignment_2() { return cOnebattlespellAssignment_2; }
 
 		//"#onebattlespell"
-		public Keyword getOnebattlespellOnebattlespellKeyword_1_0() { return cOnebattlespellOnebattlespellKeyword_1_0; }
+		public Keyword getOnebattlespellOnebattlespellKeyword_2_0() { return cOnebattlespellOnebattlespellKeyword_2_0; }
 
 		//firstshape?="#firstshape"
-		public Assignment getFirstshapeAssignment_2() { return cFirstshapeAssignment_2; }
+		public Assignment getFirstshapeAssignment_3() { return cFirstshapeAssignment_3; }
 
 		//"#firstshape"
-		public Keyword getFirstshapeFirstshapeKeyword_2_0() { return cFirstshapeFirstshapeKeyword_2_0; }
+		public Keyword getFirstshapeFirstshapeKeyword_3_0() { return cFirstshapeFirstshapeKeyword_3_0; }
 
 		//secondshape?="#secondshape"
-		public Assignment getSecondshapeAssignment_3() { return cSecondshapeAssignment_3; }
+		public Assignment getSecondshapeAssignment_4() { return cSecondshapeAssignment_4; }
 
 		//"#secondshape"
-		public Keyword getSecondshapeSecondshapeKeyword_3_0() { return cSecondshapeSecondshapeKeyword_3_0; }
+		public Keyword getSecondshapeSecondshapeKeyword_4_0() { return cSecondshapeSecondshapeKeyword_4_0; }
 
 		//secondtmpshape?="#secondtmpshape"
-		public Assignment getSecondtmpshapeAssignment_4() { return cSecondtmpshapeAssignment_4; }
+		public Assignment getSecondtmpshapeAssignment_5() { return cSecondtmpshapeAssignment_5; }
 
 		//"#secondtmpshape"
-		public Keyword getSecondtmpshapeSecondtmpshapeKeyword_4_0() { return cSecondtmpshapeSecondtmpshapeKeyword_4_0; }
+		public Keyword getSecondtmpshapeSecondtmpshapeKeyword_5_0() { return cSecondtmpshapeSecondtmpshapeKeyword_5_0; }
 
 		//shapechange?="#shapechange"
-		public Assignment getShapechangeAssignment_5() { return cShapechangeAssignment_5; }
+		public Assignment getShapechangeAssignment_6() { return cShapechangeAssignment_6; }
 
 		//"#shapechange"
-		public Keyword getShapechangeShapechangeKeyword_5_0() { return cShapechangeShapechangeKeyword_5_0; }
+		public Keyword getShapechangeShapechangeKeyword_6_0() { return cShapechangeShapechangeKeyword_6_0; }
 
 		//landshape?="#landshape"
-		public Assignment getLandshapeAssignment_6() { return cLandshapeAssignment_6; }
+		public Assignment getLandshapeAssignment_7() { return cLandshapeAssignment_7; }
 
 		//"#landshape"
-		public Keyword getLandshapeLandshapeKeyword_6_0() { return cLandshapeLandshapeKeyword_6_0; }
+		public Keyword getLandshapeLandshapeKeyword_7_0() { return cLandshapeLandshapeKeyword_7_0; }
 
 		//watershape?="#watershape"
-		public Assignment getWatershapeAssignment_7() { return cWatershapeAssignment_7; }
+		public Assignment getWatershapeAssignment_8() { return cWatershapeAssignment_8; }
 
 		//"#watershape"
-		public Keyword getWatershapeWatershapeKeyword_7_0() { return cWatershapeWatershapeKeyword_7_0; }
+		public Keyword getWatershapeWatershapeKeyword_8_0() { return cWatershapeWatershapeKeyword_8_0; }
 
 		//forestshape?="#forestshape"
-		public Assignment getForestshapeAssignment_8() { return cForestshapeAssignment_8; }
+		public Assignment getForestshapeAssignment_9() { return cForestshapeAssignment_9; }
 
 		//"#forestshape"
-		public Keyword getForestshapeForestshapeKeyword_8_0() { return cForestshapeForestshapeKeyword_8_0; }
+		public Keyword getForestshapeForestshapeKeyword_9_0() { return cForestshapeForestshapeKeyword_9_0; }
 
 		//plainshape?="#plainshape"
-		public Assignment getPlainshapeAssignment_9() { return cPlainshapeAssignment_9; }
+		public Assignment getPlainshapeAssignment_10() { return cPlainshapeAssignment_10; }
 
 		//"#plainshape"
-		public Keyword getPlainshapePlainshapeKeyword_9_0() { return cPlainshapePlainshapeKeyword_9_0; }
+		public Keyword getPlainshapePlainshapeKeyword_10_0() { return cPlainshapePlainshapeKeyword_10_0; }
 
 		//domsummon?="#domsummon"
-		public Assignment getDomsummonAssignment_10() { return cDomsummonAssignment_10; }
+		public Assignment getDomsummonAssignment_11() { return cDomsummonAssignment_11; }
 
 		//"#domsummon"
-		public Keyword getDomsummonDomsummonKeyword_10_0() { return cDomsummonDomsummonKeyword_10_0; }
+		public Keyword getDomsummonDomsummonKeyword_11_0() { return cDomsummonDomsummonKeyword_11_0; }
 
 		//domsummon2?="#domsummon2"
-		public Assignment getDomsummon2Assignment_11() { return cDomsummon2Assignment_11; }
+		public Assignment getDomsummon2Assignment_12() { return cDomsummon2Assignment_12; }
 
 		//"#domsummon2"
-		public Keyword getDomsummon2Domsummon2Keyword_11_0() { return cDomsummon2Domsummon2Keyword_11_0; }
+		public Keyword getDomsummon2Domsummon2Keyword_12_0() { return cDomsummon2Domsummon2Keyword_12_0; }
 
 		//domsummon20?="#domsummon20"
-		public Assignment getDomsummon20Assignment_12() { return cDomsummon20Assignment_12; }
+		public Assignment getDomsummon20Assignment_13() { return cDomsummon20Assignment_13; }
 
 		//"#domsummon20"
-		public Keyword getDomsummon20Domsummon20Keyword_12_0() { return cDomsummon20Domsummon20Keyword_12_0; }
+		public Keyword getDomsummon20Domsummon20Keyword_13_0() { return cDomsummon20Domsummon20Keyword_13_0; }
 
 		//makemonster1?="#makemonster1"
-		public Assignment getMakemonster1Assignment_13() { return cMakemonster1Assignment_13; }
+		public Assignment getMakemonster1Assignment_14() { return cMakemonster1Assignment_14; }
 
 		//"#makemonster1"
-		public Keyword getMakemonster1Makemonster1Keyword_13_0() { return cMakemonster1Makemonster1Keyword_13_0; }
+		public Keyword getMakemonster1Makemonster1Keyword_14_0() { return cMakemonster1Makemonster1Keyword_14_0; }
 
 		//makemonster2?="#makemonster2"
-		public Assignment getMakemonster2Assignment_14() { return cMakemonster2Assignment_14; }
+		public Assignment getMakemonster2Assignment_15() { return cMakemonster2Assignment_15; }
 
 		//"#makemonster2"
-		public Keyword getMakemonster2Makemonster2Keyword_14_0() { return cMakemonster2Makemonster2Keyword_14_0; }
+		public Keyword getMakemonster2Makemonster2Keyword_15_0() { return cMakemonster2Makemonster2Keyword_15_0; }
 
 		//makemonster3?="#makemonster3"
-		public Assignment getMakemonster3Assignment_15() { return cMakemonster3Assignment_15; }
+		public Assignment getMakemonster3Assignment_16() { return cMakemonster3Assignment_16; }
 
 		//"#makemonster3"
-		public Keyword getMakemonster3Makemonster3Keyword_15_0() { return cMakemonster3Makemonster3Keyword_15_0; }
+		public Keyword getMakemonster3Makemonster3Keyword_16_0() { return cMakemonster3Makemonster3Keyword_16_0; }
 
 		//makemonster4?="#makemonster4"
-		public Assignment getMakemonster4Assignment_16() { return cMakemonster4Assignment_16; }
+		public Assignment getMakemonster4Assignment_17() { return cMakemonster4Assignment_17; }
 
 		//"#makemonster4"
-		public Keyword getMakemonster4Makemonster4Keyword_16_0() { return cMakemonster4Makemonster4Keyword_16_0; }
+		public Keyword getMakemonster4Makemonster4Keyword_17_0() { return cMakemonster4Makemonster4Keyword_17_0; }
 
 		//makemonster5?="#makemonster5"
-		public Assignment getMakemonster5Assignment_17() { return cMakemonster5Assignment_17; }
+		public Assignment getMakemonster5Assignment_18() { return cMakemonster5Assignment_18; }
 
 		//"#makemonster5"
-		public Keyword getMakemonster5Makemonster5Keyword_17_0() { return cMakemonster5Makemonster5Keyword_17_0; }
+		public Keyword getMakemonster5Makemonster5Keyword_18_0() { return cMakemonster5Makemonster5Keyword_18_0; }
 
 		//summon1?="#summon1"
-		public Assignment getSummon1Assignment_18() { return cSummon1Assignment_18; }
+		public Assignment getSummon1Assignment_19() { return cSummon1Assignment_19; }
 
 		//"#summon1"
-		public Keyword getSummon1Summon1Keyword_18_0() { return cSummon1Summon1Keyword_18_0; }
+		public Keyword getSummon1Summon1Keyword_19_0() { return cSummon1Summon1Keyword_19_0; }
 
 		//summon5?="#summon5"
-		public Assignment getSummon5Assignment_19() { return cSummon5Assignment_19; }
+		public Assignment getSummon5Assignment_20() { return cSummon5Assignment_20; }
 
 		//"#summon5"
-		public Keyword getSummon5Summon5Keyword_19_0() { return cSummon5Summon5Keyword_19_0; }
+		public Keyword getSummon5Summon5Keyword_20_0() { return cSummon5Summon5Keyword_20_0; }
 	}
 
 	public class MonsterInst6Elements extends AbstractParserRuleElementFinder {
@@ -4718,14 +4752,46 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cIncscaleIncscaleKeyword_10_0 = (Keyword)cIncscaleAssignment_10.eContents().get(0);
 		private final Assignment cDecscaleAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
 		private final Keyword cDecscaleDecscaleKeyword_11_0 = (Keyword)cDecscaleAssignment_11.eContents().get(0);
+		private final Assignment cHealAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
+		private final Keyword cHealHealKeyword_12_0 = (Keyword)cHealAssignment_12.eContents().get(0);
+		private final Assignment cCurseAssignment_13 = (Assignment)cAlternatives.eContents().get(13);
+		private final Keyword cCurseCurseKeyword_13_0 = (Keyword)cCurseAssignment_13.eContents().get(0);
+		private final Assignment cDiseaseAssignment_14 = (Assignment)cAlternatives.eContents().get(14);
+		private final Keyword cDiseaseDiseaseKeyword_14_0 = (Keyword)cDiseaseAssignment_14.eContents().get(0);
+		private final Assignment cHorrormarkAssignment_15 = (Assignment)cAlternatives.eContents().get(15);
+		private final Keyword cHorrormarkHorrormarkKeyword_15_0 = (Keyword)cHorrormarkAssignment_15.eContents().get(0);
+		private final Assignment cHolyfireAssignment_16 = (Assignment)cAlternatives.eContents().get(16);
+		private final Keyword cHolyfireHolyfireKeyword_16_0 = (Keyword)cHolyfireAssignment_16.eContents().get(0);
+		private final Assignment cHolypowerAssignment_17 = (Assignment)cAlternatives.eContents().get(17);
+		private final Keyword cHolypowerHolypowerKeyword_17_0 = (Keyword)cHolypowerAssignment_17.eContents().get(0);
+		private final Assignment cConjcostAssignment_18 = (Assignment)cAlternatives.eContents().get(18);
+		private final Keyword cConjcostConjcostKeyword_18_0 = (Keyword)cConjcostAssignment_18.eContents().get(0);
+		private final Assignment cAltcostAssignment_19 = (Assignment)cAlternatives.eContents().get(19);
+		private final Keyword cAltcostAltcostKeyword_19_0 = (Keyword)cAltcostAssignment_19.eContents().get(0);
+		private final Assignment cEvocostAssignment_20 = (Assignment)cAlternatives.eContents().get(20);
+		private final Keyword cEvocostEvocostKeyword_20_0 = (Keyword)cEvocostAssignment_20.eContents().get(0);
+		private final Assignment cConstcostAssignment_21 = (Assignment)cAlternatives.eContents().get(21);
+		private final Keyword cConstcostConstcostKeyword_21_0 = (Keyword)cConstcostAssignment_21.eContents().get(0);
+		private final Assignment cEnchcostAssignment_22 = (Assignment)cAlternatives.eContents().get(22);
+		private final Keyword cEnchcostEnchcostKeyword_22_0 = (Keyword)cEnchcostAssignment_22.eContents().get(0);
+		private final Assignment cThaucostAssignment_23 = (Assignment)cAlternatives.eContents().get(23);
+		private final Keyword cThaucostThaucostKeyword_23_0 = (Keyword)cThaucostAssignment_23.eContents().get(0);
+		private final Assignment cBloodcostAssignment_24 = (Assignment)cAlternatives.eContents().get(24);
+		private final Keyword cBloodcostBloodcostKeyword_24_0 = (Keyword)cBloodcostAssignment_24.eContents().get(0);
 		
 		//SiteInst2:
 		//	path?="#path" | level?="#level" | rarity?="#rarity" | loc?="#loc" | homemon?="#homemon" | homecom?="#homecom" |
-		//	mon?="#mon" | com?="#com" | gold?="#gold" | res?="#res" | incscale?="#incscale" | decscale?="#decscale";
+		//	mon?="#mon" | com?="#com" | gold?="#gold" | res?="#res" | incscale?="#incscale" | decscale?="#decscale" |
+		//	heal?="#heal" | curse?="#curse" | disease?="#disease" | horrormark?="#horrormark" | holyfire?="#holyfire" |
+		//	holypower?="#holypower" | conjcost?="#conjcost" | altcost?="#altcost" | evocost?="#evocost" | constcost?="#constcost"
+		//	| enchcost?="#enchcost" | thaucost?="#thaucost" | bloodcost?="#bloodcost";
 		public ParserRule getRule() { return rule; }
 
 		//path?="#path" | level?="#level" | rarity?="#rarity" | loc?="#loc" | homemon?="#homemon" | homecom?="#homecom" |
-		//mon?="#mon" | com?="#com" | gold?="#gold" | res?="#res" | incscale?="#incscale" | decscale?="#decscale"
+		//mon?="#mon" | com?="#com" | gold?="#gold" | res?="#res" | incscale?="#incscale" | decscale?="#decscale" | heal?="#heal"
+		//| curse?="#curse" | disease?="#disease" | horrormark?="#horrormark" | holyfire?="#holyfire" | holypower?="#holypower" |
+		//conjcost?="#conjcost" | altcost?="#altcost" | evocost?="#evocost" | constcost?="#constcost" | enchcost?="#enchcost" |
+		//thaucost?="#thaucost" | bloodcost?="#bloodcost"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//path?="#path"
@@ -4799,6 +4865,84 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"#decscale"
 		public Keyword getDecscaleDecscaleKeyword_11_0() { return cDecscaleDecscaleKeyword_11_0; }
+
+		//heal?="#heal"
+		public Assignment getHealAssignment_12() { return cHealAssignment_12; }
+
+		//"#heal"
+		public Keyword getHealHealKeyword_12_0() { return cHealHealKeyword_12_0; }
+
+		//curse?="#curse"
+		public Assignment getCurseAssignment_13() { return cCurseAssignment_13; }
+
+		//"#curse"
+		public Keyword getCurseCurseKeyword_13_0() { return cCurseCurseKeyword_13_0; }
+
+		//disease?="#disease"
+		public Assignment getDiseaseAssignment_14() { return cDiseaseAssignment_14; }
+
+		//"#disease"
+		public Keyword getDiseaseDiseaseKeyword_14_0() { return cDiseaseDiseaseKeyword_14_0; }
+
+		//horrormark?="#horrormark"
+		public Assignment getHorrormarkAssignment_15() { return cHorrormarkAssignment_15; }
+
+		//"#horrormark"
+		public Keyword getHorrormarkHorrormarkKeyword_15_0() { return cHorrormarkHorrormarkKeyword_15_0; }
+
+		//holyfire?="#holyfire"
+		public Assignment getHolyfireAssignment_16() { return cHolyfireAssignment_16; }
+
+		//"#holyfire"
+		public Keyword getHolyfireHolyfireKeyword_16_0() { return cHolyfireHolyfireKeyword_16_0; }
+
+		//holypower?="#holypower"
+		public Assignment getHolypowerAssignment_17() { return cHolypowerAssignment_17; }
+
+		//"#holypower"
+		public Keyword getHolypowerHolypowerKeyword_17_0() { return cHolypowerHolypowerKeyword_17_0; }
+
+		//conjcost?="#conjcost"
+		public Assignment getConjcostAssignment_18() { return cConjcostAssignment_18; }
+
+		//"#conjcost"
+		public Keyword getConjcostConjcostKeyword_18_0() { return cConjcostConjcostKeyword_18_0; }
+
+		//altcost?="#altcost"
+		public Assignment getAltcostAssignment_19() { return cAltcostAssignment_19; }
+
+		//"#altcost"
+		public Keyword getAltcostAltcostKeyword_19_0() { return cAltcostAltcostKeyword_19_0; }
+
+		//evocost?="#evocost"
+		public Assignment getEvocostAssignment_20() { return cEvocostAssignment_20; }
+
+		//"#evocost"
+		public Keyword getEvocostEvocostKeyword_20_0() { return cEvocostEvocostKeyword_20_0; }
+
+		//constcost?="#constcost"
+		public Assignment getConstcostAssignment_21() { return cConstcostAssignment_21; }
+
+		//"#constcost"
+		public Keyword getConstcostConstcostKeyword_21_0() { return cConstcostConstcostKeyword_21_0; }
+
+		//enchcost?="#enchcost"
+		public Assignment getEnchcostAssignment_22() { return cEnchcostAssignment_22; }
+
+		//"#enchcost"
+		public Keyword getEnchcostEnchcostKeyword_22_0() { return cEnchcostEnchcostKeyword_22_0; }
+
+		//thaucost?="#thaucost"
+		public Assignment getThaucostAssignment_23() { return cThaucostAssignment_23; }
+
+		//"#thaucost"
+		public Keyword getThaucostThaucostKeyword_23_0() { return cThaucostThaucostKeyword_23_0; }
+
+		//bloodcost?="#bloodcost"
+		public Assignment getBloodcostAssignment_24() { return cBloodcostAssignment_24; }
+
+		//"#bloodcost"
+		public Keyword getBloodcostBloodcostKeyword_24_0() { return cBloodcostBloodcostKeyword_24_0; }
 	}
 
 	public class SiteInst3Elements extends AbstractParserRuleElementFinder {
@@ -4819,18 +4963,30 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class SiteInst4Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SiteInst4");
-		private final Assignment cClearAssignment = (Assignment)rule.eContents().get(1);
-		private final Keyword cClearClearKeyword_0 = (Keyword)cClearAssignment.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cClearAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cClearClearKeyword_0_0 = (Keyword)cClearAssignment_0.eContents().get(0);
+		private final Assignment cLabAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cLabLabKeyword_1_0 = (Keyword)cLabAssignment_1.eContents().get(0);
 		
 		//SiteInst4:
-		//	clear?="#clear";
+		//	clear?="#clear" | lab?="#lab";
 		public ParserRule getRule() { return rule; }
 
+		//clear?="#clear" | lab?="#lab"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//clear?="#clear"
-		public Assignment getClearAssignment() { return cClearAssignment; }
+		public Assignment getClearAssignment_0() { return cClearAssignment_0; }
 
 		//"#clear"
-		public Keyword getClearClearKeyword_0() { return cClearClearKeyword_0; }
+		public Keyword getClearClearKeyword_0_0() { return cClearClearKeyword_0_0; }
+
+		//lab?="#lab"
+		public Assignment getLabAssignment_1() { return cLabAssignment_1; }
+
+		//"#lab"
+		public Keyword getLabLabKeyword_1_0() { return cLabLabKeyword_1_0; }
 	}
 
 	public class NationElements extends AbstractParserRuleElementFinder {
@@ -6327,7 +6483,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MonsterInst1:
-	//	name?="#name" | spr1?="#spr1" | spr2?="#spr2" | descr?="#descr" | armor?="#armor";
+	//	name?="#name" | spr1?="#spr1" | spr2?="#spr2" | descr?="#descr";
 	public MonsterInst1Elements getMonsterInst1Access() {
 		return (pMonsterInst1 != null) ? pMonsterInst1 : (pMonsterInst1 = new MonsterInst1Elements());
 	}
@@ -6344,9 +6500,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	//	coldres?="#coldres" | coldres?="#coldresist" | fireres?="#fireres" | fireres?="#fireresist" | poisonres?="#poisonres"
 	//	| shockres?="#shockres" | darkvision?="#darkvision" | seduce?="#seduce" | succubus?="#succubus" | beckon?="#beckon" |
 	//	startage?="#startage" | maxage?="#maxage" | older?="#older" | healer?="#healer" | startaff?="#startaff" |
-	//	supplybonus?="#supplybonus" | uwdamage?="#uwdamage" | coldpower?="#coldpower" | firepower?="#firepower" |
-	//	stormpower?="#stormpower" | darkpower?="#darkpower" | springpower?="#springpower" | summerpower?="#summerpower" |
-	//	fallpower?="#fallpower" | winterpower?="#winterpower" | ambidextrous?="#ambidextrous" |
+	//	supplybonus?="#supplybonus" | uwdamage?="#uwdamage" | homesick?="#homesick" | coldpower?="#coldpower" |
+	//	firepower?="#firepower" | stormpower?="#stormpower" | darkpower?="#darkpower" | springpower?="#springpower" |
+	//	summerpower?="#summerpower" | fallpower?="#fallpower" | winterpower?="#winterpower" | ambidextrous?="#ambidextrous" |
 	//	banefireshield?="#banefireshield" | berserk?="#berserk" | standard?="#standard" | animalawe?="#animalawe" |
 	//	awe?="#awe" | fear?="#fear" | regeneration?="#regeneration" | reinvigoration?="#reinvigoration" |
 	//	fireshield?="#fireshield" | iceprot?="#iceprot" | poisoncloud?="#poisoncloud" | diseasecloud?="#diseasecloud" |
@@ -6373,19 +6529,20 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MonsterInst4:
-	//	clear?="#clear" | clearmagic?="#clearmagic" | clearspec?="#clearspec" | female?="#female" | mounted?="#mounted" |
-	//	holy?="#holy" | animal?="#animal" | undead?="#undead" | demon?="#demon" | magicbeing?="#magicbeing" |
-	//	stonebeing?="#stonebeing" | inanimate?="#inanimate" | coldblood?="#coldblood" | coldblood?="#coldblooded" |
-	//	immortal?="#immortal" | blind?="#blind" | unique?="#unique" | immobile?="#immobile" | aquatic?="#aquatic" |
-	//	amphibian?="#amphibian" | pooramphibian?="#pooramphibian" | flying?="#flying" | stormimmune?="#stormimmune" |
-	//	sailing?="#sailing" | forestsurvival?="#forestsurvival" | mountainsurvival?="#mountainsurvival" |
-	//	swampsurvival?="#swampsurvival" | wastesurvival?="#wastesurvival" | illusion?="#illusion" | spy?="#spy" |
-	//	assassin?="#assassin" | heal?="#heal" | noheal?="#noheal" | neednoteat?="#neednoteat" | ethereal?="#ethereal" |
-	//	trample?="#trample" | entangle?="#entangle" | eyeloss?="#eyeloss" | horrormark?="#horrormark" |
-	//	poisonarmor?="#poisonarmor" | inquisitor?="#inquisitor" | noitem?="#noitem" | noleader?="#noleader" |
-	//	poorleader?="#poorleader" | okleader?="#okleader" | goodleader?="#goodleader" | expertleader?="#expertleader" |
-	//	superiorleader?="#superiorleader" | nomagicleader?="#nomagicleader" | poormagicleader?="#poormagicleader" |
-	//	okmagicleader?="#okmagicleader" | goodmagicleader?="#goodmagicleader" | expertmagicleader?="#expertmagicleader" |
+	//	clear?="#clear" | clearweapons?="#clearweapons" | cleararmor?="#cleararmor" | clearmagic?="#clearmagic" |
+	//	clearspec?="#clearspec" | female?="#female" | mounted?="#mounted" | holy?="#holy" | animal?="#animal" |
+	//	undead?="#undead" | demon?="#demon" | magicbeing?="#magicbeing" | stonebeing?="#stonebeing" | inanimate?="#inanimate"
+	//	| coldblood?="#coldblood" | coldblood?="#coldblooded" | immortal?="#immortal" | blind?="#blind" | unique?="#unique" |
+	//	immobile?="#immobile" | aquatic?="#aquatic" | amphibian?="#amphibian" | pooramphibian?="#pooramphibian" |
+	//	flying?="#flying" | stormimmune?="#stormimmune" | sailing?="#sailing" | forestsurvival?="#forestsurvival" |
+	//	mountainsurvival?="#mountainsurvival" | swampsurvival?="#swampsurvival" | wastesurvival?="#wastesurvival" |
+	//	illusion?="#illusion" | spy?="#spy" | assassin?="#assassin" | heal?="#heal" | noheal?="#noheal" |
+	//	neednoteat?="#neednoteat" | ethereal?="#ethereal" | trample?="#trample" | entangle?="#entangle" | eyeloss?="#eyeloss"
+	//	| horrormark?="#horrormark" | poisonarmor?="#poisonarmor" | inquisitor?="#inquisitor" | noitem?="#noitem" |
+	//	drainimmune?="#drainimmune" | noleader?="#noleader" | poorleader?="#poorleader" | okleader?="#okleader" |
+	//	goodleader?="#goodleader" | expertleader?="#expertleader" | superiorleader?="#superiorleader" |
+	//	nomagicleader?="#nomagicleader" | poormagicleader?="#poormagicleader" | okmagicleader?="#okmagicleader" |
+	//	goodmagicleader?="#goodmagicleader" | expertmagicleader?="#expertmagicleader" |
 	//	superiormagicleader?="#superiormagicleader" | noundeadleader?="#noundeadleader" |
 	//	poorundeadleader?="#poorundeadleader" | okundeadleader?="#okundeadleader" | goodundeadleader?="#goodundeadleader" |
 	//	expertundeadleader?="#expertundeadleader" | superiorundeadleader?="#superiorundeadleader";
@@ -6398,12 +6555,12 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MonsterInst5:
-	//	weapon?="#weapon" | onebattlespell?="#onebattlespell" | firstshape?="#firstshape" | secondshape?="#secondshape" |
-	//	secondtmpshape?="#secondtmpshape" | shapechange?="#shapechange" | landshape?="#landshape" | watershape?="#watershape"
-	//	| forestshape?="#forestshape" | plainshape?="#plainshape" | domsummon?="#domsummon" | domsummon2?="#domsummon2" |
-	//	domsummon20?="#domsummon20" | makemonster1?="#makemonster1" | makemonster2?="#makemonster2" |
-	//	makemonster3?="#makemonster3" | makemonster4?="#makemonster4" | makemonster5?="#makemonster5" | summon1?="#summon1" |
-	//	summon5?="#summon5";
+	//	weapon?="#weapon" | armor?="#armor" | onebattlespell?="#onebattlespell" | firstshape?="#firstshape" |
+	//	secondshape?="#secondshape" | secondtmpshape?="#secondtmpshape" | shapechange?="#shapechange" |
+	//	landshape?="#landshape" | watershape?="#watershape" | forestshape?="#forestshape" | plainshape?="#plainshape" |
+	//	domsummon?="#domsummon" | domsummon2?="#domsummon2" | domsummon20?="#domsummon20" | makemonster1?="#makemonster1" |
+	//	makemonster2?="#makemonster2" | makemonster3?="#makemonster3" | makemonster4?="#makemonster4" |
+	//	makemonster5?="#makemonster5" | summon1?="#summon1" | summon5?="#summon5";
 	public MonsterInst5Elements getMonsterInst5Access() {
 		return (pMonsterInst5 != null) ? pMonsterInst5 : (pMonsterInst5 = new MonsterInst5Elements());
 	}
@@ -6857,7 +7014,10 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 	//SiteInst2:
 	//	path?="#path" | level?="#level" | rarity?="#rarity" | loc?="#loc" | homemon?="#homemon" | homecom?="#homecom" |
-	//	mon?="#mon" | com?="#com" | gold?="#gold" | res?="#res" | incscale?="#incscale" | decscale?="#decscale";
+	//	mon?="#mon" | com?="#com" | gold?="#gold" | res?="#res" | incscale?="#incscale" | decscale?="#decscale" |
+	//	heal?="#heal" | curse?="#curse" | disease?="#disease" | horrormark?="#horrormark" | holyfire?="#holyfire" |
+	//	holypower?="#holypower" | conjcost?="#conjcost" | altcost?="#altcost" | evocost?="#evocost" | constcost?="#constcost"
+	//	| enchcost?="#enchcost" | thaucost?="#thaucost" | bloodcost?="#bloodcost";
 	public SiteInst2Elements getSiteInst2Access() {
 		return (pSiteInst2 != null) ? pSiteInst2 : (pSiteInst2 = new SiteInst2Elements());
 	}
@@ -6877,7 +7037,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SiteInst4:
-	//	clear?="#clear";
+	//	clear?="#clear" | lab?="#lab";
 	public SiteInst4Elements getSiteInst4Access() {
 		return (pSiteInst4 != null) ? pSiteInst4 : (pSiteInst4 = new SiteInst4Elements());
 	}

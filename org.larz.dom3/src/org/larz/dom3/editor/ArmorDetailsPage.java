@@ -55,12 +55,15 @@ import org.larz.dom3.dm.dm.ArmorMods;
 import org.larz.dom3.dm.dm.DmFactory;
 import org.larz.dom3.dm.dm.SelectArmorById;
 import org.larz.dom3.dm.dm.SelectArmorByName;
+import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class ArmorDetailsPage extends AbstractDetailsPage {
 	private Text name;
+	private Button nameCheck;
 
 	enum Inst2 {
+		NAME (Messages.getString("ArmorDetailsSection.mod.name"), ""), 
 		TYPE (Messages.getString("ArmorDetailsSection.mod.type"), "4"), 
 		PROT (Messages.getString("ArmorDetailsSection.mod.prot"), "1"),
 		DEF (Messages.getString("ArmorDetailsSection.mod.def"), "1"), 
@@ -117,16 +120,20 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 		GridLayout glayout = new GridLayout();
 		glayout.marginWidth = glayout.marginHeight = 0;
 		glayout.numColumns = 3;
+		glayout.verticalSpacing = 0;
 		client.setLayout(glayout);
 		
 		Composite nameComp = toolkit.createComposite(client);
-		nameComp.setLayout(new GridLayout(2, false));
+		glayout = new GridLayout(2, false);
+		glayout.marginWidth = 0;
+		nameComp.setLayout(glayout);
 		GridData gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.horizontalSpan = 3;
 		nameComp.setLayoutData(gd);
 
-		toolkit.createLabel(nameComp, Messages.getString("ArmorDetailsSection.mod.name")); //$NON-NLS-1$
-		
+		nameCheck = toolkit.createButton(nameComp, Messages.getString("ArmorDetailsSection.mod.name"), SWT.CHECK); //$NON-NLS-1$
+		nameCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.ARMOR_CATEGORY, "name"));
+
 		name = toolkit.createText(nameComp, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 		name.addFocusListener(new FocusAdapter() {
 			@Override
@@ -147,16 +154,36 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.widthHint = 200;
 		name.setLayoutData(gd);
-		
+		nameCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (nameCheck.getSelection()) {
+					addInst1(Inst2.NAME, doc, "");
+					name.setEnabled(true);
+					name.setText("");
+					nameCheck.setFont(boldFont);
+				} else {
+					removeInst(Inst2.NAME, doc);
+					name.setEnabled(false);
+					if (input instanceof SelectArmorById || input instanceof SelectArmorByName) {
+						name.setText(getSelectArmorname((Armor)input));
+					} else {
+						name.setText("");
+					}
+					nameCheck.setFont(normalFont);
+				}
+			}
+		});
+
 		for (final Map.Entry<Inst2, Inst2Fields> fields : inst2Map.entrySet()) {
 			final Inst2 key = fields.getKey();
 			final Button check = toolkit.createButton(client, key.label, SWT.CHECK);
+			check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.ARMOR_CATEGORY, key.label));
 			final Text value = toolkit.createText(client, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 			Label defaultLabel = toolkit.createLabel(client, "");
 			defaultLabel.setEnabled(false);
 			
 			value.addVerifyListener(new VerifyListener() {
-				
 				@Override
 				public void verifyText(VerifyEvent e) {
 					if (Character.isLetter(e.character)) {
@@ -210,13 +237,25 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 	
 	public void update() {
 		if (input != null) {
-			if (input instanceof SelectArmorByName || input instanceof SelectArmorById) {
-				String str = getSelectArmorname((Armor)input);
-				name.setText(str!= null?str:"");
-				name.setEnabled(false);
+			String nameString = getInst1(Inst2.NAME, input);
+			if (nameString != null) {
+				name.setText(nameString);
+				name.setEnabled(true);
+				nameCheck.setSelection(true);
+				nameCheck.setFont(boldFont);
 			} else {
-				String str = getArmorname((Armor)input);
-				name.setText(str!=null?str:"");
+				if (input instanceof SelectArmorByName || input instanceof SelectArmorById) {
+					String str = getSelectArmorname((Armor)input);
+					name.setText(str!= null?str:"");
+					name.setEnabled(false);
+				} else {
+					String str = getArmorname((Armor)input);
+					name.setText(str!=null?str:"");
+					nameCheck.setEnabled(false);
+				}
+				name.setEnabled(false);
+				nameCheck.setSelection(false);
+				nameCheck.setFont(normalFont);
 			}
 		}
 		ArmorDB armorDB = new ArmorDB();
@@ -327,6 +366,23 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 
 		updateSelection();
 	}
+	
+	private String getInst1(Inst2 inst2, Object armor) {
+		EList<ArmorMods> list = ((Armor)armor).getMods();
+		for (ArmorMods mod : list) {
+			if (mod instanceof ArmorInst1) {
+				switch (inst2) {
+				case NAME:
+					if (((ArmorInst1)mod).isName()){
+						return ((ArmorInst1)mod).getValue();
+					}
+					break;
+				}
+			}
+		}
+		return null;
+	}
+
 
 	private Integer getInst2(Inst2 inst2, Armor armor) {
 		EList<ArmorMods> list = armor.getMods();
@@ -411,6 +467,33 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 
 		updateSelection();
 	}
+	
+	private void addInst1(final Inst2 inst, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
+				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+					@Override
+					public void process(XtextResource resource) {
+						EList<ArmorMods> mods = ((Armor)input).getMods();
+						ArmorInst1 type = DmFactory.eINSTANCE.createArmorInst1();
+						switch (inst) {
+						case NAME:
+							type.setName(true);
+							break;
+						}
+						type.setValue(newName);
+						mods.add(type);
+					}  
+				},
+				myDocument);
+
+				updateSelection();
+			}
+		});
+	}
 
 	private void addInst2(final Inst2 inst2, final XtextEditor editor, final String newName) {
 		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
@@ -463,7 +546,15 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 						ArmorMods modToRemove = null;
 						EList<ArmorMods> mods = ((Armor)input).getMods();
 						for (ArmorMods mod : mods) {
-							if (mod instanceof ArmorInst2) {
+							if (mod instanceof ArmorInst1) {
+								switch (inst2) {
+								case NAME:
+									if (((ArmorInst1)mod).isName()) {
+										modToRemove = mod;
+									}
+									break;
+								}
+							} else if (mod instanceof ArmorInst2) {
 								switch (inst2) {
 								case TYPE:
 									if (((ArmorInst2)mod).isType()) {

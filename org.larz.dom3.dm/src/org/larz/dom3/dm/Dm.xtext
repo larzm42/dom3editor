@@ -211,8 +211,7 @@ MonsterInst1:
 	name?='#name' |
 	spr1?='#spr1' |
 	spr2?='#spr2' |
-	descr?='#descr' |
-	armor?='#armor';
+	descr?='#descr';
 	
 MonsterInst2:	
 	speciallook?='#speciallook' |
@@ -255,6 +254,7 @@ MonsterInst2:
 	startaff?='#startaff' |
 	supplybonus?='#supplybonus' |
 	uwdamage?='#uwdamage' |
+	homesick?='#homesick' |
 	coldpower?='#coldpower' |
 	firepower?='#firepower' |
 	stormpower?='#stormpower' |
@@ -301,6 +301,8 @@ MonsterInst3:
 	
 MonsterInst4:
 	(clear?='#clear') |
+	(clearweapons?='#clearweapons') |
+	(cleararmor?='#cleararmor') |
 	(clearmagic?='#clearmagic') |
 	(clearspec?='#clearspec') |
 	(female?='#female') |
@@ -342,6 +344,7 @@ MonsterInst4:
 	(poisonarmor?='#poisonarmor') |
 	(inquisitor?='#inquisitor') |
 	(noitem?='#noitem') |
+	(drainimmune?='#drainimmune') |
 	(noleader?='#noleader') |
 	(poorleader?='#poorleader') |
 	(okleader?='#okleader') |
@@ -363,6 +366,7 @@ MonsterInst4:
 
 MonsterInst5:
 	weapon?='#weapon' |
+	armor?='#armor' |
 	onebattlespell?='#onebattlespell' |
 	firstshape?='#firstshape' |
 	secondshape?='#secondshape' |
@@ -589,13 +593,27 @@ SiteInst2:
 	gold?='#gold' |
 	res?='#res' |
 	incscale?='#incscale' |
-	decscale?='#decscale';
+	decscale?='#decscale' |
+	heal?='#heal' |
+	curse?='#curse' |
+	disease?='#disease' |
+	horrormark?='#horrormark' |
+	holyfire?='#holyfire' |
+	holypower?='#holypower' |
+	conjcost?='#conjcost' |
+	altcost?='#altcost' |
+	evocost?='#evocost' |
+	constcost?='#constcost' |
+	enchcost?='#enchcost' |
+	thaucost?='#thaucost' |
+	bloodcost?='#bloodcost';
 	
 SiteInst3:
 	gems?='#gems';
 
 SiteInst4:
-	clear?='#clear';
+	clear?='#clear' |
+	lab?='#lab';
 
 
 /***************/

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.larz.dom3.dm
 Bundle-Vendor: Larz
-Bundle-Version: 0.9.1
+Bundle-Version: 0.9.2
 Bundle-SymbolicName: org.larz.dom3.dm; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,

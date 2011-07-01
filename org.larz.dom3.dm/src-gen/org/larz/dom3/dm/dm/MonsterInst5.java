@@ -17,6 +17,7 @@ package org.larz.dom3.dm.dm;
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst5#getValue1 <em>Value1</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst5#getValue2 <em>Value2</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst5#isWeapon <em>Weapon</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.MonsterInst5#isArmor <em>Armor</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst5#isOnebattlespell <em>Onebattlespell</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst5#isFirstshape <em>Firstshape</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.MonsterInst5#isSecondshape <em>Secondshape</em>}</li>
@@ -122,6 +123,32 @@ public interface MonsterInst5 extends MonsterPattern5
    * @generated
    */
   void setWeapon(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Armor</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Armor</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Armor</em>' attribute.
+   * @see #setArmor(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getMonsterInst5_Armor()
+   * @model
+   * @generated
+   */
+  boolean isArmor();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.MonsterInst5#isArmor <em>Armor</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Armor</em>' attribute.
+   * @see #isArmor()
+   * @generated
+   */
+  void setArmor(boolean value);
 
   /**
    * Returns the value of the '<em><b>Onebattlespell</b></em>' attribute.

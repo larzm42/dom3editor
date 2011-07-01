@@ -159,7 +159,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst1/spr1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst1/spr2"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst1/descr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst1/armor"/>
     </genClasses>
     <genClasses ecoreClass="Dm.ecore#//MonsterInst2">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/value"/>
@@ -201,6 +200,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/startaff"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/supplybonus"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/uwdamage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/homesick"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/coldpower"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/firepower"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst2/stormpower"/>
@@ -249,6 +249,8 @@
     </genClasses>
     <genClasses ecoreClass="Dm.ecore#//MonsterInst4">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/clear"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/clearweapons"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/cleararmor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/clearmagic"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/clearspec"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/female"/>
@@ -289,6 +291,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/poisonarmor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/inquisitor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/noitem"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/drainimmune"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/noleader"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/poorleader"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst4/okleader"/>
@@ -312,6 +315,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst5/value1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst5/value2"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst5/weapon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst5/armor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst5/onebattlespell"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst5/firstshape"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//MonsterInst5/secondshape"/>
@@ -476,6 +480,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/res"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/incscale"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/decscale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/heal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/curse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/disease"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/horrormark"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/holyfire"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/holypower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/conjcost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/altcost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/evocost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/constcost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/enchcost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/thaucost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst2/bloodcost"/>
     </genClasses>
     <genClasses ecoreClass="Dm.ecore#//SiteInst3">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst3/value1"/>
@@ -484,6 +501,7 @@
     </genClasses>
     <genClasses ecoreClass="Dm.ecore#//SiteInst4">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst4/clear"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dm.ecore#//SiteInst4/lab"/>
     </genClasses>
     <genClasses ecoreClass="Dm.ecore#//Nation"/>
     <genClasses ecoreClass="Dm.ecore#//SelectNation">

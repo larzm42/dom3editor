@@ -21,6 +21,7 @@ import org.eclipse.xtext.parsetree.reconstr.impl.DefaultCommentAssociater;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.larz.dom3.dm.ui.comment.DmCommentAssociater;
 import org.larz.dom3.dm.ui.editor.DmXtextEditor;
+import org.larz.dom3.dm.ui.help.DmSourceViewerConfiguration;
 import org.larz.dom3.dm.ui.syntax.DmSyntaxErrorMessageProvider;
 
 /**
@@ -30,15 +31,16 @@ public class DmUiModule extends org.larz.dom3.dm.ui.AbstractDmUiModule {
 	public DmUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
-	public Class<? extends XtextEditor> bindEditor()
-	{
+	public Class<? extends XtextEditor> bindEditor() {
 		return DmXtextEditor.class;
 	}
-	public Class<? extends DefaultCommentAssociater> bindCommentAssociater()
-	{
+	public Class<? extends DefaultCommentAssociater> bindCommentAssociater() {
 		return DmCommentAssociater.class;
 	}
 	public Class<? extends ISyntaxErrorMessageProvider> bindISyntaxErrorMessageProvider() {
 		return DmSyntaxErrorMessageProvider.class;
 	}
+	public Class<? extends org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration> bindSourceViewerConfiguration() {  
+	    return DmSourceViewerConfiguration.class;  
+    } 
 }

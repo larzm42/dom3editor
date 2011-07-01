@@ -15,8 +15,14 @@
  */
 package org.larz.dom3.editor;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.EnumMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.viewers.TableViewer;
@@ -57,10 +63,12 @@ import org.larz.dom3.dm.dm.SiteInst2;
 import org.larz.dom3.dm.dm.SiteInst3;
 import org.larz.dom3.dm.dm.SiteInst4;
 import org.larz.dom3.dm.dm.SiteMods;
+import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class SiteDetailsPage extends AbstractDetailsPage {
 	private Text name;
+	private Button nameCheck;
 
 	enum Inst {
 		NAME (Messages.getString("SiteDetailsSection.mod.name")),
@@ -73,27 +81,57 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 		GEMS2 (Messages.getString("SiteDetailsSection.mod.gems"), "0", "0"),
 		GEMS3 (Messages.getString("SiteDetailsSection.mod.gems"), "0", "0"),
 		HOMEMON1 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
-		HOMEMON2 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
-		HOMEMON3 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
 		HOMECOM1 (Messages.getString("SiteDetailsSection.mod.homecom"), "0"),
+		HOMEMON2 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
 		HOMECOM2 (Messages.getString("SiteDetailsSection.mod.homecom"), "0"),
+		HOMEMON3 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
 		HOMECOM3 (Messages.getString("SiteDetailsSection.mod.homecom"), "0"),
+		HOMEMON4 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
+		HOMECOM4 (Messages.getString("SiteDetailsSection.mod.homecom"), "0"),
+		HOMEMON5 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
+		HOMECOM5 (Messages.getString("SiteDetailsSection.mod.homecom"), "0"),
+		HOMEMON6 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
+		HOMECOM6 (Messages.getString("SiteDetailsSection.mod.homecom"), "0"),
+		HOMEMON7 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
+		HOMECOM7 (Messages.getString("SiteDetailsSection.mod.homecom"), "0"),
+		HOMEMON8 (Messages.getString("SiteDetailsSection.mod.homemon"), "0"),
+		HOMECOM8 (Messages.getString("SiteDetailsSection.mod.homecom"), "0"),
 		MON1 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
-		MON2 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
-		MON3 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
-		MON4 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
-		MON5 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
 		COM1 (Messages.getString("SiteDetailsSection.mod.com"), "0"),
+		MON2 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
 		COM2 (Messages.getString("SiteDetailsSection.mod.com"), "0"),
+		MON3 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
 		COM3 (Messages.getString("SiteDetailsSection.mod.com"), "0"),
+		MON4 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
 		COM4 (Messages.getString("SiteDetailsSection.mod.com"), "0"),
+		MON5 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
 		COM5 (Messages.getString("SiteDetailsSection.mod.com"), "0"),
+		MON6 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
+		COM6 (Messages.getString("SiteDetailsSection.mod.com"), "0"),
+		MON7 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
+		COM7 (Messages.getString("SiteDetailsSection.mod.com"), "0"),
+		MON8 (Messages.getString("SiteDetailsSection.mod.mon"), "0"),
+		COM8 (Messages.getString("SiteDetailsSection.mod.com"), "0"),
 		GOLD (Messages.getString("SiteDetailsSection.mod.gold"), "0"),
 		RES (Messages.getString("SiteDetailsSection.mod.res"), "0"),
 		INCSCALE1 (Messages.getString("SiteDetailsSection.mod.incscale"), "0"),
 		INCSCALE2 (Messages.getString("SiteDetailsSection.mod.incscale"), "0"),
 		DECSCALE1 (Messages.getString("SiteDetailsSection.mod.decscale"), "0"),
-		DECSCALE2 (Messages.getString("SiteDetailsSection.mod.decscale"), "0");
+		DECSCALE2 (Messages.getString("SiteDetailsSection.mod.decscale"), "0"),
+		LAB (Messages.getString("SiteDetailsSection.mod.lab")),		
+		HEAL (Messages.getString("SiteDetailsSection.mod.heal"), "0"),
+		CURSE (Messages.getString("SiteDetailsSection.mod.curse"), "0"),
+		DISEASE (Messages.getString("SiteDetailsSection.mod.disease"), "0"),
+		HORRORMARK (Messages.getString("SiteDetailsSection.mod.horrormark"), "0"),
+		HOLYFIRE (Messages.getString("SiteDetailsSection.mod.holyfire"), "0"),
+		HOLYPOWER (Messages.getString("SiteDetailsSection.mod.holypower"), "0"),
+		CONJCOST (Messages.getString("SiteDetailsSection.mod.conjcost"), "0"),
+		ALTCOST (Messages.getString("SiteDetailsSection.mod.altcost"), "0"),
+		EVOCOST (Messages.getString("SiteDetailsSection.mod.evocost"), "0"),
+		CONSTCOST (Messages.getString("SiteDetailsSection.mod.constcost"), "0"),
+		ENCHCOST (Messages.getString("SiteDetailsSection.mod.enchcost"), "0"),
+		THAUCOST (Messages.getString("SiteDetailsSection.mod.thaucost"), "0"),
+		BLOODCOST (Messages.getString("SiteDetailsSection.mod.bloodcost"), "0");
 		
 		private String label;
 		private String defaultValue;
@@ -142,7 +180,8 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 	}
 
 	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
-	
+	private Set<List<Inst>> dynamicFields = new HashSet<List<Inst>>();
+
 	public SiteDetailsPage(XtextEditor doc, TableViewer viewer) {
 		super(doc, viewer);
 		instMap.put(Inst.PATH, new Inst2Fields());
@@ -153,29 +192,104 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.HOMEMON1, new Inst2Fields());
 		instMap.put(Inst.HOMEMON2, new Inst2Fields());
 		instMap.put(Inst.HOMEMON3, new Inst2Fields());
+		instMap.put(Inst.HOMEMON4, new Inst2Fields());
+		instMap.put(Inst.HOMEMON5, new Inst2Fields());
+		instMap.put(Inst.HOMEMON6, new Inst2Fields());
+		instMap.put(Inst.HOMEMON7, new Inst2Fields());
+		instMap.put(Inst.HOMEMON8, new Inst2Fields());
 		instMap.put(Inst.HOMECOM1, new Inst2Fields());
 		instMap.put(Inst.HOMECOM2, new Inst2Fields());
 		instMap.put(Inst.HOMECOM3, new Inst2Fields());
+		instMap.put(Inst.HOMECOM4, new Inst2Fields());
+		instMap.put(Inst.HOMECOM5, new Inst2Fields());
+		instMap.put(Inst.HOMECOM6, new Inst2Fields());
+		instMap.put(Inst.HOMECOM7, new Inst2Fields());
+		instMap.put(Inst.HOMECOM8, new Inst2Fields());
 		instMap.put(Inst.MON1, new Inst2Fields());
 		instMap.put(Inst.MON2, new Inst2Fields());
 		instMap.put(Inst.MON3, new Inst2Fields());
 		instMap.put(Inst.MON4, new Inst2Fields());
 		instMap.put(Inst.MON5, new Inst2Fields());
+		instMap.put(Inst.MON6, new Inst2Fields());
+		instMap.put(Inst.MON7, new Inst2Fields());
+		instMap.put(Inst.MON8, new Inst2Fields());
 		instMap.put(Inst.COM1, new Inst2Fields());
 		instMap.put(Inst.COM2, new Inst2Fields());
 		instMap.put(Inst.COM3, new Inst2Fields());
 		instMap.put(Inst.COM4, new Inst2Fields());
 		instMap.put(Inst.COM5, new Inst2Fields());
+		instMap.put(Inst.COM6, new Inst2Fields());
+		instMap.put(Inst.COM7, new Inst2Fields());
+		instMap.put(Inst.COM8, new Inst2Fields());
 		instMap.put(Inst.GOLD, new Inst2Fields());
 		instMap.put(Inst.RES, new Inst2Fields());
 		instMap.put(Inst.INCSCALE1, new Inst2Fields());
 		instMap.put(Inst.INCSCALE2, new Inst2Fields());
 		instMap.put(Inst.DECSCALE1, new Inst2Fields());
 		instMap.put(Inst.DECSCALE2, new Inst2Fields());
+		instMap.put(Inst.HEAL, new Inst2Fields());
+		instMap.put(Inst.CURSE, new Inst2Fields());
+		instMap.put(Inst.DISEASE, new Inst2Fields());
+		instMap.put(Inst.HORRORMARK, new Inst2Fields());
+		instMap.put(Inst.HOLYFIRE, new Inst2Fields());
+		instMap.put(Inst.HOLYPOWER, new Inst2Fields());
+		instMap.put(Inst.CONJCOST, new Inst2Fields());
+		instMap.put(Inst.ALTCOST, new Inst2Fields());
+		instMap.put(Inst.EVOCOST, new Inst2Fields());
+		instMap.put(Inst.CONSTCOST, new Inst2Fields());
+		instMap.put(Inst.ENCHCOST, new Inst2Fields());
+		instMap.put(Inst.THAUCOST, new Inst2Fields());
+		instMap.put(Inst.BLOODCOST, new Inst2Fields());
 		instMap.put(Inst.GEMS1, new Inst3Fields());
 		instMap.put(Inst.GEMS2, new Inst3Fields());
 		instMap.put(Inst.GEMS3, new Inst3Fields());
 		instMap.put(Inst.CLEAR, new Inst4Fields());
+		instMap.put(Inst.LAB, new Inst4Fields());
+		
+		List<Inst> homeMonList = new ArrayList<Inst>();
+		homeMonList.add(Inst.HOMEMON1);
+		homeMonList.add(Inst.HOMEMON2);
+		homeMonList.add(Inst.HOMEMON3);
+		homeMonList.add(Inst.HOMEMON4);
+		homeMonList.add(Inst.HOMEMON5);
+		homeMonList.add(Inst.HOMEMON6);
+		homeMonList.add(Inst.HOMEMON7);
+		homeMonList.add(Inst.HOMEMON8);
+		dynamicFields.add(homeMonList);
+		
+		List<Inst> homeComList = new ArrayList<Inst>();
+		homeComList.add(Inst.HOMECOM1);
+		homeComList.add(Inst.HOMECOM2);
+		homeComList.add(Inst.HOMECOM3);
+		homeComList.add(Inst.HOMECOM4);
+		homeComList.add(Inst.HOMECOM5);
+		homeComList.add(Inst.HOMECOM6);
+		homeComList.add(Inst.HOMECOM7);
+		homeComList.add(Inst.HOMECOM8);
+		dynamicFields.add(homeComList);
+
+		List<Inst> monList = new ArrayList<Inst>();
+		monList.add(Inst.MON1);
+		monList.add(Inst.MON2);
+		monList.add(Inst.MON3);
+		monList.add(Inst.MON4);
+		monList.add(Inst.MON5);
+		monList.add(Inst.MON6);
+		monList.add(Inst.MON7);
+		monList.add(Inst.MON8);
+		dynamicFields.add(monList);
+		
+		List<Inst> comList = new ArrayList<Inst>();
+		comList.add(Inst.COM1);
+		comList.add(Inst.COM2);
+		comList.add(Inst.COM3);
+		comList.add(Inst.COM4);
+		comList.add(Inst.COM5);
+		comList.add(Inst.COM6);
+		comList.add(Inst.COM7);
+		comList.add(Inst.COM8);
+		dynamicFields.add(comList);
+
 	}
 	
 	/* (non-Javadoc)
@@ -205,13 +319,16 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 		client.setLayout(glayout);
 		
 		final Composite nameComp = toolkit.createComposite(client);
-		nameComp.setLayout(new GridLayout(2, false));
+		glayout = new GridLayout(2, false);
+		glayout.marginWidth = 0;
+		nameComp.setLayout(glayout);
 		GridData gd = new GridData(SWT.DEFAULT, SWT.FILL, false, false);
 		gd.horizontalSpan = 2;
 		nameComp.setLayoutData(gd);
 		
-		toolkit.createLabel(nameComp, Messages.getString("SiteDetailsSection.mod.name")); //$NON-NLS-1$
-		
+		nameCheck = toolkit.createButton(nameComp, Messages.getString("SiteDetailsSection.mod.name"), SWT.CHECK); //$NON-NLS-1$
+		nameCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.SITE_CATEGORY, "name"));
+
 		name = toolkit.createText(nameComp, null, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 		name.addFocusListener(new FocusAdapter() {
 			@Override
@@ -232,11 +349,32 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.widthHint = 500;
 		name.setLayoutData(gd);
-				
+		nameCheck.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (nameCheck.getSelection()) {
+					addInst1(Inst.NAME, doc, "");
+					name.setEnabled(true);
+					name.setText("");
+					nameCheck.setFont(boldFont);
+				} else {
+					removeInst(Inst.NAME, doc);
+					name.setEnabled(false);
+					if (input instanceof SelectSiteById || input instanceof SelectSiteByName) {
+						name.setText(getSelectSitename(input));
+					} else {
+						name.setText("");
+					}
+					nameCheck.setFont(normalFont);
+				}
+			}
+		});
+
 		Composite leftColumn = toolkit.createComposite(client);
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
+		glayout.verticalSpacing = 0;
 		leftColumn.setLayout(glayout);
 		leftColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
@@ -244,6 +382,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 		glayout = new GridLayout(5, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
+		glayout.verticalSpacing = 0;
 		rightColumn.setLayout(glayout);
 		rightColumn.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
@@ -251,7 +390,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 		for (final Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			final Inst key = fields.getKey();
 			final InstFields field = fields.getValue();
-			final Button check = toolkit.createButton(isRight?rightColumn:leftColumn, key.label, SWT.CHECK);
+			final Button check = new DynamicButton(isRight?rightColumn:leftColumn, SWT.CHECK);
+			check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.SITE_CATEGORY, key.label));
+
 			check.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
@@ -271,8 +412,8 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						check.setFont(normalFont);
 					}
 				}
-
 			});
+			check.setText(key.label);
 
 			if (field instanceof Inst4Fields) {
 				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
@@ -283,7 +424,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 			Text myValue1 = null;
 			Text myValue2 = null;
 			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
-				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
+				final Text value = new DynamicText(isRight?rightColumn:leftColumn, SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 				myValue1 = value;
 				
 				if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
@@ -303,9 +444,46 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						if (check.getSelection()) {
 							value.setEnabled(true);
 							value.setText(key.defaultValue);
+							for (List<Inst> dynamic : dynamicFields) {
+								if (dynamic.contains(key)) {
+									for (final Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
+										if (dynamic.contains(fields.getKey())) {
+											if (Boolean.FALSE.equals(((Inst2Fields)fields.getValue()).value.getData())) {
+												((Inst2Fields)fields.getValue()).value.setData(Boolean.TRUE);
+												((Inst2Fields)fields.getValue()).check.setData(Boolean.TRUE);
+												((Inst2Fields)fields.getValue()).defaultLabel.setData(Boolean.TRUE);
+												client.getParent().layout(true, true);
+												break;
+											}
+										}
+									}
+									update();
+									mform.fireSelectionChanged(mform.getParts()[0], viewer.getSelection());
+								}
+							}
 						} else {
 							value.setEnabled(false);
 							value.setText("");
+							for (List<Inst> dynamic : dynamicFields) {
+								if (dynamic.contains(key)) {
+									@SuppressWarnings("rawtypes")
+									List<Map.Entry> entries = Arrays.asList(instMap.entrySet().toArray(new Map.Entry[instMap.entrySet().size()]));
+									Collections.reverse(entries);
+									for (final Map.Entry<Inst, InstFields> fields : entries) {
+										if (!key.equals(fields.getKey()) && dynamic.contains(fields.getKey())) {
+											if (Boolean.TRUE.equals(((Inst2Fields)fields.getValue()).value.getData()) && !((Inst2Fields)fields.getValue()).value.isEnabled()) {
+												((Inst2Fields)fields.getValue()).value.setData(Boolean.FALSE);
+												((Inst2Fields)fields.getValue()).check.setData(Boolean.FALSE);
+												((Inst2Fields)fields.getValue()).defaultLabel.setData(Boolean.FALSE);
+												client.getParent().layout(true, true);
+												break;
+											}
+										}
+									}
+									update();
+									mform.fireSelectionChanged(mform.getParts()[0], viewer.getSelection());
+								}
+							}
 						}
 					}
 
@@ -352,7 +530,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 			Label defaultLabel1 = null;
 			
 			if (field instanceof Inst2Fields || field instanceof Inst3Fields|| field instanceof Inst4Fields) {
-				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+				defaultLabel1 = new DynamicLabel(isRight?rightColumn:leftColumn, SWT.NONE);
 				defaultLabel1.setEnabled(false);
 			}
 			if (field instanceof Inst2Fields) {
@@ -419,6 +597,23 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 				((Inst2Fields)field).check = check;
 				((Inst2Fields)field).value = myValue1;
 				((Inst2Fields)field).defaultLabel = defaultLabel1;
+				for (List<Inst> list : dynamicFields) {
+					boolean firstElement = true;
+					for (Inst inst : list) {
+						if (key.equals(inst)) {
+							if (firstElement) {
+								myValue1.setData(Boolean.TRUE);
+								check.setData(Boolean.TRUE);
+								defaultLabel1.setData(Boolean.TRUE);
+							} else {
+								myValue1.setData(Boolean.FALSE);
+								check.setData(Boolean.FALSE);
+								defaultLabel1.setData(Boolean.FALSE);
+							}
+						}
+						firstElement = false;
+					}
+				}
 			} else if (field instanceof Inst3Fields) {
 				((Inst3Fields)field).check = check;
 				((Inst3Fields)field).value1 = myValue1;
@@ -438,15 +633,26 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 	
 	public void update() {
 		if (input != null) {
-			if (input instanceof SelectSiteByName || input instanceof SelectSiteById) {
-				String str = getSelectSitename(input);
-				name.setText(str!= null?str:"");
-				name.setEnabled(false);
+			String nameString = getInst1(Inst.NAME, input);
+			if (nameString != null) {
+				name.setText(nameString);
+				name.setEnabled(true);
+				nameCheck.setSelection(true);
+				nameCheck.setFont(boldFont);
 			} else {
-				String str = getInst1(Inst.NAME, input);
-				name.setText(str!=null?str:"");
+				if (input instanceof SelectSiteByName || input instanceof SelectSiteById) {
+					String str = getSelectSitename((Site)input);
+					name.setText(str!= null?str:"");
+					name.setEnabled(false);
+				} else {
+					String str = getSitename((Site)input);
+					name.setText(str!=null?str:"");
+					nameCheck.setEnabled(false);
+				}
+				name.setEnabled(false);
+				nameCheck.setSelection(false);
+				nameCheck.setFont(normalFont);
 			}
-			
 		}
 		SiteDB siteDB = new SiteDB();
 		if (input instanceof SelectSiteById) {
@@ -454,6 +660,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 		} else if (input instanceof SelectSiteByName) {
 			siteDB = Database.getSite(((SelectSiteByName)input).getValue());
 		}
+		Set<List<Inst>> dynamicFirstEmpty = new HashSet<List<Inst>>();
 		for (Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 			String val1 = getInst1(fields.getKey(), input);
 			if (val1 != null) {
@@ -478,6 +685,16 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 					((Inst2Fields)fields.getValue()).value.setEnabled(true);
 					((Inst2Fields)fields.getValue()).check.setSelection(true);
 					((Inst2Fields)fields.getValue()).check.setFont(boldFont);
+					for (List<Inst> dynamic : dynamicFields) {
+						if (dynamic.contains(fields.getKey())) {
+							if (Boolean.FALSE.equals(((Inst2Fields)fields.getValue()).value.getData())) {
+								((Inst2Fields)fields.getValue()).value.setData(Boolean.TRUE);
+								((Inst2Fields)fields.getValue()).check.setData(Boolean.TRUE);
+								((Inst2Fields)fields.getValue()).defaultLabel.setData(Boolean.TRUE);
+								break;
+							}
+						}
+					}
 				}
 			} else {
 				if (fields.getValue() instanceof Inst2Fields) {
@@ -485,6 +702,26 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 					((Inst2Fields)fields.getValue()).value.setEnabled(false);
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
 					((Inst2Fields)fields.getValue()).check.setFont(normalFont);
+					for (List<Inst> dynamic : dynamicFields) {
+						if (dynamic.contains(fields.getKey())) {
+							if (dynamicFirstEmpty.contains(dynamic)) {
+								if (Boolean.TRUE.equals(((Inst2Fields)fields.getValue()).value.getData())) {
+									((Inst2Fields)fields.getValue()).value.setData(Boolean.FALSE);
+									((Inst2Fields)fields.getValue()).check.setData(Boolean.FALSE);
+									((Inst2Fields)fields.getValue()).defaultLabel.setData(Boolean.FALSE);
+									break;
+								}
+							} else {
+								dynamicFirstEmpty.add(dynamic);
+								if (Boolean.FALSE.equals(((Inst2Fields)fields.getValue()).value.getData())) {
+									((Inst2Fields)fields.getValue()).value.setData(Boolean.TRUE);
+									((Inst2Fields)fields.getValue()).check.setData(Boolean.TRUE);
+									((Inst2Fields)fields.getValue()).defaultLabel.setData(Boolean.TRUE);
+									break;
+								}
+							}
+						}
+					}
 				}
 			}
 			Integer[] vals = getInst3(fields.getKey(), input);
@@ -651,6 +888,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 				}
 			}
 		}
+		name.getParent().getParent().layout(true, true);
 	}
 	
 	private String getSelectSitename(Object site) {
@@ -660,6 +898,18 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 			int id = ((SelectSiteById)site).getValue();
 			return Database.getSiteName(id);
 		}
+	}
+	
+	private String getSitename(Site site) {
+		EList<SiteMods> list = site.getMods();
+		for (SiteMods mod : list) {
+			if (mod instanceof SiteInst1) {
+				if (((SiteInst1)mod).isName()) {
+					return ((SiteInst1)mod).getValue();
+				}
+			}
+		}
+		return null;
 	}
 	
 	private void setSitename(final XtextEditor editor, final String newName) 
@@ -764,6 +1014,46 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						}
 					}
 					break;
+				case HOMEMON4:
+					if (((SiteInst2)mod).isHomemon()){
+						homeMonCount++;
+						if (homeMonCount == 4) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case HOMEMON5:
+					if (((SiteInst2)mod).isHomemon()){
+						homeMonCount++;
+						if (homeMonCount == 5) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case HOMEMON6:
+					if (((SiteInst2)mod).isHomemon()){
+						homeMonCount++;
+						if (homeMonCount == 6) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case HOMEMON7:
+					if (((SiteInst2)mod).isHomemon()){
+						homeMonCount++;
+						if (homeMonCount == 7) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case HOMEMON8:
+					if (((SiteInst2)mod).isHomemon()){
+						homeMonCount++;
+						if (homeMonCount == 8) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
 				case HOMECOM1:
 					if (((SiteInst2)mod).isHomecom()){
 						homeComCount++;
@@ -784,6 +1074,46 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 					if (((SiteInst2)mod).isHomecom()){
 						homeComCount++;
 						if (homeComCount == 3) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case HOMECOM4:
+					if (((SiteInst2)mod).isHomecom()){
+						homeComCount++;
+						if (homeComCount == 4) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case HOMECOM5:
+					if (((SiteInst2)mod).isHomecom()){
+						homeComCount++;
+						if (homeComCount == 5) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case HOMECOM6:
+					if (((SiteInst2)mod).isHomecom()){
+						homeComCount++;
+						if (homeComCount == 6) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case HOMECOM7:
+					if (((SiteInst2)mod).isHomecom()){
+						homeComCount++;
+						if (homeComCount == 7) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case HOMECOM8:
+					if (((SiteInst2)mod).isHomecom()){
+						homeComCount++;
+						if (homeComCount == 8) {
 							return Integer.valueOf(((SiteInst2)mod).getValue());
 						}
 					}
@@ -828,6 +1158,30 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						}
 					}
 					break;
+				case MON6:
+					if (((SiteInst2)mod).isMon()){
+						monCount++;
+						if (monCount == 6) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case MON7:
+					if (((SiteInst2)mod).isMon()){
+						monCount++;
+						if (monCount == 7) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case MON8:
+					if (((SiteInst2)mod).isMon()){
+						monCount++;
+						if (monCount == 8) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
 				case COM1:
 					if (((SiteInst2)mod).isCom()){
 						comCount++;
@@ -864,6 +1218,30 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 					if (((SiteInst2)mod).isCom()){
 						comCount++;
 						if (comCount == 5) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case COM6:
+					if (((SiteInst2)mod).isCom()){
+						comCount++;
+						if (comCount == 6) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case COM7:
+					if (((SiteInst2)mod).isCom()){
+						comCount++;
+						if (comCount == 7) {
+							return Integer.valueOf(((SiteInst2)mod).getValue());
+						}
+					}
+					break;
+				case COM8:
+					if (((SiteInst2)mod).isCom()){
+						comCount++;
+						if (comCount == 8) {
 							return Integer.valueOf(((SiteInst2)mod).getValue());
 						}
 					}
@@ -908,6 +1286,71 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						if (descaleCount == 2) {
 							return Integer.valueOf(((SiteInst2)mod).getValue());
 						}
+					}
+					break;
+				case HEAL:
+					if (((SiteInst2)mod).isHeal()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case CURSE:
+					if (((SiteInst2)mod).isCurse()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case DISEASE:
+					if (((SiteInst2)mod).isDisease()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case HORRORMARK:
+					if (((SiteInst2)mod).isHorrormark()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case HOLYFIRE:
+					if (((SiteInst2)mod).isHolyfire()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case HOLYPOWER:
+					if (((SiteInst2)mod).isHolypower()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case CONJCOST:
+					if (((SiteInst2)mod).isConjcost()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case ALTCOST:
+					if (((SiteInst2)mod).isAltcost()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case EVOCOST:
+					if (((SiteInst2)mod).isEvocost()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case CONSTCOST:
+					if (((SiteInst2)mod).isConstcost()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case ENCHCOST:
+					if (((SiteInst2)mod).isEnchcost()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case THAUCOST:
+					if (((SiteInst2)mod).isThaucost()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
+					}
+					break;
+				case BLOODCOST:
+					if (((SiteInst2)mod).isBloodcost()){
+						return Integer.valueOf(((SiteInst2)mod).getValue());
 					}
 					break;
 				}
@@ -959,6 +1402,11 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 				switch (inst4) {
 				case CLEAR:
 					if (((SiteInst4)mod).isClear()){
+						return Boolean.TRUE;
+					}
+					break;
+				case LAB:
+					if (((SiteInst4)mod).isLab()){
 						return Boolean.TRUE;
 					}
 					break;
@@ -1058,6 +1506,46 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 								}
 							}
 							break;
+						case HOMEMON4:
+							if (((SiteInst2)mod).isHomemon()){
+								homeMonCount++;
+								if (homeMonCount == 4) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case HOMEMON5:
+							if (((SiteInst2)mod).isHomemon()){
+								homeMonCount++;
+								if (homeMonCount == 5) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case HOMEMON6:
+							if (((SiteInst2)mod).isHomemon()){
+								homeMonCount++;
+								if (homeMonCount == 6) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case HOMEMON7:
+							if (((SiteInst2)mod).isHomemon()){
+								homeMonCount++;
+								if (homeMonCount == 7) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case HOMEMON8:
+							if (((SiteInst2)mod).isHomemon()){
+								homeMonCount++;
+								if (homeMonCount == 8) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
 						case HOMECOM1:
 							if (((SiteInst2)mod).isHomecom()){
 								homeComCount++;
@@ -1078,6 +1566,46 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 							if (((SiteInst2)mod).isHomecom()){
 								homeComCount++;
 								if (homeComCount == 3) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case HOMECOM4:
+							if (((SiteInst2)mod).isHomecom()){
+								homeComCount++;
+								if (homeComCount == 4) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case HOMECOM5:
+							if (((SiteInst2)mod).isHomecom()){
+								homeComCount++;
+								if (homeComCount == 5) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case HOMECOM6:
+							if (((SiteInst2)mod).isHomecom()){
+								homeComCount++;
+								if (homeComCount == 6) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case HOMECOM7:
+							if (((SiteInst2)mod).isHomecom()){
+								homeComCount++;
+								if (homeComCount == 7) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case HOMECOM8:
+							if (((SiteInst2)mod).isHomecom()){
+								homeComCount++;
+								if (homeComCount == 8) {
 									((SiteInst2)mod).setValue(Integer.parseInt(newName));
 								}
 							}
@@ -1122,6 +1650,30 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 								}
 							}
 							break;
+						case MON6:
+							if (((SiteInst2)mod).isMon()){
+								monCount++;
+								if (monCount == 6) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case MON7:
+							if (((SiteInst2)mod).isMon()){
+								monCount++;
+								if (monCount == 7) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case MON8:
+							if (((SiteInst2)mod).isMon()){
+								monCount++;
+								if (monCount == 8) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
 						case COM1:
 							if (((SiteInst2)mod).isCom()){
 								comCount++;
@@ -1158,6 +1710,30 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 							if (((SiteInst2)mod).isCom()){
 								comCount++;
 								if (comCount == 5) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case COM6:
+							if (((SiteInst2)mod).isCom()){
+								comCount++;
+								if (comCount == 6) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case COM7:
+							if (((SiteInst2)mod).isCom()){
+								comCount++;
+								if (comCount == 7) {
+									((SiteInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case COM8:
+							if (((SiteInst2)mod).isCom()){
+								comCount++;
+								if (comCount == 8) {
 									((SiteInst2)mod).setValue(Integer.parseInt(newName));
 								}
 							}
@@ -1202,6 +1778,71 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 								if (descaleCount == 2) {
 									((SiteInst2)mod).setValue(Integer.parseInt(newName));
 								}
+							}
+							break;
+						case HEAL:
+							if (((SiteInst2)mod).isHeal()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case CURSE:
+							if (((SiteInst2)mod).isCurse()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case DISEASE:
+							if (((SiteInst2)mod).isDisease()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case HORRORMARK:
+							if (((SiteInst2)mod).isHorrormark()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case HOLYFIRE:
+							if (((SiteInst2)mod).isHolyfire()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case HOLYPOWER:
+							if (((SiteInst2)mod).isHolypower()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case CONJCOST:
+							if (((SiteInst2)mod).isConjcost()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case ALTCOST:
+							if (((SiteInst2)mod).isAltcost()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case EVOCOST:
+							if (((SiteInst2)mod).isEvocost()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case CONSTCOST:
+							if (((SiteInst2)mod).isConstcost()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case ENCHCOST:
+							if (((SiteInst2)mod).isEnchcost()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case THAUCOST:
+							if (((SiteInst2)mod).isThaucost()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
+							}
+							break;
+						case BLOODCOST:
+							if (((SiteInst2)mod).isBloodcost()){
+								((SiteInst2)mod).setValue(Integer.parseInt(newName));
 							}
 							break;
 						}
@@ -1338,6 +1979,21 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						case HOMEMON3:
 							type.setHomemon(true);
 							break;
+						case HOMEMON4:
+							type.setHomemon(true);
+							break;
+						case HOMEMON5:
+							type.setHomemon(true);
+							break;
+						case HOMEMON6:
+							type.setHomemon(true);
+							break;
+						case HOMEMON7:
+							type.setHomemon(true);
+							break;
+						case HOMEMON8:
+							type.setHomemon(true);
+							break;
 						case HOMECOM1:
 							type.setHomecom(true);
 							break;
@@ -1345,6 +2001,21 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 							type.setHomecom(true);
 							break;
 						case HOMECOM3:
+							type.setHomecom(true);
+							break;
+						case HOMECOM4:
+							type.setHomecom(true);
+							break;
+						case HOMECOM5:
+							type.setHomecom(true);
+							break;
+						case HOMECOM6:
+							type.setHomecom(true);
+							break;
+						case HOMECOM7:
+							type.setHomecom(true);
+							break;
+						case HOMECOM8:
 							type.setHomecom(true);
 							break;
 						case MON1:
@@ -1362,6 +2033,15 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						case MON5:
 							type.setMon(true);
 							break;
+						case MON6:
+							type.setMon(true);
+							break;
+						case MON7:
+							type.setMon(true);
+							break;
+						case MON8:
+							type.setMon(true);
+							break;
 						case COM1:
 							type.setCom(true);
 							break;
@@ -1375,6 +2055,15 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 							type.setCom(true);
 							break;
 						case COM5:
+							type.setCom(true);
+							break;
+						case COM6:
+							type.setCom(true);
+							break;
+						case COM7:
+							type.setCom(true);
+							break;
+						case COM8:
 							type.setCom(true);
 							break;
 						case GOLD:
@@ -1394,6 +2083,45 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 							break;
 						case DECSCALE2:
 							type.setDecscale(true);
+							break;
+						case HEAL:
+							type.setHeal(true);
+							break;
+						case CURSE:
+							type.setCurse(true);
+							break;
+						case DISEASE:
+							type.setDisease(true);
+							break;
+						case HORRORMARK:
+							type.setHorrormark(true);
+							break;
+						case HOLYFIRE:
+							type.setHolyfire(true);
+							break;
+						case HOLYPOWER:
+							type.setHolypower(true);
+							break;
+						case CONJCOST:
+							type.setConjcost(true);
+							break;
+						case ALTCOST:
+							type.setAltcost(true);
+							break;
+						case EVOCOST:
+							type.setEvocost(true);
+							break;
+						case CONSTCOST:
+							type.setConstcost(true);
+							break;
+						case ENCHCOST:
+							type.setEnchcost(true);
+							break;
+						case THAUCOST:
+							type.setThaucost(true);
+							break;
+						case BLOODCOST:
+							type.setBloodcost(true);
 							break;
 						}
 						type.setValue(Integer.valueOf(newName));
@@ -1455,6 +2183,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						switch (inst) {
 						case CLEAR:
 							type.setClear(true);
+							break;
+						case LAB:
+							type.setLab(true);
 							break;
 						}
 						mods.add(type);
@@ -1541,6 +2272,46 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 										}
 									}
 									break;
+								case HOMEMON4:
+									if (((SiteInst2)mod).isHomemon()){
+										homeMonCount++;
+										if (homeMonCount == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMEMON5:
+									if (((SiteInst2)mod).isHomemon()){
+										homeMonCount++;
+										if (homeMonCount == 5) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMEMON6:
+									if (((SiteInst2)mod).isHomemon()){
+										homeMonCount++;
+										if (homeMonCount == 6) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMEMON7:
+									if (((SiteInst2)mod).isHomemon()){
+										homeMonCount++;
+										if (homeMonCount == 7) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMEMON8:
+									if (((SiteInst2)mod).isHomemon()){
+										homeMonCount++;
+										if (homeMonCount == 8) {
+											modToRemove = mod;
+										}
+									}
+									break;
 								case HOMECOM1:
 									if (((SiteInst2)mod).isHomecom()){
 										homeComCount++;
@@ -1561,6 +2332,46 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 									if (((SiteInst2)mod).isHomecom()){
 										homeComCount++;
 										if (homeComCount == 3) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMECOM4:
+									if (((SiteInst2)mod).isHomecom()){
+										homeComCount++;
+										if (homeComCount == 4) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMECOM5:
+									if (((SiteInst2)mod).isHomecom()){
+										homeComCount++;
+										if (homeComCount == 5) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMECOM6:
+									if (((SiteInst2)mod).isHomecom()){
+										homeComCount++;
+										if (homeComCount == 6) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMECOM7:
+									if (((SiteInst2)mod).isHomecom()){
+										homeComCount++;
+										if (homeComCount == 7) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case HOMECOM8:
+									if (((SiteInst2)mod).isHomecom()){
+										homeComCount++;
+										if (homeComCount == 8) {
 											modToRemove = mod;
 										}
 									}
@@ -1605,6 +2416,30 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 										}
 									}
 									break;
+								case MON6:
+									if (((SiteInst2)mod).isMon()){
+										monCount++;
+										if (monCount == 6) {									
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MON7:
+									if (((SiteInst2)mod).isMon()){
+										monCount++;
+										if (monCount == 7) {									
+											modToRemove = mod;
+										}
+									}
+									break;
+								case MON8:
+									if (((SiteInst2)mod).isMon()){
+										monCount++;
+										if (monCount == 8) {									
+											modToRemove = mod;
+										}
+									}
+									break;
 								case COM1:
 									if (((SiteInst2)mod).isCom()){
 										comCount++;
@@ -1641,6 +2476,30 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 									if (((SiteInst2)mod).isCom()){
 										comCount++;
 										if (comCount == 5) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case COM6:
+									if (((SiteInst2)mod).isCom()){
+										comCount++;
+										if (comCount == 6) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case COM7:
+									if (((SiteInst2)mod).isCom()){
+										comCount++;
+										if (comCount == 7) {
+											modToRemove = mod;
+										}
+									}
+									break;
+								case COM8:
+									if (((SiteInst2)mod).isCom()){
+										comCount++;
+										if (comCount == 8) {
 											modToRemove = mod;
 										}
 									}
@@ -1687,6 +2546,71 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 										}
 									}
 									break;
+								case HEAL:
+									if (((SiteInst2)mod).isHeal()){
+										modToRemove = mod;
+									}
+									break;
+								case CURSE:
+									if (((SiteInst2)mod).isCurse()){
+										modToRemove = mod;
+									}
+									break;
+								case DISEASE:
+									if (((SiteInst2)mod).isDisease()){
+										modToRemove = mod;
+									}
+									break;
+								case HORRORMARK:
+									if (((SiteInst2)mod).isHorrormark()){
+										modToRemove = mod;
+									}
+									break;
+								case HOLYFIRE:
+									if (((SiteInst2)mod).isHolyfire()){
+										modToRemove = mod;
+									}
+									break;
+								case HOLYPOWER:
+									if (((SiteInst2)mod).isHolypower()){
+										modToRemove = mod;
+									}
+									break;
+								case CONJCOST:
+									if (((SiteInst2)mod).isConjcost()){
+										modToRemove = mod;
+									}
+									break;
+								case ALTCOST:
+									if (((SiteInst2)mod).isAltcost()){
+										modToRemove = mod;
+									}
+									break;
+								case EVOCOST:
+									if (((SiteInst2)mod).isEvocost()){
+										modToRemove = mod;
+									}
+									break;
+								case CONSTCOST:
+									if (((SiteInst2)mod).isConstcost()){
+										modToRemove = mod;
+									}
+									break;
+								case ENCHCOST:
+									if (((SiteInst2)mod).isEnchcost()){
+										modToRemove = mod;
+									}
+									break;
+								case THAUCOST:
+									if (((SiteInst2)mod).isThaucost()){
+										modToRemove = mod;
+									}
+									break;
+								case BLOODCOST:
+									if (((SiteInst2)mod).isBloodcost()){
+										modToRemove = mod;
+									}
+									break;
 								}
 							}
 							if (mod instanceof SiteInst3) {
@@ -1721,6 +2645,11 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 								switch (inst) {
 								case CLEAR:
 									if (((SiteInst4)mod).isClear()){
+										modToRemove = mod;
+									}
+									break;
+								case LAB:
+									if (((SiteInst4)mod).isLab()){
 										modToRemove = mod;
 									}
 									break;

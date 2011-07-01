@@ -15,6 +15,7 @@ package org.larz.dom3.dm.dm;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.larz.dom3.dm.dm.SiteInst4#isClear <em>Clear</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst4#isLab <em>Lab</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,5 +50,31 @@ public interface SiteInst4 extends SitePattern4
    * @generated
    */
   void setClear(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Lab</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Lab</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Lab</em>' attribute.
+   * @see #setLab(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst4_Lab()
+   * @model
+   * @generated
+   */
+  boolean isLab();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst4#isLab <em>Lab</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Lab</em>' attribute.
+   * @see #isLab()
+   * @generated
+   */
+  void setLab(boolean value);
 
 } // SiteInst4

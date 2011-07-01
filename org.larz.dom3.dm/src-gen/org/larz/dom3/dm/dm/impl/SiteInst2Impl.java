@@ -34,6 +34,19 @@ import org.larz.dom3.dm.dm.SiteInst2;
  *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isRes <em>Res</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isIncscale <em>Incscale</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isDecscale <em>Decscale</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isHeal <em>Heal</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isCurse <em>Curse</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isDisease <em>Disease</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isHorrormark <em>Horrormark</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isHolyfire <em>Holyfire</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isHolypower <em>Holypower</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isConjcost <em>Conjcost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isAltcost <em>Altcost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isEvocost <em>Evocost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isConstcost <em>Constcost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isEnchcost <em>Enchcost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isThaucost <em>Thaucost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.SiteInst2Impl#isBloodcost <em>Bloodcost</em>}</li>
  * </ul>
  * </p>
  *
@@ -300,6 +313,266 @@ public class SiteInst2Impl extends SitePattern2Impl implements SiteInst2
    * @ordered
    */
   protected boolean decscale = DECSCALE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isHeal() <em>Heal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHeal()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean HEAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isHeal() <em>Heal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHeal()
+   * @generated
+   * @ordered
+   */
+  protected boolean heal = HEAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isCurse() <em>Curse</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isCurse()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean CURSE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isCurse() <em>Curse</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isCurse()
+   * @generated
+   * @ordered
+   */
+  protected boolean curse = CURSE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isDisease() <em>Disease</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDisease()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean DISEASE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isDisease() <em>Disease</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDisease()
+   * @generated
+   * @ordered
+   */
+  protected boolean disease = DISEASE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isHorrormark() <em>Horrormark</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHorrormark()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean HORRORMARK_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isHorrormark() <em>Horrormark</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHorrormark()
+   * @generated
+   * @ordered
+   */
+  protected boolean horrormark = HORRORMARK_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isHolyfire() <em>Holyfire</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHolyfire()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean HOLYFIRE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isHolyfire() <em>Holyfire</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHolyfire()
+   * @generated
+   * @ordered
+   */
+  protected boolean holyfire = HOLYFIRE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isHolypower() <em>Holypower</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHolypower()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean HOLYPOWER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isHolypower() <em>Holypower</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHolypower()
+   * @generated
+   * @ordered
+   */
+  protected boolean holypower = HOLYPOWER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isConjcost() <em>Conjcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isConjcost()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean CONJCOST_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isConjcost() <em>Conjcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isConjcost()
+   * @generated
+   * @ordered
+   */
+  protected boolean conjcost = CONJCOST_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isAltcost() <em>Altcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAltcost()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ALTCOST_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isAltcost() <em>Altcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAltcost()
+   * @generated
+   * @ordered
+   */
+  protected boolean altcost = ALTCOST_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isEvocost() <em>Evocost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isEvocost()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean EVOCOST_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isEvocost() <em>Evocost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isEvocost()
+   * @generated
+   * @ordered
+   */
+  protected boolean evocost = EVOCOST_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isConstcost() <em>Constcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isConstcost()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean CONSTCOST_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isConstcost() <em>Constcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isConstcost()
+   * @generated
+   * @ordered
+   */
+  protected boolean constcost = CONSTCOST_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isEnchcost() <em>Enchcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isEnchcost()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ENCHCOST_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isEnchcost() <em>Enchcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isEnchcost()
+   * @generated
+   * @ordered
+   */
+  protected boolean enchcost = ENCHCOST_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isThaucost() <em>Thaucost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isThaucost()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean THAUCOST_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isThaucost() <em>Thaucost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isThaucost()
+   * @generated
+   * @ordered
+   */
+  protected boolean thaucost = THAUCOST_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isBloodcost() <em>Bloodcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isBloodcost()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean BLOODCOST_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isBloodcost() <em>Bloodcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isBloodcost()
+   * @generated
+   * @ordered
+   */
+  protected boolean bloodcost = BLOODCOST_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -626,6 +899,305 @@ public class SiteInst2Impl extends SitePattern2Impl implements SiteInst2
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isHeal()
+  {
+    return heal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHeal(boolean newHeal)
+  {
+    boolean oldHeal = heal;
+    heal = newHeal;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__HEAL, oldHeal, heal));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isCurse()
+  {
+    return curse;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCurse(boolean newCurse)
+  {
+    boolean oldCurse = curse;
+    curse = newCurse;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__CURSE, oldCurse, curse));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isDisease()
+  {
+    return disease;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDisease(boolean newDisease)
+  {
+    boolean oldDisease = disease;
+    disease = newDisease;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__DISEASE, oldDisease, disease));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isHorrormark()
+  {
+    return horrormark;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHorrormark(boolean newHorrormark)
+  {
+    boolean oldHorrormark = horrormark;
+    horrormark = newHorrormark;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__HORRORMARK, oldHorrormark, horrormark));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isHolyfire()
+  {
+    return holyfire;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHolyfire(boolean newHolyfire)
+  {
+    boolean oldHolyfire = holyfire;
+    holyfire = newHolyfire;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__HOLYFIRE, oldHolyfire, holyfire));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isHolypower()
+  {
+    return holypower;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHolypower(boolean newHolypower)
+  {
+    boolean oldHolypower = holypower;
+    holypower = newHolypower;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__HOLYPOWER, oldHolypower, holypower));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isConjcost()
+  {
+    return conjcost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setConjcost(boolean newConjcost)
+  {
+    boolean oldConjcost = conjcost;
+    conjcost = newConjcost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__CONJCOST, oldConjcost, conjcost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isAltcost()
+  {
+    return altcost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAltcost(boolean newAltcost)
+  {
+    boolean oldAltcost = altcost;
+    altcost = newAltcost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__ALTCOST, oldAltcost, altcost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isEvocost()
+  {
+    return evocost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEvocost(boolean newEvocost)
+  {
+    boolean oldEvocost = evocost;
+    evocost = newEvocost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__EVOCOST, oldEvocost, evocost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isConstcost()
+  {
+    return constcost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setConstcost(boolean newConstcost)
+  {
+    boolean oldConstcost = constcost;
+    constcost = newConstcost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__CONSTCOST, oldConstcost, constcost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isEnchcost()
+  {
+    return enchcost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEnchcost(boolean newEnchcost)
+  {
+    boolean oldEnchcost = enchcost;
+    enchcost = newEnchcost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__ENCHCOST, oldEnchcost, enchcost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isThaucost()
+  {
+    return thaucost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setThaucost(boolean newThaucost)
+  {
+    boolean oldThaucost = thaucost;
+    thaucost = newThaucost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__THAUCOST, oldThaucost, thaucost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isBloodcost()
+  {
+    return bloodcost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBloodcost(boolean newBloodcost)
+  {
+    boolean oldBloodcost = bloodcost;
+    bloodcost = newBloodcost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.SITE_INST2__BLOODCOST, oldBloodcost, bloodcost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -657,6 +1229,32 @@ public class SiteInst2Impl extends SitePattern2Impl implements SiteInst2
         return isIncscale();
       case DmPackage.SITE_INST2__DECSCALE:
         return isDecscale();
+      case DmPackage.SITE_INST2__HEAL:
+        return isHeal();
+      case DmPackage.SITE_INST2__CURSE:
+        return isCurse();
+      case DmPackage.SITE_INST2__DISEASE:
+        return isDisease();
+      case DmPackage.SITE_INST2__HORRORMARK:
+        return isHorrormark();
+      case DmPackage.SITE_INST2__HOLYFIRE:
+        return isHolyfire();
+      case DmPackage.SITE_INST2__HOLYPOWER:
+        return isHolypower();
+      case DmPackage.SITE_INST2__CONJCOST:
+        return isConjcost();
+      case DmPackage.SITE_INST2__ALTCOST:
+        return isAltcost();
+      case DmPackage.SITE_INST2__EVOCOST:
+        return isEvocost();
+      case DmPackage.SITE_INST2__CONSTCOST:
+        return isConstcost();
+      case DmPackage.SITE_INST2__ENCHCOST:
+        return isEnchcost();
+      case DmPackage.SITE_INST2__THAUCOST:
+        return isThaucost();
+      case DmPackage.SITE_INST2__BLOODCOST:
+        return isBloodcost();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -709,6 +1307,45 @@ public class SiteInst2Impl extends SitePattern2Impl implements SiteInst2
         return;
       case DmPackage.SITE_INST2__DECSCALE:
         setDecscale((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__HEAL:
+        setHeal((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__CURSE:
+        setCurse((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__DISEASE:
+        setDisease((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__HORRORMARK:
+        setHorrormark((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__HOLYFIRE:
+        setHolyfire((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__HOLYPOWER:
+        setHolypower((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__CONJCOST:
+        setConjcost((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__ALTCOST:
+        setAltcost((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__EVOCOST:
+        setEvocost((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__CONSTCOST:
+        setConstcost((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__ENCHCOST:
+        setEnchcost((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__THAUCOST:
+        setThaucost((Boolean)newValue);
+        return;
+      case DmPackage.SITE_INST2__BLOODCOST:
+        setBloodcost((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -763,6 +1400,45 @@ public class SiteInst2Impl extends SitePattern2Impl implements SiteInst2
       case DmPackage.SITE_INST2__DECSCALE:
         setDecscale(DECSCALE_EDEFAULT);
         return;
+      case DmPackage.SITE_INST2__HEAL:
+        setHeal(HEAL_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__CURSE:
+        setCurse(CURSE_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__DISEASE:
+        setDisease(DISEASE_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__HORRORMARK:
+        setHorrormark(HORRORMARK_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__HOLYFIRE:
+        setHolyfire(HOLYFIRE_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__HOLYPOWER:
+        setHolypower(HOLYPOWER_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__CONJCOST:
+        setConjcost(CONJCOST_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__ALTCOST:
+        setAltcost(ALTCOST_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__EVOCOST:
+        setEvocost(EVOCOST_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__CONSTCOST:
+        setConstcost(CONSTCOST_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__ENCHCOST:
+        setEnchcost(ENCHCOST_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__THAUCOST:
+        setThaucost(THAUCOST_EDEFAULT);
+        return;
+      case DmPackage.SITE_INST2__BLOODCOST:
+        setBloodcost(BLOODCOST_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -803,6 +1479,32 @@ public class SiteInst2Impl extends SitePattern2Impl implements SiteInst2
         return incscale != INCSCALE_EDEFAULT;
       case DmPackage.SITE_INST2__DECSCALE:
         return decscale != DECSCALE_EDEFAULT;
+      case DmPackage.SITE_INST2__HEAL:
+        return heal != HEAL_EDEFAULT;
+      case DmPackage.SITE_INST2__CURSE:
+        return curse != CURSE_EDEFAULT;
+      case DmPackage.SITE_INST2__DISEASE:
+        return disease != DISEASE_EDEFAULT;
+      case DmPackage.SITE_INST2__HORRORMARK:
+        return horrormark != HORRORMARK_EDEFAULT;
+      case DmPackage.SITE_INST2__HOLYFIRE:
+        return holyfire != HOLYFIRE_EDEFAULT;
+      case DmPackage.SITE_INST2__HOLYPOWER:
+        return holypower != HOLYPOWER_EDEFAULT;
+      case DmPackage.SITE_INST2__CONJCOST:
+        return conjcost != CONJCOST_EDEFAULT;
+      case DmPackage.SITE_INST2__ALTCOST:
+        return altcost != ALTCOST_EDEFAULT;
+      case DmPackage.SITE_INST2__EVOCOST:
+        return evocost != EVOCOST_EDEFAULT;
+      case DmPackage.SITE_INST2__CONSTCOST:
+        return constcost != CONSTCOST_EDEFAULT;
+      case DmPackage.SITE_INST2__ENCHCOST:
+        return enchcost != ENCHCOST_EDEFAULT;
+      case DmPackage.SITE_INST2__THAUCOST:
+        return thaucost != THAUCOST_EDEFAULT;
+      case DmPackage.SITE_INST2__BLOODCOST:
+        return bloodcost != BLOODCOST_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -844,6 +1546,32 @@ public class SiteInst2Impl extends SitePattern2Impl implements SiteInst2
     result.append(incscale);
     result.append(", decscale: ");
     result.append(decscale);
+    result.append(", heal: ");
+    result.append(heal);
+    result.append(", curse: ");
+    result.append(curse);
+    result.append(", disease: ");
+    result.append(disease);
+    result.append(", horrormark: ");
+    result.append(horrormark);
+    result.append(", holyfire: ");
+    result.append(holyfire);
+    result.append(", holypower: ");
+    result.append(holypower);
+    result.append(", conjcost: ");
+    result.append(conjcost);
+    result.append(", altcost: ");
+    result.append(altcost);
+    result.append(", evocost: ");
+    result.append(evocost);
+    result.append(", constcost: ");
+    result.append(constcost);
+    result.append(", enchcost: ");
+    result.append(enchcost);
+    result.append(", thaucost: ");
+    result.append(thaucost);
+    result.append(", bloodcost: ");
+    result.append(bloodcost);
     result.append(')');
     return result.toString();
   }

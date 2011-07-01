@@ -66,6 +66,7 @@ import org.larz.dom3.dm.dm.NameInst1;
 import org.larz.dom3.dm.dm.NameInst2;
 import org.larz.dom3.dm.dm.NameMods;
 import org.larz.dom3.dm.dm.SelectName;
+import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class NameDetailsPage extends AbstractDetailsPage {
@@ -138,6 +139,7 @@ public class NameDetailsPage extends AbstractDetailsPage {
 		id.setLayoutData(gd);
 		
 		clear = toolkit.createButton(nameComp, "clear", SWT.CHECK);
+		clear.setToolTipText(HelpTextHelper.getText(HelpTextHelper.NAME_CATEGORY, "clear"));
 		clear.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {

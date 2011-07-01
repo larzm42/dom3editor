@@ -27,6 +27,19 @@ package org.larz.dom3.dm.dm;
  *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isRes <em>Res</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isIncscale <em>Incscale</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isDecscale <em>Decscale</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isHeal <em>Heal</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isCurse <em>Curse</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isDisease <em>Disease</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isHorrormark <em>Horrormark</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isHolyfire <em>Holyfire</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isHolypower <em>Holypower</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isConjcost <em>Conjcost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isAltcost <em>Altcost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isEvocost <em>Evocost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isConstcost <em>Constcost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isEnchcost <em>Enchcost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isThaucost <em>Thaucost</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.SiteInst2#isBloodcost <em>Bloodcost</em>}</li>
  * </ul>
  * </p>
  *
@@ -373,5 +386,343 @@ public interface SiteInst2 extends SitePattern2
    * @generated
    */
   void setDecscale(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Heal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Heal</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Heal</em>' attribute.
+   * @see #setHeal(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Heal()
+   * @model
+   * @generated
+   */
+  boolean isHeal();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isHeal <em>Heal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Heal</em>' attribute.
+   * @see #isHeal()
+   * @generated
+   */
+  void setHeal(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Curse</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Curse</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Curse</em>' attribute.
+   * @see #setCurse(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Curse()
+   * @model
+   * @generated
+   */
+  boolean isCurse();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isCurse <em>Curse</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Curse</em>' attribute.
+   * @see #isCurse()
+   * @generated
+   */
+  void setCurse(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Disease</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Disease</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Disease</em>' attribute.
+   * @see #setDisease(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Disease()
+   * @model
+   * @generated
+   */
+  boolean isDisease();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isDisease <em>Disease</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Disease</em>' attribute.
+   * @see #isDisease()
+   * @generated
+   */
+  void setDisease(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Horrormark</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Horrormark</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Horrormark</em>' attribute.
+   * @see #setHorrormark(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Horrormark()
+   * @model
+   * @generated
+   */
+  boolean isHorrormark();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isHorrormark <em>Horrormark</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Horrormark</em>' attribute.
+   * @see #isHorrormark()
+   * @generated
+   */
+  void setHorrormark(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Holyfire</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Holyfire</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Holyfire</em>' attribute.
+   * @see #setHolyfire(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Holyfire()
+   * @model
+   * @generated
+   */
+  boolean isHolyfire();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isHolyfire <em>Holyfire</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Holyfire</em>' attribute.
+   * @see #isHolyfire()
+   * @generated
+   */
+  void setHolyfire(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Holypower</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Holypower</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Holypower</em>' attribute.
+   * @see #setHolypower(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Holypower()
+   * @model
+   * @generated
+   */
+  boolean isHolypower();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isHolypower <em>Holypower</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Holypower</em>' attribute.
+   * @see #isHolypower()
+   * @generated
+   */
+  void setHolypower(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Conjcost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Conjcost</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Conjcost</em>' attribute.
+   * @see #setConjcost(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Conjcost()
+   * @model
+   * @generated
+   */
+  boolean isConjcost();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isConjcost <em>Conjcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Conjcost</em>' attribute.
+   * @see #isConjcost()
+   * @generated
+   */
+  void setConjcost(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Altcost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Altcost</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Altcost</em>' attribute.
+   * @see #setAltcost(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Altcost()
+   * @model
+   * @generated
+   */
+  boolean isAltcost();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isAltcost <em>Altcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Altcost</em>' attribute.
+   * @see #isAltcost()
+   * @generated
+   */
+  void setAltcost(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Evocost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Evocost</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Evocost</em>' attribute.
+   * @see #setEvocost(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Evocost()
+   * @model
+   * @generated
+   */
+  boolean isEvocost();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isEvocost <em>Evocost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Evocost</em>' attribute.
+   * @see #isEvocost()
+   * @generated
+   */
+  void setEvocost(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Constcost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Constcost</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Constcost</em>' attribute.
+   * @see #setConstcost(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Constcost()
+   * @model
+   * @generated
+   */
+  boolean isConstcost();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isConstcost <em>Constcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Constcost</em>' attribute.
+   * @see #isConstcost()
+   * @generated
+   */
+  void setConstcost(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Enchcost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Enchcost</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Enchcost</em>' attribute.
+   * @see #setEnchcost(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Enchcost()
+   * @model
+   * @generated
+   */
+  boolean isEnchcost();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isEnchcost <em>Enchcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Enchcost</em>' attribute.
+   * @see #isEnchcost()
+   * @generated
+   */
+  void setEnchcost(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Thaucost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Thaucost</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Thaucost</em>' attribute.
+   * @see #setThaucost(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Thaucost()
+   * @model
+   * @generated
+   */
+  boolean isThaucost();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isThaucost <em>Thaucost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Thaucost</em>' attribute.
+   * @see #isThaucost()
+   * @generated
+   */
+  void setThaucost(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Bloodcost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bloodcost</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bloodcost</em>' attribute.
+   * @see #setBloodcost(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getSiteInst2_Bloodcost()
+   * @model
+   * @generated
+   */
+  boolean isBloodcost();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.SiteInst2#isBloodcost <em>Bloodcost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bloodcost</em>' attribute.
+   * @see #isBloodcost()
+   * @generated
+   */
+  void setBloodcost(boolean value);
 
 } // SiteInst2

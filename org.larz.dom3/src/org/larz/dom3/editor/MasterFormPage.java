@@ -51,6 +51,7 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.Activator;
 import org.larz.dom3.dm.dm.Dom3Mod;
 import org.larz.dom3.dm.ui.editor.DmXtextEditor;
+import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.dm.ui.internal.DmActivator;
 import org.larz.dom3.image.ImageConverter;
 import org.larz.dom3.image.ImageLoader;
@@ -139,8 +140,9 @@ public class MasterFormPage extends FormPage {
 		expandable.setExpanded(false);
 		
 		for (final General general : General.values()) {
-			toolkit.createLabel(header, general.label); //$NON-NLS-1$
-			
+			Label label = toolkit.createLabel(header, general.label); //$NON-NLS-1$
+			label.setToolTipText(HelpTextHelper.getText(HelpTextHelper.GENERAL_CATEGORY, general.label));
+
 			final Text modname = toolkit.createText(header, getGeneral(general, doc), (general.equals(General.DESC) ? SWT.MULTI | SWT.WRAP : SWT.SINGLE) | SWT.BORDER); //$NON-NLS-1$
 			modname.addFocusListener(new FocusAdapter() {
 				@Override
@@ -213,6 +215,7 @@ public class MasterFormPage extends FormPage {
 		
 		for (final General2 general2 : General2.values()) {
 			final Button check = toolkit.createButton(general2Comp, general2.label, SWT.CHECK);
+			check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.GENERAL_CATEGORY, general2.label));
 			GridData data = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
 			check.setLayoutData(data);
 
