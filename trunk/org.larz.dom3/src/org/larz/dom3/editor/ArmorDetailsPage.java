@@ -237,7 +237,7 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 	
 	public void update() {
 		if (input != null) {
-			String nameString = getInst1(Inst2.NAME, input);
+			String nameString = getInst1(Inst2.NAME, (Armor)input);
 			if (nameString != null) {
 				name.setText(nameString);
 				name.setEnabled(true);
@@ -298,9 +298,9 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 					}
 					break;
 				case RCOST:
-					if (armorDB.res != null) {
-						fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.res.toString()));
-						Inst2.RCOST.defaultValue = armorDB.res.toString();
+					if (armorDB.rcost != null) {
+						fields.getValue().defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", armorDB.rcost.toString()));
+						Inst2.RCOST.defaultValue = armorDB.rcost.toString();
 					}
 					break;
 				case TYPE:
@@ -367,8 +367,8 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 		updateSelection();
 	}
 	
-	private String getInst1(Inst2 inst2, Object armor) {
-		EList<ArmorMods> list = ((Armor)armor).getMods();
+	private String getInst1(Inst2 inst2, Armor armor) {
+		EList<ArmorMods> list = (armor).getMods();
 		for (ArmorMods mod : list) {
 			if (mod instanceof ArmorInst1) {
 				switch (inst2) {

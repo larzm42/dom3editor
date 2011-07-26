@@ -40,7 +40,6 @@ import org.larz.dom3.db.IDNameDB;
 import org.larz.dom3.editor.AddDialog.TypeToAdd;
 
 /**
- * @author lmoore
  *
  */
 public class SearchDialog extends Dialog {

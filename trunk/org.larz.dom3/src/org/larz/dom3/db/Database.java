@@ -30,7 +30,6 @@ import org.eclipse.core.runtime.Path;
 import org.larz.dom3.Activator;
 
 /**
- * @author lmoore
  *
  */
 public class Database {
@@ -284,7 +283,7 @@ public class Database {
 			armor.def = rs.getInt("def");
 			armor.enc = rs.getInt("enc");
 			armor.prot = rs.getInt("prot");
-			armor.res = rs.getInt("res");
+			armor.rcost = rs.getInt("res");
 			armor.type = rs.getInt("type");
 		}
 		return armor;
