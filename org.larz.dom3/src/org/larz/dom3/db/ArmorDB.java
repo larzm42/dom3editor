@@ -22,6 +22,6 @@ public class ArmorDB {
 	public Integer prot;
 	public Integer def;
 	public Integer enc;
-	public Integer res;
+	public Integer rcost;
 	
 }

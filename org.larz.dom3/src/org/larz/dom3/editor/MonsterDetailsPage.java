@@ -2428,48 +2428,64 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					if (monsterDB.firstshape != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.firstshape));
 						Inst.FIRSTSHAPE.defaultValue = monsterDB.firstshape;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
 					}
 					break;
 				case SECONDSHAPE:
 					if (monsterDB.secondshape != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.secondshape));
 						Inst.SECONDSHAPE.defaultValue = monsterDB.secondshape;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
 					}
 					break;
 				case SECONDTMPSHAPE:
 					if (monsterDB.secondtmpshape != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.secondtmpshape));
 						Inst.SECONDTMPSHAPE.defaultValue = monsterDB.secondtmpshape;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
 					}
 					break;
 				case SHAPECHANGE:
 					if (monsterDB.shapechange != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.shapechange));
 						Inst.SHAPECHANGE.defaultValue = monsterDB.shapechange;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
 					}
 					break;
 				case LANDSHAPE:
 					if (monsterDB.landshape != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.landshape));
 						Inst.LANDSHAPE.defaultValue = monsterDB.landshape;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
 					}
 					break;
 				case WATERSHAPE:
 					if (monsterDB.watershape != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.watershape));
 						Inst.WATERSHAPE.defaultValue = monsterDB.watershape;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
 					}
 					break;
 				case FORESTSHAPE:
 					if (monsterDB.forestshape != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.forestshape));
 						Inst.FORESTSHAPE.defaultValue = monsterDB.forestshape;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
 					}
 					break;
 				case PLAINSHAPE:
 					if (monsterDB.plainshape != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.plainshape));
 						Inst.PLAINSHAPE.defaultValue = monsterDB.plainshape;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
 					}
 					break;
 				case DOMSUMMON:
