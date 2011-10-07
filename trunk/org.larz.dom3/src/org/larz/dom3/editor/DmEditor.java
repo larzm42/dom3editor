@@ -94,6 +94,7 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 	protected IEditorPart sourcePage;
 	protected MasterFormPage masterDetailsPage;
 	
+
 	/**
 	 * This is the method used by the framework to install your own controls.
 	 */
@@ -627,6 +628,10 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 		runValidation();
 		
 		refresh();
+	}
+	
+	public void generateReport() {
+		ReportGenerator.generateReport((XtextEditor)sourcePage);
 	}
 
 }

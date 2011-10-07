@@ -417,8 +417,21 @@ public class Database {
 
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery("SELECT * FROM \"Nations\" where \"#id\"="+id);
-			nation = getNationDB(rs);
+
+			Statement statement2 = con.createStatement();
+			ResultSet rs2 = statement2.executeQuery("SELECT * FROM \"Heroes\" where \"nation\"="+id);
+
+			Statement statement3 = con.createStatement();
+			ResultSet rs3 = statement3.executeQuery("SELECT * FROM \"Units\" where \"nation\"="+id);
+
+			Statement statement4 = con.createStatement();
+			ResultSet rs4 = statement4.executeQuery("SELECT * FROM \"Commanders\" where \"nation\"="+id);
+
+			nation = getNationDB(rs, rs2, rs3, rs4);
 			statement.close();
+			statement2.close();
+			statement3.close();
+			statement4.close();
 			con.close();
 
 		} catch (Exception ex) {
@@ -579,7 +592,7 @@ public class Database {
 		return site;
 	}
 
-	private static NationDB getNationDB(ResultSet rs) throws SQLException {
+	private static NationDB getNationDB(ResultSet rs, ResultSet rs2, ResultSet rs3, ResultSet rs4) throws SQLException {
 		NationDB nation = new NationDB();
 		if (rs.next()) {
 			nation.id = rs.getInt("#id");
@@ -592,6 +605,51 @@ public class Database {
 			nation.startsite3 = getSiteName(rs.getInt("site3"));
 			nation.startsite4 = getSiteName(rs.getInt("site4"));
 		}
+		int heroCount = 1;
+		while (rs2.next()) {
+			switch (heroCount) {
+			case 1:
+				nation.hero1 = rs2.getInt("hero");
+				break;
+			case 2:
+				nation.hero2 = rs2.getInt("hero");
+				break;
+			case 3:
+				nation.hero3 = rs2.getInt("hero");
+				break;
+			case 4:
+				nation.hero4 = rs2.getInt("hero");
+				break;
+			case 5:
+				nation.hero5 = rs2.getInt("hero");
+				break;
+			case 6:
+				nation.hero6 = rs2.getInt("hero");
+				break;
+			}
+			heroCount++;
+		}
+		
+		int i = 0;
+		List<Integer> units = new ArrayList<Integer>();
+		while (rs3.next()) {
+			units.add(rs3.getInt("unit"));
+			i++;
+		}
+		nation.addrecunit = new Integer[units.size()];
+		for (i = 0; i < units.size(); i++) {
+			nation.addrecunit[i] = units.get(i);
+		}
+		i = 0;
+		List<Integer> cmdrs = new ArrayList<Integer>();
+		while (rs4.next()) {
+			cmdrs.add(rs4.getInt("cmdr"));
+			i++;
+		}
+		nation.addreccom = new Integer[cmdrs.size()];
+		for (i = 0; i < cmdrs.size(); i++) {
+			nation.addreccom[i] = cmdrs.get(i);
+		}
 		return nation;
 	}
 
@@ -599,7 +657,11 @@ public class Database {
 		WeaponDB weapon = new WeaponDB();
 		if (rs.next()) {	
 			weapon.name = rs.getString("wpname");
-			weapon.dmg = rs.getInt("dmg");
+			try {
+				weapon.dmg = rs.getInt("dmg");
+			} catch (SQLException e) {
+				// some bad data
+			}
 			weapon.nratt = rs.getInt("#att");
 			weapon.att = rs.getInt("att");
 			weapon.def = rs.getInt("def");
@@ -716,8 +778,16 @@ public class Database {
 			monster.fireshield = rs.getInt("fshld");
 			monster.heat = rs.getInt("heat");
 			monster.cold = rs.getInt("chill");
-			monster.iceprot = rs.getInt("ice");
-			monster.poisoncloud = rs.getInt("pcloud");
+			try {
+				monster.iceprot = rs.getInt("ice");
+			} catch (SQLException e) {
+				// some bad data in db
+			}
+			try {
+				monster.poisoncloud = rs.getInt("pcloud");
+			} catch (SQLException e) {
+				// some bad data in db
+			}
 			monster.diseasecloud = rs.getInt("dcloud");
 			monster.bloodvengeance = rs.getInt("bldvng");
 			monster.castledef = rs.getInt("cdef");

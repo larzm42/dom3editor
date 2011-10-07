@@ -94,6 +94,18 @@
             class="org.larz.dom3.editor.EditorActionProblems"> 
          </action>
       </editorContribution>
+      <editorContribution
+            id="org.larz.dom3.editor.DmEditor.contribution"
+            targetID="org.larz.dom3.editor.DmEditor">
+         <action
+               class="org.larz.dom3.editor.EditorActionReport"
+               icon="icons/pdf.gif"
+               id="org.larz.dom3.action1"
+               label="Generate Report"
+               toolbarPath="Normal/additions"
+               tooltip="Generate Report">
+         </action>
+      </editorContribution>
    </extension>
    <extension
          point="org.eclipse.ui.startup">
