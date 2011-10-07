@@ -22,8 +22,8 @@ public class SiteDB {
 	public Integer level;
 	public Integer rarity;
 	public Integer loc;
-//	public Integer homemon;
-//	public Integer homecom;
+	public Integer homemon;
+	public Integer homecom;
 	public Integer mon1;
 	public Integer mon2;
 	public Integer mon3;

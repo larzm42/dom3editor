@@ -17,4 +17,5 @@ Bundle-Vendor: Larz
 Bundle-ClassPath: .,
  lib/hsqldb.jar,
  lib/imageio_tga_1.1.0.jar,
- lib/commons-compress-1.1.jar
+ lib/commons-compress-1.1.jar,
+ lib/itextpdf-5.1.1.jar

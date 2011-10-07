@@ -18,9 +18,9 @@ package org.larz.dom3.db;
 public class MonsterDB {
 	public Integer id;
 	public String name;
-//	public String spr1;
-//	public String spr2;
-//	public String descr;
+	public String spr1;
+	public String spr2;
+	public String descr;
 	public String armor1;
 	public String armor2;
 	public String armor3;
