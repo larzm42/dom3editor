@@ -46,7 +46,6 @@ import org.eclipse.ui.forms.widgets.TableWrapLayout;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.db.Database;
 import org.larz.dom3.db.SpellDB;
@@ -61,7 +60,6 @@ import org.larz.dom3.dm.dm.SpellInst4;
 import org.larz.dom3.dm.dm.SpellInst5;
 import org.larz.dom3.dm.dm.SpellMods;
 import org.larz.dom3.dm.ui.help.HelpTextHelper;
-import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class SpellDetailsPage extends AbstractDetailsPage {
 	private Text name;
@@ -771,10 +769,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 	private void setSpellname(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				boolean nameSet = false;
@@ -793,8 +790,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 					mods.add(nameInst);
 				}
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -802,10 +798,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 	private void setSpelldescr(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				boolean nameSet = false;
@@ -824,8 +819,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 					mods.add(nameInst);
 				}
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -1027,10 +1021,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 	private void setInst1(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();				
 				for (SpellMods mod : mods) {
@@ -1051,8 +1044,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -1060,10 +1052,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
@@ -1144,8 +1135,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -1153,10 +1143,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Spell spellToEdit = (Spell)input;
 				int pathCount = 0;
 				int pathLevelCount = 0;
@@ -1221,8 +1210,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -1230,10 +1218,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 	private void setInst5(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
@@ -1277,8 +1264,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -1288,10 +1274,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<SpellMods> mods = ((Spell)input).getMods();
 						SpellInst1 type = DmFactory.eINSTANCE.createSpellInst1();
 						switch (inst) {
@@ -1305,8 +1290,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 						type.setValue(newName);
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -1318,10 +1302,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<SpellMods> mods = ((Spell)input).getMods();
 						SpellInst2 type = DmFactory.eINSTANCE.createSpellInst2();
 						switch (inst) {
@@ -1371,8 +1354,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 						type.setValue(Integer.valueOf(newName));
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -1384,10 +1366,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<SpellMods> mods = ((Spell)input).getMods();
 						SpellInst3 type = DmFactory.eINSTANCE.createSpellInst3();
 						switch (inst) {
@@ -1408,8 +1389,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 						type.setValue2(Integer.valueOf(newName2));
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -1421,10 +1401,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<SpellMods> mods = ((Spell)input).getMods();
 						SpellInst4 type = DmFactory.eINSTANCE.createSpellInst4();
 						switch (inst) {
@@ -1434,8 +1413,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 						}
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -1447,10 +1425,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<SpellMods> mods = ((Spell)input).getMods();
 						SpellInst5 type = DmFactory.eINSTANCE.createSpellInst5();
 						switch (inst) {
@@ -1474,8 +1451,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 						}
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -1487,10 +1463,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						SpellMods modToRemove = null;
 						int pathCount = 0;
 						int pathLevelCount = 0;
@@ -1583,8 +1558,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 							mods.remove(modToRemove);
 						}
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}

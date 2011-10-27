@@ -22,25 +22,25 @@ import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.jface.text.Region;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.graphics.Point;
+import org.eclipse.xtext.nodemodel.ILeafNode;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.parser.IParseResult;
-import org.eclipse.xtext.parsetree.AbstractNode;
-import org.eclipse.xtext.parsetree.LeafNode;
-import org.eclipse.xtext.parsetree.ParseTreeUtil;
 import org.eclipse.xtext.resource.EObjectAtOffsetHelper;
 import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.ui.editor.hover.ProblemHover;
+import org.eclipse.xtext.ui.editor.hover.ProblemAnnotationHover;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.util.TextLocation;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 
 public class DmTextHover implements ITextHover, ITextHoverExtension2 {
 	/**
 	 * As pointed out in the forum, we should put problem messages first.
 	 */
-	private ProblemHover problem;
+	private ProblemAnnotationHover problem;
 
 	public DmTextHover(ISourceViewer sourceViewer) {
-		problem = new ProblemHover(sourceViewer);
+		problem = new ProblemAnnotationHover();
+		problem.setSourceViewer(sourceViewer);
 	}
 
 	@Override
@@ -84,15 +84,15 @@ public class DmTextHover implements ITextHover, ITextHoverExtension2 {
 				String text = null;
 				IParseResult parseResult = state.getParseResult();
 				if (parseResult != null && parseResult.getRootNode() != null) {
-					AbstractNode node = ParseTreeUtil.getCurrentOrFollowingNodeByOffset(parseResult.getRootNode(), hoverRegion.getOffset());
-					text = ((LeafNode)node).getText();
+					INode node = NodeModelUtils.findLeafNodeAtOffset(parseResult.getRootNode(), hoverRegion.getOffset());
+					text = ((ILeafNode)node).getText();
 				}
 
+				EObjectAtOffsetHelper helper = new EObjectAtOffsetHelper();
 				return HelpTextHelper.getText(
-						EObjectAtOffsetHelper.resolveElementAt(
+						helper.resolveElementAt(
 								state, 
-								hoverRegion.getOffset(), 
-								new TextLocation(hoverRegion.getOffset(), hoverRegion.getLength())), 
+								hoverRegion.getOffset()), 
 						text);
 			}
 		});

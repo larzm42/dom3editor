@@ -58,12 +58,12 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check(CheckType.EXPENSIVE)
 	public void checkNewArmorIds(NewArmor armor) {
 		if (armor.getValue() < MIN_ARMOR_ID || armor.getValue() > MAX_ARMOR_ID) {
-			warning(Messages.format("ArmorRangeWarning.fmt", MIN_ARMOR_ID, MAX_ARMOR_ID), armor, DmPackage.NEW_ARMOR__VALUE);
+			warning(Messages.format("ArmorRangeWarning.fmt", MIN_ARMOR_ID, MAX_ARMOR_ID), DmPackage.eINSTANCE.getNewArmor_Value());
 			return;
 		}
 		if (getContext().containsKey("NewArmorId")) {
 			if (((Set)getContext().get("NewArmorId")).contains(armor.getValue())) {
-				warning(Messages.format("DuplicateNewArmor.fmt", armor.getValue()), armor, DmPackage.NEW_ARMOR__VALUE);
+				warning(Messages.format("DuplicateNewArmor.fmt", armor.getValue()), DmPackage.eINSTANCE.getNewArmor_Value());
 			}
 			return;
  		} else {
@@ -80,7 +80,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  	 					armorIds.add(newArmor.getValue());
  					}
  					if (!armor.equals(newArmor) && armor.getValue() == newArmor.getValue()) {
- 						warning(Messages.format("DuplicateNewArmor.fmt", armor.getValue()), armor, DmPackage.NEW_ARMOR__VALUE);
+ 						warning(Messages.format("DuplicateNewArmor.fmt", armor.getValue()), DmPackage.eINSTANCE.getNewArmor_Value());
  					}
  				}
  			}
@@ -93,7 +93,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	public void checkSelectArmorIds(SelectArmorById armor) {
 		if (getContext().containsKey("SelectArmorId")) {
 			if (((Set)getContext().get("SelectArmorId")).contains(armor.getValue())) {
-				warning(Messages.format("DuplicateSelectArmor.fmt", armor.getValue()), armor, DmPackage.SELECT_ARMOR_BY_ID__VALUE);
+				warning(Messages.format("DuplicateSelectArmor.fmt", armor.getValue()), DmPackage.eINSTANCE.getSelectArmorById_Value());
 			}
 			return;
  		} else {
@@ -110,7 +110,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  	 					armorIds.add(newArmor.getValue());
  					}
  					if (!armor.equals(newArmor) && armor.getValue() == newArmor.getValue()) {
- 						warning(Messages.format("DuplicateSelectArmor.fmt", armor.getValue()), armor, DmPackage.SELECT_ARMOR_BY_ID__VALUE);
+ 						warning(Messages.format("DuplicateSelectArmor.fmt", armor.getValue()), DmPackage.eINSTANCE.getSelectArmorById_Value());
  					}
  				}
  			}
@@ -123,7 +123,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	public void checkSelectArmorNames(SelectArmorByName armor) {
 		if (getContext().containsKey("SelectArmorName")) {
 			if (((Set)getContext().get("SelectArmorName")).contains(armor.getValue())) {
-				warning(Messages.format("DuplicateSelectArmorName.fmt", armor.getValue()), armor, DmPackage.SELECT_ARMOR_BY_NAME__VALUE);
+				warning(Messages.format("DuplicateSelectArmorName.fmt", armor.getValue()), DmPackage.eINSTANCE.getSelectArmorByName_Value());
 			}
 			return;
  		} else {
@@ -140,7 +140,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						armorNames.add(newArmor.getValue());
  					}
  					if (!armor.equals(newArmor) && armor.getValue().equals(newArmor.getValue())) {
- 						warning(Messages.format("DuplicateSelectArmorName.fmt", armor.getValue()), armor, DmPackage.SELECT_ARMOR_BY_NAME__VALUE);
+ 						warning(Messages.format("DuplicateSelectArmorName.fmt", armor.getValue()), DmPackage.eINSTANCE.getSelectArmorByName_Value());
  					}
  				}
  			}
@@ -152,12 +152,12 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check(CheckType.EXPENSIVE)
 	public void checkWeaponIds(NewWeapon weapon) {
 		if (weapon.getValue() < MIN_WEAPON_ID || weapon.getValue() > MAX_WEAPON_ID) {
-			warning(Messages.format("WeaponRangeWarning.fmt", MIN_WEAPON_ID, MAX_WEAPON_ID), weapon, DmPackage.NEW_WEAPON__VALUE);
+			warning(Messages.format("WeaponRangeWarning.fmt", MIN_WEAPON_ID, MAX_WEAPON_ID), DmPackage.eINSTANCE.getNewWeapon_Value());
 			return;
 		}
 		if (getContext().containsKey("NewWeaponId")) {
 			if (((Set)getContext().get("NewWeaponId")).contains(weapon.getValue())) {
-				warning(Messages.format("DuplicateNewWeapon.fmt", weapon.getValue()), weapon, DmPackage.NEW_WEAPON__VALUE);
+				warning(Messages.format("DuplicateNewWeapon.fmt", weapon.getValue()), DmPackage.eINSTANCE.getNewWeapon_Value());
 			}
 			return;
  		} else {
@@ -174,7 +174,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						weaponIds.add(newWeapon.getValue());
  					}
  					if (!weapon.equals(newWeapon) && weapon.getValue() == newWeapon.getValue()) {
- 						warning(Messages.format("DuplicateNewWeapon.fmt", weapon.getValue()), weapon, DmPackage.NEW_WEAPON__VALUE);
+ 						warning(Messages.format("DuplicateNewWeapon.fmt", weapon.getValue()), DmPackage.eINSTANCE.getNewWeapon_Value());
  					}
  				}
  			}
@@ -187,7 +187,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	public void checkSelectWeaponIds(SelectWeaponById weapon) {
 		if (getContext().containsKey("SelectWeaponId")) {
 			if (((Set)getContext().get("SelectWeaponId")).contains(weapon.getValue())) {
-				warning(Messages.format("DuplicateSelectWeapon.fmt", weapon.getValue()), weapon, DmPackage.SELECT_WEAPON_BY_ID__VALUE);
+				warning(Messages.format("DuplicateSelectWeapon.fmt", weapon.getValue()), DmPackage.eINSTANCE.getSelectWeaponById_Value());
 			}
 			return;
  		} else {
@@ -204,7 +204,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						weaponIds.add(newWeapon.getValue());
  					}
  					if (!weapon.equals(newWeapon) && weapon.getValue() == newWeapon.getValue()) {
- 						warning(Messages.format("DuplicateSelectWeapon.fmt", weapon.getValue()), weapon, DmPackage.SELECT_WEAPON_BY_ID__VALUE);
+ 						warning(Messages.format("DuplicateSelectWeapon.fmt", weapon.getValue()), DmPackage.eINSTANCE.getSelectWeaponById_Value());
  					}
  				}
  			}
@@ -217,7 +217,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	public void checkSelectWeaponNames(SelectWeaponByName weapon) {
 		if (getContext().containsKey("SelectWeaponName")) {
 			if (((Set)getContext().get("SelectWeaponName")).contains(weapon.getValue())) {
-				warning(Messages.format("DuplicateSelectWeaponName.fmt", weapon.getValue()), weapon, DmPackage.SELECT_WEAPON_BY_NAME__VALUE);
+				warning(Messages.format("DuplicateSelectWeaponName.fmt", weapon.getValue()), DmPackage.eINSTANCE.getSelectWeaponByName_Value());
 			}
 			return;
  		} else {
@@ -234,7 +234,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						weaponIds.add(newWeapon.getValue());
  					}
  					if (!weapon.equals(newWeapon) && weapon.getValue().equals(newWeapon.getValue())) {
- 						warning(Messages.format("DuplicateSelectWeaponName.fmt", weapon.getValue()), weapon, DmPackage.SELECT_WEAPON_BY_NAME__VALUE);
+ 						warning(Messages.format("DuplicateSelectWeaponName.fmt", weapon.getValue()), DmPackage.eINSTANCE.getSelectWeaponByName_Value());
  					}
  				}
  			}
@@ -246,12 +246,12 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check(CheckType.EXPENSIVE)
 	public void checkMonsterIds(NewMonster monster) {
 		if (monster.getValue() < MIN_MONSTER_ID || monster.getValue() > MAX_MONSTER_ID) {
-			warning(Messages.format("UnitRangeWarning.fmt", MIN_MONSTER_ID, MAX_MONSTER_ID), monster, DmPackage.NEW_MONSTER__VALUE);
+			warning(Messages.format("UnitRangeWarning.fmt", MIN_MONSTER_ID, MAX_MONSTER_ID), DmPackage.eINSTANCE.getNewMonster_Value());
 			return;
 		}
 		if (getContext().containsKey("NewMonsterId")) {
 			if (((Set)getContext().get("NewMonsterId")).contains(monster.getValue())) {
-				warning(Messages.format("DuplicateNewUnit.fmt", monster.getValue()), monster, DmPackage.NEW_MONSTER__VALUE);
+				warning(Messages.format("DuplicateNewUnit.fmt", monster.getValue()), DmPackage.eINSTANCE.getNewMonster_Value());
 			}
 			return;
  		} else {
@@ -268,7 +268,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						monsterIds.add(newMonster.getValue());
  					}
  					if (!monster.equals(newMonster) && monster.getValue() == newMonster.getValue()) {
- 						warning(Messages.format("DuplicateNewUnit.fmt", monster.getValue()), monster, DmPackage.NEW_MONSTER__VALUE);
+ 						warning(Messages.format("DuplicateNewUnit.fmt", monster.getValue()), DmPackage.eINSTANCE.getNewMonster_Value());
  					}
  				}
  			}
@@ -281,7 +281,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	public void checkSelectMonsterIds(SelectMonsterById monster) {
 		if (getContext().containsKey("SelectMonsterId")) {
 			if (((Set)getContext().get("SelectMonsterId")).contains(monster.getValue())) {
-				warning(Messages.format("DuplicateSelectUnit.fmt", monster.getValue()), monster, DmPackage.SELECT_MONSTER_BY_ID__VALUE);
+				warning(Messages.format("DuplicateSelectUnit.fmt", monster.getValue()), DmPackage.eINSTANCE.getSelectMonsterById_Value());
 			}
 			return;
  		} else {
@@ -298,7 +298,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						monsterIds.add(newMonster.getValue());
  					}
  					if (!monster.equals(newMonster) && monster.getValue() == newMonster.getValue()) {
- 						warning(Messages.format("DuplicateSelectUnit.fmt", monster.getValue()), monster, DmPackage.SELECT_MONSTER_BY_ID__VALUE);
+ 						warning(Messages.format("DuplicateSelectUnit.fmt", monster.getValue()), DmPackage.eINSTANCE.getSelectMonsterById_Value());
  					}
  				}
  			}
@@ -311,7 +311,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	public void checkSelectMonsterNames(SelectMonsterByName monster) {
 		if (getContext().containsKey("SelectMonsterName")) {
 			if (((Set)getContext().get("SelectMonsterName")).contains(monster.getValue())) {
-				warning(Messages.format("DuplicateSelectUnitName.fmt", monster.getValue()), monster, DmPackage.SELECT_MONSTER_BY_NAME__VALUE);
+				warning(Messages.format("DuplicateSelectUnitName.fmt", monster.getValue()), DmPackage.eINSTANCE.getSelectMonsterByName_Value());
 			}
 			return;
  		} else {
@@ -328,7 +328,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						monsterIds.add(newMonster.getValue());
  					}
  					if (!monster.equals(newMonster) && monster.getValue().equals(newMonster.getValue())) {
- 						warning(Messages.format("DuplicateSelectUnitName.fmt", monster.getValue()), monster, DmPackage.SELECT_MONSTER_BY_NAME__VALUE);
+ 						warning(Messages.format("DuplicateSelectUnitName.fmt", monster.getValue()), DmPackage.eINSTANCE.getSelectMonsterByName_Value());
  					}
  				}
  			}
@@ -339,7 +339,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check(CheckType.EXPENSIVE)
 	public void checkNameIds(SelectName name) {
 		if (name.getValue() < MIN_NAME_ID || name.getValue() > MAX_NAME_ID) {
-			warning(Messages.format("NametypeRangeWarning.fmt", MIN_NAME_ID, MAX_NAME_ID), name, DmPackage.SELECT_NAME__VALUE);
+			warning(Messages.format("NametypeRangeWarning.fmt", MIN_NAME_ID, MAX_NAME_ID), DmPackage.eINSTANCE.getSelectName_Value());
 			return;
 		}
 	}
@@ -348,12 +348,12 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check(CheckType.EXPENSIVE)
 	public void checkSiteIds(NewSite site) {
 		if (site.getValue() < MIN_SITE_ID || site.getValue() > MAX_SITE_ID) {
-			warning(Messages.format("SiteRangeWarning.fmt", MIN_SITE_ID, MAX_SITE_ID), site, DmPackage.NEW_SITE__VALUE);
+			warning(Messages.format("SiteRangeWarning.fmt", MIN_SITE_ID, MAX_SITE_ID), DmPackage.eINSTANCE.getNewSite_Value());
 			return;
 		}
 		if (getContext().containsKey("NewSiteId")) {
 			if (((Set)getContext().get("NewSiteId")).contains(site.getValue())) {
-				warning(Messages.format("DuplicateNewSite.fmt", site.getValue()), site, DmPackage.NEW_SITE__VALUE);
+				warning(Messages.format("DuplicateNewSite.fmt", site.getValue()), DmPackage.eINSTANCE.getNewSite_Value());
 			}
 			return;
  		} else {
@@ -370,7 +370,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						siteIds.add(newSite.getValue());
  					}
  					if (!site.equals(newSite) && site.getValue() == newSite.getValue()) {
- 						warning(Messages.format("DuplicateNewSite.fmt", site.getValue()), site, DmPackage.NEW_SITE__VALUE);
+ 						warning(Messages.format("DuplicateNewSite.fmt", site.getValue()), DmPackage.eINSTANCE.getNewSite_Value());
  					}
  				}
  			}
@@ -383,7 +383,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	public void checkSelectSiteIds(SelectSiteById site) {
 		if (getContext().containsKey("SelectSiteId")) {
 			if (((Set)getContext().get("SelectSiteId")).contains(site.getValue())) {
-				warning(Messages.format("DuplicateSelectSite.fmt", site.getValue()), site, DmPackage.SELECT_SITE_BY_ID__VALUE);
+				warning(Messages.format("DuplicateSelectSite.fmt", site.getValue()), DmPackage.eINSTANCE.getSelectSiteById_Value());
 			}
 			return;
  		} else {
@@ -400,7 +400,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						siteIds.add(newSite.getValue());
  					}
  					if (!site.equals(newSite) && site.getValue() == newSite.getValue()) {
- 						warning(Messages.format("DuplicateSelectSite.fmt", site.getValue()), site, DmPackage.SELECT_SITE_BY_ID__VALUE);
+ 						warning(Messages.format("DuplicateSelectSite.fmt", site.getValue()), DmPackage.eINSTANCE.getSelectSiteById_Value());
  					}
  				}
  			}
@@ -413,7 +413,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	public void checkSelectSiteNames(SelectSiteByName site) {
 		if (getContext().containsKey("SelectSiteName")) {
 			if (((Set)getContext().get("SelectSiteName")).contains(site.getValue())) {
-				warning(Messages.format("DuplicateSelectSiteName.fmt", site.getValue()), site, DmPackage.SELECT_SITE_BY_NAME__VALUE);
+				warning(Messages.format("DuplicateSelectSiteName.fmt", site.getValue()), DmPackage.eINSTANCE.getSelectSiteByName_Value());
 			}
 			return;
  		} else {
@@ -430,7 +430,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						siteIds.add(newSite.getValue());
  					}
  					if (!site.equals(newSite) && site.getValue().equals(newSite.getValue())) {
- 						warning(Messages.format("DuplicateSelectSiteName.fmt", site.getValue()), site, DmPackage.SELECT_SITE_BY_NAME__VALUE);
+ 						warning(Messages.format("DuplicateSelectSiteName.fmt", site.getValue()), DmPackage.eINSTANCE.getSelectSiteByName_Value());
  					}
  				}
  			}
@@ -442,12 +442,12 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	@Check(CheckType.EXPENSIVE)
 	public void checkNationIds(SelectNation nation) {
 		if (nation.getValue() < MIN_NATION_ID || nation.getValue() > MAX_NATION_ID) {
-			warning(Messages.format("NationRangeWarning.fmt", MIN_NATION_ID, MAX_NATION_ID), nation, DmPackage.SELECT_NATION__VALUE);
+			warning(Messages.format("NationRangeWarning.fmt", MIN_NATION_ID, MAX_NATION_ID), DmPackage.eINSTANCE.getSelectNation_Value());
 			return;
 		}
 		if (getContext().containsKey("SelectNationId")) {
 			if (((Set)getContext().get("SelectNationId")).contains(nation.getValue())) {
-				warning(Messages.format("DuplicateSelectNation.fmt", nation.getValue()), nation, DmPackage.SELECT_NATION__VALUE);
+				warning(Messages.format("DuplicateSelectNation.fmt", nation.getValue()), DmPackage.eINSTANCE.getSelectNation_Value());
 			}
 			return;
  		} else {
@@ -464,7 +464,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
  						nationIds.add(newNation.getValue());
  					}
  					if (!nation.equals(newNation) && nation.getValue() == newNation.getValue()) {
- 						warning(Messages.format("DuplicateSelectNation.fmt", nation.getValue()), nation, DmPackage.SELECT_NATION__VALUE);
+ 						warning(Messages.format("DuplicateSelectNation.fmt", nation.getValue()), DmPackage.eINSTANCE.getSelectNation_Value());
  					}
  				}
  			}

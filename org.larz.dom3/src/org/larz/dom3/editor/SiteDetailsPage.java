@@ -50,7 +50,6 @@ import org.eclipse.ui.forms.widgets.TableWrapLayout;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.db.Database;
 import org.larz.dom3.db.SiteDB;
@@ -64,7 +63,6 @@ import org.larz.dom3.dm.dm.SiteInst3;
 import org.larz.dom3.dm.dm.SiteInst4;
 import org.larz.dom3.dm.dm.SiteMods;
 import org.larz.dom3.dm.ui.help.HelpTextHelper;
-import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class SiteDetailsPage extends AbstractDetailsPage {
 	private Text name;
@@ -915,10 +913,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 	private void setSitename(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Site siteToEdit = (Site)input;
 				EList<SiteMods> mods = siteToEdit.getMods();
 				boolean nameSet = false;
@@ -937,8 +934,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 					mods.add(nameInst);
 				}
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -1419,10 +1415,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 	private void setInst1(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Site siteToEdit = (Site)input;
 				EList<SiteMods> mods = siteToEdit.getMods();				
 				for (SiteMods mod : mods) {
@@ -1438,8 +1433,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -1447,10 +1441,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Site siteToEdit = (Site)input;
 				int homeMonCount = 0;
 				int homeComCount = 0;
@@ -1850,8 +1843,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -1859,10 +1851,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Site siteToEdit = (Site)input;
 				int gemCount = 0;
 				EList<SiteMods> mods = siteToEdit.getMods();
@@ -1913,8 +1904,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -1924,10 +1914,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<SiteMods> mods = ((Site)input).getMods();
 						SiteInst1 type = DmFactory.eINSTANCE.createSiteInst1();
 						switch (inst) {
@@ -1938,8 +1927,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						type.setValue(newName);
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -1951,10 +1939,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<SiteMods> mods = ((Site)input).getMods();
 						SiteInst2 type = DmFactory.eINSTANCE.createSiteInst2();
 						switch (inst) {
@@ -2127,8 +2114,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						type.setValue(Integer.valueOf(newName));
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -2140,10 +2126,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<SiteMods> mods = ((Site)input).getMods();
 						SiteInst3 type = DmFactory.eINSTANCE.createSiteInst3();
 						switch (inst) {
@@ -2161,8 +2146,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						type.setValue2(Integer.valueOf(newName2));
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -2174,10 +2158,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<SiteMods> mods = ((Site)input).getMods();
 						SiteInst4 type = DmFactory.eINSTANCE.createSiteInst4();
 						switch (inst) {
@@ -2190,8 +2173,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 						}
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -2203,10 +2185,9 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						int homeMonCount = 0;
 						int homeComCount = 0;
 						int monCount = 0;
@@ -2660,8 +2641,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 							mods.remove(modToRemove);
 						}
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}

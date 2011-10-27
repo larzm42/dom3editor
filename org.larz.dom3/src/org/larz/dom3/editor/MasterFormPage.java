@@ -46,13 +46,11 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.Activator;
 import org.larz.dom3.dm.dm.Dom3Mod;
 import org.larz.dom3.dm.ui.editor.DmXtextEditor;
 import org.larz.dom3.dm.ui.help.HelpTextHelper;
-import org.larz.dom3.dm.ui.internal.DmActivator;
 import org.larz.dom3.image.ImageConverter;
 import org.larz.dom3.image.ImageLoader;
 
@@ -340,10 +338,9 @@ public class MasterFormPage extends FormPage {
 	
 	private void setGeneral(final General general, final XtextEditor editor, final String newName) {
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				switch (general) {
 				case MODNAME:
@@ -363,15 +360,14 @@ public class MasterFormPage extends FormPage {
 					break;
 				}
 			}  
-		}, myDocument);
+		});
 	}
 
 	private void setGeneral2(final General2 general2, final XtextEditor editor, final String newName) {
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				switch (general2) {
 				case POPPERGOLD:
@@ -430,16 +426,15 @@ public class MasterFormPage extends FormPage {
 					break;
 				}
 			}  
-		}, myDocument);
+		});
 	}
 	
 	private void removeInst2(final General2 inst2, final XtextEditor editor) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				switch (inst2) {
 				case POPPERGOLD:
@@ -499,8 +494,7 @@ public class MasterFormPage extends FormPage {
 				}
 					
 			}  
-		},
-		myDocument);
+		});
 
 	}
 

@@ -65,7 +65,6 @@ import org.eclipse.ui.forms.widgets.TableWrapLayout;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.Activator;
 import org.larz.dom3.db.Database;
@@ -82,7 +81,6 @@ import org.larz.dom3.dm.dm.MonsterMods;
 import org.larz.dom3.dm.dm.SelectMonsterById;
 import org.larz.dom3.dm.dm.SelectMonsterByName;
 import org.larz.dom3.dm.ui.help.HelpTextHelper;
-import org.larz.dom3.dm.ui.internal.DmActivator;
 import org.larz.dom3.image.ImageConverter;
 import org.larz.dom3.image.ImageLoader;
 
@@ -2586,10 +2584,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	private void setMonstername(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				boolean nameSet = false;
@@ -2608,8 +2605,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					mods.add(nameInst);
 				}
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -2617,10 +2613,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	private void setMonsterdescr(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				boolean nameSet = false;
@@ -2639,8 +2634,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					mods.add(nameInst);
 				}
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -3992,10 +3986,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	private void setInst1(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();				
 				for (MonsterMods mod : mods) {
@@ -4021,8 +4014,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -4030,10 +4022,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
@@ -4424,8 +4415,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -4433,10 +4423,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				int magicSkillCount = 0;
 				int customMagicCount = 0;
 				int boostCount = 0;
@@ -4867,8 +4856,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -4876,10 +4864,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	private void setInst5(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Monster monsterToEdit = (Monster)input;
 				int weaponCount = 0;
 				int armorCount = 0;
@@ -5258,8 +5245,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -5267,10 +5253,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	private void setInst6(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Monster monsterToEdit = (Monster)input;
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
@@ -5296,8 +5281,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -5307,10 +5291,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst1 type = DmFactory.eINSTANCE.createMonsterInst1();
 						switch (inst) {
@@ -5330,8 +5313,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						type.setValue(newName);
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -5343,10 +5325,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				 documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource state) throws Exception {
+					public void process(XtextResource resource) throws Exception {
 						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst2 type = DmFactory.eINSTANCE.createMonsterInst2();
 						switch (inst) {
@@ -5580,12 +5561,16 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							break;				
 						}
 						type.setValue(Integer.valueOf(newName));
-						mods.add(type);	
+						// copystats should be the first command
+						if (inst == Inst.COPYSTATS) {
+							mods.add(0, type);
+						} else {
+							mods.add(type);	
+						}
 					}  
-				},
-				myDocument);
+				});
 
-					updateSelection();
+				updateSelection();
 			}
 		});
 	}
@@ -5595,10 +5580,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst3 type = DmFactory.eINSTANCE.createMonsterInst3();
 						switch (inst) {
@@ -5703,8 +5687,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						type.setValue2(Integer.valueOf(newName2));
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -5716,10 +5699,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst4 type = DmFactory.eINSTANCE.createMonsterInst4();
 						switch (inst) {
@@ -5911,8 +5893,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							break;				}
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -5924,10 +5905,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst5 type = DmFactory.eINSTANCE.createMonsterInst5();
 						switch (inst) {
@@ -6023,8 +6003,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						}
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -6036,10 +6015,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<MonsterMods> mods = ((Monster)input).getMods();
 						MonsterInst6 type = DmFactory.eINSTANCE.createMonsterInst6();
 						switch (inst) {
@@ -6056,8 +6034,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						type.setValue(Integer.valueOf(newName));
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -6069,10 +6046,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						int magicSkillCount = 0;
 						int customMagicCount = 0;
 						int boostCount = 0;
@@ -7243,8 +7219,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							mods.remove(modToRemove);
 						}
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}

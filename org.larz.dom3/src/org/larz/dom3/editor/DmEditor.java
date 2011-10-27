@@ -50,7 +50,6 @@ import org.eclipse.xtext.ui.MarkerTypes;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.XtextDocumentUtil;
-import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.ui.editor.validation.MarkerCreator;
 import org.eclipse.xtext.ui.editor.validation.MarkerIssueProcessor;
 import org.eclipse.xtext.ui.editor.validation.ValidationJob;
@@ -316,6 +315,10 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 		super.setActivePage(index);
 	}
 	
+	public IEditorPart getSourcePage() {
+		return sourcePage;
+	}
+	
 	/**
 	 * This is how the framework determines which interfaces we implement.
 	 */
@@ -381,10 +384,9 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 	
 	public void fixIdNumbers() {
 		final IXtextDocument myDocument = ((XtextEditor)sourcePage).getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				// Fix Armor IDs
 				Set<Integer> armorIds = new HashSet<Integer>();
 				List<NewArmor> armorsToFix = new ArrayList<NewArmor>();
@@ -622,8 +624,8 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 					}
 				}
 			}
-		},
-		myDocument);
+			
+		});
 		
 		runValidation();
 		

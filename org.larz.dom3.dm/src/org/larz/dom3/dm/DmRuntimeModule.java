@@ -16,7 +16,7 @@
 package org.larz.dom3.dm;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
-import org.eclipse.xtext.parser.antlr.IAntlrParser;
+import org.eclipse.xtext.parser.IParser;
 import org.larz.dom3.dm.converter.DmValueConverter;
 
 /**
@@ -24,10 +24,10 @@ import org.larz.dom3.dm.converter.DmValueConverter;
  */
 public class DmRuntimeModule extends org.larz.dom3.dm.AbstractDmRuntimeModule {
 	@Override
-	public Class<? extends IAntlrParser> bindIAntlrParser() {
+	public Class<? extends IParser> bindIParser() {
 		return org.larz.dom3.dm.parser.DmParser.class;
 	}
-	
+
 	@Override
 	public Class<? extends IValueConverterService> bindIValueConverterService() {
 	  return DmValueConverter.class;

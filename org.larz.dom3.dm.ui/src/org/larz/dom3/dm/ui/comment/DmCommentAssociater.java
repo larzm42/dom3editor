@@ -20,9 +20,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.parsetree.AbstractNode;
-import org.eclipse.xtext.parsetree.CompositeNode;
-import org.eclipse.xtext.parsetree.LeafNode;
+import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.ILeafNode;
+import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.parsetree.reconstr.impl.DefaultCommentAssociater;
 import org.eclipse.xtext.parsetree.reconstr.impl.NodeIterator;
 import org.eclipse.xtext.util.Pair;
@@ -36,37 +36,37 @@ public class DmCommentAssociater extends DefaultCommentAssociater {
 	 * case, where a line of the document end by a semantic element followed by a comment. Then, the the comment is
 	 * associated with this preceding semantic token.
 	 */
-	protected void associateCommentsWithSemanticEObjects(Map<LeafNode, EObject> mapping, CompositeNode rootNode) {
-		//		System.out.println(EmfFormatter.objToStr(rootNode));
+	@Override
+	protected void associateCommentsWithSemanticEObjects(Map<ILeafNode, EObject> mapping, ICompositeNode rootNode) {
 		EObject currentEObject = null;
-		List<LeafNode> currentComments = new ArrayList<LeafNode>();
+		List<ILeafNode> currentComments = new ArrayList<ILeafNode>();
 
 		NodeIterator nodeIterator = new NodeIterator(rootNode);
 		// rewind to previous token with token owner 
 		while (nodeIterator.hasPrevious() && currentEObject == null) {
-			AbstractNode node = nodeIterator.previous();
+			INode node = nodeIterator.previous();
 			if (tokenUtil.isToken(node)) {
 				currentEObject = tokenUtil.getTokenOwner(node);
 			}
 		}
 		while (nodeIterator.hasNext()) {
-			EObject o = nodeIterator.next();
-			if (o instanceof AbstractNode) {
-				AbstractNode node = (AbstractNode) o;
+			INode o = nodeIterator.next();
+			if (o instanceof INode) {
+				INode node = (INode) o;
 				if (tokenUtil.isCommentNode(node)) {
-					currentComments.add((LeafNode) node);
+					currentComments.add((ILeafNode) node);
 				}
 				boolean isToken = tokenUtil.isToken(node);
-				if ((node instanceof LeafNode || isToken) && node.getLine() != node.endLine() && currentEObject != null) {
+				if ((node instanceof ILeafNode || isToken) && node.getStartLine() != node.getEndLine() && currentEObject != null) {
 					// found a newline -> associating existing comments with currentEObject
 					//addMapping(mapping, currentComments, currentEObject);
 					currentEObject = null;
 					continue;
 				}
 				if (isToken) {
-					Pair<List<LeafNode>, List<LeafNode>> leadingAndTrailingHiddenTokens = tokenUtil
+					Pair<List<ILeafNode>, List<ILeafNode>> leadingAndTrailingHiddenTokens = tokenUtil
 							.getLeadingAndTrailingHiddenTokens(node);
-					for (LeafNode leadingHiddenNode : leadingAndTrailingHiddenTokens.getFirst()) {
+					for (ILeafNode leadingHiddenNode : leadingAndTrailingHiddenTokens.getFirst()) {
 						if (tokenUtil.isCommentNode(leadingHiddenNode)) {
 							currentComments.add(leadingHiddenNode);
 						}

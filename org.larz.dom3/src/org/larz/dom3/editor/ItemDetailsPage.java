@@ -46,7 +46,6 @@ import org.eclipse.ui.forms.widgets.TableWrapLayout;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.db.Database;
 import org.larz.dom3.db.ItemDB;
@@ -59,7 +58,6 @@ import org.larz.dom3.dm.dm.ItemMods;
 import org.larz.dom3.dm.dm.SelectItemById;
 import org.larz.dom3.dm.dm.SelectItemByName;
 import org.larz.dom3.dm.ui.help.HelpTextHelper;
-import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class ItemDetailsPage extends AbstractDetailsPage {
 	private Text name;
@@ -631,10 +629,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 	private void setItemname(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource state) throws Exception {
 				Item itemToEdit = (Item)input;
 				EList<ItemMods> mods = itemToEdit.getMods();
 				boolean nameSet = false;
@@ -653,8 +650,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					mods.add(nameInst);
 				}
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -662,10 +658,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 	private void setItemdescr(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource state) throws Exception {
 				Item itemToEdit = (Item)input;
 				EList<ItemMods> mods = itemToEdit.getMods();
 				boolean nameSet = false;
@@ -684,8 +679,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					mods.add(nameInst);
 				}
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -786,10 +780,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 	private void setInst1(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource state) throws Exception {
 				Item itemToEdit = (Item)input;
 				EList<ItemMods> mods = itemToEdit.getMods();				
 				for (ItemMods mod : mods) {
@@ -815,8 +808,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -824,10 +816,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource state) throws Exception {
 				Item itemToEdit = (Item)input;
 				EList<ItemMods> mods = itemToEdit.getMods();
 				for (ItemMods mod : mods) {
@@ -873,8 +864,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -882,10 +872,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 	private void setInst3(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource state) throws Exception {
 				Item itemToEdit = (Item)input;
 				EList<ItemMods> mods = itemToEdit.getMods();
 				for (ItemMods mod : mods) {
@@ -916,8 +905,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -927,10 +915,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource state) throws Exception {
 						EList<ItemMods> mods = ((Item)input).getMods();
 						ItemInst1 type = DmFactory.eINSTANCE.createItemInst1();
 						switch (inst) {
@@ -947,8 +934,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 						type.setValue(newName);
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -960,10 +946,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource state) throws Exception {
 						EList<ItemMods> mods = ((Item)input).getMods();
 						ItemInst2 type = DmFactory.eINSTANCE.createItemInst2();
 						switch (inst) {
@@ -996,8 +981,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 						}
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -1009,10 +993,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource state) throws Exception {
 						EList<ItemMods> mods = ((Item)input).getMods();
 						ItemInst3 type = DmFactory.eINSTANCE.createItemInst3();
 						switch (inst) {
@@ -1033,8 +1016,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 						}
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -1046,10 +1028,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource state) throws Exception {
 						ItemMods modToRemove = null;
 						EList<ItemMods> mods = ((Item)input).getMods();
 						for (ItemMods mod : mods) {
@@ -1125,8 +1106,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 							mods.remove(modToRemove);
 						}
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}

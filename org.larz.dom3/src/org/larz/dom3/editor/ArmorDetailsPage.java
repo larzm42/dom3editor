@@ -44,7 +44,6 @@ import org.eclipse.ui.forms.widgets.TableWrapLayout;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.db.ArmorDB;
 import org.larz.dom3.db.Database;
@@ -56,7 +55,6 @@ import org.larz.dom3.dm.dm.DmFactory;
 import org.larz.dom3.dm.dm.SelectArmorById;
 import org.larz.dom3.dm.dm.SelectArmorByName;
 import org.larz.dom3.dm.ui.help.HelpTextHelper;
-import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class ArmorDetailsPage extends AbstractDetailsPage {
 	private Text name;
@@ -339,10 +337,9 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 	private void setArmorname(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Armor armorToEdit = (Armor)input;
 				EList<ArmorMods> mods = armorToEdit.getMods();
 				boolean nameSet = false;
@@ -360,9 +357,9 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 					nameInst.setValue(newName);
 					mods.add(nameInst);
 				}
-			}  
-		},
-		myDocument);
+			}
+			
+		});
 
 		updateSelection();
 	}
@@ -423,10 +420,9 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 	private void setInst2(final Inst2 inst2, final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource state) throws Exception {
 				Armor armorToEdit = (Armor)input;
 				EList<ArmorMods> mods = armorToEdit.getMods();
 				for (ArmorMods mod : mods) {
@@ -460,10 +456,9 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 						}
 					}
 				}
-
-			}  
-		},
-		myDocument);
+			}
+			
+		});
 
 		updateSelection();
 	}
@@ -473,10 +468,9 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource state) throws Exception {
 						EList<ArmorMods> mods = ((Armor)input).getMods();
 						ArmorInst1 type = DmFactory.eINSTANCE.createArmorInst1();
 						switch (inst) {
@@ -487,8 +481,7 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 						type.setValue(newName);
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -500,10 +493,9 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource state) throws Exception {
 						EList<ArmorMods> mods = ((Armor)input).getMods();
 						ArmorInst2 type = DmFactory.eINSTANCE.createArmorInst2();
 						switch (inst2) {
@@ -526,8 +518,7 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 						type.setValue(Integer.valueOf(newName));
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -539,10 +530,9 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource state) throws Exception {
 						ArmorMods modToRemove = null;
 						EList<ArmorMods> mods = ((Armor)input).getMods();
 						for (ArmorMods mod : mods) {
@@ -588,8 +578,7 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 							mods.remove(modToRemove);
 						}
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
