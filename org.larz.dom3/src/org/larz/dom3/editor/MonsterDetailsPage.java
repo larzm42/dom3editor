@@ -100,25 +100,25 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		NAME (Messages.getString("MonsterDetailsSection.mod.name"), ""),
 		SPR1 (Messages.getString("MonsterDetailsSection.mod.spr1"), ""),
 		SPR2 (Messages.getString("MonsterDetailsSection.mod.spr2"), ""),
-		SPECIALLOOK (Messages.getString("MonsterDetailsSection.mod.speciallook"), "10"),
+		SPECIALLOOK (Messages.getString("MonsterDetailsSection.mod.speciallook"), "1"),
 		DESCR (Messages.getString("MonsterDetailsSection.mod.descr"), ""),
-		AP (Messages.getString("MonsterDetailsSection.mod.ap"), "10"),
-		MAPMOVE (Messages.getString("MonsterDetailsSection.mod.mapmove"), "10"),
+		AP (Messages.getString("MonsterDetailsSection.mod.ap"), "12"),
+		MAPMOVE (Messages.getString("MonsterDetailsSection.mod.mapmove"), "1"),
 		HP (Messages.getString("MonsterDetailsSection.mod.hp"), "10"),
-		PROT (Messages.getString("MonsterDetailsSection.mod.prot"), "10"),
-		SIZE (Messages.getString("MonsterDetailsSection.mod.size"), "10"),
-		RESSIZE (Messages.getString("MonsterDetailsSection.mod.ressize"), "10"),
+		PROT (Messages.getString("MonsterDetailsSection.mod.prot"), "0"),
+		SIZE (Messages.getString("MonsterDetailsSection.mod.size"), "2"),
+		RESSIZE (Messages.getString("MonsterDetailsSection.mod.ressize"), "1"),
 		STR (Messages.getString("MonsterDetailsSection.mod.str"), "10"),
-		ENC (Messages.getString("MonsterDetailsSection.mod.enc"), "10"),
+		ENC (Messages.getString("MonsterDetailsSection.mod.enc"), "3"),
 		ATT (Messages.getString("MonsterDetailsSection.mod.att"), "10"),
 		DEF (Messages.getString("MonsterDetailsSection.mod.def"), "10"),
 		PREC (Messages.getString("MonsterDetailsSection.mod.prec"), "10"),
 		MR (Messages.getString("MonsterDetailsSection.mod.mr"), "10"),
 		MOR (Messages.getString("MonsterDetailsSection.mod.mor"), "10"),
 		GCOST (Messages.getString("MonsterDetailsSection.mod.gcost"), "10"),
-		RCOST (Messages.getString("MonsterDetailsSection.mod.rcost"), "10"),
+		RCOST (Messages.getString("MonsterDetailsSection.mod.rcost"), "1"),
 		PATHCOST (Messages.getString("MonsterDetailsSection.mod.pathcost"), "10"),
-		STARTDOM (Messages.getString("MonsterDetailsSection.mod.startdom"), "10"),
+		STARTDOM (Messages.getString("MonsterDetailsSection.mod.startdom"), "1"),
 		WEAPON1 (Messages.getString("MonsterDetailsSection.mod.weapon"), "1"),
 		WEAPON2 (Messages.getString("MonsterDetailsSection.mod.weapon"), "2"),
 		WEAPON3 (Messages.getString("MonsterDetailsSection.mod.weapon"), "3"),
@@ -126,15 +126,15 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		ARMOR1 (Messages.getString("MonsterDetailsSection.mod.armor"), ""),
 		ARMOR2 (Messages.getString("MonsterDetailsSection.mod.armor"), ""),
 		ARMOR3 (Messages.getString("MonsterDetailsSection.mod.armor"), ""),
-		EYES (Messages.getString("MonsterDetailsSection.mod.eyes"), "10"),
+		EYES (Messages.getString("MonsterDetailsSection.mod.eyes"), "2"),
 		CLEAR (Messages.getString("MonsterDetailsSection.mod.clear")),
 		CLEARWEAPONS (Messages.getString("MonsterDetailsSection.mod.clearweapons")),
 		CLEARARMOR (Messages.getString("MonsterDetailsSection.mod.cleararmor")),
 		CLEARMAGIC (Messages.getString("MonsterDetailsSection.mod.clearmagic")),
 		CLEARSPEC (Messages.getString("MonsterDetailsSection.mod.clearspec")),
-		COPYSTATS (Messages.getString("MonsterDetailsSection.mod.copystats"), "10"),
-		COPYSPR (Messages.getString("MonsterDetailsSection.mod.copyspr"), "10"),
-		RESTRICTEDGOD (Messages.getString("MonsterDetailsSection.mod.restrictedgod"), "10"),
+		COPYSTATS (Messages.getString("MonsterDetailsSection.mod.copystats"), "0"),
+		COPYSPR (Messages.getString("MonsterDetailsSection.mod.copyspr"), "0"),
+		RESTRICTEDGOD (Messages.getString("MonsterDetailsSection.mod.restrictedgod"), "0"),
 		FEMALE (Messages.getString("MonsterDetailsSection.mod.female")),
 		MOUNTED (Messages.getString("MonsterDetailsSection.mod.mounted")),
 		HOLY (Messages.getString("MonsterDetailsSection.mod.holy")),
@@ -160,20 +160,20 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		MOUNTAINSURVIVAL (Messages.getString("MonsterDetailsSection.mod.mountainsurvival")),
 		SWAMPSURVIVAL (Messages.getString("MonsterDetailsSection.mod.swampsurvival")),
 		WASTESURVIVAL (Messages.getString("MonsterDetailsSection.mod.wastesurvival")),
-		COLDRES (Messages.getString("MonsterDetailsSection.mod.coldres"), "10"),
-		FIRERES (Messages.getString("MonsterDetailsSection.mod.fireres"), "10"),
-		POISONRES (Messages.getString("MonsterDetailsSection.mod.poisonres"), "10"),
-		SHOCKRES (Messages.getString("MonsterDetailsSection.mod.shockres"), "10"),
-		DARKVISION (Messages.getString("MonsterDetailsSection.mod.darkvision"), "10"),
-		STEALTHY (Messages.getString("MonsterDetailsSection.mod.stealthy"), "10"),
+		COLDRES (Messages.getString("MonsterDetailsSection.mod.coldres"), "100"),
+		FIRERES (Messages.getString("MonsterDetailsSection.mod.fireres"), "100"),
+		POISONRES (Messages.getString("MonsterDetailsSection.mod.poisonres"), "100"),
+		SHOCKRES (Messages.getString("MonsterDetailsSection.mod.shockres"), "100"),
+		DARKVISION (Messages.getString("MonsterDetailsSection.mod.darkvision"), "100"),
+		STEALTHY (Messages.getString("MonsterDetailsSection.mod.stealthy"), "0"),
 		ILLUSION (Messages.getString("MonsterDetailsSection.mod.illusion")),
 		SPY (Messages.getString("MonsterDetailsSection.mod.spy")),
 		ASSASSIN (Messages.getString("MonsterDetailsSection.mod.assassin")),
 		SEDUCE (Messages.getString("MonsterDetailsSection.mod.seduce"), "10"),
 		SUCCUBUS (Messages.getString("MonsterDetailsSection.mod.succubus"), "10"),
 		BECKON (Messages.getString("MonsterDetailsSection.mod.beckon"), "10"),
-		STARTAGE (Messages.getString("MonsterDetailsSection.mod.startage"), "10"),
-		MAXAGE (Messages.getString("MonsterDetailsSection.mod.maxage"), "10"),
+		STARTAGE (Messages.getString("MonsterDetailsSection.mod.startage"), "20"),
+		MAXAGE (Messages.getString("MonsterDetailsSection.mod.maxage"), "50"),
 		OLDER (Messages.getString("MonsterDetailsSection.mod.older"), "10"),
 		HEALER (Messages.getString("MonsterDetailsSection.mod.healer"), "10"),
 		HEAL (Messages.getString("MonsterDetailsSection.mod.heal")),
@@ -191,76 +191,76 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		SUMMERPOWER (Messages.getString("MonsterDetailsSection.mod.summerpower"), "10"),
 		FALLPOWER (Messages.getString("MonsterDetailsSection.mod.fallpower"), "10"),
 		WINTERPOWER (Messages.getString("MonsterDetailsSection.mod.winterpower"), "10"),
-		AMBIDEXTROUS (Messages.getString("MonsterDetailsSection.mod.ambidextrous"), "10"),
-		BANEFIRESHIELD (Messages.getString("MonsterDetailsSection.mod.banefireshield"), "10"),
-		BERSERK (Messages.getString("MonsterDetailsSection.mod.berserk"), "10"),
+		AMBIDEXTROUS (Messages.getString("MonsterDetailsSection.mod.ambidextrous"), "2"),
+		BANEFIRESHIELD (Messages.getString("MonsterDetailsSection.mod.banefireshield"), "8"),
+		BERSERK (Messages.getString("MonsterDetailsSection.mod.berserk"), "3"),
 		ETHEREAL (Messages.getString("MonsterDetailsSection.mod.ethereal")),
-		STANDARD (Messages.getString("MonsterDetailsSection.mod.standard"), "10"),
-		ANIMALAWE (Messages.getString("MonsterDetailsSection.mod.animalawe"), "10"),
-		AWE (Messages.getString("MonsterDetailsSection.mod.awe"), "10"),
-		FEAR (Messages.getString("MonsterDetailsSection.mod.fear"), "10"),
+		STANDARD (Messages.getString("MonsterDetailsSection.mod.standard"), "3"),
+		ANIMALAWE (Messages.getString("MonsterDetailsSection.mod.animalawe"), "1"),
+		AWE (Messages.getString("MonsterDetailsSection.mod.awe"), "1"),
+		FEAR (Messages.getString("MonsterDetailsSection.mod.fear"), "0"),
 		REGENERATION (Messages.getString("MonsterDetailsSection.mod.regeneration"), "10"),
 		REINVIGORATION (Messages.getString("MonsterDetailsSection.mod.reinvigoration"), "10"),
-		FIRESHIELD (Messages.getString("MonsterDetailsSection.mod.fireshield"), "10"),
-		HEAT (Messages.getString("MonsterDetailsSection.mod.heat"), "10"),
-		COLD (Messages.getString("MonsterDetailsSection.mod.cold"), "10"),
-		ICEPROT (Messages.getString("MonsterDetailsSection.mod.iceprot"), "10"),
+		FIRESHIELD (Messages.getString("MonsterDetailsSection.mod.fireshield"), "8"),
+		HEAT (Messages.getString("MonsterDetailsSection.mod.heat"), "3"),
+		COLD (Messages.getString("MonsterDetailsSection.mod.cold"), "3"),
+		ICEPROT (Messages.getString("MonsterDetailsSection.mod.iceprot"), "2"),
 		TRAMPLE (Messages.getString("MonsterDetailsSection.mod.trample")),
 		ENTANGLE (Messages.getString("MonsterDetailsSection.mod.entangle")),
 		EYELOSS (Messages.getString("MonsterDetailsSection.mod.eyeloss")),
 		HORRORMARK (Messages.getString("MonsterDetailsSection.mod.horrormark")),
 		POISONARMOR (Messages.getString("MonsterDetailsSection.mod.poisonarmor")),
-		POISONCLOUD (Messages.getString("MonsterDetailsSection.mod.poisoncloud"), "10"),
-		DISEASECLOUD (Messages.getString("MonsterDetailsSection.mod.diseasecloud"), "10"),
-		BLOODVENGEANCE (Messages.getString("MonsterDetailsSection.mod.bloodvengeance"), "10"),
+		POISONCLOUD (Messages.getString("MonsterDetailsSection.mod.poisoncloud"), "6"),
+		DISEASECLOUD (Messages.getString("MonsterDetailsSection.mod.diseasecloud"), "6"),
+		BLOODVENGEANCE (Messages.getString("MonsterDetailsSection.mod.bloodvengeance"), "1"),
 		CASTLEDEF (Messages.getString("MonsterDetailsSection.mod.castledef"), "10"),
 		SIEGEBONUS (Messages.getString("MonsterDetailsSection.mod.siegebonus"), "10"),
 		PATROLBONUS (Messages.getString("MonsterDetailsSection.mod.patrolbonus"), "10"),
 		PILLAGEBONUS (Messages.getString("MonsterDetailsSection.mod.pillagebonus"), "10"),
-		RESEARCHBONUS (Messages.getString("MonsterDetailsSection.mod.researchbonus"), "10"),
+		RESEARCHBONUS (Messages.getString("MonsterDetailsSection.mod.researchbonus"), "4"),
 		FORGEBONUS (Messages.getString("MonsterDetailsSection.mod.forgebonus"), "10"),
-		DOUSE (Messages.getString("MonsterDetailsSection.mod.douse"), "10"),
+		DOUSE (Messages.getString("MonsterDetailsSection.mod.douse"), "1"),
 		NOBADEVENTS (Messages.getString("MonsterDetailsSection.mod.nobadevents"), "10"),
 		INCUNREST (Messages.getString("MonsterDetailsSection.mod.incunrest"), "10"),
 		SPREADDOM (Messages.getString("MonsterDetailsSection.mod.spreaddom"), "10"),
 		LEPER (Messages.getString("MonsterDetailsSection.mod.leper"), "10"),
 		POPKILL (Messages.getString("MonsterDetailsSection.mod.popkill"), "10"),
 		INQUISITOR (Messages.getString("MonsterDetailsSection.mod.inquisitor")),
-		HERETIC (Messages.getString("MonsterDetailsSection.mod.heretic"), "10"),
-		ITEMSLOTS (Messages.getString("MonsterDetailsSection.mod.itemslots"), "10"),
+		HERETIC (Messages.getString("MonsterDetailsSection.mod.heretic"), "1"),
+		ITEMSLOTS (Messages.getString("MonsterDetailsSection.mod.itemslots"), "15494"),
 		NOITEM (Messages.getString("MonsterDetailsSection.mod.noitem")),
-		MAGICSKILL1 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
-		CUSTOMMAGIC1 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
-		MAGICSKILL2 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
-		CUSTOMMAGIC2 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
-		MAGICSKILL3 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
-		CUSTOMMAGIC3 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
-		MAGICSKILL4 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
-		CUSTOMMAGIC4 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
-		MAGICSKILL5 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
-		CUSTOMMAGIC5 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
-		MAGICSKILL6 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
-		CUSTOMMAGIC6 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
-		MAGICSKILL7 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
-		CUSTOMMAGIC7 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
-		MAGICSKILL8 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "1", "1"),
-		CUSTOMMAGIC8 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "10", "10"),
-		MAGICBOOST1 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
-		GEMPROD1 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
-		MAGICBOOST2 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
-		GEMPROD2 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
-		MAGICBOOST3 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
-		GEMPROD3 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
-		MAGICBOOST4 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
-		GEMPROD4 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
-		MAGICBOOST5 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
-		GEMPROD5 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
-		MAGICBOOST6 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
-		GEMPROD6 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
-		MAGICBOOST7 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
-		GEMPROD7 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
-		MAGICBOOST8 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "10", "10"),
-		GEMPROD8 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "10", "10"),
+		MAGICSKILL1 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "0", "1"),
+		CUSTOMMAGIC1 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "128", "100"),
+		MAGICSKILL2 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "0", "1"),
+		CUSTOMMAGIC2 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "128", "100"),
+		MAGICSKILL3 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "0", "1"),
+		CUSTOMMAGIC3 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "128", "100"),
+		MAGICSKILL4 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "0", "1"),
+		CUSTOMMAGIC4 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "128", "100"),
+		MAGICSKILL5 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "0", "1"),
+		CUSTOMMAGIC5 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "128", "100"),
+		MAGICSKILL6 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "0", "1"),
+		CUSTOMMAGIC6 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "128", "100"),
+		MAGICSKILL7 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "0", "1"),
+		CUSTOMMAGIC7 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "128", "100"),
+		MAGICSKILL8 (Messages.getString("MonsterDetailsSection.mod.magicskill"), "0", "1"),
+		CUSTOMMAGIC8 (Messages.getString("MonsterDetailsSection.mod.custommagic"), "128", "100"),
+		MAGICBOOST1 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "0", "1"),
+		GEMPROD1 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "0", "1"),
+		MAGICBOOST2 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "0", "1"),
+		GEMPROD2 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "0", "1"),
+		MAGICBOOST3 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "0", "1"),
+		GEMPROD3 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "0", "1"),
+		MAGICBOOST4 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "0", "1"),
+		GEMPROD4 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "0", "1"),
+		MAGICBOOST5 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "0", "1"),
+		GEMPROD5 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "0", "1"),
+		MAGICBOOST6 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "0", "1"),
+		GEMPROD6 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "0", "1"),
+		MAGICBOOST7 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "0", "1"),
+		GEMPROD7 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "0", "1"),
+		MAGICBOOST8 (Messages.getString("MonsterDetailsSection.mod.magicboost"), "0", "1"),
+		GEMPROD8 (Messages.getString("MonsterDetailsSection.mod.gemprod"), "0", "1"),
 		ONEBATTLESPELL (Messages.getString("MonsterDetailsSection.mod.onebattlespell"), ""),
 		DRAINIMMUNE (Messages.getString("MonsterDetailsSection.mod.drainimmune"), ""),
 		FIRSTSHAPE (Messages.getString("MonsterDetailsSection.mod.firstshape"), ""),
@@ -281,7 +281,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		MAKEMONSTER5 (Messages.getString("MonsterDetailsSection.mod.makemonster5"), ""),
 		SUMMON1 (Messages.getString("MonsterDetailsSection.mod.summon1"), ""),
 		SUMMON5 (Messages.getString("MonsterDetailsSection.mod.summon5"), ""),
-		NAMETYPE (Messages.getString("MonsterDetailsSection.mod.nametype"), "10"),
+		NAMETYPE (Messages.getString("MonsterDetailsSection.mod.nametype"), "100"),
 		NOLEADER (Messages.getString("MonsterDetailsSection.mod.noleader")),
 		POORLEADER (Messages.getString("MonsterDetailsSection.mod.poorleader")),
 		OKLEADER (Messages.getString("MonsterDetailsSection.mod.okleader")),
@@ -1148,7 +1148,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					public void widgetSelected(SelectionEvent e) {
 						if (check.getSelection()) {
 							value.setEnabled(true);
-							value.setText(key.defaultValue);
+							value.setText(key.defaultValue2);
 						} else {
 							value.setEnabled(false);
 							value.setText("");
@@ -4021,6 +4021,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
+		try {
+			// If this is not an int, return
+			Integer.parseInt(newName);
+		} catch (NumberFormatException e) {
+			return;
+		}
 		final IXtextDocument myDocument = editor.getDocument();
 		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
@@ -4422,6 +4428,17 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 
 	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
 	{
+		try {
+			// If this is not an int, return
+			if (value1 != null) {
+				Integer.parseInt(value1);
+			}
+			if (value2 != null) {
+				Integer.parseInt(value2);
+			}
+		} catch (NumberFormatException e) {
+			return;
+		}
 		final IXtextDocument myDocument = editor.getDocument();
 		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
@@ -4870,6 +4887,8 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				Monster monsterToEdit = (Monster)input;
 				int weaponCount = 0;
 				int armorCount = 0;
+				List<MonsterMods> modsToRemove = new ArrayList<MonsterMods>();
+				List<MonsterMods> modsToAdd = new ArrayList<MonsterMods>();
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst5) {
@@ -4885,7 +4904,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							if (((MonsterInst5)mod).isWeapon()){
 								weaponCount++;
 								if (weaponCount == 1) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 									newMod.setWeapon(true);
 									if (newValue != null) {
@@ -4893,7 +4912,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -4901,7 +4920,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							if (((MonsterInst5)mod).isWeapon()){
 								weaponCount++;
 								if (weaponCount == 2) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 									newMod.setWeapon(true);
 									if (newValue != null) {
@@ -4909,7 +4928,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -4917,7 +4936,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							if (((MonsterInst5)mod).isWeapon()){
 								weaponCount++;
 								if (weaponCount == 3) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 									newMod.setWeapon(true);
 									if (newValue != null) {
@@ -4925,7 +4944,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -4933,7 +4952,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							if (((MonsterInst5)mod).isWeapon()){
 								weaponCount++;
 								if (weaponCount == 4) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 									newMod.setWeapon(true);
 									if (newValue != null) {
@@ -4941,7 +4960,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -4949,7 +4968,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							if (((MonsterInst5)mod).isArmor()){
 								armorCount++;
 								if (armorCount == 1) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 									newMod.setArmor(true);
 									if (newValue != null) {
@@ -4957,7 +4976,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -4965,7 +4984,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							if (((MonsterInst5)mod).isArmor()){
 								armorCount++;
 								if (armorCount == 2) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 									newMod.setArmor(true);
 									if (newValue != null) {
@@ -4973,7 +4992,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -4981,7 +5000,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							if (((MonsterInst5)mod).isArmor()){
 								armorCount++;
 								if (armorCount == 3) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 									newMod.setArmor(true);
 									if (newValue != null) {
@@ -4989,13 +5008,13 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
 						case ONEBATTLESPELL:
 							if (((MonsterInst5)mod).isOnebattlespell()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setOnebattlespell(true);
 								if (newValue != null) {
@@ -5003,12 +5022,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case FIRSTSHAPE:
 							if (((MonsterInst5)mod).isFirstshape()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setFirstshape(true);
 								if (newValue != null) {
@@ -5016,12 +5035,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case SECONDSHAPE:
 							if (((MonsterInst5)mod).isSecondshape()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setSecondshape(true);
 								if (newValue != null) {
@@ -5029,12 +5048,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case SECONDTMPSHAPE:
 							if (((MonsterInst5)mod).isSecondtmpshape()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setSecondtmpshape(true);
 								if (newValue != null) {
@@ -5042,12 +5061,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case SHAPECHANGE:
 							if (((MonsterInst5)mod).isShapechange()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setShapechange(true);
 								if (newValue != null) {
@@ -5055,12 +5074,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case LANDSHAPE:
 							if (((MonsterInst5)mod).isLandshape()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setLandshape(true);
 								if (newValue != null) {
@@ -5068,12 +5087,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case WATERSHAPE:
 							if (((MonsterInst5)mod).isWatershape()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setWatershape(true);
 								if (newValue != null) {
@@ -5081,12 +5100,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case FORESTSHAPE:
 							if (((MonsterInst5)mod).isForestshape()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setForestshape(true);
 								if (newValue != null) {
@@ -5094,12 +5113,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case PLAINSHAPE:
 							if (((MonsterInst5)mod).isPlainshape()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setPlainshape(true);
 								if (newValue != null) {
@@ -5107,12 +5126,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case DOMSUMMON:
 							if (((MonsterInst5)mod).isDomsummon()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setDomsummon(true);
 								if (newValue != null) {
@@ -5120,12 +5139,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case DOMSUMMON2:
 							if (((MonsterInst5)mod).isDomsummon2()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setDomsummon2(true);
 								if (newValue != null) {
@@ -5133,12 +5152,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case DOMSUMMON20:
 							if (((MonsterInst5)mod).isDomsummon20()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setDomsummon20(true);
 								if (newValue != null) {
@@ -5146,12 +5165,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case MAKEMONSTER1:
 							if (((MonsterInst5)mod).isMakemonster1()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setMakemonster1(true);
 								if (newValue != null) {
@@ -5159,12 +5178,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case MAKEMONSTER2:
 							if (((MonsterInst5)mod).isMakemonster2()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setMakemonster2(true);
 								if (newValue != null) {
@@ -5172,12 +5191,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case MAKEMONSTER3:
 							if (((MonsterInst5)mod).isMakemonster3()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setMakemonster3(true);
 								if (newValue != null) {
@@ -5185,12 +5204,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case MAKEMONSTER4:
 							if (((MonsterInst5)mod).isMakemonster4()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setMakemonster4(true);
 								if (newValue != null) {
@@ -5198,12 +5217,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case MAKEMONSTER5:
 							if (((MonsterInst5)mod).isMakemonster5()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setMakemonster5(true);
 								if (newValue != null) {
@@ -5211,12 +5230,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case SUMMON1:
 							if (((MonsterInst5)mod).isSummon1()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setSummon1(true);
 								if (newValue != null) {
@@ -5224,12 +5243,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case SUMMON5:
 							if (((MonsterInst5)mod).isSummon5()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								MonsterInst5 newMod = DmFactory.eINSTANCE.createMonsterInst5();
 								newMod.setSummon5(true);
 								if (newValue != null) {
@@ -5237,13 +5256,14 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						}
 					}
 				}
-
+				mods.removeAll(modsToRemove);
+				mods.addAll(modsToAdd);
 			}  
 		});
 
@@ -5257,29 +5277,57 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void process(XtextResource resource) throws Exception {
 				Monster monsterToEdit = (Monster)input;
+				List<MonsterMods> modsToRemove = new ArrayList<MonsterMods>();
+				List<MonsterMods> modsToAdd = new ArrayList<MonsterMods>();
 				EList<MonsterMods> mods = monsterToEdit.getMods();
 				for (MonsterMods mod : mods) {
 					if (mod instanceof MonsterInst6) {
+						Integer newValue = null;
+						try {
+							newValue = Integer.valueOf(newName);
+						} catch (NumberFormatException e) {
+							// is not a number
+						}
+
 						switch (inst2) {
 						case HEAT:
 							if (((MonsterInst6)mod).isHeat()){
-								((MonsterInst6)mod).setValue("".equals(newName) ? 0 : Integer.parseInt(newName));
+								modsToRemove.add(mod);
+								MonsterInst6 newMod = DmFactory.eINSTANCE.createMonsterInst6();
+								newMod.setHeat(true);
+								if (newValue != null) {
+									newMod.setValue(Integer.parseInt(newName));
+								}
+								modsToAdd.add(newMod);
 							}
 							break;
 						case COLD:
 							if (((MonsterInst6)mod).isCold()){
-								((MonsterInst6)mod).setValue("".equals(newName) ? 0 : Integer.parseInt(newName));
+								modsToRemove.add(mod);
+								MonsterInst6 newMod = DmFactory.eINSTANCE.createMonsterInst6();
+								newMod.setCold(true);
+								if (newValue != null) {
+									newMod.setValue(Integer.parseInt(newName));
+								}
+								modsToAdd.add(newMod);
 							}
 							break;
 						case STEALTHY:
 							if (((MonsterInst6)mod).isStealthy()){
-								((MonsterInst6)mod).setValue(Integer.parseInt(newName));
+								modsToRemove.add(mod);
+								MonsterInst6 newMod = DmFactory.eINSTANCE.createMonsterInst6();
+								newMod.setStealthy(true);
+								if (newValue != null) {
+									newMod.setValue(Integer.parseInt(newName));
+								}
+								modsToAdd.add(newMod);
 							}
 							break;
 						}
 					}
 				}
-
+				mods.removeAll(modsToRemove);
+				mods.addAll(modsToAdd);
 			}  
 		});
 

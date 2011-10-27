@@ -64,16 +64,16 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 
 	enum Inst {
 		NAME (Messages.getString("WeaponDetailsSection.mod.name"), ""), 
-		DMG (Messages.getString("WeaponDetailsSection.mod.dmg"), "4"), 
+		DMG (Messages.getString("WeaponDetailsSection.mod.dmg"), "3"), 
 		NRATT (Messages.getString("WeaponDetailsSection.mod.nratt"), "1"),
-		ATT (Messages.getString("WeaponDetailsSection.mod.att"), "1"), 
+		ATT (Messages.getString("WeaponDetailsSection.mod.att"), "0"), 
 		DEF (Messages.getString("WeaponDetailsSection.mod.def"), "0"), 
-		LEN (Messages.getString("WeaponDetailsSection.mod.len"), "10"),
-		RANGE (Messages.getString("WeaponDetailsSection.mod.range"), "10"),
-		AMMO (Messages.getString("WeaponDetailsSection.mod.ammo"), "10"),
-		RCOST (Messages.getString("WeaponDetailsSection.mod.rcost"), "10"),
+		LEN (Messages.getString("WeaponDetailsSection.mod.len"), "4"),
+		RANGE (Messages.getString("WeaponDetailsSection.mod.range"), "30"),
+		AMMO (Messages.getString("WeaponDetailsSection.mod.ammo"), "12"),
+		RCOST (Messages.getString("WeaponDetailsSection.mod.rcost"), "0"),
 		TWOHANDED (Messages.getString("WeaponDetailsSection.mod.twohanded")),
-		SOUND (Messages.getString("WeaponDetailsSection.mod.sound"), "10"),
+		SOUND (Messages.getString("WeaponDetailsSection.mod.sound"), "12"),
 		ARMORPIERCING (Messages.getString("WeaponDetailsSection.mod.armorpiercing")),
 		ARMORNEGATING (Messages.getString("WeaponDetailsSection.mod.armornegating")),
 		MAGIC (Messages.getString("WeaponDetailsSection.mod.magic")),
@@ -102,10 +102,10 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 		NOSTR (Messages.getString("WeaponDetailsSection.mod.nostr")),
 		MRNEGATES (Messages.getString("WeaponDetailsSection.mod.mrnegates")),
 		MRNEGATESEASILY (Messages.getString("WeaponDetailsSection.mod.mrnegateseasily")),
-		SECONDARYEFFECT (Messages.getString("WeaponDetailsSection.mod.secondaryeffect"), "10"),
-		SECONDARYEFFECTALWAYS (Messages.getString("WeaponDetailsSection.mod.secondaryeffectalways"), "10"),
-		FLYSPR (Messages.getString("WeaponDetailsSection.mod.flyspr"), "10", "10"),
-		EXPLSPR (Messages.getString("WeaponDetailsSection.mod.explspr"), "10");
+		SECONDARYEFFECT (Messages.getString("WeaponDetailsSection.mod.secondaryeffect"), "0"),
+		SECONDARYEFFECTALWAYS (Messages.getString("WeaponDetailsSection.mod.secondaryeffectalways"), "0"),
+		FLYSPR (Messages.getString("WeaponDetailsSection.mod.flyspr"), "100", "1"),
+		EXPLSPR (Messages.getString("WeaponDetailsSection.mod.explspr"), "10001");
 		
 		private String label;
 		private String defaultValue;

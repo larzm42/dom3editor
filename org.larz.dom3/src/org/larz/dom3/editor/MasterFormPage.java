@@ -73,28 +73,31 @@ public class MasterFormPage extends FormPage {
 	}
 	
 	enum General2 {
-		POPPERGOLD(Messages.getString("ScrolledPropertiesBlock.poppergold")),
-		RESOURCEMULT(Messages.getString("ScrolledPropertiesBlock.resourcemult")),
-		SUPPLYMULT(Messages.getString("ScrolledPropertiesBlock.supplymult")),
-		UNRESTHALFINC(Messages.getString("ScrolledPropertiesBlock.unresthalfinc")),
-		UNRESTHALFRES(Messages.getString("ScrolledPropertiesBlock.unresthalfres")),
-		EVENTISRARE(Messages.getString("ScrolledPropertiesBlock.eventisrare")),
-		TURMOILINCOME(Messages.getString("ScrolledPropertiesBlock.turmoilincome")),
-		TURMOILEVENTS(Messages.getString("ScrolledPropertiesBlock.turmoilevents")),
-		DEATHINCOME(Messages.getString("ScrolledPropertiesBlock.deathincome")),
-		DEATHSUPPLY(Messages.getString("ScrolledPropertiesBlock.deathsupply")),
-		DEATHDEATH(Messages.getString("ScrolledPropertiesBlock.deathdeath")),
-		SLOTHINCOME(Messages.getString("ScrolledPropertiesBlock.slothincome")),
-		SLOTHRESOURCES(Messages.getString("ScrolledPropertiesBlock.slothresources")),
-		COLDINCOME(Messages.getString("ScrolledPropertiesBlock.coldincome")),
-		COLDSUPPLY(Messages.getString("ScrolledPropertiesBlock.coldsupply")),
-		MISFORTUNE(Messages.getString("ScrolledPropertiesBlock.misfortune")),
-		LUCKEVENTS(Messages.getString("ScrolledPropertiesBlock.luckevents")),
-		RESEARCHSCALE(Messages.getString("ScrolledPropertiesBlock.researchscale"));
+		POPPERGOLD(Messages.getString("ScrolledPropertiesBlock.poppergold"), "100"),
+		RESOURCEMULT(Messages.getString("ScrolledPropertiesBlock.resourcemult"), "100"),
+		SUPPLYMULT(Messages.getString("ScrolledPropertiesBlock.supplymult"), "100"),
+		UNRESTHALFINC(Messages.getString("ScrolledPropertiesBlock.unresthalfinc"), "50"),
+		UNRESTHALFRES(Messages.getString("ScrolledPropertiesBlock.unresthalfres"), "100"),
+		EVENTISRARE(Messages.getString("ScrolledPropertiesBlock.eventisrare"), "15"),
+		TURMOILINCOME(Messages.getString("ScrolledPropertiesBlock.turmoilincome"), "7"),
+		TURMOILEVENTS(Messages.getString("ScrolledPropertiesBlock.turmoilevents"), "5"),
+		DEATHINCOME(Messages.getString("ScrolledPropertiesBlock.deathincome"), "2"),
+		DEATHSUPPLY(Messages.getString("ScrolledPropertiesBlock.deathsupply"), "20"),
+		DEATHDEATH(Messages.getString("ScrolledPropertiesBlock.deathdeath"), "2"),
+		SLOTHINCOME(Messages.getString("ScrolledPropertiesBlock.slothincome"), "2"),
+		SLOTHRESOURCES(Messages.getString("ScrolledPropertiesBlock.slothresources"), "15"),
+		COLDINCOME(Messages.getString("ScrolledPropertiesBlock.coldincome"), "5"),
+		COLDSUPPLY(Messages.getString("ScrolledPropertiesBlock.coldsupply"), "10"),
+		MISFORTUNE(Messages.getString("ScrolledPropertiesBlock.misfortune"), "10"),
+		LUCKEVENTS(Messages.getString("ScrolledPropertiesBlock.luckevents"), "5"),
+		RESEARCHSCALE(Messages.getString("ScrolledPropertiesBlock.researchscale"), "2");
 		
 		private String label;
-		General2 (String label) {
+		private String defaultValue;
+
+		General2 (String label, String defaultValue) {
 			this.label = label;
+			this.defaultValue = defaultValue;
 		}
 	}
 	
@@ -243,9 +246,9 @@ public class MasterFormPage extends FormPage {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
-						setGeneral2(general2, doc, "10");
+						setGeneral2(general2, doc, general2.defaultValue);
 						modname.setEnabled(true);
-						modname.setText("10");
+						modname.setText(general2.defaultValue);
 					} else {
 						removeInst2(general2, doc);
 						modname.setEnabled(false);
@@ -364,6 +367,12 @@ public class MasterFormPage extends FormPage {
 	}
 
 	private void setGeneral2(final General2 general2, final XtextEditor editor, final String newName) {
+		try {
+			// If this is not an int, return
+			Integer.parseInt(newName);
+		} catch (NumberFormatException e) {
+			return;
+		}
 		final IXtextDocument myDocument = editor.getDocument();
 		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
