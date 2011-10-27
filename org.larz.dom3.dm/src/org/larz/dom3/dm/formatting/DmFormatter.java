@@ -122,6 +122,8 @@ public class DmFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getMonsterPattern4Rule());
 		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getMonsterPattern5Rule());
 		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getMonsterPattern5Rule());
+		c.setLinewrap(1, 1, 1).before(((DmGrammarAccess)getGrammarAccess()).getMonsterPattern6Rule());
+		c.setLinewrap(0, 1, 1).after(((DmGrammarAccess)getGrammarAccess()).getMonsterPattern6Rule());
 		
 		// Item rules
 		c.setLinewrap(2, 2, 2).before(((DmGrammarAccess)getGrammarAccess()).getSelectItemByIdRule());
