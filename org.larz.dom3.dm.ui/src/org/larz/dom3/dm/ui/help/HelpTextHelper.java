@@ -61,47 +61,89 @@ public abstract class HelpTextHelper {
 	
 	public static String getText(EObject obj, String text) {
 		if (obj instanceof SelectWeaponById || obj instanceof SelectWeaponByName) {
-			return Messages.getString(WEAPON_CATEGORY + ".selectweapon");
+			if ("#selectweapon".equals(text)) {
+				return Messages.getString(WEAPON_CATEGORY + ".selectweapon");
+			}
+			return null;
 		} else if (obj instanceof NewWeapon) {
-			return Messages.getString(WEAPON_CATEGORY + ".newweapon");
+			if ("#newweapon".equals(text)) {
+				return Messages.getString(WEAPON_CATEGORY + ".newweapon");
+			}
+			return null;
 		} else if (obj instanceof WeaponMods) {
 			return getHelpString(obj, WEAPON_CATEGORY);
 		} else if (obj instanceof SelectArmorById || obj instanceof SelectArmorByName) {
-			return Messages.getString(ARMOR_CATEGORY + ".selectarmor");
+			if ("#selectarmor".equals(text)) {
+				return Messages.getString(ARMOR_CATEGORY + ".selectarmor");
+			}
+			return null;
 		} else if (obj instanceof NewArmor) {
+			if ("#newarmor".equals(text)) {
 				return Messages.getString(ARMOR_CATEGORY + ".newarmor");
+			}
+			return null;
 		} else if (obj instanceof ArmorMods) {
 			return getHelpString(obj, ARMOR_CATEGORY);
 		} else if (obj instanceof SelectMonsterById || obj instanceof SelectMonsterByName) {
-			return Messages.getString(MONSTER_CATEGORY + ".selectmonster");
+			if ("#selectmonster".equals(text)) {
+				return Messages.getString(MONSTER_CATEGORY + ".selectmonster");
+			}
+			return null;
 		} else if (obj instanceof NewMonster) {
+			if ("#newmonster".equals(text)) {
 				return Messages.getString(MONSTER_CATEGORY + ".newmonster");
+			}
+			return null;
 		} else if (obj instanceof MonsterMods) {
 			return getHelpString(obj, MONSTER_CATEGORY);
 		} else if (obj instanceof SelectSpellById || obj instanceof SelectSpellByName) {
-			return Messages.getString(SPELL_CATEGORY + ".selectspell");
+			if ("#selectspell".equals(text)) {
+				return Messages.getString(SPELL_CATEGORY + ".selectspell");
+			}
+			return null;
 		} else if (obj instanceof NewSpell) {
+			if ("#newspell".equals(text)) {
 				return Messages.getString(SPELL_CATEGORY + ".newspell");
+			}
+			return null;
 		} else if (obj instanceof SpellMods) {
 			return getHelpString(obj, SPELL_CATEGORY);
 		} else if (obj instanceof SelectItemById || obj instanceof SelectItemByName) {
-			return Messages.getString(ITEM_CATEGORY + ".selectitem");
+			if ("#selectitem".equals(text)) {
+				return Messages.getString(ITEM_CATEGORY + ".selectitem");
+			}
+			return null;
 		} else if (obj instanceof NewItem) {
+			if ("#newitem".equals(text)) {
 				return Messages.getString(ITEM_CATEGORY + ".newitem");
+			}
+			return null;
 		} else if (obj instanceof ItemMods) {
 			return getHelpString(obj, ITEM_CATEGORY);
 		} else if (obj instanceof SelectName) {
-			return Messages.getString(NAME_CATEGORY + ".selectnametype");
+			if ("#selectnametype".equals(text)) {
+				return Messages.getString(NAME_CATEGORY + ".selectnametype");
+			}
+			return null;
 		} else if (obj instanceof NameMods) {
 			return getHelpString(obj, NAME_CATEGORY);
 		} else if (obj instanceof SelectSiteById || obj instanceof SelectSiteByName) {
-			return Messages.getString(SITE_CATEGORY + ".selectsite");
+			if ("#selectsite".equals(text)) {
+				return Messages.getString(SITE_CATEGORY + ".selectsite");
+			}
+			return null;
 		} else if (obj instanceof NewSite) {
+			if ("#newsite".equals(text)) {
 				return Messages.getString(SITE_CATEGORY + ".newsite");
+			}
+			return null;
 		} else if (obj instanceof SiteMods) {
 			return getHelpString(obj, SITE_CATEGORY);
 		} else if (obj instanceof SelectNation) {
-			return Messages.getString(NATION_CATEGORY + ".selectnation");
+			if ("#selectnation".equals(text)) {
+				return Messages.getString(NATION_CATEGORY + ".selectnation");
+			}
+			return null;
 		} else if (obj instanceof NationMods) {
 			return getHelpString(obj, NATION_CATEGORY);
 		} else if (obj instanceof Dom3Mod) {
