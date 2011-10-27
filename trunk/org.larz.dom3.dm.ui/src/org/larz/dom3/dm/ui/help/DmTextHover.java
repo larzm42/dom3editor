@@ -70,7 +70,7 @@ public class DmTextHover implements ITextHover, ITextHoverExtension2 {
 		String ourString = getDmHover(textViewer, hoverRegion);
 		//If there are problems, return them first.
 		if(problemString!=null && !problemString.isEmpty()) {
-			return problemString+"\n"+ourString;
+			return problemString;//+"\n"+ourString;
 		}
 		//Otherwise, return our hover string.
 		return ourString;
