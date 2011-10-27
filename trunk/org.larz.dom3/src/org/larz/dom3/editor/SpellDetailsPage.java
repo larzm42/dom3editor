@@ -15,7 +15,9 @@
  */
 package org.larz.dom3.editor;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
@@ -78,16 +80,16 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		PATH2 (Messages.getString("SpellDetailsSection.mod.path"), "0", "0"),
 		PATHLEVEL1 (Messages.getString("SpellDetailsSection.mod.pathlevel"), "0", "0"),
 		PATHLEVEL2 (Messages.getString("SpellDetailsSection.mod.pathlevel"), "0", "0"),
-		AOE (Messages.getString("SpellDetailsSection.mod.aoe"), "0"),
-		DAMAGE (Messages.getString("SpellDetailsSection.mod.damage"), "0"),
+		AOE (Messages.getString("SpellDetailsSection.mod.aoe"), "1"),
+		DAMAGE (Messages.getString("SpellDetailsSection.mod.damage"), "1"),
 		EFFECT (Messages.getString("SpellDetailsSection.mod.effect"), "0"),
 		FATIGUECOST (Messages.getString("SpellDetailsSection.mod.fatiguecost"), "0"),
-		FLIGHTSPR (Messages.getString("SpellDetailsSection.mod.flightspr"), "0"),
-		EXPLSPR (Messages.getString("SpellDetailsSection.mod.explspr"), "0"),
+		FLIGHTSPR (Messages.getString("SpellDetailsSection.mod.flightspr"), "10000"),
+		EXPLSPR (Messages.getString("SpellDetailsSection.mod.explspr"), "10001"),
 		NEXTSPELL (Messages.getString("SpellDetailsSection.mod.nextspell"), ""),
-		NREFF (Messages.getString("SpellDetailsSection.mod.nreff"), "0"),
-		RANGE (Messages.getString("SpellDetailsSection.mod.range"), "0"),
-		PRECISION (Messages.getString("SpellDetailsSection.mod.precision"), "0"),
+		NREFF (Messages.getString("SpellDetailsSection.mod.nreff"), "1"),
+		RANGE (Messages.getString("SpellDetailsSection.mod.range"), "1"),
+		PRECISION (Messages.getString("SpellDetailsSection.mod.precision"), "10"),
 		SOUND (Messages.getString("SpellDetailsSection.mod.sound"), "0"),
 		SPEC (Messages.getString("SpellDetailsSection.mod.spec"), "0"),
 		RESTRICTED (Messages.getString("SpellDetailsSection.mod.restricted"), "0");
@@ -1222,6 +1224,8 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void process(XtextResource resource) throws Exception {
 				Spell spellToEdit = (Spell)input;
+				List<SpellMods> modsToRemove = new ArrayList<SpellMods>();
+				List<SpellMods> modsToAdd = new ArrayList<SpellMods>();
 				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
 					if (mod instanceof SpellInst5) {
@@ -1235,7 +1239,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 						switch (inst2) {
 						case COPYSPELL:
 							if (((SpellInst5)mod).isCopyspell()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								SpellInst5 newMod = DmFactory.eINSTANCE.createSpellInst5();
 								newMod.setCopyspell(true);
 								if (newValue != null) {
@@ -1243,12 +1247,12 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case NEXTSPELL:
 							if (((SpellInst5)mod).isNextspell()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								SpellInst5 newMod = DmFactory.eINSTANCE.createSpellInst5();
 								newMod.setNextspell(true);
 								if (newValue != null) {
@@ -1256,13 +1260,14 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						}
 					}
 				}
-
+				mods.removeAll(modsToRemove);
+				mods.addAll(modsToAdd);
 			}  
 		});
 

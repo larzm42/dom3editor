@@ -419,6 +419,12 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 	
 	private void setInst2(final Inst2 inst2, final XtextEditor editor, final String newName) 
 	{
+		try {
+			// If this is not an int, return
+			Integer.parseInt(newName);
+		} catch (NumberFormatException e) {
+			return;
+		}
 		final IXtextDocument myDocument = editor.getDocument();
 		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override

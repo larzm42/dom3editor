@@ -2476,6 +2476,8 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				int addreccom = 0;
 				int addrecunit = 0;
 				SelectNation nationToEdit = (SelectNation)input;
+				List<NationMods> modsToRemove = new ArrayList<NationMods>();
+				List<NationMods> modsToAdd = new ArrayList<NationMods>();
 				EList<NationMods> mods = nationToEdit.getMods();
 				for (NationMods mod : mods) {
 					if (mod instanceof NationInst4) {
@@ -2489,7 +2491,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 						switch (inst2) {
 						case STARTCOM:
 							if (((NationInst4)mod).isStartcom()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setStartcom(true);
 								if (newValue != null) {
@@ -2497,12 +2499,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case STARTSCOUT:
 							if (((NationInst4)mod).isStartscout()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setStartscout(true);
 								if (newValue != null) {
@@ -2510,12 +2512,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case STARTUNITTYPE1:
 							if (((NationInst4)mod).isStartunittype1()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setStartunittype1(true);
 								if (newValue != null) {
@@ -2523,12 +2525,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case STARTUNITTYPE2:
 							if (((NationInst4)mod).isStartunittype2()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setStartunittype2(true);
 								if (newValue != null) {
@@ -2536,14 +2538,14 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case ADDRECUNIT1:
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 1) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2551,7 +2553,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2559,7 +2561,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 2) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2567,7 +2569,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2575,7 +2577,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 3) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2583,7 +2585,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2591,7 +2593,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 4) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2599,7 +2601,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2607,7 +2609,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 5) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2615,7 +2617,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2623,7 +2625,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 6) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2631,7 +2633,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2639,7 +2641,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 7) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2647,7 +2649,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2655,7 +2657,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 8) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2663,7 +2665,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2671,7 +2673,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 9) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2679,7 +2681,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2687,7 +2689,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 10) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2695,7 +2697,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2703,7 +2705,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 11) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2711,7 +2713,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2719,7 +2721,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 12) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2727,7 +2729,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2735,7 +2737,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 13) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2743,7 +2745,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2751,7 +2753,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddrecunit()){
 								addrecunit++;
 								if (addrecunit == 14) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddrecunit(true);
 									if (newValue != null) {
@@ -2759,7 +2761,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2767,7 +2769,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 1) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2775,7 +2777,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2783,7 +2785,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 2) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2791,7 +2793,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2799,7 +2801,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 3) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2807,7 +2809,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2815,7 +2817,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 4) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2823,7 +2825,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2831,7 +2833,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 5) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2839,7 +2841,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2847,7 +2849,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 6) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2855,7 +2857,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2863,7 +2865,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 7) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2871,7 +2873,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2879,7 +2881,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 8) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2887,7 +2889,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2895,7 +2897,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 9) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2903,7 +2905,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2911,7 +2913,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 10) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2919,7 +2921,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2927,7 +2929,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 11) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2935,7 +2937,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2943,7 +2945,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 12) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2951,7 +2953,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2959,7 +2961,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 13) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2967,7 +2969,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
@@ -2975,7 +2977,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 							if (((NationInst4)mod).isAddreccom()){
 								addreccom++;
 								if (addreccom == 14) {
-									mods.remove(mod);
+									modsToRemove.add(mod);
 									NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 									newMod.setAddreccom(true);
 									if (newValue != null) {
@@ -2983,13 +2985,13 @@ public class NationDetailsPage extends AbstractDetailsPage {
 									} else {
 										newMod.setValue1(newName);
 									}
-									mods.add(newMod);
+									modsToAdd.add(newMod);
 								}
 							}
 							break;
 						case UWUNIT1:
 							if (((NationInst4)mod).isUwunit1()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setUwunit1(true);
 								if (newValue != null) {
@@ -2997,12 +2999,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case UWUNIT2:
 							if (((NationInst4)mod).isUwunit2()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setUwunit2(true);
 								if (newValue != null) {
@@ -3010,12 +3012,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case UWUNIT3:
 							if (((NationInst4)mod).isUwunit3()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setUwunit3(true);
 								if (newValue != null) {
@@ -3023,12 +3025,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case UWUNIT4:
 							if (((NationInst4)mod).isUwunit4()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setUwunit4(true);
 								if (newValue != null) {
@@ -3036,12 +3038,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case UWUNIT5:
 							if (((NationInst4)mod).isUwunit5()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setUwunit5(true);
 								if (newValue != null) {
@@ -3049,12 +3051,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case UWCOM1:
 							if (((NationInst4)mod).isUwcom1()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setUwcom1(true);
 								if (newValue != null) {
@@ -3062,12 +3064,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case UWCOM2:
 							if (((NationInst4)mod).isUwcom2()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setUwcom2(true);
 								if (newValue != null) {
@@ -3075,12 +3077,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case UWCOM3:
 							if (((NationInst4)mod).isUwcom3()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setUwcom3(true);
 								if (newValue != null) {
@@ -3088,12 +3090,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case UWCOM4:
 							if (((NationInst4)mod).isUwcom4()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setUwcom4(true);
 								if (newValue != null) {
@@ -3101,12 +3103,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case UWCOM5:
 							if (((NationInst4)mod).isUwcom5()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setUwcom5(true);
 								if (newValue != null) {
@@ -3114,12 +3116,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case DEFCOM1:
 							if (((NationInst4)mod).isDefcom1()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setDefcom1(true);
 								if (newValue != null) {
@@ -3127,12 +3129,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case DEFCOM2:
 							if (((NationInst4)mod).isDefcom2()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setDefcom2(true);
 								if (newValue != null) {
@@ -3140,12 +3142,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case DEFUNIT1:
 							if (((NationInst4)mod).isDefunit1()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setDefunit1(true);
 								if (newValue != null) {
@@ -3153,12 +3155,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case DEFUNIT1B:
 							if (((NationInst4)mod).isDefunit1b()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setDefunit1b(true);
 								if (newValue != null) {
@@ -3166,12 +3168,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case DEFUNIT2:
 							if (((NationInst4)mod).isDefunit2()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setDefunit2(true);
 								if (newValue != null) {
@@ -3179,12 +3181,12 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						case DEFUNIT2B:
 							if (((NationInst4)mod).isDefunit2b()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								NationInst4 newMod = DmFactory.eINSTANCE.createNationInst4();
 								newMod.setDefunit2b(true);
 								if (newValue != null) {
@@ -3192,13 +3194,14 @@ public class NationDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						}
 					}
 				}
-
+				mods.removeAll(modsToRemove);
+				mods.addAll(modsToAdd);
 			}  
 		});
 

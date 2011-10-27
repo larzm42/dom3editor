@@ -15,7 +15,9 @@
  */
 package org.larz.dom3.editor;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
@@ -71,11 +73,11 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 		DESCR (Messages.getString("ItemDetailsSection.mod.descr"), ""),
 		CONSTLEVEL (Messages.getString("ItemDetailsSection.mod.constlevel"), "0"),
 		MAINPATH (Messages.getString("ItemDetailsSection.mod.mainpath"), "0"),
-		MAINLEVEL (Messages.getString("ItemDetailsSection.mod.mainlevel"), "0"),
+		MAINLEVEL (Messages.getString("ItemDetailsSection.mod.mainlevel"), "1"),
 		SECONDARYPATH (Messages.getString("ItemDetailsSection.mod.secondarypath"), "0"),
-		SECONDARYLEVEL (Messages.getString("ItemDetailsSection.mod.secondarylevel"), "0"),		
+		SECONDARYLEVEL (Messages.getString("ItemDetailsSection.mod.secondarylevel"), "1"),		
 		COPYSPR (Messages.getString("ItemDetailsSection.mod.copyspr"), "0"),
-		TYPE (Messages.getString("ItemDetailsSection.mod.type"), "0"),
+		TYPE (Messages.getString("ItemDetailsSection.mod.type"), "1"),
 		WEAPON (Messages.getString("ItemDetailsSection.mod.weapon"), "0"),
 		ARMOR (Messages.getString("ItemDetailsSection.mod.armor"), "");
 		
@@ -815,6 +817,12 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 
 	private void setInst2(final Inst inst2, final XtextEditor editor, final String newName) 
 	{
+		try {
+			// If this is not an int, return
+			Integer.parseInt(newName);
+		} catch (NumberFormatException e) {
+			return;
+		}
 		final IXtextDocument myDocument = editor.getDocument();
 		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
@@ -876,6 +884,8 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void process(XtextResource state) throws Exception {
 				Item itemToEdit = (Item)input;
+				List<ItemMods> modsToRemove = new ArrayList<ItemMods>();
+				List<ItemMods> modsToAdd = new ArrayList<ItemMods>();
 				EList<ItemMods> mods = itemToEdit.getMods();
 				for (ItemMods mod : mods) {
 					if (mod instanceof ItemInst3) {
@@ -889,7 +899,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 						switch (inst2) {
 						case COPYSPR:
 							if (((ItemInst3)mod).isCopyspr()){
-								mods.remove(mod);
+								modsToRemove.add(mod);
 								ItemInst3 newMod = DmFactory.eINSTANCE.createItemInst3();
 								newMod.setCopyspr(true);
 								if (newValue != null) {
@@ -897,13 +907,14 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 								} else {
 									newMod.setValue1(newName);
 								}
-								mods.add(newMod);
+								modsToAdd.add(newMod);
 							}
 							break;
 						}
 					}
 				}
-
+				mods.removeAll(modsToRemove);
+				mods.addAll(modsToAdd);
 			}  
 		});
 
