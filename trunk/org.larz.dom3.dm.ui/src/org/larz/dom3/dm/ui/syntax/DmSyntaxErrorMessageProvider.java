@@ -20,8 +20,8 @@ import java.text.MessageFormat;
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.conversion.ValueConverterException;
 import org.eclipse.xtext.diagnostics.Diagnostic;
+import org.eclipse.xtext.nodemodel.SyntaxErrorMessage;
 import org.eclipse.xtext.parser.antlr.ISyntaxErrorMessageProvider;
-import org.eclipse.xtext.parser.antlr.SyntaxErrorMessage;
 
 
 public class DmSyntaxErrorMessageProvider implements ISyntaxErrorMessageProvider {

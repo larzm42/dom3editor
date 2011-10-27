@@ -69,4 +69,7 @@ public class NationDB {
 	public Integer defmult1b;
 	public Integer defmult2;
 	public Integer defmult2b;
+	
+	public String mapbackground;
+	public Integer templecost;
 }

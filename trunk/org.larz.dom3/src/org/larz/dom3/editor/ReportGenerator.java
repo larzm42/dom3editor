@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.db.ArmorDB;
 import org.larz.dom3.db.Database;
@@ -85,7 +84,6 @@ import org.larz.dom3.dm.dm.WeaponInst2;
 import org.larz.dom3.dm.dm.WeaponInst3;
 import org.larz.dom3.dm.dm.WeaponInst4;
 import org.larz.dom3.dm.dm.WeaponMods;
-import org.larz.dom3.dm.ui.internal.DmActivator;
 
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
@@ -119,10 +117,9 @@ public class ReportGenerator {
 
 	public static void generateReport(XtextEditor sourcePage) {
 		final IXtextDocument myDocument = ((XtextEditor)sourcePage).getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				Map<String, Map<String, ModObject>> cellMap = new HashMap<String, Map<String, ModObject>>();
 				
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
@@ -421,8 +418,7 @@ public class ReportGenerator {
 					e.printStackTrace();
 				}
 			}
-		},
-		myDocument);
+		});
 	}
 
 	private static String getArmorname(Armor armor) {

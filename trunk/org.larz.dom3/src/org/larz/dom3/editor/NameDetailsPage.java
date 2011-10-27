@@ -59,7 +59,6 @@ import org.eclipse.ui.forms.widgets.TableWrapLayout;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.dm.dm.DmFactory;
 import org.larz.dom3.dm.dm.NameInst1;
@@ -67,7 +66,6 @@ import org.larz.dom3.dm.dm.NameInst2;
 import org.larz.dom3.dm.dm.NameMods;
 import org.larz.dom3.dm.dm.SelectName;
 import org.larz.dom3.dm.ui.help.HelpTextHelper;
-import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class NameDetailsPage extends AbstractDetailsPage {
 	private TableViewer tv;
@@ -274,15 +272,13 @@ public class NameDetailsPage extends AbstractDetailsPage {
 	private void setNameId(final XtextEditor editor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				SelectName armorToEdit = (SelectName)input;
 				armorToEdit.setValue(Integer.parseInt(newName));
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -304,17 +300,15 @@ public class NameDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						EList<NameMods> mods = ((SelectName)input).getMods();
 						NameInst2 type = DmFactory.eINSTANCE.createNameInst2();
 						type.setClear(true);
 						mods.add(type);
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -326,10 +320,9 @@ public class NameDetailsPage extends AbstractDetailsPage {
 			@Override
 			public void run() {
 				final IXtextDocument myDocument = editor.getDocument();
-				IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-				documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 					@Override
-					public void process(XtextResource resource) {
+					public void process(XtextResource resource) throws Exception {
 						NameMods modToRemove = null;
 						EList<NameMods> mods = ((SelectName)input).getMods();
 						for (NameMods mod : mods) {
@@ -344,8 +337,7 @@ public class NameDetailsPage extends AbstractDetailsPage {
 							mods.remove(modToRemove);
 						}
 					}  
-				},
-				myDocument);
+				});
 
 				updateSelection();
 			}
@@ -369,10 +361,9 @@ public class NameDetailsPage extends AbstractDetailsPage {
 	private void setInst2(final XtextEditor editor, final int row, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				SelectName armorToEdit = (SelectName)input;
 				int counter = 0;
 				EList<NameMods> mods = armorToEdit.getMods();
@@ -389,8 +380,7 @@ public class NameDetailsPage extends AbstractDetailsPage {
 				}
 
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}
@@ -398,8 +388,7 @@ public class NameDetailsPage extends AbstractDetailsPage {
 	private NameInst1 addInst2(final XtextEditor editor, final Object armor, final String newName) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		NameInst1 inst1 = documentEditor.process(  new IUnitOfWork<NameInst1, XtextResource>() {     
+		NameInst1 inst1 = myDocument.modify(new IUnitOfWork<NameInst1, XtextResource>() {     
 			@Override
 			public NameInst1 exec(XtextResource resource) {
 				SelectName armorToEdit = (SelectName)input;
@@ -410,8 +399,7 @@ public class NameDetailsPage extends AbstractDetailsPage {
 				mods.add(type);
 				return type;
 			}  
-		},
-		myDocument);
+		});
 
 		tv.setInput(input != null ? getNames((SelectName)input).toArray() : null);
 
@@ -422,10 +410,9 @@ public class NameDetailsPage extends AbstractDetailsPage {
 	private void removeInst2(final XtextEditor editor, final int row) 
 	{
 		final IXtextDocument myDocument = editor.getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {
+			public void process(XtextResource resource) throws Exception {
 				SelectName armorToEdit = (SelectName)input;
 				NameMods modToRemove = null;
 				int counter = 0;
@@ -445,8 +432,7 @@ public class NameDetailsPage extends AbstractDetailsPage {
 					mods.remove(modToRemove);
 				}
 			}  
-		},
-		myDocument);
+		});
 
 		updateSelection();
 	}

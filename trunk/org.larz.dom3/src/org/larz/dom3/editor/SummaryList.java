@@ -64,8 +64,7 @@ import org.eclipse.xtext.resource.DefaultLocationInFileProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.ui.editor.model.edit.IDocumentEditor;
-import org.eclipse.xtext.util.TextLocation;
+import org.eclipse.xtext.util.ITextRegion;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.Activator;
 import org.larz.dom3.db.Database;
@@ -133,7 +132,6 @@ import org.larz.dom3.dm.dm.impl.SelectSpellByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectSpellByNameImpl;
 import org.larz.dom3.dm.dm.impl.SelectWeaponByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectWeaponByNameImpl;
-import org.larz.dom3.dm.ui.internal.DmActivator;
 
 public class SummaryList extends MasterDetailsBlock {
 	private FormPage page;
@@ -684,10 +682,9 @@ public class SummaryList extends MasterDetailsBlock {
 	
 	public void addArmor(final AddTypes type, final String name, final int id) {
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		document.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {        
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 
 				EList<AbstractElement> elements = dom3Mod.getElements();
@@ -714,8 +711,7 @@ public class SummaryList extends MasterDetailsBlock {
 					break;
 				}
 			}  
-		},
-		document);
+		});
 		viewer.refresh();
 
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -732,10 +728,9 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addWeapon(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		document.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {        
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				
 				EList<AbstractElement> elements = dom3Mod.getElements();
@@ -762,8 +757,7 @@ public class SummaryList extends MasterDetailsBlock {
 					break;
 				}
 				}  
-			},
-			document);
+			});
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -780,10 +774,9 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addSpell(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		document.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {        
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				
 				EList<AbstractElement> elements = dom3Mod.getElements();
@@ -809,8 +802,7 @@ public class SummaryList extends MasterDetailsBlock {
 					break;
 				}
 				}  
-			},
-			document);
+			});
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -827,10 +819,9 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addItem(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		document.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {        
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				
 				EList<AbstractElement> elements = dom3Mod.getElements();
@@ -856,8 +847,7 @@ public class SummaryList extends MasterDetailsBlock {
 					break;
 				}
 				}  
-			},
-			document);
+			});
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -874,10 +864,9 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addName(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		document.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {        
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				
 				EList<AbstractElement> elements = dom3Mod.getElements();
@@ -885,8 +874,7 @@ public class SummaryList extends MasterDetailsBlock {
 				armorById.setValue(id);
 				elements.add(armorById);
 				}  
-			},
-			document);
+			});
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -903,10 +891,9 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addSite(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		document.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {        
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				
 				EList<AbstractElement> elements = dom3Mod.getElements();
@@ -933,8 +920,7 @@ public class SummaryList extends MasterDetailsBlock {
 					break;
 				}
 				}  
-			},
-			document);
+			});
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -951,10 +937,9 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addNation(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		document.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {        
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				
 				EList<AbstractElement> elements = dom3Mod.getElements();
@@ -962,8 +947,7 @@ public class SummaryList extends MasterDetailsBlock {
 				armorById.setValue(id);
 				elements.add(armorById);
 				}  
-			},
-			document);
+			});
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -980,10 +964,9 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addMonster(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-		documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+		document.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
-			public void process(XtextResource resource) {        
+			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				
 				EList<AbstractElement> elements = dom3Mod.getElements();
@@ -1010,8 +993,7 @@ public class SummaryList extends MasterDetailsBlock {
 					break;
 				}
 				}  
-			},
-			document);
+			});
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -1033,17 +1015,15 @@ public class SummaryList extends MasterDetailsBlock {
 				if (ssel.size()==1) {
 					final AbstractElement element = ((AbstractElementWrapper)ssel.getFirstElement()).getElement();
 					IXtextDocument document = ((XtextEditor)doc).getDocument();
-					IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-					documentEditor.process( new IUnitOfWork.Void<XtextResource>() {     
+					document.modify(new IUnitOfWork.Void<XtextResource>() {
 						@Override
-						public void process(XtextResource resource) {        
+						public void process(XtextResource resource) throws Exception {
 							Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 
 							EList<AbstractElement> elements = dom3Mod.getElements();
 							elements.remove(element);
 						}  
-					},
-					document);
+					});
 					viewer.refresh();
 					viewer.setSelection(null);
 				}
@@ -1056,17 +1036,15 @@ public class SummaryList extends MasterDetailsBlock {
 		if (ssel.size()==1) {
 			final AbstractElement element = ((AbstractElementWrapper)ssel.getFirstElement()).getElement();
 			IXtextDocument document = ((XtextEditor)doc).getDocument();
-			IDocumentEditor documentEditor = DmActivator.getInstance().getInjector("org.larz.dom3.dm.Dm").getInstance(IDocumentEditor.class);;
-			documentEditor.process(  new IUnitOfWork.Void<XtextResource>() {     
+			document.modify(new IUnitOfWork.Void<XtextResource>() {
 				@Override
-				public void process(XtextResource resource) {  
+				public void process(XtextResource resource) throws Exception {
 					editor.setActivePage(1);
 					DefaultLocationInFileProvider prov = new DefaultLocationInFileProvider();
-					TextLocation loc = prov.getLocation(element);
+					ITextRegion loc = prov.getFullTextRegion(element);
 					((XtextEditor)doc).selectAndReveal(loc.getOffset(), loc.getLength());
 				}  
-			},
-			document);
+			});
 			viewer.refresh();
 		}
 		

@@ -19,7 +19,7 @@ import org.eclipse.xtext.common.services.DefaultTerminalConverters;
 import org.eclipse.xtext.conversion.IValueConverter;
 import org.eclipse.xtext.conversion.ValueConverterException;
 import org.eclipse.xtext.conversion.impl.AbstractValueConverter;
-import org.eclipse.xtext.parsetree.AbstractNode;
+import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.util.Strings;
 
 public class DmValueConverter extends DefaultTerminalConverters {
@@ -34,7 +34,8 @@ public class DmValueConverter extends DefaultTerminalConverters {
 				return value.toString();
 			}
 
-			public Integer toValue(String string, AbstractNode node) {
+			@Override
+			public Integer toValue(String string, INode node) throws ValueConverterException {
 				if (Strings.isEmpty(string))
 					throw new ValueConverterException("Couldn't convert empty string to int.", node, null);
 				try {
