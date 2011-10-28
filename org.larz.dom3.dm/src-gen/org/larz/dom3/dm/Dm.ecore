@@ -28,30 +28,31 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="luckevents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="researchscale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//AbstractElement" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Armor" eSuperTypes="#//AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="#//ArmorMods"
+        eType="ecore:EClass platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//AbstractElement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectArmorById" eSuperTypes="#//Armor">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Armor" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="ecore:EClass platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ArmorMods"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectArmorById" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Armor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectArmorByName" eSuperTypes="#//Armor">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectArmorByName" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Armor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NewArmor" eSuperTypes="#//Armor">
+  <eClassifiers xsi:type="ecore:EClass" name="NewArmor" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Armor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArmorMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ArmorPattern1" eSuperTypes="#//ArmorMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ArmorPattern2" eSuperTypes="#//ArmorMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ArmorInst1" eSuperTypes="#//ArmorPattern1">
+  <eClassifiers xsi:type="ecore:EClass" name="ArmorPattern1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ArmorMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArmorPattern2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ArmorMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArmorInst1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ArmorPattern1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArmorInst2" eSuperTypes="#//ArmorPattern2">
+  <eClassifiers xsi:type="ecore:EClass" name="ArmorInst2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ArmorPattern2">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -59,29 +60,29 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rcost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Weapon" eSuperTypes="#//AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="#//WeaponMods"
+  <eClassifiers xsi:type="ecore:EClass" name="Weapon" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="ecore:EClass platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//WeaponMods"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectWeaponById" eSuperTypes="#//Weapon">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectWeaponById" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Weapon">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectWeaponByName" eSuperTypes="#//Weapon">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectWeaponByName" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Weapon">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NewWeapon" eSuperTypes="#//Weapon">
+  <eClassifiers xsi:type="ecore:EClass" name="NewWeapon" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Weapon">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WeaponMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="WeaponPattern1" eSuperTypes="#//WeaponMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="WeaponPattern2" eSuperTypes="#//WeaponMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="WeaponPattern3" eSuperTypes="#//WeaponMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="WeaponPattern4" eSuperTypes="#//WeaponMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="WeaponInst1" eSuperTypes="#//WeaponPattern1">
+  <eClassifiers xsi:type="ecore:EClass" name="WeaponPattern1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//WeaponMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WeaponPattern2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//WeaponMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WeaponPattern3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//WeaponMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WeaponPattern4" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//WeaponMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WeaponInst1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//WeaponPattern1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WeaponInst2" eSuperTypes="#//WeaponPattern2">
+  <eClassifiers xsi:type="ecore:EClass" name="WeaponInst2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//WeaponPattern2">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dmg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nratt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -98,12 +99,12 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="explspr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WeaponInst3" eSuperTypes="#//WeaponPattern3">
+  <eClassifiers xsi:type="ecore:EClass" name="WeaponInst3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//WeaponPattern3">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="flyspr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WeaponInst4" eSuperTypes="#//WeaponPattern4">
+  <eClassifiers xsi:type="ecore:EClass" name="WeaponInst4" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//WeaponPattern4">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="twohanded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="armorpiercing" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="armornegating" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -133,34 +134,34 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mrnegates" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mrnegateseasily" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Monster" eSuperTypes="#//AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="#//MonsterMods"
+  <eClassifiers xsi:type="ecore:EClass" name="Monster" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="ecore:EClass platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterMods"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectMonsterById" eSuperTypes="#//Monster">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectMonsterById" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Monster">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectMonsterByName" eSuperTypes="#//Monster">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectMonsterByName" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Monster">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NewMonster" eSuperTypes="#//Monster">
+  <eClassifiers xsi:type="ecore:EClass" name="NewMonster" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Monster">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MonsterMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern1" eSuperTypes="#//MonsterMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern2" eSuperTypes="#//MonsterMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern3" eSuperTypes="#//MonsterMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern4" eSuperTypes="#//MonsterMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern5" eSuperTypes="#//MonsterMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern6" eSuperTypes="#//MonsterMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst1" eSuperTypes="#//MonsterPattern1">
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern4" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern5" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterPattern6" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterPattern1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="spr1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="spr2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst2" eSuperTypes="#//MonsterPattern2">
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterPattern2">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="speciallook" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ap" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -239,7 +240,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemslots" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nametype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst3" eSuperTypes="#//MonsterPattern3">
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterPattern3">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="magicskill" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -247,7 +248,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="magicboost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="gemprod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst4" eSuperTypes="#//MonsterPattern4">
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst4" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterPattern4">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clearweapons" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cleararmor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -311,7 +312,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expertundeadleader" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="superiorundeadleader" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst5" eSuperTypes="#//MonsterPattern5">
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst5" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterPattern5">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weapon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -336,35 +337,35 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="summon1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="summon5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst6" eSuperTypes="#//MonsterPattern6">
+  <eClassifiers xsi:type="ecore:EClass" name="MonsterInst6" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//MonsterPattern6">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stealthy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="heat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cold" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Spell" eSuperTypes="#//AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="#//SpellMods"
+  <eClassifiers xsi:type="ecore:EClass" name="Spell" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="ecore:EClass platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellMods"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectSpellById" eSuperTypes="#//Spell">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectSpellById" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Spell">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectSpellByName" eSuperTypes="#//Spell">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectSpellByName" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Spell">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NewSpell" eSuperTypes="#//Spell"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewSpell" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Spell"/>
   <eClassifiers xsi:type="ecore:EClass" name="SpellMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SpellPattern1" eSuperTypes="#//SpellMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SpellPattern2" eSuperTypes="#//SpellMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SpellPattern3" eSuperTypes="#//SpellMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SpellPattern4" eSuperTypes="#//SpellMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SpellPattern5" eSuperTypes="#//SpellMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SpellInst1" eSuperTypes="#//SpellPattern1">
+  <eClassifiers xsi:type="ecore:EClass" name="SpellPattern1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SpellPattern2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SpellPattern3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SpellPattern4" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SpellPattern5" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SpellInst1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellPattern1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SpellInst2" eSuperTypes="#//SpellPattern2">
+  <eClassifiers xsi:type="ecore:EClass" name="SpellInst2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellPattern2">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="school" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="researchlevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -381,43 +382,43 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="spec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="restricted" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SpellInst3" eSuperTypes="#//SpellPattern3">
+  <eClassifiers xsi:type="ecore:EClass" name="SpellInst3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellPattern3">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathlevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SpellInst4" eSuperTypes="#//SpellPattern4">
+  <eClassifiers xsi:type="ecore:EClass" name="SpellInst4" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellPattern4">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SpellInst5" eSuperTypes="#//SpellPattern5">
+  <eClassifiers xsi:type="ecore:EClass" name="SpellInst5" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SpellPattern5">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="copyspell" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextspell" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="#//ItemMods"
+  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="ecore:EClass platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemMods"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectItemById" eSuperTypes="#//Item">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectItemById" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Item">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectItemByName" eSuperTypes="#//Item">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectItemByName" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Item">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NewItem" eSuperTypes="#//Item"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewItem" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Item"/>
   <eClassifiers xsi:type="ecore:EClass" name="ItemMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemPattern1" eSuperTypes="#//ItemMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemPattern2" eSuperTypes="#//ItemMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemPattern3" eSuperTypes="#//ItemMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemInst1" eSuperTypes="#//ItemPattern1">
+  <eClassifiers xsi:type="ecore:EClass" name="ItemPattern1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemPattern2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemPattern3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemInst1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemPattern1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="armor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemInst2" eSuperTypes="#//ItemPattern2">
+  <eClassifiers xsi:type="ecore:EClass" name="ItemInst2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemPattern2">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="constlevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainpath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -427,50 +428,50 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weapon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemInst3" eSuperTypes="#//ItemPattern3">
+  <eClassifiers xsi:type="ecore:EClass" name="ItemInst3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemPattern3">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="copyspr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Name" eSuperTypes="#//AbstractElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectName" eSuperTypes="#//Name">
+  <eClassifiers xsi:type="ecore:EClass" name="Name" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//AbstractElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectName" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Name">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="#//NameMods"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="ecore:EClass platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NameMods"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NameMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NamePattern1" eSuperTypes="#//NameMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NamePattern2" eSuperTypes="#//NameMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NameInst1" eSuperTypes="#//NamePattern1">
+  <eClassifiers xsi:type="ecore:EClass" name="NamePattern1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NameMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamePattern2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NameMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NameInst1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NamePattern1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NameInst2" eSuperTypes="#//NamePattern2">
+  <eClassifiers xsi:type="ecore:EClass" name="NameInst2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NamePattern2">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Site" eSuperTypes="#//AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="#//SiteMods"
+  <eClassifiers xsi:type="ecore:EClass" name="Site" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="ecore:EClass platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SiteMods"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectSiteById" eSuperTypes="#//Site">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectSiteById" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Site">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectSiteByName" eSuperTypes="#//Site">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectSiteByName" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Site">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NewSite" eSuperTypes="#//Site">
+  <eClassifiers xsi:type="ecore:EClass" name="NewSite" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Site">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SiteMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SitePattern1" eSuperTypes="#//SiteMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SitePattern2" eSuperTypes="#//SiteMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SitePattern3" eSuperTypes="#//SiteMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SitePattern4" eSuperTypes="#//SiteMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SiteInst1" eSuperTypes="#//SitePattern1">
+  <eClassifiers xsi:type="ecore:EClass" name="SitePattern1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SiteMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SitePattern2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SiteMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SitePattern3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SiteMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SitePattern4" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SiteMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SiteInst1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SitePattern1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SiteInst2" eSuperTypes="#//SitePattern2">
+  <eClassifiers xsi:type="ecore:EClass" name="SiteInst2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SitePattern2">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -498,31 +499,31 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="thaucost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bloodcost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SiteInst3" eSuperTypes="#//SitePattern3">
+  <eClassifiers xsi:type="ecore:EClass" name="SiteInst3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SitePattern3">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="gems" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SiteInst4" eSuperTypes="#//SitePattern4">
+  <eClassifiers xsi:type="ecore:EClass" name="SiteInst4" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SitePattern4">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lab" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Nation" eSuperTypes="#//AbstractElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectNation" eSuperTypes="#//Nation">
+  <eClassifiers xsi:type="ecore:EClass" name="Nation" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//AbstractElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectNation" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Nation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="#//NationMods"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mods" upperBound="-1" eType="ecore:EClass platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationMods"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IndepFlag" eSuperTypes="#//Nation">
+  <eClassifiers xsi:type="ecore:EClass" name="IndepFlag" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Nation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NationMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NationPattern1" eSuperTypes="#//NationMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NationPattern2" eSuperTypes="#//NationMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NationPattern3" eSuperTypes="#//NationMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NationPattern4" eSuperTypes="#//NationMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NationPattern5" eSuperTypes="#//NationMods"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NationInst1" eSuperTypes="#//NationPattern1">
+  <eClassifiers xsi:type="ecore:EClass" name="NationPattern1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NationPattern2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NationPattern3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NationPattern4" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NationPattern5" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationMods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NationInst1" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationPattern1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="epithet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -533,7 +534,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mapbackground" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startsite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NationInst2" eSuperTypes="#//NationPattern2">
+  <eClassifiers xsi:type="ecore:EClass" name="NationInst2" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationPattern2">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="era" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labcost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -566,7 +567,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uwfort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deepfort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NationInst3" eSuperTypes="#//NationPattern3">
+  <eClassifiers xsi:type="ecore:EClass" name="NationInst3" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationPattern3">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clearnation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clearrec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clearsites" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -583,7 +584,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="manikinreanim" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tombwyrmreanim" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NationInst4" eSuperTypes="#//NationPattern4">
+  <eClassifiers xsi:type="ecore:EClass" name="NationInst4" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationPattern4">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startcom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -609,7 +610,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defunit2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defunit2b" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NationInst5" eSuperTypes="#//NationPattern5">
+  <eClassifiers xsi:type="ecore:EClass" name="NationInst5" eSuperTypes="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//NationPattern5">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
