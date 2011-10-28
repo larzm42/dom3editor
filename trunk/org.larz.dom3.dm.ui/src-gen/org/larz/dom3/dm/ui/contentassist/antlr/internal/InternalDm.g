@@ -23,7 +23,6 @@ import java.io.InputStream;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
-import org.eclipse.xtext.parsetree.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
@@ -24127,7 +24126,7 @@ RULE_FREE_FORM_COMMENT : ('a'..'z'|'A'..'Z'|'0'..'9'|'('|')'|'['|']'|',')+;
 
 RULE_ML_COMMENT : (RULE_SL_COMMENT|(' '* '\t'* ('\r'|'\n'))+) ~(('#'|'\r'|'\n')) ~(('\r'|'\n'))*;
 
-RULE_SL_COMMENT : ('-' ~('0'..'9') ~(('\n'|'\r'))* ('\r'|'\n')?|'//' ~(('\n'|'\r'))* ('\r'|'\n')?);
+RULE_SL_COMMENT : ('-' ~('0'..'9') ~(('\n'|'\r'))* ('\r'|'\n')?|'//' ~(('\n'|'\r'))* ('\r'|'\n')?|'##' ~(('\n'|'\r'))* ('\r'|'\n')?);
 
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 

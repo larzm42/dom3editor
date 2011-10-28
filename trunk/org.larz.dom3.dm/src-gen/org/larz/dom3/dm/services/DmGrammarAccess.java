@@ -5974,7 +5974,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
-		//DecimalValue returns ecore::EString:
+		//DecimalValue:
 		//	INT ("." INT)*;
 		public ParserRule getRule() { return rule; }
 
@@ -7203,7 +7203,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		return getNationInst5Access().getRule();
 	}
 
-	//DecimalValue returns ecore::EString:
+	//DecimalValue:
 	//	INT ("." INT)*;
 	public DecimalValueElements getDecimalValueAccess() {
 		return (pDecimalValue != null) ? pDecimalValue : (pDecimalValue = new DecimalValueElements());
@@ -7239,7 +7239,8 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal SL_COMMENT:
-	//	"-" !"0".."9" !("\n" | "\r")* ("\r" | "\n")? | "//" !("\n" | "\r")* ("\r" | "\n")?;
+	//	"-" !"0".."9" !("\n" | "\r")* ("\r" | "\n")? | "//" !("\n" | "\r")* ("\r" | "\n")? | "##" !("\n" | "\r")* ("\r" |
+	//	"\n")?;
 	public TerminalRule getSL_COMMENTRule() {
 		return (tSL_COMMENT != null) ? tSL_COMMENT : (tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT"));
 	} 

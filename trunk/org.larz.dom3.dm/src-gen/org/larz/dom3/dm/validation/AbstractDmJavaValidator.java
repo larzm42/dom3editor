@@ -8,7 +8,7 @@ import org.eclipse.xtext.validation.AbstractDeclarativeValidator;
 
 public class AbstractDmJavaValidator extends AbstractDeclarativeValidator {
 
-@Override
+	@Override
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
 	    result.add(org.larz.dom3.dm.dm.DmPackage.eINSTANCE);
