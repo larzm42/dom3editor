@@ -92,7 +92,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		PRECISION (Messages.getString("SpellDetailsSection.mod.precision"), "10"),
 		SOUND (Messages.getString("SpellDetailsSection.mod.sound"), "0"),
 		SPEC (Messages.getString("SpellDetailsSection.mod.spec"), "0"),
-		RESTRICTED (Messages.getString("SpellDetailsSection.mod.restricted"), "0");
+		RESTRICTED1 (Messages.getString("SpellDetailsSection.mod.restricted"), "0"),
+		RESTRICTED2 (Messages.getString("SpellDetailsSection.mod.restricted"), "0"),
+		RESTRICTED3 (Messages.getString("SpellDetailsSection.mod.restricted"), "0");
 		
 		private String label;
 		private String defaultValue;
@@ -161,7 +163,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.PRECISION, new Inst2Fields());
 		instMap.put(Inst.SOUND, new Inst2Fields());
 		instMap.put(Inst.SPEC, new Inst2Fields());
-		instMap.put(Inst.RESTRICTED, new Inst2Fields());	
+		instMap.put(Inst.RESTRICTED1, new Inst2Fields());	
+		instMap.put(Inst.RESTRICTED2, new Inst2Fields());	
+		instMap.put(Inst.RESTRICTED3, new Inst2Fields());	
 		instMap.put(Inst.PATH1, new Inst3Fields());	
 		instMap.put(Inst.PATH2, new Inst3Fields());	
 		instMap.put(Inst.PATHLEVEL1, new Inst3Fields());	
@@ -423,7 +427,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 					gd.horizontalSpan = 4;
 				} else if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-					gd.widthHint = 30;
+					gd.widthHint = DEFAULT_VALUE_WIDTH;
 				} else if (field instanceof Inst5Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 					gd.horizontalSpan = 4;
@@ -491,7 +495,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 				});
 				value.setEnabled(false);
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-				gd.widthHint = 30;
+				gd.widthHint = DEFAULT_VALUE_WIDTH;
 				value.setLayoutData(gd);
 				
 				defaultLabel2 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
@@ -848,6 +852,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 	}
 	
 	private Integer getInst2(Inst inst2, Object spell) {
+		int restrictedCount = 0;
 		EList<SpellMods> list = ((Spell)spell).getMods();
 		for (SpellMods mod : list) {
 			if (mod instanceof SpellInst2) {
@@ -917,9 +922,28 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 						return Integer.valueOf(((SpellInst2)mod).getValue());
 					}
 					break;
-				case RESTRICTED:
-					if (((SpellInst2)mod).isRestricted()){
-						return Integer.valueOf(((SpellInst2)mod).getValue());
+				case RESTRICTED1:
+					if (((SpellInst2)mod).isRestricted()) {
+						restrictedCount++;
+						if (restrictedCount == 1) {
+							return Integer.valueOf(((SpellInst2)mod).getValue());
+						}
+					}
+					break;
+				case RESTRICTED2:
+					if (((SpellInst2)mod).isRestricted()) {
+						restrictedCount++;
+						if (restrictedCount == 2) {
+							return Integer.valueOf(((SpellInst2)mod).getValue());
+						}
+					}
+					break;
+				case RESTRICTED3:
+					if (((SpellInst2)mod).isRestricted()) {
+						restrictedCount++;
+						if (restrictedCount == 3) {
+							return Integer.valueOf(((SpellInst2)mod).getValue());
+						}
 					}
 					break;
 				}
@@ -1057,6 +1081,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
 			public void process(XtextResource resource) throws Exception {
+				int restrictedCount = 0;
 				Spell spellToEdit = (Spell)input;
 				EList<SpellMods> mods = spellToEdit.getMods();
 				for (SpellMods mod : mods) {
@@ -1127,9 +1152,28 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 								((SpellInst2)mod).setValue(Integer.parseInt(newName));
 							}
 							break;
-						case RESTRICTED:
-							if (((SpellInst2)mod).isRestricted()){
-								((SpellInst2)mod).setValue(Integer.parseInt(newName));
+						case RESTRICTED1:
+							if (((SpellInst2)mod).isRestricted()) {
+								restrictedCount++;
+								if (restrictedCount == 1) {
+									((SpellInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case RESTRICTED2:
+							if (((SpellInst2)mod).isRestricted()) {
+								restrictedCount++;
+								if (restrictedCount == 2) {
+									((SpellInst2)mod).setValue(Integer.parseInt(newName));
+								}
+							}
+							break;
+						case RESTRICTED3:
+							if (((SpellInst2)mod).isRestricted()) {
+								restrictedCount++;
+								if (restrictedCount == 3) {
+									((SpellInst2)mod).setValue(Integer.parseInt(newName));
+								}
 							}
 							break;
 						}
@@ -1352,7 +1396,13 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 						case SPEC:
 							type.setSpec(true);
 							break;
-						case RESTRICTED:
+						case RESTRICTED1:
+							type.setRestricted(true);
+							break;
+						case RESTRICTED2:
+							type.setRestricted(true);
+							break;
+						case RESTRICTED3:
 							type.setRestricted(true);
 							break;
 						}
@@ -1494,6 +1544,81 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 								switch (inst2) {
 								case SCHOOL:
 									if (((SpellInst2)mod).isSchool()){
+										modToRemove = mod;
+									}
+									break;
+								case RESEARCHLEVEL:
+									if (((SpellInst2)mod).isResearchlevel()){
+										modToRemove = mod;
+									}
+									break;
+								case AOE:
+									if (((SpellInst2)mod).isAoe()){
+										modToRemove = mod;
+									}
+									break;
+								case DAMAGE:
+									if (((SpellInst2)mod).isDamage()){
+										modToRemove = mod;
+									}
+									break;
+								case EFFECT:
+									if (((SpellInst2)mod).isEffect()){
+										modToRemove = mod;
+									}
+									break;
+								case FATIGUECOST:
+									if (((SpellInst2)mod).isFatiguecost()){
+										modToRemove = mod;
+									}
+									break;
+								case FLIGHTSPR:
+									if (((SpellInst2)mod).isFlightspr()){
+										modToRemove = mod;
+									}
+									break;
+								case EXPLSPR:
+									if (((SpellInst2)mod).isExplspr()){
+										modToRemove = mod;
+									}
+									break;
+								case NREFF:
+									if (((SpellInst2)mod).isNreff()){
+										modToRemove = mod;
+									}
+									break;
+								case RANGE:
+									if (((SpellInst2)mod).isRange()){
+										modToRemove = mod;
+									}
+									break;
+								case PRECISION:
+									if (((SpellInst2)mod).isPrecision()){
+										modToRemove = mod;
+									}
+									break;
+								case SOUND:
+									if (((SpellInst2)mod).isSound()){
+										modToRemove = mod;
+									}
+									break;
+								case SPEC:
+									if (((SpellInst2)mod).isSpec()){
+										modToRemove = mod;
+									}
+									break;
+								case RESTRICTED1:
+									if (((SpellInst2)mod).isRestricted()){
+										modToRemove = mod;
+									}
+									break;
+								case RESTRICTED2:
+									if (((SpellInst2)mod).isRestricted()){
+										modToRemove = mod;
+									}
+									break;
+								case RESTRICTED3:
+									if (((SpellInst2)mod).isRestricted()){
 										modToRemove = mod;
 									}
 									break;

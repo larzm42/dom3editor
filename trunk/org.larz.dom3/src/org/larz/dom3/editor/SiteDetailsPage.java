@@ -519,7 +519,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 					gd.horizontalSpan = 4;
 				} else if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-					gd.widthHint = 30;
+					gd.widthHint = DEFAULT_VALUE_WIDTH;
 				}
 				value.setLayoutData(gd);
 				
@@ -581,7 +581,7 @@ public class SiteDetailsPage extends AbstractDetailsPage {
 				});
 				value.setEnabled(false);
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-				gd.widthHint = 30;
+				gd.widthHint = DEFAULT_VALUE_WIDTH;
 				value.setLayoutData(gd);
 				
 				defaultLabel2 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");

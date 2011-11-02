@@ -1098,10 +1098,10 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					gd.horizontalSpan = 3;
 				} else if (field instanceof Inst2Fields ||	field instanceof Inst3Fields || field instanceof Inst6Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-					gd.widthHint = 30;
+					gd.widthHint = DEFAULT_VALUE_WIDTH;
 				} else if (field instanceof Inst5Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.widthHint = 30;
+					gd.widthHint = DEFAULT_VALUE_WIDTH;
 				}
 				value.setLayoutData(gd);
 				
@@ -1172,7 +1172,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				});
 				value.setEnabled(false);
 				gd = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
-				gd.widthHint = 30;
+				gd.widthHint = DEFAULT_VALUE_WIDTH;
 				value.setLayoutData(gd);
 				
 				defaultLabel2 = new DynamicLabel(isRight?rightColumn:leftColumn, SWT.NONE);

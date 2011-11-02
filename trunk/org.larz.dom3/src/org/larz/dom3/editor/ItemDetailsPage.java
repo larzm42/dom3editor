@@ -366,7 +366,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					gd.horizontalSpan = 3;
 				} else if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-					gd.widthHint = 30;
+					gd.widthHint = DEFAULT_VALUE_WIDTH;
 				}
 				value.setLayoutData(gd);
 				

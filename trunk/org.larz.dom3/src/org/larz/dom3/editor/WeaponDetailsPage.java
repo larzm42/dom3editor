@@ -374,7 +374,7 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 				});
 				value.setEnabled(false);
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-				gd.widthHint = 30;
+				gd.widthHint = DEFAULT_VALUE_WIDTH;
 				value.setLayoutData(gd);
 				
 			}
@@ -435,7 +435,7 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 				});
 				value.setEnabled(false);
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-				gd.widthHint = 30;
+				gd.widthHint = DEFAULT_VALUE_WIDTH;
 				value.setLayoutData(gd);
 				
 				defaultLabel2 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
