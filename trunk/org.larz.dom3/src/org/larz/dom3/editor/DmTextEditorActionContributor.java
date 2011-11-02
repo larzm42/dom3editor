@@ -16,15 +16,11 @@
 package org.larz.dom3.editor;
 
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.editors.text.TextEditorActionContributor;
+import org.eclipse.ui.texteditor.BasicTextEditorActionContributor;
 
-public class DmTextEditorActionContributor extends TextEditorActionContributor {
+public class DmTextEditorActionContributor extends BasicTextEditorActionContributor {
 
-	/**
-	 * 
-	 */
-	public DmTextEditorActionContributor() {
-	}
+	public DmTextEditorActionContributor() { }
 
 	@Override
 	public void setActiveEditor(IEditorPart part) {

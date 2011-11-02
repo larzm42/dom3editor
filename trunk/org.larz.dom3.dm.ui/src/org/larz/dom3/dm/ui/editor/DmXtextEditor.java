@@ -38,19 +38,22 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.jface.action.GroupMarker;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IURIEditorInput;
-import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.FileStoreEditorInput;
 import org.eclipse.ui.part.FileEditorInput;
@@ -105,39 +108,38 @@ public class DmXtextEditor extends XtextEditor
 		linkFile.createLink(uri, IResource.ALLOW_MISSING_LOCAL, null);
 	}
 
-	/**
-	 * Overridden to allow customization of editor context menu via injected handler
-	 *
-	 * @see org.eclipse.ui.editors.text.TextEditor#editorContextMenuAboutToShow(org.eclipse.jface.action.IMenuManager)
-	 */
 	@Override
-	protected void editorContextMenuAboutToShow(IMenuManager menu) {
-		menu.add(new Separator(ITextEditorActionConstants.GROUP_UNDO));
-		menu.add(new GroupMarker(ITextEditorActionConstants.GROUP_SAVE));
-		menu.add(new Separator(ITextEditorActionConstants.GROUP_COPY));
-		menu.add(new Separator(ITextEditorActionConstants.GROUP_PRINT));
-		menu.add(new Separator(ITextEditorActionConstants.GROUP_EDIT));
-		menu.add(new Separator(ITextEditorActionConstants.GROUP_FIND));
-		menu.add(new Separator(IWorkbenchActionConstants.GROUP_ADD));
-		menu.add(new Separator(ITextEditorActionConstants.GROUP_REST));
-		menu.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
-
-		if (isEditable()) {
-			addAction(menu, ITextEditorActionConstants.GROUP_UNDO, ITextEditorActionConstants.UNDO);
-			addAction(menu, ITextEditorActionConstants.GROUP_UNDO, ITextEditorActionConstants.REVERT_TO_SAVED);
-			addAction(menu, ITextEditorActionConstants.GROUP_SAVE, ITextEditorActionConstants.SAVE);
-			addAction(menu, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.CUT);
-			addAction(menu, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.COPY);
-			addAction(menu, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.PASTE);
-		} else {
-			addAction(menu, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.COPY);
-		}
+	public void createPartControl(Composite parent) {
+		super.createPartControl(parent);
 		
-		IAction preferencesAction= getAction(ITextEditorActionConstants.CONTEXT_PREFERENCES);
-		menu.appendToGroup(IWorkbenchActionConstants.MB_ADDITIONS, new Separator(ITextEditorActionConstants.GROUP_SETTINGS));
-		menu.appendToGroup(ITextEditorActionConstants.GROUP_SETTINGS, preferencesAction);
+		MenuManager manager= new MenuManager();
+		manager.setRemoveAllWhenShown(true);
+		manager.addMenuListener(new IMenuListener() {
+			@Override
+			public void menuAboutToShow(IMenuManager manager) {
+				manager.removeAll();
+				manager.add(new Separator(ITextEditorActionConstants.GROUP_UNDO));
+				manager.add(new GroupMarker(ITextEditorActionConstants.GROUP_SAVE));
+				manager.add(new Separator(ITextEditorActionConstants.GROUP_COPY));
+				manager.add(new Separator(ITextEditorActionConstants.GROUP_SETTINGS));
 
-		menu.appendToGroup(ITextEditorActionConstants.GROUP_SAVE, new Separator(ITextEditorActionConstants.GROUP_OPEN));
+				if (isEditable()) {
+					addAction(manager, ITextEditorActionConstants.GROUP_UNDO, ITextEditorActionConstants.UNDO);
+					addAction(manager, ITextEditorActionConstants.GROUP_UNDO, ITextEditorActionConstants.REVERT_TO_SAVED);
+					addAction(manager, ITextEditorActionConstants.GROUP_SAVE, ITextEditorActionConstants.SAVE);
+					addAction(manager, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.CUT);
+					addAction(manager, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.COPY);
+					addAction(manager, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.PASTE);
+				} else {
+					addAction(manager, ITextEditorActionConstants.GROUP_COPY, ITextEditorActionConstants.COPY);
+				}
+				IAction preferencesAction= getAction(ITextEditorActionConstants.CONTEXT_PREFERENCES);
+				manager.appendToGroup(ITextEditorActionConstants.GROUP_SETTINGS, preferencesAction);
+			}
+		});
+		
+		StyledText styledText = getSourceViewer().getTextWidget();
+		styledText.setMenu(manager.createContextMenu(styledText));
 	}
 
 	private IFile getWorkspaceFile(IFileStore fileStore) {
