@@ -223,7 +223,7 @@ public class ArmorDetailsPage extends AbstractDetailsPage {
 			});
 			value.setEnabled(false);
 			gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-			gd.widthHint = 30;
+			gd.widthHint = DEFAULT_VALUE_WIDTH;
 			value.setLayoutData(gd);
 			fields.getValue().check = check;
 			fields.getValue().value = value;

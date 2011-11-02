@@ -820,7 +820,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 					gd.horizontalSpan = 4;
 				} else if (field instanceof Inst2Fields ||	field instanceof Inst4Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-					gd.widthHint = 30;
+					gd.widthHint = DEFAULT_VALUE_WIDTH;
 				} else if (field instanceof Inst5Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 				}
@@ -888,7 +888,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				value.setEnabled(false);
 				
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-				gd.widthHint = 30;
+				gd.widthHint = DEFAULT_VALUE_WIDTH;
 				value.setLayoutData(gd);
 				
 				defaultLabel2 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
@@ -934,7 +934,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 				value3.setEnabled(false);
 				
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-				gd.widthHint = 30;
+				gd.widthHint = DEFAULT_VALUE_WIDTH;
 				value3.setLayoutData(gd);
 				
 				defaultLabel3 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
