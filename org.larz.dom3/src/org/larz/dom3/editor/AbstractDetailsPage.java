@@ -52,7 +52,7 @@ import org.larz.dom3.image.ImageConverter;
 import org.larz.dom3.image.ImageLoader;
 
 public abstract class AbstractDetailsPage implements IDetailsPage {
-	public static final int DEFAULT_VALUE_WIDTH = 50;
+	public static final int DEFAULT_VALUE_WIDTH = 60;
 	
 	protected static Map<String, Image> spriteMap = new HashMap<String, Image>();
 
