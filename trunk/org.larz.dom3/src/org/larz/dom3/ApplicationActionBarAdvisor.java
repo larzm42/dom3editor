@@ -30,6 +30,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.content.IContentType;
 import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.GroupMarker;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.ICoolBarManager;
 import org.eclipse.jface.action.IMenuManager;
@@ -56,8 +57,6 @@ import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.ui.ide.FileStoreEditorInput;
-import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
-import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.eclipse.ui.part.FileEditorInput;
 import org.larz.dom3.dm.ui.editor.DmXtextEditor;
 import org.larz.dom3.dm.ui.editor.LinkedFileEditorInput;
@@ -76,6 +75,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     private IWorkbenchAction cutAction;
     private IWorkbenchAction copyAction;
     private IWorkbenchAction pasteAction;
+    private IWorkbenchAction findAction;
     private IAction newAction;
     private IAction openAction;
 
@@ -174,6 +174,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         register(copyAction);
         pasteAction = ActionFactory.PASTE.create(window);
         register(pasteAction);
+        findAction = ActionFactory.FIND.create(window);
+        register(findAction);
     }
     
     /* (non-Javadoc)
@@ -209,6 +211,9 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
         editMenu.add(cutAction);
         editMenu.add(copyAction);
         editMenu.add(pasteAction);
+        editMenu.add(new Separator());
+        editMenu.add(findAction);
+        editMenu.add(new GroupMarker(IWorkbenchActionConstants.FIND_EXT)); 
         
         // Help
         helpMenu.add(aboutAction);
@@ -317,13 +322,13 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		// next lookup the default text editor
 		if (editorDesc == null) {
 			editorDesc = editorReg
-					.findEditor(IDEWorkbenchPlugin.DEFAULT_TEXT_EDITOR_ID);
+					.findEditor("org.eclipse.ui.DefaultTextEditor"/*IDEWorkbenchPlugin.DEFAULT_TEXT_EDITOR_ID*/);
 		}
 
 		// if no valid editor found, bail out
 		if (editorDesc == null) {
 			throw new PartInitException(
-					IDEWorkbenchMessages.IDE_noFileEditorFound);
+					Messages.getString("NoEditorFound.message")/*IDEWorkbenchMessages.IDE_noFileEditorFound*/);
 		}
 
 		return editorDesc;
