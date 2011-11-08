@@ -14,7 +14,6 @@ Bundle-Activator: org.larz.dom3.dm.ui.internal.DmActivator
 Require-Bundle: org.larz.dom3.dm,
  org.eclipse.xtext.ui,
  org.eclipse.core.filesystem,
- org.apache.log4j,
  org.eclipse.ui.ide,
  org.eclipse.xtext.builder,
  org.eclipse.xtext.ui.shared,
