@@ -16,9 +16,13 @@
 package org.larz.dom3.editor;
 
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.dialogs.IDialogConstants;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IEditorActionDelegate;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.PlatformUI;
 
 public class EditorActionFixIds implements IEditorActionDelegate {
 	private IEditorPart targetEditor;
@@ -27,6 +31,12 @@ public class EditorActionFixIds implements IEditorActionDelegate {
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	public void run(IAction action) {
+		MessageDialog overwriteDialog = new MessageDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), Messages.getString("FixIDsDialog.title"), null, 
+				Messages.getString("FixIDsDialog.text"), MessageDialog.INFORMATION, new String[] {
+				IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL }, 1); // 'No' is the default
+		if(overwriteDialog.open() != Window.OK) {
+			return;
+		}
 		((DmEditor)targetEditor).fixIdNumbers();
 	}
 
