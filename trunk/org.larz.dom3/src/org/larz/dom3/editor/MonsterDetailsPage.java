@@ -5737,9 +5737,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					}  
 				});
 
-				updateSelection();
 			}
 		});
+		updateSelection();
 	}
 	
 	private void addInst4(final Inst inst, final XtextEditor editor) {
@@ -5938,7 +5938,8 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							break;
 						case SUPERIORUNDEADLEADER:
 							type.setSuperiorundeadleader(true);
-							break;				}
+							break;				
+						}
 						mods.add(type);
 					}  
 				});
@@ -7262,15 +7263,17 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									break;
 								}
 							}
+							if (modToRemove != null) {
+								break;
+							}
 						}
 						if (modToRemove != null) {
 							mods.remove(modToRemove);
 						}
 					}  
 				});
-
-				updateSelection();
 			}
 		});
+		updateSelection();
 	}
 }

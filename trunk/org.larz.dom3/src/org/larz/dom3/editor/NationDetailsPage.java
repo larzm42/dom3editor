@@ -863,7 +863,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 					public void widgetSelected(SelectionEvent e) {
 						if (check.getSelection()) {
 							value.setEnabled(true);
-							value.setText(key.defaultValue);
+							value.setText(key.defaultValue2);
 						} else {
 							value.setEnabled(false);
 							value.setText("");
@@ -909,7 +909,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 					public void widgetSelected(SelectionEvent e) {
 						if (check.getSelection()) {
 							value3.setEnabled(true);
-							value3.setText("");
+							value3.setText(key.defaultValue3);
 						} else {
 							value3.setEnabled(false);
 							value3.setText("");
@@ -3208,8 +3208,7 @@ public class NationDetailsPage extends AbstractDetailsPage {
 		updateSelection();
 	}
 	
-	private void setInst5(final Inst inst5, final XtextEditor editor, final String value1, final String value2, final String value3) 
-	{
+	private void setInst5(final Inst inst5, final XtextEditor editor, final String value1, final String value2, final String value3) { 
 		final IXtextDocument myDocument = editor.getDocument();
 		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
@@ -3222,13 +3221,28 @@ public class NationDetailsPage extends AbstractDetailsPage {
 						case COLOR:
 							if (((NationInst5)mod).isColor()) {
 								if (value1 != null) {
-									((NationInst5)mod).setValue1(value1);
+									try {
+										Double.parseDouble(value1);
+										((NationInst5)mod).setValue1(value1);
+									} catch(NumberFormatException e) {
+										// Skip if not a double
+									}
 								}
 								if (value2 != null) {
-									((NationInst5)mod).setValue2(value2);
+									try {
+										Double.parseDouble(value2);
+										((NationInst5)mod).setValue2(value2);
+									} catch(NumberFormatException e) {
+										// Skip if not a double
+									}
 								}
 								if (value3 != null) {
-									((NationInst5)mod).setValue3(value3);
+									try {
+										Double.parseDouble(value3);
+										((NationInst5)mod).setValue3(value3);
+									} catch(NumberFormatException e) {
+										// Skip if not a double
+									}
 								}
 							}
 							break;
