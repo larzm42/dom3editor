@@ -175,6 +175,7 @@ public class MonsterDB {
 	public Boolean goodundeadleader;
 	public Boolean expertundeadleader;
 	public Boolean superiorundeadleader;
+	public Boolean drainimmune;
 	public String weapon1;
 	public String weapon2;
 	public String weapon3;

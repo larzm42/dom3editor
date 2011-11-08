@@ -47,5 +47,11 @@ public class SiteDB {
 	public Integer gemspath3;
 	public Integer gemsamt3;
 	public Boolean clear;
-	
+	public Integer bloodcost;
+	public Integer conjcost;
+	public Integer altcost;
+	public Integer evocost;
+	public Integer constcost;
+	public Integer enchcost;
+	public Integer thaucost;	
 }

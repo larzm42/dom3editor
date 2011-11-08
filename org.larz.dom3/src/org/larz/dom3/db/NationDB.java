@@ -72,4 +72,5 @@ public class NationDB {
 	
 	public String mapbackground;
 	public Integer templecost;
+	public Integer castleprod;
 }
