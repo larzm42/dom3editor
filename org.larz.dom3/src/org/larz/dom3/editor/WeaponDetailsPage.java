@@ -15,7 +15,9 @@
  */
 package org.larz.dom3.editor;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
@@ -350,28 +352,6 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 					}
 
 				});
-				value.addFocusListener(new FocusAdapter() {
-					@Override
-					public void focusLost(FocusEvent e) {
-						if (field instanceof Inst2Fields) {
-							setInst2(key, doc, value.getText());
-						} else if (field instanceof Inst3Fields) {
-							setInst3(key, doc, value.getText(), null);
-						}
-					}			
-				});
-				value.addKeyListener(new KeyAdapter() {
-					@Override
-					public void keyPressed(KeyEvent e) {
-						if (e.character == '\r') {
-							if (field instanceof Inst2Fields) {
-								setInst2(key, doc, value.getText());
-							} else if (field instanceof Inst3Fields) {
-								setInst3(key, doc, value.getText(), null);
-							}
-						}
-					}
-				});
 				value.setEnabled(false);
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 				gd.widthHint = DEFAULT_VALUE_WIDTH;
@@ -419,20 +399,6 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 					}
 
 				});
-				value.addFocusListener(new FocusAdapter() {
-					@Override
-					public void focusLost(FocusEvent e) {
-						setInst3(key, doc, null, value.getText());
-					}			
-				});
-				value.addKeyListener(new KeyAdapter() {
-					@Override
-					public void keyPressed(KeyEvent e) {
-						if (e.character == '\r') {
-							setInst3(key, doc, null, value.getText());
-						}
-					}
-				});
 				value.setEnabled(false);
 				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 				gd.widthHint = DEFAULT_VALUE_WIDTH;
@@ -442,6 +408,49 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 				defaultLabel2.setEnabled(false);
 			}
 			
+			final Text finalValue1 = myValue1;
+			final Text finalValue2 = myValue2;
+			if (myValue1 != null) {
+				myValue1.addFocusListener(new FocusAdapter() {
+					@Override
+					public void focusLost(FocusEvent e) {
+						if (field instanceof Inst2Fields) {
+							setInst2(key, doc, finalValue1.getText());
+						} else if (field instanceof Inst3Fields) {
+							setInst3(key, doc, finalValue1.getText(), finalValue2.getText());
+						}
+					}			
+				});
+				myValue1.addKeyListener(new KeyAdapter() {
+					@Override
+					public void keyPressed(KeyEvent e) {
+						if (e.character == '\r') {
+							if (field instanceof Inst2Fields) {
+								setInst2(key, doc, finalValue1.getText());
+							} else if (field instanceof Inst3Fields) {
+								setInst3(key, doc, finalValue1.getText(), finalValue2.getText());
+							}
+						}
+					}
+				});
+			}
+			if (myValue2 != null) {
+				myValue2.addFocusListener(new FocusAdapter() {
+					@Override
+					public void focusLost(FocusEvent e) {
+						setInst3(key, doc, finalValue1.getText(), finalValue2.getText());
+					}			
+				});
+				myValue2.addKeyListener(new KeyAdapter() {
+					@Override
+					public void keyPressed(KeyEvent e) {
+						if (e.character == '\r') {
+							setInst3(key, doc, finalValue1.getText(), finalValue2.getText());
+						}
+					}
+				});
+			}
+
 			if (field instanceof Inst2Fields) {
 				((Inst2Fields)field).check = check;
 				((Inst2Fields)field).value = myValue1;
@@ -514,7 +523,11 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 				if (fields.getValue() instanceof Inst3Fields) {
 					((Inst3Fields)fields.getValue()).value1.setText(vals[0].toString());
 					((Inst3Fields)fields.getValue()).value1.setEnabled(true);
-					((Inst3Fields)fields.getValue()).value2.setText(vals[1].toString());
+					if (vals[1] != null) {
+						((Inst3Fields)fields.getValue()).value2.setText(vals[1].toString());
+					} else {
+						((Inst3Fields)fields.getValue()).value2.setText("");
+					}
 					((Inst3Fields)fields.getValue()).value2.setEnabled(true);
 					((Inst3Fields)fields.getValue()).check.setSelection(true);
 					((Inst3Fields)fields.getValue()).check.setFont(boldFont);
@@ -942,7 +955,7 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 				switch (inst3) {
 				case FLYSPR:
 					if (((WeaponInst3)mod).isFlyspr()) {
-						return new Integer[]{Integer.valueOf(((WeaponInst3)mod).getValue1()), Integer.valueOf(((WeaponInst3)mod).getValue2())};
+						return new Integer[]{Integer.valueOf(((WeaponInst3)mod).getValue1()), ((WeaponInst3)mod).getValue2() != 0 ? Integer.valueOf(((WeaponInst3)mod).getValue2()) : null};
 					}
 					break;
 				}
@@ -1188,31 +1201,49 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 		updateSelection();
 	}
 
-	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2) 
-	{
+	private void setInst3(final Inst inst3, final XtextEditor editor, final String value1, final String value2)  {
 		final IXtextDocument myDocument = editor.getDocument();
 		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
 			public void process(XtextResource resource) throws Exception {
 				Weapon weaponToEdit = (Weapon)input;
+				List<WeaponMods> modsToRemove = new ArrayList<WeaponMods>();
+				List<WeaponMods> modsToAdd = new ArrayList<WeaponMods>();
 				EList<WeaponMods> mods = weaponToEdit.getMods();
 				for (WeaponMods mod : mods) {
 					if (mod instanceof WeaponInst3) {
+						Integer newValue1 = null;
+						Integer newValue2 = null;
+						try {
+							newValue1 = Integer.valueOf(value1);
+						} catch (NumberFormatException e) {
+							// is not a number
+						}
+						try {
+							newValue2 = Integer.valueOf(value2);
+						} catch (NumberFormatException e) {
+							// is not a number
+						}
 						switch (inst3) {
 						case FLYSPR:
 							if (((WeaponInst3)mod).isFlyspr()) {
-								if (value1 != null) {
-									((WeaponInst3)mod).setValue1(Integer.parseInt(value1));
+								modsToRemove.add(mod);
+								WeaponInst3 newMod = DmFactory.eINSTANCE.createWeaponInst3();
+								newMod.setFlyspr(true);
+								if (newValue1 != null) {
+									newMod.setValue1(newValue1);
 								}
-								if (value2 != null) {
-									((WeaponInst3)mod).setValue2(Integer.parseInt(value2));
+								if (newValue2 != null) {
+									newMod.setValue2(newValue2);
 								}
+								modsToAdd.add(newMod);
 							}
 							break;
 						}
 					}
 				}
-
+				mods.removeAll(modsToRemove);
+				mods.addAll(modsToAdd);
 			}  
 		});
 
@@ -1306,6 +1337,12 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 	}
 	
 	private void addInst3(final Inst inst, final XtextEditor editor, final String newName1, final String newName2) {
+		try {
+			// If this is not an int, return
+			Integer.valueOf(newName1);
+		} catch (NumberFormatException e) {
+			return;
+		}
 		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
 			@Override
 			public void run() {
@@ -1321,7 +1358,11 @@ public class WeaponDetailsPage extends AbstractDetailsPage {
 							break;
 						}
 						type.setValue1(Integer.valueOf(newName1));
-						type.setValue2(Integer.valueOf(newName2));
+						try {
+							type.setValue2(Integer.valueOf(newName2));
+						} catch (NumberFormatException e) {
+							// Optional parm
+						}
 						mods.add(type);
 					}  
 				});

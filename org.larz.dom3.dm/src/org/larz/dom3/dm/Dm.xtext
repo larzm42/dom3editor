@@ -107,7 +107,7 @@ WeaponPattern2:
 	WeaponInst2 value=INT (FREE_FORM_COMMENT)*;
 
 WeaponPattern3:
-	WeaponInst3 value1=INT value2=INT (FREE_FORM_COMMENT)*;
+	WeaponInst3 value1=INT (value2=INT)? (FREE_FORM_COMMENT)*;
 
 WeaponPattern4:
 	WeaponInst4 (FREE_FORM_COMMENT)*;
