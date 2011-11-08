@@ -1,5 +1,7 @@
 package org.larz.dom3.editor;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -10,6 +12,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.program.Program;
+import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
@@ -49,8 +55,10 @@ import org.larz.dom3.dm.dm.NationInst4;
 import org.larz.dom3.dm.dm.NationInst5;
 import org.larz.dom3.dm.dm.NationMods;
 import org.larz.dom3.dm.dm.NewArmor;
+import org.larz.dom3.dm.dm.NewItem;
 import org.larz.dom3.dm.dm.NewMonster;
 import org.larz.dom3.dm.dm.NewSite;
+import org.larz.dom3.dm.dm.NewSpell;
 import org.larz.dom3.dm.dm.NewWeapon;
 import org.larz.dom3.dm.dm.SelectArmorById;
 import org.larz.dom3.dm.dm.SelectArmorByName;
@@ -115,7 +123,7 @@ public class ReportGenerator {
 	public static final String NEW_SITES = "New Sites";
 	public static final String MODIFIED_NATIONS = "Modified Nations";
 
-	public static void generateReport(XtextEditor sourcePage) {
+	public static void generateReport(XtextEditor sourcePage, final Shell shell) {
 		final IXtextDocument myDocument = ((XtextEditor)sourcePage).getDocument();
 		myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
 			@Override
@@ -125,7 +133,7 @@ public class ReportGenerator {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
 				EList<AbstractElement> elements = dom3Mod.getElements();
 				for (AbstractElement element : elements) {
-					/*if (element instanceof SelectArmorById || element instanceof SelectArmorByName) {
+					if (element instanceof SelectArmorById || element instanceof SelectArmorByName) {
 						String name = getSelectArmorname((Armor)element);
 						if (name == null) continue;
 						String id = getArmorid((Armor)element);
@@ -330,7 +338,7 @@ public class ReportGenerator {
 							map.put(id, modObject);
 						}
 						setPropertyValues((Site)element, modObject.propertyMap);
-					} else*/ if (element instanceof SelectNation) {
+					} else if (element instanceof SelectNation) {
 						String name = getSelectNationname((Nation)element);
 						String id = getNationid((Nation)element);
 
@@ -355,7 +363,11 @@ public class ReportGenerator {
 					// step 1
 					Document document = new Document();
 					// step 2
-					PdfWriter.getInstance(document, new FileOutputStream("c:\\test.pdf"));
+					File tempFile = File.createTempFile("dom3editor", ".pdf");
+					tempFile.deleteOnExit();
+					FileOutputStream tempFileOutputStream = new FileOutputStream(tempFile);
+							
+					PdfWriter.getInstance(document, tempFileOutputStream);
 					// step 3
 					document.open();
 					
@@ -414,6 +426,41 @@ public class ReportGenerator {
 					}
 					document.close();
 					
+		    		tempFileOutputStream.flush();
+		    		tempFileOutputStream.close();
+
+		    		Program pdfViewer = Program.findProgram("pdf");
+			    	if (pdfViewer != null) {
+			    		pdfViewer.execute(tempFile.getAbsolutePath());
+			    	} else {			 
+			    		FileDialog dialog = new FileDialog(shell, SWT.SAVE);
+			    		dialog.setFilterExtensions(new String[]{"*.pdf"});
+			    		if (dialog.open() != null) {
+							FileInputStream from = null;
+							FileOutputStream to = null;
+							try {
+								String filterPath =  dialog.getFilterPath();
+					    		String name =  dialog.getFileName();
+
+								from = new FileInputStream(new File(tempFile.getAbsolutePath()));
+								to = new FileOutputStream(new File(filterPath + File.separator + name));
+								byte[] buffer = new byte[4096];
+								int bytesRead;
+
+								while ((bytesRead = from.read(buffer)) != -1) {
+									to.write(buffer, 0, bytesRead); // write
+								}
+							} finally {
+								if (from != null) {
+									from.close();
+								}
+								if (to != null) {
+									to.close();
+								}
+							}
+			    		}
+			    	}
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -921,7 +968,7 @@ public class ReportGenerator {
 									} else if (((SpellInst3)mod).getValue1() == 1) {
 										oldVal = "1, " + spellDB.path2;
 									} else {
-										System.out.println("invlalid path: " + ((SpellInst3)mod).getValue1());
+										System.out.println("invalid path: " + ((SpellInst3)mod).getValue1());
 									}
 								} else if (fieldName.equals("pathlevel")) {
 									if (((SpellInst3)mod).getValue1() == 0) {
@@ -929,7 +976,7 @@ public class ReportGenerator {
 									} else if (((SpellInst3)mod).getValue1() == 1) {
 										oldVal = "1, " + spellDB.pathlevel2;
 									} else {
-										System.out.println("invlalid pathlevel: " + ((SpellInst3)mod).getValue1());
+										System.out.println("invalid pathlevel: " + ((SpellInst3)mod).getValue1());
 									}
 								} else {
 									Field field2 = spellDB.getClass().getField(fieldName);

@@ -633,7 +633,7 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 	}
 	
 	public void generateReport() {
-		ReportGenerator.generateReport((XtextEditor)sourcePage);
+		ReportGenerator.generateReport((XtextEditor)sourcePage, sourcePage.getSite().getShell());
 	}
 
 }
