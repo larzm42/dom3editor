@@ -1096,12 +1096,19 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 					gd.widthHint = 140;
 					gd.horizontalSpan = 3;
-				} else if (field instanceof Inst2Fields ||	field instanceof Inst3Fields || field instanceof Inst6Fields) {
+				} else if (field instanceof Inst2Fields || field instanceof Inst6Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 					gd.widthHint = DEFAULT_VALUE_WIDTH;
+				} else if (field instanceof Inst3Fields) {
+					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+					gd.widthHint = DEFAULT_VALUE_WIDTH-12;
 				} else if (field instanceof Inst5Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.widthHint = DEFAULT_VALUE_WIDTH;
+					if (fields.getKey() == Inst.ONEBATTLESPELL) {
+						gd.widthHint = DEFAULT_VALUE_WIDTH-12;
+					} else {
+						gd.widthHint = DEFAULT_VALUE_WIDTH;
+					}
 				}
 				value.setLayoutData(gd);
 				
@@ -1149,9 +1156,11 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						if (check.getSelection()) {
 							value.setEnabled(true);
 							value.setText(key.defaultValue2);
+							update();
 						} else {
 							value.setEnabled(false);
 							value.setText("");
+							update();
 						}
 					}
 
@@ -1172,7 +1181,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				});
 				value.setEnabled(false);
 				gd = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
-				gd.widthHint = DEFAULT_VALUE_WIDTH;
+				gd.widthHint = DEFAULT_VALUE_WIDTH-12;
 				value.setLayoutData(gd);
 				
 				defaultLabel2 = new DynamicLabel(isRight?rightColumn:leftColumn, SWT.NONE);
@@ -1465,7 +1474,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					((Inst3Fields)fields.getValue()).check.setFont(normalFont);
 					for (List<Inst> dynamic : dynamicFields) {
 						if (dynamic.contains(fields.getKey())) {
-							if (dynamicFirstEmpty.contains(dynamic)) {
+							if (dynamicFirstEmpty.contains(dynamic) && ((Inst3Fields)fields.getValue()).defaultLabel1.getText().equals("")) {
 								if (Boolean.TRUE.equals(((Inst3Fields)fields.getValue()).value1.getData())) {
 									((Inst3Fields)fields.getValue()).value1.setData(Boolean.FALSE);
 									((Inst3Fields)fields.getValue()).value2.setData(Boolean.FALSE);
@@ -1475,7 +1484,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									break;
 								}
 							} else {
-								dynamicFirstEmpty.add(dynamic);
+								if (((Inst3Fields)fields.getValue()).defaultLabel1.getText().equals("")) {
+									dynamicFirstEmpty.add(dynamic);
+								}
 								if (Boolean.FALSE.equals(((Inst3Fields)fields.getValue()).value1.getData())) {
 									((Inst3Fields)fields.getValue()).value1.setData(Boolean.TRUE);
 									((Inst3Fields)fields.getValue()).value2.setData(Boolean.TRUE);
@@ -2017,24 +2028,160 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					}
 					break;
 				case MAGICSKILL1:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskillpath1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath1) : "");
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskilllevel1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel1) : "");
+					if (monsterDB.magicskillpath1 != null && monsterDB.magicskilllevel1 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath1));
+						Inst.MAGICSKILL1.defaultValue = monsterDB.magicskillpath1.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel1));
+						Inst.MAGICSKILL1.defaultValue2 = monsterDB.magicskilllevel1.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.MAGICSKILL1.defaultValue = "0";
+						Inst.MAGICSKILL1.defaultValue2 = "1";
+					}
 					break;
 				case MAGICSKILL2:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskillpath2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath2) : "");
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskilllevel2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel2) : "");
+					if (monsterDB.magicskillpath2 != null && monsterDB.magicskilllevel2 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath2));
+						Inst.MAGICSKILL2.defaultValue = monsterDB.magicskillpath2.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel2));
+						Inst.MAGICSKILL2.defaultValue2 = monsterDB.magicskilllevel2.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.MAGICSKILL2.defaultValue = "0";
+						Inst.MAGICSKILL2.defaultValue2 = "1";
+					}
 					break;
 				case MAGICSKILL3:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskillpath3 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath3) : "");
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskilllevel3 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel3) : "");
+					if (monsterDB.magicskillpath3 != null && monsterDB.magicskilllevel3 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath3));
+						Inst.MAGICSKILL3.defaultValue = monsterDB.magicskillpath3.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel3));
+						Inst.MAGICSKILL3.defaultValue2 = monsterDB.magicskilllevel3.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.MAGICSKILL3.defaultValue = "0";
+						Inst.MAGICSKILL3.defaultValue2 = "1";
+					}
 					break;
 				case MAGICSKILL4:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicskillpath4 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath4) : "");
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.magicskilllevel4 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel4) : "");
+					if (monsterDB.magicskillpath4 != null && monsterDB.magicskilllevel4 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath4));
+						Inst.MAGICSKILL4.defaultValue = monsterDB.magicskillpath4.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel4));
+						Inst.MAGICSKILL4.defaultValue2 = monsterDB.magicskilllevel4.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.MAGICSKILL4.defaultValue = "0";
+						Inst.MAGICSKILL4.defaultValue2 = "1";
+					}
 					break;
 				case CUSTOMMAGIC1:
-					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.custommagic1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagic1) : "");
-					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.custommagic2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagic2) : "");
+					if (monsterDB.custommagicpath1 != null && monsterDB.custommagicchance1 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath1));
+						Inst.CUSTOMMAGIC1.defaultValue = monsterDB.custommagicpath1.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance1));
+						Inst.CUSTOMMAGIC1.defaultValue2 = monsterDB.custommagicchance1.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.CUSTOMMAGIC1.defaultValue = "128";
+						Inst.CUSTOMMAGIC1.defaultValue2 = "100";
+					}
+					break;
+				case CUSTOMMAGIC2:
+					if (monsterDB.custommagicpath2 != null && monsterDB.custommagicchance2 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath2));
+						Inst.CUSTOMMAGIC2.defaultValue = monsterDB.custommagicpath2.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance2));
+						Inst.CUSTOMMAGIC2.defaultValue2 = monsterDB.custommagicchance2.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.CUSTOMMAGIC2.defaultValue = "128";
+						Inst.CUSTOMMAGIC2.defaultValue2 = "100";
+					}
+					break;
+				case CUSTOMMAGIC3:
+					if (monsterDB.custommagicpath3 != null && monsterDB.custommagicchance3 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath3));
+						Inst.CUSTOMMAGIC3.defaultValue = monsterDB.custommagicpath3.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance3));
+						Inst.CUSTOMMAGIC3.defaultValue2 = monsterDB.custommagicchance3.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.CUSTOMMAGIC3.defaultValue = "128";
+						Inst.CUSTOMMAGIC3.defaultValue2 = "100";
+					}
+					break;
+				case CUSTOMMAGIC4:
+					if (monsterDB.custommagicpath4 != null && monsterDB.custommagicchance4 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath4));
+						Inst.CUSTOMMAGIC4.defaultValue = monsterDB.custommagicpath4.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance4));
+						Inst.CUSTOMMAGIC4.defaultValue2 = monsterDB.custommagicchance4.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.CUSTOMMAGIC4.defaultValue = "128";
+						Inst.CUSTOMMAGIC4.defaultValue2 = "100";
+					}
+					break;
+				case CUSTOMMAGIC5:
+					if (monsterDB.custommagicpath5 != null && monsterDB.custommagicchance5 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath5));
+						Inst.CUSTOMMAGIC5.defaultValue = monsterDB.custommagicpath5.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance5));
+						Inst.CUSTOMMAGIC5.defaultValue2 = monsterDB.custommagicchance5.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.CUSTOMMAGIC5.defaultValue = "128";
+						Inst.CUSTOMMAGIC5.defaultValue2 = "100";
+					}
+					break;
+				case CUSTOMMAGIC6:
+					if (monsterDB.custommagicpath6 != null && monsterDB.custommagicchance6 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath6));
+						Inst.CUSTOMMAGIC6.defaultValue = monsterDB.custommagicpath6.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance6));
+						Inst.CUSTOMMAGIC6.defaultValue2 = monsterDB.custommagicchance6.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.CUSTOMMAGIC6.defaultValue = "128";
+						Inst.CUSTOMMAGIC6.defaultValue2 = "100";
+					}
+					break;
+				case CUSTOMMAGIC7:
+					if (monsterDB.custommagicpath7 != null && monsterDB.custommagicchance7 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath7));
+						Inst.CUSTOMMAGIC7.defaultValue = monsterDB.custommagicpath7.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance7));
+						Inst.CUSTOMMAGIC7.defaultValue2 = monsterDB.custommagicchance7.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.CUSTOMMAGIC7.defaultValue = "128";
+						Inst.CUSTOMMAGIC7.defaultValue2 = "100";
+					}
+					break;
+				case CUSTOMMAGIC8:
+					if (monsterDB.custommagicpath8 != null && monsterDB.custommagicchance8 != null) {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath8));
+						Inst.CUSTOMMAGIC8.defaultValue = monsterDB.custommagicpath8.toString();
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance8));
+						Inst.CUSTOMMAGIC8.defaultValue2 = monsterDB.custommagicchance8.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.CUSTOMMAGIC8.defaultValue = "128";
+						Inst.CUSTOMMAGIC8.defaultValue2 = "100";
+					}
 					break;
 				case MAGICBOOST1:
 					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.magicboost1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicboost1) : "");
