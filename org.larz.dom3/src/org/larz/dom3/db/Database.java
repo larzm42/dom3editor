@@ -912,7 +912,59 @@ public class Database {
 				}
 			}
 			
-//			monster.custommagic = rs.getInt("custommagic") == 1;
+			List<Integer[]> customList = new ArrayList<Integer[]>();
+			for (int loop = 1; loop <= 4; loop++) {
+				int rand = rs.getInt("rand" + loop);
+				int nbr = rs.getInt("nbr" + loop);
+				int link = rs.getInt("link" + loop);
+				int mask = rs.getInt("mask" + loop);
+				if (rand != 0) {
+					rand *= link;
+					for (int i = 0; i < nbr; i++) {
+						customList.add(new Integer[]{mask, rand});
+					}
+				}
+			}
+			
+			int customCount = 0;
+			for (Integer[] custArray : customList) {
+				customCount ++;
+				switch (customCount) {
+				case 1:
+					monster.custommagicpath1 = custArray[0];
+					monster.custommagicchance1 = custArray[1];
+					break;
+				case 2:
+					monster.custommagicpath2 = custArray[0];
+					monster.custommagicchance2 = custArray[1];
+					break;
+				case 3:
+					monster.custommagicpath3 = custArray[0];
+					monster.custommagicchance3 = custArray[1];
+					break;
+				case 4:
+					monster.custommagicpath4 = custArray[0];
+					monster.custommagicchance4 = custArray[1];
+					break;
+				case 5:
+					monster.custommagicpath5 = custArray[0];
+					monster.custommagicchance5 = custArray[1];
+					break;
+				case 6:
+					monster.custommagicpath6 = custArray[0];
+					monster.custommagicchance6 = custArray[1];
+					break;
+				case 7:
+					monster.custommagicpath7 = custArray[0];
+					monster.custommagicchance7 = custArray[1];
+					break;
+				case 8:
+					monster.custommagicpath8 = custArray[0];
+					monster.custommagicchance8 = custArray[1];
+					break;
+				}
+			}
+			
 //			monster.magicboost = rs.getInt("magicboost") == 1;
 //			monster.gemprod = rs.getInt("gemprod") == 1;
 //			monster.clear = rs.getInt("clear") == 1;
