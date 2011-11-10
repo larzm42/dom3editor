@@ -5379,7 +5379,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWeaponPattern3"
-    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:1988:1: ruleWeaponPattern3 returns [EObject current=null] : (this_WeaponInst3_0= ruleWeaponInst3 ( (lv_value1_1_0= RULE_INT ) ) ( (lv_value2_2_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )* ) ;
+    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:1988:1: ruleWeaponPattern3 returns [EObject current=null] : (this_WeaponInst3_0= ruleWeaponInst3 ( (lv_value1_1_0= RULE_INT ) ) ( (lv_value2_2_0= RULE_INT ) )? (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )* ) ;
     public final EObject ruleWeaponPattern3() throws RecognitionException {
         EObject current = null;
 
@@ -5392,11 +5392,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:1991:28: ( (this_WeaponInst3_0= ruleWeaponInst3 ( (lv_value1_1_0= RULE_INT ) ) ( (lv_value2_2_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )* ) )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:1992:1: (this_WeaponInst3_0= ruleWeaponInst3 ( (lv_value1_1_0= RULE_INT ) ) ( (lv_value2_2_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )* )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:1991:28: ( (this_WeaponInst3_0= ruleWeaponInst3 ( (lv_value1_1_0= RULE_INT ) ) ( (lv_value2_2_0= RULE_INT ) )? (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )* ) )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:1992:1: (this_WeaponInst3_0= ruleWeaponInst3 ( (lv_value1_1_0= RULE_INT ) ) ( (lv_value2_2_0= RULE_INT ) )? (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )* )
             {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:1992:1: (this_WeaponInst3_0= ruleWeaponInst3 ( (lv_value1_1_0= RULE_INT ) ) ( (lv_value2_2_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )* )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:1993:5: this_WeaponInst3_0= ruleWeaponInst3 ( (lv_value1_1_0= RULE_INT ) ) ( (lv_value2_2_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:1992:1: (this_WeaponInst3_0= ruleWeaponInst3 ( (lv_value1_1_0= RULE_INT ) ) ( (lv_value2_2_0= RULE_INT ) )? (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )* )
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:1993:5: this_WeaponInst3_0= ruleWeaponInst3 ( (lv_value1_1_0= RULE_INT ) ) ( (lv_value2_2_0= RULE_INT ) )? (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
             {
              
                     newCompositeNode(grammarAccess.getWeaponPattern3Access().getWeaponInst3ParserRuleCall_0()); 
@@ -5436,48 +5436,59 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2019:2: ( (lv_value2_2_0= RULE_INT ) )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2020:1: (lv_value2_2_0= RULE_INT )
-            {
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2020:1: (lv_value2_2_0= RULE_INT )
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2021:3: lv_value2_2_0= RULE_INT
-            {
-            lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleWeaponPattern35071); 
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2019:2: ( (lv_value2_2_0= RULE_INT ) )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            			newLeafNode(lv_value2_2_0, grammarAccess.getWeaponPattern3Access().getValue2INTTerminalRuleCall_2_0()); 
-            		
+            if ( (LA25_0==RULE_INT) ) {
+                alt25=1;
+            }
+            switch (alt25) {
+                case 1 :
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2020:1: (lv_value2_2_0= RULE_INT )
+                    {
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2020:1: (lv_value2_2_0= RULE_INT )
+                    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2021:3: lv_value2_2_0= RULE_INT
+                    {
+                    lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleWeaponPattern35071); 
 
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getWeaponPattern3Rule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"value2",
-                    		lv_value2_2_0, 
-                    		"INT");
-            	    
+                    			newLeafNode(lv_value2_2_0, grammarAccess.getWeaponPattern3Access().getValue2INTTerminalRuleCall_2_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getWeaponPattern3Rule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"value2",
+                            		lv_value2_2_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
-
-            }
-
-            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2037:2: (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
-            loop25:
+            // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2037:3: (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
+            loop26:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( (LA25_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt25=1;
+                if ( (LA26_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt26) {
             	case 1 :
-            	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2037:3: this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT
+            	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2037:4: this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleWeaponPattern35088); 
+            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleWeaponPattern35089); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_3, grammarAccess.getWeaponPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3()); 
             	        
@@ -5486,7 +5497,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop26;
                 }
             } while (true);
 
@@ -5523,13 +5534,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2051:2: iv_ruleWeaponPattern4= ruleWeaponPattern4 EOF
             {
              newCompositeNode(grammarAccess.getWeaponPattern4Rule()); 
-            pushFollow(FOLLOW_ruleWeaponPattern4_in_entryRuleWeaponPattern45125);
+            pushFollow(FOLLOW_ruleWeaponPattern4_in_entryRuleWeaponPattern45126);
             iv_ruleWeaponPattern4=ruleWeaponPattern4();
 
             state._fsp--;
 
              current =iv_ruleWeaponPattern4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWeaponPattern45135); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWeaponPattern45136); 
 
             }
 
@@ -5567,7 +5578,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getWeaponPattern4Access().getWeaponInst4ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleWeaponInst4_in_ruleWeaponPattern45182);
+            pushFollow(FOLLOW_ruleWeaponInst4_in_ruleWeaponPattern45183);
             this_WeaponInst4_0=ruleWeaponInst4();
 
             state._fsp--;
@@ -5577,21 +5588,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2071:1: (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )*
-            loop26:
+            loop27:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( (LA26_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt26=1;
+                if ( (LA27_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt27) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2071:2: this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleWeaponPattern45193); 
+            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleWeaponPattern45194); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_1, grammarAccess.getWeaponPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             	        
@@ -5600,7 +5611,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop27;
                 }
             } while (true);
 
@@ -5637,13 +5648,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2085:2: iv_ruleWeaponInst1= ruleWeaponInst1 EOF
             {
              newCompositeNode(grammarAccess.getWeaponInst1Rule()); 
-            pushFollow(FOLLOW_ruleWeaponInst1_in_entryRuleWeaponInst15230);
+            pushFollow(FOLLOW_ruleWeaponInst1_in_entryRuleWeaponInst15231);
             iv_ruleWeaponInst1=ruleWeaponInst1();
 
             state._fsp--;
 
              current =iv_ruleWeaponInst1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWeaponInst15240); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWeaponInst15241); 
 
             }
 
@@ -5679,7 +5690,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2097:1: (lv_name_0_0= '#name' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2098:3: lv_name_0_0= '#name'
             {
-            lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleWeaponInst15282); 
+            lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleWeaponInst15283); 
 
                     newLeafNode(lv_name_0_0, grammarAccess.getWeaponInst1Access().getNameNameKeyword_0());
                 
@@ -5725,13 +5736,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2121:2: iv_ruleWeaponInst2= ruleWeaponInst2 EOF
             {
              newCompositeNode(grammarAccess.getWeaponInst2Rule()); 
-            pushFollow(FOLLOW_ruleWeaponInst2_in_entryRuleWeaponInst25330);
+            pushFollow(FOLLOW_ruleWeaponInst2_in_entryRuleWeaponInst25331);
             iv_ruleWeaponInst2=ruleWeaponInst2();
 
             state._fsp--;
 
              current =iv_ruleWeaponInst2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWeaponInst25340); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWeaponInst25341); 
 
             }
 
@@ -5774,81 +5785,81 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2132:1: ( ( (lv_dmg_0_0= '#dmg' ) ) | ( (lv_nratt_1_0= '#nratt' ) ) | ( (lv_att_2_0= '#att' ) ) | ( (lv_def_3_0= '#def' ) ) | ( (lv_len_4_0= '#len' ) ) | ( (lv_range_5_0= '#range' ) ) | ( (lv_ammo_6_0= '#ammo' ) ) | ( (lv_rcost_7_0= '#rcost' ) ) | ( (lv_sound_8_0= '#sound' ) ) | ( (lv_aoe_9_0= '#aoe' ) ) | ( (lv_secondaryeffect_10_0= '#secondaryeffect' ) ) | ( (lv_secondaryeffectalways_11_0= '#secondaryeffectalways' ) ) | ( (lv_explspr_12_0= '#explspr' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2132:1: ( ( (lv_dmg_0_0= '#dmg' ) ) | ( (lv_nratt_1_0= '#nratt' ) ) | ( (lv_att_2_0= '#att' ) ) | ( (lv_def_3_0= '#def' ) ) | ( (lv_len_4_0= '#len' ) ) | ( (lv_range_5_0= '#range' ) ) | ( (lv_ammo_6_0= '#ammo' ) ) | ( (lv_rcost_7_0= '#rcost' ) ) | ( (lv_sound_8_0= '#sound' ) ) | ( (lv_aoe_9_0= '#aoe' ) ) | ( (lv_secondaryeffect_10_0= '#secondaryeffect' ) ) | ( (lv_secondaryeffectalways_11_0= '#secondaryeffectalways' ) ) | ( (lv_explspr_12_0= '#explspr' ) ) )
-            int alt27=13;
+            int alt28=13;
             switch ( input.LA(1) ) {
             case 44:
                 {
-                alt27=1;
+                alt28=1;
                 }
                 break;
             case 45:
                 {
-                alt27=2;
+                alt28=2;
                 }
                 break;
             case 46:
                 {
-                alt27=3;
+                alt28=3;
                 }
                 break;
             case 39:
                 {
-                alt27=4;
+                alt28=4;
                 }
                 break;
             case 47:
                 {
-                alt27=5;
+                alt28=5;
                 }
                 break;
             case 48:
                 {
-                alt27=6;
+                alt28=6;
                 }
                 break;
             case 49:
                 {
-                alt27=7;
+                alt28=7;
                 }
                 break;
             case 41:
                 {
-                alt27=8;
+                alt28=8;
                 }
                 break;
             case 50:
                 {
-                alt27=9;
+                alt28=9;
                 }
                 break;
             case 51:
                 {
-                alt27=10;
+                alt28=10;
                 }
                 break;
             case 52:
                 {
-                alt27=11;
+                alt28=11;
                 }
                 break;
             case 53:
                 {
-                alt27=12;
+                alt28=12;
                 }
                 break;
             case 54:
                 {
-                alt27=13;
+                alt28=13;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 27, 0, input);
+                    new NoViableAltException("", 28, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt27) {
+            switch (alt28) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2132:2: ( (lv_dmg_0_0= '#dmg' ) )
                     {
@@ -5858,7 +5869,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2133:1: (lv_dmg_0_0= '#dmg' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2134:3: lv_dmg_0_0= '#dmg'
                     {
-                    lv_dmg_0_0=(Token)match(input,44,FOLLOW_44_in_ruleWeaponInst25383); 
+                    lv_dmg_0_0=(Token)match(input,44,FOLLOW_44_in_ruleWeaponInst25384); 
 
                             newLeafNode(lv_dmg_0_0, grammarAccess.getWeaponInst2Access().getDmgDmgKeyword_0_0());
                         
@@ -5886,7 +5897,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2149:1: (lv_nratt_1_0= '#nratt' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2150:3: lv_nratt_1_0= '#nratt'
                     {
-                    lv_nratt_1_0=(Token)match(input,45,FOLLOW_45_in_ruleWeaponInst25420); 
+                    lv_nratt_1_0=(Token)match(input,45,FOLLOW_45_in_ruleWeaponInst25421); 
 
                             newLeafNode(lv_nratt_1_0, grammarAccess.getWeaponInst2Access().getNrattNrattKeyword_1_0());
                         
@@ -5914,7 +5925,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2165:1: (lv_att_2_0= '#att' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2166:3: lv_att_2_0= '#att'
                     {
-                    lv_att_2_0=(Token)match(input,46,FOLLOW_46_in_ruleWeaponInst25457); 
+                    lv_att_2_0=(Token)match(input,46,FOLLOW_46_in_ruleWeaponInst25458); 
 
                             newLeafNode(lv_att_2_0, grammarAccess.getWeaponInst2Access().getAttAttKeyword_2_0());
                         
@@ -5942,7 +5953,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2181:1: (lv_def_3_0= '#def' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2182:3: lv_def_3_0= '#def'
                     {
-                    lv_def_3_0=(Token)match(input,39,FOLLOW_39_in_ruleWeaponInst25494); 
+                    lv_def_3_0=(Token)match(input,39,FOLLOW_39_in_ruleWeaponInst25495); 
 
                             newLeafNode(lv_def_3_0, grammarAccess.getWeaponInst2Access().getDefDefKeyword_3_0());
                         
@@ -5970,7 +5981,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2197:1: (lv_len_4_0= '#len' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2198:3: lv_len_4_0= '#len'
                     {
-                    lv_len_4_0=(Token)match(input,47,FOLLOW_47_in_ruleWeaponInst25531); 
+                    lv_len_4_0=(Token)match(input,47,FOLLOW_47_in_ruleWeaponInst25532); 
 
                             newLeafNode(lv_len_4_0, grammarAccess.getWeaponInst2Access().getLenLenKeyword_4_0());
                         
@@ -5998,7 +6009,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2213:1: (lv_range_5_0= '#range' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2214:3: lv_range_5_0= '#range'
                     {
-                    lv_range_5_0=(Token)match(input,48,FOLLOW_48_in_ruleWeaponInst25568); 
+                    lv_range_5_0=(Token)match(input,48,FOLLOW_48_in_ruleWeaponInst25569); 
 
                             newLeafNode(lv_range_5_0, grammarAccess.getWeaponInst2Access().getRangeRangeKeyword_5_0());
                         
@@ -6026,7 +6037,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2229:1: (lv_ammo_6_0= '#ammo' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2230:3: lv_ammo_6_0= '#ammo'
                     {
-                    lv_ammo_6_0=(Token)match(input,49,FOLLOW_49_in_ruleWeaponInst25605); 
+                    lv_ammo_6_0=(Token)match(input,49,FOLLOW_49_in_ruleWeaponInst25606); 
 
                             newLeafNode(lv_ammo_6_0, grammarAccess.getWeaponInst2Access().getAmmoAmmoKeyword_6_0());
                         
@@ -6054,7 +6065,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2245:1: (lv_rcost_7_0= '#rcost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2246:3: lv_rcost_7_0= '#rcost'
                     {
-                    lv_rcost_7_0=(Token)match(input,41,FOLLOW_41_in_ruleWeaponInst25642); 
+                    lv_rcost_7_0=(Token)match(input,41,FOLLOW_41_in_ruleWeaponInst25643); 
 
                             newLeafNode(lv_rcost_7_0, grammarAccess.getWeaponInst2Access().getRcostRcostKeyword_7_0());
                         
@@ -6082,7 +6093,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2261:1: (lv_sound_8_0= '#sound' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2262:3: lv_sound_8_0= '#sound'
                     {
-                    lv_sound_8_0=(Token)match(input,50,FOLLOW_50_in_ruleWeaponInst25679); 
+                    lv_sound_8_0=(Token)match(input,50,FOLLOW_50_in_ruleWeaponInst25680); 
 
                             newLeafNode(lv_sound_8_0, grammarAccess.getWeaponInst2Access().getSoundSoundKeyword_8_0());
                         
@@ -6110,7 +6121,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2277:1: (lv_aoe_9_0= '#aoe' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2278:3: lv_aoe_9_0= '#aoe'
                     {
-                    lv_aoe_9_0=(Token)match(input,51,FOLLOW_51_in_ruleWeaponInst25716); 
+                    lv_aoe_9_0=(Token)match(input,51,FOLLOW_51_in_ruleWeaponInst25717); 
 
                             newLeafNode(lv_aoe_9_0, grammarAccess.getWeaponInst2Access().getAoeAoeKeyword_9_0());
                         
@@ -6138,7 +6149,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2293:1: (lv_secondaryeffect_10_0= '#secondaryeffect' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2294:3: lv_secondaryeffect_10_0= '#secondaryeffect'
                     {
-                    lv_secondaryeffect_10_0=(Token)match(input,52,FOLLOW_52_in_ruleWeaponInst25753); 
+                    lv_secondaryeffect_10_0=(Token)match(input,52,FOLLOW_52_in_ruleWeaponInst25754); 
 
                             newLeafNode(lv_secondaryeffect_10_0, grammarAccess.getWeaponInst2Access().getSecondaryeffectSecondaryeffectKeyword_10_0());
                         
@@ -6166,7 +6177,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2309:1: (lv_secondaryeffectalways_11_0= '#secondaryeffectalways' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2310:3: lv_secondaryeffectalways_11_0= '#secondaryeffectalways'
                     {
-                    lv_secondaryeffectalways_11_0=(Token)match(input,53,FOLLOW_53_in_ruleWeaponInst25790); 
+                    lv_secondaryeffectalways_11_0=(Token)match(input,53,FOLLOW_53_in_ruleWeaponInst25791); 
 
                             newLeafNode(lv_secondaryeffectalways_11_0, grammarAccess.getWeaponInst2Access().getSecondaryeffectalwaysSecondaryeffectalwaysKeyword_11_0());
                         
@@ -6194,7 +6205,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2325:1: (lv_explspr_12_0= '#explspr' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2326:3: lv_explspr_12_0= '#explspr'
                     {
-                    lv_explspr_12_0=(Token)match(input,54,FOLLOW_54_in_ruleWeaponInst25827); 
+                    lv_explspr_12_0=(Token)match(input,54,FOLLOW_54_in_ruleWeaponInst25828); 
 
                             newLeafNode(lv_explspr_12_0, grammarAccess.getWeaponInst2Access().getExplsprExplsprKeyword_12_0());
                         
@@ -6246,13 +6257,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2349:2: iv_ruleWeaponInst3= ruleWeaponInst3 EOF
             {
              newCompositeNode(grammarAccess.getWeaponInst3Rule()); 
-            pushFollow(FOLLOW_ruleWeaponInst3_in_entryRuleWeaponInst35876);
+            pushFollow(FOLLOW_ruleWeaponInst3_in_entryRuleWeaponInst35877);
             iv_ruleWeaponInst3=ruleWeaponInst3();
 
             state._fsp--;
 
              current =iv_ruleWeaponInst3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWeaponInst35886); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWeaponInst35887); 
 
             }
 
@@ -6288,7 +6299,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2361:1: (lv_flyspr_0_0= '#flyspr' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2362:3: lv_flyspr_0_0= '#flyspr'
             {
-            lv_flyspr_0_0=(Token)match(input,55,FOLLOW_55_in_ruleWeaponInst35928); 
+            lv_flyspr_0_0=(Token)match(input,55,FOLLOW_55_in_ruleWeaponInst35929); 
 
                     newLeafNode(lv_flyspr_0_0, grammarAccess.getWeaponInst3Access().getFlysprFlysprKeyword_0());
                 
@@ -6334,13 +6345,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2385:2: iv_ruleWeaponInst4= ruleWeaponInst4 EOF
             {
              newCompositeNode(grammarAccess.getWeaponInst4Rule()); 
-            pushFollow(FOLLOW_ruleWeaponInst4_in_entryRuleWeaponInst45976);
+            pushFollow(FOLLOW_ruleWeaponInst4_in_entryRuleWeaponInst45977);
             iv_ruleWeaponInst4=ruleWeaponInst4();
 
             state._fsp--;
 
              current =iv_ruleWeaponInst4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWeaponInst45986); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWeaponInst45987); 
 
             }
 
@@ -6399,161 +6410,161 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2396:1: ( ( (lv_twohanded_0_0= '#twohanded' ) ) | ( (lv_armorpiercing_1_0= '#armorpiercing' ) ) | ( (lv_armornegating_2_0= '#armornegating' ) ) | ( (lv_magic_3_0= '#magic' ) ) | ( (lv_dt_normal_4_0= '#dt_normal' ) ) | ( (lv_dt_stun_5_0= '#dt_stun' ) ) | ( (lv_dt_paralyze_6_0= '#dt_paralyze' ) ) | ( (lv_dt_poison_7_0= '#dt_poison' ) ) | ( (lv_dt_cap_8_0= '#dt_cap' ) ) | ( (lv_dt_demon_9_0= '#dt_demon' ) ) | ( (lv_dt_demononly_10_0= '#dt_demononly' ) ) | ( (lv_dt_holy_11_0= '#dt_holy' ) ) | ( (lv_dt_magic_12_0= '#dt_magic' ) ) | ( (lv_dt_small_13_0= '#dt_small' ) ) | ( (lv_dt_large_14_0= '#dt_large' ) ) | ( (lv_dt_constructonly_15_0= '#dt_constructonly' ) ) | ( (lv_dt_raise_16_0= '#dt_raise' ) ) | ( (lv_mind_17_0= '#mind' ) ) | ( (lv_cold_18_0= '#cold' ) ) | ( (lv_fire_19_0= '#fire' ) ) | ( (lv_shock_20_0= '#shock' ) ) | ( (lv_poison_21_0= '#poison' ) ) | ( (lv_bonus_22_0= '#bonus' ) ) | ( (lv_charge_23_0= '#charge' ) ) | ( (lv_flail_24_0= '#flail' ) ) | ( (lv_nostr_25_0= '#nostr' ) ) | ( (lv_nostr_26_0= '#nostrength' ) ) | ( (lv_mrnegates_27_0= '#mrnegates' ) ) | ( (lv_mrnegateseasily_28_0= '#mrnegateseasily' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2396:1: ( ( (lv_twohanded_0_0= '#twohanded' ) ) | ( (lv_armorpiercing_1_0= '#armorpiercing' ) ) | ( (lv_armornegating_2_0= '#armornegating' ) ) | ( (lv_magic_3_0= '#magic' ) ) | ( (lv_dt_normal_4_0= '#dt_normal' ) ) | ( (lv_dt_stun_5_0= '#dt_stun' ) ) | ( (lv_dt_paralyze_6_0= '#dt_paralyze' ) ) | ( (lv_dt_poison_7_0= '#dt_poison' ) ) | ( (lv_dt_cap_8_0= '#dt_cap' ) ) | ( (lv_dt_demon_9_0= '#dt_demon' ) ) | ( (lv_dt_demononly_10_0= '#dt_demononly' ) ) | ( (lv_dt_holy_11_0= '#dt_holy' ) ) | ( (lv_dt_magic_12_0= '#dt_magic' ) ) | ( (lv_dt_small_13_0= '#dt_small' ) ) | ( (lv_dt_large_14_0= '#dt_large' ) ) | ( (lv_dt_constructonly_15_0= '#dt_constructonly' ) ) | ( (lv_dt_raise_16_0= '#dt_raise' ) ) | ( (lv_mind_17_0= '#mind' ) ) | ( (lv_cold_18_0= '#cold' ) ) | ( (lv_fire_19_0= '#fire' ) ) | ( (lv_shock_20_0= '#shock' ) ) | ( (lv_poison_21_0= '#poison' ) ) | ( (lv_bonus_22_0= '#bonus' ) ) | ( (lv_charge_23_0= '#charge' ) ) | ( (lv_flail_24_0= '#flail' ) ) | ( (lv_nostr_25_0= '#nostr' ) ) | ( (lv_nostr_26_0= '#nostrength' ) ) | ( (lv_mrnegates_27_0= '#mrnegates' ) ) | ( (lv_mrnegateseasily_28_0= '#mrnegateseasily' ) ) )
-            int alt28=29;
+            int alt29=29;
             switch ( input.LA(1) ) {
             case 56:
                 {
-                alt28=1;
+                alt29=1;
                 }
                 break;
             case 57:
                 {
-                alt28=2;
+                alt29=2;
                 }
                 break;
             case 58:
                 {
-                alt28=3;
+                alt29=3;
                 }
                 break;
             case 59:
                 {
-                alt28=4;
+                alt29=4;
                 }
                 break;
             case 60:
                 {
-                alt28=5;
+                alt29=5;
                 }
                 break;
             case 61:
                 {
-                alt28=6;
+                alt29=6;
                 }
                 break;
             case 62:
                 {
-                alt28=7;
+                alt29=7;
                 }
                 break;
             case 63:
                 {
-                alt28=8;
+                alt29=8;
                 }
                 break;
             case 64:
                 {
-                alt28=9;
+                alt29=9;
                 }
                 break;
             case 65:
                 {
-                alt28=10;
+                alt29=10;
                 }
                 break;
             case 66:
                 {
-                alt28=11;
+                alt29=11;
                 }
                 break;
             case 67:
                 {
-                alt28=12;
+                alt29=12;
                 }
                 break;
             case 68:
                 {
-                alt28=13;
+                alt29=13;
                 }
                 break;
             case 69:
                 {
-                alt28=14;
+                alt29=14;
                 }
                 break;
             case 70:
                 {
-                alt28=15;
+                alt29=15;
                 }
                 break;
             case 71:
                 {
-                alt28=16;
+                alt29=16;
                 }
                 break;
             case 72:
                 {
-                alt28=17;
+                alt29=17;
                 }
                 break;
             case 73:
                 {
-                alt28=18;
+                alt29=18;
                 }
                 break;
             case 74:
                 {
-                alt28=19;
+                alt29=19;
                 }
                 break;
             case 75:
                 {
-                alt28=20;
+                alt29=20;
                 }
                 break;
             case 76:
                 {
-                alt28=21;
+                alt29=21;
                 }
                 break;
             case 77:
                 {
-                alt28=22;
+                alt29=22;
                 }
                 break;
             case 78:
                 {
-                alt28=23;
+                alt29=23;
                 }
                 break;
             case 79:
                 {
-                alt28=24;
+                alt29=24;
                 }
                 break;
             case 80:
                 {
-                alt28=25;
+                alt29=25;
                 }
                 break;
             case 81:
                 {
-                alt28=26;
+                alt29=26;
                 }
                 break;
             case 82:
                 {
-                alt28=27;
+                alt29=27;
                 }
                 break;
             case 83:
                 {
-                alt28=28;
+                alt29=28;
                 }
                 break;
             case 84:
                 {
-                alt28=29;
+                alt29=29;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
+                    new NoViableAltException("", 29, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt28) {
+            switch (alt29) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2396:2: ( (lv_twohanded_0_0= '#twohanded' ) )
                     {
@@ -6563,7 +6574,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2397:1: (lv_twohanded_0_0= '#twohanded' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2398:3: lv_twohanded_0_0= '#twohanded'
                     {
-                    lv_twohanded_0_0=(Token)match(input,56,FOLLOW_56_in_ruleWeaponInst46029); 
+                    lv_twohanded_0_0=(Token)match(input,56,FOLLOW_56_in_ruleWeaponInst46030); 
 
                             newLeafNode(lv_twohanded_0_0, grammarAccess.getWeaponInst4Access().getTwohandedTwohandedKeyword_0_0());
                         
@@ -6591,7 +6602,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2413:1: (lv_armorpiercing_1_0= '#armorpiercing' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2414:3: lv_armorpiercing_1_0= '#armorpiercing'
                     {
-                    lv_armorpiercing_1_0=(Token)match(input,57,FOLLOW_57_in_ruleWeaponInst46066); 
+                    lv_armorpiercing_1_0=(Token)match(input,57,FOLLOW_57_in_ruleWeaponInst46067); 
 
                             newLeafNode(lv_armorpiercing_1_0, grammarAccess.getWeaponInst4Access().getArmorpiercingArmorpiercingKeyword_1_0());
                         
@@ -6619,7 +6630,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2429:1: (lv_armornegating_2_0= '#armornegating' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2430:3: lv_armornegating_2_0= '#armornegating'
                     {
-                    lv_armornegating_2_0=(Token)match(input,58,FOLLOW_58_in_ruleWeaponInst46103); 
+                    lv_armornegating_2_0=(Token)match(input,58,FOLLOW_58_in_ruleWeaponInst46104); 
 
                             newLeafNode(lv_armornegating_2_0, grammarAccess.getWeaponInst4Access().getArmornegatingArmornegatingKeyword_2_0());
                         
@@ -6647,7 +6658,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2445:1: (lv_magic_3_0= '#magic' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2446:3: lv_magic_3_0= '#magic'
                     {
-                    lv_magic_3_0=(Token)match(input,59,FOLLOW_59_in_ruleWeaponInst46140); 
+                    lv_magic_3_0=(Token)match(input,59,FOLLOW_59_in_ruleWeaponInst46141); 
 
                             newLeafNode(lv_magic_3_0, grammarAccess.getWeaponInst4Access().getMagicMagicKeyword_3_0());
                         
@@ -6675,7 +6686,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2461:1: (lv_dt_normal_4_0= '#dt_normal' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2462:3: lv_dt_normal_4_0= '#dt_normal'
                     {
-                    lv_dt_normal_4_0=(Token)match(input,60,FOLLOW_60_in_ruleWeaponInst46177); 
+                    lv_dt_normal_4_0=(Token)match(input,60,FOLLOW_60_in_ruleWeaponInst46178); 
 
                             newLeafNode(lv_dt_normal_4_0, grammarAccess.getWeaponInst4Access().getDt_normalDt_normalKeyword_4_0());
                         
@@ -6703,7 +6714,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2477:1: (lv_dt_stun_5_0= '#dt_stun' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2478:3: lv_dt_stun_5_0= '#dt_stun'
                     {
-                    lv_dt_stun_5_0=(Token)match(input,61,FOLLOW_61_in_ruleWeaponInst46214); 
+                    lv_dt_stun_5_0=(Token)match(input,61,FOLLOW_61_in_ruleWeaponInst46215); 
 
                             newLeafNode(lv_dt_stun_5_0, grammarAccess.getWeaponInst4Access().getDt_stunDt_stunKeyword_5_0());
                         
@@ -6731,7 +6742,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2493:1: (lv_dt_paralyze_6_0= '#dt_paralyze' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2494:3: lv_dt_paralyze_6_0= '#dt_paralyze'
                     {
-                    lv_dt_paralyze_6_0=(Token)match(input,62,FOLLOW_62_in_ruleWeaponInst46251); 
+                    lv_dt_paralyze_6_0=(Token)match(input,62,FOLLOW_62_in_ruleWeaponInst46252); 
 
                             newLeafNode(lv_dt_paralyze_6_0, grammarAccess.getWeaponInst4Access().getDt_paralyzeDt_paralyzeKeyword_6_0());
                         
@@ -6759,7 +6770,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2509:1: (lv_dt_poison_7_0= '#dt_poison' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2510:3: lv_dt_poison_7_0= '#dt_poison'
                     {
-                    lv_dt_poison_7_0=(Token)match(input,63,FOLLOW_63_in_ruleWeaponInst46288); 
+                    lv_dt_poison_7_0=(Token)match(input,63,FOLLOW_63_in_ruleWeaponInst46289); 
 
                             newLeafNode(lv_dt_poison_7_0, grammarAccess.getWeaponInst4Access().getDt_poisonDt_poisonKeyword_7_0());
                         
@@ -6787,7 +6798,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2525:1: (lv_dt_cap_8_0= '#dt_cap' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2526:3: lv_dt_cap_8_0= '#dt_cap'
                     {
-                    lv_dt_cap_8_0=(Token)match(input,64,FOLLOW_64_in_ruleWeaponInst46325); 
+                    lv_dt_cap_8_0=(Token)match(input,64,FOLLOW_64_in_ruleWeaponInst46326); 
 
                             newLeafNode(lv_dt_cap_8_0, grammarAccess.getWeaponInst4Access().getDt_capDt_capKeyword_8_0());
                         
@@ -6815,7 +6826,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2541:1: (lv_dt_demon_9_0= '#dt_demon' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2542:3: lv_dt_demon_9_0= '#dt_demon'
                     {
-                    lv_dt_demon_9_0=(Token)match(input,65,FOLLOW_65_in_ruleWeaponInst46362); 
+                    lv_dt_demon_9_0=(Token)match(input,65,FOLLOW_65_in_ruleWeaponInst46363); 
 
                             newLeafNode(lv_dt_demon_9_0, grammarAccess.getWeaponInst4Access().getDt_demonDt_demonKeyword_9_0());
                         
@@ -6843,7 +6854,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2557:1: (lv_dt_demononly_10_0= '#dt_demononly' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2558:3: lv_dt_demononly_10_0= '#dt_demononly'
                     {
-                    lv_dt_demononly_10_0=(Token)match(input,66,FOLLOW_66_in_ruleWeaponInst46399); 
+                    lv_dt_demononly_10_0=(Token)match(input,66,FOLLOW_66_in_ruleWeaponInst46400); 
 
                             newLeafNode(lv_dt_demononly_10_0, grammarAccess.getWeaponInst4Access().getDt_demononlyDt_demononlyKeyword_10_0());
                         
@@ -6871,7 +6882,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2573:1: (lv_dt_holy_11_0= '#dt_holy' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2574:3: lv_dt_holy_11_0= '#dt_holy'
                     {
-                    lv_dt_holy_11_0=(Token)match(input,67,FOLLOW_67_in_ruleWeaponInst46436); 
+                    lv_dt_holy_11_0=(Token)match(input,67,FOLLOW_67_in_ruleWeaponInst46437); 
 
                             newLeafNode(lv_dt_holy_11_0, grammarAccess.getWeaponInst4Access().getDt_holyDt_holyKeyword_11_0());
                         
@@ -6899,7 +6910,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2589:1: (lv_dt_magic_12_0= '#dt_magic' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2590:3: lv_dt_magic_12_0= '#dt_magic'
                     {
-                    lv_dt_magic_12_0=(Token)match(input,68,FOLLOW_68_in_ruleWeaponInst46473); 
+                    lv_dt_magic_12_0=(Token)match(input,68,FOLLOW_68_in_ruleWeaponInst46474); 
 
                             newLeafNode(lv_dt_magic_12_0, grammarAccess.getWeaponInst4Access().getDt_magicDt_magicKeyword_12_0());
                         
@@ -6927,7 +6938,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2605:1: (lv_dt_small_13_0= '#dt_small' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2606:3: lv_dt_small_13_0= '#dt_small'
                     {
-                    lv_dt_small_13_0=(Token)match(input,69,FOLLOW_69_in_ruleWeaponInst46510); 
+                    lv_dt_small_13_0=(Token)match(input,69,FOLLOW_69_in_ruleWeaponInst46511); 
 
                             newLeafNode(lv_dt_small_13_0, grammarAccess.getWeaponInst4Access().getDt_smallDt_smallKeyword_13_0());
                         
@@ -6955,7 +6966,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2621:1: (lv_dt_large_14_0= '#dt_large' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2622:3: lv_dt_large_14_0= '#dt_large'
                     {
-                    lv_dt_large_14_0=(Token)match(input,70,FOLLOW_70_in_ruleWeaponInst46547); 
+                    lv_dt_large_14_0=(Token)match(input,70,FOLLOW_70_in_ruleWeaponInst46548); 
 
                             newLeafNode(lv_dt_large_14_0, grammarAccess.getWeaponInst4Access().getDt_largeDt_largeKeyword_14_0());
                         
@@ -6983,7 +6994,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2637:1: (lv_dt_constructonly_15_0= '#dt_constructonly' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2638:3: lv_dt_constructonly_15_0= '#dt_constructonly'
                     {
-                    lv_dt_constructonly_15_0=(Token)match(input,71,FOLLOW_71_in_ruleWeaponInst46584); 
+                    lv_dt_constructonly_15_0=(Token)match(input,71,FOLLOW_71_in_ruleWeaponInst46585); 
 
                             newLeafNode(lv_dt_constructonly_15_0, grammarAccess.getWeaponInst4Access().getDt_constructonlyDt_constructonlyKeyword_15_0());
                         
@@ -7011,7 +7022,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2653:1: (lv_dt_raise_16_0= '#dt_raise' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2654:3: lv_dt_raise_16_0= '#dt_raise'
                     {
-                    lv_dt_raise_16_0=(Token)match(input,72,FOLLOW_72_in_ruleWeaponInst46621); 
+                    lv_dt_raise_16_0=(Token)match(input,72,FOLLOW_72_in_ruleWeaponInst46622); 
 
                             newLeafNode(lv_dt_raise_16_0, grammarAccess.getWeaponInst4Access().getDt_raiseDt_raiseKeyword_16_0());
                         
@@ -7039,7 +7050,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2669:1: (lv_mind_17_0= '#mind' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2670:3: lv_mind_17_0= '#mind'
                     {
-                    lv_mind_17_0=(Token)match(input,73,FOLLOW_73_in_ruleWeaponInst46658); 
+                    lv_mind_17_0=(Token)match(input,73,FOLLOW_73_in_ruleWeaponInst46659); 
 
                             newLeafNode(lv_mind_17_0, grammarAccess.getWeaponInst4Access().getMindMindKeyword_17_0());
                         
@@ -7067,7 +7078,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2685:1: (lv_cold_18_0= '#cold' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2686:3: lv_cold_18_0= '#cold'
                     {
-                    lv_cold_18_0=(Token)match(input,74,FOLLOW_74_in_ruleWeaponInst46695); 
+                    lv_cold_18_0=(Token)match(input,74,FOLLOW_74_in_ruleWeaponInst46696); 
 
                             newLeafNode(lv_cold_18_0, grammarAccess.getWeaponInst4Access().getColdColdKeyword_18_0());
                         
@@ -7095,7 +7106,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2701:1: (lv_fire_19_0= '#fire' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2702:3: lv_fire_19_0= '#fire'
                     {
-                    lv_fire_19_0=(Token)match(input,75,FOLLOW_75_in_ruleWeaponInst46732); 
+                    lv_fire_19_0=(Token)match(input,75,FOLLOW_75_in_ruleWeaponInst46733); 
 
                             newLeafNode(lv_fire_19_0, grammarAccess.getWeaponInst4Access().getFireFireKeyword_19_0());
                         
@@ -7123,7 +7134,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2717:1: (lv_shock_20_0= '#shock' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2718:3: lv_shock_20_0= '#shock'
                     {
-                    lv_shock_20_0=(Token)match(input,76,FOLLOW_76_in_ruleWeaponInst46769); 
+                    lv_shock_20_0=(Token)match(input,76,FOLLOW_76_in_ruleWeaponInst46770); 
 
                             newLeafNode(lv_shock_20_0, grammarAccess.getWeaponInst4Access().getShockShockKeyword_20_0());
                         
@@ -7151,7 +7162,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2733:1: (lv_poison_21_0= '#poison' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2734:3: lv_poison_21_0= '#poison'
                     {
-                    lv_poison_21_0=(Token)match(input,77,FOLLOW_77_in_ruleWeaponInst46806); 
+                    lv_poison_21_0=(Token)match(input,77,FOLLOW_77_in_ruleWeaponInst46807); 
 
                             newLeafNode(lv_poison_21_0, grammarAccess.getWeaponInst4Access().getPoisonPoisonKeyword_21_0());
                         
@@ -7179,7 +7190,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2749:1: (lv_bonus_22_0= '#bonus' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2750:3: lv_bonus_22_0= '#bonus'
                     {
-                    lv_bonus_22_0=(Token)match(input,78,FOLLOW_78_in_ruleWeaponInst46843); 
+                    lv_bonus_22_0=(Token)match(input,78,FOLLOW_78_in_ruleWeaponInst46844); 
 
                             newLeafNode(lv_bonus_22_0, grammarAccess.getWeaponInst4Access().getBonusBonusKeyword_22_0());
                         
@@ -7207,7 +7218,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2765:1: (lv_charge_23_0= '#charge' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2766:3: lv_charge_23_0= '#charge'
                     {
-                    lv_charge_23_0=(Token)match(input,79,FOLLOW_79_in_ruleWeaponInst46880); 
+                    lv_charge_23_0=(Token)match(input,79,FOLLOW_79_in_ruleWeaponInst46881); 
 
                             newLeafNode(lv_charge_23_0, grammarAccess.getWeaponInst4Access().getChargeChargeKeyword_23_0());
                         
@@ -7235,7 +7246,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2781:1: (lv_flail_24_0= '#flail' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2782:3: lv_flail_24_0= '#flail'
                     {
-                    lv_flail_24_0=(Token)match(input,80,FOLLOW_80_in_ruleWeaponInst46917); 
+                    lv_flail_24_0=(Token)match(input,80,FOLLOW_80_in_ruleWeaponInst46918); 
 
                             newLeafNode(lv_flail_24_0, grammarAccess.getWeaponInst4Access().getFlailFlailKeyword_24_0());
                         
@@ -7263,7 +7274,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2797:1: (lv_nostr_25_0= '#nostr' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2798:3: lv_nostr_25_0= '#nostr'
                     {
-                    lv_nostr_25_0=(Token)match(input,81,FOLLOW_81_in_ruleWeaponInst46954); 
+                    lv_nostr_25_0=(Token)match(input,81,FOLLOW_81_in_ruleWeaponInst46955); 
 
                             newLeafNode(lv_nostr_25_0, grammarAccess.getWeaponInst4Access().getNostrNostrKeyword_25_0());
                         
@@ -7291,7 +7302,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2813:1: (lv_nostr_26_0= '#nostrength' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2814:3: lv_nostr_26_0= '#nostrength'
                     {
-                    lv_nostr_26_0=(Token)match(input,82,FOLLOW_82_in_ruleWeaponInst46991); 
+                    lv_nostr_26_0=(Token)match(input,82,FOLLOW_82_in_ruleWeaponInst46992); 
 
                             newLeafNode(lv_nostr_26_0, grammarAccess.getWeaponInst4Access().getNostrNostrengthKeyword_26_0());
                         
@@ -7319,7 +7330,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2829:1: (lv_mrnegates_27_0= '#mrnegates' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2830:3: lv_mrnegates_27_0= '#mrnegates'
                     {
-                    lv_mrnegates_27_0=(Token)match(input,83,FOLLOW_83_in_ruleWeaponInst47028); 
+                    lv_mrnegates_27_0=(Token)match(input,83,FOLLOW_83_in_ruleWeaponInst47029); 
 
                             newLeafNode(lv_mrnegates_27_0, grammarAccess.getWeaponInst4Access().getMrnegatesMrnegatesKeyword_27_0());
                         
@@ -7347,7 +7358,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2845:1: (lv_mrnegateseasily_28_0= '#mrnegateseasily' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2846:3: lv_mrnegateseasily_28_0= '#mrnegateseasily'
                     {
-                    lv_mrnegateseasily_28_0=(Token)match(input,84,FOLLOW_84_in_ruleWeaponInst47065); 
+                    lv_mrnegateseasily_28_0=(Token)match(input,84,FOLLOW_84_in_ruleWeaponInst47066); 
 
                             newLeafNode(lv_mrnegateseasily_28_0, grammarAccess.getWeaponInst4Access().getMrnegateseasilyMrnegateseasilyKeyword_28_0());
                         
@@ -7399,13 +7410,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2869:2: iv_ruleMonster= ruleMonster EOF
             {
              newCompositeNode(grammarAccess.getMonsterRule()); 
-            pushFollow(FOLLOW_ruleMonster_in_entryRuleMonster7114);
+            pushFollow(FOLLOW_ruleMonster_in_entryRuleMonster7115);
             iv_ruleMonster=ruleMonster();
 
             state._fsp--;
 
              current =iv_ruleMonster; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonster7124); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonster7125); 
 
             }
 
@@ -7441,42 +7452,42 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2880:1: (this_SelectMonsterById_0= ruleSelectMonsterById | this_SelectMonsterByName_1= ruleSelectMonsterByName | this_NewMonster_2= ruleNewMonster )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2880:1: (this_SelectMonsterById_0= ruleSelectMonsterById | this_SelectMonsterByName_1= ruleSelectMonsterByName | this_NewMonster_2= ruleNewMonster )
-            int alt29=3;
-            int LA29_0 = input.LA(1);
+            int alt30=3;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA29_0==85) ) {
-                int LA29_1 = input.LA(2);
+            if ( (LA30_0==85) ) {
+                int LA30_1 = input.LA(2);
 
-                if ( (LA29_1==RULE_INT) ) {
-                    alt29=1;
+                if ( (LA30_1==RULE_INT) ) {
+                    alt30=1;
                 }
-                else if ( (LA29_1==RULE_STRING) ) {
-                    alt29=2;
+                else if ( (LA30_1==RULE_STRING) ) {
+                    alt30=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 29, 1, input);
+                        new NoViableAltException("", 30, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA29_0==86) ) {
-                alt29=3;
+            else if ( (LA30_0==86) ) {
+                alt30=3;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
+                    new NoViableAltException("", 30, 0, input);
 
                 throw nvae;
             }
-            switch (alt29) {
+            switch (alt30) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2881:5: this_SelectMonsterById_0= ruleSelectMonsterById
                     {
                      
                             newCompositeNode(grammarAccess.getMonsterAccess().getSelectMonsterByIdParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleSelectMonsterById_in_ruleMonster7171);
+                    pushFollow(FOLLOW_ruleSelectMonsterById_in_ruleMonster7172);
                     this_SelectMonsterById_0=ruleSelectMonsterById();
 
                     state._fsp--;
@@ -7494,7 +7505,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getMonsterAccess().getSelectMonsterByNameParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleSelectMonsterByName_in_ruleMonster7198);
+                    pushFollow(FOLLOW_ruleSelectMonsterByName_in_ruleMonster7199);
                     this_SelectMonsterByName_1=ruleSelectMonsterByName();
 
                     state._fsp--;
@@ -7512,7 +7523,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getMonsterAccess().getNewMonsterParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleNewMonster_in_ruleMonster7225);
+                    pushFollow(FOLLOW_ruleNewMonster_in_ruleMonster7226);
                     this_NewMonster_2=ruleNewMonster();
 
                     state._fsp--;
@@ -7557,13 +7568,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2919:2: iv_ruleSelectMonsterById= ruleSelectMonsterById EOF
             {
              newCompositeNode(grammarAccess.getSelectMonsterByIdRule()); 
-            pushFollow(FOLLOW_ruleSelectMonsterById_in_entryRuleSelectMonsterById7260);
+            pushFollow(FOLLOW_ruleSelectMonsterById_in_entryRuleSelectMonsterById7261);
             iv_ruleSelectMonsterById=ruleSelectMonsterById();
 
             state._fsp--;
 
              current =iv_ruleSelectMonsterById; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectMonsterById7270); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectMonsterById7271); 
 
             }
 
@@ -7601,7 +7612,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2930:1: (otherlv_0= '#selectmonster' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleMonsterMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2930:3: otherlv_0= '#selectmonster' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleMonsterMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,85,FOLLOW_85_in_ruleSelectMonsterById7307); 
+            otherlv_0=(Token)match(input,85,FOLLOW_85_in_ruleSelectMonsterById7308); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSelectMonsterByIdAccess().getSelectmonsterKeyword_0());
                 
@@ -7611,7 +7622,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2935:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2936:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectMonsterById7324); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectMonsterById7325); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSelectMonsterByIdAccess().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -7632,21 +7643,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2952:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop30:
+            loop31:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( (LA30_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt30=1;
+                if ( (LA31_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt31) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2952:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectMonsterById7341); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectMonsterById7342); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSelectMonsterByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -7655,22 +7666,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop31;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2956:3: ( (lv_mods_3_0= ruleMonsterMods ) )*
-            loop31:
+            loop32:
             do {
-                int alt31=2;
-                int LA31_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( (LA31_0==36||(LA31_0>=38 && LA31_0<=41)||LA31_0==46||LA31_0==74||(LA31_0>=87 && LA31_0<=252)) ) {
-                    alt31=1;
+                if ( (LA32_0==36||(LA32_0>=38 && LA32_0<=41)||LA32_0==46||LA32_0==74||(LA32_0>=87 && LA32_0<=252)) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt31) {
+                switch (alt32) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2957:1: (lv_mods_3_0= ruleMonsterMods )
             	    {
@@ -7680,7 +7691,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSelectMonsterByIdAccess().getModsMonsterModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMonsterMods_in_ruleSelectMonsterById7363);
+            	    pushFollow(FOLLOW_ruleMonsterMods_in_ruleSelectMonsterById7364);
             	    lv_mods_3_0=ruleMonsterMods();
 
             	    state._fsp--;
@@ -7704,11 +7715,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop31;
+            	    break loop32;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectMonsterById7376); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectMonsterById7377); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSelectMonsterByIdAccess().getEndKeyword_4());
                 
@@ -7745,13 +7756,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2988:2: iv_ruleSelectMonsterByName= ruleSelectMonsterByName EOF
             {
              newCompositeNode(grammarAccess.getSelectMonsterByNameRule()); 
-            pushFollow(FOLLOW_ruleSelectMonsterByName_in_entryRuleSelectMonsterByName7412);
+            pushFollow(FOLLOW_ruleSelectMonsterByName_in_entryRuleSelectMonsterByName7413);
             iv_ruleSelectMonsterByName=ruleSelectMonsterByName();
 
             state._fsp--;
 
              current =iv_ruleSelectMonsterByName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectMonsterByName7422); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectMonsterByName7423); 
 
             }
 
@@ -7789,7 +7800,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2999:1: (otherlv_0= '#selectmonster' ( (lv_value_1_0= RULE_STRING ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleMonsterMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:2999:3: otherlv_0= '#selectmonster' ( (lv_value_1_0= RULE_STRING ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleMonsterMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,85,FOLLOW_85_in_ruleSelectMonsterByName7459); 
+            otherlv_0=(Token)match(input,85,FOLLOW_85_in_ruleSelectMonsterByName7460); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSelectMonsterByNameAccess().getSelectmonsterKeyword_0());
                 
@@ -7799,7 +7810,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3004:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3005:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSelectMonsterByName7476); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSelectMonsterByName7477); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSelectMonsterByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -7820,21 +7831,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3021:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop32:
+            loop33:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( (LA32_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt32=1;
+                if ( (LA33_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt33) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3021:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectMonsterByName7493); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectMonsterByName7494); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSelectMonsterByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -7843,22 +7854,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop33;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3025:3: ( (lv_mods_3_0= ruleMonsterMods ) )*
-            loop33:
+            loop34:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt34=2;
+                int LA34_0 = input.LA(1);
 
-                if ( (LA33_0==36||(LA33_0>=38 && LA33_0<=41)||LA33_0==46||LA33_0==74||(LA33_0>=87 && LA33_0<=252)) ) {
-                    alt33=1;
+                if ( (LA34_0==36||(LA34_0>=38 && LA34_0<=41)||LA34_0==46||LA34_0==74||(LA34_0>=87 && LA34_0<=252)) ) {
+                    alt34=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt34) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3026:1: (lv_mods_3_0= ruleMonsterMods )
             	    {
@@ -7868,7 +7879,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSelectMonsterByNameAccess().getModsMonsterModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMonsterMods_in_ruleSelectMonsterByName7515);
+            	    pushFollow(FOLLOW_ruleMonsterMods_in_ruleSelectMonsterByName7516);
             	    lv_mods_3_0=ruleMonsterMods();
 
             	    state._fsp--;
@@ -7892,11 +7903,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop33;
+            	    break loop34;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectMonsterByName7528); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectMonsterByName7529); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSelectMonsterByNameAccess().getEndKeyword_4());
                 
@@ -7933,13 +7944,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3057:2: iv_ruleNewMonster= ruleNewMonster EOF
             {
              newCompositeNode(grammarAccess.getNewMonsterRule()); 
-            pushFollow(FOLLOW_ruleNewMonster_in_entryRuleNewMonster7564);
+            pushFollow(FOLLOW_ruleNewMonster_in_entryRuleNewMonster7565);
             iv_ruleNewMonster=ruleNewMonster();
 
             state._fsp--;
 
              current =iv_ruleNewMonster; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNewMonster7574); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNewMonster7575); 
 
             }
 
@@ -7977,7 +7988,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3068:1: (otherlv_0= '#newmonster' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleMonsterMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3068:3: otherlv_0= '#newmonster' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleMonsterMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,86,FOLLOW_86_in_ruleNewMonster7611); 
+            otherlv_0=(Token)match(input,86,FOLLOW_86_in_ruleNewMonster7612); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getNewMonsterAccess().getNewmonsterKeyword_0());
                 
@@ -7987,7 +7998,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3073:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3074:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNewMonster7628); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNewMonster7629); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getNewMonsterAccess().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -8008,21 +8019,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3090:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop34:
+            loop35:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( (LA34_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt34=1;
+                if ( (LA35_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt35) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3090:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewMonster7645); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewMonster7646); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getNewMonsterAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -8031,22 +8042,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop35;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3094:3: ( (lv_mods_3_0= ruleMonsterMods ) )*
-            loop35:
+            loop36:
             do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
+                int alt36=2;
+                int LA36_0 = input.LA(1);
 
-                if ( (LA35_0==36||(LA35_0>=38 && LA35_0<=41)||LA35_0==46||LA35_0==74||(LA35_0>=87 && LA35_0<=252)) ) {
-                    alt35=1;
+                if ( (LA36_0==36||(LA36_0>=38 && LA36_0<=41)||LA36_0==46||LA36_0==74||(LA36_0>=87 && LA36_0<=252)) ) {
+                    alt36=1;
                 }
 
 
-                switch (alt35) {
+                switch (alt36) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3095:1: (lv_mods_3_0= ruleMonsterMods )
             	    {
@@ -8056,7 +8067,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getNewMonsterAccess().getModsMonsterModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMonsterMods_in_ruleNewMonster7667);
+            	    pushFollow(FOLLOW_ruleMonsterMods_in_ruleNewMonster7668);
             	    lv_mods_3_0=ruleMonsterMods();
 
             	    state._fsp--;
@@ -8080,11 +8091,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop35;
+            	    break loop36;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleNewMonster7680); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleNewMonster7681); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getNewMonsterAccess().getEndKeyword_4());
                 
@@ -8121,13 +8132,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3126:2: iv_ruleMonsterMods= ruleMonsterMods EOF
             {
              newCompositeNode(grammarAccess.getMonsterModsRule()); 
-            pushFollow(FOLLOW_ruleMonsterMods_in_entryRuleMonsterMods7716);
+            pushFollow(FOLLOW_ruleMonsterMods_in_entryRuleMonsterMods7717);
             iv_ruleMonsterMods=ruleMonsterMods();
 
             state._fsp--;
 
              current =iv_ruleMonsterMods; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterMods7726); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterMods7727); 
 
             }
 
@@ -8169,14 +8180,14 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3137:1: (this_MonsterPattern1_0= ruleMonsterPattern1 | this_MonsterPattern2_1= ruleMonsterPattern2 | this_MonsterPattern3_2= ruleMonsterPattern3 | this_MonsterPattern4_3= ruleMonsterPattern4 | this_MonsterPattern5_4= ruleMonsterPattern5 | this_MonsterPattern6_5= ruleMonsterPattern6 )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3137:1: (this_MonsterPattern1_0= ruleMonsterPattern1 | this_MonsterPattern2_1= ruleMonsterPattern2 | this_MonsterPattern3_2= ruleMonsterPattern3 | this_MonsterPattern4_3= ruleMonsterPattern4 | this_MonsterPattern5_4= ruleMonsterPattern5 | this_MonsterPattern6_5= ruleMonsterPattern6 )
-            int alt36=6;
+            int alt37=6;
             switch ( input.LA(1) ) {
             case 36:
             case 87:
             case 88:
             case 89:
                 {
-                alt36=1;
+                alt37=1;
                 }
                 break;
             case 38:
@@ -8258,7 +8269,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 161:
             case 162:
                 {
-                alt36=2;
+                alt37=2;
                 }
                 break;
             case 163:
@@ -8266,7 +8277,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 165:
             case 166:
                 {
-                alt36=3;
+                alt37=3;
                 }
                 break;
             case 167:
@@ -8333,7 +8344,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 228:
             case 229:
                 {
-                alt36=4;
+                alt37=4;
                 }
                 break;
             case 230:
@@ -8358,31 +8369,31 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 249:
             case 250:
                 {
-                alt36=5;
+                alt37=5;
                 }
                 break;
             case 74:
             case 251:
             case 252:
                 {
-                alt36=6;
+                alt37=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 36, 0, input);
+                    new NoViableAltException("", 37, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt36) {
+            switch (alt37) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3138:5: this_MonsterPattern1_0= ruleMonsterPattern1
                     {
                      
                             newCompositeNode(grammarAccess.getMonsterModsAccess().getMonsterPattern1ParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleMonsterPattern1_in_ruleMonsterMods7773);
+                    pushFollow(FOLLOW_ruleMonsterPattern1_in_ruleMonsterMods7774);
                     this_MonsterPattern1_0=ruleMonsterPattern1();
 
                     state._fsp--;
@@ -8400,7 +8411,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getMonsterModsAccess().getMonsterPattern2ParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleMonsterPattern2_in_ruleMonsterMods7800);
+                    pushFollow(FOLLOW_ruleMonsterPattern2_in_ruleMonsterMods7801);
                     this_MonsterPattern2_1=ruleMonsterPattern2();
 
                     state._fsp--;
@@ -8418,7 +8429,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getMonsterModsAccess().getMonsterPattern3ParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleMonsterPattern3_in_ruleMonsterMods7827);
+                    pushFollow(FOLLOW_ruleMonsterPattern3_in_ruleMonsterMods7828);
                     this_MonsterPattern3_2=ruleMonsterPattern3();
 
                     state._fsp--;
@@ -8436,7 +8447,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getMonsterModsAccess().getMonsterPattern4ParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleMonsterPattern4_in_ruleMonsterMods7854);
+                    pushFollow(FOLLOW_ruleMonsterPattern4_in_ruleMonsterMods7855);
                     this_MonsterPattern4_3=ruleMonsterPattern4();
 
                     state._fsp--;
@@ -8454,7 +8465,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getMonsterModsAccess().getMonsterPattern5ParserRuleCall_4()); 
                         
-                    pushFollow(FOLLOW_ruleMonsterPattern5_in_ruleMonsterMods7881);
+                    pushFollow(FOLLOW_ruleMonsterPattern5_in_ruleMonsterMods7882);
                     this_MonsterPattern5_4=ruleMonsterPattern5();
 
                     state._fsp--;
@@ -8472,7 +8483,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getMonsterModsAccess().getMonsterPattern6ParserRuleCall_5()); 
                         
-                    pushFollow(FOLLOW_ruleMonsterPattern6_in_ruleMonsterMods7908);
+                    pushFollow(FOLLOW_ruleMonsterPattern6_in_ruleMonsterMods7909);
                     this_MonsterPattern6_5=ruleMonsterPattern6();
 
                     state._fsp--;
@@ -8517,13 +8528,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3206:2: iv_ruleMonsterPattern1= ruleMonsterPattern1 EOF
             {
              newCompositeNode(grammarAccess.getMonsterPattern1Rule()); 
-            pushFollow(FOLLOW_ruleMonsterPattern1_in_entryRuleMonsterPattern17943);
+            pushFollow(FOLLOW_ruleMonsterPattern1_in_entryRuleMonsterPattern17944);
             iv_ruleMonsterPattern1=ruleMonsterPattern1();
 
             state._fsp--;
 
              current =iv_ruleMonsterPattern1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern17953); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern17954); 
 
             }
 
@@ -8562,7 +8573,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getMonsterPattern1Access().getMonsterInst1ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleMonsterInst1_in_ruleMonsterPattern18000);
+            pushFollow(FOLLOW_ruleMonsterInst1_in_ruleMonsterPattern18001);
             this_MonsterInst1_0=ruleMonsterInst1();
 
             state._fsp--;
@@ -8577,7 +8588,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3227:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3228:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMonsterPattern18016); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMonsterPattern18017); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getMonsterPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -8598,21 +8609,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3244:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop37:
+            loop38:
             do {
-                int alt37=2;
-                int LA37_0 = input.LA(1);
+                int alt38=2;
+                int LA38_0 = input.LA(1);
 
-                if ( (LA37_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt37=1;
+                if ( (LA38_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt38=1;
                 }
 
 
-                switch (alt37) {
+                switch (alt38) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3244:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern18033); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern18034); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getMonsterPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -8621,7 +8632,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop37;
+            	    break loop38;
                 }
             } while (true);
 
@@ -8658,13 +8669,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3258:2: iv_ruleMonsterPattern2= ruleMonsterPattern2 EOF
             {
              newCompositeNode(grammarAccess.getMonsterPattern2Rule()); 
-            pushFollow(FOLLOW_ruleMonsterPattern2_in_entryRuleMonsterPattern28070);
+            pushFollow(FOLLOW_ruleMonsterPattern2_in_entryRuleMonsterPattern28071);
             iv_ruleMonsterPattern2=ruleMonsterPattern2();
 
             state._fsp--;
 
              current =iv_ruleMonsterPattern2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern28080); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern28081); 
 
             }
 
@@ -8703,7 +8714,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getMonsterPattern2Access().getMonsterInst2ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleMonsterInst2_in_ruleMonsterPattern28127);
+            pushFollow(FOLLOW_ruleMonsterInst2_in_ruleMonsterPattern28128);
             this_MonsterInst2_0=ruleMonsterInst2();
 
             state._fsp--;
@@ -8718,7 +8729,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3279:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3280:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMonsterPattern28143); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMonsterPattern28144); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getMonsterPattern2Access().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -8739,21 +8750,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3296:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop38:
+            loop39:
             do {
-                int alt38=2;
-                int LA38_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( (LA38_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt38=1;
+                if ( (LA39_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt38) {
+                switch (alt39) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3296:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern28160); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern28161); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getMonsterPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -8762,7 +8773,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop38;
+            	    break loop39;
                 }
             } while (true);
 
@@ -8799,13 +8810,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3310:2: iv_ruleMonsterPattern3= ruleMonsterPattern3 EOF
             {
              newCompositeNode(grammarAccess.getMonsterPattern3Rule()); 
-            pushFollow(FOLLOW_ruleMonsterPattern3_in_entryRuleMonsterPattern38197);
+            pushFollow(FOLLOW_ruleMonsterPattern3_in_entryRuleMonsterPattern38198);
             iv_ruleMonsterPattern3=ruleMonsterPattern3();
 
             state._fsp--;
 
              current =iv_ruleMonsterPattern3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern38207); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern38208); 
 
             }
 
@@ -8845,7 +8856,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getMonsterPattern3Access().getMonsterInst3ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleMonsterInst3_in_ruleMonsterPattern38254);
+            pushFollow(FOLLOW_ruleMonsterInst3_in_ruleMonsterPattern38255);
             this_MonsterInst3_0=ruleMonsterInst3();
 
             state._fsp--;
@@ -8860,7 +8871,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3331:1: (lv_value1_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3332:3: lv_value1_1_0= RULE_INT
             {
-            lv_value1_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMonsterPattern38270); 
+            lv_value1_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMonsterPattern38271); 
 
             			newLeafNode(lv_value1_1_0, grammarAccess.getMonsterPattern3Access().getValue1INTTerminalRuleCall_1_0()); 
             		
@@ -8886,7 +8897,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3349:1: (lv_value2_2_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3350:3: lv_value2_2_0= RULE_INT
             {
-            lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMonsterPattern38292); 
+            lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMonsterPattern38293); 
 
             			newLeafNode(lv_value2_2_0, grammarAccess.getMonsterPattern3Access().getValue2INTTerminalRuleCall_2_0()); 
             		
@@ -8907,21 +8918,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3366:2: (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
-            loop39:
+            loop40:
             do {
-                int alt39=2;
-                int LA39_0 = input.LA(1);
+                int alt40=2;
+                int LA40_0 = input.LA(1);
 
-                if ( (LA39_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt39=1;
+                if ( (LA40_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt40=1;
                 }
 
 
-                switch (alt39) {
+                switch (alt40) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3366:3: this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern38309); 
+            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern38310); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_3, grammarAccess.getMonsterPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3()); 
             	        
@@ -8930,7 +8941,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop39;
+            	    break loop40;
                 }
             } while (true);
 
@@ -8967,13 +8978,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3380:2: iv_ruleMonsterPattern4= ruleMonsterPattern4 EOF
             {
              newCompositeNode(grammarAccess.getMonsterPattern4Rule()); 
-            pushFollow(FOLLOW_ruleMonsterPattern4_in_entryRuleMonsterPattern48346);
+            pushFollow(FOLLOW_ruleMonsterPattern4_in_entryRuleMonsterPattern48347);
             iv_ruleMonsterPattern4=ruleMonsterPattern4();
 
             state._fsp--;
 
              current =iv_ruleMonsterPattern4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern48356); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern48357); 
 
             }
 
@@ -9011,7 +9022,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getMonsterPattern4Access().getMonsterInst4ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleMonsterInst4_in_ruleMonsterPattern48403);
+            pushFollow(FOLLOW_ruleMonsterInst4_in_ruleMonsterPattern48404);
             this_MonsterInst4_0=ruleMonsterInst4();
 
             state._fsp--;
@@ -9021,21 +9032,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3400:1: (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )*
-            loop40:
+            loop41:
             do {
-                int alt40=2;
-                int LA40_0 = input.LA(1);
+                int alt41=2;
+                int LA41_0 = input.LA(1);
 
-                if ( (LA40_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt40=1;
+                if ( (LA41_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt41=1;
                 }
 
 
-                switch (alt40) {
+                switch (alt41) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3400:2: this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern48414); 
+            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern48415); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_1, grammarAccess.getMonsterPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             	        
@@ -9044,7 +9055,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop40;
+            	    break loop41;
                 }
             } while (true);
 
@@ -9081,13 +9092,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3414:2: iv_ruleMonsterPattern5= ruleMonsterPattern5 EOF
             {
              newCompositeNode(grammarAccess.getMonsterPattern5Rule()); 
-            pushFollow(FOLLOW_ruleMonsterPattern5_in_entryRuleMonsterPattern58451);
+            pushFollow(FOLLOW_ruleMonsterPattern5_in_entryRuleMonsterPattern58452);
             iv_ruleMonsterPattern5=ruleMonsterPattern5();
 
             state._fsp--;
 
              current =iv_ruleMonsterPattern5; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern58461); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern58462); 
 
             }
 
@@ -9127,7 +9138,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getMonsterPattern5Access().getMonsterInst5ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleMonsterInst5_in_ruleMonsterPattern58508);
+            pushFollow(FOLLOW_ruleMonsterInst5_in_ruleMonsterPattern58509);
             this_MonsterInst5_0=ruleMonsterInst5();
 
             state._fsp--;
@@ -9137,22 +9148,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3434:1: ( ( (lv_value1_1_0= RULE_STRING ) ) | ( (lv_value2_2_0= RULE_INT ) ) )
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA41_0==RULE_STRING) ) {
-                alt41=1;
+            if ( (LA42_0==RULE_STRING) ) {
+                alt42=1;
             }
-            else if ( (LA41_0==RULE_INT) ) {
-                alt41=2;
+            else if ( (LA42_0==RULE_INT) ) {
+                alt42=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 41, 0, input);
+                    new NoViableAltException("", 42, 0, input);
 
                 throw nvae;
             }
-            switch (alt41) {
+            switch (alt42) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3434:2: ( (lv_value1_1_0= RULE_STRING ) )
                     {
@@ -9162,7 +9173,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3435:1: (lv_value1_1_0= RULE_STRING )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3436:3: lv_value1_1_0= RULE_STRING
                     {
-                    lv_value1_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMonsterPattern58525); 
+                    lv_value1_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMonsterPattern58526); 
 
                     			newLeafNode(lv_value1_1_0, grammarAccess.getMonsterPattern5Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
                     		
@@ -9194,7 +9205,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3454:1: (lv_value2_2_0= RULE_INT )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3455:3: lv_value2_2_0= RULE_INT
                     {
-                    lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMonsterPattern58553); 
+                    lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMonsterPattern58554); 
 
                     			newLeafNode(lv_value2_2_0, grammarAccess.getMonsterPattern5Access().getValue2INTTerminalRuleCall_1_1_0()); 
                     		
@@ -9221,21 +9232,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3471:3: (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
-            loop42:
+            loop43:
             do {
-                int alt42=2;
-                int LA42_0 = input.LA(1);
+                int alt43=2;
+                int LA43_0 = input.LA(1);
 
-                if ( (LA42_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt42=1;
+                if ( (LA43_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt43=1;
                 }
 
 
-                switch (alt42) {
+                switch (alt43) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3471:4: this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern58571); 
+            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern58572); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_3, grammarAccess.getMonsterPattern5Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -9244,7 +9255,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop42;
+            	    break loop43;
                 }
             } while (true);
 
@@ -9281,13 +9292,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3485:2: iv_ruleMonsterPattern6= ruleMonsterPattern6 EOF
             {
              newCompositeNode(grammarAccess.getMonsterPattern6Rule()); 
-            pushFollow(FOLLOW_ruleMonsterPattern6_in_entryRuleMonsterPattern68608);
+            pushFollow(FOLLOW_ruleMonsterPattern6_in_entryRuleMonsterPattern68609);
             iv_ruleMonsterPattern6=ruleMonsterPattern6();
 
             state._fsp--;
 
              current =iv_ruleMonsterPattern6; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern68618); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterPattern68619); 
 
             }
 
@@ -9326,7 +9337,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getMonsterPattern6Access().getMonsterInst6ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleMonsterInst6_in_ruleMonsterPattern68665);
+            pushFollow(FOLLOW_ruleMonsterInst6_in_ruleMonsterPattern68666);
             this_MonsterInst6_0=ruleMonsterInst6();
 
             state._fsp--;
@@ -9336,20 +9347,20 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3505:1: ( (lv_value_1_0= RULE_INT ) )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA43_0==RULE_INT) ) {
-                alt43=1;
+            if ( (LA44_0==RULE_INT) ) {
+                alt44=1;
             }
-            switch (alt43) {
+            switch (alt44) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3506:1: (lv_value_1_0= RULE_INT )
                     {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3506:1: (lv_value_1_0= RULE_INT )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3507:3: lv_value_1_0= RULE_INT
                     {
-                    lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMonsterPattern68681); 
+                    lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMonsterPattern68682); 
 
                     			newLeafNode(lv_value_1_0, grammarAccess.getMonsterPattern6Access().getValueINTTerminalRuleCall_1_0()); 
                     		
@@ -9373,21 +9384,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3523:3: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop44:
+            loop45:
             do {
-                int alt44=2;
-                int LA44_0 = input.LA(1);
+                int alt45=2;
+                int LA45_0 = input.LA(1);
 
-                if ( (LA44_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt44=1;
+                if ( (LA45_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt45=1;
                 }
 
 
-                switch (alt44) {
+                switch (alt45) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3523:4: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern68699); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern68700); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getMonsterPattern6Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -9396,7 +9407,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop44;
+            	    break loop45;
                 }
             } while (true);
 
@@ -9433,13 +9444,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3537:2: iv_ruleMonsterInst1= ruleMonsterInst1 EOF
             {
              newCompositeNode(grammarAccess.getMonsterInst1Rule()); 
-            pushFollow(FOLLOW_ruleMonsterInst1_in_entryRuleMonsterInst18736);
+            pushFollow(FOLLOW_ruleMonsterInst1_in_entryRuleMonsterInst18737);
             iv_ruleMonsterInst1=ruleMonsterInst1();
 
             state._fsp--;
 
              current =iv_ruleMonsterInst1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst18746); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst18747); 
 
             }
 
@@ -9473,36 +9484,36 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3548:1: ( ( (lv_name_0_0= '#name' ) ) | ( (lv_spr1_1_0= '#spr1' ) ) | ( (lv_spr2_2_0= '#spr2' ) ) | ( (lv_descr_3_0= '#descr' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3548:1: ( ( (lv_name_0_0= '#name' ) ) | ( (lv_spr1_1_0= '#spr1' ) ) | ( (lv_spr2_2_0= '#spr2' ) ) | ( (lv_descr_3_0= '#descr' ) ) )
-            int alt45=4;
+            int alt46=4;
             switch ( input.LA(1) ) {
             case 36:
                 {
-                alt45=1;
+                alt46=1;
                 }
                 break;
             case 87:
                 {
-                alt45=2;
+                alt46=2;
                 }
                 break;
             case 88:
                 {
-                alt45=3;
+                alt46=3;
                 }
                 break;
             case 89:
                 {
-                alt45=4;
+                alt46=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 45, 0, input);
+                    new NoViableAltException("", 46, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt45) {
+            switch (alt46) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3548:2: ( (lv_name_0_0= '#name' ) )
                     {
@@ -9512,7 +9523,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3549:1: (lv_name_0_0= '#name' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3550:3: lv_name_0_0= '#name'
                     {
-                    lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleMonsterInst18789); 
+                    lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleMonsterInst18790); 
 
                             newLeafNode(lv_name_0_0, grammarAccess.getMonsterInst1Access().getNameNameKeyword_0_0());
                         
@@ -9540,7 +9551,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3565:1: (lv_spr1_1_0= '#spr1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3566:3: lv_spr1_1_0= '#spr1'
                     {
-                    lv_spr1_1_0=(Token)match(input,87,FOLLOW_87_in_ruleMonsterInst18826); 
+                    lv_spr1_1_0=(Token)match(input,87,FOLLOW_87_in_ruleMonsterInst18827); 
 
                             newLeafNode(lv_spr1_1_0, grammarAccess.getMonsterInst1Access().getSpr1Spr1Keyword_1_0());
                         
@@ -9568,7 +9579,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3581:1: (lv_spr2_2_0= '#spr2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3582:3: lv_spr2_2_0= '#spr2'
                     {
-                    lv_spr2_2_0=(Token)match(input,88,FOLLOW_88_in_ruleMonsterInst18863); 
+                    lv_spr2_2_0=(Token)match(input,88,FOLLOW_88_in_ruleMonsterInst18864); 
 
                             newLeafNode(lv_spr2_2_0, grammarAccess.getMonsterInst1Access().getSpr2Spr2Keyword_2_0());
                         
@@ -9596,7 +9607,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3597:1: (lv_descr_3_0= '#descr' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3598:3: lv_descr_3_0= '#descr'
                     {
-                    lv_descr_3_0=(Token)match(input,89,FOLLOW_89_in_ruleMonsterInst18900); 
+                    lv_descr_3_0=(Token)match(input,89,FOLLOW_89_in_ruleMonsterInst18901); 
 
                             newLeafNode(lv_descr_3_0, grammarAccess.getMonsterInst1Access().getDescrDescrKeyword_3_0());
                         
@@ -9648,13 +9659,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3621:2: iv_ruleMonsterInst2= ruleMonsterInst2 EOF
             {
              newCompositeNode(grammarAccess.getMonsterInst2Rule()); 
-            pushFollow(FOLLOW_ruleMonsterInst2_in_entryRuleMonsterInst28949);
+            pushFollow(FOLLOW_ruleMonsterInst2_in_entryRuleMonsterInst28950);
             iv_ruleMonsterInst2=ruleMonsterInst2();
 
             state._fsp--;
 
              current =iv_ruleMonsterInst2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst28959); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst28960); 
 
             }
 
@@ -9762,406 +9773,406 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3632:1: ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_seduce_30_0= '#seduce' ) ) | ( (lv_succubus_31_0= '#succubus' ) ) | ( (lv_beckon_32_0= '#beckon' ) ) | ( (lv_startage_33_0= '#startage' ) ) | ( (lv_maxage_34_0= '#maxage' ) ) | ( (lv_older_35_0= '#older' ) ) | ( (lv_healer_36_0= '#healer' ) ) | ( (lv_startaff_37_0= '#startaff' ) ) | ( (lv_supplybonus_38_0= '#supplybonus' ) ) | ( (lv_uwdamage_39_0= '#uwdamage' ) ) | ( (lv_homesick_40_0= '#homesick' ) ) | ( (lv_coldpower_41_0= '#coldpower' ) ) | ( (lv_firepower_42_0= '#firepower' ) ) | ( (lv_stormpower_43_0= '#stormpower' ) ) | ( (lv_darkpower_44_0= '#darkpower' ) ) | ( (lv_springpower_45_0= '#springpower' ) ) | ( (lv_summerpower_46_0= '#summerpower' ) ) | ( (lv_fallpower_47_0= '#fallpower' ) ) | ( (lv_winterpower_48_0= '#winterpower' ) ) | ( (lv_ambidextrous_49_0= '#ambidextrous' ) ) | ( (lv_banefireshield_50_0= '#banefireshield' ) ) | ( (lv_berserk_51_0= '#berserk' ) ) | ( (lv_standard_52_0= '#standard' ) ) | ( (lv_animalawe_53_0= '#animalawe' ) ) | ( (lv_awe_54_0= '#awe' ) ) | ( (lv_fear_55_0= '#fear' ) ) | ( (lv_regeneration_56_0= '#regeneration' ) ) | ( (lv_reinvigoration_57_0= '#reinvigoration' ) ) | ( (lv_fireshield_58_0= '#fireshield' ) ) | ( (lv_iceprot_59_0= '#iceprot' ) ) | ( (lv_poisoncloud_60_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_61_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_62_0= '#bloodvengeance' ) ) | ( (lv_castledef_63_0= '#castledef' ) ) | ( (lv_siegebonus_64_0= '#siegebonus' ) ) | ( (lv_patrolbonus_65_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_66_0= '#pillagebonus' ) ) | ( (lv_researchbonus_67_0= '#researchbonus' ) ) | ( (lv_forgebonus_68_0= '#forgebonus' ) ) | ( (lv_douse_69_0= '#douse' ) ) | ( (lv_nobadevents_70_0= '#nobadevents' ) ) | ( (lv_incunrest_71_0= '#incunrest' ) ) | ( (lv_spreaddom_72_0= '#spreaddom' ) ) | ( (lv_leper_73_0= '#leper' ) ) | ( (lv_popkill_74_0= '#popkill' ) ) | ( (lv_heretic_75_0= '#heretic' ) ) | ( (lv_itemslots_76_0= '#itemslots' ) ) | ( (lv_nametype_77_0= '#nametype' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3632:1: ( ( (lv_speciallook_0_0= '#speciallook' ) ) | ( (lv_ap_1_0= '#ap' ) ) | ( (lv_mapmove_2_0= '#mapmove' ) ) | ( (lv_hp_3_0= '#hp' ) ) | ( (lv_prot_4_0= '#prot' ) ) | ( (lv_size_5_0= '#size' ) ) | ( (lv_ressize_6_0= '#ressize' ) ) | ( (lv_str_7_0= '#str' ) ) | ( (lv_enc_8_0= '#enc' ) ) | ( (lv_att_9_0= '#att' ) ) | ( (lv_def_10_0= '#def' ) ) | ( (lv_prec_11_0= '#prec' ) ) | ( (lv_mr_12_0= '#mr' ) ) | ( (lv_mor_13_0= '#mor' ) ) | ( (lv_gcost_14_0= '#gcost' ) ) | ( (lv_rcost_15_0= '#rcost' ) ) | ( (lv_pathcost_16_0= '#pathcost' ) ) | ( (lv_startdom_17_0= '#startdom' ) ) | ( (lv_eyes_18_0= '#eyes' ) ) | ( (lv_copystats_19_0= '#copystats' ) ) | ( (lv_copyspr_20_0= '#copyspr' ) ) | ( (lv_restrictedgod_21_0= '#restrictedgod' ) ) | ( (lv_shatteredsoul_22_0= '#shatteredsoul' ) ) | ( (lv_coldres_23_0= '#coldres' ) ) | ( (lv_coldres_24_0= '#coldresist' ) ) | ( (lv_fireres_25_0= '#fireres' ) ) | ( (lv_fireres_26_0= '#fireresist' ) ) | ( (lv_poisonres_27_0= '#poisonres' ) ) | ( (lv_shockres_28_0= '#shockres' ) ) | ( (lv_darkvision_29_0= '#darkvision' ) ) | ( (lv_seduce_30_0= '#seduce' ) ) | ( (lv_succubus_31_0= '#succubus' ) ) | ( (lv_beckon_32_0= '#beckon' ) ) | ( (lv_startage_33_0= '#startage' ) ) | ( (lv_maxage_34_0= '#maxage' ) ) | ( (lv_older_35_0= '#older' ) ) | ( (lv_healer_36_0= '#healer' ) ) | ( (lv_startaff_37_0= '#startaff' ) ) | ( (lv_supplybonus_38_0= '#supplybonus' ) ) | ( (lv_uwdamage_39_0= '#uwdamage' ) ) | ( (lv_homesick_40_0= '#homesick' ) ) | ( (lv_coldpower_41_0= '#coldpower' ) ) | ( (lv_firepower_42_0= '#firepower' ) ) | ( (lv_stormpower_43_0= '#stormpower' ) ) | ( (lv_darkpower_44_0= '#darkpower' ) ) | ( (lv_springpower_45_0= '#springpower' ) ) | ( (lv_summerpower_46_0= '#summerpower' ) ) | ( (lv_fallpower_47_0= '#fallpower' ) ) | ( (lv_winterpower_48_0= '#winterpower' ) ) | ( (lv_ambidextrous_49_0= '#ambidextrous' ) ) | ( (lv_banefireshield_50_0= '#banefireshield' ) ) | ( (lv_berserk_51_0= '#berserk' ) ) | ( (lv_standard_52_0= '#standard' ) ) | ( (lv_animalawe_53_0= '#animalawe' ) ) | ( (lv_awe_54_0= '#awe' ) ) | ( (lv_fear_55_0= '#fear' ) ) | ( (lv_regeneration_56_0= '#regeneration' ) ) | ( (lv_reinvigoration_57_0= '#reinvigoration' ) ) | ( (lv_fireshield_58_0= '#fireshield' ) ) | ( (lv_iceprot_59_0= '#iceprot' ) ) | ( (lv_poisoncloud_60_0= '#poisoncloud' ) ) | ( (lv_diseasecloud_61_0= '#diseasecloud' ) ) | ( (lv_bloodvengeance_62_0= '#bloodvengeance' ) ) | ( (lv_castledef_63_0= '#castledef' ) ) | ( (lv_siegebonus_64_0= '#siegebonus' ) ) | ( (lv_patrolbonus_65_0= '#patrolbonus' ) ) | ( (lv_pillagebonus_66_0= '#pillagebonus' ) ) | ( (lv_researchbonus_67_0= '#researchbonus' ) ) | ( (lv_forgebonus_68_0= '#forgebonus' ) ) | ( (lv_douse_69_0= '#douse' ) ) | ( (lv_nobadevents_70_0= '#nobadevents' ) ) | ( (lv_incunrest_71_0= '#incunrest' ) ) | ( (lv_spreaddom_72_0= '#spreaddom' ) ) | ( (lv_leper_73_0= '#leper' ) ) | ( (lv_popkill_74_0= '#popkill' ) ) | ( (lv_heretic_75_0= '#heretic' ) ) | ( (lv_itemslots_76_0= '#itemslots' ) ) | ( (lv_nametype_77_0= '#nametype' ) ) )
-            int alt46=78;
+            int alt47=78;
             switch ( input.LA(1) ) {
             case 90:
                 {
-                alt46=1;
+                alt47=1;
                 }
                 break;
             case 91:
                 {
-                alt46=2;
+                alt47=2;
                 }
                 break;
             case 92:
                 {
-                alt46=3;
+                alt47=3;
                 }
                 break;
             case 93:
                 {
-                alt46=4;
+                alt47=4;
                 }
                 break;
             case 38:
                 {
-                alt46=5;
+                alt47=5;
                 }
                 break;
             case 94:
                 {
-                alt46=6;
+                alt47=6;
                 }
                 break;
             case 95:
                 {
-                alt46=7;
+                alt47=7;
                 }
                 break;
             case 96:
                 {
-                alt46=8;
+                alt47=8;
                 }
                 break;
             case 40:
                 {
-                alt46=9;
+                alt47=9;
                 }
                 break;
             case 46:
                 {
-                alt46=10;
+                alt47=10;
                 }
                 break;
             case 39:
                 {
-                alt46=11;
+                alt47=11;
                 }
                 break;
             case 97:
                 {
-                alt46=12;
+                alt47=12;
                 }
                 break;
             case 98:
                 {
-                alt46=13;
+                alt47=13;
                 }
                 break;
             case 99:
                 {
-                alt46=14;
+                alt47=14;
                 }
                 break;
             case 100:
                 {
-                alt46=15;
+                alt47=15;
                 }
                 break;
             case 41:
                 {
-                alt46=16;
+                alt47=16;
                 }
                 break;
             case 101:
                 {
-                alt46=17;
+                alt47=17;
                 }
                 break;
             case 102:
                 {
-                alt46=18;
+                alt47=18;
                 }
                 break;
             case 103:
                 {
-                alt46=19;
+                alt47=19;
                 }
                 break;
             case 104:
                 {
-                alt46=20;
+                alt47=20;
                 }
                 break;
             case 105:
                 {
-                alt46=21;
+                alt47=21;
                 }
                 break;
             case 106:
                 {
-                alt46=22;
+                alt47=22;
                 }
                 break;
             case 107:
                 {
-                alt46=23;
+                alt47=23;
                 }
                 break;
             case 108:
                 {
-                alt46=24;
+                alt47=24;
                 }
                 break;
             case 109:
                 {
-                alt46=25;
+                alt47=25;
                 }
                 break;
             case 110:
                 {
-                alt46=26;
+                alt47=26;
                 }
                 break;
             case 111:
                 {
-                alt46=27;
+                alt47=27;
                 }
                 break;
             case 112:
                 {
-                alt46=28;
+                alt47=28;
                 }
                 break;
             case 113:
                 {
-                alt46=29;
+                alt47=29;
                 }
                 break;
             case 114:
                 {
-                alt46=30;
+                alt47=30;
                 }
                 break;
             case 115:
                 {
-                alt46=31;
+                alt47=31;
                 }
                 break;
             case 116:
                 {
-                alt46=32;
+                alt47=32;
                 }
                 break;
             case 117:
                 {
-                alt46=33;
+                alt47=33;
                 }
                 break;
             case 118:
                 {
-                alt46=34;
+                alt47=34;
                 }
                 break;
             case 119:
                 {
-                alt46=35;
+                alt47=35;
                 }
                 break;
             case 120:
                 {
-                alt46=36;
+                alt47=36;
                 }
                 break;
             case 121:
                 {
-                alt46=37;
+                alt47=37;
                 }
                 break;
             case 122:
                 {
-                alt46=38;
+                alt47=38;
                 }
                 break;
             case 123:
                 {
-                alt46=39;
+                alt47=39;
                 }
                 break;
             case 124:
                 {
-                alt46=40;
+                alt47=40;
                 }
                 break;
             case 125:
                 {
-                alt46=41;
+                alt47=41;
                 }
                 break;
             case 126:
                 {
-                alt46=42;
+                alt47=42;
                 }
                 break;
             case 127:
                 {
-                alt46=43;
+                alt47=43;
                 }
                 break;
             case 128:
                 {
-                alt46=44;
+                alt47=44;
                 }
                 break;
             case 129:
                 {
-                alt46=45;
+                alt47=45;
                 }
                 break;
             case 130:
                 {
-                alt46=46;
+                alt47=46;
                 }
                 break;
             case 131:
                 {
-                alt46=47;
+                alt47=47;
                 }
                 break;
             case 132:
                 {
-                alt46=48;
+                alt47=48;
                 }
                 break;
             case 133:
                 {
-                alt46=49;
+                alt47=49;
                 }
                 break;
             case 134:
                 {
-                alt46=50;
+                alt47=50;
                 }
                 break;
             case 135:
                 {
-                alt46=51;
+                alt47=51;
                 }
                 break;
             case 136:
                 {
-                alt46=52;
+                alt47=52;
                 }
                 break;
             case 137:
                 {
-                alt46=53;
+                alt47=53;
                 }
                 break;
             case 138:
                 {
-                alt46=54;
+                alt47=54;
                 }
                 break;
             case 139:
                 {
-                alt46=55;
+                alt47=55;
                 }
                 break;
             case 140:
                 {
-                alt46=56;
+                alt47=56;
                 }
                 break;
             case 141:
                 {
-                alt46=57;
+                alt47=57;
                 }
                 break;
             case 142:
                 {
-                alt46=58;
+                alt47=58;
                 }
                 break;
             case 143:
                 {
-                alt46=59;
+                alt47=59;
                 }
                 break;
             case 144:
                 {
-                alt46=60;
+                alt47=60;
                 }
                 break;
             case 145:
                 {
-                alt46=61;
+                alt47=61;
                 }
                 break;
             case 146:
                 {
-                alt46=62;
+                alt47=62;
                 }
                 break;
             case 147:
                 {
-                alt46=63;
+                alt47=63;
                 }
                 break;
             case 148:
                 {
-                alt46=64;
+                alt47=64;
                 }
                 break;
             case 149:
                 {
-                alt46=65;
+                alt47=65;
                 }
                 break;
             case 150:
                 {
-                alt46=66;
+                alt47=66;
                 }
                 break;
             case 151:
                 {
-                alt46=67;
+                alt47=67;
                 }
                 break;
             case 152:
                 {
-                alt46=68;
+                alt47=68;
                 }
                 break;
             case 153:
                 {
-                alt46=69;
+                alt47=69;
                 }
                 break;
             case 154:
                 {
-                alt46=70;
+                alt47=70;
                 }
                 break;
             case 155:
                 {
-                alt46=71;
+                alt47=71;
                 }
                 break;
             case 156:
                 {
-                alt46=72;
+                alt47=72;
                 }
                 break;
             case 157:
                 {
-                alt46=73;
+                alt47=73;
                 }
                 break;
             case 158:
                 {
-                alt46=74;
+                alt47=74;
                 }
                 break;
             case 159:
                 {
-                alt46=75;
+                alt47=75;
                 }
                 break;
             case 160:
                 {
-                alt46=76;
+                alt47=76;
                 }
                 break;
             case 161:
                 {
-                alt46=77;
+                alt47=77;
                 }
                 break;
             case 162:
                 {
-                alt46=78;
+                alt47=78;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 46, 0, input);
+                    new NoViableAltException("", 47, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt46) {
+            switch (alt47) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3632:2: ( (lv_speciallook_0_0= '#speciallook' ) )
                     {
@@ -10171,7 +10182,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3633:1: (lv_speciallook_0_0= '#speciallook' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3634:3: lv_speciallook_0_0= '#speciallook'
                     {
-                    lv_speciallook_0_0=(Token)match(input,90,FOLLOW_90_in_ruleMonsterInst29002); 
+                    lv_speciallook_0_0=(Token)match(input,90,FOLLOW_90_in_ruleMonsterInst29003); 
 
                             newLeafNode(lv_speciallook_0_0, grammarAccess.getMonsterInst2Access().getSpeciallookSpeciallookKeyword_0_0());
                         
@@ -10199,7 +10210,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3649:1: (lv_ap_1_0= '#ap' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3650:3: lv_ap_1_0= '#ap'
                     {
-                    lv_ap_1_0=(Token)match(input,91,FOLLOW_91_in_ruleMonsterInst29039); 
+                    lv_ap_1_0=(Token)match(input,91,FOLLOW_91_in_ruleMonsterInst29040); 
 
                             newLeafNode(lv_ap_1_0, grammarAccess.getMonsterInst2Access().getApApKeyword_1_0());
                         
@@ -10227,7 +10238,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3665:1: (lv_mapmove_2_0= '#mapmove' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3666:3: lv_mapmove_2_0= '#mapmove'
                     {
-                    lv_mapmove_2_0=(Token)match(input,92,FOLLOW_92_in_ruleMonsterInst29076); 
+                    lv_mapmove_2_0=(Token)match(input,92,FOLLOW_92_in_ruleMonsterInst29077); 
 
                             newLeafNode(lv_mapmove_2_0, grammarAccess.getMonsterInst2Access().getMapmoveMapmoveKeyword_2_0());
                         
@@ -10255,7 +10266,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3681:1: (lv_hp_3_0= '#hp' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3682:3: lv_hp_3_0= '#hp'
                     {
-                    lv_hp_3_0=(Token)match(input,93,FOLLOW_93_in_ruleMonsterInst29113); 
+                    lv_hp_3_0=(Token)match(input,93,FOLLOW_93_in_ruleMonsterInst29114); 
 
                             newLeafNode(lv_hp_3_0, grammarAccess.getMonsterInst2Access().getHpHpKeyword_3_0());
                         
@@ -10283,7 +10294,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3697:1: (lv_prot_4_0= '#prot' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3698:3: lv_prot_4_0= '#prot'
                     {
-                    lv_prot_4_0=(Token)match(input,38,FOLLOW_38_in_ruleMonsterInst29150); 
+                    lv_prot_4_0=(Token)match(input,38,FOLLOW_38_in_ruleMonsterInst29151); 
 
                             newLeafNode(lv_prot_4_0, grammarAccess.getMonsterInst2Access().getProtProtKeyword_4_0());
                         
@@ -10311,7 +10322,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3713:1: (lv_size_5_0= '#size' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3714:3: lv_size_5_0= '#size'
                     {
-                    lv_size_5_0=(Token)match(input,94,FOLLOW_94_in_ruleMonsterInst29187); 
+                    lv_size_5_0=(Token)match(input,94,FOLLOW_94_in_ruleMonsterInst29188); 
 
                             newLeafNode(lv_size_5_0, grammarAccess.getMonsterInst2Access().getSizeSizeKeyword_5_0());
                         
@@ -10339,7 +10350,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3729:1: (lv_ressize_6_0= '#ressize' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3730:3: lv_ressize_6_0= '#ressize'
                     {
-                    lv_ressize_6_0=(Token)match(input,95,FOLLOW_95_in_ruleMonsterInst29224); 
+                    lv_ressize_6_0=(Token)match(input,95,FOLLOW_95_in_ruleMonsterInst29225); 
 
                             newLeafNode(lv_ressize_6_0, grammarAccess.getMonsterInst2Access().getRessizeRessizeKeyword_6_0());
                         
@@ -10367,7 +10378,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3745:1: (lv_str_7_0= '#str' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3746:3: lv_str_7_0= '#str'
                     {
-                    lv_str_7_0=(Token)match(input,96,FOLLOW_96_in_ruleMonsterInst29261); 
+                    lv_str_7_0=(Token)match(input,96,FOLLOW_96_in_ruleMonsterInst29262); 
 
                             newLeafNode(lv_str_7_0, grammarAccess.getMonsterInst2Access().getStrStrKeyword_7_0());
                         
@@ -10395,7 +10406,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3761:1: (lv_enc_8_0= '#enc' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3762:3: lv_enc_8_0= '#enc'
                     {
-                    lv_enc_8_0=(Token)match(input,40,FOLLOW_40_in_ruleMonsterInst29298); 
+                    lv_enc_8_0=(Token)match(input,40,FOLLOW_40_in_ruleMonsterInst29299); 
 
                             newLeafNode(lv_enc_8_0, grammarAccess.getMonsterInst2Access().getEncEncKeyword_8_0());
                         
@@ -10423,7 +10434,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3777:1: (lv_att_9_0= '#att' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3778:3: lv_att_9_0= '#att'
                     {
-                    lv_att_9_0=(Token)match(input,46,FOLLOW_46_in_ruleMonsterInst29335); 
+                    lv_att_9_0=(Token)match(input,46,FOLLOW_46_in_ruleMonsterInst29336); 
 
                             newLeafNode(lv_att_9_0, grammarAccess.getMonsterInst2Access().getAttAttKeyword_9_0());
                         
@@ -10451,7 +10462,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3793:1: (lv_def_10_0= '#def' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3794:3: lv_def_10_0= '#def'
                     {
-                    lv_def_10_0=(Token)match(input,39,FOLLOW_39_in_ruleMonsterInst29372); 
+                    lv_def_10_0=(Token)match(input,39,FOLLOW_39_in_ruleMonsterInst29373); 
 
                             newLeafNode(lv_def_10_0, grammarAccess.getMonsterInst2Access().getDefDefKeyword_10_0());
                         
@@ -10479,7 +10490,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3809:1: (lv_prec_11_0= '#prec' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3810:3: lv_prec_11_0= '#prec'
                     {
-                    lv_prec_11_0=(Token)match(input,97,FOLLOW_97_in_ruleMonsterInst29409); 
+                    lv_prec_11_0=(Token)match(input,97,FOLLOW_97_in_ruleMonsterInst29410); 
 
                             newLeafNode(lv_prec_11_0, grammarAccess.getMonsterInst2Access().getPrecPrecKeyword_11_0());
                         
@@ -10507,7 +10518,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3825:1: (lv_mr_12_0= '#mr' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3826:3: lv_mr_12_0= '#mr'
                     {
-                    lv_mr_12_0=(Token)match(input,98,FOLLOW_98_in_ruleMonsterInst29446); 
+                    lv_mr_12_0=(Token)match(input,98,FOLLOW_98_in_ruleMonsterInst29447); 
 
                             newLeafNode(lv_mr_12_0, grammarAccess.getMonsterInst2Access().getMrMrKeyword_12_0());
                         
@@ -10535,7 +10546,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3841:1: (lv_mor_13_0= '#mor' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3842:3: lv_mor_13_0= '#mor'
                     {
-                    lv_mor_13_0=(Token)match(input,99,FOLLOW_99_in_ruleMonsterInst29483); 
+                    lv_mor_13_0=(Token)match(input,99,FOLLOW_99_in_ruleMonsterInst29484); 
 
                             newLeafNode(lv_mor_13_0, grammarAccess.getMonsterInst2Access().getMorMorKeyword_13_0());
                         
@@ -10563,7 +10574,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3857:1: (lv_gcost_14_0= '#gcost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3858:3: lv_gcost_14_0= '#gcost'
                     {
-                    lv_gcost_14_0=(Token)match(input,100,FOLLOW_100_in_ruleMonsterInst29520); 
+                    lv_gcost_14_0=(Token)match(input,100,FOLLOW_100_in_ruleMonsterInst29521); 
 
                             newLeafNode(lv_gcost_14_0, grammarAccess.getMonsterInst2Access().getGcostGcostKeyword_14_0());
                         
@@ -10591,7 +10602,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3873:1: (lv_rcost_15_0= '#rcost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3874:3: lv_rcost_15_0= '#rcost'
                     {
-                    lv_rcost_15_0=(Token)match(input,41,FOLLOW_41_in_ruleMonsterInst29557); 
+                    lv_rcost_15_0=(Token)match(input,41,FOLLOW_41_in_ruleMonsterInst29558); 
 
                             newLeafNode(lv_rcost_15_0, grammarAccess.getMonsterInst2Access().getRcostRcostKeyword_15_0());
                         
@@ -10619,7 +10630,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3889:1: (lv_pathcost_16_0= '#pathcost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3890:3: lv_pathcost_16_0= '#pathcost'
                     {
-                    lv_pathcost_16_0=(Token)match(input,101,FOLLOW_101_in_ruleMonsterInst29594); 
+                    lv_pathcost_16_0=(Token)match(input,101,FOLLOW_101_in_ruleMonsterInst29595); 
 
                             newLeafNode(lv_pathcost_16_0, grammarAccess.getMonsterInst2Access().getPathcostPathcostKeyword_16_0());
                         
@@ -10647,7 +10658,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3905:1: (lv_startdom_17_0= '#startdom' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3906:3: lv_startdom_17_0= '#startdom'
                     {
-                    lv_startdom_17_0=(Token)match(input,102,FOLLOW_102_in_ruleMonsterInst29631); 
+                    lv_startdom_17_0=(Token)match(input,102,FOLLOW_102_in_ruleMonsterInst29632); 
 
                             newLeafNode(lv_startdom_17_0, grammarAccess.getMonsterInst2Access().getStartdomStartdomKeyword_17_0());
                         
@@ -10675,7 +10686,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3921:1: (lv_eyes_18_0= '#eyes' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3922:3: lv_eyes_18_0= '#eyes'
                     {
-                    lv_eyes_18_0=(Token)match(input,103,FOLLOW_103_in_ruleMonsterInst29668); 
+                    lv_eyes_18_0=(Token)match(input,103,FOLLOW_103_in_ruleMonsterInst29669); 
 
                             newLeafNode(lv_eyes_18_0, grammarAccess.getMonsterInst2Access().getEyesEyesKeyword_18_0());
                         
@@ -10703,7 +10714,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3937:1: (lv_copystats_19_0= '#copystats' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3938:3: lv_copystats_19_0= '#copystats'
                     {
-                    lv_copystats_19_0=(Token)match(input,104,FOLLOW_104_in_ruleMonsterInst29705); 
+                    lv_copystats_19_0=(Token)match(input,104,FOLLOW_104_in_ruleMonsterInst29706); 
 
                             newLeafNode(lv_copystats_19_0, grammarAccess.getMonsterInst2Access().getCopystatsCopystatsKeyword_19_0());
                         
@@ -10731,7 +10742,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3953:1: (lv_copyspr_20_0= '#copyspr' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3954:3: lv_copyspr_20_0= '#copyspr'
                     {
-                    lv_copyspr_20_0=(Token)match(input,105,FOLLOW_105_in_ruleMonsterInst29742); 
+                    lv_copyspr_20_0=(Token)match(input,105,FOLLOW_105_in_ruleMonsterInst29743); 
 
                             newLeafNode(lv_copyspr_20_0, grammarAccess.getMonsterInst2Access().getCopysprCopysprKeyword_20_0());
                         
@@ -10759,7 +10770,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3969:1: (lv_restrictedgod_21_0= '#restrictedgod' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3970:3: lv_restrictedgod_21_0= '#restrictedgod'
                     {
-                    lv_restrictedgod_21_0=(Token)match(input,106,FOLLOW_106_in_ruleMonsterInst29779); 
+                    lv_restrictedgod_21_0=(Token)match(input,106,FOLLOW_106_in_ruleMonsterInst29780); 
 
                             newLeafNode(lv_restrictedgod_21_0, grammarAccess.getMonsterInst2Access().getRestrictedgodRestrictedgodKeyword_21_0());
                         
@@ -10787,7 +10798,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3985:1: (lv_shatteredsoul_22_0= '#shatteredsoul' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:3986:3: lv_shatteredsoul_22_0= '#shatteredsoul'
                     {
-                    lv_shatteredsoul_22_0=(Token)match(input,107,FOLLOW_107_in_ruleMonsterInst29816); 
+                    lv_shatteredsoul_22_0=(Token)match(input,107,FOLLOW_107_in_ruleMonsterInst29817); 
 
                             newLeafNode(lv_shatteredsoul_22_0, grammarAccess.getMonsterInst2Access().getShatteredsoulShatteredsoulKeyword_22_0());
                         
@@ -10815,7 +10826,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4001:1: (lv_coldres_23_0= '#coldres' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4002:3: lv_coldres_23_0= '#coldres'
                     {
-                    lv_coldres_23_0=(Token)match(input,108,FOLLOW_108_in_ruleMonsterInst29853); 
+                    lv_coldres_23_0=(Token)match(input,108,FOLLOW_108_in_ruleMonsterInst29854); 
 
                             newLeafNode(lv_coldres_23_0, grammarAccess.getMonsterInst2Access().getColdresColdresKeyword_23_0());
                         
@@ -10843,7 +10854,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4017:1: (lv_coldres_24_0= '#coldresist' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4018:3: lv_coldres_24_0= '#coldresist'
                     {
-                    lv_coldres_24_0=(Token)match(input,109,FOLLOW_109_in_ruleMonsterInst29890); 
+                    lv_coldres_24_0=(Token)match(input,109,FOLLOW_109_in_ruleMonsterInst29891); 
 
                             newLeafNode(lv_coldres_24_0, grammarAccess.getMonsterInst2Access().getColdresColdresistKeyword_24_0());
                         
@@ -10871,7 +10882,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4033:1: (lv_fireres_25_0= '#fireres' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4034:3: lv_fireres_25_0= '#fireres'
                     {
-                    lv_fireres_25_0=(Token)match(input,110,FOLLOW_110_in_ruleMonsterInst29927); 
+                    lv_fireres_25_0=(Token)match(input,110,FOLLOW_110_in_ruleMonsterInst29928); 
 
                             newLeafNode(lv_fireres_25_0, grammarAccess.getMonsterInst2Access().getFireresFireresKeyword_25_0());
                         
@@ -10899,7 +10910,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4049:1: (lv_fireres_26_0= '#fireresist' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4050:3: lv_fireres_26_0= '#fireresist'
                     {
-                    lv_fireres_26_0=(Token)match(input,111,FOLLOW_111_in_ruleMonsterInst29964); 
+                    lv_fireres_26_0=(Token)match(input,111,FOLLOW_111_in_ruleMonsterInst29965); 
 
                             newLeafNode(lv_fireres_26_0, grammarAccess.getMonsterInst2Access().getFireresFireresistKeyword_26_0());
                         
@@ -10927,7 +10938,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4065:1: (lv_poisonres_27_0= '#poisonres' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4066:3: lv_poisonres_27_0= '#poisonres'
                     {
-                    lv_poisonres_27_0=(Token)match(input,112,FOLLOW_112_in_ruleMonsterInst210001); 
+                    lv_poisonres_27_0=(Token)match(input,112,FOLLOW_112_in_ruleMonsterInst210002); 
 
                             newLeafNode(lv_poisonres_27_0, grammarAccess.getMonsterInst2Access().getPoisonresPoisonresKeyword_27_0());
                         
@@ -10955,7 +10966,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4081:1: (lv_shockres_28_0= '#shockres' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4082:3: lv_shockres_28_0= '#shockres'
                     {
-                    lv_shockres_28_0=(Token)match(input,113,FOLLOW_113_in_ruleMonsterInst210038); 
+                    lv_shockres_28_0=(Token)match(input,113,FOLLOW_113_in_ruleMonsterInst210039); 
 
                             newLeafNode(lv_shockres_28_0, grammarAccess.getMonsterInst2Access().getShockresShockresKeyword_28_0());
                         
@@ -10983,7 +10994,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4097:1: (lv_darkvision_29_0= '#darkvision' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4098:3: lv_darkvision_29_0= '#darkvision'
                     {
-                    lv_darkvision_29_0=(Token)match(input,114,FOLLOW_114_in_ruleMonsterInst210075); 
+                    lv_darkvision_29_0=(Token)match(input,114,FOLLOW_114_in_ruleMonsterInst210076); 
 
                             newLeafNode(lv_darkvision_29_0, grammarAccess.getMonsterInst2Access().getDarkvisionDarkvisionKeyword_29_0());
                         
@@ -11011,7 +11022,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4113:1: (lv_seduce_30_0= '#seduce' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4114:3: lv_seduce_30_0= '#seduce'
                     {
-                    lv_seduce_30_0=(Token)match(input,115,FOLLOW_115_in_ruleMonsterInst210112); 
+                    lv_seduce_30_0=(Token)match(input,115,FOLLOW_115_in_ruleMonsterInst210113); 
 
                             newLeafNode(lv_seduce_30_0, grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_30_0());
                         
@@ -11039,7 +11050,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4129:1: (lv_succubus_31_0= '#succubus' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4130:3: lv_succubus_31_0= '#succubus'
                     {
-                    lv_succubus_31_0=(Token)match(input,116,FOLLOW_116_in_ruleMonsterInst210149); 
+                    lv_succubus_31_0=(Token)match(input,116,FOLLOW_116_in_ruleMonsterInst210150); 
 
                             newLeafNode(lv_succubus_31_0, grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_31_0());
                         
@@ -11067,7 +11078,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4145:1: (lv_beckon_32_0= '#beckon' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4146:3: lv_beckon_32_0= '#beckon'
                     {
-                    lv_beckon_32_0=(Token)match(input,117,FOLLOW_117_in_ruleMonsterInst210186); 
+                    lv_beckon_32_0=(Token)match(input,117,FOLLOW_117_in_ruleMonsterInst210187); 
 
                             newLeafNode(lv_beckon_32_0, grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_32_0());
                         
@@ -11095,7 +11106,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4161:1: (lv_startage_33_0= '#startage' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4162:3: lv_startage_33_0= '#startage'
                     {
-                    lv_startage_33_0=(Token)match(input,118,FOLLOW_118_in_ruleMonsterInst210223); 
+                    lv_startage_33_0=(Token)match(input,118,FOLLOW_118_in_ruleMonsterInst210224); 
 
                             newLeafNode(lv_startage_33_0, grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_33_0());
                         
@@ -11123,7 +11134,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4177:1: (lv_maxage_34_0= '#maxage' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4178:3: lv_maxage_34_0= '#maxage'
                     {
-                    lv_maxage_34_0=(Token)match(input,119,FOLLOW_119_in_ruleMonsterInst210260); 
+                    lv_maxage_34_0=(Token)match(input,119,FOLLOW_119_in_ruleMonsterInst210261); 
 
                             newLeafNode(lv_maxage_34_0, grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_34_0());
                         
@@ -11151,7 +11162,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4193:1: (lv_older_35_0= '#older' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4194:3: lv_older_35_0= '#older'
                     {
-                    lv_older_35_0=(Token)match(input,120,FOLLOW_120_in_ruleMonsterInst210297); 
+                    lv_older_35_0=(Token)match(input,120,FOLLOW_120_in_ruleMonsterInst210298); 
 
                             newLeafNode(lv_older_35_0, grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_35_0());
                         
@@ -11179,7 +11190,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4209:1: (lv_healer_36_0= '#healer' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4210:3: lv_healer_36_0= '#healer'
                     {
-                    lv_healer_36_0=(Token)match(input,121,FOLLOW_121_in_ruleMonsterInst210334); 
+                    lv_healer_36_0=(Token)match(input,121,FOLLOW_121_in_ruleMonsterInst210335); 
 
                             newLeafNode(lv_healer_36_0, grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_36_0());
                         
@@ -11207,7 +11218,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4225:1: (lv_startaff_37_0= '#startaff' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4226:3: lv_startaff_37_0= '#startaff'
                     {
-                    lv_startaff_37_0=(Token)match(input,122,FOLLOW_122_in_ruleMonsterInst210371); 
+                    lv_startaff_37_0=(Token)match(input,122,FOLLOW_122_in_ruleMonsterInst210372); 
 
                             newLeafNode(lv_startaff_37_0, grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_37_0());
                         
@@ -11235,7 +11246,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4241:1: (lv_supplybonus_38_0= '#supplybonus' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4242:3: lv_supplybonus_38_0= '#supplybonus'
                     {
-                    lv_supplybonus_38_0=(Token)match(input,123,FOLLOW_123_in_ruleMonsterInst210408); 
+                    lv_supplybonus_38_0=(Token)match(input,123,FOLLOW_123_in_ruleMonsterInst210409); 
 
                             newLeafNode(lv_supplybonus_38_0, grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_38_0());
                         
@@ -11263,7 +11274,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4257:1: (lv_uwdamage_39_0= '#uwdamage' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4258:3: lv_uwdamage_39_0= '#uwdamage'
                     {
-                    lv_uwdamage_39_0=(Token)match(input,124,FOLLOW_124_in_ruleMonsterInst210445); 
+                    lv_uwdamage_39_0=(Token)match(input,124,FOLLOW_124_in_ruleMonsterInst210446); 
 
                             newLeafNode(lv_uwdamage_39_0, grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_39_0());
                         
@@ -11291,7 +11302,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4273:1: (lv_homesick_40_0= '#homesick' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4274:3: lv_homesick_40_0= '#homesick'
                     {
-                    lv_homesick_40_0=(Token)match(input,125,FOLLOW_125_in_ruleMonsterInst210482); 
+                    lv_homesick_40_0=(Token)match(input,125,FOLLOW_125_in_ruleMonsterInst210483); 
 
                             newLeafNode(lv_homesick_40_0, grammarAccess.getMonsterInst2Access().getHomesickHomesickKeyword_40_0());
                         
@@ -11319,7 +11330,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4289:1: (lv_coldpower_41_0= '#coldpower' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4290:3: lv_coldpower_41_0= '#coldpower'
                     {
-                    lv_coldpower_41_0=(Token)match(input,126,FOLLOW_126_in_ruleMonsterInst210519); 
+                    lv_coldpower_41_0=(Token)match(input,126,FOLLOW_126_in_ruleMonsterInst210520); 
 
                             newLeafNode(lv_coldpower_41_0, grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_41_0());
                         
@@ -11347,7 +11358,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4305:1: (lv_firepower_42_0= '#firepower' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4306:3: lv_firepower_42_0= '#firepower'
                     {
-                    lv_firepower_42_0=(Token)match(input,127,FOLLOW_127_in_ruleMonsterInst210556); 
+                    lv_firepower_42_0=(Token)match(input,127,FOLLOW_127_in_ruleMonsterInst210557); 
 
                             newLeafNode(lv_firepower_42_0, grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_42_0());
                         
@@ -11375,7 +11386,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4321:1: (lv_stormpower_43_0= '#stormpower' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4322:3: lv_stormpower_43_0= '#stormpower'
                     {
-                    lv_stormpower_43_0=(Token)match(input,128,FOLLOW_128_in_ruleMonsterInst210593); 
+                    lv_stormpower_43_0=(Token)match(input,128,FOLLOW_128_in_ruleMonsterInst210594); 
 
                             newLeafNode(lv_stormpower_43_0, grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_43_0());
                         
@@ -11403,7 +11414,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4337:1: (lv_darkpower_44_0= '#darkpower' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4338:3: lv_darkpower_44_0= '#darkpower'
                     {
-                    lv_darkpower_44_0=(Token)match(input,129,FOLLOW_129_in_ruleMonsterInst210630); 
+                    lv_darkpower_44_0=(Token)match(input,129,FOLLOW_129_in_ruleMonsterInst210631); 
 
                             newLeafNode(lv_darkpower_44_0, grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_44_0());
                         
@@ -11431,7 +11442,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4353:1: (lv_springpower_45_0= '#springpower' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4354:3: lv_springpower_45_0= '#springpower'
                     {
-                    lv_springpower_45_0=(Token)match(input,130,FOLLOW_130_in_ruleMonsterInst210667); 
+                    lv_springpower_45_0=(Token)match(input,130,FOLLOW_130_in_ruleMonsterInst210668); 
 
                             newLeafNode(lv_springpower_45_0, grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_45_0());
                         
@@ -11459,7 +11470,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4369:1: (lv_summerpower_46_0= '#summerpower' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4370:3: lv_summerpower_46_0= '#summerpower'
                     {
-                    lv_summerpower_46_0=(Token)match(input,131,FOLLOW_131_in_ruleMonsterInst210704); 
+                    lv_summerpower_46_0=(Token)match(input,131,FOLLOW_131_in_ruleMonsterInst210705); 
 
                             newLeafNode(lv_summerpower_46_0, grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_46_0());
                         
@@ -11487,7 +11498,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4385:1: (lv_fallpower_47_0= '#fallpower' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4386:3: lv_fallpower_47_0= '#fallpower'
                     {
-                    lv_fallpower_47_0=(Token)match(input,132,FOLLOW_132_in_ruleMonsterInst210741); 
+                    lv_fallpower_47_0=(Token)match(input,132,FOLLOW_132_in_ruleMonsterInst210742); 
 
                             newLeafNode(lv_fallpower_47_0, grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_47_0());
                         
@@ -11515,7 +11526,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4401:1: (lv_winterpower_48_0= '#winterpower' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4402:3: lv_winterpower_48_0= '#winterpower'
                     {
-                    lv_winterpower_48_0=(Token)match(input,133,FOLLOW_133_in_ruleMonsterInst210778); 
+                    lv_winterpower_48_0=(Token)match(input,133,FOLLOW_133_in_ruleMonsterInst210779); 
 
                             newLeafNode(lv_winterpower_48_0, grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_48_0());
                         
@@ -11543,7 +11554,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4417:1: (lv_ambidextrous_49_0= '#ambidextrous' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4418:3: lv_ambidextrous_49_0= '#ambidextrous'
                     {
-                    lv_ambidextrous_49_0=(Token)match(input,134,FOLLOW_134_in_ruleMonsterInst210815); 
+                    lv_ambidextrous_49_0=(Token)match(input,134,FOLLOW_134_in_ruleMonsterInst210816); 
 
                             newLeafNode(lv_ambidextrous_49_0, grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_49_0());
                         
@@ -11571,7 +11582,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4433:1: (lv_banefireshield_50_0= '#banefireshield' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4434:3: lv_banefireshield_50_0= '#banefireshield'
                     {
-                    lv_banefireshield_50_0=(Token)match(input,135,FOLLOW_135_in_ruleMonsterInst210852); 
+                    lv_banefireshield_50_0=(Token)match(input,135,FOLLOW_135_in_ruleMonsterInst210853); 
 
                             newLeafNode(lv_banefireshield_50_0, grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_50_0());
                         
@@ -11599,7 +11610,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4449:1: (lv_berserk_51_0= '#berserk' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4450:3: lv_berserk_51_0= '#berserk'
                     {
-                    lv_berserk_51_0=(Token)match(input,136,FOLLOW_136_in_ruleMonsterInst210889); 
+                    lv_berserk_51_0=(Token)match(input,136,FOLLOW_136_in_ruleMonsterInst210890); 
 
                             newLeafNode(lv_berserk_51_0, grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_51_0());
                         
@@ -11627,7 +11638,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4465:1: (lv_standard_52_0= '#standard' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4466:3: lv_standard_52_0= '#standard'
                     {
-                    lv_standard_52_0=(Token)match(input,137,FOLLOW_137_in_ruleMonsterInst210926); 
+                    lv_standard_52_0=(Token)match(input,137,FOLLOW_137_in_ruleMonsterInst210927); 
 
                             newLeafNode(lv_standard_52_0, grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_52_0());
                         
@@ -11655,7 +11666,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4481:1: (lv_animalawe_53_0= '#animalawe' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4482:3: lv_animalawe_53_0= '#animalawe'
                     {
-                    lv_animalawe_53_0=(Token)match(input,138,FOLLOW_138_in_ruleMonsterInst210963); 
+                    lv_animalawe_53_0=(Token)match(input,138,FOLLOW_138_in_ruleMonsterInst210964); 
 
                             newLeafNode(lv_animalawe_53_0, grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_53_0());
                         
@@ -11683,7 +11694,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4497:1: (lv_awe_54_0= '#awe' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4498:3: lv_awe_54_0= '#awe'
                     {
-                    lv_awe_54_0=(Token)match(input,139,FOLLOW_139_in_ruleMonsterInst211000); 
+                    lv_awe_54_0=(Token)match(input,139,FOLLOW_139_in_ruleMonsterInst211001); 
 
                             newLeafNode(lv_awe_54_0, grammarAccess.getMonsterInst2Access().getAweAweKeyword_54_0());
                         
@@ -11711,7 +11722,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4513:1: (lv_fear_55_0= '#fear' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4514:3: lv_fear_55_0= '#fear'
                     {
-                    lv_fear_55_0=(Token)match(input,140,FOLLOW_140_in_ruleMonsterInst211037); 
+                    lv_fear_55_0=(Token)match(input,140,FOLLOW_140_in_ruleMonsterInst211038); 
 
                             newLeafNode(lv_fear_55_0, grammarAccess.getMonsterInst2Access().getFearFearKeyword_55_0());
                         
@@ -11739,7 +11750,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4529:1: (lv_regeneration_56_0= '#regeneration' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4530:3: lv_regeneration_56_0= '#regeneration'
                     {
-                    lv_regeneration_56_0=(Token)match(input,141,FOLLOW_141_in_ruleMonsterInst211074); 
+                    lv_regeneration_56_0=(Token)match(input,141,FOLLOW_141_in_ruleMonsterInst211075); 
 
                             newLeafNode(lv_regeneration_56_0, grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_56_0());
                         
@@ -11767,7 +11778,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4545:1: (lv_reinvigoration_57_0= '#reinvigoration' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4546:3: lv_reinvigoration_57_0= '#reinvigoration'
                     {
-                    lv_reinvigoration_57_0=(Token)match(input,142,FOLLOW_142_in_ruleMonsterInst211111); 
+                    lv_reinvigoration_57_0=(Token)match(input,142,FOLLOW_142_in_ruleMonsterInst211112); 
 
                             newLeafNode(lv_reinvigoration_57_0, grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_57_0());
                         
@@ -11795,7 +11806,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4561:1: (lv_fireshield_58_0= '#fireshield' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4562:3: lv_fireshield_58_0= '#fireshield'
                     {
-                    lv_fireshield_58_0=(Token)match(input,143,FOLLOW_143_in_ruleMonsterInst211148); 
+                    lv_fireshield_58_0=(Token)match(input,143,FOLLOW_143_in_ruleMonsterInst211149); 
 
                             newLeafNode(lv_fireshield_58_0, grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_58_0());
                         
@@ -11823,7 +11834,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4577:1: (lv_iceprot_59_0= '#iceprot' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4578:3: lv_iceprot_59_0= '#iceprot'
                     {
-                    lv_iceprot_59_0=(Token)match(input,144,FOLLOW_144_in_ruleMonsterInst211185); 
+                    lv_iceprot_59_0=(Token)match(input,144,FOLLOW_144_in_ruleMonsterInst211186); 
 
                             newLeafNode(lv_iceprot_59_0, grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0());
                         
@@ -11851,7 +11862,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4593:1: (lv_poisoncloud_60_0= '#poisoncloud' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4594:3: lv_poisoncloud_60_0= '#poisoncloud'
                     {
-                    lv_poisoncloud_60_0=(Token)match(input,145,FOLLOW_145_in_ruleMonsterInst211222); 
+                    lv_poisoncloud_60_0=(Token)match(input,145,FOLLOW_145_in_ruleMonsterInst211223); 
 
                             newLeafNode(lv_poisoncloud_60_0, grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0());
                         
@@ -11879,7 +11890,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4609:1: (lv_diseasecloud_61_0= '#diseasecloud' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4610:3: lv_diseasecloud_61_0= '#diseasecloud'
                     {
-                    lv_diseasecloud_61_0=(Token)match(input,146,FOLLOW_146_in_ruleMonsterInst211259); 
+                    lv_diseasecloud_61_0=(Token)match(input,146,FOLLOW_146_in_ruleMonsterInst211260); 
 
                             newLeafNode(lv_diseasecloud_61_0, grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0());
                         
@@ -11907,7 +11918,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4625:1: (lv_bloodvengeance_62_0= '#bloodvengeance' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4626:3: lv_bloodvengeance_62_0= '#bloodvengeance'
                     {
-                    lv_bloodvengeance_62_0=(Token)match(input,147,FOLLOW_147_in_ruleMonsterInst211296); 
+                    lv_bloodvengeance_62_0=(Token)match(input,147,FOLLOW_147_in_ruleMonsterInst211297); 
 
                             newLeafNode(lv_bloodvengeance_62_0, grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0());
                         
@@ -11935,7 +11946,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4641:1: (lv_castledef_63_0= '#castledef' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4642:3: lv_castledef_63_0= '#castledef'
                     {
-                    lv_castledef_63_0=(Token)match(input,148,FOLLOW_148_in_ruleMonsterInst211333); 
+                    lv_castledef_63_0=(Token)match(input,148,FOLLOW_148_in_ruleMonsterInst211334); 
 
                             newLeafNode(lv_castledef_63_0, grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0());
                         
@@ -11963,7 +11974,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4657:1: (lv_siegebonus_64_0= '#siegebonus' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4658:3: lv_siegebonus_64_0= '#siegebonus'
                     {
-                    lv_siegebonus_64_0=(Token)match(input,149,FOLLOW_149_in_ruleMonsterInst211370); 
+                    lv_siegebonus_64_0=(Token)match(input,149,FOLLOW_149_in_ruleMonsterInst211371); 
 
                             newLeafNode(lv_siegebonus_64_0, grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0());
                         
@@ -11991,7 +12002,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4673:1: (lv_patrolbonus_65_0= '#patrolbonus' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4674:3: lv_patrolbonus_65_0= '#patrolbonus'
                     {
-                    lv_patrolbonus_65_0=(Token)match(input,150,FOLLOW_150_in_ruleMonsterInst211407); 
+                    lv_patrolbonus_65_0=(Token)match(input,150,FOLLOW_150_in_ruleMonsterInst211408); 
 
                             newLeafNode(lv_patrolbonus_65_0, grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0());
                         
@@ -12019,7 +12030,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4689:1: (lv_pillagebonus_66_0= '#pillagebonus' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4690:3: lv_pillagebonus_66_0= '#pillagebonus'
                     {
-                    lv_pillagebonus_66_0=(Token)match(input,151,FOLLOW_151_in_ruleMonsterInst211444); 
+                    lv_pillagebonus_66_0=(Token)match(input,151,FOLLOW_151_in_ruleMonsterInst211445); 
 
                             newLeafNode(lv_pillagebonus_66_0, grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0());
                         
@@ -12047,7 +12058,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4705:1: (lv_researchbonus_67_0= '#researchbonus' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4706:3: lv_researchbonus_67_0= '#researchbonus'
                     {
-                    lv_researchbonus_67_0=(Token)match(input,152,FOLLOW_152_in_ruleMonsterInst211481); 
+                    lv_researchbonus_67_0=(Token)match(input,152,FOLLOW_152_in_ruleMonsterInst211482); 
 
                             newLeafNode(lv_researchbonus_67_0, grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0());
                         
@@ -12075,7 +12086,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4721:1: (lv_forgebonus_68_0= '#forgebonus' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4722:3: lv_forgebonus_68_0= '#forgebonus'
                     {
-                    lv_forgebonus_68_0=(Token)match(input,153,FOLLOW_153_in_ruleMonsterInst211518); 
+                    lv_forgebonus_68_0=(Token)match(input,153,FOLLOW_153_in_ruleMonsterInst211519); 
 
                             newLeafNode(lv_forgebonus_68_0, grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0());
                         
@@ -12103,7 +12114,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4737:1: (lv_douse_69_0= '#douse' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4738:3: lv_douse_69_0= '#douse'
                     {
-                    lv_douse_69_0=(Token)match(input,154,FOLLOW_154_in_ruleMonsterInst211555); 
+                    lv_douse_69_0=(Token)match(input,154,FOLLOW_154_in_ruleMonsterInst211556); 
 
                             newLeafNode(lv_douse_69_0, grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0());
                         
@@ -12131,7 +12142,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4753:1: (lv_nobadevents_70_0= '#nobadevents' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4754:3: lv_nobadevents_70_0= '#nobadevents'
                     {
-                    lv_nobadevents_70_0=(Token)match(input,155,FOLLOW_155_in_ruleMonsterInst211592); 
+                    lv_nobadevents_70_0=(Token)match(input,155,FOLLOW_155_in_ruleMonsterInst211593); 
 
                             newLeafNode(lv_nobadevents_70_0, grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0());
                         
@@ -12159,7 +12170,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4769:1: (lv_incunrest_71_0= '#incunrest' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4770:3: lv_incunrest_71_0= '#incunrest'
                     {
-                    lv_incunrest_71_0=(Token)match(input,156,FOLLOW_156_in_ruleMonsterInst211629); 
+                    lv_incunrest_71_0=(Token)match(input,156,FOLLOW_156_in_ruleMonsterInst211630); 
 
                             newLeafNode(lv_incunrest_71_0, grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0());
                         
@@ -12187,7 +12198,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4785:1: (lv_spreaddom_72_0= '#spreaddom' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4786:3: lv_spreaddom_72_0= '#spreaddom'
                     {
-                    lv_spreaddom_72_0=(Token)match(input,157,FOLLOW_157_in_ruleMonsterInst211666); 
+                    lv_spreaddom_72_0=(Token)match(input,157,FOLLOW_157_in_ruleMonsterInst211667); 
 
                             newLeafNode(lv_spreaddom_72_0, grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0());
                         
@@ -12215,7 +12226,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4801:1: (lv_leper_73_0= '#leper' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4802:3: lv_leper_73_0= '#leper'
                     {
-                    lv_leper_73_0=(Token)match(input,158,FOLLOW_158_in_ruleMonsterInst211703); 
+                    lv_leper_73_0=(Token)match(input,158,FOLLOW_158_in_ruleMonsterInst211704); 
 
                             newLeafNode(lv_leper_73_0, grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0());
                         
@@ -12243,7 +12254,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4817:1: (lv_popkill_74_0= '#popkill' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4818:3: lv_popkill_74_0= '#popkill'
                     {
-                    lv_popkill_74_0=(Token)match(input,159,FOLLOW_159_in_ruleMonsterInst211740); 
+                    lv_popkill_74_0=(Token)match(input,159,FOLLOW_159_in_ruleMonsterInst211741); 
 
                             newLeafNode(lv_popkill_74_0, grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0());
                         
@@ -12271,7 +12282,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4833:1: (lv_heretic_75_0= '#heretic' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4834:3: lv_heretic_75_0= '#heretic'
                     {
-                    lv_heretic_75_0=(Token)match(input,160,FOLLOW_160_in_ruleMonsterInst211777); 
+                    lv_heretic_75_0=(Token)match(input,160,FOLLOW_160_in_ruleMonsterInst211778); 
 
                             newLeafNode(lv_heretic_75_0, grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0());
                         
@@ -12299,7 +12310,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4849:1: (lv_itemslots_76_0= '#itemslots' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4850:3: lv_itemslots_76_0= '#itemslots'
                     {
-                    lv_itemslots_76_0=(Token)match(input,161,FOLLOW_161_in_ruleMonsterInst211814); 
+                    lv_itemslots_76_0=(Token)match(input,161,FOLLOW_161_in_ruleMonsterInst211815); 
 
                             newLeafNode(lv_itemslots_76_0, grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0());
                         
@@ -12327,7 +12338,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4865:1: (lv_nametype_77_0= '#nametype' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4866:3: lv_nametype_77_0= '#nametype'
                     {
-                    lv_nametype_77_0=(Token)match(input,162,FOLLOW_162_in_ruleMonsterInst211851); 
+                    lv_nametype_77_0=(Token)match(input,162,FOLLOW_162_in_ruleMonsterInst211852); 
 
                             newLeafNode(lv_nametype_77_0, grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0());
                         
@@ -12379,13 +12390,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4889:2: iv_ruleMonsterInst3= ruleMonsterInst3 EOF
             {
              newCompositeNode(grammarAccess.getMonsterInst3Rule()); 
-            pushFollow(FOLLOW_ruleMonsterInst3_in_entryRuleMonsterInst311900);
+            pushFollow(FOLLOW_ruleMonsterInst3_in_entryRuleMonsterInst311901);
             iv_ruleMonsterInst3=ruleMonsterInst3();
 
             state._fsp--;
 
              current =iv_ruleMonsterInst3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst311910); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst311911); 
 
             }
 
@@ -12419,36 +12430,36 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4900:1: ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4900:1: ( ( (lv_magicskill_0_0= '#magicskill' ) ) | ( (lv_custommagic_1_0= '#custommagic' ) ) | ( (lv_magicboost_2_0= '#magicboost' ) ) | ( (lv_gemprod_3_0= '#gemprod' ) ) )
-            int alt47=4;
+            int alt48=4;
             switch ( input.LA(1) ) {
             case 163:
                 {
-                alt47=1;
+                alt48=1;
                 }
                 break;
             case 164:
                 {
-                alt47=2;
+                alt48=2;
                 }
                 break;
             case 165:
                 {
-                alt47=3;
+                alt48=3;
                 }
                 break;
             case 166:
                 {
-                alt47=4;
+                alt48=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 47, 0, input);
+                    new NoViableAltException("", 48, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt47) {
+            switch (alt48) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4900:2: ( (lv_magicskill_0_0= '#magicskill' ) )
                     {
@@ -12458,7 +12469,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4901:1: (lv_magicskill_0_0= '#magicskill' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4902:3: lv_magicskill_0_0= '#magicskill'
                     {
-                    lv_magicskill_0_0=(Token)match(input,163,FOLLOW_163_in_ruleMonsterInst311953); 
+                    lv_magicskill_0_0=(Token)match(input,163,FOLLOW_163_in_ruleMonsterInst311954); 
 
                             newLeafNode(lv_magicskill_0_0, grammarAccess.getMonsterInst3Access().getMagicskillMagicskillKeyword_0_0());
                         
@@ -12486,7 +12497,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4917:1: (lv_custommagic_1_0= '#custommagic' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4918:3: lv_custommagic_1_0= '#custommagic'
                     {
-                    lv_custommagic_1_0=(Token)match(input,164,FOLLOW_164_in_ruleMonsterInst311990); 
+                    lv_custommagic_1_0=(Token)match(input,164,FOLLOW_164_in_ruleMonsterInst311991); 
 
                             newLeafNode(lv_custommagic_1_0, grammarAccess.getMonsterInst3Access().getCustommagicCustommagicKeyword_1_0());
                         
@@ -12514,7 +12525,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4933:1: (lv_magicboost_2_0= '#magicboost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4934:3: lv_magicboost_2_0= '#magicboost'
                     {
-                    lv_magicboost_2_0=(Token)match(input,165,FOLLOW_165_in_ruleMonsterInst312027); 
+                    lv_magicboost_2_0=(Token)match(input,165,FOLLOW_165_in_ruleMonsterInst312028); 
 
                             newLeafNode(lv_magicboost_2_0, grammarAccess.getMonsterInst3Access().getMagicboostMagicboostKeyword_2_0());
                         
@@ -12542,7 +12553,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4949:1: (lv_gemprod_3_0= '#gemprod' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4950:3: lv_gemprod_3_0= '#gemprod'
                     {
-                    lv_gemprod_3_0=(Token)match(input,166,FOLLOW_166_in_ruleMonsterInst312064); 
+                    lv_gemprod_3_0=(Token)match(input,166,FOLLOW_166_in_ruleMonsterInst312065); 
 
                             newLeafNode(lv_gemprod_3_0, grammarAccess.getMonsterInst3Access().getGemprodGemprodKeyword_3_0());
                         
@@ -12594,13 +12605,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4973:2: iv_ruleMonsterInst4= ruleMonsterInst4 EOF
             {
              newCompositeNode(grammarAccess.getMonsterInst4Rule()); 
-            pushFollow(FOLLOW_ruleMonsterInst4_in_entryRuleMonsterInst412113);
+            pushFollow(FOLLOW_ruleMonsterInst4_in_entryRuleMonsterInst412114);
             iv_ruleMonsterInst4=ruleMonsterInst4();
 
             state._fsp--;
 
              current =iv_ruleMonsterInst4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst412123); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst412124); 
 
             }
 
@@ -12693,331 +12704,331 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4984:1: ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearweapons_1_0= '#clearweapons' ) ) | ( (lv_cleararmor_2_0= '#cleararmor' ) ) | ( (lv_clearmagic_3_0= '#clearmagic' ) ) | ( (lv_clearspec_4_0= '#clearspec' ) ) | ( (lv_female_5_0= '#female' ) ) | ( (lv_mounted_6_0= '#mounted' ) ) | ( (lv_holy_7_0= '#holy' ) ) | ( (lv_animal_8_0= '#animal' ) ) | ( (lv_undead_9_0= '#undead' ) ) | ( (lv_demon_10_0= '#demon' ) ) | ( (lv_magicbeing_11_0= '#magicbeing' ) ) | ( (lv_stonebeing_12_0= '#stonebeing' ) ) | ( (lv_inanimate_13_0= '#inanimate' ) ) | ( (lv_coldblood_14_0= '#coldblood' ) ) | ( (lv_coldblood_15_0= '#coldblooded' ) ) | ( (lv_immortal_16_0= '#immortal' ) ) | ( (lv_blind_17_0= '#blind' ) ) | ( (lv_unique_18_0= '#unique' ) ) | ( (lv_immobile_19_0= '#immobile' ) ) | ( (lv_aquatic_20_0= '#aquatic' ) ) | ( (lv_amphibian_21_0= '#amphibian' ) ) | ( (lv_pooramphibian_22_0= '#pooramphibian' ) ) | ( (lv_flying_23_0= '#flying' ) ) | ( (lv_stormimmune_24_0= '#stormimmune' ) ) | ( (lv_sailing_25_0= '#sailing' ) ) | ( (lv_forestsurvival_26_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_27_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_28_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_29_0= '#wastesurvival' ) ) | ( (lv_illusion_30_0= '#illusion' ) ) | ( (lv_spy_31_0= '#spy' ) ) | ( (lv_assassin_32_0= '#assassin' ) ) | ( (lv_heal_33_0= '#heal' ) ) | ( (lv_noheal_34_0= '#noheal' ) ) | ( (lv_neednoteat_35_0= '#neednoteat' ) ) | ( (lv_ethereal_36_0= '#ethereal' ) ) | ( (lv_trample_37_0= '#trample' ) ) | ( (lv_entangle_38_0= '#entangle' ) ) | ( (lv_eyeloss_39_0= '#eyeloss' ) ) | ( (lv_horrormark_40_0= '#horrormark' ) ) | ( (lv_poisonarmor_41_0= '#poisonarmor' ) ) | ( (lv_inquisitor_42_0= '#inquisitor' ) ) | ( (lv_noitem_43_0= '#noitem' ) ) | ( (lv_drainimmune_44_0= '#drainimmune' ) ) | ( (lv_noleader_45_0= '#noleader' ) ) | ( (lv_poorleader_46_0= '#poorleader' ) ) | ( (lv_okleader_47_0= '#okleader' ) ) | ( (lv_goodleader_48_0= '#goodleader' ) ) | ( (lv_expertleader_49_0= '#expertleader' ) ) | ( (lv_superiorleader_50_0= '#superiorleader' ) ) | ( (lv_nomagicleader_51_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_52_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_53_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_54_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_55_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_56_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_57_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_58_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_59_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_60_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_61_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_62_0= '#superiorundeadleader' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4984:1: ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_clearweapons_1_0= '#clearweapons' ) ) | ( (lv_cleararmor_2_0= '#cleararmor' ) ) | ( (lv_clearmagic_3_0= '#clearmagic' ) ) | ( (lv_clearspec_4_0= '#clearspec' ) ) | ( (lv_female_5_0= '#female' ) ) | ( (lv_mounted_6_0= '#mounted' ) ) | ( (lv_holy_7_0= '#holy' ) ) | ( (lv_animal_8_0= '#animal' ) ) | ( (lv_undead_9_0= '#undead' ) ) | ( (lv_demon_10_0= '#demon' ) ) | ( (lv_magicbeing_11_0= '#magicbeing' ) ) | ( (lv_stonebeing_12_0= '#stonebeing' ) ) | ( (lv_inanimate_13_0= '#inanimate' ) ) | ( (lv_coldblood_14_0= '#coldblood' ) ) | ( (lv_coldblood_15_0= '#coldblooded' ) ) | ( (lv_immortal_16_0= '#immortal' ) ) | ( (lv_blind_17_0= '#blind' ) ) | ( (lv_unique_18_0= '#unique' ) ) | ( (lv_immobile_19_0= '#immobile' ) ) | ( (lv_aquatic_20_0= '#aquatic' ) ) | ( (lv_amphibian_21_0= '#amphibian' ) ) | ( (lv_pooramphibian_22_0= '#pooramphibian' ) ) | ( (lv_flying_23_0= '#flying' ) ) | ( (lv_stormimmune_24_0= '#stormimmune' ) ) | ( (lv_sailing_25_0= '#sailing' ) ) | ( (lv_forestsurvival_26_0= '#forestsurvival' ) ) | ( (lv_mountainsurvival_27_0= '#mountainsurvival' ) ) | ( (lv_swampsurvival_28_0= '#swampsurvival' ) ) | ( (lv_wastesurvival_29_0= '#wastesurvival' ) ) | ( (lv_illusion_30_0= '#illusion' ) ) | ( (lv_spy_31_0= '#spy' ) ) | ( (lv_assassin_32_0= '#assassin' ) ) | ( (lv_heal_33_0= '#heal' ) ) | ( (lv_noheal_34_0= '#noheal' ) ) | ( (lv_neednoteat_35_0= '#neednoteat' ) ) | ( (lv_ethereal_36_0= '#ethereal' ) ) | ( (lv_trample_37_0= '#trample' ) ) | ( (lv_entangle_38_0= '#entangle' ) ) | ( (lv_eyeloss_39_0= '#eyeloss' ) ) | ( (lv_horrormark_40_0= '#horrormark' ) ) | ( (lv_poisonarmor_41_0= '#poisonarmor' ) ) | ( (lv_inquisitor_42_0= '#inquisitor' ) ) | ( (lv_noitem_43_0= '#noitem' ) ) | ( (lv_drainimmune_44_0= '#drainimmune' ) ) | ( (lv_noleader_45_0= '#noleader' ) ) | ( (lv_poorleader_46_0= '#poorleader' ) ) | ( (lv_okleader_47_0= '#okleader' ) ) | ( (lv_goodleader_48_0= '#goodleader' ) ) | ( (lv_expertleader_49_0= '#expertleader' ) ) | ( (lv_superiorleader_50_0= '#superiorleader' ) ) | ( (lv_nomagicleader_51_0= '#nomagicleader' ) ) | ( (lv_poormagicleader_52_0= '#poormagicleader' ) ) | ( (lv_okmagicleader_53_0= '#okmagicleader' ) ) | ( (lv_goodmagicleader_54_0= '#goodmagicleader' ) ) | ( (lv_expertmagicleader_55_0= '#expertmagicleader' ) ) | ( (lv_superiormagicleader_56_0= '#superiormagicleader' ) ) | ( (lv_noundeadleader_57_0= '#noundeadleader' ) ) | ( (lv_poorundeadleader_58_0= '#poorundeadleader' ) ) | ( (lv_okundeadleader_59_0= '#okundeadleader' ) ) | ( (lv_goodundeadleader_60_0= '#goodundeadleader' ) ) | ( (lv_expertundeadleader_61_0= '#expertundeadleader' ) ) | ( (lv_superiorundeadleader_62_0= '#superiorundeadleader' ) ) )
-            int alt48=63;
+            int alt49=63;
             switch ( input.LA(1) ) {
             case 167:
                 {
-                alt48=1;
+                alt49=1;
                 }
                 break;
             case 168:
                 {
-                alt48=2;
+                alt49=2;
                 }
                 break;
             case 169:
                 {
-                alt48=3;
+                alt49=3;
                 }
                 break;
             case 170:
                 {
-                alt48=4;
+                alt49=4;
                 }
                 break;
             case 171:
                 {
-                alt48=5;
+                alt49=5;
                 }
                 break;
             case 172:
                 {
-                alt48=6;
+                alt49=6;
                 }
                 break;
             case 173:
                 {
-                alt48=7;
+                alt49=7;
                 }
                 break;
             case 174:
                 {
-                alt48=8;
+                alt49=8;
                 }
                 break;
             case 175:
                 {
-                alt48=9;
+                alt49=9;
                 }
                 break;
             case 176:
                 {
-                alt48=10;
+                alt49=10;
                 }
                 break;
             case 177:
                 {
-                alt48=11;
+                alt49=11;
                 }
                 break;
             case 178:
                 {
-                alt48=12;
+                alt49=12;
                 }
                 break;
             case 179:
                 {
-                alt48=13;
+                alt49=13;
                 }
                 break;
             case 180:
                 {
-                alt48=14;
+                alt49=14;
                 }
                 break;
             case 181:
                 {
-                alt48=15;
+                alt49=15;
                 }
                 break;
             case 182:
                 {
-                alt48=16;
+                alt49=16;
                 }
                 break;
             case 183:
                 {
-                alt48=17;
+                alt49=17;
                 }
                 break;
             case 184:
                 {
-                alt48=18;
+                alt49=18;
                 }
                 break;
             case 185:
                 {
-                alt48=19;
+                alt49=19;
                 }
                 break;
             case 186:
                 {
-                alt48=20;
+                alt49=20;
                 }
                 break;
             case 187:
                 {
-                alt48=21;
+                alt49=21;
                 }
                 break;
             case 188:
                 {
-                alt48=22;
+                alt49=22;
                 }
                 break;
             case 189:
                 {
-                alt48=23;
+                alt49=23;
                 }
                 break;
             case 190:
                 {
-                alt48=24;
+                alt49=24;
                 }
                 break;
             case 191:
                 {
-                alt48=25;
+                alt49=25;
                 }
                 break;
             case 192:
                 {
-                alt48=26;
+                alt49=26;
                 }
                 break;
             case 193:
                 {
-                alt48=27;
+                alt49=27;
                 }
                 break;
             case 194:
                 {
-                alt48=28;
+                alt49=28;
                 }
                 break;
             case 195:
                 {
-                alt48=29;
+                alt49=29;
                 }
                 break;
             case 196:
                 {
-                alt48=30;
+                alt49=30;
                 }
                 break;
             case 197:
                 {
-                alt48=31;
+                alt49=31;
                 }
                 break;
             case 198:
                 {
-                alt48=32;
+                alt49=32;
                 }
                 break;
             case 199:
                 {
-                alt48=33;
+                alt49=33;
                 }
                 break;
             case 200:
                 {
-                alt48=34;
+                alt49=34;
                 }
                 break;
             case 201:
                 {
-                alt48=35;
+                alt49=35;
                 }
                 break;
             case 202:
                 {
-                alt48=36;
+                alt49=36;
                 }
                 break;
             case 203:
                 {
-                alt48=37;
+                alt49=37;
                 }
                 break;
             case 204:
                 {
-                alt48=38;
+                alt49=38;
                 }
                 break;
             case 205:
                 {
-                alt48=39;
+                alt49=39;
                 }
                 break;
             case 206:
                 {
-                alt48=40;
+                alt49=40;
                 }
                 break;
             case 207:
                 {
-                alt48=41;
+                alt49=41;
                 }
                 break;
             case 208:
                 {
-                alt48=42;
+                alt49=42;
                 }
                 break;
             case 209:
                 {
-                alt48=43;
+                alt49=43;
                 }
                 break;
             case 210:
                 {
-                alt48=44;
+                alt49=44;
                 }
                 break;
             case 211:
                 {
-                alt48=45;
+                alt49=45;
                 }
                 break;
             case 212:
                 {
-                alt48=46;
+                alt49=46;
                 }
                 break;
             case 213:
                 {
-                alt48=47;
+                alt49=47;
                 }
                 break;
             case 214:
                 {
-                alt48=48;
+                alt49=48;
                 }
                 break;
             case 215:
                 {
-                alt48=49;
+                alt49=49;
                 }
                 break;
             case 216:
                 {
-                alt48=50;
+                alt49=50;
                 }
                 break;
             case 217:
                 {
-                alt48=51;
+                alt49=51;
                 }
                 break;
             case 218:
                 {
-                alt48=52;
+                alt49=52;
                 }
                 break;
             case 219:
                 {
-                alt48=53;
+                alt49=53;
                 }
                 break;
             case 220:
                 {
-                alt48=54;
+                alt49=54;
                 }
                 break;
             case 221:
                 {
-                alt48=55;
+                alt49=55;
                 }
                 break;
             case 222:
                 {
-                alt48=56;
+                alt49=56;
                 }
                 break;
             case 223:
                 {
-                alt48=57;
+                alt49=57;
                 }
                 break;
             case 224:
                 {
-                alt48=58;
+                alt49=58;
                 }
                 break;
             case 225:
                 {
-                alt48=59;
+                alt49=59;
                 }
                 break;
             case 226:
                 {
-                alt48=60;
+                alt49=60;
                 }
                 break;
             case 227:
                 {
-                alt48=61;
+                alt49=61;
                 }
                 break;
             case 228:
                 {
-                alt48=62;
+                alt49=62;
                 }
                 break;
             case 229:
                 {
-                alt48=63;
+                alt49=63;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 48, 0, input);
+                    new NoViableAltException("", 49, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt48) {
+            switch (alt49) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4984:2: ( (lv_clear_0_0= '#clear' ) )
                     {
@@ -13027,7 +13038,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4985:1: (lv_clear_0_0= '#clear' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:4986:3: lv_clear_0_0= '#clear'
                     {
-                    lv_clear_0_0=(Token)match(input,167,FOLLOW_167_in_ruleMonsterInst412166); 
+                    lv_clear_0_0=(Token)match(input,167,FOLLOW_167_in_ruleMonsterInst412167); 
 
                             newLeafNode(lv_clear_0_0, grammarAccess.getMonsterInst4Access().getClearClearKeyword_0_0());
                         
@@ -13055,7 +13066,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5001:1: (lv_clearweapons_1_0= '#clearweapons' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5002:3: lv_clearweapons_1_0= '#clearweapons'
                     {
-                    lv_clearweapons_1_0=(Token)match(input,168,FOLLOW_168_in_ruleMonsterInst412203); 
+                    lv_clearweapons_1_0=(Token)match(input,168,FOLLOW_168_in_ruleMonsterInst412204); 
 
                             newLeafNode(lv_clearweapons_1_0, grammarAccess.getMonsterInst4Access().getClearweaponsClearweaponsKeyword_1_0());
                         
@@ -13083,7 +13094,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5017:1: (lv_cleararmor_2_0= '#cleararmor' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5018:3: lv_cleararmor_2_0= '#cleararmor'
                     {
-                    lv_cleararmor_2_0=(Token)match(input,169,FOLLOW_169_in_ruleMonsterInst412240); 
+                    lv_cleararmor_2_0=(Token)match(input,169,FOLLOW_169_in_ruleMonsterInst412241); 
 
                             newLeafNode(lv_cleararmor_2_0, grammarAccess.getMonsterInst4Access().getCleararmorCleararmorKeyword_2_0());
                         
@@ -13111,7 +13122,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5033:1: (lv_clearmagic_3_0= '#clearmagic' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5034:3: lv_clearmagic_3_0= '#clearmagic'
                     {
-                    lv_clearmagic_3_0=(Token)match(input,170,FOLLOW_170_in_ruleMonsterInst412277); 
+                    lv_clearmagic_3_0=(Token)match(input,170,FOLLOW_170_in_ruleMonsterInst412278); 
 
                             newLeafNode(lv_clearmagic_3_0, grammarAccess.getMonsterInst4Access().getClearmagicClearmagicKeyword_3_0());
                         
@@ -13139,7 +13150,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5049:1: (lv_clearspec_4_0= '#clearspec' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5050:3: lv_clearspec_4_0= '#clearspec'
                     {
-                    lv_clearspec_4_0=(Token)match(input,171,FOLLOW_171_in_ruleMonsterInst412314); 
+                    lv_clearspec_4_0=(Token)match(input,171,FOLLOW_171_in_ruleMonsterInst412315); 
 
                             newLeafNode(lv_clearspec_4_0, grammarAccess.getMonsterInst4Access().getClearspecClearspecKeyword_4_0());
                         
@@ -13167,7 +13178,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5065:1: (lv_female_5_0= '#female' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5066:3: lv_female_5_0= '#female'
                     {
-                    lv_female_5_0=(Token)match(input,172,FOLLOW_172_in_ruleMonsterInst412351); 
+                    lv_female_5_0=(Token)match(input,172,FOLLOW_172_in_ruleMonsterInst412352); 
 
                             newLeafNode(lv_female_5_0, grammarAccess.getMonsterInst4Access().getFemaleFemaleKeyword_5_0());
                         
@@ -13195,7 +13206,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5081:1: (lv_mounted_6_0= '#mounted' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5082:3: lv_mounted_6_0= '#mounted'
                     {
-                    lv_mounted_6_0=(Token)match(input,173,FOLLOW_173_in_ruleMonsterInst412388); 
+                    lv_mounted_6_0=(Token)match(input,173,FOLLOW_173_in_ruleMonsterInst412389); 
 
                             newLeafNode(lv_mounted_6_0, grammarAccess.getMonsterInst4Access().getMountedMountedKeyword_6_0());
                         
@@ -13223,7 +13234,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5097:1: (lv_holy_7_0= '#holy' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5098:3: lv_holy_7_0= '#holy'
                     {
-                    lv_holy_7_0=(Token)match(input,174,FOLLOW_174_in_ruleMonsterInst412425); 
+                    lv_holy_7_0=(Token)match(input,174,FOLLOW_174_in_ruleMonsterInst412426); 
 
                             newLeafNode(lv_holy_7_0, grammarAccess.getMonsterInst4Access().getHolyHolyKeyword_7_0());
                         
@@ -13251,7 +13262,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5113:1: (lv_animal_8_0= '#animal' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5114:3: lv_animal_8_0= '#animal'
                     {
-                    lv_animal_8_0=(Token)match(input,175,FOLLOW_175_in_ruleMonsterInst412462); 
+                    lv_animal_8_0=(Token)match(input,175,FOLLOW_175_in_ruleMonsterInst412463); 
 
                             newLeafNode(lv_animal_8_0, grammarAccess.getMonsterInst4Access().getAnimalAnimalKeyword_8_0());
                         
@@ -13279,7 +13290,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5129:1: (lv_undead_9_0= '#undead' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5130:3: lv_undead_9_0= '#undead'
                     {
-                    lv_undead_9_0=(Token)match(input,176,FOLLOW_176_in_ruleMonsterInst412499); 
+                    lv_undead_9_0=(Token)match(input,176,FOLLOW_176_in_ruleMonsterInst412500); 
 
                             newLeafNode(lv_undead_9_0, grammarAccess.getMonsterInst4Access().getUndeadUndeadKeyword_9_0());
                         
@@ -13307,7 +13318,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5145:1: (lv_demon_10_0= '#demon' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5146:3: lv_demon_10_0= '#demon'
                     {
-                    lv_demon_10_0=(Token)match(input,177,FOLLOW_177_in_ruleMonsterInst412536); 
+                    lv_demon_10_0=(Token)match(input,177,FOLLOW_177_in_ruleMonsterInst412537); 
 
                             newLeafNode(lv_demon_10_0, grammarAccess.getMonsterInst4Access().getDemonDemonKeyword_10_0());
                         
@@ -13335,7 +13346,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5161:1: (lv_magicbeing_11_0= '#magicbeing' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5162:3: lv_magicbeing_11_0= '#magicbeing'
                     {
-                    lv_magicbeing_11_0=(Token)match(input,178,FOLLOW_178_in_ruleMonsterInst412573); 
+                    lv_magicbeing_11_0=(Token)match(input,178,FOLLOW_178_in_ruleMonsterInst412574); 
 
                             newLeafNode(lv_magicbeing_11_0, grammarAccess.getMonsterInst4Access().getMagicbeingMagicbeingKeyword_11_0());
                         
@@ -13363,7 +13374,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5177:1: (lv_stonebeing_12_0= '#stonebeing' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5178:3: lv_stonebeing_12_0= '#stonebeing'
                     {
-                    lv_stonebeing_12_0=(Token)match(input,179,FOLLOW_179_in_ruleMonsterInst412610); 
+                    lv_stonebeing_12_0=(Token)match(input,179,FOLLOW_179_in_ruleMonsterInst412611); 
 
                             newLeafNode(lv_stonebeing_12_0, grammarAccess.getMonsterInst4Access().getStonebeingStonebeingKeyword_12_0());
                         
@@ -13391,7 +13402,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5193:1: (lv_inanimate_13_0= '#inanimate' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5194:3: lv_inanimate_13_0= '#inanimate'
                     {
-                    lv_inanimate_13_0=(Token)match(input,180,FOLLOW_180_in_ruleMonsterInst412647); 
+                    lv_inanimate_13_0=(Token)match(input,180,FOLLOW_180_in_ruleMonsterInst412648); 
 
                             newLeafNode(lv_inanimate_13_0, grammarAccess.getMonsterInst4Access().getInanimateInanimateKeyword_13_0());
                         
@@ -13419,7 +13430,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5209:1: (lv_coldblood_14_0= '#coldblood' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5210:3: lv_coldblood_14_0= '#coldblood'
                     {
-                    lv_coldblood_14_0=(Token)match(input,181,FOLLOW_181_in_ruleMonsterInst412684); 
+                    lv_coldblood_14_0=(Token)match(input,181,FOLLOW_181_in_ruleMonsterInst412685); 
 
                             newLeafNode(lv_coldblood_14_0, grammarAccess.getMonsterInst4Access().getColdbloodColdbloodKeyword_14_0());
                         
@@ -13447,7 +13458,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5225:1: (lv_coldblood_15_0= '#coldblooded' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5226:3: lv_coldblood_15_0= '#coldblooded'
                     {
-                    lv_coldblood_15_0=(Token)match(input,182,FOLLOW_182_in_ruleMonsterInst412721); 
+                    lv_coldblood_15_0=(Token)match(input,182,FOLLOW_182_in_ruleMonsterInst412722); 
 
                             newLeafNode(lv_coldblood_15_0, grammarAccess.getMonsterInst4Access().getColdbloodColdbloodedKeyword_15_0());
                         
@@ -13475,7 +13486,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5241:1: (lv_immortal_16_0= '#immortal' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5242:3: lv_immortal_16_0= '#immortal'
                     {
-                    lv_immortal_16_0=(Token)match(input,183,FOLLOW_183_in_ruleMonsterInst412758); 
+                    lv_immortal_16_0=(Token)match(input,183,FOLLOW_183_in_ruleMonsterInst412759); 
 
                             newLeafNode(lv_immortal_16_0, grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_16_0());
                         
@@ -13503,7 +13514,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5257:1: (lv_blind_17_0= '#blind' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5258:3: lv_blind_17_0= '#blind'
                     {
-                    lv_blind_17_0=(Token)match(input,184,FOLLOW_184_in_ruleMonsterInst412795); 
+                    lv_blind_17_0=(Token)match(input,184,FOLLOW_184_in_ruleMonsterInst412796); 
 
                             newLeafNode(lv_blind_17_0, grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_17_0());
                         
@@ -13531,7 +13542,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5273:1: (lv_unique_18_0= '#unique' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5274:3: lv_unique_18_0= '#unique'
                     {
-                    lv_unique_18_0=(Token)match(input,185,FOLLOW_185_in_ruleMonsterInst412832); 
+                    lv_unique_18_0=(Token)match(input,185,FOLLOW_185_in_ruleMonsterInst412833); 
 
                             newLeafNode(lv_unique_18_0, grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_18_0());
                         
@@ -13559,7 +13570,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5289:1: (lv_immobile_19_0= '#immobile' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5290:3: lv_immobile_19_0= '#immobile'
                     {
-                    lv_immobile_19_0=(Token)match(input,186,FOLLOW_186_in_ruleMonsterInst412869); 
+                    lv_immobile_19_0=(Token)match(input,186,FOLLOW_186_in_ruleMonsterInst412870); 
 
                             newLeafNode(lv_immobile_19_0, grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_19_0());
                         
@@ -13587,7 +13598,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5305:1: (lv_aquatic_20_0= '#aquatic' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5306:3: lv_aquatic_20_0= '#aquatic'
                     {
-                    lv_aquatic_20_0=(Token)match(input,187,FOLLOW_187_in_ruleMonsterInst412906); 
+                    lv_aquatic_20_0=(Token)match(input,187,FOLLOW_187_in_ruleMonsterInst412907); 
 
                             newLeafNode(lv_aquatic_20_0, grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_20_0());
                         
@@ -13615,7 +13626,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5321:1: (lv_amphibian_21_0= '#amphibian' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5322:3: lv_amphibian_21_0= '#amphibian'
                     {
-                    lv_amphibian_21_0=(Token)match(input,188,FOLLOW_188_in_ruleMonsterInst412943); 
+                    lv_amphibian_21_0=(Token)match(input,188,FOLLOW_188_in_ruleMonsterInst412944); 
 
                             newLeafNode(lv_amphibian_21_0, grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_21_0());
                         
@@ -13643,7 +13654,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5337:1: (lv_pooramphibian_22_0= '#pooramphibian' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5338:3: lv_pooramphibian_22_0= '#pooramphibian'
                     {
-                    lv_pooramphibian_22_0=(Token)match(input,189,FOLLOW_189_in_ruleMonsterInst412980); 
+                    lv_pooramphibian_22_0=(Token)match(input,189,FOLLOW_189_in_ruleMonsterInst412981); 
 
                             newLeafNode(lv_pooramphibian_22_0, grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_22_0());
                         
@@ -13671,7 +13682,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5353:1: (lv_flying_23_0= '#flying' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5354:3: lv_flying_23_0= '#flying'
                     {
-                    lv_flying_23_0=(Token)match(input,190,FOLLOW_190_in_ruleMonsterInst413017); 
+                    lv_flying_23_0=(Token)match(input,190,FOLLOW_190_in_ruleMonsterInst413018); 
 
                             newLeafNode(lv_flying_23_0, grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_23_0());
                         
@@ -13699,7 +13710,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5369:1: (lv_stormimmune_24_0= '#stormimmune' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5370:3: lv_stormimmune_24_0= '#stormimmune'
                     {
-                    lv_stormimmune_24_0=(Token)match(input,191,FOLLOW_191_in_ruleMonsterInst413054); 
+                    lv_stormimmune_24_0=(Token)match(input,191,FOLLOW_191_in_ruleMonsterInst413055); 
 
                             newLeafNode(lv_stormimmune_24_0, grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_24_0());
                         
@@ -13727,7 +13738,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5385:1: (lv_sailing_25_0= '#sailing' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5386:3: lv_sailing_25_0= '#sailing'
                     {
-                    lv_sailing_25_0=(Token)match(input,192,FOLLOW_192_in_ruleMonsterInst413091); 
+                    lv_sailing_25_0=(Token)match(input,192,FOLLOW_192_in_ruleMonsterInst413092); 
 
                             newLeafNode(lv_sailing_25_0, grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_25_0());
                         
@@ -13755,7 +13766,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5401:1: (lv_forestsurvival_26_0= '#forestsurvival' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5402:3: lv_forestsurvival_26_0= '#forestsurvival'
                     {
-                    lv_forestsurvival_26_0=(Token)match(input,193,FOLLOW_193_in_ruleMonsterInst413128); 
+                    lv_forestsurvival_26_0=(Token)match(input,193,FOLLOW_193_in_ruleMonsterInst413129); 
 
                             newLeafNode(lv_forestsurvival_26_0, grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_26_0());
                         
@@ -13783,7 +13794,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5417:1: (lv_mountainsurvival_27_0= '#mountainsurvival' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5418:3: lv_mountainsurvival_27_0= '#mountainsurvival'
                     {
-                    lv_mountainsurvival_27_0=(Token)match(input,194,FOLLOW_194_in_ruleMonsterInst413165); 
+                    lv_mountainsurvival_27_0=(Token)match(input,194,FOLLOW_194_in_ruleMonsterInst413166); 
 
                             newLeafNode(lv_mountainsurvival_27_0, grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_27_0());
                         
@@ -13811,7 +13822,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5433:1: (lv_swampsurvival_28_0= '#swampsurvival' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5434:3: lv_swampsurvival_28_0= '#swampsurvival'
                     {
-                    lv_swampsurvival_28_0=(Token)match(input,195,FOLLOW_195_in_ruleMonsterInst413202); 
+                    lv_swampsurvival_28_0=(Token)match(input,195,FOLLOW_195_in_ruleMonsterInst413203); 
 
                             newLeafNode(lv_swampsurvival_28_0, grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_28_0());
                         
@@ -13839,7 +13850,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5449:1: (lv_wastesurvival_29_0= '#wastesurvival' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5450:3: lv_wastesurvival_29_0= '#wastesurvival'
                     {
-                    lv_wastesurvival_29_0=(Token)match(input,196,FOLLOW_196_in_ruleMonsterInst413239); 
+                    lv_wastesurvival_29_0=(Token)match(input,196,FOLLOW_196_in_ruleMonsterInst413240); 
 
                             newLeafNode(lv_wastesurvival_29_0, grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_29_0());
                         
@@ -13867,7 +13878,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5465:1: (lv_illusion_30_0= '#illusion' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5466:3: lv_illusion_30_0= '#illusion'
                     {
-                    lv_illusion_30_0=(Token)match(input,197,FOLLOW_197_in_ruleMonsterInst413276); 
+                    lv_illusion_30_0=(Token)match(input,197,FOLLOW_197_in_ruleMonsterInst413277); 
 
                             newLeafNode(lv_illusion_30_0, grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_30_0());
                         
@@ -13895,7 +13906,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5481:1: (lv_spy_31_0= '#spy' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5482:3: lv_spy_31_0= '#spy'
                     {
-                    lv_spy_31_0=(Token)match(input,198,FOLLOW_198_in_ruleMonsterInst413313); 
+                    lv_spy_31_0=(Token)match(input,198,FOLLOW_198_in_ruleMonsterInst413314); 
 
                             newLeafNode(lv_spy_31_0, grammarAccess.getMonsterInst4Access().getSpySpyKeyword_31_0());
                         
@@ -13923,7 +13934,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5497:1: (lv_assassin_32_0= '#assassin' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5498:3: lv_assassin_32_0= '#assassin'
                     {
-                    lv_assassin_32_0=(Token)match(input,199,FOLLOW_199_in_ruleMonsterInst413350); 
+                    lv_assassin_32_0=(Token)match(input,199,FOLLOW_199_in_ruleMonsterInst413351); 
 
                             newLeafNode(lv_assassin_32_0, grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_32_0());
                         
@@ -13951,7 +13962,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5513:1: (lv_heal_33_0= '#heal' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5514:3: lv_heal_33_0= '#heal'
                     {
-                    lv_heal_33_0=(Token)match(input,200,FOLLOW_200_in_ruleMonsterInst413387); 
+                    lv_heal_33_0=(Token)match(input,200,FOLLOW_200_in_ruleMonsterInst413388); 
 
                             newLeafNode(lv_heal_33_0, grammarAccess.getMonsterInst4Access().getHealHealKeyword_33_0());
                         
@@ -13979,7 +13990,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5529:1: (lv_noheal_34_0= '#noheal' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5530:3: lv_noheal_34_0= '#noheal'
                     {
-                    lv_noheal_34_0=(Token)match(input,201,FOLLOW_201_in_ruleMonsterInst413424); 
+                    lv_noheal_34_0=(Token)match(input,201,FOLLOW_201_in_ruleMonsterInst413425); 
 
                             newLeafNode(lv_noheal_34_0, grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_34_0());
                         
@@ -14007,7 +14018,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5545:1: (lv_neednoteat_35_0= '#neednoteat' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5546:3: lv_neednoteat_35_0= '#neednoteat'
                     {
-                    lv_neednoteat_35_0=(Token)match(input,202,FOLLOW_202_in_ruleMonsterInst413461); 
+                    lv_neednoteat_35_0=(Token)match(input,202,FOLLOW_202_in_ruleMonsterInst413462); 
 
                             newLeafNode(lv_neednoteat_35_0, grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_35_0());
                         
@@ -14035,7 +14046,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5561:1: (lv_ethereal_36_0= '#ethereal' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5562:3: lv_ethereal_36_0= '#ethereal'
                     {
-                    lv_ethereal_36_0=(Token)match(input,203,FOLLOW_203_in_ruleMonsterInst413498); 
+                    lv_ethereal_36_0=(Token)match(input,203,FOLLOW_203_in_ruleMonsterInst413499); 
 
                             newLeafNode(lv_ethereal_36_0, grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_36_0());
                         
@@ -14063,7 +14074,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5577:1: (lv_trample_37_0= '#trample' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5578:3: lv_trample_37_0= '#trample'
                     {
-                    lv_trample_37_0=(Token)match(input,204,FOLLOW_204_in_ruleMonsterInst413535); 
+                    lv_trample_37_0=(Token)match(input,204,FOLLOW_204_in_ruleMonsterInst413536); 
 
                             newLeafNode(lv_trample_37_0, grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_37_0());
                         
@@ -14091,7 +14102,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5593:1: (lv_entangle_38_0= '#entangle' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5594:3: lv_entangle_38_0= '#entangle'
                     {
-                    lv_entangle_38_0=(Token)match(input,205,FOLLOW_205_in_ruleMonsterInst413572); 
+                    lv_entangle_38_0=(Token)match(input,205,FOLLOW_205_in_ruleMonsterInst413573); 
 
                             newLeafNode(lv_entangle_38_0, grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_38_0());
                         
@@ -14119,7 +14130,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5609:1: (lv_eyeloss_39_0= '#eyeloss' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5610:3: lv_eyeloss_39_0= '#eyeloss'
                     {
-                    lv_eyeloss_39_0=(Token)match(input,206,FOLLOW_206_in_ruleMonsterInst413609); 
+                    lv_eyeloss_39_0=(Token)match(input,206,FOLLOW_206_in_ruleMonsterInst413610); 
 
                             newLeafNode(lv_eyeloss_39_0, grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_39_0());
                         
@@ -14147,7 +14158,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5625:1: (lv_horrormark_40_0= '#horrormark' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5626:3: lv_horrormark_40_0= '#horrormark'
                     {
-                    lv_horrormark_40_0=(Token)match(input,207,FOLLOW_207_in_ruleMonsterInst413646); 
+                    lv_horrormark_40_0=(Token)match(input,207,FOLLOW_207_in_ruleMonsterInst413647); 
 
                             newLeafNode(lv_horrormark_40_0, grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_40_0());
                         
@@ -14175,7 +14186,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5641:1: (lv_poisonarmor_41_0= '#poisonarmor' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5642:3: lv_poisonarmor_41_0= '#poisonarmor'
                     {
-                    lv_poisonarmor_41_0=(Token)match(input,208,FOLLOW_208_in_ruleMonsterInst413683); 
+                    lv_poisonarmor_41_0=(Token)match(input,208,FOLLOW_208_in_ruleMonsterInst413684); 
 
                             newLeafNode(lv_poisonarmor_41_0, grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_41_0());
                         
@@ -14203,7 +14214,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5657:1: (lv_inquisitor_42_0= '#inquisitor' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5658:3: lv_inquisitor_42_0= '#inquisitor'
                     {
-                    lv_inquisitor_42_0=(Token)match(input,209,FOLLOW_209_in_ruleMonsterInst413720); 
+                    lv_inquisitor_42_0=(Token)match(input,209,FOLLOW_209_in_ruleMonsterInst413721); 
 
                             newLeafNode(lv_inquisitor_42_0, grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_42_0());
                         
@@ -14231,7 +14242,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5673:1: (lv_noitem_43_0= '#noitem' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5674:3: lv_noitem_43_0= '#noitem'
                     {
-                    lv_noitem_43_0=(Token)match(input,210,FOLLOW_210_in_ruleMonsterInst413757); 
+                    lv_noitem_43_0=(Token)match(input,210,FOLLOW_210_in_ruleMonsterInst413758); 
 
                             newLeafNode(lv_noitem_43_0, grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_43_0());
                         
@@ -14259,7 +14270,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5689:1: (lv_drainimmune_44_0= '#drainimmune' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5690:3: lv_drainimmune_44_0= '#drainimmune'
                     {
-                    lv_drainimmune_44_0=(Token)match(input,211,FOLLOW_211_in_ruleMonsterInst413794); 
+                    lv_drainimmune_44_0=(Token)match(input,211,FOLLOW_211_in_ruleMonsterInst413795); 
 
                             newLeafNode(lv_drainimmune_44_0, grammarAccess.getMonsterInst4Access().getDrainimmuneDrainimmuneKeyword_44_0());
                         
@@ -14287,7 +14298,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5705:1: (lv_noleader_45_0= '#noleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5706:3: lv_noleader_45_0= '#noleader'
                     {
-                    lv_noleader_45_0=(Token)match(input,212,FOLLOW_212_in_ruleMonsterInst413831); 
+                    lv_noleader_45_0=(Token)match(input,212,FOLLOW_212_in_ruleMonsterInst413832); 
 
                             newLeafNode(lv_noleader_45_0, grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_45_0());
                         
@@ -14315,7 +14326,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5721:1: (lv_poorleader_46_0= '#poorleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5722:3: lv_poorleader_46_0= '#poorleader'
                     {
-                    lv_poorleader_46_0=(Token)match(input,213,FOLLOW_213_in_ruleMonsterInst413868); 
+                    lv_poorleader_46_0=(Token)match(input,213,FOLLOW_213_in_ruleMonsterInst413869); 
 
                             newLeafNode(lv_poorleader_46_0, grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_46_0());
                         
@@ -14343,7 +14354,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5737:1: (lv_okleader_47_0= '#okleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5738:3: lv_okleader_47_0= '#okleader'
                     {
-                    lv_okleader_47_0=(Token)match(input,214,FOLLOW_214_in_ruleMonsterInst413905); 
+                    lv_okleader_47_0=(Token)match(input,214,FOLLOW_214_in_ruleMonsterInst413906); 
 
                             newLeafNode(lv_okleader_47_0, grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_47_0());
                         
@@ -14371,7 +14382,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5753:1: (lv_goodleader_48_0= '#goodleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5754:3: lv_goodleader_48_0= '#goodleader'
                     {
-                    lv_goodleader_48_0=(Token)match(input,215,FOLLOW_215_in_ruleMonsterInst413942); 
+                    lv_goodleader_48_0=(Token)match(input,215,FOLLOW_215_in_ruleMonsterInst413943); 
 
                             newLeafNode(lv_goodleader_48_0, grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_48_0());
                         
@@ -14399,7 +14410,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5769:1: (lv_expertleader_49_0= '#expertleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5770:3: lv_expertleader_49_0= '#expertleader'
                     {
-                    lv_expertleader_49_0=(Token)match(input,216,FOLLOW_216_in_ruleMonsterInst413979); 
+                    lv_expertleader_49_0=(Token)match(input,216,FOLLOW_216_in_ruleMonsterInst413980); 
 
                             newLeafNode(lv_expertleader_49_0, grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_49_0());
                         
@@ -14427,7 +14438,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5785:1: (lv_superiorleader_50_0= '#superiorleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5786:3: lv_superiorleader_50_0= '#superiorleader'
                     {
-                    lv_superiorleader_50_0=(Token)match(input,217,FOLLOW_217_in_ruleMonsterInst414016); 
+                    lv_superiorleader_50_0=(Token)match(input,217,FOLLOW_217_in_ruleMonsterInst414017); 
 
                             newLeafNode(lv_superiorleader_50_0, grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_50_0());
                         
@@ -14455,7 +14466,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5801:1: (lv_nomagicleader_51_0= '#nomagicleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5802:3: lv_nomagicleader_51_0= '#nomagicleader'
                     {
-                    lv_nomagicleader_51_0=(Token)match(input,218,FOLLOW_218_in_ruleMonsterInst414053); 
+                    lv_nomagicleader_51_0=(Token)match(input,218,FOLLOW_218_in_ruleMonsterInst414054); 
 
                             newLeafNode(lv_nomagicleader_51_0, grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_51_0());
                         
@@ -14483,7 +14494,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5817:1: (lv_poormagicleader_52_0= '#poormagicleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5818:3: lv_poormagicleader_52_0= '#poormagicleader'
                     {
-                    lv_poormagicleader_52_0=(Token)match(input,219,FOLLOW_219_in_ruleMonsterInst414090); 
+                    lv_poormagicleader_52_0=(Token)match(input,219,FOLLOW_219_in_ruleMonsterInst414091); 
 
                             newLeafNode(lv_poormagicleader_52_0, grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_52_0());
                         
@@ -14511,7 +14522,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5833:1: (lv_okmagicleader_53_0= '#okmagicleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5834:3: lv_okmagicleader_53_0= '#okmagicleader'
                     {
-                    lv_okmagicleader_53_0=(Token)match(input,220,FOLLOW_220_in_ruleMonsterInst414127); 
+                    lv_okmagicleader_53_0=(Token)match(input,220,FOLLOW_220_in_ruleMonsterInst414128); 
 
                             newLeafNode(lv_okmagicleader_53_0, grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_53_0());
                         
@@ -14539,7 +14550,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5849:1: (lv_goodmagicleader_54_0= '#goodmagicleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5850:3: lv_goodmagicleader_54_0= '#goodmagicleader'
                     {
-                    lv_goodmagicleader_54_0=(Token)match(input,221,FOLLOW_221_in_ruleMonsterInst414164); 
+                    lv_goodmagicleader_54_0=(Token)match(input,221,FOLLOW_221_in_ruleMonsterInst414165); 
 
                             newLeafNode(lv_goodmagicleader_54_0, grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_54_0());
                         
@@ -14567,7 +14578,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5865:1: (lv_expertmagicleader_55_0= '#expertmagicleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5866:3: lv_expertmagicleader_55_0= '#expertmagicleader'
                     {
-                    lv_expertmagicleader_55_0=(Token)match(input,222,FOLLOW_222_in_ruleMonsterInst414201); 
+                    lv_expertmagicleader_55_0=(Token)match(input,222,FOLLOW_222_in_ruleMonsterInst414202); 
 
                             newLeafNode(lv_expertmagicleader_55_0, grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_55_0());
                         
@@ -14595,7 +14606,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5881:1: (lv_superiormagicleader_56_0= '#superiormagicleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5882:3: lv_superiormagicleader_56_0= '#superiormagicleader'
                     {
-                    lv_superiormagicleader_56_0=(Token)match(input,223,FOLLOW_223_in_ruleMonsterInst414238); 
+                    lv_superiormagicleader_56_0=(Token)match(input,223,FOLLOW_223_in_ruleMonsterInst414239); 
 
                             newLeafNode(lv_superiormagicleader_56_0, grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_56_0());
                         
@@ -14623,7 +14634,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5897:1: (lv_noundeadleader_57_0= '#noundeadleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5898:3: lv_noundeadleader_57_0= '#noundeadleader'
                     {
-                    lv_noundeadleader_57_0=(Token)match(input,224,FOLLOW_224_in_ruleMonsterInst414275); 
+                    lv_noundeadleader_57_0=(Token)match(input,224,FOLLOW_224_in_ruleMonsterInst414276); 
 
                             newLeafNode(lv_noundeadleader_57_0, grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_57_0());
                         
@@ -14651,7 +14662,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5913:1: (lv_poorundeadleader_58_0= '#poorundeadleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5914:3: lv_poorundeadleader_58_0= '#poorundeadleader'
                     {
-                    lv_poorundeadleader_58_0=(Token)match(input,225,FOLLOW_225_in_ruleMonsterInst414312); 
+                    lv_poorundeadleader_58_0=(Token)match(input,225,FOLLOW_225_in_ruleMonsterInst414313); 
 
                             newLeafNode(lv_poorundeadleader_58_0, grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_58_0());
                         
@@ -14679,7 +14690,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5929:1: (lv_okundeadleader_59_0= '#okundeadleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5930:3: lv_okundeadleader_59_0= '#okundeadleader'
                     {
-                    lv_okundeadleader_59_0=(Token)match(input,226,FOLLOW_226_in_ruleMonsterInst414349); 
+                    lv_okundeadleader_59_0=(Token)match(input,226,FOLLOW_226_in_ruleMonsterInst414350); 
 
                             newLeafNode(lv_okundeadleader_59_0, grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_59_0());
                         
@@ -14707,7 +14718,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5945:1: (lv_goodundeadleader_60_0= '#goodundeadleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5946:3: lv_goodundeadleader_60_0= '#goodundeadleader'
                     {
-                    lv_goodundeadleader_60_0=(Token)match(input,227,FOLLOW_227_in_ruleMonsterInst414386); 
+                    lv_goodundeadleader_60_0=(Token)match(input,227,FOLLOW_227_in_ruleMonsterInst414387); 
 
                             newLeafNode(lv_goodundeadleader_60_0, grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_60_0());
                         
@@ -14735,7 +14746,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5961:1: (lv_expertundeadleader_61_0= '#expertundeadleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5962:3: lv_expertundeadleader_61_0= '#expertundeadleader'
                     {
-                    lv_expertundeadleader_61_0=(Token)match(input,228,FOLLOW_228_in_ruleMonsterInst414423); 
+                    lv_expertundeadleader_61_0=(Token)match(input,228,FOLLOW_228_in_ruleMonsterInst414424); 
 
                             newLeafNode(lv_expertundeadleader_61_0, grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_61_0());
                         
@@ -14763,7 +14774,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5977:1: (lv_superiorundeadleader_62_0= '#superiorundeadleader' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:5978:3: lv_superiorundeadleader_62_0= '#superiorundeadleader'
                     {
-                    lv_superiorundeadleader_62_0=(Token)match(input,229,FOLLOW_229_in_ruleMonsterInst414460); 
+                    lv_superiorundeadleader_62_0=(Token)match(input,229,FOLLOW_229_in_ruleMonsterInst414461); 
 
                             newLeafNode(lv_superiorundeadleader_62_0, grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_62_0());
                         
@@ -14815,13 +14826,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6001:2: iv_ruleMonsterInst5= ruleMonsterInst5 EOF
             {
              newCompositeNode(grammarAccess.getMonsterInst5Rule()); 
-            pushFollow(FOLLOW_ruleMonsterInst5_in_entryRuleMonsterInst514509);
+            pushFollow(FOLLOW_ruleMonsterInst5_in_entryRuleMonsterInst514510);
             iv_ruleMonsterInst5=ruleMonsterInst5();
 
             state._fsp--;
 
              current =iv_ruleMonsterInst5; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst514519); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst514520); 
 
             }
 
@@ -14872,121 +14883,121 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6012:1: ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_armor_1_0= '#armor' ) ) | ( (lv_onebattlespell_2_0= '#onebattlespell' ) ) | ( (lv_firstshape_3_0= '#firstshape' ) ) | ( (lv_secondshape_4_0= '#secondshape' ) ) | ( (lv_secondtmpshape_5_0= '#secondtmpshape' ) ) | ( (lv_shapechange_6_0= '#shapechange' ) ) | ( (lv_landshape_7_0= '#landshape' ) ) | ( (lv_watershape_8_0= '#watershape' ) ) | ( (lv_forestshape_9_0= '#forestshape' ) ) | ( (lv_plainshape_10_0= '#plainshape' ) ) | ( (lv_domsummon_11_0= '#domsummon' ) ) | ( (lv_domsummon2_12_0= '#domsummon2' ) ) | ( (lv_domsummon20_13_0= '#domsummon20' ) ) | ( (lv_makemonster1_14_0= '#makemonster1' ) ) | ( (lv_makemonster2_15_0= '#makemonster2' ) ) | ( (lv_makemonster3_16_0= '#makemonster3' ) ) | ( (lv_makemonster4_17_0= '#makemonster4' ) ) | ( (lv_makemonster5_18_0= '#makemonster5' ) ) | ( (lv_summon1_19_0= '#summon1' ) ) | ( (lv_summon5_20_0= '#summon5' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6012:1: ( ( (lv_weapon_0_0= '#weapon' ) ) | ( (lv_armor_1_0= '#armor' ) ) | ( (lv_onebattlespell_2_0= '#onebattlespell' ) ) | ( (lv_firstshape_3_0= '#firstshape' ) ) | ( (lv_secondshape_4_0= '#secondshape' ) ) | ( (lv_secondtmpshape_5_0= '#secondtmpshape' ) ) | ( (lv_shapechange_6_0= '#shapechange' ) ) | ( (lv_landshape_7_0= '#landshape' ) ) | ( (lv_watershape_8_0= '#watershape' ) ) | ( (lv_forestshape_9_0= '#forestshape' ) ) | ( (lv_plainshape_10_0= '#plainshape' ) ) | ( (lv_domsummon_11_0= '#domsummon' ) ) | ( (lv_domsummon2_12_0= '#domsummon2' ) ) | ( (lv_domsummon20_13_0= '#domsummon20' ) ) | ( (lv_makemonster1_14_0= '#makemonster1' ) ) | ( (lv_makemonster2_15_0= '#makemonster2' ) ) | ( (lv_makemonster3_16_0= '#makemonster3' ) ) | ( (lv_makemonster4_17_0= '#makemonster4' ) ) | ( (lv_makemonster5_18_0= '#makemonster5' ) ) | ( (lv_summon1_19_0= '#summon1' ) ) | ( (lv_summon5_20_0= '#summon5' ) ) )
-            int alt49=21;
+            int alt50=21;
             switch ( input.LA(1) ) {
             case 230:
                 {
-                alt49=1;
+                alt50=1;
                 }
                 break;
             case 231:
                 {
-                alt49=2;
+                alt50=2;
                 }
                 break;
             case 232:
                 {
-                alt49=3;
+                alt50=3;
                 }
                 break;
             case 233:
                 {
-                alt49=4;
+                alt50=4;
                 }
                 break;
             case 234:
                 {
-                alt49=5;
+                alt50=5;
                 }
                 break;
             case 235:
                 {
-                alt49=6;
+                alt50=6;
                 }
                 break;
             case 236:
                 {
-                alt49=7;
+                alt50=7;
                 }
                 break;
             case 237:
                 {
-                alt49=8;
+                alt50=8;
                 }
                 break;
             case 238:
                 {
-                alt49=9;
+                alt50=9;
                 }
                 break;
             case 239:
                 {
-                alt49=10;
+                alt50=10;
                 }
                 break;
             case 240:
                 {
-                alt49=11;
+                alt50=11;
                 }
                 break;
             case 241:
                 {
-                alt49=12;
+                alt50=12;
                 }
                 break;
             case 242:
                 {
-                alt49=13;
+                alt50=13;
                 }
                 break;
             case 243:
                 {
-                alt49=14;
+                alt50=14;
                 }
                 break;
             case 244:
                 {
-                alt49=15;
+                alt50=15;
                 }
                 break;
             case 245:
                 {
-                alt49=16;
+                alt50=16;
                 }
                 break;
             case 246:
                 {
-                alt49=17;
+                alt50=17;
                 }
                 break;
             case 247:
                 {
-                alt49=18;
+                alt50=18;
                 }
                 break;
             case 248:
                 {
-                alt49=19;
+                alt50=19;
                 }
                 break;
             case 249:
                 {
-                alt49=20;
+                alt50=20;
                 }
                 break;
             case 250:
                 {
-                alt49=21;
+                alt50=21;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 49, 0, input);
+                    new NoViableAltException("", 50, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt49) {
+            switch (alt50) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6012:2: ( (lv_weapon_0_0= '#weapon' ) )
                     {
@@ -14996,7 +15007,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6013:1: (lv_weapon_0_0= '#weapon' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6014:3: lv_weapon_0_0= '#weapon'
                     {
-                    lv_weapon_0_0=(Token)match(input,230,FOLLOW_230_in_ruleMonsterInst514562); 
+                    lv_weapon_0_0=(Token)match(input,230,FOLLOW_230_in_ruleMonsterInst514563); 
 
                             newLeafNode(lv_weapon_0_0, grammarAccess.getMonsterInst5Access().getWeaponWeaponKeyword_0_0());
                         
@@ -15024,7 +15035,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6029:1: (lv_armor_1_0= '#armor' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6030:3: lv_armor_1_0= '#armor'
                     {
-                    lv_armor_1_0=(Token)match(input,231,FOLLOW_231_in_ruleMonsterInst514599); 
+                    lv_armor_1_0=(Token)match(input,231,FOLLOW_231_in_ruleMonsterInst514600); 
 
                             newLeafNode(lv_armor_1_0, grammarAccess.getMonsterInst5Access().getArmorArmorKeyword_1_0());
                         
@@ -15052,7 +15063,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6045:1: (lv_onebattlespell_2_0= '#onebattlespell' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6046:3: lv_onebattlespell_2_0= '#onebattlespell'
                     {
-                    lv_onebattlespell_2_0=(Token)match(input,232,FOLLOW_232_in_ruleMonsterInst514636); 
+                    lv_onebattlespell_2_0=(Token)match(input,232,FOLLOW_232_in_ruleMonsterInst514637); 
 
                             newLeafNode(lv_onebattlespell_2_0, grammarAccess.getMonsterInst5Access().getOnebattlespellOnebattlespellKeyword_2_0());
                         
@@ -15080,7 +15091,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6061:1: (lv_firstshape_3_0= '#firstshape' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6062:3: lv_firstshape_3_0= '#firstshape'
                     {
-                    lv_firstshape_3_0=(Token)match(input,233,FOLLOW_233_in_ruleMonsterInst514673); 
+                    lv_firstshape_3_0=(Token)match(input,233,FOLLOW_233_in_ruleMonsterInst514674); 
 
                             newLeafNode(lv_firstshape_3_0, grammarAccess.getMonsterInst5Access().getFirstshapeFirstshapeKeyword_3_0());
                         
@@ -15108,7 +15119,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6077:1: (lv_secondshape_4_0= '#secondshape' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6078:3: lv_secondshape_4_0= '#secondshape'
                     {
-                    lv_secondshape_4_0=(Token)match(input,234,FOLLOW_234_in_ruleMonsterInst514710); 
+                    lv_secondshape_4_0=(Token)match(input,234,FOLLOW_234_in_ruleMonsterInst514711); 
 
                             newLeafNode(lv_secondshape_4_0, grammarAccess.getMonsterInst5Access().getSecondshapeSecondshapeKeyword_4_0());
                         
@@ -15136,7 +15147,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6093:1: (lv_secondtmpshape_5_0= '#secondtmpshape' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6094:3: lv_secondtmpshape_5_0= '#secondtmpshape'
                     {
-                    lv_secondtmpshape_5_0=(Token)match(input,235,FOLLOW_235_in_ruleMonsterInst514747); 
+                    lv_secondtmpshape_5_0=(Token)match(input,235,FOLLOW_235_in_ruleMonsterInst514748); 
 
                             newLeafNode(lv_secondtmpshape_5_0, grammarAccess.getMonsterInst5Access().getSecondtmpshapeSecondtmpshapeKeyword_5_0());
                         
@@ -15164,7 +15175,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6109:1: (lv_shapechange_6_0= '#shapechange' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6110:3: lv_shapechange_6_0= '#shapechange'
                     {
-                    lv_shapechange_6_0=(Token)match(input,236,FOLLOW_236_in_ruleMonsterInst514784); 
+                    lv_shapechange_6_0=(Token)match(input,236,FOLLOW_236_in_ruleMonsterInst514785); 
 
                             newLeafNode(lv_shapechange_6_0, grammarAccess.getMonsterInst5Access().getShapechangeShapechangeKeyword_6_0());
                         
@@ -15192,7 +15203,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6125:1: (lv_landshape_7_0= '#landshape' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6126:3: lv_landshape_7_0= '#landshape'
                     {
-                    lv_landshape_7_0=(Token)match(input,237,FOLLOW_237_in_ruleMonsterInst514821); 
+                    lv_landshape_7_0=(Token)match(input,237,FOLLOW_237_in_ruleMonsterInst514822); 
 
                             newLeafNode(lv_landshape_7_0, grammarAccess.getMonsterInst5Access().getLandshapeLandshapeKeyword_7_0());
                         
@@ -15220,7 +15231,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6141:1: (lv_watershape_8_0= '#watershape' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6142:3: lv_watershape_8_0= '#watershape'
                     {
-                    lv_watershape_8_0=(Token)match(input,238,FOLLOW_238_in_ruleMonsterInst514858); 
+                    lv_watershape_8_0=(Token)match(input,238,FOLLOW_238_in_ruleMonsterInst514859); 
 
                             newLeafNode(lv_watershape_8_0, grammarAccess.getMonsterInst5Access().getWatershapeWatershapeKeyword_8_0());
                         
@@ -15248,7 +15259,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6157:1: (lv_forestshape_9_0= '#forestshape' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6158:3: lv_forestshape_9_0= '#forestshape'
                     {
-                    lv_forestshape_9_0=(Token)match(input,239,FOLLOW_239_in_ruleMonsterInst514895); 
+                    lv_forestshape_9_0=(Token)match(input,239,FOLLOW_239_in_ruleMonsterInst514896); 
 
                             newLeafNode(lv_forestshape_9_0, grammarAccess.getMonsterInst5Access().getForestshapeForestshapeKeyword_9_0());
                         
@@ -15276,7 +15287,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6173:1: (lv_plainshape_10_0= '#plainshape' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6174:3: lv_plainshape_10_0= '#plainshape'
                     {
-                    lv_plainshape_10_0=(Token)match(input,240,FOLLOW_240_in_ruleMonsterInst514932); 
+                    lv_plainshape_10_0=(Token)match(input,240,FOLLOW_240_in_ruleMonsterInst514933); 
 
                             newLeafNode(lv_plainshape_10_0, grammarAccess.getMonsterInst5Access().getPlainshapePlainshapeKeyword_10_0());
                         
@@ -15304,7 +15315,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6189:1: (lv_domsummon_11_0= '#domsummon' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6190:3: lv_domsummon_11_0= '#domsummon'
                     {
-                    lv_domsummon_11_0=(Token)match(input,241,FOLLOW_241_in_ruleMonsterInst514969); 
+                    lv_domsummon_11_0=(Token)match(input,241,FOLLOW_241_in_ruleMonsterInst514970); 
 
                             newLeafNode(lv_domsummon_11_0, grammarAccess.getMonsterInst5Access().getDomsummonDomsummonKeyword_11_0());
                         
@@ -15332,7 +15343,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6205:1: (lv_domsummon2_12_0= '#domsummon2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6206:3: lv_domsummon2_12_0= '#domsummon2'
                     {
-                    lv_domsummon2_12_0=(Token)match(input,242,FOLLOW_242_in_ruleMonsterInst515006); 
+                    lv_domsummon2_12_0=(Token)match(input,242,FOLLOW_242_in_ruleMonsterInst515007); 
 
                             newLeafNode(lv_domsummon2_12_0, grammarAccess.getMonsterInst5Access().getDomsummon2Domsummon2Keyword_12_0());
                         
@@ -15360,7 +15371,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6221:1: (lv_domsummon20_13_0= '#domsummon20' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6222:3: lv_domsummon20_13_0= '#domsummon20'
                     {
-                    lv_domsummon20_13_0=(Token)match(input,243,FOLLOW_243_in_ruleMonsterInst515043); 
+                    lv_domsummon20_13_0=(Token)match(input,243,FOLLOW_243_in_ruleMonsterInst515044); 
 
                             newLeafNode(lv_domsummon20_13_0, grammarAccess.getMonsterInst5Access().getDomsummon20Domsummon20Keyword_13_0());
                         
@@ -15388,7 +15399,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6237:1: (lv_makemonster1_14_0= '#makemonster1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6238:3: lv_makemonster1_14_0= '#makemonster1'
                     {
-                    lv_makemonster1_14_0=(Token)match(input,244,FOLLOW_244_in_ruleMonsterInst515080); 
+                    lv_makemonster1_14_0=(Token)match(input,244,FOLLOW_244_in_ruleMonsterInst515081); 
 
                             newLeafNode(lv_makemonster1_14_0, grammarAccess.getMonsterInst5Access().getMakemonster1Makemonster1Keyword_14_0());
                         
@@ -15416,7 +15427,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6253:1: (lv_makemonster2_15_0= '#makemonster2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6254:3: lv_makemonster2_15_0= '#makemonster2'
                     {
-                    lv_makemonster2_15_0=(Token)match(input,245,FOLLOW_245_in_ruleMonsterInst515117); 
+                    lv_makemonster2_15_0=(Token)match(input,245,FOLLOW_245_in_ruleMonsterInst515118); 
 
                             newLeafNode(lv_makemonster2_15_0, grammarAccess.getMonsterInst5Access().getMakemonster2Makemonster2Keyword_15_0());
                         
@@ -15444,7 +15455,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6269:1: (lv_makemonster3_16_0= '#makemonster3' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6270:3: lv_makemonster3_16_0= '#makemonster3'
                     {
-                    lv_makemonster3_16_0=(Token)match(input,246,FOLLOW_246_in_ruleMonsterInst515154); 
+                    lv_makemonster3_16_0=(Token)match(input,246,FOLLOW_246_in_ruleMonsterInst515155); 
 
                             newLeafNode(lv_makemonster3_16_0, grammarAccess.getMonsterInst5Access().getMakemonster3Makemonster3Keyword_16_0());
                         
@@ -15472,7 +15483,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6285:1: (lv_makemonster4_17_0= '#makemonster4' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6286:3: lv_makemonster4_17_0= '#makemonster4'
                     {
-                    lv_makemonster4_17_0=(Token)match(input,247,FOLLOW_247_in_ruleMonsterInst515191); 
+                    lv_makemonster4_17_0=(Token)match(input,247,FOLLOW_247_in_ruleMonsterInst515192); 
 
                             newLeafNode(lv_makemonster4_17_0, grammarAccess.getMonsterInst5Access().getMakemonster4Makemonster4Keyword_17_0());
                         
@@ -15500,7 +15511,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6301:1: (lv_makemonster5_18_0= '#makemonster5' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6302:3: lv_makemonster5_18_0= '#makemonster5'
                     {
-                    lv_makemonster5_18_0=(Token)match(input,248,FOLLOW_248_in_ruleMonsterInst515228); 
+                    lv_makemonster5_18_0=(Token)match(input,248,FOLLOW_248_in_ruleMonsterInst515229); 
 
                             newLeafNode(lv_makemonster5_18_0, grammarAccess.getMonsterInst5Access().getMakemonster5Makemonster5Keyword_18_0());
                         
@@ -15528,7 +15539,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6317:1: (lv_summon1_19_0= '#summon1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6318:3: lv_summon1_19_0= '#summon1'
                     {
-                    lv_summon1_19_0=(Token)match(input,249,FOLLOW_249_in_ruleMonsterInst515265); 
+                    lv_summon1_19_0=(Token)match(input,249,FOLLOW_249_in_ruleMonsterInst515266); 
 
                             newLeafNode(lv_summon1_19_0, grammarAccess.getMonsterInst5Access().getSummon1Summon1Keyword_19_0());
                         
@@ -15556,7 +15567,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6333:1: (lv_summon5_20_0= '#summon5' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6334:3: lv_summon5_20_0= '#summon5'
                     {
-                    lv_summon5_20_0=(Token)match(input,250,FOLLOW_250_in_ruleMonsterInst515302); 
+                    lv_summon5_20_0=(Token)match(input,250,FOLLOW_250_in_ruleMonsterInst515303); 
 
                             newLeafNode(lv_summon5_20_0, grammarAccess.getMonsterInst5Access().getSummon5Summon5Keyword_20_0());
                         
@@ -15608,13 +15619,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6357:2: iv_ruleMonsterInst6= ruleMonsterInst6 EOF
             {
              newCompositeNode(grammarAccess.getMonsterInst6Rule()); 
-            pushFollow(FOLLOW_ruleMonsterInst6_in_entryRuleMonsterInst615351);
+            pushFollow(FOLLOW_ruleMonsterInst6_in_entryRuleMonsterInst615352);
             iv_ruleMonsterInst6=ruleMonsterInst6();
 
             state._fsp--;
 
              current =iv_ruleMonsterInst6; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst615361); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMonsterInst615362); 
 
             }
 
@@ -15647,31 +15658,31 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6368:1: ( ( (lv_stealthy_0_0= '#stealthy' ) ) | ( (lv_heat_1_0= '#heat' ) ) | ( (lv_cold_2_0= '#cold' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6368:1: ( ( (lv_stealthy_0_0= '#stealthy' ) ) | ( (lv_heat_1_0= '#heat' ) ) | ( (lv_cold_2_0= '#cold' ) ) )
-            int alt50=3;
+            int alt51=3;
             switch ( input.LA(1) ) {
             case 251:
                 {
-                alt50=1;
+                alt51=1;
                 }
                 break;
             case 252:
                 {
-                alt50=2;
+                alt51=2;
                 }
                 break;
             case 74:
                 {
-                alt50=3;
+                alt51=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
+                    new NoViableAltException("", 51, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6368:2: ( (lv_stealthy_0_0= '#stealthy' ) )
                     {
@@ -15681,7 +15692,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6369:1: (lv_stealthy_0_0= '#stealthy' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6370:3: lv_stealthy_0_0= '#stealthy'
                     {
-                    lv_stealthy_0_0=(Token)match(input,251,FOLLOW_251_in_ruleMonsterInst615404); 
+                    lv_stealthy_0_0=(Token)match(input,251,FOLLOW_251_in_ruleMonsterInst615405); 
 
                             newLeafNode(lv_stealthy_0_0, grammarAccess.getMonsterInst6Access().getStealthyStealthyKeyword_0_0());
                         
@@ -15709,7 +15720,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6385:1: (lv_heat_1_0= '#heat' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6386:3: lv_heat_1_0= '#heat'
                     {
-                    lv_heat_1_0=(Token)match(input,252,FOLLOW_252_in_ruleMonsterInst615441); 
+                    lv_heat_1_0=(Token)match(input,252,FOLLOW_252_in_ruleMonsterInst615442); 
 
                             newLeafNode(lv_heat_1_0, grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_1_0());
                         
@@ -15737,7 +15748,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6401:1: (lv_cold_2_0= '#cold' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6402:3: lv_cold_2_0= '#cold'
                     {
-                    lv_cold_2_0=(Token)match(input,74,FOLLOW_74_in_ruleMonsterInst615478); 
+                    lv_cold_2_0=(Token)match(input,74,FOLLOW_74_in_ruleMonsterInst615479); 
 
                             newLeafNode(lv_cold_2_0, grammarAccess.getMonsterInst6Access().getColdColdKeyword_2_0());
                         
@@ -15789,13 +15800,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6425:2: iv_ruleSpell= ruleSpell EOF
             {
              newCompositeNode(grammarAccess.getSpellRule()); 
-            pushFollow(FOLLOW_ruleSpell_in_entryRuleSpell15527);
+            pushFollow(FOLLOW_ruleSpell_in_entryRuleSpell15528);
             iv_ruleSpell=ruleSpell();
 
             state._fsp--;
 
              current =iv_ruleSpell; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpell15537); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpell15538); 
 
             }
 
@@ -15831,42 +15842,42 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6436:1: (this_SelectSpellById_0= ruleSelectSpellById | this_SelectSpellByName_1= ruleSelectSpellByName | this_NewSpell_2= ruleNewSpell )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6436:1: (this_SelectSpellById_0= ruleSelectSpellById | this_SelectSpellByName_1= ruleSelectSpellByName | this_NewSpell_2= ruleNewSpell )
-            int alt51=3;
-            int LA51_0 = input.LA(1);
+            int alt52=3;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA51_0==253) ) {
-                int LA51_1 = input.LA(2);
+            if ( (LA52_0==253) ) {
+                int LA52_1 = input.LA(2);
 
-                if ( (LA51_1==RULE_STRING) ) {
-                    alt51=2;
+                if ( (LA52_1==RULE_STRING) ) {
+                    alt52=2;
                 }
-                else if ( (LA51_1==RULE_INT) ) {
-                    alt51=1;
+                else if ( (LA52_1==RULE_INT) ) {
+                    alt52=1;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 51, 1, input);
+                        new NoViableAltException("", 52, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA51_0==254) ) {
-                alt51=3;
+            else if ( (LA52_0==254) ) {
+                alt52=3;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 51, 0, input);
+                    new NoViableAltException("", 52, 0, input);
 
                 throw nvae;
             }
-            switch (alt51) {
+            switch (alt52) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6437:5: this_SelectSpellById_0= ruleSelectSpellById
                     {
                      
                             newCompositeNode(grammarAccess.getSpellAccess().getSelectSpellByIdParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleSelectSpellById_in_ruleSpell15584);
+                    pushFollow(FOLLOW_ruleSelectSpellById_in_ruleSpell15585);
                     this_SelectSpellById_0=ruleSelectSpellById();
 
                     state._fsp--;
@@ -15884,7 +15895,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSpellAccess().getSelectSpellByNameParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleSelectSpellByName_in_ruleSpell15611);
+                    pushFollow(FOLLOW_ruleSelectSpellByName_in_ruleSpell15612);
                     this_SelectSpellByName_1=ruleSelectSpellByName();
 
                     state._fsp--;
@@ -15902,7 +15913,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSpellAccess().getNewSpellParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleNewSpell_in_ruleSpell15638);
+                    pushFollow(FOLLOW_ruleNewSpell_in_ruleSpell15639);
                     this_NewSpell_2=ruleNewSpell();
 
                     state._fsp--;
@@ -15947,13 +15958,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6475:2: iv_ruleSelectSpellById= ruleSelectSpellById EOF
             {
              newCompositeNode(grammarAccess.getSelectSpellByIdRule()); 
-            pushFollow(FOLLOW_ruleSelectSpellById_in_entryRuleSelectSpellById15673);
+            pushFollow(FOLLOW_ruleSelectSpellById_in_entryRuleSelectSpellById15674);
             iv_ruleSelectSpellById=ruleSelectSpellById();
 
             state._fsp--;
 
              current =iv_ruleSelectSpellById; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectSpellById15683); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectSpellById15684); 
 
             }
 
@@ -15991,7 +16002,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6486:1: (otherlv_0= '#selectspell' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleSpellMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6486:3: otherlv_0= '#selectspell' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleSpellMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,253,FOLLOW_253_in_ruleSelectSpellById15720); 
+            otherlv_0=(Token)match(input,253,FOLLOW_253_in_ruleSelectSpellById15721); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSelectSpellByIdAccess().getSelectspellKeyword_0());
                 
@@ -16001,7 +16012,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6491:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6492:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectSpellById15737); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectSpellById15738); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSelectSpellByIdAccess().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -16022,21 +16033,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6508:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop52:
+            loop53:
             do {
-                int alt52=2;
-                int LA52_0 = input.LA(1);
+                int alt53=2;
+                int LA53_0 = input.LA(1);
 
-                if ( (LA52_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt52=1;
+                if ( (LA53_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt53=1;
                 }
 
 
-                switch (alt52) {
+                switch (alt53) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6508:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSpellById15754); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSpellById15755); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSelectSpellByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -16045,22 +16056,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop52;
+            	    break loop53;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6512:3: ( (lv_mods_3_0= ruleSpellMods ) )*
-            loop53:
+            loop54:
             do {
-                int alt53=2;
-                int LA53_0 = input.LA(1);
+                int alt54=2;
+                int LA54_0 = input.LA(1);
 
-                if ( (LA53_0==36||LA53_0==48||(LA53_0>=50 && LA53_0<=51)||LA53_0==54||LA53_0==89||LA53_0==167||(LA53_0>=255 && LA53_0<=268)) ) {
-                    alt53=1;
+                if ( (LA54_0==36||LA54_0==48||(LA54_0>=50 && LA54_0<=51)||LA54_0==54||LA54_0==89||LA54_0==167||(LA54_0>=255 && LA54_0<=268)) ) {
+                    alt54=1;
                 }
 
 
-                switch (alt53) {
+                switch (alt54) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6513:1: (lv_mods_3_0= ruleSpellMods )
             	    {
@@ -16070,7 +16081,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSelectSpellByIdAccess().getModsSpellModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleSpellMods_in_ruleSelectSpellById15776);
+            	    pushFollow(FOLLOW_ruleSpellMods_in_ruleSelectSpellById15777);
             	    lv_mods_3_0=ruleSpellMods();
 
             	    state._fsp--;
@@ -16094,11 +16105,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop53;
+            	    break loop54;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectSpellById15789); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectSpellById15790); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSelectSpellByIdAccess().getEndKeyword_4());
                 
@@ -16135,13 +16146,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6544:2: iv_ruleSelectSpellByName= ruleSelectSpellByName EOF
             {
              newCompositeNode(grammarAccess.getSelectSpellByNameRule()); 
-            pushFollow(FOLLOW_ruleSelectSpellByName_in_entryRuleSelectSpellByName15825);
+            pushFollow(FOLLOW_ruleSelectSpellByName_in_entryRuleSelectSpellByName15826);
             iv_ruleSelectSpellByName=ruleSelectSpellByName();
 
             state._fsp--;
 
              current =iv_ruleSelectSpellByName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectSpellByName15835); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectSpellByName15836); 
 
             }
 
@@ -16179,7 +16190,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6555:1: (otherlv_0= '#selectspell' ( (lv_value_1_0= RULE_STRING ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleSpellMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6555:3: otherlv_0= '#selectspell' ( (lv_value_1_0= RULE_STRING ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleSpellMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,253,FOLLOW_253_in_ruleSelectSpellByName15872); 
+            otherlv_0=(Token)match(input,253,FOLLOW_253_in_ruleSelectSpellByName15873); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSelectSpellByNameAccess().getSelectspellKeyword_0());
                 
@@ -16189,7 +16200,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6560:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6561:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSelectSpellByName15889); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSelectSpellByName15890); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSelectSpellByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -16210,21 +16221,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6577:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop54:
+            loop55:
             do {
-                int alt54=2;
-                int LA54_0 = input.LA(1);
+                int alt55=2;
+                int LA55_0 = input.LA(1);
 
-                if ( (LA54_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt54=1;
+                if ( (LA55_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt55=1;
                 }
 
 
-                switch (alt54) {
+                switch (alt55) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6577:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSpellByName15906); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSpellByName15907); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSelectSpellByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -16233,22 +16244,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop54;
+            	    break loop55;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6581:3: ( (lv_mods_3_0= ruleSpellMods ) )*
-            loop55:
+            loop56:
             do {
-                int alt55=2;
-                int LA55_0 = input.LA(1);
+                int alt56=2;
+                int LA56_0 = input.LA(1);
 
-                if ( (LA55_0==36||LA55_0==48||(LA55_0>=50 && LA55_0<=51)||LA55_0==54||LA55_0==89||LA55_0==167||(LA55_0>=255 && LA55_0<=268)) ) {
-                    alt55=1;
+                if ( (LA56_0==36||LA56_0==48||(LA56_0>=50 && LA56_0<=51)||LA56_0==54||LA56_0==89||LA56_0==167||(LA56_0>=255 && LA56_0<=268)) ) {
+                    alt56=1;
                 }
 
 
-                switch (alt55) {
+                switch (alt56) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6582:1: (lv_mods_3_0= ruleSpellMods )
             	    {
@@ -16258,7 +16269,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSelectSpellByNameAccess().getModsSpellModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleSpellMods_in_ruleSelectSpellByName15928);
+            	    pushFollow(FOLLOW_ruleSpellMods_in_ruleSelectSpellByName15929);
             	    lv_mods_3_0=ruleSpellMods();
 
             	    state._fsp--;
@@ -16282,11 +16293,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop55;
+            	    break loop56;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectSpellByName15941); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectSpellByName15942); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSelectSpellByNameAccess().getEndKeyword_4());
                 
@@ -16323,13 +16334,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6613:2: iv_ruleNewSpell= ruleNewSpell EOF
             {
              newCompositeNode(grammarAccess.getNewSpellRule()); 
-            pushFollow(FOLLOW_ruleNewSpell_in_entryRuleNewSpell15977);
+            pushFollow(FOLLOW_ruleNewSpell_in_entryRuleNewSpell15978);
             iv_ruleNewSpell=ruleNewSpell();
 
             state._fsp--;
 
              current =iv_ruleNewSpell; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNewSpell15987); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNewSpell15988); 
 
             }
 
@@ -16366,26 +16377,26 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6624:1: (otherlv_0= '#newspell' (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )* ( (lv_mods_2_0= ruleSpellMods ) )* otherlv_3= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6624:3: otherlv_0= '#newspell' (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )* ( (lv_mods_2_0= ruleSpellMods ) )* otherlv_3= '#end'
             {
-            otherlv_0=(Token)match(input,254,FOLLOW_254_in_ruleNewSpell16024); 
+            otherlv_0=(Token)match(input,254,FOLLOW_254_in_ruleNewSpell16025); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getNewSpellAccess().getNewspellKeyword_0());
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6628:1: (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )*
-            loop56:
+            loop57:
             do {
-                int alt56=2;
-                int LA56_0 = input.LA(1);
+                int alt57=2;
+                int LA57_0 = input.LA(1);
 
-                if ( (LA56_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt56=1;
+                if ( (LA57_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt57=1;
                 }
 
 
-                switch (alt56) {
+                switch (alt57) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6628:2: this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewSpell16036); 
+            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewSpell16037); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_1, grammarAccess.getNewSpellAccess().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             	        
@@ -16394,22 +16405,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop56;
+            	    break loop57;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6632:3: ( (lv_mods_2_0= ruleSpellMods ) )*
-            loop57:
+            loop58:
             do {
-                int alt57=2;
-                int LA57_0 = input.LA(1);
+                int alt58=2;
+                int LA58_0 = input.LA(1);
 
-                if ( (LA57_0==36||LA57_0==48||(LA57_0>=50 && LA57_0<=51)||LA57_0==54||LA57_0==89||LA57_0==167||(LA57_0>=255 && LA57_0<=268)) ) {
-                    alt57=1;
+                if ( (LA58_0==36||LA58_0==48||(LA58_0>=50 && LA58_0<=51)||LA58_0==54||LA58_0==89||LA58_0==167||(LA58_0>=255 && LA58_0<=268)) ) {
+                    alt58=1;
                 }
 
 
-                switch (alt57) {
+                switch (alt58) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6633:1: (lv_mods_2_0= ruleSpellMods )
             	    {
@@ -16419,7 +16430,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getNewSpellAccess().getModsSpellModsParserRuleCall_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleSpellMods_in_ruleNewSpell16058);
+            	    pushFollow(FOLLOW_ruleSpellMods_in_ruleNewSpell16059);
             	    lv_mods_2_0=ruleSpellMods();
 
             	    state._fsp--;
@@ -16443,11 +16454,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop57;
+            	    break loop58;
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,33,FOLLOW_33_in_ruleNewSpell16071); 
+            otherlv_3=(Token)match(input,33,FOLLOW_33_in_ruleNewSpell16072); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getNewSpellAccess().getEndKeyword_3());
                 
@@ -16484,13 +16495,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6664:2: iv_ruleSpellMods= ruleSpellMods EOF
             {
              newCompositeNode(grammarAccess.getSpellModsRule()); 
-            pushFollow(FOLLOW_ruleSpellMods_in_entryRuleSpellMods16107);
+            pushFollow(FOLLOW_ruleSpellMods_in_entryRuleSpellMods16108);
             iv_ruleSpellMods=ruleSpellMods();
 
             state._fsp--;
 
              current =iv_ruleSpellMods; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellMods16117); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellMods16118); 
 
             }
 
@@ -16530,12 +16541,12 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6675:1: (this_SpellPattern1_0= ruleSpellPattern1 | this_SpellPattern2_1= ruleSpellPattern2 | this_SpellPattern3_2= ruleSpellPattern3 | this_SpellPattern4_3= ruleSpellPattern4 | this_SpellPattern5_4= ruleSpellPattern5 )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6675:1: (this_SpellPattern1_0= ruleSpellPattern1 | this_SpellPattern2_1= ruleSpellPattern2 | this_SpellPattern3_2= ruleSpellPattern3 | this_SpellPattern4_3= ruleSpellPattern4 | this_SpellPattern5_4= ruleSpellPattern5 )
-            int alt58=5;
+            int alt59=5;
             switch ( input.LA(1) ) {
             case 36:
             case 89:
                 {
-                alt58=1;
+                alt59=1;
                 }
                 break;
             case 48:
@@ -16553,41 +16564,41 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 263:
             case 264:
                 {
-                alt58=2;
+                alt59=2;
                 }
                 break;
             case 265:
             case 266:
                 {
-                alt58=3;
+                alt59=3;
                 }
                 break;
             case 167:
                 {
-                alt58=4;
+                alt59=4;
                 }
                 break;
             case 267:
             case 268:
                 {
-                alt58=5;
+                alt59=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 58, 0, input);
+                    new NoViableAltException("", 59, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt58) {
+            switch (alt59) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6676:5: this_SpellPattern1_0= ruleSpellPattern1
                     {
                      
                             newCompositeNode(grammarAccess.getSpellModsAccess().getSpellPattern1ParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleSpellPattern1_in_ruleSpellMods16164);
+                    pushFollow(FOLLOW_ruleSpellPattern1_in_ruleSpellMods16165);
                     this_SpellPattern1_0=ruleSpellPattern1();
 
                     state._fsp--;
@@ -16605,7 +16616,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSpellModsAccess().getSpellPattern2ParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleSpellPattern2_in_ruleSpellMods16191);
+                    pushFollow(FOLLOW_ruleSpellPattern2_in_ruleSpellMods16192);
                     this_SpellPattern2_1=ruleSpellPattern2();
 
                     state._fsp--;
@@ -16623,7 +16634,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSpellModsAccess().getSpellPattern3ParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleSpellPattern3_in_ruleSpellMods16218);
+                    pushFollow(FOLLOW_ruleSpellPattern3_in_ruleSpellMods16219);
                     this_SpellPattern3_2=ruleSpellPattern3();
 
                     state._fsp--;
@@ -16641,7 +16652,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSpellModsAccess().getSpellPattern4ParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleSpellPattern4_in_ruleSpellMods16245);
+                    pushFollow(FOLLOW_ruleSpellPattern4_in_ruleSpellMods16246);
                     this_SpellPattern4_3=ruleSpellPattern4();
 
                     state._fsp--;
@@ -16659,7 +16670,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSpellModsAccess().getSpellPattern5ParserRuleCall_4()); 
                         
-                    pushFollow(FOLLOW_ruleSpellPattern5_in_ruleSpellMods16272);
+                    pushFollow(FOLLOW_ruleSpellPattern5_in_ruleSpellMods16273);
                     this_SpellPattern5_4=ruleSpellPattern5();
 
                     state._fsp--;
@@ -16704,13 +16715,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6734:2: iv_ruleSpellPattern1= ruleSpellPattern1 EOF
             {
              newCompositeNode(grammarAccess.getSpellPattern1Rule()); 
-            pushFollow(FOLLOW_ruleSpellPattern1_in_entryRuleSpellPattern116307);
+            pushFollow(FOLLOW_ruleSpellPattern1_in_entryRuleSpellPattern116308);
             iv_ruleSpellPattern1=ruleSpellPattern1();
 
             state._fsp--;
 
              current =iv_ruleSpellPattern1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellPattern116317); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellPattern116318); 
 
             }
 
@@ -16749,7 +16760,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSpellPattern1Access().getSpellInst1ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleSpellInst1_in_ruleSpellPattern116364);
+            pushFollow(FOLLOW_ruleSpellInst1_in_ruleSpellPattern116365);
             this_SpellInst1_0=ruleSpellInst1();
 
             state._fsp--;
@@ -16764,7 +16775,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6755:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6756:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSpellPattern116380); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSpellPattern116381); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSpellPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -16785,21 +16796,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6772:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop59:
+            loop60:
             do {
-                int alt59=2;
-                int LA59_0 = input.LA(1);
+                int alt60=2;
+                int LA60_0 = input.LA(1);
 
-                if ( (LA59_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt59=1;
+                if ( (LA60_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt60=1;
                 }
 
 
-                switch (alt59) {
+                switch (alt60) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6772:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern116397); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern116398); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSpellPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -16808,7 +16819,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop59;
+            	    break loop60;
                 }
             } while (true);
 
@@ -16845,13 +16856,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6786:2: iv_ruleSpellPattern2= ruleSpellPattern2 EOF
             {
              newCompositeNode(grammarAccess.getSpellPattern2Rule()); 
-            pushFollow(FOLLOW_ruleSpellPattern2_in_entryRuleSpellPattern216434);
+            pushFollow(FOLLOW_ruleSpellPattern2_in_entryRuleSpellPattern216435);
             iv_ruleSpellPattern2=ruleSpellPattern2();
 
             state._fsp--;
 
              current =iv_ruleSpellPattern2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellPattern216444); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellPattern216445); 
 
             }
 
@@ -16890,7 +16901,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSpellPattern2Access().getSpellInst2ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleSpellInst2_in_ruleSpellPattern216491);
+            pushFollow(FOLLOW_ruleSpellInst2_in_ruleSpellPattern216492);
             this_SpellInst2_0=ruleSpellInst2();
 
             state._fsp--;
@@ -16905,7 +16916,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6807:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6808:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSpellPattern216507); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSpellPattern216508); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSpellPattern2Access().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -16926,21 +16937,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6824:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop60:
+            loop61:
             do {
-                int alt60=2;
-                int LA60_0 = input.LA(1);
+                int alt61=2;
+                int LA61_0 = input.LA(1);
 
-                if ( (LA60_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt60=1;
+                if ( (LA61_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt61=1;
                 }
 
 
-                switch (alt60) {
+                switch (alt61) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6824:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern216524); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern216525); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSpellPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -16949,7 +16960,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop60;
+            	    break loop61;
                 }
             } while (true);
 
@@ -16986,13 +16997,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6838:2: iv_ruleSpellPattern3= ruleSpellPattern3 EOF
             {
              newCompositeNode(grammarAccess.getSpellPattern3Rule()); 
-            pushFollow(FOLLOW_ruleSpellPattern3_in_entryRuleSpellPattern316561);
+            pushFollow(FOLLOW_ruleSpellPattern3_in_entryRuleSpellPattern316562);
             iv_ruleSpellPattern3=ruleSpellPattern3();
 
             state._fsp--;
 
              current =iv_ruleSpellPattern3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellPattern316571); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellPattern316572); 
 
             }
 
@@ -17032,7 +17043,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSpellPattern3Access().getSpellInst3ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleSpellInst3_in_ruleSpellPattern316618);
+            pushFollow(FOLLOW_ruleSpellInst3_in_ruleSpellPattern316619);
             this_SpellInst3_0=ruleSpellInst3();
 
             state._fsp--;
@@ -17047,7 +17058,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6859:1: (lv_value1_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6860:3: lv_value1_1_0= RULE_INT
             {
-            lv_value1_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSpellPattern316634); 
+            lv_value1_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSpellPattern316635); 
 
             			newLeafNode(lv_value1_1_0, grammarAccess.getSpellPattern3Access().getValue1INTTerminalRuleCall_1_0()); 
             		
@@ -17073,7 +17084,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6877:1: (lv_value2_2_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6878:3: lv_value2_2_0= RULE_INT
             {
-            lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSpellPattern316656); 
+            lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSpellPattern316657); 
 
             			newLeafNode(lv_value2_2_0, grammarAccess.getSpellPattern3Access().getValue2INTTerminalRuleCall_2_0()); 
             		
@@ -17094,21 +17105,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6894:2: (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
-            loop61:
+            loop62:
             do {
-                int alt61=2;
-                int LA61_0 = input.LA(1);
+                int alt62=2;
+                int LA62_0 = input.LA(1);
 
-                if ( (LA61_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt61=1;
+                if ( (LA62_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt62=1;
                 }
 
 
-                switch (alt61) {
+                switch (alt62) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6894:3: this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern316673); 
+            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern316674); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_3, grammarAccess.getSpellPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3()); 
             	        
@@ -17117,7 +17128,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop61;
+            	    break loop62;
                 }
             } while (true);
 
@@ -17154,13 +17165,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6908:2: iv_ruleSpellPattern4= ruleSpellPattern4 EOF
             {
              newCompositeNode(grammarAccess.getSpellPattern4Rule()); 
-            pushFollow(FOLLOW_ruleSpellPattern4_in_entryRuleSpellPattern416710);
+            pushFollow(FOLLOW_ruleSpellPattern4_in_entryRuleSpellPattern416711);
             iv_ruleSpellPattern4=ruleSpellPattern4();
 
             state._fsp--;
 
              current =iv_ruleSpellPattern4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellPattern416720); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellPattern416721); 
 
             }
 
@@ -17198,7 +17209,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSpellPattern4Access().getSpellInst4ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleSpellInst4_in_ruleSpellPattern416767);
+            pushFollow(FOLLOW_ruleSpellInst4_in_ruleSpellPattern416768);
             this_SpellInst4_0=ruleSpellInst4();
 
             state._fsp--;
@@ -17208,21 +17219,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6928:1: (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )*
-            loop62:
+            loop63:
             do {
-                int alt62=2;
-                int LA62_0 = input.LA(1);
+                int alt63=2;
+                int LA63_0 = input.LA(1);
 
-                if ( (LA62_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt62=1;
+                if ( (LA63_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt63=1;
                 }
 
 
-                switch (alt62) {
+                switch (alt63) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6928:2: this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern416778); 
+            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern416779); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_1, grammarAccess.getSpellPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             	        
@@ -17231,7 +17242,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop62;
+            	    break loop63;
                 }
             } while (true);
 
@@ -17268,13 +17279,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6942:2: iv_ruleSpellPattern5= ruleSpellPattern5 EOF
             {
              newCompositeNode(grammarAccess.getSpellPattern5Rule()); 
-            pushFollow(FOLLOW_ruleSpellPattern5_in_entryRuleSpellPattern516815);
+            pushFollow(FOLLOW_ruleSpellPattern5_in_entryRuleSpellPattern516816);
             iv_ruleSpellPattern5=ruleSpellPattern5();
 
             state._fsp--;
 
              current =iv_ruleSpellPattern5; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellPattern516825); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellPattern516826); 
 
             }
 
@@ -17314,7 +17325,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSpellPattern5Access().getSpellInst5ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleSpellInst5_in_ruleSpellPattern516872);
+            pushFollow(FOLLOW_ruleSpellInst5_in_ruleSpellPattern516873);
             this_SpellInst5_0=ruleSpellInst5();
 
             state._fsp--;
@@ -17324,22 +17335,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6962:1: ( ( (lv_value1_1_0= RULE_STRING ) ) | ( (lv_value2_2_0= RULE_INT ) ) )
-            int alt63=2;
-            int LA63_0 = input.LA(1);
+            int alt64=2;
+            int LA64_0 = input.LA(1);
 
-            if ( (LA63_0==RULE_STRING) ) {
-                alt63=1;
+            if ( (LA64_0==RULE_STRING) ) {
+                alt64=1;
             }
-            else if ( (LA63_0==RULE_INT) ) {
-                alt63=2;
+            else if ( (LA64_0==RULE_INT) ) {
+                alt64=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 63, 0, input);
+                    new NoViableAltException("", 64, 0, input);
 
                 throw nvae;
             }
-            switch (alt63) {
+            switch (alt64) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6962:2: ( (lv_value1_1_0= RULE_STRING ) )
                     {
@@ -17349,7 +17360,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6963:1: (lv_value1_1_0= RULE_STRING )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6964:3: lv_value1_1_0= RULE_STRING
                     {
-                    lv_value1_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSpellPattern516889); 
+                    lv_value1_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSpellPattern516890); 
 
                     			newLeafNode(lv_value1_1_0, grammarAccess.getSpellPattern5Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
                     		
@@ -17381,7 +17392,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6982:1: (lv_value2_2_0= RULE_INT )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6983:3: lv_value2_2_0= RULE_INT
                     {
-                    lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSpellPattern516917); 
+                    lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSpellPattern516918); 
 
                     			newLeafNode(lv_value2_2_0, grammarAccess.getSpellPattern5Access().getValue2INTTerminalRuleCall_1_1_0()); 
                     		
@@ -17408,21 +17419,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6999:3: (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
-            loop64:
+            loop65:
             do {
-                int alt64=2;
-                int LA64_0 = input.LA(1);
+                int alt65=2;
+                int LA65_0 = input.LA(1);
 
-                if ( (LA64_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt64=1;
+                if ( (LA65_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt65=1;
                 }
 
 
-                switch (alt64) {
+                switch (alt65) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:6999:4: this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern516935); 
+            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern516936); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_3, grammarAccess.getSpellPattern5Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -17431,7 +17442,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop64;
+            	    break loop65;
                 }
             } while (true);
 
@@ -17468,13 +17479,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7013:2: iv_ruleSpellInst1= ruleSpellInst1 EOF
             {
              newCompositeNode(grammarAccess.getSpellInst1Rule()); 
-            pushFollow(FOLLOW_ruleSpellInst1_in_entryRuleSpellInst116972);
+            pushFollow(FOLLOW_ruleSpellInst1_in_entryRuleSpellInst116973);
             iv_ruleSpellInst1=ruleSpellInst1();
 
             state._fsp--;
 
              current =iv_ruleSpellInst1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellInst116982); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellInst116983); 
 
             }
 
@@ -17506,22 +17517,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7024:1: ( ( (lv_name_0_0= '#name' ) ) | ( (lv_descr_1_0= '#descr' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7024:1: ( ( (lv_name_0_0= '#name' ) ) | ( (lv_descr_1_0= '#descr' ) ) )
-            int alt65=2;
-            int LA65_0 = input.LA(1);
+            int alt66=2;
+            int LA66_0 = input.LA(1);
 
-            if ( (LA65_0==36) ) {
-                alt65=1;
+            if ( (LA66_0==36) ) {
+                alt66=1;
             }
-            else if ( (LA65_0==89) ) {
-                alt65=2;
+            else if ( (LA66_0==89) ) {
+                alt66=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 65, 0, input);
+                    new NoViableAltException("", 66, 0, input);
 
                 throw nvae;
             }
-            switch (alt65) {
+            switch (alt66) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7024:2: ( (lv_name_0_0= '#name' ) )
                     {
@@ -17531,7 +17542,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7025:1: (lv_name_0_0= '#name' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7026:3: lv_name_0_0= '#name'
                     {
-                    lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleSpellInst117025); 
+                    lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleSpellInst117026); 
 
                             newLeafNode(lv_name_0_0, grammarAccess.getSpellInst1Access().getNameNameKeyword_0_0());
                         
@@ -17559,7 +17570,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7041:1: (lv_descr_1_0= '#descr' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7042:3: lv_descr_1_0= '#descr'
                     {
-                    lv_descr_1_0=(Token)match(input,89,FOLLOW_89_in_ruleSpellInst117062); 
+                    lv_descr_1_0=(Token)match(input,89,FOLLOW_89_in_ruleSpellInst117063); 
 
                             newLeafNode(lv_descr_1_0, grammarAccess.getSpellInst1Access().getDescrDescrKeyword_1_0());
                         
@@ -17611,13 +17622,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7065:2: iv_ruleSpellInst2= ruleSpellInst2 EOF
             {
              newCompositeNode(grammarAccess.getSpellInst2Rule()); 
-            pushFollow(FOLLOW_ruleSpellInst2_in_entryRuleSpellInst217111);
+            pushFollow(FOLLOW_ruleSpellInst2_in_entryRuleSpellInst217112);
             iv_ruleSpellInst2=ruleSpellInst2();
 
             state._fsp--;
 
              current =iv_ruleSpellInst2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellInst217121); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellInst217122); 
 
             }
 
@@ -17661,86 +17672,86 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7076:1: ( ( (lv_school_0_0= '#school' ) ) | ( (lv_researchlevel_1_0= '#researchlevel' ) ) | ( (lv_aoe_2_0= '#aoe' ) ) | ( (lv_damage_3_0= '#damage' ) ) | ( (lv_effect_4_0= '#effect' ) ) | ( (lv_fatiguecost_5_0= '#fatiguecost' ) ) | ( (lv_flightspr_6_0= '#flightspr' ) ) | ( (lv_explspr_7_0= '#explspr' ) ) | ( (lv_nreff_8_0= '#nreff' ) ) | ( (lv_range_9_0= '#range' ) ) | ( (lv_precision_10_0= '#precision' ) ) | ( (lv_sound_11_0= '#sound' ) ) | ( (lv_spec_12_0= '#spec' ) ) | ( (lv_restricted_13_0= '#restricted' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7076:1: ( ( (lv_school_0_0= '#school' ) ) | ( (lv_researchlevel_1_0= '#researchlevel' ) ) | ( (lv_aoe_2_0= '#aoe' ) ) | ( (lv_damage_3_0= '#damage' ) ) | ( (lv_effect_4_0= '#effect' ) ) | ( (lv_fatiguecost_5_0= '#fatiguecost' ) ) | ( (lv_flightspr_6_0= '#flightspr' ) ) | ( (lv_explspr_7_0= '#explspr' ) ) | ( (lv_nreff_8_0= '#nreff' ) ) | ( (lv_range_9_0= '#range' ) ) | ( (lv_precision_10_0= '#precision' ) ) | ( (lv_sound_11_0= '#sound' ) ) | ( (lv_spec_12_0= '#spec' ) ) | ( (lv_restricted_13_0= '#restricted' ) ) )
-            int alt66=14;
+            int alt67=14;
             switch ( input.LA(1) ) {
             case 255:
                 {
-                alt66=1;
+                alt67=1;
                 }
                 break;
             case 256:
                 {
-                alt66=2;
+                alt67=2;
                 }
                 break;
             case 51:
                 {
-                alt66=3;
+                alt67=3;
                 }
                 break;
             case 257:
                 {
-                alt66=4;
+                alt67=4;
                 }
                 break;
             case 258:
                 {
-                alt66=5;
+                alt67=5;
                 }
                 break;
             case 259:
                 {
-                alt66=6;
+                alt67=6;
                 }
                 break;
             case 260:
                 {
-                alt66=7;
+                alt67=7;
                 }
                 break;
             case 54:
                 {
-                alt66=8;
+                alt67=8;
                 }
                 break;
             case 261:
                 {
-                alt66=9;
+                alt67=9;
                 }
                 break;
             case 48:
                 {
-                alt66=10;
+                alt67=10;
                 }
                 break;
             case 262:
                 {
-                alt66=11;
+                alt67=11;
                 }
                 break;
             case 50:
                 {
-                alt66=12;
+                alt67=12;
                 }
                 break;
             case 263:
                 {
-                alt66=13;
+                alt67=13;
                 }
                 break;
             case 264:
                 {
-                alt66=14;
+                alt67=14;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 66, 0, input);
+                    new NoViableAltException("", 67, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt66) {
+            switch (alt67) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7076:2: ( (lv_school_0_0= '#school' ) )
                     {
@@ -17750,7 +17761,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7077:1: (lv_school_0_0= '#school' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7078:3: lv_school_0_0= '#school'
                     {
-                    lv_school_0_0=(Token)match(input,255,FOLLOW_255_in_ruleSpellInst217164); 
+                    lv_school_0_0=(Token)match(input,255,FOLLOW_255_in_ruleSpellInst217165); 
 
                             newLeafNode(lv_school_0_0, grammarAccess.getSpellInst2Access().getSchoolSchoolKeyword_0_0());
                         
@@ -17778,7 +17789,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7093:1: (lv_researchlevel_1_0= '#researchlevel' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7094:3: lv_researchlevel_1_0= '#researchlevel'
                     {
-                    lv_researchlevel_1_0=(Token)match(input,256,FOLLOW_256_in_ruleSpellInst217201); 
+                    lv_researchlevel_1_0=(Token)match(input,256,FOLLOW_256_in_ruleSpellInst217202); 
 
                             newLeafNode(lv_researchlevel_1_0, grammarAccess.getSpellInst2Access().getResearchlevelResearchlevelKeyword_1_0());
                         
@@ -17806,7 +17817,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7109:1: (lv_aoe_2_0= '#aoe' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7110:3: lv_aoe_2_0= '#aoe'
                     {
-                    lv_aoe_2_0=(Token)match(input,51,FOLLOW_51_in_ruleSpellInst217238); 
+                    lv_aoe_2_0=(Token)match(input,51,FOLLOW_51_in_ruleSpellInst217239); 
 
                             newLeafNode(lv_aoe_2_0, grammarAccess.getSpellInst2Access().getAoeAoeKeyword_2_0());
                         
@@ -17834,7 +17845,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7125:1: (lv_damage_3_0= '#damage' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7126:3: lv_damage_3_0= '#damage'
                     {
-                    lv_damage_3_0=(Token)match(input,257,FOLLOW_257_in_ruleSpellInst217275); 
+                    lv_damage_3_0=(Token)match(input,257,FOLLOW_257_in_ruleSpellInst217276); 
 
                             newLeafNode(lv_damage_3_0, grammarAccess.getSpellInst2Access().getDamageDamageKeyword_3_0());
                         
@@ -17862,7 +17873,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7141:1: (lv_effect_4_0= '#effect' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7142:3: lv_effect_4_0= '#effect'
                     {
-                    lv_effect_4_0=(Token)match(input,258,FOLLOW_258_in_ruleSpellInst217312); 
+                    lv_effect_4_0=(Token)match(input,258,FOLLOW_258_in_ruleSpellInst217313); 
 
                             newLeafNode(lv_effect_4_0, grammarAccess.getSpellInst2Access().getEffectEffectKeyword_4_0());
                         
@@ -17890,7 +17901,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7157:1: (lv_fatiguecost_5_0= '#fatiguecost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7158:3: lv_fatiguecost_5_0= '#fatiguecost'
                     {
-                    lv_fatiguecost_5_0=(Token)match(input,259,FOLLOW_259_in_ruleSpellInst217349); 
+                    lv_fatiguecost_5_0=(Token)match(input,259,FOLLOW_259_in_ruleSpellInst217350); 
 
                             newLeafNode(lv_fatiguecost_5_0, grammarAccess.getSpellInst2Access().getFatiguecostFatiguecostKeyword_5_0());
                         
@@ -17918,7 +17929,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7173:1: (lv_flightspr_6_0= '#flightspr' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7174:3: lv_flightspr_6_0= '#flightspr'
                     {
-                    lv_flightspr_6_0=(Token)match(input,260,FOLLOW_260_in_ruleSpellInst217386); 
+                    lv_flightspr_6_0=(Token)match(input,260,FOLLOW_260_in_ruleSpellInst217387); 
 
                             newLeafNode(lv_flightspr_6_0, grammarAccess.getSpellInst2Access().getFlightsprFlightsprKeyword_6_0());
                         
@@ -17946,7 +17957,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7189:1: (lv_explspr_7_0= '#explspr' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7190:3: lv_explspr_7_0= '#explspr'
                     {
-                    lv_explspr_7_0=(Token)match(input,54,FOLLOW_54_in_ruleSpellInst217423); 
+                    lv_explspr_7_0=(Token)match(input,54,FOLLOW_54_in_ruleSpellInst217424); 
 
                             newLeafNode(lv_explspr_7_0, grammarAccess.getSpellInst2Access().getExplsprExplsprKeyword_7_0());
                         
@@ -17974,7 +17985,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7205:1: (lv_nreff_8_0= '#nreff' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7206:3: lv_nreff_8_0= '#nreff'
                     {
-                    lv_nreff_8_0=(Token)match(input,261,FOLLOW_261_in_ruleSpellInst217460); 
+                    lv_nreff_8_0=(Token)match(input,261,FOLLOW_261_in_ruleSpellInst217461); 
 
                             newLeafNode(lv_nreff_8_0, grammarAccess.getSpellInst2Access().getNreffNreffKeyword_8_0());
                         
@@ -18002,7 +18013,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7221:1: (lv_range_9_0= '#range' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7222:3: lv_range_9_0= '#range'
                     {
-                    lv_range_9_0=(Token)match(input,48,FOLLOW_48_in_ruleSpellInst217497); 
+                    lv_range_9_0=(Token)match(input,48,FOLLOW_48_in_ruleSpellInst217498); 
 
                             newLeafNode(lv_range_9_0, grammarAccess.getSpellInst2Access().getRangeRangeKeyword_9_0());
                         
@@ -18030,7 +18041,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7237:1: (lv_precision_10_0= '#precision' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7238:3: lv_precision_10_0= '#precision'
                     {
-                    lv_precision_10_0=(Token)match(input,262,FOLLOW_262_in_ruleSpellInst217534); 
+                    lv_precision_10_0=(Token)match(input,262,FOLLOW_262_in_ruleSpellInst217535); 
 
                             newLeafNode(lv_precision_10_0, grammarAccess.getSpellInst2Access().getPrecisionPrecisionKeyword_10_0());
                         
@@ -18058,7 +18069,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7253:1: (lv_sound_11_0= '#sound' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7254:3: lv_sound_11_0= '#sound'
                     {
-                    lv_sound_11_0=(Token)match(input,50,FOLLOW_50_in_ruleSpellInst217571); 
+                    lv_sound_11_0=(Token)match(input,50,FOLLOW_50_in_ruleSpellInst217572); 
 
                             newLeafNode(lv_sound_11_0, grammarAccess.getSpellInst2Access().getSoundSoundKeyword_11_0());
                         
@@ -18086,7 +18097,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7269:1: (lv_spec_12_0= '#spec' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7270:3: lv_spec_12_0= '#spec'
                     {
-                    lv_spec_12_0=(Token)match(input,263,FOLLOW_263_in_ruleSpellInst217608); 
+                    lv_spec_12_0=(Token)match(input,263,FOLLOW_263_in_ruleSpellInst217609); 
 
                             newLeafNode(lv_spec_12_0, grammarAccess.getSpellInst2Access().getSpecSpecKeyword_12_0());
                         
@@ -18114,7 +18125,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7285:1: (lv_restricted_13_0= '#restricted' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7286:3: lv_restricted_13_0= '#restricted'
                     {
-                    lv_restricted_13_0=(Token)match(input,264,FOLLOW_264_in_ruleSpellInst217645); 
+                    lv_restricted_13_0=(Token)match(input,264,FOLLOW_264_in_ruleSpellInst217646); 
 
                             newLeafNode(lv_restricted_13_0, grammarAccess.getSpellInst2Access().getRestrictedRestrictedKeyword_13_0());
                         
@@ -18166,13 +18177,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7309:2: iv_ruleSpellInst3= ruleSpellInst3 EOF
             {
              newCompositeNode(grammarAccess.getSpellInst3Rule()); 
-            pushFollow(FOLLOW_ruleSpellInst3_in_entryRuleSpellInst317694);
+            pushFollow(FOLLOW_ruleSpellInst3_in_entryRuleSpellInst317695);
             iv_ruleSpellInst3=ruleSpellInst3();
 
             state._fsp--;
 
              current =iv_ruleSpellInst3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellInst317704); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellInst317705); 
 
             }
 
@@ -18204,22 +18215,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7320:1: ( ( (lv_path_0_0= '#path' ) ) | ( (lv_pathlevel_1_0= '#pathlevel' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7320:1: ( ( (lv_path_0_0= '#path' ) ) | ( (lv_pathlevel_1_0= '#pathlevel' ) ) )
-            int alt67=2;
-            int LA67_0 = input.LA(1);
+            int alt68=2;
+            int LA68_0 = input.LA(1);
 
-            if ( (LA67_0==265) ) {
-                alt67=1;
+            if ( (LA68_0==265) ) {
+                alt68=1;
             }
-            else if ( (LA67_0==266) ) {
-                alt67=2;
+            else if ( (LA68_0==266) ) {
+                alt68=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 67, 0, input);
+                    new NoViableAltException("", 68, 0, input);
 
                 throw nvae;
             }
-            switch (alt67) {
+            switch (alt68) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7320:2: ( (lv_path_0_0= '#path' ) )
                     {
@@ -18229,7 +18240,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7321:1: (lv_path_0_0= '#path' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7322:3: lv_path_0_0= '#path'
                     {
-                    lv_path_0_0=(Token)match(input,265,FOLLOW_265_in_ruleSpellInst317747); 
+                    lv_path_0_0=(Token)match(input,265,FOLLOW_265_in_ruleSpellInst317748); 
 
                             newLeafNode(lv_path_0_0, grammarAccess.getSpellInst3Access().getPathPathKeyword_0_0());
                         
@@ -18257,7 +18268,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7337:1: (lv_pathlevel_1_0= '#pathlevel' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7338:3: lv_pathlevel_1_0= '#pathlevel'
                     {
-                    lv_pathlevel_1_0=(Token)match(input,266,FOLLOW_266_in_ruleSpellInst317784); 
+                    lv_pathlevel_1_0=(Token)match(input,266,FOLLOW_266_in_ruleSpellInst317785); 
 
                             newLeafNode(lv_pathlevel_1_0, grammarAccess.getSpellInst3Access().getPathlevelPathlevelKeyword_1_0());
                         
@@ -18309,13 +18320,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7361:2: iv_ruleSpellInst4= ruleSpellInst4 EOF
             {
              newCompositeNode(grammarAccess.getSpellInst4Rule()); 
-            pushFollow(FOLLOW_ruleSpellInst4_in_entryRuleSpellInst417833);
+            pushFollow(FOLLOW_ruleSpellInst4_in_entryRuleSpellInst417834);
             iv_ruleSpellInst4=ruleSpellInst4();
 
             state._fsp--;
 
              current =iv_ruleSpellInst4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellInst417843); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellInst417844); 
 
             }
 
@@ -18351,7 +18362,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7373:1: (lv_clear_0_0= '#clear' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7374:3: lv_clear_0_0= '#clear'
             {
-            lv_clear_0_0=(Token)match(input,167,FOLLOW_167_in_ruleSpellInst417885); 
+            lv_clear_0_0=(Token)match(input,167,FOLLOW_167_in_ruleSpellInst417886); 
 
                     newLeafNode(lv_clear_0_0, grammarAccess.getSpellInst4Access().getClearClearKeyword_0());
                 
@@ -18397,13 +18408,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7397:2: iv_ruleSpellInst5= ruleSpellInst5 EOF
             {
              newCompositeNode(grammarAccess.getSpellInst5Rule()); 
-            pushFollow(FOLLOW_ruleSpellInst5_in_entryRuleSpellInst517933);
+            pushFollow(FOLLOW_ruleSpellInst5_in_entryRuleSpellInst517934);
             iv_ruleSpellInst5=ruleSpellInst5();
 
             state._fsp--;
 
              current =iv_ruleSpellInst5; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellInst517943); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpellInst517944); 
 
             }
 
@@ -18435,22 +18446,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7408:1: ( ( (lv_copyspell_0_0= '#copyspell' ) ) | ( (lv_nextspell_1_0= '#nextspell' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7408:1: ( ( (lv_copyspell_0_0= '#copyspell' ) ) | ( (lv_nextspell_1_0= '#nextspell' ) ) )
-            int alt68=2;
-            int LA68_0 = input.LA(1);
+            int alt69=2;
+            int LA69_0 = input.LA(1);
 
-            if ( (LA68_0==267) ) {
-                alt68=1;
+            if ( (LA69_0==267) ) {
+                alt69=1;
             }
-            else if ( (LA68_0==268) ) {
-                alt68=2;
+            else if ( (LA69_0==268) ) {
+                alt69=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 68, 0, input);
+                    new NoViableAltException("", 69, 0, input);
 
                 throw nvae;
             }
-            switch (alt68) {
+            switch (alt69) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7408:2: ( (lv_copyspell_0_0= '#copyspell' ) )
                     {
@@ -18460,7 +18471,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7409:1: (lv_copyspell_0_0= '#copyspell' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7410:3: lv_copyspell_0_0= '#copyspell'
                     {
-                    lv_copyspell_0_0=(Token)match(input,267,FOLLOW_267_in_ruleSpellInst517986); 
+                    lv_copyspell_0_0=(Token)match(input,267,FOLLOW_267_in_ruleSpellInst517987); 
 
                             newLeafNode(lv_copyspell_0_0, grammarAccess.getSpellInst5Access().getCopyspellCopyspellKeyword_0_0());
                         
@@ -18488,7 +18499,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7425:1: (lv_nextspell_1_0= '#nextspell' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7426:3: lv_nextspell_1_0= '#nextspell'
                     {
-                    lv_nextspell_1_0=(Token)match(input,268,FOLLOW_268_in_ruleSpellInst518023); 
+                    lv_nextspell_1_0=(Token)match(input,268,FOLLOW_268_in_ruleSpellInst518024); 
 
                             newLeafNode(lv_nextspell_1_0, grammarAccess.getSpellInst5Access().getNextspellNextspellKeyword_1_0());
                         
@@ -18540,13 +18551,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7449:2: iv_ruleItem= ruleItem EOF
             {
              newCompositeNode(grammarAccess.getItemRule()); 
-            pushFollow(FOLLOW_ruleItem_in_entryRuleItem18072);
+            pushFollow(FOLLOW_ruleItem_in_entryRuleItem18073);
             iv_ruleItem=ruleItem();
 
             state._fsp--;
 
              current =iv_ruleItem; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleItem18082); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleItem18083); 
 
             }
 
@@ -18582,42 +18593,42 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7460:1: (this_SelectItemById_0= ruleSelectItemById | this_SelectItemByName_1= ruleSelectItemByName | this_NewItem_2= ruleNewItem )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7460:1: (this_SelectItemById_0= ruleSelectItemById | this_SelectItemByName_1= ruleSelectItemByName | this_NewItem_2= ruleNewItem )
-            int alt69=3;
-            int LA69_0 = input.LA(1);
+            int alt70=3;
+            int LA70_0 = input.LA(1);
 
-            if ( (LA69_0==269) ) {
-                int LA69_1 = input.LA(2);
+            if ( (LA70_0==269) ) {
+                int LA70_1 = input.LA(2);
 
-                if ( (LA69_1==RULE_STRING) ) {
-                    alt69=2;
+                if ( (LA70_1==RULE_INT) ) {
+                    alt70=1;
                 }
-                else if ( (LA69_1==RULE_INT) ) {
-                    alt69=1;
+                else if ( (LA70_1==RULE_STRING) ) {
+                    alt70=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 69, 1, input);
+                        new NoViableAltException("", 70, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA69_0==270) ) {
-                alt69=3;
+            else if ( (LA70_0==270) ) {
+                alt70=3;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 69, 0, input);
+                    new NoViableAltException("", 70, 0, input);
 
                 throw nvae;
             }
-            switch (alt69) {
+            switch (alt70) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7461:5: this_SelectItemById_0= ruleSelectItemById
                     {
                      
                             newCompositeNode(grammarAccess.getItemAccess().getSelectItemByIdParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleSelectItemById_in_ruleItem18129);
+                    pushFollow(FOLLOW_ruleSelectItemById_in_ruleItem18130);
                     this_SelectItemById_0=ruleSelectItemById();
 
                     state._fsp--;
@@ -18635,7 +18646,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getItemAccess().getSelectItemByNameParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleSelectItemByName_in_ruleItem18156);
+                    pushFollow(FOLLOW_ruleSelectItemByName_in_ruleItem18157);
                     this_SelectItemByName_1=ruleSelectItemByName();
 
                     state._fsp--;
@@ -18653,7 +18664,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getItemAccess().getNewItemParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleNewItem_in_ruleItem18183);
+                    pushFollow(FOLLOW_ruleNewItem_in_ruleItem18184);
                     this_NewItem_2=ruleNewItem();
 
                     state._fsp--;
@@ -18698,13 +18709,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7499:2: iv_ruleSelectItemById= ruleSelectItemById EOF
             {
              newCompositeNode(grammarAccess.getSelectItemByIdRule()); 
-            pushFollow(FOLLOW_ruleSelectItemById_in_entryRuleSelectItemById18218);
+            pushFollow(FOLLOW_ruleSelectItemById_in_entryRuleSelectItemById18219);
             iv_ruleSelectItemById=ruleSelectItemById();
 
             state._fsp--;
 
              current =iv_ruleSelectItemById; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectItemById18228); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectItemById18229); 
 
             }
 
@@ -18742,7 +18753,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7510:1: (otherlv_0= '#selectitem' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleItemMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7510:3: otherlv_0= '#selectitem' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleItemMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,269,FOLLOW_269_in_ruleSelectItemById18265); 
+            otherlv_0=(Token)match(input,269,FOLLOW_269_in_ruleSelectItemById18266); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSelectItemByIdAccess().getSelectitemKeyword_0());
                 
@@ -18752,7 +18763,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7515:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7516:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectItemById18282); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectItemById18283); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSelectItemByIdAccess().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -18773,21 +18784,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7532:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop70:
+            loop71:
             do {
-                int alt70=2;
-                int LA70_0 = input.LA(1);
+                int alt71=2;
+                int LA71_0 = input.LA(1);
 
-                if ( (LA70_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt70=1;
+                if ( (LA71_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt71=1;
                 }
 
 
-                switch (alt70) {
+                switch (alt71) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7532:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectItemById18299); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectItemById18300); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSelectItemByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -18796,22 +18807,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop70;
+            	    break loop71;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7536:3: ( (lv_mods_3_0= ruleItemMods ) )*
-            loop71:
+            loop72:
             do {
-                int alt71=2;
-                int LA71_0 = input.LA(1);
+                int alt72=2;
+                int LA72_0 = input.LA(1);
 
-                if ( ((LA71_0>=36 && LA71_0<=37)||LA71_0==89||LA71_0==105||(LA71_0>=230 && LA71_0<=231)||(LA71_0>=271 && LA71_0<=275)) ) {
-                    alt71=1;
+                if ( ((LA72_0>=36 && LA72_0<=37)||LA72_0==89||LA72_0==105||(LA72_0>=230 && LA72_0<=231)||(LA72_0>=271 && LA72_0<=275)) ) {
+                    alt72=1;
                 }
 
 
-                switch (alt71) {
+                switch (alt72) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7537:1: (lv_mods_3_0= ruleItemMods )
             	    {
@@ -18821,7 +18832,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSelectItemByIdAccess().getModsItemModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleItemMods_in_ruleSelectItemById18321);
+            	    pushFollow(FOLLOW_ruleItemMods_in_ruleSelectItemById18322);
             	    lv_mods_3_0=ruleItemMods();
 
             	    state._fsp--;
@@ -18845,11 +18856,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop71;
+            	    break loop72;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectItemById18334); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectItemById18335); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSelectItemByIdAccess().getEndKeyword_4());
                 
@@ -18886,13 +18897,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7568:2: iv_ruleSelectItemByName= ruleSelectItemByName EOF
             {
              newCompositeNode(grammarAccess.getSelectItemByNameRule()); 
-            pushFollow(FOLLOW_ruleSelectItemByName_in_entryRuleSelectItemByName18370);
+            pushFollow(FOLLOW_ruleSelectItemByName_in_entryRuleSelectItemByName18371);
             iv_ruleSelectItemByName=ruleSelectItemByName();
 
             state._fsp--;
 
              current =iv_ruleSelectItemByName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectItemByName18380); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectItemByName18381); 
 
             }
 
@@ -18930,7 +18941,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7579:1: (otherlv_0= '#selectitem' ( (lv_value_1_0= RULE_STRING ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleItemMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7579:3: otherlv_0= '#selectitem' ( (lv_value_1_0= RULE_STRING ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleItemMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,269,FOLLOW_269_in_ruleSelectItemByName18417); 
+            otherlv_0=(Token)match(input,269,FOLLOW_269_in_ruleSelectItemByName18418); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSelectItemByNameAccess().getSelectitemKeyword_0());
                 
@@ -18940,7 +18951,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7584:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7585:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSelectItemByName18434); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSelectItemByName18435); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSelectItemByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -18961,21 +18972,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7601:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop72:
+            loop73:
             do {
-                int alt72=2;
-                int LA72_0 = input.LA(1);
+                int alt73=2;
+                int LA73_0 = input.LA(1);
 
-                if ( (LA72_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt72=1;
+                if ( (LA73_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt73=1;
                 }
 
 
-                switch (alt72) {
+                switch (alt73) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7601:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectItemByName18451); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectItemByName18452); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSelectItemByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -18984,22 +18995,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop72;
+            	    break loop73;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7605:3: ( (lv_mods_3_0= ruleItemMods ) )*
-            loop73:
+            loop74:
             do {
-                int alt73=2;
-                int LA73_0 = input.LA(1);
+                int alt74=2;
+                int LA74_0 = input.LA(1);
 
-                if ( ((LA73_0>=36 && LA73_0<=37)||LA73_0==89||LA73_0==105||(LA73_0>=230 && LA73_0<=231)||(LA73_0>=271 && LA73_0<=275)) ) {
-                    alt73=1;
+                if ( ((LA74_0>=36 && LA74_0<=37)||LA74_0==89||LA74_0==105||(LA74_0>=230 && LA74_0<=231)||(LA74_0>=271 && LA74_0<=275)) ) {
+                    alt74=1;
                 }
 
 
-                switch (alt73) {
+                switch (alt74) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7606:1: (lv_mods_3_0= ruleItemMods )
             	    {
@@ -19009,7 +19020,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSelectItemByNameAccess().getModsItemModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleItemMods_in_ruleSelectItemByName18473);
+            	    pushFollow(FOLLOW_ruleItemMods_in_ruleSelectItemByName18474);
             	    lv_mods_3_0=ruleItemMods();
 
             	    state._fsp--;
@@ -19033,11 +19044,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop73;
+            	    break loop74;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectItemByName18486); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectItemByName18487); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSelectItemByNameAccess().getEndKeyword_4());
                 
@@ -19074,13 +19085,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7637:2: iv_ruleNewItem= ruleNewItem EOF
             {
              newCompositeNode(grammarAccess.getNewItemRule()); 
-            pushFollow(FOLLOW_ruleNewItem_in_entryRuleNewItem18522);
+            pushFollow(FOLLOW_ruleNewItem_in_entryRuleNewItem18523);
             iv_ruleNewItem=ruleNewItem();
 
             state._fsp--;
 
              current =iv_ruleNewItem; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNewItem18532); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNewItem18533); 
 
             }
 
@@ -19117,26 +19128,26 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7648:1: (otherlv_0= '#newitem' (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )* ( (lv_mods_2_0= ruleItemMods ) )* otherlv_3= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7648:3: otherlv_0= '#newitem' (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )* ( (lv_mods_2_0= ruleItemMods ) )* otherlv_3= '#end'
             {
-            otherlv_0=(Token)match(input,270,FOLLOW_270_in_ruleNewItem18569); 
+            otherlv_0=(Token)match(input,270,FOLLOW_270_in_ruleNewItem18570); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getNewItemAccess().getNewitemKeyword_0());
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7652:1: (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )*
-            loop74:
+            loop75:
             do {
-                int alt74=2;
-                int LA74_0 = input.LA(1);
+                int alt75=2;
+                int LA75_0 = input.LA(1);
 
-                if ( (LA74_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt74=1;
+                if ( (LA75_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt75=1;
                 }
 
 
-                switch (alt74) {
+                switch (alt75) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7652:2: this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewItem18581); 
+            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewItem18582); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_1, grammarAccess.getNewItemAccess().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             	        
@@ -19145,22 +19156,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop74;
+            	    break loop75;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7656:3: ( (lv_mods_2_0= ruleItemMods ) )*
-            loop75:
+            loop76:
             do {
-                int alt75=2;
-                int LA75_0 = input.LA(1);
+                int alt76=2;
+                int LA76_0 = input.LA(1);
 
-                if ( ((LA75_0>=36 && LA75_0<=37)||LA75_0==89||LA75_0==105||(LA75_0>=230 && LA75_0<=231)||(LA75_0>=271 && LA75_0<=275)) ) {
-                    alt75=1;
+                if ( ((LA76_0>=36 && LA76_0<=37)||LA76_0==89||LA76_0==105||(LA76_0>=230 && LA76_0<=231)||(LA76_0>=271 && LA76_0<=275)) ) {
+                    alt76=1;
                 }
 
 
-                switch (alt75) {
+                switch (alt76) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7657:1: (lv_mods_2_0= ruleItemMods )
             	    {
@@ -19170,7 +19181,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getNewItemAccess().getModsItemModsParserRuleCall_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleItemMods_in_ruleNewItem18603);
+            	    pushFollow(FOLLOW_ruleItemMods_in_ruleNewItem18604);
             	    lv_mods_2_0=ruleItemMods();
 
             	    state._fsp--;
@@ -19194,11 +19205,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop75;
+            	    break loop76;
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,33,FOLLOW_33_in_ruleNewItem18616); 
+            otherlv_3=(Token)match(input,33,FOLLOW_33_in_ruleNewItem18617); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getNewItemAccess().getEndKeyword_3());
                 
@@ -19235,13 +19246,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7688:2: iv_ruleItemMods= ruleItemMods EOF
             {
              newCompositeNode(grammarAccess.getItemModsRule()); 
-            pushFollow(FOLLOW_ruleItemMods_in_entryRuleItemMods18652);
+            pushFollow(FOLLOW_ruleItemMods_in_entryRuleItemMods18653);
             iv_ruleItemMods=ruleItemMods();
 
             state._fsp--;
 
              current =iv_ruleItemMods; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleItemMods18662); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleItemMods18663); 
 
             }
 
@@ -19277,13 +19288,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7699:1: (this_ItemPattern1_0= ruleItemPattern1 | this_ItemPattern2_1= ruleItemPattern2 | this_ItemPattern3_2= ruleItemPattern3 )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7699:1: (this_ItemPattern1_0= ruleItemPattern1 | this_ItemPattern2_1= ruleItemPattern2 | this_ItemPattern3_2= ruleItemPattern3 )
-            int alt76=3;
+            int alt77=3;
             switch ( input.LA(1) ) {
             case 36:
             case 89:
             case 231:
                 {
-                alt76=1;
+                alt77=1;
                 }
                 break;
             case 37:
@@ -19294,29 +19305,29 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 274:
             case 275:
                 {
-                alt76=2;
+                alt77=2;
                 }
                 break;
             case 105:
                 {
-                alt76=3;
+                alt77=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 76, 0, input);
+                    new NoViableAltException("", 77, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt76) {
+            switch (alt77) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7700:5: this_ItemPattern1_0= ruleItemPattern1
                     {
                      
                             newCompositeNode(grammarAccess.getItemModsAccess().getItemPattern1ParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleItemPattern1_in_ruleItemMods18709);
+                    pushFollow(FOLLOW_ruleItemPattern1_in_ruleItemMods18710);
                     this_ItemPattern1_0=ruleItemPattern1();
 
                     state._fsp--;
@@ -19334,7 +19345,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getItemModsAccess().getItemPattern2ParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleItemPattern2_in_ruleItemMods18736);
+                    pushFollow(FOLLOW_ruleItemPattern2_in_ruleItemMods18737);
                     this_ItemPattern2_1=ruleItemPattern2();
 
                     state._fsp--;
@@ -19352,7 +19363,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getItemModsAccess().getItemPattern3ParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleItemPattern3_in_ruleItemMods18763);
+                    pushFollow(FOLLOW_ruleItemPattern3_in_ruleItemMods18764);
                     this_ItemPattern3_2=ruleItemPattern3();
 
                     state._fsp--;
@@ -19397,13 +19408,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7738:2: iv_ruleItemPattern1= ruleItemPattern1 EOF
             {
              newCompositeNode(grammarAccess.getItemPattern1Rule()); 
-            pushFollow(FOLLOW_ruleItemPattern1_in_entryRuleItemPattern118798);
+            pushFollow(FOLLOW_ruleItemPattern1_in_entryRuleItemPattern118799);
             iv_ruleItemPattern1=ruleItemPattern1();
 
             state._fsp--;
 
              current =iv_ruleItemPattern1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleItemPattern118808); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleItemPattern118809); 
 
             }
 
@@ -19442,7 +19453,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getItemPattern1Access().getItemInst1ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleItemInst1_in_ruleItemPattern118855);
+            pushFollow(FOLLOW_ruleItemInst1_in_ruleItemPattern118856);
             this_ItemInst1_0=ruleItemInst1();
 
             state._fsp--;
@@ -19457,7 +19468,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7759:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7760:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleItemPattern118871); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleItemPattern118872); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getItemPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -19478,21 +19489,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7776:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop77:
+            loop78:
             do {
-                int alt77=2;
-                int LA77_0 = input.LA(1);
+                int alt78=2;
+                int LA78_0 = input.LA(1);
 
-                if ( (LA77_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt77=1;
+                if ( (LA78_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt78=1;
                 }
 
 
-                switch (alt77) {
+                switch (alt78) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7776:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern118888); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern118889); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getItemPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -19501,7 +19512,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop77;
+            	    break loop78;
                 }
             } while (true);
 
@@ -19538,13 +19549,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7790:2: iv_ruleItemPattern2= ruleItemPattern2 EOF
             {
              newCompositeNode(grammarAccess.getItemPattern2Rule()); 
-            pushFollow(FOLLOW_ruleItemPattern2_in_entryRuleItemPattern218925);
+            pushFollow(FOLLOW_ruleItemPattern2_in_entryRuleItemPattern218926);
             iv_ruleItemPattern2=ruleItemPattern2();
 
             state._fsp--;
 
              current =iv_ruleItemPattern2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleItemPattern218935); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleItemPattern218936); 
 
             }
 
@@ -19583,7 +19594,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getItemPattern2Access().getItemInst2ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleItemInst2_in_ruleItemPattern218982);
+            pushFollow(FOLLOW_ruleItemInst2_in_ruleItemPattern218983);
             this_ItemInst2_0=ruleItemInst2();
 
             state._fsp--;
@@ -19598,7 +19609,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7811:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7812:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleItemPattern218998); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleItemPattern218999); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getItemPattern2Access().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -19619,21 +19630,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7828:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop78:
+            loop79:
             do {
-                int alt78=2;
-                int LA78_0 = input.LA(1);
+                int alt79=2;
+                int LA79_0 = input.LA(1);
 
-                if ( (LA78_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt78=1;
+                if ( (LA79_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt79=1;
                 }
 
 
-                switch (alt78) {
+                switch (alt79) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7828:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern219015); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern219016); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getItemPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -19642,7 +19653,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop78;
+            	    break loop79;
                 }
             } while (true);
 
@@ -19679,13 +19690,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7842:2: iv_ruleItemPattern3= ruleItemPattern3 EOF
             {
              newCompositeNode(grammarAccess.getItemPattern3Rule()); 
-            pushFollow(FOLLOW_ruleItemPattern3_in_entryRuleItemPattern319052);
+            pushFollow(FOLLOW_ruleItemPattern3_in_entryRuleItemPattern319053);
             iv_ruleItemPattern3=ruleItemPattern3();
 
             state._fsp--;
 
              current =iv_ruleItemPattern3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleItemPattern319062); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleItemPattern319063); 
 
             }
 
@@ -19725,7 +19736,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getItemPattern3Access().getItemInst3ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleItemInst3_in_ruleItemPattern319109);
+            pushFollow(FOLLOW_ruleItemInst3_in_ruleItemPattern319110);
             this_ItemInst3_0=ruleItemInst3();
 
             state._fsp--;
@@ -19735,22 +19746,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7862:1: ( ( (lv_value1_1_0= RULE_STRING ) ) | ( (lv_value2_2_0= RULE_INT ) ) )
-            int alt79=2;
-            int LA79_0 = input.LA(1);
+            int alt80=2;
+            int LA80_0 = input.LA(1);
 
-            if ( (LA79_0==RULE_STRING) ) {
-                alt79=1;
+            if ( (LA80_0==RULE_STRING) ) {
+                alt80=1;
             }
-            else if ( (LA79_0==RULE_INT) ) {
-                alt79=2;
+            else if ( (LA80_0==RULE_INT) ) {
+                alt80=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 79, 0, input);
+                    new NoViableAltException("", 80, 0, input);
 
                 throw nvae;
             }
-            switch (alt79) {
+            switch (alt80) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7862:2: ( (lv_value1_1_0= RULE_STRING ) )
                     {
@@ -19760,7 +19771,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7863:1: (lv_value1_1_0= RULE_STRING )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7864:3: lv_value1_1_0= RULE_STRING
                     {
-                    lv_value1_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleItemPattern319126); 
+                    lv_value1_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleItemPattern319127); 
 
                     			newLeafNode(lv_value1_1_0, grammarAccess.getItemPattern3Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
                     		
@@ -19792,7 +19803,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7882:1: (lv_value2_2_0= RULE_INT )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7883:3: lv_value2_2_0= RULE_INT
                     {
-                    lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleItemPattern319154); 
+                    lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleItemPattern319155); 
 
                     			newLeafNode(lv_value2_2_0, grammarAccess.getItemPattern3Access().getValue2INTTerminalRuleCall_1_1_0()); 
                     		
@@ -19819,21 +19830,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7899:3: (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
-            loop80:
+            loop81:
             do {
-                int alt80=2;
-                int LA80_0 = input.LA(1);
+                int alt81=2;
+                int LA81_0 = input.LA(1);
 
-                if ( (LA80_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt80=1;
+                if ( (LA81_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt81=1;
                 }
 
 
-                switch (alt80) {
+                switch (alt81) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7899:4: this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern319172); 
+            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern319173); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_3, grammarAccess.getItemPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -19842,7 +19853,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop80;
+            	    break loop81;
                 }
             } while (true);
 
@@ -19879,13 +19890,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7913:2: iv_ruleItemInst1= ruleItemInst1 EOF
             {
              newCompositeNode(grammarAccess.getItemInst1Rule()); 
-            pushFollow(FOLLOW_ruleItemInst1_in_entryRuleItemInst119209);
+            pushFollow(FOLLOW_ruleItemInst1_in_entryRuleItemInst119210);
             iv_ruleItemInst1=ruleItemInst1();
 
             state._fsp--;
 
              current =iv_ruleItemInst1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleItemInst119219); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleItemInst119220); 
 
             }
 
@@ -19918,31 +19929,31 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7924:1: ( ( (lv_name_0_0= '#name' ) ) | ( (lv_descr_1_0= '#descr' ) ) | ( (lv_armor_2_0= '#armor' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7924:1: ( ( (lv_name_0_0= '#name' ) ) | ( (lv_descr_1_0= '#descr' ) ) | ( (lv_armor_2_0= '#armor' ) ) )
-            int alt81=3;
+            int alt82=3;
             switch ( input.LA(1) ) {
             case 36:
                 {
-                alt81=1;
+                alt82=1;
                 }
                 break;
             case 89:
                 {
-                alt81=2;
+                alt82=2;
                 }
                 break;
             case 231:
                 {
-                alt81=3;
+                alt82=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 81, 0, input);
+                    new NoViableAltException("", 82, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt81) {
+            switch (alt82) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7924:2: ( (lv_name_0_0= '#name' ) )
                     {
@@ -19952,7 +19963,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7925:1: (lv_name_0_0= '#name' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7926:3: lv_name_0_0= '#name'
                     {
-                    lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleItemInst119262); 
+                    lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleItemInst119263); 
 
                             newLeafNode(lv_name_0_0, grammarAccess.getItemInst1Access().getNameNameKeyword_0_0());
                         
@@ -19980,7 +19991,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7941:1: (lv_descr_1_0= '#descr' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7942:3: lv_descr_1_0= '#descr'
                     {
-                    lv_descr_1_0=(Token)match(input,89,FOLLOW_89_in_ruleItemInst119299); 
+                    lv_descr_1_0=(Token)match(input,89,FOLLOW_89_in_ruleItemInst119300); 
 
                             newLeafNode(lv_descr_1_0, grammarAccess.getItemInst1Access().getDescrDescrKeyword_1_0());
                         
@@ -20008,7 +20019,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7957:1: (lv_armor_2_0= '#armor' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7958:3: lv_armor_2_0= '#armor'
                     {
-                    lv_armor_2_0=(Token)match(input,231,FOLLOW_231_in_ruleItemInst119336); 
+                    lv_armor_2_0=(Token)match(input,231,FOLLOW_231_in_ruleItemInst119337); 
 
                             newLeafNode(lv_armor_2_0, grammarAccess.getItemInst1Access().getArmorArmorKeyword_2_0());
                         
@@ -20060,13 +20071,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7981:2: iv_ruleItemInst2= ruleItemInst2 EOF
             {
              newCompositeNode(grammarAccess.getItemInst2Rule()); 
-            pushFollow(FOLLOW_ruleItemInst2_in_entryRuleItemInst219385);
+            pushFollow(FOLLOW_ruleItemInst2_in_entryRuleItemInst219386);
             iv_ruleItemInst2=ruleItemInst2();
 
             state._fsp--;
 
              current =iv_ruleItemInst2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleItemInst219395); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleItemInst219396); 
 
             }
 
@@ -20103,51 +20114,51 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7992:1: ( ( (lv_constlevel_0_0= '#constlevel' ) ) | ( (lv_mainpath_1_0= '#mainpath' ) ) | ( (lv_mainlevel_2_0= '#mainlevel' ) ) | ( (lv_secondarypath_3_0= '#secondarypath' ) ) | ( (lv_secondarylevel_4_0= '#secondarylevel' ) ) | ( (lv_type_5_0= '#type' ) ) | ( (lv_weapon_6_0= '#weapon' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7992:1: ( ( (lv_constlevel_0_0= '#constlevel' ) ) | ( (lv_mainpath_1_0= '#mainpath' ) ) | ( (lv_mainlevel_2_0= '#mainlevel' ) ) | ( (lv_secondarypath_3_0= '#secondarypath' ) ) | ( (lv_secondarylevel_4_0= '#secondarylevel' ) ) | ( (lv_type_5_0= '#type' ) ) | ( (lv_weapon_6_0= '#weapon' ) ) )
-            int alt82=7;
+            int alt83=7;
             switch ( input.LA(1) ) {
             case 271:
                 {
-                alt82=1;
+                alt83=1;
                 }
                 break;
             case 272:
                 {
-                alt82=2;
+                alt83=2;
                 }
                 break;
             case 273:
                 {
-                alt82=3;
+                alt83=3;
                 }
                 break;
             case 274:
                 {
-                alt82=4;
+                alt83=4;
                 }
                 break;
             case 275:
                 {
-                alt82=5;
+                alt83=5;
                 }
                 break;
             case 37:
                 {
-                alt82=6;
+                alt83=6;
                 }
                 break;
             case 230:
                 {
-                alt82=7;
+                alt83=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 82, 0, input);
+                    new NoViableAltException("", 83, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt82) {
+            switch (alt83) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7992:2: ( (lv_constlevel_0_0= '#constlevel' ) )
                     {
@@ -20157,7 +20168,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7993:1: (lv_constlevel_0_0= '#constlevel' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:7994:3: lv_constlevel_0_0= '#constlevel'
                     {
-                    lv_constlevel_0_0=(Token)match(input,271,FOLLOW_271_in_ruleItemInst219438); 
+                    lv_constlevel_0_0=(Token)match(input,271,FOLLOW_271_in_ruleItemInst219439); 
 
                             newLeafNode(lv_constlevel_0_0, grammarAccess.getItemInst2Access().getConstlevelConstlevelKeyword_0_0());
                         
@@ -20185,7 +20196,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8009:1: (lv_mainpath_1_0= '#mainpath' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8010:3: lv_mainpath_1_0= '#mainpath'
                     {
-                    lv_mainpath_1_0=(Token)match(input,272,FOLLOW_272_in_ruleItemInst219475); 
+                    lv_mainpath_1_0=(Token)match(input,272,FOLLOW_272_in_ruleItemInst219476); 
 
                             newLeafNode(lv_mainpath_1_0, grammarAccess.getItemInst2Access().getMainpathMainpathKeyword_1_0());
                         
@@ -20213,7 +20224,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8025:1: (lv_mainlevel_2_0= '#mainlevel' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8026:3: lv_mainlevel_2_0= '#mainlevel'
                     {
-                    lv_mainlevel_2_0=(Token)match(input,273,FOLLOW_273_in_ruleItemInst219512); 
+                    lv_mainlevel_2_0=(Token)match(input,273,FOLLOW_273_in_ruleItemInst219513); 
 
                             newLeafNode(lv_mainlevel_2_0, grammarAccess.getItemInst2Access().getMainlevelMainlevelKeyword_2_0());
                         
@@ -20241,7 +20252,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8041:1: (lv_secondarypath_3_0= '#secondarypath' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8042:3: lv_secondarypath_3_0= '#secondarypath'
                     {
-                    lv_secondarypath_3_0=(Token)match(input,274,FOLLOW_274_in_ruleItemInst219549); 
+                    lv_secondarypath_3_0=(Token)match(input,274,FOLLOW_274_in_ruleItemInst219550); 
 
                             newLeafNode(lv_secondarypath_3_0, grammarAccess.getItemInst2Access().getSecondarypathSecondarypathKeyword_3_0());
                         
@@ -20269,7 +20280,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8057:1: (lv_secondarylevel_4_0= '#secondarylevel' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8058:3: lv_secondarylevel_4_0= '#secondarylevel'
                     {
-                    lv_secondarylevel_4_0=(Token)match(input,275,FOLLOW_275_in_ruleItemInst219586); 
+                    lv_secondarylevel_4_0=(Token)match(input,275,FOLLOW_275_in_ruleItemInst219587); 
 
                             newLeafNode(lv_secondarylevel_4_0, grammarAccess.getItemInst2Access().getSecondarylevelSecondarylevelKeyword_4_0());
                         
@@ -20297,7 +20308,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8073:1: (lv_type_5_0= '#type' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8074:3: lv_type_5_0= '#type'
                     {
-                    lv_type_5_0=(Token)match(input,37,FOLLOW_37_in_ruleItemInst219623); 
+                    lv_type_5_0=(Token)match(input,37,FOLLOW_37_in_ruleItemInst219624); 
 
                             newLeafNode(lv_type_5_0, grammarAccess.getItemInst2Access().getTypeTypeKeyword_5_0());
                         
@@ -20325,7 +20336,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8089:1: (lv_weapon_6_0= '#weapon' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8090:3: lv_weapon_6_0= '#weapon'
                     {
-                    lv_weapon_6_0=(Token)match(input,230,FOLLOW_230_in_ruleItemInst219660); 
+                    lv_weapon_6_0=(Token)match(input,230,FOLLOW_230_in_ruleItemInst219661); 
 
                             newLeafNode(lv_weapon_6_0, grammarAccess.getItemInst2Access().getWeaponWeaponKeyword_6_0());
                         
@@ -20377,13 +20388,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8113:2: iv_ruleItemInst3= ruleItemInst3 EOF
             {
              newCompositeNode(grammarAccess.getItemInst3Rule()); 
-            pushFollow(FOLLOW_ruleItemInst3_in_entryRuleItemInst319709);
+            pushFollow(FOLLOW_ruleItemInst3_in_entryRuleItemInst319710);
             iv_ruleItemInst3=ruleItemInst3();
 
             state._fsp--;
 
              current =iv_ruleItemInst3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleItemInst319719); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleItemInst319720); 
 
             }
 
@@ -20419,7 +20430,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8125:1: (lv_copyspr_0_0= '#copyspr' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8126:3: lv_copyspr_0_0= '#copyspr'
             {
-            lv_copyspr_0_0=(Token)match(input,105,FOLLOW_105_in_ruleItemInst319761); 
+            lv_copyspr_0_0=(Token)match(input,105,FOLLOW_105_in_ruleItemInst319762); 
 
                     newLeafNode(lv_copyspr_0_0, grammarAccess.getItemInst3Access().getCopysprCopysprKeyword_0());
                 
@@ -20465,13 +20476,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8149:2: iv_ruleName= ruleName EOF
             {
              newCompositeNode(grammarAccess.getNameRule()); 
-            pushFollow(FOLLOW_ruleName_in_entryRuleName19809);
+            pushFollow(FOLLOW_ruleName_in_entryRuleName19810);
             iv_ruleName=ruleName();
 
             state._fsp--;
 
              current =iv_ruleName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleName19819); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleName19820); 
 
             }
 
@@ -20505,7 +20516,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getNameAccess().getSelectNameParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleSelectName_in_ruleName19865);
+            pushFollow(FOLLOW_ruleSelectName_in_ruleName19866);
             this_SelectName_0=ruleSelectName();
 
             state._fsp--;
@@ -20544,13 +20555,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8179:2: iv_ruleSelectName= ruleSelectName EOF
             {
              newCompositeNode(grammarAccess.getSelectNameRule()); 
-            pushFollow(FOLLOW_ruleSelectName_in_entryRuleSelectName19899);
+            pushFollow(FOLLOW_ruleSelectName_in_entryRuleSelectName19900);
             iv_ruleSelectName=ruleSelectName();
 
             state._fsp--;
 
              current =iv_ruleSelectName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectName19909); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectName19910); 
 
             }
 
@@ -20588,7 +20599,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8190:1: (otherlv_0= '#selectnametype' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleNameMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8190:3: otherlv_0= '#selectnametype' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleNameMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,276,FOLLOW_276_in_ruleSelectName19946); 
+            otherlv_0=(Token)match(input,276,FOLLOW_276_in_ruleSelectName19947); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSelectNameAccess().getSelectnametypeKeyword_0());
                 
@@ -20598,7 +20609,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8195:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8196:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectName19963); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectName19964); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSelectNameAccess().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -20619,21 +20630,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8212:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop83:
+            loop84:
             do {
-                int alt83=2;
-                int LA83_0 = input.LA(1);
+                int alt84=2;
+                int LA84_0 = input.LA(1);
 
-                if ( (LA83_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt83=1;
+                if ( (LA84_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt84=1;
                 }
 
 
-                switch (alt83) {
+                switch (alt84) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8212:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectName19980); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectName19981); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSelectNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -20642,22 +20653,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop83;
+            	    break loop84;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8216:3: ( (lv_mods_3_0= ruleNameMods ) )*
-            loop84:
+            loop85:
             do {
-                int alt84=2;
-                int LA84_0 = input.LA(1);
+                int alt85=2;
+                int LA85_0 = input.LA(1);
 
-                if ( (LA84_0==167||LA84_0==277) ) {
-                    alt84=1;
+                if ( (LA85_0==167||LA85_0==277) ) {
+                    alt85=1;
                 }
 
 
-                switch (alt84) {
+                switch (alt85) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8217:1: (lv_mods_3_0= ruleNameMods )
             	    {
@@ -20667,7 +20678,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSelectNameAccess().getModsNameModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleNameMods_in_ruleSelectName20002);
+            	    pushFollow(FOLLOW_ruleNameMods_in_ruleSelectName20003);
             	    lv_mods_3_0=ruleNameMods();
 
             	    state._fsp--;
@@ -20691,11 +20702,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop84;
+            	    break loop85;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectName20015); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectName20016); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSelectNameAccess().getEndKeyword_4());
                 
@@ -20732,13 +20743,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8248:2: iv_ruleNameMods= ruleNameMods EOF
             {
              newCompositeNode(grammarAccess.getNameModsRule()); 
-            pushFollow(FOLLOW_ruleNameMods_in_entryRuleNameMods20051);
+            pushFollow(FOLLOW_ruleNameMods_in_entryRuleNameMods20052);
             iv_ruleNameMods=ruleNameMods();
 
             state._fsp--;
 
              current =iv_ruleNameMods; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNameMods20061); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNameMods20062); 
 
             }
 
@@ -20772,29 +20783,29 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8259:1: (this_NamePattern1_0= ruleNamePattern1 | this_NamePattern2_1= ruleNamePattern2 )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8259:1: (this_NamePattern1_0= ruleNamePattern1 | this_NamePattern2_1= ruleNamePattern2 )
-            int alt85=2;
-            int LA85_0 = input.LA(1);
+            int alt86=2;
+            int LA86_0 = input.LA(1);
 
-            if ( (LA85_0==277) ) {
-                alt85=1;
+            if ( (LA86_0==277) ) {
+                alt86=1;
             }
-            else if ( (LA85_0==167) ) {
-                alt85=2;
+            else if ( (LA86_0==167) ) {
+                alt86=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 85, 0, input);
+                    new NoViableAltException("", 86, 0, input);
 
                 throw nvae;
             }
-            switch (alt85) {
+            switch (alt86) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8260:5: this_NamePattern1_0= ruleNamePattern1
                     {
                      
                             newCompositeNode(grammarAccess.getNameModsAccess().getNamePattern1ParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleNamePattern1_in_ruleNameMods20108);
+                    pushFollow(FOLLOW_ruleNamePattern1_in_ruleNameMods20109);
                     this_NamePattern1_0=ruleNamePattern1();
 
                     state._fsp--;
@@ -20812,7 +20823,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getNameModsAccess().getNamePattern2ParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleNamePattern2_in_ruleNameMods20135);
+                    pushFollow(FOLLOW_ruleNamePattern2_in_ruleNameMods20136);
                     this_NamePattern2_1=ruleNamePattern2();
 
                     state._fsp--;
@@ -20857,13 +20868,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8288:2: iv_ruleNamePattern1= ruleNamePattern1 EOF
             {
              newCompositeNode(grammarAccess.getNamePattern1Rule()); 
-            pushFollow(FOLLOW_ruleNamePattern1_in_entryRuleNamePattern120170);
+            pushFollow(FOLLOW_ruleNamePattern1_in_entryRuleNamePattern120171);
             iv_ruleNamePattern1=ruleNamePattern1();
 
             state._fsp--;
 
              current =iv_ruleNamePattern1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNamePattern120180); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNamePattern120181); 
 
             }
 
@@ -20902,7 +20913,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getNamePattern1Access().getNameInst1ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleNameInst1_in_ruleNamePattern120227);
+            pushFollow(FOLLOW_ruleNameInst1_in_ruleNamePattern120228);
             this_NameInst1_0=ruleNameInst1();
 
             state._fsp--;
@@ -20917,7 +20928,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8309:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8310:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNamePattern120243); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNamePattern120244); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getNamePattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -20938,21 +20949,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8326:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop86:
+            loop87:
             do {
-                int alt86=2;
-                int LA86_0 = input.LA(1);
+                int alt87=2;
+                int LA87_0 = input.LA(1);
 
-                if ( (LA86_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt86=1;
+                if ( (LA87_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt87=1;
                 }
 
 
-                switch (alt86) {
+                switch (alt87) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8326:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNamePattern120260); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNamePattern120261); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getNamePattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -20961,7 +20972,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop86;
+            	    break loop87;
                 }
             } while (true);
 
@@ -20998,13 +21009,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8340:2: iv_ruleNamePattern2= ruleNamePattern2 EOF
             {
              newCompositeNode(grammarAccess.getNamePattern2Rule()); 
-            pushFollow(FOLLOW_ruleNamePattern2_in_entryRuleNamePattern220297);
+            pushFollow(FOLLOW_ruleNamePattern2_in_entryRuleNamePattern220298);
             iv_ruleNamePattern2=ruleNamePattern2();
 
             state._fsp--;
 
              current =iv_ruleNamePattern2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNamePattern220307); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNamePattern220308); 
 
             }
 
@@ -21042,7 +21053,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getNamePattern2Access().getNameInst2ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleNameInst2_in_ruleNamePattern220354);
+            pushFollow(FOLLOW_ruleNameInst2_in_ruleNamePattern220355);
             this_NameInst2_0=ruleNameInst2();
 
             state._fsp--;
@@ -21052,21 +21063,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8360:1: (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )*
-            loop87:
+            loop88:
             do {
-                int alt87=2;
-                int LA87_0 = input.LA(1);
+                int alt88=2;
+                int LA88_0 = input.LA(1);
 
-                if ( (LA87_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt87=1;
+                if ( (LA88_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt88=1;
                 }
 
 
-                switch (alt87) {
+                switch (alt88) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8360:2: this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNamePattern220365); 
+            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNamePattern220366); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_1, grammarAccess.getNamePattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             	        
@@ -21075,7 +21086,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop87;
+            	    break loop88;
                 }
             } while (true);
 
@@ -21112,13 +21123,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8374:2: iv_ruleNameInst1= ruleNameInst1 EOF
             {
              newCompositeNode(grammarAccess.getNameInst1Rule()); 
-            pushFollow(FOLLOW_ruleNameInst1_in_entryRuleNameInst120402);
+            pushFollow(FOLLOW_ruleNameInst1_in_entryRuleNameInst120403);
             iv_ruleNameInst1=ruleNameInst1();
 
             state._fsp--;
 
              current =iv_ruleNameInst1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNameInst120412); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNameInst120413); 
 
             }
 
@@ -21154,7 +21165,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8386:1: (lv_name_0_0= '#addname' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8387:3: lv_name_0_0= '#addname'
             {
-            lv_name_0_0=(Token)match(input,277,FOLLOW_277_in_ruleNameInst120454); 
+            lv_name_0_0=(Token)match(input,277,FOLLOW_277_in_ruleNameInst120455); 
 
                     newLeafNode(lv_name_0_0, grammarAccess.getNameInst1Access().getNameAddnameKeyword_0());
                 
@@ -21200,13 +21211,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8410:2: iv_ruleNameInst2= ruleNameInst2 EOF
             {
              newCompositeNode(grammarAccess.getNameInst2Rule()); 
-            pushFollow(FOLLOW_ruleNameInst2_in_entryRuleNameInst220502);
+            pushFollow(FOLLOW_ruleNameInst2_in_entryRuleNameInst220503);
             iv_ruleNameInst2=ruleNameInst2();
 
             state._fsp--;
 
              current =iv_ruleNameInst2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNameInst220512); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNameInst220513); 
 
             }
 
@@ -21242,7 +21253,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8422:1: (lv_clear_0_0= '#clear' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8423:3: lv_clear_0_0= '#clear'
             {
-            lv_clear_0_0=(Token)match(input,167,FOLLOW_167_in_ruleNameInst220554); 
+            lv_clear_0_0=(Token)match(input,167,FOLLOW_167_in_ruleNameInst220555); 
 
                     newLeafNode(lv_clear_0_0, grammarAccess.getNameInst2Access().getClearClearKeyword_0());
                 
@@ -21288,13 +21299,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8446:2: iv_ruleSite= ruleSite EOF
             {
              newCompositeNode(grammarAccess.getSiteRule()); 
-            pushFollow(FOLLOW_ruleSite_in_entryRuleSite20602);
+            pushFollow(FOLLOW_ruleSite_in_entryRuleSite20603);
             iv_ruleSite=ruleSite();
 
             state._fsp--;
 
              current =iv_ruleSite; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSite20612); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSite20613); 
 
             }
 
@@ -21330,42 +21341,42 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8457:1: (this_SelectSiteById_0= ruleSelectSiteById | this_SelectSiteByName_1= ruleSelectSiteByName | this_NewSite_2= ruleNewSite )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8457:1: (this_SelectSiteById_0= ruleSelectSiteById | this_SelectSiteByName_1= ruleSelectSiteByName | this_NewSite_2= ruleNewSite )
-            int alt88=3;
-            int LA88_0 = input.LA(1);
+            int alt89=3;
+            int LA89_0 = input.LA(1);
 
-            if ( (LA88_0==278) ) {
-                int LA88_1 = input.LA(2);
+            if ( (LA89_0==278) ) {
+                int LA89_1 = input.LA(2);
 
-                if ( (LA88_1==RULE_INT) ) {
-                    alt88=1;
+                if ( (LA89_1==RULE_STRING) ) {
+                    alt89=2;
                 }
-                else if ( (LA88_1==RULE_STRING) ) {
-                    alt88=2;
+                else if ( (LA89_1==RULE_INT) ) {
+                    alt89=1;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 88, 1, input);
+                        new NoViableAltException("", 89, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA88_0==279) ) {
-                alt88=3;
+            else if ( (LA89_0==279) ) {
+                alt89=3;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 88, 0, input);
+                    new NoViableAltException("", 89, 0, input);
 
                 throw nvae;
             }
-            switch (alt88) {
+            switch (alt89) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8458:5: this_SelectSiteById_0= ruleSelectSiteById
                     {
                      
                             newCompositeNode(grammarAccess.getSiteAccess().getSelectSiteByIdParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleSelectSiteById_in_ruleSite20659);
+                    pushFollow(FOLLOW_ruleSelectSiteById_in_ruleSite20660);
                     this_SelectSiteById_0=ruleSelectSiteById();
 
                     state._fsp--;
@@ -21383,7 +21394,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSiteAccess().getSelectSiteByNameParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleSelectSiteByName_in_ruleSite20686);
+                    pushFollow(FOLLOW_ruleSelectSiteByName_in_ruleSite20687);
                     this_SelectSiteByName_1=ruleSelectSiteByName();
 
                     state._fsp--;
@@ -21401,7 +21412,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSiteAccess().getNewSiteParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleNewSite_in_ruleSite20713);
+                    pushFollow(FOLLOW_ruleNewSite_in_ruleSite20714);
                     this_NewSite_2=ruleNewSite();
 
                     state._fsp--;
@@ -21446,13 +21457,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8496:2: iv_ruleSelectSiteById= ruleSelectSiteById EOF
             {
              newCompositeNode(grammarAccess.getSelectSiteByIdRule()); 
-            pushFollow(FOLLOW_ruleSelectSiteById_in_entryRuleSelectSiteById20748);
+            pushFollow(FOLLOW_ruleSelectSiteById_in_entryRuleSelectSiteById20749);
             iv_ruleSelectSiteById=ruleSelectSiteById();
 
             state._fsp--;
 
              current =iv_ruleSelectSiteById; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectSiteById20758); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectSiteById20759); 
 
             }
 
@@ -21490,7 +21501,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8507:1: (otherlv_0= '#selectsite' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleSiteMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8507:3: otherlv_0= '#selectsite' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleSiteMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,278,FOLLOW_278_in_ruleSelectSiteById20795); 
+            otherlv_0=(Token)match(input,278,FOLLOW_278_in_ruleSelectSiteById20796); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSelectSiteByIdAccess().getSelectsiteKeyword_0());
                 
@@ -21500,7 +21511,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8512:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8513:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectSiteById20812); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectSiteById20813); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSelectSiteByIdAccess().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -21521,21 +21532,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8529:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop89:
+            loop90:
             do {
-                int alt89=2;
-                int LA89_0 = input.LA(1);
+                int alt90=2;
+                int LA90_0 = input.LA(1);
 
-                if ( (LA89_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt89=1;
+                if ( (LA90_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt90=1;
                 }
 
 
-                switch (alt89) {
+                switch (alt90) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8529:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSiteById20829); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSiteById20830); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSelectSiteByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -21544,22 +21555,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop89;
+            	    break loop90;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8533:3: ( (lv_mods_3_0= ruleSiteMods ) )*
-            loop90:
+            loop91:
             do {
-                int alt90=2;
-                int LA90_0 = input.LA(1);
+                int alt91=2;
+                int LA91_0 = input.LA(1);
 
-                if ( (LA90_0==36||LA90_0==167||LA90_0==200||LA90_0==207||LA90_0==265||(LA90_0>=280 && LA90_0<=303)) ) {
-                    alt90=1;
+                if ( (LA91_0==36||LA91_0==167||LA91_0==200||LA91_0==207||LA91_0==265||(LA91_0>=280 && LA91_0<=303)) ) {
+                    alt91=1;
                 }
 
 
-                switch (alt90) {
+                switch (alt91) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8534:1: (lv_mods_3_0= ruleSiteMods )
             	    {
@@ -21569,7 +21580,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSelectSiteByIdAccess().getModsSiteModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleSiteMods_in_ruleSelectSiteById20851);
+            	    pushFollow(FOLLOW_ruleSiteMods_in_ruleSelectSiteById20852);
             	    lv_mods_3_0=ruleSiteMods();
 
             	    state._fsp--;
@@ -21593,11 +21604,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop90;
+            	    break loop91;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectSiteById20864); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectSiteById20865); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSelectSiteByIdAccess().getEndKeyword_4());
                 
@@ -21634,13 +21645,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8565:2: iv_ruleSelectSiteByName= ruleSelectSiteByName EOF
             {
              newCompositeNode(grammarAccess.getSelectSiteByNameRule()); 
-            pushFollow(FOLLOW_ruleSelectSiteByName_in_entryRuleSelectSiteByName20900);
+            pushFollow(FOLLOW_ruleSelectSiteByName_in_entryRuleSelectSiteByName20901);
             iv_ruleSelectSiteByName=ruleSelectSiteByName();
 
             state._fsp--;
 
              current =iv_ruleSelectSiteByName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectSiteByName20910); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectSiteByName20911); 
 
             }
 
@@ -21678,7 +21689,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8576:1: (otherlv_0= '#selectsite' ( (lv_value_1_0= RULE_STRING ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleSiteMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8576:3: otherlv_0= '#selectsite' ( (lv_value_1_0= RULE_STRING ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleSiteMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,278,FOLLOW_278_in_ruleSelectSiteByName20947); 
+            otherlv_0=(Token)match(input,278,FOLLOW_278_in_ruleSelectSiteByName20948); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSelectSiteByNameAccess().getSelectsiteKeyword_0());
                 
@@ -21688,7 +21699,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8581:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8582:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSelectSiteByName20964); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSelectSiteByName20965); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSelectSiteByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -21709,21 +21720,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8598:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop91:
+            loop92:
             do {
-                int alt91=2;
-                int LA91_0 = input.LA(1);
+                int alt92=2;
+                int LA92_0 = input.LA(1);
 
-                if ( (LA91_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt91=1;
+                if ( (LA92_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt92=1;
                 }
 
 
-                switch (alt91) {
+                switch (alt92) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8598:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSiteByName20981); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSiteByName20982); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSelectSiteByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -21732,22 +21743,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop91;
+            	    break loop92;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8602:3: ( (lv_mods_3_0= ruleSiteMods ) )*
-            loop92:
+            loop93:
             do {
-                int alt92=2;
-                int LA92_0 = input.LA(1);
+                int alt93=2;
+                int LA93_0 = input.LA(1);
 
-                if ( (LA92_0==36||LA92_0==167||LA92_0==200||LA92_0==207||LA92_0==265||(LA92_0>=280 && LA92_0<=303)) ) {
-                    alt92=1;
+                if ( (LA93_0==36||LA93_0==167||LA93_0==200||LA93_0==207||LA93_0==265||(LA93_0>=280 && LA93_0<=303)) ) {
+                    alt93=1;
                 }
 
 
-                switch (alt92) {
+                switch (alt93) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8603:1: (lv_mods_3_0= ruleSiteMods )
             	    {
@@ -21757,7 +21768,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSelectSiteByNameAccess().getModsSiteModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleSiteMods_in_ruleSelectSiteByName21003);
+            	    pushFollow(FOLLOW_ruleSiteMods_in_ruleSelectSiteByName21004);
             	    lv_mods_3_0=ruleSiteMods();
 
             	    state._fsp--;
@@ -21781,11 +21792,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop92;
+            	    break loop93;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectSiteByName21016); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectSiteByName21017); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSelectSiteByNameAccess().getEndKeyword_4());
                 
@@ -21822,13 +21833,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8634:2: iv_ruleNewSite= ruleNewSite EOF
             {
              newCompositeNode(grammarAccess.getNewSiteRule()); 
-            pushFollow(FOLLOW_ruleNewSite_in_entryRuleNewSite21052);
+            pushFollow(FOLLOW_ruleNewSite_in_entryRuleNewSite21053);
             iv_ruleNewSite=ruleNewSite();
 
             state._fsp--;
 
              current =iv_ruleNewSite; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNewSite21062); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNewSite21063); 
 
             }
 
@@ -21866,7 +21877,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8645:1: (otherlv_0= '#newsite' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleSiteMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8645:3: otherlv_0= '#newsite' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleSiteMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,279,FOLLOW_279_in_ruleNewSite21099); 
+            otherlv_0=(Token)match(input,279,FOLLOW_279_in_ruleNewSite21100); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getNewSiteAccess().getNewsiteKeyword_0());
                 
@@ -21876,7 +21887,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8650:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8651:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNewSite21116); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNewSite21117); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getNewSiteAccess().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -21897,21 +21908,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8667:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop93:
+            loop94:
             do {
-                int alt93=2;
-                int LA93_0 = input.LA(1);
+                int alt94=2;
+                int LA94_0 = input.LA(1);
 
-                if ( (LA93_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt93=1;
+                if ( (LA94_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt94=1;
                 }
 
 
-                switch (alt93) {
+                switch (alt94) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8667:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewSite21133); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewSite21134); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getNewSiteAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -21920,22 +21931,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop93;
+            	    break loop94;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8671:3: ( (lv_mods_3_0= ruleSiteMods ) )*
-            loop94:
+            loop95:
             do {
-                int alt94=2;
-                int LA94_0 = input.LA(1);
+                int alt95=2;
+                int LA95_0 = input.LA(1);
 
-                if ( (LA94_0==36||LA94_0==167||LA94_0==200||LA94_0==207||LA94_0==265||(LA94_0>=280 && LA94_0<=303)) ) {
-                    alt94=1;
+                if ( (LA95_0==36||LA95_0==167||LA95_0==200||LA95_0==207||LA95_0==265||(LA95_0>=280 && LA95_0<=303)) ) {
+                    alt95=1;
                 }
 
 
-                switch (alt94) {
+                switch (alt95) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8672:1: (lv_mods_3_0= ruleSiteMods )
             	    {
@@ -21945,7 +21956,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getNewSiteAccess().getModsSiteModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleSiteMods_in_ruleNewSite21155);
+            	    pushFollow(FOLLOW_ruleSiteMods_in_ruleNewSite21156);
             	    lv_mods_3_0=ruleSiteMods();
 
             	    state._fsp--;
@@ -21969,11 +21980,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop94;
+            	    break loop95;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleNewSite21168); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleNewSite21169); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getNewSiteAccess().getEndKeyword_4());
                 
@@ -22010,13 +22021,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8703:2: iv_ruleSiteMods= ruleSiteMods EOF
             {
              newCompositeNode(grammarAccess.getSiteModsRule()); 
-            pushFollow(FOLLOW_ruleSiteMods_in_entryRuleSiteMods21204);
+            pushFollow(FOLLOW_ruleSiteMods_in_entryRuleSiteMods21205);
             iv_ruleSiteMods=ruleSiteMods();
 
             state._fsp--;
 
              current =iv_ruleSiteMods; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSiteMods21214); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSiteMods21215); 
 
             }
 
@@ -22054,11 +22065,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8714:1: (this_SitePattern1_0= ruleSitePattern1 | this_SitePattern2_1= ruleSitePattern2 | this_SitePattern3_2= ruleSitePattern3 | this_SitePattern4_3= ruleSitePattern4 )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8714:1: (this_SitePattern1_0= ruleSitePattern1 | this_SitePattern2_1= ruleSitePattern2 | this_SitePattern3_2= ruleSitePattern3 | this_SitePattern4_3= ruleSitePattern4 )
-            int alt95=4;
+            int alt96=4;
             switch ( input.LA(1) ) {
             case 36:
                 {
-                alt95=1;
+                alt96=1;
                 }
                 break;
             case 200:
@@ -22087,35 +22098,35 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 300:
             case 301:
                 {
-                alt95=2;
+                alt96=2;
                 }
                 break;
             case 302:
                 {
-                alt95=3;
+                alt96=3;
                 }
                 break;
             case 167:
             case 303:
                 {
-                alt95=4;
+                alt96=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 95, 0, input);
+                    new NoViableAltException("", 96, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt95) {
+            switch (alt96) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8715:5: this_SitePattern1_0= ruleSitePattern1
                     {
                      
                             newCompositeNode(grammarAccess.getSiteModsAccess().getSitePattern1ParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleSitePattern1_in_ruleSiteMods21261);
+                    pushFollow(FOLLOW_ruleSitePattern1_in_ruleSiteMods21262);
                     this_SitePattern1_0=ruleSitePattern1();
 
                     state._fsp--;
@@ -22133,7 +22144,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSiteModsAccess().getSitePattern2ParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleSitePattern2_in_ruleSiteMods21288);
+                    pushFollow(FOLLOW_ruleSitePattern2_in_ruleSiteMods21289);
                     this_SitePattern2_1=ruleSitePattern2();
 
                     state._fsp--;
@@ -22151,7 +22162,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSiteModsAccess().getSitePattern3ParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleSitePattern3_in_ruleSiteMods21315);
+                    pushFollow(FOLLOW_ruleSitePattern3_in_ruleSiteMods21316);
                     this_SitePattern3_2=ruleSitePattern3();
 
                     state._fsp--;
@@ -22169,7 +22180,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getSiteModsAccess().getSitePattern4ParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleSitePattern4_in_ruleSiteMods21342);
+                    pushFollow(FOLLOW_ruleSitePattern4_in_ruleSiteMods21343);
                     this_SitePattern4_3=ruleSitePattern4();
 
                     state._fsp--;
@@ -22214,13 +22225,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8763:2: iv_ruleSitePattern1= ruleSitePattern1 EOF
             {
              newCompositeNode(grammarAccess.getSitePattern1Rule()); 
-            pushFollow(FOLLOW_ruleSitePattern1_in_entryRuleSitePattern121377);
+            pushFollow(FOLLOW_ruleSitePattern1_in_entryRuleSitePattern121378);
             iv_ruleSitePattern1=ruleSitePattern1();
 
             state._fsp--;
 
              current =iv_ruleSitePattern1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSitePattern121387); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSitePattern121388); 
 
             }
 
@@ -22259,7 +22270,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSitePattern1Access().getSiteInst1ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleSiteInst1_in_ruleSitePattern121434);
+            pushFollow(FOLLOW_ruleSiteInst1_in_ruleSitePattern121435);
             this_SiteInst1_0=ruleSiteInst1();
 
             state._fsp--;
@@ -22274,7 +22285,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8784:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8785:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSitePattern121450); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSitePattern121451); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSitePattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -22295,21 +22306,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8801:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop96:
+            loop97:
             do {
-                int alt96=2;
-                int LA96_0 = input.LA(1);
+                int alt97=2;
+                int LA97_0 = input.LA(1);
 
-                if ( (LA96_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt96=1;
+                if ( (LA97_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt97=1;
                 }
 
 
-                switch (alt96) {
+                switch (alt97) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8801:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern121467); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern121468); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSitePattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -22318,7 +22329,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop96;
+            	    break loop97;
                 }
             } while (true);
 
@@ -22355,13 +22366,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8815:2: iv_ruleSitePattern2= ruleSitePattern2 EOF
             {
              newCompositeNode(grammarAccess.getSitePattern2Rule()); 
-            pushFollow(FOLLOW_ruleSitePattern2_in_entryRuleSitePattern221504);
+            pushFollow(FOLLOW_ruleSitePattern2_in_entryRuleSitePattern221505);
             iv_ruleSitePattern2=ruleSitePattern2();
 
             state._fsp--;
 
              current =iv_ruleSitePattern2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSitePattern221514); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSitePattern221515); 
 
             }
 
@@ -22400,7 +22411,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSitePattern2Access().getSiteInst2ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleSiteInst2_in_ruleSitePattern221561);
+            pushFollow(FOLLOW_ruleSiteInst2_in_ruleSitePattern221562);
             this_SiteInst2_0=ruleSiteInst2();
 
             state._fsp--;
@@ -22415,7 +22426,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8836:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8837:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSitePattern221577); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSitePattern221578); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSitePattern2Access().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -22436,21 +22447,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8853:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop97:
+            loop98:
             do {
-                int alt97=2;
-                int LA97_0 = input.LA(1);
+                int alt98=2;
+                int LA98_0 = input.LA(1);
 
-                if ( (LA97_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt97=1;
+                if ( (LA98_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt98=1;
                 }
 
 
-                switch (alt97) {
+                switch (alt98) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8853:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern221594); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern221595); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSitePattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -22459,7 +22470,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop97;
+            	    break loop98;
                 }
             } while (true);
 
@@ -22496,13 +22507,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8867:2: iv_ruleSitePattern3= ruleSitePattern3 EOF
             {
              newCompositeNode(grammarAccess.getSitePattern3Rule()); 
-            pushFollow(FOLLOW_ruleSitePattern3_in_entryRuleSitePattern321631);
+            pushFollow(FOLLOW_ruleSitePattern3_in_entryRuleSitePattern321632);
             iv_ruleSitePattern3=ruleSitePattern3();
 
             state._fsp--;
 
              current =iv_ruleSitePattern3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSitePattern321641); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSitePattern321642); 
 
             }
 
@@ -22542,7 +22553,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSitePattern3Access().getSiteInst3ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleSiteInst3_in_ruleSitePattern321688);
+            pushFollow(FOLLOW_ruleSiteInst3_in_ruleSitePattern321689);
             this_SiteInst3_0=ruleSiteInst3();
 
             state._fsp--;
@@ -22557,7 +22568,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8888:1: (lv_value1_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8889:3: lv_value1_1_0= RULE_INT
             {
-            lv_value1_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSitePattern321704); 
+            lv_value1_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSitePattern321705); 
 
             			newLeafNode(lv_value1_1_0, grammarAccess.getSitePattern3Access().getValue1INTTerminalRuleCall_1_0()); 
             		
@@ -22583,7 +22594,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8906:1: (lv_value2_2_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8907:3: lv_value2_2_0= RULE_INT
             {
-            lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSitePattern321726); 
+            lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSitePattern321727); 
 
             			newLeafNode(lv_value2_2_0, grammarAccess.getSitePattern3Access().getValue2INTTerminalRuleCall_2_0()); 
             		
@@ -22604,21 +22615,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8923:2: (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
-            loop98:
+            loop99:
             do {
-                int alt98=2;
-                int LA98_0 = input.LA(1);
+                int alt99=2;
+                int LA99_0 = input.LA(1);
 
-                if ( (LA98_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt98=1;
+                if ( (LA99_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt99=1;
                 }
 
 
-                switch (alt98) {
+                switch (alt99) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8923:3: this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern321743); 
+            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern321744); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_3, grammarAccess.getSitePattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3()); 
             	        
@@ -22627,7 +22638,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop98;
+            	    break loop99;
                 }
             } while (true);
 
@@ -22664,13 +22675,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8937:2: iv_ruleSitePattern4= ruleSitePattern4 EOF
             {
              newCompositeNode(grammarAccess.getSitePattern4Rule()); 
-            pushFollow(FOLLOW_ruleSitePattern4_in_entryRuleSitePattern421780);
+            pushFollow(FOLLOW_ruleSitePattern4_in_entryRuleSitePattern421781);
             iv_ruleSitePattern4=ruleSitePattern4();
 
             state._fsp--;
 
              current =iv_ruleSitePattern4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSitePattern421790); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSitePattern421791); 
 
             }
 
@@ -22708,7 +22719,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSitePattern4Access().getSiteInst4ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleSiteInst4_in_ruleSitePattern421837);
+            pushFollow(FOLLOW_ruleSiteInst4_in_ruleSitePattern421838);
             this_SiteInst4_0=ruleSiteInst4();
 
             state._fsp--;
@@ -22718,21 +22729,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8957:1: (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )*
-            loop99:
+            loop100:
             do {
-                int alt99=2;
-                int LA99_0 = input.LA(1);
+                int alt100=2;
+                int LA100_0 = input.LA(1);
 
-                if ( (LA99_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt99=1;
+                if ( (LA100_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt100=1;
                 }
 
 
-                switch (alt99) {
+                switch (alt100) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8957:2: this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern421848); 
+            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern421849); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_1, grammarAccess.getSitePattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             	        
@@ -22741,7 +22752,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop99;
+            	    break loop100;
                 }
             } while (true);
 
@@ -22778,13 +22789,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8971:2: iv_ruleSiteInst1= ruleSiteInst1 EOF
             {
              newCompositeNode(grammarAccess.getSiteInst1Rule()); 
-            pushFollow(FOLLOW_ruleSiteInst1_in_entryRuleSiteInst121885);
+            pushFollow(FOLLOW_ruleSiteInst1_in_entryRuleSiteInst121886);
             iv_ruleSiteInst1=ruleSiteInst1();
 
             state._fsp--;
 
              current =iv_ruleSiteInst1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSiteInst121895); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSiteInst121896); 
 
             }
 
@@ -22820,7 +22831,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8983:1: (lv_name_0_0= '#name' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:8984:3: lv_name_0_0= '#name'
             {
-            lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleSiteInst121937); 
+            lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleSiteInst121938); 
 
                     newLeafNode(lv_name_0_0, grammarAccess.getSiteInst1Access().getNameNameKeyword_0());
                 
@@ -22866,13 +22877,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9007:2: iv_ruleSiteInst2= ruleSiteInst2 EOF
             {
              newCompositeNode(grammarAccess.getSiteInst2Rule()); 
-            pushFollow(FOLLOW_ruleSiteInst2_in_entryRuleSiteInst221985);
+            pushFollow(FOLLOW_ruleSiteInst2_in_entryRuleSiteInst221986);
             iv_ruleSiteInst2=ruleSiteInst2();
 
             state._fsp--;
 
              current =iv_ruleSiteInst2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSiteInst221995); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSiteInst221996); 
 
             }
 
@@ -22927,141 +22938,141 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9018:1: ( ( (lv_path_0_0= '#path' ) ) | ( (lv_level_1_0= '#level' ) ) | ( (lv_rarity_2_0= '#rarity' ) ) | ( (lv_loc_3_0= '#loc' ) ) | ( (lv_homemon_4_0= '#homemon' ) ) | ( (lv_homecom_5_0= '#homecom' ) ) | ( (lv_mon_6_0= '#mon' ) ) | ( (lv_com_7_0= '#com' ) ) | ( (lv_gold_8_0= '#gold' ) ) | ( (lv_res_9_0= '#res' ) ) | ( (lv_incscale_10_0= '#incscale' ) ) | ( (lv_decscale_11_0= '#decscale' ) ) | ( (lv_heal_12_0= '#heal' ) ) | ( (lv_curse_13_0= '#curse' ) ) | ( (lv_disease_14_0= '#disease' ) ) | ( (lv_horrormark_15_0= '#horrormark' ) ) | ( (lv_holyfire_16_0= '#holyfire' ) ) | ( (lv_holypower_17_0= '#holypower' ) ) | ( (lv_conjcost_18_0= '#conjcost' ) ) | ( (lv_altcost_19_0= '#altcost' ) ) | ( (lv_evocost_20_0= '#evocost' ) ) | ( (lv_constcost_21_0= '#constcost' ) ) | ( (lv_enchcost_22_0= '#enchcost' ) ) | ( (lv_thaucost_23_0= '#thaucost' ) ) | ( (lv_bloodcost_24_0= '#bloodcost' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9018:1: ( ( (lv_path_0_0= '#path' ) ) | ( (lv_level_1_0= '#level' ) ) | ( (lv_rarity_2_0= '#rarity' ) ) | ( (lv_loc_3_0= '#loc' ) ) | ( (lv_homemon_4_0= '#homemon' ) ) | ( (lv_homecom_5_0= '#homecom' ) ) | ( (lv_mon_6_0= '#mon' ) ) | ( (lv_com_7_0= '#com' ) ) | ( (lv_gold_8_0= '#gold' ) ) | ( (lv_res_9_0= '#res' ) ) | ( (lv_incscale_10_0= '#incscale' ) ) | ( (lv_decscale_11_0= '#decscale' ) ) | ( (lv_heal_12_0= '#heal' ) ) | ( (lv_curse_13_0= '#curse' ) ) | ( (lv_disease_14_0= '#disease' ) ) | ( (lv_horrormark_15_0= '#horrormark' ) ) | ( (lv_holyfire_16_0= '#holyfire' ) ) | ( (lv_holypower_17_0= '#holypower' ) ) | ( (lv_conjcost_18_0= '#conjcost' ) ) | ( (lv_altcost_19_0= '#altcost' ) ) | ( (lv_evocost_20_0= '#evocost' ) ) | ( (lv_constcost_21_0= '#constcost' ) ) | ( (lv_enchcost_22_0= '#enchcost' ) ) | ( (lv_thaucost_23_0= '#thaucost' ) ) | ( (lv_bloodcost_24_0= '#bloodcost' ) ) )
-            int alt100=25;
+            int alt101=25;
             switch ( input.LA(1) ) {
             case 265:
                 {
-                alt100=1;
+                alt101=1;
                 }
                 break;
             case 280:
                 {
-                alt100=2;
+                alt101=2;
                 }
                 break;
             case 281:
                 {
-                alt100=3;
+                alt101=3;
                 }
                 break;
             case 282:
                 {
-                alt100=4;
+                alt101=4;
                 }
                 break;
             case 283:
                 {
-                alt100=5;
+                alt101=5;
                 }
                 break;
             case 284:
                 {
-                alt100=6;
+                alt101=6;
                 }
                 break;
             case 285:
                 {
-                alt100=7;
+                alt101=7;
                 }
                 break;
             case 286:
                 {
-                alt100=8;
+                alt101=8;
                 }
                 break;
             case 287:
                 {
-                alt100=9;
+                alt101=9;
                 }
                 break;
             case 288:
                 {
-                alt100=10;
+                alt101=10;
                 }
                 break;
             case 289:
                 {
-                alt100=11;
+                alt101=11;
                 }
                 break;
             case 290:
                 {
-                alt100=12;
+                alt101=12;
                 }
                 break;
             case 200:
                 {
-                alt100=13;
+                alt101=13;
                 }
                 break;
             case 291:
                 {
-                alt100=14;
+                alt101=14;
                 }
                 break;
             case 292:
                 {
-                alt100=15;
+                alt101=15;
                 }
                 break;
             case 207:
                 {
-                alt100=16;
+                alt101=16;
                 }
                 break;
             case 293:
                 {
-                alt100=17;
+                alt101=17;
                 }
                 break;
             case 294:
                 {
-                alt100=18;
+                alt101=18;
                 }
                 break;
             case 295:
                 {
-                alt100=19;
+                alt101=19;
                 }
                 break;
             case 296:
                 {
-                alt100=20;
+                alt101=20;
                 }
                 break;
             case 297:
                 {
-                alt100=21;
+                alt101=21;
                 }
                 break;
             case 298:
                 {
-                alt100=22;
+                alt101=22;
                 }
                 break;
             case 299:
                 {
-                alt100=23;
+                alt101=23;
                 }
                 break;
             case 300:
                 {
-                alt100=24;
+                alt101=24;
                 }
                 break;
             case 301:
                 {
-                alt100=25;
+                alt101=25;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 100, 0, input);
+                    new NoViableAltException("", 101, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt100) {
+            switch (alt101) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9018:2: ( (lv_path_0_0= '#path' ) )
                     {
@@ -23071,7 +23082,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9019:1: (lv_path_0_0= '#path' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9020:3: lv_path_0_0= '#path'
                     {
-                    lv_path_0_0=(Token)match(input,265,FOLLOW_265_in_ruleSiteInst222038); 
+                    lv_path_0_0=(Token)match(input,265,FOLLOW_265_in_ruleSiteInst222039); 
 
                             newLeafNode(lv_path_0_0, grammarAccess.getSiteInst2Access().getPathPathKeyword_0_0());
                         
@@ -23099,7 +23110,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9035:1: (lv_level_1_0= '#level' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9036:3: lv_level_1_0= '#level'
                     {
-                    lv_level_1_0=(Token)match(input,280,FOLLOW_280_in_ruleSiteInst222075); 
+                    lv_level_1_0=(Token)match(input,280,FOLLOW_280_in_ruleSiteInst222076); 
 
                             newLeafNode(lv_level_1_0, grammarAccess.getSiteInst2Access().getLevelLevelKeyword_1_0());
                         
@@ -23127,7 +23138,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9051:1: (lv_rarity_2_0= '#rarity' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9052:3: lv_rarity_2_0= '#rarity'
                     {
-                    lv_rarity_2_0=(Token)match(input,281,FOLLOW_281_in_ruleSiteInst222112); 
+                    lv_rarity_2_0=(Token)match(input,281,FOLLOW_281_in_ruleSiteInst222113); 
 
                             newLeafNode(lv_rarity_2_0, grammarAccess.getSiteInst2Access().getRarityRarityKeyword_2_0());
                         
@@ -23155,7 +23166,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9067:1: (lv_loc_3_0= '#loc' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9068:3: lv_loc_3_0= '#loc'
                     {
-                    lv_loc_3_0=(Token)match(input,282,FOLLOW_282_in_ruleSiteInst222149); 
+                    lv_loc_3_0=(Token)match(input,282,FOLLOW_282_in_ruleSiteInst222150); 
 
                             newLeafNode(lv_loc_3_0, grammarAccess.getSiteInst2Access().getLocLocKeyword_3_0());
                         
@@ -23183,7 +23194,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9083:1: (lv_homemon_4_0= '#homemon' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9084:3: lv_homemon_4_0= '#homemon'
                     {
-                    lv_homemon_4_0=(Token)match(input,283,FOLLOW_283_in_ruleSiteInst222186); 
+                    lv_homemon_4_0=(Token)match(input,283,FOLLOW_283_in_ruleSiteInst222187); 
 
                             newLeafNode(lv_homemon_4_0, grammarAccess.getSiteInst2Access().getHomemonHomemonKeyword_4_0());
                         
@@ -23211,7 +23222,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9099:1: (lv_homecom_5_0= '#homecom' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9100:3: lv_homecom_5_0= '#homecom'
                     {
-                    lv_homecom_5_0=(Token)match(input,284,FOLLOW_284_in_ruleSiteInst222223); 
+                    lv_homecom_5_0=(Token)match(input,284,FOLLOW_284_in_ruleSiteInst222224); 
 
                             newLeafNode(lv_homecom_5_0, grammarAccess.getSiteInst2Access().getHomecomHomecomKeyword_5_0());
                         
@@ -23239,7 +23250,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9115:1: (lv_mon_6_0= '#mon' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9116:3: lv_mon_6_0= '#mon'
                     {
-                    lv_mon_6_0=(Token)match(input,285,FOLLOW_285_in_ruleSiteInst222260); 
+                    lv_mon_6_0=(Token)match(input,285,FOLLOW_285_in_ruleSiteInst222261); 
 
                             newLeafNode(lv_mon_6_0, grammarAccess.getSiteInst2Access().getMonMonKeyword_6_0());
                         
@@ -23267,7 +23278,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9131:1: (lv_com_7_0= '#com' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9132:3: lv_com_7_0= '#com'
                     {
-                    lv_com_7_0=(Token)match(input,286,FOLLOW_286_in_ruleSiteInst222297); 
+                    lv_com_7_0=(Token)match(input,286,FOLLOW_286_in_ruleSiteInst222298); 
 
                             newLeafNode(lv_com_7_0, grammarAccess.getSiteInst2Access().getComComKeyword_7_0());
                         
@@ -23295,7 +23306,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9147:1: (lv_gold_8_0= '#gold' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9148:3: lv_gold_8_0= '#gold'
                     {
-                    lv_gold_8_0=(Token)match(input,287,FOLLOW_287_in_ruleSiteInst222334); 
+                    lv_gold_8_0=(Token)match(input,287,FOLLOW_287_in_ruleSiteInst222335); 
 
                             newLeafNode(lv_gold_8_0, grammarAccess.getSiteInst2Access().getGoldGoldKeyword_8_0());
                         
@@ -23323,7 +23334,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9163:1: (lv_res_9_0= '#res' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9164:3: lv_res_9_0= '#res'
                     {
-                    lv_res_9_0=(Token)match(input,288,FOLLOW_288_in_ruleSiteInst222371); 
+                    lv_res_9_0=(Token)match(input,288,FOLLOW_288_in_ruleSiteInst222372); 
 
                             newLeafNode(lv_res_9_0, grammarAccess.getSiteInst2Access().getResResKeyword_9_0());
                         
@@ -23351,7 +23362,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9179:1: (lv_incscale_10_0= '#incscale' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9180:3: lv_incscale_10_0= '#incscale'
                     {
-                    lv_incscale_10_0=(Token)match(input,289,FOLLOW_289_in_ruleSiteInst222408); 
+                    lv_incscale_10_0=(Token)match(input,289,FOLLOW_289_in_ruleSiteInst222409); 
 
                             newLeafNode(lv_incscale_10_0, grammarAccess.getSiteInst2Access().getIncscaleIncscaleKeyword_10_0());
                         
@@ -23379,7 +23390,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9195:1: (lv_decscale_11_0= '#decscale' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9196:3: lv_decscale_11_0= '#decscale'
                     {
-                    lv_decscale_11_0=(Token)match(input,290,FOLLOW_290_in_ruleSiteInst222445); 
+                    lv_decscale_11_0=(Token)match(input,290,FOLLOW_290_in_ruleSiteInst222446); 
 
                             newLeafNode(lv_decscale_11_0, grammarAccess.getSiteInst2Access().getDecscaleDecscaleKeyword_11_0());
                         
@@ -23407,7 +23418,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9211:1: (lv_heal_12_0= '#heal' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9212:3: lv_heal_12_0= '#heal'
                     {
-                    lv_heal_12_0=(Token)match(input,200,FOLLOW_200_in_ruleSiteInst222482); 
+                    lv_heal_12_0=(Token)match(input,200,FOLLOW_200_in_ruleSiteInst222483); 
 
                             newLeafNode(lv_heal_12_0, grammarAccess.getSiteInst2Access().getHealHealKeyword_12_0());
                         
@@ -23435,7 +23446,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9227:1: (lv_curse_13_0= '#curse' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9228:3: lv_curse_13_0= '#curse'
                     {
-                    lv_curse_13_0=(Token)match(input,291,FOLLOW_291_in_ruleSiteInst222519); 
+                    lv_curse_13_0=(Token)match(input,291,FOLLOW_291_in_ruleSiteInst222520); 
 
                             newLeafNode(lv_curse_13_0, grammarAccess.getSiteInst2Access().getCurseCurseKeyword_13_0());
                         
@@ -23463,7 +23474,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9243:1: (lv_disease_14_0= '#disease' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9244:3: lv_disease_14_0= '#disease'
                     {
-                    lv_disease_14_0=(Token)match(input,292,FOLLOW_292_in_ruleSiteInst222556); 
+                    lv_disease_14_0=(Token)match(input,292,FOLLOW_292_in_ruleSiteInst222557); 
 
                             newLeafNode(lv_disease_14_0, grammarAccess.getSiteInst2Access().getDiseaseDiseaseKeyword_14_0());
                         
@@ -23491,7 +23502,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9259:1: (lv_horrormark_15_0= '#horrormark' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9260:3: lv_horrormark_15_0= '#horrormark'
                     {
-                    lv_horrormark_15_0=(Token)match(input,207,FOLLOW_207_in_ruleSiteInst222593); 
+                    lv_horrormark_15_0=(Token)match(input,207,FOLLOW_207_in_ruleSiteInst222594); 
 
                             newLeafNode(lv_horrormark_15_0, grammarAccess.getSiteInst2Access().getHorrormarkHorrormarkKeyword_15_0());
                         
@@ -23519,7 +23530,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9275:1: (lv_holyfire_16_0= '#holyfire' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9276:3: lv_holyfire_16_0= '#holyfire'
                     {
-                    lv_holyfire_16_0=(Token)match(input,293,FOLLOW_293_in_ruleSiteInst222630); 
+                    lv_holyfire_16_0=(Token)match(input,293,FOLLOW_293_in_ruleSiteInst222631); 
 
                             newLeafNode(lv_holyfire_16_0, grammarAccess.getSiteInst2Access().getHolyfireHolyfireKeyword_16_0());
                         
@@ -23547,7 +23558,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9291:1: (lv_holypower_17_0= '#holypower' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9292:3: lv_holypower_17_0= '#holypower'
                     {
-                    lv_holypower_17_0=(Token)match(input,294,FOLLOW_294_in_ruleSiteInst222667); 
+                    lv_holypower_17_0=(Token)match(input,294,FOLLOW_294_in_ruleSiteInst222668); 
 
                             newLeafNode(lv_holypower_17_0, grammarAccess.getSiteInst2Access().getHolypowerHolypowerKeyword_17_0());
                         
@@ -23575,7 +23586,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9307:1: (lv_conjcost_18_0= '#conjcost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9308:3: lv_conjcost_18_0= '#conjcost'
                     {
-                    lv_conjcost_18_0=(Token)match(input,295,FOLLOW_295_in_ruleSiteInst222704); 
+                    lv_conjcost_18_0=(Token)match(input,295,FOLLOW_295_in_ruleSiteInst222705); 
 
                             newLeafNode(lv_conjcost_18_0, grammarAccess.getSiteInst2Access().getConjcostConjcostKeyword_18_0());
                         
@@ -23603,7 +23614,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9323:1: (lv_altcost_19_0= '#altcost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9324:3: lv_altcost_19_0= '#altcost'
                     {
-                    lv_altcost_19_0=(Token)match(input,296,FOLLOW_296_in_ruleSiteInst222741); 
+                    lv_altcost_19_0=(Token)match(input,296,FOLLOW_296_in_ruleSiteInst222742); 
 
                             newLeafNode(lv_altcost_19_0, grammarAccess.getSiteInst2Access().getAltcostAltcostKeyword_19_0());
                         
@@ -23631,7 +23642,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9339:1: (lv_evocost_20_0= '#evocost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9340:3: lv_evocost_20_0= '#evocost'
                     {
-                    lv_evocost_20_0=(Token)match(input,297,FOLLOW_297_in_ruleSiteInst222778); 
+                    lv_evocost_20_0=(Token)match(input,297,FOLLOW_297_in_ruleSiteInst222779); 
 
                             newLeafNode(lv_evocost_20_0, grammarAccess.getSiteInst2Access().getEvocostEvocostKeyword_20_0());
                         
@@ -23659,7 +23670,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9355:1: (lv_constcost_21_0= '#constcost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9356:3: lv_constcost_21_0= '#constcost'
                     {
-                    lv_constcost_21_0=(Token)match(input,298,FOLLOW_298_in_ruleSiteInst222815); 
+                    lv_constcost_21_0=(Token)match(input,298,FOLLOW_298_in_ruleSiteInst222816); 
 
                             newLeafNode(lv_constcost_21_0, grammarAccess.getSiteInst2Access().getConstcostConstcostKeyword_21_0());
                         
@@ -23687,7 +23698,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9371:1: (lv_enchcost_22_0= '#enchcost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9372:3: lv_enchcost_22_0= '#enchcost'
                     {
-                    lv_enchcost_22_0=(Token)match(input,299,FOLLOW_299_in_ruleSiteInst222852); 
+                    lv_enchcost_22_0=(Token)match(input,299,FOLLOW_299_in_ruleSiteInst222853); 
 
                             newLeafNode(lv_enchcost_22_0, grammarAccess.getSiteInst2Access().getEnchcostEnchcostKeyword_22_0());
                         
@@ -23715,7 +23726,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9387:1: (lv_thaucost_23_0= '#thaucost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9388:3: lv_thaucost_23_0= '#thaucost'
                     {
-                    lv_thaucost_23_0=(Token)match(input,300,FOLLOW_300_in_ruleSiteInst222889); 
+                    lv_thaucost_23_0=(Token)match(input,300,FOLLOW_300_in_ruleSiteInst222890); 
 
                             newLeafNode(lv_thaucost_23_0, grammarAccess.getSiteInst2Access().getThaucostThaucostKeyword_23_0());
                         
@@ -23743,7 +23754,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9403:1: (lv_bloodcost_24_0= '#bloodcost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9404:3: lv_bloodcost_24_0= '#bloodcost'
                     {
-                    lv_bloodcost_24_0=(Token)match(input,301,FOLLOW_301_in_ruleSiteInst222926); 
+                    lv_bloodcost_24_0=(Token)match(input,301,FOLLOW_301_in_ruleSiteInst222927); 
 
                             newLeafNode(lv_bloodcost_24_0, grammarAccess.getSiteInst2Access().getBloodcostBloodcostKeyword_24_0());
                         
@@ -23795,13 +23806,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9427:2: iv_ruleSiteInst3= ruleSiteInst3 EOF
             {
              newCompositeNode(grammarAccess.getSiteInst3Rule()); 
-            pushFollow(FOLLOW_ruleSiteInst3_in_entryRuleSiteInst322975);
+            pushFollow(FOLLOW_ruleSiteInst3_in_entryRuleSiteInst322976);
             iv_ruleSiteInst3=ruleSiteInst3();
 
             state._fsp--;
 
              current =iv_ruleSiteInst3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSiteInst322985); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSiteInst322986); 
 
             }
 
@@ -23837,7 +23848,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9439:1: (lv_gems_0_0= '#gems' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9440:3: lv_gems_0_0= '#gems'
             {
-            lv_gems_0_0=(Token)match(input,302,FOLLOW_302_in_ruleSiteInst323027); 
+            lv_gems_0_0=(Token)match(input,302,FOLLOW_302_in_ruleSiteInst323028); 
 
                     newLeafNode(lv_gems_0_0, grammarAccess.getSiteInst3Access().getGemsGemsKeyword_0());
                 
@@ -23883,13 +23894,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9463:2: iv_ruleSiteInst4= ruleSiteInst4 EOF
             {
              newCompositeNode(grammarAccess.getSiteInst4Rule()); 
-            pushFollow(FOLLOW_ruleSiteInst4_in_entryRuleSiteInst423075);
+            pushFollow(FOLLOW_ruleSiteInst4_in_entryRuleSiteInst423076);
             iv_ruleSiteInst4=ruleSiteInst4();
 
             state._fsp--;
 
              current =iv_ruleSiteInst4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSiteInst423085); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSiteInst423086); 
 
             }
 
@@ -23921,22 +23932,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9474:1: ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_lab_1_0= '#lab' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9474:1: ( ( (lv_clear_0_0= '#clear' ) ) | ( (lv_lab_1_0= '#lab' ) ) )
-            int alt101=2;
-            int LA101_0 = input.LA(1);
+            int alt102=2;
+            int LA102_0 = input.LA(1);
 
-            if ( (LA101_0==167) ) {
-                alt101=1;
+            if ( (LA102_0==167) ) {
+                alt102=1;
             }
-            else if ( (LA101_0==303) ) {
-                alt101=2;
+            else if ( (LA102_0==303) ) {
+                alt102=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 101, 0, input);
+                    new NoViableAltException("", 102, 0, input);
 
                 throw nvae;
             }
-            switch (alt101) {
+            switch (alt102) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9474:2: ( (lv_clear_0_0= '#clear' ) )
                     {
@@ -23946,7 +23957,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9475:1: (lv_clear_0_0= '#clear' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9476:3: lv_clear_0_0= '#clear'
                     {
-                    lv_clear_0_0=(Token)match(input,167,FOLLOW_167_in_ruleSiteInst423128); 
+                    lv_clear_0_0=(Token)match(input,167,FOLLOW_167_in_ruleSiteInst423129); 
 
                             newLeafNode(lv_clear_0_0, grammarAccess.getSiteInst4Access().getClearClearKeyword_0_0());
                         
@@ -23974,7 +23985,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9491:1: (lv_lab_1_0= '#lab' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9492:3: lv_lab_1_0= '#lab'
                     {
-                    lv_lab_1_0=(Token)match(input,303,FOLLOW_303_in_ruleSiteInst423165); 
+                    lv_lab_1_0=(Token)match(input,303,FOLLOW_303_in_ruleSiteInst423166); 
 
                             newLeafNode(lv_lab_1_0, grammarAccess.getSiteInst4Access().getLabLabKeyword_1_0());
                         
@@ -24026,13 +24037,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9515:2: iv_ruleNation= ruleNation EOF
             {
              newCompositeNode(grammarAccess.getNationRule()); 
-            pushFollow(FOLLOW_ruleNation_in_entryRuleNation23214);
+            pushFollow(FOLLOW_ruleNation_in_entryRuleNation23215);
             iv_ruleNation=ruleNation();
 
             state._fsp--;
 
              current =iv_ruleNation; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNation23224); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNation23225); 
 
             }
 
@@ -24066,29 +24077,29 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9526:1: (this_SelectNation_0= ruleSelectNation | this_IndepFlag_1= ruleIndepFlag )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9526:1: (this_SelectNation_0= ruleSelectNation | this_IndepFlag_1= ruleIndepFlag )
-            int alt102=2;
-            int LA102_0 = input.LA(1);
+            int alt103=2;
+            int LA103_0 = input.LA(1);
 
-            if ( (LA102_0==304) ) {
-                alt102=1;
+            if ( (LA103_0==304) ) {
+                alt103=1;
             }
-            else if ( (LA102_0==305) ) {
-                alt102=2;
+            else if ( (LA103_0==305) ) {
+                alt103=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 102, 0, input);
+                    new NoViableAltException("", 103, 0, input);
 
                 throw nvae;
             }
-            switch (alt102) {
+            switch (alt103) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9527:5: this_SelectNation_0= ruleSelectNation
                     {
                      
                             newCompositeNode(grammarAccess.getNationAccess().getSelectNationParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleSelectNation_in_ruleNation23271);
+                    pushFollow(FOLLOW_ruleSelectNation_in_ruleNation23272);
                     this_SelectNation_0=ruleSelectNation();
 
                     state._fsp--;
@@ -24106,7 +24117,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getNationAccess().getIndepFlagParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleIndepFlag_in_ruleNation23298);
+                    pushFollow(FOLLOW_ruleIndepFlag_in_ruleNation23299);
                     this_IndepFlag_1=ruleIndepFlag();
 
                     state._fsp--;
@@ -24151,13 +24162,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9555:2: iv_ruleSelectNation= ruleSelectNation EOF
             {
              newCompositeNode(grammarAccess.getSelectNationRule()); 
-            pushFollow(FOLLOW_ruleSelectNation_in_entryRuleSelectNation23333);
+            pushFollow(FOLLOW_ruleSelectNation_in_entryRuleSelectNation23334);
             iv_ruleSelectNation=ruleSelectNation();
 
             state._fsp--;
 
              current =iv_ruleSelectNation; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectNation23343); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectNation23344); 
 
             }
 
@@ -24195,7 +24206,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9566:1: (otherlv_0= '#selectnation' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleNationMods ) )* otherlv_4= '#end' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9566:3: otherlv_0= '#selectnation' ( (lv_value_1_0= RULE_INT ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* ( (lv_mods_3_0= ruleNationMods ) )* otherlv_4= '#end'
             {
-            otherlv_0=(Token)match(input,304,FOLLOW_304_in_ruleSelectNation23380); 
+            otherlv_0=(Token)match(input,304,FOLLOW_304_in_ruleSelectNation23381); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSelectNationAccess().getSelectnationKeyword_0());
                 
@@ -24205,7 +24216,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9571:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9572:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectNation23397); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSelectNation23398); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getSelectNationAccess().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -24226,21 +24237,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9588:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop103:
+            loop104:
             do {
-                int alt103=2;
-                int LA103_0 = input.LA(1);
+                int alt104=2;
+                int LA104_0 = input.LA(1);
 
-                if ( (LA103_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt103=1;
+                if ( (LA104_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt104=1;
                 }
 
 
-                switch (alt103) {
+                switch (alt104) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9588:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectNation23414); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectNation23415); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getSelectNationAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -24249,22 +24260,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop103;
+            	    break loop104;
                 }
             } while (true);
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9592:3: ( (lv_mods_3_0= ruleNationMods ) )*
-            loop104:
+            loop105:
             do {
-                int alt104=2;
-                int LA104_0 = input.LA(1);
+                int alt105=2;
+                int LA105_0 = input.LA(1);
 
-                if ( (LA104_0==36||LA104_0==89||(LA104_0>=306 && LA104_0<=379)) ) {
-                    alt104=1;
+                if ( (LA105_0==36||LA105_0==89||(LA105_0>=306 && LA105_0<=379)) ) {
+                    alt105=1;
                 }
 
 
-                switch (alt104) {
+                switch (alt105) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9593:1: (lv_mods_3_0= ruleNationMods )
             	    {
@@ -24274,7 +24285,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSelectNationAccess().getModsNationModsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleNationMods_in_ruleSelectNation23436);
+            	    pushFollow(FOLLOW_ruleNationMods_in_ruleSelectNation23437);
             	    lv_mods_3_0=ruleNationMods();
 
             	    state._fsp--;
@@ -24298,11 +24309,11 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop104;
+            	    break loop105;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectNation23449); 
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleSelectNation23450); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSelectNationAccess().getEndKeyword_4());
                 
@@ -24339,13 +24350,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9624:2: iv_ruleIndepFlag= ruleIndepFlag EOF
             {
              newCompositeNode(grammarAccess.getIndepFlagRule()); 
-            pushFollow(FOLLOW_ruleIndepFlag_in_entryRuleIndepFlag23485);
+            pushFollow(FOLLOW_ruleIndepFlag_in_entryRuleIndepFlag23486);
             iv_ruleIndepFlag=ruleIndepFlag();
 
             state._fsp--;
 
              current =iv_ruleIndepFlag; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIndepFlag23495); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIndepFlag23496); 
 
             }
 
@@ -24380,7 +24391,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9635:1: (otherlv_0= '#indepflag' ( (lv_value_1_0= RULE_STRING ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )* )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9635:3: otherlv_0= '#indepflag' ( (lv_value_1_0= RULE_STRING ) ) (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
             {
-            otherlv_0=(Token)match(input,305,FOLLOW_305_in_ruleIndepFlag23532); 
+            otherlv_0=(Token)match(input,305,FOLLOW_305_in_ruleIndepFlag23533); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getIndepFlagAccess().getIndepflagKeyword_0());
                 
@@ -24390,7 +24401,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9640:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9641:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleIndepFlag23549); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleIndepFlag23550); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getIndepFlagAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -24411,21 +24422,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9657:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop105:
+            loop106:
             do {
-                int alt105=2;
-                int LA105_0 = input.LA(1);
+                int alt106=2;
+                int LA106_0 = input.LA(1);
 
-                if ( (LA105_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt105=1;
+                if ( (LA106_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt106=1;
                 }
 
 
-                switch (alt105) {
+                switch (alt106) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9657:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleIndepFlag23566); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleIndepFlag23567); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getIndepFlagAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -24434,7 +24445,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop105;
+            	    break loop106;
                 }
             } while (true);
 
@@ -24471,13 +24482,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9671:2: iv_ruleNationMods= ruleNationMods EOF
             {
              newCompositeNode(grammarAccess.getNationModsRule()); 
-            pushFollow(FOLLOW_ruleNationMods_in_entryRuleNationMods23603);
+            pushFollow(FOLLOW_ruleNationMods_in_entryRuleNationMods23604);
             iv_ruleNationMods=ruleNationMods();
 
             state._fsp--;
 
              current =iv_ruleNationMods; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationMods23613); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationMods23614); 
 
             }
 
@@ -24517,7 +24528,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9682:1: (this_NationPattern1_0= ruleNationPattern1 | this_NationPattern2_1= ruleNationPattern2 | this_NationPattern3_2= ruleNationPattern3 | this_NationPattern4_3= ruleNationPattern4 | this_NationPattern5_4= ruleNationPattern5 )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9682:1: (this_NationPattern1_0= ruleNationPattern1 | this_NationPattern2_1= ruleNationPattern2 | this_NationPattern3_2= ruleNationPattern3 | this_NationPattern4_3= ruleNationPattern4 | this_NationPattern5_4= ruleNationPattern5 )
-            int alt106=5;
+            int alt107=5;
             switch ( input.LA(1) ) {
             case 36:
             case 89:
@@ -24528,7 +24539,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 310:
             case 311:
                 {
-                alt106=1;
+                alt107=1;
                 }
                 break;
             case 312:
@@ -24562,7 +24573,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 340:
             case 341:
                 {
-                alt106=2;
+                alt107=2;
                 }
                 break;
             case 342:
@@ -24581,7 +24592,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 355:
             case 356:
                 {
-                alt106=3;
+                alt107=3;
                 }
                 break;
             case 357:
@@ -24607,29 +24618,29 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             case 377:
             case 378:
                 {
-                alt106=4;
+                alt107=4;
                 }
                 break;
             case 379:
                 {
-                alt106=5;
+                alt107=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 106, 0, input);
+                    new NoViableAltException("", 107, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt106) {
+            switch (alt107) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9683:5: this_NationPattern1_0= ruleNationPattern1
                     {
                      
                             newCompositeNode(grammarAccess.getNationModsAccess().getNationPattern1ParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleNationPattern1_in_ruleNationMods23660);
+                    pushFollow(FOLLOW_ruleNationPattern1_in_ruleNationMods23661);
                     this_NationPattern1_0=ruleNationPattern1();
 
                     state._fsp--;
@@ -24647,7 +24658,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getNationModsAccess().getNationPattern2ParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleNationPattern2_in_ruleNationMods23687);
+                    pushFollow(FOLLOW_ruleNationPattern2_in_ruleNationMods23688);
                     this_NationPattern2_1=ruleNationPattern2();
 
                     state._fsp--;
@@ -24665,7 +24676,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getNationModsAccess().getNationPattern3ParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleNationPattern3_in_ruleNationMods23714);
+                    pushFollow(FOLLOW_ruleNationPattern3_in_ruleNationMods23715);
                     this_NationPattern3_2=ruleNationPattern3();
 
                     state._fsp--;
@@ -24683,7 +24694,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getNationModsAccess().getNationPattern4ParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleNationPattern4_in_ruleNationMods23741);
+                    pushFollow(FOLLOW_ruleNationPattern4_in_ruleNationMods23742);
                     this_NationPattern4_3=ruleNationPattern4();
 
                     state._fsp--;
@@ -24701,7 +24712,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getNationModsAccess().getNationPattern5ParserRuleCall_4()); 
                         
-                    pushFollow(FOLLOW_ruleNationPattern5_in_ruleNationMods23768);
+                    pushFollow(FOLLOW_ruleNationPattern5_in_ruleNationMods23769);
                     this_NationPattern5_4=ruleNationPattern5();
 
                     state._fsp--;
@@ -24746,13 +24757,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9741:2: iv_ruleNationPattern1= ruleNationPattern1 EOF
             {
              newCompositeNode(grammarAccess.getNationPattern1Rule()); 
-            pushFollow(FOLLOW_ruleNationPattern1_in_entryRuleNationPattern123803);
+            pushFollow(FOLLOW_ruleNationPattern1_in_entryRuleNationPattern123804);
             iv_ruleNationPattern1=ruleNationPattern1();
 
             state._fsp--;
 
              current =iv_ruleNationPattern1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationPattern123813); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationPattern123814); 
 
             }
 
@@ -24791,7 +24802,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getNationPattern1Access().getNationInst1ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleNationInst1_in_ruleNationPattern123860);
+            pushFollow(FOLLOW_ruleNationInst1_in_ruleNationPattern123861);
             this_NationInst1_0=ruleNationInst1();
 
             state._fsp--;
@@ -24806,7 +24817,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9762:1: (lv_value_1_0= RULE_STRING )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9763:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNationPattern123876); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNationPattern123877); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getNationPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -24827,21 +24838,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9779:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop107:
+            loop108:
             do {
-                int alt107=2;
-                int LA107_0 = input.LA(1);
+                int alt108=2;
+                int LA108_0 = input.LA(1);
 
-                if ( (LA107_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt107=1;
+                if ( (LA108_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt108=1;
                 }
 
 
-                switch (alt107) {
+                switch (alt108) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9779:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern123893); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern123894); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getNationPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -24850,7 +24861,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop107;
+            	    break loop108;
                 }
             } while (true);
 
@@ -24887,13 +24898,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9793:2: iv_ruleNationPattern2= ruleNationPattern2 EOF
             {
              newCompositeNode(grammarAccess.getNationPattern2Rule()); 
-            pushFollow(FOLLOW_ruleNationPattern2_in_entryRuleNationPattern223930);
+            pushFollow(FOLLOW_ruleNationPattern2_in_entryRuleNationPattern223931);
             iv_ruleNationPattern2=ruleNationPattern2();
 
             state._fsp--;
 
              current =iv_ruleNationPattern2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationPattern223940); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationPattern223941); 
 
             }
 
@@ -24932,7 +24943,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getNationPattern2Access().getNationInst2ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleNationInst2_in_ruleNationPattern223987);
+            pushFollow(FOLLOW_ruleNationInst2_in_ruleNationPattern223988);
             this_NationInst2_0=ruleNationInst2();
 
             state._fsp--;
@@ -24947,7 +24958,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9814:1: (lv_value_1_0= RULE_INT )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9815:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNationPattern224003); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNationPattern224004); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getNationPattern2Access().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -24968,21 +24979,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9831:2: (this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT )*
-            loop108:
+            loop109:
             do {
-                int alt108=2;
-                int LA108_0 = input.LA(1);
+                int alt109=2;
+                int LA109_0 = input.LA(1);
 
-                if ( (LA108_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt108=1;
+                if ( (LA109_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt109=1;
                 }
 
 
-                switch (alt108) {
+                switch (alt109) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9831:3: this_FREE_FORM_COMMENT_2= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern224020); 
+            	    this_FREE_FORM_COMMENT_2=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern224021); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getNationPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -24991,7 +25002,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop108;
+            	    break loop109;
                 }
             } while (true);
 
@@ -25028,13 +25039,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9845:2: iv_ruleNationPattern3= ruleNationPattern3 EOF
             {
              newCompositeNode(grammarAccess.getNationPattern3Rule()); 
-            pushFollow(FOLLOW_ruleNationPattern3_in_entryRuleNationPattern324057);
+            pushFollow(FOLLOW_ruleNationPattern3_in_entryRuleNationPattern324058);
             iv_ruleNationPattern3=ruleNationPattern3();
 
             state._fsp--;
 
              current =iv_ruleNationPattern3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationPattern324067); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationPattern324068); 
 
             }
 
@@ -25072,7 +25083,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getNationPattern3Access().getNationInst3ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleNationInst3_in_ruleNationPattern324114);
+            pushFollow(FOLLOW_ruleNationInst3_in_ruleNationPattern324115);
             this_NationInst3_0=ruleNationInst3();
 
             state._fsp--;
@@ -25082,21 +25093,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9865:1: (this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT )*
-            loop109:
+            loop110:
             do {
-                int alt109=2;
-                int LA109_0 = input.LA(1);
+                int alt110=2;
+                int LA110_0 = input.LA(1);
 
-                if ( (LA109_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt109=1;
+                if ( (LA110_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt110=1;
                 }
 
 
-                switch (alt109) {
+                switch (alt110) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9865:2: this_FREE_FORM_COMMENT_1= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern324125); 
+            	    this_FREE_FORM_COMMENT_1=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern324126); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_1, grammarAccess.getNationPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             	        
@@ -25105,7 +25116,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop109;
+            	    break loop110;
                 }
             } while (true);
 
@@ -25142,13 +25153,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9879:2: iv_ruleNationPattern4= ruleNationPattern4 EOF
             {
              newCompositeNode(grammarAccess.getNationPattern4Rule()); 
-            pushFollow(FOLLOW_ruleNationPattern4_in_entryRuleNationPattern424162);
+            pushFollow(FOLLOW_ruleNationPattern4_in_entryRuleNationPattern424163);
             iv_ruleNationPattern4=ruleNationPattern4();
 
             state._fsp--;
 
              current =iv_ruleNationPattern4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationPattern424172); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationPattern424173); 
 
             }
 
@@ -25188,7 +25199,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getNationPattern4Access().getNationInst4ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleNationInst4_in_ruleNationPattern424219);
+            pushFollow(FOLLOW_ruleNationInst4_in_ruleNationPattern424220);
             this_NationInst4_0=ruleNationInst4();
 
             state._fsp--;
@@ -25198,22 +25209,22 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9899:1: ( ( (lv_value1_1_0= RULE_STRING ) ) | ( (lv_value2_2_0= RULE_INT ) ) )
-            int alt110=2;
-            int LA110_0 = input.LA(1);
+            int alt111=2;
+            int LA111_0 = input.LA(1);
 
-            if ( (LA110_0==RULE_STRING) ) {
-                alt110=1;
+            if ( (LA111_0==RULE_STRING) ) {
+                alt111=1;
             }
-            else if ( (LA110_0==RULE_INT) ) {
-                alt110=2;
+            else if ( (LA111_0==RULE_INT) ) {
+                alt111=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 110, 0, input);
+                    new NoViableAltException("", 111, 0, input);
 
                 throw nvae;
             }
-            switch (alt110) {
+            switch (alt111) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9899:2: ( (lv_value1_1_0= RULE_STRING ) )
                     {
@@ -25223,7 +25234,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9900:1: (lv_value1_1_0= RULE_STRING )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9901:3: lv_value1_1_0= RULE_STRING
                     {
-                    lv_value1_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNationPattern424236); 
+                    lv_value1_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNationPattern424237); 
 
                     			newLeafNode(lv_value1_1_0, grammarAccess.getNationPattern4Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
                     		
@@ -25255,7 +25266,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9919:1: (lv_value2_2_0= RULE_INT )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9920:3: lv_value2_2_0= RULE_INT
                     {
-                    lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNationPattern424264); 
+                    lv_value2_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNationPattern424265); 
 
                     			newLeafNode(lv_value2_2_0, grammarAccess.getNationPattern4Access().getValue2INTTerminalRuleCall_1_1_0()); 
                     		
@@ -25282,21 +25293,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9936:3: (this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT )*
-            loop111:
+            loop112:
             do {
-                int alt111=2;
-                int LA111_0 = input.LA(1);
+                int alt112=2;
+                int LA112_0 = input.LA(1);
 
-                if ( (LA111_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt111=1;
+                if ( (LA112_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt112=1;
                 }
 
 
-                switch (alt111) {
+                switch (alt112) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9936:4: this_FREE_FORM_COMMENT_3= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern424282); 
+            	    this_FREE_FORM_COMMENT_3=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern424283); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_3, grammarAccess.getNationPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             	        
@@ -25305,7 +25316,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop111;
+            	    break loop112;
                 }
             } while (true);
 
@@ -25342,13 +25353,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:9950:2: iv_ruleNationPattern5= ruleNationPattern5 EOF
             {
              newCompositeNode(grammarAccess.getNationPattern5Rule()); 
-            pushFollow(FOLLOW_ruleNationPattern5_in_entryRuleNationPattern524319);
+            pushFollow(FOLLOW_ruleNationPattern5_in_entryRuleNationPattern524320);
             iv_ruleNationPattern5=ruleNationPattern5();
 
             state._fsp--;
 
              current =iv_ruleNationPattern5; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationPattern524329); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationPattern524330); 
 
             }
 
@@ -25392,7 +25403,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getNationPattern5Access().getNationInst5ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleNationInst5_in_ruleNationPattern524376);
+            pushFollow(FOLLOW_ruleNationInst5_in_ruleNationPattern524377);
             this_NationInst5_0=ruleNationInst5();
 
             state._fsp--;
@@ -25410,7 +25421,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getNationPattern5Access().getValue1DecimalValueParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleDecimalValue_in_ruleNationPattern524396);
+            pushFollow(FOLLOW_ruleDecimalValue_in_ruleNationPattern524397);
             lv_value1_1_0=ruleDecimalValue();
 
             state._fsp--;
@@ -25441,7 +25452,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getNationPattern5Access().getValue2DecimalValueParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleDecimalValue_in_ruleNationPattern524417);
+            pushFollow(FOLLOW_ruleDecimalValue_in_ruleNationPattern524418);
             lv_value2_2_0=ruleDecimalValue();
 
             state._fsp--;
@@ -25472,7 +25483,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getNationPattern5Access().getValue3DecimalValueParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleDecimalValue_in_ruleNationPattern524438);
+            pushFollow(FOLLOW_ruleDecimalValue_in_ruleNationPattern524439);
             lv_value3_3_0=ruleDecimalValue();
 
             state._fsp--;
@@ -25495,21 +25506,21 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10024:2: (this_FREE_FORM_COMMENT_4= RULE_FREE_FORM_COMMENT )*
-            loop112:
+            loop113:
             do {
-                int alt112=2;
-                int LA112_0 = input.LA(1);
+                int alt113=2;
+                int LA113_0 = input.LA(1);
 
-                if ( (LA112_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt112=1;
+                if ( (LA113_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt113=1;
                 }
 
 
-                switch (alt112) {
+                switch (alt113) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10024:3: this_FREE_FORM_COMMENT_4= RULE_FREE_FORM_COMMENT
             	    {
-            	    this_FREE_FORM_COMMENT_4=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern524450); 
+            	    this_FREE_FORM_COMMENT_4=(Token)match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern524451); 
             	     
             	        newLeafNode(this_FREE_FORM_COMMENT_4, grammarAccess.getNationPattern5Access().getFREE_FORM_COMMENTTerminalRuleCall_4()); 
             	        
@@ -25518,7 +25529,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop112;
+            	    break loop113;
                 }
             } while (true);
 
@@ -25555,13 +25566,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10038:2: iv_ruleNationInst1= ruleNationInst1 EOF
             {
              newCompositeNode(grammarAccess.getNationInst1Rule()); 
-            pushFollow(FOLLOW_ruleNationInst1_in_entryRuleNationInst124487);
+            pushFollow(FOLLOW_ruleNationInst1_in_entryRuleNationInst124488);
             iv_ruleNationInst1=ruleNationInst1();
 
             state._fsp--;
 
              current =iv_ruleNationInst1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationInst124497); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationInst124498); 
 
             }
 
@@ -25599,56 +25610,56 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10049:1: ( ( (lv_name_0_0= '#name' ) ) | ( (lv_epithet_1_0= '#epithet' ) ) | ( (lv_descr_2_0= '#descr' ) ) | ( (lv_summary_3_0= '#summary' ) ) | ( (lv_brief_4_0= '#brief' ) ) | ( (lv_flag_5_0= '#flag' ) ) | ( (lv_mapbackground_6_0= '#mapbackground' ) ) | ( (lv_startsite_7_0= '#startsite' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10049:1: ( ( (lv_name_0_0= '#name' ) ) | ( (lv_epithet_1_0= '#epithet' ) ) | ( (lv_descr_2_0= '#descr' ) ) | ( (lv_summary_3_0= '#summary' ) ) | ( (lv_brief_4_0= '#brief' ) ) | ( (lv_flag_5_0= '#flag' ) ) | ( (lv_mapbackground_6_0= '#mapbackground' ) ) | ( (lv_startsite_7_0= '#startsite' ) ) )
-            int alt113=8;
+            int alt114=8;
             switch ( input.LA(1) ) {
             case 36:
                 {
-                alt113=1;
+                alt114=1;
                 }
                 break;
             case 306:
                 {
-                alt113=2;
+                alt114=2;
                 }
                 break;
             case 89:
                 {
-                alt113=3;
+                alt114=3;
                 }
                 break;
             case 307:
                 {
-                alt113=4;
+                alt114=4;
                 }
                 break;
             case 308:
                 {
-                alt113=5;
+                alt114=5;
                 }
                 break;
             case 309:
                 {
-                alt113=6;
+                alt114=6;
                 }
                 break;
             case 310:
                 {
-                alt113=7;
+                alt114=7;
                 }
                 break;
             case 311:
                 {
-                alt113=8;
+                alt114=8;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 113, 0, input);
+                    new NoViableAltException("", 114, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt113) {
+            switch (alt114) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10049:2: ( (lv_name_0_0= '#name' ) )
                     {
@@ -25658,7 +25669,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10050:1: (lv_name_0_0= '#name' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10051:3: lv_name_0_0= '#name'
                     {
-                    lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleNationInst124540); 
+                    lv_name_0_0=(Token)match(input,36,FOLLOW_36_in_ruleNationInst124541); 
 
                             newLeafNode(lv_name_0_0, grammarAccess.getNationInst1Access().getNameNameKeyword_0_0());
                         
@@ -25686,7 +25697,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10066:1: (lv_epithet_1_0= '#epithet' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10067:3: lv_epithet_1_0= '#epithet'
                     {
-                    lv_epithet_1_0=(Token)match(input,306,FOLLOW_306_in_ruleNationInst124577); 
+                    lv_epithet_1_0=(Token)match(input,306,FOLLOW_306_in_ruleNationInst124578); 
 
                             newLeafNode(lv_epithet_1_0, grammarAccess.getNationInst1Access().getEpithetEpithetKeyword_1_0());
                         
@@ -25714,7 +25725,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10082:1: (lv_descr_2_0= '#descr' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10083:3: lv_descr_2_0= '#descr'
                     {
-                    lv_descr_2_0=(Token)match(input,89,FOLLOW_89_in_ruleNationInst124614); 
+                    lv_descr_2_0=(Token)match(input,89,FOLLOW_89_in_ruleNationInst124615); 
 
                             newLeafNode(lv_descr_2_0, grammarAccess.getNationInst1Access().getDescrDescrKeyword_2_0());
                         
@@ -25742,7 +25753,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10098:1: (lv_summary_3_0= '#summary' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10099:3: lv_summary_3_0= '#summary'
                     {
-                    lv_summary_3_0=(Token)match(input,307,FOLLOW_307_in_ruleNationInst124651); 
+                    lv_summary_3_0=(Token)match(input,307,FOLLOW_307_in_ruleNationInst124652); 
 
                             newLeafNode(lv_summary_3_0, grammarAccess.getNationInst1Access().getSummarySummaryKeyword_3_0());
                         
@@ -25770,7 +25781,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10114:1: (lv_brief_4_0= '#brief' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10115:3: lv_brief_4_0= '#brief'
                     {
-                    lv_brief_4_0=(Token)match(input,308,FOLLOW_308_in_ruleNationInst124688); 
+                    lv_brief_4_0=(Token)match(input,308,FOLLOW_308_in_ruleNationInst124689); 
 
                             newLeafNode(lv_brief_4_0, grammarAccess.getNationInst1Access().getBriefBriefKeyword_4_0());
                         
@@ -25798,7 +25809,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10130:1: (lv_flag_5_0= '#flag' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10131:3: lv_flag_5_0= '#flag'
                     {
-                    lv_flag_5_0=(Token)match(input,309,FOLLOW_309_in_ruleNationInst124725); 
+                    lv_flag_5_0=(Token)match(input,309,FOLLOW_309_in_ruleNationInst124726); 
 
                             newLeafNode(lv_flag_5_0, grammarAccess.getNationInst1Access().getFlagFlagKeyword_5_0());
                         
@@ -25826,7 +25837,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10146:1: (lv_mapbackground_6_0= '#mapbackground' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10147:3: lv_mapbackground_6_0= '#mapbackground'
                     {
-                    lv_mapbackground_6_0=(Token)match(input,310,FOLLOW_310_in_ruleNationInst124762); 
+                    lv_mapbackground_6_0=(Token)match(input,310,FOLLOW_310_in_ruleNationInst124763); 
 
                             newLeafNode(lv_mapbackground_6_0, grammarAccess.getNationInst1Access().getMapbackgroundMapbackgroundKeyword_6_0());
                         
@@ -25854,7 +25865,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10162:1: (lv_startsite_7_0= '#startsite' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10163:3: lv_startsite_7_0= '#startsite'
                     {
-                    lv_startsite_7_0=(Token)match(input,311,FOLLOW_311_in_ruleNationInst124799); 
+                    lv_startsite_7_0=(Token)match(input,311,FOLLOW_311_in_ruleNationInst124800); 
 
                             newLeafNode(lv_startsite_7_0, grammarAccess.getNationInst1Access().getStartsiteStartsiteKeyword_7_0());
                         
@@ -25906,13 +25917,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10186:2: iv_ruleNationInst2= ruleNationInst2 EOF
             {
              newCompositeNode(grammarAccess.getNationInst2Rule()); 
-            pushFollow(FOLLOW_ruleNationInst2_in_entryRuleNationInst224848);
+            pushFollow(FOLLOW_ruleNationInst2_in_entryRuleNationInst224849);
             iv_ruleNationInst2=ruleNationInst2();
 
             state._fsp--;
 
              current =iv_ruleNationInst2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationInst224858); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationInst224859); 
 
             }
 
@@ -25972,166 +25983,166 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10197:1: ( ( (lv_era_0_0= '#era' ) ) | ( (lv_labcost_1_0= '#labcost' ) ) | ( (lv_templecost_2_0= '#templecost' ) ) | ( (lv_templepic_3_0= '#templepic' ) ) | ( (lv_startunitnbrs1_4_0= '#startunitnbrs1' ) ) | ( (lv_startunitnbrs2_5_0= '#startunitnbrs2' ) ) | ( (lv_hero1_6_0= '#hero1' ) ) | ( (lv_hero2_7_0= '#hero2' ) ) | ( (lv_hero3_8_0= '#hero3' ) ) | ( (lv_hero4_9_0= '#hero4' ) ) | ( (lv_hero5_10_0= '#hero5' ) ) | ( (lv_hero6_11_0= '#hero6' ) ) | ( (lv_multihero1_12_0= '#multihero1' ) ) | ( (lv_multihero2_13_0= '#multihero2' ) ) | ( (lv_defmult1_14_0= '#defmult1' ) ) | ( (lv_defmult1b_15_0= '#defmult1b' ) ) | ( (lv_defmult2_16_0= '#defmult2' ) ) | ( (lv_defmult2b_17_0= '#defmult2b' ) ) | ( (lv_idealcold_18_0= '#idealcold' ) ) | ( (lv_castleprod_19_0= '#castleprod' ) ) | ( (lv_domkill_20_0= '#domkill' ) ) | ( (lv_domunrest_21_0= '#domunrest' ) ) | ( (lv_startfort_22_0= '#startfort' ) ) | ( (lv_defaultfort_23_0= '#defaultfort' ) ) | ( (lv_farmfort_24_0= '#farmfort' ) ) | ( (lv_mountainfort_25_0= '#mountainfort' ) ) | ( (lv_forestfort_26_0= '#forestfort' ) ) | ( (lv_swampfort_27_0= '#swampfort' ) ) | ( (lv_uwfort_28_0= '#uwfort' ) ) | ( (lv_deepfort_29_0= '#deepfort' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10197:1: ( ( (lv_era_0_0= '#era' ) ) | ( (lv_labcost_1_0= '#labcost' ) ) | ( (lv_templecost_2_0= '#templecost' ) ) | ( (lv_templepic_3_0= '#templepic' ) ) | ( (lv_startunitnbrs1_4_0= '#startunitnbrs1' ) ) | ( (lv_startunitnbrs2_5_0= '#startunitnbrs2' ) ) | ( (lv_hero1_6_0= '#hero1' ) ) | ( (lv_hero2_7_0= '#hero2' ) ) | ( (lv_hero3_8_0= '#hero3' ) ) | ( (lv_hero4_9_0= '#hero4' ) ) | ( (lv_hero5_10_0= '#hero5' ) ) | ( (lv_hero6_11_0= '#hero6' ) ) | ( (lv_multihero1_12_0= '#multihero1' ) ) | ( (lv_multihero2_13_0= '#multihero2' ) ) | ( (lv_defmult1_14_0= '#defmult1' ) ) | ( (lv_defmult1b_15_0= '#defmult1b' ) ) | ( (lv_defmult2_16_0= '#defmult2' ) ) | ( (lv_defmult2b_17_0= '#defmult2b' ) ) | ( (lv_idealcold_18_0= '#idealcold' ) ) | ( (lv_castleprod_19_0= '#castleprod' ) ) | ( (lv_domkill_20_0= '#domkill' ) ) | ( (lv_domunrest_21_0= '#domunrest' ) ) | ( (lv_startfort_22_0= '#startfort' ) ) | ( (lv_defaultfort_23_0= '#defaultfort' ) ) | ( (lv_farmfort_24_0= '#farmfort' ) ) | ( (lv_mountainfort_25_0= '#mountainfort' ) ) | ( (lv_forestfort_26_0= '#forestfort' ) ) | ( (lv_swampfort_27_0= '#swampfort' ) ) | ( (lv_uwfort_28_0= '#uwfort' ) ) | ( (lv_deepfort_29_0= '#deepfort' ) ) )
-            int alt114=30;
+            int alt115=30;
             switch ( input.LA(1) ) {
             case 312:
                 {
-                alt114=1;
+                alt115=1;
                 }
                 break;
             case 313:
                 {
-                alt114=2;
+                alt115=2;
                 }
                 break;
             case 314:
                 {
-                alt114=3;
+                alt115=3;
                 }
                 break;
             case 315:
                 {
-                alt114=4;
+                alt115=4;
                 }
                 break;
             case 316:
                 {
-                alt114=5;
+                alt115=5;
                 }
                 break;
             case 317:
                 {
-                alt114=6;
+                alt115=6;
                 }
                 break;
             case 318:
                 {
-                alt114=7;
+                alt115=7;
                 }
                 break;
             case 319:
                 {
-                alt114=8;
+                alt115=8;
                 }
                 break;
             case 320:
                 {
-                alt114=9;
+                alt115=9;
                 }
                 break;
             case 321:
                 {
-                alt114=10;
+                alt115=10;
                 }
                 break;
             case 322:
                 {
-                alt114=11;
+                alt115=11;
                 }
                 break;
             case 323:
                 {
-                alt114=12;
+                alt115=12;
                 }
                 break;
             case 324:
                 {
-                alt114=13;
+                alt115=13;
                 }
                 break;
             case 325:
                 {
-                alt114=14;
+                alt115=14;
                 }
                 break;
             case 326:
                 {
-                alt114=15;
+                alt115=15;
                 }
                 break;
             case 327:
                 {
-                alt114=16;
+                alt115=16;
                 }
                 break;
             case 328:
                 {
-                alt114=17;
+                alt115=17;
                 }
                 break;
             case 329:
                 {
-                alt114=18;
+                alt115=18;
                 }
                 break;
             case 330:
                 {
-                alt114=19;
+                alt115=19;
                 }
                 break;
             case 331:
                 {
-                alt114=20;
+                alt115=20;
                 }
                 break;
             case 332:
                 {
-                alt114=21;
+                alt115=21;
                 }
                 break;
             case 333:
                 {
-                alt114=22;
+                alt115=22;
                 }
                 break;
             case 334:
                 {
-                alt114=23;
+                alt115=23;
                 }
                 break;
             case 335:
                 {
-                alt114=24;
+                alt115=24;
                 }
                 break;
             case 336:
                 {
-                alt114=25;
+                alt115=25;
                 }
                 break;
             case 337:
                 {
-                alt114=26;
+                alt115=26;
                 }
                 break;
             case 338:
                 {
-                alt114=27;
+                alt115=27;
                 }
                 break;
             case 339:
                 {
-                alt114=28;
+                alt115=28;
                 }
                 break;
             case 340:
                 {
-                alt114=29;
+                alt115=29;
                 }
                 break;
             case 341:
                 {
-                alt114=30;
+                alt115=30;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 114, 0, input);
+                    new NoViableAltException("", 115, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt114) {
+            switch (alt115) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10197:2: ( (lv_era_0_0= '#era' ) )
                     {
@@ -26141,7 +26152,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10198:1: (lv_era_0_0= '#era' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10199:3: lv_era_0_0= '#era'
                     {
-                    lv_era_0_0=(Token)match(input,312,FOLLOW_312_in_ruleNationInst224901); 
+                    lv_era_0_0=(Token)match(input,312,FOLLOW_312_in_ruleNationInst224902); 
 
                             newLeafNode(lv_era_0_0, grammarAccess.getNationInst2Access().getEraEraKeyword_0_0());
                         
@@ -26169,7 +26180,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10214:1: (lv_labcost_1_0= '#labcost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10215:3: lv_labcost_1_0= '#labcost'
                     {
-                    lv_labcost_1_0=(Token)match(input,313,FOLLOW_313_in_ruleNationInst224938); 
+                    lv_labcost_1_0=(Token)match(input,313,FOLLOW_313_in_ruleNationInst224939); 
 
                             newLeafNode(lv_labcost_1_0, grammarAccess.getNationInst2Access().getLabcostLabcostKeyword_1_0());
                         
@@ -26197,7 +26208,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10230:1: (lv_templecost_2_0= '#templecost' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10231:3: lv_templecost_2_0= '#templecost'
                     {
-                    lv_templecost_2_0=(Token)match(input,314,FOLLOW_314_in_ruleNationInst224975); 
+                    lv_templecost_2_0=(Token)match(input,314,FOLLOW_314_in_ruleNationInst224976); 
 
                             newLeafNode(lv_templecost_2_0, grammarAccess.getNationInst2Access().getTemplecostTemplecostKeyword_2_0());
                         
@@ -26225,7 +26236,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10246:1: (lv_templepic_3_0= '#templepic' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10247:3: lv_templepic_3_0= '#templepic'
                     {
-                    lv_templepic_3_0=(Token)match(input,315,FOLLOW_315_in_ruleNationInst225012); 
+                    lv_templepic_3_0=(Token)match(input,315,FOLLOW_315_in_ruleNationInst225013); 
 
                             newLeafNode(lv_templepic_3_0, grammarAccess.getNationInst2Access().getTemplepicTemplepicKeyword_3_0());
                         
@@ -26253,7 +26264,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10262:1: (lv_startunitnbrs1_4_0= '#startunitnbrs1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10263:3: lv_startunitnbrs1_4_0= '#startunitnbrs1'
                     {
-                    lv_startunitnbrs1_4_0=(Token)match(input,316,FOLLOW_316_in_ruleNationInst225049); 
+                    lv_startunitnbrs1_4_0=(Token)match(input,316,FOLLOW_316_in_ruleNationInst225050); 
 
                             newLeafNode(lv_startunitnbrs1_4_0, grammarAccess.getNationInst2Access().getStartunitnbrs1Startunitnbrs1Keyword_4_0());
                         
@@ -26281,7 +26292,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10278:1: (lv_startunitnbrs2_5_0= '#startunitnbrs2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10279:3: lv_startunitnbrs2_5_0= '#startunitnbrs2'
                     {
-                    lv_startunitnbrs2_5_0=(Token)match(input,317,FOLLOW_317_in_ruleNationInst225086); 
+                    lv_startunitnbrs2_5_0=(Token)match(input,317,FOLLOW_317_in_ruleNationInst225087); 
 
                             newLeafNode(lv_startunitnbrs2_5_0, grammarAccess.getNationInst2Access().getStartunitnbrs2Startunitnbrs2Keyword_5_0());
                         
@@ -26309,7 +26320,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10294:1: (lv_hero1_6_0= '#hero1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10295:3: lv_hero1_6_0= '#hero1'
                     {
-                    lv_hero1_6_0=(Token)match(input,318,FOLLOW_318_in_ruleNationInst225123); 
+                    lv_hero1_6_0=(Token)match(input,318,FOLLOW_318_in_ruleNationInst225124); 
 
                             newLeafNode(lv_hero1_6_0, grammarAccess.getNationInst2Access().getHero1Hero1Keyword_6_0());
                         
@@ -26337,7 +26348,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10310:1: (lv_hero2_7_0= '#hero2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10311:3: lv_hero2_7_0= '#hero2'
                     {
-                    lv_hero2_7_0=(Token)match(input,319,FOLLOW_319_in_ruleNationInst225160); 
+                    lv_hero2_7_0=(Token)match(input,319,FOLLOW_319_in_ruleNationInst225161); 
 
                             newLeafNode(lv_hero2_7_0, grammarAccess.getNationInst2Access().getHero2Hero2Keyword_7_0());
                         
@@ -26365,7 +26376,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10326:1: (lv_hero3_8_0= '#hero3' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10327:3: lv_hero3_8_0= '#hero3'
                     {
-                    lv_hero3_8_0=(Token)match(input,320,FOLLOW_320_in_ruleNationInst225197); 
+                    lv_hero3_8_0=(Token)match(input,320,FOLLOW_320_in_ruleNationInst225198); 
 
                             newLeafNode(lv_hero3_8_0, grammarAccess.getNationInst2Access().getHero3Hero3Keyword_8_0());
                         
@@ -26393,7 +26404,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10342:1: (lv_hero4_9_0= '#hero4' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10343:3: lv_hero4_9_0= '#hero4'
                     {
-                    lv_hero4_9_0=(Token)match(input,321,FOLLOW_321_in_ruleNationInst225234); 
+                    lv_hero4_9_0=(Token)match(input,321,FOLLOW_321_in_ruleNationInst225235); 
 
                             newLeafNode(lv_hero4_9_0, grammarAccess.getNationInst2Access().getHero4Hero4Keyword_9_0());
                         
@@ -26421,7 +26432,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10358:1: (lv_hero5_10_0= '#hero5' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10359:3: lv_hero5_10_0= '#hero5'
                     {
-                    lv_hero5_10_0=(Token)match(input,322,FOLLOW_322_in_ruleNationInst225271); 
+                    lv_hero5_10_0=(Token)match(input,322,FOLLOW_322_in_ruleNationInst225272); 
 
                             newLeafNode(lv_hero5_10_0, grammarAccess.getNationInst2Access().getHero5Hero5Keyword_10_0());
                         
@@ -26449,7 +26460,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10374:1: (lv_hero6_11_0= '#hero6' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10375:3: lv_hero6_11_0= '#hero6'
                     {
-                    lv_hero6_11_0=(Token)match(input,323,FOLLOW_323_in_ruleNationInst225308); 
+                    lv_hero6_11_0=(Token)match(input,323,FOLLOW_323_in_ruleNationInst225309); 
 
                             newLeafNode(lv_hero6_11_0, grammarAccess.getNationInst2Access().getHero6Hero6Keyword_11_0());
                         
@@ -26477,7 +26488,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10390:1: (lv_multihero1_12_0= '#multihero1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10391:3: lv_multihero1_12_0= '#multihero1'
                     {
-                    lv_multihero1_12_0=(Token)match(input,324,FOLLOW_324_in_ruleNationInst225345); 
+                    lv_multihero1_12_0=(Token)match(input,324,FOLLOW_324_in_ruleNationInst225346); 
 
                             newLeafNode(lv_multihero1_12_0, grammarAccess.getNationInst2Access().getMultihero1Multihero1Keyword_12_0());
                         
@@ -26505,7 +26516,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10406:1: (lv_multihero2_13_0= '#multihero2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10407:3: lv_multihero2_13_0= '#multihero2'
                     {
-                    lv_multihero2_13_0=(Token)match(input,325,FOLLOW_325_in_ruleNationInst225382); 
+                    lv_multihero2_13_0=(Token)match(input,325,FOLLOW_325_in_ruleNationInst225383); 
 
                             newLeafNode(lv_multihero2_13_0, grammarAccess.getNationInst2Access().getMultihero2Multihero2Keyword_13_0());
                         
@@ -26533,7 +26544,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10422:1: (lv_defmult1_14_0= '#defmult1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10423:3: lv_defmult1_14_0= '#defmult1'
                     {
-                    lv_defmult1_14_0=(Token)match(input,326,FOLLOW_326_in_ruleNationInst225419); 
+                    lv_defmult1_14_0=(Token)match(input,326,FOLLOW_326_in_ruleNationInst225420); 
 
                             newLeafNode(lv_defmult1_14_0, grammarAccess.getNationInst2Access().getDefmult1Defmult1Keyword_14_0());
                         
@@ -26561,7 +26572,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10438:1: (lv_defmult1b_15_0= '#defmult1b' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10439:3: lv_defmult1b_15_0= '#defmult1b'
                     {
-                    lv_defmult1b_15_0=(Token)match(input,327,FOLLOW_327_in_ruleNationInst225456); 
+                    lv_defmult1b_15_0=(Token)match(input,327,FOLLOW_327_in_ruleNationInst225457); 
 
                             newLeafNode(lv_defmult1b_15_0, grammarAccess.getNationInst2Access().getDefmult1bDefmult1bKeyword_15_0());
                         
@@ -26589,7 +26600,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10454:1: (lv_defmult2_16_0= '#defmult2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10455:3: lv_defmult2_16_0= '#defmult2'
                     {
-                    lv_defmult2_16_0=(Token)match(input,328,FOLLOW_328_in_ruleNationInst225493); 
+                    lv_defmult2_16_0=(Token)match(input,328,FOLLOW_328_in_ruleNationInst225494); 
 
                             newLeafNode(lv_defmult2_16_0, grammarAccess.getNationInst2Access().getDefmult2Defmult2Keyword_16_0());
                         
@@ -26617,7 +26628,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10470:1: (lv_defmult2b_17_0= '#defmult2b' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10471:3: lv_defmult2b_17_0= '#defmult2b'
                     {
-                    lv_defmult2b_17_0=(Token)match(input,329,FOLLOW_329_in_ruleNationInst225530); 
+                    lv_defmult2b_17_0=(Token)match(input,329,FOLLOW_329_in_ruleNationInst225531); 
 
                             newLeafNode(lv_defmult2b_17_0, grammarAccess.getNationInst2Access().getDefmult2bDefmult2bKeyword_17_0());
                         
@@ -26645,7 +26656,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10486:1: (lv_idealcold_18_0= '#idealcold' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10487:3: lv_idealcold_18_0= '#idealcold'
                     {
-                    lv_idealcold_18_0=(Token)match(input,330,FOLLOW_330_in_ruleNationInst225567); 
+                    lv_idealcold_18_0=(Token)match(input,330,FOLLOW_330_in_ruleNationInst225568); 
 
                             newLeafNode(lv_idealcold_18_0, grammarAccess.getNationInst2Access().getIdealcoldIdealcoldKeyword_18_0());
                         
@@ -26673,7 +26684,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10502:1: (lv_castleprod_19_0= '#castleprod' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10503:3: lv_castleprod_19_0= '#castleprod'
                     {
-                    lv_castleprod_19_0=(Token)match(input,331,FOLLOW_331_in_ruleNationInst225604); 
+                    lv_castleprod_19_0=(Token)match(input,331,FOLLOW_331_in_ruleNationInst225605); 
 
                             newLeafNode(lv_castleprod_19_0, grammarAccess.getNationInst2Access().getCastleprodCastleprodKeyword_19_0());
                         
@@ -26701,7 +26712,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10518:1: (lv_domkill_20_0= '#domkill' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10519:3: lv_domkill_20_0= '#domkill'
                     {
-                    lv_domkill_20_0=(Token)match(input,332,FOLLOW_332_in_ruleNationInst225641); 
+                    lv_domkill_20_0=(Token)match(input,332,FOLLOW_332_in_ruleNationInst225642); 
 
                             newLeafNode(lv_domkill_20_0, grammarAccess.getNationInst2Access().getDomkillDomkillKeyword_20_0());
                         
@@ -26729,7 +26740,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10534:1: (lv_domunrest_21_0= '#domunrest' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10535:3: lv_domunrest_21_0= '#domunrest'
                     {
-                    lv_domunrest_21_0=(Token)match(input,333,FOLLOW_333_in_ruleNationInst225678); 
+                    lv_domunrest_21_0=(Token)match(input,333,FOLLOW_333_in_ruleNationInst225679); 
 
                             newLeafNode(lv_domunrest_21_0, grammarAccess.getNationInst2Access().getDomunrestDomunrestKeyword_21_0());
                         
@@ -26757,7 +26768,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10550:1: (lv_startfort_22_0= '#startfort' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10551:3: lv_startfort_22_0= '#startfort'
                     {
-                    lv_startfort_22_0=(Token)match(input,334,FOLLOW_334_in_ruleNationInst225715); 
+                    lv_startfort_22_0=(Token)match(input,334,FOLLOW_334_in_ruleNationInst225716); 
 
                             newLeafNode(lv_startfort_22_0, grammarAccess.getNationInst2Access().getStartfortStartfortKeyword_22_0());
                         
@@ -26785,7 +26796,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10566:1: (lv_defaultfort_23_0= '#defaultfort' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10567:3: lv_defaultfort_23_0= '#defaultfort'
                     {
-                    lv_defaultfort_23_0=(Token)match(input,335,FOLLOW_335_in_ruleNationInst225752); 
+                    lv_defaultfort_23_0=(Token)match(input,335,FOLLOW_335_in_ruleNationInst225753); 
 
                             newLeafNode(lv_defaultfort_23_0, grammarAccess.getNationInst2Access().getDefaultfortDefaultfortKeyword_23_0());
                         
@@ -26813,7 +26824,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10582:1: (lv_farmfort_24_0= '#farmfort' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10583:3: lv_farmfort_24_0= '#farmfort'
                     {
-                    lv_farmfort_24_0=(Token)match(input,336,FOLLOW_336_in_ruleNationInst225789); 
+                    lv_farmfort_24_0=(Token)match(input,336,FOLLOW_336_in_ruleNationInst225790); 
 
                             newLeafNode(lv_farmfort_24_0, grammarAccess.getNationInst2Access().getFarmfortFarmfortKeyword_24_0());
                         
@@ -26841,7 +26852,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10598:1: (lv_mountainfort_25_0= '#mountainfort' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10599:3: lv_mountainfort_25_0= '#mountainfort'
                     {
-                    lv_mountainfort_25_0=(Token)match(input,337,FOLLOW_337_in_ruleNationInst225826); 
+                    lv_mountainfort_25_0=(Token)match(input,337,FOLLOW_337_in_ruleNationInst225827); 
 
                             newLeafNode(lv_mountainfort_25_0, grammarAccess.getNationInst2Access().getMountainfortMountainfortKeyword_25_0());
                         
@@ -26869,7 +26880,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10614:1: (lv_forestfort_26_0= '#forestfort' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10615:3: lv_forestfort_26_0= '#forestfort'
                     {
-                    lv_forestfort_26_0=(Token)match(input,338,FOLLOW_338_in_ruleNationInst225863); 
+                    lv_forestfort_26_0=(Token)match(input,338,FOLLOW_338_in_ruleNationInst225864); 
 
                             newLeafNode(lv_forestfort_26_0, grammarAccess.getNationInst2Access().getForestfortForestfortKeyword_26_0());
                         
@@ -26897,7 +26908,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10630:1: (lv_swampfort_27_0= '#swampfort' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10631:3: lv_swampfort_27_0= '#swampfort'
                     {
-                    lv_swampfort_27_0=(Token)match(input,339,FOLLOW_339_in_ruleNationInst225900); 
+                    lv_swampfort_27_0=(Token)match(input,339,FOLLOW_339_in_ruleNationInst225901); 
 
                             newLeafNode(lv_swampfort_27_0, grammarAccess.getNationInst2Access().getSwampfortSwampfortKeyword_27_0());
                         
@@ -26925,7 +26936,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10646:1: (lv_uwfort_28_0= '#uwfort' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10647:3: lv_uwfort_28_0= '#uwfort'
                     {
-                    lv_uwfort_28_0=(Token)match(input,340,FOLLOW_340_in_ruleNationInst225937); 
+                    lv_uwfort_28_0=(Token)match(input,340,FOLLOW_340_in_ruleNationInst225938); 
 
                             newLeafNode(lv_uwfort_28_0, grammarAccess.getNationInst2Access().getUwfortUwfortKeyword_28_0());
                         
@@ -26953,7 +26964,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10662:1: (lv_deepfort_29_0= '#deepfort' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10663:3: lv_deepfort_29_0= '#deepfort'
                     {
-                    lv_deepfort_29_0=(Token)match(input,341,FOLLOW_341_in_ruleNationInst225974); 
+                    lv_deepfort_29_0=(Token)match(input,341,FOLLOW_341_in_ruleNationInst225975); 
 
                             newLeafNode(lv_deepfort_29_0, grammarAccess.getNationInst2Access().getDeepfortDeepfortKeyword_29_0());
                         
@@ -27005,13 +27016,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10686:2: iv_ruleNationInst3= ruleNationInst3 EOF
             {
              newCompositeNode(grammarAccess.getNationInst3Rule()); 
-            pushFollow(FOLLOW_ruleNationInst3_in_entryRuleNationInst326023);
+            pushFollow(FOLLOW_ruleNationInst3_in_entryRuleNationInst326024);
             iv_ruleNationInst3=ruleNationInst3();
 
             state._fsp--;
 
              current =iv_ruleNationInst3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationInst326033); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationInst326034); 
 
             }
 
@@ -27056,91 +27067,91 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10697:1: ( ( (lv_clearnation_0_0= '#clearnation' ) ) | ( (lv_clearrec_1_0= '#clearrec' ) ) | ( (lv_clearsites_2_0= '#clearsites' ) ) | ( (lv_uwnation_3_0= '#uwnation' ) ) | ( (lv_bloodnation_4_0= '#bloodnation' ) ) | ( (lv_nopreach_5_0= '#nopreach' ) ) | ( (lv_dyingdom_6_0= '#dyingdom' ) ) | ( (lv_sacrificedom_7_0= '#sacrificedom' ) ) | ( (lv_nodeathsupply_8_0= '#nodeathsupply' ) ) | ( (lv_autoundead_9_0= '#autoundead' ) ) | ( (lv_zombiereanim_10_0= '#zombiereanim' ) ) | ( (lv_horsereanim_11_0= '#horsereanim' ) ) | ( (lv_wightreanim_12_0= '#wightreanim' ) ) | ( (lv_manikinreanim_13_0= '#manikinreanim' ) ) | ( (lv_tombwyrmreanim_14_0= '#tombwyrmreanim' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10697:1: ( ( (lv_clearnation_0_0= '#clearnation' ) ) | ( (lv_clearrec_1_0= '#clearrec' ) ) | ( (lv_clearsites_2_0= '#clearsites' ) ) | ( (lv_uwnation_3_0= '#uwnation' ) ) | ( (lv_bloodnation_4_0= '#bloodnation' ) ) | ( (lv_nopreach_5_0= '#nopreach' ) ) | ( (lv_dyingdom_6_0= '#dyingdom' ) ) | ( (lv_sacrificedom_7_0= '#sacrificedom' ) ) | ( (lv_nodeathsupply_8_0= '#nodeathsupply' ) ) | ( (lv_autoundead_9_0= '#autoundead' ) ) | ( (lv_zombiereanim_10_0= '#zombiereanim' ) ) | ( (lv_horsereanim_11_0= '#horsereanim' ) ) | ( (lv_wightreanim_12_0= '#wightreanim' ) ) | ( (lv_manikinreanim_13_0= '#manikinreanim' ) ) | ( (lv_tombwyrmreanim_14_0= '#tombwyrmreanim' ) ) )
-            int alt115=15;
+            int alt116=15;
             switch ( input.LA(1) ) {
             case 342:
                 {
-                alt115=1;
+                alt116=1;
                 }
                 break;
             case 343:
                 {
-                alt115=2;
+                alt116=2;
                 }
                 break;
             case 344:
                 {
-                alt115=3;
+                alt116=3;
                 }
                 break;
             case 345:
                 {
-                alt115=4;
+                alt116=4;
                 }
                 break;
             case 346:
                 {
-                alt115=5;
+                alt116=5;
                 }
                 break;
             case 347:
                 {
-                alt115=6;
+                alt116=6;
                 }
                 break;
             case 348:
                 {
-                alt115=7;
+                alt116=7;
                 }
                 break;
             case 349:
                 {
-                alt115=8;
+                alt116=8;
                 }
                 break;
             case 350:
                 {
-                alt115=9;
+                alt116=9;
                 }
                 break;
             case 351:
                 {
-                alt115=10;
+                alt116=10;
                 }
                 break;
             case 352:
                 {
-                alt115=11;
+                alt116=11;
                 }
                 break;
             case 353:
                 {
-                alt115=12;
+                alt116=12;
                 }
                 break;
             case 354:
                 {
-                alt115=13;
+                alt116=13;
                 }
                 break;
             case 355:
                 {
-                alt115=14;
+                alt116=14;
                 }
                 break;
             case 356:
                 {
-                alt115=15;
+                alt116=15;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 115, 0, input);
+                    new NoViableAltException("", 116, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt115) {
+            switch (alt116) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10697:2: ( (lv_clearnation_0_0= '#clearnation' ) )
                     {
@@ -27150,7 +27161,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10698:1: (lv_clearnation_0_0= '#clearnation' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10699:3: lv_clearnation_0_0= '#clearnation'
                     {
-                    lv_clearnation_0_0=(Token)match(input,342,FOLLOW_342_in_ruleNationInst326076); 
+                    lv_clearnation_0_0=(Token)match(input,342,FOLLOW_342_in_ruleNationInst326077); 
 
                             newLeafNode(lv_clearnation_0_0, grammarAccess.getNationInst3Access().getClearnationClearnationKeyword_0_0());
                         
@@ -27178,7 +27189,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10714:1: (lv_clearrec_1_0= '#clearrec' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10715:3: lv_clearrec_1_0= '#clearrec'
                     {
-                    lv_clearrec_1_0=(Token)match(input,343,FOLLOW_343_in_ruleNationInst326113); 
+                    lv_clearrec_1_0=(Token)match(input,343,FOLLOW_343_in_ruleNationInst326114); 
 
                             newLeafNode(lv_clearrec_1_0, grammarAccess.getNationInst3Access().getClearrecClearrecKeyword_1_0());
                         
@@ -27206,7 +27217,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10730:1: (lv_clearsites_2_0= '#clearsites' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10731:3: lv_clearsites_2_0= '#clearsites'
                     {
-                    lv_clearsites_2_0=(Token)match(input,344,FOLLOW_344_in_ruleNationInst326150); 
+                    lv_clearsites_2_0=(Token)match(input,344,FOLLOW_344_in_ruleNationInst326151); 
 
                             newLeafNode(lv_clearsites_2_0, grammarAccess.getNationInst3Access().getClearsitesClearsitesKeyword_2_0());
                         
@@ -27234,7 +27245,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10746:1: (lv_uwnation_3_0= '#uwnation' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10747:3: lv_uwnation_3_0= '#uwnation'
                     {
-                    lv_uwnation_3_0=(Token)match(input,345,FOLLOW_345_in_ruleNationInst326187); 
+                    lv_uwnation_3_0=(Token)match(input,345,FOLLOW_345_in_ruleNationInst326188); 
 
                             newLeafNode(lv_uwnation_3_0, grammarAccess.getNationInst3Access().getUwnationUwnationKeyword_3_0());
                         
@@ -27262,7 +27273,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10762:1: (lv_bloodnation_4_0= '#bloodnation' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10763:3: lv_bloodnation_4_0= '#bloodnation'
                     {
-                    lv_bloodnation_4_0=(Token)match(input,346,FOLLOW_346_in_ruleNationInst326224); 
+                    lv_bloodnation_4_0=(Token)match(input,346,FOLLOW_346_in_ruleNationInst326225); 
 
                             newLeafNode(lv_bloodnation_4_0, grammarAccess.getNationInst3Access().getBloodnationBloodnationKeyword_4_0());
                         
@@ -27290,7 +27301,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10778:1: (lv_nopreach_5_0= '#nopreach' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10779:3: lv_nopreach_5_0= '#nopreach'
                     {
-                    lv_nopreach_5_0=(Token)match(input,347,FOLLOW_347_in_ruleNationInst326261); 
+                    lv_nopreach_5_0=(Token)match(input,347,FOLLOW_347_in_ruleNationInst326262); 
 
                             newLeafNode(lv_nopreach_5_0, grammarAccess.getNationInst3Access().getNopreachNopreachKeyword_5_0());
                         
@@ -27318,7 +27329,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10794:1: (lv_dyingdom_6_0= '#dyingdom' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10795:3: lv_dyingdom_6_0= '#dyingdom'
                     {
-                    lv_dyingdom_6_0=(Token)match(input,348,FOLLOW_348_in_ruleNationInst326298); 
+                    lv_dyingdom_6_0=(Token)match(input,348,FOLLOW_348_in_ruleNationInst326299); 
 
                             newLeafNode(lv_dyingdom_6_0, grammarAccess.getNationInst3Access().getDyingdomDyingdomKeyword_6_0());
                         
@@ -27346,7 +27357,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10810:1: (lv_sacrificedom_7_0= '#sacrificedom' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10811:3: lv_sacrificedom_7_0= '#sacrificedom'
                     {
-                    lv_sacrificedom_7_0=(Token)match(input,349,FOLLOW_349_in_ruleNationInst326335); 
+                    lv_sacrificedom_7_0=(Token)match(input,349,FOLLOW_349_in_ruleNationInst326336); 
 
                             newLeafNode(lv_sacrificedom_7_0, grammarAccess.getNationInst3Access().getSacrificedomSacrificedomKeyword_7_0());
                         
@@ -27374,7 +27385,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10826:1: (lv_nodeathsupply_8_0= '#nodeathsupply' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10827:3: lv_nodeathsupply_8_0= '#nodeathsupply'
                     {
-                    lv_nodeathsupply_8_0=(Token)match(input,350,FOLLOW_350_in_ruleNationInst326372); 
+                    lv_nodeathsupply_8_0=(Token)match(input,350,FOLLOW_350_in_ruleNationInst326373); 
 
                             newLeafNode(lv_nodeathsupply_8_0, grammarAccess.getNationInst3Access().getNodeathsupplyNodeathsupplyKeyword_8_0());
                         
@@ -27402,7 +27413,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10842:1: (lv_autoundead_9_0= '#autoundead' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10843:3: lv_autoundead_9_0= '#autoundead'
                     {
-                    lv_autoundead_9_0=(Token)match(input,351,FOLLOW_351_in_ruleNationInst326409); 
+                    lv_autoundead_9_0=(Token)match(input,351,FOLLOW_351_in_ruleNationInst326410); 
 
                             newLeafNode(lv_autoundead_9_0, grammarAccess.getNationInst3Access().getAutoundeadAutoundeadKeyword_9_0());
                         
@@ -27430,7 +27441,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10858:1: (lv_zombiereanim_10_0= '#zombiereanim' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10859:3: lv_zombiereanim_10_0= '#zombiereanim'
                     {
-                    lv_zombiereanim_10_0=(Token)match(input,352,FOLLOW_352_in_ruleNationInst326446); 
+                    lv_zombiereanim_10_0=(Token)match(input,352,FOLLOW_352_in_ruleNationInst326447); 
 
                             newLeafNode(lv_zombiereanim_10_0, grammarAccess.getNationInst3Access().getZombiereanimZombiereanimKeyword_10_0());
                         
@@ -27458,7 +27469,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10874:1: (lv_horsereanim_11_0= '#horsereanim' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10875:3: lv_horsereanim_11_0= '#horsereanim'
                     {
-                    lv_horsereanim_11_0=(Token)match(input,353,FOLLOW_353_in_ruleNationInst326483); 
+                    lv_horsereanim_11_0=(Token)match(input,353,FOLLOW_353_in_ruleNationInst326484); 
 
                             newLeafNode(lv_horsereanim_11_0, grammarAccess.getNationInst3Access().getHorsereanimHorsereanimKeyword_11_0());
                         
@@ -27486,7 +27497,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10890:1: (lv_wightreanim_12_0= '#wightreanim' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10891:3: lv_wightreanim_12_0= '#wightreanim'
                     {
-                    lv_wightreanim_12_0=(Token)match(input,354,FOLLOW_354_in_ruleNationInst326520); 
+                    lv_wightreanim_12_0=(Token)match(input,354,FOLLOW_354_in_ruleNationInst326521); 
 
                             newLeafNode(lv_wightreanim_12_0, grammarAccess.getNationInst3Access().getWightreanimWightreanimKeyword_12_0());
                         
@@ -27514,7 +27525,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10906:1: (lv_manikinreanim_13_0= '#manikinreanim' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10907:3: lv_manikinreanim_13_0= '#manikinreanim'
                     {
-                    lv_manikinreanim_13_0=(Token)match(input,355,FOLLOW_355_in_ruleNationInst326557); 
+                    lv_manikinreanim_13_0=(Token)match(input,355,FOLLOW_355_in_ruleNationInst326558); 
 
                             newLeafNode(lv_manikinreanim_13_0, grammarAccess.getNationInst3Access().getManikinreanimManikinreanimKeyword_13_0());
                         
@@ -27542,7 +27553,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10922:1: (lv_tombwyrmreanim_14_0= '#tombwyrmreanim' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10923:3: lv_tombwyrmreanim_14_0= '#tombwyrmreanim'
                     {
-                    lv_tombwyrmreanim_14_0=(Token)match(input,356,FOLLOW_356_in_ruleNationInst326594); 
+                    lv_tombwyrmreanim_14_0=(Token)match(input,356,FOLLOW_356_in_ruleNationInst326595); 
 
                             newLeafNode(lv_tombwyrmreanim_14_0, grammarAccess.getNationInst3Access().getTombwyrmreanimTombwyrmreanimKeyword_14_0());
                         
@@ -27594,13 +27605,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10946:2: iv_ruleNationInst4= ruleNationInst4 EOF
             {
              newCompositeNode(grammarAccess.getNationInst4Rule()); 
-            pushFollow(FOLLOW_ruleNationInst4_in_entryRuleNationInst426643);
+            pushFollow(FOLLOW_ruleNationInst4_in_entryRuleNationInst426644);
             iv_ruleNationInst4=ruleNationInst4();
 
             state._fsp--;
 
              current =iv_ruleNationInst4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationInst426653); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationInst426654); 
 
             }
 
@@ -27652,126 +27663,126 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10957:1: ( ( (lv_startcom_0_0= '#startcom' ) ) | ( (lv_startscout_1_0= '#startscout' ) ) | ( (lv_startunittype1_2_0= '#startunittype1' ) ) | ( (lv_startunittype2_3_0= '#startunittype2' ) ) | ( (lv_addrecunit_4_0= '#addrecunit' ) ) | ( (lv_addreccom_5_0= '#addreccom' ) ) | ( (lv_uwunit1_6_0= '#uwunit1' ) ) | ( (lv_uwunit2_7_0= '#uwunit2' ) ) | ( (lv_uwunit3_8_0= '#uwunit3' ) ) | ( (lv_uwunit4_9_0= '#uwunit4' ) ) | ( (lv_uwunit5_10_0= '#uwunit5' ) ) | ( (lv_uwcom1_11_0= '#uwcom1' ) ) | ( (lv_uwcom2_12_0= '#uwcom2' ) ) | ( (lv_uwcom3_13_0= '#uwcom3' ) ) | ( (lv_uwcom4_14_0= '#uwcom4' ) ) | ( (lv_uwcom5_15_0= '#uwcom5' ) ) | ( (lv_defcom1_16_0= '#defcom1' ) ) | ( (lv_defcom2_17_0= '#defcom2' ) ) | ( (lv_defunit1_18_0= '#defunit1' ) ) | ( (lv_defunit1b_19_0= '#defunit1b' ) ) | ( (lv_defunit2_20_0= '#defunit2' ) ) | ( (lv_defunit2b_21_0= '#defunit2b' ) ) )
             {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10957:1: ( ( (lv_startcom_0_0= '#startcom' ) ) | ( (lv_startscout_1_0= '#startscout' ) ) | ( (lv_startunittype1_2_0= '#startunittype1' ) ) | ( (lv_startunittype2_3_0= '#startunittype2' ) ) | ( (lv_addrecunit_4_0= '#addrecunit' ) ) | ( (lv_addreccom_5_0= '#addreccom' ) ) | ( (lv_uwunit1_6_0= '#uwunit1' ) ) | ( (lv_uwunit2_7_0= '#uwunit2' ) ) | ( (lv_uwunit3_8_0= '#uwunit3' ) ) | ( (lv_uwunit4_9_0= '#uwunit4' ) ) | ( (lv_uwunit5_10_0= '#uwunit5' ) ) | ( (lv_uwcom1_11_0= '#uwcom1' ) ) | ( (lv_uwcom2_12_0= '#uwcom2' ) ) | ( (lv_uwcom3_13_0= '#uwcom3' ) ) | ( (lv_uwcom4_14_0= '#uwcom4' ) ) | ( (lv_uwcom5_15_0= '#uwcom5' ) ) | ( (lv_defcom1_16_0= '#defcom1' ) ) | ( (lv_defcom2_17_0= '#defcom2' ) ) | ( (lv_defunit1_18_0= '#defunit1' ) ) | ( (lv_defunit1b_19_0= '#defunit1b' ) ) | ( (lv_defunit2_20_0= '#defunit2' ) ) | ( (lv_defunit2b_21_0= '#defunit2b' ) ) )
-            int alt116=22;
+            int alt117=22;
             switch ( input.LA(1) ) {
             case 357:
                 {
-                alt116=1;
+                alt117=1;
                 }
                 break;
             case 358:
                 {
-                alt116=2;
+                alt117=2;
                 }
                 break;
             case 359:
                 {
-                alt116=3;
+                alt117=3;
                 }
                 break;
             case 360:
                 {
-                alt116=4;
+                alt117=4;
                 }
                 break;
             case 361:
                 {
-                alt116=5;
+                alt117=5;
                 }
                 break;
             case 362:
                 {
-                alt116=6;
+                alt117=6;
                 }
                 break;
             case 363:
                 {
-                alt116=7;
+                alt117=7;
                 }
                 break;
             case 364:
                 {
-                alt116=8;
+                alt117=8;
                 }
                 break;
             case 365:
                 {
-                alt116=9;
+                alt117=9;
                 }
                 break;
             case 366:
                 {
-                alt116=10;
+                alt117=10;
                 }
                 break;
             case 367:
                 {
-                alt116=11;
+                alt117=11;
                 }
                 break;
             case 368:
                 {
-                alt116=12;
+                alt117=12;
                 }
                 break;
             case 369:
                 {
-                alt116=13;
+                alt117=13;
                 }
                 break;
             case 370:
                 {
-                alt116=14;
+                alt117=14;
                 }
                 break;
             case 371:
                 {
-                alt116=15;
+                alt117=15;
                 }
                 break;
             case 372:
                 {
-                alt116=16;
+                alt117=16;
                 }
                 break;
             case 373:
                 {
-                alt116=17;
+                alt117=17;
                 }
                 break;
             case 374:
                 {
-                alt116=18;
+                alt117=18;
                 }
                 break;
             case 375:
                 {
-                alt116=19;
+                alt117=19;
                 }
                 break;
             case 376:
                 {
-                alt116=20;
+                alt117=20;
                 }
                 break;
             case 377:
                 {
-                alt116=21;
+                alt117=21;
                 }
                 break;
             case 378:
                 {
-                alt116=22;
+                alt117=22;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 116, 0, input);
+                    new NoViableAltException("", 117, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt116) {
+            switch (alt117) {
                 case 1 :
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10957:2: ( (lv_startcom_0_0= '#startcom' ) )
                     {
@@ -27781,7 +27792,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10958:1: (lv_startcom_0_0= '#startcom' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10959:3: lv_startcom_0_0= '#startcom'
                     {
-                    lv_startcom_0_0=(Token)match(input,357,FOLLOW_357_in_ruleNationInst426696); 
+                    lv_startcom_0_0=(Token)match(input,357,FOLLOW_357_in_ruleNationInst426697); 
 
                             newLeafNode(lv_startcom_0_0, grammarAccess.getNationInst4Access().getStartcomStartcomKeyword_0_0());
                         
@@ -27809,7 +27820,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10974:1: (lv_startscout_1_0= '#startscout' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10975:3: lv_startscout_1_0= '#startscout'
                     {
-                    lv_startscout_1_0=(Token)match(input,358,FOLLOW_358_in_ruleNationInst426733); 
+                    lv_startscout_1_0=(Token)match(input,358,FOLLOW_358_in_ruleNationInst426734); 
 
                             newLeafNode(lv_startscout_1_0, grammarAccess.getNationInst4Access().getStartscoutStartscoutKeyword_1_0());
                         
@@ -27837,7 +27848,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10990:1: (lv_startunittype1_2_0= '#startunittype1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:10991:3: lv_startunittype1_2_0= '#startunittype1'
                     {
-                    lv_startunittype1_2_0=(Token)match(input,359,FOLLOW_359_in_ruleNationInst426770); 
+                    lv_startunittype1_2_0=(Token)match(input,359,FOLLOW_359_in_ruleNationInst426771); 
 
                             newLeafNode(lv_startunittype1_2_0, grammarAccess.getNationInst4Access().getStartunittype1Startunittype1Keyword_2_0());
                         
@@ -27865,7 +27876,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11006:1: (lv_startunittype2_3_0= '#startunittype2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11007:3: lv_startunittype2_3_0= '#startunittype2'
                     {
-                    lv_startunittype2_3_0=(Token)match(input,360,FOLLOW_360_in_ruleNationInst426807); 
+                    lv_startunittype2_3_0=(Token)match(input,360,FOLLOW_360_in_ruleNationInst426808); 
 
                             newLeafNode(lv_startunittype2_3_0, grammarAccess.getNationInst4Access().getStartunittype2Startunittype2Keyword_3_0());
                         
@@ -27893,7 +27904,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11022:1: (lv_addrecunit_4_0= '#addrecunit' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11023:3: lv_addrecunit_4_0= '#addrecunit'
                     {
-                    lv_addrecunit_4_0=(Token)match(input,361,FOLLOW_361_in_ruleNationInst426844); 
+                    lv_addrecunit_4_0=(Token)match(input,361,FOLLOW_361_in_ruleNationInst426845); 
 
                             newLeafNode(lv_addrecunit_4_0, grammarAccess.getNationInst4Access().getAddrecunitAddrecunitKeyword_4_0());
                         
@@ -27921,7 +27932,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11038:1: (lv_addreccom_5_0= '#addreccom' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11039:3: lv_addreccom_5_0= '#addreccom'
                     {
-                    lv_addreccom_5_0=(Token)match(input,362,FOLLOW_362_in_ruleNationInst426881); 
+                    lv_addreccom_5_0=(Token)match(input,362,FOLLOW_362_in_ruleNationInst426882); 
 
                             newLeafNode(lv_addreccom_5_0, grammarAccess.getNationInst4Access().getAddreccomAddreccomKeyword_5_0());
                         
@@ -27949,7 +27960,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11054:1: (lv_uwunit1_6_0= '#uwunit1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11055:3: lv_uwunit1_6_0= '#uwunit1'
                     {
-                    lv_uwunit1_6_0=(Token)match(input,363,FOLLOW_363_in_ruleNationInst426918); 
+                    lv_uwunit1_6_0=(Token)match(input,363,FOLLOW_363_in_ruleNationInst426919); 
 
                             newLeafNode(lv_uwunit1_6_0, grammarAccess.getNationInst4Access().getUwunit1Uwunit1Keyword_6_0());
                         
@@ -27977,7 +27988,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11070:1: (lv_uwunit2_7_0= '#uwunit2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11071:3: lv_uwunit2_7_0= '#uwunit2'
                     {
-                    lv_uwunit2_7_0=(Token)match(input,364,FOLLOW_364_in_ruleNationInst426955); 
+                    lv_uwunit2_7_0=(Token)match(input,364,FOLLOW_364_in_ruleNationInst426956); 
 
                             newLeafNode(lv_uwunit2_7_0, grammarAccess.getNationInst4Access().getUwunit2Uwunit2Keyword_7_0());
                         
@@ -28005,7 +28016,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11086:1: (lv_uwunit3_8_0= '#uwunit3' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11087:3: lv_uwunit3_8_0= '#uwunit3'
                     {
-                    lv_uwunit3_8_0=(Token)match(input,365,FOLLOW_365_in_ruleNationInst426992); 
+                    lv_uwunit3_8_0=(Token)match(input,365,FOLLOW_365_in_ruleNationInst426993); 
 
                             newLeafNode(lv_uwunit3_8_0, grammarAccess.getNationInst4Access().getUwunit3Uwunit3Keyword_8_0());
                         
@@ -28033,7 +28044,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11102:1: (lv_uwunit4_9_0= '#uwunit4' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11103:3: lv_uwunit4_9_0= '#uwunit4'
                     {
-                    lv_uwunit4_9_0=(Token)match(input,366,FOLLOW_366_in_ruleNationInst427029); 
+                    lv_uwunit4_9_0=(Token)match(input,366,FOLLOW_366_in_ruleNationInst427030); 
 
                             newLeafNode(lv_uwunit4_9_0, grammarAccess.getNationInst4Access().getUwunit4Uwunit4Keyword_9_0());
                         
@@ -28061,7 +28072,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11118:1: (lv_uwunit5_10_0= '#uwunit5' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11119:3: lv_uwunit5_10_0= '#uwunit5'
                     {
-                    lv_uwunit5_10_0=(Token)match(input,367,FOLLOW_367_in_ruleNationInst427066); 
+                    lv_uwunit5_10_0=(Token)match(input,367,FOLLOW_367_in_ruleNationInst427067); 
 
                             newLeafNode(lv_uwunit5_10_0, grammarAccess.getNationInst4Access().getUwunit5Uwunit5Keyword_10_0());
                         
@@ -28089,7 +28100,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11134:1: (lv_uwcom1_11_0= '#uwcom1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11135:3: lv_uwcom1_11_0= '#uwcom1'
                     {
-                    lv_uwcom1_11_0=(Token)match(input,368,FOLLOW_368_in_ruleNationInst427103); 
+                    lv_uwcom1_11_0=(Token)match(input,368,FOLLOW_368_in_ruleNationInst427104); 
 
                             newLeafNode(lv_uwcom1_11_0, grammarAccess.getNationInst4Access().getUwcom1Uwcom1Keyword_11_0());
                         
@@ -28117,7 +28128,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11150:1: (lv_uwcom2_12_0= '#uwcom2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11151:3: lv_uwcom2_12_0= '#uwcom2'
                     {
-                    lv_uwcom2_12_0=(Token)match(input,369,FOLLOW_369_in_ruleNationInst427140); 
+                    lv_uwcom2_12_0=(Token)match(input,369,FOLLOW_369_in_ruleNationInst427141); 
 
                             newLeafNode(lv_uwcom2_12_0, grammarAccess.getNationInst4Access().getUwcom2Uwcom2Keyword_12_0());
                         
@@ -28145,7 +28156,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11166:1: (lv_uwcom3_13_0= '#uwcom3' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11167:3: lv_uwcom3_13_0= '#uwcom3'
                     {
-                    lv_uwcom3_13_0=(Token)match(input,370,FOLLOW_370_in_ruleNationInst427177); 
+                    lv_uwcom3_13_0=(Token)match(input,370,FOLLOW_370_in_ruleNationInst427178); 
 
                             newLeafNode(lv_uwcom3_13_0, grammarAccess.getNationInst4Access().getUwcom3Uwcom3Keyword_13_0());
                         
@@ -28173,7 +28184,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11182:1: (lv_uwcom4_14_0= '#uwcom4' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11183:3: lv_uwcom4_14_0= '#uwcom4'
                     {
-                    lv_uwcom4_14_0=(Token)match(input,371,FOLLOW_371_in_ruleNationInst427214); 
+                    lv_uwcom4_14_0=(Token)match(input,371,FOLLOW_371_in_ruleNationInst427215); 
 
                             newLeafNode(lv_uwcom4_14_0, grammarAccess.getNationInst4Access().getUwcom4Uwcom4Keyword_14_0());
                         
@@ -28201,7 +28212,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11198:1: (lv_uwcom5_15_0= '#uwcom5' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11199:3: lv_uwcom5_15_0= '#uwcom5'
                     {
-                    lv_uwcom5_15_0=(Token)match(input,372,FOLLOW_372_in_ruleNationInst427251); 
+                    lv_uwcom5_15_0=(Token)match(input,372,FOLLOW_372_in_ruleNationInst427252); 
 
                             newLeafNode(lv_uwcom5_15_0, grammarAccess.getNationInst4Access().getUwcom5Uwcom5Keyword_15_0());
                         
@@ -28229,7 +28240,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11214:1: (lv_defcom1_16_0= '#defcom1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11215:3: lv_defcom1_16_0= '#defcom1'
                     {
-                    lv_defcom1_16_0=(Token)match(input,373,FOLLOW_373_in_ruleNationInst427288); 
+                    lv_defcom1_16_0=(Token)match(input,373,FOLLOW_373_in_ruleNationInst427289); 
 
                             newLeafNode(lv_defcom1_16_0, grammarAccess.getNationInst4Access().getDefcom1Defcom1Keyword_16_0());
                         
@@ -28257,7 +28268,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11230:1: (lv_defcom2_17_0= '#defcom2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11231:3: lv_defcom2_17_0= '#defcom2'
                     {
-                    lv_defcom2_17_0=(Token)match(input,374,FOLLOW_374_in_ruleNationInst427325); 
+                    lv_defcom2_17_0=(Token)match(input,374,FOLLOW_374_in_ruleNationInst427326); 
 
                             newLeafNode(lv_defcom2_17_0, grammarAccess.getNationInst4Access().getDefcom2Defcom2Keyword_17_0());
                         
@@ -28285,7 +28296,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11246:1: (lv_defunit1_18_0= '#defunit1' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11247:3: lv_defunit1_18_0= '#defunit1'
                     {
-                    lv_defunit1_18_0=(Token)match(input,375,FOLLOW_375_in_ruleNationInst427362); 
+                    lv_defunit1_18_0=(Token)match(input,375,FOLLOW_375_in_ruleNationInst427363); 
 
                             newLeafNode(lv_defunit1_18_0, grammarAccess.getNationInst4Access().getDefunit1Defunit1Keyword_18_0());
                         
@@ -28313,7 +28324,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11262:1: (lv_defunit1b_19_0= '#defunit1b' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11263:3: lv_defunit1b_19_0= '#defunit1b'
                     {
-                    lv_defunit1b_19_0=(Token)match(input,376,FOLLOW_376_in_ruleNationInst427399); 
+                    lv_defunit1b_19_0=(Token)match(input,376,FOLLOW_376_in_ruleNationInst427400); 
 
                             newLeafNode(lv_defunit1b_19_0, grammarAccess.getNationInst4Access().getDefunit1bDefunit1bKeyword_19_0());
                         
@@ -28341,7 +28352,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11278:1: (lv_defunit2_20_0= '#defunit2' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11279:3: lv_defunit2_20_0= '#defunit2'
                     {
-                    lv_defunit2_20_0=(Token)match(input,377,FOLLOW_377_in_ruleNationInst427436); 
+                    lv_defunit2_20_0=(Token)match(input,377,FOLLOW_377_in_ruleNationInst427437); 
 
                             newLeafNode(lv_defunit2_20_0, grammarAccess.getNationInst4Access().getDefunit2Defunit2Keyword_20_0());
                         
@@ -28369,7 +28380,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11294:1: (lv_defunit2b_21_0= '#defunit2b' )
                     // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11295:3: lv_defunit2b_21_0= '#defunit2b'
                     {
-                    lv_defunit2b_21_0=(Token)match(input,378,FOLLOW_378_in_ruleNationInst427473); 
+                    lv_defunit2b_21_0=(Token)match(input,378,FOLLOW_378_in_ruleNationInst427474); 
 
                             newLeafNode(lv_defunit2b_21_0, grammarAccess.getNationInst4Access().getDefunit2bDefunit2bKeyword_21_0());
                         
@@ -28421,13 +28432,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11318:2: iv_ruleNationInst5= ruleNationInst5 EOF
             {
              newCompositeNode(grammarAccess.getNationInst5Rule()); 
-            pushFollow(FOLLOW_ruleNationInst5_in_entryRuleNationInst527522);
+            pushFollow(FOLLOW_ruleNationInst5_in_entryRuleNationInst527523);
             iv_ruleNationInst5=ruleNationInst5();
 
             state._fsp--;
 
              current =iv_ruleNationInst5; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNationInst527532); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNationInst527533); 
 
             }
 
@@ -28463,7 +28474,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11330:1: (lv_color_0_0= '#color' )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11331:3: lv_color_0_0= '#color'
             {
-            lv_color_0_0=(Token)match(input,379,FOLLOW_379_in_ruleNationInst527574); 
+            lv_color_0_0=(Token)match(input,379,FOLLOW_379_in_ruleNationInst527575); 
 
                     newLeafNode(lv_color_0_0, grammarAccess.getNationInst5Access().getColorColorKeyword_0());
                 
@@ -28509,13 +28520,13 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11354:2: iv_ruleDecimalValue= ruleDecimalValue EOF
             {
              newCompositeNode(grammarAccess.getDecimalValueRule()); 
-            pushFollow(FOLLOW_ruleDecimalValue_in_entryRuleDecimalValue27623);
+            pushFollow(FOLLOW_ruleDecimalValue_in_entryRuleDecimalValue27624);
             iv_ruleDecimalValue=ruleDecimalValue();
 
             state._fsp--;
 
              current =iv_ruleDecimalValue.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDecimalValue27634); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDecimalValue27635); 
 
             }
 
@@ -28550,7 +28561,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11365:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )* )
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11365:6: this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )*
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDecimalValue27674); 
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDecimalValue27675); 
 
             		current.merge(this_INT_0);
                 
@@ -28558,26 +28569,26 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
                 newLeafNode(this_INT_0, grammarAccess.getDecimalValueAccess().getINTTerminalRuleCall_0()); 
                 
             // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11372:1: (kw= '.' this_INT_2= RULE_INT )*
-            loop117:
+            loop118:
             do {
-                int alt117=2;
-                int LA117_0 = input.LA(1);
+                int alt118=2;
+                int LA118_0 = input.LA(1);
 
-                if ( (LA117_0==380) ) {
-                    alt117=1;
+                if ( (LA118_0==380) ) {
+                    alt118=1;
                 }
 
 
-                switch (alt117) {
+                switch (alt118) {
             	case 1 :
             	    // ../org.larz.dom3.dm/src-gen/org/larz/dom3/dm/parser/antlr/internal/InternalDm.g:11373:2: kw= '.' this_INT_2= RULE_INT
             	    {
-            	    kw=(Token)match(input,380,FOLLOW_380_in_ruleDecimalValue27693); 
+            	    kw=(Token)match(input,380,FOLLOW_380_in_ruleDecimalValue27694); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getDecimalValueAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDecimalValue27708); 
+            	    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDecimalValue27709); 
 
             	    		current.merge(this_INT_2);
             	        
@@ -28589,7 +28600,7 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop117;
+            	    break loop118;
                 }
             } while (true);
 
@@ -28922,725 +28933,725 @@ public class InternalDmParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleWeaponPattern3_in_entryRuleWeaponPattern34976 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleWeaponPattern34986 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWeaponInst3_in_ruleWeaponPattern35033 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleWeaponPattern35049 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleWeaponPattern35049 = new BitSet(new long[]{0x0000000000000062L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleWeaponPattern35071 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleWeaponPattern35088 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleWeaponPattern4_in_entryRuleWeaponPattern45125 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWeaponPattern45135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWeaponInst4_in_ruleWeaponPattern45182 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleWeaponPattern45193 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleWeaponInst1_in_entryRuleWeaponInst15230 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWeaponInst15240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleWeaponInst15282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWeaponInst2_in_entryRuleWeaponInst25330 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWeaponInst25340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleWeaponInst25383 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleWeaponInst25420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_ruleWeaponInst25457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleWeaponInst25494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_ruleWeaponInst25531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_ruleWeaponInst25568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleWeaponInst25605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleWeaponInst25642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleWeaponInst25679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleWeaponInst25716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_ruleWeaponInst25753 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_ruleWeaponInst25790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleWeaponInst25827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWeaponInst3_in_entryRuleWeaponInst35876 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWeaponInst35886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleWeaponInst35928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWeaponInst4_in_entryRuleWeaponInst45976 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWeaponInst45986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleWeaponInst46029 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_ruleWeaponInst46066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleWeaponInst46103 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_59_in_ruleWeaponInst46140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleWeaponInst46177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleWeaponInst46214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_ruleWeaponInst46251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleWeaponInst46288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_ruleWeaponInst46325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleWeaponInst46362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_ruleWeaponInst46399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_ruleWeaponInst46436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_ruleWeaponInst46473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_ruleWeaponInst46510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_ruleWeaponInst46547 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_ruleWeaponInst46584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_ruleWeaponInst46621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_ruleWeaponInst46658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_74_in_ruleWeaponInst46695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_ruleWeaponInst46732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_ruleWeaponInst46769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_77_in_ruleWeaponInst46806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_78_in_ruleWeaponInst46843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_ruleWeaponInst46880 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_ruleWeaponInst46917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_81_in_ruleWeaponInst46954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_ruleWeaponInst46991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_ruleWeaponInst47028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_84_in_ruleWeaponInst47065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonster_in_entryRuleMonster7114 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonster7124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectMonsterById_in_ruleMonster7171 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectMonsterByName_in_ruleMonster7198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNewMonster_in_ruleMonster7225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectMonsterById_in_entryRuleSelectMonsterById7260 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectMonsterById7270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_ruleSelectMonsterById7307 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectMonsterById7324 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectMonsterById7341 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_ruleMonsterMods_in_ruleSelectMonsterById7363 = new BitSet(new long[]{0x000043D200000000L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_33_in_ruleSelectMonsterById7376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectMonsterByName_in_entryRuleSelectMonsterByName7412 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectMonsterByName7422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_ruleSelectMonsterByName7459 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectMonsterByName7476 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectMonsterByName7493 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_ruleMonsterMods_in_ruleSelectMonsterByName7515 = new BitSet(new long[]{0x000043D200000000L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_33_in_ruleSelectMonsterByName7528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNewMonster_in_entryRuleNewMonster7564 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNewMonster7574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_ruleNewMonster7611 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNewMonster7628 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewMonster7645 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_ruleMonsterMods_in_ruleNewMonster7667 = new BitSet(new long[]{0x000043D200000000L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_33_in_ruleNewMonster7680 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterMods_in_entryRuleMonsterMods7716 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterMods7726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterPattern1_in_ruleMonsterMods7773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterPattern2_in_ruleMonsterMods7800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterPattern3_in_ruleMonsterMods7827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterPattern4_in_ruleMonsterMods7854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterPattern5_in_ruleMonsterMods7881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterPattern6_in_ruleMonsterMods7908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterPattern1_in_entryRuleMonsterPattern17943 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern17953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst1_in_ruleMonsterPattern18000 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleMonsterPattern18016 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern18033 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleMonsterPattern2_in_entryRuleMonsterPattern28070 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern28080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst2_in_ruleMonsterPattern28127 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleMonsterPattern28143 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern28160 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleMonsterPattern3_in_entryRuleMonsterPattern38197 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern38207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst3_in_ruleMonsterPattern38254 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleMonsterPattern38270 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleMonsterPattern38292 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern38309 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleMonsterPattern4_in_entryRuleMonsterPattern48346 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern48356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst4_in_ruleMonsterPattern48403 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern48414 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleMonsterPattern5_in_entryRuleMonsterPattern58451 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern58461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst5_in_ruleMonsterPattern58508 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleMonsterPattern58525 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleMonsterPattern58553 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern58571 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleMonsterPattern6_in_entryRuleMonsterPattern68608 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern68618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst6_in_ruleMonsterPattern68665 = new BitSet(new long[]{0x0000000000000062L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleMonsterPattern68681 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern68699 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleMonsterInst1_in_entryRuleMonsterInst18736 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst18746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleMonsterInst18789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_ruleMonsterInst18826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_88_in_ruleMonsterInst18863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_ruleMonsterInst18900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst2_in_entryRuleMonsterInst28949 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst28959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_ruleMonsterInst29002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleMonsterInst29039 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_ruleMonsterInst29076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_93_in_ruleMonsterInst29113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleMonsterInst29150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_94_in_ruleMonsterInst29187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_ruleMonsterInst29224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_96_in_ruleMonsterInst29261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleMonsterInst29298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_ruleMonsterInst29335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleMonsterInst29372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_97_in_ruleMonsterInst29409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_98_in_ruleMonsterInst29446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_ruleMonsterInst29483 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_100_in_ruleMonsterInst29520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleMonsterInst29557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_101_in_ruleMonsterInst29594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_102_in_ruleMonsterInst29631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_103_in_ruleMonsterInst29668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_104_in_ruleMonsterInst29705 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_105_in_ruleMonsterInst29742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_106_in_ruleMonsterInst29779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_107_in_ruleMonsterInst29816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_108_in_ruleMonsterInst29853 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_109_in_ruleMonsterInst29890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_110_in_ruleMonsterInst29927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_111_in_ruleMonsterInst29964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_112_in_ruleMonsterInst210001 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_113_in_ruleMonsterInst210038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_114_in_ruleMonsterInst210075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_115_in_ruleMonsterInst210112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_116_in_ruleMonsterInst210149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_117_in_ruleMonsterInst210186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_118_in_ruleMonsterInst210223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_ruleMonsterInst210260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_120_in_ruleMonsterInst210297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_121_in_ruleMonsterInst210334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_122_in_ruleMonsterInst210371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_123_in_ruleMonsterInst210408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_124_in_ruleMonsterInst210445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_125_in_ruleMonsterInst210482 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_126_in_ruleMonsterInst210519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_127_in_ruleMonsterInst210556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_128_in_ruleMonsterInst210593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_129_in_ruleMonsterInst210630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_130_in_ruleMonsterInst210667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_131_in_ruleMonsterInst210704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_132_in_ruleMonsterInst210741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_133_in_ruleMonsterInst210778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_134_in_ruleMonsterInst210815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_135_in_ruleMonsterInst210852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_136_in_ruleMonsterInst210889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_137_in_ruleMonsterInst210926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_138_in_ruleMonsterInst210963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_139_in_ruleMonsterInst211000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_140_in_ruleMonsterInst211037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_141_in_ruleMonsterInst211074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_142_in_ruleMonsterInst211111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_143_in_ruleMonsterInst211148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_144_in_ruleMonsterInst211185 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_145_in_ruleMonsterInst211222 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_146_in_ruleMonsterInst211259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_147_in_ruleMonsterInst211296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_148_in_ruleMonsterInst211333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_149_in_ruleMonsterInst211370 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_150_in_ruleMonsterInst211407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_151_in_ruleMonsterInst211444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_152_in_ruleMonsterInst211481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_153_in_ruleMonsterInst211518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_154_in_ruleMonsterInst211555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_155_in_ruleMonsterInst211592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_156_in_ruleMonsterInst211629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_157_in_ruleMonsterInst211666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_158_in_ruleMonsterInst211703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_ruleMonsterInst211740 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_ruleMonsterInst211777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_ruleMonsterInst211814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_162_in_ruleMonsterInst211851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst3_in_entryRuleMonsterInst311900 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst311910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_163_in_ruleMonsterInst311953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_164_in_ruleMonsterInst311990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_165_in_ruleMonsterInst312027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_ruleMonsterInst312064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst4_in_entryRuleMonsterInst412113 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst412123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_ruleMonsterInst412166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_168_in_ruleMonsterInst412203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_169_in_ruleMonsterInst412240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_170_in_ruleMonsterInst412277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_171_in_ruleMonsterInst412314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_172_in_ruleMonsterInst412351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_173_in_ruleMonsterInst412388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_174_in_ruleMonsterInst412425 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_175_in_ruleMonsterInst412462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_176_in_ruleMonsterInst412499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_177_in_ruleMonsterInst412536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_178_in_ruleMonsterInst412573 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_179_in_ruleMonsterInst412610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_180_in_ruleMonsterInst412647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_181_in_ruleMonsterInst412684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_182_in_ruleMonsterInst412721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_183_in_ruleMonsterInst412758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_184_in_ruleMonsterInst412795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_185_in_ruleMonsterInst412832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_186_in_ruleMonsterInst412869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_187_in_ruleMonsterInst412906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_188_in_ruleMonsterInst412943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_189_in_ruleMonsterInst412980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_190_in_ruleMonsterInst413017 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_191_in_ruleMonsterInst413054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_192_in_ruleMonsterInst413091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_193_in_ruleMonsterInst413128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_194_in_ruleMonsterInst413165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_195_in_ruleMonsterInst413202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_196_in_ruleMonsterInst413239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_197_in_ruleMonsterInst413276 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_198_in_ruleMonsterInst413313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_199_in_ruleMonsterInst413350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_200_in_ruleMonsterInst413387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_201_in_ruleMonsterInst413424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_202_in_ruleMonsterInst413461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_203_in_ruleMonsterInst413498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_204_in_ruleMonsterInst413535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_205_in_ruleMonsterInst413572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_206_in_ruleMonsterInst413609 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_207_in_ruleMonsterInst413646 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_208_in_ruleMonsterInst413683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_209_in_ruleMonsterInst413720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_210_in_ruleMonsterInst413757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_211_in_ruleMonsterInst413794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_212_in_ruleMonsterInst413831 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_213_in_ruleMonsterInst413868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_214_in_ruleMonsterInst413905 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_215_in_ruleMonsterInst413942 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_216_in_ruleMonsterInst413979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_217_in_ruleMonsterInst414016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_218_in_ruleMonsterInst414053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_219_in_ruleMonsterInst414090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_220_in_ruleMonsterInst414127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_221_in_ruleMonsterInst414164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_222_in_ruleMonsterInst414201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_223_in_ruleMonsterInst414238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_224_in_ruleMonsterInst414275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_225_in_ruleMonsterInst414312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_226_in_ruleMonsterInst414349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_227_in_ruleMonsterInst414386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_228_in_ruleMonsterInst414423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_229_in_ruleMonsterInst414460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst5_in_entryRuleMonsterInst514509 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst514519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_230_in_ruleMonsterInst514562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_231_in_ruleMonsterInst514599 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_232_in_ruleMonsterInst514636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_233_in_ruleMonsterInst514673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_234_in_ruleMonsterInst514710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_235_in_ruleMonsterInst514747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_236_in_ruleMonsterInst514784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_237_in_ruleMonsterInst514821 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_238_in_ruleMonsterInst514858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_239_in_ruleMonsterInst514895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_240_in_ruleMonsterInst514932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_241_in_ruleMonsterInst514969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_242_in_ruleMonsterInst515006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_243_in_ruleMonsterInst515043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_244_in_ruleMonsterInst515080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_245_in_ruleMonsterInst515117 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_246_in_ruleMonsterInst515154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_247_in_ruleMonsterInst515191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_248_in_ruleMonsterInst515228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_249_in_ruleMonsterInst515265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_250_in_ruleMonsterInst515302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst6_in_entryRuleMonsterInst615351 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst615361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_251_in_ruleMonsterInst615404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_252_in_ruleMonsterInst615441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_74_in_ruleMonsterInst615478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpell_in_entryRuleSpell15527 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpell15537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectSpellById_in_ruleSpell15584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectSpellByName_in_ruleSpell15611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNewSpell_in_ruleSpell15638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectSpellById_in_entryRuleSelectSpellById15673 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectSpellById15683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_253_in_ruleSelectSpellById15720 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectSpellById15737 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSpellById15754 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
-    public static final BitSet FOLLOW_ruleSpellMods_in_ruleSelectSpellById15776 = new BitSet(new long[]{0x004D001200000000L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
-    public static final BitSet FOLLOW_33_in_ruleSelectSpellById15789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectSpellByName_in_entryRuleSelectSpellByName15825 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectSpellByName15835 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_253_in_ruleSelectSpellByName15872 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectSpellByName15889 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSpellByName15906 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
-    public static final BitSet FOLLOW_ruleSpellMods_in_ruleSelectSpellByName15928 = new BitSet(new long[]{0x004D001200000000L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
-    public static final BitSet FOLLOW_33_in_ruleSelectSpellByName15941 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNewSpell_in_entryRuleNewSpell15977 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNewSpell15987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_254_in_ruleNewSpell16024 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewSpell16036 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
-    public static final BitSet FOLLOW_ruleSpellMods_in_ruleNewSpell16058 = new BitSet(new long[]{0x004D001200000000L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
-    public static final BitSet FOLLOW_33_in_ruleNewSpell16071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellMods_in_entryRuleSpellMods16107 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellMods16117 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellPattern1_in_ruleSpellMods16164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellPattern2_in_ruleSpellMods16191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellPattern3_in_ruleSpellMods16218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellPattern4_in_ruleSpellMods16245 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellPattern5_in_ruleSpellMods16272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellPattern1_in_entryRuleSpellPattern116307 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellPattern116317 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst1_in_ruleSpellPattern116364 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSpellPattern116380 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern116397 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleSpellPattern2_in_entryRuleSpellPattern216434 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellPattern216444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst2_in_ruleSpellPattern216491 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSpellPattern216507 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern216524 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleSpellPattern3_in_entryRuleSpellPattern316561 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellPattern316571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst3_in_ruleSpellPattern316618 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSpellPattern316634 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSpellPattern316656 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern316673 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleSpellPattern4_in_entryRuleSpellPattern416710 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellPattern416720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst4_in_ruleSpellPattern416767 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern416778 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleSpellPattern5_in_entryRuleSpellPattern516815 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellPattern516825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst5_in_ruleSpellPattern516872 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSpellPattern516889 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSpellPattern516917 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern516935 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleSpellInst1_in_entryRuleSpellInst116972 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst116982 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleSpellInst117025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_ruleSpellInst117062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst2_in_entryRuleSpellInst217111 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst217121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_255_in_ruleSpellInst217164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_256_in_ruleSpellInst217201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleSpellInst217238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_257_in_ruleSpellInst217275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_258_in_ruleSpellInst217312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_259_in_ruleSpellInst217349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_260_in_ruleSpellInst217386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleSpellInst217423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_261_in_ruleSpellInst217460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_ruleSpellInst217497 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_262_in_ruleSpellInst217534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleSpellInst217571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_263_in_ruleSpellInst217608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_264_in_ruleSpellInst217645 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst3_in_entryRuleSpellInst317694 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst317704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_265_in_ruleSpellInst317747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_266_in_ruleSpellInst317784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst4_in_entryRuleSpellInst417833 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst417843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_ruleSpellInst417885 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst5_in_entryRuleSpellInst517933 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst517943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_267_in_ruleSpellInst517986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_268_in_ruleSpellInst518023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItem_in_entryRuleItem18072 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleItem18082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectItemById_in_ruleItem18129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectItemByName_in_ruleItem18156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNewItem_in_ruleItem18183 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectItemById_in_entryRuleSelectItemById18218 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectItemById18228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_269_in_ruleSelectItemById18265 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectItemById18282 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectItemById18299 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
-    public static final BitSet FOLLOW_ruleItemMods_in_ruleSelectItemById18321 = new BitSet(new long[]{0x0000003200000000L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
-    public static final BitSet FOLLOW_33_in_ruleSelectItemById18334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectItemByName_in_entryRuleSelectItemByName18370 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectItemByName18380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_269_in_ruleSelectItemByName18417 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectItemByName18434 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectItemByName18451 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
-    public static final BitSet FOLLOW_ruleItemMods_in_ruleSelectItemByName18473 = new BitSet(new long[]{0x0000003200000000L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
-    public static final BitSet FOLLOW_33_in_ruleSelectItemByName18486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNewItem_in_entryRuleNewItem18522 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNewItem18532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_270_in_ruleNewItem18569 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewItem18581 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
-    public static final BitSet FOLLOW_ruleItemMods_in_ruleNewItem18603 = new BitSet(new long[]{0x0000003200000000L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
-    public static final BitSet FOLLOW_33_in_ruleNewItem18616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemMods_in_entryRuleItemMods18652 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleItemMods18662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemPattern1_in_ruleItemMods18709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemPattern2_in_ruleItemMods18736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemPattern3_in_ruleItemMods18763 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemPattern1_in_entryRuleItemPattern118798 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleItemPattern118808 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemInst1_in_ruleItemPattern118855 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleItemPattern118871 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern118888 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleItemPattern2_in_entryRuleItemPattern218925 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleItemPattern218935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemInst2_in_ruleItemPattern218982 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleItemPattern218998 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern219015 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleItemPattern3_in_entryRuleItemPattern319052 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleItemPattern319062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemInst3_in_ruleItemPattern319109 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleItemPattern319126 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleItemPattern319154 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern319172 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleItemInst1_in_entryRuleItemInst119209 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleItemInst119219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleItemInst119262 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_ruleItemInst119299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_231_in_ruleItemInst119336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemInst2_in_entryRuleItemInst219385 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleItemInst219395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_271_in_ruleItemInst219438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_272_in_ruleItemInst219475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_273_in_ruleItemInst219512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_274_in_ruleItemInst219549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_275_in_ruleItemInst219586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleItemInst219623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_230_in_ruleItemInst219660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemInst3_in_entryRuleItemInst319709 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleItemInst319719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_105_in_ruleItemInst319761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleName_in_entryRuleName19809 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleName19819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectName_in_ruleName19865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectName_in_entryRuleSelectName19899 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectName19909 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_276_in_ruleSelectName19946 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectName19963 = new BitSet(new long[]{0x0000000200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectName19980 = new BitSet(new long[]{0x0000000200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_ruleNameMods_in_ruleSelectName20002 = new BitSet(new long[]{0x0000000200000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_33_in_ruleSelectName20015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNameMods_in_entryRuleNameMods20051 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNameMods20061 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNamePattern1_in_ruleNameMods20108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNamePattern2_in_ruleNameMods20135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNamePattern1_in_entryRuleNamePattern120170 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNamePattern120180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNameInst1_in_ruleNamePattern120227 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleNamePattern120243 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNamePattern120260 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleNamePattern2_in_entryRuleNamePattern220297 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNamePattern220307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNameInst2_in_ruleNamePattern220354 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNamePattern220365 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleNameInst1_in_entryRuleNameInst120402 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNameInst120412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_277_in_ruleNameInst120454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNameInst2_in_entryRuleNameInst220502 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNameInst220512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_ruleNameInst220554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSite_in_entryRuleSite20602 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSite20612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectSiteById_in_ruleSite20659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectSiteByName_in_ruleSite20686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNewSite_in_ruleSite20713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectSiteById_in_entryRuleSelectSiteById20748 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectSiteById20758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_278_in_ruleSelectSiteById20795 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectSiteById20812 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSiteById20829 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
-    public static final BitSet FOLLOW_ruleSiteMods_in_ruleSelectSiteById20851 = new BitSet(new long[]{0x0000001200000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
-    public static final BitSet FOLLOW_33_in_ruleSelectSiteById20864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectSiteByName_in_entryRuleSelectSiteByName20900 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectSiteByName20910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_278_in_ruleSelectSiteByName20947 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectSiteByName20964 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSiteByName20981 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
-    public static final BitSet FOLLOW_ruleSiteMods_in_ruleSelectSiteByName21003 = new BitSet(new long[]{0x0000001200000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
-    public static final BitSet FOLLOW_33_in_ruleSelectSiteByName21016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNewSite_in_entryRuleNewSite21052 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNewSite21062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_279_in_ruleNewSite21099 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNewSite21116 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewSite21133 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
-    public static final BitSet FOLLOW_ruleSiteMods_in_ruleNewSite21155 = new BitSet(new long[]{0x0000001200000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
-    public static final BitSet FOLLOW_33_in_ruleNewSite21168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteMods_in_entryRuleSiteMods21204 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSiteMods21214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSitePattern1_in_ruleSiteMods21261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSitePattern2_in_ruleSiteMods21288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSitePattern3_in_ruleSiteMods21315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSitePattern4_in_ruleSiteMods21342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSitePattern1_in_entryRuleSitePattern121377 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSitePattern121387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst1_in_ruleSitePattern121434 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSitePattern121450 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern121467 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleSitePattern2_in_entryRuleSitePattern221504 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSitePattern221514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst2_in_ruleSitePattern221561 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSitePattern221577 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern221594 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleSitePattern3_in_entryRuleSitePattern321631 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSitePattern321641 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst3_in_ruleSitePattern321688 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSitePattern321704 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSitePattern321726 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern321743 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleSitePattern4_in_entryRuleSitePattern421780 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSitePattern421790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst4_in_ruleSitePattern421837 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern421848 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleSiteInst1_in_entryRuleSiteInst121885 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSiteInst121895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleSiteInst121937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst2_in_entryRuleSiteInst221985 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSiteInst221995 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_265_in_ruleSiteInst222038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_280_in_ruleSiteInst222075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_281_in_ruleSiteInst222112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_282_in_ruleSiteInst222149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_283_in_ruleSiteInst222186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_284_in_ruleSiteInst222223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_285_in_ruleSiteInst222260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_286_in_ruleSiteInst222297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_287_in_ruleSiteInst222334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_288_in_ruleSiteInst222371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_289_in_ruleSiteInst222408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_290_in_ruleSiteInst222445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_200_in_ruleSiteInst222482 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_291_in_ruleSiteInst222519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_292_in_ruleSiteInst222556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_207_in_ruleSiteInst222593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_293_in_ruleSiteInst222630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_294_in_ruleSiteInst222667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_295_in_ruleSiteInst222704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_296_in_ruleSiteInst222741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_297_in_ruleSiteInst222778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_298_in_ruleSiteInst222815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_299_in_ruleSiteInst222852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_300_in_ruleSiteInst222889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_301_in_ruleSiteInst222926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst3_in_entryRuleSiteInst322975 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSiteInst322985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_302_in_ruleSiteInst323027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst4_in_entryRuleSiteInst423075 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSiteInst423085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_ruleSiteInst423128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_303_in_ruleSiteInst423165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNation_in_entryRuleNation23214 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNation23224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectNation_in_ruleNation23271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIndepFlag_in_ruleNation23298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectNation_in_entryRuleSelectNation23333 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectNation23343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_304_in_ruleSelectNation23380 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectNation23397 = new BitSet(new long[]{0x0000001200000040L,0x0000000002000000L,0x0000000000000000L,0x0000000000000000L,0xFFFC000000000000L,0x0FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectNation23414 = new BitSet(new long[]{0x0000001200000040L,0x0000000002000000L,0x0000000000000000L,0x0000000000000000L,0xFFFC000000000000L,0x0FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_ruleNationMods_in_ruleSelectNation23436 = new BitSet(new long[]{0x0000001200000000L,0x0000000002000000L,0x0000000000000000L,0x0000000000000000L,0xFFFC000000000000L,0x0FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_33_in_ruleSelectNation23449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIndepFlag_in_entryRuleIndepFlag23485 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIndepFlag23495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_305_in_ruleIndepFlag23532 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleIndepFlag23549 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleIndepFlag23566 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleNationMods_in_entryRuleNationMods23603 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationMods23613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationPattern1_in_ruleNationMods23660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationPattern2_in_ruleNationMods23687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationPattern3_in_ruleNationMods23714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationPattern4_in_ruleNationMods23741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationPattern5_in_ruleNationMods23768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationPattern1_in_entryRuleNationPattern123803 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationPattern123813 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst1_in_ruleNationPattern123860 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleNationPattern123876 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern123893 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleNationPattern2_in_entryRuleNationPattern223930 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationPattern223940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst2_in_ruleNationPattern223987 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNationPattern224003 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern224020 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleNationPattern3_in_entryRuleNationPattern324057 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationPattern324067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst3_in_ruleNationPattern324114 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern324125 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleNationPattern4_in_entryRuleNationPattern424162 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationPattern424172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst4_in_ruleNationPattern424219 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleNationPattern424236 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNationPattern424264 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern424282 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleNationPattern5_in_entryRuleNationPattern524319 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationPattern524329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst5_in_ruleNationPattern524376 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleDecimalValue_in_ruleNationPattern524396 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleDecimalValue_in_ruleNationPattern524417 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleDecimalValue_in_ruleNationPattern524438 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern524450 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleNationInst1_in_entryRuleNationInst124487 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationInst124497 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleNationInst124540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_306_in_ruleNationInst124577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_ruleNationInst124614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_307_in_ruleNationInst124651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_308_in_ruleNationInst124688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_309_in_ruleNationInst124725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_310_in_ruleNationInst124762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_311_in_ruleNationInst124799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst2_in_entryRuleNationInst224848 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationInst224858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_312_in_ruleNationInst224901 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_313_in_ruleNationInst224938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_314_in_ruleNationInst224975 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_315_in_ruleNationInst225012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_316_in_ruleNationInst225049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_317_in_ruleNationInst225086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_318_in_ruleNationInst225123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_319_in_ruleNationInst225160 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_320_in_ruleNationInst225197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_321_in_ruleNationInst225234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_322_in_ruleNationInst225271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_323_in_ruleNationInst225308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_324_in_ruleNationInst225345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_325_in_ruleNationInst225382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_326_in_ruleNationInst225419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_327_in_ruleNationInst225456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_328_in_ruleNationInst225493 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_329_in_ruleNationInst225530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_330_in_ruleNationInst225567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_331_in_ruleNationInst225604 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_332_in_ruleNationInst225641 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_333_in_ruleNationInst225678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_334_in_ruleNationInst225715 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_335_in_ruleNationInst225752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_336_in_ruleNationInst225789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_337_in_ruleNationInst225826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_338_in_ruleNationInst225863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_339_in_ruleNationInst225900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_340_in_ruleNationInst225937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_341_in_ruleNationInst225974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst3_in_entryRuleNationInst326023 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationInst326033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_342_in_ruleNationInst326076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_343_in_ruleNationInst326113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_344_in_ruleNationInst326150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_345_in_ruleNationInst326187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_346_in_ruleNationInst326224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_347_in_ruleNationInst326261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_348_in_ruleNationInst326298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_349_in_ruleNationInst326335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_350_in_ruleNationInst326372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_351_in_ruleNationInst326409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_352_in_ruleNationInst326446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_353_in_ruleNationInst326483 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_354_in_ruleNationInst326520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_355_in_ruleNationInst326557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_356_in_ruleNationInst326594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst4_in_entryRuleNationInst426643 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationInst426653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_357_in_ruleNationInst426696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_358_in_ruleNationInst426733 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_359_in_ruleNationInst426770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_360_in_ruleNationInst426807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_361_in_ruleNationInst426844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_362_in_ruleNationInst426881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_363_in_ruleNationInst426918 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_364_in_ruleNationInst426955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_365_in_ruleNationInst426992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_366_in_ruleNationInst427029 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_367_in_ruleNationInst427066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_368_in_ruleNationInst427103 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_369_in_ruleNationInst427140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_370_in_ruleNationInst427177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_371_in_ruleNationInst427214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_372_in_ruleNationInst427251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_373_in_ruleNationInst427288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_374_in_ruleNationInst427325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_375_in_ruleNationInst427362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_376_in_ruleNationInst427399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_377_in_ruleNationInst427436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_378_in_ruleNationInst427473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst5_in_entryRuleNationInst527522 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNationInst527532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_379_in_ruleNationInst527574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDecimalValue_in_entryRuleDecimalValue27623 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDecimalValue27634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleDecimalValue27674 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x1000000000000000L});
-    public static final BitSet FOLLOW_380_in_ruleDecimalValue27693 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleDecimalValue27708 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleWeaponPattern35089 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleWeaponPattern4_in_entryRuleWeaponPattern45126 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWeaponPattern45136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWeaponInst4_in_ruleWeaponPattern45183 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleWeaponPattern45194 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleWeaponInst1_in_entryRuleWeaponInst15231 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWeaponInst15241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleWeaponInst15283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWeaponInst2_in_entryRuleWeaponInst25331 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWeaponInst25341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleWeaponInst25384 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleWeaponInst25421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_ruleWeaponInst25458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleWeaponInst25495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_ruleWeaponInst25532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleWeaponInst25569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_ruleWeaponInst25606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleWeaponInst25643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleWeaponInst25680 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleWeaponInst25717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleWeaponInst25754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_ruleWeaponInst25791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleWeaponInst25828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWeaponInst3_in_entryRuleWeaponInst35877 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWeaponInst35887 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleWeaponInst35929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWeaponInst4_in_entryRuleWeaponInst45977 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWeaponInst45987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleWeaponInst46030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_ruleWeaponInst46067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleWeaponInst46104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_ruleWeaponInst46141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleWeaponInst46178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleWeaponInst46215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_ruleWeaponInst46252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_ruleWeaponInst46289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_64_in_ruleWeaponInst46326 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleWeaponInst46363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_ruleWeaponInst46400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_67_in_ruleWeaponInst46437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_ruleWeaponInst46474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_ruleWeaponInst46511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_ruleWeaponInst46548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_ruleWeaponInst46585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_ruleWeaponInst46622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_ruleWeaponInst46659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_74_in_ruleWeaponInst46696 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_ruleWeaponInst46733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_76_in_ruleWeaponInst46770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_77_in_ruleWeaponInst46807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_78_in_ruleWeaponInst46844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_ruleWeaponInst46881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_80_in_ruleWeaponInst46918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_81_in_ruleWeaponInst46955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_ruleWeaponInst46992 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_83_in_ruleWeaponInst47029 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_84_in_ruleWeaponInst47066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonster_in_entryRuleMonster7115 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonster7125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectMonsterById_in_ruleMonster7172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectMonsterByName_in_ruleMonster7199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewMonster_in_ruleMonster7226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectMonsterById_in_entryRuleSelectMonsterById7261 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectMonsterById7271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_ruleSelectMonsterById7308 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectMonsterById7325 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectMonsterById7342 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_ruleMonsterMods_in_ruleSelectMonsterById7364 = new BitSet(new long[]{0x000043D200000000L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_33_in_ruleSelectMonsterById7377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectMonsterByName_in_entryRuleSelectMonsterByName7413 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectMonsterByName7423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_ruleSelectMonsterByName7460 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectMonsterByName7477 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectMonsterByName7494 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_ruleMonsterMods_in_ruleSelectMonsterByName7516 = new BitSet(new long[]{0x000043D200000000L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_33_in_ruleSelectMonsterByName7529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewMonster_in_entryRuleNewMonster7565 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNewMonster7575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_86_in_ruleNewMonster7612 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNewMonster7629 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewMonster7646 = new BitSet(new long[]{0x000043D200000040L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_ruleMonsterMods_in_ruleNewMonster7668 = new BitSet(new long[]{0x000043D200000000L,0xFFFFFFFFFF800400L,0xFFFFFFFFFFFFFFFFL,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_33_in_ruleNewMonster7681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterMods_in_entryRuleMonsterMods7717 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterMods7727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterPattern1_in_ruleMonsterMods7774 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterPattern2_in_ruleMonsterMods7801 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterPattern3_in_ruleMonsterMods7828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterPattern4_in_ruleMonsterMods7855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterPattern5_in_ruleMonsterMods7882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterPattern6_in_ruleMonsterMods7909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterPattern1_in_entryRuleMonsterPattern17944 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern17954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst1_in_ruleMonsterPattern18001 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleMonsterPattern18017 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern18034 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleMonsterPattern2_in_entryRuleMonsterPattern28071 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern28081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst2_in_ruleMonsterPattern28128 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleMonsterPattern28144 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern28161 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleMonsterPattern3_in_entryRuleMonsterPattern38198 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern38208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst3_in_ruleMonsterPattern38255 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleMonsterPattern38271 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleMonsterPattern38293 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern38310 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleMonsterPattern4_in_entryRuleMonsterPattern48347 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern48357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst4_in_ruleMonsterPattern48404 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern48415 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleMonsterPattern5_in_entryRuleMonsterPattern58452 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern58462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst5_in_ruleMonsterPattern58509 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleMonsterPattern58526 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleMonsterPattern58554 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern58572 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleMonsterPattern6_in_entryRuleMonsterPattern68609 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterPattern68619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst6_in_ruleMonsterPattern68666 = new BitSet(new long[]{0x0000000000000062L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleMonsterPattern68682 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleMonsterPattern68700 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleMonsterInst1_in_entryRuleMonsterInst18737 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst18747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleMonsterInst18790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_87_in_ruleMonsterInst18827 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_88_in_ruleMonsterInst18864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_ruleMonsterInst18901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst2_in_entryRuleMonsterInst28950 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst28960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_90_in_ruleMonsterInst29003 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleMonsterInst29040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_92_in_ruleMonsterInst29077 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_93_in_ruleMonsterInst29114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleMonsterInst29151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_94_in_ruleMonsterInst29188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_ruleMonsterInst29225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_96_in_ruleMonsterInst29262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleMonsterInst29299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_ruleMonsterInst29336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleMonsterInst29373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_97_in_ruleMonsterInst29410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_98_in_ruleMonsterInst29447 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_99_in_ruleMonsterInst29484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_100_in_ruleMonsterInst29521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleMonsterInst29558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_101_in_ruleMonsterInst29595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_102_in_ruleMonsterInst29632 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_103_in_ruleMonsterInst29669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_104_in_ruleMonsterInst29706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_105_in_ruleMonsterInst29743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_106_in_ruleMonsterInst29780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_107_in_ruleMonsterInst29817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_ruleMonsterInst29854 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_109_in_ruleMonsterInst29891 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_110_in_ruleMonsterInst29928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_111_in_ruleMonsterInst29965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_112_in_ruleMonsterInst210002 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_113_in_ruleMonsterInst210039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_114_in_ruleMonsterInst210076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_115_in_ruleMonsterInst210113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_116_in_ruleMonsterInst210150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_117_in_ruleMonsterInst210187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_118_in_ruleMonsterInst210224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_ruleMonsterInst210261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_120_in_ruleMonsterInst210298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_121_in_ruleMonsterInst210335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_122_in_ruleMonsterInst210372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_123_in_ruleMonsterInst210409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_ruleMonsterInst210446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_125_in_ruleMonsterInst210483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_ruleMonsterInst210520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_ruleMonsterInst210557 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_128_in_ruleMonsterInst210594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_129_in_ruleMonsterInst210631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_130_in_ruleMonsterInst210668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_131_in_ruleMonsterInst210705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_132_in_ruleMonsterInst210742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_133_in_ruleMonsterInst210779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_134_in_ruleMonsterInst210816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_135_in_ruleMonsterInst210853 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_136_in_ruleMonsterInst210890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_137_in_ruleMonsterInst210927 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_138_in_ruleMonsterInst210964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_139_in_ruleMonsterInst211001 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_140_in_ruleMonsterInst211038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_141_in_ruleMonsterInst211075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_142_in_ruleMonsterInst211112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_143_in_ruleMonsterInst211149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_144_in_ruleMonsterInst211186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_145_in_ruleMonsterInst211223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_146_in_ruleMonsterInst211260 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_147_in_ruleMonsterInst211297 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_148_in_ruleMonsterInst211334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_149_in_ruleMonsterInst211371 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_150_in_ruleMonsterInst211408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_151_in_ruleMonsterInst211445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_152_in_ruleMonsterInst211482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_153_in_ruleMonsterInst211519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_154_in_ruleMonsterInst211556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_155_in_ruleMonsterInst211593 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_156_in_ruleMonsterInst211630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_157_in_ruleMonsterInst211667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_158_in_ruleMonsterInst211704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_159_in_ruleMonsterInst211741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_160_in_ruleMonsterInst211778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_161_in_ruleMonsterInst211815 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_ruleMonsterInst211852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst3_in_entryRuleMonsterInst311901 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst311911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_ruleMonsterInst311954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_ruleMonsterInst311991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_165_in_ruleMonsterInst312028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_ruleMonsterInst312065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst4_in_entryRuleMonsterInst412114 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst412124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_ruleMonsterInst412167 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_168_in_ruleMonsterInst412204 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_ruleMonsterInst412241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_170_in_ruleMonsterInst412278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_171_in_ruleMonsterInst412315 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_172_in_ruleMonsterInst412352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_173_in_ruleMonsterInst412389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_174_in_ruleMonsterInst412426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_175_in_ruleMonsterInst412463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_176_in_ruleMonsterInst412500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_177_in_ruleMonsterInst412537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_178_in_ruleMonsterInst412574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_179_in_ruleMonsterInst412611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_180_in_ruleMonsterInst412648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_181_in_ruleMonsterInst412685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_182_in_ruleMonsterInst412722 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_183_in_ruleMonsterInst412759 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_184_in_ruleMonsterInst412796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_185_in_ruleMonsterInst412833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_186_in_ruleMonsterInst412870 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_187_in_ruleMonsterInst412907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_188_in_ruleMonsterInst412944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_189_in_ruleMonsterInst412981 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_190_in_ruleMonsterInst413018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_191_in_ruleMonsterInst413055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_192_in_ruleMonsterInst413092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_193_in_ruleMonsterInst413129 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_194_in_ruleMonsterInst413166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_195_in_ruleMonsterInst413203 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_196_in_ruleMonsterInst413240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_197_in_ruleMonsterInst413277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_198_in_ruleMonsterInst413314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_199_in_ruleMonsterInst413351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_200_in_ruleMonsterInst413388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_201_in_ruleMonsterInst413425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_202_in_ruleMonsterInst413462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_203_in_ruleMonsterInst413499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_204_in_ruleMonsterInst413536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_205_in_ruleMonsterInst413573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_206_in_ruleMonsterInst413610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_207_in_ruleMonsterInst413647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_208_in_ruleMonsterInst413684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_209_in_ruleMonsterInst413721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_210_in_ruleMonsterInst413758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_211_in_ruleMonsterInst413795 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_212_in_ruleMonsterInst413832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_213_in_ruleMonsterInst413869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_214_in_ruleMonsterInst413906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_215_in_ruleMonsterInst413943 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_216_in_ruleMonsterInst413980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_217_in_ruleMonsterInst414017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_218_in_ruleMonsterInst414054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_219_in_ruleMonsterInst414091 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_220_in_ruleMonsterInst414128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_221_in_ruleMonsterInst414165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_222_in_ruleMonsterInst414202 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_223_in_ruleMonsterInst414239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_224_in_ruleMonsterInst414276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_225_in_ruleMonsterInst414313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_226_in_ruleMonsterInst414350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_227_in_ruleMonsterInst414387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_228_in_ruleMonsterInst414424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_229_in_ruleMonsterInst414461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst5_in_entryRuleMonsterInst514510 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst514520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_230_in_ruleMonsterInst514563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_231_in_ruleMonsterInst514600 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_232_in_ruleMonsterInst514637 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_233_in_ruleMonsterInst514674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_234_in_ruleMonsterInst514711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_235_in_ruleMonsterInst514748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_236_in_ruleMonsterInst514785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_237_in_ruleMonsterInst514822 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_238_in_ruleMonsterInst514859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_239_in_ruleMonsterInst514896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_240_in_ruleMonsterInst514933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_241_in_ruleMonsterInst514970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_242_in_ruleMonsterInst515007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_243_in_ruleMonsterInst515044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_244_in_ruleMonsterInst515081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_245_in_ruleMonsterInst515118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_246_in_ruleMonsterInst515155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_247_in_ruleMonsterInst515192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_248_in_ruleMonsterInst515229 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_249_in_ruleMonsterInst515266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_250_in_ruleMonsterInst515303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst6_in_entryRuleMonsterInst615352 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMonsterInst615362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_251_in_ruleMonsterInst615405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_252_in_ruleMonsterInst615442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_74_in_ruleMonsterInst615479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpell_in_entryRuleSpell15528 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpell15538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectSpellById_in_ruleSpell15585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectSpellByName_in_ruleSpell15612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewSpell_in_ruleSpell15639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectSpellById_in_entryRuleSelectSpellById15674 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectSpellById15684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_253_in_ruleSelectSpellById15721 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectSpellById15738 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSpellById15755 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
+    public static final BitSet FOLLOW_ruleSpellMods_in_ruleSelectSpellById15777 = new BitSet(new long[]{0x004D001200000000L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
+    public static final BitSet FOLLOW_33_in_ruleSelectSpellById15790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectSpellByName_in_entryRuleSelectSpellByName15826 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectSpellByName15836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_253_in_ruleSelectSpellByName15873 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectSpellByName15890 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSpellByName15907 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
+    public static final BitSet FOLLOW_ruleSpellMods_in_ruleSelectSpellByName15929 = new BitSet(new long[]{0x004D001200000000L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
+    public static final BitSet FOLLOW_33_in_ruleSelectSpellByName15942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewSpell_in_entryRuleNewSpell15978 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNewSpell15988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_254_in_ruleNewSpell16025 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewSpell16037 = new BitSet(new long[]{0x004D001200000040L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
+    public static final BitSet FOLLOW_ruleSpellMods_in_ruleNewSpell16059 = new BitSet(new long[]{0x004D001200000000L,0x0000000002000000L,0x0000008000000000L,0x8000000000000000L,0x0000000000001FFFL});
+    public static final BitSet FOLLOW_33_in_ruleNewSpell16072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellMods_in_entryRuleSpellMods16108 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellMods16118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellPattern1_in_ruleSpellMods16165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellPattern2_in_ruleSpellMods16192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellPattern3_in_ruleSpellMods16219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellPattern4_in_ruleSpellMods16246 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellPattern5_in_ruleSpellMods16273 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellPattern1_in_entryRuleSpellPattern116308 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellPattern116318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst1_in_ruleSpellPattern116365 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSpellPattern116381 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern116398 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleSpellPattern2_in_entryRuleSpellPattern216435 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellPattern216445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst2_in_ruleSpellPattern216492 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSpellPattern216508 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern216525 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleSpellPattern3_in_entryRuleSpellPattern316562 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellPattern316572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst3_in_ruleSpellPattern316619 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSpellPattern316635 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSpellPattern316657 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern316674 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleSpellPattern4_in_entryRuleSpellPattern416711 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellPattern416721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst4_in_ruleSpellPattern416768 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern416779 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleSpellPattern5_in_entryRuleSpellPattern516816 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellPattern516826 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst5_in_ruleSpellPattern516873 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSpellPattern516890 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSpellPattern516918 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSpellPattern516936 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleSpellInst1_in_entryRuleSpellInst116973 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst116983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleSpellInst117026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_ruleSpellInst117063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst2_in_entryRuleSpellInst217112 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst217122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_255_in_ruleSpellInst217165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_256_in_ruleSpellInst217202 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleSpellInst217239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_257_in_ruleSpellInst217276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_258_in_ruleSpellInst217313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_259_in_ruleSpellInst217350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_260_in_ruleSpellInst217387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleSpellInst217424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_261_in_ruleSpellInst217461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleSpellInst217498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_262_in_ruleSpellInst217535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleSpellInst217572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_263_in_ruleSpellInst217609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_264_in_ruleSpellInst217646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst3_in_entryRuleSpellInst317695 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst317705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_265_in_ruleSpellInst317748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_266_in_ruleSpellInst317785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst4_in_entryRuleSpellInst417834 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst417844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_ruleSpellInst417886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst5_in_entryRuleSpellInst517934 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpellInst517944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_267_in_ruleSpellInst517987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_268_in_ruleSpellInst518024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItem_in_entryRuleItem18073 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleItem18083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectItemById_in_ruleItem18130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectItemByName_in_ruleItem18157 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewItem_in_ruleItem18184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectItemById_in_entryRuleSelectItemById18219 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectItemById18229 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_269_in_ruleSelectItemById18266 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectItemById18283 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectItemById18300 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_ruleItemMods_in_ruleSelectItemById18322 = new BitSet(new long[]{0x0000003200000000L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_33_in_ruleSelectItemById18335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectItemByName_in_entryRuleSelectItemByName18371 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectItemByName18381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_269_in_ruleSelectItemByName18418 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectItemByName18435 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectItemByName18452 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_ruleItemMods_in_ruleSelectItemByName18474 = new BitSet(new long[]{0x0000003200000000L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_33_in_ruleSelectItemByName18487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewItem_in_entryRuleNewItem18523 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNewItem18533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_270_in_ruleNewItem18570 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewItem18582 = new BitSet(new long[]{0x0000003200000040L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_ruleItemMods_in_ruleNewItem18604 = new BitSet(new long[]{0x0000003200000000L,0x0000020002000000L,0x0000000000000000L,0x000000C000000000L,0x00000000000F8000L});
+    public static final BitSet FOLLOW_33_in_ruleNewItem18617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemMods_in_entryRuleItemMods18653 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleItemMods18663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemPattern1_in_ruleItemMods18710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemPattern2_in_ruleItemMods18737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemPattern3_in_ruleItemMods18764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemPattern1_in_entryRuleItemPattern118799 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleItemPattern118809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemInst1_in_ruleItemPattern118856 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleItemPattern118872 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern118889 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleItemPattern2_in_entryRuleItemPattern218926 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleItemPattern218936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemInst2_in_ruleItemPattern218983 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleItemPattern218999 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern219016 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleItemPattern3_in_entryRuleItemPattern319053 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleItemPattern319063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemInst3_in_ruleItemPattern319110 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleItemPattern319127 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleItemPattern319155 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleItemPattern319173 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleItemInst1_in_entryRuleItemInst119210 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleItemInst119220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleItemInst119263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_ruleItemInst119300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_231_in_ruleItemInst119337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemInst2_in_entryRuleItemInst219386 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleItemInst219396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_271_in_ruleItemInst219439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_272_in_ruleItemInst219476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_273_in_ruleItemInst219513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_274_in_ruleItemInst219550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_275_in_ruleItemInst219587 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleItemInst219624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_230_in_ruleItemInst219661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemInst3_in_entryRuleItemInst319710 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleItemInst319720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_105_in_ruleItemInst319762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleName_in_entryRuleName19810 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleName19820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectName_in_ruleName19866 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectName_in_entryRuleSelectName19900 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectName19910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_276_in_ruleSelectName19947 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectName19964 = new BitSet(new long[]{0x0000000200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectName19981 = new BitSet(new long[]{0x0000000200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_ruleNameMods_in_ruleSelectName20003 = new BitSet(new long[]{0x0000000200000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_33_in_ruleSelectName20016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNameMods_in_entryRuleNameMods20052 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNameMods20062 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNamePattern1_in_ruleNameMods20109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNamePattern2_in_ruleNameMods20136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNamePattern1_in_entryRuleNamePattern120171 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNamePattern120181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNameInst1_in_ruleNamePattern120228 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleNamePattern120244 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNamePattern120261 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleNamePattern2_in_entryRuleNamePattern220298 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNamePattern220308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNameInst2_in_ruleNamePattern220355 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNamePattern220366 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleNameInst1_in_entryRuleNameInst120403 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNameInst120413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_277_in_ruleNameInst120455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNameInst2_in_entryRuleNameInst220503 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNameInst220513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_ruleNameInst220555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSite_in_entryRuleSite20603 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSite20613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectSiteById_in_ruleSite20660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectSiteByName_in_ruleSite20687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewSite_in_ruleSite20714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectSiteById_in_entryRuleSelectSiteById20749 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectSiteById20759 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_278_in_ruleSelectSiteById20796 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectSiteById20813 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSiteById20830 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
+    public static final BitSet FOLLOW_ruleSiteMods_in_ruleSelectSiteById20852 = new BitSet(new long[]{0x0000001200000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
+    public static final BitSet FOLLOW_33_in_ruleSelectSiteById20865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectSiteByName_in_entryRuleSelectSiteByName20901 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectSiteByName20911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_278_in_ruleSelectSiteByName20948 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectSiteByName20965 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectSiteByName20982 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
+    public static final BitSet FOLLOW_ruleSiteMods_in_ruleSelectSiteByName21004 = new BitSet(new long[]{0x0000001200000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
+    public static final BitSet FOLLOW_33_in_ruleSelectSiteByName21017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewSite_in_entryRuleNewSite21053 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNewSite21063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_279_in_ruleNewSite21100 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNewSite21117 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNewSite21134 = new BitSet(new long[]{0x0000001200000040L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
+    public static final BitSet FOLLOW_ruleSiteMods_in_ruleNewSite21156 = new BitSet(new long[]{0x0000001200000000L,0x0000000000000000L,0x0000008000000000L,0x0000000000008100L,0x0000FFFFFF000200L});
+    public static final BitSet FOLLOW_33_in_ruleNewSite21169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteMods_in_entryRuleSiteMods21205 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSiteMods21215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSitePattern1_in_ruleSiteMods21262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSitePattern2_in_ruleSiteMods21289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSitePattern3_in_ruleSiteMods21316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSitePattern4_in_ruleSiteMods21343 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSitePattern1_in_entryRuleSitePattern121378 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSitePattern121388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst1_in_ruleSitePattern121435 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSitePattern121451 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern121468 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleSitePattern2_in_entryRuleSitePattern221505 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSitePattern221515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst2_in_ruleSitePattern221562 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSitePattern221578 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern221595 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleSitePattern3_in_entryRuleSitePattern321632 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSitePattern321642 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst3_in_ruleSitePattern321689 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSitePattern321705 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSitePattern321727 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern321744 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleSitePattern4_in_entryRuleSitePattern421781 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSitePattern421791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst4_in_ruleSitePattern421838 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSitePattern421849 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleSiteInst1_in_entryRuleSiteInst121886 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSiteInst121896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleSiteInst121938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst2_in_entryRuleSiteInst221986 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSiteInst221996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_265_in_ruleSiteInst222039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_280_in_ruleSiteInst222076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_281_in_ruleSiteInst222113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_282_in_ruleSiteInst222150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_283_in_ruleSiteInst222187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_284_in_ruleSiteInst222224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_285_in_ruleSiteInst222261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_286_in_ruleSiteInst222298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_287_in_ruleSiteInst222335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_288_in_ruleSiteInst222372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_289_in_ruleSiteInst222409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_290_in_ruleSiteInst222446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_200_in_ruleSiteInst222483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_291_in_ruleSiteInst222520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_292_in_ruleSiteInst222557 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_207_in_ruleSiteInst222594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_293_in_ruleSiteInst222631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_294_in_ruleSiteInst222668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_295_in_ruleSiteInst222705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_296_in_ruleSiteInst222742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_297_in_ruleSiteInst222779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_298_in_ruleSiteInst222816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_299_in_ruleSiteInst222853 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_300_in_ruleSiteInst222890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_301_in_ruleSiteInst222927 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst3_in_entryRuleSiteInst322976 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSiteInst322986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_302_in_ruleSiteInst323028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst4_in_entryRuleSiteInst423076 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSiteInst423086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_ruleSiteInst423129 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_303_in_ruleSiteInst423166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNation_in_entryRuleNation23215 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNation23225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectNation_in_ruleNation23272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIndepFlag_in_ruleNation23299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectNation_in_entryRuleSelectNation23334 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectNation23344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_304_in_ruleSelectNation23381 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSelectNation23398 = new BitSet(new long[]{0x0000001200000040L,0x0000000002000000L,0x0000000000000000L,0x0000000000000000L,0xFFFC000000000000L,0x0FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleSelectNation23415 = new BitSet(new long[]{0x0000001200000040L,0x0000000002000000L,0x0000000000000000L,0x0000000000000000L,0xFFFC000000000000L,0x0FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_ruleNationMods_in_ruleSelectNation23437 = new BitSet(new long[]{0x0000001200000000L,0x0000000002000000L,0x0000000000000000L,0x0000000000000000L,0xFFFC000000000000L,0x0FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_33_in_ruleSelectNation23450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIndepFlag_in_entryRuleIndepFlag23486 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIndepFlag23496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_305_in_ruleIndepFlag23533 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleIndepFlag23550 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleIndepFlag23567 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleNationMods_in_entryRuleNationMods23604 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationMods23614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationPattern1_in_ruleNationMods23661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationPattern2_in_ruleNationMods23688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationPattern3_in_ruleNationMods23715 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationPattern4_in_ruleNationMods23742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationPattern5_in_ruleNationMods23769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationPattern1_in_entryRuleNationPattern123804 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationPattern123814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst1_in_ruleNationPattern123861 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleNationPattern123877 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern123894 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleNationPattern2_in_entryRuleNationPattern223931 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationPattern223941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst2_in_ruleNationPattern223988 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNationPattern224004 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern224021 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleNationPattern3_in_entryRuleNationPattern324058 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationPattern324068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst3_in_ruleNationPattern324115 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern324126 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleNationPattern4_in_entryRuleNationPattern424163 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationPattern424173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst4_in_ruleNationPattern424220 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleNationPattern424237 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNationPattern424265 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern424283 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleNationPattern5_in_entryRuleNationPattern524320 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationPattern524330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst5_in_ruleNationPattern524377 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleDecimalValue_in_ruleNationPattern524397 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleDecimalValue_in_ruleNationPattern524418 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleDecimalValue_in_ruleNationPattern524439 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_ruleNationPattern524451 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleNationInst1_in_entryRuleNationInst124488 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationInst124498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleNationInst124541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_306_in_ruleNationInst124578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_ruleNationInst124615 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_307_in_ruleNationInst124652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_308_in_ruleNationInst124689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_309_in_ruleNationInst124726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_310_in_ruleNationInst124763 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_311_in_ruleNationInst124800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst2_in_entryRuleNationInst224849 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationInst224859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_312_in_ruleNationInst224902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_313_in_ruleNationInst224939 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_314_in_ruleNationInst224976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_315_in_ruleNationInst225013 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_316_in_ruleNationInst225050 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_317_in_ruleNationInst225087 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_318_in_ruleNationInst225124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_319_in_ruleNationInst225161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_320_in_ruleNationInst225198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_321_in_ruleNationInst225235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_322_in_ruleNationInst225272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_323_in_ruleNationInst225309 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_324_in_ruleNationInst225346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_325_in_ruleNationInst225383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_326_in_ruleNationInst225420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_327_in_ruleNationInst225457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_328_in_ruleNationInst225494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_329_in_ruleNationInst225531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_330_in_ruleNationInst225568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_331_in_ruleNationInst225605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_332_in_ruleNationInst225642 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_333_in_ruleNationInst225679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_334_in_ruleNationInst225716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_335_in_ruleNationInst225753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_336_in_ruleNationInst225790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_337_in_ruleNationInst225827 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_338_in_ruleNationInst225864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_339_in_ruleNationInst225901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_340_in_ruleNationInst225938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_341_in_ruleNationInst225975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst3_in_entryRuleNationInst326024 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationInst326034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_342_in_ruleNationInst326077 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_343_in_ruleNationInst326114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_344_in_ruleNationInst326151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_345_in_ruleNationInst326188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_346_in_ruleNationInst326225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_347_in_ruleNationInst326262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_348_in_ruleNationInst326299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_349_in_ruleNationInst326336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_350_in_ruleNationInst326373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_351_in_ruleNationInst326410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_352_in_ruleNationInst326447 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_353_in_ruleNationInst326484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_354_in_ruleNationInst326521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_355_in_ruleNationInst326558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_356_in_ruleNationInst326595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst4_in_entryRuleNationInst426644 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationInst426654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_357_in_ruleNationInst426697 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_358_in_ruleNationInst426734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_359_in_ruleNationInst426771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_360_in_ruleNationInst426808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_361_in_ruleNationInst426845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_362_in_ruleNationInst426882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_363_in_ruleNationInst426919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_364_in_ruleNationInst426956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_365_in_ruleNationInst426993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_366_in_ruleNationInst427030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_367_in_ruleNationInst427067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_368_in_ruleNationInst427104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_369_in_ruleNationInst427141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_370_in_ruleNationInst427178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_371_in_ruleNationInst427215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_372_in_ruleNationInst427252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_373_in_ruleNationInst427289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_374_in_ruleNationInst427326 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_375_in_ruleNationInst427363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_376_in_ruleNationInst427400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_377_in_ruleNationInst427437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_378_in_ruleNationInst427474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst5_in_entryRuleNationInst527523 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNationInst527533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_379_in_ruleNationInst527575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDecimalValue_in_entryRuleDecimalValue27624 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDecimalValue27635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleDecimalValue27675 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_380_in_ruleDecimalValue27694 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleDecimalValue27709 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x1000000000000000L});
 
 }

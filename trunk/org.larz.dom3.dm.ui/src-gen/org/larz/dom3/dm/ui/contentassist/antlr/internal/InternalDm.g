@@ -8742,7 +8742,7 @@ rule__WeaponPattern3__Group__2__Impl
 :
 (
 { before(grammarAccess.getWeaponPattern3Access().getValue2Assignment_2()); }
-(rule__WeaponPattern3__Value2Assignment_2)
+(rule__WeaponPattern3__Value2Assignment_2)?
 { after(grammarAccess.getWeaponPattern3Access().getValue2Assignment_2()); }
 )
 
