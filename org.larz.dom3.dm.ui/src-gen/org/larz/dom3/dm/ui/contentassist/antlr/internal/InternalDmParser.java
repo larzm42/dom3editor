@@ -17572,11 +17572,11 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             if ( (LA25_0==42) ) {
                 int LA25_1 = input.LA(2);
 
-                if ( (LA25_1==RULE_STRING) ) {
-                    alt25=2;
-                }
-                else if ( (LA25_1==RULE_INT) ) {
+                if ( (LA25_1==RULE_INT) ) {
                     alt25=1;
+                }
+                else if ( (LA25_1==RULE_STRING) ) {
+                    alt25=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -29828,27 +29828,38 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeaponPattern3__Group__2__Impl"
-    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8738:1: rule__WeaponPattern3__Group__2__Impl : ( ( rule__WeaponPattern3__Value2Assignment_2 ) ) ;
+    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8738:1: rule__WeaponPattern3__Group__2__Impl : ( ( rule__WeaponPattern3__Value2Assignment_2 )? ) ;
     public final void rule__WeaponPattern3__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8742:1: ( ( ( rule__WeaponPattern3__Value2Assignment_2 ) ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8743:1: ( ( rule__WeaponPattern3__Value2Assignment_2 ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8742:1: ( ( ( rule__WeaponPattern3__Value2Assignment_2 )? ) )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8743:1: ( ( rule__WeaponPattern3__Value2Assignment_2 )? )
             {
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8743:1: ( ( rule__WeaponPattern3__Value2Assignment_2 ) )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8744:1: ( rule__WeaponPattern3__Value2Assignment_2 )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8743:1: ( ( rule__WeaponPattern3__Value2Assignment_2 )? )
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8744:1: ( rule__WeaponPattern3__Value2Assignment_2 )?
             {
              before(grammarAccess.getWeaponPattern3Access().getValue2Assignment_2()); 
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8745:1: ( rule__WeaponPattern3__Value2Assignment_2 )
-            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8745:2: rule__WeaponPattern3__Value2Assignment_2
-            {
-            pushFollow(FOLLOW_rule__WeaponPattern3__Value2Assignment_2_in_rule__WeaponPattern3__Group__2__Impl20005);
-            rule__WeaponPattern3__Value2Assignment_2();
+            // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8745:1: ( rule__WeaponPattern3__Value2Assignment_2 )?
+            int alt59=2;
+            int LA59_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA59_0==RULE_INT) ) {
+                alt59=1;
+            }
+            switch (alt59) {
+                case 1 :
+                    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8745:2: rule__WeaponPattern3__Value2Assignment_2
+                    {
+                    pushFollow(FOLLOW_rule__WeaponPattern3__Value2Assignment_2_in_rule__WeaponPattern3__Group__2__Impl20005);
+                    rule__WeaponPattern3__Value2Assignment_2();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -29884,7 +29895,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8759:1: ( rule__WeaponPattern3__Group__3__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8760:2: rule__WeaponPattern3__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__WeaponPattern3__Group__3__Impl_in_rule__WeaponPattern3__Group__320035);
+            pushFollow(FOLLOW_rule__WeaponPattern3__Group__3__Impl_in_rule__WeaponPattern3__Group__320036);
             rule__WeaponPattern3__Group__3__Impl();
 
             state._fsp--;
@@ -29922,27 +29933,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getWeaponPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8773:1: ( RULE_FREE_FORM_COMMENT )*
-            loop59:
+            loop60:
             do {
-                int alt59=2;
-                int LA59_0 = input.LA(1);
+                int alt60=2;
+                int LA60_0 = input.LA(1);
 
-                if ( (LA59_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt59=1;
+                if ( (LA60_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt60=1;
                 }
 
 
-                switch (alt59) {
+                switch (alt60) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8773:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__WeaponPattern3__Group__3__Impl20063); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__WeaponPattern3__Group__3__Impl20064); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop59;
+            	    break loop60;
                 }
             } while (true);
 
@@ -29978,12 +29989,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8795:1: ( rule__WeaponPattern4__Group__0__Impl rule__WeaponPattern4__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8796:2: rule__WeaponPattern4__Group__0__Impl rule__WeaponPattern4__Group__1
             {
-            pushFollow(FOLLOW_rule__WeaponPattern4__Group__0__Impl_in_rule__WeaponPattern4__Group__020102);
+            pushFollow(FOLLOW_rule__WeaponPattern4__Group__0__Impl_in_rule__WeaponPattern4__Group__020103);
             rule__WeaponPattern4__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__WeaponPattern4__Group__1_in_rule__WeaponPattern4__Group__020105);
+            pushFollow(FOLLOW_rule__WeaponPattern4__Group__1_in_rule__WeaponPattern4__Group__020106);
             rule__WeaponPattern4__Group__1();
 
             state._fsp--;
@@ -30020,7 +30031,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8809:1: ruleWeaponInst4
             {
              before(grammarAccess.getWeaponPattern4Access().getWeaponInst4ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleWeaponInst4_in_rule__WeaponPattern4__Group__0__Impl20132);
+            pushFollow(FOLLOW_ruleWeaponInst4_in_rule__WeaponPattern4__Group__0__Impl20133);
             ruleWeaponInst4();
 
             state._fsp--;
@@ -30057,7 +30068,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8824:1: ( rule__WeaponPattern4__Group__1__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8825:2: rule__WeaponPattern4__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__WeaponPattern4__Group__1__Impl_in_rule__WeaponPattern4__Group__120161);
+            pushFollow(FOLLOW_rule__WeaponPattern4__Group__1__Impl_in_rule__WeaponPattern4__Group__120162);
             rule__WeaponPattern4__Group__1__Impl();
 
             state._fsp--;
@@ -30095,27 +30106,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getWeaponPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8838:1: ( RULE_FREE_FORM_COMMENT )*
-            loop60:
+            loop61:
             do {
-                int alt60=2;
-                int LA60_0 = input.LA(1);
+                int alt61=2;
+                int LA61_0 = input.LA(1);
 
-                if ( (LA60_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt60=1;
+                if ( (LA61_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt61=1;
                 }
 
 
-                switch (alt60) {
+                switch (alt61) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8838:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__WeaponPattern4__Group__1__Impl20189); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__WeaponPattern4__Group__1__Impl20190); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop60;
+            	    break loop61;
                 }
             } while (true);
 
@@ -30151,12 +30162,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8856:1: ( rule__SelectMonsterById__Group__0__Impl rule__SelectMonsterById__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8857:2: rule__SelectMonsterById__Group__0__Impl rule__SelectMonsterById__Group__1
             {
-            pushFollow(FOLLOW_rule__SelectMonsterById__Group__0__Impl_in_rule__SelectMonsterById__Group__020224);
+            pushFollow(FOLLOW_rule__SelectMonsterById__Group__0__Impl_in_rule__SelectMonsterById__Group__020225);
             rule__SelectMonsterById__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectMonsterById__Group__1_in_rule__SelectMonsterById__Group__020227);
+            pushFollow(FOLLOW_rule__SelectMonsterById__Group__1_in_rule__SelectMonsterById__Group__020228);
             rule__SelectMonsterById__Group__1();
 
             state._fsp--;
@@ -30193,7 +30204,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8870:1: '#selectmonster'
             {
              before(grammarAccess.getSelectMonsterByIdAccess().getSelectmonsterKeyword_0()); 
-            match(input,38,FOLLOW_38_in_rule__SelectMonsterById__Group__0__Impl20255); 
+            match(input,38,FOLLOW_38_in_rule__SelectMonsterById__Group__0__Impl20256); 
              after(grammarAccess.getSelectMonsterByIdAccess().getSelectmonsterKeyword_0()); 
 
             }
@@ -30226,12 +30237,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8887:1: ( rule__SelectMonsterById__Group__1__Impl rule__SelectMonsterById__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8888:2: rule__SelectMonsterById__Group__1__Impl rule__SelectMonsterById__Group__2
             {
-            pushFollow(FOLLOW_rule__SelectMonsterById__Group__1__Impl_in_rule__SelectMonsterById__Group__120286);
+            pushFollow(FOLLOW_rule__SelectMonsterById__Group__1__Impl_in_rule__SelectMonsterById__Group__120287);
             rule__SelectMonsterById__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectMonsterById__Group__2_in_rule__SelectMonsterById__Group__120289);
+            pushFollow(FOLLOW_rule__SelectMonsterById__Group__2_in_rule__SelectMonsterById__Group__120290);
             rule__SelectMonsterById__Group__2();
 
             state._fsp--;
@@ -30271,7 +30282,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8902:1: ( rule__SelectMonsterById__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8902:2: rule__SelectMonsterById__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SelectMonsterById__ValueAssignment_1_in_rule__SelectMonsterById__Group__1__Impl20316);
+            pushFollow(FOLLOW_rule__SelectMonsterById__ValueAssignment_1_in_rule__SelectMonsterById__Group__1__Impl20317);
             rule__SelectMonsterById__ValueAssignment_1();
 
             state._fsp--;
@@ -30311,12 +30322,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8916:1: ( rule__SelectMonsterById__Group__2__Impl rule__SelectMonsterById__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8917:2: rule__SelectMonsterById__Group__2__Impl rule__SelectMonsterById__Group__3
             {
-            pushFollow(FOLLOW_rule__SelectMonsterById__Group__2__Impl_in_rule__SelectMonsterById__Group__220346);
+            pushFollow(FOLLOW_rule__SelectMonsterById__Group__2__Impl_in_rule__SelectMonsterById__Group__220347);
             rule__SelectMonsterById__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectMonsterById__Group__3_in_rule__SelectMonsterById__Group__220349);
+            pushFollow(FOLLOW_rule__SelectMonsterById__Group__3_in_rule__SelectMonsterById__Group__220350);
             rule__SelectMonsterById__Group__3();
 
             state._fsp--;
@@ -30354,27 +30365,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectMonsterByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8931:1: ( RULE_FREE_FORM_COMMENT )*
-            loop61:
+            loop62:
             do {
-                int alt61=2;
-                int LA61_0 = input.LA(1);
+                int alt62=2;
+                int LA62_0 = input.LA(1);
 
-                if ( (LA61_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt61=1;
+                if ( (LA62_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt62=1;
                 }
 
 
-                switch (alt61) {
+                switch (alt62) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8931:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectMonsterById__Group__2__Impl20377); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectMonsterById__Group__2__Impl20378); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop61;
+            	    break loop62;
                 }
             } while (true);
 
@@ -30410,12 +30421,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8945:1: ( rule__SelectMonsterById__Group__3__Impl rule__SelectMonsterById__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8946:2: rule__SelectMonsterById__Group__3__Impl rule__SelectMonsterById__Group__4
             {
-            pushFollow(FOLLOW_rule__SelectMonsterById__Group__3__Impl_in_rule__SelectMonsterById__Group__320408);
+            pushFollow(FOLLOW_rule__SelectMonsterById__Group__3__Impl_in_rule__SelectMonsterById__Group__320409);
             rule__SelectMonsterById__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectMonsterById__Group__4_in_rule__SelectMonsterById__Group__320411);
+            pushFollow(FOLLOW_rule__SelectMonsterById__Group__4_in_rule__SelectMonsterById__Group__320412);
             rule__SelectMonsterById__Group__4();
 
             state._fsp--;
@@ -30453,21 +30464,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectMonsterByIdAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8960:1: ( rule__SelectMonsterById__ModsAssignment_3 )*
-            loop62:
+            loop63:
             do {
-                int alt62=2;
-                int LA62_0 = input.LA(1);
+                int alt63=2;
+                int LA63_0 = input.LA(1);
 
-                if ( (LA62_0==50||(LA62_0>=52 && LA62_0<=55)||LA62_0==58||LA62_0==86||(LA62_0>=97 && LA62_0<=262)) ) {
-                    alt62=1;
+                if ( (LA63_0==50||(LA63_0>=52 && LA63_0<=55)||LA63_0==58||LA63_0==86||(LA63_0>=97 && LA63_0<=262)) ) {
+                    alt63=1;
                 }
 
 
-                switch (alt62) {
+                switch (alt63) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8960:2: rule__SelectMonsterById__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__SelectMonsterById__ModsAssignment_3_in_rule__SelectMonsterById__Group__3__Impl20438);
+            	    pushFollow(FOLLOW_rule__SelectMonsterById__ModsAssignment_3_in_rule__SelectMonsterById__Group__3__Impl20439);
             	    rule__SelectMonsterById__ModsAssignment_3();
 
             	    state._fsp--;
@@ -30477,7 +30488,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop62;
+            	    break loop63;
                 }
             } while (true);
 
@@ -30513,7 +30524,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8974:1: ( rule__SelectMonsterById__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8975:2: rule__SelectMonsterById__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SelectMonsterById__Group__4__Impl_in_rule__SelectMonsterById__Group__420469);
+            pushFollow(FOLLOW_rule__SelectMonsterById__Group__4__Impl_in_rule__SelectMonsterById__Group__420470);
             rule__SelectMonsterById__Group__4__Impl();
 
             state._fsp--;
@@ -30550,7 +30561,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:8987:1: '#end'
             {
              before(grammarAccess.getSelectMonsterByIdAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__SelectMonsterById__Group__4__Impl20497); 
+            match(input,34,FOLLOW_34_in_rule__SelectMonsterById__Group__4__Impl20498); 
              after(grammarAccess.getSelectMonsterByIdAccess().getEndKeyword_4()); 
 
             }
@@ -30583,12 +30594,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9014:1: ( rule__SelectMonsterByName__Group__0__Impl rule__SelectMonsterByName__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9015:2: rule__SelectMonsterByName__Group__0__Impl rule__SelectMonsterByName__Group__1
             {
-            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__0__Impl_in_rule__SelectMonsterByName__Group__020538);
+            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__0__Impl_in_rule__SelectMonsterByName__Group__020539);
             rule__SelectMonsterByName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__1_in_rule__SelectMonsterByName__Group__020541);
+            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__1_in_rule__SelectMonsterByName__Group__020542);
             rule__SelectMonsterByName__Group__1();
 
             state._fsp--;
@@ -30625,7 +30636,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9028:1: '#selectmonster'
             {
              before(grammarAccess.getSelectMonsterByNameAccess().getSelectmonsterKeyword_0()); 
-            match(input,38,FOLLOW_38_in_rule__SelectMonsterByName__Group__0__Impl20569); 
+            match(input,38,FOLLOW_38_in_rule__SelectMonsterByName__Group__0__Impl20570); 
              after(grammarAccess.getSelectMonsterByNameAccess().getSelectmonsterKeyword_0()); 
 
             }
@@ -30658,12 +30669,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9045:1: ( rule__SelectMonsterByName__Group__1__Impl rule__SelectMonsterByName__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9046:2: rule__SelectMonsterByName__Group__1__Impl rule__SelectMonsterByName__Group__2
             {
-            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__1__Impl_in_rule__SelectMonsterByName__Group__120600);
+            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__1__Impl_in_rule__SelectMonsterByName__Group__120601);
             rule__SelectMonsterByName__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__2_in_rule__SelectMonsterByName__Group__120603);
+            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__2_in_rule__SelectMonsterByName__Group__120604);
             rule__SelectMonsterByName__Group__2();
 
             state._fsp--;
@@ -30703,7 +30714,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9060:1: ( rule__SelectMonsterByName__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9060:2: rule__SelectMonsterByName__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SelectMonsterByName__ValueAssignment_1_in_rule__SelectMonsterByName__Group__1__Impl20630);
+            pushFollow(FOLLOW_rule__SelectMonsterByName__ValueAssignment_1_in_rule__SelectMonsterByName__Group__1__Impl20631);
             rule__SelectMonsterByName__ValueAssignment_1();
 
             state._fsp--;
@@ -30743,12 +30754,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9074:1: ( rule__SelectMonsterByName__Group__2__Impl rule__SelectMonsterByName__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9075:2: rule__SelectMonsterByName__Group__2__Impl rule__SelectMonsterByName__Group__3
             {
-            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__2__Impl_in_rule__SelectMonsterByName__Group__220660);
+            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__2__Impl_in_rule__SelectMonsterByName__Group__220661);
             rule__SelectMonsterByName__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__3_in_rule__SelectMonsterByName__Group__220663);
+            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__3_in_rule__SelectMonsterByName__Group__220664);
             rule__SelectMonsterByName__Group__3();
 
             state._fsp--;
@@ -30786,27 +30797,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectMonsterByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9089:1: ( RULE_FREE_FORM_COMMENT )*
-            loop63:
+            loop64:
             do {
-                int alt63=2;
-                int LA63_0 = input.LA(1);
+                int alt64=2;
+                int LA64_0 = input.LA(1);
 
-                if ( (LA63_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt63=1;
+                if ( (LA64_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt64=1;
                 }
 
 
-                switch (alt63) {
+                switch (alt64) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9089:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectMonsterByName__Group__2__Impl20691); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectMonsterByName__Group__2__Impl20692); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop63;
+            	    break loop64;
                 }
             } while (true);
 
@@ -30842,12 +30853,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9103:1: ( rule__SelectMonsterByName__Group__3__Impl rule__SelectMonsterByName__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9104:2: rule__SelectMonsterByName__Group__3__Impl rule__SelectMonsterByName__Group__4
             {
-            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__3__Impl_in_rule__SelectMonsterByName__Group__320722);
+            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__3__Impl_in_rule__SelectMonsterByName__Group__320723);
             rule__SelectMonsterByName__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__4_in_rule__SelectMonsterByName__Group__320725);
+            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__4_in_rule__SelectMonsterByName__Group__320726);
             rule__SelectMonsterByName__Group__4();
 
             state._fsp--;
@@ -30885,21 +30896,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectMonsterByNameAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9118:1: ( rule__SelectMonsterByName__ModsAssignment_3 )*
-            loop64:
+            loop65:
             do {
-                int alt64=2;
-                int LA64_0 = input.LA(1);
+                int alt65=2;
+                int LA65_0 = input.LA(1);
 
-                if ( (LA64_0==50||(LA64_0>=52 && LA64_0<=55)||LA64_0==58||LA64_0==86||(LA64_0>=97 && LA64_0<=262)) ) {
-                    alt64=1;
+                if ( (LA65_0==50||(LA65_0>=52 && LA65_0<=55)||LA65_0==58||LA65_0==86||(LA65_0>=97 && LA65_0<=262)) ) {
+                    alt65=1;
                 }
 
 
-                switch (alt64) {
+                switch (alt65) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9118:2: rule__SelectMonsterByName__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__SelectMonsterByName__ModsAssignment_3_in_rule__SelectMonsterByName__Group__3__Impl20752);
+            	    pushFollow(FOLLOW_rule__SelectMonsterByName__ModsAssignment_3_in_rule__SelectMonsterByName__Group__3__Impl20753);
             	    rule__SelectMonsterByName__ModsAssignment_3();
 
             	    state._fsp--;
@@ -30909,7 +30920,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop64;
+            	    break loop65;
                 }
             } while (true);
 
@@ -30945,7 +30956,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9132:1: ( rule__SelectMonsterByName__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9133:2: rule__SelectMonsterByName__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__4__Impl_in_rule__SelectMonsterByName__Group__420783);
+            pushFollow(FOLLOW_rule__SelectMonsterByName__Group__4__Impl_in_rule__SelectMonsterByName__Group__420784);
             rule__SelectMonsterByName__Group__4__Impl();
 
             state._fsp--;
@@ -30982,7 +30993,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9145:1: '#end'
             {
              before(grammarAccess.getSelectMonsterByNameAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__SelectMonsterByName__Group__4__Impl20811); 
+            match(input,34,FOLLOW_34_in_rule__SelectMonsterByName__Group__4__Impl20812); 
              after(grammarAccess.getSelectMonsterByNameAccess().getEndKeyword_4()); 
 
             }
@@ -31015,12 +31026,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9172:1: ( rule__NewMonster__Group__0__Impl rule__NewMonster__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9173:2: rule__NewMonster__Group__0__Impl rule__NewMonster__Group__1
             {
-            pushFollow(FOLLOW_rule__NewMonster__Group__0__Impl_in_rule__NewMonster__Group__020852);
+            pushFollow(FOLLOW_rule__NewMonster__Group__0__Impl_in_rule__NewMonster__Group__020853);
             rule__NewMonster__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewMonster__Group__1_in_rule__NewMonster__Group__020855);
+            pushFollow(FOLLOW_rule__NewMonster__Group__1_in_rule__NewMonster__Group__020856);
             rule__NewMonster__Group__1();
 
             state._fsp--;
@@ -31057,7 +31068,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9186:1: '#newmonster'
             {
              before(grammarAccess.getNewMonsterAccess().getNewmonsterKeyword_0()); 
-            match(input,39,FOLLOW_39_in_rule__NewMonster__Group__0__Impl20883); 
+            match(input,39,FOLLOW_39_in_rule__NewMonster__Group__0__Impl20884); 
              after(grammarAccess.getNewMonsterAccess().getNewmonsterKeyword_0()); 
 
             }
@@ -31090,12 +31101,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9203:1: ( rule__NewMonster__Group__1__Impl rule__NewMonster__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9204:2: rule__NewMonster__Group__1__Impl rule__NewMonster__Group__2
             {
-            pushFollow(FOLLOW_rule__NewMonster__Group__1__Impl_in_rule__NewMonster__Group__120914);
+            pushFollow(FOLLOW_rule__NewMonster__Group__1__Impl_in_rule__NewMonster__Group__120915);
             rule__NewMonster__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewMonster__Group__2_in_rule__NewMonster__Group__120917);
+            pushFollow(FOLLOW_rule__NewMonster__Group__2_in_rule__NewMonster__Group__120918);
             rule__NewMonster__Group__2();
 
             state._fsp--;
@@ -31135,7 +31146,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9218:1: ( rule__NewMonster__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9218:2: rule__NewMonster__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__NewMonster__ValueAssignment_1_in_rule__NewMonster__Group__1__Impl20944);
+            pushFollow(FOLLOW_rule__NewMonster__ValueAssignment_1_in_rule__NewMonster__Group__1__Impl20945);
             rule__NewMonster__ValueAssignment_1();
 
             state._fsp--;
@@ -31175,12 +31186,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9232:1: ( rule__NewMonster__Group__2__Impl rule__NewMonster__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9233:2: rule__NewMonster__Group__2__Impl rule__NewMonster__Group__3
             {
-            pushFollow(FOLLOW_rule__NewMonster__Group__2__Impl_in_rule__NewMonster__Group__220974);
+            pushFollow(FOLLOW_rule__NewMonster__Group__2__Impl_in_rule__NewMonster__Group__220975);
             rule__NewMonster__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewMonster__Group__3_in_rule__NewMonster__Group__220977);
+            pushFollow(FOLLOW_rule__NewMonster__Group__3_in_rule__NewMonster__Group__220978);
             rule__NewMonster__Group__3();
 
             state._fsp--;
@@ -31218,27 +31229,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNewMonsterAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9247:1: ( RULE_FREE_FORM_COMMENT )*
-            loop65:
+            loop66:
             do {
-                int alt65=2;
-                int LA65_0 = input.LA(1);
+                int alt66=2;
+                int LA66_0 = input.LA(1);
 
-                if ( (LA65_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt65=1;
+                if ( (LA66_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt66=1;
                 }
 
 
-                switch (alt65) {
+                switch (alt66) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9247:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewMonster__Group__2__Impl21005); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewMonster__Group__2__Impl21006); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop65;
+            	    break loop66;
                 }
             } while (true);
 
@@ -31274,12 +31285,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9261:1: ( rule__NewMonster__Group__3__Impl rule__NewMonster__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9262:2: rule__NewMonster__Group__3__Impl rule__NewMonster__Group__4
             {
-            pushFollow(FOLLOW_rule__NewMonster__Group__3__Impl_in_rule__NewMonster__Group__321036);
+            pushFollow(FOLLOW_rule__NewMonster__Group__3__Impl_in_rule__NewMonster__Group__321037);
             rule__NewMonster__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewMonster__Group__4_in_rule__NewMonster__Group__321039);
+            pushFollow(FOLLOW_rule__NewMonster__Group__4_in_rule__NewMonster__Group__321040);
             rule__NewMonster__Group__4();
 
             state._fsp--;
@@ -31317,21 +31328,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNewMonsterAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9276:1: ( rule__NewMonster__ModsAssignment_3 )*
-            loop66:
+            loop67:
             do {
-                int alt66=2;
-                int LA66_0 = input.LA(1);
+                int alt67=2;
+                int LA67_0 = input.LA(1);
 
-                if ( (LA66_0==50||(LA66_0>=52 && LA66_0<=55)||LA66_0==58||LA66_0==86||(LA66_0>=97 && LA66_0<=262)) ) {
-                    alt66=1;
+                if ( (LA67_0==50||(LA67_0>=52 && LA67_0<=55)||LA67_0==58||LA67_0==86||(LA67_0>=97 && LA67_0<=262)) ) {
+                    alt67=1;
                 }
 
 
-                switch (alt66) {
+                switch (alt67) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9276:2: rule__NewMonster__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__NewMonster__ModsAssignment_3_in_rule__NewMonster__Group__3__Impl21066);
+            	    pushFollow(FOLLOW_rule__NewMonster__ModsAssignment_3_in_rule__NewMonster__Group__3__Impl21067);
             	    rule__NewMonster__ModsAssignment_3();
 
             	    state._fsp--;
@@ -31341,7 +31352,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop66;
+            	    break loop67;
                 }
             } while (true);
 
@@ -31377,7 +31388,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9290:1: ( rule__NewMonster__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9291:2: rule__NewMonster__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__NewMonster__Group__4__Impl_in_rule__NewMonster__Group__421097);
+            pushFollow(FOLLOW_rule__NewMonster__Group__4__Impl_in_rule__NewMonster__Group__421098);
             rule__NewMonster__Group__4__Impl();
 
             state._fsp--;
@@ -31414,7 +31425,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9303:1: '#end'
             {
              before(grammarAccess.getNewMonsterAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__NewMonster__Group__4__Impl21125); 
+            match(input,34,FOLLOW_34_in_rule__NewMonster__Group__4__Impl21126); 
              after(grammarAccess.getNewMonsterAccess().getEndKeyword_4()); 
 
             }
@@ -31447,12 +31458,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9330:1: ( rule__MonsterPattern1__Group__0__Impl rule__MonsterPattern1__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9331:2: rule__MonsterPattern1__Group__0__Impl rule__MonsterPattern1__Group__1
             {
-            pushFollow(FOLLOW_rule__MonsterPattern1__Group__0__Impl_in_rule__MonsterPattern1__Group__021166);
+            pushFollow(FOLLOW_rule__MonsterPattern1__Group__0__Impl_in_rule__MonsterPattern1__Group__021167);
             rule__MonsterPattern1__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern1__Group__1_in_rule__MonsterPattern1__Group__021169);
+            pushFollow(FOLLOW_rule__MonsterPattern1__Group__1_in_rule__MonsterPattern1__Group__021170);
             rule__MonsterPattern1__Group__1();
 
             state._fsp--;
@@ -31489,7 +31500,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9344:1: ruleMonsterInst1
             {
              before(grammarAccess.getMonsterPattern1Access().getMonsterInst1ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleMonsterInst1_in_rule__MonsterPattern1__Group__0__Impl21196);
+            pushFollow(FOLLOW_ruleMonsterInst1_in_rule__MonsterPattern1__Group__0__Impl21197);
             ruleMonsterInst1();
 
             state._fsp--;
@@ -31526,12 +31537,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9359:1: ( rule__MonsterPattern1__Group__1__Impl rule__MonsterPattern1__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9360:2: rule__MonsterPattern1__Group__1__Impl rule__MonsterPattern1__Group__2
             {
-            pushFollow(FOLLOW_rule__MonsterPattern1__Group__1__Impl_in_rule__MonsterPattern1__Group__121225);
+            pushFollow(FOLLOW_rule__MonsterPattern1__Group__1__Impl_in_rule__MonsterPattern1__Group__121226);
             rule__MonsterPattern1__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern1__Group__2_in_rule__MonsterPattern1__Group__121228);
+            pushFollow(FOLLOW_rule__MonsterPattern1__Group__2_in_rule__MonsterPattern1__Group__121229);
             rule__MonsterPattern1__Group__2();
 
             state._fsp--;
@@ -31571,7 +31582,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9374:1: ( rule__MonsterPattern1__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9374:2: rule__MonsterPattern1__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__MonsterPattern1__ValueAssignment_1_in_rule__MonsterPattern1__Group__1__Impl21255);
+            pushFollow(FOLLOW_rule__MonsterPattern1__ValueAssignment_1_in_rule__MonsterPattern1__Group__1__Impl21256);
             rule__MonsterPattern1__ValueAssignment_1();
 
             state._fsp--;
@@ -31611,7 +31622,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9388:1: ( rule__MonsterPattern1__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9389:2: rule__MonsterPattern1__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__MonsterPattern1__Group__2__Impl_in_rule__MonsterPattern1__Group__221285);
+            pushFollow(FOLLOW_rule__MonsterPattern1__Group__2__Impl_in_rule__MonsterPattern1__Group__221286);
             rule__MonsterPattern1__Group__2__Impl();
 
             state._fsp--;
@@ -31649,27 +31660,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getMonsterPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9402:1: ( RULE_FREE_FORM_COMMENT )*
-            loop67:
+            loop68:
             do {
-                int alt67=2;
-                int LA67_0 = input.LA(1);
+                int alt68=2;
+                int LA68_0 = input.LA(1);
 
-                if ( (LA67_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt67=1;
+                if ( (LA68_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt68=1;
                 }
 
 
-                switch (alt67) {
+                switch (alt68) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9402:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern1__Group__2__Impl21313); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern1__Group__2__Impl21314); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop67;
+            	    break loop68;
                 }
             } while (true);
 
@@ -31705,12 +31716,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9422:1: ( rule__MonsterPattern2__Group__0__Impl rule__MonsterPattern2__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9423:2: rule__MonsterPattern2__Group__0__Impl rule__MonsterPattern2__Group__1
             {
-            pushFollow(FOLLOW_rule__MonsterPattern2__Group__0__Impl_in_rule__MonsterPattern2__Group__021350);
+            pushFollow(FOLLOW_rule__MonsterPattern2__Group__0__Impl_in_rule__MonsterPattern2__Group__021351);
             rule__MonsterPattern2__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern2__Group__1_in_rule__MonsterPattern2__Group__021353);
+            pushFollow(FOLLOW_rule__MonsterPattern2__Group__1_in_rule__MonsterPattern2__Group__021354);
             rule__MonsterPattern2__Group__1();
 
             state._fsp--;
@@ -31747,7 +31758,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9436:1: ruleMonsterInst2
             {
              before(grammarAccess.getMonsterPattern2Access().getMonsterInst2ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleMonsterInst2_in_rule__MonsterPattern2__Group__0__Impl21380);
+            pushFollow(FOLLOW_ruleMonsterInst2_in_rule__MonsterPattern2__Group__0__Impl21381);
             ruleMonsterInst2();
 
             state._fsp--;
@@ -31784,12 +31795,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9451:1: ( rule__MonsterPattern2__Group__1__Impl rule__MonsterPattern2__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9452:2: rule__MonsterPattern2__Group__1__Impl rule__MonsterPattern2__Group__2
             {
-            pushFollow(FOLLOW_rule__MonsterPattern2__Group__1__Impl_in_rule__MonsterPattern2__Group__121409);
+            pushFollow(FOLLOW_rule__MonsterPattern2__Group__1__Impl_in_rule__MonsterPattern2__Group__121410);
             rule__MonsterPattern2__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern2__Group__2_in_rule__MonsterPattern2__Group__121412);
+            pushFollow(FOLLOW_rule__MonsterPattern2__Group__2_in_rule__MonsterPattern2__Group__121413);
             rule__MonsterPattern2__Group__2();
 
             state._fsp--;
@@ -31829,7 +31840,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9466:1: ( rule__MonsterPattern2__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9466:2: rule__MonsterPattern2__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__MonsterPattern2__ValueAssignment_1_in_rule__MonsterPattern2__Group__1__Impl21439);
+            pushFollow(FOLLOW_rule__MonsterPattern2__ValueAssignment_1_in_rule__MonsterPattern2__Group__1__Impl21440);
             rule__MonsterPattern2__ValueAssignment_1();
 
             state._fsp--;
@@ -31869,7 +31880,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9480:1: ( rule__MonsterPattern2__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9481:2: rule__MonsterPattern2__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__MonsterPattern2__Group__2__Impl_in_rule__MonsterPattern2__Group__221469);
+            pushFollow(FOLLOW_rule__MonsterPattern2__Group__2__Impl_in_rule__MonsterPattern2__Group__221470);
             rule__MonsterPattern2__Group__2__Impl();
 
             state._fsp--;
@@ -31907,27 +31918,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getMonsterPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9494:1: ( RULE_FREE_FORM_COMMENT )*
-            loop68:
+            loop69:
             do {
-                int alt68=2;
-                int LA68_0 = input.LA(1);
+                int alt69=2;
+                int LA69_0 = input.LA(1);
 
-                if ( (LA68_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt68=1;
+                if ( (LA69_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt69=1;
                 }
 
 
-                switch (alt68) {
+                switch (alt69) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9494:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern2__Group__2__Impl21497); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern2__Group__2__Impl21498); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop68;
+            	    break loop69;
                 }
             } while (true);
 
@@ -31963,12 +31974,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9514:1: ( rule__MonsterPattern3__Group__0__Impl rule__MonsterPattern3__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9515:2: rule__MonsterPattern3__Group__0__Impl rule__MonsterPattern3__Group__1
             {
-            pushFollow(FOLLOW_rule__MonsterPattern3__Group__0__Impl_in_rule__MonsterPattern3__Group__021534);
+            pushFollow(FOLLOW_rule__MonsterPattern3__Group__0__Impl_in_rule__MonsterPattern3__Group__021535);
             rule__MonsterPattern3__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern3__Group__1_in_rule__MonsterPattern3__Group__021537);
+            pushFollow(FOLLOW_rule__MonsterPattern3__Group__1_in_rule__MonsterPattern3__Group__021538);
             rule__MonsterPattern3__Group__1();
 
             state._fsp--;
@@ -32005,7 +32016,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9528:1: ruleMonsterInst3
             {
              before(grammarAccess.getMonsterPattern3Access().getMonsterInst3ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleMonsterInst3_in_rule__MonsterPattern3__Group__0__Impl21564);
+            pushFollow(FOLLOW_ruleMonsterInst3_in_rule__MonsterPattern3__Group__0__Impl21565);
             ruleMonsterInst3();
 
             state._fsp--;
@@ -32042,12 +32053,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9543:1: ( rule__MonsterPattern3__Group__1__Impl rule__MonsterPattern3__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9544:2: rule__MonsterPattern3__Group__1__Impl rule__MonsterPattern3__Group__2
             {
-            pushFollow(FOLLOW_rule__MonsterPattern3__Group__1__Impl_in_rule__MonsterPattern3__Group__121593);
+            pushFollow(FOLLOW_rule__MonsterPattern3__Group__1__Impl_in_rule__MonsterPattern3__Group__121594);
             rule__MonsterPattern3__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern3__Group__2_in_rule__MonsterPattern3__Group__121596);
+            pushFollow(FOLLOW_rule__MonsterPattern3__Group__2_in_rule__MonsterPattern3__Group__121597);
             rule__MonsterPattern3__Group__2();
 
             state._fsp--;
@@ -32087,7 +32098,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9558:1: ( rule__MonsterPattern3__Value1Assignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9558:2: rule__MonsterPattern3__Value1Assignment_1
             {
-            pushFollow(FOLLOW_rule__MonsterPattern3__Value1Assignment_1_in_rule__MonsterPattern3__Group__1__Impl21623);
+            pushFollow(FOLLOW_rule__MonsterPattern3__Value1Assignment_1_in_rule__MonsterPattern3__Group__1__Impl21624);
             rule__MonsterPattern3__Value1Assignment_1();
 
             state._fsp--;
@@ -32127,12 +32138,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9572:1: ( rule__MonsterPattern3__Group__2__Impl rule__MonsterPattern3__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9573:2: rule__MonsterPattern3__Group__2__Impl rule__MonsterPattern3__Group__3
             {
-            pushFollow(FOLLOW_rule__MonsterPattern3__Group__2__Impl_in_rule__MonsterPattern3__Group__221653);
+            pushFollow(FOLLOW_rule__MonsterPattern3__Group__2__Impl_in_rule__MonsterPattern3__Group__221654);
             rule__MonsterPattern3__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern3__Group__3_in_rule__MonsterPattern3__Group__221656);
+            pushFollow(FOLLOW_rule__MonsterPattern3__Group__3_in_rule__MonsterPattern3__Group__221657);
             rule__MonsterPattern3__Group__3();
 
             state._fsp--;
@@ -32172,7 +32183,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9587:1: ( rule__MonsterPattern3__Value2Assignment_2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9587:2: rule__MonsterPattern3__Value2Assignment_2
             {
-            pushFollow(FOLLOW_rule__MonsterPattern3__Value2Assignment_2_in_rule__MonsterPattern3__Group__2__Impl21683);
+            pushFollow(FOLLOW_rule__MonsterPattern3__Value2Assignment_2_in_rule__MonsterPattern3__Group__2__Impl21684);
             rule__MonsterPattern3__Value2Assignment_2();
 
             state._fsp--;
@@ -32212,7 +32223,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9601:1: ( rule__MonsterPattern3__Group__3__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9602:2: rule__MonsterPattern3__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__MonsterPattern3__Group__3__Impl_in_rule__MonsterPattern3__Group__321713);
+            pushFollow(FOLLOW_rule__MonsterPattern3__Group__3__Impl_in_rule__MonsterPattern3__Group__321714);
             rule__MonsterPattern3__Group__3__Impl();
 
             state._fsp--;
@@ -32250,27 +32261,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getMonsterPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9615:1: ( RULE_FREE_FORM_COMMENT )*
-            loop69:
+            loop70:
             do {
-                int alt69=2;
-                int LA69_0 = input.LA(1);
+                int alt70=2;
+                int LA70_0 = input.LA(1);
 
-                if ( (LA69_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt69=1;
+                if ( (LA70_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt70=1;
                 }
 
 
-                switch (alt69) {
+                switch (alt70) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9615:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern3__Group__3__Impl21741); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern3__Group__3__Impl21742); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop69;
+            	    break loop70;
                 }
             } while (true);
 
@@ -32306,12 +32317,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9637:1: ( rule__MonsterPattern4__Group__0__Impl rule__MonsterPattern4__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9638:2: rule__MonsterPattern4__Group__0__Impl rule__MonsterPattern4__Group__1
             {
-            pushFollow(FOLLOW_rule__MonsterPattern4__Group__0__Impl_in_rule__MonsterPattern4__Group__021780);
+            pushFollow(FOLLOW_rule__MonsterPattern4__Group__0__Impl_in_rule__MonsterPattern4__Group__021781);
             rule__MonsterPattern4__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern4__Group__1_in_rule__MonsterPattern4__Group__021783);
+            pushFollow(FOLLOW_rule__MonsterPattern4__Group__1_in_rule__MonsterPattern4__Group__021784);
             rule__MonsterPattern4__Group__1();
 
             state._fsp--;
@@ -32348,7 +32359,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9651:1: ruleMonsterInst4
             {
              before(grammarAccess.getMonsterPattern4Access().getMonsterInst4ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleMonsterInst4_in_rule__MonsterPattern4__Group__0__Impl21810);
+            pushFollow(FOLLOW_ruleMonsterInst4_in_rule__MonsterPattern4__Group__0__Impl21811);
             ruleMonsterInst4();
 
             state._fsp--;
@@ -32385,7 +32396,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9666:1: ( rule__MonsterPattern4__Group__1__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9667:2: rule__MonsterPattern4__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__MonsterPattern4__Group__1__Impl_in_rule__MonsterPattern4__Group__121839);
+            pushFollow(FOLLOW_rule__MonsterPattern4__Group__1__Impl_in_rule__MonsterPattern4__Group__121840);
             rule__MonsterPattern4__Group__1__Impl();
 
             state._fsp--;
@@ -32423,27 +32434,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getMonsterPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9680:1: ( RULE_FREE_FORM_COMMENT )*
-            loop70:
+            loop71:
             do {
-                int alt70=2;
-                int LA70_0 = input.LA(1);
+                int alt71=2;
+                int LA71_0 = input.LA(1);
 
-                if ( (LA70_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt70=1;
+                if ( (LA71_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt71=1;
                 }
 
 
-                switch (alt70) {
+                switch (alt71) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9680:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern4__Group__1__Impl21867); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern4__Group__1__Impl21868); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop70;
+            	    break loop71;
                 }
             } while (true);
 
@@ -32479,12 +32490,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9698:1: ( rule__MonsterPattern5__Group__0__Impl rule__MonsterPattern5__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9699:2: rule__MonsterPattern5__Group__0__Impl rule__MonsterPattern5__Group__1
             {
-            pushFollow(FOLLOW_rule__MonsterPattern5__Group__0__Impl_in_rule__MonsterPattern5__Group__021902);
+            pushFollow(FOLLOW_rule__MonsterPattern5__Group__0__Impl_in_rule__MonsterPattern5__Group__021903);
             rule__MonsterPattern5__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern5__Group__1_in_rule__MonsterPattern5__Group__021905);
+            pushFollow(FOLLOW_rule__MonsterPattern5__Group__1_in_rule__MonsterPattern5__Group__021906);
             rule__MonsterPattern5__Group__1();
 
             state._fsp--;
@@ -32521,7 +32532,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9712:1: ruleMonsterInst5
             {
              before(grammarAccess.getMonsterPattern5Access().getMonsterInst5ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleMonsterInst5_in_rule__MonsterPattern5__Group__0__Impl21932);
+            pushFollow(FOLLOW_ruleMonsterInst5_in_rule__MonsterPattern5__Group__0__Impl21933);
             ruleMonsterInst5();
 
             state._fsp--;
@@ -32558,12 +32569,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9727:1: ( rule__MonsterPattern5__Group__1__Impl rule__MonsterPattern5__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9728:2: rule__MonsterPattern5__Group__1__Impl rule__MonsterPattern5__Group__2
             {
-            pushFollow(FOLLOW_rule__MonsterPattern5__Group__1__Impl_in_rule__MonsterPattern5__Group__121961);
+            pushFollow(FOLLOW_rule__MonsterPattern5__Group__1__Impl_in_rule__MonsterPattern5__Group__121962);
             rule__MonsterPattern5__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern5__Group__2_in_rule__MonsterPattern5__Group__121964);
+            pushFollow(FOLLOW_rule__MonsterPattern5__Group__2_in_rule__MonsterPattern5__Group__121965);
             rule__MonsterPattern5__Group__2();
 
             state._fsp--;
@@ -32603,7 +32614,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9742:1: ( rule__MonsterPattern5__Alternatives_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9742:2: rule__MonsterPattern5__Alternatives_1
             {
-            pushFollow(FOLLOW_rule__MonsterPattern5__Alternatives_1_in_rule__MonsterPattern5__Group__1__Impl21991);
+            pushFollow(FOLLOW_rule__MonsterPattern5__Alternatives_1_in_rule__MonsterPattern5__Group__1__Impl21992);
             rule__MonsterPattern5__Alternatives_1();
 
             state._fsp--;
@@ -32643,7 +32654,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9756:1: ( rule__MonsterPattern5__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9757:2: rule__MonsterPattern5__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__MonsterPattern5__Group__2__Impl_in_rule__MonsterPattern5__Group__222021);
+            pushFollow(FOLLOW_rule__MonsterPattern5__Group__2__Impl_in_rule__MonsterPattern5__Group__222022);
             rule__MonsterPattern5__Group__2__Impl();
 
             state._fsp--;
@@ -32681,27 +32692,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getMonsterPattern5Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9770:1: ( RULE_FREE_FORM_COMMENT )*
-            loop71:
+            loop72:
             do {
-                int alt71=2;
-                int LA71_0 = input.LA(1);
+                int alt72=2;
+                int LA72_0 = input.LA(1);
 
-                if ( (LA71_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt71=1;
+                if ( (LA72_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt72=1;
                 }
 
 
-                switch (alt71) {
+                switch (alt72) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9770:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern5__Group__2__Impl22049); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern5__Group__2__Impl22050); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop71;
+            	    break loop72;
                 }
             } while (true);
 
@@ -32737,12 +32748,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9790:1: ( rule__MonsterPattern6__Group__0__Impl rule__MonsterPattern6__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9791:2: rule__MonsterPattern6__Group__0__Impl rule__MonsterPattern6__Group__1
             {
-            pushFollow(FOLLOW_rule__MonsterPattern6__Group__0__Impl_in_rule__MonsterPattern6__Group__022086);
+            pushFollow(FOLLOW_rule__MonsterPattern6__Group__0__Impl_in_rule__MonsterPattern6__Group__022087);
             rule__MonsterPattern6__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern6__Group__1_in_rule__MonsterPattern6__Group__022089);
+            pushFollow(FOLLOW_rule__MonsterPattern6__Group__1_in_rule__MonsterPattern6__Group__022090);
             rule__MonsterPattern6__Group__1();
 
             state._fsp--;
@@ -32779,7 +32790,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9804:1: ruleMonsterInst6
             {
              before(grammarAccess.getMonsterPattern6Access().getMonsterInst6ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleMonsterInst6_in_rule__MonsterPattern6__Group__0__Impl22116);
+            pushFollow(FOLLOW_ruleMonsterInst6_in_rule__MonsterPattern6__Group__0__Impl22117);
             ruleMonsterInst6();
 
             state._fsp--;
@@ -32816,12 +32827,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9819:1: ( rule__MonsterPattern6__Group__1__Impl rule__MonsterPattern6__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9820:2: rule__MonsterPattern6__Group__1__Impl rule__MonsterPattern6__Group__2
             {
-            pushFollow(FOLLOW_rule__MonsterPattern6__Group__1__Impl_in_rule__MonsterPattern6__Group__122145);
+            pushFollow(FOLLOW_rule__MonsterPattern6__Group__1__Impl_in_rule__MonsterPattern6__Group__122146);
             rule__MonsterPattern6__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MonsterPattern6__Group__2_in_rule__MonsterPattern6__Group__122148);
+            pushFollow(FOLLOW_rule__MonsterPattern6__Group__2_in_rule__MonsterPattern6__Group__122149);
             rule__MonsterPattern6__Group__2();
 
             state._fsp--;
@@ -32859,17 +32870,17 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getMonsterPattern6Access().getValueAssignment_1()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9834:1: ( rule__MonsterPattern6__ValueAssignment_1 )?
-            int alt72=2;
-            int LA72_0 = input.LA(1);
+            int alt73=2;
+            int LA73_0 = input.LA(1);
 
-            if ( (LA72_0==RULE_INT) ) {
-                alt72=1;
+            if ( (LA73_0==RULE_INT) ) {
+                alt73=1;
             }
-            switch (alt72) {
+            switch (alt73) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9834:2: rule__MonsterPattern6__ValueAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__MonsterPattern6__ValueAssignment_1_in_rule__MonsterPattern6__Group__1__Impl22175);
+                    pushFollow(FOLLOW_rule__MonsterPattern6__ValueAssignment_1_in_rule__MonsterPattern6__Group__1__Impl22176);
                     rule__MonsterPattern6__ValueAssignment_1();
 
                     state._fsp--;
@@ -32912,7 +32923,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9848:1: ( rule__MonsterPattern6__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9849:2: rule__MonsterPattern6__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__MonsterPattern6__Group__2__Impl_in_rule__MonsterPattern6__Group__222206);
+            pushFollow(FOLLOW_rule__MonsterPattern6__Group__2__Impl_in_rule__MonsterPattern6__Group__222207);
             rule__MonsterPattern6__Group__2__Impl();
 
             state._fsp--;
@@ -32950,27 +32961,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getMonsterPattern6Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9862:1: ( RULE_FREE_FORM_COMMENT )*
-            loop73:
+            loop74:
             do {
-                int alt73=2;
-                int LA73_0 = input.LA(1);
+                int alt74=2;
+                int LA74_0 = input.LA(1);
 
-                if ( (LA73_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt73=1;
+                if ( (LA74_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt74=1;
                 }
 
 
-                switch (alt73) {
+                switch (alt74) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9862:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern6__Group__2__Impl22234); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern6__Group__2__Impl22235); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop73;
+            	    break loop74;
                 }
             } while (true);
 
@@ -33006,12 +33017,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9882:1: ( rule__SelectSpellById__Group__0__Impl rule__SelectSpellById__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9883:2: rule__SelectSpellById__Group__0__Impl rule__SelectSpellById__Group__1
             {
-            pushFollow(FOLLOW_rule__SelectSpellById__Group__0__Impl_in_rule__SelectSpellById__Group__022271);
+            pushFollow(FOLLOW_rule__SelectSpellById__Group__0__Impl_in_rule__SelectSpellById__Group__022272);
             rule__SelectSpellById__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSpellById__Group__1_in_rule__SelectSpellById__Group__022274);
+            pushFollow(FOLLOW_rule__SelectSpellById__Group__1_in_rule__SelectSpellById__Group__022275);
             rule__SelectSpellById__Group__1();
 
             state._fsp--;
@@ -33048,7 +33059,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9896:1: '#selectspell'
             {
              before(grammarAccess.getSelectSpellByIdAccess().getSelectspellKeyword_0()); 
-            match(input,40,FOLLOW_40_in_rule__SelectSpellById__Group__0__Impl22302); 
+            match(input,40,FOLLOW_40_in_rule__SelectSpellById__Group__0__Impl22303); 
              after(grammarAccess.getSelectSpellByIdAccess().getSelectspellKeyword_0()); 
 
             }
@@ -33081,12 +33092,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9913:1: ( rule__SelectSpellById__Group__1__Impl rule__SelectSpellById__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9914:2: rule__SelectSpellById__Group__1__Impl rule__SelectSpellById__Group__2
             {
-            pushFollow(FOLLOW_rule__SelectSpellById__Group__1__Impl_in_rule__SelectSpellById__Group__122333);
+            pushFollow(FOLLOW_rule__SelectSpellById__Group__1__Impl_in_rule__SelectSpellById__Group__122334);
             rule__SelectSpellById__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSpellById__Group__2_in_rule__SelectSpellById__Group__122336);
+            pushFollow(FOLLOW_rule__SelectSpellById__Group__2_in_rule__SelectSpellById__Group__122337);
             rule__SelectSpellById__Group__2();
 
             state._fsp--;
@@ -33126,7 +33137,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9928:1: ( rule__SelectSpellById__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9928:2: rule__SelectSpellById__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SelectSpellById__ValueAssignment_1_in_rule__SelectSpellById__Group__1__Impl22363);
+            pushFollow(FOLLOW_rule__SelectSpellById__ValueAssignment_1_in_rule__SelectSpellById__Group__1__Impl22364);
             rule__SelectSpellById__ValueAssignment_1();
 
             state._fsp--;
@@ -33166,12 +33177,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9942:1: ( rule__SelectSpellById__Group__2__Impl rule__SelectSpellById__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9943:2: rule__SelectSpellById__Group__2__Impl rule__SelectSpellById__Group__3
             {
-            pushFollow(FOLLOW_rule__SelectSpellById__Group__2__Impl_in_rule__SelectSpellById__Group__222393);
+            pushFollow(FOLLOW_rule__SelectSpellById__Group__2__Impl_in_rule__SelectSpellById__Group__222394);
             rule__SelectSpellById__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSpellById__Group__3_in_rule__SelectSpellById__Group__222396);
+            pushFollow(FOLLOW_rule__SelectSpellById__Group__3_in_rule__SelectSpellById__Group__222397);
             rule__SelectSpellById__Group__3();
 
             state._fsp--;
@@ -33209,27 +33220,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectSpellByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9957:1: ( RULE_FREE_FORM_COMMENT )*
-            loop74:
+            loop75:
             do {
-                int alt74=2;
-                int LA74_0 = input.LA(1);
+                int alt75=2;
+                int LA75_0 = input.LA(1);
 
-                if ( (LA74_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt74=1;
+                if ( (LA75_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt75=1;
                 }
 
 
-                switch (alt74) {
+                switch (alt75) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9957:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSpellById__Group__2__Impl22424); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSpellById__Group__2__Impl22425); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop74;
+            	    break loop75;
                 }
             } while (true);
 
@@ -33265,12 +33276,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9971:1: ( rule__SelectSpellById__Group__3__Impl rule__SelectSpellById__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9972:2: rule__SelectSpellById__Group__3__Impl rule__SelectSpellById__Group__4
             {
-            pushFollow(FOLLOW_rule__SelectSpellById__Group__3__Impl_in_rule__SelectSpellById__Group__322455);
+            pushFollow(FOLLOW_rule__SelectSpellById__Group__3__Impl_in_rule__SelectSpellById__Group__322456);
             rule__SelectSpellById__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSpellById__Group__4_in_rule__SelectSpellById__Group__322458);
+            pushFollow(FOLLOW_rule__SelectSpellById__Group__4_in_rule__SelectSpellById__Group__322459);
             rule__SelectSpellById__Group__4();
 
             state._fsp--;
@@ -33308,21 +33319,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectSpellByIdAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9986:1: ( rule__SelectSpellById__ModsAssignment_3 )*
-            loop75:
+            loop76:
             do {
-                int alt75=2;
-                int LA75_0 = input.LA(1);
+                int alt76=2;
+                int LA76_0 = input.LA(1);
 
-                if ( (LA75_0==50||LA75_0==60||(LA75_0>=62 && LA75_0<=63)||LA75_0==66||LA75_0==99||LA75_0==177||(LA75_0>=263 && LA75_0<=276)) ) {
-                    alt75=1;
+                if ( (LA76_0==50||LA76_0==60||(LA76_0>=62 && LA76_0<=63)||LA76_0==66||LA76_0==99||LA76_0==177||(LA76_0>=263 && LA76_0<=276)) ) {
+                    alt76=1;
                 }
 
 
-                switch (alt75) {
+                switch (alt76) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:9986:2: rule__SelectSpellById__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__SelectSpellById__ModsAssignment_3_in_rule__SelectSpellById__Group__3__Impl22485);
+            	    pushFollow(FOLLOW_rule__SelectSpellById__ModsAssignment_3_in_rule__SelectSpellById__Group__3__Impl22486);
             	    rule__SelectSpellById__ModsAssignment_3();
 
             	    state._fsp--;
@@ -33332,7 +33343,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop75;
+            	    break loop76;
                 }
             } while (true);
 
@@ -33368,7 +33379,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10000:1: ( rule__SelectSpellById__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10001:2: rule__SelectSpellById__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SelectSpellById__Group__4__Impl_in_rule__SelectSpellById__Group__422516);
+            pushFollow(FOLLOW_rule__SelectSpellById__Group__4__Impl_in_rule__SelectSpellById__Group__422517);
             rule__SelectSpellById__Group__4__Impl();
 
             state._fsp--;
@@ -33405,7 +33416,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10013:1: '#end'
             {
              before(grammarAccess.getSelectSpellByIdAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__SelectSpellById__Group__4__Impl22544); 
+            match(input,34,FOLLOW_34_in_rule__SelectSpellById__Group__4__Impl22545); 
              after(grammarAccess.getSelectSpellByIdAccess().getEndKeyword_4()); 
 
             }
@@ -33438,12 +33449,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10040:1: ( rule__SelectSpellByName__Group__0__Impl rule__SelectSpellByName__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10041:2: rule__SelectSpellByName__Group__0__Impl rule__SelectSpellByName__Group__1
             {
-            pushFollow(FOLLOW_rule__SelectSpellByName__Group__0__Impl_in_rule__SelectSpellByName__Group__022585);
+            pushFollow(FOLLOW_rule__SelectSpellByName__Group__0__Impl_in_rule__SelectSpellByName__Group__022586);
             rule__SelectSpellByName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSpellByName__Group__1_in_rule__SelectSpellByName__Group__022588);
+            pushFollow(FOLLOW_rule__SelectSpellByName__Group__1_in_rule__SelectSpellByName__Group__022589);
             rule__SelectSpellByName__Group__1();
 
             state._fsp--;
@@ -33480,7 +33491,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10054:1: '#selectspell'
             {
              before(grammarAccess.getSelectSpellByNameAccess().getSelectspellKeyword_0()); 
-            match(input,40,FOLLOW_40_in_rule__SelectSpellByName__Group__0__Impl22616); 
+            match(input,40,FOLLOW_40_in_rule__SelectSpellByName__Group__0__Impl22617); 
              after(grammarAccess.getSelectSpellByNameAccess().getSelectspellKeyword_0()); 
 
             }
@@ -33513,12 +33524,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10071:1: ( rule__SelectSpellByName__Group__1__Impl rule__SelectSpellByName__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10072:2: rule__SelectSpellByName__Group__1__Impl rule__SelectSpellByName__Group__2
             {
-            pushFollow(FOLLOW_rule__SelectSpellByName__Group__1__Impl_in_rule__SelectSpellByName__Group__122647);
+            pushFollow(FOLLOW_rule__SelectSpellByName__Group__1__Impl_in_rule__SelectSpellByName__Group__122648);
             rule__SelectSpellByName__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSpellByName__Group__2_in_rule__SelectSpellByName__Group__122650);
+            pushFollow(FOLLOW_rule__SelectSpellByName__Group__2_in_rule__SelectSpellByName__Group__122651);
             rule__SelectSpellByName__Group__2();
 
             state._fsp--;
@@ -33558,7 +33569,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10086:1: ( rule__SelectSpellByName__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10086:2: rule__SelectSpellByName__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SelectSpellByName__ValueAssignment_1_in_rule__SelectSpellByName__Group__1__Impl22677);
+            pushFollow(FOLLOW_rule__SelectSpellByName__ValueAssignment_1_in_rule__SelectSpellByName__Group__1__Impl22678);
             rule__SelectSpellByName__ValueAssignment_1();
 
             state._fsp--;
@@ -33598,12 +33609,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10100:1: ( rule__SelectSpellByName__Group__2__Impl rule__SelectSpellByName__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10101:2: rule__SelectSpellByName__Group__2__Impl rule__SelectSpellByName__Group__3
             {
-            pushFollow(FOLLOW_rule__SelectSpellByName__Group__2__Impl_in_rule__SelectSpellByName__Group__222707);
+            pushFollow(FOLLOW_rule__SelectSpellByName__Group__2__Impl_in_rule__SelectSpellByName__Group__222708);
             rule__SelectSpellByName__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSpellByName__Group__3_in_rule__SelectSpellByName__Group__222710);
+            pushFollow(FOLLOW_rule__SelectSpellByName__Group__3_in_rule__SelectSpellByName__Group__222711);
             rule__SelectSpellByName__Group__3();
 
             state._fsp--;
@@ -33641,27 +33652,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectSpellByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10115:1: ( RULE_FREE_FORM_COMMENT )*
-            loop76:
+            loop77:
             do {
-                int alt76=2;
-                int LA76_0 = input.LA(1);
+                int alt77=2;
+                int LA77_0 = input.LA(1);
 
-                if ( (LA76_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt76=1;
+                if ( (LA77_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt77=1;
                 }
 
 
-                switch (alt76) {
+                switch (alt77) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10115:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSpellByName__Group__2__Impl22738); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSpellByName__Group__2__Impl22739); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop76;
+            	    break loop77;
                 }
             } while (true);
 
@@ -33697,12 +33708,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10129:1: ( rule__SelectSpellByName__Group__3__Impl rule__SelectSpellByName__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10130:2: rule__SelectSpellByName__Group__3__Impl rule__SelectSpellByName__Group__4
             {
-            pushFollow(FOLLOW_rule__SelectSpellByName__Group__3__Impl_in_rule__SelectSpellByName__Group__322769);
+            pushFollow(FOLLOW_rule__SelectSpellByName__Group__3__Impl_in_rule__SelectSpellByName__Group__322770);
             rule__SelectSpellByName__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSpellByName__Group__4_in_rule__SelectSpellByName__Group__322772);
+            pushFollow(FOLLOW_rule__SelectSpellByName__Group__4_in_rule__SelectSpellByName__Group__322773);
             rule__SelectSpellByName__Group__4();
 
             state._fsp--;
@@ -33740,21 +33751,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectSpellByNameAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10144:1: ( rule__SelectSpellByName__ModsAssignment_3 )*
-            loop77:
+            loop78:
             do {
-                int alt77=2;
-                int LA77_0 = input.LA(1);
+                int alt78=2;
+                int LA78_0 = input.LA(1);
 
-                if ( (LA77_0==50||LA77_0==60||(LA77_0>=62 && LA77_0<=63)||LA77_0==66||LA77_0==99||LA77_0==177||(LA77_0>=263 && LA77_0<=276)) ) {
-                    alt77=1;
+                if ( (LA78_0==50||LA78_0==60||(LA78_0>=62 && LA78_0<=63)||LA78_0==66||LA78_0==99||LA78_0==177||(LA78_0>=263 && LA78_0<=276)) ) {
+                    alt78=1;
                 }
 
 
-                switch (alt77) {
+                switch (alt78) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10144:2: rule__SelectSpellByName__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__SelectSpellByName__ModsAssignment_3_in_rule__SelectSpellByName__Group__3__Impl22799);
+            	    pushFollow(FOLLOW_rule__SelectSpellByName__ModsAssignment_3_in_rule__SelectSpellByName__Group__3__Impl22800);
             	    rule__SelectSpellByName__ModsAssignment_3();
 
             	    state._fsp--;
@@ -33764,7 +33775,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop77;
+            	    break loop78;
                 }
             } while (true);
 
@@ -33800,7 +33811,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10158:1: ( rule__SelectSpellByName__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10159:2: rule__SelectSpellByName__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SelectSpellByName__Group__4__Impl_in_rule__SelectSpellByName__Group__422830);
+            pushFollow(FOLLOW_rule__SelectSpellByName__Group__4__Impl_in_rule__SelectSpellByName__Group__422831);
             rule__SelectSpellByName__Group__4__Impl();
 
             state._fsp--;
@@ -33837,7 +33848,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10171:1: '#end'
             {
              before(grammarAccess.getSelectSpellByNameAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__SelectSpellByName__Group__4__Impl22858); 
+            match(input,34,FOLLOW_34_in_rule__SelectSpellByName__Group__4__Impl22859); 
              after(grammarAccess.getSelectSpellByNameAccess().getEndKeyword_4()); 
 
             }
@@ -33870,12 +33881,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10198:1: ( rule__NewSpell__Group__0__Impl rule__NewSpell__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10199:2: rule__NewSpell__Group__0__Impl rule__NewSpell__Group__1
             {
-            pushFollow(FOLLOW_rule__NewSpell__Group__0__Impl_in_rule__NewSpell__Group__022899);
+            pushFollow(FOLLOW_rule__NewSpell__Group__0__Impl_in_rule__NewSpell__Group__022900);
             rule__NewSpell__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewSpell__Group__1_in_rule__NewSpell__Group__022902);
+            pushFollow(FOLLOW_rule__NewSpell__Group__1_in_rule__NewSpell__Group__022903);
             rule__NewSpell__Group__1();
 
             state._fsp--;
@@ -33912,7 +33923,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10212:1: '#newspell'
             {
              before(grammarAccess.getNewSpellAccess().getNewspellKeyword_0()); 
-            match(input,41,FOLLOW_41_in_rule__NewSpell__Group__0__Impl22930); 
+            match(input,41,FOLLOW_41_in_rule__NewSpell__Group__0__Impl22931); 
              after(grammarAccess.getNewSpellAccess().getNewspellKeyword_0()); 
 
             }
@@ -33945,12 +33956,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10229:1: ( rule__NewSpell__Group__1__Impl rule__NewSpell__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10230:2: rule__NewSpell__Group__1__Impl rule__NewSpell__Group__2
             {
-            pushFollow(FOLLOW_rule__NewSpell__Group__1__Impl_in_rule__NewSpell__Group__122961);
+            pushFollow(FOLLOW_rule__NewSpell__Group__1__Impl_in_rule__NewSpell__Group__122962);
             rule__NewSpell__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewSpell__Group__2_in_rule__NewSpell__Group__122964);
+            pushFollow(FOLLOW_rule__NewSpell__Group__2_in_rule__NewSpell__Group__122965);
             rule__NewSpell__Group__2();
 
             state._fsp--;
@@ -33988,27 +33999,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNewSpellAccess().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10244:1: ( RULE_FREE_FORM_COMMENT )*
-            loop78:
+            loop79:
             do {
-                int alt78=2;
-                int LA78_0 = input.LA(1);
+                int alt79=2;
+                int LA79_0 = input.LA(1);
 
-                if ( (LA78_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt78=1;
+                if ( (LA79_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt79=1;
                 }
 
 
-                switch (alt78) {
+                switch (alt79) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10244:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewSpell__Group__1__Impl22992); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewSpell__Group__1__Impl22993); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop78;
+            	    break loop79;
                 }
             } while (true);
 
@@ -34044,12 +34055,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10258:1: ( rule__NewSpell__Group__2__Impl rule__NewSpell__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10259:2: rule__NewSpell__Group__2__Impl rule__NewSpell__Group__3
             {
-            pushFollow(FOLLOW_rule__NewSpell__Group__2__Impl_in_rule__NewSpell__Group__223023);
+            pushFollow(FOLLOW_rule__NewSpell__Group__2__Impl_in_rule__NewSpell__Group__223024);
             rule__NewSpell__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewSpell__Group__3_in_rule__NewSpell__Group__223026);
+            pushFollow(FOLLOW_rule__NewSpell__Group__3_in_rule__NewSpell__Group__223027);
             rule__NewSpell__Group__3();
 
             state._fsp--;
@@ -34087,21 +34098,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNewSpellAccess().getModsAssignment_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10273:1: ( rule__NewSpell__ModsAssignment_2 )*
-            loop79:
+            loop80:
             do {
-                int alt79=2;
-                int LA79_0 = input.LA(1);
+                int alt80=2;
+                int LA80_0 = input.LA(1);
 
-                if ( (LA79_0==50||LA79_0==60||(LA79_0>=62 && LA79_0<=63)||LA79_0==66||LA79_0==99||LA79_0==177||(LA79_0>=263 && LA79_0<=276)) ) {
-                    alt79=1;
+                if ( (LA80_0==50||LA80_0==60||(LA80_0>=62 && LA80_0<=63)||LA80_0==66||LA80_0==99||LA80_0==177||(LA80_0>=263 && LA80_0<=276)) ) {
+                    alt80=1;
                 }
 
 
-                switch (alt79) {
+                switch (alt80) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10273:2: rule__NewSpell__ModsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__NewSpell__ModsAssignment_2_in_rule__NewSpell__Group__2__Impl23053);
+            	    pushFollow(FOLLOW_rule__NewSpell__ModsAssignment_2_in_rule__NewSpell__Group__2__Impl23054);
             	    rule__NewSpell__ModsAssignment_2();
 
             	    state._fsp--;
@@ -34111,7 +34122,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop79;
+            	    break loop80;
                 }
             } while (true);
 
@@ -34147,7 +34158,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10287:1: ( rule__NewSpell__Group__3__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10288:2: rule__NewSpell__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__NewSpell__Group__3__Impl_in_rule__NewSpell__Group__323084);
+            pushFollow(FOLLOW_rule__NewSpell__Group__3__Impl_in_rule__NewSpell__Group__323085);
             rule__NewSpell__Group__3__Impl();
 
             state._fsp--;
@@ -34184,7 +34195,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10300:1: '#end'
             {
              before(grammarAccess.getNewSpellAccess().getEndKeyword_3()); 
-            match(input,34,FOLLOW_34_in_rule__NewSpell__Group__3__Impl23112); 
+            match(input,34,FOLLOW_34_in_rule__NewSpell__Group__3__Impl23113); 
              after(grammarAccess.getNewSpellAccess().getEndKeyword_3()); 
 
             }
@@ -34217,12 +34228,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10325:1: ( rule__SpellPattern1__Group__0__Impl rule__SpellPattern1__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10326:2: rule__SpellPattern1__Group__0__Impl rule__SpellPattern1__Group__1
             {
-            pushFollow(FOLLOW_rule__SpellPattern1__Group__0__Impl_in_rule__SpellPattern1__Group__023151);
+            pushFollow(FOLLOW_rule__SpellPattern1__Group__0__Impl_in_rule__SpellPattern1__Group__023152);
             rule__SpellPattern1__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SpellPattern1__Group__1_in_rule__SpellPattern1__Group__023154);
+            pushFollow(FOLLOW_rule__SpellPattern1__Group__1_in_rule__SpellPattern1__Group__023155);
             rule__SpellPattern1__Group__1();
 
             state._fsp--;
@@ -34259,7 +34270,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10339:1: ruleSpellInst1
             {
              before(grammarAccess.getSpellPattern1Access().getSpellInst1ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSpellInst1_in_rule__SpellPattern1__Group__0__Impl23181);
+            pushFollow(FOLLOW_ruleSpellInst1_in_rule__SpellPattern1__Group__0__Impl23182);
             ruleSpellInst1();
 
             state._fsp--;
@@ -34296,12 +34307,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10354:1: ( rule__SpellPattern1__Group__1__Impl rule__SpellPattern1__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10355:2: rule__SpellPattern1__Group__1__Impl rule__SpellPattern1__Group__2
             {
-            pushFollow(FOLLOW_rule__SpellPattern1__Group__1__Impl_in_rule__SpellPattern1__Group__123210);
+            pushFollow(FOLLOW_rule__SpellPattern1__Group__1__Impl_in_rule__SpellPattern1__Group__123211);
             rule__SpellPattern1__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SpellPattern1__Group__2_in_rule__SpellPattern1__Group__123213);
+            pushFollow(FOLLOW_rule__SpellPattern1__Group__2_in_rule__SpellPattern1__Group__123214);
             rule__SpellPattern1__Group__2();
 
             state._fsp--;
@@ -34341,7 +34352,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10369:1: ( rule__SpellPattern1__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10369:2: rule__SpellPattern1__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SpellPattern1__ValueAssignment_1_in_rule__SpellPattern1__Group__1__Impl23240);
+            pushFollow(FOLLOW_rule__SpellPattern1__ValueAssignment_1_in_rule__SpellPattern1__Group__1__Impl23241);
             rule__SpellPattern1__ValueAssignment_1();
 
             state._fsp--;
@@ -34381,7 +34392,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10383:1: ( rule__SpellPattern1__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10384:2: rule__SpellPattern1__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__SpellPattern1__Group__2__Impl_in_rule__SpellPattern1__Group__223270);
+            pushFollow(FOLLOW_rule__SpellPattern1__Group__2__Impl_in_rule__SpellPattern1__Group__223271);
             rule__SpellPattern1__Group__2__Impl();
 
             state._fsp--;
@@ -34419,27 +34430,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSpellPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10397:1: ( RULE_FREE_FORM_COMMENT )*
-            loop80:
+            loop81:
             do {
-                int alt80=2;
-                int LA80_0 = input.LA(1);
+                int alt81=2;
+                int LA81_0 = input.LA(1);
 
-                if ( (LA80_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt80=1;
+                if ( (LA81_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt81=1;
                 }
 
 
-                switch (alt80) {
+                switch (alt81) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10397:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern1__Group__2__Impl23298); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern1__Group__2__Impl23299); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop80;
+            	    break loop81;
                 }
             } while (true);
 
@@ -34475,12 +34486,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10417:1: ( rule__SpellPattern2__Group__0__Impl rule__SpellPattern2__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10418:2: rule__SpellPattern2__Group__0__Impl rule__SpellPattern2__Group__1
             {
-            pushFollow(FOLLOW_rule__SpellPattern2__Group__0__Impl_in_rule__SpellPattern2__Group__023335);
+            pushFollow(FOLLOW_rule__SpellPattern2__Group__0__Impl_in_rule__SpellPattern2__Group__023336);
             rule__SpellPattern2__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SpellPattern2__Group__1_in_rule__SpellPattern2__Group__023338);
+            pushFollow(FOLLOW_rule__SpellPattern2__Group__1_in_rule__SpellPattern2__Group__023339);
             rule__SpellPattern2__Group__1();
 
             state._fsp--;
@@ -34517,7 +34528,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10431:1: ruleSpellInst2
             {
              before(grammarAccess.getSpellPattern2Access().getSpellInst2ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSpellInst2_in_rule__SpellPattern2__Group__0__Impl23365);
+            pushFollow(FOLLOW_ruleSpellInst2_in_rule__SpellPattern2__Group__0__Impl23366);
             ruleSpellInst2();
 
             state._fsp--;
@@ -34554,12 +34565,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10446:1: ( rule__SpellPattern2__Group__1__Impl rule__SpellPattern2__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10447:2: rule__SpellPattern2__Group__1__Impl rule__SpellPattern2__Group__2
             {
-            pushFollow(FOLLOW_rule__SpellPattern2__Group__1__Impl_in_rule__SpellPattern2__Group__123394);
+            pushFollow(FOLLOW_rule__SpellPattern2__Group__1__Impl_in_rule__SpellPattern2__Group__123395);
             rule__SpellPattern2__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SpellPattern2__Group__2_in_rule__SpellPattern2__Group__123397);
+            pushFollow(FOLLOW_rule__SpellPattern2__Group__2_in_rule__SpellPattern2__Group__123398);
             rule__SpellPattern2__Group__2();
 
             state._fsp--;
@@ -34599,7 +34610,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10461:1: ( rule__SpellPattern2__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10461:2: rule__SpellPattern2__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SpellPattern2__ValueAssignment_1_in_rule__SpellPattern2__Group__1__Impl23424);
+            pushFollow(FOLLOW_rule__SpellPattern2__ValueAssignment_1_in_rule__SpellPattern2__Group__1__Impl23425);
             rule__SpellPattern2__ValueAssignment_1();
 
             state._fsp--;
@@ -34639,7 +34650,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10475:1: ( rule__SpellPattern2__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10476:2: rule__SpellPattern2__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__SpellPattern2__Group__2__Impl_in_rule__SpellPattern2__Group__223454);
+            pushFollow(FOLLOW_rule__SpellPattern2__Group__2__Impl_in_rule__SpellPattern2__Group__223455);
             rule__SpellPattern2__Group__2__Impl();
 
             state._fsp--;
@@ -34677,27 +34688,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSpellPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10489:1: ( RULE_FREE_FORM_COMMENT )*
-            loop81:
+            loop82:
             do {
-                int alt81=2;
-                int LA81_0 = input.LA(1);
+                int alt82=2;
+                int LA82_0 = input.LA(1);
 
-                if ( (LA81_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt81=1;
+                if ( (LA82_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt82=1;
                 }
 
 
-                switch (alt81) {
+                switch (alt82) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10489:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern2__Group__2__Impl23482); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern2__Group__2__Impl23483); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop81;
+            	    break loop82;
                 }
             } while (true);
 
@@ -34733,12 +34744,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10509:1: ( rule__SpellPattern3__Group__0__Impl rule__SpellPattern3__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10510:2: rule__SpellPattern3__Group__0__Impl rule__SpellPattern3__Group__1
             {
-            pushFollow(FOLLOW_rule__SpellPattern3__Group__0__Impl_in_rule__SpellPattern3__Group__023519);
+            pushFollow(FOLLOW_rule__SpellPattern3__Group__0__Impl_in_rule__SpellPattern3__Group__023520);
             rule__SpellPattern3__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SpellPattern3__Group__1_in_rule__SpellPattern3__Group__023522);
+            pushFollow(FOLLOW_rule__SpellPattern3__Group__1_in_rule__SpellPattern3__Group__023523);
             rule__SpellPattern3__Group__1();
 
             state._fsp--;
@@ -34775,7 +34786,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10523:1: ruleSpellInst3
             {
              before(grammarAccess.getSpellPattern3Access().getSpellInst3ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSpellInst3_in_rule__SpellPattern3__Group__0__Impl23549);
+            pushFollow(FOLLOW_ruleSpellInst3_in_rule__SpellPattern3__Group__0__Impl23550);
             ruleSpellInst3();
 
             state._fsp--;
@@ -34812,12 +34823,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10538:1: ( rule__SpellPattern3__Group__1__Impl rule__SpellPattern3__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10539:2: rule__SpellPattern3__Group__1__Impl rule__SpellPattern3__Group__2
             {
-            pushFollow(FOLLOW_rule__SpellPattern3__Group__1__Impl_in_rule__SpellPattern3__Group__123578);
+            pushFollow(FOLLOW_rule__SpellPattern3__Group__1__Impl_in_rule__SpellPattern3__Group__123579);
             rule__SpellPattern3__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SpellPattern3__Group__2_in_rule__SpellPattern3__Group__123581);
+            pushFollow(FOLLOW_rule__SpellPattern3__Group__2_in_rule__SpellPattern3__Group__123582);
             rule__SpellPattern3__Group__2();
 
             state._fsp--;
@@ -34857,7 +34868,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10553:1: ( rule__SpellPattern3__Value1Assignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10553:2: rule__SpellPattern3__Value1Assignment_1
             {
-            pushFollow(FOLLOW_rule__SpellPattern3__Value1Assignment_1_in_rule__SpellPattern3__Group__1__Impl23608);
+            pushFollow(FOLLOW_rule__SpellPattern3__Value1Assignment_1_in_rule__SpellPattern3__Group__1__Impl23609);
             rule__SpellPattern3__Value1Assignment_1();
 
             state._fsp--;
@@ -34897,12 +34908,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10567:1: ( rule__SpellPattern3__Group__2__Impl rule__SpellPattern3__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10568:2: rule__SpellPattern3__Group__2__Impl rule__SpellPattern3__Group__3
             {
-            pushFollow(FOLLOW_rule__SpellPattern3__Group__2__Impl_in_rule__SpellPattern3__Group__223638);
+            pushFollow(FOLLOW_rule__SpellPattern3__Group__2__Impl_in_rule__SpellPattern3__Group__223639);
             rule__SpellPattern3__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SpellPattern3__Group__3_in_rule__SpellPattern3__Group__223641);
+            pushFollow(FOLLOW_rule__SpellPattern3__Group__3_in_rule__SpellPattern3__Group__223642);
             rule__SpellPattern3__Group__3();
 
             state._fsp--;
@@ -34942,7 +34953,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10582:1: ( rule__SpellPattern3__Value2Assignment_2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10582:2: rule__SpellPattern3__Value2Assignment_2
             {
-            pushFollow(FOLLOW_rule__SpellPattern3__Value2Assignment_2_in_rule__SpellPattern3__Group__2__Impl23668);
+            pushFollow(FOLLOW_rule__SpellPattern3__Value2Assignment_2_in_rule__SpellPattern3__Group__2__Impl23669);
             rule__SpellPattern3__Value2Assignment_2();
 
             state._fsp--;
@@ -34982,7 +34993,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10596:1: ( rule__SpellPattern3__Group__3__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10597:2: rule__SpellPattern3__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__SpellPattern3__Group__3__Impl_in_rule__SpellPattern3__Group__323698);
+            pushFollow(FOLLOW_rule__SpellPattern3__Group__3__Impl_in_rule__SpellPattern3__Group__323699);
             rule__SpellPattern3__Group__3__Impl();
 
             state._fsp--;
@@ -35020,27 +35031,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSpellPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10610:1: ( RULE_FREE_FORM_COMMENT )*
-            loop82:
+            loop83:
             do {
-                int alt82=2;
-                int LA82_0 = input.LA(1);
+                int alt83=2;
+                int LA83_0 = input.LA(1);
 
-                if ( (LA82_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt82=1;
+                if ( (LA83_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt83=1;
                 }
 
 
-                switch (alt82) {
+                switch (alt83) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10610:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern3__Group__3__Impl23726); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern3__Group__3__Impl23727); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop82;
+            	    break loop83;
                 }
             } while (true);
 
@@ -35076,12 +35087,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10632:1: ( rule__SpellPattern4__Group__0__Impl rule__SpellPattern4__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10633:2: rule__SpellPattern4__Group__0__Impl rule__SpellPattern4__Group__1
             {
-            pushFollow(FOLLOW_rule__SpellPattern4__Group__0__Impl_in_rule__SpellPattern4__Group__023765);
+            pushFollow(FOLLOW_rule__SpellPattern4__Group__0__Impl_in_rule__SpellPattern4__Group__023766);
             rule__SpellPattern4__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SpellPattern4__Group__1_in_rule__SpellPattern4__Group__023768);
+            pushFollow(FOLLOW_rule__SpellPattern4__Group__1_in_rule__SpellPattern4__Group__023769);
             rule__SpellPattern4__Group__1();
 
             state._fsp--;
@@ -35118,7 +35129,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10646:1: ruleSpellInst4
             {
              before(grammarAccess.getSpellPattern4Access().getSpellInst4ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSpellInst4_in_rule__SpellPattern4__Group__0__Impl23795);
+            pushFollow(FOLLOW_ruleSpellInst4_in_rule__SpellPattern4__Group__0__Impl23796);
             ruleSpellInst4();
 
             state._fsp--;
@@ -35155,7 +35166,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10661:1: ( rule__SpellPattern4__Group__1__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10662:2: rule__SpellPattern4__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__SpellPattern4__Group__1__Impl_in_rule__SpellPattern4__Group__123824);
+            pushFollow(FOLLOW_rule__SpellPattern4__Group__1__Impl_in_rule__SpellPattern4__Group__123825);
             rule__SpellPattern4__Group__1__Impl();
 
             state._fsp--;
@@ -35193,27 +35204,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSpellPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10675:1: ( RULE_FREE_FORM_COMMENT )*
-            loop83:
+            loop84:
             do {
-                int alt83=2;
-                int LA83_0 = input.LA(1);
+                int alt84=2;
+                int LA84_0 = input.LA(1);
 
-                if ( (LA83_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt83=1;
+                if ( (LA84_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt84=1;
                 }
 
 
-                switch (alt83) {
+                switch (alt84) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10675:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern4__Group__1__Impl23852); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern4__Group__1__Impl23853); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop83;
+            	    break loop84;
                 }
             } while (true);
 
@@ -35249,12 +35260,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10693:1: ( rule__SpellPattern5__Group__0__Impl rule__SpellPattern5__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10694:2: rule__SpellPattern5__Group__0__Impl rule__SpellPattern5__Group__1
             {
-            pushFollow(FOLLOW_rule__SpellPattern5__Group__0__Impl_in_rule__SpellPattern5__Group__023887);
+            pushFollow(FOLLOW_rule__SpellPattern5__Group__0__Impl_in_rule__SpellPattern5__Group__023888);
             rule__SpellPattern5__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SpellPattern5__Group__1_in_rule__SpellPattern5__Group__023890);
+            pushFollow(FOLLOW_rule__SpellPattern5__Group__1_in_rule__SpellPattern5__Group__023891);
             rule__SpellPattern5__Group__1();
 
             state._fsp--;
@@ -35291,7 +35302,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10707:1: ruleSpellInst5
             {
              before(grammarAccess.getSpellPattern5Access().getSpellInst5ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSpellInst5_in_rule__SpellPattern5__Group__0__Impl23917);
+            pushFollow(FOLLOW_ruleSpellInst5_in_rule__SpellPattern5__Group__0__Impl23918);
             ruleSpellInst5();
 
             state._fsp--;
@@ -35328,12 +35339,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10722:1: ( rule__SpellPattern5__Group__1__Impl rule__SpellPattern5__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10723:2: rule__SpellPattern5__Group__1__Impl rule__SpellPattern5__Group__2
             {
-            pushFollow(FOLLOW_rule__SpellPattern5__Group__1__Impl_in_rule__SpellPattern5__Group__123946);
+            pushFollow(FOLLOW_rule__SpellPattern5__Group__1__Impl_in_rule__SpellPattern5__Group__123947);
             rule__SpellPattern5__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SpellPattern5__Group__2_in_rule__SpellPattern5__Group__123949);
+            pushFollow(FOLLOW_rule__SpellPattern5__Group__2_in_rule__SpellPattern5__Group__123950);
             rule__SpellPattern5__Group__2();
 
             state._fsp--;
@@ -35373,7 +35384,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10737:1: ( rule__SpellPattern5__Alternatives_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10737:2: rule__SpellPattern5__Alternatives_1
             {
-            pushFollow(FOLLOW_rule__SpellPattern5__Alternatives_1_in_rule__SpellPattern5__Group__1__Impl23976);
+            pushFollow(FOLLOW_rule__SpellPattern5__Alternatives_1_in_rule__SpellPattern5__Group__1__Impl23977);
             rule__SpellPattern5__Alternatives_1();
 
             state._fsp--;
@@ -35413,7 +35424,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10751:1: ( rule__SpellPattern5__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10752:2: rule__SpellPattern5__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__SpellPattern5__Group__2__Impl_in_rule__SpellPattern5__Group__224006);
+            pushFollow(FOLLOW_rule__SpellPattern5__Group__2__Impl_in_rule__SpellPattern5__Group__224007);
             rule__SpellPattern5__Group__2__Impl();
 
             state._fsp--;
@@ -35451,27 +35462,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSpellPattern5Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10765:1: ( RULE_FREE_FORM_COMMENT )*
-            loop84:
+            loop85:
             do {
-                int alt84=2;
-                int LA84_0 = input.LA(1);
+                int alt85=2;
+                int LA85_0 = input.LA(1);
 
-                if ( (LA84_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt84=1;
+                if ( (LA85_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt85=1;
                 }
 
 
-                switch (alt84) {
+                switch (alt85) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10765:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern5__Group__2__Impl24034); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern5__Group__2__Impl24035); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop84;
+            	    break loop85;
                 }
             } while (true);
 
@@ -35507,12 +35518,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10785:1: ( rule__SelectItemById__Group__0__Impl rule__SelectItemById__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10786:2: rule__SelectItemById__Group__0__Impl rule__SelectItemById__Group__1
             {
-            pushFollow(FOLLOW_rule__SelectItemById__Group__0__Impl_in_rule__SelectItemById__Group__024071);
+            pushFollow(FOLLOW_rule__SelectItemById__Group__0__Impl_in_rule__SelectItemById__Group__024072);
             rule__SelectItemById__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectItemById__Group__1_in_rule__SelectItemById__Group__024074);
+            pushFollow(FOLLOW_rule__SelectItemById__Group__1_in_rule__SelectItemById__Group__024075);
             rule__SelectItemById__Group__1();
 
             state._fsp--;
@@ -35549,7 +35560,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10799:1: '#selectitem'
             {
              before(grammarAccess.getSelectItemByIdAccess().getSelectitemKeyword_0()); 
-            match(input,42,FOLLOW_42_in_rule__SelectItemById__Group__0__Impl24102); 
+            match(input,42,FOLLOW_42_in_rule__SelectItemById__Group__0__Impl24103); 
              after(grammarAccess.getSelectItemByIdAccess().getSelectitemKeyword_0()); 
 
             }
@@ -35582,12 +35593,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10816:1: ( rule__SelectItemById__Group__1__Impl rule__SelectItemById__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10817:2: rule__SelectItemById__Group__1__Impl rule__SelectItemById__Group__2
             {
-            pushFollow(FOLLOW_rule__SelectItemById__Group__1__Impl_in_rule__SelectItemById__Group__124133);
+            pushFollow(FOLLOW_rule__SelectItemById__Group__1__Impl_in_rule__SelectItemById__Group__124134);
             rule__SelectItemById__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectItemById__Group__2_in_rule__SelectItemById__Group__124136);
+            pushFollow(FOLLOW_rule__SelectItemById__Group__2_in_rule__SelectItemById__Group__124137);
             rule__SelectItemById__Group__2();
 
             state._fsp--;
@@ -35627,7 +35638,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10831:1: ( rule__SelectItemById__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10831:2: rule__SelectItemById__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SelectItemById__ValueAssignment_1_in_rule__SelectItemById__Group__1__Impl24163);
+            pushFollow(FOLLOW_rule__SelectItemById__ValueAssignment_1_in_rule__SelectItemById__Group__1__Impl24164);
             rule__SelectItemById__ValueAssignment_1();
 
             state._fsp--;
@@ -35667,12 +35678,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10845:1: ( rule__SelectItemById__Group__2__Impl rule__SelectItemById__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10846:2: rule__SelectItemById__Group__2__Impl rule__SelectItemById__Group__3
             {
-            pushFollow(FOLLOW_rule__SelectItemById__Group__2__Impl_in_rule__SelectItemById__Group__224193);
+            pushFollow(FOLLOW_rule__SelectItemById__Group__2__Impl_in_rule__SelectItemById__Group__224194);
             rule__SelectItemById__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectItemById__Group__3_in_rule__SelectItemById__Group__224196);
+            pushFollow(FOLLOW_rule__SelectItemById__Group__3_in_rule__SelectItemById__Group__224197);
             rule__SelectItemById__Group__3();
 
             state._fsp--;
@@ -35710,27 +35721,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectItemByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10860:1: ( RULE_FREE_FORM_COMMENT )*
-            loop85:
+            loop86:
             do {
-                int alt85=2;
-                int LA85_0 = input.LA(1);
+                int alt86=2;
+                int LA86_0 = input.LA(1);
 
-                if ( (LA85_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt85=1;
+                if ( (LA86_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt86=1;
                 }
 
 
-                switch (alt85) {
+                switch (alt86) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10860:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectItemById__Group__2__Impl24224); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectItemById__Group__2__Impl24225); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop85;
+            	    break loop86;
                 }
             } while (true);
 
@@ -35766,12 +35777,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10874:1: ( rule__SelectItemById__Group__3__Impl rule__SelectItemById__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10875:2: rule__SelectItemById__Group__3__Impl rule__SelectItemById__Group__4
             {
-            pushFollow(FOLLOW_rule__SelectItemById__Group__3__Impl_in_rule__SelectItemById__Group__324255);
+            pushFollow(FOLLOW_rule__SelectItemById__Group__3__Impl_in_rule__SelectItemById__Group__324256);
             rule__SelectItemById__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectItemById__Group__4_in_rule__SelectItemById__Group__324258);
+            pushFollow(FOLLOW_rule__SelectItemById__Group__4_in_rule__SelectItemById__Group__324259);
             rule__SelectItemById__Group__4();
 
             state._fsp--;
@@ -35809,21 +35820,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectItemByIdAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10889:1: ( rule__SelectItemById__ModsAssignment_3 )*
-            loop86:
+            loop87:
             do {
-                int alt86=2;
-                int LA86_0 = input.LA(1);
+                int alt87=2;
+                int LA87_0 = input.LA(1);
 
-                if ( ((LA86_0>=50 && LA86_0<=51)||LA86_0==99||LA86_0==115||(LA86_0>=240 && LA86_0<=241)||(LA86_0>=277 && LA86_0<=281)) ) {
-                    alt86=1;
+                if ( ((LA87_0>=50 && LA87_0<=51)||LA87_0==99||LA87_0==115||(LA87_0>=240 && LA87_0<=241)||(LA87_0>=277 && LA87_0<=281)) ) {
+                    alt87=1;
                 }
 
 
-                switch (alt86) {
+                switch (alt87) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10889:2: rule__SelectItemById__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__SelectItemById__ModsAssignment_3_in_rule__SelectItemById__Group__3__Impl24285);
+            	    pushFollow(FOLLOW_rule__SelectItemById__ModsAssignment_3_in_rule__SelectItemById__Group__3__Impl24286);
             	    rule__SelectItemById__ModsAssignment_3();
 
             	    state._fsp--;
@@ -35833,7 +35844,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop86;
+            	    break loop87;
                 }
             } while (true);
 
@@ -35869,7 +35880,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10903:1: ( rule__SelectItemById__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10904:2: rule__SelectItemById__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SelectItemById__Group__4__Impl_in_rule__SelectItemById__Group__424316);
+            pushFollow(FOLLOW_rule__SelectItemById__Group__4__Impl_in_rule__SelectItemById__Group__424317);
             rule__SelectItemById__Group__4__Impl();
 
             state._fsp--;
@@ -35906,7 +35917,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10916:1: '#end'
             {
              before(grammarAccess.getSelectItemByIdAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__SelectItemById__Group__4__Impl24344); 
+            match(input,34,FOLLOW_34_in_rule__SelectItemById__Group__4__Impl24345); 
              after(grammarAccess.getSelectItemByIdAccess().getEndKeyword_4()); 
 
             }
@@ -35939,12 +35950,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10943:1: ( rule__SelectItemByName__Group__0__Impl rule__SelectItemByName__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10944:2: rule__SelectItemByName__Group__0__Impl rule__SelectItemByName__Group__1
             {
-            pushFollow(FOLLOW_rule__SelectItemByName__Group__0__Impl_in_rule__SelectItemByName__Group__024385);
+            pushFollow(FOLLOW_rule__SelectItemByName__Group__0__Impl_in_rule__SelectItemByName__Group__024386);
             rule__SelectItemByName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectItemByName__Group__1_in_rule__SelectItemByName__Group__024388);
+            pushFollow(FOLLOW_rule__SelectItemByName__Group__1_in_rule__SelectItemByName__Group__024389);
             rule__SelectItemByName__Group__1();
 
             state._fsp--;
@@ -35981,7 +35992,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10957:1: '#selectitem'
             {
              before(grammarAccess.getSelectItemByNameAccess().getSelectitemKeyword_0()); 
-            match(input,42,FOLLOW_42_in_rule__SelectItemByName__Group__0__Impl24416); 
+            match(input,42,FOLLOW_42_in_rule__SelectItemByName__Group__0__Impl24417); 
              after(grammarAccess.getSelectItemByNameAccess().getSelectitemKeyword_0()); 
 
             }
@@ -36014,12 +36025,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10974:1: ( rule__SelectItemByName__Group__1__Impl rule__SelectItemByName__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10975:2: rule__SelectItemByName__Group__1__Impl rule__SelectItemByName__Group__2
             {
-            pushFollow(FOLLOW_rule__SelectItemByName__Group__1__Impl_in_rule__SelectItemByName__Group__124447);
+            pushFollow(FOLLOW_rule__SelectItemByName__Group__1__Impl_in_rule__SelectItemByName__Group__124448);
             rule__SelectItemByName__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectItemByName__Group__2_in_rule__SelectItemByName__Group__124450);
+            pushFollow(FOLLOW_rule__SelectItemByName__Group__2_in_rule__SelectItemByName__Group__124451);
             rule__SelectItemByName__Group__2();
 
             state._fsp--;
@@ -36059,7 +36070,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10989:1: ( rule__SelectItemByName__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:10989:2: rule__SelectItemByName__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SelectItemByName__ValueAssignment_1_in_rule__SelectItemByName__Group__1__Impl24477);
+            pushFollow(FOLLOW_rule__SelectItemByName__ValueAssignment_1_in_rule__SelectItemByName__Group__1__Impl24478);
             rule__SelectItemByName__ValueAssignment_1();
 
             state._fsp--;
@@ -36099,12 +36110,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11003:1: ( rule__SelectItemByName__Group__2__Impl rule__SelectItemByName__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11004:2: rule__SelectItemByName__Group__2__Impl rule__SelectItemByName__Group__3
             {
-            pushFollow(FOLLOW_rule__SelectItemByName__Group__2__Impl_in_rule__SelectItemByName__Group__224507);
+            pushFollow(FOLLOW_rule__SelectItemByName__Group__2__Impl_in_rule__SelectItemByName__Group__224508);
             rule__SelectItemByName__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectItemByName__Group__3_in_rule__SelectItemByName__Group__224510);
+            pushFollow(FOLLOW_rule__SelectItemByName__Group__3_in_rule__SelectItemByName__Group__224511);
             rule__SelectItemByName__Group__3();
 
             state._fsp--;
@@ -36142,27 +36153,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectItemByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11018:1: ( RULE_FREE_FORM_COMMENT )*
-            loop87:
+            loop88:
             do {
-                int alt87=2;
-                int LA87_0 = input.LA(1);
+                int alt88=2;
+                int LA88_0 = input.LA(1);
 
-                if ( (LA87_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt87=1;
+                if ( (LA88_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt88=1;
                 }
 
 
-                switch (alt87) {
+                switch (alt88) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11018:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectItemByName__Group__2__Impl24538); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectItemByName__Group__2__Impl24539); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop87;
+            	    break loop88;
                 }
             } while (true);
 
@@ -36198,12 +36209,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11032:1: ( rule__SelectItemByName__Group__3__Impl rule__SelectItemByName__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11033:2: rule__SelectItemByName__Group__3__Impl rule__SelectItemByName__Group__4
             {
-            pushFollow(FOLLOW_rule__SelectItemByName__Group__3__Impl_in_rule__SelectItemByName__Group__324569);
+            pushFollow(FOLLOW_rule__SelectItemByName__Group__3__Impl_in_rule__SelectItemByName__Group__324570);
             rule__SelectItemByName__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectItemByName__Group__4_in_rule__SelectItemByName__Group__324572);
+            pushFollow(FOLLOW_rule__SelectItemByName__Group__4_in_rule__SelectItemByName__Group__324573);
             rule__SelectItemByName__Group__4();
 
             state._fsp--;
@@ -36241,21 +36252,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectItemByNameAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11047:1: ( rule__SelectItemByName__ModsAssignment_3 )*
-            loop88:
+            loop89:
             do {
-                int alt88=2;
-                int LA88_0 = input.LA(1);
+                int alt89=2;
+                int LA89_0 = input.LA(1);
 
-                if ( ((LA88_0>=50 && LA88_0<=51)||LA88_0==99||LA88_0==115||(LA88_0>=240 && LA88_0<=241)||(LA88_0>=277 && LA88_0<=281)) ) {
-                    alt88=1;
+                if ( ((LA89_0>=50 && LA89_0<=51)||LA89_0==99||LA89_0==115||(LA89_0>=240 && LA89_0<=241)||(LA89_0>=277 && LA89_0<=281)) ) {
+                    alt89=1;
                 }
 
 
-                switch (alt88) {
+                switch (alt89) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11047:2: rule__SelectItemByName__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__SelectItemByName__ModsAssignment_3_in_rule__SelectItemByName__Group__3__Impl24599);
+            	    pushFollow(FOLLOW_rule__SelectItemByName__ModsAssignment_3_in_rule__SelectItemByName__Group__3__Impl24600);
             	    rule__SelectItemByName__ModsAssignment_3();
 
             	    state._fsp--;
@@ -36265,7 +36276,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop88;
+            	    break loop89;
                 }
             } while (true);
 
@@ -36301,7 +36312,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11061:1: ( rule__SelectItemByName__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11062:2: rule__SelectItemByName__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SelectItemByName__Group__4__Impl_in_rule__SelectItemByName__Group__424630);
+            pushFollow(FOLLOW_rule__SelectItemByName__Group__4__Impl_in_rule__SelectItemByName__Group__424631);
             rule__SelectItemByName__Group__4__Impl();
 
             state._fsp--;
@@ -36338,7 +36349,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11074:1: '#end'
             {
              before(grammarAccess.getSelectItemByNameAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__SelectItemByName__Group__4__Impl24658); 
+            match(input,34,FOLLOW_34_in_rule__SelectItemByName__Group__4__Impl24659); 
              after(grammarAccess.getSelectItemByNameAccess().getEndKeyword_4()); 
 
             }
@@ -36371,12 +36382,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11101:1: ( rule__NewItem__Group__0__Impl rule__NewItem__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11102:2: rule__NewItem__Group__0__Impl rule__NewItem__Group__1
             {
-            pushFollow(FOLLOW_rule__NewItem__Group__0__Impl_in_rule__NewItem__Group__024699);
+            pushFollow(FOLLOW_rule__NewItem__Group__0__Impl_in_rule__NewItem__Group__024700);
             rule__NewItem__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewItem__Group__1_in_rule__NewItem__Group__024702);
+            pushFollow(FOLLOW_rule__NewItem__Group__1_in_rule__NewItem__Group__024703);
             rule__NewItem__Group__1();
 
             state._fsp--;
@@ -36413,7 +36424,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11115:1: '#newitem'
             {
              before(grammarAccess.getNewItemAccess().getNewitemKeyword_0()); 
-            match(input,43,FOLLOW_43_in_rule__NewItem__Group__0__Impl24730); 
+            match(input,43,FOLLOW_43_in_rule__NewItem__Group__0__Impl24731); 
              after(grammarAccess.getNewItemAccess().getNewitemKeyword_0()); 
 
             }
@@ -36446,12 +36457,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11132:1: ( rule__NewItem__Group__1__Impl rule__NewItem__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11133:2: rule__NewItem__Group__1__Impl rule__NewItem__Group__2
             {
-            pushFollow(FOLLOW_rule__NewItem__Group__1__Impl_in_rule__NewItem__Group__124761);
+            pushFollow(FOLLOW_rule__NewItem__Group__1__Impl_in_rule__NewItem__Group__124762);
             rule__NewItem__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewItem__Group__2_in_rule__NewItem__Group__124764);
+            pushFollow(FOLLOW_rule__NewItem__Group__2_in_rule__NewItem__Group__124765);
             rule__NewItem__Group__2();
 
             state._fsp--;
@@ -36489,27 +36500,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNewItemAccess().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11147:1: ( RULE_FREE_FORM_COMMENT )*
-            loop89:
+            loop90:
             do {
-                int alt89=2;
-                int LA89_0 = input.LA(1);
+                int alt90=2;
+                int LA90_0 = input.LA(1);
 
-                if ( (LA89_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt89=1;
+                if ( (LA90_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt90=1;
                 }
 
 
-                switch (alt89) {
+                switch (alt90) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11147:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewItem__Group__1__Impl24792); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewItem__Group__1__Impl24793); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop89;
+            	    break loop90;
                 }
             } while (true);
 
@@ -36545,12 +36556,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11161:1: ( rule__NewItem__Group__2__Impl rule__NewItem__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11162:2: rule__NewItem__Group__2__Impl rule__NewItem__Group__3
             {
-            pushFollow(FOLLOW_rule__NewItem__Group__2__Impl_in_rule__NewItem__Group__224823);
+            pushFollow(FOLLOW_rule__NewItem__Group__2__Impl_in_rule__NewItem__Group__224824);
             rule__NewItem__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewItem__Group__3_in_rule__NewItem__Group__224826);
+            pushFollow(FOLLOW_rule__NewItem__Group__3_in_rule__NewItem__Group__224827);
             rule__NewItem__Group__3();
 
             state._fsp--;
@@ -36588,21 +36599,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNewItemAccess().getModsAssignment_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11176:1: ( rule__NewItem__ModsAssignment_2 )*
-            loop90:
+            loop91:
             do {
-                int alt90=2;
-                int LA90_0 = input.LA(1);
+                int alt91=2;
+                int LA91_0 = input.LA(1);
 
-                if ( ((LA90_0>=50 && LA90_0<=51)||LA90_0==99||LA90_0==115||(LA90_0>=240 && LA90_0<=241)||(LA90_0>=277 && LA90_0<=281)) ) {
-                    alt90=1;
+                if ( ((LA91_0>=50 && LA91_0<=51)||LA91_0==99||LA91_0==115||(LA91_0>=240 && LA91_0<=241)||(LA91_0>=277 && LA91_0<=281)) ) {
+                    alt91=1;
                 }
 
 
-                switch (alt90) {
+                switch (alt91) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11176:2: rule__NewItem__ModsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__NewItem__ModsAssignment_2_in_rule__NewItem__Group__2__Impl24853);
+            	    pushFollow(FOLLOW_rule__NewItem__ModsAssignment_2_in_rule__NewItem__Group__2__Impl24854);
             	    rule__NewItem__ModsAssignment_2();
 
             	    state._fsp--;
@@ -36612,7 +36623,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop90;
+            	    break loop91;
                 }
             } while (true);
 
@@ -36648,7 +36659,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11190:1: ( rule__NewItem__Group__3__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11191:2: rule__NewItem__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__NewItem__Group__3__Impl_in_rule__NewItem__Group__324884);
+            pushFollow(FOLLOW_rule__NewItem__Group__3__Impl_in_rule__NewItem__Group__324885);
             rule__NewItem__Group__3__Impl();
 
             state._fsp--;
@@ -36685,7 +36696,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11203:1: '#end'
             {
              before(grammarAccess.getNewItemAccess().getEndKeyword_3()); 
-            match(input,34,FOLLOW_34_in_rule__NewItem__Group__3__Impl24912); 
+            match(input,34,FOLLOW_34_in_rule__NewItem__Group__3__Impl24913); 
              after(grammarAccess.getNewItemAccess().getEndKeyword_3()); 
 
             }
@@ -36718,12 +36729,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11228:1: ( rule__ItemPattern1__Group__0__Impl rule__ItemPattern1__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11229:2: rule__ItemPattern1__Group__0__Impl rule__ItemPattern1__Group__1
             {
-            pushFollow(FOLLOW_rule__ItemPattern1__Group__0__Impl_in_rule__ItemPattern1__Group__024951);
+            pushFollow(FOLLOW_rule__ItemPattern1__Group__0__Impl_in_rule__ItemPattern1__Group__024952);
             rule__ItemPattern1__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ItemPattern1__Group__1_in_rule__ItemPattern1__Group__024954);
+            pushFollow(FOLLOW_rule__ItemPattern1__Group__1_in_rule__ItemPattern1__Group__024955);
             rule__ItemPattern1__Group__1();
 
             state._fsp--;
@@ -36760,7 +36771,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11242:1: ruleItemInst1
             {
              before(grammarAccess.getItemPattern1Access().getItemInst1ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleItemInst1_in_rule__ItemPattern1__Group__0__Impl24981);
+            pushFollow(FOLLOW_ruleItemInst1_in_rule__ItemPattern1__Group__0__Impl24982);
             ruleItemInst1();
 
             state._fsp--;
@@ -36797,12 +36808,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11257:1: ( rule__ItemPattern1__Group__1__Impl rule__ItemPattern1__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11258:2: rule__ItemPattern1__Group__1__Impl rule__ItemPattern1__Group__2
             {
-            pushFollow(FOLLOW_rule__ItemPattern1__Group__1__Impl_in_rule__ItemPattern1__Group__125010);
+            pushFollow(FOLLOW_rule__ItemPattern1__Group__1__Impl_in_rule__ItemPattern1__Group__125011);
             rule__ItemPattern1__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ItemPattern1__Group__2_in_rule__ItemPattern1__Group__125013);
+            pushFollow(FOLLOW_rule__ItemPattern1__Group__2_in_rule__ItemPattern1__Group__125014);
             rule__ItemPattern1__Group__2();
 
             state._fsp--;
@@ -36842,7 +36853,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11272:1: ( rule__ItemPattern1__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11272:2: rule__ItemPattern1__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__ItemPattern1__ValueAssignment_1_in_rule__ItemPattern1__Group__1__Impl25040);
+            pushFollow(FOLLOW_rule__ItemPattern1__ValueAssignment_1_in_rule__ItemPattern1__Group__1__Impl25041);
             rule__ItemPattern1__ValueAssignment_1();
 
             state._fsp--;
@@ -36882,7 +36893,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11286:1: ( rule__ItemPattern1__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11287:2: rule__ItemPattern1__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__ItemPattern1__Group__2__Impl_in_rule__ItemPattern1__Group__225070);
+            pushFollow(FOLLOW_rule__ItemPattern1__Group__2__Impl_in_rule__ItemPattern1__Group__225071);
             rule__ItemPattern1__Group__2__Impl();
 
             state._fsp--;
@@ -36920,27 +36931,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getItemPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11300:1: ( RULE_FREE_FORM_COMMENT )*
-            loop91:
+            loop92:
             do {
-                int alt91=2;
-                int LA91_0 = input.LA(1);
+                int alt92=2;
+                int LA92_0 = input.LA(1);
 
-                if ( (LA91_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt91=1;
+                if ( (LA92_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt92=1;
                 }
 
 
-                switch (alt91) {
+                switch (alt92) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11300:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern1__Group__2__Impl25098); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern1__Group__2__Impl25099); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop91;
+            	    break loop92;
                 }
             } while (true);
 
@@ -36976,12 +36987,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11320:1: ( rule__ItemPattern2__Group__0__Impl rule__ItemPattern2__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11321:2: rule__ItemPattern2__Group__0__Impl rule__ItemPattern2__Group__1
             {
-            pushFollow(FOLLOW_rule__ItemPattern2__Group__0__Impl_in_rule__ItemPattern2__Group__025135);
+            pushFollow(FOLLOW_rule__ItemPattern2__Group__0__Impl_in_rule__ItemPattern2__Group__025136);
             rule__ItemPattern2__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ItemPattern2__Group__1_in_rule__ItemPattern2__Group__025138);
+            pushFollow(FOLLOW_rule__ItemPattern2__Group__1_in_rule__ItemPattern2__Group__025139);
             rule__ItemPattern2__Group__1();
 
             state._fsp--;
@@ -37018,7 +37029,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11334:1: ruleItemInst2
             {
              before(grammarAccess.getItemPattern2Access().getItemInst2ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleItemInst2_in_rule__ItemPattern2__Group__0__Impl25165);
+            pushFollow(FOLLOW_ruleItemInst2_in_rule__ItemPattern2__Group__0__Impl25166);
             ruleItemInst2();
 
             state._fsp--;
@@ -37055,12 +37066,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11349:1: ( rule__ItemPattern2__Group__1__Impl rule__ItemPattern2__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11350:2: rule__ItemPattern2__Group__1__Impl rule__ItemPattern2__Group__2
             {
-            pushFollow(FOLLOW_rule__ItemPattern2__Group__1__Impl_in_rule__ItemPattern2__Group__125194);
+            pushFollow(FOLLOW_rule__ItemPattern2__Group__1__Impl_in_rule__ItemPattern2__Group__125195);
             rule__ItemPattern2__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ItemPattern2__Group__2_in_rule__ItemPattern2__Group__125197);
+            pushFollow(FOLLOW_rule__ItemPattern2__Group__2_in_rule__ItemPattern2__Group__125198);
             rule__ItemPattern2__Group__2();
 
             state._fsp--;
@@ -37100,7 +37111,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11364:1: ( rule__ItemPattern2__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11364:2: rule__ItemPattern2__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__ItemPattern2__ValueAssignment_1_in_rule__ItemPattern2__Group__1__Impl25224);
+            pushFollow(FOLLOW_rule__ItemPattern2__ValueAssignment_1_in_rule__ItemPattern2__Group__1__Impl25225);
             rule__ItemPattern2__ValueAssignment_1();
 
             state._fsp--;
@@ -37140,7 +37151,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11378:1: ( rule__ItemPattern2__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11379:2: rule__ItemPattern2__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__ItemPattern2__Group__2__Impl_in_rule__ItemPattern2__Group__225254);
+            pushFollow(FOLLOW_rule__ItemPattern2__Group__2__Impl_in_rule__ItemPattern2__Group__225255);
             rule__ItemPattern2__Group__2__Impl();
 
             state._fsp--;
@@ -37178,27 +37189,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getItemPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11392:1: ( RULE_FREE_FORM_COMMENT )*
-            loop92:
+            loop93:
             do {
-                int alt92=2;
-                int LA92_0 = input.LA(1);
+                int alt93=2;
+                int LA93_0 = input.LA(1);
 
-                if ( (LA92_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt92=1;
+                if ( (LA93_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt93=1;
                 }
 
 
-                switch (alt92) {
+                switch (alt93) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11392:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern2__Group__2__Impl25282); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern2__Group__2__Impl25283); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop92;
+            	    break loop93;
                 }
             } while (true);
 
@@ -37234,12 +37245,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11412:1: ( rule__ItemPattern3__Group__0__Impl rule__ItemPattern3__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11413:2: rule__ItemPattern3__Group__0__Impl rule__ItemPattern3__Group__1
             {
-            pushFollow(FOLLOW_rule__ItemPattern3__Group__0__Impl_in_rule__ItemPattern3__Group__025319);
+            pushFollow(FOLLOW_rule__ItemPattern3__Group__0__Impl_in_rule__ItemPattern3__Group__025320);
             rule__ItemPattern3__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ItemPattern3__Group__1_in_rule__ItemPattern3__Group__025322);
+            pushFollow(FOLLOW_rule__ItemPattern3__Group__1_in_rule__ItemPattern3__Group__025323);
             rule__ItemPattern3__Group__1();
 
             state._fsp--;
@@ -37276,7 +37287,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11426:1: ruleItemInst3
             {
              before(grammarAccess.getItemPattern3Access().getItemInst3ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleItemInst3_in_rule__ItemPattern3__Group__0__Impl25349);
+            pushFollow(FOLLOW_ruleItemInst3_in_rule__ItemPattern3__Group__0__Impl25350);
             ruleItemInst3();
 
             state._fsp--;
@@ -37313,12 +37324,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11441:1: ( rule__ItemPattern3__Group__1__Impl rule__ItemPattern3__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11442:2: rule__ItemPattern3__Group__1__Impl rule__ItemPattern3__Group__2
             {
-            pushFollow(FOLLOW_rule__ItemPattern3__Group__1__Impl_in_rule__ItemPattern3__Group__125378);
+            pushFollow(FOLLOW_rule__ItemPattern3__Group__1__Impl_in_rule__ItemPattern3__Group__125379);
             rule__ItemPattern3__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ItemPattern3__Group__2_in_rule__ItemPattern3__Group__125381);
+            pushFollow(FOLLOW_rule__ItemPattern3__Group__2_in_rule__ItemPattern3__Group__125382);
             rule__ItemPattern3__Group__2();
 
             state._fsp--;
@@ -37358,7 +37369,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11456:1: ( rule__ItemPattern3__Alternatives_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11456:2: rule__ItemPattern3__Alternatives_1
             {
-            pushFollow(FOLLOW_rule__ItemPattern3__Alternatives_1_in_rule__ItemPattern3__Group__1__Impl25408);
+            pushFollow(FOLLOW_rule__ItemPattern3__Alternatives_1_in_rule__ItemPattern3__Group__1__Impl25409);
             rule__ItemPattern3__Alternatives_1();
 
             state._fsp--;
@@ -37398,7 +37409,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11470:1: ( rule__ItemPattern3__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11471:2: rule__ItemPattern3__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__ItemPattern3__Group__2__Impl_in_rule__ItemPattern3__Group__225438);
+            pushFollow(FOLLOW_rule__ItemPattern3__Group__2__Impl_in_rule__ItemPattern3__Group__225439);
             rule__ItemPattern3__Group__2__Impl();
 
             state._fsp--;
@@ -37436,27 +37447,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getItemPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11484:1: ( RULE_FREE_FORM_COMMENT )*
-            loop93:
+            loop94:
             do {
-                int alt93=2;
-                int LA93_0 = input.LA(1);
+                int alt94=2;
+                int LA94_0 = input.LA(1);
 
-                if ( (LA93_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt93=1;
+                if ( (LA94_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt94=1;
                 }
 
 
-                switch (alt93) {
+                switch (alt94) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11484:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern3__Group__2__Impl25466); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern3__Group__2__Impl25467); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop93;
+            	    break loop94;
                 }
             } while (true);
 
@@ -37492,12 +37503,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11504:1: ( rule__SelectName__Group__0__Impl rule__SelectName__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11505:2: rule__SelectName__Group__0__Impl rule__SelectName__Group__1
             {
-            pushFollow(FOLLOW_rule__SelectName__Group__0__Impl_in_rule__SelectName__Group__025503);
+            pushFollow(FOLLOW_rule__SelectName__Group__0__Impl_in_rule__SelectName__Group__025504);
             rule__SelectName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectName__Group__1_in_rule__SelectName__Group__025506);
+            pushFollow(FOLLOW_rule__SelectName__Group__1_in_rule__SelectName__Group__025507);
             rule__SelectName__Group__1();
 
             state._fsp--;
@@ -37534,7 +37545,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11518:1: '#selectnametype'
             {
              before(grammarAccess.getSelectNameAccess().getSelectnametypeKeyword_0()); 
-            match(input,44,FOLLOW_44_in_rule__SelectName__Group__0__Impl25534); 
+            match(input,44,FOLLOW_44_in_rule__SelectName__Group__0__Impl25535); 
              after(grammarAccess.getSelectNameAccess().getSelectnametypeKeyword_0()); 
 
             }
@@ -37567,12 +37578,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11535:1: ( rule__SelectName__Group__1__Impl rule__SelectName__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11536:2: rule__SelectName__Group__1__Impl rule__SelectName__Group__2
             {
-            pushFollow(FOLLOW_rule__SelectName__Group__1__Impl_in_rule__SelectName__Group__125565);
+            pushFollow(FOLLOW_rule__SelectName__Group__1__Impl_in_rule__SelectName__Group__125566);
             rule__SelectName__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectName__Group__2_in_rule__SelectName__Group__125568);
+            pushFollow(FOLLOW_rule__SelectName__Group__2_in_rule__SelectName__Group__125569);
             rule__SelectName__Group__2();
 
             state._fsp--;
@@ -37612,7 +37623,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11550:1: ( rule__SelectName__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11550:2: rule__SelectName__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SelectName__ValueAssignment_1_in_rule__SelectName__Group__1__Impl25595);
+            pushFollow(FOLLOW_rule__SelectName__ValueAssignment_1_in_rule__SelectName__Group__1__Impl25596);
             rule__SelectName__ValueAssignment_1();
 
             state._fsp--;
@@ -37652,12 +37663,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11564:1: ( rule__SelectName__Group__2__Impl rule__SelectName__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11565:2: rule__SelectName__Group__2__Impl rule__SelectName__Group__3
             {
-            pushFollow(FOLLOW_rule__SelectName__Group__2__Impl_in_rule__SelectName__Group__225625);
+            pushFollow(FOLLOW_rule__SelectName__Group__2__Impl_in_rule__SelectName__Group__225626);
             rule__SelectName__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectName__Group__3_in_rule__SelectName__Group__225628);
+            pushFollow(FOLLOW_rule__SelectName__Group__3_in_rule__SelectName__Group__225629);
             rule__SelectName__Group__3();
 
             state._fsp--;
@@ -37695,27 +37706,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11579:1: ( RULE_FREE_FORM_COMMENT )*
-            loop94:
+            loop95:
             do {
-                int alt94=2;
-                int LA94_0 = input.LA(1);
+                int alt95=2;
+                int LA95_0 = input.LA(1);
 
-                if ( (LA94_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt94=1;
+                if ( (LA95_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt95=1;
                 }
 
 
-                switch (alt94) {
+                switch (alt95) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11579:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectName__Group__2__Impl25656); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectName__Group__2__Impl25657); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop94;
+            	    break loop95;
                 }
             } while (true);
 
@@ -37751,12 +37762,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11593:1: ( rule__SelectName__Group__3__Impl rule__SelectName__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11594:2: rule__SelectName__Group__3__Impl rule__SelectName__Group__4
             {
-            pushFollow(FOLLOW_rule__SelectName__Group__3__Impl_in_rule__SelectName__Group__325687);
+            pushFollow(FOLLOW_rule__SelectName__Group__3__Impl_in_rule__SelectName__Group__325688);
             rule__SelectName__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectName__Group__4_in_rule__SelectName__Group__325690);
+            pushFollow(FOLLOW_rule__SelectName__Group__4_in_rule__SelectName__Group__325691);
             rule__SelectName__Group__4();
 
             state._fsp--;
@@ -37794,21 +37805,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectNameAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11608:1: ( rule__SelectName__ModsAssignment_3 )*
-            loop95:
+            loop96:
             do {
-                int alt95=2;
-                int LA95_0 = input.LA(1);
+                int alt96=2;
+                int LA96_0 = input.LA(1);
 
-                if ( (LA95_0==177||LA95_0==282) ) {
-                    alt95=1;
+                if ( (LA96_0==177||LA96_0==282) ) {
+                    alt96=1;
                 }
 
 
-                switch (alt95) {
+                switch (alt96) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11608:2: rule__SelectName__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__SelectName__ModsAssignment_3_in_rule__SelectName__Group__3__Impl25717);
+            	    pushFollow(FOLLOW_rule__SelectName__ModsAssignment_3_in_rule__SelectName__Group__3__Impl25718);
             	    rule__SelectName__ModsAssignment_3();
 
             	    state._fsp--;
@@ -37818,7 +37829,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop95;
+            	    break loop96;
                 }
             } while (true);
 
@@ -37854,7 +37865,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11622:1: ( rule__SelectName__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11623:2: rule__SelectName__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SelectName__Group__4__Impl_in_rule__SelectName__Group__425748);
+            pushFollow(FOLLOW_rule__SelectName__Group__4__Impl_in_rule__SelectName__Group__425749);
             rule__SelectName__Group__4__Impl();
 
             state._fsp--;
@@ -37891,7 +37902,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11635:1: '#end'
             {
              before(grammarAccess.getSelectNameAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__SelectName__Group__4__Impl25776); 
+            match(input,34,FOLLOW_34_in_rule__SelectName__Group__4__Impl25777); 
              after(grammarAccess.getSelectNameAccess().getEndKeyword_4()); 
 
             }
@@ -37924,12 +37935,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11662:1: ( rule__NamePattern1__Group__0__Impl rule__NamePattern1__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11663:2: rule__NamePattern1__Group__0__Impl rule__NamePattern1__Group__1
             {
-            pushFollow(FOLLOW_rule__NamePattern1__Group__0__Impl_in_rule__NamePattern1__Group__025817);
+            pushFollow(FOLLOW_rule__NamePattern1__Group__0__Impl_in_rule__NamePattern1__Group__025818);
             rule__NamePattern1__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NamePattern1__Group__1_in_rule__NamePattern1__Group__025820);
+            pushFollow(FOLLOW_rule__NamePattern1__Group__1_in_rule__NamePattern1__Group__025821);
             rule__NamePattern1__Group__1();
 
             state._fsp--;
@@ -37966,7 +37977,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11676:1: ruleNameInst1
             {
              before(grammarAccess.getNamePattern1Access().getNameInst1ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleNameInst1_in_rule__NamePattern1__Group__0__Impl25847);
+            pushFollow(FOLLOW_ruleNameInst1_in_rule__NamePattern1__Group__0__Impl25848);
             ruleNameInst1();
 
             state._fsp--;
@@ -38003,12 +38014,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11691:1: ( rule__NamePattern1__Group__1__Impl rule__NamePattern1__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11692:2: rule__NamePattern1__Group__1__Impl rule__NamePattern1__Group__2
             {
-            pushFollow(FOLLOW_rule__NamePattern1__Group__1__Impl_in_rule__NamePattern1__Group__125876);
+            pushFollow(FOLLOW_rule__NamePattern1__Group__1__Impl_in_rule__NamePattern1__Group__125877);
             rule__NamePattern1__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NamePattern1__Group__2_in_rule__NamePattern1__Group__125879);
+            pushFollow(FOLLOW_rule__NamePattern1__Group__2_in_rule__NamePattern1__Group__125880);
             rule__NamePattern1__Group__2();
 
             state._fsp--;
@@ -38048,7 +38059,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11706:1: ( rule__NamePattern1__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11706:2: rule__NamePattern1__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__NamePattern1__ValueAssignment_1_in_rule__NamePattern1__Group__1__Impl25906);
+            pushFollow(FOLLOW_rule__NamePattern1__ValueAssignment_1_in_rule__NamePattern1__Group__1__Impl25907);
             rule__NamePattern1__ValueAssignment_1();
 
             state._fsp--;
@@ -38088,7 +38099,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11720:1: ( rule__NamePattern1__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11721:2: rule__NamePattern1__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__NamePattern1__Group__2__Impl_in_rule__NamePattern1__Group__225936);
+            pushFollow(FOLLOW_rule__NamePattern1__Group__2__Impl_in_rule__NamePattern1__Group__225937);
             rule__NamePattern1__Group__2__Impl();
 
             state._fsp--;
@@ -38126,27 +38137,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNamePattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11734:1: ( RULE_FREE_FORM_COMMENT )*
-            loop96:
+            loop97:
             do {
-                int alt96=2;
-                int LA96_0 = input.LA(1);
+                int alt97=2;
+                int LA97_0 = input.LA(1);
 
-                if ( (LA96_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt96=1;
+                if ( (LA97_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt97=1;
                 }
 
 
-                switch (alt96) {
+                switch (alt97) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11734:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NamePattern1__Group__2__Impl25964); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NamePattern1__Group__2__Impl25965); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop96;
+            	    break loop97;
                 }
             } while (true);
 
@@ -38182,12 +38193,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11754:1: ( rule__NamePattern2__Group__0__Impl rule__NamePattern2__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11755:2: rule__NamePattern2__Group__0__Impl rule__NamePattern2__Group__1
             {
-            pushFollow(FOLLOW_rule__NamePattern2__Group__0__Impl_in_rule__NamePattern2__Group__026001);
+            pushFollow(FOLLOW_rule__NamePattern2__Group__0__Impl_in_rule__NamePattern2__Group__026002);
             rule__NamePattern2__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NamePattern2__Group__1_in_rule__NamePattern2__Group__026004);
+            pushFollow(FOLLOW_rule__NamePattern2__Group__1_in_rule__NamePattern2__Group__026005);
             rule__NamePattern2__Group__1();
 
             state._fsp--;
@@ -38224,7 +38235,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11768:1: ruleNameInst2
             {
              before(grammarAccess.getNamePattern2Access().getNameInst2ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleNameInst2_in_rule__NamePattern2__Group__0__Impl26031);
+            pushFollow(FOLLOW_ruleNameInst2_in_rule__NamePattern2__Group__0__Impl26032);
             ruleNameInst2();
 
             state._fsp--;
@@ -38261,7 +38272,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11783:1: ( rule__NamePattern2__Group__1__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11784:2: rule__NamePattern2__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__NamePattern2__Group__1__Impl_in_rule__NamePattern2__Group__126060);
+            pushFollow(FOLLOW_rule__NamePattern2__Group__1__Impl_in_rule__NamePattern2__Group__126061);
             rule__NamePattern2__Group__1__Impl();
 
             state._fsp--;
@@ -38299,27 +38310,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNamePattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11797:1: ( RULE_FREE_FORM_COMMENT )*
-            loop97:
+            loop98:
             do {
-                int alt97=2;
-                int LA97_0 = input.LA(1);
+                int alt98=2;
+                int LA98_0 = input.LA(1);
 
-                if ( (LA97_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt97=1;
+                if ( (LA98_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt98=1;
                 }
 
 
-                switch (alt97) {
+                switch (alt98) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11797:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NamePattern2__Group__1__Impl26088); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NamePattern2__Group__1__Impl26089); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop97;
+            	    break loop98;
                 }
             } while (true);
 
@@ -38355,12 +38366,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11815:1: ( rule__SelectSiteById__Group__0__Impl rule__SelectSiteById__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11816:2: rule__SelectSiteById__Group__0__Impl rule__SelectSiteById__Group__1
             {
-            pushFollow(FOLLOW_rule__SelectSiteById__Group__0__Impl_in_rule__SelectSiteById__Group__026123);
+            pushFollow(FOLLOW_rule__SelectSiteById__Group__0__Impl_in_rule__SelectSiteById__Group__026124);
             rule__SelectSiteById__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSiteById__Group__1_in_rule__SelectSiteById__Group__026126);
+            pushFollow(FOLLOW_rule__SelectSiteById__Group__1_in_rule__SelectSiteById__Group__026127);
             rule__SelectSiteById__Group__1();
 
             state._fsp--;
@@ -38397,7 +38408,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11829:1: '#selectsite'
             {
              before(grammarAccess.getSelectSiteByIdAccess().getSelectsiteKeyword_0()); 
-            match(input,45,FOLLOW_45_in_rule__SelectSiteById__Group__0__Impl26154); 
+            match(input,45,FOLLOW_45_in_rule__SelectSiteById__Group__0__Impl26155); 
              after(grammarAccess.getSelectSiteByIdAccess().getSelectsiteKeyword_0()); 
 
             }
@@ -38430,12 +38441,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11846:1: ( rule__SelectSiteById__Group__1__Impl rule__SelectSiteById__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11847:2: rule__SelectSiteById__Group__1__Impl rule__SelectSiteById__Group__2
             {
-            pushFollow(FOLLOW_rule__SelectSiteById__Group__1__Impl_in_rule__SelectSiteById__Group__126185);
+            pushFollow(FOLLOW_rule__SelectSiteById__Group__1__Impl_in_rule__SelectSiteById__Group__126186);
             rule__SelectSiteById__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSiteById__Group__2_in_rule__SelectSiteById__Group__126188);
+            pushFollow(FOLLOW_rule__SelectSiteById__Group__2_in_rule__SelectSiteById__Group__126189);
             rule__SelectSiteById__Group__2();
 
             state._fsp--;
@@ -38475,7 +38486,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11861:1: ( rule__SelectSiteById__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11861:2: rule__SelectSiteById__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SelectSiteById__ValueAssignment_1_in_rule__SelectSiteById__Group__1__Impl26215);
+            pushFollow(FOLLOW_rule__SelectSiteById__ValueAssignment_1_in_rule__SelectSiteById__Group__1__Impl26216);
             rule__SelectSiteById__ValueAssignment_1();
 
             state._fsp--;
@@ -38515,12 +38526,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11875:1: ( rule__SelectSiteById__Group__2__Impl rule__SelectSiteById__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11876:2: rule__SelectSiteById__Group__2__Impl rule__SelectSiteById__Group__3
             {
-            pushFollow(FOLLOW_rule__SelectSiteById__Group__2__Impl_in_rule__SelectSiteById__Group__226245);
+            pushFollow(FOLLOW_rule__SelectSiteById__Group__2__Impl_in_rule__SelectSiteById__Group__226246);
             rule__SelectSiteById__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSiteById__Group__3_in_rule__SelectSiteById__Group__226248);
+            pushFollow(FOLLOW_rule__SelectSiteById__Group__3_in_rule__SelectSiteById__Group__226249);
             rule__SelectSiteById__Group__3();
 
             state._fsp--;
@@ -38558,27 +38569,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectSiteByIdAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11890:1: ( RULE_FREE_FORM_COMMENT )*
-            loop98:
+            loop99:
             do {
-                int alt98=2;
-                int LA98_0 = input.LA(1);
+                int alt99=2;
+                int LA99_0 = input.LA(1);
 
-                if ( (LA98_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt98=1;
+                if ( (LA99_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt99=1;
                 }
 
 
-                switch (alt98) {
+                switch (alt99) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11890:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSiteById__Group__2__Impl26276); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSiteById__Group__2__Impl26277); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop98;
+            	    break loop99;
                 }
             } while (true);
 
@@ -38614,12 +38625,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11904:1: ( rule__SelectSiteById__Group__3__Impl rule__SelectSiteById__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11905:2: rule__SelectSiteById__Group__3__Impl rule__SelectSiteById__Group__4
             {
-            pushFollow(FOLLOW_rule__SelectSiteById__Group__3__Impl_in_rule__SelectSiteById__Group__326307);
+            pushFollow(FOLLOW_rule__SelectSiteById__Group__3__Impl_in_rule__SelectSiteById__Group__326308);
             rule__SelectSiteById__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSiteById__Group__4_in_rule__SelectSiteById__Group__326310);
+            pushFollow(FOLLOW_rule__SelectSiteById__Group__4_in_rule__SelectSiteById__Group__326311);
             rule__SelectSiteById__Group__4();
 
             state._fsp--;
@@ -38657,21 +38668,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectSiteByIdAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11919:1: ( rule__SelectSiteById__ModsAssignment_3 )*
-            loop99:
+            loop100:
             do {
-                int alt99=2;
-                int LA99_0 = input.LA(1);
+                int alt100=2;
+                int LA100_0 = input.LA(1);
 
-                if ( (LA99_0==50||LA99_0==177||LA99_0==210||LA99_0==217||LA99_0==273||(LA99_0>=283 && LA99_0<=306)) ) {
-                    alt99=1;
+                if ( (LA100_0==50||LA100_0==177||LA100_0==210||LA100_0==217||LA100_0==273||(LA100_0>=283 && LA100_0<=306)) ) {
+                    alt100=1;
                 }
 
 
-                switch (alt99) {
+                switch (alt100) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11919:2: rule__SelectSiteById__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__SelectSiteById__ModsAssignment_3_in_rule__SelectSiteById__Group__3__Impl26337);
+            	    pushFollow(FOLLOW_rule__SelectSiteById__ModsAssignment_3_in_rule__SelectSiteById__Group__3__Impl26338);
             	    rule__SelectSiteById__ModsAssignment_3();
 
             	    state._fsp--;
@@ -38681,7 +38692,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop99;
+            	    break loop100;
                 }
             } while (true);
 
@@ -38717,7 +38728,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11933:1: ( rule__SelectSiteById__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11934:2: rule__SelectSiteById__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SelectSiteById__Group__4__Impl_in_rule__SelectSiteById__Group__426368);
+            pushFollow(FOLLOW_rule__SelectSiteById__Group__4__Impl_in_rule__SelectSiteById__Group__426369);
             rule__SelectSiteById__Group__4__Impl();
 
             state._fsp--;
@@ -38754,7 +38765,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11946:1: '#end'
             {
              before(grammarAccess.getSelectSiteByIdAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__SelectSiteById__Group__4__Impl26396); 
+            match(input,34,FOLLOW_34_in_rule__SelectSiteById__Group__4__Impl26397); 
              after(grammarAccess.getSelectSiteByIdAccess().getEndKeyword_4()); 
 
             }
@@ -38787,12 +38798,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11973:1: ( rule__SelectSiteByName__Group__0__Impl rule__SelectSiteByName__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11974:2: rule__SelectSiteByName__Group__0__Impl rule__SelectSiteByName__Group__1
             {
-            pushFollow(FOLLOW_rule__SelectSiteByName__Group__0__Impl_in_rule__SelectSiteByName__Group__026437);
+            pushFollow(FOLLOW_rule__SelectSiteByName__Group__0__Impl_in_rule__SelectSiteByName__Group__026438);
             rule__SelectSiteByName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSiteByName__Group__1_in_rule__SelectSiteByName__Group__026440);
+            pushFollow(FOLLOW_rule__SelectSiteByName__Group__1_in_rule__SelectSiteByName__Group__026441);
             rule__SelectSiteByName__Group__1();
 
             state._fsp--;
@@ -38829,7 +38840,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:11987:1: '#selectsite'
             {
              before(grammarAccess.getSelectSiteByNameAccess().getSelectsiteKeyword_0()); 
-            match(input,45,FOLLOW_45_in_rule__SelectSiteByName__Group__0__Impl26468); 
+            match(input,45,FOLLOW_45_in_rule__SelectSiteByName__Group__0__Impl26469); 
              after(grammarAccess.getSelectSiteByNameAccess().getSelectsiteKeyword_0()); 
 
             }
@@ -38862,12 +38873,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12004:1: ( rule__SelectSiteByName__Group__1__Impl rule__SelectSiteByName__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12005:2: rule__SelectSiteByName__Group__1__Impl rule__SelectSiteByName__Group__2
             {
-            pushFollow(FOLLOW_rule__SelectSiteByName__Group__1__Impl_in_rule__SelectSiteByName__Group__126499);
+            pushFollow(FOLLOW_rule__SelectSiteByName__Group__1__Impl_in_rule__SelectSiteByName__Group__126500);
             rule__SelectSiteByName__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSiteByName__Group__2_in_rule__SelectSiteByName__Group__126502);
+            pushFollow(FOLLOW_rule__SelectSiteByName__Group__2_in_rule__SelectSiteByName__Group__126503);
             rule__SelectSiteByName__Group__2();
 
             state._fsp--;
@@ -38907,7 +38918,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12019:1: ( rule__SelectSiteByName__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12019:2: rule__SelectSiteByName__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SelectSiteByName__ValueAssignment_1_in_rule__SelectSiteByName__Group__1__Impl26529);
+            pushFollow(FOLLOW_rule__SelectSiteByName__ValueAssignment_1_in_rule__SelectSiteByName__Group__1__Impl26530);
             rule__SelectSiteByName__ValueAssignment_1();
 
             state._fsp--;
@@ -38947,12 +38958,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12033:1: ( rule__SelectSiteByName__Group__2__Impl rule__SelectSiteByName__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12034:2: rule__SelectSiteByName__Group__2__Impl rule__SelectSiteByName__Group__3
             {
-            pushFollow(FOLLOW_rule__SelectSiteByName__Group__2__Impl_in_rule__SelectSiteByName__Group__226559);
+            pushFollow(FOLLOW_rule__SelectSiteByName__Group__2__Impl_in_rule__SelectSiteByName__Group__226560);
             rule__SelectSiteByName__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSiteByName__Group__3_in_rule__SelectSiteByName__Group__226562);
+            pushFollow(FOLLOW_rule__SelectSiteByName__Group__3_in_rule__SelectSiteByName__Group__226563);
             rule__SelectSiteByName__Group__3();
 
             state._fsp--;
@@ -38990,27 +39001,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectSiteByNameAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12048:1: ( RULE_FREE_FORM_COMMENT )*
-            loop100:
+            loop101:
             do {
-                int alt100=2;
-                int LA100_0 = input.LA(1);
+                int alt101=2;
+                int LA101_0 = input.LA(1);
 
-                if ( (LA100_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt100=1;
+                if ( (LA101_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt101=1;
                 }
 
 
-                switch (alt100) {
+                switch (alt101) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12048:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSiteByName__Group__2__Impl26590); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSiteByName__Group__2__Impl26591); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop100;
+            	    break loop101;
                 }
             } while (true);
 
@@ -39046,12 +39057,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12062:1: ( rule__SelectSiteByName__Group__3__Impl rule__SelectSiteByName__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12063:2: rule__SelectSiteByName__Group__3__Impl rule__SelectSiteByName__Group__4
             {
-            pushFollow(FOLLOW_rule__SelectSiteByName__Group__3__Impl_in_rule__SelectSiteByName__Group__326621);
+            pushFollow(FOLLOW_rule__SelectSiteByName__Group__3__Impl_in_rule__SelectSiteByName__Group__326622);
             rule__SelectSiteByName__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectSiteByName__Group__4_in_rule__SelectSiteByName__Group__326624);
+            pushFollow(FOLLOW_rule__SelectSiteByName__Group__4_in_rule__SelectSiteByName__Group__326625);
             rule__SelectSiteByName__Group__4();
 
             state._fsp--;
@@ -39089,21 +39100,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectSiteByNameAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12077:1: ( rule__SelectSiteByName__ModsAssignment_3 )*
-            loop101:
+            loop102:
             do {
-                int alt101=2;
-                int LA101_0 = input.LA(1);
+                int alt102=2;
+                int LA102_0 = input.LA(1);
 
-                if ( (LA101_0==50||LA101_0==177||LA101_0==210||LA101_0==217||LA101_0==273||(LA101_0>=283 && LA101_0<=306)) ) {
-                    alt101=1;
+                if ( (LA102_0==50||LA102_0==177||LA102_0==210||LA102_0==217||LA102_0==273||(LA102_0>=283 && LA102_0<=306)) ) {
+                    alt102=1;
                 }
 
 
-                switch (alt101) {
+                switch (alt102) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12077:2: rule__SelectSiteByName__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__SelectSiteByName__ModsAssignment_3_in_rule__SelectSiteByName__Group__3__Impl26651);
+            	    pushFollow(FOLLOW_rule__SelectSiteByName__ModsAssignment_3_in_rule__SelectSiteByName__Group__3__Impl26652);
             	    rule__SelectSiteByName__ModsAssignment_3();
 
             	    state._fsp--;
@@ -39113,7 +39124,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop101;
+            	    break loop102;
                 }
             } while (true);
 
@@ -39149,7 +39160,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12091:1: ( rule__SelectSiteByName__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12092:2: rule__SelectSiteByName__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SelectSiteByName__Group__4__Impl_in_rule__SelectSiteByName__Group__426682);
+            pushFollow(FOLLOW_rule__SelectSiteByName__Group__4__Impl_in_rule__SelectSiteByName__Group__426683);
             rule__SelectSiteByName__Group__4__Impl();
 
             state._fsp--;
@@ -39186,7 +39197,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12104:1: '#end'
             {
              before(grammarAccess.getSelectSiteByNameAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__SelectSiteByName__Group__4__Impl26710); 
+            match(input,34,FOLLOW_34_in_rule__SelectSiteByName__Group__4__Impl26711); 
              after(grammarAccess.getSelectSiteByNameAccess().getEndKeyword_4()); 
 
             }
@@ -39219,12 +39230,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12131:1: ( rule__NewSite__Group__0__Impl rule__NewSite__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12132:2: rule__NewSite__Group__0__Impl rule__NewSite__Group__1
             {
-            pushFollow(FOLLOW_rule__NewSite__Group__0__Impl_in_rule__NewSite__Group__026751);
+            pushFollow(FOLLOW_rule__NewSite__Group__0__Impl_in_rule__NewSite__Group__026752);
             rule__NewSite__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewSite__Group__1_in_rule__NewSite__Group__026754);
+            pushFollow(FOLLOW_rule__NewSite__Group__1_in_rule__NewSite__Group__026755);
             rule__NewSite__Group__1();
 
             state._fsp--;
@@ -39261,7 +39272,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12145:1: '#newsite'
             {
              before(grammarAccess.getNewSiteAccess().getNewsiteKeyword_0()); 
-            match(input,46,FOLLOW_46_in_rule__NewSite__Group__0__Impl26782); 
+            match(input,46,FOLLOW_46_in_rule__NewSite__Group__0__Impl26783); 
              after(grammarAccess.getNewSiteAccess().getNewsiteKeyword_0()); 
 
             }
@@ -39294,12 +39305,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12162:1: ( rule__NewSite__Group__1__Impl rule__NewSite__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12163:2: rule__NewSite__Group__1__Impl rule__NewSite__Group__2
             {
-            pushFollow(FOLLOW_rule__NewSite__Group__1__Impl_in_rule__NewSite__Group__126813);
+            pushFollow(FOLLOW_rule__NewSite__Group__1__Impl_in_rule__NewSite__Group__126814);
             rule__NewSite__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewSite__Group__2_in_rule__NewSite__Group__126816);
+            pushFollow(FOLLOW_rule__NewSite__Group__2_in_rule__NewSite__Group__126817);
             rule__NewSite__Group__2();
 
             state._fsp--;
@@ -39339,7 +39350,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12177:1: ( rule__NewSite__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12177:2: rule__NewSite__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__NewSite__ValueAssignment_1_in_rule__NewSite__Group__1__Impl26843);
+            pushFollow(FOLLOW_rule__NewSite__ValueAssignment_1_in_rule__NewSite__Group__1__Impl26844);
             rule__NewSite__ValueAssignment_1();
 
             state._fsp--;
@@ -39379,12 +39390,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12191:1: ( rule__NewSite__Group__2__Impl rule__NewSite__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12192:2: rule__NewSite__Group__2__Impl rule__NewSite__Group__3
             {
-            pushFollow(FOLLOW_rule__NewSite__Group__2__Impl_in_rule__NewSite__Group__226873);
+            pushFollow(FOLLOW_rule__NewSite__Group__2__Impl_in_rule__NewSite__Group__226874);
             rule__NewSite__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewSite__Group__3_in_rule__NewSite__Group__226876);
+            pushFollow(FOLLOW_rule__NewSite__Group__3_in_rule__NewSite__Group__226877);
             rule__NewSite__Group__3();
 
             state._fsp--;
@@ -39422,27 +39433,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNewSiteAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12206:1: ( RULE_FREE_FORM_COMMENT )*
-            loop102:
+            loop103:
             do {
-                int alt102=2;
-                int LA102_0 = input.LA(1);
+                int alt103=2;
+                int LA103_0 = input.LA(1);
 
-                if ( (LA102_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt102=1;
+                if ( (LA103_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt103=1;
                 }
 
 
-                switch (alt102) {
+                switch (alt103) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12206:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewSite__Group__2__Impl26904); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewSite__Group__2__Impl26905); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop102;
+            	    break loop103;
                 }
             } while (true);
 
@@ -39478,12 +39489,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12220:1: ( rule__NewSite__Group__3__Impl rule__NewSite__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12221:2: rule__NewSite__Group__3__Impl rule__NewSite__Group__4
             {
-            pushFollow(FOLLOW_rule__NewSite__Group__3__Impl_in_rule__NewSite__Group__326935);
+            pushFollow(FOLLOW_rule__NewSite__Group__3__Impl_in_rule__NewSite__Group__326936);
             rule__NewSite__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NewSite__Group__4_in_rule__NewSite__Group__326938);
+            pushFollow(FOLLOW_rule__NewSite__Group__4_in_rule__NewSite__Group__326939);
             rule__NewSite__Group__4();
 
             state._fsp--;
@@ -39521,21 +39532,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNewSiteAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12235:1: ( rule__NewSite__ModsAssignment_3 )*
-            loop103:
+            loop104:
             do {
-                int alt103=2;
-                int LA103_0 = input.LA(1);
+                int alt104=2;
+                int LA104_0 = input.LA(1);
 
-                if ( (LA103_0==50||LA103_0==177||LA103_0==210||LA103_0==217||LA103_0==273||(LA103_0>=283 && LA103_0<=306)) ) {
-                    alt103=1;
+                if ( (LA104_0==50||LA104_0==177||LA104_0==210||LA104_0==217||LA104_0==273||(LA104_0>=283 && LA104_0<=306)) ) {
+                    alt104=1;
                 }
 
 
-                switch (alt103) {
+                switch (alt104) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12235:2: rule__NewSite__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__NewSite__ModsAssignment_3_in_rule__NewSite__Group__3__Impl26965);
+            	    pushFollow(FOLLOW_rule__NewSite__ModsAssignment_3_in_rule__NewSite__Group__3__Impl26966);
             	    rule__NewSite__ModsAssignment_3();
 
             	    state._fsp--;
@@ -39545,7 +39556,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop103;
+            	    break loop104;
                 }
             } while (true);
 
@@ -39581,7 +39592,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12249:1: ( rule__NewSite__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12250:2: rule__NewSite__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__NewSite__Group__4__Impl_in_rule__NewSite__Group__426996);
+            pushFollow(FOLLOW_rule__NewSite__Group__4__Impl_in_rule__NewSite__Group__426997);
             rule__NewSite__Group__4__Impl();
 
             state._fsp--;
@@ -39618,7 +39629,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12262:1: '#end'
             {
              before(grammarAccess.getNewSiteAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__NewSite__Group__4__Impl27024); 
+            match(input,34,FOLLOW_34_in_rule__NewSite__Group__4__Impl27025); 
              after(grammarAccess.getNewSiteAccess().getEndKeyword_4()); 
 
             }
@@ -39651,12 +39662,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12289:1: ( rule__SitePattern1__Group__0__Impl rule__SitePattern1__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12290:2: rule__SitePattern1__Group__0__Impl rule__SitePattern1__Group__1
             {
-            pushFollow(FOLLOW_rule__SitePattern1__Group__0__Impl_in_rule__SitePattern1__Group__027065);
+            pushFollow(FOLLOW_rule__SitePattern1__Group__0__Impl_in_rule__SitePattern1__Group__027066);
             rule__SitePattern1__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SitePattern1__Group__1_in_rule__SitePattern1__Group__027068);
+            pushFollow(FOLLOW_rule__SitePattern1__Group__1_in_rule__SitePattern1__Group__027069);
             rule__SitePattern1__Group__1();
 
             state._fsp--;
@@ -39693,7 +39704,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12303:1: ruleSiteInst1
             {
              before(grammarAccess.getSitePattern1Access().getSiteInst1ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSiteInst1_in_rule__SitePattern1__Group__0__Impl27095);
+            pushFollow(FOLLOW_ruleSiteInst1_in_rule__SitePattern1__Group__0__Impl27096);
             ruleSiteInst1();
 
             state._fsp--;
@@ -39730,12 +39741,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12318:1: ( rule__SitePattern1__Group__1__Impl rule__SitePattern1__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12319:2: rule__SitePattern1__Group__1__Impl rule__SitePattern1__Group__2
             {
-            pushFollow(FOLLOW_rule__SitePattern1__Group__1__Impl_in_rule__SitePattern1__Group__127124);
+            pushFollow(FOLLOW_rule__SitePattern1__Group__1__Impl_in_rule__SitePattern1__Group__127125);
             rule__SitePattern1__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SitePattern1__Group__2_in_rule__SitePattern1__Group__127127);
+            pushFollow(FOLLOW_rule__SitePattern1__Group__2_in_rule__SitePattern1__Group__127128);
             rule__SitePattern1__Group__2();
 
             state._fsp--;
@@ -39775,7 +39786,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12333:1: ( rule__SitePattern1__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12333:2: rule__SitePattern1__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SitePattern1__ValueAssignment_1_in_rule__SitePattern1__Group__1__Impl27154);
+            pushFollow(FOLLOW_rule__SitePattern1__ValueAssignment_1_in_rule__SitePattern1__Group__1__Impl27155);
             rule__SitePattern1__ValueAssignment_1();
 
             state._fsp--;
@@ -39815,7 +39826,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12347:1: ( rule__SitePattern1__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12348:2: rule__SitePattern1__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__SitePattern1__Group__2__Impl_in_rule__SitePattern1__Group__227184);
+            pushFollow(FOLLOW_rule__SitePattern1__Group__2__Impl_in_rule__SitePattern1__Group__227185);
             rule__SitePattern1__Group__2__Impl();
 
             state._fsp--;
@@ -39853,27 +39864,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSitePattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12361:1: ( RULE_FREE_FORM_COMMENT )*
-            loop104:
+            loop105:
             do {
-                int alt104=2;
-                int LA104_0 = input.LA(1);
+                int alt105=2;
+                int LA105_0 = input.LA(1);
 
-                if ( (LA104_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt104=1;
+                if ( (LA105_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt105=1;
                 }
 
 
-                switch (alt104) {
+                switch (alt105) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12361:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern1__Group__2__Impl27212); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern1__Group__2__Impl27213); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop104;
+            	    break loop105;
                 }
             } while (true);
 
@@ -39909,12 +39920,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12381:1: ( rule__SitePattern2__Group__0__Impl rule__SitePattern2__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12382:2: rule__SitePattern2__Group__0__Impl rule__SitePattern2__Group__1
             {
-            pushFollow(FOLLOW_rule__SitePattern2__Group__0__Impl_in_rule__SitePattern2__Group__027249);
+            pushFollow(FOLLOW_rule__SitePattern2__Group__0__Impl_in_rule__SitePattern2__Group__027250);
             rule__SitePattern2__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SitePattern2__Group__1_in_rule__SitePattern2__Group__027252);
+            pushFollow(FOLLOW_rule__SitePattern2__Group__1_in_rule__SitePattern2__Group__027253);
             rule__SitePattern2__Group__1();
 
             state._fsp--;
@@ -39951,7 +39962,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12395:1: ruleSiteInst2
             {
              before(grammarAccess.getSitePattern2Access().getSiteInst2ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSiteInst2_in_rule__SitePattern2__Group__0__Impl27279);
+            pushFollow(FOLLOW_ruleSiteInst2_in_rule__SitePattern2__Group__0__Impl27280);
             ruleSiteInst2();
 
             state._fsp--;
@@ -39988,12 +39999,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12410:1: ( rule__SitePattern2__Group__1__Impl rule__SitePattern2__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12411:2: rule__SitePattern2__Group__1__Impl rule__SitePattern2__Group__2
             {
-            pushFollow(FOLLOW_rule__SitePattern2__Group__1__Impl_in_rule__SitePattern2__Group__127308);
+            pushFollow(FOLLOW_rule__SitePattern2__Group__1__Impl_in_rule__SitePattern2__Group__127309);
             rule__SitePattern2__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SitePattern2__Group__2_in_rule__SitePattern2__Group__127311);
+            pushFollow(FOLLOW_rule__SitePattern2__Group__2_in_rule__SitePattern2__Group__127312);
             rule__SitePattern2__Group__2();
 
             state._fsp--;
@@ -40033,7 +40044,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12425:1: ( rule__SitePattern2__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12425:2: rule__SitePattern2__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SitePattern2__ValueAssignment_1_in_rule__SitePattern2__Group__1__Impl27338);
+            pushFollow(FOLLOW_rule__SitePattern2__ValueAssignment_1_in_rule__SitePattern2__Group__1__Impl27339);
             rule__SitePattern2__ValueAssignment_1();
 
             state._fsp--;
@@ -40073,7 +40084,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12439:1: ( rule__SitePattern2__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12440:2: rule__SitePattern2__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__SitePattern2__Group__2__Impl_in_rule__SitePattern2__Group__227368);
+            pushFollow(FOLLOW_rule__SitePattern2__Group__2__Impl_in_rule__SitePattern2__Group__227369);
             rule__SitePattern2__Group__2__Impl();
 
             state._fsp--;
@@ -40111,27 +40122,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSitePattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12453:1: ( RULE_FREE_FORM_COMMENT )*
-            loop105:
+            loop106:
             do {
-                int alt105=2;
-                int LA105_0 = input.LA(1);
+                int alt106=2;
+                int LA106_0 = input.LA(1);
 
-                if ( (LA105_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt105=1;
+                if ( (LA106_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt106=1;
                 }
 
 
-                switch (alt105) {
+                switch (alt106) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12453:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern2__Group__2__Impl27396); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern2__Group__2__Impl27397); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop105;
+            	    break loop106;
                 }
             } while (true);
 
@@ -40167,12 +40178,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12473:1: ( rule__SitePattern3__Group__0__Impl rule__SitePattern3__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12474:2: rule__SitePattern3__Group__0__Impl rule__SitePattern3__Group__1
             {
-            pushFollow(FOLLOW_rule__SitePattern3__Group__0__Impl_in_rule__SitePattern3__Group__027433);
+            pushFollow(FOLLOW_rule__SitePattern3__Group__0__Impl_in_rule__SitePattern3__Group__027434);
             rule__SitePattern3__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SitePattern3__Group__1_in_rule__SitePattern3__Group__027436);
+            pushFollow(FOLLOW_rule__SitePattern3__Group__1_in_rule__SitePattern3__Group__027437);
             rule__SitePattern3__Group__1();
 
             state._fsp--;
@@ -40209,7 +40220,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12487:1: ruleSiteInst3
             {
              before(grammarAccess.getSitePattern3Access().getSiteInst3ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSiteInst3_in_rule__SitePattern3__Group__0__Impl27463);
+            pushFollow(FOLLOW_ruleSiteInst3_in_rule__SitePattern3__Group__0__Impl27464);
             ruleSiteInst3();
 
             state._fsp--;
@@ -40246,12 +40257,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12502:1: ( rule__SitePattern3__Group__1__Impl rule__SitePattern3__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12503:2: rule__SitePattern3__Group__1__Impl rule__SitePattern3__Group__2
             {
-            pushFollow(FOLLOW_rule__SitePattern3__Group__1__Impl_in_rule__SitePattern3__Group__127492);
+            pushFollow(FOLLOW_rule__SitePattern3__Group__1__Impl_in_rule__SitePattern3__Group__127493);
             rule__SitePattern3__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SitePattern3__Group__2_in_rule__SitePattern3__Group__127495);
+            pushFollow(FOLLOW_rule__SitePattern3__Group__2_in_rule__SitePattern3__Group__127496);
             rule__SitePattern3__Group__2();
 
             state._fsp--;
@@ -40291,7 +40302,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12517:1: ( rule__SitePattern3__Value1Assignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12517:2: rule__SitePattern3__Value1Assignment_1
             {
-            pushFollow(FOLLOW_rule__SitePattern3__Value1Assignment_1_in_rule__SitePattern3__Group__1__Impl27522);
+            pushFollow(FOLLOW_rule__SitePattern3__Value1Assignment_1_in_rule__SitePattern3__Group__1__Impl27523);
             rule__SitePattern3__Value1Assignment_1();
 
             state._fsp--;
@@ -40331,12 +40342,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12531:1: ( rule__SitePattern3__Group__2__Impl rule__SitePattern3__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12532:2: rule__SitePattern3__Group__2__Impl rule__SitePattern3__Group__3
             {
-            pushFollow(FOLLOW_rule__SitePattern3__Group__2__Impl_in_rule__SitePattern3__Group__227552);
+            pushFollow(FOLLOW_rule__SitePattern3__Group__2__Impl_in_rule__SitePattern3__Group__227553);
             rule__SitePattern3__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SitePattern3__Group__3_in_rule__SitePattern3__Group__227555);
+            pushFollow(FOLLOW_rule__SitePattern3__Group__3_in_rule__SitePattern3__Group__227556);
             rule__SitePattern3__Group__3();
 
             state._fsp--;
@@ -40376,7 +40387,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12546:1: ( rule__SitePattern3__Value2Assignment_2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12546:2: rule__SitePattern3__Value2Assignment_2
             {
-            pushFollow(FOLLOW_rule__SitePattern3__Value2Assignment_2_in_rule__SitePattern3__Group__2__Impl27582);
+            pushFollow(FOLLOW_rule__SitePattern3__Value2Assignment_2_in_rule__SitePattern3__Group__2__Impl27583);
             rule__SitePattern3__Value2Assignment_2();
 
             state._fsp--;
@@ -40416,7 +40427,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12560:1: ( rule__SitePattern3__Group__3__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12561:2: rule__SitePattern3__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__SitePattern3__Group__3__Impl_in_rule__SitePattern3__Group__327612);
+            pushFollow(FOLLOW_rule__SitePattern3__Group__3__Impl_in_rule__SitePattern3__Group__327613);
             rule__SitePattern3__Group__3__Impl();
 
             state._fsp--;
@@ -40454,27 +40465,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSitePattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12574:1: ( RULE_FREE_FORM_COMMENT )*
-            loop106:
+            loop107:
             do {
-                int alt106=2;
-                int LA106_0 = input.LA(1);
+                int alt107=2;
+                int LA107_0 = input.LA(1);
 
-                if ( (LA106_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt106=1;
+                if ( (LA107_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt107=1;
                 }
 
 
-                switch (alt106) {
+                switch (alt107) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12574:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern3__Group__3__Impl27640); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern3__Group__3__Impl27641); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop106;
+            	    break loop107;
                 }
             } while (true);
 
@@ -40510,12 +40521,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12596:1: ( rule__SitePattern4__Group__0__Impl rule__SitePattern4__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12597:2: rule__SitePattern4__Group__0__Impl rule__SitePattern4__Group__1
             {
-            pushFollow(FOLLOW_rule__SitePattern4__Group__0__Impl_in_rule__SitePattern4__Group__027679);
+            pushFollow(FOLLOW_rule__SitePattern4__Group__0__Impl_in_rule__SitePattern4__Group__027680);
             rule__SitePattern4__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SitePattern4__Group__1_in_rule__SitePattern4__Group__027682);
+            pushFollow(FOLLOW_rule__SitePattern4__Group__1_in_rule__SitePattern4__Group__027683);
             rule__SitePattern4__Group__1();
 
             state._fsp--;
@@ -40552,7 +40563,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12610:1: ruleSiteInst4
             {
              before(grammarAccess.getSitePattern4Access().getSiteInst4ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSiteInst4_in_rule__SitePattern4__Group__0__Impl27709);
+            pushFollow(FOLLOW_ruleSiteInst4_in_rule__SitePattern4__Group__0__Impl27710);
             ruleSiteInst4();
 
             state._fsp--;
@@ -40589,7 +40600,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12625:1: ( rule__SitePattern4__Group__1__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12626:2: rule__SitePattern4__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__SitePattern4__Group__1__Impl_in_rule__SitePattern4__Group__127738);
+            pushFollow(FOLLOW_rule__SitePattern4__Group__1__Impl_in_rule__SitePattern4__Group__127739);
             rule__SitePattern4__Group__1__Impl();
 
             state._fsp--;
@@ -40627,27 +40638,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSitePattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12639:1: ( RULE_FREE_FORM_COMMENT )*
-            loop107:
+            loop108:
             do {
-                int alt107=2;
-                int LA107_0 = input.LA(1);
+                int alt108=2;
+                int LA108_0 = input.LA(1);
 
-                if ( (LA107_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt107=1;
+                if ( (LA108_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt108=1;
                 }
 
 
-                switch (alt107) {
+                switch (alt108) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12639:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern4__Group__1__Impl27766); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern4__Group__1__Impl27767); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop107;
+            	    break loop108;
                 }
             } while (true);
 
@@ -40683,12 +40694,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12657:1: ( rule__SelectNation__Group__0__Impl rule__SelectNation__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12658:2: rule__SelectNation__Group__0__Impl rule__SelectNation__Group__1
             {
-            pushFollow(FOLLOW_rule__SelectNation__Group__0__Impl_in_rule__SelectNation__Group__027801);
+            pushFollow(FOLLOW_rule__SelectNation__Group__0__Impl_in_rule__SelectNation__Group__027802);
             rule__SelectNation__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectNation__Group__1_in_rule__SelectNation__Group__027804);
+            pushFollow(FOLLOW_rule__SelectNation__Group__1_in_rule__SelectNation__Group__027805);
             rule__SelectNation__Group__1();
 
             state._fsp--;
@@ -40725,7 +40736,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12671:1: '#selectnation'
             {
              before(grammarAccess.getSelectNationAccess().getSelectnationKeyword_0()); 
-            match(input,47,FOLLOW_47_in_rule__SelectNation__Group__0__Impl27832); 
+            match(input,47,FOLLOW_47_in_rule__SelectNation__Group__0__Impl27833); 
              after(grammarAccess.getSelectNationAccess().getSelectnationKeyword_0()); 
 
             }
@@ -40758,12 +40769,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12688:1: ( rule__SelectNation__Group__1__Impl rule__SelectNation__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12689:2: rule__SelectNation__Group__1__Impl rule__SelectNation__Group__2
             {
-            pushFollow(FOLLOW_rule__SelectNation__Group__1__Impl_in_rule__SelectNation__Group__127863);
+            pushFollow(FOLLOW_rule__SelectNation__Group__1__Impl_in_rule__SelectNation__Group__127864);
             rule__SelectNation__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectNation__Group__2_in_rule__SelectNation__Group__127866);
+            pushFollow(FOLLOW_rule__SelectNation__Group__2_in_rule__SelectNation__Group__127867);
             rule__SelectNation__Group__2();
 
             state._fsp--;
@@ -40803,7 +40814,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12703:1: ( rule__SelectNation__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12703:2: rule__SelectNation__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__SelectNation__ValueAssignment_1_in_rule__SelectNation__Group__1__Impl27893);
+            pushFollow(FOLLOW_rule__SelectNation__ValueAssignment_1_in_rule__SelectNation__Group__1__Impl27894);
             rule__SelectNation__ValueAssignment_1();
 
             state._fsp--;
@@ -40843,12 +40854,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12717:1: ( rule__SelectNation__Group__2__Impl rule__SelectNation__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12718:2: rule__SelectNation__Group__2__Impl rule__SelectNation__Group__3
             {
-            pushFollow(FOLLOW_rule__SelectNation__Group__2__Impl_in_rule__SelectNation__Group__227923);
+            pushFollow(FOLLOW_rule__SelectNation__Group__2__Impl_in_rule__SelectNation__Group__227924);
             rule__SelectNation__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectNation__Group__3_in_rule__SelectNation__Group__227926);
+            pushFollow(FOLLOW_rule__SelectNation__Group__3_in_rule__SelectNation__Group__227927);
             rule__SelectNation__Group__3();
 
             state._fsp--;
@@ -40886,27 +40897,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectNationAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12732:1: ( RULE_FREE_FORM_COMMENT )*
-            loop108:
+            loop109:
             do {
-                int alt108=2;
-                int LA108_0 = input.LA(1);
+                int alt109=2;
+                int LA109_0 = input.LA(1);
 
-                if ( (LA108_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt108=1;
+                if ( (LA109_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt109=1;
                 }
 
 
-                switch (alt108) {
+                switch (alt109) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12732:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectNation__Group__2__Impl27954); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectNation__Group__2__Impl27955); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop108;
+            	    break loop109;
                 }
             } while (true);
 
@@ -40942,12 +40953,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12746:1: ( rule__SelectNation__Group__3__Impl rule__SelectNation__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12747:2: rule__SelectNation__Group__3__Impl rule__SelectNation__Group__4
             {
-            pushFollow(FOLLOW_rule__SelectNation__Group__3__Impl_in_rule__SelectNation__Group__327985);
+            pushFollow(FOLLOW_rule__SelectNation__Group__3__Impl_in_rule__SelectNation__Group__327986);
             rule__SelectNation__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SelectNation__Group__4_in_rule__SelectNation__Group__327988);
+            pushFollow(FOLLOW_rule__SelectNation__Group__4_in_rule__SelectNation__Group__327989);
             rule__SelectNation__Group__4();
 
             state._fsp--;
@@ -40985,21 +40996,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSelectNationAccess().getModsAssignment_3()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12761:1: ( rule__SelectNation__ModsAssignment_3 )*
-            loop109:
+            loop110:
             do {
-                int alt109=2;
-                int LA109_0 = input.LA(1);
+                int alt110=2;
+                int LA110_0 = input.LA(1);
 
-                if ( (LA109_0==50||LA109_0==99||(LA109_0>=307 && LA109_0<=380)) ) {
-                    alt109=1;
+                if ( (LA110_0==50||LA110_0==99||(LA110_0>=307 && LA110_0<=380)) ) {
+                    alt110=1;
                 }
 
 
-                switch (alt109) {
+                switch (alt110) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12761:2: rule__SelectNation__ModsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__SelectNation__ModsAssignment_3_in_rule__SelectNation__Group__3__Impl28015);
+            	    pushFollow(FOLLOW_rule__SelectNation__ModsAssignment_3_in_rule__SelectNation__Group__3__Impl28016);
             	    rule__SelectNation__ModsAssignment_3();
 
             	    state._fsp--;
@@ -41009,7 +41020,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop109;
+            	    break loop110;
                 }
             } while (true);
 
@@ -41045,7 +41056,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12775:1: ( rule__SelectNation__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12776:2: rule__SelectNation__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SelectNation__Group__4__Impl_in_rule__SelectNation__Group__428046);
+            pushFollow(FOLLOW_rule__SelectNation__Group__4__Impl_in_rule__SelectNation__Group__428047);
             rule__SelectNation__Group__4__Impl();
 
             state._fsp--;
@@ -41082,7 +41093,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12788:1: '#end'
             {
              before(grammarAccess.getSelectNationAccess().getEndKeyword_4()); 
-            match(input,34,FOLLOW_34_in_rule__SelectNation__Group__4__Impl28074); 
+            match(input,34,FOLLOW_34_in_rule__SelectNation__Group__4__Impl28075); 
              after(grammarAccess.getSelectNationAccess().getEndKeyword_4()); 
 
             }
@@ -41115,12 +41126,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12815:1: ( rule__IndepFlag__Group__0__Impl rule__IndepFlag__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12816:2: rule__IndepFlag__Group__0__Impl rule__IndepFlag__Group__1
             {
-            pushFollow(FOLLOW_rule__IndepFlag__Group__0__Impl_in_rule__IndepFlag__Group__028115);
+            pushFollow(FOLLOW_rule__IndepFlag__Group__0__Impl_in_rule__IndepFlag__Group__028116);
             rule__IndepFlag__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__IndepFlag__Group__1_in_rule__IndepFlag__Group__028118);
+            pushFollow(FOLLOW_rule__IndepFlag__Group__1_in_rule__IndepFlag__Group__028119);
             rule__IndepFlag__Group__1();
 
             state._fsp--;
@@ -41157,7 +41168,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12829:1: '#indepflag'
             {
              before(grammarAccess.getIndepFlagAccess().getIndepflagKeyword_0()); 
-            match(input,48,FOLLOW_48_in_rule__IndepFlag__Group__0__Impl28146); 
+            match(input,48,FOLLOW_48_in_rule__IndepFlag__Group__0__Impl28147); 
              after(grammarAccess.getIndepFlagAccess().getIndepflagKeyword_0()); 
 
             }
@@ -41190,12 +41201,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12846:1: ( rule__IndepFlag__Group__1__Impl rule__IndepFlag__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12847:2: rule__IndepFlag__Group__1__Impl rule__IndepFlag__Group__2
             {
-            pushFollow(FOLLOW_rule__IndepFlag__Group__1__Impl_in_rule__IndepFlag__Group__128177);
+            pushFollow(FOLLOW_rule__IndepFlag__Group__1__Impl_in_rule__IndepFlag__Group__128178);
             rule__IndepFlag__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__IndepFlag__Group__2_in_rule__IndepFlag__Group__128180);
+            pushFollow(FOLLOW_rule__IndepFlag__Group__2_in_rule__IndepFlag__Group__128181);
             rule__IndepFlag__Group__2();
 
             state._fsp--;
@@ -41235,7 +41246,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12861:1: ( rule__IndepFlag__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12861:2: rule__IndepFlag__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__IndepFlag__ValueAssignment_1_in_rule__IndepFlag__Group__1__Impl28207);
+            pushFollow(FOLLOW_rule__IndepFlag__ValueAssignment_1_in_rule__IndepFlag__Group__1__Impl28208);
             rule__IndepFlag__ValueAssignment_1();
 
             state._fsp--;
@@ -41275,7 +41286,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12875:1: ( rule__IndepFlag__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12876:2: rule__IndepFlag__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__IndepFlag__Group__2__Impl_in_rule__IndepFlag__Group__228237);
+            pushFollow(FOLLOW_rule__IndepFlag__Group__2__Impl_in_rule__IndepFlag__Group__228238);
             rule__IndepFlag__Group__2__Impl();
 
             state._fsp--;
@@ -41313,27 +41324,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getIndepFlagAccess().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12889:1: ( RULE_FREE_FORM_COMMENT )*
-            loop110:
+            loop111:
             do {
-                int alt110=2;
-                int LA110_0 = input.LA(1);
+                int alt111=2;
+                int LA111_0 = input.LA(1);
 
-                if ( (LA110_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt110=1;
+                if ( (LA111_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt111=1;
                 }
 
 
-                switch (alt110) {
+                switch (alt111) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12889:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__IndepFlag__Group__2__Impl28265); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__IndepFlag__Group__2__Impl28266); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop110;
+            	    break loop111;
                 }
             } while (true);
 
@@ -41369,12 +41380,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12909:1: ( rule__NationPattern1__Group__0__Impl rule__NationPattern1__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12910:2: rule__NationPattern1__Group__0__Impl rule__NationPattern1__Group__1
             {
-            pushFollow(FOLLOW_rule__NationPattern1__Group__0__Impl_in_rule__NationPattern1__Group__028302);
+            pushFollow(FOLLOW_rule__NationPattern1__Group__0__Impl_in_rule__NationPattern1__Group__028303);
             rule__NationPattern1__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern1__Group__1_in_rule__NationPattern1__Group__028305);
+            pushFollow(FOLLOW_rule__NationPattern1__Group__1_in_rule__NationPattern1__Group__028306);
             rule__NationPattern1__Group__1();
 
             state._fsp--;
@@ -41411,7 +41422,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12923:1: ruleNationInst1
             {
              before(grammarAccess.getNationPattern1Access().getNationInst1ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleNationInst1_in_rule__NationPattern1__Group__0__Impl28332);
+            pushFollow(FOLLOW_ruleNationInst1_in_rule__NationPattern1__Group__0__Impl28333);
             ruleNationInst1();
 
             state._fsp--;
@@ -41448,12 +41459,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12938:1: ( rule__NationPattern1__Group__1__Impl rule__NationPattern1__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12939:2: rule__NationPattern1__Group__1__Impl rule__NationPattern1__Group__2
             {
-            pushFollow(FOLLOW_rule__NationPattern1__Group__1__Impl_in_rule__NationPattern1__Group__128361);
+            pushFollow(FOLLOW_rule__NationPattern1__Group__1__Impl_in_rule__NationPattern1__Group__128362);
             rule__NationPattern1__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern1__Group__2_in_rule__NationPattern1__Group__128364);
+            pushFollow(FOLLOW_rule__NationPattern1__Group__2_in_rule__NationPattern1__Group__128365);
             rule__NationPattern1__Group__2();
 
             state._fsp--;
@@ -41493,7 +41504,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12953:1: ( rule__NationPattern1__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12953:2: rule__NationPattern1__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__NationPattern1__ValueAssignment_1_in_rule__NationPattern1__Group__1__Impl28391);
+            pushFollow(FOLLOW_rule__NationPattern1__ValueAssignment_1_in_rule__NationPattern1__Group__1__Impl28392);
             rule__NationPattern1__ValueAssignment_1();
 
             state._fsp--;
@@ -41533,7 +41544,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12967:1: ( rule__NationPattern1__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12968:2: rule__NationPattern1__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__NationPattern1__Group__2__Impl_in_rule__NationPattern1__Group__228421);
+            pushFollow(FOLLOW_rule__NationPattern1__Group__2__Impl_in_rule__NationPattern1__Group__228422);
             rule__NationPattern1__Group__2__Impl();
 
             state._fsp--;
@@ -41571,27 +41582,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNationPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12981:1: ( RULE_FREE_FORM_COMMENT )*
-            loop111:
+            loop112:
             do {
-                int alt111=2;
-                int LA111_0 = input.LA(1);
+                int alt112=2;
+                int LA112_0 = input.LA(1);
 
-                if ( (LA111_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt111=1;
+                if ( (LA112_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt112=1;
                 }
 
 
-                switch (alt111) {
+                switch (alt112) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:12981:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern1__Group__2__Impl28449); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern1__Group__2__Impl28450); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop111;
+            	    break loop112;
                 }
             } while (true);
 
@@ -41627,12 +41638,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13001:1: ( rule__NationPattern2__Group__0__Impl rule__NationPattern2__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13002:2: rule__NationPattern2__Group__0__Impl rule__NationPattern2__Group__1
             {
-            pushFollow(FOLLOW_rule__NationPattern2__Group__0__Impl_in_rule__NationPattern2__Group__028486);
+            pushFollow(FOLLOW_rule__NationPattern2__Group__0__Impl_in_rule__NationPattern2__Group__028487);
             rule__NationPattern2__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern2__Group__1_in_rule__NationPattern2__Group__028489);
+            pushFollow(FOLLOW_rule__NationPattern2__Group__1_in_rule__NationPattern2__Group__028490);
             rule__NationPattern2__Group__1();
 
             state._fsp--;
@@ -41669,7 +41680,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13015:1: ruleNationInst2
             {
              before(grammarAccess.getNationPattern2Access().getNationInst2ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleNationInst2_in_rule__NationPattern2__Group__0__Impl28516);
+            pushFollow(FOLLOW_ruleNationInst2_in_rule__NationPattern2__Group__0__Impl28517);
             ruleNationInst2();
 
             state._fsp--;
@@ -41706,12 +41717,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13030:1: ( rule__NationPattern2__Group__1__Impl rule__NationPattern2__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13031:2: rule__NationPattern2__Group__1__Impl rule__NationPattern2__Group__2
             {
-            pushFollow(FOLLOW_rule__NationPattern2__Group__1__Impl_in_rule__NationPattern2__Group__128545);
+            pushFollow(FOLLOW_rule__NationPattern2__Group__1__Impl_in_rule__NationPattern2__Group__128546);
             rule__NationPattern2__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern2__Group__2_in_rule__NationPattern2__Group__128548);
+            pushFollow(FOLLOW_rule__NationPattern2__Group__2_in_rule__NationPattern2__Group__128549);
             rule__NationPattern2__Group__2();
 
             state._fsp--;
@@ -41751,7 +41762,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13045:1: ( rule__NationPattern2__ValueAssignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13045:2: rule__NationPattern2__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__NationPattern2__ValueAssignment_1_in_rule__NationPattern2__Group__1__Impl28575);
+            pushFollow(FOLLOW_rule__NationPattern2__ValueAssignment_1_in_rule__NationPattern2__Group__1__Impl28576);
             rule__NationPattern2__ValueAssignment_1();
 
             state._fsp--;
@@ -41791,7 +41802,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13059:1: ( rule__NationPattern2__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13060:2: rule__NationPattern2__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__NationPattern2__Group__2__Impl_in_rule__NationPattern2__Group__228605);
+            pushFollow(FOLLOW_rule__NationPattern2__Group__2__Impl_in_rule__NationPattern2__Group__228606);
             rule__NationPattern2__Group__2__Impl();
 
             state._fsp--;
@@ -41829,27 +41840,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNationPattern2Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13073:1: ( RULE_FREE_FORM_COMMENT )*
-            loop112:
+            loop113:
             do {
-                int alt112=2;
-                int LA112_0 = input.LA(1);
+                int alt113=2;
+                int LA113_0 = input.LA(1);
 
-                if ( (LA112_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt112=1;
+                if ( (LA113_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt113=1;
                 }
 
 
-                switch (alt112) {
+                switch (alt113) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13073:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern2__Group__2__Impl28633); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern2__Group__2__Impl28634); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop112;
+            	    break loop113;
                 }
             } while (true);
 
@@ -41885,12 +41896,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13093:1: ( rule__NationPattern3__Group__0__Impl rule__NationPattern3__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13094:2: rule__NationPattern3__Group__0__Impl rule__NationPattern3__Group__1
             {
-            pushFollow(FOLLOW_rule__NationPattern3__Group__0__Impl_in_rule__NationPattern3__Group__028670);
+            pushFollow(FOLLOW_rule__NationPattern3__Group__0__Impl_in_rule__NationPattern3__Group__028671);
             rule__NationPattern3__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern3__Group__1_in_rule__NationPattern3__Group__028673);
+            pushFollow(FOLLOW_rule__NationPattern3__Group__1_in_rule__NationPattern3__Group__028674);
             rule__NationPattern3__Group__1();
 
             state._fsp--;
@@ -41927,7 +41938,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13107:1: ruleNationInst3
             {
              before(grammarAccess.getNationPattern3Access().getNationInst3ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleNationInst3_in_rule__NationPattern3__Group__0__Impl28700);
+            pushFollow(FOLLOW_ruleNationInst3_in_rule__NationPattern3__Group__0__Impl28701);
             ruleNationInst3();
 
             state._fsp--;
@@ -41964,7 +41975,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13122:1: ( rule__NationPattern3__Group__1__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13123:2: rule__NationPattern3__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__NationPattern3__Group__1__Impl_in_rule__NationPattern3__Group__128729);
+            pushFollow(FOLLOW_rule__NationPattern3__Group__1__Impl_in_rule__NationPattern3__Group__128730);
             rule__NationPattern3__Group__1__Impl();
 
             state._fsp--;
@@ -42002,27 +42013,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNationPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_1()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13136:1: ( RULE_FREE_FORM_COMMENT )*
-            loop113:
+            loop114:
             do {
-                int alt113=2;
-                int LA113_0 = input.LA(1);
+                int alt114=2;
+                int LA114_0 = input.LA(1);
 
-                if ( (LA113_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt113=1;
+                if ( (LA114_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt114=1;
                 }
 
 
-                switch (alt113) {
+                switch (alt114) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13136:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern3__Group__1__Impl28757); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern3__Group__1__Impl28758); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop113;
+            	    break loop114;
                 }
             } while (true);
 
@@ -42058,12 +42069,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13154:1: ( rule__NationPattern4__Group__0__Impl rule__NationPattern4__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13155:2: rule__NationPattern4__Group__0__Impl rule__NationPattern4__Group__1
             {
-            pushFollow(FOLLOW_rule__NationPattern4__Group__0__Impl_in_rule__NationPattern4__Group__028792);
+            pushFollow(FOLLOW_rule__NationPattern4__Group__0__Impl_in_rule__NationPattern4__Group__028793);
             rule__NationPattern4__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern4__Group__1_in_rule__NationPattern4__Group__028795);
+            pushFollow(FOLLOW_rule__NationPattern4__Group__1_in_rule__NationPattern4__Group__028796);
             rule__NationPattern4__Group__1();
 
             state._fsp--;
@@ -42100,7 +42111,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13168:1: ruleNationInst4
             {
              before(grammarAccess.getNationPattern4Access().getNationInst4ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleNationInst4_in_rule__NationPattern4__Group__0__Impl28822);
+            pushFollow(FOLLOW_ruleNationInst4_in_rule__NationPattern4__Group__0__Impl28823);
             ruleNationInst4();
 
             state._fsp--;
@@ -42137,12 +42148,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13183:1: ( rule__NationPattern4__Group__1__Impl rule__NationPattern4__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13184:2: rule__NationPattern4__Group__1__Impl rule__NationPattern4__Group__2
             {
-            pushFollow(FOLLOW_rule__NationPattern4__Group__1__Impl_in_rule__NationPattern4__Group__128851);
+            pushFollow(FOLLOW_rule__NationPattern4__Group__1__Impl_in_rule__NationPattern4__Group__128852);
             rule__NationPattern4__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern4__Group__2_in_rule__NationPattern4__Group__128854);
+            pushFollow(FOLLOW_rule__NationPattern4__Group__2_in_rule__NationPattern4__Group__128855);
             rule__NationPattern4__Group__2();
 
             state._fsp--;
@@ -42182,7 +42193,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13198:1: ( rule__NationPattern4__Alternatives_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13198:2: rule__NationPattern4__Alternatives_1
             {
-            pushFollow(FOLLOW_rule__NationPattern4__Alternatives_1_in_rule__NationPattern4__Group__1__Impl28881);
+            pushFollow(FOLLOW_rule__NationPattern4__Alternatives_1_in_rule__NationPattern4__Group__1__Impl28882);
             rule__NationPattern4__Alternatives_1();
 
             state._fsp--;
@@ -42222,7 +42233,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13212:1: ( rule__NationPattern4__Group__2__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13213:2: rule__NationPattern4__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__NationPattern4__Group__2__Impl_in_rule__NationPattern4__Group__228911);
+            pushFollow(FOLLOW_rule__NationPattern4__Group__2__Impl_in_rule__NationPattern4__Group__228912);
             rule__NationPattern4__Group__2__Impl();
 
             state._fsp--;
@@ -42260,27 +42271,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNationPattern4Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13226:1: ( RULE_FREE_FORM_COMMENT )*
-            loop114:
+            loop115:
             do {
-                int alt114=2;
-                int LA114_0 = input.LA(1);
+                int alt115=2;
+                int LA115_0 = input.LA(1);
 
-                if ( (LA114_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt114=1;
+                if ( (LA115_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt115=1;
                 }
 
 
-                switch (alt114) {
+                switch (alt115) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13226:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern4__Group__2__Impl28939); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern4__Group__2__Impl28940); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop114;
+            	    break loop115;
                 }
             } while (true);
 
@@ -42316,12 +42327,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13246:1: ( rule__NationPattern5__Group__0__Impl rule__NationPattern5__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13247:2: rule__NationPattern5__Group__0__Impl rule__NationPattern5__Group__1
             {
-            pushFollow(FOLLOW_rule__NationPattern5__Group__0__Impl_in_rule__NationPattern5__Group__028976);
+            pushFollow(FOLLOW_rule__NationPattern5__Group__0__Impl_in_rule__NationPattern5__Group__028977);
             rule__NationPattern5__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern5__Group__1_in_rule__NationPattern5__Group__028979);
+            pushFollow(FOLLOW_rule__NationPattern5__Group__1_in_rule__NationPattern5__Group__028980);
             rule__NationPattern5__Group__1();
 
             state._fsp--;
@@ -42358,7 +42369,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13260:1: ruleNationInst5
             {
              before(grammarAccess.getNationPattern5Access().getNationInst5ParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleNationInst5_in_rule__NationPattern5__Group__0__Impl29006);
+            pushFollow(FOLLOW_ruleNationInst5_in_rule__NationPattern5__Group__0__Impl29007);
             ruleNationInst5();
 
             state._fsp--;
@@ -42395,12 +42406,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13275:1: ( rule__NationPattern5__Group__1__Impl rule__NationPattern5__Group__2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13276:2: rule__NationPattern5__Group__1__Impl rule__NationPattern5__Group__2
             {
-            pushFollow(FOLLOW_rule__NationPattern5__Group__1__Impl_in_rule__NationPattern5__Group__129035);
+            pushFollow(FOLLOW_rule__NationPattern5__Group__1__Impl_in_rule__NationPattern5__Group__129036);
             rule__NationPattern5__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern5__Group__2_in_rule__NationPattern5__Group__129038);
+            pushFollow(FOLLOW_rule__NationPattern5__Group__2_in_rule__NationPattern5__Group__129039);
             rule__NationPattern5__Group__2();
 
             state._fsp--;
@@ -42440,7 +42451,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13290:1: ( rule__NationPattern5__Value1Assignment_1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13290:2: rule__NationPattern5__Value1Assignment_1
             {
-            pushFollow(FOLLOW_rule__NationPattern5__Value1Assignment_1_in_rule__NationPattern5__Group__1__Impl29065);
+            pushFollow(FOLLOW_rule__NationPattern5__Value1Assignment_1_in_rule__NationPattern5__Group__1__Impl29066);
             rule__NationPattern5__Value1Assignment_1();
 
             state._fsp--;
@@ -42480,12 +42491,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13304:1: ( rule__NationPattern5__Group__2__Impl rule__NationPattern5__Group__3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13305:2: rule__NationPattern5__Group__2__Impl rule__NationPattern5__Group__3
             {
-            pushFollow(FOLLOW_rule__NationPattern5__Group__2__Impl_in_rule__NationPattern5__Group__229095);
+            pushFollow(FOLLOW_rule__NationPattern5__Group__2__Impl_in_rule__NationPattern5__Group__229096);
             rule__NationPattern5__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern5__Group__3_in_rule__NationPattern5__Group__229098);
+            pushFollow(FOLLOW_rule__NationPattern5__Group__3_in_rule__NationPattern5__Group__229099);
             rule__NationPattern5__Group__3();
 
             state._fsp--;
@@ -42525,7 +42536,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13319:1: ( rule__NationPattern5__Value2Assignment_2 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13319:2: rule__NationPattern5__Value2Assignment_2
             {
-            pushFollow(FOLLOW_rule__NationPattern5__Value2Assignment_2_in_rule__NationPattern5__Group__2__Impl29125);
+            pushFollow(FOLLOW_rule__NationPattern5__Value2Assignment_2_in_rule__NationPattern5__Group__2__Impl29126);
             rule__NationPattern5__Value2Assignment_2();
 
             state._fsp--;
@@ -42565,12 +42576,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13333:1: ( rule__NationPattern5__Group__3__Impl rule__NationPattern5__Group__4 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13334:2: rule__NationPattern5__Group__3__Impl rule__NationPattern5__Group__4
             {
-            pushFollow(FOLLOW_rule__NationPattern5__Group__3__Impl_in_rule__NationPattern5__Group__329155);
+            pushFollow(FOLLOW_rule__NationPattern5__Group__3__Impl_in_rule__NationPattern5__Group__329156);
             rule__NationPattern5__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NationPattern5__Group__4_in_rule__NationPattern5__Group__329158);
+            pushFollow(FOLLOW_rule__NationPattern5__Group__4_in_rule__NationPattern5__Group__329159);
             rule__NationPattern5__Group__4();
 
             state._fsp--;
@@ -42610,7 +42621,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13348:1: ( rule__NationPattern5__Value3Assignment_3 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13348:2: rule__NationPattern5__Value3Assignment_3
             {
-            pushFollow(FOLLOW_rule__NationPattern5__Value3Assignment_3_in_rule__NationPattern5__Group__3__Impl29185);
+            pushFollow(FOLLOW_rule__NationPattern5__Value3Assignment_3_in_rule__NationPattern5__Group__3__Impl29186);
             rule__NationPattern5__Value3Assignment_3();
 
             state._fsp--;
@@ -42650,7 +42661,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13362:1: ( rule__NationPattern5__Group__4__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13363:2: rule__NationPattern5__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__NationPattern5__Group__4__Impl_in_rule__NationPattern5__Group__429215);
+            pushFollow(FOLLOW_rule__NationPattern5__Group__4__Impl_in_rule__NationPattern5__Group__429216);
             rule__NationPattern5__Group__4__Impl();
 
             state._fsp--;
@@ -42688,27 +42699,27 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getNationPattern5Access().getFREE_FORM_COMMENTTerminalRuleCall_4()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13376:1: ( RULE_FREE_FORM_COMMENT )*
-            loop115:
+            loop116:
             do {
-                int alt115=2;
-                int LA115_0 = input.LA(1);
+                int alt116=2;
+                int LA116_0 = input.LA(1);
 
-                if ( (LA115_0==RULE_FREE_FORM_COMMENT) ) {
-                    alt115=1;
+                if ( (LA116_0==RULE_FREE_FORM_COMMENT) ) {
+                    alt116=1;
                 }
 
 
-                switch (alt115) {
+                switch (alt116) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13376:3: RULE_FREE_FORM_COMMENT
             	    {
-            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern5__Group__4__Impl29243); 
+            	    match(input,RULE_FREE_FORM_COMMENT,FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern5__Group__4__Impl29244); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop115;
+            	    break loop116;
                 }
             } while (true);
 
@@ -42744,12 +42755,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13400:1: ( rule__DecimalValue__Group__0__Impl rule__DecimalValue__Group__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13401:2: rule__DecimalValue__Group__0__Impl rule__DecimalValue__Group__1
             {
-            pushFollow(FOLLOW_rule__DecimalValue__Group__0__Impl_in_rule__DecimalValue__Group__029284);
+            pushFollow(FOLLOW_rule__DecimalValue__Group__0__Impl_in_rule__DecimalValue__Group__029285);
             rule__DecimalValue__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__DecimalValue__Group__1_in_rule__DecimalValue__Group__029287);
+            pushFollow(FOLLOW_rule__DecimalValue__Group__1_in_rule__DecimalValue__Group__029288);
             rule__DecimalValue__Group__1();
 
             state._fsp--;
@@ -42786,7 +42797,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13414:1: RULE_INT
             {
              before(grammarAccess.getDecimalValueAccess().getINTTerminalRuleCall_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__DecimalValue__Group__0__Impl29314); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__DecimalValue__Group__0__Impl29315); 
              after(grammarAccess.getDecimalValueAccess().getINTTerminalRuleCall_0()); 
 
             }
@@ -42819,7 +42830,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13429:1: ( rule__DecimalValue__Group__1__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13430:2: rule__DecimalValue__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__DecimalValue__Group__1__Impl_in_rule__DecimalValue__Group__129343);
+            pushFollow(FOLLOW_rule__DecimalValue__Group__1__Impl_in_rule__DecimalValue__Group__129344);
             rule__DecimalValue__Group__1__Impl();
 
             state._fsp--;
@@ -42857,21 +42868,21 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getDecimalValueAccess().getGroup_1()); 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13443:1: ( rule__DecimalValue__Group_1__0 )*
-            loop116:
+            loop117:
             do {
-                int alt116=2;
-                int LA116_0 = input.LA(1);
+                int alt117=2;
+                int LA117_0 = input.LA(1);
 
-                if ( (LA116_0==49) ) {
-                    alt116=1;
+                if ( (LA117_0==49) ) {
+                    alt117=1;
                 }
 
 
-                switch (alt116) {
+                switch (alt117) {
             	case 1 :
             	    // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13443:2: rule__DecimalValue__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__DecimalValue__Group_1__0_in_rule__DecimalValue__Group__1__Impl29370);
+            	    pushFollow(FOLLOW_rule__DecimalValue__Group_1__0_in_rule__DecimalValue__Group__1__Impl29371);
             	    rule__DecimalValue__Group_1__0();
 
             	    state._fsp--;
@@ -42881,7 +42892,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop116;
+            	    break loop117;
                 }
             } while (true);
 
@@ -42917,12 +42928,12 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13461:1: ( rule__DecimalValue__Group_1__0__Impl rule__DecimalValue__Group_1__1 )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13462:2: rule__DecimalValue__Group_1__0__Impl rule__DecimalValue__Group_1__1
             {
-            pushFollow(FOLLOW_rule__DecimalValue__Group_1__0__Impl_in_rule__DecimalValue__Group_1__029405);
+            pushFollow(FOLLOW_rule__DecimalValue__Group_1__0__Impl_in_rule__DecimalValue__Group_1__029406);
             rule__DecimalValue__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__DecimalValue__Group_1__1_in_rule__DecimalValue__Group_1__029408);
+            pushFollow(FOLLOW_rule__DecimalValue__Group_1__1_in_rule__DecimalValue__Group_1__029409);
             rule__DecimalValue__Group_1__1();
 
             state._fsp--;
@@ -42959,7 +42970,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13475:1: '.'
             {
              before(grammarAccess.getDecimalValueAccess().getFullStopKeyword_1_0()); 
-            match(input,49,FOLLOW_49_in_rule__DecimalValue__Group_1__0__Impl29436); 
+            match(input,49,FOLLOW_49_in_rule__DecimalValue__Group_1__0__Impl29437); 
              after(grammarAccess.getDecimalValueAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -42992,7 +43003,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13492:1: ( rule__DecimalValue__Group_1__1__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13493:2: rule__DecimalValue__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__DecimalValue__Group_1__1__Impl_in_rule__DecimalValue__Group_1__129467);
+            pushFollow(FOLLOW_rule__DecimalValue__Group_1__1__Impl_in_rule__DecimalValue__Group_1__129468);
             rule__DecimalValue__Group_1__1__Impl();
 
             state._fsp--;
@@ -43029,7 +43040,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13505:1: RULE_INT
             {
              before(grammarAccess.getDecimalValueAccess().getINTTerminalRuleCall_1_1()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__DecimalValue__Group_1__1__Impl29494); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__DecimalValue__Group_1__1__Impl29495); 
              after(grammarAccess.getDecimalValueAccess().getINTTerminalRuleCall_1_1()); 
 
             }
@@ -43063,7 +43074,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13526:1: ( rule__Dom3Mod__UnorderedGroup_0__0 {...}?)
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13527:2: rule__Dom3Mod__UnorderedGroup_0__0 {...}?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__0_in_rule__Dom3Mod__UnorderedGroup_029528);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__0_in_rule__Dom3Mod__UnorderedGroup_029529);
             rule__Dom3Mod__UnorderedGroup_0__0();
 
             state._fsp--;
@@ -43102,9 +43113,9 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13544:3: ( ({...}? => ( ( ( rule__Dom3Mod__Group_0_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_2__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_3__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_4__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_5__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_6__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_7__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_8__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_9__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_10__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_11__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_12__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_13__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_14__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_15__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_16__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_17__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_18__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_19__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_20__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_21__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_22__0 ) ) ) ) | ({...}? => ( ( ( '#end' ) ) ) ) )
             {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13544:3: ( ({...}? => ( ( ( rule__Dom3Mod__Group_0_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_2__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_3__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_4__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_5__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_6__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_7__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_8__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_9__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_10__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_11__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_12__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_13__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_14__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_15__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_16__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_17__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_18__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_19__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_20__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_21__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_22__0 ) ) ) ) | ({...}? => ( ( ( '#end' ) ) ) ) )
-            int alt117=24;
-            alt117 = dfa117.predict(input);
-            switch (alt117) {
+            int alt118=24;
+            alt118 = dfa118.predict(input);
+            switch (alt118) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13546:4: ({...}? => ( ( ( rule__Dom3Mod__Group_0_0__0 ) ) ) )
                     {
@@ -43130,7 +43141,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13557:7: ( rule__Dom3Mod__Group_0_0__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13557:8: rule__Dom3Mod__Group_0_0__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_0__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29617);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_0__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29618);
                     rule__Dom3Mod__Group_0_0__0();
 
                     state._fsp--;
@@ -43176,7 +43187,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13574:7: ( rule__Dom3Mod__Group_0_1__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13574:8: rule__Dom3Mod__Group_0_1__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_1__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29708);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_1__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29709);
                     rule__Dom3Mod__Group_0_1__0();
 
                     state._fsp--;
@@ -43222,7 +43233,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13591:7: ( rule__Dom3Mod__Group_0_2__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13591:8: rule__Dom3Mod__Group_0_2__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_2__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29799);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_2__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29800);
                     rule__Dom3Mod__Group_0_2__0();
 
                     state._fsp--;
@@ -43268,7 +43279,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13608:7: ( rule__Dom3Mod__Group_0_3__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13608:8: rule__Dom3Mod__Group_0_3__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_3__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29890);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_3__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29891);
                     rule__Dom3Mod__Group_0_3__0();
 
                     state._fsp--;
@@ -43314,7 +43325,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13625:7: ( rule__Dom3Mod__Group_0_4__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13625:8: rule__Dom3Mod__Group_0_4__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_4__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29981);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_4__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29982);
                     rule__Dom3Mod__Group_0_4__0();
 
                     state._fsp--;
@@ -43360,7 +43371,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13642:7: ( rule__Dom3Mod__Group_0_5__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13642:8: rule__Dom3Mod__Group_0_5__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_5__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30072);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_5__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30073);
                     rule__Dom3Mod__Group_0_5__0();
 
                     state._fsp--;
@@ -43406,7 +43417,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13659:7: ( rule__Dom3Mod__Group_0_6__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13659:8: rule__Dom3Mod__Group_0_6__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_6__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30163);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_6__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30164);
                     rule__Dom3Mod__Group_0_6__0();
 
                     state._fsp--;
@@ -43452,7 +43463,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13676:7: ( rule__Dom3Mod__Group_0_7__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13676:8: rule__Dom3Mod__Group_0_7__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_7__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30254);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_7__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30255);
                     rule__Dom3Mod__Group_0_7__0();
 
                     state._fsp--;
@@ -43498,7 +43509,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13693:7: ( rule__Dom3Mod__Group_0_8__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13693:8: rule__Dom3Mod__Group_0_8__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_8__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30345);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_8__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30346);
                     rule__Dom3Mod__Group_0_8__0();
 
                     state._fsp--;
@@ -43544,7 +43555,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13710:7: ( rule__Dom3Mod__Group_0_9__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13710:8: rule__Dom3Mod__Group_0_9__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_9__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30436);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_9__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30437);
                     rule__Dom3Mod__Group_0_9__0();
 
                     state._fsp--;
@@ -43590,7 +43601,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13727:7: ( rule__Dom3Mod__Group_0_10__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13727:8: rule__Dom3Mod__Group_0_10__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_10__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30527);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_10__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30528);
                     rule__Dom3Mod__Group_0_10__0();
 
                     state._fsp--;
@@ -43636,7 +43647,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13744:7: ( rule__Dom3Mod__Group_0_11__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13744:8: rule__Dom3Mod__Group_0_11__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_11__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30618);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_11__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30619);
                     rule__Dom3Mod__Group_0_11__0();
 
                     state._fsp--;
@@ -43682,7 +43693,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13761:7: ( rule__Dom3Mod__Group_0_12__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13761:8: rule__Dom3Mod__Group_0_12__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_12__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30709);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_12__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30710);
                     rule__Dom3Mod__Group_0_12__0();
 
                     state._fsp--;
@@ -43728,7 +43739,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13778:7: ( rule__Dom3Mod__Group_0_13__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13778:8: rule__Dom3Mod__Group_0_13__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_13__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30800);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_13__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30801);
                     rule__Dom3Mod__Group_0_13__0();
 
                     state._fsp--;
@@ -43774,7 +43785,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13795:7: ( rule__Dom3Mod__Group_0_14__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13795:8: rule__Dom3Mod__Group_0_14__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_14__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30891);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_14__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30892);
                     rule__Dom3Mod__Group_0_14__0();
 
                     state._fsp--;
@@ -43820,7 +43831,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13812:7: ( rule__Dom3Mod__Group_0_15__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13812:8: rule__Dom3Mod__Group_0_15__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_15__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30982);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_15__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30983);
                     rule__Dom3Mod__Group_0_15__0();
 
                     state._fsp--;
@@ -43866,7 +43877,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13829:7: ( rule__Dom3Mod__Group_0_16__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13829:8: rule__Dom3Mod__Group_0_16__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_16__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31073);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_16__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31074);
                     rule__Dom3Mod__Group_0_16__0();
 
                     state._fsp--;
@@ -43912,7 +43923,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13846:7: ( rule__Dom3Mod__Group_0_17__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13846:8: rule__Dom3Mod__Group_0_17__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_17__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31164);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_17__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31165);
                     rule__Dom3Mod__Group_0_17__0();
 
                     state._fsp--;
@@ -43958,7 +43969,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13863:7: ( rule__Dom3Mod__Group_0_18__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13863:8: rule__Dom3Mod__Group_0_18__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_18__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31255);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_18__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31256);
                     rule__Dom3Mod__Group_0_18__0();
 
                     state._fsp--;
@@ -44004,7 +44015,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13880:7: ( rule__Dom3Mod__Group_0_19__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13880:8: rule__Dom3Mod__Group_0_19__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_19__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31346);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_19__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31347);
                     rule__Dom3Mod__Group_0_19__0();
 
                     state._fsp--;
@@ -44050,7 +44061,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13897:7: ( rule__Dom3Mod__Group_0_20__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13897:8: rule__Dom3Mod__Group_0_20__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_20__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31437);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_20__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31438);
                     rule__Dom3Mod__Group_0_20__0();
 
                     state._fsp--;
@@ -44096,7 +44107,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13914:7: ( rule__Dom3Mod__Group_0_21__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13914:8: rule__Dom3Mod__Group_0_21__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_21__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31528);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_21__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31529);
                     rule__Dom3Mod__Group_0_21__0();
 
                     state._fsp--;
@@ -44142,7 +44153,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13931:7: ( rule__Dom3Mod__Group_0_22__0 )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13931:8: rule__Dom3Mod__Group_0_22__0
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_22__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31619);
+                    pushFollow(FOLLOW_rule__Dom3Mod__Group_0_22__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31620);
                     rule__Dom3Mod__Group_0_22__0();
 
                     state._fsp--;
@@ -44188,7 +44199,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13948:7: ( '#end' )
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13949:2: '#end'
                     {
-                    match(input,34,FOLLOW_34_in_rule__Dom3Mod__UnorderedGroup_0__Impl31712); 
+                    match(input,34,FOLLOW_34_in_rule__Dom3Mod__UnorderedGroup_0__Impl31713); 
 
                     }
 
@@ -44238,19 +44249,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13969:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__1 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13970:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__1 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__031773);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__031774);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13971:2: ( rule__Dom3Mod__UnorderedGroup_0__1 )?
-            int alt118=2;
-            alt118 = dfa118.predict(input);
-            switch (alt118) {
+            int alt119=2;
+            alt119 = dfa119.predict(input);
+            switch (alt119) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13971:2: rule__Dom3Mod__UnorderedGroup_0__1
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__1_in_rule__Dom3Mod__UnorderedGroup_0__031776);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__1_in_rule__Dom3Mod__UnorderedGroup_0__031777);
                     rule__Dom3Mod__UnorderedGroup_0__1();
 
                     state._fsp--;
@@ -44289,19 +44300,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13982:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__2 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13983:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__2 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__131801);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__131802);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13984:2: ( rule__Dom3Mod__UnorderedGroup_0__2 )?
-            int alt119=2;
-            alt119 = dfa119.predict(input);
-            switch (alt119) {
+            int alt120=2;
+            alt120 = dfa120.predict(input);
+            switch (alt120) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13984:2: rule__Dom3Mod__UnorderedGroup_0__2
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__2_in_rule__Dom3Mod__UnorderedGroup_0__131804);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__2_in_rule__Dom3Mod__UnorderedGroup_0__131805);
                     rule__Dom3Mod__UnorderedGroup_0__2();
 
                     state._fsp--;
@@ -44340,19 +44351,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13995:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__3 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13996:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__3 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__231829);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__231830);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13997:2: ( rule__Dom3Mod__UnorderedGroup_0__3 )?
-            int alt120=2;
-            alt120 = dfa120.predict(input);
-            switch (alt120) {
+            int alt121=2;
+            alt121 = dfa121.predict(input);
+            switch (alt121) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:13997:2: rule__Dom3Mod__UnorderedGroup_0__3
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__3_in_rule__Dom3Mod__UnorderedGroup_0__231832);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__3_in_rule__Dom3Mod__UnorderedGroup_0__231833);
                     rule__Dom3Mod__UnorderedGroup_0__3();
 
                     state._fsp--;
@@ -44391,19 +44402,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14008:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__4 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14009:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__4 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__331857);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__331858);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14010:2: ( rule__Dom3Mod__UnorderedGroup_0__4 )?
-            int alt121=2;
-            alt121 = dfa121.predict(input);
-            switch (alt121) {
+            int alt122=2;
+            alt122 = dfa122.predict(input);
+            switch (alt122) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14010:2: rule__Dom3Mod__UnorderedGroup_0__4
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__4_in_rule__Dom3Mod__UnorderedGroup_0__331860);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__4_in_rule__Dom3Mod__UnorderedGroup_0__331861);
                     rule__Dom3Mod__UnorderedGroup_0__4();
 
                     state._fsp--;
@@ -44442,19 +44453,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14021:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__5 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14022:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__5 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__431885);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__431886);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14023:2: ( rule__Dom3Mod__UnorderedGroup_0__5 )?
-            int alt122=2;
-            alt122 = dfa122.predict(input);
-            switch (alt122) {
+            int alt123=2;
+            alt123 = dfa123.predict(input);
+            switch (alt123) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14023:2: rule__Dom3Mod__UnorderedGroup_0__5
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__5_in_rule__Dom3Mod__UnorderedGroup_0__431888);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__5_in_rule__Dom3Mod__UnorderedGroup_0__431889);
                     rule__Dom3Mod__UnorderedGroup_0__5();
 
                     state._fsp--;
@@ -44493,19 +44504,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14034:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__6 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14035:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__6 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__531913);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__531914);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14036:2: ( rule__Dom3Mod__UnorderedGroup_0__6 )?
-            int alt123=2;
-            alt123 = dfa123.predict(input);
-            switch (alt123) {
+            int alt124=2;
+            alt124 = dfa124.predict(input);
+            switch (alt124) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14036:2: rule__Dom3Mod__UnorderedGroup_0__6
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__6_in_rule__Dom3Mod__UnorderedGroup_0__531916);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__6_in_rule__Dom3Mod__UnorderedGroup_0__531917);
                     rule__Dom3Mod__UnorderedGroup_0__6();
 
                     state._fsp--;
@@ -44544,19 +44555,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14047:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__7 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14048:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__7 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__631941);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__631942);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14049:2: ( rule__Dom3Mod__UnorderedGroup_0__7 )?
-            int alt124=2;
-            alt124 = dfa124.predict(input);
-            switch (alt124) {
+            int alt125=2;
+            alt125 = dfa125.predict(input);
+            switch (alt125) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14049:2: rule__Dom3Mod__UnorderedGroup_0__7
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__7_in_rule__Dom3Mod__UnorderedGroup_0__631944);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__7_in_rule__Dom3Mod__UnorderedGroup_0__631945);
                     rule__Dom3Mod__UnorderedGroup_0__7();
 
                     state._fsp--;
@@ -44595,19 +44606,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14060:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__8 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14061:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__8 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__731969);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__731970);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14062:2: ( rule__Dom3Mod__UnorderedGroup_0__8 )?
-            int alt125=2;
-            alt125 = dfa125.predict(input);
-            switch (alt125) {
+            int alt126=2;
+            alt126 = dfa126.predict(input);
+            switch (alt126) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14062:2: rule__Dom3Mod__UnorderedGroup_0__8
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__8_in_rule__Dom3Mod__UnorderedGroup_0__731972);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__8_in_rule__Dom3Mod__UnorderedGroup_0__731973);
                     rule__Dom3Mod__UnorderedGroup_0__8();
 
                     state._fsp--;
@@ -44646,19 +44657,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14073:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__9 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14074:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__9 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__831997);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__831998);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14075:2: ( rule__Dom3Mod__UnorderedGroup_0__9 )?
-            int alt126=2;
-            alt126 = dfa126.predict(input);
-            switch (alt126) {
+            int alt127=2;
+            alt127 = dfa127.predict(input);
+            switch (alt127) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14075:2: rule__Dom3Mod__UnorderedGroup_0__9
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__9_in_rule__Dom3Mod__UnorderedGroup_0__832000);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__9_in_rule__Dom3Mod__UnorderedGroup_0__832001);
                     rule__Dom3Mod__UnorderedGroup_0__9();
 
                     state._fsp--;
@@ -44697,19 +44708,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14086:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__10 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14087:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__10 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__932025);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__932026);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14088:2: ( rule__Dom3Mod__UnorderedGroup_0__10 )?
-            int alt127=2;
-            alt127 = dfa127.predict(input);
-            switch (alt127) {
+            int alt128=2;
+            alt128 = dfa128.predict(input);
+            switch (alt128) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14088:2: rule__Dom3Mod__UnorderedGroup_0__10
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__10_in_rule__Dom3Mod__UnorderedGroup_0__932028);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__10_in_rule__Dom3Mod__UnorderedGroup_0__932029);
                     rule__Dom3Mod__UnorderedGroup_0__10();
 
                     state._fsp--;
@@ -44748,19 +44759,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14099:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__11 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14100:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__11 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1032053);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1032054);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14101:2: ( rule__Dom3Mod__UnorderedGroup_0__11 )?
-            int alt128=2;
-            alt128 = dfa128.predict(input);
-            switch (alt128) {
+            int alt129=2;
+            alt129 = dfa129.predict(input);
+            switch (alt129) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14101:2: rule__Dom3Mod__UnorderedGroup_0__11
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__11_in_rule__Dom3Mod__UnorderedGroup_0__1032056);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__11_in_rule__Dom3Mod__UnorderedGroup_0__1032057);
                     rule__Dom3Mod__UnorderedGroup_0__11();
 
                     state._fsp--;
@@ -44799,19 +44810,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14112:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__12 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14113:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__12 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1132081);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1132082);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14114:2: ( rule__Dom3Mod__UnorderedGroup_0__12 )?
-            int alt129=2;
-            alt129 = dfa129.predict(input);
-            switch (alt129) {
+            int alt130=2;
+            alt130 = dfa130.predict(input);
+            switch (alt130) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14114:2: rule__Dom3Mod__UnorderedGroup_0__12
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__12_in_rule__Dom3Mod__UnorderedGroup_0__1132084);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__12_in_rule__Dom3Mod__UnorderedGroup_0__1132085);
                     rule__Dom3Mod__UnorderedGroup_0__12();
 
                     state._fsp--;
@@ -44850,19 +44861,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14125:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__13 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14126:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__13 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1232109);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1232110);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14127:2: ( rule__Dom3Mod__UnorderedGroup_0__13 )?
-            int alt130=2;
-            alt130 = dfa130.predict(input);
-            switch (alt130) {
+            int alt131=2;
+            alt131 = dfa131.predict(input);
+            switch (alt131) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14127:2: rule__Dom3Mod__UnorderedGroup_0__13
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__13_in_rule__Dom3Mod__UnorderedGroup_0__1232112);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__13_in_rule__Dom3Mod__UnorderedGroup_0__1232113);
                     rule__Dom3Mod__UnorderedGroup_0__13();
 
                     state._fsp--;
@@ -44901,19 +44912,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14138:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__14 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14139:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__14 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1332137);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1332138);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14140:2: ( rule__Dom3Mod__UnorderedGroup_0__14 )?
-            int alt131=2;
-            alt131 = dfa131.predict(input);
-            switch (alt131) {
+            int alt132=2;
+            alt132 = dfa132.predict(input);
+            switch (alt132) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14140:2: rule__Dom3Mod__UnorderedGroup_0__14
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__14_in_rule__Dom3Mod__UnorderedGroup_0__1332140);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__14_in_rule__Dom3Mod__UnorderedGroup_0__1332141);
                     rule__Dom3Mod__UnorderedGroup_0__14();
 
                     state._fsp--;
@@ -44952,19 +44963,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14151:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__15 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14152:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__15 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1432165);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1432166);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14153:2: ( rule__Dom3Mod__UnorderedGroup_0__15 )?
-            int alt132=2;
-            alt132 = dfa132.predict(input);
-            switch (alt132) {
+            int alt133=2;
+            alt133 = dfa133.predict(input);
+            switch (alt133) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14153:2: rule__Dom3Mod__UnorderedGroup_0__15
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__15_in_rule__Dom3Mod__UnorderedGroup_0__1432168);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__15_in_rule__Dom3Mod__UnorderedGroup_0__1432169);
                     rule__Dom3Mod__UnorderedGroup_0__15();
 
                     state._fsp--;
@@ -45003,19 +45014,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14164:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__16 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14165:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__16 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1532193);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1532194);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14166:2: ( rule__Dom3Mod__UnorderedGroup_0__16 )?
-            int alt133=2;
-            alt133 = dfa133.predict(input);
-            switch (alt133) {
+            int alt134=2;
+            alt134 = dfa134.predict(input);
+            switch (alt134) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14166:2: rule__Dom3Mod__UnorderedGroup_0__16
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__16_in_rule__Dom3Mod__UnorderedGroup_0__1532196);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__16_in_rule__Dom3Mod__UnorderedGroup_0__1532197);
                     rule__Dom3Mod__UnorderedGroup_0__16();
 
                     state._fsp--;
@@ -45054,19 +45065,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14177:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__17 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14178:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__17 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1632221);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1632222);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14179:2: ( rule__Dom3Mod__UnorderedGroup_0__17 )?
-            int alt134=2;
-            alt134 = dfa134.predict(input);
-            switch (alt134) {
+            int alt135=2;
+            alt135 = dfa135.predict(input);
+            switch (alt135) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14179:2: rule__Dom3Mod__UnorderedGroup_0__17
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__17_in_rule__Dom3Mod__UnorderedGroup_0__1632224);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__17_in_rule__Dom3Mod__UnorderedGroup_0__1632225);
                     rule__Dom3Mod__UnorderedGroup_0__17();
 
                     state._fsp--;
@@ -45105,19 +45116,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14190:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__18 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14191:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__18 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1732249);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1732250);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14192:2: ( rule__Dom3Mod__UnorderedGroup_0__18 )?
-            int alt135=2;
-            alt135 = dfa135.predict(input);
-            switch (alt135) {
+            int alt136=2;
+            alt136 = dfa136.predict(input);
+            switch (alt136) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14192:2: rule__Dom3Mod__UnorderedGroup_0__18
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__18_in_rule__Dom3Mod__UnorderedGroup_0__1732252);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__18_in_rule__Dom3Mod__UnorderedGroup_0__1732253);
                     rule__Dom3Mod__UnorderedGroup_0__18();
 
                     state._fsp--;
@@ -45156,19 +45167,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14203:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__19 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14204:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__19 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1832277);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1832278);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14205:2: ( rule__Dom3Mod__UnorderedGroup_0__19 )?
-            int alt136=2;
-            alt136 = dfa136.predict(input);
-            switch (alt136) {
+            int alt137=2;
+            alt137 = dfa137.predict(input);
+            switch (alt137) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14205:2: rule__Dom3Mod__UnorderedGroup_0__19
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__19_in_rule__Dom3Mod__UnorderedGroup_0__1832280);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__19_in_rule__Dom3Mod__UnorderedGroup_0__1832281);
                     rule__Dom3Mod__UnorderedGroup_0__19();
 
                     state._fsp--;
@@ -45207,19 +45218,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14216:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__20 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14217:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__20 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1932305);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1932306);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14218:2: ( rule__Dom3Mod__UnorderedGroup_0__20 )?
-            int alt137=2;
-            alt137 = dfa137.predict(input);
-            switch (alt137) {
+            int alt138=2;
+            alt138 = dfa138.predict(input);
+            switch (alt138) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14218:2: rule__Dom3Mod__UnorderedGroup_0__20
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__20_in_rule__Dom3Mod__UnorderedGroup_0__1932308);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__20_in_rule__Dom3Mod__UnorderedGroup_0__1932309);
                     rule__Dom3Mod__UnorderedGroup_0__20();
 
                     state._fsp--;
@@ -45258,19 +45269,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14229:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__21 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14230:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__21 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2032333);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2032334);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14231:2: ( rule__Dom3Mod__UnorderedGroup_0__21 )?
-            int alt138=2;
-            alt138 = dfa138.predict(input);
-            switch (alt138) {
+            int alt139=2;
+            alt139 = dfa139.predict(input);
+            switch (alt139) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14231:2: rule__Dom3Mod__UnorderedGroup_0__21
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__21_in_rule__Dom3Mod__UnorderedGroup_0__2032336);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__21_in_rule__Dom3Mod__UnorderedGroup_0__2032337);
                     rule__Dom3Mod__UnorderedGroup_0__21();
 
                     state._fsp--;
@@ -45309,19 +45320,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14242:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__22 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14243:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__22 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2132361);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2132362);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14244:2: ( rule__Dom3Mod__UnorderedGroup_0__22 )?
-            int alt139=2;
-            alt139 = dfa139.predict(input);
-            switch (alt139) {
+            int alt140=2;
+            alt140 = dfa140.predict(input);
+            switch (alt140) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14244:2: rule__Dom3Mod__UnorderedGroup_0__22
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__22_in_rule__Dom3Mod__UnorderedGroup_0__2132364);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__22_in_rule__Dom3Mod__UnorderedGroup_0__2132365);
                     rule__Dom3Mod__UnorderedGroup_0__22();
 
                     state._fsp--;
@@ -45360,19 +45371,19 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14255:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__23 )? )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14256:2: rule__Dom3Mod__UnorderedGroup_0__Impl ( rule__Dom3Mod__UnorderedGroup_0__23 )?
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2232389);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2232390);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14257:2: ( rule__Dom3Mod__UnorderedGroup_0__23 )?
-            int alt140=2;
-            alt140 = dfa140.predict(input);
-            switch (alt140) {
+            int alt141=2;
+            alt141 = dfa141.predict(input);
+            switch (alt141) {
                 case 1 :
                     // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14257:2: rule__Dom3Mod__UnorderedGroup_0__23
                     {
-                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__23_in_rule__Dom3Mod__UnorderedGroup_0__2232392);
+                    pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__23_in_rule__Dom3Mod__UnorderedGroup_0__2232393);
                     rule__Dom3Mod__UnorderedGroup_0__23();
 
                     state._fsp--;
@@ -45411,7 +45422,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14268:1: ( rule__Dom3Mod__UnorderedGroup_0__Impl )
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14269:2: rule__Dom3Mod__UnorderedGroup_0__Impl
             {
-            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2332417);
+            pushFollow(FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2332418);
             rule__Dom3Mod__UnorderedGroup_0__Impl();
 
             state._fsp--;
@@ -45448,7 +45459,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14330:1: RULE_STRING
             {
              before(grammarAccess.getDom3ModAccess().getModnameSTRINGTerminalRuleCall_0_0_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Dom3Mod__ModnameAssignment_0_0_132493); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Dom3Mod__ModnameAssignment_0_0_132494); 
              after(grammarAccess.getDom3ModAccess().getModnameSTRINGTerminalRuleCall_0_0_1_0()); 
 
             }
@@ -45485,7 +45496,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14345:1: RULE_STRING
             {
              before(grammarAccess.getDom3ModAccess().getDescSTRINGTerminalRuleCall_0_1_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Dom3Mod__DescAssignment_0_1_132524); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Dom3Mod__DescAssignment_0_1_132525); 
              after(grammarAccess.getDom3ModAccess().getDescSTRINGTerminalRuleCall_0_1_1_0()); 
 
             }
@@ -45522,7 +45533,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14360:1: RULE_STRING
             {
              before(grammarAccess.getDom3ModAccess().getIconSTRINGTerminalRuleCall_0_2_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Dom3Mod__IconAssignment_0_2_132555); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Dom3Mod__IconAssignment_0_2_132556); 
              after(grammarAccess.getDom3ModAccess().getIconSTRINGTerminalRuleCall_0_2_1_0()); 
 
             }
@@ -45559,7 +45570,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14375:1: ruleDecimalValue
             {
              before(grammarAccess.getDom3ModAccess().getVersionDecimalValueParserRuleCall_0_3_1_0()); 
-            pushFollow(FOLLOW_ruleDecimalValue_in_rule__Dom3Mod__VersionAssignment_0_3_132586);
+            pushFollow(FOLLOW_ruleDecimalValue_in_rule__Dom3Mod__VersionAssignment_0_3_132587);
             ruleDecimalValue();
 
             state._fsp--;
@@ -45600,7 +45611,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14390:1: ruleDecimalValue
             {
              before(grammarAccess.getDom3ModAccess().getDomversionDecimalValueParserRuleCall_0_4_1_0()); 
-            pushFollow(FOLLOW_ruleDecimalValue_in_rule__Dom3Mod__DomversionAssignment_0_4_132617);
+            pushFollow(FOLLOW_ruleDecimalValue_in_rule__Dom3Mod__DomversionAssignment_0_4_132618);
             ruleDecimalValue();
 
             state._fsp--;
@@ -45641,7 +45652,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14405:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getPoppergoldINTTerminalRuleCall_0_5_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__PoppergoldAssignment_0_5_132648); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__PoppergoldAssignment_0_5_132649); 
              after(grammarAccess.getDom3ModAccess().getPoppergoldINTTerminalRuleCall_0_5_1_0()); 
 
             }
@@ -45678,7 +45689,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14420:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getResourcemultINTTerminalRuleCall_0_6_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__ResourcemultAssignment_0_6_132679); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__ResourcemultAssignment_0_6_132680); 
              after(grammarAccess.getDom3ModAccess().getResourcemultINTTerminalRuleCall_0_6_1_0()); 
 
             }
@@ -45715,7 +45726,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14435:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getSupplymultINTTerminalRuleCall_0_7_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__SupplymultAssignment_0_7_132710); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__SupplymultAssignment_0_7_132711); 
              after(grammarAccess.getDom3ModAccess().getSupplymultINTTerminalRuleCall_0_7_1_0()); 
 
             }
@@ -45752,7 +45763,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14450:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getUnresthalfincINTTerminalRuleCall_0_8_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__UnresthalfincAssignment_0_8_132741); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__UnresthalfincAssignment_0_8_132742); 
              after(grammarAccess.getDom3ModAccess().getUnresthalfincINTTerminalRuleCall_0_8_1_0()); 
 
             }
@@ -45789,7 +45800,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14465:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getUnresthalfresINTTerminalRuleCall_0_9_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__UnresthalfresAssignment_0_9_132772); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__UnresthalfresAssignment_0_9_132773); 
              after(grammarAccess.getDom3ModAccess().getUnresthalfresINTTerminalRuleCall_0_9_1_0()); 
 
             }
@@ -45826,7 +45837,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14480:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getEventisrareINTTerminalRuleCall_0_10_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__EventisrareAssignment_0_10_132803); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__EventisrareAssignment_0_10_132804); 
              after(grammarAccess.getDom3ModAccess().getEventisrareINTTerminalRuleCall_0_10_1_0()); 
 
             }
@@ -45863,7 +45874,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14495:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getTurmoilincomeINTTerminalRuleCall_0_11_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__TurmoilincomeAssignment_0_11_132834); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__TurmoilincomeAssignment_0_11_132835); 
              after(grammarAccess.getDom3ModAccess().getTurmoilincomeINTTerminalRuleCall_0_11_1_0()); 
 
             }
@@ -45900,7 +45911,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14510:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getTurmoileventsINTTerminalRuleCall_0_12_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__TurmoileventsAssignment_0_12_132865); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__TurmoileventsAssignment_0_12_132866); 
              after(grammarAccess.getDom3ModAccess().getTurmoileventsINTTerminalRuleCall_0_12_1_0()); 
 
             }
@@ -45937,7 +45948,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14525:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getDeathincomeINTTerminalRuleCall_0_13_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathincomeAssignment_0_13_132896); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathincomeAssignment_0_13_132897); 
              after(grammarAccess.getDom3ModAccess().getDeathincomeINTTerminalRuleCall_0_13_1_0()); 
 
             }
@@ -45974,7 +45985,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14540:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getDeathsupplyINTTerminalRuleCall_0_14_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathsupplyAssignment_0_14_132927); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathsupplyAssignment_0_14_132928); 
              after(grammarAccess.getDom3ModAccess().getDeathsupplyINTTerminalRuleCall_0_14_1_0()); 
 
             }
@@ -46011,7 +46022,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14555:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getDeathdeathINTTerminalRuleCall_0_15_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathdeathAssignment_0_15_132958); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathdeathAssignment_0_15_132959); 
              after(grammarAccess.getDom3ModAccess().getDeathdeathINTTerminalRuleCall_0_15_1_0()); 
 
             }
@@ -46048,7 +46059,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14570:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getSlothincomeINTTerminalRuleCall_0_16_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__SlothincomeAssignment_0_16_132989); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__SlothincomeAssignment_0_16_132990); 
              after(grammarAccess.getDom3ModAccess().getSlothincomeINTTerminalRuleCall_0_16_1_0()); 
 
             }
@@ -46085,7 +46096,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14585:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getSlothresourcesINTTerminalRuleCall_0_17_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__SlothresourcesAssignment_0_17_133020); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__SlothresourcesAssignment_0_17_133021); 
              after(grammarAccess.getDom3ModAccess().getSlothresourcesINTTerminalRuleCall_0_17_1_0()); 
 
             }
@@ -46122,7 +46133,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14600:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getColdincomeINTTerminalRuleCall_0_18_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__ColdincomeAssignment_0_18_133051); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__ColdincomeAssignment_0_18_133052); 
              after(grammarAccess.getDom3ModAccess().getColdincomeINTTerminalRuleCall_0_18_1_0()); 
 
             }
@@ -46159,7 +46170,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14615:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getColdsupplyINTTerminalRuleCall_0_19_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__ColdsupplyAssignment_0_19_133082); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__ColdsupplyAssignment_0_19_133083); 
              after(grammarAccess.getDom3ModAccess().getColdsupplyINTTerminalRuleCall_0_19_1_0()); 
 
             }
@@ -46196,7 +46207,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14630:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getMisfortuneINTTerminalRuleCall_0_20_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__MisfortuneAssignment_0_20_133113); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__MisfortuneAssignment_0_20_133114); 
              after(grammarAccess.getDom3ModAccess().getMisfortuneINTTerminalRuleCall_0_20_1_0()); 
 
             }
@@ -46233,7 +46244,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14645:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getLuckeventsINTTerminalRuleCall_0_21_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__LuckeventsAssignment_0_21_133144); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__LuckeventsAssignment_0_21_133145); 
              after(grammarAccess.getDom3ModAccess().getLuckeventsINTTerminalRuleCall_0_21_1_0()); 
 
             }
@@ -46270,7 +46281,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14660:1: RULE_INT
             {
              before(grammarAccess.getDom3ModAccess().getResearchscaleINTTerminalRuleCall_0_22_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__ResearchscaleAssignment_0_22_133175); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Dom3Mod__ResearchscaleAssignment_0_22_133176); 
              after(grammarAccess.getDom3ModAccess().getResearchscaleINTTerminalRuleCall_0_22_1_0()); 
 
             }
@@ -46307,7 +46318,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14675:1: ruleAbstractElement
             {
              before(grammarAccess.getDom3ModAccess().getElementsAbstractElementParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleAbstractElement_in_rule__Dom3Mod__ElementsAssignment_133206);
+            pushFollow(FOLLOW_ruleAbstractElement_in_rule__Dom3Mod__ElementsAssignment_133207);
             ruleAbstractElement();
 
             state._fsp--;
@@ -46348,7 +46359,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14690:1: RULE_INT
             {
              before(grammarAccess.getSelectArmorByIdAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectArmorById__ValueAssignment_133237); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectArmorById__ValueAssignment_133238); 
              after(grammarAccess.getSelectArmorByIdAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -46385,7 +46396,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14705:1: ruleArmorMods
             {
              before(grammarAccess.getSelectArmorByIdAccess().getModsArmorModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleArmorMods_in_rule__SelectArmorById__ModsAssignment_333268);
+            pushFollow(FOLLOW_ruleArmorMods_in_rule__SelectArmorById__ModsAssignment_333269);
             ruleArmorMods();
 
             state._fsp--;
@@ -46426,7 +46437,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14720:1: RULE_STRING
             {
              before(grammarAccess.getSelectArmorByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectArmorByName__ValueAssignment_133299); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectArmorByName__ValueAssignment_133300); 
              after(grammarAccess.getSelectArmorByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -46463,7 +46474,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14735:1: ruleArmorMods
             {
              before(grammarAccess.getSelectArmorByNameAccess().getModsArmorModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleArmorMods_in_rule__SelectArmorByName__ModsAssignment_333330);
+            pushFollow(FOLLOW_ruleArmorMods_in_rule__SelectArmorByName__ModsAssignment_333331);
             ruleArmorMods();
 
             state._fsp--;
@@ -46504,7 +46515,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14750:1: RULE_INT
             {
              before(grammarAccess.getNewArmorAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NewArmor__ValueAssignment_133361); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NewArmor__ValueAssignment_133362); 
              after(grammarAccess.getNewArmorAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -46541,7 +46552,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14765:1: ruleArmorMods
             {
              before(grammarAccess.getNewArmorAccess().getModsArmorModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleArmorMods_in_rule__NewArmor__ModsAssignment_333392);
+            pushFollow(FOLLOW_ruleArmorMods_in_rule__NewArmor__ModsAssignment_333393);
             ruleArmorMods();
 
             state._fsp--;
@@ -46582,7 +46593,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14780:1: RULE_STRING
             {
              before(grammarAccess.getArmorPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ArmorPattern1__ValueAssignment_133423); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ArmorPattern1__ValueAssignment_133424); 
              after(grammarAccess.getArmorPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -46619,7 +46630,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14795:1: RULE_INT
             {
              before(grammarAccess.getArmorPattern2Access().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__ArmorPattern2__ValueAssignment_133454); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__ArmorPattern2__ValueAssignment_133455); 
              after(grammarAccess.getArmorPattern2Access().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -46660,7 +46671,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14812:1: '#name'
             {
              before(grammarAccess.getArmorInst1Access().getNameNameKeyword_0()); 
-            match(input,50,FOLLOW_50_in_rule__ArmorInst1__NameAssignment33490); 
+            match(input,50,FOLLOW_50_in_rule__ArmorInst1__NameAssignment33491); 
              after(grammarAccess.getArmorInst1Access().getNameNameKeyword_0()); 
 
             }
@@ -46705,7 +46716,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14835:1: '#type'
             {
              before(grammarAccess.getArmorInst2Access().getTypeTypeKeyword_0_0()); 
-            match(input,51,FOLLOW_51_in_rule__ArmorInst2__TypeAssignment_033534); 
+            match(input,51,FOLLOW_51_in_rule__ArmorInst2__TypeAssignment_033535); 
              after(grammarAccess.getArmorInst2Access().getTypeTypeKeyword_0_0()); 
 
             }
@@ -46750,7 +46761,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14858:1: '#prot'
             {
              before(grammarAccess.getArmorInst2Access().getProtProtKeyword_1_0()); 
-            match(input,52,FOLLOW_52_in_rule__ArmorInst2__ProtAssignment_133578); 
+            match(input,52,FOLLOW_52_in_rule__ArmorInst2__ProtAssignment_133579); 
              after(grammarAccess.getArmorInst2Access().getProtProtKeyword_1_0()); 
 
             }
@@ -46795,7 +46806,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14881:1: '#def'
             {
              before(grammarAccess.getArmorInst2Access().getDefDefKeyword_2_0()); 
-            match(input,53,FOLLOW_53_in_rule__ArmorInst2__DefAssignment_233622); 
+            match(input,53,FOLLOW_53_in_rule__ArmorInst2__DefAssignment_233623); 
              after(grammarAccess.getArmorInst2Access().getDefDefKeyword_2_0()); 
 
             }
@@ -46840,7 +46851,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14904:1: '#enc'
             {
              before(grammarAccess.getArmorInst2Access().getEncEncKeyword_3_0()); 
-            match(input,54,FOLLOW_54_in_rule__ArmorInst2__EncAssignment_333666); 
+            match(input,54,FOLLOW_54_in_rule__ArmorInst2__EncAssignment_333667); 
              after(grammarAccess.getArmorInst2Access().getEncEncKeyword_3_0()); 
 
             }
@@ -46885,7 +46896,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14927:1: '#rcost'
             {
              before(grammarAccess.getArmorInst2Access().getRcostRcostKeyword_4_0()); 
-            match(input,55,FOLLOW_55_in_rule__ArmorInst2__RcostAssignment_433710); 
+            match(input,55,FOLLOW_55_in_rule__ArmorInst2__RcostAssignment_433711); 
              after(grammarAccess.getArmorInst2Access().getRcostRcostKeyword_4_0()); 
 
             }
@@ -46926,7 +46937,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14948:1: RULE_INT
             {
              before(grammarAccess.getSelectWeaponByIdAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectWeaponById__ValueAssignment_133749); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectWeaponById__ValueAssignment_133750); 
              after(grammarAccess.getSelectWeaponByIdAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -46963,7 +46974,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14963:1: ruleWeaponMods
             {
              before(grammarAccess.getSelectWeaponByIdAccess().getModsWeaponModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleWeaponMods_in_rule__SelectWeaponById__ModsAssignment_333780);
+            pushFollow(FOLLOW_ruleWeaponMods_in_rule__SelectWeaponById__ModsAssignment_333781);
             ruleWeaponMods();
 
             state._fsp--;
@@ -47004,7 +47015,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14978:1: RULE_STRING
             {
              before(grammarAccess.getSelectWeaponByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectWeaponByName__ValueAssignment_133811); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectWeaponByName__ValueAssignment_133812); 
              after(grammarAccess.getSelectWeaponByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -47041,7 +47052,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:14993:1: ruleWeaponMods
             {
              before(grammarAccess.getSelectWeaponByNameAccess().getModsWeaponModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleWeaponMods_in_rule__SelectWeaponByName__ModsAssignment_333842);
+            pushFollow(FOLLOW_ruleWeaponMods_in_rule__SelectWeaponByName__ModsAssignment_333843);
             ruleWeaponMods();
 
             state._fsp--;
@@ -47082,7 +47093,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15008:1: RULE_INT
             {
              before(grammarAccess.getNewWeaponAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NewWeapon__ValueAssignment_133873); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NewWeapon__ValueAssignment_133874); 
              after(grammarAccess.getNewWeaponAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -47119,7 +47130,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15023:1: ruleWeaponMods
             {
              before(grammarAccess.getNewWeaponAccess().getModsWeaponModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleWeaponMods_in_rule__NewWeapon__ModsAssignment_333904);
+            pushFollow(FOLLOW_ruleWeaponMods_in_rule__NewWeapon__ModsAssignment_333905);
             ruleWeaponMods();
 
             state._fsp--;
@@ -47160,7 +47171,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15038:1: RULE_STRING
             {
              before(grammarAccess.getWeaponPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__WeaponPattern1__ValueAssignment_133935); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__WeaponPattern1__ValueAssignment_133936); 
              after(grammarAccess.getWeaponPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -47197,7 +47208,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15053:1: RULE_INT
             {
              before(grammarAccess.getWeaponPattern2Access().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__WeaponPattern2__ValueAssignment_133966); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__WeaponPattern2__ValueAssignment_133967); 
              after(grammarAccess.getWeaponPattern2Access().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -47234,7 +47245,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15068:1: RULE_INT
             {
              before(grammarAccess.getWeaponPattern3Access().getValue1INTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__WeaponPattern3__Value1Assignment_133997); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__WeaponPattern3__Value1Assignment_133998); 
              after(grammarAccess.getWeaponPattern3Access().getValue1INTTerminalRuleCall_1_0()); 
 
             }
@@ -47271,7 +47282,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15083:1: RULE_INT
             {
              before(grammarAccess.getWeaponPattern3Access().getValue2INTTerminalRuleCall_2_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__WeaponPattern3__Value2Assignment_234028); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__WeaponPattern3__Value2Assignment_234029); 
              after(grammarAccess.getWeaponPattern3Access().getValue2INTTerminalRuleCall_2_0()); 
 
             }
@@ -47312,7 +47323,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15100:1: '#name'
             {
              before(grammarAccess.getWeaponInst1Access().getNameNameKeyword_0()); 
-            match(input,50,FOLLOW_50_in_rule__WeaponInst1__NameAssignment34064); 
+            match(input,50,FOLLOW_50_in_rule__WeaponInst1__NameAssignment34065); 
              after(grammarAccess.getWeaponInst1Access().getNameNameKeyword_0()); 
 
             }
@@ -47357,7 +47368,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15123:1: '#dmg'
             {
              before(grammarAccess.getWeaponInst2Access().getDmgDmgKeyword_0_0()); 
-            match(input,56,FOLLOW_56_in_rule__WeaponInst2__DmgAssignment_034108); 
+            match(input,56,FOLLOW_56_in_rule__WeaponInst2__DmgAssignment_034109); 
              after(grammarAccess.getWeaponInst2Access().getDmgDmgKeyword_0_0()); 
 
             }
@@ -47402,7 +47413,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15146:1: '#nratt'
             {
              before(grammarAccess.getWeaponInst2Access().getNrattNrattKeyword_1_0()); 
-            match(input,57,FOLLOW_57_in_rule__WeaponInst2__NrattAssignment_134152); 
+            match(input,57,FOLLOW_57_in_rule__WeaponInst2__NrattAssignment_134153); 
              after(grammarAccess.getWeaponInst2Access().getNrattNrattKeyword_1_0()); 
 
             }
@@ -47447,7 +47458,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15169:1: '#att'
             {
              before(grammarAccess.getWeaponInst2Access().getAttAttKeyword_2_0()); 
-            match(input,58,FOLLOW_58_in_rule__WeaponInst2__AttAssignment_234196); 
+            match(input,58,FOLLOW_58_in_rule__WeaponInst2__AttAssignment_234197); 
              after(grammarAccess.getWeaponInst2Access().getAttAttKeyword_2_0()); 
 
             }
@@ -47492,7 +47503,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15192:1: '#def'
             {
              before(grammarAccess.getWeaponInst2Access().getDefDefKeyword_3_0()); 
-            match(input,53,FOLLOW_53_in_rule__WeaponInst2__DefAssignment_334240); 
+            match(input,53,FOLLOW_53_in_rule__WeaponInst2__DefAssignment_334241); 
              after(grammarAccess.getWeaponInst2Access().getDefDefKeyword_3_0()); 
 
             }
@@ -47537,7 +47548,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15215:1: '#len'
             {
              before(grammarAccess.getWeaponInst2Access().getLenLenKeyword_4_0()); 
-            match(input,59,FOLLOW_59_in_rule__WeaponInst2__LenAssignment_434284); 
+            match(input,59,FOLLOW_59_in_rule__WeaponInst2__LenAssignment_434285); 
              after(grammarAccess.getWeaponInst2Access().getLenLenKeyword_4_0()); 
 
             }
@@ -47582,7 +47593,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15238:1: '#range'
             {
              before(grammarAccess.getWeaponInst2Access().getRangeRangeKeyword_5_0()); 
-            match(input,60,FOLLOW_60_in_rule__WeaponInst2__RangeAssignment_534328); 
+            match(input,60,FOLLOW_60_in_rule__WeaponInst2__RangeAssignment_534329); 
              after(grammarAccess.getWeaponInst2Access().getRangeRangeKeyword_5_0()); 
 
             }
@@ -47627,7 +47638,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15261:1: '#ammo'
             {
              before(grammarAccess.getWeaponInst2Access().getAmmoAmmoKeyword_6_0()); 
-            match(input,61,FOLLOW_61_in_rule__WeaponInst2__AmmoAssignment_634372); 
+            match(input,61,FOLLOW_61_in_rule__WeaponInst2__AmmoAssignment_634373); 
              after(grammarAccess.getWeaponInst2Access().getAmmoAmmoKeyword_6_0()); 
 
             }
@@ -47672,7 +47683,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15284:1: '#rcost'
             {
              before(grammarAccess.getWeaponInst2Access().getRcostRcostKeyword_7_0()); 
-            match(input,55,FOLLOW_55_in_rule__WeaponInst2__RcostAssignment_734416); 
+            match(input,55,FOLLOW_55_in_rule__WeaponInst2__RcostAssignment_734417); 
              after(grammarAccess.getWeaponInst2Access().getRcostRcostKeyword_7_0()); 
 
             }
@@ -47717,7 +47728,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15307:1: '#sound'
             {
              before(grammarAccess.getWeaponInst2Access().getSoundSoundKeyword_8_0()); 
-            match(input,62,FOLLOW_62_in_rule__WeaponInst2__SoundAssignment_834460); 
+            match(input,62,FOLLOW_62_in_rule__WeaponInst2__SoundAssignment_834461); 
              after(grammarAccess.getWeaponInst2Access().getSoundSoundKeyword_8_0()); 
 
             }
@@ -47762,7 +47773,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15330:1: '#aoe'
             {
              before(grammarAccess.getWeaponInst2Access().getAoeAoeKeyword_9_0()); 
-            match(input,63,FOLLOW_63_in_rule__WeaponInst2__AoeAssignment_934504); 
+            match(input,63,FOLLOW_63_in_rule__WeaponInst2__AoeAssignment_934505); 
              after(grammarAccess.getWeaponInst2Access().getAoeAoeKeyword_9_0()); 
 
             }
@@ -47807,7 +47818,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15353:1: '#secondaryeffect'
             {
              before(grammarAccess.getWeaponInst2Access().getSecondaryeffectSecondaryeffectKeyword_10_0()); 
-            match(input,64,FOLLOW_64_in_rule__WeaponInst2__SecondaryeffectAssignment_1034548); 
+            match(input,64,FOLLOW_64_in_rule__WeaponInst2__SecondaryeffectAssignment_1034549); 
              after(grammarAccess.getWeaponInst2Access().getSecondaryeffectSecondaryeffectKeyword_10_0()); 
 
             }
@@ -47852,7 +47863,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15376:1: '#secondaryeffectalways'
             {
              before(grammarAccess.getWeaponInst2Access().getSecondaryeffectalwaysSecondaryeffectalwaysKeyword_11_0()); 
-            match(input,65,FOLLOW_65_in_rule__WeaponInst2__SecondaryeffectalwaysAssignment_1134592); 
+            match(input,65,FOLLOW_65_in_rule__WeaponInst2__SecondaryeffectalwaysAssignment_1134593); 
              after(grammarAccess.getWeaponInst2Access().getSecondaryeffectalwaysSecondaryeffectalwaysKeyword_11_0()); 
 
             }
@@ -47897,7 +47908,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15399:1: '#explspr'
             {
              before(grammarAccess.getWeaponInst2Access().getExplsprExplsprKeyword_12_0()); 
-            match(input,66,FOLLOW_66_in_rule__WeaponInst2__ExplsprAssignment_1234636); 
+            match(input,66,FOLLOW_66_in_rule__WeaponInst2__ExplsprAssignment_1234637); 
              after(grammarAccess.getWeaponInst2Access().getExplsprExplsprKeyword_12_0()); 
 
             }
@@ -47942,7 +47953,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15422:1: '#flyspr'
             {
              before(grammarAccess.getWeaponInst3Access().getFlysprFlysprKeyword_0()); 
-            match(input,67,FOLLOW_67_in_rule__WeaponInst3__FlysprAssignment34680); 
+            match(input,67,FOLLOW_67_in_rule__WeaponInst3__FlysprAssignment34681); 
              after(grammarAccess.getWeaponInst3Access().getFlysprFlysprKeyword_0()); 
 
             }
@@ -47987,7 +47998,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15445:1: '#twohanded'
             {
              before(grammarAccess.getWeaponInst4Access().getTwohandedTwohandedKeyword_0_0()); 
-            match(input,68,FOLLOW_68_in_rule__WeaponInst4__TwohandedAssignment_034724); 
+            match(input,68,FOLLOW_68_in_rule__WeaponInst4__TwohandedAssignment_034725); 
              after(grammarAccess.getWeaponInst4Access().getTwohandedTwohandedKeyword_0_0()); 
 
             }
@@ -48032,7 +48043,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15468:1: '#armorpiercing'
             {
              before(grammarAccess.getWeaponInst4Access().getArmorpiercingArmorpiercingKeyword_1_0()); 
-            match(input,69,FOLLOW_69_in_rule__WeaponInst4__ArmorpiercingAssignment_134768); 
+            match(input,69,FOLLOW_69_in_rule__WeaponInst4__ArmorpiercingAssignment_134769); 
              after(grammarAccess.getWeaponInst4Access().getArmorpiercingArmorpiercingKeyword_1_0()); 
 
             }
@@ -48077,7 +48088,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15491:1: '#armornegating'
             {
              before(grammarAccess.getWeaponInst4Access().getArmornegatingArmornegatingKeyword_2_0()); 
-            match(input,70,FOLLOW_70_in_rule__WeaponInst4__ArmornegatingAssignment_234812); 
+            match(input,70,FOLLOW_70_in_rule__WeaponInst4__ArmornegatingAssignment_234813); 
              after(grammarAccess.getWeaponInst4Access().getArmornegatingArmornegatingKeyword_2_0()); 
 
             }
@@ -48122,7 +48133,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15514:1: '#magic'
             {
              before(grammarAccess.getWeaponInst4Access().getMagicMagicKeyword_3_0()); 
-            match(input,71,FOLLOW_71_in_rule__WeaponInst4__MagicAssignment_334856); 
+            match(input,71,FOLLOW_71_in_rule__WeaponInst4__MagicAssignment_334857); 
              after(grammarAccess.getWeaponInst4Access().getMagicMagicKeyword_3_0()); 
 
             }
@@ -48167,7 +48178,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15537:1: '#dt_normal'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_normalDt_normalKeyword_4_0()); 
-            match(input,72,FOLLOW_72_in_rule__WeaponInst4__Dt_normalAssignment_434900); 
+            match(input,72,FOLLOW_72_in_rule__WeaponInst4__Dt_normalAssignment_434901); 
              after(grammarAccess.getWeaponInst4Access().getDt_normalDt_normalKeyword_4_0()); 
 
             }
@@ -48212,7 +48223,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15560:1: '#dt_stun'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_stunDt_stunKeyword_5_0()); 
-            match(input,73,FOLLOW_73_in_rule__WeaponInst4__Dt_stunAssignment_534944); 
+            match(input,73,FOLLOW_73_in_rule__WeaponInst4__Dt_stunAssignment_534945); 
              after(grammarAccess.getWeaponInst4Access().getDt_stunDt_stunKeyword_5_0()); 
 
             }
@@ -48257,7 +48268,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15583:1: '#dt_paralyze'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_paralyzeDt_paralyzeKeyword_6_0()); 
-            match(input,74,FOLLOW_74_in_rule__WeaponInst4__Dt_paralyzeAssignment_634988); 
+            match(input,74,FOLLOW_74_in_rule__WeaponInst4__Dt_paralyzeAssignment_634989); 
              after(grammarAccess.getWeaponInst4Access().getDt_paralyzeDt_paralyzeKeyword_6_0()); 
 
             }
@@ -48302,7 +48313,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15606:1: '#dt_poison'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_poisonDt_poisonKeyword_7_0()); 
-            match(input,75,FOLLOW_75_in_rule__WeaponInst4__Dt_poisonAssignment_735032); 
+            match(input,75,FOLLOW_75_in_rule__WeaponInst4__Dt_poisonAssignment_735033); 
              after(grammarAccess.getWeaponInst4Access().getDt_poisonDt_poisonKeyword_7_0()); 
 
             }
@@ -48347,7 +48358,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15629:1: '#dt_cap'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_capDt_capKeyword_8_0()); 
-            match(input,76,FOLLOW_76_in_rule__WeaponInst4__Dt_capAssignment_835076); 
+            match(input,76,FOLLOW_76_in_rule__WeaponInst4__Dt_capAssignment_835077); 
              after(grammarAccess.getWeaponInst4Access().getDt_capDt_capKeyword_8_0()); 
 
             }
@@ -48392,7 +48403,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15652:1: '#dt_demon'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_demonDt_demonKeyword_9_0()); 
-            match(input,77,FOLLOW_77_in_rule__WeaponInst4__Dt_demonAssignment_935120); 
+            match(input,77,FOLLOW_77_in_rule__WeaponInst4__Dt_demonAssignment_935121); 
              after(grammarAccess.getWeaponInst4Access().getDt_demonDt_demonKeyword_9_0()); 
 
             }
@@ -48437,7 +48448,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15675:1: '#dt_demononly'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_demononlyDt_demononlyKeyword_10_0()); 
-            match(input,78,FOLLOW_78_in_rule__WeaponInst4__Dt_demononlyAssignment_1035164); 
+            match(input,78,FOLLOW_78_in_rule__WeaponInst4__Dt_demononlyAssignment_1035165); 
              after(grammarAccess.getWeaponInst4Access().getDt_demononlyDt_demononlyKeyword_10_0()); 
 
             }
@@ -48482,7 +48493,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15698:1: '#dt_holy'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_holyDt_holyKeyword_11_0()); 
-            match(input,79,FOLLOW_79_in_rule__WeaponInst4__Dt_holyAssignment_1135208); 
+            match(input,79,FOLLOW_79_in_rule__WeaponInst4__Dt_holyAssignment_1135209); 
              after(grammarAccess.getWeaponInst4Access().getDt_holyDt_holyKeyword_11_0()); 
 
             }
@@ -48527,7 +48538,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15721:1: '#dt_magic'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_magicDt_magicKeyword_12_0()); 
-            match(input,80,FOLLOW_80_in_rule__WeaponInst4__Dt_magicAssignment_1235252); 
+            match(input,80,FOLLOW_80_in_rule__WeaponInst4__Dt_magicAssignment_1235253); 
              after(grammarAccess.getWeaponInst4Access().getDt_magicDt_magicKeyword_12_0()); 
 
             }
@@ -48572,7 +48583,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15744:1: '#dt_small'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_smallDt_smallKeyword_13_0()); 
-            match(input,81,FOLLOW_81_in_rule__WeaponInst4__Dt_smallAssignment_1335296); 
+            match(input,81,FOLLOW_81_in_rule__WeaponInst4__Dt_smallAssignment_1335297); 
              after(grammarAccess.getWeaponInst4Access().getDt_smallDt_smallKeyword_13_0()); 
 
             }
@@ -48617,7 +48628,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15767:1: '#dt_large'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_largeDt_largeKeyword_14_0()); 
-            match(input,82,FOLLOW_82_in_rule__WeaponInst4__Dt_largeAssignment_1435340); 
+            match(input,82,FOLLOW_82_in_rule__WeaponInst4__Dt_largeAssignment_1435341); 
              after(grammarAccess.getWeaponInst4Access().getDt_largeDt_largeKeyword_14_0()); 
 
             }
@@ -48662,7 +48673,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15790:1: '#dt_constructonly'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_constructonlyDt_constructonlyKeyword_15_0()); 
-            match(input,83,FOLLOW_83_in_rule__WeaponInst4__Dt_constructonlyAssignment_1535384); 
+            match(input,83,FOLLOW_83_in_rule__WeaponInst4__Dt_constructonlyAssignment_1535385); 
              after(grammarAccess.getWeaponInst4Access().getDt_constructonlyDt_constructonlyKeyword_15_0()); 
 
             }
@@ -48707,7 +48718,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15813:1: '#dt_raise'
             {
              before(grammarAccess.getWeaponInst4Access().getDt_raiseDt_raiseKeyword_16_0()); 
-            match(input,84,FOLLOW_84_in_rule__WeaponInst4__Dt_raiseAssignment_1635428); 
+            match(input,84,FOLLOW_84_in_rule__WeaponInst4__Dt_raiseAssignment_1635429); 
              after(grammarAccess.getWeaponInst4Access().getDt_raiseDt_raiseKeyword_16_0()); 
 
             }
@@ -48752,7 +48763,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15836:1: '#mind'
             {
              before(grammarAccess.getWeaponInst4Access().getMindMindKeyword_17_0()); 
-            match(input,85,FOLLOW_85_in_rule__WeaponInst4__MindAssignment_1735472); 
+            match(input,85,FOLLOW_85_in_rule__WeaponInst4__MindAssignment_1735473); 
              after(grammarAccess.getWeaponInst4Access().getMindMindKeyword_17_0()); 
 
             }
@@ -48797,7 +48808,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15859:1: '#cold'
             {
              before(grammarAccess.getWeaponInst4Access().getColdColdKeyword_18_0()); 
-            match(input,86,FOLLOW_86_in_rule__WeaponInst4__ColdAssignment_1835516); 
+            match(input,86,FOLLOW_86_in_rule__WeaponInst4__ColdAssignment_1835517); 
              after(grammarAccess.getWeaponInst4Access().getColdColdKeyword_18_0()); 
 
             }
@@ -48842,7 +48853,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15882:1: '#fire'
             {
              before(grammarAccess.getWeaponInst4Access().getFireFireKeyword_19_0()); 
-            match(input,87,FOLLOW_87_in_rule__WeaponInst4__FireAssignment_1935560); 
+            match(input,87,FOLLOW_87_in_rule__WeaponInst4__FireAssignment_1935561); 
              after(grammarAccess.getWeaponInst4Access().getFireFireKeyword_19_0()); 
 
             }
@@ -48887,7 +48898,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15905:1: '#shock'
             {
              before(grammarAccess.getWeaponInst4Access().getShockShockKeyword_20_0()); 
-            match(input,88,FOLLOW_88_in_rule__WeaponInst4__ShockAssignment_2035604); 
+            match(input,88,FOLLOW_88_in_rule__WeaponInst4__ShockAssignment_2035605); 
              after(grammarAccess.getWeaponInst4Access().getShockShockKeyword_20_0()); 
 
             }
@@ -48932,7 +48943,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15928:1: '#poison'
             {
              before(grammarAccess.getWeaponInst4Access().getPoisonPoisonKeyword_21_0()); 
-            match(input,89,FOLLOW_89_in_rule__WeaponInst4__PoisonAssignment_2135648); 
+            match(input,89,FOLLOW_89_in_rule__WeaponInst4__PoisonAssignment_2135649); 
              after(grammarAccess.getWeaponInst4Access().getPoisonPoisonKeyword_21_0()); 
 
             }
@@ -48977,7 +48988,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15951:1: '#bonus'
             {
              before(grammarAccess.getWeaponInst4Access().getBonusBonusKeyword_22_0()); 
-            match(input,90,FOLLOW_90_in_rule__WeaponInst4__BonusAssignment_2235692); 
+            match(input,90,FOLLOW_90_in_rule__WeaponInst4__BonusAssignment_2235693); 
              after(grammarAccess.getWeaponInst4Access().getBonusBonusKeyword_22_0()); 
 
             }
@@ -49022,7 +49033,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15974:1: '#charge'
             {
              before(grammarAccess.getWeaponInst4Access().getChargeChargeKeyword_23_0()); 
-            match(input,91,FOLLOW_91_in_rule__WeaponInst4__ChargeAssignment_2335736); 
+            match(input,91,FOLLOW_91_in_rule__WeaponInst4__ChargeAssignment_2335737); 
              after(grammarAccess.getWeaponInst4Access().getChargeChargeKeyword_23_0()); 
 
             }
@@ -49067,7 +49078,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:15997:1: '#flail'
             {
              before(grammarAccess.getWeaponInst4Access().getFlailFlailKeyword_24_0()); 
-            match(input,92,FOLLOW_92_in_rule__WeaponInst4__FlailAssignment_2435780); 
+            match(input,92,FOLLOW_92_in_rule__WeaponInst4__FlailAssignment_2435781); 
              after(grammarAccess.getWeaponInst4Access().getFlailFlailKeyword_24_0()); 
 
             }
@@ -49112,7 +49123,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16020:1: '#nostr'
             {
              before(grammarAccess.getWeaponInst4Access().getNostrNostrKeyword_25_0()); 
-            match(input,93,FOLLOW_93_in_rule__WeaponInst4__NostrAssignment_2535824); 
+            match(input,93,FOLLOW_93_in_rule__WeaponInst4__NostrAssignment_2535825); 
              after(grammarAccess.getWeaponInst4Access().getNostrNostrKeyword_25_0()); 
 
             }
@@ -49157,7 +49168,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16043:1: '#nostrength'
             {
              before(grammarAccess.getWeaponInst4Access().getNostrNostrengthKeyword_26_0()); 
-            match(input,94,FOLLOW_94_in_rule__WeaponInst4__NostrAssignment_2635868); 
+            match(input,94,FOLLOW_94_in_rule__WeaponInst4__NostrAssignment_2635869); 
              after(grammarAccess.getWeaponInst4Access().getNostrNostrengthKeyword_26_0()); 
 
             }
@@ -49202,7 +49213,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16066:1: '#mrnegates'
             {
              before(grammarAccess.getWeaponInst4Access().getMrnegatesMrnegatesKeyword_27_0()); 
-            match(input,95,FOLLOW_95_in_rule__WeaponInst4__MrnegatesAssignment_2735912); 
+            match(input,95,FOLLOW_95_in_rule__WeaponInst4__MrnegatesAssignment_2735913); 
              after(grammarAccess.getWeaponInst4Access().getMrnegatesMrnegatesKeyword_27_0()); 
 
             }
@@ -49247,7 +49258,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16089:1: '#mrnegateseasily'
             {
              before(grammarAccess.getWeaponInst4Access().getMrnegateseasilyMrnegateseasilyKeyword_28_0()); 
-            match(input,96,FOLLOW_96_in_rule__WeaponInst4__MrnegateseasilyAssignment_2835956); 
+            match(input,96,FOLLOW_96_in_rule__WeaponInst4__MrnegateseasilyAssignment_2835957); 
              after(grammarAccess.getWeaponInst4Access().getMrnegateseasilyMrnegateseasilyKeyword_28_0()); 
 
             }
@@ -49288,7 +49299,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16110:1: RULE_INT
             {
              before(grammarAccess.getSelectMonsterByIdAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectMonsterById__ValueAssignment_135995); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectMonsterById__ValueAssignment_135996); 
              after(grammarAccess.getSelectMonsterByIdAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -49325,7 +49336,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16125:1: ruleMonsterMods
             {
              before(grammarAccess.getSelectMonsterByIdAccess().getModsMonsterModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleMonsterMods_in_rule__SelectMonsterById__ModsAssignment_336026);
+            pushFollow(FOLLOW_ruleMonsterMods_in_rule__SelectMonsterById__ModsAssignment_336027);
             ruleMonsterMods();
 
             state._fsp--;
@@ -49366,7 +49377,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16140:1: RULE_STRING
             {
              before(grammarAccess.getSelectMonsterByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectMonsterByName__ValueAssignment_136057); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectMonsterByName__ValueAssignment_136058); 
              after(grammarAccess.getSelectMonsterByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -49403,7 +49414,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16155:1: ruleMonsterMods
             {
              before(grammarAccess.getSelectMonsterByNameAccess().getModsMonsterModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleMonsterMods_in_rule__SelectMonsterByName__ModsAssignment_336088);
+            pushFollow(FOLLOW_ruleMonsterMods_in_rule__SelectMonsterByName__ModsAssignment_336089);
             ruleMonsterMods();
 
             state._fsp--;
@@ -49444,7 +49455,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16170:1: RULE_INT
             {
              before(grammarAccess.getNewMonsterAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NewMonster__ValueAssignment_136119); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NewMonster__ValueAssignment_136120); 
              after(grammarAccess.getNewMonsterAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -49481,7 +49492,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16185:1: ruleMonsterMods
             {
              before(grammarAccess.getNewMonsterAccess().getModsMonsterModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleMonsterMods_in_rule__NewMonster__ModsAssignment_336150);
+            pushFollow(FOLLOW_ruleMonsterMods_in_rule__NewMonster__ModsAssignment_336151);
             ruleMonsterMods();
 
             state._fsp--;
@@ -49522,7 +49533,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16200:1: RULE_STRING
             {
              before(grammarAccess.getMonsterPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__MonsterPattern1__ValueAssignment_136181); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__MonsterPattern1__ValueAssignment_136182); 
              after(grammarAccess.getMonsterPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -49559,7 +49570,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16215:1: RULE_INT
             {
              before(grammarAccess.getMonsterPattern2Access().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__MonsterPattern2__ValueAssignment_136212); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__MonsterPattern2__ValueAssignment_136213); 
              after(grammarAccess.getMonsterPattern2Access().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -49596,7 +49607,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16230:1: RULE_INT
             {
              before(grammarAccess.getMonsterPattern3Access().getValue1INTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__MonsterPattern3__Value1Assignment_136243); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__MonsterPattern3__Value1Assignment_136244); 
              after(grammarAccess.getMonsterPattern3Access().getValue1INTTerminalRuleCall_1_0()); 
 
             }
@@ -49633,7 +49644,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16245:1: RULE_INT
             {
              before(grammarAccess.getMonsterPattern3Access().getValue2INTTerminalRuleCall_2_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__MonsterPattern3__Value2Assignment_236274); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__MonsterPattern3__Value2Assignment_236275); 
              after(grammarAccess.getMonsterPattern3Access().getValue2INTTerminalRuleCall_2_0()); 
 
             }
@@ -49670,7 +49681,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16260:1: RULE_STRING
             {
              before(grammarAccess.getMonsterPattern5Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__MonsterPattern5__Value1Assignment_1_036305); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__MonsterPattern5__Value1Assignment_1_036306); 
              after(grammarAccess.getMonsterPattern5Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
 
             }
@@ -49707,7 +49718,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16275:1: RULE_INT
             {
              before(grammarAccess.getMonsterPattern5Access().getValue2INTTerminalRuleCall_1_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__MonsterPattern5__Value2Assignment_1_136336); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__MonsterPattern5__Value2Assignment_1_136337); 
              after(grammarAccess.getMonsterPattern5Access().getValue2INTTerminalRuleCall_1_1_0()); 
 
             }
@@ -49744,7 +49755,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16290:1: RULE_INT
             {
              before(grammarAccess.getMonsterPattern6Access().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__MonsterPattern6__ValueAssignment_136367); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__MonsterPattern6__ValueAssignment_136368); 
              after(grammarAccess.getMonsterPattern6Access().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -49785,7 +49796,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16307:1: '#name'
             {
              before(grammarAccess.getMonsterInst1Access().getNameNameKeyword_0_0()); 
-            match(input,50,FOLLOW_50_in_rule__MonsterInst1__NameAssignment_036403); 
+            match(input,50,FOLLOW_50_in_rule__MonsterInst1__NameAssignment_036404); 
              after(grammarAccess.getMonsterInst1Access().getNameNameKeyword_0_0()); 
 
             }
@@ -49830,7 +49841,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16330:1: '#spr1'
             {
              before(grammarAccess.getMonsterInst1Access().getSpr1Spr1Keyword_1_0()); 
-            match(input,97,FOLLOW_97_in_rule__MonsterInst1__Spr1Assignment_136447); 
+            match(input,97,FOLLOW_97_in_rule__MonsterInst1__Spr1Assignment_136448); 
              after(grammarAccess.getMonsterInst1Access().getSpr1Spr1Keyword_1_0()); 
 
             }
@@ -49875,7 +49886,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16353:1: '#spr2'
             {
              before(grammarAccess.getMonsterInst1Access().getSpr2Spr2Keyword_2_0()); 
-            match(input,98,FOLLOW_98_in_rule__MonsterInst1__Spr2Assignment_236491); 
+            match(input,98,FOLLOW_98_in_rule__MonsterInst1__Spr2Assignment_236492); 
              after(grammarAccess.getMonsterInst1Access().getSpr2Spr2Keyword_2_0()); 
 
             }
@@ -49920,7 +49931,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16376:1: '#descr'
             {
              before(grammarAccess.getMonsterInst1Access().getDescrDescrKeyword_3_0()); 
-            match(input,99,FOLLOW_99_in_rule__MonsterInst1__DescrAssignment_336535); 
+            match(input,99,FOLLOW_99_in_rule__MonsterInst1__DescrAssignment_336536); 
              after(grammarAccess.getMonsterInst1Access().getDescrDescrKeyword_3_0()); 
 
             }
@@ -49965,7 +49976,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16399:1: '#speciallook'
             {
              before(grammarAccess.getMonsterInst2Access().getSpeciallookSpeciallookKeyword_0_0()); 
-            match(input,100,FOLLOW_100_in_rule__MonsterInst2__SpeciallookAssignment_036579); 
+            match(input,100,FOLLOW_100_in_rule__MonsterInst2__SpeciallookAssignment_036580); 
              after(grammarAccess.getMonsterInst2Access().getSpeciallookSpeciallookKeyword_0_0()); 
 
             }
@@ -50010,7 +50021,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16422:1: '#ap'
             {
              before(grammarAccess.getMonsterInst2Access().getApApKeyword_1_0()); 
-            match(input,101,FOLLOW_101_in_rule__MonsterInst2__ApAssignment_136623); 
+            match(input,101,FOLLOW_101_in_rule__MonsterInst2__ApAssignment_136624); 
              after(grammarAccess.getMonsterInst2Access().getApApKeyword_1_0()); 
 
             }
@@ -50055,7 +50066,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16445:1: '#mapmove'
             {
              before(grammarAccess.getMonsterInst2Access().getMapmoveMapmoveKeyword_2_0()); 
-            match(input,102,FOLLOW_102_in_rule__MonsterInst2__MapmoveAssignment_236667); 
+            match(input,102,FOLLOW_102_in_rule__MonsterInst2__MapmoveAssignment_236668); 
              after(grammarAccess.getMonsterInst2Access().getMapmoveMapmoveKeyword_2_0()); 
 
             }
@@ -50100,7 +50111,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16468:1: '#hp'
             {
              before(grammarAccess.getMonsterInst2Access().getHpHpKeyword_3_0()); 
-            match(input,103,FOLLOW_103_in_rule__MonsterInst2__HpAssignment_336711); 
+            match(input,103,FOLLOW_103_in_rule__MonsterInst2__HpAssignment_336712); 
              after(grammarAccess.getMonsterInst2Access().getHpHpKeyword_3_0()); 
 
             }
@@ -50145,7 +50156,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16491:1: '#prot'
             {
              before(grammarAccess.getMonsterInst2Access().getProtProtKeyword_4_0()); 
-            match(input,52,FOLLOW_52_in_rule__MonsterInst2__ProtAssignment_436755); 
+            match(input,52,FOLLOW_52_in_rule__MonsterInst2__ProtAssignment_436756); 
              after(grammarAccess.getMonsterInst2Access().getProtProtKeyword_4_0()); 
 
             }
@@ -50190,7 +50201,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16514:1: '#size'
             {
              before(grammarAccess.getMonsterInst2Access().getSizeSizeKeyword_5_0()); 
-            match(input,104,FOLLOW_104_in_rule__MonsterInst2__SizeAssignment_536799); 
+            match(input,104,FOLLOW_104_in_rule__MonsterInst2__SizeAssignment_536800); 
              after(grammarAccess.getMonsterInst2Access().getSizeSizeKeyword_5_0()); 
 
             }
@@ -50235,7 +50246,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16537:1: '#ressize'
             {
              before(grammarAccess.getMonsterInst2Access().getRessizeRessizeKeyword_6_0()); 
-            match(input,105,FOLLOW_105_in_rule__MonsterInst2__RessizeAssignment_636843); 
+            match(input,105,FOLLOW_105_in_rule__MonsterInst2__RessizeAssignment_636844); 
              after(grammarAccess.getMonsterInst2Access().getRessizeRessizeKeyword_6_0()); 
 
             }
@@ -50280,7 +50291,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16560:1: '#str'
             {
              before(grammarAccess.getMonsterInst2Access().getStrStrKeyword_7_0()); 
-            match(input,106,FOLLOW_106_in_rule__MonsterInst2__StrAssignment_736887); 
+            match(input,106,FOLLOW_106_in_rule__MonsterInst2__StrAssignment_736888); 
              after(grammarAccess.getMonsterInst2Access().getStrStrKeyword_7_0()); 
 
             }
@@ -50325,7 +50336,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16583:1: '#enc'
             {
              before(grammarAccess.getMonsterInst2Access().getEncEncKeyword_8_0()); 
-            match(input,54,FOLLOW_54_in_rule__MonsterInst2__EncAssignment_836931); 
+            match(input,54,FOLLOW_54_in_rule__MonsterInst2__EncAssignment_836932); 
              after(grammarAccess.getMonsterInst2Access().getEncEncKeyword_8_0()); 
 
             }
@@ -50370,7 +50381,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16606:1: '#att'
             {
              before(grammarAccess.getMonsterInst2Access().getAttAttKeyword_9_0()); 
-            match(input,58,FOLLOW_58_in_rule__MonsterInst2__AttAssignment_936975); 
+            match(input,58,FOLLOW_58_in_rule__MonsterInst2__AttAssignment_936976); 
              after(grammarAccess.getMonsterInst2Access().getAttAttKeyword_9_0()); 
 
             }
@@ -50415,7 +50426,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16629:1: '#def'
             {
              before(grammarAccess.getMonsterInst2Access().getDefDefKeyword_10_0()); 
-            match(input,53,FOLLOW_53_in_rule__MonsterInst2__DefAssignment_1037019); 
+            match(input,53,FOLLOW_53_in_rule__MonsterInst2__DefAssignment_1037020); 
              after(grammarAccess.getMonsterInst2Access().getDefDefKeyword_10_0()); 
 
             }
@@ -50460,7 +50471,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16652:1: '#prec'
             {
              before(grammarAccess.getMonsterInst2Access().getPrecPrecKeyword_11_0()); 
-            match(input,107,FOLLOW_107_in_rule__MonsterInst2__PrecAssignment_1137063); 
+            match(input,107,FOLLOW_107_in_rule__MonsterInst2__PrecAssignment_1137064); 
              after(grammarAccess.getMonsterInst2Access().getPrecPrecKeyword_11_0()); 
 
             }
@@ -50505,7 +50516,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16675:1: '#mr'
             {
              before(grammarAccess.getMonsterInst2Access().getMrMrKeyword_12_0()); 
-            match(input,108,FOLLOW_108_in_rule__MonsterInst2__MrAssignment_1237107); 
+            match(input,108,FOLLOW_108_in_rule__MonsterInst2__MrAssignment_1237108); 
              after(grammarAccess.getMonsterInst2Access().getMrMrKeyword_12_0()); 
 
             }
@@ -50550,7 +50561,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16698:1: '#mor'
             {
              before(grammarAccess.getMonsterInst2Access().getMorMorKeyword_13_0()); 
-            match(input,109,FOLLOW_109_in_rule__MonsterInst2__MorAssignment_1337151); 
+            match(input,109,FOLLOW_109_in_rule__MonsterInst2__MorAssignment_1337152); 
              after(grammarAccess.getMonsterInst2Access().getMorMorKeyword_13_0()); 
 
             }
@@ -50595,7 +50606,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16721:1: '#gcost'
             {
              before(grammarAccess.getMonsterInst2Access().getGcostGcostKeyword_14_0()); 
-            match(input,110,FOLLOW_110_in_rule__MonsterInst2__GcostAssignment_1437195); 
+            match(input,110,FOLLOW_110_in_rule__MonsterInst2__GcostAssignment_1437196); 
              after(grammarAccess.getMonsterInst2Access().getGcostGcostKeyword_14_0()); 
 
             }
@@ -50640,7 +50651,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16744:1: '#rcost'
             {
              before(grammarAccess.getMonsterInst2Access().getRcostRcostKeyword_15_0()); 
-            match(input,55,FOLLOW_55_in_rule__MonsterInst2__RcostAssignment_1537239); 
+            match(input,55,FOLLOW_55_in_rule__MonsterInst2__RcostAssignment_1537240); 
              after(grammarAccess.getMonsterInst2Access().getRcostRcostKeyword_15_0()); 
 
             }
@@ -50685,7 +50696,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16767:1: '#pathcost'
             {
              before(grammarAccess.getMonsterInst2Access().getPathcostPathcostKeyword_16_0()); 
-            match(input,111,FOLLOW_111_in_rule__MonsterInst2__PathcostAssignment_1637283); 
+            match(input,111,FOLLOW_111_in_rule__MonsterInst2__PathcostAssignment_1637284); 
              after(grammarAccess.getMonsterInst2Access().getPathcostPathcostKeyword_16_0()); 
 
             }
@@ -50730,7 +50741,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16790:1: '#startdom'
             {
              before(grammarAccess.getMonsterInst2Access().getStartdomStartdomKeyword_17_0()); 
-            match(input,112,FOLLOW_112_in_rule__MonsterInst2__StartdomAssignment_1737327); 
+            match(input,112,FOLLOW_112_in_rule__MonsterInst2__StartdomAssignment_1737328); 
              after(grammarAccess.getMonsterInst2Access().getStartdomStartdomKeyword_17_0()); 
 
             }
@@ -50775,7 +50786,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16813:1: '#eyes'
             {
              before(grammarAccess.getMonsterInst2Access().getEyesEyesKeyword_18_0()); 
-            match(input,113,FOLLOW_113_in_rule__MonsterInst2__EyesAssignment_1837371); 
+            match(input,113,FOLLOW_113_in_rule__MonsterInst2__EyesAssignment_1837372); 
              after(grammarAccess.getMonsterInst2Access().getEyesEyesKeyword_18_0()); 
 
             }
@@ -50820,7 +50831,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16836:1: '#copystats'
             {
              before(grammarAccess.getMonsterInst2Access().getCopystatsCopystatsKeyword_19_0()); 
-            match(input,114,FOLLOW_114_in_rule__MonsterInst2__CopystatsAssignment_1937415); 
+            match(input,114,FOLLOW_114_in_rule__MonsterInst2__CopystatsAssignment_1937416); 
              after(grammarAccess.getMonsterInst2Access().getCopystatsCopystatsKeyword_19_0()); 
 
             }
@@ -50865,7 +50876,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16859:1: '#copyspr'
             {
              before(grammarAccess.getMonsterInst2Access().getCopysprCopysprKeyword_20_0()); 
-            match(input,115,FOLLOW_115_in_rule__MonsterInst2__CopysprAssignment_2037459); 
+            match(input,115,FOLLOW_115_in_rule__MonsterInst2__CopysprAssignment_2037460); 
              after(grammarAccess.getMonsterInst2Access().getCopysprCopysprKeyword_20_0()); 
 
             }
@@ -50910,7 +50921,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16882:1: '#restrictedgod'
             {
              before(grammarAccess.getMonsterInst2Access().getRestrictedgodRestrictedgodKeyword_21_0()); 
-            match(input,116,FOLLOW_116_in_rule__MonsterInst2__RestrictedgodAssignment_2137503); 
+            match(input,116,FOLLOW_116_in_rule__MonsterInst2__RestrictedgodAssignment_2137504); 
              after(grammarAccess.getMonsterInst2Access().getRestrictedgodRestrictedgodKeyword_21_0()); 
 
             }
@@ -50955,7 +50966,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16905:1: '#shatteredsoul'
             {
              before(grammarAccess.getMonsterInst2Access().getShatteredsoulShatteredsoulKeyword_22_0()); 
-            match(input,117,FOLLOW_117_in_rule__MonsterInst2__ShatteredsoulAssignment_2237547); 
+            match(input,117,FOLLOW_117_in_rule__MonsterInst2__ShatteredsoulAssignment_2237548); 
              after(grammarAccess.getMonsterInst2Access().getShatteredsoulShatteredsoulKeyword_22_0()); 
 
             }
@@ -51000,7 +51011,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16928:1: '#coldres'
             {
              before(grammarAccess.getMonsterInst2Access().getColdresColdresKeyword_23_0()); 
-            match(input,118,FOLLOW_118_in_rule__MonsterInst2__ColdresAssignment_2337591); 
+            match(input,118,FOLLOW_118_in_rule__MonsterInst2__ColdresAssignment_2337592); 
              after(grammarAccess.getMonsterInst2Access().getColdresColdresKeyword_23_0()); 
 
             }
@@ -51045,7 +51056,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16951:1: '#coldresist'
             {
              before(grammarAccess.getMonsterInst2Access().getColdresColdresistKeyword_24_0()); 
-            match(input,119,FOLLOW_119_in_rule__MonsterInst2__ColdresAssignment_2437635); 
+            match(input,119,FOLLOW_119_in_rule__MonsterInst2__ColdresAssignment_2437636); 
              after(grammarAccess.getMonsterInst2Access().getColdresColdresistKeyword_24_0()); 
 
             }
@@ -51090,7 +51101,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16974:1: '#fireres'
             {
              before(grammarAccess.getMonsterInst2Access().getFireresFireresKeyword_25_0()); 
-            match(input,120,FOLLOW_120_in_rule__MonsterInst2__FireresAssignment_2537679); 
+            match(input,120,FOLLOW_120_in_rule__MonsterInst2__FireresAssignment_2537680); 
              after(grammarAccess.getMonsterInst2Access().getFireresFireresKeyword_25_0()); 
 
             }
@@ -51135,7 +51146,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:16997:1: '#fireresist'
             {
              before(grammarAccess.getMonsterInst2Access().getFireresFireresistKeyword_26_0()); 
-            match(input,121,FOLLOW_121_in_rule__MonsterInst2__FireresAssignment_2637723); 
+            match(input,121,FOLLOW_121_in_rule__MonsterInst2__FireresAssignment_2637724); 
              after(grammarAccess.getMonsterInst2Access().getFireresFireresistKeyword_26_0()); 
 
             }
@@ -51180,7 +51191,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17020:1: '#poisonres'
             {
              before(grammarAccess.getMonsterInst2Access().getPoisonresPoisonresKeyword_27_0()); 
-            match(input,122,FOLLOW_122_in_rule__MonsterInst2__PoisonresAssignment_2737767); 
+            match(input,122,FOLLOW_122_in_rule__MonsterInst2__PoisonresAssignment_2737768); 
              after(grammarAccess.getMonsterInst2Access().getPoisonresPoisonresKeyword_27_0()); 
 
             }
@@ -51225,7 +51236,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17043:1: '#shockres'
             {
              before(grammarAccess.getMonsterInst2Access().getShockresShockresKeyword_28_0()); 
-            match(input,123,FOLLOW_123_in_rule__MonsterInst2__ShockresAssignment_2837811); 
+            match(input,123,FOLLOW_123_in_rule__MonsterInst2__ShockresAssignment_2837812); 
              after(grammarAccess.getMonsterInst2Access().getShockresShockresKeyword_28_0()); 
 
             }
@@ -51270,7 +51281,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17066:1: '#darkvision'
             {
              before(grammarAccess.getMonsterInst2Access().getDarkvisionDarkvisionKeyword_29_0()); 
-            match(input,124,FOLLOW_124_in_rule__MonsterInst2__DarkvisionAssignment_2937855); 
+            match(input,124,FOLLOW_124_in_rule__MonsterInst2__DarkvisionAssignment_2937856); 
              after(grammarAccess.getMonsterInst2Access().getDarkvisionDarkvisionKeyword_29_0()); 
 
             }
@@ -51315,7 +51326,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17089:1: '#seduce'
             {
              before(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_30_0()); 
-            match(input,125,FOLLOW_125_in_rule__MonsterInst2__SeduceAssignment_3037899); 
+            match(input,125,FOLLOW_125_in_rule__MonsterInst2__SeduceAssignment_3037900); 
              after(grammarAccess.getMonsterInst2Access().getSeduceSeduceKeyword_30_0()); 
 
             }
@@ -51360,7 +51371,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17112:1: '#succubus'
             {
              before(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_31_0()); 
-            match(input,126,FOLLOW_126_in_rule__MonsterInst2__SuccubusAssignment_3137943); 
+            match(input,126,FOLLOW_126_in_rule__MonsterInst2__SuccubusAssignment_3137944); 
              after(grammarAccess.getMonsterInst2Access().getSuccubusSuccubusKeyword_31_0()); 
 
             }
@@ -51405,7 +51416,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17135:1: '#beckon'
             {
              before(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_32_0()); 
-            match(input,127,FOLLOW_127_in_rule__MonsterInst2__BeckonAssignment_3237987); 
+            match(input,127,FOLLOW_127_in_rule__MonsterInst2__BeckonAssignment_3237988); 
              after(grammarAccess.getMonsterInst2Access().getBeckonBeckonKeyword_32_0()); 
 
             }
@@ -51450,7 +51461,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17158:1: '#startage'
             {
              before(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_33_0()); 
-            match(input,128,FOLLOW_128_in_rule__MonsterInst2__StartageAssignment_3338031); 
+            match(input,128,FOLLOW_128_in_rule__MonsterInst2__StartageAssignment_3338032); 
              after(grammarAccess.getMonsterInst2Access().getStartageStartageKeyword_33_0()); 
 
             }
@@ -51495,7 +51506,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17181:1: '#maxage'
             {
              before(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_34_0()); 
-            match(input,129,FOLLOW_129_in_rule__MonsterInst2__MaxageAssignment_3438075); 
+            match(input,129,FOLLOW_129_in_rule__MonsterInst2__MaxageAssignment_3438076); 
              after(grammarAccess.getMonsterInst2Access().getMaxageMaxageKeyword_34_0()); 
 
             }
@@ -51540,7 +51551,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17204:1: '#older'
             {
              before(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_35_0()); 
-            match(input,130,FOLLOW_130_in_rule__MonsterInst2__OlderAssignment_3538119); 
+            match(input,130,FOLLOW_130_in_rule__MonsterInst2__OlderAssignment_3538120); 
              after(grammarAccess.getMonsterInst2Access().getOlderOlderKeyword_35_0()); 
 
             }
@@ -51585,7 +51596,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17227:1: '#healer'
             {
              before(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_36_0()); 
-            match(input,131,FOLLOW_131_in_rule__MonsterInst2__HealerAssignment_3638163); 
+            match(input,131,FOLLOW_131_in_rule__MonsterInst2__HealerAssignment_3638164); 
              after(grammarAccess.getMonsterInst2Access().getHealerHealerKeyword_36_0()); 
 
             }
@@ -51630,7 +51641,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17250:1: '#startaff'
             {
              before(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_37_0()); 
-            match(input,132,FOLLOW_132_in_rule__MonsterInst2__StartaffAssignment_3738207); 
+            match(input,132,FOLLOW_132_in_rule__MonsterInst2__StartaffAssignment_3738208); 
              after(grammarAccess.getMonsterInst2Access().getStartaffStartaffKeyword_37_0()); 
 
             }
@@ -51675,7 +51686,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17273:1: '#supplybonus'
             {
              before(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_38_0()); 
-            match(input,133,FOLLOW_133_in_rule__MonsterInst2__SupplybonusAssignment_3838251); 
+            match(input,133,FOLLOW_133_in_rule__MonsterInst2__SupplybonusAssignment_3838252); 
              after(grammarAccess.getMonsterInst2Access().getSupplybonusSupplybonusKeyword_38_0()); 
 
             }
@@ -51720,7 +51731,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17296:1: '#uwdamage'
             {
              before(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_39_0()); 
-            match(input,134,FOLLOW_134_in_rule__MonsterInst2__UwdamageAssignment_3938295); 
+            match(input,134,FOLLOW_134_in_rule__MonsterInst2__UwdamageAssignment_3938296); 
              after(grammarAccess.getMonsterInst2Access().getUwdamageUwdamageKeyword_39_0()); 
 
             }
@@ -51765,7 +51776,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17319:1: '#homesick'
             {
              before(grammarAccess.getMonsterInst2Access().getHomesickHomesickKeyword_40_0()); 
-            match(input,135,FOLLOW_135_in_rule__MonsterInst2__HomesickAssignment_4038339); 
+            match(input,135,FOLLOW_135_in_rule__MonsterInst2__HomesickAssignment_4038340); 
              after(grammarAccess.getMonsterInst2Access().getHomesickHomesickKeyword_40_0()); 
 
             }
@@ -51810,7 +51821,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17342:1: '#coldpower'
             {
              before(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_41_0()); 
-            match(input,136,FOLLOW_136_in_rule__MonsterInst2__ColdpowerAssignment_4138383); 
+            match(input,136,FOLLOW_136_in_rule__MonsterInst2__ColdpowerAssignment_4138384); 
              after(grammarAccess.getMonsterInst2Access().getColdpowerColdpowerKeyword_41_0()); 
 
             }
@@ -51855,7 +51866,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17365:1: '#firepower'
             {
              before(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_42_0()); 
-            match(input,137,FOLLOW_137_in_rule__MonsterInst2__FirepowerAssignment_4238427); 
+            match(input,137,FOLLOW_137_in_rule__MonsterInst2__FirepowerAssignment_4238428); 
              after(grammarAccess.getMonsterInst2Access().getFirepowerFirepowerKeyword_42_0()); 
 
             }
@@ -51900,7 +51911,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17388:1: '#stormpower'
             {
              before(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_43_0()); 
-            match(input,138,FOLLOW_138_in_rule__MonsterInst2__StormpowerAssignment_4338471); 
+            match(input,138,FOLLOW_138_in_rule__MonsterInst2__StormpowerAssignment_4338472); 
              after(grammarAccess.getMonsterInst2Access().getStormpowerStormpowerKeyword_43_0()); 
 
             }
@@ -51945,7 +51956,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17411:1: '#darkpower'
             {
              before(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_44_0()); 
-            match(input,139,FOLLOW_139_in_rule__MonsterInst2__DarkpowerAssignment_4438515); 
+            match(input,139,FOLLOW_139_in_rule__MonsterInst2__DarkpowerAssignment_4438516); 
              after(grammarAccess.getMonsterInst2Access().getDarkpowerDarkpowerKeyword_44_0()); 
 
             }
@@ -51990,7 +52001,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17434:1: '#springpower'
             {
              before(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_45_0()); 
-            match(input,140,FOLLOW_140_in_rule__MonsterInst2__SpringpowerAssignment_4538559); 
+            match(input,140,FOLLOW_140_in_rule__MonsterInst2__SpringpowerAssignment_4538560); 
              after(grammarAccess.getMonsterInst2Access().getSpringpowerSpringpowerKeyword_45_0()); 
 
             }
@@ -52035,7 +52046,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17457:1: '#summerpower'
             {
              before(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_46_0()); 
-            match(input,141,FOLLOW_141_in_rule__MonsterInst2__SummerpowerAssignment_4638603); 
+            match(input,141,FOLLOW_141_in_rule__MonsterInst2__SummerpowerAssignment_4638604); 
              after(grammarAccess.getMonsterInst2Access().getSummerpowerSummerpowerKeyword_46_0()); 
 
             }
@@ -52080,7 +52091,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17480:1: '#fallpower'
             {
              before(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_47_0()); 
-            match(input,142,FOLLOW_142_in_rule__MonsterInst2__FallpowerAssignment_4738647); 
+            match(input,142,FOLLOW_142_in_rule__MonsterInst2__FallpowerAssignment_4738648); 
              after(grammarAccess.getMonsterInst2Access().getFallpowerFallpowerKeyword_47_0()); 
 
             }
@@ -52125,7 +52136,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17503:1: '#winterpower'
             {
              before(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_48_0()); 
-            match(input,143,FOLLOW_143_in_rule__MonsterInst2__WinterpowerAssignment_4838691); 
+            match(input,143,FOLLOW_143_in_rule__MonsterInst2__WinterpowerAssignment_4838692); 
              after(grammarAccess.getMonsterInst2Access().getWinterpowerWinterpowerKeyword_48_0()); 
 
             }
@@ -52170,7 +52181,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17526:1: '#ambidextrous'
             {
              before(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_49_0()); 
-            match(input,144,FOLLOW_144_in_rule__MonsterInst2__AmbidextrousAssignment_4938735); 
+            match(input,144,FOLLOW_144_in_rule__MonsterInst2__AmbidextrousAssignment_4938736); 
              after(grammarAccess.getMonsterInst2Access().getAmbidextrousAmbidextrousKeyword_49_0()); 
 
             }
@@ -52215,7 +52226,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17549:1: '#banefireshield'
             {
              before(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_50_0()); 
-            match(input,145,FOLLOW_145_in_rule__MonsterInst2__BanefireshieldAssignment_5038779); 
+            match(input,145,FOLLOW_145_in_rule__MonsterInst2__BanefireshieldAssignment_5038780); 
              after(grammarAccess.getMonsterInst2Access().getBanefireshieldBanefireshieldKeyword_50_0()); 
 
             }
@@ -52260,7 +52271,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17572:1: '#berserk'
             {
              before(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_51_0()); 
-            match(input,146,FOLLOW_146_in_rule__MonsterInst2__BerserkAssignment_5138823); 
+            match(input,146,FOLLOW_146_in_rule__MonsterInst2__BerserkAssignment_5138824); 
              after(grammarAccess.getMonsterInst2Access().getBerserkBerserkKeyword_51_0()); 
 
             }
@@ -52305,7 +52316,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17595:1: '#standard'
             {
              before(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_52_0()); 
-            match(input,147,FOLLOW_147_in_rule__MonsterInst2__StandardAssignment_5238867); 
+            match(input,147,FOLLOW_147_in_rule__MonsterInst2__StandardAssignment_5238868); 
              after(grammarAccess.getMonsterInst2Access().getStandardStandardKeyword_52_0()); 
 
             }
@@ -52350,7 +52361,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17618:1: '#animalawe'
             {
              before(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_53_0()); 
-            match(input,148,FOLLOW_148_in_rule__MonsterInst2__AnimalaweAssignment_5338911); 
+            match(input,148,FOLLOW_148_in_rule__MonsterInst2__AnimalaweAssignment_5338912); 
              after(grammarAccess.getMonsterInst2Access().getAnimalaweAnimalaweKeyword_53_0()); 
 
             }
@@ -52395,7 +52406,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17641:1: '#awe'
             {
              before(grammarAccess.getMonsterInst2Access().getAweAweKeyword_54_0()); 
-            match(input,149,FOLLOW_149_in_rule__MonsterInst2__AweAssignment_5438955); 
+            match(input,149,FOLLOW_149_in_rule__MonsterInst2__AweAssignment_5438956); 
              after(grammarAccess.getMonsterInst2Access().getAweAweKeyword_54_0()); 
 
             }
@@ -52440,7 +52451,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17664:1: '#fear'
             {
              before(grammarAccess.getMonsterInst2Access().getFearFearKeyword_55_0()); 
-            match(input,150,FOLLOW_150_in_rule__MonsterInst2__FearAssignment_5538999); 
+            match(input,150,FOLLOW_150_in_rule__MonsterInst2__FearAssignment_5539000); 
              after(grammarAccess.getMonsterInst2Access().getFearFearKeyword_55_0()); 
 
             }
@@ -52485,7 +52496,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17687:1: '#regeneration'
             {
              before(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_56_0()); 
-            match(input,151,FOLLOW_151_in_rule__MonsterInst2__RegenerationAssignment_5639043); 
+            match(input,151,FOLLOW_151_in_rule__MonsterInst2__RegenerationAssignment_5639044); 
              after(grammarAccess.getMonsterInst2Access().getRegenerationRegenerationKeyword_56_0()); 
 
             }
@@ -52530,7 +52541,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17710:1: '#reinvigoration'
             {
              before(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_57_0()); 
-            match(input,152,FOLLOW_152_in_rule__MonsterInst2__ReinvigorationAssignment_5739087); 
+            match(input,152,FOLLOW_152_in_rule__MonsterInst2__ReinvigorationAssignment_5739088); 
              after(grammarAccess.getMonsterInst2Access().getReinvigorationReinvigorationKeyword_57_0()); 
 
             }
@@ -52575,7 +52586,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17733:1: '#fireshield'
             {
              before(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_58_0()); 
-            match(input,153,FOLLOW_153_in_rule__MonsterInst2__FireshieldAssignment_5839131); 
+            match(input,153,FOLLOW_153_in_rule__MonsterInst2__FireshieldAssignment_5839132); 
              after(grammarAccess.getMonsterInst2Access().getFireshieldFireshieldKeyword_58_0()); 
 
             }
@@ -52620,7 +52631,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17756:1: '#iceprot'
             {
              before(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0()); 
-            match(input,154,FOLLOW_154_in_rule__MonsterInst2__IceprotAssignment_5939175); 
+            match(input,154,FOLLOW_154_in_rule__MonsterInst2__IceprotAssignment_5939176); 
              after(grammarAccess.getMonsterInst2Access().getIceprotIceprotKeyword_59_0()); 
 
             }
@@ -52665,7 +52676,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17779:1: '#poisoncloud'
             {
              before(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0()); 
-            match(input,155,FOLLOW_155_in_rule__MonsterInst2__PoisoncloudAssignment_6039219); 
+            match(input,155,FOLLOW_155_in_rule__MonsterInst2__PoisoncloudAssignment_6039220); 
              after(grammarAccess.getMonsterInst2Access().getPoisoncloudPoisoncloudKeyword_60_0()); 
 
             }
@@ -52710,7 +52721,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17802:1: '#diseasecloud'
             {
              before(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0()); 
-            match(input,156,FOLLOW_156_in_rule__MonsterInst2__DiseasecloudAssignment_6139263); 
+            match(input,156,FOLLOW_156_in_rule__MonsterInst2__DiseasecloudAssignment_6139264); 
              after(grammarAccess.getMonsterInst2Access().getDiseasecloudDiseasecloudKeyword_61_0()); 
 
             }
@@ -52755,7 +52766,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17825:1: '#bloodvengeance'
             {
              before(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0()); 
-            match(input,157,FOLLOW_157_in_rule__MonsterInst2__BloodvengeanceAssignment_6239307); 
+            match(input,157,FOLLOW_157_in_rule__MonsterInst2__BloodvengeanceAssignment_6239308); 
              after(grammarAccess.getMonsterInst2Access().getBloodvengeanceBloodvengeanceKeyword_62_0()); 
 
             }
@@ -52800,7 +52811,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17848:1: '#castledef'
             {
              before(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0()); 
-            match(input,158,FOLLOW_158_in_rule__MonsterInst2__CastledefAssignment_6339351); 
+            match(input,158,FOLLOW_158_in_rule__MonsterInst2__CastledefAssignment_6339352); 
              after(grammarAccess.getMonsterInst2Access().getCastledefCastledefKeyword_63_0()); 
 
             }
@@ -52845,7 +52856,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17871:1: '#siegebonus'
             {
              before(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0()); 
-            match(input,159,FOLLOW_159_in_rule__MonsterInst2__SiegebonusAssignment_6439395); 
+            match(input,159,FOLLOW_159_in_rule__MonsterInst2__SiegebonusAssignment_6439396); 
              after(grammarAccess.getMonsterInst2Access().getSiegebonusSiegebonusKeyword_64_0()); 
 
             }
@@ -52890,7 +52901,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17894:1: '#patrolbonus'
             {
              before(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0()); 
-            match(input,160,FOLLOW_160_in_rule__MonsterInst2__PatrolbonusAssignment_6539439); 
+            match(input,160,FOLLOW_160_in_rule__MonsterInst2__PatrolbonusAssignment_6539440); 
              after(grammarAccess.getMonsterInst2Access().getPatrolbonusPatrolbonusKeyword_65_0()); 
 
             }
@@ -52935,7 +52946,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17917:1: '#pillagebonus'
             {
              before(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0()); 
-            match(input,161,FOLLOW_161_in_rule__MonsterInst2__PillagebonusAssignment_6639483); 
+            match(input,161,FOLLOW_161_in_rule__MonsterInst2__PillagebonusAssignment_6639484); 
              after(grammarAccess.getMonsterInst2Access().getPillagebonusPillagebonusKeyword_66_0()); 
 
             }
@@ -52980,7 +52991,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17940:1: '#researchbonus'
             {
              before(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0()); 
-            match(input,162,FOLLOW_162_in_rule__MonsterInst2__ResearchbonusAssignment_6739527); 
+            match(input,162,FOLLOW_162_in_rule__MonsterInst2__ResearchbonusAssignment_6739528); 
              after(grammarAccess.getMonsterInst2Access().getResearchbonusResearchbonusKeyword_67_0()); 
 
             }
@@ -53025,7 +53036,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17963:1: '#forgebonus'
             {
              before(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0()); 
-            match(input,163,FOLLOW_163_in_rule__MonsterInst2__ForgebonusAssignment_6839571); 
+            match(input,163,FOLLOW_163_in_rule__MonsterInst2__ForgebonusAssignment_6839572); 
              after(grammarAccess.getMonsterInst2Access().getForgebonusForgebonusKeyword_68_0()); 
 
             }
@@ -53070,7 +53081,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:17986:1: '#douse'
             {
              before(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0()); 
-            match(input,164,FOLLOW_164_in_rule__MonsterInst2__DouseAssignment_6939615); 
+            match(input,164,FOLLOW_164_in_rule__MonsterInst2__DouseAssignment_6939616); 
              after(grammarAccess.getMonsterInst2Access().getDouseDouseKeyword_69_0()); 
 
             }
@@ -53115,7 +53126,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18009:1: '#nobadevents'
             {
              before(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0()); 
-            match(input,165,FOLLOW_165_in_rule__MonsterInst2__NobadeventsAssignment_7039659); 
+            match(input,165,FOLLOW_165_in_rule__MonsterInst2__NobadeventsAssignment_7039660); 
              after(grammarAccess.getMonsterInst2Access().getNobadeventsNobadeventsKeyword_70_0()); 
 
             }
@@ -53160,7 +53171,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18032:1: '#incunrest'
             {
              before(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0()); 
-            match(input,166,FOLLOW_166_in_rule__MonsterInst2__IncunrestAssignment_7139703); 
+            match(input,166,FOLLOW_166_in_rule__MonsterInst2__IncunrestAssignment_7139704); 
              after(grammarAccess.getMonsterInst2Access().getIncunrestIncunrestKeyword_71_0()); 
 
             }
@@ -53205,7 +53216,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18055:1: '#spreaddom'
             {
              before(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0()); 
-            match(input,167,FOLLOW_167_in_rule__MonsterInst2__SpreaddomAssignment_7239747); 
+            match(input,167,FOLLOW_167_in_rule__MonsterInst2__SpreaddomAssignment_7239748); 
              after(grammarAccess.getMonsterInst2Access().getSpreaddomSpreaddomKeyword_72_0()); 
 
             }
@@ -53250,7 +53261,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18078:1: '#leper'
             {
              before(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0()); 
-            match(input,168,FOLLOW_168_in_rule__MonsterInst2__LeperAssignment_7339791); 
+            match(input,168,FOLLOW_168_in_rule__MonsterInst2__LeperAssignment_7339792); 
              after(grammarAccess.getMonsterInst2Access().getLeperLeperKeyword_73_0()); 
 
             }
@@ -53295,7 +53306,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18101:1: '#popkill'
             {
              before(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0()); 
-            match(input,169,FOLLOW_169_in_rule__MonsterInst2__PopkillAssignment_7439835); 
+            match(input,169,FOLLOW_169_in_rule__MonsterInst2__PopkillAssignment_7439836); 
              after(grammarAccess.getMonsterInst2Access().getPopkillPopkillKeyword_74_0()); 
 
             }
@@ -53340,7 +53351,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18124:1: '#heretic'
             {
              before(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0()); 
-            match(input,170,FOLLOW_170_in_rule__MonsterInst2__HereticAssignment_7539879); 
+            match(input,170,FOLLOW_170_in_rule__MonsterInst2__HereticAssignment_7539880); 
              after(grammarAccess.getMonsterInst2Access().getHereticHereticKeyword_75_0()); 
 
             }
@@ -53385,7 +53396,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18147:1: '#itemslots'
             {
              before(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0()); 
-            match(input,171,FOLLOW_171_in_rule__MonsterInst2__ItemslotsAssignment_7639923); 
+            match(input,171,FOLLOW_171_in_rule__MonsterInst2__ItemslotsAssignment_7639924); 
              after(grammarAccess.getMonsterInst2Access().getItemslotsItemslotsKeyword_76_0()); 
 
             }
@@ -53430,7 +53441,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18170:1: '#nametype'
             {
              before(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0()); 
-            match(input,172,FOLLOW_172_in_rule__MonsterInst2__NametypeAssignment_7739967); 
+            match(input,172,FOLLOW_172_in_rule__MonsterInst2__NametypeAssignment_7739968); 
              after(grammarAccess.getMonsterInst2Access().getNametypeNametypeKeyword_77_0()); 
 
             }
@@ -53475,7 +53486,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18193:1: '#magicskill'
             {
              before(grammarAccess.getMonsterInst3Access().getMagicskillMagicskillKeyword_0_0()); 
-            match(input,173,FOLLOW_173_in_rule__MonsterInst3__MagicskillAssignment_040011); 
+            match(input,173,FOLLOW_173_in_rule__MonsterInst3__MagicskillAssignment_040012); 
              after(grammarAccess.getMonsterInst3Access().getMagicskillMagicskillKeyword_0_0()); 
 
             }
@@ -53520,7 +53531,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18216:1: '#custommagic'
             {
              before(grammarAccess.getMonsterInst3Access().getCustommagicCustommagicKeyword_1_0()); 
-            match(input,174,FOLLOW_174_in_rule__MonsterInst3__CustommagicAssignment_140055); 
+            match(input,174,FOLLOW_174_in_rule__MonsterInst3__CustommagicAssignment_140056); 
              after(grammarAccess.getMonsterInst3Access().getCustommagicCustommagicKeyword_1_0()); 
 
             }
@@ -53565,7 +53576,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18239:1: '#magicboost'
             {
              before(grammarAccess.getMonsterInst3Access().getMagicboostMagicboostKeyword_2_0()); 
-            match(input,175,FOLLOW_175_in_rule__MonsterInst3__MagicboostAssignment_240099); 
+            match(input,175,FOLLOW_175_in_rule__MonsterInst3__MagicboostAssignment_240100); 
              after(grammarAccess.getMonsterInst3Access().getMagicboostMagicboostKeyword_2_0()); 
 
             }
@@ -53610,7 +53621,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18262:1: '#gemprod'
             {
              before(grammarAccess.getMonsterInst3Access().getGemprodGemprodKeyword_3_0()); 
-            match(input,176,FOLLOW_176_in_rule__MonsterInst3__GemprodAssignment_340143); 
+            match(input,176,FOLLOW_176_in_rule__MonsterInst3__GemprodAssignment_340144); 
              after(grammarAccess.getMonsterInst3Access().getGemprodGemprodKeyword_3_0()); 
 
             }
@@ -53655,7 +53666,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18285:1: '#clear'
             {
              before(grammarAccess.getMonsterInst4Access().getClearClearKeyword_0_0()); 
-            match(input,177,FOLLOW_177_in_rule__MonsterInst4__ClearAssignment_040187); 
+            match(input,177,FOLLOW_177_in_rule__MonsterInst4__ClearAssignment_040188); 
              after(grammarAccess.getMonsterInst4Access().getClearClearKeyword_0_0()); 
 
             }
@@ -53700,7 +53711,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18308:1: '#clearweapons'
             {
              before(grammarAccess.getMonsterInst4Access().getClearweaponsClearweaponsKeyword_1_0()); 
-            match(input,178,FOLLOW_178_in_rule__MonsterInst4__ClearweaponsAssignment_140231); 
+            match(input,178,FOLLOW_178_in_rule__MonsterInst4__ClearweaponsAssignment_140232); 
              after(grammarAccess.getMonsterInst4Access().getClearweaponsClearweaponsKeyword_1_0()); 
 
             }
@@ -53745,7 +53756,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18331:1: '#cleararmor'
             {
              before(grammarAccess.getMonsterInst4Access().getCleararmorCleararmorKeyword_2_0()); 
-            match(input,179,FOLLOW_179_in_rule__MonsterInst4__CleararmorAssignment_240275); 
+            match(input,179,FOLLOW_179_in_rule__MonsterInst4__CleararmorAssignment_240276); 
              after(grammarAccess.getMonsterInst4Access().getCleararmorCleararmorKeyword_2_0()); 
 
             }
@@ -53790,7 +53801,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18354:1: '#clearmagic'
             {
              before(grammarAccess.getMonsterInst4Access().getClearmagicClearmagicKeyword_3_0()); 
-            match(input,180,FOLLOW_180_in_rule__MonsterInst4__ClearmagicAssignment_340319); 
+            match(input,180,FOLLOW_180_in_rule__MonsterInst4__ClearmagicAssignment_340320); 
              after(grammarAccess.getMonsterInst4Access().getClearmagicClearmagicKeyword_3_0()); 
 
             }
@@ -53835,7 +53846,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18377:1: '#clearspec'
             {
              before(grammarAccess.getMonsterInst4Access().getClearspecClearspecKeyword_4_0()); 
-            match(input,181,FOLLOW_181_in_rule__MonsterInst4__ClearspecAssignment_440363); 
+            match(input,181,FOLLOW_181_in_rule__MonsterInst4__ClearspecAssignment_440364); 
              after(grammarAccess.getMonsterInst4Access().getClearspecClearspecKeyword_4_0()); 
 
             }
@@ -53880,7 +53891,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18400:1: '#female'
             {
              before(grammarAccess.getMonsterInst4Access().getFemaleFemaleKeyword_5_0()); 
-            match(input,182,FOLLOW_182_in_rule__MonsterInst4__FemaleAssignment_540407); 
+            match(input,182,FOLLOW_182_in_rule__MonsterInst4__FemaleAssignment_540408); 
              after(grammarAccess.getMonsterInst4Access().getFemaleFemaleKeyword_5_0()); 
 
             }
@@ -53925,7 +53936,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18423:1: '#mounted'
             {
              before(grammarAccess.getMonsterInst4Access().getMountedMountedKeyword_6_0()); 
-            match(input,183,FOLLOW_183_in_rule__MonsterInst4__MountedAssignment_640451); 
+            match(input,183,FOLLOW_183_in_rule__MonsterInst4__MountedAssignment_640452); 
              after(grammarAccess.getMonsterInst4Access().getMountedMountedKeyword_6_0()); 
 
             }
@@ -53970,7 +53981,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18446:1: '#holy'
             {
              before(grammarAccess.getMonsterInst4Access().getHolyHolyKeyword_7_0()); 
-            match(input,184,FOLLOW_184_in_rule__MonsterInst4__HolyAssignment_740495); 
+            match(input,184,FOLLOW_184_in_rule__MonsterInst4__HolyAssignment_740496); 
              after(grammarAccess.getMonsterInst4Access().getHolyHolyKeyword_7_0()); 
 
             }
@@ -54015,7 +54026,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18469:1: '#animal'
             {
              before(grammarAccess.getMonsterInst4Access().getAnimalAnimalKeyword_8_0()); 
-            match(input,185,FOLLOW_185_in_rule__MonsterInst4__AnimalAssignment_840539); 
+            match(input,185,FOLLOW_185_in_rule__MonsterInst4__AnimalAssignment_840540); 
              after(grammarAccess.getMonsterInst4Access().getAnimalAnimalKeyword_8_0()); 
 
             }
@@ -54060,7 +54071,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18492:1: '#undead'
             {
              before(grammarAccess.getMonsterInst4Access().getUndeadUndeadKeyword_9_0()); 
-            match(input,186,FOLLOW_186_in_rule__MonsterInst4__UndeadAssignment_940583); 
+            match(input,186,FOLLOW_186_in_rule__MonsterInst4__UndeadAssignment_940584); 
              after(grammarAccess.getMonsterInst4Access().getUndeadUndeadKeyword_9_0()); 
 
             }
@@ -54105,7 +54116,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18515:1: '#demon'
             {
              before(grammarAccess.getMonsterInst4Access().getDemonDemonKeyword_10_0()); 
-            match(input,187,FOLLOW_187_in_rule__MonsterInst4__DemonAssignment_1040627); 
+            match(input,187,FOLLOW_187_in_rule__MonsterInst4__DemonAssignment_1040628); 
              after(grammarAccess.getMonsterInst4Access().getDemonDemonKeyword_10_0()); 
 
             }
@@ -54150,7 +54161,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18538:1: '#magicbeing'
             {
              before(grammarAccess.getMonsterInst4Access().getMagicbeingMagicbeingKeyword_11_0()); 
-            match(input,188,FOLLOW_188_in_rule__MonsterInst4__MagicbeingAssignment_1140671); 
+            match(input,188,FOLLOW_188_in_rule__MonsterInst4__MagicbeingAssignment_1140672); 
              after(grammarAccess.getMonsterInst4Access().getMagicbeingMagicbeingKeyword_11_0()); 
 
             }
@@ -54195,7 +54206,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18561:1: '#stonebeing'
             {
              before(grammarAccess.getMonsterInst4Access().getStonebeingStonebeingKeyword_12_0()); 
-            match(input,189,FOLLOW_189_in_rule__MonsterInst4__StonebeingAssignment_1240715); 
+            match(input,189,FOLLOW_189_in_rule__MonsterInst4__StonebeingAssignment_1240716); 
              after(grammarAccess.getMonsterInst4Access().getStonebeingStonebeingKeyword_12_0()); 
 
             }
@@ -54240,7 +54251,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18584:1: '#inanimate'
             {
              before(grammarAccess.getMonsterInst4Access().getInanimateInanimateKeyword_13_0()); 
-            match(input,190,FOLLOW_190_in_rule__MonsterInst4__InanimateAssignment_1340759); 
+            match(input,190,FOLLOW_190_in_rule__MonsterInst4__InanimateAssignment_1340760); 
              after(grammarAccess.getMonsterInst4Access().getInanimateInanimateKeyword_13_0()); 
 
             }
@@ -54285,7 +54296,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18607:1: '#coldblood'
             {
              before(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodKeyword_14_0()); 
-            match(input,191,FOLLOW_191_in_rule__MonsterInst4__ColdbloodAssignment_1440803); 
+            match(input,191,FOLLOW_191_in_rule__MonsterInst4__ColdbloodAssignment_1440804); 
              after(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodKeyword_14_0()); 
 
             }
@@ -54330,7 +54341,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18630:1: '#coldblooded'
             {
              before(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodedKeyword_15_0()); 
-            match(input,192,FOLLOW_192_in_rule__MonsterInst4__ColdbloodAssignment_1540847); 
+            match(input,192,FOLLOW_192_in_rule__MonsterInst4__ColdbloodAssignment_1540848); 
              after(grammarAccess.getMonsterInst4Access().getColdbloodColdbloodedKeyword_15_0()); 
 
             }
@@ -54375,7 +54386,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18653:1: '#immortal'
             {
              before(grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_16_0()); 
-            match(input,193,FOLLOW_193_in_rule__MonsterInst4__ImmortalAssignment_1640891); 
+            match(input,193,FOLLOW_193_in_rule__MonsterInst4__ImmortalAssignment_1640892); 
              after(grammarAccess.getMonsterInst4Access().getImmortalImmortalKeyword_16_0()); 
 
             }
@@ -54420,7 +54431,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18676:1: '#blind'
             {
              before(grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_17_0()); 
-            match(input,194,FOLLOW_194_in_rule__MonsterInst4__BlindAssignment_1740935); 
+            match(input,194,FOLLOW_194_in_rule__MonsterInst4__BlindAssignment_1740936); 
              after(grammarAccess.getMonsterInst4Access().getBlindBlindKeyword_17_0()); 
 
             }
@@ -54465,7 +54476,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18699:1: '#unique'
             {
              before(grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_18_0()); 
-            match(input,195,FOLLOW_195_in_rule__MonsterInst4__UniqueAssignment_1840979); 
+            match(input,195,FOLLOW_195_in_rule__MonsterInst4__UniqueAssignment_1840980); 
              after(grammarAccess.getMonsterInst4Access().getUniqueUniqueKeyword_18_0()); 
 
             }
@@ -54510,7 +54521,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18722:1: '#immobile'
             {
              before(grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_19_0()); 
-            match(input,196,FOLLOW_196_in_rule__MonsterInst4__ImmobileAssignment_1941023); 
+            match(input,196,FOLLOW_196_in_rule__MonsterInst4__ImmobileAssignment_1941024); 
              after(grammarAccess.getMonsterInst4Access().getImmobileImmobileKeyword_19_0()); 
 
             }
@@ -54555,7 +54566,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18745:1: '#aquatic'
             {
              before(grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_20_0()); 
-            match(input,197,FOLLOW_197_in_rule__MonsterInst4__AquaticAssignment_2041067); 
+            match(input,197,FOLLOW_197_in_rule__MonsterInst4__AquaticAssignment_2041068); 
              after(grammarAccess.getMonsterInst4Access().getAquaticAquaticKeyword_20_0()); 
 
             }
@@ -54600,7 +54611,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18768:1: '#amphibian'
             {
              before(grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_21_0()); 
-            match(input,198,FOLLOW_198_in_rule__MonsterInst4__AmphibianAssignment_2141111); 
+            match(input,198,FOLLOW_198_in_rule__MonsterInst4__AmphibianAssignment_2141112); 
              after(grammarAccess.getMonsterInst4Access().getAmphibianAmphibianKeyword_21_0()); 
 
             }
@@ -54645,7 +54656,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18791:1: '#pooramphibian'
             {
              before(grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_22_0()); 
-            match(input,199,FOLLOW_199_in_rule__MonsterInst4__PooramphibianAssignment_2241155); 
+            match(input,199,FOLLOW_199_in_rule__MonsterInst4__PooramphibianAssignment_2241156); 
              after(grammarAccess.getMonsterInst4Access().getPooramphibianPooramphibianKeyword_22_0()); 
 
             }
@@ -54690,7 +54701,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18814:1: '#flying'
             {
              before(grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_23_0()); 
-            match(input,200,FOLLOW_200_in_rule__MonsterInst4__FlyingAssignment_2341199); 
+            match(input,200,FOLLOW_200_in_rule__MonsterInst4__FlyingAssignment_2341200); 
              after(grammarAccess.getMonsterInst4Access().getFlyingFlyingKeyword_23_0()); 
 
             }
@@ -54735,7 +54746,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18837:1: '#stormimmune'
             {
              before(grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_24_0()); 
-            match(input,201,FOLLOW_201_in_rule__MonsterInst4__StormimmuneAssignment_2441243); 
+            match(input,201,FOLLOW_201_in_rule__MonsterInst4__StormimmuneAssignment_2441244); 
              after(grammarAccess.getMonsterInst4Access().getStormimmuneStormimmuneKeyword_24_0()); 
 
             }
@@ -54780,7 +54791,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18860:1: '#sailing'
             {
              before(grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_25_0()); 
-            match(input,202,FOLLOW_202_in_rule__MonsterInst4__SailingAssignment_2541287); 
+            match(input,202,FOLLOW_202_in_rule__MonsterInst4__SailingAssignment_2541288); 
              after(grammarAccess.getMonsterInst4Access().getSailingSailingKeyword_25_0()); 
 
             }
@@ -54825,7 +54836,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18883:1: '#forestsurvival'
             {
              before(grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_26_0()); 
-            match(input,203,FOLLOW_203_in_rule__MonsterInst4__ForestsurvivalAssignment_2641331); 
+            match(input,203,FOLLOW_203_in_rule__MonsterInst4__ForestsurvivalAssignment_2641332); 
              after(grammarAccess.getMonsterInst4Access().getForestsurvivalForestsurvivalKeyword_26_0()); 
 
             }
@@ -54870,7 +54881,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18906:1: '#mountainsurvival'
             {
              before(grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_27_0()); 
-            match(input,204,FOLLOW_204_in_rule__MonsterInst4__MountainsurvivalAssignment_2741375); 
+            match(input,204,FOLLOW_204_in_rule__MonsterInst4__MountainsurvivalAssignment_2741376); 
              after(grammarAccess.getMonsterInst4Access().getMountainsurvivalMountainsurvivalKeyword_27_0()); 
 
             }
@@ -54915,7 +54926,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18929:1: '#swampsurvival'
             {
              before(grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_28_0()); 
-            match(input,205,FOLLOW_205_in_rule__MonsterInst4__SwampsurvivalAssignment_2841419); 
+            match(input,205,FOLLOW_205_in_rule__MonsterInst4__SwampsurvivalAssignment_2841420); 
              after(grammarAccess.getMonsterInst4Access().getSwampsurvivalSwampsurvivalKeyword_28_0()); 
 
             }
@@ -54960,7 +54971,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18952:1: '#wastesurvival'
             {
              before(grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_29_0()); 
-            match(input,206,FOLLOW_206_in_rule__MonsterInst4__WastesurvivalAssignment_2941463); 
+            match(input,206,FOLLOW_206_in_rule__MonsterInst4__WastesurvivalAssignment_2941464); 
              after(grammarAccess.getMonsterInst4Access().getWastesurvivalWastesurvivalKeyword_29_0()); 
 
             }
@@ -55005,7 +55016,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18975:1: '#illusion'
             {
              before(grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_30_0()); 
-            match(input,207,FOLLOW_207_in_rule__MonsterInst4__IllusionAssignment_3041507); 
+            match(input,207,FOLLOW_207_in_rule__MonsterInst4__IllusionAssignment_3041508); 
              after(grammarAccess.getMonsterInst4Access().getIllusionIllusionKeyword_30_0()); 
 
             }
@@ -55050,7 +55061,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:18998:1: '#spy'
             {
              before(grammarAccess.getMonsterInst4Access().getSpySpyKeyword_31_0()); 
-            match(input,208,FOLLOW_208_in_rule__MonsterInst4__SpyAssignment_3141551); 
+            match(input,208,FOLLOW_208_in_rule__MonsterInst4__SpyAssignment_3141552); 
              after(grammarAccess.getMonsterInst4Access().getSpySpyKeyword_31_0()); 
 
             }
@@ -55095,7 +55106,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19021:1: '#assassin'
             {
              before(grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_32_0()); 
-            match(input,209,FOLLOW_209_in_rule__MonsterInst4__AssassinAssignment_3241595); 
+            match(input,209,FOLLOW_209_in_rule__MonsterInst4__AssassinAssignment_3241596); 
              after(grammarAccess.getMonsterInst4Access().getAssassinAssassinKeyword_32_0()); 
 
             }
@@ -55140,7 +55151,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19044:1: '#heal'
             {
              before(grammarAccess.getMonsterInst4Access().getHealHealKeyword_33_0()); 
-            match(input,210,FOLLOW_210_in_rule__MonsterInst4__HealAssignment_3341639); 
+            match(input,210,FOLLOW_210_in_rule__MonsterInst4__HealAssignment_3341640); 
              after(grammarAccess.getMonsterInst4Access().getHealHealKeyword_33_0()); 
 
             }
@@ -55185,7 +55196,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19067:1: '#noheal'
             {
              before(grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_34_0()); 
-            match(input,211,FOLLOW_211_in_rule__MonsterInst4__NohealAssignment_3441683); 
+            match(input,211,FOLLOW_211_in_rule__MonsterInst4__NohealAssignment_3441684); 
              after(grammarAccess.getMonsterInst4Access().getNohealNohealKeyword_34_0()); 
 
             }
@@ -55230,7 +55241,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19090:1: '#neednoteat'
             {
              before(grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_35_0()); 
-            match(input,212,FOLLOW_212_in_rule__MonsterInst4__NeednoteatAssignment_3541727); 
+            match(input,212,FOLLOW_212_in_rule__MonsterInst4__NeednoteatAssignment_3541728); 
              after(grammarAccess.getMonsterInst4Access().getNeednoteatNeednoteatKeyword_35_0()); 
 
             }
@@ -55275,7 +55286,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19113:1: '#ethereal'
             {
              before(grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_36_0()); 
-            match(input,213,FOLLOW_213_in_rule__MonsterInst4__EtherealAssignment_3641771); 
+            match(input,213,FOLLOW_213_in_rule__MonsterInst4__EtherealAssignment_3641772); 
              after(grammarAccess.getMonsterInst4Access().getEtherealEtherealKeyword_36_0()); 
 
             }
@@ -55320,7 +55331,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19136:1: '#trample'
             {
              before(grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_37_0()); 
-            match(input,214,FOLLOW_214_in_rule__MonsterInst4__TrampleAssignment_3741815); 
+            match(input,214,FOLLOW_214_in_rule__MonsterInst4__TrampleAssignment_3741816); 
              after(grammarAccess.getMonsterInst4Access().getTrampleTrampleKeyword_37_0()); 
 
             }
@@ -55365,7 +55376,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19159:1: '#entangle'
             {
              before(grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_38_0()); 
-            match(input,215,FOLLOW_215_in_rule__MonsterInst4__EntangleAssignment_3841859); 
+            match(input,215,FOLLOW_215_in_rule__MonsterInst4__EntangleAssignment_3841860); 
              after(grammarAccess.getMonsterInst4Access().getEntangleEntangleKeyword_38_0()); 
 
             }
@@ -55410,7 +55421,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19182:1: '#eyeloss'
             {
              before(grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_39_0()); 
-            match(input,216,FOLLOW_216_in_rule__MonsterInst4__EyelossAssignment_3941903); 
+            match(input,216,FOLLOW_216_in_rule__MonsterInst4__EyelossAssignment_3941904); 
              after(grammarAccess.getMonsterInst4Access().getEyelossEyelossKeyword_39_0()); 
 
             }
@@ -55455,7 +55466,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19205:1: '#horrormark'
             {
              before(grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_40_0()); 
-            match(input,217,FOLLOW_217_in_rule__MonsterInst4__HorrormarkAssignment_4041947); 
+            match(input,217,FOLLOW_217_in_rule__MonsterInst4__HorrormarkAssignment_4041948); 
              after(grammarAccess.getMonsterInst4Access().getHorrormarkHorrormarkKeyword_40_0()); 
 
             }
@@ -55500,7 +55511,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19228:1: '#poisonarmor'
             {
              before(grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_41_0()); 
-            match(input,218,FOLLOW_218_in_rule__MonsterInst4__PoisonarmorAssignment_4141991); 
+            match(input,218,FOLLOW_218_in_rule__MonsterInst4__PoisonarmorAssignment_4141992); 
              after(grammarAccess.getMonsterInst4Access().getPoisonarmorPoisonarmorKeyword_41_0()); 
 
             }
@@ -55545,7 +55556,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19251:1: '#inquisitor'
             {
              before(grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_42_0()); 
-            match(input,219,FOLLOW_219_in_rule__MonsterInst4__InquisitorAssignment_4242035); 
+            match(input,219,FOLLOW_219_in_rule__MonsterInst4__InquisitorAssignment_4242036); 
              after(grammarAccess.getMonsterInst4Access().getInquisitorInquisitorKeyword_42_0()); 
 
             }
@@ -55590,7 +55601,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19274:1: '#noitem'
             {
              before(grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_43_0()); 
-            match(input,220,FOLLOW_220_in_rule__MonsterInst4__NoitemAssignment_4342079); 
+            match(input,220,FOLLOW_220_in_rule__MonsterInst4__NoitemAssignment_4342080); 
              after(grammarAccess.getMonsterInst4Access().getNoitemNoitemKeyword_43_0()); 
 
             }
@@ -55635,7 +55646,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19297:1: '#drainimmune'
             {
              before(grammarAccess.getMonsterInst4Access().getDrainimmuneDrainimmuneKeyword_44_0()); 
-            match(input,221,FOLLOW_221_in_rule__MonsterInst4__DrainimmuneAssignment_4442123); 
+            match(input,221,FOLLOW_221_in_rule__MonsterInst4__DrainimmuneAssignment_4442124); 
              after(grammarAccess.getMonsterInst4Access().getDrainimmuneDrainimmuneKeyword_44_0()); 
 
             }
@@ -55680,7 +55691,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19320:1: '#noleader'
             {
              before(grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_45_0()); 
-            match(input,222,FOLLOW_222_in_rule__MonsterInst4__NoleaderAssignment_4542167); 
+            match(input,222,FOLLOW_222_in_rule__MonsterInst4__NoleaderAssignment_4542168); 
              after(grammarAccess.getMonsterInst4Access().getNoleaderNoleaderKeyword_45_0()); 
 
             }
@@ -55725,7 +55736,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19343:1: '#poorleader'
             {
              before(grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_46_0()); 
-            match(input,223,FOLLOW_223_in_rule__MonsterInst4__PoorleaderAssignment_4642211); 
+            match(input,223,FOLLOW_223_in_rule__MonsterInst4__PoorleaderAssignment_4642212); 
              after(grammarAccess.getMonsterInst4Access().getPoorleaderPoorleaderKeyword_46_0()); 
 
             }
@@ -55770,7 +55781,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19366:1: '#okleader'
             {
              before(grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_47_0()); 
-            match(input,224,FOLLOW_224_in_rule__MonsterInst4__OkleaderAssignment_4742255); 
+            match(input,224,FOLLOW_224_in_rule__MonsterInst4__OkleaderAssignment_4742256); 
              after(grammarAccess.getMonsterInst4Access().getOkleaderOkleaderKeyword_47_0()); 
 
             }
@@ -55815,7 +55826,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19389:1: '#goodleader'
             {
              before(grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_48_0()); 
-            match(input,225,FOLLOW_225_in_rule__MonsterInst4__GoodleaderAssignment_4842299); 
+            match(input,225,FOLLOW_225_in_rule__MonsterInst4__GoodleaderAssignment_4842300); 
              after(grammarAccess.getMonsterInst4Access().getGoodleaderGoodleaderKeyword_48_0()); 
 
             }
@@ -55860,7 +55871,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19412:1: '#expertleader'
             {
              before(grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_49_0()); 
-            match(input,226,FOLLOW_226_in_rule__MonsterInst4__ExpertleaderAssignment_4942343); 
+            match(input,226,FOLLOW_226_in_rule__MonsterInst4__ExpertleaderAssignment_4942344); 
              after(grammarAccess.getMonsterInst4Access().getExpertleaderExpertleaderKeyword_49_0()); 
 
             }
@@ -55905,7 +55916,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19435:1: '#superiorleader'
             {
              before(grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_50_0()); 
-            match(input,227,FOLLOW_227_in_rule__MonsterInst4__SuperiorleaderAssignment_5042387); 
+            match(input,227,FOLLOW_227_in_rule__MonsterInst4__SuperiorleaderAssignment_5042388); 
              after(grammarAccess.getMonsterInst4Access().getSuperiorleaderSuperiorleaderKeyword_50_0()); 
 
             }
@@ -55950,7 +55961,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19458:1: '#nomagicleader'
             {
              before(grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_51_0()); 
-            match(input,228,FOLLOW_228_in_rule__MonsterInst4__NomagicleaderAssignment_5142431); 
+            match(input,228,FOLLOW_228_in_rule__MonsterInst4__NomagicleaderAssignment_5142432); 
              after(grammarAccess.getMonsterInst4Access().getNomagicleaderNomagicleaderKeyword_51_0()); 
 
             }
@@ -55995,7 +56006,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19481:1: '#poormagicleader'
             {
              before(grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_52_0()); 
-            match(input,229,FOLLOW_229_in_rule__MonsterInst4__PoormagicleaderAssignment_5242475); 
+            match(input,229,FOLLOW_229_in_rule__MonsterInst4__PoormagicleaderAssignment_5242476); 
              after(grammarAccess.getMonsterInst4Access().getPoormagicleaderPoormagicleaderKeyword_52_0()); 
 
             }
@@ -56040,7 +56051,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19504:1: '#okmagicleader'
             {
              before(grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_53_0()); 
-            match(input,230,FOLLOW_230_in_rule__MonsterInst4__OkmagicleaderAssignment_5342519); 
+            match(input,230,FOLLOW_230_in_rule__MonsterInst4__OkmagicleaderAssignment_5342520); 
              after(grammarAccess.getMonsterInst4Access().getOkmagicleaderOkmagicleaderKeyword_53_0()); 
 
             }
@@ -56085,7 +56096,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19527:1: '#goodmagicleader'
             {
              before(grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_54_0()); 
-            match(input,231,FOLLOW_231_in_rule__MonsterInst4__GoodmagicleaderAssignment_5442563); 
+            match(input,231,FOLLOW_231_in_rule__MonsterInst4__GoodmagicleaderAssignment_5442564); 
              after(grammarAccess.getMonsterInst4Access().getGoodmagicleaderGoodmagicleaderKeyword_54_0()); 
 
             }
@@ -56130,7 +56141,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19550:1: '#expertmagicleader'
             {
              before(grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_55_0()); 
-            match(input,232,FOLLOW_232_in_rule__MonsterInst4__ExpertmagicleaderAssignment_5542607); 
+            match(input,232,FOLLOW_232_in_rule__MonsterInst4__ExpertmagicleaderAssignment_5542608); 
              after(grammarAccess.getMonsterInst4Access().getExpertmagicleaderExpertmagicleaderKeyword_55_0()); 
 
             }
@@ -56175,7 +56186,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19573:1: '#superiormagicleader'
             {
              before(grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_56_0()); 
-            match(input,233,FOLLOW_233_in_rule__MonsterInst4__SuperiormagicleaderAssignment_5642651); 
+            match(input,233,FOLLOW_233_in_rule__MonsterInst4__SuperiormagicleaderAssignment_5642652); 
              after(grammarAccess.getMonsterInst4Access().getSuperiormagicleaderSuperiormagicleaderKeyword_56_0()); 
 
             }
@@ -56220,7 +56231,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19596:1: '#noundeadleader'
             {
              before(grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_57_0()); 
-            match(input,234,FOLLOW_234_in_rule__MonsterInst4__NoundeadleaderAssignment_5742695); 
+            match(input,234,FOLLOW_234_in_rule__MonsterInst4__NoundeadleaderAssignment_5742696); 
              after(grammarAccess.getMonsterInst4Access().getNoundeadleaderNoundeadleaderKeyword_57_0()); 
 
             }
@@ -56265,7 +56276,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19619:1: '#poorundeadleader'
             {
              before(grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_58_0()); 
-            match(input,235,FOLLOW_235_in_rule__MonsterInst4__PoorundeadleaderAssignment_5842739); 
+            match(input,235,FOLLOW_235_in_rule__MonsterInst4__PoorundeadleaderAssignment_5842740); 
              after(grammarAccess.getMonsterInst4Access().getPoorundeadleaderPoorundeadleaderKeyword_58_0()); 
 
             }
@@ -56310,7 +56321,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19642:1: '#okundeadleader'
             {
              before(grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_59_0()); 
-            match(input,236,FOLLOW_236_in_rule__MonsterInst4__OkundeadleaderAssignment_5942783); 
+            match(input,236,FOLLOW_236_in_rule__MonsterInst4__OkundeadleaderAssignment_5942784); 
              after(grammarAccess.getMonsterInst4Access().getOkundeadleaderOkundeadleaderKeyword_59_0()); 
 
             }
@@ -56355,7 +56366,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19665:1: '#goodundeadleader'
             {
              before(grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_60_0()); 
-            match(input,237,FOLLOW_237_in_rule__MonsterInst4__GoodundeadleaderAssignment_6042827); 
+            match(input,237,FOLLOW_237_in_rule__MonsterInst4__GoodundeadleaderAssignment_6042828); 
              after(grammarAccess.getMonsterInst4Access().getGoodundeadleaderGoodundeadleaderKeyword_60_0()); 
 
             }
@@ -56400,7 +56411,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19688:1: '#expertundeadleader'
             {
              before(grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_61_0()); 
-            match(input,238,FOLLOW_238_in_rule__MonsterInst4__ExpertundeadleaderAssignment_6142871); 
+            match(input,238,FOLLOW_238_in_rule__MonsterInst4__ExpertundeadleaderAssignment_6142872); 
              after(grammarAccess.getMonsterInst4Access().getExpertundeadleaderExpertundeadleaderKeyword_61_0()); 
 
             }
@@ -56445,7 +56456,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19711:1: '#superiorundeadleader'
             {
              before(grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_62_0()); 
-            match(input,239,FOLLOW_239_in_rule__MonsterInst4__SuperiorundeadleaderAssignment_6242915); 
+            match(input,239,FOLLOW_239_in_rule__MonsterInst4__SuperiorundeadleaderAssignment_6242916); 
              after(grammarAccess.getMonsterInst4Access().getSuperiorundeadleaderSuperiorundeadleaderKeyword_62_0()); 
 
             }
@@ -56490,7 +56501,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19734:1: '#weapon'
             {
              before(grammarAccess.getMonsterInst5Access().getWeaponWeaponKeyword_0_0()); 
-            match(input,240,FOLLOW_240_in_rule__MonsterInst5__WeaponAssignment_042959); 
+            match(input,240,FOLLOW_240_in_rule__MonsterInst5__WeaponAssignment_042960); 
              after(grammarAccess.getMonsterInst5Access().getWeaponWeaponKeyword_0_0()); 
 
             }
@@ -56535,7 +56546,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19757:1: '#armor'
             {
              before(grammarAccess.getMonsterInst5Access().getArmorArmorKeyword_1_0()); 
-            match(input,241,FOLLOW_241_in_rule__MonsterInst5__ArmorAssignment_143003); 
+            match(input,241,FOLLOW_241_in_rule__MonsterInst5__ArmorAssignment_143004); 
              after(grammarAccess.getMonsterInst5Access().getArmorArmorKeyword_1_0()); 
 
             }
@@ -56580,7 +56591,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19780:1: '#onebattlespell'
             {
              before(grammarAccess.getMonsterInst5Access().getOnebattlespellOnebattlespellKeyword_2_0()); 
-            match(input,242,FOLLOW_242_in_rule__MonsterInst5__OnebattlespellAssignment_243047); 
+            match(input,242,FOLLOW_242_in_rule__MonsterInst5__OnebattlespellAssignment_243048); 
              after(grammarAccess.getMonsterInst5Access().getOnebattlespellOnebattlespellKeyword_2_0()); 
 
             }
@@ -56625,7 +56636,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19803:1: '#firstshape'
             {
              before(grammarAccess.getMonsterInst5Access().getFirstshapeFirstshapeKeyword_3_0()); 
-            match(input,243,FOLLOW_243_in_rule__MonsterInst5__FirstshapeAssignment_343091); 
+            match(input,243,FOLLOW_243_in_rule__MonsterInst5__FirstshapeAssignment_343092); 
              after(grammarAccess.getMonsterInst5Access().getFirstshapeFirstshapeKeyword_3_0()); 
 
             }
@@ -56670,7 +56681,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19826:1: '#secondshape'
             {
              before(grammarAccess.getMonsterInst5Access().getSecondshapeSecondshapeKeyword_4_0()); 
-            match(input,244,FOLLOW_244_in_rule__MonsterInst5__SecondshapeAssignment_443135); 
+            match(input,244,FOLLOW_244_in_rule__MonsterInst5__SecondshapeAssignment_443136); 
              after(grammarAccess.getMonsterInst5Access().getSecondshapeSecondshapeKeyword_4_0()); 
 
             }
@@ -56715,7 +56726,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19849:1: '#secondtmpshape'
             {
              before(grammarAccess.getMonsterInst5Access().getSecondtmpshapeSecondtmpshapeKeyword_5_0()); 
-            match(input,245,FOLLOW_245_in_rule__MonsterInst5__SecondtmpshapeAssignment_543179); 
+            match(input,245,FOLLOW_245_in_rule__MonsterInst5__SecondtmpshapeAssignment_543180); 
              after(grammarAccess.getMonsterInst5Access().getSecondtmpshapeSecondtmpshapeKeyword_5_0()); 
 
             }
@@ -56760,7 +56771,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19872:1: '#shapechange'
             {
              before(grammarAccess.getMonsterInst5Access().getShapechangeShapechangeKeyword_6_0()); 
-            match(input,246,FOLLOW_246_in_rule__MonsterInst5__ShapechangeAssignment_643223); 
+            match(input,246,FOLLOW_246_in_rule__MonsterInst5__ShapechangeAssignment_643224); 
              after(grammarAccess.getMonsterInst5Access().getShapechangeShapechangeKeyword_6_0()); 
 
             }
@@ -56805,7 +56816,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19895:1: '#landshape'
             {
              before(grammarAccess.getMonsterInst5Access().getLandshapeLandshapeKeyword_7_0()); 
-            match(input,247,FOLLOW_247_in_rule__MonsterInst5__LandshapeAssignment_743267); 
+            match(input,247,FOLLOW_247_in_rule__MonsterInst5__LandshapeAssignment_743268); 
              after(grammarAccess.getMonsterInst5Access().getLandshapeLandshapeKeyword_7_0()); 
 
             }
@@ -56850,7 +56861,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19918:1: '#watershape'
             {
              before(grammarAccess.getMonsterInst5Access().getWatershapeWatershapeKeyword_8_0()); 
-            match(input,248,FOLLOW_248_in_rule__MonsterInst5__WatershapeAssignment_843311); 
+            match(input,248,FOLLOW_248_in_rule__MonsterInst5__WatershapeAssignment_843312); 
              after(grammarAccess.getMonsterInst5Access().getWatershapeWatershapeKeyword_8_0()); 
 
             }
@@ -56895,7 +56906,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19941:1: '#forestshape'
             {
              before(grammarAccess.getMonsterInst5Access().getForestshapeForestshapeKeyword_9_0()); 
-            match(input,249,FOLLOW_249_in_rule__MonsterInst5__ForestshapeAssignment_943355); 
+            match(input,249,FOLLOW_249_in_rule__MonsterInst5__ForestshapeAssignment_943356); 
              after(grammarAccess.getMonsterInst5Access().getForestshapeForestshapeKeyword_9_0()); 
 
             }
@@ -56940,7 +56951,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19964:1: '#plainshape'
             {
              before(grammarAccess.getMonsterInst5Access().getPlainshapePlainshapeKeyword_10_0()); 
-            match(input,250,FOLLOW_250_in_rule__MonsterInst5__PlainshapeAssignment_1043399); 
+            match(input,250,FOLLOW_250_in_rule__MonsterInst5__PlainshapeAssignment_1043400); 
              after(grammarAccess.getMonsterInst5Access().getPlainshapePlainshapeKeyword_10_0()); 
 
             }
@@ -56985,7 +56996,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:19987:1: '#domsummon'
             {
              before(grammarAccess.getMonsterInst5Access().getDomsummonDomsummonKeyword_11_0()); 
-            match(input,251,FOLLOW_251_in_rule__MonsterInst5__DomsummonAssignment_1143443); 
+            match(input,251,FOLLOW_251_in_rule__MonsterInst5__DomsummonAssignment_1143444); 
              after(grammarAccess.getMonsterInst5Access().getDomsummonDomsummonKeyword_11_0()); 
 
             }
@@ -57030,7 +57041,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20010:1: '#domsummon2'
             {
              before(grammarAccess.getMonsterInst5Access().getDomsummon2Domsummon2Keyword_12_0()); 
-            match(input,252,FOLLOW_252_in_rule__MonsterInst5__Domsummon2Assignment_1243487); 
+            match(input,252,FOLLOW_252_in_rule__MonsterInst5__Domsummon2Assignment_1243488); 
              after(grammarAccess.getMonsterInst5Access().getDomsummon2Domsummon2Keyword_12_0()); 
 
             }
@@ -57075,7 +57086,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20033:1: '#domsummon20'
             {
              before(grammarAccess.getMonsterInst5Access().getDomsummon20Domsummon20Keyword_13_0()); 
-            match(input,253,FOLLOW_253_in_rule__MonsterInst5__Domsummon20Assignment_1343531); 
+            match(input,253,FOLLOW_253_in_rule__MonsterInst5__Domsummon20Assignment_1343532); 
              after(grammarAccess.getMonsterInst5Access().getDomsummon20Domsummon20Keyword_13_0()); 
 
             }
@@ -57120,7 +57131,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20056:1: '#makemonster1'
             {
              before(grammarAccess.getMonsterInst5Access().getMakemonster1Makemonster1Keyword_14_0()); 
-            match(input,254,FOLLOW_254_in_rule__MonsterInst5__Makemonster1Assignment_1443575); 
+            match(input,254,FOLLOW_254_in_rule__MonsterInst5__Makemonster1Assignment_1443576); 
              after(grammarAccess.getMonsterInst5Access().getMakemonster1Makemonster1Keyword_14_0()); 
 
             }
@@ -57165,7 +57176,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20079:1: '#makemonster2'
             {
              before(grammarAccess.getMonsterInst5Access().getMakemonster2Makemonster2Keyword_15_0()); 
-            match(input,255,FOLLOW_255_in_rule__MonsterInst5__Makemonster2Assignment_1543619); 
+            match(input,255,FOLLOW_255_in_rule__MonsterInst5__Makemonster2Assignment_1543620); 
              after(grammarAccess.getMonsterInst5Access().getMakemonster2Makemonster2Keyword_15_0()); 
 
             }
@@ -57210,7 +57221,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20102:1: '#makemonster3'
             {
              before(grammarAccess.getMonsterInst5Access().getMakemonster3Makemonster3Keyword_16_0()); 
-            match(input,256,FOLLOW_256_in_rule__MonsterInst5__Makemonster3Assignment_1643663); 
+            match(input,256,FOLLOW_256_in_rule__MonsterInst5__Makemonster3Assignment_1643664); 
              after(grammarAccess.getMonsterInst5Access().getMakemonster3Makemonster3Keyword_16_0()); 
 
             }
@@ -57255,7 +57266,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20125:1: '#makemonster4'
             {
              before(grammarAccess.getMonsterInst5Access().getMakemonster4Makemonster4Keyword_17_0()); 
-            match(input,257,FOLLOW_257_in_rule__MonsterInst5__Makemonster4Assignment_1743707); 
+            match(input,257,FOLLOW_257_in_rule__MonsterInst5__Makemonster4Assignment_1743708); 
              after(grammarAccess.getMonsterInst5Access().getMakemonster4Makemonster4Keyword_17_0()); 
 
             }
@@ -57300,7 +57311,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20148:1: '#makemonster5'
             {
              before(grammarAccess.getMonsterInst5Access().getMakemonster5Makemonster5Keyword_18_0()); 
-            match(input,258,FOLLOW_258_in_rule__MonsterInst5__Makemonster5Assignment_1843751); 
+            match(input,258,FOLLOW_258_in_rule__MonsterInst5__Makemonster5Assignment_1843752); 
              after(grammarAccess.getMonsterInst5Access().getMakemonster5Makemonster5Keyword_18_0()); 
 
             }
@@ -57345,7 +57356,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20171:1: '#summon1'
             {
              before(grammarAccess.getMonsterInst5Access().getSummon1Summon1Keyword_19_0()); 
-            match(input,259,FOLLOW_259_in_rule__MonsterInst5__Summon1Assignment_1943795); 
+            match(input,259,FOLLOW_259_in_rule__MonsterInst5__Summon1Assignment_1943796); 
              after(grammarAccess.getMonsterInst5Access().getSummon1Summon1Keyword_19_0()); 
 
             }
@@ -57390,7 +57401,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20194:1: '#summon5'
             {
              before(grammarAccess.getMonsterInst5Access().getSummon5Summon5Keyword_20_0()); 
-            match(input,260,FOLLOW_260_in_rule__MonsterInst5__Summon5Assignment_2043839); 
+            match(input,260,FOLLOW_260_in_rule__MonsterInst5__Summon5Assignment_2043840); 
              after(grammarAccess.getMonsterInst5Access().getSummon5Summon5Keyword_20_0()); 
 
             }
@@ -57435,7 +57446,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20217:1: '#stealthy'
             {
              before(grammarAccess.getMonsterInst6Access().getStealthyStealthyKeyword_0_0()); 
-            match(input,261,FOLLOW_261_in_rule__MonsterInst6__StealthyAssignment_043883); 
+            match(input,261,FOLLOW_261_in_rule__MonsterInst6__StealthyAssignment_043884); 
              after(grammarAccess.getMonsterInst6Access().getStealthyStealthyKeyword_0_0()); 
 
             }
@@ -57480,7 +57491,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20240:1: '#heat'
             {
              before(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_1_0()); 
-            match(input,262,FOLLOW_262_in_rule__MonsterInst6__HeatAssignment_143927); 
+            match(input,262,FOLLOW_262_in_rule__MonsterInst6__HeatAssignment_143928); 
              after(grammarAccess.getMonsterInst6Access().getHeatHeatKeyword_1_0()); 
 
             }
@@ -57525,7 +57536,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20263:1: '#cold'
             {
              before(grammarAccess.getMonsterInst6Access().getColdColdKeyword_2_0()); 
-            match(input,86,FOLLOW_86_in_rule__MonsterInst6__ColdAssignment_243971); 
+            match(input,86,FOLLOW_86_in_rule__MonsterInst6__ColdAssignment_243972); 
              after(grammarAccess.getMonsterInst6Access().getColdColdKeyword_2_0()); 
 
             }
@@ -57566,7 +57577,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20284:1: RULE_INT
             {
              before(grammarAccess.getSelectSpellByIdAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectSpellById__ValueAssignment_144010); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectSpellById__ValueAssignment_144011); 
              after(grammarAccess.getSelectSpellByIdAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -57603,7 +57614,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20299:1: ruleSpellMods
             {
              before(grammarAccess.getSelectSpellByIdAccess().getModsSpellModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleSpellMods_in_rule__SelectSpellById__ModsAssignment_344041);
+            pushFollow(FOLLOW_ruleSpellMods_in_rule__SelectSpellById__ModsAssignment_344042);
             ruleSpellMods();
 
             state._fsp--;
@@ -57644,7 +57655,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20314:1: RULE_STRING
             {
              before(grammarAccess.getSelectSpellByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectSpellByName__ValueAssignment_144072); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectSpellByName__ValueAssignment_144073); 
              after(grammarAccess.getSelectSpellByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -57681,7 +57692,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20329:1: ruleSpellMods
             {
              before(grammarAccess.getSelectSpellByNameAccess().getModsSpellModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleSpellMods_in_rule__SelectSpellByName__ModsAssignment_344103);
+            pushFollow(FOLLOW_ruleSpellMods_in_rule__SelectSpellByName__ModsAssignment_344104);
             ruleSpellMods();
 
             state._fsp--;
@@ -57722,7 +57733,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20344:1: ruleSpellMods
             {
              before(grammarAccess.getNewSpellAccess().getModsSpellModsParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleSpellMods_in_rule__NewSpell__ModsAssignment_244134);
+            pushFollow(FOLLOW_ruleSpellMods_in_rule__NewSpell__ModsAssignment_244135);
             ruleSpellMods();
 
             state._fsp--;
@@ -57763,7 +57774,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20359:1: RULE_STRING
             {
              before(grammarAccess.getSpellPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SpellPattern1__ValueAssignment_144165); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SpellPattern1__ValueAssignment_144166); 
              after(grammarAccess.getSpellPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -57800,7 +57811,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20374:1: RULE_INT
             {
              before(grammarAccess.getSpellPattern2Access().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SpellPattern2__ValueAssignment_144196); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SpellPattern2__ValueAssignment_144197); 
              after(grammarAccess.getSpellPattern2Access().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -57837,7 +57848,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20389:1: RULE_INT
             {
              before(grammarAccess.getSpellPattern3Access().getValue1INTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SpellPattern3__Value1Assignment_144227); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SpellPattern3__Value1Assignment_144228); 
              after(grammarAccess.getSpellPattern3Access().getValue1INTTerminalRuleCall_1_0()); 
 
             }
@@ -57874,7 +57885,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20404:1: RULE_INT
             {
              before(grammarAccess.getSpellPattern3Access().getValue2INTTerminalRuleCall_2_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SpellPattern3__Value2Assignment_244258); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SpellPattern3__Value2Assignment_244259); 
              after(grammarAccess.getSpellPattern3Access().getValue2INTTerminalRuleCall_2_0()); 
 
             }
@@ -57911,7 +57922,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20419:1: RULE_STRING
             {
              before(grammarAccess.getSpellPattern5Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SpellPattern5__Value1Assignment_1_044289); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SpellPattern5__Value1Assignment_1_044290); 
              after(grammarAccess.getSpellPattern5Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
 
             }
@@ -57948,7 +57959,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20434:1: RULE_INT
             {
              before(grammarAccess.getSpellPattern5Access().getValue2INTTerminalRuleCall_1_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SpellPattern5__Value2Assignment_1_144320); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SpellPattern5__Value2Assignment_1_144321); 
              after(grammarAccess.getSpellPattern5Access().getValue2INTTerminalRuleCall_1_1_0()); 
 
             }
@@ -57989,7 +58000,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20451:1: '#name'
             {
              before(grammarAccess.getSpellInst1Access().getNameNameKeyword_0_0()); 
-            match(input,50,FOLLOW_50_in_rule__SpellInst1__NameAssignment_044356); 
+            match(input,50,FOLLOW_50_in_rule__SpellInst1__NameAssignment_044357); 
              after(grammarAccess.getSpellInst1Access().getNameNameKeyword_0_0()); 
 
             }
@@ -58034,7 +58045,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20474:1: '#descr'
             {
              before(grammarAccess.getSpellInst1Access().getDescrDescrKeyword_1_0()); 
-            match(input,99,FOLLOW_99_in_rule__SpellInst1__DescrAssignment_144400); 
+            match(input,99,FOLLOW_99_in_rule__SpellInst1__DescrAssignment_144401); 
              after(grammarAccess.getSpellInst1Access().getDescrDescrKeyword_1_0()); 
 
             }
@@ -58079,7 +58090,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20497:1: '#school'
             {
              before(grammarAccess.getSpellInst2Access().getSchoolSchoolKeyword_0_0()); 
-            match(input,263,FOLLOW_263_in_rule__SpellInst2__SchoolAssignment_044444); 
+            match(input,263,FOLLOW_263_in_rule__SpellInst2__SchoolAssignment_044445); 
              after(grammarAccess.getSpellInst2Access().getSchoolSchoolKeyword_0_0()); 
 
             }
@@ -58124,7 +58135,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20520:1: '#researchlevel'
             {
              before(grammarAccess.getSpellInst2Access().getResearchlevelResearchlevelKeyword_1_0()); 
-            match(input,264,FOLLOW_264_in_rule__SpellInst2__ResearchlevelAssignment_144488); 
+            match(input,264,FOLLOW_264_in_rule__SpellInst2__ResearchlevelAssignment_144489); 
              after(grammarAccess.getSpellInst2Access().getResearchlevelResearchlevelKeyword_1_0()); 
 
             }
@@ -58169,7 +58180,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20543:1: '#aoe'
             {
              before(grammarAccess.getSpellInst2Access().getAoeAoeKeyword_2_0()); 
-            match(input,63,FOLLOW_63_in_rule__SpellInst2__AoeAssignment_244532); 
+            match(input,63,FOLLOW_63_in_rule__SpellInst2__AoeAssignment_244533); 
              after(grammarAccess.getSpellInst2Access().getAoeAoeKeyword_2_0()); 
 
             }
@@ -58214,7 +58225,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20566:1: '#damage'
             {
              before(grammarAccess.getSpellInst2Access().getDamageDamageKeyword_3_0()); 
-            match(input,265,FOLLOW_265_in_rule__SpellInst2__DamageAssignment_344576); 
+            match(input,265,FOLLOW_265_in_rule__SpellInst2__DamageAssignment_344577); 
              after(grammarAccess.getSpellInst2Access().getDamageDamageKeyword_3_0()); 
 
             }
@@ -58259,7 +58270,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20589:1: '#effect'
             {
              before(grammarAccess.getSpellInst2Access().getEffectEffectKeyword_4_0()); 
-            match(input,266,FOLLOW_266_in_rule__SpellInst2__EffectAssignment_444620); 
+            match(input,266,FOLLOW_266_in_rule__SpellInst2__EffectAssignment_444621); 
              after(grammarAccess.getSpellInst2Access().getEffectEffectKeyword_4_0()); 
 
             }
@@ -58304,7 +58315,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20612:1: '#fatiguecost'
             {
              before(grammarAccess.getSpellInst2Access().getFatiguecostFatiguecostKeyword_5_0()); 
-            match(input,267,FOLLOW_267_in_rule__SpellInst2__FatiguecostAssignment_544664); 
+            match(input,267,FOLLOW_267_in_rule__SpellInst2__FatiguecostAssignment_544665); 
              after(grammarAccess.getSpellInst2Access().getFatiguecostFatiguecostKeyword_5_0()); 
 
             }
@@ -58349,7 +58360,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20635:1: '#flightspr'
             {
              before(grammarAccess.getSpellInst2Access().getFlightsprFlightsprKeyword_6_0()); 
-            match(input,268,FOLLOW_268_in_rule__SpellInst2__FlightsprAssignment_644708); 
+            match(input,268,FOLLOW_268_in_rule__SpellInst2__FlightsprAssignment_644709); 
              after(grammarAccess.getSpellInst2Access().getFlightsprFlightsprKeyword_6_0()); 
 
             }
@@ -58394,7 +58405,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20658:1: '#explspr'
             {
              before(grammarAccess.getSpellInst2Access().getExplsprExplsprKeyword_7_0()); 
-            match(input,66,FOLLOW_66_in_rule__SpellInst2__ExplsprAssignment_744752); 
+            match(input,66,FOLLOW_66_in_rule__SpellInst2__ExplsprAssignment_744753); 
              after(grammarAccess.getSpellInst2Access().getExplsprExplsprKeyword_7_0()); 
 
             }
@@ -58439,7 +58450,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20681:1: '#nreff'
             {
              before(grammarAccess.getSpellInst2Access().getNreffNreffKeyword_8_0()); 
-            match(input,269,FOLLOW_269_in_rule__SpellInst2__NreffAssignment_844796); 
+            match(input,269,FOLLOW_269_in_rule__SpellInst2__NreffAssignment_844797); 
              after(grammarAccess.getSpellInst2Access().getNreffNreffKeyword_8_0()); 
 
             }
@@ -58484,7 +58495,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20704:1: '#range'
             {
              before(grammarAccess.getSpellInst2Access().getRangeRangeKeyword_9_0()); 
-            match(input,60,FOLLOW_60_in_rule__SpellInst2__RangeAssignment_944840); 
+            match(input,60,FOLLOW_60_in_rule__SpellInst2__RangeAssignment_944841); 
              after(grammarAccess.getSpellInst2Access().getRangeRangeKeyword_9_0()); 
 
             }
@@ -58529,7 +58540,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20727:1: '#precision'
             {
              before(grammarAccess.getSpellInst2Access().getPrecisionPrecisionKeyword_10_0()); 
-            match(input,270,FOLLOW_270_in_rule__SpellInst2__PrecisionAssignment_1044884); 
+            match(input,270,FOLLOW_270_in_rule__SpellInst2__PrecisionAssignment_1044885); 
              after(grammarAccess.getSpellInst2Access().getPrecisionPrecisionKeyword_10_0()); 
 
             }
@@ -58574,7 +58585,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20750:1: '#sound'
             {
              before(grammarAccess.getSpellInst2Access().getSoundSoundKeyword_11_0()); 
-            match(input,62,FOLLOW_62_in_rule__SpellInst2__SoundAssignment_1144928); 
+            match(input,62,FOLLOW_62_in_rule__SpellInst2__SoundAssignment_1144929); 
              after(grammarAccess.getSpellInst2Access().getSoundSoundKeyword_11_0()); 
 
             }
@@ -58619,7 +58630,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20773:1: '#spec'
             {
              before(grammarAccess.getSpellInst2Access().getSpecSpecKeyword_12_0()); 
-            match(input,271,FOLLOW_271_in_rule__SpellInst2__SpecAssignment_1244972); 
+            match(input,271,FOLLOW_271_in_rule__SpellInst2__SpecAssignment_1244973); 
              after(grammarAccess.getSpellInst2Access().getSpecSpecKeyword_12_0()); 
 
             }
@@ -58664,7 +58675,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20796:1: '#restricted'
             {
              before(grammarAccess.getSpellInst2Access().getRestrictedRestrictedKeyword_13_0()); 
-            match(input,272,FOLLOW_272_in_rule__SpellInst2__RestrictedAssignment_1345016); 
+            match(input,272,FOLLOW_272_in_rule__SpellInst2__RestrictedAssignment_1345017); 
              after(grammarAccess.getSpellInst2Access().getRestrictedRestrictedKeyword_13_0()); 
 
             }
@@ -58709,7 +58720,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20819:1: '#path'
             {
              before(grammarAccess.getSpellInst3Access().getPathPathKeyword_0_0()); 
-            match(input,273,FOLLOW_273_in_rule__SpellInst3__PathAssignment_045060); 
+            match(input,273,FOLLOW_273_in_rule__SpellInst3__PathAssignment_045061); 
              after(grammarAccess.getSpellInst3Access().getPathPathKeyword_0_0()); 
 
             }
@@ -58754,7 +58765,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20842:1: '#pathlevel'
             {
              before(grammarAccess.getSpellInst3Access().getPathlevelPathlevelKeyword_1_0()); 
-            match(input,274,FOLLOW_274_in_rule__SpellInst3__PathlevelAssignment_145104); 
+            match(input,274,FOLLOW_274_in_rule__SpellInst3__PathlevelAssignment_145105); 
              after(grammarAccess.getSpellInst3Access().getPathlevelPathlevelKeyword_1_0()); 
 
             }
@@ -58799,7 +58810,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20865:1: '#clear'
             {
              before(grammarAccess.getSpellInst4Access().getClearClearKeyword_0()); 
-            match(input,177,FOLLOW_177_in_rule__SpellInst4__ClearAssignment45148); 
+            match(input,177,FOLLOW_177_in_rule__SpellInst4__ClearAssignment45149); 
              after(grammarAccess.getSpellInst4Access().getClearClearKeyword_0()); 
 
             }
@@ -58844,7 +58855,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20888:1: '#copyspell'
             {
              before(grammarAccess.getSpellInst5Access().getCopyspellCopyspellKeyword_0_0()); 
-            match(input,275,FOLLOW_275_in_rule__SpellInst5__CopyspellAssignment_045192); 
+            match(input,275,FOLLOW_275_in_rule__SpellInst5__CopyspellAssignment_045193); 
              after(grammarAccess.getSpellInst5Access().getCopyspellCopyspellKeyword_0_0()); 
 
             }
@@ -58889,7 +58900,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20911:1: '#nextspell'
             {
              before(grammarAccess.getSpellInst5Access().getNextspellNextspellKeyword_1_0()); 
-            match(input,276,FOLLOW_276_in_rule__SpellInst5__NextspellAssignment_145236); 
+            match(input,276,FOLLOW_276_in_rule__SpellInst5__NextspellAssignment_145237); 
              after(grammarAccess.getSpellInst5Access().getNextspellNextspellKeyword_1_0()); 
 
             }
@@ -58930,7 +58941,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20932:1: RULE_INT
             {
              before(grammarAccess.getSelectItemByIdAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectItemById__ValueAssignment_145275); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectItemById__ValueAssignment_145276); 
              after(grammarAccess.getSelectItemByIdAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -58967,7 +58978,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20947:1: ruleItemMods
             {
              before(grammarAccess.getSelectItemByIdAccess().getModsItemModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleItemMods_in_rule__SelectItemById__ModsAssignment_345306);
+            pushFollow(FOLLOW_ruleItemMods_in_rule__SelectItemById__ModsAssignment_345307);
             ruleItemMods();
 
             state._fsp--;
@@ -59008,7 +59019,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20962:1: RULE_STRING
             {
              before(grammarAccess.getSelectItemByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectItemByName__ValueAssignment_145337); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectItemByName__ValueAssignment_145338); 
              after(grammarAccess.getSelectItemByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -59045,7 +59056,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20977:1: ruleItemMods
             {
              before(grammarAccess.getSelectItemByNameAccess().getModsItemModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleItemMods_in_rule__SelectItemByName__ModsAssignment_345368);
+            pushFollow(FOLLOW_ruleItemMods_in_rule__SelectItemByName__ModsAssignment_345369);
             ruleItemMods();
 
             state._fsp--;
@@ -59086,7 +59097,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:20992:1: ruleItemMods
             {
              before(grammarAccess.getNewItemAccess().getModsItemModsParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleItemMods_in_rule__NewItem__ModsAssignment_245399);
+            pushFollow(FOLLOW_ruleItemMods_in_rule__NewItem__ModsAssignment_245400);
             ruleItemMods();
 
             state._fsp--;
@@ -59127,7 +59138,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21007:1: RULE_STRING
             {
              before(grammarAccess.getItemPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ItemPattern1__ValueAssignment_145430); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ItemPattern1__ValueAssignment_145431); 
              after(grammarAccess.getItemPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -59164,7 +59175,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21022:1: RULE_INT
             {
              before(grammarAccess.getItemPattern2Access().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__ItemPattern2__ValueAssignment_145461); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__ItemPattern2__ValueAssignment_145462); 
              after(grammarAccess.getItemPattern2Access().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -59201,7 +59212,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21037:1: RULE_STRING
             {
              before(grammarAccess.getItemPattern3Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ItemPattern3__Value1Assignment_1_045492); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ItemPattern3__Value1Assignment_1_045493); 
              after(grammarAccess.getItemPattern3Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
 
             }
@@ -59238,7 +59249,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21052:1: RULE_INT
             {
              before(grammarAccess.getItemPattern3Access().getValue2INTTerminalRuleCall_1_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__ItemPattern3__Value2Assignment_1_145523); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__ItemPattern3__Value2Assignment_1_145524); 
              after(grammarAccess.getItemPattern3Access().getValue2INTTerminalRuleCall_1_1_0()); 
 
             }
@@ -59279,7 +59290,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21069:1: '#name'
             {
              before(grammarAccess.getItemInst1Access().getNameNameKeyword_0_0()); 
-            match(input,50,FOLLOW_50_in_rule__ItemInst1__NameAssignment_045559); 
+            match(input,50,FOLLOW_50_in_rule__ItemInst1__NameAssignment_045560); 
              after(grammarAccess.getItemInst1Access().getNameNameKeyword_0_0()); 
 
             }
@@ -59324,7 +59335,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21092:1: '#descr'
             {
              before(grammarAccess.getItemInst1Access().getDescrDescrKeyword_1_0()); 
-            match(input,99,FOLLOW_99_in_rule__ItemInst1__DescrAssignment_145603); 
+            match(input,99,FOLLOW_99_in_rule__ItemInst1__DescrAssignment_145604); 
              after(grammarAccess.getItemInst1Access().getDescrDescrKeyword_1_0()); 
 
             }
@@ -59369,7 +59380,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21115:1: '#armor'
             {
              before(grammarAccess.getItemInst1Access().getArmorArmorKeyword_2_0()); 
-            match(input,241,FOLLOW_241_in_rule__ItemInst1__ArmorAssignment_245647); 
+            match(input,241,FOLLOW_241_in_rule__ItemInst1__ArmorAssignment_245648); 
              after(grammarAccess.getItemInst1Access().getArmorArmorKeyword_2_0()); 
 
             }
@@ -59414,7 +59425,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21138:1: '#constlevel'
             {
              before(grammarAccess.getItemInst2Access().getConstlevelConstlevelKeyword_0_0()); 
-            match(input,277,FOLLOW_277_in_rule__ItemInst2__ConstlevelAssignment_045691); 
+            match(input,277,FOLLOW_277_in_rule__ItemInst2__ConstlevelAssignment_045692); 
              after(grammarAccess.getItemInst2Access().getConstlevelConstlevelKeyword_0_0()); 
 
             }
@@ -59459,7 +59470,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21161:1: '#mainpath'
             {
              before(grammarAccess.getItemInst2Access().getMainpathMainpathKeyword_1_0()); 
-            match(input,278,FOLLOW_278_in_rule__ItemInst2__MainpathAssignment_145735); 
+            match(input,278,FOLLOW_278_in_rule__ItemInst2__MainpathAssignment_145736); 
              after(grammarAccess.getItemInst2Access().getMainpathMainpathKeyword_1_0()); 
 
             }
@@ -59504,7 +59515,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21184:1: '#mainlevel'
             {
              before(grammarAccess.getItemInst2Access().getMainlevelMainlevelKeyword_2_0()); 
-            match(input,279,FOLLOW_279_in_rule__ItemInst2__MainlevelAssignment_245779); 
+            match(input,279,FOLLOW_279_in_rule__ItemInst2__MainlevelAssignment_245780); 
              after(grammarAccess.getItemInst2Access().getMainlevelMainlevelKeyword_2_0()); 
 
             }
@@ -59549,7 +59560,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21207:1: '#secondarypath'
             {
              before(grammarAccess.getItemInst2Access().getSecondarypathSecondarypathKeyword_3_0()); 
-            match(input,280,FOLLOW_280_in_rule__ItemInst2__SecondarypathAssignment_345823); 
+            match(input,280,FOLLOW_280_in_rule__ItemInst2__SecondarypathAssignment_345824); 
              after(grammarAccess.getItemInst2Access().getSecondarypathSecondarypathKeyword_3_0()); 
 
             }
@@ -59594,7 +59605,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21230:1: '#secondarylevel'
             {
              before(grammarAccess.getItemInst2Access().getSecondarylevelSecondarylevelKeyword_4_0()); 
-            match(input,281,FOLLOW_281_in_rule__ItemInst2__SecondarylevelAssignment_445867); 
+            match(input,281,FOLLOW_281_in_rule__ItemInst2__SecondarylevelAssignment_445868); 
              after(grammarAccess.getItemInst2Access().getSecondarylevelSecondarylevelKeyword_4_0()); 
 
             }
@@ -59639,7 +59650,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21253:1: '#type'
             {
              before(grammarAccess.getItemInst2Access().getTypeTypeKeyword_5_0()); 
-            match(input,51,FOLLOW_51_in_rule__ItemInst2__TypeAssignment_545911); 
+            match(input,51,FOLLOW_51_in_rule__ItemInst2__TypeAssignment_545912); 
              after(grammarAccess.getItemInst2Access().getTypeTypeKeyword_5_0()); 
 
             }
@@ -59684,7 +59695,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21276:1: '#weapon'
             {
              before(grammarAccess.getItemInst2Access().getWeaponWeaponKeyword_6_0()); 
-            match(input,240,FOLLOW_240_in_rule__ItemInst2__WeaponAssignment_645955); 
+            match(input,240,FOLLOW_240_in_rule__ItemInst2__WeaponAssignment_645956); 
              after(grammarAccess.getItemInst2Access().getWeaponWeaponKeyword_6_0()); 
 
             }
@@ -59729,7 +59740,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21299:1: '#copyspr'
             {
              before(grammarAccess.getItemInst3Access().getCopysprCopysprKeyword_0()); 
-            match(input,115,FOLLOW_115_in_rule__ItemInst3__CopysprAssignment45999); 
+            match(input,115,FOLLOW_115_in_rule__ItemInst3__CopysprAssignment46000); 
              after(grammarAccess.getItemInst3Access().getCopysprCopysprKeyword_0()); 
 
             }
@@ -59770,7 +59781,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21320:1: RULE_INT
             {
              before(grammarAccess.getSelectNameAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectName__ValueAssignment_146038); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectName__ValueAssignment_146039); 
              after(grammarAccess.getSelectNameAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -59807,7 +59818,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21335:1: ruleNameMods
             {
              before(grammarAccess.getSelectNameAccess().getModsNameModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleNameMods_in_rule__SelectName__ModsAssignment_346069);
+            pushFollow(FOLLOW_ruleNameMods_in_rule__SelectName__ModsAssignment_346070);
             ruleNameMods();
 
             state._fsp--;
@@ -59848,7 +59859,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21350:1: RULE_STRING
             {
              before(grammarAccess.getNamePattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__NamePattern1__ValueAssignment_146100); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__NamePattern1__ValueAssignment_146101); 
              after(grammarAccess.getNamePattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -59889,7 +59900,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21367:1: '#addname'
             {
              before(grammarAccess.getNameInst1Access().getNameAddnameKeyword_0()); 
-            match(input,282,FOLLOW_282_in_rule__NameInst1__NameAssignment46136); 
+            match(input,282,FOLLOW_282_in_rule__NameInst1__NameAssignment46137); 
              after(grammarAccess.getNameInst1Access().getNameAddnameKeyword_0()); 
 
             }
@@ -59934,7 +59945,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21390:1: '#clear'
             {
              before(grammarAccess.getNameInst2Access().getClearClearKeyword_0()); 
-            match(input,177,FOLLOW_177_in_rule__NameInst2__ClearAssignment46180); 
+            match(input,177,FOLLOW_177_in_rule__NameInst2__ClearAssignment46181); 
              after(grammarAccess.getNameInst2Access().getClearClearKeyword_0()); 
 
             }
@@ -59975,7 +59986,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21411:1: RULE_INT
             {
              before(grammarAccess.getSelectSiteByIdAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectSiteById__ValueAssignment_146219); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectSiteById__ValueAssignment_146220); 
              after(grammarAccess.getSelectSiteByIdAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -60012,7 +60023,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21426:1: ruleSiteMods
             {
              before(grammarAccess.getSelectSiteByIdAccess().getModsSiteModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleSiteMods_in_rule__SelectSiteById__ModsAssignment_346250);
+            pushFollow(FOLLOW_ruleSiteMods_in_rule__SelectSiteById__ModsAssignment_346251);
             ruleSiteMods();
 
             state._fsp--;
@@ -60053,7 +60064,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21441:1: RULE_STRING
             {
              before(grammarAccess.getSelectSiteByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectSiteByName__ValueAssignment_146281); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SelectSiteByName__ValueAssignment_146282); 
              after(grammarAccess.getSelectSiteByNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -60090,7 +60101,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21456:1: ruleSiteMods
             {
              before(grammarAccess.getSelectSiteByNameAccess().getModsSiteModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleSiteMods_in_rule__SelectSiteByName__ModsAssignment_346312);
+            pushFollow(FOLLOW_ruleSiteMods_in_rule__SelectSiteByName__ModsAssignment_346313);
             ruleSiteMods();
 
             state._fsp--;
@@ -60131,7 +60142,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21471:1: RULE_INT
             {
              before(grammarAccess.getNewSiteAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NewSite__ValueAssignment_146343); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NewSite__ValueAssignment_146344); 
              after(grammarAccess.getNewSiteAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -60168,7 +60179,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21486:1: ruleSiteMods
             {
              before(grammarAccess.getNewSiteAccess().getModsSiteModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleSiteMods_in_rule__NewSite__ModsAssignment_346374);
+            pushFollow(FOLLOW_ruleSiteMods_in_rule__NewSite__ModsAssignment_346375);
             ruleSiteMods();
 
             state._fsp--;
@@ -60209,7 +60220,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21501:1: RULE_STRING
             {
              before(grammarAccess.getSitePattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SitePattern1__ValueAssignment_146405); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SitePattern1__ValueAssignment_146406); 
              after(grammarAccess.getSitePattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -60246,7 +60257,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21516:1: RULE_INT
             {
              before(grammarAccess.getSitePattern2Access().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SitePattern2__ValueAssignment_146436); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SitePattern2__ValueAssignment_146437); 
              after(grammarAccess.getSitePattern2Access().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -60283,7 +60294,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21531:1: RULE_INT
             {
              before(grammarAccess.getSitePattern3Access().getValue1INTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SitePattern3__Value1Assignment_146467); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SitePattern3__Value1Assignment_146468); 
              after(grammarAccess.getSitePattern3Access().getValue1INTTerminalRuleCall_1_0()); 
 
             }
@@ -60320,7 +60331,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21546:1: RULE_INT
             {
              before(grammarAccess.getSitePattern3Access().getValue2INTTerminalRuleCall_2_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SitePattern3__Value2Assignment_246498); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SitePattern3__Value2Assignment_246499); 
              after(grammarAccess.getSitePattern3Access().getValue2INTTerminalRuleCall_2_0()); 
 
             }
@@ -60361,7 +60372,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21563:1: '#name'
             {
              before(grammarAccess.getSiteInst1Access().getNameNameKeyword_0()); 
-            match(input,50,FOLLOW_50_in_rule__SiteInst1__NameAssignment46534); 
+            match(input,50,FOLLOW_50_in_rule__SiteInst1__NameAssignment46535); 
              after(grammarAccess.getSiteInst1Access().getNameNameKeyword_0()); 
 
             }
@@ -60406,7 +60417,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21586:1: '#path'
             {
              before(grammarAccess.getSiteInst2Access().getPathPathKeyword_0_0()); 
-            match(input,273,FOLLOW_273_in_rule__SiteInst2__PathAssignment_046578); 
+            match(input,273,FOLLOW_273_in_rule__SiteInst2__PathAssignment_046579); 
              after(grammarAccess.getSiteInst2Access().getPathPathKeyword_0_0()); 
 
             }
@@ -60451,7 +60462,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21609:1: '#level'
             {
              before(grammarAccess.getSiteInst2Access().getLevelLevelKeyword_1_0()); 
-            match(input,283,FOLLOW_283_in_rule__SiteInst2__LevelAssignment_146622); 
+            match(input,283,FOLLOW_283_in_rule__SiteInst2__LevelAssignment_146623); 
              after(grammarAccess.getSiteInst2Access().getLevelLevelKeyword_1_0()); 
 
             }
@@ -60496,7 +60507,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21632:1: '#rarity'
             {
              before(grammarAccess.getSiteInst2Access().getRarityRarityKeyword_2_0()); 
-            match(input,284,FOLLOW_284_in_rule__SiteInst2__RarityAssignment_246666); 
+            match(input,284,FOLLOW_284_in_rule__SiteInst2__RarityAssignment_246667); 
              after(grammarAccess.getSiteInst2Access().getRarityRarityKeyword_2_0()); 
 
             }
@@ -60541,7 +60552,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21655:1: '#loc'
             {
              before(grammarAccess.getSiteInst2Access().getLocLocKeyword_3_0()); 
-            match(input,285,FOLLOW_285_in_rule__SiteInst2__LocAssignment_346710); 
+            match(input,285,FOLLOW_285_in_rule__SiteInst2__LocAssignment_346711); 
              after(grammarAccess.getSiteInst2Access().getLocLocKeyword_3_0()); 
 
             }
@@ -60586,7 +60597,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21678:1: '#homemon'
             {
              before(grammarAccess.getSiteInst2Access().getHomemonHomemonKeyword_4_0()); 
-            match(input,286,FOLLOW_286_in_rule__SiteInst2__HomemonAssignment_446754); 
+            match(input,286,FOLLOW_286_in_rule__SiteInst2__HomemonAssignment_446755); 
              after(grammarAccess.getSiteInst2Access().getHomemonHomemonKeyword_4_0()); 
 
             }
@@ -60631,7 +60642,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21701:1: '#homecom'
             {
              before(grammarAccess.getSiteInst2Access().getHomecomHomecomKeyword_5_0()); 
-            match(input,287,FOLLOW_287_in_rule__SiteInst2__HomecomAssignment_546798); 
+            match(input,287,FOLLOW_287_in_rule__SiteInst2__HomecomAssignment_546799); 
              after(grammarAccess.getSiteInst2Access().getHomecomHomecomKeyword_5_0()); 
 
             }
@@ -60676,7 +60687,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21724:1: '#mon'
             {
              before(grammarAccess.getSiteInst2Access().getMonMonKeyword_6_0()); 
-            match(input,288,FOLLOW_288_in_rule__SiteInst2__MonAssignment_646842); 
+            match(input,288,FOLLOW_288_in_rule__SiteInst2__MonAssignment_646843); 
              after(grammarAccess.getSiteInst2Access().getMonMonKeyword_6_0()); 
 
             }
@@ -60721,7 +60732,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21747:1: '#com'
             {
              before(grammarAccess.getSiteInst2Access().getComComKeyword_7_0()); 
-            match(input,289,FOLLOW_289_in_rule__SiteInst2__ComAssignment_746886); 
+            match(input,289,FOLLOW_289_in_rule__SiteInst2__ComAssignment_746887); 
              after(grammarAccess.getSiteInst2Access().getComComKeyword_7_0()); 
 
             }
@@ -60766,7 +60777,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21770:1: '#gold'
             {
              before(grammarAccess.getSiteInst2Access().getGoldGoldKeyword_8_0()); 
-            match(input,290,FOLLOW_290_in_rule__SiteInst2__GoldAssignment_846930); 
+            match(input,290,FOLLOW_290_in_rule__SiteInst2__GoldAssignment_846931); 
              after(grammarAccess.getSiteInst2Access().getGoldGoldKeyword_8_0()); 
 
             }
@@ -60811,7 +60822,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21793:1: '#res'
             {
              before(grammarAccess.getSiteInst2Access().getResResKeyword_9_0()); 
-            match(input,291,FOLLOW_291_in_rule__SiteInst2__ResAssignment_946974); 
+            match(input,291,FOLLOW_291_in_rule__SiteInst2__ResAssignment_946975); 
              after(grammarAccess.getSiteInst2Access().getResResKeyword_9_0()); 
 
             }
@@ -60856,7 +60867,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21816:1: '#incscale'
             {
              before(grammarAccess.getSiteInst2Access().getIncscaleIncscaleKeyword_10_0()); 
-            match(input,292,FOLLOW_292_in_rule__SiteInst2__IncscaleAssignment_1047018); 
+            match(input,292,FOLLOW_292_in_rule__SiteInst2__IncscaleAssignment_1047019); 
              after(grammarAccess.getSiteInst2Access().getIncscaleIncscaleKeyword_10_0()); 
 
             }
@@ -60901,7 +60912,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21839:1: '#decscale'
             {
              before(grammarAccess.getSiteInst2Access().getDecscaleDecscaleKeyword_11_0()); 
-            match(input,293,FOLLOW_293_in_rule__SiteInst2__DecscaleAssignment_1147062); 
+            match(input,293,FOLLOW_293_in_rule__SiteInst2__DecscaleAssignment_1147063); 
              after(grammarAccess.getSiteInst2Access().getDecscaleDecscaleKeyword_11_0()); 
 
             }
@@ -60946,7 +60957,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21862:1: '#heal'
             {
              before(grammarAccess.getSiteInst2Access().getHealHealKeyword_12_0()); 
-            match(input,210,FOLLOW_210_in_rule__SiteInst2__HealAssignment_1247106); 
+            match(input,210,FOLLOW_210_in_rule__SiteInst2__HealAssignment_1247107); 
              after(grammarAccess.getSiteInst2Access().getHealHealKeyword_12_0()); 
 
             }
@@ -60991,7 +61002,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21885:1: '#curse'
             {
              before(grammarAccess.getSiteInst2Access().getCurseCurseKeyword_13_0()); 
-            match(input,294,FOLLOW_294_in_rule__SiteInst2__CurseAssignment_1347150); 
+            match(input,294,FOLLOW_294_in_rule__SiteInst2__CurseAssignment_1347151); 
              after(grammarAccess.getSiteInst2Access().getCurseCurseKeyword_13_0()); 
 
             }
@@ -61036,7 +61047,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21908:1: '#disease'
             {
              before(grammarAccess.getSiteInst2Access().getDiseaseDiseaseKeyword_14_0()); 
-            match(input,295,FOLLOW_295_in_rule__SiteInst2__DiseaseAssignment_1447194); 
+            match(input,295,FOLLOW_295_in_rule__SiteInst2__DiseaseAssignment_1447195); 
              after(grammarAccess.getSiteInst2Access().getDiseaseDiseaseKeyword_14_0()); 
 
             }
@@ -61081,7 +61092,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21931:1: '#horrormark'
             {
              before(grammarAccess.getSiteInst2Access().getHorrormarkHorrormarkKeyword_15_0()); 
-            match(input,217,FOLLOW_217_in_rule__SiteInst2__HorrormarkAssignment_1547238); 
+            match(input,217,FOLLOW_217_in_rule__SiteInst2__HorrormarkAssignment_1547239); 
              after(grammarAccess.getSiteInst2Access().getHorrormarkHorrormarkKeyword_15_0()); 
 
             }
@@ -61126,7 +61137,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21954:1: '#holyfire'
             {
              before(grammarAccess.getSiteInst2Access().getHolyfireHolyfireKeyword_16_0()); 
-            match(input,296,FOLLOW_296_in_rule__SiteInst2__HolyfireAssignment_1647282); 
+            match(input,296,FOLLOW_296_in_rule__SiteInst2__HolyfireAssignment_1647283); 
              after(grammarAccess.getSiteInst2Access().getHolyfireHolyfireKeyword_16_0()); 
 
             }
@@ -61171,7 +61182,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:21977:1: '#holypower'
             {
              before(grammarAccess.getSiteInst2Access().getHolypowerHolypowerKeyword_17_0()); 
-            match(input,297,FOLLOW_297_in_rule__SiteInst2__HolypowerAssignment_1747326); 
+            match(input,297,FOLLOW_297_in_rule__SiteInst2__HolypowerAssignment_1747327); 
              after(grammarAccess.getSiteInst2Access().getHolypowerHolypowerKeyword_17_0()); 
 
             }
@@ -61216,7 +61227,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22000:1: '#conjcost'
             {
              before(grammarAccess.getSiteInst2Access().getConjcostConjcostKeyword_18_0()); 
-            match(input,298,FOLLOW_298_in_rule__SiteInst2__ConjcostAssignment_1847370); 
+            match(input,298,FOLLOW_298_in_rule__SiteInst2__ConjcostAssignment_1847371); 
              after(grammarAccess.getSiteInst2Access().getConjcostConjcostKeyword_18_0()); 
 
             }
@@ -61261,7 +61272,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22023:1: '#altcost'
             {
              before(grammarAccess.getSiteInst2Access().getAltcostAltcostKeyword_19_0()); 
-            match(input,299,FOLLOW_299_in_rule__SiteInst2__AltcostAssignment_1947414); 
+            match(input,299,FOLLOW_299_in_rule__SiteInst2__AltcostAssignment_1947415); 
              after(grammarAccess.getSiteInst2Access().getAltcostAltcostKeyword_19_0()); 
 
             }
@@ -61306,7 +61317,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22046:1: '#evocost'
             {
              before(grammarAccess.getSiteInst2Access().getEvocostEvocostKeyword_20_0()); 
-            match(input,300,FOLLOW_300_in_rule__SiteInst2__EvocostAssignment_2047458); 
+            match(input,300,FOLLOW_300_in_rule__SiteInst2__EvocostAssignment_2047459); 
              after(grammarAccess.getSiteInst2Access().getEvocostEvocostKeyword_20_0()); 
 
             }
@@ -61351,7 +61362,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22069:1: '#constcost'
             {
              before(grammarAccess.getSiteInst2Access().getConstcostConstcostKeyword_21_0()); 
-            match(input,301,FOLLOW_301_in_rule__SiteInst2__ConstcostAssignment_2147502); 
+            match(input,301,FOLLOW_301_in_rule__SiteInst2__ConstcostAssignment_2147503); 
              after(grammarAccess.getSiteInst2Access().getConstcostConstcostKeyword_21_0()); 
 
             }
@@ -61396,7 +61407,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22092:1: '#enchcost'
             {
              before(grammarAccess.getSiteInst2Access().getEnchcostEnchcostKeyword_22_0()); 
-            match(input,302,FOLLOW_302_in_rule__SiteInst2__EnchcostAssignment_2247546); 
+            match(input,302,FOLLOW_302_in_rule__SiteInst2__EnchcostAssignment_2247547); 
              after(grammarAccess.getSiteInst2Access().getEnchcostEnchcostKeyword_22_0()); 
 
             }
@@ -61441,7 +61452,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22115:1: '#thaucost'
             {
              before(grammarAccess.getSiteInst2Access().getThaucostThaucostKeyword_23_0()); 
-            match(input,303,FOLLOW_303_in_rule__SiteInst2__ThaucostAssignment_2347590); 
+            match(input,303,FOLLOW_303_in_rule__SiteInst2__ThaucostAssignment_2347591); 
              after(grammarAccess.getSiteInst2Access().getThaucostThaucostKeyword_23_0()); 
 
             }
@@ -61486,7 +61497,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22138:1: '#bloodcost'
             {
              before(grammarAccess.getSiteInst2Access().getBloodcostBloodcostKeyword_24_0()); 
-            match(input,304,FOLLOW_304_in_rule__SiteInst2__BloodcostAssignment_2447634); 
+            match(input,304,FOLLOW_304_in_rule__SiteInst2__BloodcostAssignment_2447635); 
              after(grammarAccess.getSiteInst2Access().getBloodcostBloodcostKeyword_24_0()); 
 
             }
@@ -61531,7 +61542,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22161:1: '#gems'
             {
              before(grammarAccess.getSiteInst3Access().getGemsGemsKeyword_0()); 
-            match(input,305,FOLLOW_305_in_rule__SiteInst3__GemsAssignment47678); 
+            match(input,305,FOLLOW_305_in_rule__SiteInst3__GemsAssignment47679); 
              after(grammarAccess.getSiteInst3Access().getGemsGemsKeyword_0()); 
 
             }
@@ -61576,7 +61587,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22184:1: '#clear'
             {
              before(grammarAccess.getSiteInst4Access().getClearClearKeyword_0_0()); 
-            match(input,177,FOLLOW_177_in_rule__SiteInst4__ClearAssignment_047722); 
+            match(input,177,FOLLOW_177_in_rule__SiteInst4__ClearAssignment_047723); 
              after(grammarAccess.getSiteInst4Access().getClearClearKeyword_0_0()); 
 
             }
@@ -61621,7 +61632,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22207:1: '#lab'
             {
              before(grammarAccess.getSiteInst4Access().getLabLabKeyword_1_0()); 
-            match(input,306,FOLLOW_306_in_rule__SiteInst4__LabAssignment_147766); 
+            match(input,306,FOLLOW_306_in_rule__SiteInst4__LabAssignment_147767); 
              after(grammarAccess.getSiteInst4Access().getLabLabKeyword_1_0()); 
 
             }
@@ -61662,7 +61673,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22228:1: RULE_INT
             {
              before(grammarAccess.getSelectNationAccess().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectNation__ValueAssignment_147805); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SelectNation__ValueAssignment_147806); 
              after(grammarAccess.getSelectNationAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -61699,7 +61710,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22243:1: ruleNationMods
             {
              before(grammarAccess.getSelectNationAccess().getModsNationModsParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleNationMods_in_rule__SelectNation__ModsAssignment_347836);
+            pushFollow(FOLLOW_ruleNationMods_in_rule__SelectNation__ModsAssignment_347837);
             ruleNationMods();
 
             state._fsp--;
@@ -61740,7 +61751,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22258:1: RULE_STRING
             {
              before(grammarAccess.getIndepFlagAccess().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__IndepFlag__ValueAssignment_147867); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__IndepFlag__ValueAssignment_147868); 
              after(grammarAccess.getIndepFlagAccess().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -61777,7 +61788,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22273:1: RULE_STRING
             {
              before(grammarAccess.getNationPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__NationPattern1__ValueAssignment_147898); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__NationPattern1__ValueAssignment_147899); 
              after(grammarAccess.getNationPattern1Access().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -61814,7 +61825,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22288:1: RULE_INT
             {
              before(grammarAccess.getNationPattern2Access().getValueINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NationPattern2__ValueAssignment_147929); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NationPattern2__ValueAssignment_147930); 
              after(grammarAccess.getNationPattern2Access().getValueINTTerminalRuleCall_1_0()); 
 
             }
@@ -61851,7 +61862,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22303:1: RULE_STRING
             {
              before(grammarAccess.getNationPattern4Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__NationPattern4__Value1Assignment_1_047960); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__NationPattern4__Value1Assignment_1_047961); 
              after(grammarAccess.getNationPattern4Access().getValue1STRINGTerminalRuleCall_1_0_0()); 
 
             }
@@ -61888,7 +61899,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22318:1: RULE_INT
             {
              before(grammarAccess.getNationPattern4Access().getValue2INTTerminalRuleCall_1_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NationPattern4__Value2Assignment_1_147991); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NationPattern4__Value2Assignment_1_147992); 
              after(grammarAccess.getNationPattern4Access().getValue2INTTerminalRuleCall_1_1_0()); 
 
             }
@@ -61925,7 +61936,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22333:1: ruleDecimalValue
             {
              before(grammarAccess.getNationPattern5Access().getValue1DecimalValueParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value1Assignment_148022);
+            pushFollow(FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value1Assignment_148023);
             ruleDecimalValue();
 
             state._fsp--;
@@ -61966,7 +61977,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22348:1: ruleDecimalValue
             {
              before(grammarAccess.getNationPattern5Access().getValue2DecimalValueParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value2Assignment_248053);
+            pushFollow(FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value2Assignment_248054);
             ruleDecimalValue();
 
             state._fsp--;
@@ -62007,7 +62018,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22363:1: ruleDecimalValue
             {
              before(grammarAccess.getNationPattern5Access().getValue3DecimalValueParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value3Assignment_348084);
+            pushFollow(FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value3Assignment_348085);
             ruleDecimalValue();
 
             state._fsp--;
@@ -62052,7 +62063,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22380:1: '#name'
             {
              before(grammarAccess.getNationInst1Access().getNameNameKeyword_0_0()); 
-            match(input,50,FOLLOW_50_in_rule__NationInst1__NameAssignment_048120); 
+            match(input,50,FOLLOW_50_in_rule__NationInst1__NameAssignment_048121); 
              after(grammarAccess.getNationInst1Access().getNameNameKeyword_0_0()); 
 
             }
@@ -62097,7 +62108,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22403:1: '#epithet'
             {
              before(grammarAccess.getNationInst1Access().getEpithetEpithetKeyword_1_0()); 
-            match(input,307,FOLLOW_307_in_rule__NationInst1__EpithetAssignment_148164); 
+            match(input,307,FOLLOW_307_in_rule__NationInst1__EpithetAssignment_148165); 
              after(grammarAccess.getNationInst1Access().getEpithetEpithetKeyword_1_0()); 
 
             }
@@ -62142,7 +62153,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22426:1: '#descr'
             {
              before(grammarAccess.getNationInst1Access().getDescrDescrKeyword_2_0()); 
-            match(input,99,FOLLOW_99_in_rule__NationInst1__DescrAssignment_248208); 
+            match(input,99,FOLLOW_99_in_rule__NationInst1__DescrAssignment_248209); 
              after(grammarAccess.getNationInst1Access().getDescrDescrKeyword_2_0()); 
 
             }
@@ -62187,7 +62198,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22449:1: '#summary'
             {
              before(grammarAccess.getNationInst1Access().getSummarySummaryKeyword_3_0()); 
-            match(input,308,FOLLOW_308_in_rule__NationInst1__SummaryAssignment_348252); 
+            match(input,308,FOLLOW_308_in_rule__NationInst1__SummaryAssignment_348253); 
              after(grammarAccess.getNationInst1Access().getSummarySummaryKeyword_3_0()); 
 
             }
@@ -62232,7 +62243,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22472:1: '#brief'
             {
              before(grammarAccess.getNationInst1Access().getBriefBriefKeyword_4_0()); 
-            match(input,309,FOLLOW_309_in_rule__NationInst1__BriefAssignment_448296); 
+            match(input,309,FOLLOW_309_in_rule__NationInst1__BriefAssignment_448297); 
              after(grammarAccess.getNationInst1Access().getBriefBriefKeyword_4_0()); 
 
             }
@@ -62277,7 +62288,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22495:1: '#flag'
             {
              before(grammarAccess.getNationInst1Access().getFlagFlagKeyword_5_0()); 
-            match(input,310,FOLLOW_310_in_rule__NationInst1__FlagAssignment_548340); 
+            match(input,310,FOLLOW_310_in_rule__NationInst1__FlagAssignment_548341); 
              after(grammarAccess.getNationInst1Access().getFlagFlagKeyword_5_0()); 
 
             }
@@ -62322,7 +62333,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22518:1: '#mapbackground'
             {
              before(grammarAccess.getNationInst1Access().getMapbackgroundMapbackgroundKeyword_6_0()); 
-            match(input,311,FOLLOW_311_in_rule__NationInst1__MapbackgroundAssignment_648384); 
+            match(input,311,FOLLOW_311_in_rule__NationInst1__MapbackgroundAssignment_648385); 
              after(grammarAccess.getNationInst1Access().getMapbackgroundMapbackgroundKeyword_6_0()); 
 
             }
@@ -62367,7 +62378,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22541:1: '#startsite'
             {
              before(grammarAccess.getNationInst1Access().getStartsiteStartsiteKeyword_7_0()); 
-            match(input,312,FOLLOW_312_in_rule__NationInst1__StartsiteAssignment_748428); 
+            match(input,312,FOLLOW_312_in_rule__NationInst1__StartsiteAssignment_748429); 
              after(grammarAccess.getNationInst1Access().getStartsiteStartsiteKeyword_7_0()); 
 
             }
@@ -62412,7 +62423,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22564:1: '#era'
             {
              before(grammarAccess.getNationInst2Access().getEraEraKeyword_0_0()); 
-            match(input,313,FOLLOW_313_in_rule__NationInst2__EraAssignment_048472); 
+            match(input,313,FOLLOW_313_in_rule__NationInst2__EraAssignment_048473); 
              after(grammarAccess.getNationInst2Access().getEraEraKeyword_0_0()); 
 
             }
@@ -62457,7 +62468,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22587:1: '#labcost'
             {
              before(grammarAccess.getNationInst2Access().getLabcostLabcostKeyword_1_0()); 
-            match(input,314,FOLLOW_314_in_rule__NationInst2__LabcostAssignment_148516); 
+            match(input,314,FOLLOW_314_in_rule__NationInst2__LabcostAssignment_148517); 
              after(grammarAccess.getNationInst2Access().getLabcostLabcostKeyword_1_0()); 
 
             }
@@ -62502,7 +62513,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22610:1: '#templecost'
             {
              before(grammarAccess.getNationInst2Access().getTemplecostTemplecostKeyword_2_0()); 
-            match(input,315,FOLLOW_315_in_rule__NationInst2__TemplecostAssignment_248560); 
+            match(input,315,FOLLOW_315_in_rule__NationInst2__TemplecostAssignment_248561); 
              after(grammarAccess.getNationInst2Access().getTemplecostTemplecostKeyword_2_0()); 
 
             }
@@ -62547,7 +62558,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22633:1: '#templepic'
             {
              before(grammarAccess.getNationInst2Access().getTemplepicTemplepicKeyword_3_0()); 
-            match(input,316,FOLLOW_316_in_rule__NationInst2__TemplepicAssignment_348604); 
+            match(input,316,FOLLOW_316_in_rule__NationInst2__TemplepicAssignment_348605); 
              after(grammarAccess.getNationInst2Access().getTemplepicTemplepicKeyword_3_0()); 
 
             }
@@ -62592,7 +62603,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22656:1: '#startunitnbrs1'
             {
              before(grammarAccess.getNationInst2Access().getStartunitnbrs1Startunitnbrs1Keyword_4_0()); 
-            match(input,317,FOLLOW_317_in_rule__NationInst2__Startunitnbrs1Assignment_448648); 
+            match(input,317,FOLLOW_317_in_rule__NationInst2__Startunitnbrs1Assignment_448649); 
              after(grammarAccess.getNationInst2Access().getStartunitnbrs1Startunitnbrs1Keyword_4_0()); 
 
             }
@@ -62637,7 +62648,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22679:1: '#startunitnbrs2'
             {
              before(grammarAccess.getNationInst2Access().getStartunitnbrs2Startunitnbrs2Keyword_5_0()); 
-            match(input,318,FOLLOW_318_in_rule__NationInst2__Startunitnbrs2Assignment_548692); 
+            match(input,318,FOLLOW_318_in_rule__NationInst2__Startunitnbrs2Assignment_548693); 
              after(grammarAccess.getNationInst2Access().getStartunitnbrs2Startunitnbrs2Keyword_5_0()); 
 
             }
@@ -62682,7 +62693,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22702:1: '#hero1'
             {
              before(grammarAccess.getNationInst2Access().getHero1Hero1Keyword_6_0()); 
-            match(input,319,FOLLOW_319_in_rule__NationInst2__Hero1Assignment_648736); 
+            match(input,319,FOLLOW_319_in_rule__NationInst2__Hero1Assignment_648737); 
              after(grammarAccess.getNationInst2Access().getHero1Hero1Keyword_6_0()); 
 
             }
@@ -62727,7 +62738,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22725:1: '#hero2'
             {
              before(grammarAccess.getNationInst2Access().getHero2Hero2Keyword_7_0()); 
-            match(input,320,FOLLOW_320_in_rule__NationInst2__Hero2Assignment_748780); 
+            match(input,320,FOLLOW_320_in_rule__NationInst2__Hero2Assignment_748781); 
              after(grammarAccess.getNationInst2Access().getHero2Hero2Keyword_7_0()); 
 
             }
@@ -62772,7 +62783,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22748:1: '#hero3'
             {
              before(grammarAccess.getNationInst2Access().getHero3Hero3Keyword_8_0()); 
-            match(input,321,FOLLOW_321_in_rule__NationInst2__Hero3Assignment_848824); 
+            match(input,321,FOLLOW_321_in_rule__NationInst2__Hero3Assignment_848825); 
              after(grammarAccess.getNationInst2Access().getHero3Hero3Keyword_8_0()); 
 
             }
@@ -62817,7 +62828,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22771:1: '#hero4'
             {
              before(grammarAccess.getNationInst2Access().getHero4Hero4Keyword_9_0()); 
-            match(input,322,FOLLOW_322_in_rule__NationInst2__Hero4Assignment_948868); 
+            match(input,322,FOLLOW_322_in_rule__NationInst2__Hero4Assignment_948869); 
              after(grammarAccess.getNationInst2Access().getHero4Hero4Keyword_9_0()); 
 
             }
@@ -62862,7 +62873,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22794:1: '#hero5'
             {
              before(grammarAccess.getNationInst2Access().getHero5Hero5Keyword_10_0()); 
-            match(input,323,FOLLOW_323_in_rule__NationInst2__Hero5Assignment_1048912); 
+            match(input,323,FOLLOW_323_in_rule__NationInst2__Hero5Assignment_1048913); 
              after(grammarAccess.getNationInst2Access().getHero5Hero5Keyword_10_0()); 
 
             }
@@ -62907,7 +62918,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22817:1: '#hero6'
             {
              before(grammarAccess.getNationInst2Access().getHero6Hero6Keyword_11_0()); 
-            match(input,324,FOLLOW_324_in_rule__NationInst2__Hero6Assignment_1148956); 
+            match(input,324,FOLLOW_324_in_rule__NationInst2__Hero6Assignment_1148957); 
              after(grammarAccess.getNationInst2Access().getHero6Hero6Keyword_11_0()); 
 
             }
@@ -62952,7 +62963,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22840:1: '#multihero1'
             {
              before(grammarAccess.getNationInst2Access().getMultihero1Multihero1Keyword_12_0()); 
-            match(input,325,FOLLOW_325_in_rule__NationInst2__Multihero1Assignment_1249000); 
+            match(input,325,FOLLOW_325_in_rule__NationInst2__Multihero1Assignment_1249001); 
              after(grammarAccess.getNationInst2Access().getMultihero1Multihero1Keyword_12_0()); 
 
             }
@@ -62997,7 +63008,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22863:1: '#multihero2'
             {
              before(grammarAccess.getNationInst2Access().getMultihero2Multihero2Keyword_13_0()); 
-            match(input,326,FOLLOW_326_in_rule__NationInst2__Multihero2Assignment_1349044); 
+            match(input,326,FOLLOW_326_in_rule__NationInst2__Multihero2Assignment_1349045); 
              after(grammarAccess.getNationInst2Access().getMultihero2Multihero2Keyword_13_0()); 
 
             }
@@ -63042,7 +63053,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22886:1: '#defmult1'
             {
              before(grammarAccess.getNationInst2Access().getDefmult1Defmult1Keyword_14_0()); 
-            match(input,327,FOLLOW_327_in_rule__NationInst2__Defmult1Assignment_1449088); 
+            match(input,327,FOLLOW_327_in_rule__NationInst2__Defmult1Assignment_1449089); 
              after(grammarAccess.getNationInst2Access().getDefmult1Defmult1Keyword_14_0()); 
 
             }
@@ -63087,7 +63098,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22909:1: '#defmult1b'
             {
              before(grammarAccess.getNationInst2Access().getDefmult1bDefmult1bKeyword_15_0()); 
-            match(input,328,FOLLOW_328_in_rule__NationInst2__Defmult1bAssignment_1549132); 
+            match(input,328,FOLLOW_328_in_rule__NationInst2__Defmult1bAssignment_1549133); 
              after(grammarAccess.getNationInst2Access().getDefmult1bDefmult1bKeyword_15_0()); 
 
             }
@@ -63132,7 +63143,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22932:1: '#defmult2'
             {
              before(grammarAccess.getNationInst2Access().getDefmult2Defmult2Keyword_16_0()); 
-            match(input,329,FOLLOW_329_in_rule__NationInst2__Defmult2Assignment_1649176); 
+            match(input,329,FOLLOW_329_in_rule__NationInst2__Defmult2Assignment_1649177); 
              after(grammarAccess.getNationInst2Access().getDefmult2Defmult2Keyword_16_0()); 
 
             }
@@ -63177,7 +63188,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22955:1: '#defmult2b'
             {
              before(grammarAccess.getNationInst2Access().getDefmult2bDefmult2bKeyword_17_0()); 
-            match(input,330,FOLLOW_330_in_rule__NationInst2__Defmult2bAssignment_1749220); 
+            match(input,330,FOLLOW_330_in_rule__NationInst2__Defmult2bAssignment_1749221); 
              after(grammarAccess.getNationInst2Access().getDefmult2bDefmult2bKeyword_17_0()); 
 
             }
@@ -63222,7 +63233,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:22978:1: '#idealcold'
             {
              before(grammarAccess.getNationInst2Access().getIdealcoldIdealcoldKeyword_18_0()); 
-            match(input,331,FOLLOW_331_in_rule__NationInst2__IdealcoldAssignment_1849264); 
+            match(input,331,FOLLOW_331_in_rule__NationInst2__IdealcoldAssignment_1849265); 
              after(grammarAccess.getNationInst2Access().getIdealcoldIdealcoldKeyword_18_0()); 
 
             }
@@ -63267,7 +63278,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23001:1: '#castleprod'
             {
              before(grammarAccess.getNationInst2Access().getCastleprodCastleprodKeyword_19_0()); 
-            match(input,332,FOLLOW_332_in_rule__NationInst2__CastleprodAssignment_1949308); 
+            match(input,332,FOLLOW_332_in_rule__NationInst2__CastleprodAssignment_1949309); 
              after(grammarAccess.getNationInst2Access().getCastleprodCastleprodKeyword_19_0()); 
 
             }
@@ -63312,7 +63323,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23024:1: '#domkill'
             {
              before(grammarAccess.getNationInst2Access().getDomkillDomkillKeyword_20_0()); 
-            match(input,333,FOLLOW_333_in_rule__NationInst2__DomkillAssignment_2049352); 
+            match(input,333,FOLLOW_333_in_rule__NationInst2__DomkillAssignment_2049353); 
              after(grammarAccess.getNationInst2Access().getDomkillDomkillKeyword_20_0()); 
 
             }
@@ -63357,7 +63368,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23047:1: '#domunrest'
             {
              before(grammarAccess.getNationInst2Access().getDomunrestDomunrestKeyword_21_0()); 
-            match(input,334,FOLLOW_334_in_rule__NationInst2__DomunrestAssignment_2149396); 
+            match(input,334,FOLLOW_334_in_rule__NationInst2__DomunrestAssignment_2149397); 
              after(grammarAccess.getNationInst2Access().getDomunrestDomunrestKeyword_21_0()); 
 
             }
@@ -63402,7 +63413,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23070:1: '#startfort'
             {
              before(grammarAccess.getNationInst2Access().getStartfortStartfortKeyword_22_0()); 
-            match(input,335,FOLLOW_335_in_rule__NationInst2__StartfortAssignment_2249440); 
+            match(input,335,FOLLOW_335_in_rule__NationInst2__StartfortAssignment_2249441); 
              after(grammarAccess.getNationInst2Access().getStartfortStartfortKeyword_22_0()); 
 
             }
@@ -63447,7 +63458,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23093:1: '#defaultfort'
             {
              before(grammarAccess.getNationInst2Access().getDefaultfortDefaultfortKeyword_23_0()); 
-            match(input,336,FOLLOW_336_in_rule__NationInst2__DefaultfortAssignment_2349484); 
+            match(input,336,FOLLOW_336_in_rule__NationInst2__DefaultfortAssignment_2349485); 
              after(grammarAccess.getNationInst2Access().getDefaultfortDefaultfortKeyword_23_0()); 
 
             }
@@ -63492,7 +63503,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23116:1: '#farmfort'
             {
              before(grammarAccess.getNationInst2Access().getFarmfortFarmfortKeyword_24_0()); 
-            match(input,337,FOLLOW_337_in_rule__NationInst2__FarmfortAssignment_2449528); 
+            match(input,337,FOLLOW_337_in_rule__NationInst2__FarmfortAssignment_2449529); 
              after(grammarAccess.getNationInst2Access().getFarmfortFarmfortKeyword_24_0()); 
 
             }
@@ -63537,7 +63548,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23139:1: '#mountainfort'
             {
              before(grammarAccess.getNationInst2Access().getMountainfortMountainfortKeyword_25_0()); 
-            match(input,338,FOLLOW_338_in_rule__NationInst2__MountainfortAssignment_2549572); 
+            match(input,338,FOLLOW_338_in_rule__NationInst2__MountainfortAssignment_2549573); 
              after(grammarAccess.getNationInst2Access().getMountainfortMountainfortKeyword_25_0()); 
 
             }
@@ -63582,7 +63593,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23162:1: '#forestfort'
             {
              before(grammarAccess.getNationInst2Access().getForestfortForestfortKeyword_26_0()); 
-            match(input,339,FOLLOW_339_in_rule__NationInst2__ForestfortAssignment_2649616); 
+            match(input,339,FOLLOW_339_in_rule__NationInst2__ForestfortAssignment_2649617); 
              after(grammarAccess.getNationInst2Access().getForestfortForestfortKeyword_26_0()); 
 
             }
@@ -63627,7 +63638,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23185:1: '#swampfort'
             {
              before(grammarAccess.getNationInst2Access().getSwampfortSwampfortKeyword_27_0()); 
-            match(input,340,FOLLOW_340_in_rule__NationInst2__SwampfortAssignment_2749660); 
+            match(input,340,FOLLOW_340_in_rule__NationInst2__SwampfortAssignment_2749661); 
              after(grammarAccess.getNationInst2Access().getSwampfortSwampfortKeyword_27_0()); 
 
             }
@@ -63672,7 +63683,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23208:1: '#uwfort'
             {
              before(grammarAccess.getNationInst2Access().getUwfortUwfortKeyword_28_0()); 
-            match(input,341,FOLLOW_341_in_rule__NationInst2__UwfortAssignment_2849704); 
+            match(input,341,FOLLOW_341_in_rule__NationInst2__UwfortAssignment_2849705); 
              after(grammarAccess.getNationInst2Access().getUwfortUwfortKeyword_28_0()); 
 
             }
@@ -63717,7 +63728,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23231:1: '#deepfort'
             {
              before(grammarAccess.getNationInst2Access().getDeepfortDeepfortKeyword_29_0()); 
-            match(input,342,FOLLOW_342_in_rule__NationInst2__DeepfortAssignment_2949748); 
+            match(input,342,FOLLOW_342_in_rule__NationInst2__DeepfortAssignment_2949749); 
              after(grammarAccess.getNationInst2Access().getDeepfortDeepfortKeyword_29_0()); 
 
             }
@@ -63762,7 +63773,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23254:1: '#clearnation'
             {
              before(grammarAccess.getNationInst3Access().getClearnationClearnationKeyword_0_0()); 
-            match(input,343,FOLLOW_343_in_rule__NationInst3__ClearnationAssignment_049792); 
+            match(input,343,FOLLOW_343_in_rule__NationInst3__ClearnationAssignment_049793); 
              after(grammarAccess.getNationInst3Access().getClearnationClearnationKeyword_0_0()); 
 
             }
@@ -63807,7 +63818,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23277:1: '#clearrec'
             {
              before(grammarAccess.getNationInst3Access().getClearrecClearrecKeyword_1_0()); 
-            match(input,344,FOLLOW_344_in_rule__NationInst3__ClearrecAssignment_149836); 
+            match(input,344,FOLLOW_344_in_rule__NationInst3__ClearrecAssignment_149837); 
              after(grammarAccess.getNationInst3Access().getClearrecClearrecKeyword_1_0()); 
 
             }
@@ -63852,7 +63863,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23300:1: '#clearsites'
             {
              before(grammarAccess.getNationInst3Access().getClearsitesClearsitesKeyword_2_0()); 
-            match(input,345,FOLLOW_345_in_rule__NationInst3__ClearsitesAssignment_249880); 
+            match(input,345,FOLLOW_345_in_rule__NationInst3__ClearsitesAssignment_249881); 
              after(grammarAccess.getNationInst3Access().getClearsitesClearsitesKeyword_2_0()); 
 
             }
@@ -63897,7 +63908,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23323:1: '#uwnation'
             {
              before(grammarAccess.getNationInst3Access().getUwnationUwnationKeyword_3_0()); 
-            match(input,346,FOLLOW_346_in_rule__NationInst3__UwnationAssignment_349924); 
+            match(input,346,FOLLOW_346_in_rule__NationInst3__UwnationAssignment_349925); 
              after(grammarAccess.getNationInst3Access().getUwnationUwnationKeyword_3_0()); 
 
             }
@@ -63942,7 +63953,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23346:1: '#bloodnation'
             {
              before(grammarAccess.getNationInst3Access().getBloodnationBloodnationKeyword_4_0()); 
-            match(input,347,FOLLOW_347_in_rule__NationInst3__BloodnationAssignment_449968); 
+            match(input,347,FOLLOW_347_in_rule__NationInst3__BloodnationAssignment_449969); 
              after(grammarAccess.getNationInst3Access().getBloodnationBloodnationKeyword_4_0()); 
 
             }
@@ -63987,7 +63998,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23369:1: '#nopreach'
             {
              before(grammarAccess.getNationInst3Access().getNopreachNopreachKeyword_5_0()); 
-            match(input,348,FOLLOW_348_in_rule__NationInst3__NopreachAssignment_550012); 
+            match(input,348,FOLLOW_348_in_rule__NationInst3__NopreachAssignment_550013); 
              after(grammarAccess.getNationInst3Access().getNopreachNopreachKeyword_5_0()); 
 
             }
@@ -64032,7 +64043,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23392:1: '#dyingdom'
             {
              before(grammarAccess.getNationInst3Access().getDyingdomDyingdomKeyword_6_0()); 
-            match(input,349,FOLLOW_349_in_rule__NationInst3__DyingdomAssignment_650056); 
+            match(input,349,FOLLOW_349_in_rule__NationInst3__DyingdomAssignment_650057); 
              after(grammarAccess.getNationInst3Access().getDyingdomDyingdomKeyword_6_0()); 
 
             }
@@ -64077,7 +64088,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23415:1: '#sacrificedom'
             {
              before(grammarAccess.getNationInst3Access().getSacrificedomSacrificedomKeyword_7_0()); 
-            match(input,350,FOLLOW_350_in_rule__NationInst3__SacrificedomAssignment_750100); 
+            match(input,350,FOLLOW_350_in_rule__NationInst3__SacrificedomAssignment_750101); 
              after(grammarAccess.getNationInst3Access().getSacrificedomSacrificedomKeyword_7_0()); 
 
             }
@@ -64122,7 +64133,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23438:1: '#nodeathsupply'
             {
              before(grammarAccess.getNationInst3Access().getNodeathsupplyNodeathsupplyKeyword_8_0()); 
-            match(input,351,FOLLOW_351_in_rule__NationInst3__NodeathsupplyAssignment_850144); 
+            match(input,351,FOLLOW_351_in_rule__NationInst3__NodeathsupplyAssignment_850145); 
              after(grammarAccess.getNationInst3Access().getNodeathsupplyNodeathsupplyKeyword_8_0()); 
 
             }
@@ -64167,7 +64178,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23461:1: '#autoundead'
             {
              before(grammarAccess.getNationInst3Access().getAutoundeadAutoundeadKeyword_9_0()); 
-            match(input,352,FOLLOW_352_in_rule__NationInst3__AutoundeadAssignment_950188); 
+            match(input,352,FOLLOW_352_in_rule__NationInst3__AutoundeadAssignment_950189); 
              after(grammarAccess.getNationInst3Access().getAutoundeadAutoundeadKeyword_9_0()); 
 
             }
@@ -64212,7 +64223,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23484:1: '#zombiereanim'
             {
              before(grammarAccess.getNationInst3Access().getZombiereanimZombiereanimKeyword_10_0()); 
-            match(input,353,FOLLOW_353_in_rule__NationInst3__ZombiereanimAssignment_1050232); 
+            match(input,353,FOLLOW_353_in_rule__NationInst3__ZombiereanimAssignment_1050233); 
              after(grammarAccess.getNationInst3Access().getZombiereanimZombiereanimKeyword_10_0()); 
 
             }
@@ -64257,7 +64268,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23507:1: '#horsereanim'
             {
              before(grammarAccess.getNationInst3Access().getHorsereanimHorsereanimKeyword_11_0()); 
-            match(input,354,FOLLOW_354_in_rule__NationInst3__HorsereanimAssignment_1150276); 
+            match(input,354,FOLLOW_354_in_rule__NationInst3__HorsereanimAssignment_1150277); 
              after(grammarAccess.getNationInst3Access().getHorsereanimHorsereanimKeyword_11_0()); 
 
             }
@@ -64302,7 +64313,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23530:1: '#wightreanim'
             {
              before(grammarAccess.getNationInst3Access().getWightreanimWightreanimKeyword_12_0()); 
-            match(input,355,FOLLOW_355_in_rule__NationInst3__WightreanimAssignment_1250320); 
+            match(input,355,FOLLOW_355_in_rule__NationInst3__WightreanimAssignment_1250321); 
              after(grammarAccess.getNationInst3Access().getWightreanimWightreanimKeyword_12_0()); 
 
             }
@@ -64347,7 +64358,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23553:1: '#manikinreanim'
             {
              before(grammarAccess.getNationInst3Access().getManikinreanimManikinreanimKeyword_13_0()); 
-            match(input,356,FOLLOW_356_in_rule__NationInst3__ManikinreanimAssignment_1350364); 
+            match(input,356,FOLLOW_356_in_rule__NationInst3__ManikinreanimAssignment_1350365); 
              after(grammarAccess.getNationInst3Access().getManikinreanimManikinreanimKeyword_13_0()); 
 
             }
@@ -64392,7 +64403,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23576:1: '#tombwyrmreanim'
             {
              before(grammarAccess.getNationInst3Access().getTombwyrmreanimTombwyrmreanimKeyword_14_0()); 
-            match(input,357,FOLLOW_357_in_rule__NationInst3__TombwyrmreanimAssignment_1450408); 
+            match(input,357,FOLLOW_357_in_rule__NationInst3__TombwyrmreanimAssignment_1450409); 
              after(grammarAccess.getNationInst3Access().getTombwyrmreanimTombwyrmreanimKeyword_14_0()); 
 
             }
@@ -64437,7 +64448,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23599:1: '#startcom'
             {
              before(grammarAccess.getNationInst4Access().getStartcomStartcomKeyword_0_0()); 
-            match(input,358,FOLLOW_358_in_rule__NationInst4__StartcomAssignment_050452); 
+            match(input,358,FOLLOW_358_in_rule__NationInst4__StartcomAssignment_050453); 
              after(grammarAccess.getNationInst4Access().getStartcomStartcomKeyword_0_0()); 
 
             }
@@ -64482,7 +64493,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23622:1: '#startscout'
             {
              before(grammarAccess.getNationInst4Access().getStartscoutStartscoutKeyword_1_0()); 
-            match(input,359,FOLLOW_359_in_rule__NationInst4__StartscoutAssignment_150496); 
+            match(input,359,FOLLOW_359_in_rule__NationInst4__StartscoutAssignment_150497); 
              after(grammarAccess.getNationInst4Access().getStartscoutStartscoutKeyword_1_0()); 
 
             }
@@ -64527,7 +64538,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23645:1: '#startunittype1'
             {
              before(grammarAccess.getNationInst4Access().getStartunittype1Startunittype1Keyword_2_0()); 
-            match(input,360,FOLLOW_360_in_rule__NationInst4__Startunittype1Assignment_250540); 
+            match(input,360,FOLLOW_360_in_rule__NationInst4__Startunittype1Assignment_250541); 
              after(grammarAccess.getNationInst4Access().getStartunittype1Startunittype1Keyword_2_0()); 
 
             }
@@ -64572,7 +64583,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23668:1: '#startunittype2'
             {
              before(grammarAccess.getNationInst4Access().getStartunittype2Startunittype2Keyword_3_0()); 
-            match(input,361,FOLLOW_361_in_rule__NationInst4__Startunittype2Assignment_350584); 
+            match(input,361,FOLLOW_361_in_rule__NationInst4__Startunittype2Assignment_350585); 
              after(grammarAccess.getNationInst4Access().getStartunittype2Startunittype2Keyword_3_0()); 
 
             }
@@ -64617,7 +64628,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23691:1: '#addrecunit'
             {
              before(grammarAccess.getNationInst4Access().getAddrecunitAddrecunitKeyword_4_0()); 
-            match(input,362,FOLLOW_362_in_rule__NationInst4__AddrecunitAssignment_450628); 
+            match(input,362,FOLLOW_362_in_rule__NationInst4__AddrecunitAssignment_450629); 
              after(grammarAccess.getNationInst4Access().getAddrecunitAddrecunitKeyword_4_0()); 
 
             }
@@ -64662,7 +64673,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23714:1: '#addreccom'
             {
              before(grammarAccess.getNationInst4Access().getAddreccomAddreccomKeyword_5_0()); 
-            match(input,363,FOLLOW_363_in_rule__NationInst4__AddreccomAssignment_550672); 
+            match(input,363,FOLLOW_363_in_rule__NationInst4__AddreccomAssignment_550673); 
              after(grammarAccess.getNationInst4Access().getAddreccomAddreccomKeyword_5_0()); 
 
             }
@@ -64707,7 +64718,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23737:1: '#uwunit1'
             {
              before(grammarAccess.getNationInst4Access().getUwunit1Uwunit1Keyword_6_0()); 
-            match(input,364,FOLLOW_364_in_rule__NationInst4__Uwunit1Assignment_650716); 
+            match(input,364,FOLLOW_364_in_rule__NationInst4__Uwunit1Assignment_650717); 
              after(grammarAccess.getNationInst4Access().getUwunit1Uwunit1Keyword_6_0()); 
 
             }
@@ -64752,7 +64763,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23760:1: '#uwunit2'
             {
              before(grammarAccess.getNationInst4Access().getUwunit2Uwunit2Keyword_7_0()); 
-            match(input,365,FOLLOW_365_in_rule__NationInst4__Uwunit2Assignment_750760); 
+            match(input,365,FOLLOW_365_in_rule__NationInst4__Uwunit2Assignment_750761); 
              after(grammarAccess.getNationInst4Access().getUwunit2Uwunit2Keyword_7_0()); 
 
             }
@@ -64797,7 +64808,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23783:1: '#uwunit3'
             {
              before(grammarAccess.getNationInst4Access().getUwunit3Uwunit3Keyword_8_0()); 
-            match(input,366,FOLLOW_366_in_rule__NationInst4__Uwunit3Assignment_850804); 
+            match(input,366,FOLLOW_366_in_rule__NationInst4__Uwunit3Assignment_850805); 
              after(grammarAccess.getNationInst4Access().getUwunit3Uwunit3Keyword_8_0()); 
 
             }
@@ -64842,7 +64853,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23806:1: '#uwunit4'
             {
              before(grammarAccess.getNationInst4Access().getUwunit4Uwunit4Keyword_9_0()); 
-            match(input,367,FOLLOW_367_in_rule__NationInst4__Uwunit4Assignment_950848); 
+            match(input,367,FOLLOW_367_in_rule__NationInst4__Uwunit4Assignment_950849); 
              after(grammarAccess.getNationInst4Access().getUwunit4Uwunit4Keyword_9_0()); 
 
             }
@@ -64887,7 +64898,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23829:1: '#uwunit5'
             {
              before(grammarAccess.getNationInst4Access().getUwunit5Uwunit5Keyword_10_0()); 
-            match(input,368,FOLLOW_368_in_rule__NationInst4__Uwunit5Assignment_1050892); 
+            match(input,368,FOLLOW_368_in_rule__NationInst4__Uwunit5Assignment_1050893); 
              after(grammarAccess.getNationInst4Access().getUwunit5Uwunit5Keyword_10_0()); 
 
             }
@@ -64932,7 +64943,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23852:1: '#uwcom1'
             {
              before(grammarAccess.getNationInst4Access().getUwcom1Uwcom1Keyword_11_0()); 
-            match(input,369,FOLLOW_369_in_rule__NationInst4__Uwcom1Assignment_1150936); 
+            match(input,369,FOLLOW_369_in_rule__NationInst4__Uwcom1Assignment_1150937); 
              after(grammarAccess.getNationInst4Access().getUwcom1Uwcom1Keyword_11_0()); 
 
             }
@@ -64977,7 +64988,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23875:1: '#uwcom2'
             {
              before(grammarAccess.getNationInst4Access().getUwcom2Uwcom2Keyword_12_0()); 
-            match(input,370,FOLLOW_370_in_rule__NationInst4__Uwcom2Assignment_1250980); 
+            match(input,370,FOLLOW_370_in_rule__NationInst4__Uwcom2Assignment_1250981); 
              after(grammarAccess.getNationInst4Access().getUwcom2Uwcom2Keyword_12_0()); 
 
             }
@@ -65022,7 +65033,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23898:1: '#uwcom3'
             {
              before(grammarAccess.getNationInst4Access().getUwcom3Uwcom3Keyword_13_0()); 
-            match(input,371,FOLLOW_371_in_rule__NationInst4__Uwcom3Assignment_1351024); 
+            match(input,371,FOLLOW_371_in_rule__NationInst4__Uwcom3Assignment_1351025); 
              after(grammarAccess.getNationInst4Access().getUwcom3Uwcom3Keyword_13_0()); 
 
             }
@@ -65067,7 +65078,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23921:1: '#uwcom4'
             {
              before(grammarAccess.getNationInst4Access().getUwcom4Uwcom4Keyword_14_0()); 
-            match(input,372,FOLLOW_372_in_rule__NationInst4__Uwcom4Assignment_1451068); 
+            match(input,372,FOLLOW_372_in_rule__NationInst4__Uwcom4Assignment_1451069); 
              after(grammarAccess.getNationInst4Access().getUwcom4Uwcom4Keyword_14_0()); 
 
             }
@@ -65112,7 +65123,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23944:1: '#uwcom5'
             {
              before(grammarAccess.getNationInst4Access().getUwcom5Uwcom5Keyword_15_0()); 
-            match(input,373,FOLLOW_373_in_rule__NationInst4__Uwcom5Assignment_1551112); 
+            match(input,373,FOLLOW_373_in_rule__NationInst4__Uwcom5Assignment_1551113); 
              after(grammarAccess.getNationInst4Access().getUwcom5Uwcom5Keyword_15_0()); 
 
             }
@@ -65157,7 +65168,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23967:1: '#defcom1'
             {
              before(grammarAccess.getNationInst4Access().getDefcom1Defcom1Keyword_16_0()); 
-            match(input,374,FOLLOW_374_in_rule__NationInst4__Defcom1Assignment_1651156); 
+            match(input,374,FOLLOW_374_in_rule__NationInst4__Defcom1Assignment_1651157); 
              after(grammarAccess.getNationInst4Access().getDefcom1Defcom1Keyword_16_0()); 
 
             }
@@ -65202,7 +65213,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:23990:1: '#defcom2'
             {
              before(grammarAccess.getNationInst4Access().getDefcom2Defcom2Keyword_17_0()); 
-            match(input,375,FOLLOW_375_in_rule__NationInst4__Defcom2Assignment_1751200); 
+            match(input,375,FOLLOW_375_in_rule__NationInst4__Defcom2Assignment_1751201); 
              after(grammarAccess.getNationInst4Access().getDefcom2Defcom2Keyword_17_0()); 
 
             }
@@ -65247,7 +65258,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:24013:1: '#defunit1'
             {
              before(grammarAccess.getNationInst4Access().getDefunit1Defunit1Keyword_18_0()); 
-            match(input,376,FOLLOW_376_in_rule__NationInst4__Defunit1Assignment_1851244); 
+            match(input,376,FOLLOW_376_in_rule__NationInst4__Defunit1Assignment_1851245); 
              after(grammarAccess.getNationInst4Access().getDefunit1Defunit1Keyword_18_0()); 
 
             }
@@ -65292,7 +65303,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:24036:1: '#defunit1b'
             {
              before(grammarAccess.getNationInst4Access().getDefunit1bDefunit1bKeyword_19_0()); 
-            match(input,377,FOLLOW_377_in_rule__NationInst4__Defunit1bAssignment_1951288); 
+            match(input,377,FOLLOW_377_in_rule__NationInst4__Defunit1bAssignment_1951289); 
              after(grammarAccess.getNationInst4Access().getDefunit1bDefunit1bKeyword_19_0()); 
 
             }
@@ -65337,7 +65348,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:24059:1: '#defunit2'
             {
              before(grammarAccess.getNationInst4Access().getDefunit2Defunit2Keyword_20_0()); 
-            match(input,378,FOLLOW_378_in_rule__NationInst4__Defunit2Assignment_2051332); 
+            match(input,378,FOLLOW_378_in_rule__NationInst4__Defunit2Assignment_2051333); 
              after(grammarAccess.getNationInst4Access().getDefunit2Defunit2Keyword_20_0()); 
 
             }
@@ -65382,7 +65393,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:24082:1: '#defunit2b'
             {
              before(grammarAccess.getNationInst4Access().getDefunit2bDefunit2bKeyword_21_0()); 
-            match(input,379,FOLLOW_379_in_rule__NationInst4__Defunit2bAssignment_2151376); 
+            match(input,379,FOLLOW_379_in_rule__NationInst4__Defunit2bAssignment_2151377); 
              after(grammarAccess.getNationInst4Access().getDefunit2bDefunit2bKeyword_21_0()); 
 
             }
@@ -65427,7 +65438,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             // ../org.larz.dom3.dm.ui/src-gen/org/larz/dom3/dm/ui/contentassist/antlr/internal/InternalDm.g:24105:1: '#color'
             {
              before(grammarAccess.getNationInst5Access().getColorColorKeyword_0()); 
-            match(input,380,FOLLOW_380_in_rule__NationInst5__ColorAssignment51420); 
+            match(input,380,FOLLOW_380_in_rule__NationInst5__ColorAssignment51421); 
              after(grammarAccess.getNationInst5Access().getColorColorKeyword_0()); 
 
             }
@@ -65456,7 +65467,6 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     // Delegated rules
 
 
-    protected DFA117 dfa117 = new DFA117(this);
     protected DFA118 dfa118 = new DFA118(this);
     protected DFA119 dfa119 = new DFA119(this);
     protected DFA120 dfa120 = new DFA120(this);
@@ -65480,167 +65490,23 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     protected DFA138 dfa138 = new DFA138(this);
     protected DFA139 dfa139 = new DFA139(this);
     protected DFA140 dfa140 = new DFA140(this);
-    static final String DFA117_eotS =
+    protected DFA141 dfa141 = new DFA141(this);
+    static final String DFA118_eotS =
         "\31\uffff";
-    static final String DFA117_eofS =
+    static final String DFA118_eofS =
         "\31\uffff";
-    static final String DFA117_minS =
+    static final String DFA118_minS =
         "\1\12\30\uffff";
-    static final String DFA117_maxS =
+    static final String DFA118_maxS =
         "\1\42\30\uffff";
-    static final String DFA117_acceptS =
+    static final String DFA118_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1"+
         "\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30";
-    static final String DFA117_specialS =
-        "\1\0\30\uffff}>";
-    static final String[] DFA117_transitionS = {
-            "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1"+
-            "\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\uffff\1\30",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-    };
-
-    static final short[] DFA117_eot = DFA.unpackEncodedString(DFA117_eotS);
-    static final short[] DFA117_eof = DFA.unpackEncodedString(DFA117_eofS);
-    static final char[] DFA117_min = DFA.unpackEncodedStringToUnsignedChars(DFA117_minS);
-    static final char[] DFA117_max = DFA.unpackEncodedStringToUnsignedChars(DFA117_maxS);
-    static final short[] DFA117_accept = DFA.unpackEncodedString(DFA117_acceptS);
-    static final short[] DFA117_special = DFA.unpackEncodedString(DFA117_specialS);
-    static final short[][] DFA117_transition;
-
-    static {
-        int numStates = DFA117_transitionS.length;
-        DFA117_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA117_transition[i] = DFA.unpackEncodedString(DFA117_transitionS[i]);
-        }
-    }
-
-    class DFA117 extends DFA {
-
-        public DFA117(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 117;
-            this.eot = DFA117_eot;
-            this.eof = DFA117_eof;
-            this.min = DFA117_min;
-            this.max = DFA117_max;
-            this.accept = DFA117_accept;
-            this.special = DFA117_special;
-            this.transition = DFA117_transition;
-        }
-        public String getDescription() {
-            return "13544:3: ( ({...}? => ( ( ( rule__Dom3Mod__Group_0_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_2__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_3__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_4__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_5__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_6__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_7__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_8__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_9__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_10__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_11__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_12__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_13__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_14__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_15__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_16__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_17__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_18__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_19__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_20__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_21__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_22__0 ) ) ) ) | ({...}? => ( ( ( '#end' ) ) ) ) )";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA117_0 = input.LA(1);
-
-                         
-                        int index117_0 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( LA117_0 ==10 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 0) ) {s = 1;}
-
-                        else if ( LA117_0 ==11 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 1) ) {s = 2;}
-
-                        else if ( LA117_0 ==12 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 2) ) {s = 3;}
-
-                        else if ( LA117_0 ==13 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 3) ) {s = 4;}
-
-                        else if ( LA117_0 ==14 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 4) ) {s = 5;}
-
-                        else if ( LA117_0 ==15 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 5) ) {s = 6;}
-
-                        else if ( LA117_0 ==16 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 6) ) {s = 7;}
-
-                        else if ( LA117_0 ==17 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 7) ) {s = 8;}
-
-                        else if ( LA117_0 ==18 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 8) ) {s = 9;}
-
-                        else if ( LA117_0 ==19 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 9) ) {s = 10;}
-
-                        else if ( LA117_0 ==20 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 10) ) {s = 11;}
-
-                        else if ( LA117_0 ==21 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 11) ) {s = 12;}
-
-                        else if ( LA117_0 ==22 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 12) ) {s = 13;}
-
-                        else if ( LA117_0 ==23 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 13) ) {s = 14;}
-
-                        else if ( LA117_0 ==24 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 14) ) {s = 15;}
-
-                        else if ( LA117_0 ==25 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 15) ) {s = 16;}
-
-                        else if ( LA117_0 ==26 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 16) ) {s = 17;}
-
-                        else if ( LA117_0 ==27 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 17) ) {s = 18;}
-
-                        else if ( LA117_0 ==28 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 18) ) {s = 19;}
-
-                        else if ( LA117_0 ==29 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 19) ) {s = 20;}
-
-                        else if ( LA117_0 ==30 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 20) ) {s = 21;}
-
-                        else if ( LA117_0 ==31 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 21) ) {s = 22;}
-
-                        else if ( LA117_0 ==32 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 22) ) {s = 23;}
-
-                        else if ( LA117_0 ==34 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 23) ) {s = 24;}
-
-                         
-                        input.seek(index117_0);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 117, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String DFA118_eotS =
-        "\32\uffff";
-    static final String DFA118_eofS =
-        "\1\31\31\uffff";
-    static final String DFA118_minS =
-        "\1\12\31\uffff";
-    static final String DFA118_maxS =
-        "\1\60\31\uffff";
-    static final String DFA118_acceptS =
-        "\1\uffff\30\1\1\2";
     static final String DFA118_specialS =
-        "\1\0\31\uffff}>";
+        "\1\0\30\uffff}>";
     static final String[] DFA118_transitionS = {
             "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1"+
-            "\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\31\1\30\16"+
-            "\31",
-            "",
+            "\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\uffff\1\30",
             "",
             "",
             "",
@@ -65697,7 +65563,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA118_transition;
         }
         public String getDescription() {
-            return "13971:2: ( rule__Dom3Mod__UnorderedGroup_0__1 )?";
+            return "13544:3: ( ({...}? => ( ( ( rule__Dom3Mod__Group_0_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_2__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_3__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_4__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_5__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_6__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_7__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_8__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_9__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_10__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_11__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_12__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_13__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_14__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_15__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_16__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_17__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_18__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_19__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_20__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_21__0 ) ) ) ) | ({...}? => ( ( ( rule__Dom3Mod__Group_0_22__0 ) ) ) ) | ({...}? => ( ( ( '#end' ) ) ) ) )";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -65757,8 +65623,6 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
                         else if ( LA118_0 ==32 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 22) ) {s = 23;}
 
                         else if ( LA118_0 ==34 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 23) ) {s = 24;}
-
-                        else if ( (LA118_0==EOF||LA118_0==33||(LA118_0>=35 && LA118_0<=48)) ) {s = 25;}
 
                          
                         input.seek(index118_0);
@@ -65844,7 +65708,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA119_transition;
         }
         public String getDescription() {
-            return "13984:2: ( rule__Dom3Mod__UnorderedGroup_0__2 )?";
+            return "13971:2: ( rule__Dom3Mod__UnorderedGroup_0__1 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -65991,7 +65855,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA120_transition;
         }
         public String getDescription() {
-            return "13997:2: ( rule__Dom3Mod__UnorderedGroup_0__3 )?";
+            return "13984:2: ( rule__Dom3Mod__UnorderedGroup_0__2 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -66138,7 +66002,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA121_transition;
         }
         public String getDescription() {
-            return "14010:2: ( rule__Dom3Mod__UnorderedGroup_0__4 )?";
+            return "13997:2: ( rule__Dom3Mod__UnorderedGroup_0__3 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -66285,7 +66149,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA122_transition;
         }
         public String getDescription() {
-            return "14023:2: ( rule__Dom3Mod__UnorderedGroup_0__5 )?";
+            return "14010:2: ( rule__Dom3Mod__UnorderedGroup_0__4 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -66432,7 +66296,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA123_transition;
         }
         public String getDescription() {
-            return "14036:2: ( rule__Dom3Mod__UnorderedGroup_0__6 )?";
+            return "14023:2: ( rule__Dom3Mod__UnorderedGroup_0__5 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -66579,7 +66443,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA124_transition;
         }
         public String getDescription() {
-            return "14049:2: ( rule__Dom3Mod__UnorderedGroup_0__7 )?";
+            return "14036:2: ( rule__Dom3Mod__UnorderedGroup_0__6 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -66726,7 +66590,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA125_transition;
         }
         public String getDescription() {
-            return "14062:2: ( rule__Dom3Mod__UnorderedGroup_0__8 )?";
+            return "14049:2: ( rule__Dom3Mod__UnorderedGroup_0__7 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -66873,7 +66737,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA126_transition;
         }
         public String getDescription() {
-            return "14075:2: ( rule__Dom3Mod__UnorderedGroup_0__9 )?";
+            return "14062:2: ( rule__Dom3Mod__UnorderedGroup_0__8 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -67020,7 +66884,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA127_transition;
         }
         public String getDescription() {
-            return "14088:2: ( rule__Dom3Mod__UnorderedGroup_0__10 )?";
+            return "14075:2: ( rule__Dom3Mod__UnorderedGroup_0__9 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -67167,7 +67031,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA128_transition;
         }
         public String getDescription() {
-            return "14101:2: ( rule__Dom3Mod__UnorderedGroup_0__11 )?";
+            return "14088:2: ( rule__Dom3Mod__UnorderedGroup_0__10 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -67314,7 +67178,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA129_transition;
         }
         public String getDescription() {
-            return "14114:2: ( rule__Dom3Mod__UnorderedGroup_0__12 )?";
+            return "14101:2: ( rule__Dom3Mod__UnorderedGroup_0__11 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -67461,7 +67325,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA130_transition;
         }
         public String getDescription() {
-            return "14127:2: ( rule__Dom3Mod__UnorderedGroup_0__13 )?";
+            return "14114:2: ( rule__Dom3Mod__UnorderedGroup_0__12 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -67608,7 +67472,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA131_transition;
         }
         public String getDescription() {
-            return "14140:2: ( rule__Dom3Mod__UnorderedGroup_0__14 )?";
+            return "14127:2: ( rule__Dom3Mod__UnorderedGroup_0__13 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -67755,7 +67619,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA132_transition;
         }
         public String getDescription() {
-            return "14153:2: ( rule__Dom3Mod__UnorderedGroup_0__15 )?";
+            return "14140:2: ( rule__Dom3Mod__UnorderedGroup_0__14 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -67902,7 +67766,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA133_transition;
         }
         public String getDescription() {
-            return "14166:2: ( rule__Dom3Mod__UnorderedGroup_0__16 )?";
+            return "14153:2: ( rule__Dom3Mod__UnorderedGroup_0__15 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -68049,7 +67913,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA134_transition;
         }
         public String getDescription() {
-            return "14179:2: ( rule__Dom3Mod__UnorderedGroup_0__17 )?";
+            return "14166:2: ( rule__Dom3Mod__UnorderedGroup_0__16 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -68196,7 +68060,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA135_transition;
         }
         public String getDescription() {
-            return "14192:2: ( rule__Dom3Mod__UnorderedGroup_0__18 )?";
+            return "14179:2: ( rule__Dom3Mod__UnorderedGroup_0__17 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -68343,7 +68207,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA136_transition;
         }
         public String getDescription() {
-            return "14205:2: ( rule__Dom3Mod__UnorderedGroup_0__19 )?";
+            return "14192:2: ( rule__Dom3Mod__UnorderedGroup_0__18 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -68490,7 +68354,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA137_transition;
         }
         public String getDescription() {
-            return "14218:2: ( rule__Dom3Mod__UnorderedGroup_0__20 )?";
+            return "14205:2: ( rule__Dom3Mod__UnorderedGroup_0__19 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -68637,7 +68501,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA138_transition;
         }
         public String getDescription() {
-            return "14231:2: ( rule__Dom3Mod__UnorderedGroup_0__21 )?";
+            return "14218:2: ( rule__Dom3Mod__UnorderedGroup_0__20 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -68784,7 +68648,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA139_transition;
         }
         public String getDescription() {
-            return "14244:2: ( rule__Dom3Mod__UnorderedGroup_0__22 )?";
+            return "14231:2: ( rule__Dom3Mod__UnorderedGroup_0__21 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -68931,7 +68795,7 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             this.transition = DFA140_transition;
         }
         public String getDescription() {
-            return "14257:2: ( rule__Dom3Mod__UnorderedGroup_0__23 )?";
+            return "14244:2: ( rule__Dom3Mod__UnorderedGroup_0__22 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -69001,6 +68865,153 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
             }
             NoViableAltException nvae =
                 new NoViableAltException(getDescription(), 140, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String DFA141_eotS =
+        "\32\uffff";
+    static final String DFA141_eofS =
+        "\1\31\31\uffff";
+    static final String DFA141_minS =
+        "\1\12\31\uffff";
+    static final String DFA141_maxS =
+        "\1\60\31\uffff";
+    static final String DFA141_acceptS =
+        "\1\uffff\30\1\1\2";
+    static final String DFA141_specialS =
+        "\1\0\31\uffff}>";
+    static final String[] DFA141_transitionS = {
+            "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1"+
+            "\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\31\1\30\16"+
+            "\31",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA141_eot = DFA.unpackEncodedString(DFA141_eotS);
+    static final short[] DFA141_eof = DFA.unpackEncodedString(DFA141_eofS);
+    static final char[] DFA141_min = DFA.unpackEncodedStringToUnsignedChars(DFA141_minS);
+    static final char[] DFA141_max = DFA.unpackEncodedStringToUnsignedChars(DFA141_maxS);
+    static final short[] DFA141_accept = DFA.unpackEncodedString(DFA141_acceptS);
+    static final short[] DFA141_special = DFA.unpackEncodedString(DFA141_specialS);
+    static final short[][] DFA141_transition;
+
+    static {
+        int numStates = DFA141_transitionS.length;
+        DFA141_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA141_transition[i] = DFA.unpackEncodedString(DFA141_transitionS[i]);
+        }
+    }
+
+    class DFA141 extends DFA {
+
+        public DFA141(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 141;
+            this.eot = DFA141_eot;
+            this.eof = DFA141_eof;
+            this.min = DFA141_min;
+            this.max = DFA141_max;
+            this.accept = DFA141_accept;
+            this.special = DFA141_special;
+            this.transition = DFA141_transition;
+        }
+        public String getDescription() {
+            return "14257:2: ( rule__Dom3Mod__UnorderedGroup_0__23 )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA141_0 = input.LA(1);
+
+                         
+                        int index141_0 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( LA141_0 ==10 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 0) ) {s = 1;}
+
+                        else if ( LA141_0 ==11 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 1) ) {s = 2;}
+
+                        else if ( LA141_0 ==12 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 2) ) {s = 3;}
+
+                        else if ( LA141_0 ==13 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 3) ) {s = 4;}
+
+                        else if ( LA141_0 ==14 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 4) ) {s = 5;}
+
+                        else if ( LA141_0 ==15 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 5) ) {s = 6;}
+
+                        else if ( LA141_0 ==16 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 6) ) {s = 7;}
+
+                        else if ( LA141_0 ==17 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 7) ) {s = 8;}
+
+                        else if ( LA141_0 ==18 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 8) ) {s = 9;}
+
+                        else if ( LA141_0 ==19 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 9) ) {s = 10;}
+
+                        else if ( LA141_0 ==20 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 10) ) {s = 11;}
+
+                        else if ( LA141_0 ==21 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 11) ) {s = 12;}
+
+                        else if ( LA141_0 ==22 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 12) ) {s = 13;}
+
+                        else if ( LA141_0 ==23 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 13) ) {s = 14;}
+
+                        else if ( LA141_0 ==24 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 14) ) {s = 15;}
+
+                        else if ( LA141_0 ==25 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 15) ) {s = 16;}
+
+                        else if ( LA141_0 ==26 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 16) ) {s = 17;}
+
+                        else if ( LA141_0 ==27 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 17) ) {s = 18;}
+
+                        else if ( LA141_0 ==28 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 18) ) {s = 19;}
+
+                        else if ( LA141_0 ==29 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 19) ) {s = 20;}
+
+                        else if ( LA141_0 ==30 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 20) ) {s = 21;}
+
+                        else if ( LA141_0 ==31 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 21) ) {s = 22;}
+
+                        else if ( LA141_0 ==32 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 22) ) {s = 23;}
+
+                        else if ( LA141_0 ==34 && getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 23) ) {s = 24;}
+
+                        else if ( (LA141_0==EOF||LA141_0==33||(LA141_0>=35 && LA141_0<=48)) ) {s = 25;}
+
+                         
+                        input.seek(index141_0);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 141, _s, input);
             error(nvae);
             throw nvae;
         }
@@ -69971,958 +69982,958 @@ public class InternalDmParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__WeaponPattern3__Group__0__Impl_in_rule__WeaponPattern3__Group__019856 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__WeaponPattern3__Group__1_in_rule__WeaponPattern3__Group__019859 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWeaponInst3_in_rule__WeaponPattern3__Group__0__Impl19886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WeaponPattern3__Group__1__Impl_in_rule__WeaponPattern3__Group__119915 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__WeaponPattern3__Group__1__Impl_in_rule__WeaponPattern3__Group__119915 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_rule__WeaponPattern3__Group__2_in_rule__WeaponPattern3__Group__119918 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__WeaponPattern3__Value1Assignment_1_in_rule__WeaponPattern3__Group__1__Impl19945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WeaponPattern3__Group__2__Impl_in_rule__WeaponPattern3__Group__219975 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__WeaponPattern3__Group__2__Impl_in_rule__WeaponPattern3__Group__219975 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_rule__WeaponPattern3__Group__3_in_rule__WeaponPattern3__Group__219978 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__WeaponPattern3__Value2Assignment_2_in_rule__WeaponPattern3__Group__2__Impl20005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WeaponPattern3__Group__3__Impl_in_rule__WeaponPattern3__Group__320035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__WeaponPattern3__Group__3__Impl20063 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__WeaponPattern4__Group__0__Impl_in_rule__WeaponPattern4__Group__020102 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__WeaponPattern4__Group__1_in_rule__WeaponPattern4__Group__020105 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWeaponInst4_in_rule__WeaponPattern4__Group__0__Impl20132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WeaponPattern4__Group__1__Impl_in_rule__WeaponPattern4__Group__120161 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__WeaponPattern4__Group__1__Impl20189 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__0__Impl_in_rule__SelectMonsterById__Group__020224 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__1_in_rule__SelectMonsterById__Group__020227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__SelectMonsterById__Group__0__Impl20255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__1__Impl_in_rule__SelectMonsterById__Group__120286 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__2_in_rule__SelectMonsterById__Group__120289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__ValueAssignment_1_in_rule__SelectMonsterById__Group__1__Impl20316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__2__Impl_in_rule__SelectMonsterById__Group__220346 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__3_in_rule__SelectMonsterById__Group__220349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectMonsterById__Group__2__Impl20377 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__3__Impl_in_rule__SelectMonsterById__Group__320408 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__4_in_rule__SelectMonsterById__Group__320411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__ModsAssignment_3_in_rule__SelectMonsterById__Group__3__Impl20438 = new BitSet(new long[]{0x04F4000000000002L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__4__Impl_in_rule__SelectMonsterById__Group__420469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__SelectMonsterById__Group__4__Impl20497 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__0__Impl_in_rule__SelectMonsterByName__Group__020538 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__1_in_rule__SelectMonsterByName__Group__020541 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__SelectMonsterByName__Group__0__Impl20569 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__1__Impl_in_rule__SelectMonsterByName__Group__120600 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__2_in_rule__SelectMonsterByName__Group__120603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__ValueAssignment_1_in_rule__SelectMonsterByName__Group__1__Impl20630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__2__Impl_in_rule__SelectMonsterByName__Group__220660 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__3_in_rule__SelectMonsterByName__Group__220663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectMonsterByName__Group__2__Impl20691 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__3__Impl_in_rule__SelectMonsterByName__Group__320722 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__4_in_rule__SelectMonsterByName__Group__320725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__ModsAssignment_3_in_rule__SelectMonsterByName__Group__3__Impl20752 = new BitSet(new long[]{0x04F4000000000002L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__4__Impl_in_rule__SelectMonsterByName__Group__420783 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__SelectMonsterByName__Group__4__Impl20811 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewMonster__Group__0__Impl_in_rule__NewMonster__Group__020852 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__NewMonster__Group__1_in_rule__NewMonster__Group__020855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__NewMonster__Group__0__Impl20883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewMonster__Group__1__Impl_in_rule__NewMonster__Group__120914 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__NewMonster__Group__2_in_rule__NewMonster__Group__120917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewMonster__ValueAssignment_1_in_rule__NewMonster__Group__1__Impl20944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewMonster__Group__2__Impl_in_rule__NewMonster__Group__220974 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__NewMonster__Group__3_in_rule__NewMonster__Group__220977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewMonster__Group__2__Impl21005 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__NewMonster__Group__3__Impl_in_rule__NewMonster__Group__321036 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__NewMonster__Group__4_in_rule__NewMonster__Group__321039 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewMonster__ModsAssignment_3_in_rule__NewMonster__Group__3__Impl21066 = new BitSet(new long[]{0x04F4000000000002L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
-    public static final BitSet FOLLOW_rule__NewMonster__Group__4__Impl_in_rule__NewMonster__Group__421097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__NewMonster__Group__4__Impl21125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern1__Group__0__Impl_in_rule__MonsterPattern1__Group__021166 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__MonsterPattern1__Group__1_in_rule__MonsterPattern1__Group__021169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst1_in_rule__MonsterPattern1__Group__0__Impl21196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern1__Group__1__Impl_in_rule__MonsterPattern1__Group__121225 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MonsterPattern1__Group__2_in_rule__MonsterPattern1__Group__121228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern1__ValueAssignment_1_in_rule__MonsterPattern1__Group__1__Impl21255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern1__Group__2__Impl_in_rule__MonsterPattern1__Group__221285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern1__Group__2__Impl21313 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__MonsterPattern2__Group__0__Impl_in_rule__MonsterPattern2__Group__021350 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__MonsterPattern2__Group__1_in_rule__MonsterPattern2__Group__021353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst2_in_rule__MonsterPattern2__Group__0__Impl21380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern2__Group__1__Impl_in_rule__MonsterPattern2__Group__121409 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MonsterPattern2__Group__2_in_rule__MonsterPattern2__Group__121412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern2__ValueAssignment_1_in_rule__MonsterPattern2__Group__1__Impl21439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern2__Group__2__Impl_in_rule__MonsterPattern2__Group__221469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern2__Group__2__Impl21497 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__0__Impl_in_rule__MonsterPattern3__Group__021534 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__1_in_rule__MonsterPattern3__Group__021537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst3_in_rule__MonsterPattern3__Group__0__Impl21564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__1__Impl_in_rule__MonsterPattern3__Group__121593 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__2_in_rule__MonsterPattern3__Group__121596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern3__Value1Assignment_1_in_rule__MonsterPattern3__Group__1__Impl21623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__2__Impl_in_rule__MonsterPattern3__Group__221653 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__3_in_rule__MonsterPattern3__Group__221656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern3__Value2Assignment_2_in_rule__MonsterPattern3__Group__2__Impl21683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__3__Impl_in_rule__MonsterPattern3__Group__321713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern3__Group__3__Impl21741 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__MonsterPattern4__Group__0__Impl_in_rule__MonsterPattern4__Group__021780 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MonsterPattern4__Group__1_in_rule__MonsterPattern4__Group__021783 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst4_in_rule__MonsterPattern4__Group__0__Impl21810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern4__Group__1__Impl_in_rule__MonsterPattern4__Group__121839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern4__Group__1__Impl21867 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__MonsterPattern5__Group__0__Impl_in_rule__MonsterPattern5__Group__021902 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__MonsterPattern5__Group__1_in_rule__MonsterPattern5__Group__021905 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst5_in_rule__MonsterPattern5__Group__0__Impl21932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern5__Group__1__Impl_in_rule__MonsterPattern5__Group__121961 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MonsterPattern5__Group__2_in_rule__MonsterPattern5__Group__121964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern5__Alternatives_1_in_rule__MonsterPattern5__Group__1__Impl21991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern5__Group__2__Impl_in_rule__MonsterPattern5__Group__222021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern5__Group__2__Impl22049 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__MonsterPattern6__Group__0__Impl_in_rule__MonsterPattern6__Group__022086 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_rule__MonsterPattern6__Group__1_in_rule__MonsterPattern6__Group__022089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterInst6_in_rule__MonsterPattern6__Group__0__Impl22116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern6__Group__1__Impl_in_rule__MonsterPattern6__Group__122145 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_rule__MonsterPattern6__Group__2_in_rule__MonsterPattern6__Group__122148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern6__ValueAssignment_1_in_rule__MonsterPattern6__Group__1__Impl22175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MonsterPattern6__Group__2__Impl_in_rule__MonsterPattern6__Group__222206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern6__Group__2__Impl22234 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__Group__0__Impl_in_rule__SelectSpellById__Group__022271 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__Group__1_in_rule__SelectSpellById__Group__022274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__SelectSpellById__Group__0__Impl22302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__Group__1__Impl_in_rule__SelectSpellById__Group__122333 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__Group__2_in_rule__SelectSpellById__Group__122336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__ValueAssignment_1_in_rule__SelectSpellById__Group__1__Impl22363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__Group__2__Impl_in_rule__SelectSpellById__Group__222393 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__Group__3_in_rule__SelectSpellById__Group__222396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSpellById__Group__2__Impl22424 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__Group__3__Impl_in_rule__SelectSpellById__Group__322455 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__Group__4_in_rule__SelectSpellById__Group__322458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__ModsAssignment_3_in_rule__SelectSpellById__Group__3__Impl22485 = new BitSet(new long[]{0xD004000000000002L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__SelectSpellById__Group__4__Impl_in_rule__SelectSpellById__Group__422516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__SelectSpellById__Group__4__Impl22544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__0__Impl_in_rule__SelectSpellByName__Group__022585 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__1_in_rule__SelectSpellByName__Group__022588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__SelectSpellByName__Group__0__Impl22616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__1__Impl_in_rule__SelectSpellByName__Group__122647 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__2_in_rule__SelectSpellByName__Group__122650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__ValueAssignment_1_in_rule__SelectSpellByName__Group__1__Impl22677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__2__Impl_in_rule__SelectSpellByName__Group__222707 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__3_in_rule__SelectSpellByName__Group__222710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSpellByName__Group__2__Impl22738 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__3__Impl_in_rule__SelectSpellByName__Group__322769 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__4_in_rule__SelectSpellByName__Group__322772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__ModsAssignment_3_in_rule__SelectSpellByName__Group__3__Impl22799 = new BitSet(new long[]{0xD004000000000002L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__4__Impl_in_rule__SelectSpellByName__Group__422830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__SelectSpellByName__Group__4__Impl22858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSpell__Group__0__Impl_in_rule__NewSpell__Group__022899 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__NewSpell__Group__1_in_rule__NewSpell__Group__022902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__NewSpell__Group__0__Impl22930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSpell__Group__1__Impl_in_rule__NewSpell__Group__122961 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__NewSpell__Group__2_in_rule__NewSpell__Group__122964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewSpell__Group__1__Impl22992 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__NewSpell__Group__2__Impl_in_rule__NewSpell__Group__223023 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__NewSpell__Group__3_in_rule__NewSpell__Group__223026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSpell__ModsAssignment_2_in_rule__NewSpell__Group__2__Impl23053 = new BitSet(new long[]{0xD004000000000002L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
-    public static final BitSet FOLLOW_rule__NewSpell__Group__3__Impl_in_rule__NewSpell__Group__323084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__NewSpell__Group__3__Impl23112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern1__Group__0__Impl_in_rule__SpellPattern1__Group__023151 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__SpellPattern1__Group__1_in_rule__SpellPattern1__Group__023154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst1_in_rule__SpellPattern1__Group__0__Impl23181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern1__Group__1__Impl_in_rule__SpellPattern1__Group__123210 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SpellPattern1__Group__2_in_rule__SpellPattern1__Group__123213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern1__ValueAssignment_1_in_rule__SpellPattern1__Group__1__Impl23240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern1__Group__2__Impl_in_rule__SpellPattern1__Group__223270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern1__Group__2__Impl23298 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SpellPattern2__Group__0__Impl_in_rule__SpellPattern2__Group__023335 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SpellPattern2__Group__1_in_rule__SpellPattern2__Group__023338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst2_in_rule__SpellPattern2__Group__0__Impl23365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern2__Group__1__Impl_in_rule__SpellPattern2__Group__123394 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SpellPattern2__Group__2_in_rule__SpellPattern2__Group__123397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern2__ValueAssignment_1_in_rule__SpellPattern2__Group__1__Impl23424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern2__Group__2__Impl_in_rule__SpellPattern2__Group__223454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern2__Group__2__Impl23482 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SpellPattern3__Group__0__Impl_in_rule__SpellPattern3__Group__023519 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SpellPattern3__Group__1_in_rule__SpellPattern3__Group__023522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst3_in_rule__SpellPattern3__Group__0__Impl23549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern3__Group__1__Impl_in_rule__SpellPattern3__Group__123578 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SpellPattern3__Group__2_in_rule__SpellPattern3__Group__123581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern3__Value1Assignment_1_in_rule__SpellPattern3__Group__1__Impl23608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern3__Group__2__Impl_in_rule__SpellPattern3__Group__223638 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SpellPattern3__Group__3_in_rule__SpellPattern3__Group__223641 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern3__Value2Assignment_2_in_rule__SpellPattern3__Group__2__Impl23668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern3__Group__3__Impl_in_rule__SpellPattern3__Group__323698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern3__Group__3__Impl23726 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SpellPattern4__Group__0__Impl_in_rule__SpellPattern4__Group__023765 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SpellPattern4__Group__1_in_rule__SpellPattern4__Group__023768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst4_in_rule__SpellPattern4__Group__0__Impl23795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern4__Group__1__Impl_in_rule__SpellPattern4__Group__123824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern4__Group__1__Impl23852 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SpellPattern5__Group__0__Impl_in_rule__SpellPattern5__Group__023887 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__SpellPattern5__Group__1_in_rule__SpellPattern5__Group__023890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellInst5_in_rule__SpellPattern5__Group__0__Impl23917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern5__Group__1__Impl_in_rule__SpellPattern5__Group__123946 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SpellPattern5__Group__2_in_rule__SpellPattern5__Group__123949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern5__Alternatives_1_in_rule__SpellPattern5__Group__1__Impl23976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SpellPattern5__Group__2__Impl_in_rule__SpellPattern5__Group__224006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern5__Group__2__Impl24034 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectItemById__Group__0__Impl_in_rule__SelectItemById__Group__024071 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SelectItemById__Group__1_in_rule__SelectItemById__Group__024074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__SelectItemById__Group__0__Impl24102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemById__Group__1__Impl_in_rule__SelectItemById__Group__124133 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__SelectItemById__Group__2_in_rule__SelectItemById__Group__124136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemById__ValueAssignment_1_in_rule__SelectItemById__Group__1__Impl24163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemById__Group__2__Impl_in_rule__SelectItemById__Group__224193 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__SelectItemById__Group__3_in_rule__SelectItemById__Group__224196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectItemById__Group__2__Impl24224 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectItemById__Group__3__Impl_in_rule__SelectItemById__Group__324255 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__SelectItemById__Group__4_in_rule__SelectItemById__Group__324258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemById__ModsAssignment_3_in_rule__SelectItemById__Group__3__Impl24285 = new BitSet(new long[]{0x000C000000000002L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__SelectItemById__Group__4__Impl_in_rule__SelectItemById__Group__424316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__SelectItemById__Group__4__Impl24344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__Group__0__Impl_in_rule__SelectItemByName__Group__024385 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__Group__1_in_rule__SelectItemByName__Group__024388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__SelectItemByName__Group__0__Impl24416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__Group__1__Impl_in_rule__SelectItemByName__Group__124447 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__Group__2_in_rule__SelectItemByName__Group__124450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__ValueAssignment_1_in_rule__SelectItemByName__Group__1__Impl24477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__Group__2__Impl_in_rule__SelectItemByName__Group__224507 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__Group__3_in_rule__SelectItemByName__Group__224510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectItemByName__Group__2__Impl24538 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__Group__3__Impl_in_rule__SelectItemByName__Group__324569 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__Group__4_in_rule__SelectItemByName__Group__324572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__ModsAssignment_3_in_rule__SelectItemByName__Group__3__Impl24599 = new BitSet(new long[]{0x000C000000000002L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__SelectItemByName__Group__4__Impl_in_rule__SelectItemByName__Group__424630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__SelectItemByName__Group__4__Impl24658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewItem__Group__0__Impl_in_rule__NewItem__Group__024699 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__NewItem__Group__1_in_rule__NewItem__Group__024702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__NewItem__Group__0__Impl24730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewItem__Group__1__Impl_in_rule__NewItem__Group__124761 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__NewItem__Group__2_in_rule__NewItem__Group__124764 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewItem__Group__1__Impl24792 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__NewItem__Group__2__Impl_in_rule__NewItem__Group__224823 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__NewItem__Group__3_in_rule__NewItem__Group__224826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewItem__ModsAssignment_2_in_rule__NewItem__Group__2__Impl24853 = new BitSet(new long[]{0x000C000000000002L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_rule__NewItem__Group__3__Impl_in_rule__NewItem__Group__324884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__NewItem__Group__3__Impl24912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ItemPattern1__Group__0__Impl_in_rule__ItemPattern1__Group__024951 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__ItemPattern1__Group__1_in_rule__ItemPattern1__Group__024954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemInst1_in_rule__ItemPattern1__Group__0__Impl24981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ItemPattern1__Group__1__Impl_in_rule__ItemPattern1__Group__125010 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ItemPattern1__Group__2_in_rule__ItemPattern1__Group__125013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ItemPattern1__ValueAssignment_1_in_rule__ItemPattern1__Group__1__Impl25040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ItemPattern1__Group__2__Impl_in_rule__ItemPattern1__Group__225070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern1__Group__2__Impl25098 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__ItemPattern2__Group__0__Impl_in_rule__ItemPattern2__Group__025135 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__ItemPattern2__Group__1_in_rule__ItemPattern2__Group__025138 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemInst2_in_rule__ItemPattern2__Group__0__Impl25165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ItemPattern2__Group__1__Impl_in_rule__ItemPattern2__Group__125194 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ItemPattern2__Group__2_in_rule__ItemPattern2__Group__125197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ItemPattern2__ValueAssignment_1_in_rule__ItemPattern2__Group__1__Impl25224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ItemPattern2__Group__2__Impl_in_rule__ItemPattern2__Group__225254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern2__Group__2__Impl25282 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__ItemPattern3__Group__0__Impl_in_rule__ItemPattern3__Group__025319 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__ItemPattern3__Group__1_in_rule__ItemPattern3__Group__025322 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemInst3_in_rule__ItemPattern3__Group__0__Impl25349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ItemPattern3__Group__1__Impl_in_rule__ItemPattern3__Group__125378 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ItemPattern3__Group__2_in_rule__ItemPattern3__Group__125381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ItemPattern3__Alternatives_1_in_rule__ItemPattern3__Group__1__Impl25408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ItemPattern3__Group__2__Impl_in_rule__ItemPattern3__Group__225438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern3__Group__2__Impl25466 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectName__Group__0__Impl_in_rule__SelectName__Group__025503 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SelectName__Group__1_in_rule__SelectName__Group__025506 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_rule__SelectName__Group__0__Impl25534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectName__Group__1__Impl_in_rule__SelectName__Group__125565 = new BitSet(new long[]{0x0000000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__SelectName__Group__2_in_rule__SelectName__Group__125568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectName__ValueAssignment_1_in_rule__SelectName__Group__1__Impl25595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectName__Group__2__Impl_in_rule__SelectName__Group__225625 = new BitSet(new long[]{0x0000000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__SelectName__Group__3_in_rule__SelectName__Group__225628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectName__Group__2__Impl25656 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectName__Group__3__Impl_in_rule__SelectName__Group__325687 = new BitSet(new long[]{0x0000000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__SelectName__Group__4_in_rule__SelectName__Group__325690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectName__ModsAssignment_3_in_rule__SelectName__Group__3__Impl25717 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0002000000000000L,0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__SelectName__Group__4__Impl_in_rule__SelectName__Group__425748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__SelectName__Group__4__Impl25776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NamePattern1__Group__0__Impl_in_rule__NamePattern1__Group__025817 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__NamePattern1__Group__1_in_rule__NamePattern1__Group__025820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNameInst1_in_rule__NamePattern1__Group__0__Impl25847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NamePattern1__Group__1__Impl_in_rule__NamePattern1__Group__125876 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NamePattern1__Group__2_in_rule__NamePattern1__Group__125879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NamePattern1__ValueAssignment_1_in_rule__NamePattern1__Group__1__Impl25906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NamePattern1__Group__2__Impl_in_rule__NamePattern1__Group__225936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NamePattern1__Group__2__Impl25964 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__NamePattern2__Group__0__Impl_in_rule__NamePattern2__Group__026001 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NamePattern2__Group__1_in_rule__NamePattern2__Group__026004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNameInst2_in_rule__NamePattern2__Group__0__Impl26031 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NamePattern2__Group__1__Impl_in_rule__NamePattern2__Group__126060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NamePattern2__Group__1__Impl26088 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__Group__0__Impl_in_rule__SelectSiteById__Group__026123 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__Group__1_in_rule__SelectSiteById__Group__026126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_rule__SelectSiteById__Group__0__Impl26154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__Group__1__Impl_in_rule__SelectSiteById__Group__126185 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__Group__2_in_rule__SelectSiteById__Group__126188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__ValueAssignment_1_in_rule__SelectSiteById__Group__1__Impl26215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__Group__2__Impl_in_rule__SelectSiteById__Group__226245 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__Group__3_in_rule__SelectSiteById__Group__226248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSiteById__Group__2__Impl26276 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__Group__3__Impl_in_rule__SelectSiteById__Group__326307 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__Group__4_in_rule__SelectSiteById__Group__326310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__ModsAssignment_3_in_rule__SelectSiteById__Group__3__Impl26337 = new BitSet(new long[]{0x0004000000000002L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__SelectSiteById__Group__4__Impl_in_rule__SelectSiteById__Group__426368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__SelectSiteById__Group__4__Impl26396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__0__Impl_in_rule__SelectSiteByName__Group__026437 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__1_in_rule__SelectSiteByName__Group__026440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_rule__SelectSiteByName__Group__0__Impl26468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__1__Impl_in_rule__SelectSiteByName__Group__126499 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__2_in_rule__SelectSiteByName__Group__126502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__ValueAssignment_1_in_rule__SelectSiteByName__Group__1__Impl26529 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__2__Impl_in_rule__SelectSiteByName__Group__226559 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__3_in_rule__SelectSiteByName__Group__226562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSiteByName__Group__2__Impl26590 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__3__Impl_in_rule__SelectSiteByName__Group__326621 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__4_in_rule__SelectSiteByName__Group__326624 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__ModsAssignment_3_in_rule__SelectSiteByName__Group__3__Impl26651 = new BitSet(new long[]{0x0004000000000002L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__4__Impl_in_rule__SelectSiteByName__Group__426682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__SelectSiteByName__Group__4__Impl26710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSite__Group__0__Impl_in_rule__NewSite__Group__026751 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__NewSite__Group__1_in_rule__NewSite__Group__026754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_rule__NewSite__Group__0__Impl26782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSite__Group__1__Impl_in_rule__NewSite__Group__126813 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__NewSite__Group__2_in_rule__NewSite__Group__126816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSite__ValueAssignment_1_in_rule__NewSite__Group__1__Impl26843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSite__Group__2__Impl_in_rule__NewSite__Group__226873 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__NewSite__Group__3_in_rule__NewSite__Group__226876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewSite__Group__2__Impl26904 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__NewSite__Group__3__Impl_in_rule__NewSite__Group__326935 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__NewSite__Group__4_in_rule__NewSite__Group__326938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NewSite__ModsAssignment_3_in_rule__NewSite__Group__3__Impl26965 = new BitSet(new long[]{0x0004000000000002L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
-    public static final BitSet FOLLOW_rule__NewSite__Group__4__Impl_in_rule__NewSite__Group__426996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__NewSite__Group__4__Impl27024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern1__Group__0__Impl_in_rule__SitePattern1__Group__027065 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__SitePattern1__Group__1_in_rule__SitePattern1__Group__027068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst1_in_rule__SitePattern1__Group__0__Impl27095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern1__Group__1__Impl_in_rule__SitePattern1__Group__127124 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SitePattern1__Group__2_in_rule__SitePattern1__Group__127127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern1__ValueAssignment_1_in_rule__SitePattern1__Group__1__Impl27154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern1__Group__2__Impl_in_rule__SitePattern1__Group__227184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern1__Group__2__Impl27212 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SitePattern2__Group__0__Impl_in_rule__SitePattern2__Group__027249 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SitePattern2__Group__1_in_rule__SitePattern2__Group__027252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst2_in_rule__SitePattern2__Group__0__Impl27279 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern2__Group__1__Impl_in_rule__SitePattern2__Group__127308 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SitePattern2__Group__2_in_rule__SitePattern2__Group__127311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern2__ValueAssignment_1_in_rule__SitePattern2__Group__1__Impl27338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern2__Group__2__Impl_in_rule__SitePattern2__Group__227368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern2__Group__2__Impl27396 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SitePattern3__Group__0__Impl_in_rule__SitePattern3__Group__027433 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SitePattern3__Group__1_in_rule__SitePattern3__Group__027436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst3_in_rule__SitePattern3__Group__0__Impl27463 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern3__Group__1__Impl_in_rule__SitePattern3__Group__127492 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SitePattern3__Group__2_in_rule__SitePattern3__Group__127495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern3__Value1Assignment_1_in_rule__SitePattern3__Group__1__Impl27522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern3__Group__2__Impl_in_rule__SitePattern3__Group__227552 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SitePattern3__Group__3_in_rule__SitePattern3__Group__227555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern3__Value2Assignment_2_in_rule__SitePattern3__Group__2__Impl27582 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern3__Group__3__Impl_in_rule__SitePattern3__Group__327612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern3__Group__3__Impl27640 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SitePattern4__Group__0__Impl_in_rule__SitePattern4__Group__027679 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SitePattern4__Group__1_in_rule__SitePattern4__Group__027682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteInst4_in_rule__SitePattern4__Group__0__Impl27709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SitePattern4__Group__1__Impl_in_rule__SitePattern4__Group__127738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern4__Group__1__Impl27766 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectNation__Group__0__Impl_in_rule__SelectNation__Group__027801 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SelectNation__Group__1_in_rule__SelectNation__Group__027804 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rule__SelectNation__Group__0__Impl27832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectNation__Group__1__Impl_in_rule__SelectNation__Group__127863 = new BitSet(new long[]{0x0004000400000010L,0x0000000800000000L,0x0000000000000000L,0x0000000000000000L,0xFFF8000000000000L,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_rule__SelectNation__Group__2_in_rule__SelectNation__Group__127866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectNation__ValueAssignment_1_in_rule__SelectNation__Group__1__Impl27893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectNation__Group__2__Impl_in_rule__SelectNation__Group__227923 = new BitSet(new long[]{0x0004000400000010L,0x0000000800000000L,0x0000000000000000L,0x0000000000000000L,0xFFF8000000000000L,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_rule__SelectNation__Group__3_in_rule__SelectNation__Group__227926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectNation__Group__2__Impl27954 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__SelectNation__Group__3__Impl_in_rule__SelectNation__Group__327985 = new BitSet(new long[]{0x0004000400000010L,0x0000000800000000L,0x0000000000000000L,0x0000000000000000L,0xFFF8000000000000L,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_rule__SelectNation__Group__4_in_rule__SelectNation__Group__327988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelectNation__ModsAssignment_3_in_rule__SelectNation__Group__3__Impl28015 = new BitSet(new long[]{0x0004000000000002L,0x0000000800000000L,0x0000000000000000L,0x0000000000000000L,0xFFF8000000000000L,0x1FFFFFFFFFFFFFFFL});
-    public static final BitSet FOLLOW_rule__SelectNation__Group__4__Impl_in_rule__SelectNation__Group__428046 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__SelectNation__Group__4__Impl28074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IndepFlag__Group__0__Impl_in_rule__IndepFlag__Group__028115 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__IndepFlag__Group__1_in_rule__IndepFlag__Group__028118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_rule__IndepFlag__Group__0__Impl28146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IndepFlag__Group__1__Impl_in_rule__IndepFlag__Group__128177 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__IndepFlag__Group__2_in_rule__IndepFlag__Group__128180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IndepFlag__ValueAssignment_1_in_rule__IndepFlag__Group__1__Impl28207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IndepFlag__Group__2__Impl_in_rule__IndepFlag__Group__228237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__IndepFlag__Group__2__Impl28265 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__NationPattern1__Group__0__Impl_in_rule__NationPattern1__Group__028302 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__NationPattern1__Group__1_in_rule__NationPattern1__Group__028305 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst1_in_rule__NationPattern1__Group__0__Impl28332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern1__Group__1__Impl_in_rule__NationPattern1__Group__128361 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NationPattern1__Group__2_in_rule__NationPattern1__Group__128364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern1__ValueAssignment_1_in_rule__NationPattern1__Group__1__Impl28391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern1__Group__2__Impl_in_rule__NationPattern1__Group__228421 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern1__Group__2__Impl28449 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__NationPattern2__Group__0__Impl_in_rule__NationPattern2__Group__028486 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__NationPattern2__Group__1_in_rule__NationPattern2__Group__028489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst2_in_rule__NationPattern2__Group__0__Impl28516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern2__Group__1__Impl_in_rule__NationPattern2__Group__128545 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NationPattern2__Group__2_in_rule__NationPattern2__Group__128548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern2__ValueAssignment_1_in_rule__NationPattern2__Group__1__Impl28575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern2__Group__2__Impl_in_rule__NationPattern2__Group__228605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern2__Group__2__Impl28633 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__NationPattern3__Group__0__Impl_in_rule__NationPattern3__Group__028670 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NationPattern3__Group__1_in_rule__NationPattern3__Group__028673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst3_in_rule__NationPattern3__Group__0__Impl28700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern3__Group__1__Impl_in_rule__NationPattern3__Group__128729 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern3__Group__1__Impl28757 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__NationPattern4__Group__0__Impl_in_rule__NationPattern4__Group__028792 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__NationPattern4__Group__1_in_rule__NationPattern4__Group__028795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst4_in_rule__NationPattern4__Group__0__Impl28822 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern4__Group__1__Impl_in_rule__NationPattern4__Group__128851 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NationPattern4__Group__2_in_rule__NationPattern4__Group__128854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern4__Alternatives_1_in_rule__NationPattern4__Group__1__Impl28881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern4__Group__2__Impl_in_rule__NationPattern4__Group__228911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern4__Group__2__Impl28939 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Group__0__Impl_in_rule__NationPattern5__Group__028976 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Group__1_in_rule__NationPattern5__Group__028979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationInst5_in_rule__NationPattern5__Group__0__Impl29006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Group__1__Impl_in_rule__NationPattern5__Group__129035 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Group__2_in_rule__NationPattern5__Group__129038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Value1Assignment_1_in_rule__NationPattern5__Group__1__Impl29065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Group__2__Impl_in_rule__NationPattern5__Group__229095 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Group__3_in_rule__NationPattern5__Group__229098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Value2Assignment_2_in_rule__NationPattern5__Group__2__Impl29125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Group__3__Impl_in_rule__NationPattern5__Group__329155 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Group__4_in_rule__NationPattern5__Group__329158 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Value3Assignment_3_in_rule__NationPattern5__Group__3__Impl29185 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NationPattern5__Group__4__Impl_in_rule__NationPattern5__Group__429215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern5__Group__4__Impl29243 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__DecimalValue__Group__0__Impl_in_rule__DecimalValue__Group__029284 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_rule__DecimalValue__Group__1_in_rule__DecimalValue__Group__029287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__DecimalValue__Group__0__Impl29314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DecimalValue__Group__1__Impl_in_rule__DecimalValue__Group__129343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DecimalValue__Group_1__0_in_rule__DecimalValue__Group__1__Impl29370 = new BitSet(new long[]{0x0002000000000002L});
-    public static final BitSet FOLLOW_rule__DecimalValue__Group_1__0__Impl_in_rule__DecimalValue__Group_1__029405 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__DecimalValue__Group_1__1_in_rule__DecimalValue__Group_1__029408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_rule__DecimalValue__Group_1__0__Impl29436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DecimalValue__Group_1__1__Impl_in_rule__DecimalValue__Group_1__129467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__DecimalValue__Group_1__1__Impl29494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__0_in_rule__Dom3Mod__UnorderedGroup_029528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_0__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29617 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_1__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29708 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_2__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_3__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_4__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_5__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_6__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_7__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_8__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_9__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_10__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_11__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_12__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_13__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_14__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_15__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30982 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_16__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31073 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_17__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_18__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_19__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_20__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_21__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_22__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__Dom3Mod__UnorderedGroup_0__Impl31712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__031773 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__1_in_rule__Dom3Mod__UnorderedGroup_0__031776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__131801 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__2_in_rule__Dom3Mod__UnorderedGroup_0__131804 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__231829 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__3_in_rule__Dom3Mod__UnorderedGroup_0__231832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__331857 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__4_in_rule__Dom3Mod__UnorderedGroup_0__331860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__431885 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__5_in_rule__Dom3Mod__UnorderedGroup_0__431888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__531913 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__6_in_rule__Dom3Mod__UnorderedGroup_0__531916 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__631941 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__7_in_rule__Dom3Mod__UnorderedGroup_0__631944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__731969 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__8_in_rule__Dom3Mod__UnorderedGroup_0__731972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__831997 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__9_in_rule__Dom3Mod__UnorderedGroup_0__832000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__932025 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__10_in_rule__Dom3Mod__UnorderedGroup_0__932028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1032053 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__11_in_rule__Dom3Mod__UnorderedGroup_0__1032056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1132081 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__12_in_rule__Dom3Mod__UnorderedGroup_0__1132084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1232109 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__13_in_rule__Dom3Mod__UnorderedGroup_0__1232112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1332137 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__14_in_rule__Dom3Mod__UnorderedGroup_0__1332140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1432165 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__15_in_rule__Dom3Mod__UnorderedGroup_0__1432168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1532193 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__16_in_rule__Dom3Mod__UnorderedGroup_0__1532196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1632221 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__17_in_rule__Dom3Mod__UnorderedGroup_0__1632224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1732249 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__18_in_rule__Dom3Mod__UnorderedGroup_0__1732252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1832277 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__19_in_rule__Dom3Mod__UnorderedGroup_0__1832280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1932305 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__20_in_rule__Dom3Mod__UnorderedGroup_0__1932308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2032333 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__21_in_rule__Dom3Mod__UnorderedGroup_0__2032336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2132361 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__22_in_rule__Dom3Mod__UnorderedGroup_0__2132364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2232389 = new BitSet(new long[]{0x00000005FFFFFC02L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__23_in_rule__Dom3Mod__UnorderedGroup_0__2232392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2332417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Dom3Mod__ModnameAssignment_0_0_132493 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Dom3Mod__DescAssignment_0_1_132524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Dom3Mod__IconAssignment_0_2_132555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDecimalValue_in_rule__Dom3Mod__VersionAssignment_0_3_132586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDecimalValue_in_rule__Dom3Mod__DomversionAssignment_0_4_132617 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__PoppergoldAssignment_0_5_132648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__ResourcemultAssignment_0_6_132679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__SupplymultAssignment_0_7_132710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__UnresthalfincAssignment_0_8_132741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__UnresthalfresAssignment_0_9_132772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__EventisrareAssignment_0_10_132803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__TurmoilincomeAssignment_0_11_132834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__TurmoileventsAssignment_0_12_132865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathincomeAssignment_0_13_132896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathsupplyAssignment_0_14_132927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathdeathAssignment_0_15_132958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__SlothincomeAssignment_0_16_132989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__SlothresourcesAssignment_0_17_133020 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__ColdincomeAssignment_0_18_133051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__ColdsupplyAssignment_0_19_133082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__MisfortuneAssignment_0_20_133113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__LuckeventsAssignment_0_21_133144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__ResearchscaleAssignment_0_22_133175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractElement_in_rule__Dom3Mod__ElementsAssignment_133206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectArmorById__ValueAssignment_133237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArmorMods_in_rule__SelectArmorById__ModsAssignment_333268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectArmorByName__ValueAssignment_133299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArmorMods_in_rule__SelectArmorByName__ModsAssignment_333330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__NewArmor__ValueAssignment_133361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArmorMods_in_rule__NewArmor__ModsAssignment_333392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__ArmorPattern1__ValueAssignment_133423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__ArmorPattern2__ValueAssignment_133454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__ArmorInst1__NameAssignment33490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_rule__ArmorInst2__TypeAssignment_033534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_rule__ArmorInst2__ProtAssignment_133578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_rule__ArmorInst2__DefAssignment_233622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_rule__ArmorInst2__EncAssignment_333666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_rule__ArmorInst2__RcostAssignment_433710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectWeaponById__ValueAssignment_133749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWeaponMods_in_rule__SelectWeaponById__ModsAssignment_333780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectWeaponByName__ValueAssignment_133811 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWeaponMods_in_rule__SelectWeaponByName__ModsAssignment_333842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__NewWeapon__ValueAssignment_133873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWeaponMods_in_rule__NewWeapon__ModsAssignment_333904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__WeaponPattern1__ValueAssignment_133935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__WeaponPattern2__ValueAssignment_133966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__WeaponPattern3__Value1Assignment_133997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__WeaponPattern3__Value2Assignment_234028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__WeaponInst1__NameAssignment34064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_rule__WeaponInst2__DmgAssignment_034108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_rule__WeaponInst2__NrattAssignment_134152 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_rule__WeaponInst2__AttAssignment_234196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_rule__WeaponInst2__DefAssignment_334240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_59_in_rule__WeaponInst2__LenAssignment_434284 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_rule__WeaponInst2__RangeAssignment_534328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_rule__WeaponInst2__AmmoAssignment_634372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_rule__WeaponInst2__RcostAssignment_734416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_rule__WeaponInst2__SoundAssignment_834460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_rule__WeaponInst2__AoeAssignment_934504 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_rule__WeaponInst2__SecondaryeffectAssignment_1034548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_rule__WeaponInst2__SecondaryeffectalwaysAssignment_1134592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_rule__WeaponInst2__ExplsprAssignment_1234636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_rule__WeaponInst3__FlysprAssignment34680 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_rule__WeaponInst4__TwohandedAssignment_034724 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_rule__WeaponInst4__ArmorpiercingAssignment_134768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_rule__WeaponInst4__ArmornegatingAssignment_234812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_rule__WeaponInst4__MagicAssignment_334856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_rule__WeaponInst4__Dt_normalAssignment_434900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_rule__WeaponInst4__Dt_stunAssignment_534944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_74_in_rule__WeaponInst4__Dt_paralyzeAssignment_634988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_rule__WeaponInst4__Dt_poisonAssignment_735032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_rule__WeaponInst4__Dt_capAssignment_835076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_77_in_rule__WeaponInst4__Dt_demonAssignment_935120 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_78_in_rule__WeaponInst4__Dt_demononlyAssignment_1035164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_rule__WeaponInst4__Dt_holyAssignment_1135208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_rule__WeaponInst4__Dt_magicAssignment_1235252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_81_in_rule__WeaponInst4__Dt_smallAssignment_1335296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_rule__WeaponInst4__Dt_largeAssignment_1435340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_rule__WeaponInst4__Dt_constructonlyAssignment_1535384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_84_in_rule__WeaponInst4__Dt_raiseAssignment_1635428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_rule__WeaponInst4__MindAssignment_1735472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_rule__WeaponInst4__ColdAssignment_1835516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_rule__WeaponInst4__FireAssignment_1935560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_88_in_rule__WeaponInst4__ShockAssignment_2035604 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_rule__WeaponInst4__PoisonAssignment_2135648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_rule__WeaponInst4__BonusAssignment_2235692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_rule__WeaponInst4__ChargeAssignment_2335736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_rule__WeaponInst4__FlailAssignment_2435780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_93_in_rule__WeaponInst4__NostrAssignment_2535824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_94_in_rule__WeaponInst4__NostrAssignment_2635868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_rule__WeaponInst4__MrnegatesAssignment_2735912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_96_in_rule__WeaponInst4__MrnegateseasilyAssignment_2835956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectMonsterById__ValueAssignment_135995 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterMods_in_rule__SelectMonsterById__ModsAssignment_336026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectMonsterByName__ValueAssignment_136057 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterMods_in_rule__SelectMonsterByName__ModsAssignment_336088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__NewMonster__ValueAssignment_136119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMonsterMods_in_rule__NewMonster__ModsAssignment_336150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__MonsterPattern1__ValueAssignment_136181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__MonsterPattern2__ValueAssignment_136212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__MonsterPattern3__Value1Assignment_136243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__MonsterPattern3__Value2Assignment_236274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__MonsterPattern5__Value1Assignment_1_036305 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__MonsterPattern5__Value2Assignment_1_136336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__MonsterPattern6__ValueAssignment_136367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__MonsterInst1__NameAssignment_036403 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_97_in_rule__MonsterInst1__Spr1Assignment_136447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_98_in_rule__MonsterInst1__Spr2Assignment_236491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_rule__MonsterInst1__DescrAssignment_336535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_100_in_rule__MonsterInst2__SpeciallookAssignment_036579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_101_in_rule__MonsterInst2__ApAssignment_136623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_102_in_rule__MonsterInst2__MapmoveAssignment_236667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_103_in_rule__MonsterInst2__HpAssignment_336711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_rule__MonsterInst2__ProtAssignment_436755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_104_in_rule__MonsterInst2__SizeAssignment_536799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_105_in_rule__MonsterInst2__RessizeAssignment_636843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_106_in_rule__MonsterInst2__StrAssignment_736887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_rule__MonsterInst2__EncAssignment_836931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_rule__MonsterInst2__AttAssignment_936975 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_rule__MonsterInst2__DefAssignment_1037019 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_107_in_rule__MonsterInst2__PrecAssignment_1137063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_108_in_rule__MonsterInst2__MrAssignment_1237107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_109_in_rule__MonsterInst2__MorAssignment_1337151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_110_in_rule__MonsterInst2__GcostAssignment_1437195 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_rule__MonsterInst2__RcostAssignment_1537239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_111_in_rule__MonsterInst2__PathcostAssignment_1637283 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_112_in_rule__MonsterInst2__StartdomAssignment_1737327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_113_in_rule__MonsterInst2__EyesAssignment_1837371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_114_in_rule__MonsterInst2__CopystatsAssignment_1937415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_115_in_rule__MonsterInst2__CopysprAssignment_2037459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_116_in_rule__MonsterInst2__RestrictedgodAssignment_2137503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_117_in_rule__MonsterInst2__ShatteredsoulAssignment_2237547 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_118_in_rule__MonsterInst2__ColdresAssignment_2337591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_rule__MonsterInst2__ColdresAssignment_2437635 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_120_in_rule__MonsterInst2__FireresAssignment_2537679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_121_in_rule__MonsterInst2__FireresAssignment_2637723 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_122_in_rule__MonsterInst2__PoisonresAssignment_2737767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_123_in_rule__MonsterInst2__ShockresAssignment_2837811 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_124_in_rule__MonsterInst2__DarkvisionAssignment_2937855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_125_in_rule__MonsterInst2__SeduceAssignment_3037899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_126_in_rule__MonsterInst2__SuccubusAssignment_3137943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_127_in_rule__MonsterInst2__BeckonAssignment_3237987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_128_in_rule__MonsterInst2__StartageAssignment_3338031 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_129_in_rule__MonsterInst2__MaxageAssignment_3438075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_130_in_rule__MonsterInst2__OlderAssignment_3538119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_131_in_rule__MonsterInst2__HealerAssignment_3638163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_132_in_rule__MonsterInst2__StartaffAssignment_3738207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_133_in_rule__MonsterInst2__SupplybonusAssignment_3838251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_134_in_rule__MonsterInst2__UwdamageAssignment_3938295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_135_in_rule__MonsterInst2__HomesickAssignment_4038339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_136_in_rule__MonsterInst2__ColdpowerAssignment_4138383 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_137_in_rule__MonsterInst2__FirepowerAssignment_4238427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_138_in_rule__MonsterInst2__StormpowerAssignment_4338471 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_139_in_rule__MonsterInst2__DarkpowerAssignment_4438515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_140_in_rule__MonsterInst2__SpringpowerAssignment_4538559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_141_in_rule__MonsterInst2__SummerpowerAssignment_4638603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_142_in_rule__MonsterInst2__FallpowerAssignment_4738647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_143_in_rule__MonsterInst2__WinterpowerAssignment_4838691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_144_in_rule__MonsterInst2__AmbidextrousAssignment_4938735 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_145_in_rule__MonsterInst2__BanefireshieldAssignment_5038779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_146_in_rule__MonsterInst2__BerserkAssignment_5138823 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_147_in_rule__MonsterInst2__StandardAssignment_5238867 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_148_in_rule__MonsterInst2__AnimalaweAssignment_5338911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_149_in_rule__MonsterInst2__AweAssignment_5438955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_150_in_rule__MonsterInst2__FearAssignment_5538999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_151_in_rule__MonsterInst2__RegenerationAssignment_5639043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_152_in_rule__MonsterInst2__ReinvigorationAssignment_5739087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_153_in_rule__MonsterInst2__FireshieldAssignment_5839131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_154_in_rule__MonsterInst2__IceprotAssignment_5939175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_155_in_rule__MonsterInst2__PoisoncloudAssignment_6039219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_156_in_rule__MonsterInst2__DiseasecloudAssignment_6139263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_157_in_rule__MonsterInst2__BloodvengeanceAssignment_6239307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_158_in_rule__MonsterInst2__CastledefAssignment_6339351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__MonsterInst2__SiegebonusAssignment_6439395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__MonsterInst2__PatrolbonusAssignment_6539439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__MonsterInst2__PillagebonusAssignment_6639483 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_162_in_rule__MonsterInst2__ResearchbonusAssignment_6739527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_163_in_rule__MonsterInst2__ForgebonusAssignment_6839571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_164_in_rule__MonsterInst2__DouseAssignment_6939615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_165_in_rule__MonsterInst2__NobadeventsAssignment_7039659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_rule__MonsterInst2__IncunrestAssignment_7139703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_rule__MonsterInst2__SpreaddomAssignment_7239747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_168_in_rule__MonsterInst2__LeperAssignment_7339791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_169_in_rule__MonsterInst2__PopkillAssignment_7439835 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_170_in_rule__MonsterInst2__HereticAssignment_7539879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_171_in_rule__MonsterInst2__ItemslotsAssignment_7639923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_172_in_rule__MonsterInst2__NametypeAssignment_7739967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_173_in_rule__MonsterInst3__MagicskillAssignment_040011 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_174_in_rule__MonsterInst3__CustommagicAssignment_140055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_175_in_rule__MonsterInst3__MagicboostAssignment_240099 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_176_in_rule__MonsterInst3__GemprodAssignment_340143 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_177_in_rule__MonsterInst4__ClearAssignment_040187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_178_in_rule__MonsterInst4__ClearweaponsAssignment_140231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_179_in_rule__MonsterInst4__CleararmorAssignment_240275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_180_in_rule__MonsterInst4__ClearmagicAssignment_340319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_181_in_rule__MonsterInst4__ClearspecAssignment_440363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_182_in_rule__MonsterInst4__FemaleAssignment_540407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_183_in_rule__MonsterInst4__MountedAssignment_640451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_184_in_rule__MonsterInst4__HolyAssignment_740495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_185_in_rule__MonsterInst4__AnimalAssignment_840539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_186_in_rule__MonsterInst4__UndeadAssignment_940583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_187_in_rule__MonsterInst4__DemonAssignment_1040627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_188_in_rule__MonsterInst4__MagicbeingAssignment_1140671 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_189_in_rule__MonsterInst4__StonebeingAssignment_1240715 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_190_in_rule__MonsterInst4__InanimateAssignment_1340759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_191_in_rule__MonsterInst4__ColdbloodAssignment_1440803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_192_in_rule__MonsterInst4__ColdbloodAssignment_1540847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_193_in_rule__MonsterInst4__ImmortalAssignment_1640891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_194_in_rule__MonsterInst4__BlindAssignment_1740935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_195_in_rule__MonsterInst4__UniqueAssignment_1840979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_196_in_rule__MonsterInst4__ImmobileAssignment_1941023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_197_in_rule__MonsterInst4__AquaticAssignment_2041067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_198_in_rule__MonsterInst4__AmphibianAssignment_2141111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_199_in_rule__MonsterInst4__PooramphibianAssignment_2241155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_200_in_rule__MonsterInst4__FlyingAssignment_2341199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_201_in_rule__MonsterInst4__StormimmuneAssignment_2441243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_202_in_rule__MonsterInst4__SailingAssignment_2541287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_203_in_rule__MonsterInst4__ForestsurvivalAssignment_2641331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_204_in_rule__MonsterInst4__MountainsurvivalAssignment_2741375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_205_in_rule__MonsterInst4__SwampsurvivalAssignment_2841419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_206_in_rule__MonsterInst4__WastesurvivalAssignment_2941463 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_207_in_rule__MonsterInst4__IllusionAssignment_3041507 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_208_in_rule__MonsterInst4__SpyAssignment_3141551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_209_in_rule__MonsterInst4__AssassinAssignment_3241595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_210_in_rule__MonsterInst4__HealAssignment_3341639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_211_in_rule__MonsterInst4__NohealAssignment_3441683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_212_in_rule__MonsterInst4__NeednoteatAssignment_3541727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_213_in_rule__MonsterInst4__EtherealAssignment_3641771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_214_in_rule__MonsterInst4__TrampleAssignment_3741815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_215_in_rule__MonsterInst4__EntangleAssignment_3841859 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_216_in_rule__MonsterInst4__EyelossAssignment_3941903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_217_in_rule__MonsterInst4__HorrormarkAssignment_4041947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_218_in_rule__MonsterInst4__PoisonarmorAssignment_4141991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_219_in_rule__MonsterInst4__InquisitorAssignment_4242035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_220_in_rule__MonsterInst4__NoitemAssignment_4342079 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_221_in_rule__MonsterInst4__DrainimmuneAssignment_4442123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_222_in_rule__MonsterInst4__NoleaderAssignment_4542167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_223_in_rule__MonsterInst4__PoorleaderAssignment_4642211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_224_in_rule__MonsterInst4__OkleaderAssignment_4742255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_225_in_rule__MonsterInst4__GoodleaderAssignment_4842299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_226_in_rule__MonsterInst4__ExpertleaderAssignment_4942343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_227_in_rule__MonsterInst4__SuperiorleaderAssignment_5042387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_228_in_rule__MonsterInst4__NomagicleaderAssignment_5142431 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_229_in_rule__MonsterInst4__PoormagicleaderAssignment_5242475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_230_in_rule__MonsterInst4__OkmagicleaderAssignment_5342519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_231_in_rule__MonsterInst4__GoodmagicleaderAssignment_5442563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_232_in_rule__MonsterInst4__ExpertmagicleaderAssignment_5542607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_233_in_rule__MonsterInst4__SuperiormagicleaderAssignment_5642651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_234_in_rule__MonsterInst4__NoundeadleaderAssignment_5742695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_235_in_rule__MonsterInst4__PoorundeadleaderAssignment_5842739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_236_in_rule__MonsterInst4__OkundeadleaderAssignment_5942783 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_237_in_rule__MonsterInst4__GoodundeadleaderAssignment_6042827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_238_in_rule__MonsterInst4__ExpertundeadleaderAssignment_6142871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_239_in_rule__MonsterInst4__SuperiorundeadleaderAssignment_6242915 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_240_in_rule__MonsterInst5__WeaponAssignment_042959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_241_in_rule__MonsterInst5__ArmorAssignment_143003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_242_in_rule__MonsterInst5__OnebattlespellAssignment_243047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_243_in_rule__MonsterInst5__FirstshapeAssignment_343091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_244_in_rule__MonsterInst5__SecondshapeAssignment_443135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_245_in_rule__MonsterInst5__SecondtmpshapeAssignment_543179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_246_in_rule__MonsterInst5__ShapechangeAssignment_643223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_247_in_rule__MonsterInst5__LandshapeAssignment_743267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_248_in_rule__MonsterInst5__WatershapeAssignment_843311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_249_in_rule__MonsterInst5__ForestshapeAssignment_943355 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_250_in_rule__MonsterInst5__PlainshapeAssignment_1043399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_251_in_rule__MonsterInst5__DomsummonAssignment_1143443 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_252_in_rule__MonsterInst5__Domsummon2Assignment_1243487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_253_in_rule__MonsterInst5__Domsummon20Assignment_1343531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_254_in_rule__MonsterInst5__Makemonster1Assignment_1443575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_255_in_rule__MonsterInst5__Makemonster2Assignment_1543619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_256_in_rule__MonsterInst5__Makemonster3Assignment_1643663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_257_in_rule__MonsterInst5__Makemonster4Assignment_1743707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_258_in_rule__MonsterInst5__Makemonster5Assignment_1843751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_259_in_rule__MonsterInst5__Summon1Assignment_1943795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_260_in_rule__MonsterInst5__Summon5Assignment_2043839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_261_in_rule__MonsterInst6__StealthyAssignment_043883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_262_in_rule__MonsterInst6__HeatAssignment_143927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_rule__MonsterInst6__ColdAssignment_243971 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectSpellById__ValueAssignment_144010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellMods_in_rule__SelectSpellById__ModsAssignment_344041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectSpellByName__ValueAssignment_144072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellMods_in_rule__SelectSpellByName__ModsAssignment_344103 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpellMods_in_rule__NewSpell__ModsAssignment_244134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SpellPattern1__ValueAssignment_144165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SpellPattern2__ValueAssignment_144196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SpellPattern3__Value1Assignment_144227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SpellPattern3__Value2Assignment_244258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SpellPattern5__Value1Assignment_1_044289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SpellPattern5__Value2Assignment_1_144320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__SpellInst1__NameAssignment_044356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_rule__SpellInst1__DescrAssignment_144400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_263_in_rule__SpellInst2__SchoolAssignment_044444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_264_in_rule__SpellInst2__ResearchlevelAssignment_144488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_rule__SpellInst2__AoeAssignment_244532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_265_in_rule__SpellInst2__DamageAssignment_344576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_266_in_rule__SpellInst2__EffectAssignment_444620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_267_in_rule__SpellInst2__FatiguecostAssignment_544664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_268_in_rule__SpellInst2__FlightsprAssignment_644708 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_rule__SpellInst2__ExplsprAssignment_744752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_269_in_rule__SpellInst2__NreffAssignment_844796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_rule__SpellInst2__RangeAssignment_944840 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_270_in_rule__SpellInst2__PrecisionAssignment_1044884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_rule__SpellInst2__SoundAssignment_1144928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_271_in_rule__SpellInst2__SpecAssignment_1244972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_272_in_rule__SpellInst2__RestrictedAssignment_1345016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_273_in_rule__SpellInst3__PathAssignment_045060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_274_in_rule__SpellInst3__PathlevelAssignment_145104 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_177_in_rule__SpellInst4__ClearAssignment45148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_275_in_rule__SpellInst5__CopyspellAssignment_045192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_276_in_rule__SpellInst5__NextspellAssignment_145236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectItemById__ValueAssignment_145275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemMods_in_rule__SelectItemById__ModsAssignment_345306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectItemByName__ValueAssignment_145337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemMods_in_rule__SelectItemByName__ModsAssignment_345368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemMods_in_rule__NewItem__ModsAssignment_245399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__ItemPattern1__ValueAssignment_145430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__ItemPattern2__ValueAssignment_145461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__ItemPattern3__Value1Assignment_1_045492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__ItemPattern3__Value2Assignment_1_145523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__ItemInst1__NameAssignment_045559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_rule__ItemInst1__DescrAssignment_145603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_241_in_rule__ItemInst1__ArmorAssignment_245647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_277_in_rule__ItemInst2__ConstlevelAssignment_045691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_278_in_rule__ItemInst2__MainpathAssignment_145735 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_279_in_rule__ItemInst2__MainlevelAssignment_245779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_280_in_rule__ItemInst2__SecondarypathAssignment_345823 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_281_in_rule__ItemInst2__SecondarylevelAssignment_445867 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_rule__ItemInst2__TypeAssignment_545911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_240_in_rule__ItemInst2__WeaponAssignment_645955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_115_in_rule__ItemInst3__CopysprAssignment45999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectName__ValueAssignment_146038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNameMods_in_rule__SelectName__ModsAssignment_346069 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__NamePattern1__ValueAssignment_146100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_282_in_rule__NameInst1__NameAssignment46136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_177_in_rule__NameInst2__ClearAssignment46180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectSiteById__ValueAssignment_146219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteMods_in_rule__SelectSiteById__ModsAssignment_346250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectSiteByName__ValueAssignment_146281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteMods_in_rule__SelectSiteByName__ModsAssignment_346312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__NewSite__ValueAssignment_146343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSiteMods_in_rule__NewSite__ModsAssignment_346374 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SitePattern1__ValueAssignment_146405 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SitePattern2__ValueAssignment_146436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SitePattern3__Value1Assignment_146467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SitePattern3__Value2Assignment_246498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__SiteInst1__NameAssignment46534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_273_in_rule__SiteInst2__PathAssignment_046578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_283_in_rule__SiteInst2__LevelAssignment_146622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_284_in_rule__SiteInst2__RarityAssignment_246666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_285_in_rule__SiteInst2__LocAssignment_346710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_286_in_rule__SiteInst2__HomemonAssignment_446754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_287_in_rule__SiteInst2__HomecomAssignment_546798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_288_in_rule__SiteInst2__MonAssignment_646842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_289_in_rule__SiteInst2__ComAssignment_746886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_290_in_rule__SiteInst2__GoldAssignment_846930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_291_in_rule__SiteInst2__ResAssignment_946974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_292_in_rule__SiteInst2__IncscaleAssignment_1047018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_293_in_rule__SiteInst2__DecscaleAssignment_1147062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_210_in_rule__SiteInst2__HealAssignment_1247106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_294_in_rule__SiteInst2__CurseAssignment_1347150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_295_in_rule__SiteInst2__DiseaseAssignment_1447194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_217_in_rule__SiteInst2__HorrormarkAssignment_1547238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_296_in_rule__SiteInst2__HolyfireAssignment_1647282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_297_in_rule__SiteInst2__HolypowerAssignment_1747326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_298_in_rule__SiteInst2__ConjcostAssignment_1847370 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_299_in_rule__SiteInst2__AltcostAssignment_1947414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_300_in_rule__SiteInst2__EvocostAssignment_2047458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_301_in_rule__SiteInst2__ConstcostAssignment_2147502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_302_in_rule__SiteInst2__EnchcostAssignment_2247546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_303_in_rule__SiteInst2__ThaucostAssignment_2347590 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_304_in_rule__SiteInst2__BloodcostAssignment_2447634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_305_in_rule__SiteInst3__GemsAssignment47678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_177_in_rule__SiteInst4__ClearAssignment_047722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_306_in_rule__SiteInst4__LabAssignment_147766 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectNation__ValueAssignment_147805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNationMods_in_rule__SelectNation__ModsAssignment_347836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__IndepFlag__ValueAssignment_147867 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__NationPattern1__ValueAssignment_147898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__NationPattern2__ValueAssignment_147929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__NationPattern4__Value1Assignment_1_047960 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__NationPattern4__Value2Assignment_1_147991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value1Assignment_148022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value2Assignment_248053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value3Assignment_348084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__NationInst1__NameAssignment_048120 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_307_in_rule__NationInst1__EpithetAssignment_148164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_rule__NationInst1__DescrAssignment_248208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_308_in_rule__NationInst1__SummaryAssignment_348252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_309_in_rule__NationInst1__BriefAssignment_448296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_310_in_rule__NationInst1__FlagAssignment_548340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_311_in_rule__NationInst1__MapbackgroundAssignment_648384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_312_in_rule__NationInst1__StartsiteAssignment_748428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_313_in_rule__NationInst2__EraAssignment_048472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_314_in_rule__NationInst2__LabcostAssignment_148516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_315_in_rule__NationInst2__TemplecostAssignment_248560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_316_in_rule__NationInst2__TemplepicAssignment_348604 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_317_in_rule__NationInst2__Startunitnbrs1Assignment_448648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_318_in_rule__NationInst2__Startunitnbrs2Assignment_548692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_319_in_rule__NationInst2__Hero1Assignment_648736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_320_in_rule__NationInst2__Hero2Assignment_748780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_321_in_rule__NationInst2__Hero3Assignment_848824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_322_in_rule__NationInst2__Hero4Assignment_948868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_323_in_rule__NationInst2__Hero5Assignment_1048912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_324_in_rule__NationInst2__Hero6Assignment_1148956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_325_in_rule__NationInst2__Multihero1Assignment_1249000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_326_in_rule__NationInst2__Multihero2Assignment_1349044 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_327_in_rule__NationInst2__Defmult1Assignment_1449088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_328_in_rule__NationInst2__Defmult1bAssignment_1549132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_329_in_rule__NationInst2__Defmult2Assignment_1649176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_330_in_rule__NationInst2__Defmult2bAssignment_1749220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_331_in_rule__NationInst2__IdealcoldAssignment_1849264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_332_in_rule__NationInst2__CastleprodAssignment_1949308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_333_in_rule__NationInst2__DomkillAssignment_2049352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_334_in_rule__NationInst2__DomunrestAssignment_2149396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_335_in_rule__NationInst2__StartfortAssignment_2249440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_336_in_rule__NationInst2__DefaultfortAssignment_2349484 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_337_in_rule__NationInst2__FarmfortAssignment_2449528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_338_in_rule__NationInst2__MountainfortAssignment_2549572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_339_in_rule__NationInst2__ForestfortAssignment_2649616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_340_in_rule__NationInst2__SwampfortAssignment_2749660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_341_in_rule__NationInst2__UwfortAssignment_2849704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_342_in_rule__NationInst2__DeepfortAssignment_2949748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_343_in_rule__NationInst3__ClearnationAssignment_049792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_344_in_rule__NationInst3__ClearrecAssignment_149836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_345_in_rule__NationInst3__ClearsitesAssignment_249880 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_346_in_rule__NationInst3__UwnationAssignment_349924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_347_in_rule__NationInst3__BloodnationAssignment_449968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_348_in_rule__NationInst3__NopreachAssignment_550012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_349_in_rule__NationInst3__DyingdomAssignment_650056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_350_in_rule__NationInst3__SacrificedomAssignment_750100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_351_in_rule__NationInst3__NodeathsupplyAssignment_850144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_352_in_rule__NationInst3__AutoundeadAssignment_950188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_353_in_rule__NationInst3__ZombiereanimAssignment_1050232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_354_in_rule__NationInst3__HorsereanimAssignment_1150276 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_355_in_rule__NationInst3__WightreanimAssignment_1250320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_356_in_rule__NationInst3__ManikinreanimAssignment_1350364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_357_in_rule__NationInst3__TombwyrmreanimAssignment_1450408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_358_in_rule__NationInst4__StartcomAssignment_050452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_359_in_rule__NationInst4__StartscoutAssignment_150496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_360_in_rule__NationInst4__Startunittype1Assignment_250540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_361_in_rule__NationInst4__Startunittype2Assignment_350584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_362_in_rule__NationInst4__AddrecunitAssignment_450628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_363_in_rule__NationInst4__AddreccomAssignment_550672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_364_in_rule__NationInst4__Uwunit1Assignment_650716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_365_in_rule__NationInst4__Uwunit2Assignment_750760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_366_in_rule__NationInst4__Uwunit3Assignment_850804 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_367_in_rule__NationInst4__Uwunit4Assignment_950848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_368_in_rule__NationInst4__Uwunit5Assignment_1050892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_369_in_rule__NationInst4__Uwcom1Assignment_1150936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_370_in_rule__NationInst4__Uwcom2Assignment_1250980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_371_in_rule__NationInst4__Uwcom3Assignment_1351024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_372_in_rule__NationInst4__Uwcom4Assignment_1451068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_373_in_rule__NationInst4__Uwcom5Assignment_1551112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_374_in_rule__NationInst4__Defcom1Assignment_1651156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_375_in_rule__NationInst4__Defcom2Assignment_1751200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_376_in_rule__NationInst4__Defunit1Assignment_1851244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_377_in_rule__NationInst4__Defunit1bAssignment_1951288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_378_in_rule__NationInst4__Defunit2Assignment_2051332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_379_in_rule__NationInst4__Defunit2bAssignment_2151376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_380_in_rule__NationInst5__ColorAssignment51420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WeaponPattern3__Group__3__Impl_in_rule__WeaponPattern3__Group__320036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__WeaponPattern3__Group__3__Impl20064 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__WeaponPattern4__Group__0__Impl_in_rule__WeaponPattern4__Group__020103 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__WeaponPattern4__Group__1_in_rule__WeaponPattern4__Group__020106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWeaponInst4_in_rule__WeaponPattern4__Group__0__Impl20133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WeaponPattern4__Group__1__Impl_in_rule__WeaponPattern4__Group__120162 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__WeaponPattern4__Group__1__Impl20190 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__0__Impl_in_rule__SelectMonsterById__Group__020225 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__1_in_rule__SelectMonsterById__Group__020228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__SelectMonsterById__Group__0__Impl20256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__1__Impl_in_rule__SelectMonsterById__Group__120287 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__2_in_rule__SelectMonsterById__Group__120290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__ValueAssignment_1_in_rule__SelectMonsterById__Group__1__Impl20317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__2__Impl_in_rule__SelectMonsterById__Group__220347 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__3_in_rule__SelectMonsterById__Group__220350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectMonsterById__Group__2__Impl20378 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__3__Impl_in_rule__SelectMonsterById__Group__320409 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__4_in_rule__SelectMonsterById__Group__320412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__ModsAssignment_3_in_rule__SelectMonsterById__Group__3__Impl20439 = new BitSet(new long[]{0x04F4000000000002L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__SelectMonsterById__Group__4__Impl_in_rule__SelectMonsterById__Group__420470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectMonsterById__Group__4__Impl20498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__0__Impl_in_rule__SelectMonsterByName__Group__020539 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__1_in_rule__SelectMonsterByName__Group__020542 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__SelectMonsterByName__Group__0__Impl20570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__1__Impl_in_rule__SelectMonsterByName__Group__120601 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__2_in_rule__SelectMonsterByName__Group__120604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__ValueAssignment_1_in_rule__SelectMonsterByName__Group__1__Impl20631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__2__Impl_in_rule__SelectMonsterByName__Group__220661 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__3_in_rule__SelectMonsterByName__Group__220664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectMonsterByName__Group__2__Impl20692 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__3__Impl_in_rule__SelectMonsterByName__Group__320723 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__4_in_rule__SelectMonsterByName__Group__320726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__ModsAssignment_3_in_rule__SelectMonsterByName__Group__3__Impl20753 = new BitSet(new long[]{0x04F4000000000002L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__SelectMonsterByName__Group__4__Impl_in_rule__SelectMonsterByName__Group__420784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectMonsterByName__Group__4__Impl20812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewMonster__Group__0__Impl_in_rule__NewMonster__Group__020853 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__NewMonster__Group__1_in_rule__NewMonster__Group__020856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__NewMonster__Group__0__Impl20884 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewMonster__Group__1__Impl_in_rule__NewMonster__Group__120915 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__NewMonster__Group__2_in_rule__NewMonster__Group__120918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewMonster__ValueAssignment_1_in_rule__NewMonster__Group__1__Impl20945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewMonster__Group__2__Impl_in_rule__NewMonster__Group__220975 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__NewMonster__Group__3_in_rule__NewMonster__Group__220978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewMonster__Group__2__Impl21006 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__NewMonster__Group__3__Impl_in_rule__NewMonster__Group__321037 = new BitSet(new long[]{0x04F4000400000010L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__NewMonster__Group__4_in_rule__NewMonster__Group__321040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewMonster__ModsAssignment_3_in_rule__NewMonster__Group__3__Impl21067 = new BitSet(new long[]{0x04F4000000000002L,0xFFFFFFFE00400000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000000007FL});
+    public static final BitSet FOLLOW_rule__NewMonster__Group__4__Impl_in_rule__NewMonster__Group__421098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__NewMonster__Group__4__Impl21126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern1__Group__0__Impl_in_rule__MonsterPattern1__Group__021167 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__MonsterPattern1__Group__1_in_rule__MonsterPattern1__Group__021170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst1_in_rule__MonsterPattern1__Group__0__Impl21197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern1__Group__1__Impl_in_rule__MonsterPattern1__Group__121226 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MonsterPattern1__Group__2_in_rule__MonsterPattern1__Group__121229 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern1__ValueAssignment_1_in_rule__MonsterPattern1__Group__1__Impl21256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern1__Group__2__Impl_in_rule__MonsterPattern1__Group__221286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern1__Group__2__Impl21314 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__MonsterPattern2__Group__0__Impl_in_rule__MonsterPattern2__Group__021351 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__MonsterPattern2__Group__1_in_rule__MonsterPattern2__Group__021354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst2_in_rule__MonsterPattern2__Group__0__Impl21381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern2__Group__1__Impl_in_rule__MonsterPattern2__Group__121410 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MonsterPattern2__Group__2_in_rule__MonsterPattern2__Group__121413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern2__ValueAssignment_1_in_rule__MonsterPattern2__Group__1__Impl21440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern2__Group__2__Impl_in_rule__MonsterPattern2__Group__221470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern2__Group__2__Impl21498 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__0__Impl_in_rule__MonsterPattern3__Group__021535 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__1_in_rule__MonsterPattern3__Group__021538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst3_in_rule__MonsterPattern3__Group__0__Impl21565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__1__Impl_in_rule__MonsterPattern3__Group__121594 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__2_in_rule__MonsterPattern3__Group__121597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern3__Value1Assignment_1_in_rule__MonsterPattern3__Group__1__Impl21624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__2__Impl_in_rule__MonsterPattern3__Group__221654 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__3_in_rule__MonsterPattern3__Group__221657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern3__Value2Assignment_2_in_rule__MonsterPattern3__Group__2__Impl21684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern3__Group__3__Impl_in_rule__MonsterPattern3__Group__321714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern3__Group__3__Impl21742 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__MonsterPattern4__Group__0__Impl_in_rule__MonsterPattern4__Group__021781 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MonsterPattern4__Group__1_in_rule__MonsterPattern4__Group__021784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst4_in_rule__MonsterPattern4__Group__0__Impl21811 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern4__Group__1__Impl_in_rule__MonsterPattern4__Group__121840 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern4__Group__1__Impl21868 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__MonsterPattern5__Group__0__Impl_in_rule__MonsterPattern5__Group__021903 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_rule__MonsterPattern5__Group__1_in_rule__MonsterPattern5__Group__021906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst5_in_rule__MonsterPattern5__Group__0__Impl21933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern5__Group__1__Impl_in_rule__MonsterPattern5__Group__121962 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MonsterPattern5__Group__2_in_rule__MonsterPattern5__Group__121965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern5__Alternatives_1_in_rule__MonsterPattern5__Group__1__Impl21992 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern5__Group__2__Impl_in_rule__MonsterPattern5__Group__222022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern5__Group__2__Impl22050 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__MonsterPattern6__Group__0__Impl_in_rule__MonsterPattern6__Group__022087 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_rule__MonsterPattern6__Group__1_in_rule__MonsterPattern6__Group__022090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterInst6_in_rule__MonsterPattern6__Group__0__Impl22117 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern6__Group__1__Impl_in_rule__MonsterPattern6__Group__122146 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_rule__MonsterPattern6__Group__2_in_rule__MonsterPattern6__Group__122149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern6__ValueAssignment_1_in_rule__MonsterPattern6__Group__1__Impl22176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MonsterPattern6__Group__2__Impl_in_rule__MonsterPattern6__Group__222207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__MonsterPattern6__Group__2__Impl22235 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__Group__0__Impl_in_rule__SelectSpellById__Group__022272 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__Group__1_in_rule__SelectSpellById__Group__022275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__SelectSpellById__Group__0__Impl22303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__Group__1__Impl_in_rule__SelectSpellById__Group__122334 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__Group__2_in_rule__SelectSpellById__Group__122337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__ValueAssignment_1_in_rule__SelectSpellById__Group__1__Impl22364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__Group__2__Impl_in_rule__SelectSpellById__Group__222394 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__Group__3_in_rule__SelectSpellById__Group__222397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSpellById__Group__2__Impl22425 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__Group__3__Impl_in_rule__SelectSpellById__Group__322456 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__Group__4_in_rule__SelectSpellById__Group__322459 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__ModsAssignment_3_in_rule__SelectSpellById__Group__3__Impl22486 = new BitSet(new long[]{0xD004000000000002L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__SelectSpellById__Group__4__Impl_in_rule__SelectSpellById__Group__422517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectSpellById__Group__4__Impl22545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__0__Impl_in_rule__SelectSpellByName__Group__022586 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__1_in_rule__SelectSpellByName__Group__022589 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__SelectSpellByName__Group__0__Impl22617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__1__Impl_in_rule__SelectSpellByName__Group__122648 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__2_in_rule__SelectSpellByName__Group__122651 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__ValueAssignment_1_in_rule__SelectSpellByName__Group__1__Impl22678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__2__Impl_in_rule__SelectSpellByName__Group__222708 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__3_in_rule__SelectSpellByName__Group__222711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSpellByName__Group__2__Impl22739 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__3__Impl_in_rule__SelectSpellByName__Group__322770 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__4_in_rule__SelectSpellByName__Group__322773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__ModsAssignment_3_in_rule__SelectSpellByName__Group__3__Impl22800 = new BitSet(new long[]{0xD004000000000002L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__SelectSpellByName__Group__4__Impl_in_rule__SelectSpellByName__Group__422831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectSpellByName__Group__4__Impl22859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewSpell__Group__0__Impl_in_rule__NewSpell__Group__022900 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__NewSpell__Group__1_in_rule__NewSpell__Group__022903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__NewSpell__Group__0__Impl22931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewSpell__Group__1__Impl_in_rule__NewSpell__Group__122962 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__NewSpell__Group__2_in_rule__NewSpell__Group__122965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewSpell__Group__1__Impl22993 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__NewSpell__Group__2__Impl_in_rule__NewSpell__Group__223024 = new BitSet(new long[]{0xD004000400000010L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__NewSpell__Group__3_in_rule__NewSpell__Group__223027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewSpell__ModsAssignment_2_in_rule__NewSpell__Group__2__Impl23054 = new BitSet(new long[]{0xD004000000000002L,0x0000000800000004L,0x0002000000000000L,0x0000000000000000L,0x00000000001FFF80L});
+    public static final BitSet FOLLOW_rule__NewSpell__Group__3__Impl_in_rule__NewSpell__Group__323085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__NewSpell__Group__3__Impl23113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern1__Group__0__Impl_in_rule__SpellPattern1__Group__023152 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__SpellPattern1__Group__1_in_rule__SpellPattern1__Group__023155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst1_in_rule__SpellPattern1__Group__0__Impl23182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern1__Group__1__Impl_in_rule__SpellPattern1__Group__123211 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SpellPattern1__Group__2_in_rule__SpellPattern1__Group__123214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern1__ValueAssignment_1_in_rule__SpellPattern1__Group__1__Impl23241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern1__Group__2__Impl_in_rule__SpellPattern1__Group__223271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern1__Group__2__Impl23299 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SpellPattern2__Group__0__Impl_in_rule__SpellPattern2__Group__023336 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SpellPattern2__Group__1_in_rule__SpellPattern2__Group__023339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst2_in_rule__SpellPattern2__Group__0__Impl23366 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern2__Group__1__Impl_in_rule__SpellPattern2__Group__123395 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SpellPattern2__Group__2_in_rule__SpellPattern2__Group__123398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern2__ValueAssignment_1_in_rule__SpellPattern2__Group__1__Impl23425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern2__Group__2__Impl_in_rule__SpellPattern2__Group__223455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern2__Group__2__Impl23483 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SpellPattern3__Group__0__Impl_in_rule__SpellPattern3__Group__023520 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SpellPattern3__Group__1_in_rule__SpellPattern3__Group__023523 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst3_in_rule__SpellPattern3__Group__0__Impl23550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern3__Group__1__Impl_in_rule__SpellPattern3__Group__123579 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SpellPattern3__Group__2_in_rule__SpellPattern3__Group__123582 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern3__Value1Assignment_1_in_rule__SpellPattern3__Group__1__Impl23609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern3__Group__2__Impl_in_rule__SpellPattern3__Group__223639 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SpellPattern3__Group__3_in_rule__SpellPattern3__Group__223642 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern3__Value2Assignment_2_in_rule__SpellPattern3__Group__2__Impl23669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern3__Group__3__Impl_in_rule__SpellPattern3__Group__323699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern3__Group__3__Impl23727 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SpellPattern4__Group__0__Impl_in_rule__SpellPattern4__Group__023766 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SpellPattern4__Group__1_in_rule__SpellPattern4__Group__023769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst4_in_rule__SpellPattern4__Group__0__Impl23796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern4__Group__1__Impl_in_rule__SpellPattern4__Group__123825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern4__Group__1__Impl23853 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SpellPattern5__Group__0__Impl_in_rule__SpellPattern5__Group__023888 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_rule__SpellPattern5__Group__1_in_rule__SpellPattern5__Group__023891 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellInst5_in_rule__SpellPattern5__Group__0__Impl23918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern5__Group__1__Impl_in_rule__SpellPattern5__Group__123947 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SpellPattern5__Group__2_in_rule__SpellPattern5__Group__123950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern5__Alternatives_1_in_rule__SpellPattern5__Group__1__Impl23977 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SpellPattern5__Group__2__Impl_in_rule__SpellPattern5__Group__224007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SpellPattern5__Group__2__Impl24035 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectItemById__Group__0__Impl_in_rule__SelectItemById__Group__024072 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SelectItemById__Group__1_in_rule__SelectItemById__Group__024075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__SelectItemById__Group__0__Impl24103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectItemById__Group__1__Impl_in_rule__SelectItemById__Group__124134 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__SelectItemById__Group__2_in_rule__SelectItemById__Group__124137 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectItemById__ValueAssignment_1_in_rule__SelectItemById__Group__1__Impl24164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectItemById__Group__2__Impl_in_rule__SelectItemById__Group__224194 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__SelectItemById__Group__3_in_rule__SelectItemById__Group__224197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectItemById__Group__2__Impl24225 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectItemById__Group__3__Impl_in_rule__SelectItemById__Group__324256 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__SelectItemById__Group__4_in_rule__SelectItemById__Group__324259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectItemById__ModsAssignment_3_in_rule__SelectItemById__Group__3__Impl24286 = new BitSet(new long[]{0x000C000000000002L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__SelectItemById__Group__4__Impl_in_rule__SelectItemById__Group__424317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectItemById__Group__4__Impl24345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__Group__0__Impl_in_rule__SelectItemByName__Group__024386 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__Group__1_in_rule__SelectItemByName__Group__024389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__SelectItemByName__Group__0__Impl24417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__Group__1__Impl_in_rule__SelectItemByName__Group__124448 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__Group__2_in_rule__SelectItemByName__Group__124451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__ValueAssignment_1_in_rule__SelectItemByName__Group__1__Impl24478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__Group__2__Impl_in_rule__SelectItemByName__Group__224508 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__Group__3_in_rule__SelectItemByName__Group__224511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectItemByName__Group__2__Impl24539 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__Group__3__Impl_in_rule__SelectItemByName__Group__324570 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__Group__4_in_rule__SelectItemByName__Group__324573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__ModsAssignment_3_in_rule__SelectItemByName__Group__3__Impl24600 = new BitSet(new long[]{0x000C000000000002L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__SelectItemByName__Group__4__Impl_in_rule__SelectItemByName__Group__424631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectItemByName__Group__4__Impl24659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewItem__Group__0__Impl_in_rule__NewItem__Group__024700 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__NewItem__Group__1_in_rule__NewItem__Group__024703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__NewItem__Group__0__Impl24731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewItem__Group__1__Impl_in_rule__NewItem__Group__124762 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__NewItem__Group__2_in_rule__NewItem__Group__124765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewItem__Group__1__Impl24793 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__NewItem__Group__2__Impl_in_rule__NewItem__Group__224824 = new BitSet(new long[]{0x000C000400000010L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__NewItem__Group__3_in_rule__NewItem__Group__224827 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewItem__ModsAssignment_2_in_rule__NewItem__Group__2__Impl24854 = new BitSet(new long[]{0x000C000000000002L,0x0008000800000000L,0x0000000000000000L,0x0003000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_rule__NewItem__Group__3__Impl_in_rule__NewItem__Group__324885 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__NewItem__Group__3__Impl24913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ItemPattern1__Group__0__Impl_in_rule__ItemPattern1__Group__024952 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__ItemPattern1__Group__1_in_rule__ItemPattern1__Group__024955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemInst1_in_rule__ItemPattern1__Group__0__Impl24982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ItemPattern1__Group__1__Impl_in_rule__ItemPattern1__Group__125011 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ItemPattern1__Group__2_in_rule__ItemPattern1__Group__125014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ItemPattern1__ValueAssignment_1_in_rule__ItemPattern1__Group__1__Impl25041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ItemPattern1__Group__2__Impl_in_rule__ItemPattern1__Group__225071 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern1__Group__2__Impl25099 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__ItemPattern2__Group__0__Impl_in_rule__ItemPattern2__Group__025136 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__ItemPattern2__Group__1_in_rule__ItemPattern2__Group__025139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemInst2_in_rule__ItemPattern2__Group__0__Impl25166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ItemPattern2__Group__1__Impl_in_rule__ItemPattern2__Group__125195 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ItemPattern2__Group__2_in_rule__ItemPattern2__Group__125198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ItemPattern2__ValueAssignment_1_in_rule__ItemPattern2__Group__1__Impl25225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ItemPattern2__Group__2__Impl_in_rule__ItemPattern2__Group__225255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern2__Group__2__Impl25283 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__ItemPattern3__Group__0__Impl_in_rule__ItemPattern3__Group__025320 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_rule__ItemPattern3__Group__1_in_rule__ItemPattern3__Group__025323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemInst3_in_rule__ItemPattern3__Group__0__Impl25350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ItemPattern3__Group__1__Impl_in_rule__ItemPattern3__Group__125379 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ItemPattern3__Group__2_in_rule__ItemPattern3__Group__125382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ItemPattern3__Alternatives_1_in_rule__ItemPattern3__Group__1__Impl25409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ItemPattern3__Group__2__Impl_in_rule__ItemPattern3__Group__225439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__ItemPattern3__Group__2__Impl25467 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectName__Group__0__Impl_in_rule__SelectName__Group__025504 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SelectName__Group__1_in_rule__SelectName__Group__025507 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_rule__SelectName__Group__0__Impl25535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectName__Group__1__Impl_in_rule__SelectName__Group__125566 = new BitSet(new long[]{0x0000000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__SelectName__Group__2_in_rule__SelectName__Group__125569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectName__ValueAssignment_1_in_rule__SelectName__Group__1__Impl25596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectName__Group__2__Impl_in_rule__SelectName__Group__225626 = new BitSet(new long[]{0x0000000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__SelectName__Group__3_in_rule__SelectName__Group__225629 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectName__Group__2__Impl25657 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectName__Group__3__Impl_in_rule__SelectName__Group__325688 = new BitSet(new long[]{0x0000000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__SelectName__Group__4_in_rule__SelectName__Group__325691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectName__ModsAssignment_3_in_rule__SelectName__Group__3__Impl25718 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0002000000000000L,0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__SelectName__Group__4__Impl_in_rule__SelectName__Group__425749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectName__Group__4__Impl25777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NamePattern1__Group__0__Impl_in_rule__NamePattern1__Group__025818 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__NamePattern1__Group__1_in_rule__NamePattern1__Group__025821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNameInst1_in_rule__NamePattern1__Group__0__Impl25848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NamePattern1__Group__1__Impl_in_rule__NamePattern1__Group__125877 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NamePattern1__Group__2_in_rule__NamePattern1__Group__125880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NamePattern1__ValueAssignment_1_in_rule__NamePattern1__Group__1__Impl25907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NamePattern1__Group__2__Impl_in_rule__NamePattern1__Group__225937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NamePattern1__Group__2__Impl25965 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__NamePattern2__Group__0__Impl_in_rule__NamePattern2__Group__026002 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NamePattern2__Group__1_in_rule__NamePattern2__Group__026005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNameInst2_in_rule__NamePattern2__Group__0__Impl26032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NamePattern2__Group__1__Impl_in_rule__NamePattern2__Group__126061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NamePattern2__Group__1__Impl26089 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__Group__0__Impl_in_rule__SelectSiteById__Group__026124 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__Group__1_in_rule__SelectSiteById__Group__026127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_rule__SelectSiteById__Group__0__Impl26155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__Group__1__Impl_in_rule__SelectSiteById__Group__126186 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__Group__2_in_rule__SelectSiteById__Group__126189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__ValueAssignment_1_in_rule__SelectSiteById__Group__1__Impl26216 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__Group__2__Impl_in_rule__SelectSiteById__Group__226246 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__Group__3_in_rule__SelectSiteById__Group__226249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSiteById__Group__2__Impl26277 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__Group__3__Impl_in_rule__SelectSiteById__Group__326308 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__Group__4_in_rule__SelectSiteById__Group__326311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__ModsAssignment_3_in_rule__SelectSiteById__Group__3__Impl26338 = new BitSet(new long[]{0x0004000000000002L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__SelectSiteById__Group__4__Impl_in_rule__SelectSiteById__Group__426369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectSiteById__Group__4__Impl26397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__0__Impl_in_rule__SelectSiteByName__Group__026438 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__1_in_rule__SelectSiteByName__Group__026441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_rule__SelectSiteByName__Group__0__Impl26469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__1__Impl_in_rule__SelectSiteByName__Group__126500 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__2_in_rule__SelectSiteByName__Group__126503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__ValueAssignment_1_in_rule__SelectSiteByName__Group__1__Impl26530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__2__Impl_in_rule__SelectSiteByName__Group__226560 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__3_in_rule__SelectSiteByName__Group__226563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectSiteByName__Group__2__Impl26591 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__3__Impl_in_rule__SelectSiteByName__Group__326622 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__4_in_rule__SelectSiteByName__Group__326625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__ModsAssignment_3_in_rule__SelectSiteByName__Group__3__Impl26652 = new BitSet(new long[]{0x0004000000000002L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__SelectSiteByName__Group__4__Impl_in_rule__SelectSiteByName__Group__426683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectSiteByName__Group__4__Impl26711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewSite__Group__0__Impl_in_rule__NewSite__Group__026752 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__NewSite__Group__1_in_rule__NewSite__Group__026755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_rule__NewSite__Group__0__Impl26783 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewSite__Group__1__Impl_in_rule__NewSite__Group__126814 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__NewSite__Group__2_in_rule__NewSite__Group__126817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewSite__ValueAssignment_1_in_rule__NewSite__Group__1__Impl26844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewSite__Group__2__Impl_in_rule__NewSite__Group__226874 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__NewSite__Group__3_in_rule__NewSite__Group__226877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NewSite__Group__2__Impl26905 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__NewSite__Group__3__Impl_in_rule__NewSite__Group__326936 = new BitSet(new long[]{0x0004000400000010L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__NewSite__Group__4_in_rule__NewSite__Group__326939 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NewSite__ModsAssignment_3_in_rule__NewSite__Group__3__Impl26966 = new BitSet(new long[]{0x0004000000000002L,0x0000000000000000L,0x0002000000000000L,0x0000000002040000L,0x0007FFFFF8020000L});
+    public static final BitSet FOLLOW_rule__NewSite__Group__4__Impl_in_rule__NewSite__Group__426997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__NewSite__Group__4__Impl27025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern1__Group__0__Impl_in_rule__SitePattern1__Group__027066 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__SitePattern1__Group__1_in_rule__SitePattern1__Group__027069 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst1_in_rule__SitePattern1__Group__0__Impl27096 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern1__Group__1__Impl_in_rule__SitePattern1__Group__127125 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SitePattern1__Group__2_in_rule__SitePattern1__Group__127128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern1__ValueAssignment_1_in_rule__SitePattern1__Group__1__Impl27155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern1__Group__2__Impl_in_rule__SitePattern1__Group__227185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern1__Group__2__Impl27213 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SitePattern2__Group__0__Impl_in_rule__SitePattern2__Group__027250 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SitePattern2__Group__1_in_rule__SitePattern2__Group__027253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst2_in_rule__SitePattern2__Group__0__Impl27280 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern2__Group__1__Impl_in_rule__SitePattern2__Group__127309 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SitePattern2__Group__2_in_rule__SitePattern2__Group__127312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern2__ValueAssignment_1_in_rule__SitePattern2__Group__1__Impl27339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern2__Group__2__Impl_in_rule__SitePattern2__Group__227369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern2__Group__2__Impl27397 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SitePattern3__Group__0__Impl_in_rule__SitePattern3__Group__027434 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SitePattern3__Group__1_in_rule__SitePattern3__Group__027437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst3_in_rule__SitePattern3__Group__0__Impl27464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern3__Group__1__Impl_in_rule__SitePattern3__Group__127493 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SitePattern3__Group__2_in_rule__SitePattern3__Group__127496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern3__Value1Assignment_1_in_rule__SitePattern3__Group__1__Impl27523 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern3__Group__2__Impl_in_rule__SitePattern3__Group__227553 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SitePattern3__Group__3_in_rule__SitePattern3__Group__227556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern3__Value2Assignment_2_in_rule__SitePattern3__Group__2__Impl27583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern3__Group__3__Impl_in_rule__SitePattern3__Group__327613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern3__Group__3__Impl27641 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SitePattern4__Group__0__Impl_in_rule__SitePattern4__Group__027680 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SitePattern4__Group__1_in_rule__SitePattern4__Group__027683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteInst4_in_rule__SitePattern4__Group__0__Impl27710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SitePattern4__Group__1__Impl_in_rule__SitePattern4__Group__127739 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SitePattern4__Group__1__Impl27767 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectNation__Group__0__Impl_in_rule__SelectNation__Group__027802 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SelectNation__Group__1_in_rule__SelectNation__Group__027805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_rule__SelectNation__Group__0__Impl27833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectNation__Group__1__Impl_in_rule__SelectNation__Group__127864 = new BitSet(new long[]{0x0004000400000010L,0x0000000800000000L,0x0000000000000000L,0x0000000000000000L,0xFFF8000000000000L,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_rule__SelectNation__Group__2_in_rule__SelectNation__Group__127867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectNation__ValueAssignment_1_in_rule__SelectNation__Group__1__Impl27894 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectNation__Group__2__Impl_in_rule__SelectNation__Group__227924 = new BitSet(new long[]{0x0004000400000010L,0x0000000800000000L,0x0000000000000000L,0x0000000000000000L,0xFFF8000000000000L,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_rule__SelectNation__Group__3_in_rule__SelectNation__Group__227927 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__SelectNation__Group__2__Impl27955 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__SelectNation__Group__3__Impl_in_rule__SelectNation__Group__327986 = new BitSet(new long[]{0x0004000400000010L,0x0000000800000000L,0x0000000000000000L,0x0000000000000000L,0xFFF8000000000000L,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_rule__SelectNation__Group__4_in_rule__SelectNation__Group__327989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectNation__ModsAssignment_3_in_rule__SelectNation__Group__3__Impl28016 = new BitSet(new long[]{0x0004000000000002L,0x0000000800000000L,0x0000000000000000L,0x0000000000000000L,0xFFF8000000000000L,0x1FFFFFFFFFFFFFFFL});
+    public static final BitSet FOLLOW_rule__SelectNation__Group__4__Impl_in_rule__SelectNation__Group__428047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectNation__Group__4__Impl28075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IndepFlag__Group__0__Impl_in_rule__IndepFlag__Group__028116 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__IndepFlag__Group__1_in_rule__IndepFlag__Group__028119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_rule__IndepFlag__Group__0__Impl28147 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IndepFlag__Group__1__Impl_in_rule__IndepFlag__Group__128178 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__IndepFlag__Group__2_in_rule__IndepFlag__Group__128181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IndepFlag__ValueAssignment_1_in_rule__IndepFlag__Group__1__Impl28208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IndepFlag__Group__2__Impl_in_rule__IndepFlag__Group__228238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__IndepFlag__Group__2__Impl28266 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__NationPattern1__Group__0__Impl_in_rule__NationPattern1__Group__028303 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__NationPattern1__Group__1_in_rule__NationPattern1__Group__028306 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst1_in_rule__NationPattern1__Group__0__Impl28333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern1__Group__1__Impl_in_rule__NationPattern1__Group__128362 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NationPattern1__Group__2_in_rule__NationPattern1__Group__128365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern1__ValueAssignment_1_in_rule__NationPattern1__Group__1__Impl28392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern1__Group__2__Impl_in_rule__NationPattern1__Group__228422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern1__Group__2__Impl28450 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__NationPattern2__Group__0__Impl_in_rule__NationPattern2__Group__028487 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__NationPattern2__Group__1_in_rule__NationPattern2__Group__028490 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst2_in_rule__NationPattern2__Group__0__Impl28517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern2__Group__1__Impl_in_rule__NationPattern2__Group__128546 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NationPattern2__Group__2_in_rule__NationPattern2__Group__128549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern2__ValueAssignment_1_in_rule__NationPattern2__Group__1__Impl28576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern2__Group__2__Impl_in_rule__NationPattern2__Group__228606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern2__Group__2__Impl28634 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__NationPattern3__Group__0__Impl_in_rule__NationPattern3__Group__028671 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NationPattern3__Group__1_in_rule__NationPattern3__Group__028674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst3_in_rule__NationPattern3__Group__0__Impl28701 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern3__Group__1__Impl_in_rule__NationPattern3__Group__128730 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern3__Group__1__Impl28758 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__NationPattern4__Group__0__Impl_in_rule__NationPattern4__Group__028793 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_rule__NationPattern4__Group__1_in_rule__NationPattern4__Group__028796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst4_in_rule__NationPattern4__Group__0__Impl28823 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern4__Group__1__Impl_in_rule__NationPattern4__Group__128852 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NationPattern4__Group__2_in_rule__NationPattern4__Group__128855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern4__Alternatives_1_in_rule__NationPattern4__Group__1__Impl28882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern4__Group__2__Impl_in_rule__NationPattern4__Group__228912 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern4__Group__2__Impl28940 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Group__0__Impl_in_rule__NationPattern5__Group__028977 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Group__1_in_rule__NationPattern5__Group__028980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationInst5_in_rule__NationPattern5__Group__0__Impl29007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Group__1__Impl_in_rule__NationPattern5__Group__129036 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Group__2_in_rule__NationPattern5__Group__129039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Value1Assignment_1_in_rule__NationPattern5__Group__1__Impl29066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Group__2__Impl_in_rule__NationPattern5__Group__229096 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Group__3_in_rule__NationPattern5__Group__229099 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Value2Assignment_2_in_rule__NationPattern5__Group__2__Impl29126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Group__3__Impl_in_rule__NationPattern5__Group__329156 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Group__4_in_rule__NationPattern5__Group__329159 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Value3Assignment_3_in_rule__NationPattern5__Group__3__Impl29186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NationPattern5__Group__4__Impl_in_rule__NationPattern5__Group__429216 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FREE_FORM_COMMENT_in_rule__NationPattern5__Group__4__Impl29244 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__DecimalValue__Group__0__Impl_in_rule__DecimalValue__Group__029285 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_rule__DecimalValue__Group__1_in_rule__DecimalValue__Group__029288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__DecimalValue__Group__0__Impl29315 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DecimalValue__Group__1__Impl_in_rule__DecimalValue__Group__129344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DecimalValue__Group_1__0_in_rule__DecimalValue__Group__1__Impl29371 = new BitSet(new long[]{0x0002000000000002L});
+    public static final BitSet FOLLOW_rule__DecimalValue__Group_1__0__Impl_in_rule__DecimalValue__Group_1__029406 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__DecimalValue__Group_1__1_in_rule__DecimalValue__Group_1__029409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_rule__DecimalValue__Group_1__0__Impl29437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DecimalValue__Group_1__1__Impl_in_rule__DecimalValue__Group_1__129468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__DecimalValue__Group_1__1__Impl29495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__0_in_rule__Dom3Mod__UnorderedGroup_029529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_0__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_1__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_2__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_3__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29891 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_4__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl29982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_5__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_6__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_7__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_8__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_9__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_10__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_11__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_12__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_13__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30801 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_14__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_15__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl30983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_16__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_17__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_18__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_19__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31347 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_20__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_21__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__Group_0_22__0_in_rule__Dom3Mod__UnorderedGroup_0__Impl31620 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__Dom3Mod__UnorderedGroup_0__Impl31713 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__031774 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__1_in_rule__Dom3Mod__UnorderedGroup_0__031777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__131802 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__2_in_rule__Dom3Mod__UnorderedGroup_0__131805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__231830 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__3_in_rule__Dom3Mod__UnorderedGroup_0__231833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__331858 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__4_in_rule__Dom3Mod__UnorderedGroup_0__331861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__431886 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__5_in_rule__Dom3Mod__UnorderedGroup_0__431889 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__531914 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__6_in_rule__Dom3Mod__UnorderedGroup_0__531917 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__631942 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__7_in_rule__Dom3Mod__UnorderedGroup_0__631945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__731970 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__8_in_rule__Dom3Mod__UnorderedGroup_0__731973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__831998 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__9_in_rule__Dom3Mod__UnorderedGroup_0__832001 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__932026 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__10_in_rule__Dom3Mod__UnorderedGroup_0__932029 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1032054 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__11_in_rule__Dom3Mod__UnorderedGroup_0__1032057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1132082 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__12_in_rule__Dom3Mod__UnorderedGroup_0__1132085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1232110 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__13_in_rule__Dom3Mod__UnorderedGroup_0__1232113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1332138 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__14_in_rule__Dom3Mod__UnorderedGroup_0__1332141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1432166 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__15_in_rule__Dom3Mod__UnorderedGroup_0__1432169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1532194 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__16_in_rule__Dom3Mod__UnorderedGroup_0__1532197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1632222 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__17_in_rule__Dom3Mod__UnorderedGroup_0__1632225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1732250 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__18_in_rule__Dom3Mod__UnorderedGroup_0__1732253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1832278 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__19_in_rule__Dom3Mod__UnorderedGroup_0__1832281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__1932306 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__20_in_rule__Dom3Mod__UnorderedGroup_0__1932309 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2032334 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__21_in_rule__Dom3Mod__UnorderedGroup_0__2032337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2132362 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__22_in_rule__Dom3Mod__UnorderedGroup_0__2132365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2232390 = new BitSet(new long[]{0x00000005FFFFFC02L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__23_in_rule__Dom3Mod__UnorderedGroup_0__2232393 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dom3Mod__UnorderedGroup_0__Impl_in_rule__Dom3Mod__UnorderedGroup_0__2332418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Dom3Mod__ModnameAssignment_0_0_132494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Dom3Mod__DescAssignment_0_1_132525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Dom3Mod__IconAssignment_0_2_132556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDecimalValue_in_rule__Dom3Mod__VersionAssignment_0_3_132587 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDecimalValue_in_rule__Dom3Mod__DomversionAssignment_0_4_132618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__PoppergoldAssignment_0_5_132649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__ResourcemultAssignment_0_6_132680 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__SupplymultAssignment_0_7_132711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__UnresthalfincAssignment_0_8_132742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__UnresthalfresAssignment_0_9_132773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__EventisrareAssignment_0_10_132804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__TurmoilincomeAssignment_0_11_132835 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__TurmoileventsAssignment_0_12_132866 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathincomeAssignment_0_13_132897 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathsupplyAssignment_0_14_132928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__DeathdeathAssignment_0_15_132959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__SlothincomeAssignment_0_16_132990 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__SlothresourcesAssignment_0_17_133021 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__ColdincomeAssignment_0_18_133052 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__ColdsupplyAssignment_0_19_133083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__MisfortuneAssignment_0_20_133114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__LuckeventsAssignment_0_21_133145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Dom3Mod__ResearchscaleAssignment_0_22_133176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractElement_in_rule__Dom3Mod__ElementsAssignment_133207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectArmorById__ValueAssignment_133238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArmorMods_in_rule__SelectArmorById__ModsAssignment_333269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectArmorByName__ValueAssignment_133300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArmorMods_in_rule__SelectArmorByName__ModsAssignment_333331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__NewArmor__ValueAssignment_133362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArmorMods_in_rule__NewArmor__ModsAssignment_333393 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__ArmorPattern1__ValueAssignment_133424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__ArmorPattern2__ValueAssignment_133455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__ArmorInst1__NameAssignment33491 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_rule__ArmorInst2__TypeAssignment_033535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_rule__ArmorInst2__ProtAssignment_133579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_rule__ArmorInst2__DefAssignment_233623 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_rule__ArmorInst2__EncAssignment_333667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_rule__ArmorInst2__RcostAssignment_433711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectWeaponById__ValueAssignment_133750 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWeaponMods_in_rule__SelectWeaponById__ModsAssignment_333781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectWeaponByName__ValueAssignment_133812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWeaponMods_in_rule__SelectWeaponByName__ModsAssignment_333843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__NewWeapon__ValueAssignment_133874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWeaponMods_in_rule__NewWeapon__ModsAssignment_333905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__WeaponPattern1__ValueAssignment_133936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__WeaponPattern2__ValueAssignment_133967 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__WeaponPattern3__Value1Assignment_133998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__WeaponPattern3__Value2Assignment_234029 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__WeaponInst1__NameAssignment34065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_rule__WeaponInst2__DmgAssignment_034109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_rule__WeaponInst2__NrattAssignment_134153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_rule__WeaponInst2__AttAssignment_234197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_rule__WeaponInst2__DefAssignment_334241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_rule__WeaponInst2__LenAssignment_434285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_rule__WeaponInst2__RangeAssignment_534329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_rule__WeaponInst2__AmmoAssignment_634373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_rule__WeaponInst2__RcostAssignment_734417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_rule__WeaponInst2__SoundAssignment_834461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_rule__WeaponInst2__AoeAssignment_934505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_64_in_rule__WeaponInst2__SecondaryeffectAssignment_1034549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_rule__WeaponInst2__SecondaryeffectalwaysAssignment_1134593 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_rule__WeaponInst2__ExplsprAssignment_1234637 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_67_in_rule__WeaponInst3__FlysprAssignment34681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_rule__WeaponInst4__TwohandedAssignment_034725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_rule__WeaponInst4__ArmorpiercingAssignment_134769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_rule__WeaponInst4__ArmornegatingAssignment_234813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_rule__WeaponInst4__MagicAssignment_334857 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_rule__WeaponInst4__Dt_normalAssignment_434901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_rule__WeaponInst4__Dt_stunAssignment_534945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_74_in_rule__WeaponInst4__Dt_paralyzeAssignment_634989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_rule__WeaponInst4__Dt_poisonAssignment_735033 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_76_in_rule__WeaponInst4__Dt_capAssignment_835077 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_77_in_rule__WeaponInst4__Dt_demonAssignment_935121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_78_in_rule__WeaponInst4__Dt_demononlyAssignment_1035165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_rule__WeaponInst4__Dt_holyAssignment_1135209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_80_in_rule__WeaponInst4__Dt_magicAssignment_1235253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_81_in_rule__WeaponInst4__Dt_smallAssignment_1335297 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_rule__WeaponInst4__Dt_largeAssignment_1435341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_83_in_rule__WeaponInst4__Dt_constructonlyAssignment_1535385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_84_in_rule__WeaponInst4__Dt_raiseAssignment_1635429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_rule__WeaponInst4__MindAssignment_1735473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_86_in_rule__WeaponInst4__ColdAssignment_1835517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_87_in_rule__WeaponInst4__FireAssignment_1935561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_88_in_rule__WeaponInst4__ShockAssignment_2035605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_rule__WeaponInst4__PoisonAssignment_2135649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_90_in_rule__WeaponInst4__BonusAssignment_2235693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_rule__WeaponInst4__ChargeAssignment_2335737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_92_in_rule__WeaponInst4__FlailAssignment_2435781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_93_in_rule__WeaponInst4__NostrAssignment_2535825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_94_in_rule__WeaponInst4__NostrAssignment_2635869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_rule__WeaponInst4__MrnegatesAssignment_2735913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_96_in_rule__WeaponInst4__MrnegateseasilyAssignment_2835957 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectMonsterById__ValueAssignment_135996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterMods_in_rule__SelectMonsterById__ModsAssignment_336027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectMonsterByName__ValueAssignment_136058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterMods_in_rule__SelectMonsterByName__ModsAssignment_336089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__NewMonster__ValueAssignment_136120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMonsterMods_in_rule__NewMonster__ModsAssignment_336151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__MonsterPattern1__ValueAssignment_136182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__MonsterPattern2__ValueAssignment_136213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__MonsterPattern3__Value1Assignment_136244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__MonsterPattern3__Value2Assignment_236275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__MonsterPattern5__Value1Assignment_1_036306 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__MonsterPattern5__Value2Assignment_1_136337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__MonsterPattern6__ValueAssignment_136368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__MonsterInst1__NameAssignment_036404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_97_in_rule__MonsterInst1__Spr1Assignment_136448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_98_in_rule__MonsterInst1__Spr2Assignment_236492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_99_in_rule__MonsterInst1__DescrAssignment_336536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_100_in_rule__MonsterInst2__SpeciallookAssignment_036580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_101_in_rule__MonsterInst2__ApAssignment_136624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_102_in_rule__MonsterInst2__MapmoveAssignment_236668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_103_in_rule__MonsterInst2__HpAssignment_336712 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_rule__MonsterInst2__ProtAssignment_436756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_104_in_rule__MonsterInst2__SizeAssignment_536800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_105_in_rule__MonsterInst2__RessizeAssignment_636844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_106_in_rule__MonsterInst2__StrAssignment_736888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_rule__MonsterInst2__EncAssignment_836932 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_rule__MonsterInst2__AttAssignment_936976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_rule__MonsterInst2__DefAssignment_1037020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_107_in_rule__MonsterInst2__PrecAssignment_1137064 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_rule__MonsterInst2__MrAssignment_1237108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_109_in_rule__MonsterInst2__MorAssignment_1337152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_110_in_rule__MonsterInst2__GcostAssignment_1437196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_rule__MonsterInst2__RcostAssignment_1537240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_111_in_rule__MonsterInst2__PathcostAssignment_1637284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_112_in_rule__MonsterInst2__StartdomAssignment_1737328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_113_in_rule__MonsterInst2__EyesAssignment_1837372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_114_in_rule__MonsterInst2__CopystatsAssignment_1937416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_115_in_rule__MonsterInst2__CopysprAssignment_2037460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_116_in_rule__MonsterInst2__RestrictedgodAssignment_2137504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_117_in_rule__MonsterInst2__ShatteredsoulAssignment_2237548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_118_in_rule__MonsterInst2__ColdresAssignment_2337592 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_rule__MonsterInst2__ColdresAssignment_2437636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_120_in_rule__MonsterInst2__FireresAssignment_2537680 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_121_in_rule__MonsterInst2__FireresAssignment_2637724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_122_in_rule__MonsterInst2__PoisonresAssignment_2737768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_123_in_rule__MonsterInst2__ShockresAssignment_2837812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_rule__MonsterInst2__DarkvisionAssignment_2937856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_125_in_rule__MonsterInst2__SeduceAssignment_3037900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_rule__MonsterInst2__SuccubusAssignment_3137944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_rule__MonsterInst2__BeckonAssignment_3237988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_128_in_rule__MonsterInst2__StartageAssignment_3338032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_129_in_rule__MonsterInst2__MaxageAssignment_3438076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_130_in_rule__MonsterInst2__OlderAssignment_3538120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_131_in_rule__MonsterInst2__HealerAssignment_3638164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_132_in_rule__MonsterInst2__StartaffAssignment_3738208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_133_in_rule__MonsterInst2__SupplybonusAssignment_3838252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_134_in_rule__MonsterInst2__UwdamageAssignment_3938296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_135_in_rule__MonsterInst2__HomesickAssignment_4038340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_136_in_rule__MonsterInst2__ColdpowerAssignment_4138384 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_137_in_rule__MonsterInst2__FirepowerAssignment_4238428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_138_in_rule__MonsterInst2__StormpowerAssignment_4338472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_139_in_rule__MonsterInst2__DarkpowerAssignment_4438516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_140_in_rule__MonsterInst2__SpringpowerAssignment_4538560 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_141_in_rule__MonsterInst2__SummerpowerAssignment_4638604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_142_in_rule__MonsterInst2__FallpowerAssignment_4738648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_143_in_rule__MonsterInst2__WinterpowerAssignment_4838692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_144_in_rule__MonsterInst2__AmbidextrousAssignment_4938736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_145_in_rule__MonsterInst2__BanefireshieldAssignment_5038780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_146_in_rule__MonsterInst2__BerserkAssignment_5138824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_147_in_rule__MonsterInst2__StandardAssignment_5238868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_148_in_rule__MonsterInst2__AnimalaweAssignment_5338912 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_149_in_rule__MonsterInst2__AweAssignment_5438956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_150_in_rule__MonsterInst2__FearAssignment_5539000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_151_in_rule__MonsterInst2__RegenerationAssignment_5639044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_152_in_rule__MonsterInst2__ReinvigorationAssignment_5739088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_153_in_rule__MonsterInst2__FireshieldAssignment_5839132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_154_in_rule__MonsterInst2__IceprotAssignment_5939176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_155_in_rule__MonsterInst2__PoisoncloudAssignment_6039220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_156_in_rule__MonsterInst2__DiseasecloudAssignment_6139264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_157_in_rule__MonsterInst2__BloodvengeanceAssignment_6239308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_158_in_rule__MonsterInst2__CastledefAssignment_6339352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_159_in_rule__MonsterInst2__SiegebonusAssignment_6439396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_160_in_rule__MonsterInst2__PatrolbonusAssignment_6539440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_161_in_rule__MonsterInst2__PillagebonusAssignment_6639484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__MonsterInst2__ResearchbonusAssignment_6739528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__MonsterInst2__ForgebonusAssignment_6839572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__MonsterInst2__DouseAssignment_6939616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_165_in_rule__MonsterInst2__NobadeventsAssignment_7039660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_rule__MonsterInst2__IncunrestAssignment_7139704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_rule__MonsterInst2__SpreaddomAssignment_7239748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_168_in_rule__MonsterInst2__LeperAssignment_7339792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_rule__MonsterInst2__PopkillAssignment_7439836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_170_in_rule__MonsterInst2__HereticAssignment_7539880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_171_in_rule__MonsterInst2__ItemslotsAssignment_7639924 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_172_in_rule__MonsterInst2__NametypeAssignment_7739968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_173_in_rule__MonsterInst3__MagicskillAssignment_040012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_174_in_rule__MonsterInst3__CustommagicAssignment_140056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_175_in_rule__MonsterInst3__MagicboostAssignment_240100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_176_in_rule__MonsterInst3__GemprodAssignment_340144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_177_in_rule__MonsterInst4__ClearAssignment_040188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_178_in_rule__MonsterInst4__ClearweaponsAssignment_140232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_179_in_rule__MonsterInst4__CleararmorAssignment_240276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_180_in_rule__MonsterInst4__ClearmagicAssignment_340320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_181_in_rule__MonsterInst4__ClearspecAssignment_440364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_182_in_rule__MonsterInst4__FemaleAssignment_540408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_183_in_rule__MonsterInst4__MountedAssignment_640452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_184_in_rule__MonsterInst4__HolyAssignment_740496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_185_in_rule__MonsterInst4__AnimalAssignment_840540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_186_in_rule__MonsterInst4__UndeadAssignment_940584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_187_in_rule__MonsterInst4__DemonAssignment_1040628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_188_in_rule__MonsterInst4__MagicbeingAssignment_1140672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_189_in_rule__MonsterInst4__StonebeingAssignment_1240716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_190_in_rule__MonsterInst4__InanimateAssignment_1340760 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_191_in_rule__MonsterInst4__ColdbloodAssignment_1440804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_192_in_rule__MonsterInst4__ColdbloodAssignment_1540848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_193_in_rule__MonsterInst4__ImmortalAssignment_1640892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_194_in_rule__MonsterInst4__BlindAssignment_1740936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_195_in_rule__MonsterInst4__UniqueAssignment_1840980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_196_in_rule__MonsterInst4__ImmobileAssignment_1941024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_197_in_rule__MonsterInst4__AquaticAssignment_2041068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_198_in_rule__MonsterInst4__AmphibianAssignment_2141112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_199_in_rule__MonsterInst4__PooramphibianAssignment_2241156 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_200_in_rule__MonsterInst4__FlyingAssignment_2341200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_201_in_rule__MonsterInst4__StormimmuneAssignment_2441244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_202_in_rule__MonsterInst4__SailingAssignment_2541288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_203_in_rule__MonsterInst4__ForestsurvivalAssignment_2641332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_204_in_rule__MonsterInst4__MountainsurvivalAssignment_2741376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_205_in_rule__MonsterInst4__SwampsurvivalAssignment_2841420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_206_in_rule__MonsterInst4__WastesurvivalAssignment_2941464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_207_in_rule__MonsterInst4__IllusionAssignment_3041508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_208_in_rule__MonsterInst4__SpyAssignment_3141552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_209_in_rule__MonsterInst4__AssassinAssignment_3241596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_210_in_rule__MonsterInst4__HealAssignment_3341640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_211_in_rule__MonsterInst4__NohealAssignment_3441684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_212_in_rule__MonsterInst4__NeednoteatAssignment_3541728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_213_in_rule__MonsterInst4__EtherealAssignment_3641772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_214_in_rule__MonsterInst4__TrampleAssignment_3741816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_215_in_rule__MonsterInst4__EntangleAssignment_3841860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_216_in_rule__MonsterInst4__EyelossAssignment_3941904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_217_in_rule__MonsterInst4__HorrormarkAssignment_4041948 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_218_in_rule__MonsterInst4__PoisonarmorAssignment_4141992 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_219_in_rule__MonsterInst4__InquisitorAssignment_4242036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_220_in_rule__MonsterInst4__NoitemAssignment_4342080 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_221_in_rule__MonsterInst4__DrainimmuneAssignment_4442124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_222_in_rule__MonsterInst4__NoleaderAssignment_4542168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_223_in_rule__MonsterInst4__PoorleaderAssignment_4642212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_224_in_rule__MonsterInst4__OkleaderAssignment_4742256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_225_in_rule__MonsterInst4__GoodleaderAssignment_4842300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_226_in_rule__MonsterInst4__ExpertleaderAssignment_4942344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_227_in_rule__MonsterInst4__SuperiorleaderAssignment_5042388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_228_in_rule__MonsterInst4__NomagicleaderAssignment_5142432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_229_in_rule__MonsterInst4__PoormagicleaderAssignment_5242476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_230_in_rule__MonsterInst4__OkmagicleaderAssignment_5342520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_231_in_rule__MonsterInst4__GoodmagicleaderAssignment_5442564 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_232_in_rule__MonsterInst4__ExpertmagicleaderAssignment_5542608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_233_in_rule__MonsterInst4__SuperiormagicleaderAssignment_5642652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_234_in_rule__MonsterInst4__NoundeadleaderAssignment_5742696 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_235_in_rule__MonsterInst4__PoorundeadleaderAssignment_5842740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_236_in_rule__MonsterInst4__OkundeadleaderAssignment_5942784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_237_in_rule__MonsterInst4__GoodundeadleaderAssignment_6042828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_238_in_rule__MonsterInst4__ExpertundeadleaderAssignment_6142872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_239_in_rule__MonsterInst4__SuperiorundeadleaderAssignment_6242916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_240_in_rule__MonsterInst5__WeaponAssignment_042960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_241_in_rule__MonsterInst5__ArmorAssignment_143004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_242_in_rule__MonsterInst5__OnebattlespellAssignment_243048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_243_in_rule__MonsterInst5__FirstshapeAssignment_343092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_244_in_rule__MonsterInst5__SecondshapeAssignment_443136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_245_in_rule__MonsterInst5__SecondtmpshapeAssignment_543180 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_246_in_rule__MonsterInst5__ShapechangeAssignment_643224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_247_in_rule__MonsterInst5__LandshapeAssignment_743268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_248_in_rule__MonsterInst5__WatershapeAssignment_843312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_249_in_rule__MonsterInst5__ForestshapeAssignment_943356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_250_in_rule__MonsterInst5__PlainshapeAssignment_1043400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_251_in_rule__MonsterInst5__DomsummonAssignment_1143444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_252_in_rule__MonsterInst5__Domsummon2Assignment_1243488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_253_in_rule__MonsterInst5__Domsummon20Assignment_1343532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_254_in_rule__MonsterInst5__Makemonster1Assignment_1443576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_255_in_rule__MonsterInst5__Makemonster2Assignment_1543620 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_256_in_rule__MonsterInst5__Makemonster3Assignment_1643664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_257_in_rule__MonsterInst5__Makemonster4Assignment_1743708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_258_in_rule__MonsterInst5__Makemonster5Assignment_1843752 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_259_in_rule__MonsterInst5__Summon1Assignment_1943796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_260_in_rule__MonsterInst5__Summon5Assignment_2043840 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_261_in_rule__MonsterInst6__StealthyAssignment_043884 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_262_in_rule__MonsterInst6__HeatAssignment_143928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_86_in_rule__MonsterInst6__ColdAssignment_243972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectSpellById__ValueAssignment_144011 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellMods_in_rule__SelectSpellById__ModsAssignment_344042 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectSpellByName__ValueAssignment_144073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellMods_in_rule__SelectSpellByName__ModsAssignment_344104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpellMods_in_rule__NewSpell__ModsAssignment_244135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SpellPattern1__ValueAssignment_144166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SpellPattern2__ValueAssignment_144197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SpellPattern3__Value1Assignment_144228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SpellPattern3__Value2Assignment_244259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SpellPattern5__Value1Assignment_1_044290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SpellPattern5__Value2Assignment_1_144321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__SpellInst1__NameAssignment_044357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_99_in_rule__SpellInst1__DescrAssignment_144401 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_263_in_rule__SpellInst2__SchoolAssignment_044445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_264_in_rule__SpellInst2__ResearchlevelAssignment_144489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_rule__SpellInst2__AoeAssignment_244533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_265_in_rule__SpellInst2__DamageAssignment_344577 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_266_in_rule__SpellInst2__EffectAssignment_444621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_267_in_rule__SpellInst2__FatiguecostAssignment_544665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_268_in_rule__SpellInst2__FlightsprAssignment_644709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_rule__SpellInst2__ExplsprAssignment_744753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_269_in_rule__SpellInst2__NreffAssignment_844797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_rule__SpellInst2__RangeAssignment_944841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_270_in_rule__SpellInst2__PrecisionAssignment_1044885 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_rule__SpellInst2__SoundAssignment_1144929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_271_in_rule__SpellInst2__SpecAssignment_1244973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_272_in_rule__SpellInst2__RestrictedAssignment_1345017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_273_in_rule__SpellInst3__PathAssignment_045061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_274_in_rule__SpellInst3__PathlevelAssignment_145105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_177_in_rule__SpellInst4__ClearAssignment45149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_275_in_rule__SpellInst5__CopyspellAssignment_045193 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_276_in_rule__SpellInst5__NextspellAssignment_145237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectItemById__ValueAssignment_145276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemMods_in_rule__SelectItemById__ModsAssignment_345307 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectItemByName__ValueAssignment_145338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemMods_in_rule__SelectItemByName__ModsAssignment_345369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemMods_in_rule__NewItem__ModsAssignment_245400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__ItemPattern1__ValueAssignment_145431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__ItemPattern2__ValueAssignment_145462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__ItemPattern3__Value1Assignment_1_045493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__ItemPattern3__Value2Assignment_1_145524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__ItemInst1__NameAssignment_045560 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_99_in_rule__ItemInst1__DescrAssignment_145604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_241_in_rule__ItemInst1__ArmorAssignment_245648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_277_in_rule__ItemInst2__ConstlevelAssignment_045692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_278_in_rule__ItemInst2__MainpathAssignment_145736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_279_in_rule__ItemInst2__MainlevelAssignment_245780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_280_in_rule__ItemInst2__SecondarypathAssignment_345824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_281_in_rule__ItemInst2__SecondarylevelAssignment_445868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_rule__ItemInst2__TypeAssignment_545912 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_240_in_rule__ItemInst2__WeaponAssignment_645956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_115_in_rule__ItemInst3__CopysprAssignment46000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectName__ValueAssignment_146039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNameMods_in_rule__SelectName__ModsAssignment_346070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__NamePattern1__ValueAssignment_146101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_282_in_rule__NameInst1__NameAssignment46137 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_177_in_rule__NameInst2__ClearAssignment46181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectSiteById__ValueAssignment_146220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteMods_in_rule__SelectSiteById__ModsAssignment_346251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SelectSiteByName__ValueAssignment_146282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteMods_in_rule__SelectSiteByName__ModsAssignment_346313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__NewSite__ValueAssignment_146344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSiteMods_in_rule__NewSite__ModsAssignment_346375 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SitePattern1__ValueAssignment_146406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SitePattern2__ValueAssignment_146437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SitePattern3__Value1Assignment_146468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SitePattern3__Value2Assignment_246499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__SiteInst1__NameAssignment46535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_273_in_rule__SiteInst2__PathAssignment_046579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_283_in_rule__SiteInst2__LevelAssignment_146623 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_284_in_rule__SiteInst2__RarityAssignment_246667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_285_in_rule__SiteInst2__LocAssignment_346711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_286_in_rule__SiteInst2__HomemonAssignment_446755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_287_in_rule__SiteInst2__HomecomAssignment_546799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_288_in_rule__SiteInst2__MonAssignment_646843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_289_in_rule__SiteInst2__ComAssignment_746887 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_290_in_rule__SiteInst2__GoldAssignment_846931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_291_in_rule__SiteInst2__ResAssignment_946975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_292_in_rule__SiteInst2__IncscaleAssignment_1047019 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_293_in_rule__SiteInst2__DecscaleAssignment_1147063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_210_in_rule__SiteInst2__HealAssignment_1247107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_294_in_rule__SiteInst2__CurseAssignment_1347151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_295_in_rule__SiteInst2__DiseaseAssignment_1447195 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_217_in_rule__SiteInst2__HorrormarkAssignment_1547239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_296_in_rule__SiteInst2__HolyfireAssignment_1647283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_297_in_rule__SiteInst2__HolypowerAssignment_1747327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_298_in_rule__SiteInst2__ConjcostAssignment_1847371 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_299_in_rule__SiteInst2__AltcostAssignment_1947415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_300_in_rule__SiteInst2__EvocostAssignment_2047459 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_301_in_rule__SiteInst2__ConstcostAssignment_2147503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_302_in_rule__SiteInst2__EnchcostAssignment_2247547 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_303_in_rule__SiteInst2__ThaucostAssignment_2347591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_304_in_rule__SiteInst2__BloodcostAssignment_2447635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_305_in_rule__SiteInst3__GemsAssignment47679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_177_in_rule__SiteInst4__ClearAssignment_047723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_306_in_rule__SiteInst4__LabAssignment_147767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SelectNation__ValueAssignment_147806 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNationMods_in_rule__SelectNation__ModsAssignment_347837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__IndepFlag__ValueAssignment_147868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__NationPattern1__ValueAssignment_147899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__NationPattern2__ValueAssignment_147930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__NationPattern4__Value1Assignment_1_047961 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__NationPattern4__Value2Assignment_1_147992 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value1Assignment_148023 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value2Assignment_248054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDecimalValue_in_rule__NationPattern5__Value3Assignment_348085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__NationInst1__NameAssignment_048121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_307_in_rule__NationInst1__EpithetAssignment_148165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_99_in_rule__NationInst1__DescrAssignment_248209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_308_in_rule__NationInst1__SummaryAssignment_348253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_309_in_rule__NationInst1__BriefAssignment_448297 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_310_in_rule__NationInst1__FlagAssignment_548341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_311_in_rule__NationInst1__MapbackgroundAssignment_648385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_312_in_rule__NationInst1__StartsiteAssignment_748429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_313_in_rule__NationInst2__EraAssignment_048473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_314_in_rule__NationInst2__LabcostAssignment_148517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_315_in_rule__NationInst2__TemplecostAssignment_248561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_316_in_rule__NationInst2__TemplepicAssignment_348605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_317_in_rule__NationInst2__Startunitnbrs1Assignment_448649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_318_in_rule__NationInst2__Startunitnbrs2Assignment_548693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_319_in_rule__NationInst2__Hero1Assignment_648737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_320_in_rule__NationInst2__Hero2Assignment_748781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_321_in_rule__NationInst2__Hero3Assignment_848825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_322_in_rule__NationInst2__Hero4Assignment_948869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_323_in_rule__NationInst2__Hero5Assignment_1048913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_324_in_rule__NationInst2__Hero6Assignment_1148957 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_325_in_rule__NationInst2__Multihero1Assignment_1249001 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_326_in_rule__NationInst2__Multihero2Assignment_1349045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_327_in_rule__NationInst2__Defmult1Assignment_1449089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_328_in_rule__NationInst2__Defmult1bAssignment_1549133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_329_in_rule__NationInst2__Defmult2Assignment_1649177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_330_in_rule__NationInst2__Defmult2bAssignment_1749221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_331_in_rule__NationInst2__IdealcoldAssignment_1849265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_332_in_rule__NationInst2__CastleprodAssignment_1949309 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_333_in_rule__NationInst2__DomkillAssignment_2049353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_334_in_rule__NationInst2__DomunrestAssignment_2149397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_335_in_rule__NationInst2__StartfortAssignment_2249441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_336_in_rule__NationInst2__DefaultfortAssignment_2349485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_337_in_rule__NationInst2__FarmfortAssignment_2449529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_338_in_rule__NationInst2__MountainfortAssignment_2549573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_339_in_rule__NationInst2__ForestfortAssignment_2649617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_340_in_rule__NationInst2__SwampfortAssignment_2749661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_341_in_rule__NationInst2__UwfortAssignment_2849705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_342_in_rule__NationInst2__DeepfortAssignment_2949749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_343_in_rule__NationInst3__ClearnationAssignment_049793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_344_in_rule__NationInst3__ClearrecAssignment_149837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_345_in_rule__NationInst3__ClearsitesAssignment_249881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_346_in_rule__NationInst3__UwnationAssignment_349925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_347_in_rule__NationInst3__BloodnationAssignment_449969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_348_in_rule__NationInst3__NopreachAssignment_550013 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_349_in_rule__NationInst3__DyingdomAssignment_650057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_350_in_rule__NationInst3__SacrificedomAssignment_750101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_351_in_rule__NationInst3__NodeathsupplyAssignment_850145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_352_in_rule__NationInst3__AutoundeadAssignment_950189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_353_in_rule__NationInst3__ZombiereanimAssignment_1050233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_354_in_rule__NationInst3__HorsereanimAssignment_1150277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_355_in_rule__NationInst3__WightreanimAssignment_1250321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_356_in_rule__NationInst3__ManikinreanimAssignment_1350365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_357_in_rule__NationInst3__TombwyrmreanimAssignment_1450409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_358_in_rule__NationInst4__StartcomAssignment_050453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_359_in_rule__NationInst4__StartscoutAssignment_150497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_360_in_rule__NationInst4__Startunittype1Assignment_250541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_361_in_rule__NationInst4__Startunittype2Assignment_350585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_362_in_rule__NationInst4__AddrecunitAssignment_450629 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_363_in_rule__NationInst4__AddreccomAssignment_550673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_364_in_rule__NationInst4__Uwunit1Assignment_650717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_365_in_rule__NationInst4__Uwunit2Assignment_750761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_366_in_rule__NationInst4__Uwunit3Assignment_850805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_367_in_rule__NationInst4__Uwunit4Assignment_950849 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_368_in_rule__NationInst4__Uwunit5Assignment_1050893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_369_in_rule__NationInst4__Uwcom1Assignment_1150937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_370_in_rule__NationInst4__Uwcom2Assignment_1250981 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_371_in_rule__NationInst4__Uwcom3Assignment_1351025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_372_in_rule__NationInst4__Uwcom4Assignment_1451069 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_373_in_rule__NationInst4__Uwcom5Assignment_1551113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_374_in_rule__NationInst4__Defcom1Assignment_1651157 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_375_in_rule__NationInst4__Defcom2Assignment_1751201 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_376_in_rule__NationInst4__Defunit1Assignment_1851245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_377_in_rule__NationInst4__Defunit1bAssignment_1951289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_378_in_rule__NationInst4__Defunit2Assignment_2051333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_379_in_rule__NationInst4__Defunit2bAssignment_2151377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_380_in_rule__NationInst5__ColorAssignment51421 = new BitSet(new long[]{0x0000000000000002L});
 
 }

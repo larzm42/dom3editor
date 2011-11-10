@@ -4994,11 +4994,11 @@ protected class WeaponPattern2_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule WeaponPattern3 ****************
  *
  * WeaponPattern3:
- * 	WeaponInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
+ * 	WeaponInst3 value1=INT value2=INT? FREE_FORM_COMMENT*;
  *
  **/
 
-// WeaponInst3 value1=INT value2=INT FREE_FORM_COMMENT*
+// WeaponInst3 value1=INT value2=INT? FREE_FORM_COMMENT*
 protected class WeaponPattern3_Group extends GroupToken {
 	
 	public WeaponPattern3_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5014,6 +5014,7 @@ protected class WeaponPattern3_Group extends GroupToken {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new WeaponPattern3_Value2Assignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new WeaponPattern3_Value1Assignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -5095,7 +5096,7 @@ protected class WeaponPattern3_Value1Assignment_1 extends AssignmentToken  {
 
 }
 
-// value2=INT
+// value2=INT?
 protected class WeaponPattern3_Value2Assignment_2 extends AssignmentToken  {
 	
 	public WeaponPattern3_Value2Assignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5117,7 +5118,7 @@ protected class WeaponPattern3_Value2Assignment_2 extends AssignmentToken  {
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("value2",true)) == null) return null;
+		if((value = eObjectConsumer.getConsumable("value2",false)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("value2");
 		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getWeaponPattern3Access().getValue2INTTerminalRuleCall_2_0(), value, null)) {
 			type = AssignmentType.TERMINAL_RULE_CALL;

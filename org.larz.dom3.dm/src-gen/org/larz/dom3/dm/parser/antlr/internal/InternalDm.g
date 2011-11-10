@@ -2034,7 +2034,7 @@ ruleWeaponPattern3 returns [EObject current=null]
 	    }
 
 )
-)(this_FREE_FORM_COMMENT_3=RULE_FREE_FORM_COMMENT
+)?(this_FREE_FORM_COMMENT_3=RULE_FREE_FORM_COMMENT
     { 
     newLeafNode(this_FREE_FORM_COMMENT_3, grammarAccess.getWeaponPattern3Access().getFREE_FORM_COMMENTTerminalRuleCall_3()); 
     }

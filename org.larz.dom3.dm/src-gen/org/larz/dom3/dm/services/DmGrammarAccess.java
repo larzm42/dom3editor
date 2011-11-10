@@ -1004,10 +1004,10 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//WeaponPattern3:
-		//	WeaponInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
+		//	WeaponInst3 value1=INT value2=INT? FREE_FORM_COMMENT*;
 		public ParserRule getRule() { return rule; }
 
-		//WeaponInst3 value1=INT value2=INT FREE_FORM_COMMENT*
+		//WeaponInst3 value1=INT value2=INT? FREE_FORM_COMMENT*
 		public Group getGroup() { return cGroup; }
 
 		//WeaponInst3
@@ -1019,7 +1019,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValue1INTTerminalRuleCall_1_0() { return cValue1INTTerminalRuleCall_1_0; }
 
-		//value2=INT
+		//value2=INT?
 		public Assignment getValue2Assignment_2() { return cValue2Assignment_2; }
 
 		//INT
@@ -6305,7 +6305,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//WeaponPattern3:
-	//	WeaponInst3 value1=INT value2=INT FREE_FORM_COMMENT*;
+	//	WeaponInst3 value1=INT value2=INT? FREE_FORM_COMMENT*;
 	public WeaponPattern3Elements getWeaponPattern3Access() {
 		return (pWeaponPattern3 != null) ? pWeaponPattern3 : (pWeaponPattern3 = new WeaponPattern3Elements());
 	}
