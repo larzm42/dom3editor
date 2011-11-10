@@ -853,7 +853,6 @@ public class ReportGenerator {
 			Field[] fields = mod.getClass().getDeclaredFields();
 			int weaponCount = 1;
 			int armorCount = 1;
-			int customMagicCount = 1;
 			int magicBoostCount = 1;
 			int gemprodCount = 1;
 			for (Field field : fields) {
@@ -875,8 +874,6 @@ public class ReportGenerator {
 									fieldName += weaponCount++;
 								} else if (fieldName.equals("armor")) {
 									fieldName += armorCount++;
-								} else if (fieldName.equals("custommagic")) {
-									fieldName += customMagicCount++;
 								} else if (fieldName.equals("magicboost")) {
 									fieldName += magicBoostCount++;
 								} else if (fieldName.equals("gemprod")) {
@@ -893,7 +890,7 @@ public class ReportGenerator {
 									} else if (monsterDB.magicskillpath4 != null && monsterDB.magicskillpath4.intValue() == path) {
 										oldVal = monsterDB.magicskillpath4 + ", " + monsterDB.magicskilllevel4;
 									}
-								} else if (!fieldName.equals("cleararmor") && !fieldName.equals("clearweapons")) {
+								} else if (!fieldName.equals("cleararmor") && !fieldName.equals("clearweapons") && !fieldName.equals("custommagic")) {
 									Field field2 = monsterDB.getClass().getField(fieldName);
 									oldVal = "" + field2.get(monsterDB);
 								}
