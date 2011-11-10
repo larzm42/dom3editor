@@ -1459,7 +1459,6 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								((Inst3Fields)fields.getValue()).check.setData(Boolean.TRUE);
 								((Inst3Fields)fields.getValue()).defaultLabel1.setData(Boolean.TRUE);
 								((Inst3Fields)fields.getValue()).defaultLabel2.setData(Boolean.TRUE);
-								break;
 							}
 						}
 					}
@@ -1474,17 +1473,16 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					((Inst3Fields)fields.getValue()).check.setFont(normalFont);
 					for (List<Inst> dynamic : dynamicFields) {
 						if (dynamic.contains(fields.getKey())) {
-							if (dynamicFirstEmpty.contains(dynamic) && ((Inst3Fields)fields.getValue()).defaultLabel1.getText().equals("")) {
+							if (dynamicFirstEmpty.contains(dynamic) && !isDefaultValue(fields.getKey(), monsterDB)) {
 								if (Boolean.TRUE.equals(((Inst3Fields)fields.getValue()).value1.getData())) {
 									((Inst3Fields)fields.getValue()).value1.setData(Boolean.FALSE);
 									((Inst3Fields)fields.getValue()).value2.setData(Boolean.FALSE);
 									((Inst3Fields)fields.getValue()).check.setData(Boolean.FALSE);
 									((Inst3Fields)fields.getValue()).defaultLabel1.setData(Boolean.FALSE);
 									((Inst3Fields)fields.getValue()).defaultLabel2.setData(Boolean.FALSE);
-									break;
 								}
 							} else {
-								if (((Inst3Fields)fields.getValue()).defaultLabel1.getText().equals("")) {
+								if (!isDefaultValue(fields.getKey(), monsterDB)) {
 									dynamicFirstEmpty.add(dynamic);
 								}
 								if (Boolean.FALSE.equals(((Inst3Fields)fields.getValue()).value1.getData())) {
@@ -1493,7 +1491,6 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									((Inst3Fields)fields.getValue()).check.setData(Boolean.TRUE);
 									((Inst3Fields)fields.getValue()).defaultLabel1.setData(Boolean.TRUE);
 									((Inst3Fields)fields.getValue()).defaultLabel2.setData(Boolean.TRUE);
-									break;
 								}
 							}
 						}
@@ -2697,6 +2694,72 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			}
 		}
 		name.getParent().getParent().layout(true, true);
+	}
+	
+	private boolean isDefaultValue(Inst value, MonsterDB monsterDB) {
+		switch (value) {
+		case MAGICSKILL1:
+			if (monsterDB.magicskillpath1 != null && monsterDB.magicskilllevel1 != null) {
+				return true;
+			}
+			break;
+		case MAGICSKILL2:
+			if (monsterDB.magicskillpath2 != null && monsterDB.magicskilllevel2 != null) {
+				return true;
+			}
+			break;
+		case MAGICSKILL3:
+			if (monsterDB.magicskillpath3 != null && monsterDB.magicskilllevel3 != null) {
+				return true;
+			}
+			break;
+		case MAGICSKILL4:
+			if (monsterDB.magicskillpath4 != null && monsterDB.magicskilllevel4 != null) {
+				return true;
+			}
+			break;
+		case CUSTOMMAGIC1:
+			if (monsterDB.custommagicpath1 != null && monsterDB.custommagicchance1 != null) {
+				return true;
+			}
+			break;
+		case CUSTOMMAGIC2:
+			if (monsterDB.custommagicpath2 != null && monsterDB.custommagicchance2 != null) {
+				return true;
+			}
+			break;
+		case CUSTOMMAGIC3:
+			if (monsterDB.custommagicpath3 != null && monsterDB.custommagicchance3 != null) {
+				return true;
+			}
+			break;
+		case CUSTOMMAGIC4:
+			if (monsterDB.custommagicpath4 != null && monsterDB.custommagicchance4 != null) {
+				return true;
+			}
+			break;
+		case CUSTOMMAGIC5:
+			if (monsterDB.custommagicpath5 != null && monsterDB.custommagicchance5 != null) {
+				return true;
+			}
+			break;
+		case CUSTOMMAGIC6:
+			if (monsterDB.custommagicpath6 != null && monsterDB.custommagicchance6 != null) {
+				return true;
+			}
+			break;
+		case CUSTOMMAGIC7:
+			if (monsterDB.custommagicpath7 != null && monsterDB.custommagicchance7 != null) {
+				return true;
+			}
+			break;
+		case CUSTOMMAGIC8:
+			if (monsterDB.custommagicpath8 != null && monsterDB.custommagicchance8 != null) {
+				return true;
+			}
+			break;
+		}
+		return false;
 	}
 	
 	private String getSelectMonstername(Monster monster) {
