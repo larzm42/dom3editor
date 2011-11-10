@@ -596,14 +596,14 @@ public class SummaryList extends MasterDetailsBlock {
 
 		MenuManager menuManager = new MenuManager();
 		Menu menu = menuManager.createContextMenu(viewer.getTable());
-		menuManager.add(new Action("Go To Source") {
+		menuManager.add(new Action(Messages.getString("ScrolledPropertiesBlock.GoToSource")) {
 			@Override
 			public void run() {
 				gotoSource();
 			}
 		});
 		menuManager.add(new Separator());
-		menuManager.add(new Action("Delete") {
+		menuManager.add(new Action(Messages.getString("ScrolledPropertiesBlock.delete")) {
 			@Override
 			public void run() {
 				deleteNode();
