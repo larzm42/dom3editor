@@ -2773,7 +2773,8 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	
 	private int getSelectMonsterid(Monster monster) {
 		if (monster instanceof SelectMonsterByName) {
-			return Database.getMonster(((SelectMonsterByName) monster).getValue()).id;
+			MonsterDB monsterDB = Database.getMonster(((SelectMonsterByName) monster).getValue());
+			return monsterDB != null && monsterDB.id != null ? monsterDB.id.intValue() : 0;
 		} else {
 			return ((SelectMonsterById)monster).getValue();
 		}
