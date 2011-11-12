@@ -420,7 +420,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 	private int getSelectItemid(Item item) {
 		if (item instanceof SelectItemByName) {
 			ItemDB itemDB = Database.getItem(((SelectItemByName) item).getValue());
-			return itemDB != null ? itemDB.id : 0;
+			return itemDB != null && itemDB.id != null ? itemDB.id.intValue() : 0;
 		} else {
 			return ((SelectItemById)item).getValue();
 		}
