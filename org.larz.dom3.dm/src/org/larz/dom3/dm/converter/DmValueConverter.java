@@ -31,7 +31,18 @@ public class DmValueConverter extends DefaultTerminalConverters {
 
 			@Override
 			protected String toEscapedString(String value) {
-				return '"' + value.toString() + '"';
+				return '"' + value.toString().replaceAll("\r\n", "\n") + '"';
+			}
+
+			@Override
+			public String toValue(String string, INode node) {
+				if (string == null)
+					return null;
+				try {
+					return string.substring(1, string.length() - 1);
+				} catch (IllegalArgumentException e) {
+					throw new ValueConverterException(e.getMessage(), node, e);
+				}
 			}
 
 		};
