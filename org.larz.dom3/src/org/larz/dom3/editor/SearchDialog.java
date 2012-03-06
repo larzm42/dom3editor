@@ -37,6 +37,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.larz.dom3.db.Database;
 import org.larz.dom3.db.IDNameDB;
+import org.larz.dom3.dm.validation.DmJavaValidator;
 import org.larz.dom3.editor.AddDialog.TypeToAdd;
 
 /**
@@ -151,24 +152,24 @@ public class SearchDialog extends Dialog {
 			int endId = -1;
 			switch (type) {
 			case ARMOR:
-				startId = 200;
-				endId = 399;
+				startId = DmJavaValidator.MIN_ARMOR_ID;
+				endId = DmJavaValidator.MAX_ARMOR_ID;
 				break;
 			case WEAPON:
-				startId = 600;
-				endId = 999;
+				startId = DmJavaValidator.MIN_WEAPON_ID;
+				endId = DmJavaValidator.MAX_WEAPON_ID;
 				break;
 			case MONSTER:
-				startId = 2200;
-				endId = 2999;
+				startId = DmJavaValidator.MIN_MONSTER_ID;
+				endId = DmJavaValidator.MAX_MONSTER_ID;
 				break;
 			case SITE:
-				startId = 750;
-				endId = 999;
+				startId = DmJavaValidator.MIN_SITE_ID;
+				endId = DmJavaValidator.MAX_SITE_ID;
 				break;
 			case NATION:
-				startId = 0;
-				endId = 94;
+				startId = DmJavaValidator.MIN_NATION_ID;
+				endId = DmJavaValidator.MAX_NATION_ID;
 				break;
 			}
 			List<IDNameDB> ids = new ArrayList<IDNameDB>();

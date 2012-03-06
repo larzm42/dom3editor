@@ -1082,6 +1082,8 @@ public class ReportGenerator {
 	private static void setPropertyValues(Site site, Map<String, PropertyValues> propertyMap) {
 		EList<SiteMods> list = site.getMods();
 		for (SiteMods mod : list) {
+			int comCount = 1;
+			int monCount = 1;
 			Field[] fields = mod.getClass().getDeclaredFields();
 			for (Field field : fields) {
 				try {
@@ -1098,6 +1100,11 @@ public class ReportGenerator {
 							SiteDB siteDB = Database.getSite(id);
 							if (siteDB != null && siteDB.id != null) {
 								String fieldName = field.getName();
+								if (fieldName.equals("com")) {
+									fieldName += comCount++;
+								} else if (fieldName.equals("mon")) {
+									fieldName += monCount++;
+								}
 								if (fieldName.equals("gems")) {
 									int path = ((SiteInst3)mod).getValue1();
 									if (siteDB.gemspath1 != null && siteDB.gemspath1.intValue() == path) {
@@ -1106,9 +1113,9 @@ public class ReportGenerator {
 										oldVal = siteDB.gemspath2 + ", " + siteDB.gemsamt2;
 									} else if (siteDB.gemspath3 != null && siteDB.gemspath3.intValue() == path) {
 										oldVal = siteDB.gemspath3 + ", " + siteDB.gemsamt3;
-									}
+									}								
 								} else {
-									Field field2 = siteDB.getClass().getField(field.getName());
+									Field field2 = siteDB.getClass().getField(fieldName);
 									oldVal = "" + field2.get(siteDB);
 								}
 							}

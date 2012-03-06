@@ -10,30 +10,43 @@ Dom3Mod:
 	('#icon' icon=STRING)? &
 	('#version' version=DecimalValue)? &
 	('#domversion' domversion=DecimalValue)? &
-	('#poppergold' poppergold=INT)? &
-	('#resourcemult' resourcemult=INT)? &
-	('#supplymult' supplymult=INT)? &
-	('#unresthalfinc' unresthalfinc=INT)? &
-	('#unresthalfres' unresthalfres=INT)? &
-	('#eventisrare' eventisrare=INT)? &
-	('#turmoilincome' turmoilincome=INT)? &
-	('#turmoilevents' turmoilevents=INT)? &
-	('#deathincome' deathincome=INT)? &
-	('#deathsupply' deathsupply=INT)? &
-	('#deathdeath' deathdeath=INT)? &
-	('#slothincome' slothincome=INT)? &
-	('#slothresources' slothresources=INT)? &
-	('#coldincome' coldincome=INT)? &
-	('#coldsupply' coldsupply=INT)? &
-	('#misfortune' misfortune=INT)? &
-	('#luckevents' luckevents=INT)? &
-	('#researchscale' researchscale=INT)? &
 	('#end')?)
 	elements+=AbstractElement*;
 
 AbstractElement:
-	 Armor | Weapon | Monster | Spell | Item | Name | Site | Nation;
+	 General | Armor | Weapon | Monster | Spell | Item | Name | Site | Nation;
 		
+	
+/****************/
+/* General Mods */
+/****************/
+General:
+	GeneralPattern1;
+	
+GeneralPattern1:
+	GeneralInst1 value=INT (FREE_FORM_COMMENT)*
+	'#end'?;
+
+GeneralInst1:
+	poppergold?='#poppergold' |
+	resourcemult?='#resourcemult' |
+	supplymult?='#supplymult' |
+	unresthalfinc?='#unresthalfinc' |
+	unresthalfres?='#unresthalfres' |
+	eventisrare?='#eventisrare' |
+	turmoilincome?='#turmoilincome' |
+	turmoilevents?='#turmoilevents' |
+	deathincome?='#deathincome' |
+	deathsupply?='#deathsupply' |
+	deathdeath?='#deathdeath' |
+	slothincome?='#slothincome' |
+	slothresources?='#slothresources' |
+	coldincome?='#coldincome' |
+	coldsupply?='#coldsupply' |
+	misfortune?='#misfortune' |
+	luckevents?='#luckevents' |
+	researchscale?='#researchscale';
+
 	
 /**************/
 /* Armor Mods */
@@ -508,11 +521,11 @@ ItemInst2:
 	mainlevel?='#mainlevel' |
 	secondarypath?='#secondarypath' |
 	secondarylevel?='#secondarylevel' |
-	type?='#type' |
-	weapon?='#weapon';
+	type?='#type';
 	
 ItemInst3:
-	copyspr?='#copyspr';
+	copyspr?='#copyspr' |
+	weapon?='#weapon';
 
 
 /**************/

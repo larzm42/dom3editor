@@ -19,8 +19,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.EnumMap;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
@@ -32,6 +36,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
@@ -48,7 +53,10 @@ import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.larz.dom3.Activator;
+import org.larz.dom3.dm.dm.AbstractElement;
+import org.larz.dom3.dm.dm.DmFactory;
 import org.larz.dom3.dm.dm.Dom3Mod;
+import org.larz.dom3.dm.dm.GeneralInst1;
 import org.larz.dom3.dm.ui.editor.DmXtextEditor;
 import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.image.ImageConverter;
@@ -72,6 +80,12 @@ public class MasterFormPage extends FormPage {
 		}
 	}
 	
+	class GeneralFields {
+		private Text value;
+	}
+	
+	private EnumMap<General, GeneralFields> generalMap = new EnumMap<General, GeneralFields>(General.class);
+
 	enum General2 {
 		POPPERGOLD(Messages.getString("ScrolledPropertiesBlock.poppergold"), "100"),
 		RESOURCEMULT(Messages.getString("ScrolledPropertiesBlock.resourcemult"), "100"),
@@ -101,6 +115,13 @@ public class MasterFormPage extends FormPage {
 		}
 	}
 	
+	class General2Fields {
+		private Text value;
+		private Button check;
+	}
+	
+	private EnumMap<General2, General2Fields> general2Map = new EnumMap<General2, General2Fields>(General2.class);
+
 	/**
 	 * @param editor
 	 * @param doc
@@ -109,6 +130,31 @@ public class MasterFormPage extends FormPage {
 		super(editor, "MasterDetails", Messages.getString("MasterDetailsPage.details.label")); //$NON-NLS-1$ //$NON-NLS-2$
 		block = new SummaryList(this, editor, doc);
 		this.doc = doc;
+
+		generalMap.put(General.MODNAME, new GeneralFields());
+		generalMap.put(General.DESC, new GeneralFields());
+		generalMap.put(General.ICON, new GeneralFields());
+		generalMap.put(General.VERSION, new GeneralFields());
+		generalMap.put(General.DOMVERSION, new GeneralFields());
+		
+		general2Map.put(General2.POPPERGOLD, new General2Fields());
+		general2Map.put(General2.RESOURCEMULT, new General2Fields());
+		general2Map.put(General2.SUPPLYMULT, new General2Fields());
+		general2Map.put(General2.UNRESTHALFINC, new General2Fields());
+		general2Map.put(General2.UNRESTHALFRES, new General2Fields());
+		general2Map.put(General2.EVENTISRARE, new General2Fields());
+		general2Map.put(General2.TURMOILINCOME, new General2Fields());
+		general2Map.put(General2.TURMOILEVENTS, new General2Fields());
+		general2Map.put(General2.DEATHINCOME, new General2Fields());
+		general2Map.put(General2.DEATHSUPPLY, new General2Fields());
+		general2Map.put(General2.DEATHDEATH, new General2Fields());
+		general2Map.put(General2.SLOTHINCOME, new General2Fields());
+		general2Map.put(General2.SLOTHRESOURCES, new General2Fields());
+		general2Map.put(General2.COLDINCOME, new General2Fields());
+		general2Map.put(General2.COLDSUPPLY, new General2Fields());
+		general2Map.put(General2.MISFORTUNE, new General2Fields());
+		general2Map.put(General2.LUCKEVENTS, new General2Fields());
+		general2Map.put(General2.RESEARCHSCALE, new General2Fields());
 	}
 	
 	/* (non-Javadoc)
@@ -129,7 +175,7 @@ public class MasterFormPage extends FormPage {
 			}
 		});
 		
-		Composite header1 = toolkit.createComposite(expandable);
+		final Composite header1 = toolkit.createComposite(expandable);
 		header1.setLayout(new GridLayout(2, true));
 
 		final Composite header = toolkit.createComposite(header1);
@@ -140,7 +186,8 @@ public class MasterFormPage extends FormPage {
 		expandable.setClient(header1);
 		expandable.setExpanded(false);
 		
-		for (final General general : General.values()) {
+		for (final Map.Entry<General, GeneralFields> fields : generalMap.entrySet()) {
+			final General general = fields.getKey();
 			Label label = toolkit.createLabel(header, general.label); //$NON-NLS-1$
 			label.setToolTipText(HelpTextHelper.getText(HelpTextHelper.GENERAL_CATEGORY, general.label));
 
@@ -168,15 +215,16 @@ public class MasterFormPage extends FormPage {
 					public void handleEvent(Event event) {
 						int currentHeight = modname.getSize().y;
 						int preferredHeight = modname.computeSize(380, SWT.DEFAULT).y;
-						if (currentHeight != preferredHeight) {
+						if (currentHeight < preferredHeight || currentHeight > 2*preferredHeight) {
 							GridData data = (GridData)modname.getLayoutData();
 							data.heightHint = preferredHeight;
-							header.pack();
+							//form.getBody().pack();
+							form.getBody().layout(true, true);
 						}
 					}
 				});
-
 			}
+			fields.getValue().value = modname;
 		}
 		
 		final String iconPath = getGeneral(General.ICON, doc);
@@ -214,7 +262,8 @@ public class MasterFormPage extends FormPage {
 		gd.horizontalSpan = 2;
 		general2Comp.setLayoutData(gd);
 		
-		for (final General2 general2 : General2.values()) {
+		for (final Map.Entry<General2, General2Fields> fields : general2Map.entrySet()) {
+			final General2 general2 = fields.getKey();
 			final Button check = toolkit.createButton(general2Comp, general2.label, SWT.CHECK);
 			check.setToolTipText(HelpTextHelper.getText(HelpTextHelper.GENERAL_CATEGORY, general2.label));
 			GridData data = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
@@ -246,7 +295,7 @@ public class MasterFormPage extends FormPage {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					if (check.getSelection()) {
-						setGeneral2(general2, doc, general2.defaultValue);
+						addGeneral2(general2, doc, general2.defaultValue);
 						modname.setEnabled(true);
 						modname.setText(general2.defaultValue);
 					} else {
@@ -262,6 +311,9 @@ public class MasterFormPage extends FormPage {
 			gd = new GridData(SWT.DEFAULT, SWT.DEFAULT, false, false);
 			gd.widthHint = 10;
 			space.setLayoutData(gd);
+
+			fields.getValue().value = modname;
+			fields.getValue().check = check;
 		}
 
 		block.createContent(managedForm);
@@ -296,43 +348,103 @@ public class MasterFormPage extends FormPage {
 			@Override
 			public Integer exec(XtextResource state) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)state.getContents().get(0);
-				switch (general) {
-				case POPPERGOLD:
-					return dom3Mod.getPoppergold() != 0 ? Integer.valueOf(dom3Mod.getPoppergold()) : null;
-				case RESOURCEMULT:
-					return dom3Mod.getResourcemult() != 0 ? Integer.valueOf(dom3Mod.getResourcemult()) : null;
-				case SUPPLYMULT:
-					return dom3Mod.getSupplymult() != 0 ? Integer.valueOf(dom3Mod.getSupplymult()) : null;
-				case UNRESTHALFINC:
-					return dom3Mod.getUnresthalfinc() != 0 ? Integer.valueOf(dom3Mod.getUnresthalfinc()) : null;
-				case UNRESTHALFRES:
-					return dom3Mod.getUnresthalfres() != 0 ? Integer.valueOf(dom3Mod.getUnresthalfres()) : null;
-				case EVENTISRARE:
-					return dom3Mod.getEventisrare() != 0 ? Integer.valueOf(dom3Mod.getEventisrare()) : null;
-				case TURMOILINCOME:
-					return dom3Mod.getTurmoilincome() != 0 ? Integer.valueOf(dom3Mod.getTurmoilincome()) : null;
-				case TURMOILEVENTS:
-					return dom3Mod.getTurmoilevents() != 0 ? Integer.valueOf(dom3Mod.getTurmoilevents()) : null;
-				case DEATHINCOME:
-					return dom3Mod.getDeathincome() != 0 ? Integer.valueOf(dom3Mod.getDeathincome()) : null;
-				case DEATHSUPPLY:
-					return dom3Mod.getDeathsupply() != 0 ? Integer.valueOf(dom3Mod.getDeathsupply()) : null;
-				case DEATHDEATH:
-					return dom3Mod.getDeathdeath() != 0 ? Integer.valueOf(dom3Mod.getDeathdeath()) : null;
-				case SLOTHINCOME:
-					return dom3Mod.getSlothincome() != 0 ? Integer.valueOf(dom3Mod.getSlothincome()) : null;
-				case SLOTHRESOURCES:
-					return dom3Mod.getSlothresources() != 0 ? Integer.valueOf(dom3Mod.getSlothresources()) : null;
-				case COLDINCOME:
-					return dom3Mod.getColdincome() != 0 ? Integer.valueOf(dom3Mod.getColdincome()) : null;
-				case COLDSUPPLY:
-					return dom3Mod.getColdsupply() != 0 ? Integer.valueOf(dom3Mod.getColdsupply()) : null;
-				case MISFORTUNE:
-					return dom3Mod.getMisfortune() != 0 ? Integer.valueOf(dom3Mod.getMisfortune()) : null;
-				case LUCKEVENTS:
-					return dom3Mod.getLuckevents() != 0 ? Integer.valueOf(dom3Mod.getLuckevents()) : null;
-				case RESEARCHSCALE:
-					return dom3Mod.getResearchscale() != 0 ? Integer.valueOf(dom3Mod.getResearchscale()) : null;
+				for (AbstractElement abElement : dom3Mod.getElements()) {
+					if (abElement instanceof GeneralInst1) {
+						GeneralInst1 element = (GeneralInst1)abElement;
+						switch (general) {
+						case POPPERGOLD:
+							if (element.isPoppergold()) {
+								return element.getValue();
+							}
+							break;
+						case RESOURCEMULT:
+							if (element.isResourcemult()) {
+								return element.getValue();
+							}
+							break;
+						case SUPPLYMULT:
+							if (element.isSupplymult()) {
+								return element.getValue();
+							}
+							break;
+						case UNRESTHALFINC:
+							if (element.isUnresthalfinc()) {
+								return element.getValue();
+							}
+							break;
+						case UNRESTHALFRES:
+							if (element.isUnresthalfres()) {
+								return element.getValue();
+							}
+							break;
+						case EVENTISRARE:
+							if (element.isEventisrare()) {
+								return element.getValue();
+							}
+							break;
+						case TURMOILINCOME:
+							if (element.isTurmoilincome()) {
+								return element.getValue();
+							}
+							break;
+						case TURMOILEVENTS:
+							if (element.isTurmoilevents()) {
+								return element.getValue();
+							}
+							break;
+						case DEATHINCOME:
+							if (element.isDeathincome()) {
+								return element.getValue();
+							}
+							break;
+						case DEATHSUPPLY:
+							if (element.isDeathsupply()) {
+								return element.getValue();
+							}
+							break;
+						case DEATHDEATH:
+							if (element.isDeathdeath()) {
+								return element.getValue();
+							}
+							break;
+						case SLOTHINCOME:
+							if (element.isSlothincome()) {
+								return element.getValue();
+							}
+							break;
+						case SLOTHRESOURCES:
+							if (element.isSlothresources()) {
+								return element.getValue();
+							}
+							break;
+						case COLDINCOME:
+							if (element.isColdincome()) {
+								return element.getValue();
+							}
+							break;
+						case COLDSUPPLY:
+							if (element.isColdsupply()) {
+								return element.getValue();
+							}
+							break;
+						case MISFORTUNE:
+							if (element.isMisfortune()) {
+								return element.getValue();
+							}
+							break;
+						case LUCKEVENTS:
+							if (element.isLuckevents()) {
+								return element.getValue();
+							}
+							break;
+						case RESEARCHSCALE:
+							if (element.isResearchscale()) {
+								return element.getValue();
+							}
+							break;
+						}
+
+					}
 				}
 				return null;
 			}   
@@ -365,6 +477,82 @@ public class MasterFormPage extends FormPage {
 			}  
 		});
 	}
+	
+	private void addGeneral2(final General2 general2, final XtextEditor editor, final String newName) {
+		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
+			@Override
+			public void run() {
+				final IXtextDocument myDocument = editor.getDocument();
+				myDocument.modify(new IUnitOfWork.Void<XtextResource>() {
+					@Override
+					public void process(XtextResource state) throws Exception {
+						Dom3Mod dom3Mod = (Dom3Mod)state.getContents().get(0);
+						EList<AbstractElement> mods = dom3Mod.getElements();
+						GeneralInst1 element = DmFactory.eINSTANCE.createGeneralInst1();
+						switch (general2) {
+						case POPPERGOLD:
+							element.setPoppergold(true);
+							break;
+						case RESOURCEMULT:
+							element.setResourcemult(true);
+							break;
+						case SUPPLYMULT:
+							element.setSupplymult(true);
+							break;
+						case UNRESTHALFINC:
+							element.setUnresthalfinc(true);
+							break;
+						case UNRESTHALFRES:
+							element.setUnresthalfres(true);
+							break;
+						case EVENTISRARE:
+							element.setEventisrare(true);
+							break;
+						case TURMOILINCOME:
+							element.setTurmoilincome(true);
+							break;
+						case TURMOILEVENTS:
+							element.setTurmoilevents(true);
+							break;
+						case DEATHINCOME:
+							element.setDeathincome(true);
+							break;
+						case DEATHSUPPLY:
+							element.setDeathsupply(true);
+							break;
+						case DEATHDEATH:
+							element.setDeathdeath(true);
+							break;
+						case SLOTHINCOME:
+							element.setSlothincome(true);
+							break;
+						case SLOTHRESOURCES:
+							element.setSlothresources(true);
+							break;
+						case COLDINCOME:
+							element.setColdincome(true);
+							break;
+						case COLDSUPPLY:
+							element.setColdsupply(true);
+							break;
+						case MISFORTUNE:
+							element.setMisfortune(true);
+							break;
+						case LUCKEVENTS:
+							element.setLuckevents(true);
+							break;
+						case RESEARCHSCALE:
+							element.setResearchscale(true);
+							break;
+						}
+						element.setValue(Integer.valueOf(newName));
+						mods.add(0, element);
+						
+					}  
+				});
+			}
+		});
+	}
 
 	private void setGeneral2(final General2 general2, final XtextEditor editor, final String newName) {
 		try {
@@ -378,61 +566,102 @@ public class MasterFormPage extends FormPage {
 			@Override
 			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				switch (general2) {
-				case POPPERGOLD:
-					dom3Mod.setPoppergold(Integer.parseInt(newName));
-					break;
-				case RESOURCEMULT:
-					dom3Mod.setResourcemult(Integer.parseInt(newName));
-					break;
-				case SUPPLYMULT:
-					dom3Mod.setSupplymult(Integer.parseInt(newName));
-					break;
-				case UNRESTHALFINC:
-					dom3Mod.setUnresthalfinc(Integer.parseInt(newName));
-					break;
-				case UNRESTHALFRES:
-					dom3Mod.setUnresthalfres(Integer.parseInt(newName));
-					break;
-				case EVENTISRARE:
-					dom3Mod.setEventisrare(Integer.parseInt(newName));
-					break;
-				case TURMOILINCOME:
-					dom3Mod.setTurmoilincome(Integer.parseInt(newName));
-					break;
-				case TURMOILEVENTS:
-					dom3Mod.setTurmoilevents(Integer.parseInt(newName));
-					break;
-				case DEATHINCOME:
-					dom3Mod.setDeathincome(Integer.parseInt(newName));
-					break;
-				case DEATHSUPPLY:
-					dom3Mod.setDeathsupply(Integer.parseInt(newName));
-					break;
-				case DEATHDEATH:
-					dom3Mod.setDeathdeath(Integer.parseInt(newName));
-					break;
-				case SLOTHINCOME:
-					dom3Mod.setSlothincome(Integer.parseInt(newName));
-					break;
-				case SLOTHRESOURCES:
-					dom3Mod.setSlothresources(Integer.parseInt(newName));
-					break;
-				case COLDINCOME:
-					dom3Mod.setColdincome(Integer.parseInt(newName));
-					break;
-				case COLDSUPPLY:
-					dom3Mod.setColdsupply(Integer.parseInt(newName));
-					break;
-				case MISFORTUNE:
-					dom3Mod.setMisfortune(Integer.parseInt(newName));
-					break;
-				case LUCKEVENTS:
-					dom3Mod.setLuckevents(Integer.parseInt(newName));
-					break;
-				case RESEARCHSCALE:
-					dom3Mod.setResearchscale(Integer.parseInt(newName));
-					break;
+				for (AbstractElement abElement : dom3Mod.getElements()) {
+					if (abElement instanceof GeneralInst1) {
+						GeneralInst1 element = (GeneralInst1)abElement;
+						switch (general2) {
+						case POPPERGOLD:
+							if (element.isPoppergold()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case RESOURCEMULT:
+							if (element.isResourcemult()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case SUPPLYMULT:
+							if (element.isSupplymult()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case UNRESTHALFINC:
+							if (element.isUnresthalfinc()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case UNRESTHALFRES:
+							if (element.isUnresthalfres()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case EVENTISRARE:
+							if (element.isEventisrare()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case TURMOILINCOME:
+							if (element.isTurmoilincome()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case TURMOILEVENTS:
+							if (element.isTurmoilevents()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case DEATHINCOME:
+							if (element.isDeathincome()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case DEATHSUPPLY:
+							if (element.isDeathsupply()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case DEATHDEATH:
+							if (element.isDeathdeath()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case SLOTHINCOME:
+							if (element.isSlothincome()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case SLOTHRESOURCES:
+							if (element.isSlothresources()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case COLDINCOME:
+							if (element.isColdincome()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case COLDSUPPLY:
+							if (element.isColdsupply()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case MISFORTUNE:
+							if (element.isMisfortune()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case LUCKEVENTS:
+							if (element.isLuckevents()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						case RESEARCHSCALE:
+							if (element.isResearchscale()) {
+								element.setValue(Integer.parseInt(newName));
+							}
+							break;
+						}
+					}
 				}
 			}  
 		});
@@ -445,66 +674,134 @@ public class MasterFormPage extends FormPage {
 			@Override
 			public void process(XtextResource resource) throws Exception {
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				switch (inst2) {
-				case POPPERGOLD:
-					dom3Mod.setPoppergold(0);
-					break;
-				case RESOURCEMULT:
-					dom3Mod.setResourcemult(0);
-					break;
-				case SUPPLYMULT:
-					dom3Mod.setSupplymult(0);
-					break;
-				case UNRESTHALFINC:
-					dom3Mod.setUnresthalfinc(0);
-					break;
-				case UNRESTHALFRES:
-					dom3Mod.setUnresthalfres(0);
-					break;
-				case EVENTISRARE:
-					dom3Mod.setEventisrare(0);
-					break;
-				case TURMOILINCOME:
-					dom3Mod.setTurmoilincome(0);
-					break;
-				case TURMOILEVENTS:
-					dom3Mod.setTurmoilevents(0);
-					break;
-				case DEATHINCOME:
-					dom3Mod.setDeathincome(0);
-					break;
-				case DEATHSUPPLY:
-					dom3Mod.setDeathsupply(0);
-					break;
-				case DEATHDEATH:
-					dom3Mod.setDeathdeath(0);
-					break;
-				case SLOTHINCOME:
-					dom3Mod.setSlothincome(0);
-					break;
-				case SLOTHRESOURCES:
-					dom3Mod.setSlothresources(0);
-					break;
-				case COLDINCOME:
-					dom3Mod.setColdincome(0);
-					break;
-				case COLDSUPPLY:
-					dom3Mod.setColdsupply(0);
-					break;
-				case MISFORTUNE:
-					dom3Mod.setMisfortune(0);
-					break;
-				case LUCKEVENTS:
-					dom3Mod.setLuckevents(0);
-					break;
-				case RESEARCHSCALE:
-					dom3Mod.setResearchscale(0);
-					break;
+				AbstractElement modToRemove = null;
+				EList<AbstractElement> mods = dom3Mod.getElements();
+				for (AbstractElement mod : mods) {
+					if (mod instanceof GeneralInst1) {
+						switch (inst2) {
+						case POPPERGOLD:
+							if (((GeneralInst1)mod).isPoppergold()) {
+								modToRemove = mod;
+							}
+							break;
+						case RESOURCEMULT:
+							if (((GeneralInst1)mod).isResourcemult()) {
+								modToRemove = mod;
+							}
+							break;
+						case SUPPLYMULT:
+							if (((GeneralInst1)mod).isSupplymult()) {
+								modToRemove = mod;
+							}
+							break;
+						case UNRESTHALFINC:
+							if (((GeneralInst1)mod).isUnresthalfinc()) {
+								modToRemove = mod;
+							}
+							break;
+						case UNRESTHALFRES:
+							if (((GeneralInst1)mod).isUnresthalfres()) {
+								modToRemove = mod;
+							}
+							break;
+						case EVENTISRARE:
+							if (((GeneralInst1)mod).isEventisrare()) {
+								modToRemove = mod;
+							}
+							break;
+						case TURMOILINCOME:
+							if (((GeneralInst1)mod).isTurmoilincome()) {
+								modToRemove = mod;
+							}
+							break;
+						case TURMOILEVENTS:
+							if (((GeneralInst1)mod).isTurmoilevents()) {
+								modToRemove = mod;
+							}
+							break;
+						case DEATHINCOME:
+							if (((GeneralInst1)mod).isDeathincome()) {
+								modToRemove = mod;
+							}
+							break;
+						case DEATHSUPPLY:
+							if (((GeneralInst1)mod).isDeathsupply()) {
+								modToRemove = mod;
+							}
+							break;
+						case DEATHDEATH:
+							if (((GeneralInst1)mod).isDeathdeath()) {
+								modToRemove = mod;
+							}
+							break;
+						case SLOTHINCOME:
+							if (((GeneralInst1)mod).isSlothincome()) {
+								modToRemove = mod;
+							}
+							break;
+						case SLOTHRESOURCES:
+							if (((GeneralInst1)mod).isSlothresources()) {
+								modToRemove = mod;
+							}
+							break;
+						case COLDINCOME:
+							if (((GeneralInst1)mod).isColdincome()) {
+								modToRemove = mod;
+							}
+							break;
+						case COLDSUPPLY:
+							if (((GeneralInst1)mod).isColdsupply()) {
+								modToRemove = mod;
+							}
+							break;
+						case MISFORTUNE:
+							if (((GeneralInst1)mod).isMisfortune()) {
+								modToRemove = mod;
+							}
+							break;
+						case LUCKEVENTS:
+							if (((GeneralInst1)mod).isLuckevents()) {
+								modToRemove = mod;
+							}
+							break;
+						case RESEARCHSCALE:
+							if (((GeneralInst1)mod).isResearchscale()) {
+								modToRemove = mod;
+							}
+							break;
+						}
+					}
 				}
-					
+				if (modToRemove != null) {
+					mods.remove(modToRemove);
+				}
 			}  
 		});
-
 	}
+	
+	public void update() {
+		for (Map.Entry<General, GeneralFields> fields : generalMap.entrySet()) {
+			String val = getGeneral(fields.getKey(), doc);
+			if (val != null) {
+				fields.getValue().value.setText(val);
+			} else {
+				fields.getValue().value.setText("");
+			}
+
+		}
+		for (Map.Entry<General2, General2Fields> fields : general2Map.entrySet()) {
+			Integer val = getGeneral2(fields.getKey(), doc);
+			if (val != null) {
+				fields.getValue().value.setText(val.toString());
+				fields.getValue().value.setEnabled(true);
+				fields.getValue().check.setSelection(true);
+			} else {
+				fields.getValue().value.setText("");
+				fields.getValue().value.setEnabled(false);
+				fields.getValue().check.setSelection(false);
+			}
+		}
+	}
+
 
 }
