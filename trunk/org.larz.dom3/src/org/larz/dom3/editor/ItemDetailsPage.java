@@ -123,7 +123,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.SECONDARYLEVEL, new Inst2Fields());
 		instMap.put(Inst.COPYSPR, new Inst3Fields());
 		instMap.put(Inst.TYPE, new Inst2Fields());
-		instMap.put(Inst.WEAPON, new Inst2Fields());
+		instMap.put(Inst.WEAPON, new Inst3Fields());
 	}
 	
 	/* (non-Javadoc)
@@ -362,11 +362,16 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				
 				if (field instanceof Inst1Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.widthHint = 160;
+					gd.widthHint = 120;
 					gd.horizontalSpan = 3;
 				} else if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-					gd.widthHint = DEFAULT_VALUE_WIDTH;
+					if (fields.getKey() == Inst.WEAPON) {
+						gd.widthHint = 120;
+						gd.horizontalSpan = 3;
+					} else {
+						gd.widthHint = DEFAULT_VALUE_WIDTH;
+					}
 				}
 				value.setLayoutData(gd);
 				
@@ -379,14 +384,22 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				defaultLabel1.setEnabled(false);
 				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
 				defaultLabel1.setLayoutData(gd);
-			} else if (field instanceof Inst2Fields || field instanceof Inst3Fields) {
+			} else if (field instanceof Inst2Fields) {
 				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel1.setEnabled(false);
 				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
 				gd.horizontalSpan = 3;
 				defaultLabel1.setLayoutData(gd);
-			} 
-
+			} else if (field instanceof Inst3Fields) {
+				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+				defaultLabel1.setEnabled(false);
+				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
+				if (fields.getKey() != Inst.WEAPON) {
+					gd.horizontalSpan = 3;
+				}
+				defaultLabel1.setLayoutData(gd);
+			}
+			
 			if (field instanceof Inst1Fields) {
 				((Inst1Fields)field).check = check;
 				((Inst1Fields)field).value = myValue1;
@@ -566,48 +579,72 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					if (itemDB.armor != null) {
 						((Inst1Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.armor));
 						Inst.ARMOR.defaultValue = itemDB.armor;
+					} else {
+						((Inst1Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ARMOR.defaultValue = "";
 					}
 					break;
 				case CONSTLEVEL:
 					if (itemDB.constlevel != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.constlevel.toString()));
 						Inst.CONSTLEVEL.defaultValue = itemDB.constlevel.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.CONSTLEVEL.defaultValue = "";
 					}
 					break;
 				case MAINPATH:
 					if (itemDB.mainpath != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.mainpath.toString()));
 						Inst.MAINPATH.defaultValue = itemDB.mainpath.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAINPATH.defaultValue = "";
 					}
 					break;
 				case MAINLEVEL:
 					if (itemDB.mainlevel != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.mainlevel.toString()));
 						Inst.MAINLEVEL.defaultValue = itemDB.mainlevel.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAINLEVEL.defaultValue = "";
 					}
 					break;
 				case SECONDARYPATH:
 					if (itemDB.secondarypath != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.secondarypath.toString()));
 						Inst.SECONDARYPATH.defaultValue = itemDB.secondarypath.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SECONDARYPATH.defaultValue = "";
 					}
 					break;
 				case SECONDARYLEVEL:
 					if (itemDB.secondarylevel != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.secondarylevel.toString()));
 						Inst.SECONDARYLEVEL.defaultValue = itemDB.secondarylevel.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SECONDARYLEVEL.defaultValue = "";
 					}
 					break;
 				case TYPE:
 					if (itemDB.type != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.type.toString()));
 						Inst.TYPE.defaultValue = itemDB.type.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.TYPE.defaultValue = "";
 					}
 					break;
 				case WEAPON:
 					if (itemDB.weapon != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.weapon.toString()));
+						((Inst3Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.weapon.toString()));
 						Inst.WEAPON.defaultValue = itemDB.weapon.toString();
+					} else {
+						((Inst3Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.WEAPON.defaultValue = "";
 					}
 					break;
 				}
@@ -747,11 +784,6 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 						return Integer.valueOf(((ItemInst2)mod).getValue());
 					}
 					break;
-				case WEAPON:
-					if (((ItemInst2)mod).isWeapon()){
-						return Integer.valueOf(((ItemInst2)mod).getValue());
-					}
-					break;
 				}
 			}
 		}
@@ -765,6 +797,16 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				switch (inst2) {
 				case COPYSPR:
 					if (((ItemInst3)mod).isCopyspr()){
+						String strVal = ((ItemInst3)mod).getValue1();
+						Integer intVal = ((ItemInst3)mod).getValue2();
+						if (strVal != null) {
+							return strVal;
+						}
+						return intVal;
+					}
+					break;
+				case WEAPON:
+					if (((ItemInst3)mod).isWeapon()){
 						String strVal = ((ItemInst3)mod).getValue1();
 						Integer intVal = ((ItemInst3)mod).getValue2();
 						if (strVal != null) {
@@ -862,11 +904,6 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 								((ItemInst2)mod).setValue(Integer.parseInt(newName));
 							}
 							break;
-						case WEAPON:
-							if (((ItemInst2)mod).isWeapon()){
-								((ItemInst2)mod).setValue(Integer.parseInt(newName));
-							}
-							break;
 						}
 					}
 				}
@@ -902,6 +939,19 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 								modsToRemove.add(mod);
 								ItemInst3 newMod = DmFactory.eINSTANCE.createItemInst3();
 								newMod.setCopyspr(true);
+								if (newValue != null) {
+									newMod.setValue2(Integer.parseInt(newName));
+								} else {
+									newMod.setValue1(newName);
+								}
+								modsToAdd.add(newMod);
+							}
+							break;
+						case WEAPON:
+							if (((ItemInst3)mod).isWeapon()){
+								modsToRemove.add(mod);
+								ItemInst3 newMod = DmFactory.eINSTANCE.createItemInst3();
+								newMod.setWeapon(true);
 								if (newValue != null) {
 									newMod.setValue2(Integer.parseInt(newName));
 								} else {
@@ -981,9 +1031,6 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 						case TYPE:
 							type.setType(true);
 							break;
-						case WEAPON:
-							type.setWeapon(true);
-							break;
 						}
 						try {
 							type.setValue(Integer.valueOf(newName));
@@ -1012,6 +1059,9 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 						switch (inst) {
 						case COPYSPR:
 							type.setCopyspr(true);
+							break;
+						case WEAPON:
+							type.setWeapon(true);
 							break;
 						}
 						Integer newValue = null;
@@ -1096,17 +1146,17 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 										modToRemove = mod;
 									}
 									break;
-								case WEAPON:
-									if (((ItemInst2)mod).isWeapon()){
-										modToRemove = mod;
-									}
-									break;
 								}
 							}
 							if (mod instanceof ItemInst3) {
 								switch (inst2) {
 								case COPYSPR:
 									if (((ItemInst3)mod).isCopyspr()){
+										modToRemove = mod;
+									}
+									break;
+								case WEAPON:
+									if (((ItemInst3)mod).isWeapon()){
 										modToRemove = mod;
 									}
 									break;

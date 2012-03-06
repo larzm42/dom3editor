@@ -74,6 +74,7 @@ import org.larz.dom3.dm.dm.ArmorInst1;
 import org.larz.dom3.dm.dm.ArmorMods;
 import org.larz.dom3.dm.dm.DmFactory;
 import org.larz.dom3.dm.dm.Dom3Mod;
+import org.larz.dom3.dm.dm.GeneralInst1;
 import org.larz.dom3.dm.dm.Item;
 import org.larz.dom3.dm.dm.ItemInst1;
 import org.larz.dom3.dm.dm.ItemMods;
@@ -176,7 +177,9 @@ public class SummaryList extends MasterDetailsBlock {
 			List<AbstractElementWrapper> wrapperList = new ArrayList<AbstractElementWrapper>();
 			int id = 1;
 			for (AbstractElement abstractElement : elements) {
-				wrapperList.add(new AbstractElementWrapper(abstractElement, id++));
+				if (!(abstractElement instanceof GeneralInst1)) {
+					wrapperList.add(new AbstractElementWrapper(abstractElement, id++));
+				}
 			}
 
 			return wrapperList.toArray();
@@ -717,7 +720,14 @@ public class SummaryList extends MasterDetailsBlock {
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
 			public AbstractElement[] exec(XtextResource resource) {             
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				EList<AbstractElement> list = dom3Mod.getElements();
+				EList<AbstractElement> elist = dom3Mod.getElements();
+				List<AbstractElement> list = new ArrayList<AbstractElement>();
+				for (AbstractElement abstractElement : elist) {
+					if (!(abstractElement instanceof GeneralInst1)) {
+						list.add(abstractElement);
+					}
+				}
+
 				return list.toArray(new AbstractElement[list.size()]);
 			} 
 		});
@@ -763,7 +773,13 @@ public class SummaryList extends MasterDetailsBlock {
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
 			public AbstractElement[] exec(XtextResource resource) {             
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				EList<AbstractElement> list = dom3Mod.getElements();
+				EList<AbstractElement> elist = dom3Mod.getElements();
+				List<AbstractElement> list = new ArrayList<AbstractElement>();
+				for (AbstractElement abstractElement : elist) {
+					if (!(abstractElement instanceof GeneralInst1)) {
+						list.add(abstractElement);
+					}
+				}
 				return list.toArray(new AbstractElement[list.size()]);
 				} 
 			});
@@ -808,7 +824,13 @@ public class SummaryList extends MasterDetailsBlock {
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
 			public AbstractElement[] exec(XtextResource resource) {             
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				EList<AbstractElement> list = dom3Mod.getElements();
+				EList<AbstractElement> elist = dom3Mod.getElements();
+				List<AbstractElement> list = new ArrayList<AbstractElement>();
+				for (AbstractElement abstractElement : elist) {
+					if (!(abstractElement instanceof GeneralInst1)) {
+						list.add(abstractElement);
+					}
+				}
 				return list.toArray(new AbstractElement[list.size()]);
 				} 
 			});
@@ -853,7 +875,13 @@ public class SummaryList extends MasterDetailsBlock {
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
 			public AbstractElement[] exec(XtextResource resource) {             
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				EList<AbstractElement> list = dom3Mod.getElements();
+				EList<AbstractElement> elist = dom3Mod.getElements();
+				List<AbstractElement> list = new ArrayList<AbstractElement>();
+				for (AbstractElement abstractElement : elist) {
+					if (!(abstractElement instanceof GeneralInst1)) {
+						list.add(abstractElement);
+					}
+				}
 				return list.toArray(new AbstractElement[list.size()]);
 				} 
 			});
@@ -880,7 +908,13 @@ public class SummaryList extends MasterDetailsBlock {
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
 			public AbstractElement[] exec(XtextResource resource) {             
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				EList<AbstractElement> list = dom3Mod.getElements();
+				EList<AbstractElement> elist = dom3Mod.getElements();
+				List<AbstractElement> list = new ArrayList<AbstractElement>();
+				for (AbstractElement abstractElement : elist) {
+					if (!(abstractElement instanceof GeneralInst1)) {
+						list.add(abstractElement);
+					}
+				}
 				return list.toArray(new AbstractElement[list.size()]);
 				} 
 			});
@@ -926,7 +960,13 @@ public class SummaryList extends MasterDetailsBlock {
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
 			public AbstractElement[] exec(XtextResource resource) {             
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				EList<AbstractElement> list = dom3Mod.getElements();
+				EList<AbstractElement> elist = dom3Mod.getElements();
+				List<AbstractElement> list = new ArrayList<AbstractElement>();
+				for (AbstractElement abstractElement : elist) {
+					if (!(abstractElement instanceof GeneralInst1)) {
+						list.add(abstractElement);
+					}
+				}
 				return list.toArray(new AbstractElement[list.size()]);
 				} 
 			});
@@ -953,7 +993,13 @@ public class SummaryList extends MasterDetailsBlock {
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
 			public AbstractElement[] exec(XtextResource resource) {             
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				EList<AbstractElement> list = dom3Mod.getElements();
+				EList<AbstractElement> elist = dom3Mod.getElements();
+				List<AbstractElement> list = new ArrayList<AbstractElement>();
+				for (AbstractElement abstractElement : elist) {
+					if (!(abstractElement instanceof GeneralInst1)) {
+						list.add(abstractElement);
+					}
+				}
 				return list.toArray(new AbstractElement[list.size()]);
 				} 
 			});
@@ -999,7 +1045,13 @@ public class SummaryList extends MasterDetailsBlock {
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
 			public AbstractElement[] exec(XtextResource resource) {             
 				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				EList<AbstractElement> list = dom3Mod.getElements();
+				EList<AbstractElement> elist = dom3Mod.getElements();
+				List<AbstractElement> list = new ArrayList<AbstractElement>();
+				for (AbstractElement abstractElement : elist) {
+					if (!(abstractElement instanceof GeneralInst1)) {
+						list.add(abstractElement);
+					}
+				}
 				return list.toArray(new AbstractElement[list.size()]);
 				} 
 			});

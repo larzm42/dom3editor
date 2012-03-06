@@ -712,7 +712,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			public void handleEvent(Event event) {
 				int currentHeight = descr.getSize().y;
 				int preferredHeight = descr.computeSize(500, SWT.DEFAULT).y;
-				if (currentHeight != preferredHeight) {
+				if (currentHeight < preferredHeight || currentHeight > 2*preferredHeight) {
 					GridData data = (GridData)descr.getLayoutData();
 					data.heightHint = preferredHeight;
 					client.pack();

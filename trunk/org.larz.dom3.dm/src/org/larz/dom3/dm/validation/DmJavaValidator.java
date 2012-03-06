@@ -46,7 +46,7 @@ public class DmJavaValidator extends AbstractDmJavaValidator {
 	public final static int MIN_WEAPON_ID = 600;
 	public final static int MAX_WEAPON_ID = 999;
 	public final static int MIN_MONSTER_ID = 2200;
-	public final static int MAX_MONSTER_ID = 2999;
+	public final static int MAX_MONSTER_ID = 3999;
 	public final static int MIN_NAME_ID = 100;
 	public final static int MAX_NAME_ID = 200;
 	public final static int MIN_SITE_ID = 750;

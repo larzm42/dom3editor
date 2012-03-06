@@ -1108,7 +1108,14 @@ public class Database {
 		if (rs.next()) {
 			item.id = rs.getInt("id#");
 			item.name = rs.getString("name");
-			item.armor = rs.getString("armor");
+			String armorId = rs.getString("armor");
+			if (armorId != null) {
+				try {
+					item.armor = getArmorName(Integer.parseInt(rs.getString("armor")));
+				} catch (NumberFormatException e) {
+					System.err.println("Incorrect armor value in item DB: " + rs.getString("armor"));
+				}
+			}
 			item.constlevel = rs.getInt("con");
 			String mainPath = rs.getString("p1");
 			if (mainPath != null) {
@@ -1173,7 +1180,7 @@ public class Database {
 					item.type = 8;
 				}
 			}
-			item.weapon = rs.getInt("wpn");
+			item.weapon = rs.getInt("wpn") != 0 ? rs.getInt("wpn") : null;
 		}
 		return item;
 	}

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.larz.dom3
 Bundle-SymbolicName: org.larz.dom3; singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.2
 Bundle-Activator: org.larz.dom3.Activator
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

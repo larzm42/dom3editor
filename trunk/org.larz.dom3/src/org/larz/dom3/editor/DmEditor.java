@@ -59,7 +59,7 @@ import org.eclipse.xtext.validation.IResourceValidator;
 import org.larz.dom3.dm.dm.AbstractElement;
 import org.larz.dom3.dm.dm.Dom3Mod;
 import org.larz.dom3.dm.dm.Item;
-import org.larz.dom3.dm.dm.ItemInst2;
+import org.larz.dom3.dm.dm.ItemInst3;
 import org.larz.dom3.dm.dm.ItemMods;
 import org.larz.dom3.dm.dm.Monster;
 import org.larz.dom3.dm.dm.MonsterInst5;
@@ -87,6 +87,7 @@ import org.larz.dom3.dm.dm.SpellInst2;
 import org.larz.dom3.dm.dm.SpellMods;
 import org.larz.dom3.dm.ui.editor.DmXtextEditor;
 import org.larz.dom3.dm.ui.internal.DmActivator;
+import org.larz.dom3.dm.validation.DmJavaValidator;
 
 public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 	
@@ -237,6 +238,7 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 	private void refresh() {
 		if (masterDetailsPage.block != null && masterDetailsPage.block.viewer != null) {
 			masterDetailsPage.block.viewer.refresh();
+			masterDetailsPage.update();
 			if (((SummaryList)masterDetailsPage.block).getDetailsPart() != null) {
 				if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() != null) {
 					if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ArmorDetailsPage) {
@@ -395,8 +397,8 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 				for (AbstractElement element : elements) {
 					if (element instanceof NewArmor) {
 						if (armorIds.contains(((NewArmor)element).getValue()) ||
-							((NewArmor)element).getValue() < 200 ||
-							((NewArmor)element).getValue() > 399) {
+							((NewArmor)element).getValue() < DmJavaValidator.MIN_ARMOR_ID ||
+							((NewArmor)element).getValue() > DmJavaValidator.MAX_ARMOR_ID) {
 							armorsToFix.add((NewArmor)element);
 						} else {
 							armorIds.add(((NewArmor)element).getValue());
@@ -404,7 +406,7 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 					}
 				}
 				for (NewArmor armor : armorsToFix) {
-					for (int i = 200; i < 400; i++) {
+					for (int i = DmJavaValidator.MIN_ARMOR_ID; i <= DmJavaValidator.MAX_ARMOR_ID; i++) {
 						if (!armorIds.contains(i)) {
 							armor.setValue(i);
 							break;
@@ -418,8 +420,8 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 				for (AbstractElement element : elements) {
 					if (element instanceof NewWeapon) {
 						if (weaponIds.contains(((NewWeapon)element).getValue()) ||
-							((NewWeapon)element).getValue() < 600 ||
-							((NewWeapon)element).getValue() > 999) {
+							((NewWeapon)element).getValue() < DmJavaValidator.MIN_WEAPON_ID ||
+							((NewWeapon)element).getValue() > DmJavaValidator.MAX_WEAPON_ID) {
 							weaponsToFix.add((NewWeapon)element);
 						} else {
 							weaponIds.add(((NewWeapon)element).getValue());
@@ -428,7 +430,7 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 				}
 				for (NewWeapon weapon : weaponsToFix) {
 					int oldValue = weapon.getValue();
-					for (int i = 600; i < 999; i++) {
+					for (int i = DmJavaValidator.MIN_WEAPON_ID; i <= DmJavaValidator.MAX_WEAPON_ID; i++) {
 						if (!weaponIds.contains(i)) {
 							// Change the weapon id
 							weapon.setValue(i);
@@ -454,9 +456,9 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 									} else if (element instanceof Item) {
 										EList<ItemMods> mods = ((Item)element).getMods();
 										for (ItemMods mod : mods) {
-											if (mod instanceof ItemInst2 && ((ItemInst2)mod).isWeapon()) {
-												if (((ItemInst2)mod).getValue() == oldValue) {
-													((ItemInst2)mod).setValue(i);
+											if (mod instanceof ItemInst3 && ((ItemInst3)mod).isWeapon()) {
+												if (((ItemInst3)mod).getValue2() == oldValue) {
+													((ItemInst3)mod).setValue2(i);
 												}
 											}
 										}
@@ -474,8 +476,8 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 				for (AbstractElement element : elements) {
 					if (element instanceof NewMonster) {
 						if (monsterIds.contains(((NewMonster)element).getValue()) ||
-							((NewMonster)element).getValue() < 2200 ||
-							((NewMonster)element).getValue() > 2999) {
+							((NewMonster)element).getValue() < DmJavaValidator.MIN_MONSTER_ID ||
+							((NewMonster)element).getValue() > DmJavaValidator.MAX_MONSTER_ID) {
 							monstersToFix.add((NewMonster)element);
 						} else {
 							monsterIds.add(((NewMonster)element).getValue());
@@ -484,7 +486,7 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 				}
 				for (NewMonster monster : monstersToFix) {
 					int oldValue = monster.getValue();
-					for (int i = 2200; i < 2999; i++) {
+					for (int i = DmJavaValidator.MIN_MONSTER_ID; i <= DmJavaValidator.MAX_MONSTER_ID; i++) {
 						if (!monsterIds.contains(i)) {
 							monster.setValue(i);
 
@@ -607,8 +609,8 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 				for (AbstractElement element : elements) {
 					if (element instanceof NewSite) {
 						if (siteIds.contains(((NewSite)element).getValue()) ||
-							((NewSite)element).getValue() < 750 ||
-							((NewSite)element).getValue() > 999) {
+							((NewSite)element).getValue() < DmJavaValidator.MIN_SITE_ID ||
+							((NewSite)element).getValue() > DmJavaValidator.MAX_SITE_ID) {
 							sitesToFix.add((NewSite)element);
 						} else {
 							siteIds.add(((NewSite)element).getValue());
@@ -616,7 +618,7 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 					}
 				}
 				for (NewSite site : sitesToFix) {
-					for (int i = 750; i < 999; i++) {
+					for (int i = DmJavaValidator.MIN_SITE_ID; i <= DmJavaValidator.MAX_SITE_ID; i++) {
 						if (!siteIds.contains(i)) {
 							site.setValue(i);
 							break;
