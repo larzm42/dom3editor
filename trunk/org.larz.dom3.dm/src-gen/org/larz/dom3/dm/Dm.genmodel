@@ -14,27 +14,32 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/icon"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/version"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/domversion"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/poppergold"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/resourcemult"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/supplymult"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/unresthalfinc"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/unresthalfres"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/eventisrare"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/turmoilincome"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/turmoilevents"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/deathincome"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/deathsupply"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/deathdeath"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/slothincome"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/slothresources"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/coldincome"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/coldsupply"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/misfortune"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/luckevents"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/researchscale"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Dom3Mod/elements"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//AbstractElement"/>
+    <genClasses ecoreClass="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//General"/>
+    <genClasses ecoreClass="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralPattern1"/>
+    <genClasses ecoreClass="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/poppergold"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/resourcemult"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/supplymult"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/unresthalfinc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/unresthalfres"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/eventisrare"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/turmoilincome"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/turmoilevents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/deathincome"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/deathsupply"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/deathdeath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/slothincome"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/slothresources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/coldincome"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/coldsupply"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/misfortune"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/luckevents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//GeneralInst1/researchscale"/>
+    </genClasses>
     <genClasses ecoreClass="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Armor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Armor/mods"/>
     </genClasses>
@@ -423,12 +428,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemInst2/secondarypath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemInst2/secondarylevel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemInst2/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemInst2/weapon"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemInst3">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemInst3/value1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemInst3/value2"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemInst3/copyspr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//ItemInst3/weapon"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//Name"/>
     <genClasses ecoreClass="platform:/resource/org.larz.dom3.dm/src-gen/org/larz/dom3/dm/Dm.ecore#//SelectName">

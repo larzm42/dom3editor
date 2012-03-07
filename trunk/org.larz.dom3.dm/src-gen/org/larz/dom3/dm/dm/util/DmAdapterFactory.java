@@ -88,6 +88,21 @@ public class DmAdapterFactory extends AdapterFactoryImpl
         return createAbstractElementAdapter();
       }
       @Override
+      public Adapter caseGeneral(General object)
+      {
+        return createGeneralAdapter();
+      }
+      @Override
+      public Adapter caseGeneralPattern1(GeneralPattern1 object)
+      {
+        return createGeneralPattern1Adapter();
+      }
+      @Override
+      public Adapter caseGeneralInst1(GeneralInst1 object)
+      {
+        return createGeneralInst1Adapter();
+      }
+      @Override
       public Adapter caseArmor(Armor object)
       {
         return createArmorAdapter();
@@ -630,6 +645,51 @@ public class DmAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAbstractElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.larz.dom3.dm.dm.General <em>General</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.larz.dom3.dm.dm.General
+   * @generated
+   */
+  public Adapter createGeneralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.larz.dom3.dm.dm.GeneralPattern1 <em>General Pattern1</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.larz.dom3.dm.dm.GeneralPattern1
+   * @generated
+   */
+  public Adapter createGeneralPattern1Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.larz.dom3.dm.dm.GeneralInst1 <em>General Inst1</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.larz.dom3.dm.dm.GeneralInst1
+   * @generated
+   */
+  public Adapter createGeneralInst1Adapter()
   {
     return null;
   }

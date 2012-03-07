@@ -261,621 +261,9 @@ ruleDom3Mod returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 5);
 	 				}
-					({true}?=>(	otherlv_11='#poppergold' 
+					({true}?=>(	otherlv_11='#end' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getDom3ModAccess().getPoppergoldKeyword_0_5_0());
-    }
-(
-(
-		lv_poppergold_12_0=RULE_INT
-		{
-			newLeafNode(lv_poppergold_12_0, grammarAccess.getDom3ModAccess().getPoppergoldINTTerminalRuleCall_0_5_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"poppergold",
-        		lv_poppergold_12_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 6)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 6);
-	 				}
-					({true}?=>(	otherlv_13='#resourcemult' 
-    {
-    	newLeafNode(otherlv_13, grammarAccess.getDom3ModAccess().getResourcemultKeyword_0_6_0());
-    }
-(
-(
-		lv_resourcemult_14_0=RULE_INT
-		{
-			newLeafNode(lv_resourcemult_14_0, grammarAccess.getDom3ModAccess().getResourcemultINTTerminalRuleCall_0_6_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"resourcemult",
-        		lv_resourcemult_14_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 7)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 7);
-	 				}
-					({true}?=>(	otherlv_15='#supplymult' 
-    {
-    	newLeafNode(otherlv_15, grammarAccess.getDom3ModAccess().getSupplymultKeyword_0_7_0());
-    }
-(
-(
-		lv_supplymult_16_0=RULE_INT
-		{
-			newLeafNode(lv_supplymult_16_0, grammarAccess.getDom3ModAccess().getSupplymultINTTerminalRuleCall_0_7_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"supplymult",
-        		lv_supplymult_16_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 8)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 8);
-	 				}
-					({true}?=>(	otherlv_17='#unresthalfinc' 
-    {
-    	newLeafNode(otherlv_17, grammarAccess.getDom3ModAccess().getUnresthalfincKeyword_0_8_0());
-    }
-(
-(
-		lv_unresthalfinc_18_0=RULE_INT
-		{
-			newLeafNode(lv_unresthalfinc_18_0, grammarAccess.getDom3ModAccess().getUnresthalfincINTTerminalRuleCall_0_8_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"unresthalfinc",
-        		lv_unresthalfinc_18_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 9)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 9);
-	 				}
-					({true}?=>(	otherlv_19='#unresthalfres' 
-    {
-    	newLeafNode(otherlv_19, grammarAccess.getDom3ModAccess().getUnresthalfresKeyword_0_9_0());
-    }
-(
-(
-		lv_unresthalfres_20_0=RULE_INT
-		{
-			newLeafNode(lv_unresthalfres_20_0, grammarAccess.getDom3ModAccess().getUnresthalfresINTTerminalRuleCall_0_9_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"unresthalfres",
-        		lv_unresthalfres_20_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 10)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 10);
-	 				}
-					({true}?=>(	otherlv_21='#eventisrare' 
-    {
-    	newLeafNode(otherlv_21, grammarAccess.getDom3ModAccess().getEventisrareKeyword_0_10_0());
-    }
-(
-(
-		lv_eventisrare_22_0=RULE_INT
-		{
-			newLeafNode(lv_eventisrare_22_0, grammarAccess.getDom3ModAccess().getEventisrareINTTerminalRuleCall_0_10_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"eventisrare",
-        		lv_eventisrare_22_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 11)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 11);
-	 				}
-					({true}?=>(	otherlv_23='#turmoilincome' 
-    {
-    	newLeafNode(otherlv_23, grammarAccess.getDom3ModAccess().getTurmoilincomeKeyword_0_11_0());
-    }
-(
-(
-		lv_turmoilincome_24_0=RULE_INT
-		{
-			newLeafNode(lv_turmoilincome_24_0, grammarAccess.getDom3ModAccess().getTurmoilincomeINTTerminalRuleCall_0_11_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"turmoilincome",
-        		lv_turmoilincome_24_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 12)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 12);
-	 				}
-					({true}?=>(	otherlv_25='#turmoilevents' 
-    {
-    	newLeafNode(otherlv_25, grammarAccess.getDom3ModAccess().getTurmoileventsKeyword_0_12_0());
-    }
-(
-(
-		lv_turmoilevents_26_0=RULE_INT
-		{
-			newLeafNode(lv_turmoilevents_26_0, grammarAccess.getDom3ModAccess().getTurmoileventsINTTerminalRuleCall_0_12_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"turmoilevents",
-        		lv_turmoilevents_26_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 13)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 13);
-	 				}
-					({true}?=>(	otherlv_27='#deathincome' 
-    {
-    	newLeafNode(otherlv_27, grammarAccess.getDom3ModAccess().getDeathincomeKeyword_0_13_0());
-    }
-(
-(
-		lv_deathincome_28_0=RULE_INT
-		{
-			newLeafNode(lv_deathincome_28_0, grammarAccess.getDom3ModAccess().getDeathincomeINTTerminalRuleCall_0_13_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"deathincome",
-        		lv_deathincome_28_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 14)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 14);
-	 				}
-					({true}?=>(	otherlv_29='#deathsupply' 
-    {
-    	newLeafNode(otherlv_29, grammarAccess.getDom3ModAccess().getDeathsupplyKeyword_0_14_0());
-    }
-(
-(
-		lv_deathsupply_30_0=RULE_INT
-		{
-			newLeafNode(lv_deathsupply_30_0, grammarAccess.getDom3ModAccess().getDeathsupplyINTTerminalRuleCall_0_14_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"deathsupply",
-        		lv_deathsupply_30_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 15)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 15);
-	 				}
-					({true}?=>(	otherlv_31='#deathdeath' 
-    {
-    	newLeafNode(otherlv_31, grammarAccess.getDom3ModAccess().getDeathdeathKeyword_0_15_0());
-    }
-(
-(
-		lv_deathdeath_32_0=RULE_INT
-		{
-			newLeafNode(lv_deathdeath_32_0, grammarAccess.getDom3ModAccess().getDeathdeathINTTerminalRuleCall_0_15_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"deathdeath",
-        		lv_deathdeath_32_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 16)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 16);
-	 				}
-					({true}?=>(	otherlv_33='#slothincome' 
-    {
-    	newLeafNode(otherlv_33, grammarAccess.getDom3ModAccess().getSlothincomeKeyword_0_16_0());
-    }
-(
-(
-		lv_slothincome_34_0=RULE_INT
-		{
-			newLeafNode(lv_slothincome_34_0, grammarAccess.getDom3ModAccess().getSlothincomeINTTerminalRuleCall_0_16_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"slothincome",
-        		lv_slothincome_34_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 17)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 17);
-	 				}
-					({true}?=>(	otherlv_35='#slothresources' 
-    {
-    	newLeafNode(otherlv_35, grammarAccess.getDom3ModAccess().getSlothresourcesKeyword_0_17_0());
-    }
-(
-(
-		lv_slothresources_36_0=RULE_INT
-		{
-			newLeafNode(lv_slothresources_36_0, grammarAccess.getDom3ModAccess().getSlothresourcesINTTerminalRuleCall_0_17_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"slothresources",
-        		lv_slothresources_36_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 18)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 18);
-	 				}
-					({true}?=>(	otherlv_37='#coldincome' 
-    {
-    	newLeafNode(otherlv_37, grammarAccess.getDom3ModAccess().getColdincomeKeyword_0_18_0());
-    }
-(
-(
-		lv_coldincome_38_0=RULE_INT
-		{
-			newLeafNode(lv_coldincome_38_0, grammarAccess.getDom3ModAccess().getColdincomeINTTerminalRuleCall_0_18_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"coldincome",
-        		lv_coldincome_38_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 19)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 19);
-	 				}
-					({true}?=>(	otherlv_39='#coldsupply' 
-    {
-    	newLeafNode(otherlv_39, grammarAccess.getDom3ModAccess().getColdsupplyKeyword_0_19_0());
-    }
-(
-(
-		lv_coldsupply_40_0=RULE_INT
-		{
-			newLeafNode(lv_coldsupply_40_0, grammarAccess.getDom3ModAccess().getColdsupplyINTTerminalRuleCall_0_19_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"coldsupply",
-        		lv_coldsupply_40_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 20)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 20);
-	 				}
-					({true}?=>(	otherlv_41='#misfortune' 
-    {
-    	newLeafNode(otherlv_41, grammarAccess.getDom3ModAccess().getMisfortuneKeyword_0_20_0());
-    }
-(
-(
-		lv_misfortune_42_0=RULE_INT
-		{
-			newLeafNode(lv_misfortune_42_0, grammarAccess.getDom3ModAccess().getMisfortuneINTTerminalRuleCall_0_20_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"misfortune",
-        		lv_misfortune_42_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 21)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 21);
-	 				}
-					({true}?=>(	otherlv_43='#luckevents' 
-    {
-    	newLeafNode(otherlv_43, grammarAccess.getDom3ModAccess().getLuckeventsKeyword_0_21_0());
-    }
-(
-(
-		lv_luckevents_44_0=RULE_INT
-		{
-			newLeafNode(lv_luckevents_44_0, grammarAccess.getDom3ModAccess().getLuckeventsINTTerminalRuleCall_0_21_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"luckevents",
-        		lv_luckevents_44_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 22)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 22);
-	 				}
-					({true}?=>(	otherlv_45='#researchscale' 
-    {
-    	newLeafNode(otherlv_45, grammarAccess.getDom3ModAccess().getResearchscaleKeyword_0_22_0());
-    }
-(
-(
-		lv_researchscale_46_0=RULE_INT
-		{
-			newLeafNode(lv_researchscale_46_0, grammarAccess.getDom3ModAccess().getResearchscaleINTTerminalRuleCall_0_22_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDom3ModRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"researchscale",
-        		lv_researchscale_46_0, 
-        		"INT");
-	    }
-
-)
-)))
-					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDom3ModAccess().getUnorderedGroup_0());
-	 				}
- 				)
-			)  |
-
-			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 23)}?=>(
-					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getDom3ModAccess().getUnorderedGroup_0(), 23);
-	 				}
-					({true}?=>(	otherlv_47='#end' 
-    {
-    	newLeafNode(otherlv_47, grammarAccess.getDom3ModAccess().getEndKeyword_0_23());
+    	newLeafNode(otherlv_11, grammarAccess.getDom3ModAccess().getEndKeyword_0_5());
     }
 ))
 					{ 
@@ -897,14 +285,14 @@ ruleDom3Mod returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getDom3ModAccess().getElementsAbstractElementParserRuleCall_1_0()); 
 	    }
-		lv_elements_48_0=ruleAbstractElement		{
+		lv_elements_12_0=ruleAbstractElement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDom3ModRule());
 	        }
        		add(
        			$current, 
        			"elements",
-        		lv_elements_48_0, 
+        		lv_elements_12_0, 
         		"AbstractElement");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -933,84 +321,488 @@ ruleAbstractElement returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getArmorParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getGeneralParserRuleCall_0()); 
     }
-    this_Armor_0=ruleArmor
+    this_General_0=ruleGeneral
     { 
-        $current = $this_Armor_0.current; 
+        $current = $this_General_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getWeaponParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getArmorParserRuleCall_1()); 
     }
-    this_Weapon_1=ruleWeapon
+    this_Armor_1=ruleArmor
     { 
-        $current = $this_Weapon_1.current; 
+        $current = $this_Armor_1.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getMonsterParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getWeaponParserRuleCall_2()); 
     }
-    this_Monster_2=ruleMonster
+    this_Weapon_2=ruleWeapon
     { 
-        $current = $this_Monster_2.current; 
+        $current = $this_Weapon_2.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getSpellParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getMonsterParserRuleCall_3()); 
     }
-    this_Spell_3=ruleSpell
+    this_Monster_3=ruleMonster
     { 
-        $current = $this_Spell_3.current; 
+        $current = $this_Monster_3.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getItemParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getSpellParserRuleCall_4()); 
     }
-    this_Item_4=ruleItem
+    this_Spell_4=ruleSpell
     { 
-        $current = $this_Item_4.current; 
+        $current = $this_Spell_4.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getNameParserRuleCall_5()); 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getItemParserRuleCall_5()); 
     }
-    this_Name_5=ruleName
+    this_Item_5=ruleItem
     { 
-        $current = $this_Name_5.current; 
+        $current = $this_Item_5.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getSiteParserRuleCall_6()); 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getNameParserRuleCall_6()); 
     }
-    this_Site_6=ruleSite
+    this_Name_6=ruleName
     { 
-        $current = $this_Site_6.current; 
+        $current = $this_Name_6.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getNationParserRuleCall_7()); 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getSiteParserRuleCall_7()); 
     }
-    this_Nation_7=ruleNation
+    this_Site_7=ruleSite
     { 
-        $current = $this_Nation_7.current; 
+        $current = $this_Site_7.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getNationParserRuleCall_8()); 
+    }
+    this_Nation_8=ruleNation
+    { 
+        $current = $this_Nation_8.current; 
         afterParserOrEnumRuleCall();
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleGeneral
+entryRuleGeneral returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getGeneralRule()); }
+	 iv_ruleGeneral=ruleGeneral 
+	 { $current=$iv_ruleGeneral.current; } 
+	 EOF 
+;
+
+// Rule General
+ruleGeneral returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+    { 
+        newCompositeNode(grammarAccess.getGeneralAccess().getGeneralPattern1ParserRuleCall()); 
+    }
+    this_GeneralPattern1_0=ruleGeneralPattern1
+    { 
+        $current = $this_GeneralPattern1_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+;
+
+
+
+
+
+// Entry rule entryRuleGeneralPattern1
+entryRuleGeneralPattern1 returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getGeneralPattern1Rule()); }
+	 iv_ruleGeneralPattern1=ruleGeneralPattern1 
+	 { $current=$iv_ruleGeneralPattern1.current; } 
+	 EOF 
+;
+
+// Rule GeneralPattern1
+ruleGeneralPattern1 returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getGeneralPattern1Access().getGeneralInst1ParserRuleCall_0()); 
+    }
+    this_GeneralInst1_0=ruleGeneralInst1
+    { 
+        $current = $this_GeneralInst1_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+(
+(
+		lv_value_1_0=RULE_INT
+		{
+			newLeafNode(lv_value_1_0, grammarAccess.getGeneralPattern1Access().getValueINTTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralPattern1Rule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_1_0, 
+        		"INT");
+	    }
+
+)
+)(this_FREE_FORM_COMMENT_2=RULE_FREE_FORM_COMMENT
+    { 
+    newLeafNode(this_FREE_FORM_COMMENT_2, grammarAccess.getGeneralPattern1Access().getFREE_FORM_COMMENTTerminalRuleCall_2()); 
+    }
+)*(	otherlv_3='#end' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getGeneralPattern1Access().getEndKeyword_3());
+    }
+)?)
+;
+
+
+
+
+
+// Entry rule entryRuleGeneralInst1
+entryRuleGeneralInst1 returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getGeneralInst1Rule()); }
+	 iv_ruleGeneralInst1=ruleGeneralInst1 
+	 { $current=$iv_ruleGeneralInst1.current; } 
+	 EOF 
+;
+
+// Rule GeneralInst1
+ruleGeneralInst1 returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_poppergold_0_0=	'#poppergold' 
+    {
+        newLeafNode(lv_poppergold_0_0, grammarAccess.getGeneralInst1Access().getPoppergoldPoppergoldKeyword_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "poppergold", true, "#poppergold");
+	    }
+
+)
+)
+    |(
+(
+		lv_resourcemult_1_0=	'#resourcemult' 
+    {
+        newLeafNode(lv_resourcemult_1_0, grammarAccess.getGeneralInst1Access().getResourcemultResourcemultKeyword_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "resourcemult", true, "#resourcemult");
+	    }
+
+)
+)
+    |(
+(
+		lv_supplymult_2_0=	'#supplymult' 
+    {
+        newLeafNode(lv_supplymult_2_0, grammarAccess.getGeneralInst1Access().getSupplymultSupplymultKeyword_2_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "supplymult", true, "#supplymult");
+	    }
+
+)
+)
+    |(
+(
+		lv_unresthalfinc_3_0=	'#unresthalfinc' 
+    {
+        newLeafNode(lv_unresthalfinc_3_0, grammarAccess.getGeneralInst1Access().getUnresthalfincUnresthalfincKeyword_3_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "unresthalfinc", true, "#unresthalfinc");
+	    }
+
+)
+)
+    |(
+(
+		lv_unresthalfres_4_0=	'#unresthalfres' 
+    {
+        newLeafNode(lv_unresthalfres_4_0, grammarAccess.getGeneralInst1Access().getUnresthalfresUnresthalfresKeyword_4_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "unresthalfres", true, "#unresthalfres");
+	    }
+
+)
+)
+    |(
+(
+		lv_eventisrare_5_0=	'#eventisrare' 
+    {
+        newLeafNode(lv_eventisrare_5_0, grammarAccess.getGeneralInst1Access().getEventisrareEventisrareKeyword_5_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "eventisrare", true, "#eventisrare");
+	    }
+
+)
+)
+    |(
+(
+		lv_turmoilincome_6_0=	'#turmoilincome' 
+    {
+        newLeafNode(lv_turmoilincome_6_0, grammarAccess.getGeneralInst1Access().getTurmoilincomeTurmoilincomeKeyword_6_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "turmoilincome", true, "#turmoilincome");
+	    }
+
+)
+)
+    |(
+(
+		lv_turmoilevents_7_0=	'#turmoilevents' 
+    {
+        newLeafNode(lv_turmoilevents_7_0, grammarAccess.getGeneralInst1Access().getTurmoileventsTurmoileventsKeyword_7_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "turmoilevents", true, "#turmoilevents");
+	    }
+
+)
+)
+    |(
+(
+		lv_deathincome_8_0=	'#deathincome' 
+    {
+        newLeafNode(lv_deathincome_8_0, grammarAccess.getGeneralInst1Access().getDeathincomeDeathincomeKeyword_8_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "deathincome", true, "#deathincome");
+	    }
+
+)
+)
+    |(
+(
+		lv_deathsupply_9_0=	'#deathsupply' 
+    {
+        newLeafNode(lv_deathsupply_9_0, grammarAccess.getGeneralInst1Access().getDeathsupplyDeathsupplyKeyword_9_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "deathsupply", true, "#deathsupply");
+	    }
+
+)
+)
+    |(
+(
+		lv_deathdeath_10_0=	'#deathdeath' 
+    {
+        newLeafNode(lv_deathdeath_10_0, grammarAccess.getGeneralInst1Access().getDeathdeathDeathdeathKeyword_10_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "deathdeath", true, "#deathdeath");
+	    }
+
+)
+)
+    |(
+(
+		lv_slothincome_11_0=	'#slothincome' 
+    {
+        newLeafNode(lv_slothincome_11_0, grammarAccess.getGeneralInst1Access().getSlothincomeSlothincomeKeyword_11_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "slothincome", true, "#slothincome");
+	    }
+
+)
+)
+    |(
+(
+		lv_slothresources_12_0=	'#slothresources' 
+    {
+        newLeafNode(lv_slothresources_12_0, grammarAccess.getGeneralInst1Access().getSlothresourcesSlothresourcesKeyword_12_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "slothresources", true, "#slothresources");
+	    }
+
+)
+)
+    |(
+(
+		lv_coldincome_13_0=	'#coldincome' 
+    {
+        newLeafNode(lv_coldincome_13_0, grammarAccess.getGeneralInst1Access().getColdincomeColdincomeKeyword_13_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "coldincome", true, "#coldincome");
+	    }
+
+)
+)
+    |(
+(
+		lv_coldsupply_14_0=	'#coldsupply' 
+    {
+        newLeafNode(lv_coldsupply_14_0, grammarAccess.getGeneralInst1Access().getColdsupplyColdsupplyKeyword_14_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "coldsupply", true, "#coldsupply");
+	    }
+
+)
+)
+    |(
+(
+		lv_misfortune_15_0=	'#misfortune' 
+    {
+        newLeafNode(lv_misfortune_15_0, grammarAccess.getGeneralInst1Access().getMisfortuneMisfortuneKeyword_15_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "misfortune", true, "#misfortune");
+	    }
+
+)
+)
+    |(
+(
+		lv_luckevents_16_0=	'#luckevents' 
+    {
+        newLeafNode(lv_luckevents_16_0, grammarAccess.getGeneralInst1Access().getLuckeventsLuckeventsKeyword_16_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "luckevents", true, "#luckevents");
+	    }
+
+)
+)
+    |(
+(
+		lv_researchscale_17_0=	'#researchscale' 
+    {
+        newLeafNode(lv_researchscale_17_0, grammarAccess.getGeneralInst1Access().getResearchscaleResearchscaleKeyword_17_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralInst1Rule());
+	        }
+       		setWithLastConsumed($current, "researchscale", true, "#researchscale");
+	    }
+
+)
+))
 ;
 
 
@@ -8084,22 +7876,6 @@ ruleItemInst2 returns [EObject current=null]
 	    }
 
 )
-)
-    |(
-(
-		lv_weapon_6_0=	'#weapon' 
-    {
-        newLeafNode(lv_weapon_6_0, grammarAccess.getItemInst2Access().getWeaponWeaponKeyword_6_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getItemInst2Rule());
-	        }
-       		setWithLastConsumed($current, "weapon", true, "#weapon");
-	    }
-
-)
 ))
 ;
 
@@ -8121,11 +7897,11 @@ ruleItemInst3 returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+((
 (
 		lv_copyspr_0_0=	'#copyspr' 
     {
-        newLeafNode(lv_copyspr_0_0, grammarAccess.getItemInst3Access().getCopysprCopysprKeyword_0());
+        newLeafNode(lv_copyspr_0_0, grammarAccess.getItemInst3Access().getCopysprCopysprKeyword_0_0());
     }
  
 	    {
@@ -8137,6 +7913,22 @@ ruleItemInst3 returns [EObject current=null]
 
 )
 )
+    |(
+(
+		lv_weapon_1_0=	'#weapon' 
+    {
+        newLeafNode(lv_weapon_1_0, grammarAccess.getItemInst3Access().getWeaponWeaponKeyword_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getItemInst3Rule());
+	        }
+       		setWithLastConsumed($current, "weapon", true, "#weapon");
+	    }
+
+)
+))
 ;
 
 

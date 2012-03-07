@@ -24,6 +24,7 @@ import org.larz.dom3.dm.dm.ItemInst3;
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst3Impl#getValue1 <em>Value1</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst3Impl#getValue2 <em>Value2</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst3Impl#isCopyspr <em>Copyspr</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst3Impl#isWeapon <em>Weapon</em>}</li>
  * </ul>
  * </p>
  *
@@ -90,6 +91,26 @@ public class ItemInst3Impl extends ItemPattern3Impl implements ItemInst3
    * @ordered
    */
   protected boolean copyspr = COPYSPR_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isWeapon() <em>Weapon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isWeapon()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean WEAPON_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isWeapon() <em>Weapon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isWeapon()
+   * @generated
+   * @ordered
+   */
+  protected boolean weapon = WEAPON_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -186,6 +207,29 @@ public class ItemInst3Impl extends ItemPattern3Impl implements ItemInst3
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isWeapon()
+  {
+    return weapon;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setWeapon(boolean newWeapon)
+  {
+    boolean oldWeapon = weapon;
+    weapon = newWeapon;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.ITEM_INST3__WEAPON, oldWeapon, weapon));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -197,6 +241,8 @@ public class ItemInst3Impl extends ItemPattern3Impl implements ItemInst3
         return getValue2();
       case DmPackage.ITEM_INST3__COPYSPR:
         return isCopyspr();
+      case DmPackage.ITEM_INST3__WEAPON:
+        return isWeapon();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -219,6 +265,9 @@ public class ItemInst3Impl extends ItemPattern3Impl implements ItemInst3
         return;
       case DmPackage.ITEM_INST3__COPYSPR:
         setCopyspr((Boolean)newValue);
+        return;
+      case DmPackage.ITEM_INST3__WEAPON:
+        setWeapon((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -243,6 +292,9 @@ public class ItemInst3Impl extends ItemPattern3Impl implements ItemInst3
       case DmPackage.ITEM_INST3__COPYSPR:
         setCopyspr(COPYSPR_EDEFAULT);
         return;
+      case DmPackage.ITEM_INST3__WEAPON:
+        setWeapon(WEAPON_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -263,6 +315,8 @@ public class ItemInst3Impl extends ItemPattern3Impl implements ItemInst3
         return value2 != VALUE2_EDEFAULT;
       case DmPackage.ITEM_INST3__COPYSPR:
         return copyspr != COPYSPR_EDEFAULT;
+      case DmPackage.ITEM_INST3__WEAPON:
+        return weapon != WEAPON_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -284,6 +338,8 @@ public class ItemInst3Impl extends ItemPattern3Impl implements ItemInst3
     result.append(value2);
     result.append(", copyspr: ");
     result.append(copyspr);
+    result.append(", weapon: ");
+    result.append(weapon);
     result.append(')');
     return result.toString();
   }

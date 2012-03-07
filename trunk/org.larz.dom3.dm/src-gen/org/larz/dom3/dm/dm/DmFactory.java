@@ -44,6 +44,33 @@ public interface DmFactory extends EFactory
   AbstractElement createAbstractElement();
 
   /**
+   * Returns a new object of class '<em>General</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General</em>'.
+   * @generated
+   */
+  General createGeneral();
+
+  /**
+   * Returns a new object of class '<em>General Pattern1</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Pattern1</em>'.
+   * @generated
+   */
+  GeneralPattern1 createGeneralPattern1();
+
+  /**
+   * Returns a new object of class '<em>General Inst1</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Inst1</em>'.
+   * @generated
+   */
+  GeneralInst1 createGeneralInst1();
+
+  /**
    * Returns a new object of class '<em>Armor</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

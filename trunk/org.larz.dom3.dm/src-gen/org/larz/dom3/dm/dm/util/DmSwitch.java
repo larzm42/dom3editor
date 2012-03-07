@@ -89,6 +89,33 @@ public class DmSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DmPackage.GENERAL:
+      {
+        General general = (General)theEObject;
+        T result = caseGeneral(general);
+        if (result == null) result = caseAbstractElement(general);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DmPackage.GENERAL_PATTERN1:
+      {
+        GeneralPattern1 generalPattern1 = (GeneralPattern1)theEObject;
+        T result = caseGeneralPattern1(generalPattern1);
+        if (result == null) result = caseGeneral(generalPattern1);
+        if (result == null) result = caseAbstractElement(generalPattern1);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DmPackage.GENERAL_INST1:
+      {
+        GeneralInst1 generalInst1 = (GeneralInst1)theEObject;
+        T result = caseGeneralInst1(generalInst1);
+        if (result == null) result = caseGeneralPattern1(generalInst1);
+        if (result == null) result = caseGeneral(generalInst1);
+        if (result == null) result = caseAbstractElement(generalInst1);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DmPackage.ARMOR:
       {
         Armor armor = (Armor)theEObject;
@@ -957,6 +984,54 @@ public class DmSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAbstractElement(AbstractElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>General</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>General</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGeneral(General object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>General Pattern1</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>General Pattern1</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGeneralPattern1(GeneralPattern1 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>General Inst1</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>General Inst1</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGeneralInst1(GeneralInst1 object)
   {
     return null;
   }
