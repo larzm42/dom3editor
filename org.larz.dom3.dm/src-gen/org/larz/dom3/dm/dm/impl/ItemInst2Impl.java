@@ -28,7 +28,6 @@ import org.larz.dom3.dm.dm.ItemInst2;
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst2Impl#isSecondarypath <em>Secondarypath</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst2Impl#isSecondarylevel <em>Secondarylevel</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst2Impl#isType <em>Type</em>}</li>
- *   <li>{@link org.larz.dom3.dm.dm.impl.ItemInst2Impl#isWeapon <em>Weapon</em>}</li>
  * </ul>
  * </p>
  *
@@ -175,26 +174,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
    * @ordered
    */
   protected boolean type = TYPE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isWeapon() <em>Weapon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isWeapon()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean WEAPON_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isWeapon() <em>Weapon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isWeapon()
-   * @generated
-   * @ordered
-   */
-  protected boolean weapon = WEAPON_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -383,29 +362,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isWeapon()
-  {
-    return weapon;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setWeapon(boolean newWeapon)
-  {
-    boolean oldWeapon = weapon;
-    weapon = newWeapon;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DmPackage.ITEM_INST2__WEAPON, oldWeapon, weapon));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -425,8 +381,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
         return isSecondarylevel();
       case DmPackage.ITEM_INST2__TYPE:
         return isType();
-      case DmPackage.ITEM_INST2__WEAPON:
-        return isWeapon();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -461,9 +415,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
         return;
       case DmPackage.ITEM_INST2__TYPE:
         setType((Boolean)newValue);
-        return;
-      case DmPackage.ITEM_INST2__WEAPON:
-        setWeapon((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -500,9 +451,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
       case DmPackage.ITEM_INST2__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case DmPackage.ITEM_INST2__WEAPON:
-        setWeapon(WEAPON_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -531,8 +479,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
         return secondarylevel != SECONDARYLEVEL_EDEFAULT;
       case DmPackage.ITEM_INST2__TYPE:
         return type != TYPE_EDEFAULT;
-      case DmPackage.ITEM_INST2__WEAPON:
-        return weapon != WEAPON_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -562,8 +508,6 @@ public class ItemInst2Impl extends ItemPattern2Impl implements ItemInst2
     result.append(secondarylevel);
     result.append(", type: ");
     result.append(type);
-    result.append(", weapon: ");
-    result.append(weapon);
     result.append(')');
     return result.toString();
   }

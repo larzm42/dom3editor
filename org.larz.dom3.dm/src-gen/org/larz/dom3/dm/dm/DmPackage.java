@@ -115,175 +115,13 @@ public interface DmPackage extends EPackage
   int DOM3_MOD__DOMVERSION = 4;
 
   /**
-   * The feature id for the '<em><b>Poppergold</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__POPPERGOLD = 5;
-
-  /**
-   * The feature id for the '<em><b>Resourcemult</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__RESOURCEMULT = 6;
-
-  /**
-   * The feature id for the '<em><b>Supplymult</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__SUPPLYMULT = 7;
-
-  /**
-   * The feature id for the '<em><b>Unresthalfinc</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__UNRESTHALFINC = 8;
-
-  /**
-   * The feature id for the '<em><b>Unresthalfres</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__UNRESTHALFRES = 9;
-
-  /**
-   * The feature id for the '<em><b>Eventisrare</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__EVENTISRARE = 10;
-
-  /**
-   * The feature id for the '<em><b>Turmoilincome</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__TURMOILINCOME = 11;
-
-  /**
-   * The feature id for the '<em><b>Turmoilevents</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__TURMOILEVENTS = 12;
-
-  /**
-   * The feature id for the '<em><b>Deathincome</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__DEATHINCOME = 13;
-
-  /**
-   * The feature id for the '<em><b>Deathsupply</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__DEATHSUPPLY = 14;
-
-  /**
-   * The feature id for the '<em><b>Deathdeath</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__DEATHDEATH = 15;
-
-  /**
-   * The feature id for the '<em><b>Slothincome</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__SLOTHINCOME = 16;
-
-  /**
-   * The feature id for the '<em><b>Slothresources</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__SLOTHRESOURCES = 17;
-
-  /**
-   * The feature id for the '<em><b>Coldincome</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__COLDINCOME = 18;
-
-  /**
-   * The feature id for the '<em><b>Coldsupply</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__COLDSUPPLY = 19;
-
-  /**
-   * The feature id for the '<em><b>Misfortune</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__MISFORTUNE = 20;
-
-  /**
-   * The feature id for the '<em><b>Luckevents</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__LUCKEVENTS = 21;
-
-  /**
-   * The feature id for the '<em><b>Researchscale</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM3_MOD__RESEARCHSCALE = 22;
-
-  /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOM3_MOD__ELEMENTS = 23;
+  int DOM3_MOD__ELEMENTS = 5;
 
   /**
    * The number of structural features of the '<em>Dom3 Mod</em>' class.
@@ -292,7 +130,7 @@ public interface DmPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DOM3_MOD_FEATURE_COUNT = 24;
+  int DOM3_MOD_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
@@ -314,6 +152,234 @@ public interface DmPackage extends EPackage
   int ABSTRACT_ELEMENT_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.GeneralImpl <em>General</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.larz.dom3.dm.dm.impl.GeneralImpl
+   * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getGeneral()
+   * @generated
+   */
+  int GENERAL = 2;
+
+  /**
+   * The number of structural features of the '<em>General</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.GeneralPattern1Impl <em>General Pattern1</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.larz.dom3.dm.dm.impl.GeneralPattern1Impl
+   * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getGeneralPattern1()
+   * @generated
+   */
+  int GENERAL_PATTERN1 = 3;
+
+  /**
+   * The number of structural features of the '<em>General Pattern1</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_PATTERN1_FEATURE_COUNT = GENERAL_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.GeneralInst1Impl <em>General Inst1</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.larz.dom3.dm.dm.impl.GeneralInst1Impl
+   * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getGeneralInst1()
+   * @generated
+   */
+  int GENERAL_INST1 = 4;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__VALUE = GENERAL_PATTERN1_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Poppergold</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__POPPERGOLD = GENERAL_PATTERN1_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Resourcemult</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__RESOURCEMULT = GENERAL_PATTERN1_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Supplymult</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__SUPPLYMULT = GENERAL_PATTERN1_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Unresthalfinc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__UNRESTHALFINC = GENERAL_PATTERN1_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Unresthalfres</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__UNRESTHALFRES = GENERAL_PATTERN1_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Eventisrare</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__EVENTISRARE = GENERAL_PATTERN1_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Turmoilincome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__TURMOILINCOME = GENERAL_PATTERN1_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Turmoilevents</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__TURMOILEVENTS = GENERAL_PATTERN1_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Deathincome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__DEATHINCOME = GENERAL_PATTERN1_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Deathsupply</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__DEATHSUPPLY = GENERAL_PATTERN1_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Deathdeath</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__DEATHDEATH = GENERAL_PATTERN1_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Slothincome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__SLOTHINCOME = GENERAL_PATTERN1_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Slothresources</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__SLOTHRESOURCES = GENERAL_PATTERN1_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Coldincome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__COLDINCOME = GENERAL_PATTERN1_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Coldsupply</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__COLDSUPPLY = GENERAL_PATTERN1_FEATURE_COUNT + 15;
+
+  /**
+   * The feature id for the '<em><b>Misfortune</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__MISFORTUNE = GENERAL_PATTERN1_FEATURE_COUNT + 16;
+
+  /**
+   * The feature id for the '<em><b>Luckevents</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__LUCKEVENTS = GENERAL_PATTERN1_FEATURE_COUNT + 17;
+
+  /**
+   * The feature id for the '<em><b>Researchscale</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1__RESEARCHSCALE = GENERAL_PATTERN1_FEATURE_COUNT + 18;
+
+  /**
+   * The number of structural features of the '<em>General Inst1</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_INST1_FEATURE_COUNT = GENERAL_PATTERN1_FEATURE_COUNT + 19;
+
+  /**
    * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.ArmorImpl <em>Armor</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -321,7 +387,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getArmor()
    * @generated
    */
-  int ARMOR = 2;
+  int ARMOR = 5;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -349,7 +415,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectArmorById()
    * @generated
    */
-  int SELECT_ARMOR_BY_ID = 3;
+  int SELECT_ARMOR_BY_ID = 6;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -386,7 +452,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectArmorByName()
    * @generated
    */
-  int SELECT_ARMOR_BY_NAME = 4;
+  int SELECT_ARMOR_BY_NAME = 7;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -423,7 +489,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNewArmor()
    * @generated
    */
-  int NEW_ARMOR = 5;
+  int NEW_ARMOR = 8;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -460,7 +526,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getArmorMods()
    * @generated
    */
-  int ARMOR_MODS = 6;
+  int ARMOR_MODS = 9;
 
   /**
    * The number of structural features of the '<em>Armor Mods</em>' class.
@@ -479,7 +545,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getArmorPattern1()
    * @generated
    */
-  int ARMOR_PATTERN1 = 7;
+  int ARMOR_PATTERN1 = 10;
 
   /**
    * The number of structural features of the '<em>Armor Pattern1</em>' class.
@@ -498,7 +564,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getArmorPattern2()
    * @generated
    */
-  int ARMOR_PATTERN2 = 8;
+  int ARMOR_PATTERN2 = 11;
 
   /**
    * The number of structural features of the '<em>Armor Pattern2</em>' class.
@@ -517,7 +583,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getArmorInst1()
    * @generated
    */
-  int ARMOR_INST1 = 9;
+  int ARMOR_INST1 = 12;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -554,7 +620,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getArmorInst2()
    * @generated
    */
-  int ARMOR_INST2 = 10;
+  int ARMOR_INST2 = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -627,7 +693,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getWeapon()
    * @generated
    */
-  int WEAPON = 11;
+  int WEAPON = 14;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -655,7 +721,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectWeaponById()
    * @generated
    */
-  int SELECT_WEAPON_BY_ID = 12;
+  int SELECT_WEAPON_BY_ID = 15;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -692,7 +758,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectWeaponByName()
    * @generated
    */
-  int SELECT_WEAPON_BY_NAME = 13;
+  int SELECT_WEAPON_BY_NAME = 16;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -729,7 +795,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNewWeapon()
    * @generated
    */
-  int NEW_WEAPON = 14;
+  int NEW_WEAPON = 17;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -766,7 +832,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getWeaponMods()
    * @generated
    */
-  int WEAPON_MODS = 15;
+  int WEAPON_MODS = 18;
 
   /**
    * The number of structural features of the '<em>Weapon Mods</em>' class.
@@ -785,7 +851,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getWeaponPattern1()
    * @generated
    */
-  int WEAPON_PATTERN1 = 16;
+  int WEAPON_PATTERN1 = 19;
 
   /**
    * The number of structural features of the '<em>Weapon Pattern1</em>' class.
@@ -804,7 +870,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getWeaponPattern2()
    * @generated
    */
-  int WEAPON_PATTERN2 = 17;
+  int WEAPON_PATTERN2 = 20;
 
   /**
    * The number of structural features of the '<em>Weapon Pattern2</em>' class.
@@ -823,7 +889,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getWeaponPattern3()
    * @generated
    */
-  int WEAPON_PATTERN3 = 18;
+  int WEAPON_PATTERN3 = 21;
 
   /**
    * The number of structural features of the '<em>Weapon Pattern3</em>' class.
@@ -842,7 +908,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getWeaponPattern4()
    * @generated
    */
-  int WEAPON_PATTERN4 = 19;
+  int WEAPON_PATTERN4 = 22;
 
   /**
    * The number of structural features of the '<em>Weapon Pattern4</em>' class.
@@ -861,7 +927,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getWeaponInst1()
    * @generated
    */
-  int WEAPON_INST1 = 20;
+  int WEAPON_INST1 = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -898,7 +964,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getWeaponInst2()
    * @generated
    */
-  int WEAPON_INST2 = 21;
+  int WEAPON_INST2 = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1043,7 +1109,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getWeaponInst3()
    * @generated
    */
-  int WEAPON_INST3 = 22;
+  int WEAPON_INST3 = 25;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -1089,7 +1155,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getWeaponInst4()
    * @generated
    */
-  int WEAPON_INST4 = 23;
+  int WEAPON_INST4 = 26;
 
   /**
    * The feature id for the '<em><b>Twohanded</b></em>' attribute.
@@ -1360,7 +1426,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonster()
    * @generated
    */
-  int MONSTER = 24;
+  int MONSTER = 27;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -1388,7 +1454,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectMonsterById()
    * @generated
    */
-  int SELECT_MONSTER_BY_ID = 25;
+  int SELECT_MONSTER_BY_ID = 28;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -1425,7 +1491,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectMonsterByName()
    * @generated
    */
-  int SELECT_MONSTER_BY_NAME = 26;
+  int SELECT_MONSTER_BY_NAME = 29;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -1462,7 +1528,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNewMonster()
    * @generated
    */
-  int NEW_MONSTER = 27;
+  int NEW_MONSTER = 30;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -1499,7 +1565,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterMods()
    * @generated
    */
-  int MONSTER_MODS = 28;
+  int MONSTER_MODS = 31;
 
   /**
    * The number of structural features of the '<em>Monster Mods</em>' class.
@@ -1518,7 +1584,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterPattern1()
    * @generated
    */
-  int MONSTER_PATTERN1 = 29;
+  int MONSTER_PATTERN1 = 32;
 
   /**
    * The number of structural features of the '<em>Monster Pattern1</em>' class.
@@ -1537,7 +1603,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterPattern2()
    * @generated
    */
-  int MONSTER_PATTERN2 = 30;
+  int MONSTER_PATTERN2 = 33;
 
   /**
    * The number of structural features of the '<em>Monster Pattern2</em>' class.
@@ -1556,7 +1622,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterPattern3()
    * @generated
    */
-  int MONSTER_PATTERN3 = 31;
+  int MONSTER_PATTERN3 = 34;
 
   /**
    * The number of structural features of the '<em>Monster Pattern3</em>' class.
@@ -1575,7 +1641,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterPattern4()
    * @generated
    */
-  int MONSTER_PATTERN4 = 32;
+  int MONSTER_PATTERN4 = 35;
 
   /**
    * The number of structural features of the '<em>Monster Pattern4</em>' class.
@@ -1594,7 +1660,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterPattern5()
    * @generated
    */
-  int MONSTER_PATTERN5 = 33;
+  int MONSTER_PATTERN5 = 36;
 
   /**
    * The number of structural features of the '<em>Monster Pattern5</em>' class.
@@ -1613,7 +1679,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterPattern6()
    * @generated
    */
-  int MONSTER_PATTERN6 = 34;
+  int MONSTER_PATTERN6 = 37;
 
   /**
    * The number of structural features of the '<em>Monster Pattern6</em>' class.
@@ -1632,7 +1698,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst1()
    * @generated
    */
-  int MONSTER_INST1 = 35;
+  int MONSTER_INST1 = 38;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1696,7 +1762,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst2()
    * @generated
    */
-  int MONSTER_INST2 = 36;
+  int MONSTER_INST2 = 39;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2408,7 +2474,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst3()
    * @generated
    */
-  int MONSTER_INST3 = 37;
+  int MONSTER_INST3 = 40;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -2481,7 +2547,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst4()
    * @generated
    */
-  int MONSTER_INST4 = 38;
+  int MONSTER_INST4 = 41;
 
   /**
    * The feature id for the '<em><b>Clear</b></em>' attribute.
@@ -3058,7 +3124,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst5()
    * @generated
    */
-  int MONSTER_INST5 = 39;
+  int MONSTER_INST5 = 42;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -3284,7 +3350,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getMonsterInst6()
    * @generated
    */
-  int MONSTER_INST6 = 40;
+  int MONSTER_INST6 = 43;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3339,7 +3405,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpell()
    * @generated
    */
-  int SPELL = 41;
+  int SPELL = 44;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3367,7 +3433,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectSpellById()
    * @generated
    */
-  int SELECT_SPELL_BY_ID = 42;
+  int SELECT_SPELL_BY_ID = 45;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3404,7 +3470,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectSpellByName()
    * @generated
    */
-  int SELECT_SPELL_BY_NAME = 43;
+  int SELECT_SPELL_BY_NAME = 46;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3441,7 +3507,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNewSpell()
    * @generated
    */
-  int NEW_SPELL = 44;
+  int NEW_SPELL = 47;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3469,7 +3535,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellMods()
    * @generated
    */
-  int SPELL_MODS = 45;
+  int SPELL_MODS = 48;
 
   /**
    * The number of structural features of the '<em>Spell Mods</em>' class.
@@ -3488,7 +3554,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellPattern1()
    * @generated
    */
-  int SPELL_PATTERN1 = 46;
+  int SPELL_PATTERN1 = 49;
 
   /**
    * The number of structural features of the '<em>Spell Pattern1</em>' class.
@@ -3507,7 +3573,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellPattern2()
    * @generated
    */
-  int SPELL_PATTERN2 = 47;
+  int SPELL_PATTERN2 = 50;
 
   /**
    * The number of structural features of the '<em>Spell Pattern2</em>' class.
@@ -3526,7 +3592,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellPattern3()
    * @generated
    */
-  int SPELL_PATTERN3 = 48;
+  int SPELL_PATTERN3 = 51;
 
   /**
    * The number of structural features of the '<em>Spell Pattern3</em>' class.
@@ -3545,7 +3611,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellPattern4()
    * @generated
    */
-  int SPELL_PATTERN4 = 49;
+  int SPELL_PATTERN4 = 52;
 
   /**
    * The number of structural features of the '<em>Spell Pattern4</em>' class.
@@ -3564,7 +3630,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellPattern5()
    * @generated
    */
-  int SPELL_PATTERN5 = 50;
+  int SPELL_PATTERN5 = 53;
 
   /**
    * The number of structural features of the '<em>Spell Pattern5</em>' class.
@@ -3583,7 +3649,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellInst1()
    * @generated
    */
-  int SPELL_INST1 = 51;
+  int SPELL_INST1 = 54;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3629,7 +3695,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellInst2()
    * @generated
    */
-  int SPELL_INST2 = 52;
+  int SPELL_INST2 = 55;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3783,7 +3849,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellInst3()
    * @generated
    */
-  int SPELL_INST3 = 53;
+  int SPELL_INST3 = 56;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -3838,7 +3904,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellInst4()
    * @generated
    */
-  int SPELL_INST4 = 54;
+  int SPELL_INST4 = 57;
 
   /**
    * The feature id for the '<em><b>Clear</b></em>' attribute.
@@ -3866,7 +3932,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSpellInst5()
    * @generated
    */
-  int SPELL_INST5 = 55;
+  int SPELL_INST5 = 58;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -3921,7 +3987,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItem()
    * @generated
    */
-  int ITEM = 56;
+  int ITEM = 59;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3949,7 +4015,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectItemById()
    * @generated
    */
-  int SELECT_ITEM_BY_ID = 57;
+  int SELECT_ITEM_BY_ID = 60;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -3986,7 +4052,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectItemByName()
    * @generated
    */
-  int SELECT_ITEM_BY_NAME = 58;
+  int SELECT_ITEM_BY_NAME = 61;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -4023,7 +4089,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNewItem()
    * @generated
    */
-  int NEW_ITEM = 59;
+  int NEW_ITEM = 62;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -4051,7 +4117,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemMods()
    * @generated
    */
-  int ITEM_MODS = 60;
+  int ITEM_MODS = 63;
 
   /**
    * The number of structural features of the '<em>Item Mods</em>' class.
@@ -4070,7 +4136,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemPattern1()
    * @generated
    */
-  int ITEM_PATTERN1 = 61;
+  int ITEM_PATTERN1 = 64;
 
   /**
    * The number of structural features of the '<em>Item Pattern1</em>' class.
@@ -4089,7 +4155,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemPattern2()
    * @generated
    */
-  int ITEM_PATTERN2 = 62;
+  int ITEM_PATTERN2 = 65;
 
   /**
    * The number of structural features of the '<em>Item Pattern2</em>' class.
@@ -4108,7 +4174,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemPattern3()
    * @generated
    */
-  int ITEM_PATTERN3 = 63;
+  int ITEM_PATTERN3 = 66;
 
   /**
    * The number of structural features of the '<em>Item Pattern3</em>' class.
@@ -4127,7 +4193,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemInst1()
    * @generated
    */
-  int ITEM_INST1 = 64;
+  int ITEM_INST1 = 67;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4182,7 +4248,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemInst2()
    * @generated
    */
-  int ITEM_INST2 = 65;
+  int ITEM_INST2 = 68;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4248,22 +4314,13 @@ public interface DmPackage extends EPackage
   int ITEM_INST2__TYPE = ITEM_PATTERN2_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Weapon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITEM_INST2__WEAPON = ITEM_PATTERN2_FEATURE_COUNT + 7;
-
-  /**
    * The number of structural features of the '<em>Item Inst2</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ITEM_INST2_FEATURE_COUNT = ITEM_PATTERN2_FEATURE_COUNT + 8;
+  int ITEM_INST2_FEATURE_COUNT = ITEM_PATTERN2_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.ItemInst3Impl <em>Item Inst3</em>}' class.
@@ -4273,7 +4330,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getItemInst3()
    * @generated
    */
-  int ITEM_INST3 = 66;
+  int ITEM_INST3 = 69;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -4303,13 +4360,22 @@ public interface DmPackage extends EPackage
   int ITEM_INST3__COPYSPR = ITEM_PATTERN3_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Weapon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITEM_INST3__WEAPON = ITEM_PATTERN3_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Item Inst3</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ITEM_INST3_FEATURE_COUNT = ITEM_PATTERN3_FEATURE_COUNT + 3;
+  int ITEM_INST3_FEATURE_COUNT = ITEM_PATTERN3_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.larz.dom3.dm.dm.impl.NameImpl <em>Name</em>}' class.
@@ -4319,7 +4385,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getName_()
    * @generated
    */
-  int NAME = 67;
+  int NAME = 70;
 
   /**
    * The number of structural features of the '<em>Name</em>' class.
@@ -4338,7 +4404,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectName()
    * @generated
    */
-  int SELECT_NAME = 68;
+  int SELECT_NAME = 71;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4375,7 +4441,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNameMods()
    * @generated
    */
-  int NAME_MODS = 69;
+  int NAME_MODS = 72;
 
   /**
    * The number of structural features of the '<em>Name Mods</em>' class.
@@ -4394,7 +4460,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNamePattern1()
    * @generated
    */
-  int NAME_PATTERN1 = 70;
+  int NAME_PATTERN1 = 73;
 
   /**
    * The number of structural features of the '<em>Name Pattern1</em>' class.
@@ -4413,7 +4479,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNamePattern2()
    * @generated
    */
-  int NAME_PATTERN2 = 71;
+  int NAME_PATTERN2 = 74;
 
   /**
    * The number of structural features of the '<em>Name Pattern2</em>' class.
@@ -4432,7 +4498,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNameInst1()
    * @generated
    */
-  int NAME_INST1 = 72;
+  int NAME_INST1 = 75;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4469,7 +4535,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNameInst2()
    * @generated
    */
-  int NAME_INST2 = 73;
+  int NAME_INST2 = 76;
 
   /**
    * The feature id for the '<em><b>Clear</b></em>' attribute.
@@ -4497,7 +4563,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSite()
    * @generated
    */
-  int SITE = 74;
+  int SITE = 77;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -4525,7 +4591,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectSiteById()
    * @generated
    */
-  int SELECT_SITE_BY_ID = 75;
+  int SELECT_SITE_BY_ID = 78;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -4562,7 +4628,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectSiteByName()
    * @generated
    */
-  int SELECT_SITE_BY_NAME = 76;
+  int SELECT_SITE_BY_NAME = 79;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -4599,7 +4665,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNewSite()
    * @generated
    */
-  int NEW_SITE = 77;
+  int NEW_SITE = 80;
 
   /**
    * The feature id for the '<em><b>Mods</b></em>' containment reference list.
@@ -4636,7 +4702,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSiteMods()
    * @generated
    */
-  int SITE_MODS = 78;
+  int SITE_MODS = 81;
 
   /**
    * The number of structural features of the '<em>Site Mods</em>' class.
@@ -4655,7 +4721,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSitePattern1()
    * @generated
    */
-  int SITE_PATTERN1 = 79;
+  int SITE_PATTERN1 = 82;
 
   /**
    * The number of structural features of the '<em>Site Pattern1</em>' class.
@@ -4674,7 +4740,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSitePattern2()
    * @generated
    */
-  int SITE_PATTERN2 = 80;
+  int SITE_PATTERN2 = 83;
 
   /**
    * The number of structural features of the '<em>Site Pattern2</em>' class.
@@ -4693,7 +4759,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSitePattern3()
    * @generated
    */
-  int SITE_PATTERN3 = 81;
+  int SITE_PATTERN3 = 84;
 
   /**
    * The number of structural features of the '<em>Site Pattern3</em>' class.
@@ -4712,7 +4778,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSitePattern4()
    * @generated
    */
-  int SITE_PATTERN4 = 82;
+  int SITE_PATTERN4 = 85;
 
   /**
    * The number of structural features of the '<em>Site Pattern4</em>' class.
@@ -4731,7 +4797,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSiteInst1()
    * @generated
    */
-  int SITE_INST1 = 83;
+  int SITE_INST1 = 86;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4768,7 +4834,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSiteInst2()
    * @generated
    */
-  int SITE_INST2 = 84;
+  int SITE_INST2 = 87;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -5021,7 +5087,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSiteInst3()
    * @generated
    */
-  int SITE_INST3 = 85;
+  int SITE_INST3 = 88;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -5067,7 +5133,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSiteInst4()
    * @generated
    */
-  int SITE_INST4 = 86;
+  int SITE_INST4 = 89;
 
   /**
    * The feature id for the '<em><b>Clear</b></em>' attribute.
@@ -5104,7 +5170,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNation()
    * @generated
    */
-  int NATION = 87;
+  int NATION = 90;
 
   /**
    * The number of structural features of the '<em>Nation</em>' class.
@@ -5123,7 +5189,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getSelectNation()
    * @generated
    */
-  int SELECT_NATION = 88;
+  int SELECT_NATION = 91;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -5160,7 +5226,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getIndepFlag()
    * @generated
    */
-  int INDEP_FLAG = 89;
+  int INDEP_FLAG = 92;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -5188,7 +5254,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationMods()
    * @generated
    */
-  int NATION_MODS = 90;
+  int NATION_MODS = 93;
 
   /**
    * The number of structural features of the '<em>Nation Mods</em>' class.
@@ -5207,7 +5273,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationPattern1()
    * @generated
    */
-  int NATION_PATTERN1 = 91;
+  int NATION_PATTERN1 = 94;
 
   /**
    * The number of structural features of the '<em>Nation Pattern1</em>' class.
@@ -5226,7 +5292,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationPattern2()
    * @generated
    */
-  int NATION_PATTERN2 = 92;
+  int NATION_PATTERN2 = 95;
 
   /**
    * The number of structural features of the '<em>Nation Pattern2</em>' class.
@@ -5245,7 +5311,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationPattern3()
    * @generated
    */
-  int NATION_PATTERN3 = 93;
+  int NATION_PATTERN3 = 96;
 
   /**
    * The number of structural features of the '<em>Nation Pattern3</em>' class.
@@ -5264,7 +5330,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationPattern4()
    * @generated
    */
-  int NATION_PATTERN4 = 94;
+  int NATION_PATTERN4 = 97;
 
   /**
    * The number of structural features of the '<em>Nation Pattern4</em>' class.
@@ -5283,7 +5349,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationPattern5()
    * @generated
    */
-  int NATION_PATTERN5 = 95;
+  int NATION_PATTERN5 = 98;
 
   /**
    * The number of structural features of the '<em>Nation Pattern5</em>' class.
@@ -5302,7 +5368,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationInst1()
    * @generated
    */
-  int NATION_INST1 = 96;
+  int NATION_INST1 = 99;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -5402,7 +5468,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationInst2()
    * @generated
    */
-  int NATION_INST2 = 97;
+  int NATION_INST2 = 100;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -5700,7 +5766,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationInst3()
    * @generated
    */
-  int NATION_INST3 = 98;
+  int NATION_INST3 = 101;
 
   /**
    * The feature id for the '<em><b>Clearnation</b></em>' attribute.
@@ -5854,7 +5920,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationInst4()
    * @generated
    */
-  int NATION_INST4 = 99;
+  int NATION_INST4 = 102;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -6089,7 +6155,7 @@ public interface DmPackage extends EPackage
    * @see org.larz.dom3.dm.dm.impl.DmPackageImpl#getNationInst5()
    * @generated
    */
-  int NATION_INST5 = 100;
+  int NATION_INST5 = 103;
 
   /**
    * The feature id for the '<em><b>Value1</b></em>' attribute.
@@ -6203,204 +6269,6 @@ public interface DmPackage extends EPackage
   EAttribute getDom3Mod_Domversion();
 
   /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getPoppergold <em>Poppergold</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Poppergold</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getPoppergold()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Poppergold();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getResourcemult <em>Resourcemult</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Resourcemult</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getResourcemult()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Resourcemult();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getSupplymult <em>Supplymult</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Supplymult</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getSupplymult()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Supplymult();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getUnresthalfinc <em>Unresthalfinc</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Unresthalfinc</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getUnresthalfinc()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Unresthalfinc();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getUnresthalfres <em>Unresthalfres</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Unresthalfres</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getUnresthalfres()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Unresthalfres();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getEventisrare <em>Eventisrare</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Eventisrare</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getEventisrare()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Eventisrare();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getTurmoilincome <em>Turmoilincome</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Turmoilincome</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getTurmoilincome()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Turmoilincome();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getTurmoilevents <em>Turmoilevents</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Turmoilevents</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getTurmoilevents()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Turmoilevents();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getDeathincome <em>Deathincome</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Deathincome</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getDeathincome()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Deathincome();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getDeathsupply <em>Deathsupply</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Deathsupply</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getDeathsupply()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Deathsupply();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getDeathdeath <em>Deathdeath</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Deathdeath</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getDeathdeath()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Deathdeath();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getSlothincome <em>Slothincome</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Slothincome</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getSlothincome()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Slothincome();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getSlothresources <em>Slothresources</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Slothresources</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getSlothresources()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Slothresources();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getColdincome <em>Coldincome</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Coldincome</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getColdincome()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Coldincome();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getColdsupply <em>Coldsupply</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Coldsupply</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getColdsupply()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Coldsupply();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getMisfortune <em>Misfortune</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Misfortune</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getMisfortune()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Misfortune();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getLuckevents <em>Luckevents</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Luckevents</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getLuckevents()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Luckevents();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.Dom3Mod#getResearchscale <em>Researchscale</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Researchscale</em>'.
-   * @see org.larz.dom3.dm.dm.Dom3Mod#getResearchscale()
-   * @see #getDom3Mod()
-   * @generated
-   */
-  EAttribute getDom3Mod_Researchscale();
-
-  /**
    * Returns the meta object for the containment reference list '{@link org.larz.dom3.dm.dm.Dom3Mod#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -6420,6 +6288,245 @@ public interface DmPackage extends EPackage
    * @generated
    */
   EClass getAbstractElement();
+
+  /**
+   * Returns the meta object for class '{@link org.larz.dom3.dm.dm.General <em>General</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>General</em>'.
+   * @see org.larz.dom3.dm.dm.General
+   * @generated
+   */
+  EClass getGeneral();
+
+  /**
+   * Returns the meta object for class '{@link org.larz.dom3.dm.dm.GeneralPattern1 <em>General Pattern1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>General Pattern1</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralPattern1
+   * @generated
+   */
+  EClass getGeneralPattern1();
+
+  /**
+   * Returns the meta object for class '{@link org.larz.dom3.dm.dm.GeneralInst1 <em>General Inst1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>General Inst1</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1
+   * @generated
+   */
+  EClass getGeneralInst1();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#getValue()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isPoppergold <em>Poppergold</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Poppergold</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isPoppergold()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Poppergold();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isResourcemult <em>Resourcemult</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Resourcemult</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isResourcemult()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Resourcemult();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isSupplymult <em>Supplymult</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Supplymult</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isSupplymult()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Supplymult();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isUnresthalfinc <em>Unresthalfinc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unresthalfinc</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isUnresthalfinc()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Unresthalfinc();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isUnresthalfres <em>Unresthalfres</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unresthalfres</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isUnresthalfres()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Unresthalfres();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isEventisrare <em>Eventisrare</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Eventisrare</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isEventisrare()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Eventisrare();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isTurmoilincome <em>Turmoilincome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Turmoilincome</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isTurmoilincome()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Turmoilincome();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isTurmoilevents <em>Turmoilevents</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Turmoilevents</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isTurmoilevents()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Turmoilevents();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isDeathincome <em>Deathincome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Deathincome</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isDeathincome()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Deathincome();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isDeathsupply <em>Deathsupply</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Deathsupply</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isDeathsupply()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Deathsupply();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isDeathdeath <em>Deathdeath</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Deathdeath</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isDeathdeath()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Deathdeath();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isSlothincome <em>Slothincome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Slothincome</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isSlothincome()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Slothincome();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isSlothresources <em>Slothresources</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Slothresources</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isSlothresources()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Slothresources();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isColdincome <em>Coldincome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Coldincome</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isColdincome()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Coldincome();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isColdsupply <em>Coldsupply</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Coldsupply</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isColdsupply()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Coldsupply();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isMisfortune <em>Misfortune</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Misfortune</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isMisfortune()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Misfortune();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isLuckevents <em>Luckevents</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Luckevents</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isLuckevents()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Luckevents();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.GeneralInst1#isResearchscale <em>Researchscale</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Researchscale</em>'.
+   * @see org.larz.dom3.dm.dm.GeneralInst1#isResearchscale()
+   * @see #getGeneralInst1()
+   * @generated
+   */
+  EAttribute getGeneralInst1_Researchscale();
 
   /**
    * Returns the meta object for class '{@link org.larz.dom3.dm.dm.Armor <em>Armor</em>}'.
@@ -10230,17 +10337,6 @@ public interface DmPackage extends EPackage
   EAttribute getItemInst2_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.ItemInst2#isWeapon <em>Weapon</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Weapon</em>'.
-   * @see org.larz.dom3.dm.dm.ItemInst2#isWeapon()
-   * @see #getItemInst2()
-   * @generated
-   */
-  EAttribute getItemInst2_Weapon();
-
-  /**
    * Returns the meta object for class '{@link org.larz.dom3.dm.dm.ItemInst3 <em>Item Inst3</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10282,6 +10378,17 @@ public interface DmPackage extends EPackage
    * @generated
    */
   EAttribute getItemInst3_Copyspr();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.larz.dom3.dm.dm.ItemInst3#isWeapon <em>Weapon</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Weapon</em>'.
+   * @see org.larz.dom3.dm.dm.ItemInst3#isWeapon()
+   * @see #getItemInst3()
+   * @generated
+   */
+  EAttribute getItemInst3_Weapon();
 
   /**
    * Returns the meta object for class '{@link org.larz.dom3.dm.dm.Name <em>Name</em>}'.

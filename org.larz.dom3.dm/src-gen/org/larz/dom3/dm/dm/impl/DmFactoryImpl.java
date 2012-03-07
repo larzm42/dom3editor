@@ -69,6 +69,9 @@ public class DmFactoryImpl extends EFactoryImpl implements DmFactory
     {
       case DmPackage.DOM3_MOD: return createDom3Mod();
       case DmPackage.ABSTRACT_ELEMENT: return createAbstractElement();
+      case DmPackage.GENERAL: return createGeneral();
+      case DmPackage.GENERAL_PATTERN1: return createGeneralPattern1();
+      case DmPackage.GENERAL_INST1: return createGeneralInst1();
       case DmPackage.ARMOR: return createArmor();
       case DmPackage.SELECT_ARMOR_BY_ID: return createSelectArmorById();
       case DmPackage.SELECT_ARMOR_BY_NAME: return createSelectArmorByName();
@@ -193,6 +196,39 @@ public class DmFactoryImpl extends EFactoryImpl implements DmFactory
   {
     AbstractElementImpl abstractElement = new AbstractElementImpl();
     return abstractElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public General createGeneral()
+  {
+    GeneralImpl general = new GeneralImpl();
+    return general;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GeneralPattern1 createGeneralPattern1()
+  {
+    GeneralPattern1Impl generalPattern1 = new GeneralPattern1Impl();
+    return generalPattern1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GeneralInst1 createGeneralInst1()
+  {
+    GeneralInst1Impl generalInst1 = new GeneralInst1Impl();
+    return generalInst1;
   }
 
   /**

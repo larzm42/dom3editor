@@ -17,6 +17,7 @@ package org.larz.dom3.dm.dm;
  *   <li>{@link org.larz.dom3.dm.dm.ItemInst3#getValue1 <em>Value1</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.ItemInst3#getValue2 <em>Value2</em>}</li>
  *   <li>{@link org.larz.dom3.dm.dm.ItemInst3#isCopyspr <em>Copyspr</em>}</li>
+ *   <li>{@link org.larz.dom3.dm.dm.ItemInst3#isWeapon <em>Weapon</em>}</li>
  * </ul>
  * </p>
  *
@@ -103,5 +104,31 @@ public interface ItemInst3 extends ItemPattern3
    * @generated
    */
   void setCopyspr(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Weapon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Weapon</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Weapon</em>' attribute.
+   * @see #setWeapon(boolean)
+   * @see org.larz.dom3.dm.dm.DmPackage#getItemInst3_Weapon()
+   * @model
+   * @generated
+   */
+  boolean isWeapon();
+
+  /**
+   * Sets the value of the '{@link org.larz.dom3.dm.dm.ItemInst3#isWeapon <em>Weapon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Weapon</em>' attribute.
+   * @see #isWeapon()
+   * @generated
+   */
+  void setWeapon(boolean value);
 
 } // ItemInst3

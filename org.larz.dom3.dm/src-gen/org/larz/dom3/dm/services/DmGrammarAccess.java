@@ -40,111 +40,21 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDomversionKeyword_0_4_0 = (Keyword)cGroup_0_4.eContents().get(0);
 		private final Assignment cDomversionAssignment_0_4_1 = (Assignment)cGroup_0_4.eContents().get(1);
 		private final RuleCall cDomversionDecimalValueParserRuleCall_0_4_1_0 = (RuleCall)cDomversionAssignment_0_4_1.eContents().get(0);
-		private final Group cGroup_0_5 = (Group)cUnorderedGroup_0.eContents().get(5);
-		private final Keyword cPoppergoldKeyword_0_5_0 = (Keyword)cGroup_0_5.eContents().get(0);
-		private final Assignment cPoppergoldAssignment_0_5_1 = (Assignment)cGroup_0_5.eContents().get(1);
-		private final RuleCall cPoppergoldINTTerminalRuleCall_0_5_1_0 = (RuleCall)cPoppergoldAssignment_0_5_1.eContents().get(0);
-		private final Group cGroup_0_6 = (Group)cUnorderedGroup_0.eContents().get(6);
-		private final Keyword cResourcemultKeyword_0_6_0 = (Keyword)cGroup_0_6.eContents().get(0);
-		private final Assignment cResourcemultAssignment_0_6_1 = (Assignment)cGroup_0_6.eContents().get(1);
-		private final RuleCall cResourcemultINTTerminalRuleCall_0_6_1_0 = (RuleCall)cResourcemultAssignment_0_6_1.eContents().get(0);
-		private final Group cGroup_0_7 = (Group)cUnorderedGroup_0.eContents().get(7);
-		private final Keyword cSupplymultKeyword_0_7_0 = (Keyword)cGroup_0_7.eContents().get(0);
-		private final Assignment cSupplymultAssignment_0_7_1 = (Assignment)cGroup_0_7.eContents().get(1);
-		private final RuleCall cSupplymultINTTerminalRuleCall_0_7_1_0 = (RuleCall)cSupplymultAssignment_0_7_1.eContents().get(0);
-		private final Group cGroup_0_8 = (Group)cUnorderedGroup_0.eContents().get(8);
-		private final Keyword cUnresthalfincKeyword_0_8_0 = (Keyword)cGroup_0_8.eContents().get(0);
-		private final Assignment cUnresthalfincAssignment_0_8_1 = (Assignment)cGroup_0_8.eContents().get(1);
-		private final RuleCall cUnresthalfincINTTerminalRuleCall_0_8_1_0 = (RuleCall)cUnresthalfincAssignment_0_8_1.eContents().get(0);
-		private final Group cGroup_0_9 = (Group)cUnorderedGroup_0.eContents().get(9);
-		private final Keyword cUnresthalfresKeyword_0_9_0 = (Keyword)cGroup_0_9.eContents().get(0);
-		private final Assignment cUnresthalfresAssignment_0_9_1 = (Assignment)cGroup_0_9.eContents().get(1);
-		private final RuleCall cUnresthalfresINTTerminalRuleCall_0_9_1_0 = (RuleCall)cUnresthalfresAssignment_0_9_1.eContents().get(0);
-		private final Group cGroup_0_10 = (Group)cUnorderedGroup_0.eContents().get(10);
-		private final Keyword cEventisrareKeyword_0_10_0 = (Keyword)cGroup_0_10.eContents().get(0);
-		private final Assignment cEventisrareAssignment_0_10_1 = (Assignment)cGroup_0_10.eContents().get(1);
-		private final RuleCall cEventisrareINTTerminalRuleCall_0_10_1_0 = (RuleCall)cEventisrareAssignment_0_10_1.eContents().get(0);
-		private final Group cGroup_0_11 = (Group)cUnorderedGroup_0.eContents().get(11);
-		private final Keyword cTurmoilincomeKeyword_0_11_0 = (Keyword)cGroup_0_11.eContents().get(0);
-		private final Assignment cTurmoilincomeAssignment_0_11_1 = (Assignment)cGroup_0_11.eContents().get(1);
-		private final RuleCall cTurmoilincomeINTTerminalRuleCall_0_11_1_0 = (RuleCall)cTurmoilincomeAssignment_0_11_1.eContents().get(0);
-		private final Group cGroup_0_12 = (Group)cUnorderedGroup_0.eContents().get(12);
-		private final Keyword cTurmoileventsKeyword_0_12_0 = (Keyword)cGroup_0_12.eContents().get(0);
-		private final Assignment cTurmoileventsAssignment_0_12_1 = (Assignment)cGroup_0_12.eContents().get(1);
-		private final RuleCall cTurmoileventsINTTerminalRuleCall_0_12_1_0 = (RuleCall)cTurmoileventsAssignment_0_12_1.eContents().get(0);
-		private final Group cGroup_0_13 = (Group)cUnorderedGroup_0.eContents().get(13);
-		private final Keyword cDeathincomeKeyword_0_13_0 = (Keyword)cGroup_0_13.eContents().get(0);
-		private final Assignment cDeathincomeAssignment_0_13_1 = (Assignment)cGroup_0_13.eContents().get(1);
-		private final RuleCall cDeathincomeINTTerminalRuleCall_0_13_1_0 = (RuleCall)cDeathincomeAssignment_0_13_1.eContents().get(0);
-		private final Group cGroup_0_14 = (Group)cUnorderedGroup_0.eContents().get(14);
-		private final Keyword cDeathsupplyKeyword_0_14_0 = (Keyword)cGroup_0_14.eContents().get(0);
-		private final Assignment cDeathsupplyAssignment_0_14_1 = (Assignment)cGroup_0_14.eContents().get(1);
-		private final RuleCall cDeathsupplyINTTerminalRuleCall_0_14_1_0 = (RuleCall)cDeathsupplyAssignment_0_14_1.eContents().get(0);
-		private final Group cGroup_0_15 = (Group)cUnorderedGroup_0.eContents().get(15);
-		private final Keyword cDeathdeathKeyword_0_15_0 = (Keyword)cGroup_0_15.eContents().get(0);
-		private final Assignment cDeathdeathAssignment_0_15_1 = (Assignment)cGroup_0_15.eContents().get(1);
-		private final RuleCall cDeathdeathINTTerminalRuleCall_0_15_1_0 = (RuleCall)cDeathdeathAssignment_0_15_1.eContents().get(0);
-		private final Group cGroup_0_16 = (Group)cUnorderedGroup_0.eContents().get(16);
-		private final Keyword cSlothincomeKeyword_0_16_0 = (Keyword)cGroup_0_16.eContents().get(0);
-		private final Assignment cSlothincomeAssignment_0_16_1 = (Assignment)cGroup_0_16.eContents().get(1);
-		private final RuleCall cSlothincomeINTTerminalRuleCall_0_16_1_0 = (RuleCall)cSlothincomeAssignment_0_16_1.eContents().get(0);
-		private final Group cGroup_0_17 = (Group)cUnorderedGroup_0.eContents().get(17);
-		private final Keyword cSlothresourcesKeyword_0_17_0 = (Keyword)cGroup_0_17.eContents().get(0);
-		private final Assignment cSlothresourcesAssignment_0_17_1 = (Assignment)cGroup_0_17.eContents().get(1);
-		private final RuleCall cSlothresourcesINTTerminalRuleCall_0_17_1_0 = (RuleCall)cSlothresourcesAssignment_0_17_1.eContents().get(0);
-		private final Group cGroup_0_18 = (Group)cUnorderedGroup_0.eContents().get(18);
-		private final Keyword cColdincomeKeyword_0_18_0 = (Keyword)cGroup_0_18.eContents().get(0);
-		private final Assignment cColdincomeAssignment_0_18_1 = (Assignment)cGroup_0_18.eContents().get(1);
-		private final RuleCall cColdincomeINTTerminalRuleCall_0_18_1_0 = (RuleCall)cColdincomeAssignment_0_18_1.eContents().get(0);
-		private final Group cGroup_0_19 = (Group)cUnorderedGroup_0.eContents().get(19);
-		private final Keyword cColdsupplyKeyword_0_19_0 = (Keyword)cGroup_0_19.eContents().get(0);
-		private final Assignment cColdsupplyAssignment_0_19_1 = (Assignment)cGroup_0_19.eContents().get(1);
-		private final RuleCall cColdsupplyINTTerminalRuleCall_0_19_1_0 = (RuleCall)cColdsupplyAssignment_0_19_1.eContents().get(0);
-		private final Group cGroup_0_20 = (Group)cUnorderedGroup_0.eContents().get(20);
-		private final Keyword cMisfortuneKeyword_0_20_0 = (Keyword)cGroup_0_20.eContents().get(0);
-		private final Assignment cMisfortuneAssignment_0_20_1 = (Assignment)cGroup_0_20.eContents().get(1);
-		private final RuleCall cMisfortuneINTTerminalRuleCall_0_20_1_0 = (RuleCall)cMisfortuneAssignment_0_20_1.eContents().get(0);
-		private final Group cGroup_0_21 = (Group)cUnorderedGroup_0.eContents().get(21);
-		private final Keyword cLuckeventsKeyword_0_21_0 = (Keyword)cGroup_0_21.eContents().get(0);
-		private final Assignment cLuckeventsAssignment_0_21_1 = (Assignment)cGroup_0_21.eContents().get(1);
-		private final RuleCall cLuckeventsINTTerminalRuleCall_0_21_1_0 = (RuleCall)cLuckeventsAssignment_0_21_1.eContents().get(0);
-		private final Group cGroup_0_22 = (Group)cUnorderedGroup_0.eContents().get(22);
-		private final Keyword cResearchscaleKeyword_0_22_0 = (Keyword)cGroup_0_22.eContents().get(0);
-		private final Assignment cResearchscaleAssignment_0_22_1 = (Assignment)cGroup_0_22.eContents().get(1);
-		private final RuleCall cResearchscaleINTTerminalRuleCall_0_22_1_0 = (RuleCall)cResearchscaleAssignment_0_22_1.eContents().get(0);
-		private final Keyword cEndKeyword_0_23 = (Keyword)cUnorderedGroup_0.eContents().get(23);
+		private final Keyword cEndKeyword_0_5 = (Keyword)cUnorderedGroup_0.eContents().get(5);
 		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cElementsAbstractElementParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//Dom3Mod:
 		//	("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version"
-		//	version=DecimalValue)? & ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult"
-		//	resourcemult=INT)? & ("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres"
-		//	unresthalfres=INT)? & ("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents"
-		//	turmoilevents=INT)? & ("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath"
-		//	deathdeath=INT)? & ("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome"
-		//	coldincome=INT)? & ("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)?
-		//	& ("#researchscale" researchscale=INT)? & "#end"?) elements+=AbstractElement*;
+		//	version=DecimalValue)? & ("#domversion" domversion=DecimalValue)? & "#end"?) elements+=AbstractElement*;
 		public ParserRule getRule() { return rule; }
 
 		//("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=DecimalValue)?
-		//& ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
-		//("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres" unresthalfres=INT)? &
-		//("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents" turmoilevents=INT)? &
-		//("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
-		//("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome" coldincome=INT)? &
-		//("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)? & ("#researchscale"
-		//researchscale=INT)? & "#end"?) elements+=AbstractElement*
+		//& ("#domversion" domversion=DecimalValue)? & "#end"?) elements+=AbstractElement*
 		public Group getGroup() { return cGroup; }
 
 		//"#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version" version=DecimalValue)?
-		//& ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult" resourcemult=INT)? &
-		//("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres" unresthalfres=INT)? &
-		//("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents" turmoilevents=INT)? &
-		//("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath" deathdeath=INT)? &
-		//("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome" coldincome=INT)? &
-		//("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)? & ("#researchscale"
-		//researchscale=INT)? & "#end"?
+		//& ("#domversion" domversion=DecimalValue)? & "#end"?
 		public UnorderedGroup getUnorderedGroup_0() { return cUnorderedGroup_0; }
 
 		//"#modname" modname=STRING
@@ -207,224 +117,8 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		//DecimalValue
 		public RuleCall getDomversionDecimalValueParserRuleCall_0_4_1_0() { return cDomversionDecimalValueParserRuleCall_0_4_1_0; }
 
-		//("#poppergold" poppergold=INT)?
-		public Group getGroup_0_5() { return cGroup_0_5; }
-
-		//"#poppergold"
-		public Keyword getPoppergoldKeyword_0_5_0() { return cPoppergoldKeyword_0_5_0; }
-
-		//poppergold=INT
-		public Assignment getPoppergoldAssignment_0_5_1() { return cPoppergoldAssignment_0_5_1; }
-
-		//INT
-		public RuleCall getPoppergoldINTTerminalRuleCall_0_5_1_0() { return cPoppergoldINTTerminalRuleCall_0_5_1_0; }
-
-		//("#resourcemult" resourcemult=INT)?
-		public Group getGroup_0_6() { return cGroup_0_6; }
-
-		//"#resourcemult"
-		public Keyword getResourcemultKeyword_0_6_0() { return cResourcemultKeyword_0_6_0; }
-
-		//resourcemult=INT
-		public Assignment getResourcemultAssignment_0_6_1() { return cResourcemultAssignment_0_6_1; }
-
-		//INT
-		public RuleCall getResourcemultINTTerminalRuleCall_0_6_1_0() { return cResourcemultINTTerminalRuleCall_0_6_1_0; }
-
-		//("#supplymult" supplymult=INT)?
-		public Group getGroup_0_7() { return cGroup_0_7; }
-
-		//"#supplymult"
-		public Keyword getSupplymultKeyword_0_7_0() { return cSupplymultKeyword_0_7_0; }
-
-		//supplymult=INT
-		public Assignment getSupplymultAssignment_0_7_1() { return cSupplymultAssignment_0_7_1; }
-
-		//INT
-		public RuleCall getSupplymultINTTerminalRuleCall_0_7_1_0() { return cSupplymultINTTerminalRuleCall_0_7_1_0; }
-
-		//("#unresthalfinc" unresthalfinc=INT)?
-		public Group getGroup_0_8() { return cGroup_0_8; }
-
-		//"#unresthalfinc"
-		public Keyword getUnresthalfincKeyword_0_8_0() { return cUnresthalfincKeyword_0_8_0; }
-
-		//unresthalfinc=INT
-		public Assignment getUnresthalfincAssignment_0_8_1() { return cUnresthalfincAssignment_0_8_1; }
-
-		//INT
-		public RuleCall getUnresthalfincINTTerminalRuleCall_0_8_1_0() { return cUnresthalfincINTTerminalRuleCall_0_8_1_0; }
-
-		//("#unresthalfres" unresthalfres=INT)?
-		public Group getGroup_0_9() { return cGroup_0_9; }
-
-		//"#unresthalfres"
-		public Keyword getUnresthalfresKeyword_0_9_0() { return cUnresthalfresKeyword_0_9_0; }
-
-		//unresthalfres=INT
-		public Assignment getUnresthalfresAssignment_0_9_1() { return cUnresthalfresAssignment_0_9_1; }
-
-		//INT
-		public RuleCall getUnresthalfresINTTerminalRuleCall_0_9_1_0() { return cUnresthalfresINTTerminalRuleCall_0_9_1_0; }
-
-		//("#eventisrare" eventisrare=INT)?
-		public Group getGroup_0_10() { return cGroup_0_10; }
-
-		//"#eventisrare"
-		public Keyword getEventisrareKeyword_0_10_0() { return cEventisrareKeyword_0_10_0; }
-
-		//eventisrare=INT
-		public Assignment getEventisrareAssignment_0_10_1() { return cEventisrareAssignment_0_10_1; }
-
-		//INT
-		public RuleCall getEventisrareINTTerminalRuleCall_0_10_1_0() { return cEventisrareINTTerminalRuleCall_0_10_1_0; }
-
-		//("#turmoilincome" turmoilincome=INT)?
-		public Group getGroup_0_11() { return cGroup_0_11; }
-
-		//"#turmoilincome"
-		public Keyword getTurmoilincomeKeyword_0_11_0() { return cTurmoilincomeKeyword_0_11_0; }
-
-		//turmoilincome=INT
-		public Assignment getTurmoilincomeAssignment_0_11_1() { return cTurmoilincomeAssignment_0_11_1; }
-
-		//INT
-		public RuleCall getTurmoilincomeINTTerminalRuleCall_0_11_1_0() { return cTurmoilincomeINTTerminalRuleCall_0_11_1_0; }
-
-		//("#turmoilevents" turmoilevents=INT)?
-		public Group getGroup_0_12() { return cGroup_0_12; }
-
-		//"#turmoilevents"
-		public Keyword getTurmoileventsKeyword_0_12_0() { return cTurmoileventsKeyword_0_12_0; }
-
-		//turmoilevents=INT
-		public Assignment getTurmoileventsAssignment_0_12_1() { return cTurmoileventsAssignment_0_12_1; }
-
-		//INT
-		public RuleCall getTurmoileventsINTTerminalRuleCall_0_12_1_0() { return cTurmoileventsINTTerminalRuleCall_0_12_1_0; }
-
-		//("#deathincome" deathincome=INT)?
-		public Group getGroup_0_13() { return cGroup_0_13; }
-
-		//"#deathincome"
-		public Keyword getDeathincomeKeyword_0_13_0() { return cDeathincomeKeyword_0_13_0; }
-
-		//deathincome=INT
-		public Assignment getDeathincomeAssignment_0_13_1() { return cDeathincomeAssignment_0_13_1; }
-
-		//INT
-		public RuleCall getDeathincomeINTTerminalRuleCall_0_13_1_0() { return cDeathincomeINTTerminalRuleCall_0_13_1_0; }
-
-		//("#deathsupply" deathsupply=INT)?
-		public Group getGroup_0_14() { return cGroup_0_14; }
-
-		//"#deathsupply"
-		public Keyword getDeathsupplyKeyword_0_14_0() { return cDeathsupplyKeyword_0_14_0; }
-
-		//deathsupply=INT
-		public Assignment getDeathsupplyAssignment_0_14_1() { return cDeathsupplyAssignment_0_14_1; }
-
-		//INT
-		public RuleCall getDeathsupplyINTTerminalRuleCall_0_14_1_0() { return cDeathsupplyINTTerminalRuleCall_0_14_1_0; }
-
-		//("#deathdeath" deathdeath=INT)?
-		public Group getGroup_0_15() { return cGroup_0_15; }
-
-		//"#deathdeath"
-		public Keyword getDeathdeathKeyword_0_15_0() { return cDeathdeathKeyword_0_15_0; }
-
-		//deathdeath=INT
-		public Assignment getDeathdeathAssignment_0_15_1() { return cDeathdeathAssignment_0_15_1; }
-
-		//INT
-		public RuleCall getDeathdeathINTTerminalRuleCall_0_15_1_0() { return cDeathdeathINTTerminalRuleCall_0_15_1_0; }
-
-		//("#slothincome" slothincome=INT)?
-		public Group getGroup_0_16() { return cGroup_0_16; }
-
-		//"#slothincome"
-		public Keyword getSlothincomeKeyword_0_16_0() { return cSlothincomeKeyword_0_16_0; }
-
-		//slothincome=INT
-		public Assignment getSlothincomeAssignment_0_16_1() { return cSlothincomeAssignment_0_16_1; }
-
-		//INT
-		public RuleCall getSlothincomeINTTerminalRuleCall_0_16_1_0() { return cSlothincomeINTTerminalRuleCall_0_16_1_0; }
-
-		//("#slothresources" slothresources=INT)?
-		public Group getGroup_0_17() { return cGroup_0_17; }
-
-		//"#slothresources"
-		public Keyword getSlothresourcesKeyword_0_17_0() { return cSlothresourcesKeyword_0_17_0; }
-
-		//slothresources=INT
-		public Assignment getSlothresourcesAssignment_0_17_1() { return cSlothresourcesAssignment_0_17_1; }
-
-		//INT
-		public RuleCall getSlothresourcesINTTerminalRuleCall_0_17_1_0() { return cSlothresourcesINTTerminalRuleCall_0_17_1_0; }
-
-		//("#coldincome" coldincome=INT)?
-		public Group getGroup_0_18() { return cGroup_0_18; }
-
-		//"#coldincome"
-		public Keyword getColdincomeKeyword_0_18_0() { return cColdincomeKeyword_0_18_0; }
-
-		//coldincome=INT
-		public Assignment getColdincomeAssignment_0_18_1() { return cColdincomeAssignment_0_18_1; }
-
-		//INT
-		public RuleCall getColdincomeINTTerminalRuleCall_0_18_1_0() { return cColdincomeINTTerminalRuleCall_0_18_1_0; }
-
-		//("#coldsupply" coldsupply=INT)?
-		public Group getGroup_0_19() { return cGroup_0_19; }
-
-		//"#coldsupply"
-		public Keyword getColdsupplyKeyword_0_19_0() { return cColdsupplyKeyword_0_19_0; }
-
-		//coldsupply=INT
-		public Assignment getColdsupplyAssignment_0_19_1() { return cColdsupplyAssignment_0_19_1; }
-
-		//INT
-		public RuleCall getColdsupplyINTTerminalRuleCall_0_19_1_0() { return cColdsupplyINTTerminalRuleCall_0_19_1_0; }
-
-		//("#misfortune" misfortune=INT)?
-		public Group getGroup_0_20() { return cGroup_0_20; }
-
-		//"#misfortune"
-		public Keyword getMisfortuneKeyword_0_20_0() { return cMisfortuneKeyword_0_20_0; }
-
-		//misfortune=INT
-		public Assignment getMisfortuneAssignment_0_20_1() { return cMisfortuneAssignment_0_20_1; }
-
-		//INT
-		public RuleCall getMisfortuneINTTerminalRuleCall_0_20_1_0() { return cMisfortuneINTTerminalRuleCall_0_20_1_0; }
-
-		//("#luckevents" luckevents=INT)?
-		public Group getGroup_0_21() { return cGroup_0_21; }
-
-		//"#luckevents"
-		public Keyword getLuckeventsKeyword_0_21_0() { return cLuckeventsKeyword_0_21_0; }
-
-		//luckevents=INT
-		public Assignment getLuckeventsAssignment_0_21_1() { return cLuckeventsAssignment_0_21_1; }
-
-		//INT
-		public RuleCall getLuckeventsINTTerminalRuleCall_0_21_1_0() { return cLuckeventsINTTerminalRuleCall_0_21_1_0; }
-
-		//("#researchscale" researchscale=INT)?
-		public Group getGroup_0_22() { return cGroup_0_22; }
-
-		//"#researchscale"
-		public Keyword getResearchscaleKeyword_0_22_0() { return cResearchscaleKeyword_0_22_0; }
-
-		//researchscale=INT
-		public Assignment getResearchscaleAssignment_0_22_1() { return cResearchscaleAssignment_0_22_1; }
-
-		//INT
-		public RuleCall getResearchscaleINTTerminalRuleCall_0_22_1_0() { return cResearchscaleINTTerminalRuleCall_0_22_1_0; }
-
 		//"#end"?
-		public Keyword getEndKeyword_0_23() { return cEndKeyword_0_23; }
+		public Keyword getEndKeyword_0_5() { return cEndKeyword_0_5; }
 
 		//elements+=AbstractElement*
 		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
@@ -436,45 +130,258 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	public class AbstractElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cArmorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cWeaponParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cMonsterParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cSpellParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cItemParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cNameParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cSiteParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cNationParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cGeneralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cArmorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cWeaponParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cMonsterParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cSpellParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cItemParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cNameParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cSiteParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cNationParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		
 		//AbstractElement:
-		//	Armor | Weapon | Monster | Spell | Item | Name | Site | Nation;
+		//	General | Armor | Weapon | Monster | Spell | Item | Name | Site | Nation;
 		public ParserRule getRule() { return rule; }
 
-		//Armor | Weapon | Monster | Spell | Item | Name | Site | Nation
+		//General | Armor | Weapon | Monster | Spell | Item | Name | Site | Nation
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//General
+		public RuleCall getGeneralParserRuleCall_0() { return cGeneralParserRuleCall_0; }
+
 		//Armor
-		public RuleCall getArmorParserRuleCall_0() { return cArmorParserRuleCall_0; }
+		public RuleCall getArmorParserRuleCall_1() { return cArmorParserRuleCall_1; }
 
 		//Weapon
-		public RuleCall getWeaponParserRuleCall_1() { return cWeaponParserRuleCall_1; }
+		public RuleCall getWeaponParserRuleCall_2() { return cWeaponParserRuleCall_2; }
 
 		//Monster
-		public RuleCall getMonsterParserRuleCall_2() { return cMonsterParserRuleCall_2; }
+		public RuleCall getMonsterParserRuleCall_3() { return cMonsterParserRuleCall_3; }
 
 		//Spell
-		public RuleCall getSpellParserRuleCall_3() { return cSpellParserRuleCall_3; }
+		public RuleCall getSpellParserRuleCall_4() { return cSpellParserRuleCall_4; }
 
 		//Item
-		public RuleCall getItemParserRuleCall_4() { return cItemParserRuleCall_4; }
+		public RuleCall getItemParserRuleCall_5() { return cItemParserRuleCall_5; }
 
 		//Name
-		public RuleCall getNameParserRuleCall_5() { return cNameParserRuleCall_5; }
+		public RuleCall getNameParserRuleCall_6() { return cNameParserRuleCall_6; }
 
 		//Site
-		public RuleCall getSiteParserRuleCall_6() { return cSiteParserRuleCall_6; }
+		public RuleCall getSiteParserRuleCall_7() { return cSiteParserRuleCall_7; }
 
 		//Nation
-		public RuleCall getNationParserRuleCall_7() { return cNationParserRuleCall_7; }
+		public RuleCall getNationParserRuleCall_8() { return cNationParserRuleCall_8; }
+	}
+
+	public class GeneralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "General");
+		private final RuleCall cGeneralPattern1ParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		/// **************** / / * General Mods * / / **************** / General:
+		//	GeneralPattern1;
+		public ParserRule getRule() { return rule; }
+
+		//GeneralPattern1
+		public RuleCall getGeneralPattern1ParserRuleCall() { return cGeneralPattern1ParserRuleCall; }
+	}
+
+	public class GeneralPattern1Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GeneralPattern1");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cGeneralInst1ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cFREE_FORM_COMMENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//GeneralPattern1:
+		//	GeneralInst1 value=INT FREE_FORM_COMMENT* "#end"?;
+		public ParserRule getRule() { return rule; }
+
+		//GeneralInst1 value=INT FREE_FORM_COMMENT* "#end"?
+		public Group getGroup() { return cGroup; }
+
+		//GeneralInst1
+		public RuleCall getGeneralInst1ParserRuleCall_0() { return cGeneralInst1ParserRuleCall_0; }
+
+		//value=INT
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+
+		//FREE_FORM_COMMENT*
+		public RuleCall getFREE_FORM_COMMENTTerminalRuleCall_2() { return cFREE_FORM_COMMENTTerminalRuleCall_2; }
+
+		//"#end"?
+		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+	}
+
+	public class GeneralInst1Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GeneralInst1");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cPoppergoldAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cPoppergoldPoppergoldKeyword_0_0 = (Keyword)cPoppergoldAssignment_0.eContents().get(0);
+		private final Assignment cResourcemultAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cResourcemultResourcemultKeyword_1_0 = (Keyword)cResourcemultAssignment_1.eContents().get(0);
+		private final Assignment cSupplymultAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final Keyword cSupplymultSupplymultKeyword_2_0 = (Keyword)cSupplymultAssignment_2.eContents().get(0);
+		private final Assignment cUnresthalfincAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final Keyword cUnresthalfincUnresthalfincKeyword_3_0 = (Keyword)cUnresthalfincAssignment_3.eContents().get(0);
+		private final Assignment cUnresthalfresAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final Keyword cUnresthalfresUnresthalfresKeyword_4_0 = (Keyword)cUnresthalfresAssignment_4.eContents().get(0);
+		private final Assignment cEventisrareAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final Keyword cEventisrareEventisrareKeyword_5_0 = (Keyword)cEventisrareAssignment_5.eContents().get(0);
+		private final Assignment cTurmoilincomeAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final Keyword cTurmoilincomeTurmoilincomeKeyword_6_0 = (Keyword)cTurmoilincomeAssignment_6.eContents().get(0);
+		private final Assignment cTurmoileventsAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final Keyword cTurmoileventsTurmoileventsKeyword_7_0 = (Keyword)cTurmoileventsAssignment_7.eContents().get(0);
+		private final Assignment cDeathincomeAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
+		private final Keyword cDeathincomeDeathincomeKeyword_8_0 = (Keyword)cDeathincomeAssignment_8.eContents().get(0);
+		private final Assignment cDeathsupplyAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
+		private final Keyword cDeathsupplyDeathsupplyKeyword_9_0 = (Keyword)cDeathsupplyAssignment_9.eContents().get(0);
+		private final Assignment cDeathdeathAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
+		private final Keyword cDeathdeathDeathdeathKeyword_10_0 = (Keyword)cDeathdeathAssignment_10.eContents().get(0);
+		private final Assignment cSlothincomeAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
+		private final Keyword cSlothincomeSlothincomeKeyword_11_0 = (Keyword)cSlothincomeAssignment_11.eContents().get(0);
+		private final Assignment cSlothresourcesAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
+		private final Keyword cSlothresourcesSlothresourcesKeyword_12_0 = (Keyword)cSlothresourcesAssignment_12.eContents().get(0);
+		private final Assignment cColdincomeAssignment_13 = (Assignment)cAlternatives.eContents().get(13);
+		private final Keyword cColdincomeColdincomeKeyword_13_0 = (Keyword)cColdincomeAssignment_13.eContents().get(0);
+		private final Assignment cColdsupplyAssignment_14 = (Assignment)cAlternatives.eContents().get(14);
+		private final Keyword cColdsupplyColdsupplyKeyword_14_0 = (Keyword)cColdsupplyAssignment_14.eContents().get(0);
+		private final Assignment cMisfortuneAssignment_15 = (Assignment)cAlternatives.eContents().get(15);
+		private final Keyword cMisfortuneMisfortuneKeyword_15_0 = (Keyword)cMisfortuneAssignment_15.eContents().get(0);
+		private final Assignment cLuckeventsAssignment_16 = (Assignment)cAlternatives.eContents().get(16);
+		private final Keyword cLuckeventsLuckeventsKeyword_16_0 = (Keyword)cLuckeventsAssignment_16.eContents().get(0);
+		private final Assignment cResearchscaleAssignment_17 = (Assignment)cAlternatives.eContents().get(17);
+		private final Keyword cResearchscaleResearchscaleKeyword_17_0 = (Keyword)cResearchscaleAssignment_17.eContents().get(0);
+		
+		//GeneralInst1:
+		//	poppergold?="#poppergold" | resourcemult?="#resourcemult" | supplymult?="#supplymult" |
+		//	unresthalfinc?="#unresthalfinc" | unresthalfres?="#unresthalfres" | eventisrare?="#eventisrare" |
+		//	turmoilincome?="#turmoilincome" | turmoilevents?="#turmoilevents" | deathincome?="#deathincome" |
+		//	deathsupply?="#deathsupply" | deathdeath?="#deathdeath" | slothincome?="#slothincome" |
+		//	slothresources?="#slothresources" | coldincome?="#coldincome" | coldsupply?="#coldsupply" | misfortune?="#misfortune"
+		//	| luckevents?="#luckevents" | researchscale?="#researchscale";
+		public ParserRule getRule() { return rule; }
+
+		//poppergold?="#poppergold" | resourcemult?="#resourcemult" | supplymult?="#supplymult" | unresthalfinc?="#unresthalfinc"
+		//| unresthalfres?="#unresthalfres" | eventisrare?="#eventisrare" | turmoilincome?="#turmoilincome" |
+		//turmoilevents?="#turmoilevents" | deathincome?="#deathincome" | deathsupply?="#deathsupply" | deathdeath?="#deathdeath"
+		//| slothincome?="#slothincome" | slothresources?="#slothresources" | coldincome?="#coldincome" |
+		//coldsupply?="#coldsupply" | misfortune?="#misfortune" | luckevents?="#luckevents" | researchscale?="#researchscale"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//poppergold?="#poppergold"
+		public Assignment getPoppergoldAssignment_0() { return cPoppergoldAssignment_0; }
+
+		//"#poppergold"
+		public Keyword getPoppergoldPoppergoldKeyword_0_0() { return cPoppergoldPoppergoldKeyword_0_0; }
+
+		//resourcemult?="#resourcemult"
+		public Assignment getResourcemultAssignment_1() { return cResourcemultAssignment_1; }
+
+		//"#resourcemult"
+		public Keyword getResourcemultResourcemultKeyword_1_0() { return cResourcemultResourcemultKeyword_1_0; }
+
+		//supplymult?="#supplymult"
+		public Assignment getSupplymultAssignment_2() { return cSupplymultAssignment_2; }
+
+		//"#supplymult"
+		public Keyword getSupplymultSupplymultKeyword_2_0() { return cSupplymultSupplymultKeyword_2_0; }
+
+		//unresthalfinc?="#unresthalfinc"
+		public Assignment getUnresthalfincAssignment_3() { return cUnresthalfincAssignment_3; }
+
+		//"#unresthalfinc"
+		public Keyword getUnresthalfincUnresthalfincKeyword_3_0() { return cUnresthalfincUnresthalfincKeyword_3_0; }
+
+		//unresthalfres?="#unresthalfres"
+		public Assignment getUnresthalfresAssignment_4() { return cUnresthalfresAssignment_4; }
+
+		//"#unresthalfres"
+		public Keyword getUnresthalfresUnresthalfresKeyword_4_0() { return cUnresthalfresUnresthalfresKeyword_4_0; }
+
+		//eventisrare?="#eventisrare"
+		public Assignment getEventisrareAssignment_5() { return cEventisrareAssignment_5; }
+
+		//"#eventisrare"
+		public Keyword getEventisrareEventisrareKeyword_5_0() { return cEventisrareEventisrareKeyword_5_0; }
+
+		//turmoilincome?="#turmoilincome"
+		public Assignment getTurmoilincomeAssignment_6() { return cTurmoilincomeAssignment_6; }
+
+		//"#turmoilincome"
+		public Keyword getTurmoilincomeTurmoilincomeKeyword_6_0() { return cTurmoilincomeTurmoilincomeKeyword_6_0; }
+
+		//turmoilevents?="#turmoilevents"
+		public Assignment getTurmoileventsAssignment_7() { return cTurmoileventsAssignment_7; }
+
+		//"#turmoilevents"
+		public Keyword getTurmoileventsTurmoileventsKeyword_7_0() { return cTurmoileventsTurmoileventsKeyword_7_0; }
+
+		//deathincome?="#deathincome"
+		public Assignment getDeathincomeAssignment_8() { return cDeathincomeAssignment_8; }
+
+		//"#deathincome"
+		public Keyword getDeathincomeDeathincomeKeyword_8_0() { return cDeathincomeDeathincomeKeyword_8_0; }
+
+		//deathsupply?="#deathsupply"
+		public Assignment getDeathsupplyAssignment_9() { return cDeathsupplyAssignment_9; }
+
+		//"#deathsupply"
+		public Keyword getDeathsupplyDeathsupplyKeyword_9_0() { return cDeathsupplyDeathsupplyKeyword_9_0; }
+
+		//deathdeath?="#deathdeath"
+		public Assignment getDeathdeathAssignment_10() { return cDeathdeathAssignment_10; }
+
+		//"#deathdeath"
+		public Keyword getDeathdeathDeathdeathKeyword_10_0() { return cDeathdeathDeathdeathKeyword_10_0; }
+
+		//slothincome?="#slothincome"
+		public Assignment getSlothincomeAssignment_11() { return cSlothincomeAssignment_11; }
+
+		//"#slothincome"
+		public Keyword getSlothincomeSlothincomeKeyword_11_0() { return cSlothincomeSlothincomeKeyword_11_0; }
+
+		//slothresources?="#slothresources"
+		public Assignment getSlothresourcesAssignment_12() { return cSlothresourcesAssignment_12; }
+
+		//"#slothresources"
+		public Keyword getSlothresourcesSlothresourcesKeyword_12_0() { return cSlothresourcesSlothresourcesKeyword_12_0; }
+
+		//coldincome?="#coldincome"
+		public Assignment getColdincomeAssignment_13() { return cColdincomeAssignment_13; }
+
+		//"#coldincome"
+		public Keyword getColdincomeColdincomeKeyword_13_0() { return cColdincomeColdincomeKeyword_13_0; }
+
+		//coldsupply?="#coldsupply"
+		public Assignment getColdsupplyAssignment_14() { return cColdsupplyAssignment_14; }
+
+		//"#coldsupply"
+		public Keyword getColdsupplyColdsupplyKeyword_14_0() { return cColdsupplyColdsupplyKeyword_14_0; }
+
+		//misfortune?="#misfortune"
+		public Assignment getMisfortuneAssignment_15() { return cMisfortuneAssignment_15; }
+
+		//"#misfortune"
+		public Keyword getMisfortuneMisfortuneKeyword_15_0() { return cMisfortuneMisfortuneKeyword_15_0; }
+
+		//luckevents?="#luckevents"
+		public Assignment getLuckeventsAssignment_16() { return cLuckeventsAssignment_16; }
+
+		//"#luckevents"
+		public Keyword getLuckeventsLuckeventsKeyword_16_0() { return cLuckeventsLuckeventsKeyword_16_0; }
+
+		//researchscale?="#researchscale"
+		public Assignment getResearchscaleAssignment_17() { return cResearchscaleAssignment_17; }
+
+		//"#researchscale"
+		public Keyword getResearchscaleResearchscaleKeyword_17_0() { return cResearchscaleResearchscaleKeyword_17_0; }
 	}
 
 	public class ArmorElements extends AbstractParserRuleElementFinder {
@@ -4202,16 +4109,14 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSecondarylevelSecondarylevelKeyword_4_0 = (Keyword)cSecondarylevelAssignment_4.eContents().get(0);
 		private final Assignment cTypeAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
 		private final Keyword cTypeTypeKeyword_5_0 = (Keyword)cTypeAssignment_5.eContents().get(0);
-		private final Assignment cWeaponAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final Keyword cWeaponWeaponKeyword_6_0 = (Keyword)cWeaponAssignment_6.eContents().get(0);
 		
 		//ItemInst2:
 		//	constlevel?="#constlevel" | mainpath?="#mainpath" | mainlevel?="#mainlevel" | secondarypath?="#secondarypath" |
-		//	secondarylevel?="#secondarylevel" | type?="#type" | weapon?="#weapon";
+		//	secondarylevel?="#secondarylevel" | type?="#type";
 		public ParserRule getRule() { return rule; }
 
 		//constlevel?="#constlevel" | mainpath?="#mainpath" | mainlevel?="#mainlevel" | secondarypath?="#secondarypath" |
-		//secondarylevel?="#secondarylevel" | type?="#type" | weapon?="#weapon"
+		//secondarylevel?="#secondarylevel" | type?="#type"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//constlevel?="#constlevel"
@@ -4249,28 +4154,34 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"#type"
 		public Keyword getTypeTypeKeyword_5_0() { return cTypeTypeKeyword_5_0; }
-
-		//weapon?="#weapon"
-		public Assignment getWeaponAssignment_6() { return cWeaponAssignment_6; }
-
-		//"#weapon"
-		public Keyword getWeaponWeaponKeyword_6_0() { return cWeaponWeaponKeyword_6_0; }
 	}
 
 	public class ItemInst3Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ItemInst3");
-		private final Assignment cCopysprAssignment = (Assignment)rule.eContents().get(1);
-		private final Keyword cCopysprCopysprKeyword_0 = (Keyword)cCopysprAssignment.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cCopysprAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cCopysprCopysprKeyword_0_0 = (Keyword)cCopysprAssignment_0.eContents().get(0);
+		private final Assignment cWeaponAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cWeaponWeaponKeyword_1_0 = (Keyword)cWeaponAssignment_1.eContents().get(0);
 		
 		//ItemInst3:
-		//	copyspr?="#copyspr";
+		//	copyspr?="#copyspr" | weapon?="#weapon";
 		public ParserRule getRule() { return rule; }
 
+		//copyspr?="#copyspr" | weapon?="#weapon"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//copyspr?="#copyspr"
-		public Assignment getCopysprAssignment() { return cCopysprAssignment; }
+		public Assignment getCopysprAssignment_0() { return cCopysprAssignment_0; }
 
 		//"#copyspr"
-		public Keyword getCopysprCopysprKeyword_0() { return cCopysprCopysprKeyword_0; }
+		public Keyword getCopysprCopysprKeyword_0_0() { return cCopysprCopysprKeyword_0_0; }
+
+		//weapon?="#weapon"
+		public Assignment getWeaponAssignment_1() { return cWeaponAssignment_1; }
+
+		//"#weapon"
+		public Keyword getWeaponWeaponKeyword_1_0() { return cWeaponWeaponKeyword_1_0; }
 	}
 
 	public class NameElements extends AbstractParserRuleElementFinder {
@@ -5997,6 +5908,9 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private Dom3ModElements pDom3Mod;
 	private AbstractElementElements pAbstractElement;
+	private GeneralElements pGeneral;
+	private GeneralPattern1Elements pGeneralPattern1;
+	private GeneralInst1Elements pGeneralInst1;
 	private ArmorElements pArmor;
 	private SelectArmorByIdElements pSelectArmorById;
 	private SelectArmorByNameElements pSelectArmorByName;
@@ -6119,13 +6033,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Dom3Mod:
 	//	("#modname" modname=STRING & ("#description" desc=STRING)? & ("#icon" icon=STRING)? & ("#version"
-	//	version=DecimalValue)? & ("#domversion" domversion=DecimalValue)? & ("#poppergold" poppergold=INT)? & ("#resourcemult"
-	//	resourcemult=INT)? & ("#supplymult" supplymult=INT)? & ("#unresthalfinc" unresthalfinc=INT)? & ("#unresthalfres"
-	//	unresthalfres=INT)? & ("#eventisrare" eventisrare=INT)? & ("#turmoilincome" turmoilincome=INT)? & ("#turmoilevents"
-	//	turmoilevents=INT)? & ("#deathincome" deathincome=INT)? & ("#deathsupply" deathsupply=INT)? & ("#deathdeath"
-	//	deathdeath=INT)? & ("#slothincome" slothincome=INT)? & ("#slothresources" slothresources=INT)? & ("#coldincome"
-	//	coldincome=INT)? & ("#coldsupply" coldsupply=INT)? & ("#misfortune" misfortune=INT)? & ("#luckevents" luckevents=INT)?
-	//	& ("#researchscale" researchscale=INT)? & "#end"?) elements+=AbstractElement*;
+	//	version=DecimalValue)? & ("#domversion" domversion=DecimalValue)? & "#end"?) elements+=AbstractElement*;
 	public Dom3ModElements getDom3ModAccess() {
 		return (pDom3Mod != null) ? pDom3Mod : (pDom3Mod = new Dom3ModElements());
 	}
@@ -6135,13 +6043,48 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AbstractElement:
-	//	Armor | Weapon | Monster | Spell | Item | Name | Site | Nation;
+	//	General | Armor | Weapon | Monster | Spell | Item | Name | Site | Nation;
 	public AbstractElementElements getAbstractElementAccess() {
 		return (pAbstractElement != null) ? pAbstractElement : (pAbstractElement = new AbstractElementElements());
 	}
 	
 	public ParserRule getAbstractElementRule() {
 		return getAbstractElementAccess().getRule();
+	}
+
+	/// **************** / / * General Mods * / / **************** / General:
+	//	GeneralPattern1;
+	public GeneralElements getGeneralAccess() {
+		return (pGeneral != null) ? pGeneral : (pGeneral = new GeneralElements());
+	}
+	
+	public ParserRule getGeneralRule() {
+		return getGeneralAccess().getRule();
+	}
+
+	//GeneralPattern1:
+	//	GeneralInst1 value=INT FREE_FORM_COMMENT* "#end"?;
+	public GeneralPattern1Elements getGeneralPattern1Access() {
+		return (pGeneralPattern1 != null) ? pGeneralPattern1 : (pGeneralPattern1 = new GeneralPattern1Elements());
+	}
+	
+	public ParserRule getGeneralPattern1Rule() {
+		return getGeneralPattern1Access().getRule();
+	}
+
+	//GeneralInst1:
+	//	poppergold?="#poppergold" | resourcemult?="#resourcemult" | supplymult?="#supplymult" |
+	//	unresthalfinc?="#unresthalfinc" | unresthalfres?="#unresthalfres" | eventisrare?="#eventisrare" |
+	//	turmoilincome?="#turmoilincome" | turmoilevents?="#turmoilevents" | deathincome?="#deathincome" |
+	//	deathsupply?="#deathsupply" | deathdeath?="#deathdeath" | slothincome?="#slothincome" |
+	//	slothresources?="#slothresources" | coldincome?="#coldincome" | coldsupply?="#coldsupply" | misfortune?="#misfortune"
+	//	| luckevents?="#luckevents" | researchscale?="#researchscale";
+	public GeneralInst1Elements getGeneralInst1Access() {
+		return (pGeneralInst1 != null) ? pGeneralInst1 : (pGeneralInst1 = new GeneralInst1Elements());
+	}
+	
+	public ParserRule getGeneralInst1Rule() {
+		return getGeneralInst1Access().getRule();
 	}
 
 	/// ************** / / * Armor Mods * / / ************** / Armor:
@@ -6823,7 +6766,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ItemInst2:
 	//	constlevel?="#constlevel" | mainpath?="#mainpath" | mainlevel?="#mainlevel" | secondarypath?="#secondarypath" |
-	//	secondarylevel?="#secondarylevel" | type?="#type" | weapon?="#weapon";
+	//	secondarylevel?="#secondarylevel" | type?="#type";
 	public ItemInst2Elements getItemInst2Access() {
 		return (pItemInst2 != null) ? pItemInst2 : (pItemInst2 = new ItemInst2Elements());
 	}
@@ -6833,7 +6776,7 @@ public class DmGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ItemInst3:
-	//	copyspr?="#copyspr";
+	//	copyspr?="#copyspr" | weapon?="#weapon";
 	public ItemInst3Elements getItemInst3Access() {
 		return (pItemInst3 != null) ? pItemInst3 : (pItemInst3 = new ItemInst3Elements());
 	}
