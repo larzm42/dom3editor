@@ -36,7 +36,10 @@ import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.dialogs.IPageChangedListener;
 import org.eclipse.jface.dialogs.PageChangedEvent;
+import org.eclipse.jface.text.DocumentEvent;
+import org.eclipse.jface.text.IDocumentListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
@@ -73,10 +76,16 @@ import org.larz.dom3.dm.dm.NewSite;
 import org.larz.dom3.dm.dm.NewWeapon;
 import org.larz.dom3.dm.dm.SelectArmorById;
 import org.larz.dom3.dm.dm.SelectArmorByName;
+import org.larz.dom3.dm.dm.SelectItemById;
+import org.larz.dom3.dm.dm.SelectItemByName;
 import org.larz.dom3.dm.dm.SelectMonsterById;
 import org.larz.dom3.dm.dm.SelectMonsterByName;
 import org.larz.dom3.dm.dm.SelectName;
 import org.larz.dom3.dm.dm.SelectNation;
+import org.larz.dom3.dm.dm.SelectSiteById;
+import org.larz.dom3.dm.dm.SelectSiteByName;
+import org.larz.dom3.dm.dm.SelectSpellById;
+import org.larz.dom3.dm.dm.SelectSpellByName;
 import org.larz.dom3.dm.dm.SelectWeaponById;
 import org.larz.dom3.dm.dm.SelectWeaponByName;
 import org.larz.dom3.dm.dm.Site;
@@ -93,7 +102,8 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 	
 	protected IEditorPart sourcePage;
 	protected MasterFormPage masterDetailsPage;
-	
+	private boolean	docChanged = false;
+
 
 	/**
 	 * This is the method used by the framework to install your own controls.
@@ -122,7 +132,6 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 				try {
 					// create the xtext editor
 					sourcePage = (IEditorPart) confElem.createExecutableExtension("class");
-
 					masterDetailsPage = new MasterFormPage(DmEditor.this, (XtextEditor)sourcePage);
 					addPage(masterDetailsPage);
 
@@ -134,7 +143,10 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 					DmEditor.this.addPageChangedListener(new IPageChangedListener() {
 						@Override
 						public void pageChanged(PageChangedEvent event) {
-							refresh();
+							if (docChanged) {
+								refresh();
+								docChanged = false;
+							}
 						}
 					});
 					
@@ -146,6 +158,15 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 							EList<Adapter> eAdapters = dom3Mod.eAdapters();
 							eAdapters.add(new ValidationAdapter());
 						} 
+					});
+					document.addDocumentListener(new IDocumentListener() {
+						@Override
+						public void documentChanged(DocumentEvent event) {
+							docChanged = true;
+						}
+						@Override
+						public void documentAboutToBeChanged(DocumentEvent event) {
+						}
 					});
 				} catch (CoreException e1) {
 					e1.printStackTrace();
@@ -235,6 +256,10 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 		}
 	}
 	
+	private void setToCurrentSelection() {
+		masterDetailsPage.block.viewer.setSelection(new StructuredSelection(((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()));
+	}
+	
 	private void refresh() {
 		if (masterDetailsPage.block != null && masterDetailsPage.block.viewer != null) {
 			masterDetailsPage.block.viewer.refresh();
@@ -247,7 +272,21 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 						Object one = ((ArmorDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
 						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
 						if (one != two) {
-							masterDetailsPage.block.viewer.setSelection(null);
+							if (one instanceof SelectArmorById && two instanceof SelectArmorById) {
+								if (((SelectArmorById)one).getValue() == ((SelectArmorById)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else if (one instanceof SelectArmorByName && two instanceof SelectArmorByName) {
+								if (((SelectArmorByName)one).getValue().equals(((SelectArmorByName)two).getValue())) {
+									setToCurrentSelection();
+								}
+							} else if (one instanceof NewArmor && two instanceof NewArmor) {
+								if (((NewArmor)one).getValue() == ((NewArmor)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else {
+								masterDetailsPage.block.viewer.setSelection(null);
+							}
 						}
 					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof WeaponDetailsPage) {
 						((WeaponDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
@@ -255,7 +294,21 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 						Object one = ((WeaponDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
 						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
 						if (one != two) {
-							masterDetailsPage.block.viewer.setSelection(null);
+							if (one instanceof SelectWeaponById && two instanceof SelectWeaponById) {
+								if (((SelectWeaponById)one).getValue() == ((SelectWeaponById)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else if (one instanceof SelectWeaponByName && two instanceof SelectWeaponByName) {
+								if (((SelectWeaponByName)one).getValue().equals(((SelectWeaponByName)two).getValue())) {
+									setToCurrentSelection();
+								}
+							} else if (one instanceof NewWeapon && two instanceof NewWeapon) {
+								if (((NewWeapon)one).getValue() == ((NewWeapon)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else {
+								masterDetailsPage.block.viewer.setSelection(null);
+							}
 						}
 					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof MonsterDetailsPage) {
 						((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
@@ -263,7 +316,21 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 						Object one = ((MonsterDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
 						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
 						if (one != two) {
-							masterDetailsPage.block.viewer.setSelection(null);
+							if (one instanceof SelectMonsterById && two instanceof SelectMonsterById) {
+								if (((SelectMonsterById)one).getValue() == ((SelectMonsterById)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else if (one instanceof SelectMonsterByName && two instanceof SelectMonsterByName) {
+								if (((SelectMonsterByName)one).getValue().equals(((SelectMonsterByName)two).getValue())) {
+									setToCurrentSelection();
+								}
+							} else if (one instanceof NewMonster && two instanceof NewMonster) {
+								if (((NewMonster)one).getValue() == ((NewMonster)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else {
+								masterDetailsPage.block.viewer.setSelection(null);
+							}
 						}
 					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof NationDetailsPage) {
 						((NationDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
@@ -271,7 +338,13 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 						Object one = ((NationDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
 						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
 						if (one != two) {
-							masterDetailsPage.block.viewer.setSelection(null);
+							if (one instanceof SelectNation && two instanceof SelectNation) {
+								if (((SelectNation)one).getValue() == ((SelectNation)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else {
+								masterDetailsPage.block.viewer.setSelection(null);
+							}
 						}
 					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SpellDetailsPage) {
 						((SpellDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
@@ -279,7 +352,17 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 						Object one = ((SpellDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
 						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
 						if (one != two) {
-							masterDetailsPage.block.viewer.setSelection(null);
+							if (one instanceof SelectSpellById && two instanceof SelectSpellById) {
+								if (((SelectSpellById)one).getValue() == ((SelectSpellById)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else if (one instanceof SelectSpellByName && two instanceof SelectSpellByName) {
+								if (((SelectSpellByName)one).getValue().equals(((SelectSpellByName)two).getValue())) {
+									setToCurrentSelection();
+								}
+							} else {
+								masterDetailsPage.block.viewer.setSelection(null);
+							}
 						}
 					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof ItemDetailsPage) {
 						((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
@@ -287,7 +370,17 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 						Object one = ((ItemDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
 						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
 						if (one != two) {
-							masterDetailsPage.block.viewer.setSelection(null);
+							if (one instanceof SelectItemById && two instanceof SelectItemById) {
+								if (((SelectItemById)one).getValue() == ((SelectItemById)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else if (one instanceof SelectItemByName && two instanceof SelectItemByName) {
+								if (((SelectItemByName)one).getValue().equals(((SelectItemByName)two).getValue())) {
+									setToCurrentSelection();
+								}
+							} else {
+								masterDetailsPage.block.viewer.setSelection(null);
+							}
 						}
 					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof SiteDetailsPage) {
 						((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
@@ -295,7 +388,21 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 						Object one = ((SiteDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
 						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
 						if (one != two) {
-							masterDetailsPage.block.viewer.setSelection(null);
+							if (one instanceof SelectSiteById && two instanceof SelectSiteById) {
+								if (((SelectSiteById)one).getValue() == ((SelectSiteById)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else if (one instanceof SelectSiteByName && two instanceof SelectSiteByName) {
+								if (((SelectSiteByName)one).getValue().equals(((SelectSiteByName)two).getValue())) {
+									setToCurrentSelection();
+								}
+							} else if (one instanceof NewSite && two instanceof NewSite) {
+								if (((NewSite)one).getValue() == ((NewSite)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else {
+								masterDetailsPage.block.viewer.setSelection(null);
+							}
 						}
 					} else if (((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage() instanceof NameDetailsPage) {
 						((NameDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).update();
@@ -303,7 +410,13 @@ public class DmEditor extends FormEditor implements IMenuListener, IGotoMarker {
 						Object one = ((NameDetailsPage)((SummaryList)masterDetailsPage.block).getDetailsPart().getCurrentPage()).getInput();
 						Object two = ((AbstractElementWrapper)((IStructuredSelection)masterDetailsPage.block.viewer.getSelection()).getFirstElement()).getElement();
 						if (one != two) {
-							masterDetailsPage.block.viewer.setSelection(null);
+							if (one instanceof SelectName && two instanceof SelectName) {
+								if (((SelectName)one).getValue() == ((SelectName)two).getValue()) {
+									setToCurrentSelection();
+								}
+							} else {
+								masterDetailsPage.block.viewer.setSelection(null);
+							}
 						}
 					}
 				}

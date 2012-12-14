@@ -38,6 +38,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
@@ -66,6 +67,7 @@ import org.larz.dom3.image.ImageLoader;
 public class MasterFormPage extends FormPage {
 	public SummaryList block;
 	private XtextEditor doc;
+	private Label iconLabel;
 	
 	enum General {
 		MODNAME(Messages.getString("ScrolledPropertiesBlock.modname")), 
@@ -128,7 +130,7 @@ public class MasterFormPage extends FormPage {
 	 */
 	public MasterFormPage(DmEditor editor, XtextEditor doc) {
 		super(editor, "MasterDetails", Messages.getString("MasterDetailsPage.details.label")); //$NON-NLS-1$ //$NON-NLS-2$
-		block = new SummaryList(this, editor, doc);
+		block = new SummaryList(editor, doc);
 		this.doc = doc;
 
 		generalMap.put(General.MODNAME, new GeneralFields());
@@ -179,7 +181,7 @@ public class MasterFormPage extends FormPage {
 		header1.setLayout(new GridLayout(2, true));
 
 		final Composite header = toolkit.createComposite(header1);
-		GridLayout layout = new GridLayout(2, false);
+		GridLayout layout = new GridLayout(3, false);
 		layout.marginWidth = 0;
 		layout.marginHeight = 0;
 		header.setLayout(layout);
@@ -207,14 +209,17 @@ public class MasterFormPage extends FormPage {
 				}
 			});
 			GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
-			data.widthHint = 380;
+			data.widthHint = 335;
+			if (!general.equals(General.ICON)) {
+				data.horizontalSpan = 2;
+			}
 			modname.setLayoutData(data);
 			if (general.equals(General.DESC)) {
 				modname.addListener(SWT.Modify, new Listener() {			
 					@Override
 					public void handleEvent(Event event) {
 						int currentHeight = modname.getSize().y;
-						int preferredHeight = modname.computeSize(380, SWT.DEFAULT).y;
+						int preferredHeight = modname.computeSize(335, SWT.DEFAULT).y;
 						if (currentHeight < preferredHeight || currentHeight > 2*preferredHeight) {
 							GridData data = (GridData)modname.getLayoutData();
 							data.heightHint = preferredHeight;
@@ -224,33 +229,38 @@ public class MasterFormPage extends FormPage {
 					}
 				});
 			}
+			if (general.equals(General.ICON)) {
+				Button iconBrowse = toolkit.createButton(header, "Browse...", SWT.PUSH);
+				iconBrowse.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						FileDialog dialog = new FileDialog(header.getShell(), SWT.OPEN);
+						dialog.setFilterExtensions(new String[]{"*.tga", "*.rgb", "*.sgi"});
+						if (dialog.open() != null) {
+							String targetpath = new File(dialog.getFilterPath() + File.separator + dialog.getFileName()).getAbsolutePath();
+							String basepath = ((DmXtextEditor)doc).getPath();
+							String relativepath = ResourceUtils.getRelativePath(targetpath, basepath, "/");
+							for (Map.Entry<General, GeneralFields> fields : generalMap.entrySet()) {
+								if (fields.getKey() == General.ICON) {
+									fields.getValue().value.setText("./"+relativepath);
+								}
+							}
+							setGeneral(General.ICON, doc, "./"+relativepath);
+							iconLabel.setImage(getSprite("./"+relativepath));
+							update();
+						}
+					}
+				}); 
+			}
 			fields.getValue().value = modname;
 		}
 		
 		final String iconPath = getGeneral(General.ICON, doc);
-		if (iconPath != null && iconPath.length() > 0) {
-			ImageLoader loader = new ImageLoader() {
-				@Override
-				public InputStream getStream() throws IOException {
-					String path = ((DmXtextEditor)doc).getPath();
-					path = path.substring(0, path.lastIndexOf('/')+1);
-					if (iconPath != null && iconPath.startsWith("./")) {
-						path += iconPath.substring(2);
-					} else if (iconPath != null){
-						path += iconPath;
-					}
-
-					return new FileInputStream(new File(path));
-				}
-			};
-			try {
-				Image image = new Image(null, ImageConverter.convertToSWT(loader.loadImage()));
-				Label label = toolkit.createLabel(header1, "");
-				
-				label.setImage(image);			
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		try {
+			iconLabel = toolkit.createLabel(header1, "");				
+			iconLabel.setImage(getSprite(iconPath));			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 		Composite general2Comp = toolkit.createComposite(header1);
@@ -779,15 +789,46 @@ public class MasterFormPage extends FormPage {
 		});
 	}
 	
+	protected Image getSprite(String sprite) {
+		if (sprite != null) {
+			final String finalName1 = sprite;
+			ImageLoader loader1 = new ImageLoader() {
+				@Override
+				public InputStream getStream() throws IOException {
+					String path = ((DmXtextEditor)doc).getPath();
+					path = path.substring(0, path.lastIndexOf('/')+1);
+					if (finalName1.startsWith("./")) {
+						path += finalName1.substring(2);
+					} else {
+						path += finalName1;
+					}
+
+					return new FileInputStream(new File(path));
+				}
+			};
+			try {
+				return new Image(null, ImageConverter.convertToSWT(ImageConverter.cropImage(loader1.loadImage())));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+
 	public void update() {
 		for (Map.Entry<General, GeneralFields> fields : generalMap.entrySet()) {
 			String val = getGeneral(fields.getKey(), doc);
 			if (val != null) {
 				fields.getValue().value.setText(val);
+				if (fields.getKey() == General.ICON) {
+					Image image = getSprite(val);
+					if (image != null) {
+						iconLabel.setImage(image);
+					}
+				}
 			} else {
 				fields.getValue().value.setText("");
 			}
-
 		}
 		for (Map.Entry<General2, General2Fields> fields : general2Map.entrySet()) {
 			Integer val = getGeneral2(fields.getKey(), doc);
@@ -801,7 +842,7 @@ public class MasterFormPage extends FormPage {
 				fields.getValue().check.setSelection(false);
 			}
 		}
+		iconLabel.getParent().getParent().layout(true, true);
 	}
-
 
 }
