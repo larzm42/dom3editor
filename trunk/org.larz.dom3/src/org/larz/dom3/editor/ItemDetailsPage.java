@@ -30,6 +30,7 @@ import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.events.VerifyEvent;
 import org.eclipse.swt.events.VerifyListener;
 import org.eclipse.swt.layout.GridData;
@@ -111,18 +112,24 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 		private Label defaultLabel;
 	}
 	
+	class Inst4Fields implements InstFields {
+		private Button check;
+		private MappedDynamicCombo value;
+		private Label defaultLabel;
+	}
+	
 	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
 	
 	public ItemDetailsPage(XtextEditor doc, TableViewer viewer) {
 		super(doc, viewer);
 		instMap.put(Inst.ARMOR, new Inst1Fields());
 		instMap.put(Inst.CONSTLEVEL, new Inst2Fields());
-		instMap.put(Inst.MAINPATH, new Inst2Fields());
+		instMap.put(Inst.MAINPATH, new Inst4Fields());
 		instMap.put(Inst.MAINLEVEL, new Inst2Fields());
-		instMap.put(Inst.SECONDARYPATH, new Inst2Fields());
+		instMap.put(Inst.SECONDARYPATH, new Inst4Fields());
 		instMap.put(Inst.SECONDARYLEVEL, new Inst2Fields());
 		instMap.put(Inst.COPYSPR, new Inst3Fields());
-		instMap.put(Inst.TYPE, new Inst2Fields());
+		instMap.put(Inst.TYPE, new Inst4Fields());
 		instMap.put(Inst.WEAPON, new Inst3Fields());
 	}
 	
@@ -190,7 +197,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				if (nameCheck.getSelection()) {
 					addInst1(Inst.NAME, doc, "");
 					name.setEnabled(true);
-					name.setText("");
+					name.setText(getSelectItemname((Item)input));
 					nameCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.NAME, doc);
@@ -208,7 +215,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 		descrCheck = toolkit.createButton(nameComp, Messages.getString("ItemDetailsSection.mod.descr"), SWT.CHECK);
 		descrCheck.setToolTipText(HelpTextHelper.getText(HelpTextHelper.ITEM_CATEGORY, "descr"));
 
-		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER); //$NON-NLS-1$
+		descr = toolkit.createText(nameComp, null, SWT.MULTI | SWT.BORDER | SWT.WRAP); //$NON-NLS-1$
 		descr.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
@@ -247,13 +254,13 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					addInst1(Inst.DESCR, doc, "");
 					descr.setEnabled(true);
 					descr.setBackground(toolkit.getColors().getBackground());
-					descr.setText("");
+					descr.setText(getSelectItemdescr((Item)input));
 					descrCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
-					descr.setText("");
+					descr.setText(getSelectItemdescr((Item)input));
 					descrCheck.setFont(normalFont);
 				}
 			}
@@ -294,6 +301,8 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 							addInst2(key, doc, key.defaultValue);
 						} else if (field instanceof Inst3Fields) {
 							addInst3(key, doc, key.defaultValue);
+						} else if (field instanceof Inst4Fields) {
+							addInst2(key, doc, key.defaultValue);
 						}
 					} else {
 						removeInst(key, doc);
@@ -376,6 +385,65 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				value.setLayoutData(gd);
 				
 			}
+			MappedDynamicCombo myInst4Value1 = null;
+			if (field instanceof Inst4Fields) {
+				final MappedDynamicCombo value = new MappedDynamicCombo(isRight?rightColumn:leftColumn, SWT.READ_ONLY);
+				myInst4Value1 = value;
+				
+				check.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						if (check.getSelection()) {
+							value.setEnabled(true);
+							if (key == Inst.MAINPATH) {
+								value.setItems(new String[]{
+									"Fire",	"Air", "Water", "Earth", "Astral", "Death",
+									"Nature", "Blood",
+									},
+									new int[]{0, 1, 2, 3, 4, 5, 6, 7});
+							} else if (key == Inst.SECONDARYPATH) {
+								value.setItems(new String[]{
+										"None", "Fire",	"Air", "Water", "Earth", "Astral", "Death",
+										"Nature", "Blood",
+										},
+										new int[]{-1, 0, 1, 2, 3, 4, 5, 6, 7});
+							} else if (key == Inst.TYPE) {
+								value.setItems(new String[]{
+										"1-handed weapon", "2-handed weapon", "missile weapon", "shield", "body armor", "helmet", "boots", "misc item"},
+										new int[]{1, 2, 3, 4, 5, 6, 7, 8});
+							}
+							int selection = Integer.parseInt(key.defaultValue);
+							value.select(selection);
+						} else {
+							value.setEnabled(false);
+							value.removeAll();
+						}
+					}
+
+				});
+				value.addSelectionListener(new SelectionListener() {
+					
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						int val = value.getSelectedValue();
+						setInst2(key, doc, Integer.toString(val));
+					}
+					
+					@Override
+					public void widgetDefaultSelected(SelectionEvent e) {
+					}
+				});
+				value.setEnabled(false);
+				
+				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				if (key == Inst.TYPE) {
+					gd.widthHint = DEFAULT_VALUE_WIDTH+60;
+				} else {
+					gd.widthHint = DEFAULT_VALUE_WIDTH;
+				}
+				value.setLayoutData(gd);
+				
+			}
 				
 			Label defaultLabel1 = null;
 			
@@ -398,6 +466,12 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					gd.horizontalSpan = 3;
 				}
 				defaultLabel1.setLayoutData(gd);
+			} else if (field instanceof Inst4Fields) {
+				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+				defaultLabel1.setEnabled(false);
+				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
+				gd.horizontalSpan = 3;
+				defaultLabel1.setLayoutData(gd);
 			}
 			
 			if (field instanceof Inst1Fields) {
@@ -412,6 +486,10 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				((Inst3Fields)field).check = check;
 				((Inst3Fields)field).value = myValue1;
 				((Inst3Fields)field).defaultLabel = defaultLabel1;
+			} else if (field instanceof Inst4Fields) {
+				((Inst4Fields)field).check = check;
+				((Inst4Fields)field).value = myInst4Value1;
+				((Inst4Fields)field).defaultLabel = defaultLabel1;
 			}
 
 			isRight = !isRight;
@@ -428,6 +506,16 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 			return Database.getItemName(id);
 		}
 		return null;
+	}
+	
+	private String getSelectItemdescr(Item item) {
+		if (item instanceof SelectItemByName) {
+			return Database.getItemDescr(((SelectItemByName)item).getValue());
+		} else if (item instanceof SelectItemById) {
+			int id = ((SelectItemById)item).getValue();
+			return Database.getItemDescr(Database.getItemName(id));
+		}
+		return "";
 	}
 	
 	private int getSelectItemid(Item item) {
@@ -510,7 +598,7 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 				descrCheck.setSelection(true);
 				descrCheck.setFont(boldFont);
 			} else {
-				descr.setText("");
+				descr.setText(getSelectItemdescr((Item)input));
 				descr.setEnabled(false);
 				descr.setBackground(toolkit.getColors().getInactiveBackground());
 				descrCheck.setSelection(false);
@@ -549,12 +637,38 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					((Inst2Fields)fields.getValue()).check.setSelection(true);
 					((Inst2Fields)fields.getValue()).check.setFont(boldFont);
 				}
+				if (fields.getValue() instanceof Inst4Fields) {
+					if (fields.getKey() == Inst.MAINPATH) {
+						((Inst4Fields)fields.getValue()).value.setItems(new String[]{
+							"Fire",	"Air", "Water", "Earth", "Astral", "Death",
+							"Nature", "Blood",
+							},
+							new int[]{0, 1, 2, 3, 4, 5, 6, 7});
+					} else if (fields.getKey() == Inst.SECONDARYPATH) {
+						((Inst4Fields)fields.getValue()).value.setItems(new String[]{
+								"None", "Fire",	"Air", "Water", "Earth", "Astral", "Death",
+								"Nature", "Blood",
+								},
+								new int[]{-1, 0, 1, 2, 3, 4, 5, 6, 7});
+					}
+					int selection = Integer.parseInt(val.toString());
+					((Inst4Fields)fields.getValue()).value.select(selection);
+					((Inst4Fields)fields.getValue()).value.setEnabled(true);
+					((Inst4Fields)fields.getValue()).check.setSelection(true);
+					((Inst4Fields)fields.getValue()).check.setFont(boldFont);
+				}
 			} else {
 				if (fields.getValue() instanceof Inst2Fields) {
 					((Inst2Fields)fields.getValue()).value.setText("");
 					((Inst2Fields)fields.getValue()).value.setEnabled(false);
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
 					((Inst2Fields)fields.getValue()).check.setFont(normalFont);
+				}
+				if (fields.getValue() instanceof Inst4Fields) {
+					((Inst4Fields)fields.getValue()).value.removeAll();
+					((Inst4Fields)fields.getValue()).value.setEnabled(false);
+					((Inst4Fields)fields.getValue()).check.setSelection(false);
+					((Inst4Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Object val3 = getInst3(fields.getKey(), (Item)input);
@@ -595,11 +709,11 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					break;
 				case MAINPATH:
 					if (itemDB.mainpath != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.mainpath.toString()));
+						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getPathName(itemDB.mainpath)));
 						Inst.MAINPATH.defaultValue = itemDB.mainpath.toString();
 					} else {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
-						Inst.MAINPATH.defaultValue = "";
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAINPATH.defaultValue = "0";
 					}
 					break;
 				case MAINLEVEL:
@@ -613,11 +727,11 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					break;
 				case SECONDARYPATH:
 					if (itemDB.secondarypath != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.secondarypath.toString()));
+						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getPathName(itemDB.secondarypath)));
 						Inst.SECONDARYPATH.defaultValue = itemDB.secondarypath.toString();
 					} else {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
-						Inst.SECONDARYPATH.defaultValue = "";
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SECONDARYPATH.defaultValue = "0";
 					}
 					break;
 				case SECONDARYLEVEL:
@@ -631,10 +745,10 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 					break;
 				case TYPE:
 					if (itemDB.type != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.type.toString()));
+						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", itemDB.type.toString()));
 						Inst.TYPE.defaultValue = itemDB.type.toString();
 					} else {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
 						Inst.TYPE.defaultValue = "";
 					}
 					break;
@@ -721,6 +835,30 @@ public class ItemDetailsPage extends AbstractDetailsPage {
 		});
 
 		updateSelection();
+	}
+
+	private String getPathName(int id) {
+		switch (id) {
+		case -1:
+			return "cannot be researched";
+		case 0:
+			return "Fire";
+		case 1:
+			return "Air";
+		case 2:
+			return "Water";
+		case 3:
+			return "Earth";
+		case 4:
+			return "Astral";
+		case 5:
+			return "Death";
+		case 6:
+			return "Nature";
+		case 7:
+			return "Blood";
+		}
+		return "Unknown";
 	}
 
 	private String getInst1(Inst inst2, Item item) {

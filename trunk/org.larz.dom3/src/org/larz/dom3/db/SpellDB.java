@@ -32,7 +32,9 @@ public class SpellDB {
 	public Integer precision;
 	public Integer sound;
 	public Integer spec;
-	public Integer restricted;
+	public Integer restricted1;
+	public Integer restricted2;
+	public Integer restricted3;
 	public Integer path1;
 	public Integer path2;
 	public Integer pathlevel1;

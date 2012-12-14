@@ -30,13 +30,17 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
@@ -308,4 +312,233 @@ public abstract class AbstractDetailsPage implements IDetailsPage {
 		protected void checkSubclass() {
 		} 
 	}
+	
+	class MappedDynamicCombo extends Composite {
+	    private Map<Integer, Integer> indexToValues;
+	    private Map<Integer, Integer> valuesToIndex;
+	    private Combo combo;
+	    
+	    /**
+	     * @param parent
+	     * @param style
+	     */
+	    public MappedDynamicCombo(Composite parent, int style) {
+	        this(parent,style,null,null);
+	    }
+
+	    /**
+	     * @param parent
+	     * @param style
+	     * @param selectValues
+	     * @param returnValues
+	     */
+	    public MappedDynamicCombo(Composite parent, int style, String[] selectValues, int[] returnValues) {
+	        super(parent,style);
+			setBackground(mform.getToolkit().getColors().getBackground());
+			setForeground(mform.getToolkit().getColors().getForeground());
+	        indexToValues = new HashMap<Integer, Integer>();
+	        valuesToIndex = new HashMap<Integer, Integer>();
+	        initComponents();
+	        setItems(selectValues,returnValues);
+	    }
+	    
+		@Override
+		public Point computeSize(int wHint, int hHint, boolean changed) {
+			if (getData() == Boolean.FALSE) {
+				return new Point(0,0);
+			}
+			return super.computeSize(wHint, hHint, changed);
+		}
+		@Override
+		public Point computeSize(int wHint, int hHint) {
+			if (getData() == Boolean.FALSE) {
+				return new Point(0,0);
+			}
+			return super.computeSize(wHint, hHint);
+		}
+
+	    private void initComponents() {
+	        GridLayout grid = new GridLayout( 1, false );
+	        grid.marginHeight = 0;
+	        grid.marginWidth = 0;
+	        setLayout(grid); 
+	                        
+	        combo = new Combo(this,SWT.BORDER|SWT.DROP_DOWN | SWT.READ_ONLY);
+	        GridData gridData = new GridData( GridData.BEGINNING | GridData.FILL_HORIZONTAL );
+	        gridData.grabExcessHorizontalSpace = true;
+	        combo.setLayoutData(gridData);
+	    }
+	    
+	    @Override
+		public void setEnabled(boolean enabled){
+	        super.setEnabled(enabled);
+	        combo.setEnabled(enabled);
+	    }
+	    
+	    /**
+	     * @param string
+	     * @param returnValue
+	     */
+	    public void add(String string, int returnValue) {
+	        int newIndex = combo.getItemCount();
+	        if (indexToValues == null) indexToValues = new HashMap<Integer, Integer>();
+	        if (valuesToIndex == null) valuesToIndex = new HashMap<Integer, Integer>();
+	        indexToValues.put(Integer.valueOf(newIndex),Integer.valueOf(returnValue));
+	        valuesToIndex.put(Integer.valueOf(returnValue),Integer.valueOf(newIndex));
+	        combo.add(string);
+	    }
+
+	    /**
+	     * @param string
+	     * @param index
+	     * @param returnValue
+	     */
+	    public void add(String string, int index, int returnValue) {
+	        Map<Integer, Integer> newIndexToValues = new HashMap<Integer, Integer>();
+	        Map<Integer, Integer> newValuesToIndex = new HashMap<Integer, Integer>();
+	        int listLength = combo.getItemCount();
+	        int offset = 0;
+	        for (int i=0; i< listLength; i++) {
+	            if (i == index) {
+	                offset = 1;
+	            }
+	            newIndexToValues.put(Integer.valueOf(i+offset),indexToValues.get(Integer.valueOf(i)));
+	            newValuesToIndex.put(indexToValues.get(Integer.valueOf(i)),Integer.valueOf(i+offset));
+	        }
+	        newIndexToValues.put(Integer.valueOf(index),indexToValues.get(Integer.valueOf(returnValue)));
+	        newValuesToIndex.put(indexToValues.get(Integer.valueOf(returnValue)),Integer.valueOf(index));
+	        indexToValues = newIndexToValues;
+	        valuesToIndex = newValuesToIndex;
+	    }
+
+	    /**
+	     * @param returnValue
+	     */
+	    public void deselect(int returnValue) {
+	        Integer indexToSelect = valuesToIndex.get(Integer.valueOf(returnValue));
+	        combo.deselect(indexToSelect.intValue());
+	    }
+
+	    /**
+	     * @param returnValue
+	     * @return
+	     */
+	    public String getItem(int returnValue) {
+	        Integer indexToSelect = valuesToIndex.get(Integer.valueOf(returnValue));
+	        return combo.getItem(indexToSelect.intValue());
+	    }
+
+	    /**
+	     * @return
+	     */
+	    public String[] getItems() {
+	    	return combo.getItems();
+	    }
+
+	    /**
+	     * @return
+	     */
+	    public int getSelectedValue() {
+	    	Integer selectedValue = null;
+	    	if ((combo != null) && !combo.isDisposed()) {
+	    		int index = combo.getSelectionIndex();
+	    		selectedValue = indexToValues.get(Integer.valueOf(index));
+	    	}
+	        if (selectedValue == null) return 0;
+	        return selectedValue.intValue();
+	    }
+
+	    /**
+	     * @param returnValue
+	     * @return
+	     */
+	    public boolean select(int returnValue) {
+	        Integer indexToSelect = valuesToIndex.get(Integer.valueOf(returnValue));
+	        if ((combo != null) && !combo.isDisposed() && (indexToSelect != null)) {
+	            combo.select(indexToSelect.intValue());
+	            return true;
+	        }
+	        return false;
+	    }
+
+	    /**
+	     * 
+	     */
+	    public void selectFirst() {
+	        if (combo.getItemCount()>0) {
+	            combo.select(0);
+	        }
+	    }
+	    
+	    /**
+	     * @param returnValue
+	     * @param displayValue
+	     */
+	    public void setItem(int returnValue, String displayValue) {
+	        Integer indexToSelect = valuesToIndex.get(Integer.valueOf(returnValue));
+	        combo.setItem(indexToSelect.intValue(),displayValue);
+	    }
+
+	    /**
+	     * @param items
+	     * @param mappedValues
+	     */
+	    public void setItems(String[] items, int[] mappedValues) {
+	        indexToValues = new HashMap<Integer, Integer>();
+	        valuesToIndex = new HashMap<Integer, Integer>();
+	        if (items == null || mappedValues == null) return;
+	        assert (items.length == mappedValues.length);
+	        for (int i = 0; i < mappedValues.length; i++) {
+	            indexToValues.put(Integer.valueOf(i),Integer.valueOf(mappedValues[i]));
+	            valuesToIndex.put(Integer.valueOf(mappedValues[i]),Integer.valueOf(i));
+	        }
+	        combo.setItems(items);
+	    }
+	    
+	    /**
+	     * @param count
+	     */
+	    public void setVisibleItemCount(int count) {
+	    	combo.setVisibleItemCount(count);
+	    }
+	    
+	    /**
+	     * @param listener
+	     */
+	    public void addSelectionListener(SelectionListener listener) {
+	        combo.addSelectionListener(listener);
+	    }
+
+	    /**
+	     * @param listener
+	     */
+	    public void removeSelectionListener(SelectionListener listener) {
+	        combo.removeSelectionListener(listener);
+	    }
+	    
+	    /**
+	     * @param listener
+	     */
+	    public void addModifyListener(ModifyListener listener) {
+	    	combo.addModifyListener(listener);
+	    }
+	    
+	    /**
+	     * @param listener
+	     */
+	    public void removeModifyListener(ModifyListener listener) {
+	        combo.removeModifyListener(listener);
+	    }
+
+	    /**
+	     * 
+	     */
+	    public void removeAll() {
+	        indexToValues.clear();
+	        valuesToIndex.clear();
+	        combo.removeAll();
+	    }
+	    
+	}
+
 }

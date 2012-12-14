@@ -43,6 +43,7 @@ import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.events.VerifyEvent;
 import org.eclipse.swt.events.VerifyListener;
 import org.eclipse.swt.graphics.Image;
@@ -52,6 +53,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
@@ -80,6 +82,7 @@ import org.larz.dom3.dm.dm.MonsterInst6;
 import org.larz.dom3.dm.dm.MonsterMods;
 import org.larz.dom3.dm.dm.SelectMonsterById;
 import org.larz.dom3.dm.dm.SelectMonsterByName;
+import org.larz.dom3.dm.ui.editor.DmXtextEditor;
 import org.larz.dom3.dm.ui.help.HelpTextHelper;
 import org.larz.dom3.image.ImageConverter;
 import org.larz.dom3.image.ImageLoader;
@@ -91,8 +94,10 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	private Button descCheck;
 	private Text spr1;
 	private Button spr1Check;
+	private Button spr1Browse;
 	private Text spr2;
 	private Button spr2Check;
+	private Button spr2Browse;
 	private Label sprite1Label;
 	private Label sprite2Label;
 
@@ -337,7 +342,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	
 	class Inst3Fields implements InstFields {
 		private Button check;
-		private Text value1;
+		private MappedDynamicCombo value1;
 		private Text value2;
 		private Label defaultLabel1;
 		private Label defaultLabel2;
@@ -357,6 +362,24 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 	class Inst6Fields implements InstFields {
 		private Button check;
 		private Text value;
+		private Label defaultLabel;
+	}
+	
+	class Inst7Fields implements InstFields {
+		private Button check;
+		private Text value1;
+		private Text value2;
+		private Label defaultLabel1;
+		private Label defaultLabel2;
+	}
+	
+	class Inst8Fields implements InstFields {
+		private Button check;
+		private MappedDynamicCombo value1;
+		private MappedDynamicCombo value2;
+		private MappedDynamicCombo value3;
+		private MappedDynamicCombo value4;
+		private MappedDynamicCombo value5;
 		private Label defaultLabel;
 	}
 	
@@ -442,7 +465,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.LEPER, new Inst2Fields());
 		instMap.put(Inst.POPKILL, new Inst2Fields());
 		instMap.put(Inst.HERETIC, new Inst2Fields());
-		instMap.put(Inst.ITEMSLOTS, new Inst2Fields());
+		instMap.put(Inst.ITEMSLOTS, new Inst8Fields());
 		instMap.put(Inst.NAMETYPE, new Inst2Fields());
 		instMap.put(Inst.MAGICSKILL1, new Inst3Fields());
 		instMap.put(Inst.MAGICSKILL2, new Inst3Fields());
@@ -452,14 +475,14 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.MAGICSKILL6, new Inst3Fields());
 		instMap.put(Inst.MAGICSKILL7, new Inst3Fields());
 		instMap.put(Inst.MAGICSKILL8, new Inst3Fields());
-		instMap.put(Inst.CUSTOMMAGIC1, new Inst3Fields());
-		instMap.put(Inst.CUSTOMMAGIC2, new Inst3Fields());
-		instMap.put(Inst.CUSTOMMAGIC3, new Inst3Fields());
-		instMap.put(Inst.CUSTOMMAGIC4, new Inst3Fields());
-		instMap.put(Inst.CUSTOMMAGIC5, new Inst3Fields());
-		instMap.put(Inst.CUSTOMMAGIC6, new Inst3Fields());
-		instMap.put(Inst.CUSTOMMAGIC7, new Inst3Fields());
-		instMap.put(Inst.CUSTOMMAGIC8, new Inst3Fields());
+		instMap.put(Inst.CUSTOMMAGIC1, new Inst7Fields());
+		instMap.put(Inst.CUSTOMMAGIC2, new Inst7Fields());
+		instMap.put(Inst.CUSTOMMAGIC3, new Inst7Fields());
+		instMap.put(Inst.CUSTOMMAGIC4, new Inst7Fields());
+		instMap.put(Inst.CUSTOMMAGIC5, new Inst7Fields());
+		instMap.put(Inst.CUSTOMMAGIC6, new Inst7Fields());
+		instMap.put(Inst.CUSTOMMAGIC7, new Inst7Fields());
+		instMap.put(Inst.CUSTOMMAGIC8, new Inst7Fields());
 		instMap.put(Inst.MAGICBOOST1, new Inst3Fields());
 		instMap.put(Inst.MAGICBOOST2, new Inst3Fields());
 		instMap.put(Inst.MAGICBOOST3, new Inst3Fields());
@@ -634,7 +657,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		client.setLayout(glayout);
 		
 		final Composite nameComp = toolkit.createComposite(client);
-		glayout = new GridLayout(2, false);
+		glayout = new GridLayout(3, false);
 		glayout.marginHeight = 0;
 		glayout.marginWidth = 0;
 		nameComp.setLayout(glayout);
@@ -664,6 +687,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		
 		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 		gd.widthHint = 500;
+		gd.horizontalSpan = 2;
 		name.setLayoutData(gd);
 		nameCheck.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -705,14 +729,17 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			}
 			
 		});
-		descr.setLayoutData(new GridData(500, SWT.DEFAULT));
+		gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+		gd.widthHint = 500;
+		gd.horizontalSpan = 2;
+		descr.setLayoutData(gd);
 		descr.addListener(SWT.Modify, new Listener() {
 			
 			@Override
 			public void handleEvent(Event event) {
 				int currentHeight = descr.getSize().y;
 				int preferredHeight = descr.computeSize(500, SWT.DEFAULT).y;
-				if (currentHeight < preferredHeight || currentHeight > 2*preferredHeight) {
+				if (currentHeight < preferredHeight || currentHeight > 1.5*preferredHeight) {
 					GridData data = (GridData)descr.getLayoutData();
 					data.heightHint = preferredHeight;
 					client.pack();
@@ -728,13 +755,13 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					addInst1(Inst.DESCR, doc, "");
 					descr.setEnabled(true);
 					descr.setBackground(toolkit.getColors().getBackground());
-					descr.setText("");
+					descr.setText(getSelectMonsterdescr((Monster)input));
 					descCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
-					descr.setText("");
+					descr.setText(getSelectMonsterdescr((Monster)input));
 					descCheck.setFont(normalFont);
 				}
 			}
@@ -743,7 +770,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		Composite spriteComp = toolkit.createComposite(nameComp);
 		spriteComp.setLayout(new GridLayout(2, false));
 		gd = new GridData();
-		gd.horizontalSpan = 2;
+		gd.horizontalSpan = 3;
 		spriteComp.setLayoutData(gd);
 		sprite1Label = new Label(spriteComp, SWT.NONE);
 		sprite2Label = new Label(spriteComp, SWT.NONE);
@@ -757,7 +784,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			public void focusLost(FocusEvent e) {
 				setInst1(Inst.SPR1, doc, spr1.getText());
 				sprite1Label.setImage(getSprite(spr1.getText()));
-				sprite1Label.getParent().layout(true, true);
+				update();
 			}			
 		});
 		spr1.addKeyListener(new KeyAdapter() {
@@ -766,12 +793,30 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				if (e.character == '\r') {
 					setInst1(Inst.SPR1, doc, spr1.getText());
 					sprite1Label.setImage(getSprite(spr1.getText()));
-					sprite1Label.getParent().layout(true, true);
+					update();
 				}
 			}
 			
 		});
-		spr1.setLayoutData(new GridData(500, SWT.DEFAULT));
+		spr1.setLayoutData(new GridData(450, SWT.DEFAULT));
+		spr1Browse = toolkit.createButton(nameComp, "Browse...", SWT.PUSH);
+		spr1Browse.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				FileDialog dialog = new FileDialog(parent.getShell(), SWT.OPEN);
+				dialog.setFilterExtensions(new String[]{"*.tga", "*.rgb", "*.sgi"});
+				if (dialog.open() != null) {
+					String targetpath = new File(dialog.getFilterPath() + File.separator + dialog.getFileName()).getAbsolutePath();
+					String basepath = ((DmXtextEditor)doc).getPath();
+					String relativepath = ResourceUtils.getRelativePath(targetpath, basepath, "/");
+					spr1.setText("./"+relativepath);
+					setInst1(Inst.SPR1, doc, spr1.getText());
+					sprite1Label.setImage(getSprite(spr1.getText()));
+					update();
+				}
+			}
+		}); 
+		spr1Browse.setEnabled(false);
 		spr1Check.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
@@ -780,11 +825,13 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					spr1.setEnabled(true);
 					spr1.setText("");
 					spr1Check.setFont(boldFont);
+					spr1Browse.setEnabled(true);
 				} else {
 					removeInst(Inst.SPR1, doc);
 					spr1.setEnabled(false);
 					spr1.setText("");
 					spr1Check.setFont(normalFont);
+					spr1Browse.setEnabled(false);
 				}
 			}
 		});
@@ -798,7 +845,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			public void focusLost(FocusEvent e) {
 				setInst1(Inst.SPR2, doc, spr2.getText());
 				sprite2Label.setImage(getSprite(spr2.getText()));
-				sprite2Label.getParent().layout(true, true);
+				update();
 			}			
 		});
 		spr2.addKeyListener(new KeyAdapter() {
@@ -807,12 +854,30 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				if (e.character == '\r') {
 					setInst1(Inst.SPR2, doc, spr2.getText());
 					sprite2Label.setImage(getSprite(spr2.getText()));
-					sprite2Label.getParent().layout(true, true);
+					update();
 				}
 			}
 			
 		});
-		spr2.setLayoutData(new GridData(500, SWT.DEFAULT));
+		spr2.setLayoutData(new GridData(450, SWT.DEFAULT));
+		spr2Browse = toolkit.createButton(nameComp, "Browse...", SWT.PUSH);
+		spr2Browse.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				FileDialog dialog = new FileDialog(parent.getShell(), SWT.OPEN);
+				dialog.setFilterExtensions(new String[]{"*.tga", "*.rgb", "*.sgi"});
+				if (dialog.open() != null) {
+					String targetpath = new File(dialog.getFilterPath() + File.separator + dialog.getFileName()).getAbsolutePath();
+					String basepath = ((DmXtextEditor)doc).getPath();
+					String relativepath = ResourceUtils.getRelativePath(targetpath, basepath, "/");
+					spr2.setText("./"+relativepath);
+					setInst1(Inst.SPR2, doc, spr2.getText());
+					sprite2Label.setImage(getSprite(spr2.getText()));
+					update();
+				}
+			}
+		}); 
+		spr2Browse.setEnabled(false);
 		spr2Check.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
@@ -820,11 +885,13 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					addInst1(Inst.SPR2, doc, "");
 					spr2.setEnabled(true);
 					spr2.setText("");
+					spr2Browse.setEnabled(true);
 					spr2Check.setFont(boldFont);
 				} else {
 					removeInst(Inst.SPR2, doc);
 					spr2.setEnabled(false);
 					spr2.setText("");
+					spr2Browse.setEnabled(false);
 					spr2Check.setFont(normalFont);
 				}
 			}
@@ -979,6 +1046,10 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							addInst5(key, doc, key.defaultValue);
 						} else if (field instanceof Inst6Fields) {
 							addInst6(key, doc, key.defaultValue);
+						} else if (field instanceof Inst7Fields) {
+							addInst3(key, doc, key.defaultValue, key.defaultValue2);
+						} else if (field instanceof Inst8Fields) {
+							addInst2(key, doc, key.defaultValue);
 						}
 					} else {
 						removeInst(key, doc);
@@ -990,11 +1061,11 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 
 			Text myValue1 = null;
 			Text myValue2 = null;
-			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields ||	field instanceof Inst3Fields ||	field instanceof Inst5Fields || field instanceof Inst6Fields) {
+			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields ||	field instanceof Inst7Fields ||	field instanceof Inst5Fields || field instanceof Inst6Fields) {
 				final Text value = new DynamicText(isRight?rightColumn:leftColumn, SWT.SINGLE | SWT.BORDER);
 				myValue1 = value;
 				
-				if (field instanceof Inst2Fields ||	field instanceof Inst3Fields || field instanceof Inst6Fields) {
+				if (field instanceof Inst2Fields ||	field instanceof Inst7Fields || field instanceof Inst6Fields) {
 					value.addVerifyListener(new VerifyListener() {
 						
 						@Override
@@ -1015,6 +1086,127 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								if (dynamic.contains(key)) {
 									for (final Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
 										if (dynamic.contains(fields.getKey())) {
+											if (Boolean.FALSE.equals(((Inst7Fields)fields.getValue()).value1.getData())) {
+												((Inst7Fields)fields.getValue()).value1.setData(Boolean.TRUE);
+												((Inst7Fields)fields.getValue()).value2.setData(Boolean.TRUE);
+												((Inst7Fields)fields.getValue()).check.setData(Boolean.TRUE);
+												((Inst7Fields)fields.getValue()).defaultLabel1.setData(Boolean.TRUE);
+												((Inst7Fields)fields.getValue()).defaultLabel2.setData(Boolean.TRUE);
+												break;
+											}
+										}
+									}
+									update();
+									mform.fireSelectionChanged(mform.getParts()[0], viewer.getSelection());
+								}
+							}
+						} else {
+							value.setEnabled(false);
+							value.setText("");
+							for (List<Inst> dynamic : dynamicFields) {
+								if (dynamic.contains(key)) {
+									@SuppressWarnings("rawtypes")
+									List<Map.Entry> entries = Arrays.asList(instMap.entrySet().toArray(new Map.Entry[instMap.entrySet().size()]));
+									Collections.reverse(entries);
+									for (final Map.Entry<Inst, InstFields> fields : entries) {
+										if (!key.equals(fields.getKey()) && dynamic.contains(fields.getKey())) {
+											if (Boolean.TRUE.equals(((Inst7Fields)fields.getValue()).value1.getData()) && !((Inst7Fields)fields.getValue()).value1.isEnabled()) {
+												((Inst7Fields)fields.getValue()).value1.setData(Boolean.FALSE);
+												((Inst7Fields)fields.getValue()).value2.setData(Boolean.FALSE);
+												((Inst7Fields)fields.getValue()).check.setData(Boolean.FALSE);
+												((Inst7Fields)fields.getValue()).defaultLabel1.setData(Boolean.FALSE);
+												((Inst7Fields)fields.getValue()).defaultLabel2.setData(Boolean.FALSE);
+												break;
+											}
+										}
+									}
+									update();
+									mform.fireSelectionChanged(mform.getParts()[0], viewer.getSelection());
+								}
+							}
+						}
+					}
+
+				});
+				value.addFocusListener(new FocusAdapter() {
+					@Override
+					public void focusLost(FocusEvent e) {
+						if (field instanceof Inst1Fields) {
+							setInst1(key, doc, value.getText());
+						} else if (field instanceof Inst2Fields) {
+							setInst2(key, doc, value.getText());
+						} else if (field instanceof Inst7Fields) {
+							setInst3(key, doc, value.getText(), null);
+						} else if (field instanceof Inst5Fields) {
+							setInst5(key, doc, value.getText());
+						} else if (field instanceof Inst6Fields) {
+							setInst6(key, doc, value.getText());
+						}
+					}			
+				});
+				value.addKeyListener(new KeyAdapter() {
+					@Override
+					public void keyPressed(KeyEvent e) {
+						if (e.character == '\r') {
+							if (field instanceof Inst1Fields) {
+								setInst1(key, doc, value.getText());
+							} else if (field instanceof Inst2Fields) {
+								setInst2(key, doc, value.getText());
+							} else if (field instanceof Inst7Fields) {
+								setInst3(key, doc, value.getText(), null);
+							} else if (field instanceof Inst5Fields) {
+								setInst5(key, doc, value.getText());
+							} else if (field instanceof Inst6Fields) {
+								setInst6(key, doc, value.getText());
+							}
+						}
+					}
+				});
+				value.setEnabled(false);
+				if (field instanceof Inst1Fields) {
+					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+					gd.widthHint = 140;
+					gd.horizontalSpan = 3;
+				} else if (field instanceof Inst2Fields || field instanceof Inst6Fields) {
+					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+					gd.widthHint = DEFAULT_VALUE_WIDTH;
+				} else if (field instanceof Inst7Fields) {
+					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+					gd.widthHint = DEFAULT_VALUE_WIDTH-12;
+				} else if (field instanceof Inst5Fields) {
+					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+					if (fields.getKey() == Inst.ONEBATTLESPELL) {
+						gd.widthHint = DEFAULT_VALUE_WIDTH-12;
+					} else {
+						gd.widthHint = DEFAULT_VALUE_WIDTH;
+					}
+				}
+				value.setLayoutData(gd);
+				
+			}
+			
+			MappedDynamicCombo myInst3Value1 = null;
+			Text myInst3Value2 = null;
+			if (field instanceof Inst3Fields) {
+				final MappedDynamicCombo value = new MappedDynamicCombo(isRight?rightColumn:leftColumn, SWT.READ_ONLY);
+				myInst3Value1 = value;
+				
+				check.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						if (check.getSelection()) {
+							value.setEnabled(true);
+							value.setItems(new String[]{
+									"Fire",	"Air", "Water", "Earth", "Astral", "Death",
+									"Nature", "Blood", "Priest", "Random", "Elemental", "Sorcery",
+									},
+									new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 50, 51, 52});
+							int selection = Integer.parseInt(key.defaultValue);
+							value.select(selection);
+							for (List<Inst> dynamic : dynamicFields) {
+								if (dynamic.contains(key)) {
+									for (final Map.Entry<Inst, InstFields> fields : instMap.entrySet()) {
+										if (dynamic.contains(fields.getKey())) {
 											if (Boolean.FALSE.equals(((Inst3Fields)fields.getValue()).value1.getData())) {
 												((Inst3Fields)fields.getValue()).value1.setData(Boolean.TRUE);
 												((Inst3Fields)fields.getValue()).value2.setData(Boolean.TRUE);
@@ -1030,8 +1222,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 								}
 							}
 						} else {
+							value.setEnabled(true);
+							value.removeAll();
 							value.setEnabled(false);
-							value.setText("");
 							for (List<Inst> dynamic : dynamicFields) {
 								if (dynamic.contains(key)) {
 									@SuppressWarnings("rawtypes")
@@ -1057,66 +1250,125 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					}
 
 				});
-				value.addFocusListener(new FocusAdapter() {
+				value.addSelectionListener(new SelectionListener() {
+					
 					@Override
-					public void focusLost(FocusEvent e) {
-						if (field instanceof Inst1Fields) {
-							setInst1(key, doc, value.getText());
-						} else if (field instanceof Inst2Fields) {
-							setInst2(key, doc, value.getText());
-						} else if (field instanceof Inst3Fields) {
-							setInst3(key, doc, value.getText(), null);
-						} else if (field instanceof Inst5Fields) {
-							setInst5(key, doc, value.getText());
-						} else if (field instanceof Inst6Fields) {
-							setInst6(key, doc, value.getText());
-						}
-					}			
-				});
-				value.addKeyListener(new KeyAdapter() {
+					public void widgetSelected(SelectionEvent e) {
+						int val = value.getSelectedValue();
+						setInst3(key, doc, Integer.toString(val), null);
+					}
+					
 					@Override
-					public void keyPressed(KeyEvent e) {
-						if (e.character == '\r') {
-							if (field instanceof Inst1Fields) {
-								setInst1(key, doc, value.getText());
-							} else if (field instanceof Inst2Fields) {
-								setInst2(key, doc, value.getText());
-							} else if (field instanceof Inst3Fields) {
-								setInst3(key, doc, value.getText(), null);
-							} else if (field instanceof Inst5Fields) {
-								setInst5(key, doc, value.getText());
-							} else if (field instanceof Inst6Fields) {
-								setInst6(key, doc, value.getText());
-							}
-						}
+					public void widgetDefaultSelected(SelectionEvent e) {
 					}
 				});
 				value.setEnabled(false);
-				if (field instanceof Inst1Fields) {
-					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.widthHint = 140;
-					gd.horizontalSpan = 3;
-				} else if (field instanceof Inst2Fields || field instanceof Inst6Fields) {
-					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
-					gd.widthHint = DEFAULT_VALUE_WIDTH;
-				} else if (field instanceof Inst3Fields) {
-					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.widthHint = DEFAULT_VALUE_WIDTH-12;
-				} else if (field instanceof Inst5Fields) {
-					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					if (fields.getKey() == Inst.ONEBATTLESPELL) {
-						gd.widthHint = DEFAULT_VALUE_WIDTH-12;
-					} else {
-						gd.widthHint = DEFAULT_VALUE_WIDTH;
-					}
-				}
+				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+				gd.widthHint = DEFAULT_VALUE_WIDTH+16;
 				value.setLayoutData(gd);
 				
 			}
+
+			MappedDynamicCombo myInst8Value1 = null;
+			MappedDynamicCombo myInst8Value2 = null;
+			MappedDynamicCombo myInst8Value3 = null;
+			MappedDynamicCombo myInst8Value4 = null;
+			MappedDynamicCombo myInst8Value5 = null;
+			if (field instanceof Inst8Fields) {
+				final MappedDynamicCombo value1 = new MappedDynamicCombo(isRight?rightColumn:leftColumn, SWT.READ_ONLY);
+				final MappedDynamicCombo value2 = new MappedDynamicCombo(isRight?rightColumn:leftColumn, SWT.READ_ONLY);
+				new Label(isRight?rightColumn:leftColumn, SWT.NONE);
+				new Label(isRight?rightColumn:leftColumn, SWT.NONE);
+				final MappedDynamicCombo value3 = new MappedDynamicCombo(isRight?rightColumn:leftColumn, SWT.READ_ONLY);
+				final MappedDynamicCombo value4 = new MappedDynamicCombo(isRight?rightColumn:leftColumn, SWT.READ_ONLY);
+				final MappedDynamicCombo value5 = new MappedDynamicCombo(isRight?rightColumn:leftColumn, SWT.READ_ONLY);
+				new Label(isRight?rightColumn:leftColumn, SWT.NONE);
+				new Label(isRight?rightColumn:leftColumn, SWT.NONE);
+				myInst8Value1 = value1;
+				myInst8Value2 = value2;
+				myInst8Value3 = value3;
+				myInst8Value4 = value4;
+				myInst8Value5 = value5;
 				
+				check.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						if (check.getSelection()) {
+							value1.setEnabled(true);
+							value1.setItems(new String[]{
+									"0 hands",	"1 hand", "2 hands", "3 hands", "4 hands"},
+									new int[]{0, 2, 6, 14, 30});
+							value1.select(getHands(Integer.parseInt(key.defaultValue)));
+
+							value2.setEnabled(true);
+							value2.setItems(new String[]{
+									"0 heads",	"1 head", "2 heads"},
+									new int[]{0, 128, 384});
+							value2.select(getHeads(Integer.parseInt(key.defaultValue)));
+
+							value3.setEnabled(true);
+							value3.setItems(new String[]{
+									"0 bodies",	"1 body"},
+									new int[]{0, 1024});
+							value3.select(getBodies(Integer.parseInt(key.defaultValue)));
+
+							value4.setEnabled(true);
+							value4.setItems(new String[]{
+									"0 feet", "1 foot"},
+									new int[]{0, 2048});
+							value4.select(getFeet(Integer.parseInt(key.defaultValue)));
+
+							value5.setEnabled(true);
+							value5.setItems(new String[]{
+									"0 misc", "1 misc", "2 misc", "3 misc", "4 misc"},
+									new int[]{0, 4096, 12288, 28672, 61440});
+							value5.select(getMisc(Integer.parseInt(key.defaultValue)));
+						} else {
+							value1.setEnabled(true);
+							value1.removeAll();
+							value1.setEnabled(false);
+							value2.setEnabled(true);
+							value2.removeAll();
+							value2.setEnabled(false);
+							value3.setEnabled(true);
+							value3.removeAll();
+							value3.setEnabled(false);
+							value4.setEnabled(true);
+							value4.removeAll();
+							value4.setEnabled(false);
+							value5.setEnabled(true);
+							value5.removeAll();
+							value5.setEnabled(false);
+						}
+					}
+
+				});
+				SelectionListener selectionListener = new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						int val = getItemMask(value1.getSelectedValue(), value2.getSelectedValue(), value3.getSelectedValue(), value4.getSelectedValue(), value5.getSelectedValue());
+						setInst2(key, doc, Integer.toString(val));
+					}
+				};
+				value1.addSelectionListener(selectionListener);
+				value2.addSelectionListener(selectionListener);
+				value3.addSelectionListener(selectionListener);
+				value4.addSelectionListener(selectionListener);
+				value5.addSelectionListener(selectionListener);
+				value1.setEnabled(false);
+				value2.setEnabled(false);
+				value3.setEnabled(false);
+				value4.setEnabled(false);
+				value5.setEnabled(false);
+				gd = new GridData(SWT.FILL, SWT.FILL, false, false);
+				gd.widthHint = DEFAULT_VALUE_WIDTH+16;
+				value1.setLayoutData(gd);
+				
+			}
+
 			Label defaultLabel1 = null;
 			
-			if (field instanceof Inst1Fields || field instanceof Inst2Fields || field instanceof Inst3Fields || field instanceof Inst5Fields || field instanceof Inst6Fields) {
+			if (field instanceof Inst1Fields || field instanceof Inst2Fields || field instanceof Inst3Fields || field instanceof Inst5Fields || field instanceof Inst6Fields || field instanceof Inst7Fields || field instanceof Inst8Fields) {
 				defaultLabel1 = new DynamicLabel(isRight?rightColumn:leftColumn, SWT.NONE);
 				defaultLabel1.setEnabled(false);
 			}
@@ -1128,17 +1380,92 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				gd = new GridData(SWT.BEGINNING, SWT.CENTER, false, false);
 				defaultLabel1.setLayoutData(gd);
 				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
-			} else if (field instanceof Inst1Fields || field instanceof Inst3Fields) {
+			} else if (field instanceof Inst1Fields || field instanceof Inst3Fields || field instanceof Inst7Fields) {
 				gd = new GridData(SWT.BEGINNING, SWT.CENTER, false, false);
 				defaultLabel1.setLayoutData(gd);
 			} else if (field instanceof Inst4Fields) {
 				gd = new GridData(SWT.BEGINNING, SWT.CENTER, false, false);
 				defaultLabel1.setLayoutData(gd);
 				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
+			} else if (field instanceof Inst8Fields) {
+				gd = new GridData(SWT.BEGINNING, SWT.CENTER, false, false);
+				gd.horizontalSpan = 3;
+				defaultLabel1.setLayoutData(gd);
 			}
 
 			Label defaultLabel2 = null;
 			if (field instanceof Inst3Fields) {
+				final Text value = new DynamicText(isRight?rightColumn:leftColumn, SWT.SINGLE | SWT.BORDER);
+				myInst3Value2 = value;
+				value.addVerifyListener(new VerifyListener() {
+					
+					@Override
+					public void verifyText(VerifyEvent e) {
+						if (Character.isLetter(e.character)) {
+							e.doit = false;
+						}
+					}
+				});
+				check.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						if (check.getSelection()) {
+							value.setEnabled(true);
+							value.setText(key.defaultValue2);
+							update();
+						} else {
+							value.setEnabled(false);
+							value.setText("");
+							update();
+						}
+					}
+
+				});
+				value.addFocusListener(new FocusAdapter() {
+					@Override
+					public void focusLost(FocusEvent e) {
+						setInst3(key, doc, null, value.getText());
+					}			
+				});
+				value.addKeyListener(new KeyAdapter() {
+					@Override
+					public void keyPressed(KeyEvent e) {
+						if (e.character == '\r') {
+							setInst3(key, doc, null, value.getText());
+						}
+					}
+				});
+				value.setEnabled(false);
+				gd = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
+				gd.widthHint = DEFAULT_VALUE_WIDTH-24;
+				value.setLayoutData(gd);
+				
+				defaultLabel2 = new DynamicLabel(isRight?rightColumn:leftColumn, SWT.NONE);
+				defaultLabel2.setEnabled(false);
+
+				for (List<Inst> list : dynamicFields) {
+					boolean firstElement = true;
+					for (Inst inst : list) {
+						if (key.equals(inst)) {
+							if (firstElement) {
+								myInst3Value1.setData(Boolean.TRUE);
+								myInst3Value2.setData(Boolean.TRUE);
+								check.setData(Boolean.TRUE);
+								defaultLabel1.setData(Boolean.TRUE);
+								defaultLabel2.setData(Boolean.TRUE);
+							} else {
+								myInst3Value1.setData(Boolean.FALSE);
+								myInst3Value2.setData(Boolean.FALSE);
+								check.setData(Boolean.FALSE);
+								defaultLabel1.setData(Boolean.FALSE);
+								defaultLabel2.setData(Boolean.FALSE);
+							}
+						}
+						firstElement = false;
+					}
+				}
+			}
+			if (field instanceof Inst7Fields) {
 				final Text value = new DynamicText(isRight?rightColumn:leftColumn, SWT.SINGLE | SWT.BORDER);
 				myValue2 = value;
 				value.addVerifyListener(new VerifyListener() {
@@ -1181,7 +1508,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				});
 				value.setEnabled(false);
 				gd = new GridData(SWT.BEGINNING, SWT.DEFAULT, false, false);
-				gd.widthHint = DEFAULT_VALUE_WIDTH-12;
+				gd.widthHint = DEFAULT_VALUE_WIDTH-24;
 				value.setLayoutData(gd);
 				
 				defaultLabel2 = new DynamicLabel(isRight?rightColumn:leftColumn, SWT.NONE);
@@ -1220,9 +1547,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				((Inst2Fields)field).defaultLabel = defaultLabel1;
 			} else if (field instanceof Inst3Fields) {
 				((Inst3Fields)field).check = check;
-				((Inst3Fields)field).value1 = myValue1;
+				((Inst3Fields)field).value1 = myInst3Value1;
 				((Inst3Fields)field).defaultLabel1 = defaultLabel1;
-				((Inst3Fields)field).value2 = myValue2;
+				((Inst3Fields)field).value2 = myInst3Value2;
 				((Inst3Fields)field).defaultLabel2 = defaultLabel2;
 			} else if (field instanceof Inst4Fields) {
 				((Inst4Fields)field).check = check;
@@ -1235,6 +1562,20 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				((Inst6Fields)field).check = check;
 				((Inst6Fields)field).value = myValue1;
 				((Inst6Fields)field).defaultLabel = defaultLabel1;
+			} else if (field instanceof Inst7Fields) {
+				((Inst7Fields)field).check = check;
+				((Inst7Fields)field).value1 = myValue1;
+				((Inst7Fields)field).defaultLabel1 = defaultLabel1;
+				((Inst7Fields)field).value2 = myValue2;
+				((Inst7Fields)field).defaultLabel2 = defaultLabel2;
+			} else if (field instanceof Inst8Fields) {
+				((Inst8Fields)field).check = check;
+				((Inst8Fields)field).value1 = myInst8Value1;
+				((Inst8Fields)field).value2 = myInst8Value2;
+				((Inst8Fields)field).value3 = myInst8Value3;
+				((Inst8Fields)field).value4 = myInst8Value4;
+				((Inst8Fields)field).value5 = myInst8Value5;
+				((Inst8Fields)field).defaultLabel = defaultLabel1;
 			}
 
 			isRight = !isRight;
@@ -1264,6 +1605,36 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			e.printStackTrace();
 		}
 		return image;
+	}
+	
+	private String getPathName(int id) {
+		switch (id) {
+		case 0:
+			return "Fire";
+		case 1:
+			return "Air";
+		case 2:
+			return "Water";
+		case 3:
+			return "Earth";
+		case 4:
+			return "Astral";
+		case 5:
+			return "Death";
+		case 6:
+			return "Nature";
+		case 7:
+			return "Blood";
+		case 8:
+			return "Priest";
+		case 50:
+			return "Random";
+		case 51:
+			return "Elemental";
+		case 52:
+			return "Sorcery";			
+		}
+		return "Unknown";
 	}
 	
 	public void update() {
@@ -1370,7 +1741,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				descCheck.setSelection(true);
 				descCheck.setFont(boldFont);
 			} else {
-				descr.setText("");
+				descr.setText(getSelectMonsterdescr((Monster)input));
 				descr.setEnabled(false);
 				descr.setBackground(toolkit.getColors().getInactiveBackground());
 				descCheck.setSelection(false);
@@ -1381,11 +1752,13 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			if (spr1Text != null) {
 				spr1.setText(spr1Text);
 				spr1.setEnabled(true);
+				spr1Browse.setEnabled(true);
 				spr1Check.setSelection(true);
 				spr1Check.setFont(boldFont);
 			} else {
 				spr1.setText("");
 				spr1.setEnabled(false);
+				spr1Browse.setEnabled(false);
 				spr1Check.setSelection(false);
 				spr1Check.setFont(normalFont);
 			}
@@ -1393,11 +1766,13 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			if (spr2Text != null) {
 				spr2.setText(spr2Text);
 				spr2.setEnabled(true);
+				spr2Browse.setEnabled(true);
 				spr2Check.setSelection(true);
 				spr2Check.setFont(boldFont);
 			} else {
 				spr2.setText("");
 				spr2.setEnabled(false);
+				spr2Browse.setEnabled(false);
 				spr2Check.setSelection(false);
 				spr2Check.setFont(normalFont);
 			}
@@ -1434,6 +1809,40 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					((Inst2Fields)fields.getValue()).check.setSelection(true);
 					((Inst2Fields)fields.getValue()).check.setFont(boldFont);
 				}
+				if (fields.getValue() instanceof Inst8Fields) {
+					((Inst8Fields)fields.getValue()).value1.setEnabled(true);
+					((Inst8Fields)fields.getValue()).value1.setItems(new String[]{
+							"0 hands",	"1 hand", "2 hands", "3 hands", "4 hands"},
+							new int[]{0, 2, 6, 14, 30});
+					((Inst8Fields)fields.getValue()).value1.select(getHands(Integer.parseInt(val.toString())));
+
+					((Inst8Fields)fields.getValue()).value2.setEnabled(true);
+					((Inst8Fields)fields.getValue()).value2.setItems(new String[]{
+							"0 heads",	"1 head", "2 heads"},
+							new int[]{0, 128, 384});
+					((Inst8Fields)fields.getValue()).value2.select(getHeads(Integer.parseInt(val.toString())));
+
+					((Inst8Fields)fields.getValue()).value3.setEnabled(true);
+					((Inst8Fields)fields.getValue()).value3.setItems(new String[]{
+							"0 bodies",	"1 body"},
+							new int[]{0, 1024});
+					((Inst8Fields)fields.getValue()).value3.select(getBodies(Integer.parseInt(val.toString())));
+
+					((Inst8Fields)fields.getValue()).value4.setEnabled(true);
+					((Inst8Fields)fields.getValue()).value4.setItems(new String[]{
+							"0 feet", "1 foot"},
+							new int[]{0, 2048});
+					((Inst8Fields)fields.getValue()).value4.select(getFeet(Integer.parseInt(val.toString())));
+
+					((Inst8Fields)fields.getValue()).value5.setEnabled(true);
+					((Inst8Fields)fields.getValue()).value5.setItems(new String[]{
+							"0 misc", "1 misc", "2 misc", "3 misc", "4 misc"},
+							new int[]{0, 4096, 12288, 28672, 61440});
+					((Inst8Fields)fields.getValue()).value5.select(getMisc(Integer.parseInt(val.toString())));
+
+					((Inst8Fields)fields.getValue()).check.setSelection(true);
+					((Inst8Fields)fields.getValue()).check.setFont(boldFont);
+				}
 			} else {
 				if (fields.getValue() instanceof Inst2Fields) {
 					((Inst2Fields)fields.getValue()).value.setText("");
@@ -1441,12 +1850,32 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
 					((Inst2Fields)fields.getValue()).check.setFont(normalFont);
 				}
+				if (fields.getValue() instanceof Inst8Fields) {
+					((Inst8Fields)fields.getValue()).value1.removeAll();
+					((Inst8Fields)fields.getValue()).value1.setEnabled(false);
+					((Inst8Fields)fields.getValue()).value2.removeAll();
+					((Inst8Fields)fields.getValue()).value2.setEnabled(false);
+					((Inst8Fields)fields.getValue()).value3.removeAll();
+					((Inst8Fields)fields.getValue()).value3.setEnabled(false);
+					((Inst8Fields)fields.getValue()).value4.removeAll();
+					((Inst8Fields)fields.getValue()).value4.setEnabled(false);
+					((Inst8Fields)fields.getValue()).value5.removeAll();
+					((Inst8Fields)fields.getValue()).value5.setEnabled(false);
+					((Inst8Fields)fields.getValue()).check.setSelection(false);
+					((Inst8Fields)fields.getValue()).check.setFont(normalFont);
+				}
 			}
 			Integer[] vals = getInst3(fields.getKey(), input);
 			if (vals != null) {
 				if (fields.getValue() instanceof Inst3Fields) {
-					((Inst3Fields)fields.getValue()).value1.setText(vals[0].toString());
+					int selection = vals[0];
 					((Inst3Fields)fields.getValue()).value1.setEnabled(true);
+					((Inst3Fields)fields.getValue()).value1.setItems(new String[]{
+							"Fire",	"Air", "Water", "Earth", "Astral", "Death",
+							"Nature", "Blood", "Priest", "Random", "Elemental", "Sorcery",
+							},
+							new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 50, 51, 52});
+					((Inst3Fields)fields.getValue()).value1.select(selection);
 					((Inst3Fields)fields.getValue()).value2.setText(vals[1].toString());
 					((Inst3Fields)fields.getValue()).value2.setEnabled(true);
 					((Inst3Fields)fields.getValue()).check.setSelection(true);
@@ -1465,7 +1894,8 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				}
 			} else {
 				if (fields.getValue() instanceof Inst3Fields) {
-					((Inst3Fields)fields.getValue()).value1.setText("");
+					((Inst3Fields)fields.getValue()).value1.setEnabled(true);
+					((Inst3Fields)fields.getValue()).value1.removeAll();
 					((Inst3Fields)fields.getValue()).value1.setEnabled(false);
 					((Inst3Fields)fields.getValue()).value2.setText("");
 					((Inst3Fields)fields.getValue()).value2.setEnabled(false);
@@ -2014,7 +2444,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					break;
 				case ITEMSLOTS:
 					if (monsterDB.itemslots != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.itemslots));
+						((Inst8Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getItemMaskString(monsterDB.itemslots)));
 						Inst.ITEMSLOTS.defaultValue = monsterDB.itemslots.toString();
 					}
 					break;
@@ -2026,7 +2456,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					break;
 				case MAGICSKILL1:
 					if (monsterDB.magicskillpath1 != null && monsterDB.magicskilllevel1 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath1));
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getPathName(monsterDB.magicskillpath1)));
 						Inst.MAGICSKILL1.defaultValue = monsterDB.magicskillpath1.toString();
 						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel1));
 						Inst.MAGICSKILL1.defaultValue2 = monsterDB.magicskilllevel1.toString();
@@ -2039,7 +2469,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					break;
 				case MAGICSKILL2:
 					if (monsterDB.magicskillpath2 != null && monsterDB.magicskilllevel2 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath2));
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getPathName(monsterDB.magicskillpath2)));
 						Inst.MAGICSKILL2.defaultValue = monsterDB.magicskillpath2.toString();
 						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel2));
 						Inst.MAGICSKILL2.defaultValue2 = monsterDB.magicskilllevel2.toString();
@@ -2052,7 +2482,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					break;
 				case MAGICSKILL3:
 					if (monsterDB.magicskillpath3 != null && monsterDB.magicskilllevel3 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath3));
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getPathName(monsterDB.magicskillpath3)));
 						Inst.MAGICSKILL3.defaultValue = monsterDB.magicskillpath3.toString();
 						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel3));
 						Inst.MAGICSKILL3.defaultValue2 = monsterDB.magicskilllevel3.toString();
@@ -2065,7 +2495,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					break;
 				case MAGICSKILL4:
 					if (monsterDB.magicskillpath4 != null && monsterDB.magicskilllevel4 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskillpath4));
+						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getPathName(monsterDB.magicskillpath4)));
 						Inst.MAGICSKILL4.defaultValue = monsterDB.magicskillpath4.toString();
 						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicskilllevel4));
 						Inst.MAGICSKILL4.defaultValue2 = monsterDB.magicskilllevel4.toString();
@@ -2078,104 +2508,104 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					break;
 				case CUSTOMMAGIC1:
 					if (monsterDB.custommagicpath1 != null && monsterDB.custommagicchance1 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath1));
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath1));
 						Inst.CUSTOMMAGIC1.defaultValue = monsterDB.custommagicpath1.toString();
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance1));
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance1));
 						Inst.CUSTOMMAGIC1.defaultValue2 = monsterDB.custommagicchance1.toString();
 					} else {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText("");
 						Inst.CUSTOMMAGIC1.defaultValue = "128";
 						Inst.CUSTOMMAGIC1.defaultValue2 = "100";
 					}
 					break;
 				case CUSTOMMAGIC2:
 					if (monsterDB.custommagicpath2 != null && monsterDB.custommagicchance2 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath2));
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath2));
 						Inst.CUSTOMMAGIC2.defaultValue = monsterDB.custommagicpath2.toString();
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance2));
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance2));
 						Inst.CUSTOMMAGIC2.defaultValue2 = monsterDB.custommagicchance2.toString();
 					} else {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText("");
 						Inst.CUSTOMMAGIC2.defaultValue = "128";
 						Inst.CUSTOMMAGIC2.defaultValue2 = "100";
 					}
 					break;
 				case CUSTOMMAGIC3:
 					if (monsterDB.custommagicpath3 != null && monsterDB.custommagicchance3 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath3));
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath3));
 						Inst.CUSTOMMAGIC3.defaultValue = monsterDB.custommagicpath3.toString();
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance3));
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance3));
 						Inst.CUSTOMMAGIC3.defaultValue2 = monsterDB.custommagicchance3.toString();
 					} else {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText("");
 						Inst.CUSTOMMAGIC3.defaultValue = "128";
 						Inst.CUSTOMMAGIC3.defaultValue2 = "100";
 					}
 					break;
 				case CUSTOMMAGIC4:
 					if (monsterDB.custommagicpath4 != null && monsterDB.custommagicchance4 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath4));
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath4));
 						Inst.CUSTOMMAGIC4.defaultValue = monsterDB.custommagicpath4.toString();
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance4));
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance4));
 						Inst.CUSTOMMAGIC4.defaultValue2 = monsterDB.custommagicchance4.toString();
 					} else {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText("");
 						Inst.CUSTOMMAGIC4.defaultValue = "128";
 						Inst.CUSTOMMAGIC4.defaultValue2 = "100";
 					}
 					break;
 				case CUSTOMMAGIC5:
 					if (monsterDB.custommagicpath5 != null && monsterDB.custommagicchance5 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath5));
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath5));
 						Inst.CUSTOMMAGIC5.defaultValue = monsterDB.custommagicpath5.toString();
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance5));
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance5));
 						Inst.CUSTOMMAGIC5.defaultValue2 = monsterDB.custommagicchance5.toString();
 					} else {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText("");
 						Inst.CUSTOMMAGIC5.defaultValue = "128";
 						Inst.CUSTOMMAGIC5.defaultValue2 = "100";
 					}
 					break;
 				case CUSTOMMAGIC6:
 					if (monsterDB.custommagicpath6 != null && monsterDB.custommagicchance6 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath6));
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath6));
 						Inst.CUSTOMMAGIC6.defaultValue = monsterDB.custommagicpath6.toString();
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance6));
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance6));
 						Inst.CUSTOMMAGIC6.defaultValue2 = monsterDB.custommagicchance6.toString();
 					} else {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText("");
 						Inst.CUSTOMMAGIC6.defaultValue = "128";
 						Inst.CUSTOMMAGIC6.defaultValue2 = "100";
 					}
 					break;
 				case CUSTOMMAGIC7:
 					if (monsterDB.custommagicpath7 != null && monsterDB.custommagicchance7 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath7));
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath7));
 						Inst.CUSTOMMAGIC7.defaultValue = monsterDB.custommagicpath7.toString();
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance7));
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance7));
 						Inst.CUSTOMMAGIC7.defaultValue2 = monsterDB.custommagicchance7.toString();
 					} else {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText("");
 						Inst.CUSTOMMAGIC7.defaultValue = "128";
 						Inst.CUSTOMMAGIC7.defaultValue2 = "100";
 					}
 					break;
 				case CUSTOMMAGIC8:
 					if (monsterDB.custommagicpath8 != null && monsterDB.custommagicchance8 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath8));
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicpath8));
 						Inst.CUSTOMMAGIC8.defaultValue = monsterDB.custommagicpath8.toString();
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance8));
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.custommagicchance8));
 						Inst.CUSTOMMAGIC8.defaultValue2 = monsterDB.custommagicchance8.toString();
 					} else {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText("");
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText("");
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText("");
 						Inst.CUSTOMMAGIC8.defaultValue = "128";
 						Inst.CUSTOMMAGIC8.defaultValue2 = "100";
 					}
@@ -2187,6 +2617,12 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				case GEMPROD1:
 					((Inst3Fields)fields.getValue()).defaultLabel1.setText(monsterDB.gemprod1 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.gemprod1) : "");
 					((Inst3Fields)fields.getValue()).defaultLabel2.setText(monsterDB.gemprod2 != null ? Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.gemprod2) : "");
+					break;
+				case ONEBATTLESPELL:
+					if (monsterDB.onebattlespell != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.onebattlespell));
+						Inst.ONEBATTLESPELL.defaultValue = monsterDB.onebattlespell.toString();
+					}
 					break;
 				case CLEAR:
 					if (monsterDB.clear != null) {
@@ -2771,6 +3207,16 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		}
 	}
 	
+	private String getSelectMonsterdescr(Monster monster) {
+		if (monster instanceof SelectMonsterByName) {
+			String name = ((SelectMonsterByName)monster).getValue();
+			return Database.getMonsterDescr(Database.getMonster(name).id);
+		} else if (monster instanceof SelectMonsterById) {
+			return Database.getMonsterDescr(((SelectMonsterById)monster).getValue());
+		}
+		return "";
+	}
+	
 	private int getSelectMonsterid(Monster monster) {
 		if (monster instanceof SelectMonsterByName) {
 			MonsterDB monsterDB = Database.getMonster(((SelectMonsterByName) monster).getValue());
@@ -2848,6 +3294,72 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 		});
 
 		updateSelection();
+	}
+	
+	private int getItemMask(int hands, int heads, int bodies, int feet, int misc) {
+		return hands | heads | bodies | feet | misc;
+	}
+
+	private int getHands(int mask) {
+		return mask & 30;
+	}
+
+	private int getHeads(int mask) {
+		return mask & 384;
+	}
+
+	private int getBodies(int mask) {
+		return mask & 1024;
+	}
+
+	private int getFeet(int mask) {
+		return mask & 2048;
+	}
+
+	private int getMisc(int mask) {
+		return mask & 61440;
+	}
+	
+	private String getItemMaskString(int mask) {
+		StringBuffer string = new StringBuffer();
+		if ((mask & 30) == 2) {
+			string.append("1 hand");
+		} else if ((mask & 30) == 6) {
+			string.append("2 hands");
+		} else if ((mask & 30) == 14) {
+			string.append("3 hands");
+		} else if ((mask & 30) == 30) {
+			string.append("4 hands");
+		}
+		if ((mask & 384) == 128) {
+			if (string.length() > 0) string.append(",");
+			string.append("1 head");
+		} else if ((mask & 384) == 384) {
+			if (string.length() > 0) string.append(",");
+			string.append("2 heads");
+		}
+		if ((mask & 1024) == 1024) {
+			if (string.length() > 0) string.append(",");
+			string.append("1 body");
+		}
+		if ((mask & 2048) == 2048) {
+			if (string.length() > 0) string.append(",");
+			string.append("1 feet");
+		}
+		if ((mask & 61440) == 4096) {
+			if (string.length() > 0) string.append(",");
+			string.append("1 misc");
+		} else if ((mask & 61440) == 12288) {
+			if (string.length() > 0) string.append(",");
+			string.append("2 misc");
+		} else if ((mask & 61440) == 28672) {
+			if (string.length() > 0) string.append(",");
+			string.append("3 misc");
+		} else if ((mask & 61440) == 61440) {
+			if (string.length() > 0) string.append(",");
+			string.append("4 misc");
+		}
+		return string.toString();
 	}
 
 	private String getInst1(Inst inst2, Object monster) {

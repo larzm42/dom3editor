@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
+import org.eclipse.jface.viewers.ILazyContentProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -31,7 +32,6 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.BusyIndicator;
@@ -56,7 +56,6 @@ import org.eclipse.ui.forms.IDetailsPageProvider;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.MasterDetailsBlock;
 import org.eclipse.ui.forms.SectionPart;
-import org.eclipse.ui.forms.editor.FormPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
@@ -135,9 +134,9 @@ import org.larz.dom3.dm.dm.impl.SelectWeaponByIdImpl;
 import org.larz.dom3.dm.dm.impl.SelectWeaponByNameImpl;
 
 public class SummaryList extends MasterDetailsBlock {
-	private FormPage page;
 	private DmEditor editor;
 	private XtextEditor doc;
+	private Combo listFilter;
 	public TableViewer viewer;
 	
 	private static final Image ARMOR_IMAGE = Activator.getImageDescriptor("icons/armor.png").createImage();
@@ -153,42 +152,141 @@ public class SummaryList extends MasterDetailsBlock {
 		BY_NAME, BY_ID, NEW
 	}
 	
-	public SummaryList(FormPage page, DmEditor editor, XtextEditor doc) {
-		this.page = page;
+	public SummaryList(DmEditor editor, XtextEditor doc) {
 		this.doc = doc;
 		this.editor = editor;
 	}
 	
-	/**
-	 * @param id
-	 * @param title
-	 */
-	class MasterContentProvider implements IStructuredContentProvider {
-		
-		public Object[] getElements(Object inputElement) {
-			IXtextDocument document = ((XtextEditor)doc).getDocument();
-			AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
-				public AbstractElement[] exec(XtextResource resource) {             
-					Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-					EList<AbstractElement> list = dom3Mod.getElements();
-					return list.toArray(new AbstractElement[list.size()]);
-					} 
-				});
-			List<AbstractElementWrapper> wrapperList = new ArrayList<AbstractElementWrapper>();
-			int id = 1;
-			for (AbstractElement abstractElement : elements) {
-				if (!(abstractElement instanceof GeneralInst1)) {
-					wrapperList.add(new AbstractElementWrapper(abstractElement, id++));
+	private Object[] getElements() {
+		IXtextDocument document = ((XtextEditor)doc).getDocument();
+		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
+			public AbstractElement[] exec(XtextResource resource) {             
+				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
+				EList<AbstractElement> list = dom3Mod.getElements();
+				return list.toArray(new AbstractElement[list.size()]);
+				} 
+			});
+		List<AbstractElementWrapper> wrapperList = new ArrayList<AbstractElementWrapper>();
+		int id = 1;
+		for (AbstractElement abstractElement : elements) {
+			if (!(abstractElement instanceof GeneralInst1)) {
+				wrapperList.add(new AbstractElementWrapper(abstractElement, id++));
+			}
+		}
+
+		return wrapperList.toArray();
+
+	}
+	
+	private Object[] getFilteredElements() {
+		Object[] model = getElements();
+		if (listFilter == null) {
+			return model;
+		}
+		Object[] newModel = null;
+		List<Object> filteredList = new ArrayList<Object>();
+		if (listFilter.getSelectionIndex() == 1) {
+			for (Object element : model) {
+				if (((AbstractElementWrapper)element).getElement() instanceof SelectArmorByIdImpl ||
+					((AbstractElementWrapper)element).getElement() instanceof SelectArmorByNameImpl ||
+					((AbstractElementWrapper)element).getElement() instanceof NewArmorImpl) {
+					filteredList.add(element);
 				}
 			}
-
-			return wrapperList.toArray();
+			newModel = filteredList.toArray(new Object[filteredList.size()]);
+		} else if (listFilter.getSelectionIndex() == 2) {
+			for (Object element : model) {
+				if (((AbstractElementWrapper)element).getElement() instanceof SelectWeaponByIdImpl ||
+					((AbstractElementWrapper)element).getElement() instanceof SelectWeaponByNameImpl ||
+					((AbstractElementWrapper)element).getElement() instanceof NewWeaponImpl) {
+					filteredList.add(element);
+				}
+			}
+			newModel = filteredList.toArray(new Object[filteredList.size()]);
+		} else if (listFilter.getSelectionIndex() == 3) {
+			for (Object element : model) {
+				if (((AbstractElementWrapper)element).getElement() instanceof SelectMonsterByIdImpl ||
+					((AbstractElementWrapper)element).getElement() instanceof SelectMonsterByNameImpl ||
+					((AbstractElementWrapper)element).getElement() instanceof NewMonsterImpl) {
+					filteredList.add(element);
+				}
+			}
+			newModel = filteredList.toArray(new Object[filteredList.size()]);
+		} else if (listFilter.getSelectionIndex() == 4) {
+			for (Object element : model) {
+				if (((AbstractElementWrapper)element).getElement() instanceof SelectSpellByName ||
+					((AbstractElementWrapper)element).getElement() instanceof SelectSpellById ||
+					((AbstractElementWrapper)element).getElement() instanceof NewSpell) {
+					filteredList.add(element);
+				}
+			}
+			newModel = filteredList.toArray(new Object[filteredList.size()]);
+		} else if (listFilter.getSelectionIndex() == 5) {
+			for (Object element : model) {
+				if (((AbstractElementWrapper)element).getElement() instanceof SelectItemByName ||
+					((AbstractElementWrapper)element).getElement() instanceof SelectItemById ||
+					((AbstractElementWrapper)element).getElement() instanceof NewItem) {
+					filteredList.add(element);
+				}
+			}
+			newModel = filteredList.toArray(new Object[filteredList.size()]);
+		} else if (listFilter.getSelectionIndex() == 6) {
+			for (Object element : model) {
+				if (((AbstractElementWrapper)element).getElement() instanceof SelectName) {
+					filteredList.add(element);
+				}
+			}
+			newModel = filteredList.toArray(new Object[filteredList.size()]);
+		} else if (listFilter.getSelectionIndex() == 7) {
+			for (Object element : model) {
+				if (((AbstractElementWrapper)element).getElement() instanceof SelectSiteByName ||
+					((AbstractElementWrapper)element).getElement() instanceof SelectSiteById ||
+					((AbstractElementWrapper)element).getElement() instanceof NewSite) {
+					filteredList.add(element);
+				}
+			}
+			newModel = filteredList.toArray(new Object[filteredList.size()]);
+		} else if (listFilter.getSelectionIndex() == 8) {
+			for (Object element : model) {
+				if (((AbstractElementWrapper)element).getElement() instanceof SelectNation) {
+					filteredList.add(element);
+				}
+			}
+			newModel = filteredList.toArray(new Object[filteredList.size()]);
+		} else {
+			newModel = model;
 		}
-		public void dispose() {
-		}
-		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		}
+		return newModel;
 	}
+	
+	class MasterContentProvider implements IStructuredContentProvider, ILazyContentProvider {
+		private TableViewer viewer;
+		private Object[] elements;
+
+		public MasterContentProvider(TableViewer viewer) {
+			this.viewer = viewer;
+		}
+
+		public Object[] getElements(Object inputElement) {
+			return elements;
+		}
+
+		public void dispose() {
+
+		}
+
+		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+			this.elements = (Object[])newInput;
+		}
+
+		public void updateElement(int index) {
+			if (index < elements.length) {
+				viewer.replace(elements[index], index);
+			}
+		}
+
+	}
+
 	class MasterLabelProvider extends LabelProvider implements ITableLabelProvider {
 		public String getColumnText(Object obj, int index) {
 			AbstractElement element = ((AbstractElementWrapper)obj).getElement();
@@ -412,7 +510,7 @@ public class SummaryList extends MasterDetailsBlock {
 		Composite comboComp = toolkit.createComposite(client, SWT.NONE);
 		comboComp.setLayout(new GridLayout(4, false));
 		toolkit.createLabel(comboComp, "Show:");
-		final Combo listFilter = new Combo(comboComp, SWT.DROP_DOWN | SWT.READ_ONLY);
+		listFilter = new Combo(comboComp, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(listFilter, true, true);
 		listFilter.add("All");
 		listFilter.add(Messages.getString("AddDialog.typelist.armor"));
@@ -431,7 +529,7 @@ public class SummaryList extends MasterDetailsBlock {
 		final Text searchText = toolkit.createText(comboComp, "", SWT.BORDER);
 		final Button search = toolkit.createButton(comboComp, "Search", SWT.PUSH);
 
-		Table t = toolkit.createTable(client, SWT.NULL);
+		Table t = toolkit.createTable(client, SWT.VIRTUAL);
 		gd = new GridData(GridData.FILL_BOTH);
 		gd.heightHint = 20;
 		gd.widthHint = 100;
@@ -504,64 +602,37 @@ public class SummaryList extends MasterDetailsBlock {
 		section.setClient(client);
 		final SectionPart spart = new SectionPart(section);
 		managedForm.addPart(spart);
-		viewer = new TableViewer(t);
+		viewer = new TableViewer(t) {
+
+			@Override
+			public void refresh() {
+				Object[] model = getFilteredElements();
+				viewer.setInput(model);
+				viewer.setItemCount(model.length);
+				super.refresh();
+			}
+			
+		};
+		viewer.setUseHashlookup(true);
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event) {
 				managedForm.fireSelectionChanged(spart, event.getSelection());
 			}
 		});
-		viewer.setContentProvider(new MasterContentProvider());
+		viewer.setContentProvider(new MasterContentProvider(viewer));
 		viewer.setLabelProvider(new MasterLabelProvider());
-		viewer.setInput(page.getEditor().getEditorInput());
+		Object[] model = getElements();
+		viewer.setInput(model);
+		viewer.setItemCount(model.length);
+		
 		listFilter.addSelectionListener(new SelectionAdapter() {
-
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				
-				viewer.setFilters(new ViewerFilter[]{new ViewerFilter() {
-				@Override
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (listFilter.getSelectionIndex() == 1) {
-						return ((AbstractElementWrapper)element).getElement() instanceof SelectArmorByIdImpl ||
-						((AbstractElementWrapper)element).getElement() instanceof SelectArmorByNameImpl ||
-						((AbstractElementWrapper)element).getElement() instanceof NewArmorImpl;
-					}
-					if (listFilter.getSelectionIndex() == 2) {
-						return ((AbstractElementWrapper)element).getElement() instanceof SelectWeaponByIdImpl ||
-						((AbstractElementWrapper)element).getElement() instanceof SelectWeaponByNameImpl ||
-						((AbstractElementWrapper)element).getElement() instanceof NewWeaponImpl;
-					}
-					if (listFilter.getSelectionIndex() == 3) {
-						return ((AbstractElementWrapper)element).getElement() instanceof SelectMonsterByIdImpl ||
-						((AbstractElementWrapper)element).getElement() instanceof SelectMonsterByNameImpl ||
-						((AbstractElementWrapper)element).getElement() instanceof NewMonsterImpl;
-					}
-					if (listFilter.getSelectionIndex() == 4) {
-						return ((AbstractElementWrapper)element).getElement() instanceof SelectSpellByName ||
-						((AbstractElementWrapper)element).getElement() instanceof SelectSpellById ||
-						((AbstractElementWrapper)element).getElement() instanceof NewSpell;
-					}
-					if (listFilter.getSelectionIndex() == 5) {
-						return ((AbstractElementWrapper)element).getElement() instanceof SelectItemByName ||
-						((AbstractElementWrapper)element).getElement() instanceof SelectItemById ||
-						((AbstractElementWrapper)element).getElement() instanceof NewItem;
-					}
-					if (listFilter.getSelectionIndex() == 6) {
-						return ((AbstractElementWrapper)element).getElement() instanceof SelectName;
-					}
-					if (listFilter.getSelectionIndex() == 7) {
-						return ((AbstractElementWrapper)element).getElement() instanceof SelectSiteByName ||
-						((AbstractElementWrapper)element).getElement() instanceof SelectSiteById ||
-						((AbstractElementWrapper)element).getElement() instanceof NewSite;
-					}
-					if (listFilter.getSelectionIndex() == 8) {
-						return ((AbstractElementWrapper)element).getElement() instanceof SelectNation;
-					}
-					return true;
-				}
-			}});
+				viewer.setSelection(null);
+				Object[] model = getFilteredElements();
+				viewer.setInput(model);
+				viewer.setItemCount(model.length);
 			}
-			
 		});
 
 		final SelectionListener searchListener = new SelectionAdapter() {

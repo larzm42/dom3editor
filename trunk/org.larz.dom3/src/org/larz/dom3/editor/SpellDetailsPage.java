@@ -30,6 +30,7 @@ import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.events.VerifyEvent;
 import org.eclipse.swt.events.VerifyListener;
 import org.eclipse.swt.layout.GridData;
@@ -77,9 +78,9 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		SCHOOL (Messages.getString("SpellDetailsSection.mod.school"), "0"),
 		RESEARCHLEVEL (Messages.getString("SpellDetailsSection.mod.researchlevel"), "0"),
 		PATH1 (Messages.getString("SpellDetailsSection.mod.path"), "0", "0"),
-		PATH2 (Messages.getString("SpellDetailsSection.mod.path"), "0", "0"),
+		PATH2 (Messages.getString("SpellDetailsSection.mod.path"), "1", "0"),
 		PATHLEVEL1 (Messages.getString("SpellDetailsSection.mod.pathlevel"), "0", "0"),
-		PATHLEVEL2 (Messages.getString("SpellDetailsSection.mod.pathlevel"), "0", "0"),
+		PATHLEVEL2 (Messages.getString("SpellDetailsSection.mod.pathlevel"), "1", "0"),
 		AOE (Messages.getString("SpellDetailsSection.mod.aoe"), "1"),
 		DAMAGE (Messages.getString("SpellDetailsSection.mod.damage"), "1"),
 		EFFECT (Messages.getString("SpellDetailsSection.mod.effect"), "0"),
@@ -144,13 +145,28 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 	class Inst5Fields implements InstFields {
 		private Button check;
 		private Text value;
+		private Label defaultLabel;
 	}
 	
+	class Inst6Fields implements InstFields {
+		private Button check;
+		private MappedDynamicCombo value;
+		private Label defaultLabel;
+	}
+	
+	class Inst7Fields implements InstFields {
+		private Button check;
+		private Text value1;
+		private Label defaultLabel1;
+		private MappedDynamicCombo value2;
+		private Label defaultLabel2;
+	}
+
 	private EnumMap<Inst, InstFields> instMap = new EnumMap<Inst, InstFields>(Inst.class);
 	
 	public SpellDetailsPage(XtextEditor doc, TableViewer viewer) {
 		super(doc, viewer);
-		instMap.put(Inst.SCHOOL, new Inst2Fields());
+		instMap.put(Inst.SCHOOL, new Inst6Fields());
 		instMap.put(Inst.RESEARCHLEVEL, new Inst2Fields());
 		instMap.put(Inst.AOE, new Inst2Fields());
 		instMap.put(Inst.DAMAGE, new Inst2Fields());
@@ -166,8 +182,8 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		instMap.put(Inst.RESTRICTED1, new Inst2Fields());	
 		instMap.put(Inst.RESTRICTED2, new Inst2Fields());	
 		instMap.put(Inst.RESTRICTED3, new Inst2Fields());	
-		instMap.put(Inst.PATH1, new Inst3Fields());	
-		instMap.put(Inst.PATH2, new Inst3Fields());	
+		instMap.put(Inst.PATH1, new Inst7Fields());	
+		instMap.put(Inst.PATH2, new Inst7Fields());	
 		instMap.put(Inst.PATHLEVEL1, new Inst3Fields());	
 		instMap.put(Inst.PATHLEVEL2, new Inst3Fields());	
 		instMap.put(Inst.CLEAR, new Inst4Fields());	
@@ -295,13 +311,13 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 					addInst1(Inst.DESCR, doc, "");
 					descr.setEnabled(true);
 					descr.setBackground(toolkit.getColors().getBackground());
-					descr.setText("");
+					descr.setText(getSelectSpelldescr(input));
 					descCheck.setFont(boldFont);
 				} else {
 					removeInst(Inst.DESCR, doc);
 					descr.setEnabled(false);
 					descr.setBackground(toolkit.getColors().getInactiveBackground());
-					descr.setText("");
+					descr.setText(getSelectSpelldescr(input));
 					descCheck.setFont(normalFont);
 				}
 			}
@@ -345,6 +361,10 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 							addInst4(key, doc);
 						} else if (field instanceof Inst5Fields) {
 							addInst5(key, doc, key.defaultValue);
+						} else if (field instanceof Inst6Fields) {
+							addInst2(key, doc, key.defaultValue);
+						} else if (field instanceof Inst7Fields) {
+							addInst3(key, doc, key.defaultValue, key.defaultValue2);
 						}
 					} else {
 						removeInst(key, doc);
@@ -362,11 +382,11 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 
 			Text myValue1 = null;
 			Text myValue2 = null;
-			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields ||	field instanceof Inst3Fields ||	field instanceof Inst5Fields) {
+			if (field instanceof Inst1Fields ||	field instanceof Inst2Fields ||	field instanceof Inst3Fields ||	field instanceof Inst5Fields ||	field instanceof Inst7Fields) {
 				final Text value = toolkit.createText(isRight?rightColumn:leftColumn, "", SWT.SINGLE | SWT.BORDER); //$NON-NLS-1$
 				myValue1 = value;
 				
-				if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
+				if (field instanceof Inst2Fields ||	field instanceof Inst3Fields ||	field instanceof Inst7Fields) {
 					value.addVerifyListener(new VerifyListener() {
 						
 						@Override
@@ -401,6 +421,8 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 							setInst3(key, doc, value.getText(), null);
 						} else if (field instanceof Inst5Fields) {
 							setInst5(key, doc, value.getText());
+						} else if (field instanceof Inst7Fields) {
+							setInst3(key, doc, value.getText(), null);
 						}
 					}			
 				});
@@ -416,6 +438,8 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 								setInst3(key, doc, value.getText(), null);
 							} else if (field instanceof Inst5Fields) {
 								setInst5(key, doc, value.getText());
+							} else if (field instanceof Inst7Fields) {
+								setInst3(key, doc, value.getText(), null);
 							}
 						}
 					}
@@ -425,32 +449,76 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
 					gd.widthHint = 160;
 					gd.horizontalSpan = 4;
-				} else if (field instanceof Inst2Fields ||	field instanceof Inst3Fields) {
+				} else if (field instanceof Inst2Fields ||field instanceof Inst3Fields ||field instanceof Inst7Fields) {
 					gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
 					gd.widthHint = DEFAULT_VALUE_WIDTH;
 				} else if (field instanceof Inst5Fields) {
 					gd = new GridData(SWT.FILL, SWT.FILL, false, false);
-					gd.horizontalSpan = 4;
+					gd.horizontalSpan = 3;
 				}
 				value.setLayoutData(gd);
 				
 			}
 				
+			MappedDynamicCombo myInst6Value1 = null;
+			if (field instanceof Inst6Fields) {
+				final MappedDynamicCombo value = new MappedDynamicCombo(isRight?rightColumn:leftColumn, SWT.READ_ONLY);
+				myInst6Value1 = value;
+
+				check.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						if (check.getSelection()) {
+							value.setEnabled(true);
+							value.setItems(new String[]{
+									"cannot be researched", "Conjuration", "Alteration", "Evocation", "Construction", "Enchantment", "Thaumaturgy", "Blood", "Divine"},
+									new int[]{-1, 0, 1, 2, 3, 4, 5, 6, 7});
+							int selection = Integer.parseInt(key.defaultValue);
+							value.select(selection);
+						} else {
+							value.setEnabled(false);
+							value.removeAll();
+						}
+					}
+
+				});
+				value.addSelectionListener(new SelectionListener() {
+					
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						int val = value.getSelectedValue();
+						setInst2(key, doc, Integer.toString(val));
+					}
+					
+					@Override
+					public void widgetDefaultSelected(SelectionEvent e) {
+					}
+				});
+				value.setEnabled(false);
+				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				gd.widthHint = DEFAULT_VALUE_WIDTH;
+				value.setLayoutData(gd);
+				
+			}
+
 			Label defaultLabel1 = null;
 			
-			if (field instanceof Inst2Fields || field instanceof Inst3Fields || field instanceof Inst4Fields) {
+			if (field instanceof Inst2Fields || field instanceof Inst3Fields || field instanceof Inst4Fields || field instanceof Inst5Fields || field instanceof Inst6Fields || field instanceof Inst7Fields) {
 				defaultLabel1 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
 				defaultLabel1.setEnabled(false);
 			}
-			if (field instanceof Inst2Fields) {
+			if (field instanceof Inst2Fields || field instanceof Inst6Fields) {
 				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
 				gd.horizontalSpan = 3;
 				defaultLabel1.setLayoutData(gd);
-			} else if (field instanceof Inst3Fields) {
+			} else if (field instanceof Inst3Fields || field instanceof Inst7Fields) {
 				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
 				defaultLabel1.setLayoutData(gd);
 			} else if (field instanceof Inst4Fields) {
 				createSpacer(toolkit, isRight?rightColumn:leftColumn, 2);
+			} else if (field instanceof Inst5Fields) {
+				gd = new GridData(SWT.FILL, SWT.CENTER, false, false);
+				defaultLabel1.setLayoutData(gd);
 			}
 
 			Label defaultLabel2 = null;
@@ -502,6 +570,49 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 				defaultLabel2.setEnabled(false);
 			}
 			
+			MappedDynamicCombo myInst7Value2 = null;
+			if (field instanceof Inst7Fields) {
+				final MappedDynamicCombo value = new MappedDynamicCombo(isRight?rightColumn:leftColumn, SWT.READ_ONLY);
+				myInst7Value2 = value;
+
+				check.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						if (check.getSelection()) {
+							value.setEnabled(true);
+							value.setItems(new String[]{
+									"none", "Fire", "Air", "Water", "Earth", "Astral", "Death", "Nature", "Blood", "Holy"},
+									new int[]{-1, 0, 1, 2, 3, 4, 5, 6, 7, 8});
+							int selection = Integer.parseInt(key.defaultValue2);
+							value.select(selection);
+						} else {
+							value.setEnabled(false);
+							value.removeAll();
+						}
+					}
+
+				});
+				value.addSelectionListener(new SelectionListener() {
+					
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						int val = value.getSelectedValue();
+						setInst3(key, doc, null, Integer.toString(val));
+					}
+					
+					@Override
+					public void widgetDefaultSelected(SelectionEvent e) {
+					}
+				});
+				value.setEnabled(false);
+				gd = new GridData(SWT.FILL, SWT.BEGINNING, false, false);
+				gd.widthHint = DEFAULT_VALUE_WIDTH;
+				value.setLayoutData(gd);
+				
+				defaultLabel2 = toolkit.createLabel(isRight?rightColumn:leftColumn, "");
+				defaultLabel2.setEnabled(false);
+			}
+
 			if (field instanceof Inst1Fields) {
 				((Inst1Fields)field).check = check;
 				((Inst1Fields)field).value = myValue1;
@@ -521,6 +632,17 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			} else if (field instanceof Inst5Fields) {
 				((Inst5Fields)field).check = check;
 				((Inst5Fields)field).value = myValue1;
+				((Inst5Fields)field).defaultLabel = defaultLabel1;
+			} else if (field instanceof Inst6Fields) {
+				((Inst6Fields)field).check = check;
+				((Inst6Fields)field).value = myInst6Value1;
+				((Inst6Fields)field).defaultLabel = defaultLabel1;
+			} else if (field instanceof Inst7Fields) {
+				((Inst7Fields)field).check = check;
+				((Inst7Fields)field).value1 = myValue1;
+				((Inst7Fields)field).defaultLabel1 = defaultLabel1;
+				((Inst7Fields)field).value2 = myInst7Value2;
+				((Inst7Fields)field).defaultLabel2 = defaultLabel2;
 			}
 
 			isRight = !isRight;
@@ -561,7 +683,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 				descCheck.setSelection(true);
 				descCheck.setFont(boldFont);
 			} else {
-				descr.setText("");
+				descr.setText(getSelectSpelldescr(input));
 				descr.setEnabled(false);
 				descr.setBackground(toolkit.getColors().getInactiveBackground());
 				descCheck.setSelection(false);
@@ -600,12 +722,29 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 					((Inst2Fields)fields.getValue()).check.setSelection(true);
 					((Inst2Fields)fields.getValue()).check.setFont(boldFont);
 				}
+				if (fields.getValue() instanceof Inst6Fields) {
+					((Inst6Fields)fields.getValue()).value.setEnabled(true);
+					((Inst6Fields)fields.getValue()).value.setItems(new String[]{
+							"cannot be researched", "Conjuration", "Alteration", "Evocation", "Construction", "Enchantment", "Thaumaturgy", "Blood", "Divine"},
+							new int[]{-1, 0, 1, 2, 3, 4, 5, 6, 7});
+					int selection = Integer.parseInt(val.toString());
+					((Inst6Fields)fields.getValue()).value.select(selection);
+					((Inst6Fields)fields.getValue()).value.setEnabled(true);
+					((Inst6Fields)fields.getValue()).check.setSelection(true);
+					((Inst6Fields)fields.getValue()).check.setFont(boldFont);
+				}
 			} else {
 				if (fields.getValue() instanceof Inst2Fields) {
 					((Inst2Fields)fields.getValue()).value.setText("");
 					((Inst2Fields)fields.getValue()).value.setEnabled(false);
 					((Inst2Fields)fields.getValue()).check.setSelection(false);
 					((Inst2Fields)fields.getValue()).check.setFont(normalFont);
+				}
+				if (fields.getValue() instanceof Inst6Fields) {
+					((Inst6Fields)fields.getValue()).value.removeAll();
+					((Inst6Fields)fields.getValue()).value.setEnabled(false);
+					((Inst6Fields)fields.getValue()).check.setSelection(false);
+					((Inst6Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Integer[] vals = getInst3(fields.getKey(), input);
@@ -618,6 +757,20 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 					((Inst3Fields)fields.getValue()).check.setSelection(true);
 					((Inst3Fields)fields.getValue()).check.setFont(boldFont);
 				}
+				if (fields.getValue() instanceof Inst7Fields) {
+					((Inst7Fields)fields.getValue()).value1.setText(vals[0].toString());
+					((Inst7Fields)fields.getValue()).value1.setEnabled(true);
+					((Inst7Fields)fields.getValue()).value2.setItems(new String[]{
+							"None", "Fire",	"Air", "Water", "Earth", "Astral", "Death",
+							"Nature", "Blood", "Holy"
+							},
+							new int[]{-1, 0, 1, 2, 3, 4, 5, 6, 7, 8});
+					int selection = Integer.parseInt(vals[1].toString());
+					((Inst7Fields)fields.getValue()).value2.select(selection);
+					((Inst7Fields)fields.getValue()).value2.setEnabled(true);
+					((Inst7Fields)fields.getValue()).check.setSelection(true);
+					((Inst7Fields)fields.getValue()).check.setFont(boldFont);
+				}
 			} else {
 				if (fields.getValue() instanceof Inst3Fields) {
 					((Inst3Fields)fields.getValue()).value1.setText("");
@@ -626,6 +779,14 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 					((Inst3Fields)fields.getValue()).value2.setEnabled(false);
 					((Inst3Fields)fields.getValue()).check.setSelection(false);
 					((Inst3Fields)fields.getValue()).check.setFont(normalFont);
+				}
+				if (fields.getValue() instanceof Inst7Fields) {
+					((Inst7Fields)fields.getValue()).value1.setText("");
+					((Inst7Fields)fields.getValue()).value1.setEnabled(false);
+					((Inst7Fields)fields.getValue()).value2.removeAll();
+					((Inst7Fields)fields.getValue()).value2.setEnabled(false);
+					((Inst7Fields)fields.getValue()).check.setSelection(false);
+					((Inst7Fields)fields.getValue()).check.setFont(normalFont);
 				}
 			}
 			Boolean isVal = getInst4(fields.getKey(), input);
@@ -655,7 +816,7 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 				switch (fields.getKey()) {
 				case SCHOOL:
 					if (spellDB.school != null) {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.school));
+						((Inst6Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getSchoolName(spellDB.school)));
 						Inst.SCHOOL.defaultValue = spellDB.school.toString();
 					}
 					break;
@@ -667,18 +828,28 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 					break;
 				case PATH1:
 					if (spellDB.path1 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", 0));
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", 0));
 						Inst.PATH1.defaultValue = "0";
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.path1));
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getPathName(spellDB.path1)));
 						Inst.PATH1.defaultValue2 = spellDB.path1.toString();
+					} else {
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", 0));
+						Inst.PATH1.defaultValue = "0";
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.PATH1.defaultValue2 = "0";
 					}
 					break;
 				case PATH2:
 					if (spellDB.path2 != null) {
-						((Inst3Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", 1));
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", 1));
 						Inst.PATH2.defaultValue = "1";
-						((Inst3Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.path2));
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getPathName(spellDB.path2)));
 						Inst.PATH2.defaultValue2 = spellDB.path2.toString();
+					} else {
+						((Inst7Fields)fields.getValue()).defaultLabel1.setText(Messages.format("DetailsPage.DefaultLabel.fmt", 1));
+						Inst.PATH2.defaultValue = "1";
+						((Inst7Fields)fields.getValue()).defaultLabel2.setText("");
+						Inst.PATH2.defaultValue2 = "0";
 					}
 					break;
 				case PATHLEVEL1:
@@ -745,6 +916,30 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 						Inst.SPEC.defaultValue = spellDB.spec.toString();
 					}
 					break;
+				case NEXTSPELL:
+					if (spellDB.nextspell != null) {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.nextspell));
+						Inst.NEXTSPELL.defaultValue = spellDB.nextspell.toString();
+					}
+					break;
+				case RESTRICTED1:
+					if (spellDB.restricted1 != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.restricted1));
+						Inst.RESTRICTED1.defaultValue = spellDB.restricted1.toString();
+					}
+					break;
+				case RESTRICTED2:
+					if (spellDB.restricted2 != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.restricted2));
+						Inst.RESTRICTED2.defaultValue = spellDB.restricted2.toString();
+					}
+					break;
+				case RESTRICTED3:
+					if (spellDB.restricted3 != null) {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", spellDB.restricted3));
+						Inst.RESTRICTED3.defaultValue = spellDB.restricted3.toString();
+					}
+					break;
 				}
 			}
 		}
@@ -758,6 +953,16 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 			int id = ((SelectSpellById)spell).getValue();
 			return Database.getSpellName(id);
 		}
+	}
+	
+	private String getSelectSpelldescr(Object spell) {
+		if (spell instanceof SelectSpellByName) {
+			return Database.getSpellDescr(((SelectSpellByName)spell).getValue());
+		} else if (spell instanceof SelectSpellById) {
+			int id = ((SelectSpellById)spell).getValue();
+			return Database.getSpellDescr(Database.getSpellName(id));
+		}
+		return "";
 	}
 	
 	private String getSpellname(Spell spell) {
@@ -828,6 +1033,56 @@ public class SpellDetailsPage extends AbstractDetailsPage {
 		});
 
 		updateSelection();
+	}
+
+	private String getPathName(int id) {
+		switch (id) {
+		case -1:
+			return "none";
+		case 0:
+			return "Fire";
+		case 1:
+			return "Air";
+		case 2:
+			return "Water";
+		case 3:
+			return "Earth";
+		case 4:
+			return "Astral";
+		case 5:
+			return "Death";
+		case 6:
+			return "Nature";
+		case 7:
+			return "Blood";
+		case 8:
+			return "Holy";
+		}
+		return "Unknown";
+	}
+
+	private String getSchoolName(int id) {
+		switch (id) {
+		case -1:
+			return "cannot be researched";
+		case 0:
+			return "Conjuration";
+		case 1:
+			return "Alteration";
+		case 2:
+			return "Evocation";
+		case 3:
+			return "Construction";
+		case 4:
+			return "Enchantment";
+		case 5:
+			return "Thaumaturgy";
+		case 6:
+			return "Blood";
+		case 7:
+			return "Divine";
+		}
+		return "Unknown";
 	}
 
 	private String getInst1(Inst inst2, Object spell) {
