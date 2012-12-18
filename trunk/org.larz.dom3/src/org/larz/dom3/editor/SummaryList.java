@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
+import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.viewers.ILazyContentProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
@@ -71,7 +72,6 @@ import org.larz.dom3.dm.dm.AbstractElement;
 import org.larz.dom3.dm.dm.Armor;
 import org.larz.dom3.dm.dm.ArmorInst1;
 import org.larz.dom3.dm.dm.ArmorMods;
-import org.larz.dom3.dm.dm.DmFactory;
 import org.larz.dom3.dm.dm.Dom3Mod;
 import org.larz.dom3.dm.dm.GeneralInst1;
 import org.larz.dom3.dm.dm.Item;
@@ -756,36 +756,21 @@ public class SummaryList extends MasterDetailsBlock {
 	
 	public void addArmor(final AddTypes type, final String name, final int id) {
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		document.modify(new IUnitOfWork.Void<XtextResource>() {
-			@Override
-			public void process(XtextResource resource) throws Exception {
-				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-
-				EList<AbstractElement> elements = dom3Mod.getElements();
-				switch (type) {
-				case BY_ID:
-					SelectArmorById armorById = DmFactory.eINSTANCE.createSelectArmorById();
-					armorById.setValue(id);
-					elements.add(armorById);
-					break;
-				case BY_NAME:
-					SelectArmorByName armorByName = DmFactory.eINSTANCE.createSelectArmorByName();
-					armorByName.setValue(name);
-					elements.add(armorByName);
-					break;
-				case NEW:
-					NewArmor newArmor = DmFactory.eINSTANCE.createNewArmor();
-					newArmor.setValue(id);
-					EList<ArmorMods> mods = newArmor.getMods();
-					ArmorInst1 inst1 = DmFactory.eINSTANCE.createArmorInst1();
-					inst1.setName(true);
-					inst1.setValue(name);
-					mods.add(inst1);
-					elements.add(newArmor);
-					break;
-				}
-			}  
-		});
+		try {
+			switch (type) {
+			case BY_ID:
+				document.replace(document.getLength(), 0, "\n#selectarmor " + id + "\n#end\n");
+				break;
+			case BY_NAME:
+				document.replace(document.getLength(), 0, "\n#selectarmor \"" + name + "\"\n#end\n");
+				break;
+			case NEW:
+				document.replace(document.getLength(), 0, "\n#newarmor " + id + "\n#name \"" + name + "\"\n#end\n");
+				break;
+			}
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
 		viewer.refresh();
 
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -809,36 +794,21 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addWeapon(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		document.modify(new IUnitOfWork.Void<XtextResource>() {
-			@Override
-			public void process(XtextResource resource) throws Exception {
-				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				
-				EList<AbstractElement> elements = dom3Mod.getElements();
-				switch (type) {
-				case BY_ID:
-					SelectWeaponById armorById = DmFactory.eINSTANCE.createSelectWeaponById();
-					armorById.setValue(id);
-					elements.add(armorById);
-					break;
-				case BY_NAME:
-					SelectWeaponByName armorByName = DmFactory.eINSTANCE.createSelectWeaponByName();
-					armorByName.setValue(name);
-					elements.add(armorByName);
-					break;
-				case NEW:
-					NewWeapon newArmor = DmFactory.eINSTANCE.createNewWeapon();
-					newArmor.setValue(id);
-					EList<WeaponMods> mods = newArmor.getMods();
-					WeaponInst1 inst1 = DmFactory.eINSTANCE.createWeaponInst1();
-					inst1.setName(true);
-					inst1.setValue(name);
-					mods.add(inst1);
-					elements.add(newArmor);
-					break;
-				}
-				}  
-			});
+		try {
+			switch (type) {
+			case BY_ID:
+				document.replace(document.getLength(), 0, "\n#selectweapon " + id + "\n#end\n");
+				break;
+			case BY_NAME:
+				document.replace(document.getLength(), 0, "\n#selectweapon \"" + name + "\"\n#end\n");
+				break;
+			case NEW:
+				document.replace(document.getLength(), 0, "\n#newweapon " + id + "\n#name \"" + name + "\"\n#end\n");
+				break;
+			}
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -861,35 +831,21 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addSpell(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		document.modify(new IUnitOfWork.Void<XtextResource>() {
-			@Override
-			public void process(XtextResource resource) throws Exception {
-				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				
-				EList<AbstractElement> elements = dom3Mod.getElements();
-				switch (type) {
-				case BY_ID:
-					SelectSpellById armorById = DmFactory.eINSTANCE.createSelectSpellById();
-					armorById.setValue(id);
-					elements.add(armorById);
-					break;
-				case BY_NAME:
-					SelectSpellByName armorByName = DmFactory.eINSTANCE.createSelectSpellByName();
-					armorByName.setValue(name);
-					elements.add(armorByName);
-					break;
-				case NEW:
-					NewSpell newArmor = DmFactory.eINSTANCE.createNewSpell();
-					EList<SpellMods> mods = newArmor.getMods();
-					SpellInst1 inst1 = DmFactory.eINSTANCE.createSpellInst1();
-					inst1.setName(true);
-					inst1.setValue(name);
-					mods.add(inst1);
-					elements.add(newArmor);
-					break;
-				}
-				}  
-			});
+		try {
+			switch (type) {
+			case BY_ID:
+				document.replace(document.getLength(), 0, "\n#selectspell " + id + "\n#end\n");
+				break;
+			case BY_NAME:
+				document.replace(document.getLength(), 0, "\n#selectspell \"" + name + "\"\n#end\n");
+				break;
+			case NEW:
+				document.replace(document.getLength(), 0, "\n#newspell\n#name \"" + name + "\"\n#end\n");
+				break;
+			}
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -912,35 +868,21 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addItem(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		document.modify(new IUnitOfWork.Void<XtextResource>() {
-			@Override
-			public void process(XtextResource resource) throws Exception {
-				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				
-				EList<AbstractElement> elements = dom3Mod.getElements();
-				switch (type) {
-				case BY_ID:
-					SelectItemById armorById = DmFactory.eINSTANCE.createSelectItemById();
-					armorById.setValue(id);
-					elements.add(armorById);
-					break;
-				case BY_NAME:
-					SelectItemByName armorByName = DmFactory.eINSTANCE.createSelectItemByName();
-					armorByName.setValue(name);
-					elements.add(armorByName);
-					break;
-				case NEW:
-					NewItem newArmor = DmFactory.eINSTANCE.createNewItem();
-					EList<ItemMods> mods = newArmor.getMods();
-					ItemInst1 inst1 = DmFactory.eINSTANCE.createItemInst1();
-					inst1.setName(true);
-					inst1.setValue(name);
-					mods.add(inst1);
-					elements.add(newArmor);
-					break;
-				}
-				}  
-			});
+		try {
+			switch (type) {
+			case BY_ID:
+				document.replace(document.getLength(), 0, "\n#selectitem " + id + "\n#end\n");
+				break;
+			case BY_NAME:
+				document.replace(document.getLength(), 0, "\n#selectitem \"" + name + "\"\n#end\n");
+				break;
+			case NEW:
+				document.replace(document.getLength(), 0, "\n#newitem\n#name \"" + name + "\"\n#end\n");
+				break;
+			}
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -963,17 +905,11 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addName(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		document.modify(new IUnitOfWork.Void<XtextResource>() {
-			@Override
-			public void process(XtextResource resource) throws Exception {
-				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				
-				EList<AbstractElement> elements = dom3Mod.getElements();
-				SelectName armorById = DmFactory.eINSTANCE.createSelectName();
-				armorById.setValue(id);
-				elements.add(armorById);
-				}  
-			});
+		try {
+			document.replace(document.getLength(), 0, "\n#selectnametype " + id + "\n#end\n");
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -996,36 +932,21 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addSite(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		document.modify(new IUnitOfWork.Void<XtextResource>() {
-			@Override
-			public void process(XtextResource resource) throws Exception {
-				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				
-				EList<AbstractElement> elements = dom3Mod.getElements();
-				switch (type) {
-				case BY_ID:
-					SelectSiteById armorById = DmFactory.eINSTANCE.createSelectSiteById();
-					armorById.setValue(id);
-					elements.add(armorById);
-					break;
-				case BY_NAME:
-					SelectSiteByName armorByName = DmFactory.eINSTANCE.createSelectSiteByName();
-					armorByName.setValue(name);
-					elements.add(armorByName);
-					break;
-				case NEW:
-					NewSite newArmor = DmFactory.eINSTANCE.createNewSite();
-					newArmor.setValue(id);
-					EList<SiteMods> mods = newArmor.getMods();
-					SiteInst1 inst1 = DmFactory.eINSTANCE.createSiteInst1();
-					inst1.setName(true);
-					inst1.setValue(name);
-					mods.add(inst1);
-					elements.add(newArmor);
-					break;
-				}
-				}  
-			});
+		try {
+			switch (type) {
+			case BY_ID:
+				document.replace(document.getLength(), 0, "\n#selectsite " + id + "\n#end\n");
+				break;
+			case BY_NAME:
+				document.replace(document.getLength(), 0, "\n#selectsite \"" + name + "\"\n#end\n");
+				break;
+			case NEW:
+				document.replace(document.getLength(), 0, "\n#newsite " + id + "\n#name \"" + name + "\"\n#end\n");
+				break;
+			}
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -1048,17 +969,11 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addNation(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		document.modify(new IUnitOfWork.Void<XtextResource>() {
-			@Override
-			public void process(XtextResource resource) throws Exception {
-				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				
-				EList<AbstractElement> elements = dom3Mod.getElements();
-				SelectNation armorById = DmFactory.eINSTANCE.createSelectNation();
-				armorById.setValue(id);
-				elements.add(armorById);
-				}  
-			});
+		try {
+			document.replace(document.getLength(), 0, "\n#selectnation " + id + "\n#end\n");
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
@@ -1081,36 +996,21 @@ public class SummaryList extends MasterDetailsBlock {
 	public void addMonster(final AddTypes type, final String name, final int id) 
 	{
 		IXtextDocument document = ((XtextEditor)doc).getDocument();
-		document.modify(new IUnitOfWork.Void<XtextResource>() {
-			@Override
-			public void process(XtextResource resource) throws Exception {
-				Dom3Mod dom3Mod = (Dom3Mod)resource.getContents().get(0);
-				
-				EList<AbstractElement> elements = dom3Mod.getElements();
-				switch (type) {
-				case BY_ID:
-					SelectMonsterById armorById = DmFactory.eINSTANCE.createSelectMonsterById();
-					armorById.setValue(id);
-					elements.add(armorById);
-					break;
-				case BY_NAME:
-					SelectMonsterByName armorByName = DmFactory.eINSTANCE.createSelectMonsterByName();
-					armorByName.setValue(name);
-					elements.add(armorByName);
-					break;
-				case NEW:
-					NewMonster newArmor = DmFactory.eINSTANCE.createNewMonster();
-					newArmor.setValue(id);
-					EList<MonsterMods> mods = newArmor.getMods();
-					MonsterInst1 inst1 = DmFactory.eINSTANCE.createMonsterInst1();
-					inst1.setName(true);
-					inst1.setValue(name);
-					mods.add(inst1);
-					elements.add(newArmor);
-					break;
-				}
-				}  
-			});
+		try {
+			switch (type) {
+			case BY_ID:
+				document.replace(document.getLength(), 0, "\n#selectmonster " + id + "\n#end\n");
+				break;
+			case BY_NAME:
+				document.replace(document.getLength(), 0, "\n#selectmonster \"" + name + "\"\n#end\n");
+				break;
+			case NEW:
+				document.replace(document.getLength(), 0, "\n#newmonster " + id + "\n#name \"" + name + "\"\n#end\n");
+				break;
+			}
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
 		viewer.refresh();
 		
 		AbstractElement[] elements =  document.readOnly(new IUnitOfWork<AbstractElement[], XtextResource>(){       
