@@ -701,7 +701,8 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					removeInst(Inst.NAME, doc);
 					name.setEnabled(false);
 					if (input instanceof SelectMonsterById || input instanceof SelectMonsterByName) {
-						name.setText(getSelectMonstername((Monster)input));
+						String monsterName = getSelectMonstername((Monster)input);
+						name.setText(monsterName != null ? monsterName : "");
 					} else {
 						name.setText("");
 					}
@@ -1653,7 +1654,8 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					nameCheck.setSelection(true);
 					nameCheck.setFont(boldFont);
 				} else {
-					name.setText(getSelectMonstername((Monster)input));
+					String monsterName = getSelectMonstername((Monster)input);
+					name.setText(monsterName != null ? monsterName : "");
 					name.setEnabled(false);
 					nameCheck.setSelection(false);
 					nameCheck.setFont(normalFont);
