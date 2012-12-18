@@ -742,16 +742,16 @@ public class Database {
 			//monster.spr1 = rs.getString("spr1");
 			//monster.spr2 = rs.getString("spr2");
 			//monster.descr = rs.getString("descr");
-			monster.armor1 = Integer.toString(rs.getInt("helmet"));
-			monster.armor2 = Integer.toString(rs.getInt("armor"));
-			monster.armor3 = Integer.toString(rs.getInt("shield"));
-			monster.speciallook = rs.getInt("speciallook");
+			monster.armor1 = rs.getInt("helmet") != 0 ? Integer.toString(rs.getInt("helmet")) : null;
+			monster.armor2 = rs.getInt("armor") != 0 ? Integer.toString(rs.getInt("armor")) : null;
+			monster.armor3 = rs.getInt("shield") != 0 ? Integer.toString(rs.getInt("shield")) : null;
+			monster.speciallook = rs.getInt("speciallook") != 0 ? rs.getInt("speciallook") : null;
 			monster.ap = rs.getInt("ap");
 			monster.mapmove = rs.getInt("mapmove");
 			monster.hp = rs.getInt("hp");
 			monster.prot = rs.getInt("prot");
 			monster.size = rs.getInt("size");
-			monster.ressize = rs.getInt("ressize");
+			monster.ressize = rs.getInt("ressize") != 0 ? rs.getInt("ressize") : null;
 			monster.str = rs.getInt("str");
 			monster.enc = rs.getInt("enc");
 			monster.att = rs.getInt("att");
@@ -763,7 +763,7 @@ public class Database {
 			monster.rcost = rs.getInt("rcost");
 			monster.pathcost = rs.getInt("pathcost");
 			monster.startdom = rs.getInt("startdom");
-			monster.eyes = rs.getInt("eyes");
+			monster.eyes = rs.getInt("eyes") != 0 ? rs.getInt("eyes") : 2;
 			//monster.copystats = rs.getInt("copystats");
 			//monster.copyspr = rs.getInt("copyspr");
 //			monster.restrictedgod = rs.getInt("restrictedgod");
@@ -1142,12 +1142,12 @@ public class Database {
 				break;
 			}
 			
-			monster.weapon1 = Integer.toString(rs.getInt("wpn1"));
-			monster.weapon2 = Integer.toString(rs.getInt("wpn2"));
-			monster.weapon3 = Integer.toString(rs.getInt("wpn3"));
-			monster.weapon4 = Integer.toString(rs.getInt("wpn4"));
+			monster.weapon1 = rs.getInt("wpn1") != 0 ? Integer.toString(rs.getInt("wpn1")) : null;
+			monster.weapon2 = rs.getInt("wpn2") != 0 ? Integer.toString(rs.getInt("wpn2")) : null;
+			monster.weapon3 = rs.getInt("wpn3") != 0 ? Integer.toString(rs.getInt("wpn3")) : null;
+			monster.weapon4 = rs.getInt("wpn4") != 0 ? Integer.toString(rs.getInt("wpn4")) : null;
 			
-			monster.onebattlespell = Integer.toString(rs.getInt("onebattlespell"));
+			monster.onebattlespell = rs.getInt("onebattlespell") != 0 ? Integer.toString(rs.getInt("onebattlespell")) : null;
 			
 			monster.firstshape = rs.getString("firstshape");
 			monster.secondshape = rs.getString("secondshape");
@@ -1452,7 +1452,7 @@ public class Database {
 		if (descr == null) {
 			descr = "";
 			name = name.replaceAll(" ", "");
-			name = name.replaceAll("ö", "");
+			name = name.replaceAll("ï¿½", "");
 			name = name.replaceAll("'", "");
 			BufferedReader reader = null;
 			try {
@@ -1512,7 +1512,7 @@ public class Database {
 		if (descr == null) {
 			descr = "";
 			name = name.replaceAll(" ", "");
-			name = name.replaceAll("ö", "");
+			name = name.replaceAll("ï¿½", "");
 			name = name.replaceAll("'", "");
 			BufferedReader reader = null;
 			try {
