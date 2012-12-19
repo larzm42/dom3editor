@@ -2007,132 +2007,198 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					if (monsterDB.armor1 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor1));
 						Inst.ARMOR1.defaultValue = monsterDB.armor1;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ARMOR1.defaultValue = "";
 					}
 					break;
 				case ARMOR2:
 					if (monsterDB.armor2 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor2));
 						Inst.ARMOR2.defaultValue = monsterDB.armor2;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ARMOR2.defaultValue = "";
 					}
 					break;
 				case ARMOR3:
 					if (monsterDB.armor3 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.armor3));
 						Inst.ARMOR3.defaultValue = monsterDB.armor3;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ARMOR3.defaultValue = "";
 					}
 					break;
 				case SPECIALLOOK:
 					if (monsterDB.speciallook != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.speciallook));
 						Inst.SPECIALLOOK.defaultValue = monsterDB.speciallook.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SPECIALLOOK.defaultValue = "";
 					}
 					break;
 				case AP:
 					if (monsterDB.ap != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.ap));
 						Inst.AP.defaultValue = monsterDB.ap.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.AP.defaultValue = "";
 					}
 					break;
 				case MAPMOVE:
 					if (monsterDB.mapmove != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.mapmove));
 						Inst.MAPMOVE.defaultValue = monsterDB.mapmove.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAPMOVE.defaultValue = "";
 					}
 					break;
 				case HP:
 					if (monsterDB.hp != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.hp));
 						Inst.HP.defaultValue = monsterDB.hp.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.HP.defaultValue = "";
 					}
 					break;
 				case PROT:
 					if (monsterDB.prot != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.prot));
 						Inst.PROT.defaultValue = monsterDB.prot.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.PROT.defaultValue = "";
 					}
 					break;
 				case SIZE:
 					if (monsterDB.size != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.size));
 						Inst.SIZE.defaultValue = monsterDB.size.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SIZE.defaultValue = "";
 					}
 					break;
 				case RESSIZE:
 					if (monsterDB.ressize != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.ressize));
 						Inst.RESSIZE.defaultValue = monsterDB.ressize.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.RESSIZE.defaultValue = "";
 					}
 					break;
 				case STR:
 					if (monsterDB.str != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.str));
 						Inst.STR.defaultValue = monsterDB.str.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.STR.defaultValue = "";
 					}
 					break;
 				case ENC:
 					if (monsterDB.enc != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.enc));
 						Inst.ENC.defaultValue = monsterDB.enc.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ENC.defaultValue = "";
 					}
 					break;
 				case ATT:
 					if (monsterDB.att != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.att));
 						Inst.ATT.defaultValue = monsterDB.att.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ATT.defaultValue = "";
 					}
 					break;
 				case DEF:
 					if (monsterDB.def != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.def));
 						Inst.DEF.defaultValue = monsterDB.def.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.DEF.defaultValue = "";
 					}
 					break;
 				case PREC:
 					if (monsterDB.prec != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.prec));
 						Inst.PREC.defaultValue = monsterDB.prec.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.PREC.defaultValue = "";
 					}
 					break;
 				case MR:
 					if (monsterDB.mr != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.mr));
 						Inst.MR.defaultValue = monsterDB.mr.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MR.defaultValue = "";
 					}
 					break;
 				case MOR:
 					if (monsterDB.mor != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.mor));
 						Inst.MOR.defaultValue = monsterDB.mor.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MOR.defaultValue = "";
 					}
 					break;
 				case GCOST:
 					if (monsterDB.gcost != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.gcost));
 						Inst.GCOST.defaultValue = monsterDB.gcost.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.GCOST.defaultValue = "";
 					}
 					break;
 				case RCOST:
 					if (monsterDB.rcost != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.rcost));
 						Inst.RCOST.defaultValue = monsterDB.rcost.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.RCOST.defaultValue = "";
 					}
 					break;
 				case PATHCOST:
 					if (monsterDB.pathcost != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.pathcost));
 						Inst.PATHCOST.defaultValue = monsterDB.pathcost.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.PATHCOST.defaultValue = "";
 					}
 					break;
 				case STARTDOM:
 					if (monsterDB.startdom != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.startdom));
 						Inst.STARTDOM.defaultValue = monsterDB.startdom.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.STARTDOM.defaultValue = "";
 					}
 					break;
 				case EYES:
 					if (monsterDB.eyes != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.eyes));
 						Inst.EYES.defaultValue = monsterDB.eyes.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.EYES.defaultValue = "";
 					}
 					break;
 				case COPYSTATS:
@@ -2151,342 +2217,513 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					if (monsterDB.restrictedgod != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.restrictedgod));
 						Inst.RESTRICTEDGOD.defaultValue = monsterDB.restrictedgod.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.RESTRICTEDGOD.defaultValue = "";
 					}
 					break;
 				case SHATTEREDSOUL:
 					if (monsterDB.shatteredsoul != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.shatteredsoul));
 						Inst.SHATTEREDSOUL.defaultValue = monsterDB.shatteredsoul.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SHATTEREDSOUL.defaultValue = "";
 					}
 					break;
 				case COLDRES:
 					if (monsterDB.coldres != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.coldres));
 						Inst.COLDRES.defaultValue = monsterDB.coldres.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.COLDRES.defaultValue = "";
 					}
 					break;
 				case FIRERES:
 					if (monsterDB.fireres != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.fireres));
 						Inst.FIRERES.defaultValue = monsterDB.fireres.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FIRERES.defaultValue = "";
 					}
 					break;
 				case POISONRES:
 					if (monsterDB.poisonres != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poisonres));
 						Inst.POISONRES.defaultValue = monsterDB.poisonres.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.POISONRES.defaultValue = "";
 					}
 					break;
 				case SHOCKRES:
 					if (monsterDB.shockres != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.shockres));
 						Inst.SHOCKRES.defaultValue = monsterDB.shockres.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SHOCKRES.defaultValue = "";
 					}
 					break;
 				case DARKVISION:
 					if (monsterDB.darkvision != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.darkvision));
 						Inst.DARKVISION.defaultValue = monsterDB.darkvision.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.DARKVISION.defaultValue = "";
 					}
 					break;
 				case STEALTHY:
 					if (monsterDB.stealthy != null) {
 						((Inst6Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stealthy));
 						Inst.STEALTHY.defaultValue = monsterDB.stealthy.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.STEALTHY.defaultValue = "";
 					}
 					break;
 				case SEDUCE:
 					if (monsterDB.seduce != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.seduce));
 						Inst.SEDUCE.defaultValue = monsterDB.seduce.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SEDUCE.defaultValue = "";
 					}
 					break;
 				case SUCCUBUS:
 					if (monsterDB.succubus != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.succubus));
 						Inst.SUCCUBUS.defaultValue = monsterDB.succubus.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SUCCUBUS.defaultValue = "";
 					}
 					break;
 				case BECKON:
 					if (monsterDB.beckon != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.beckon));
 						Inst.BECKON.defaultValue = monsterDB.beckon.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.BECKON.defaultValue = "";
 					}
 					break;
 				case STARTAGE:
 					if (monsterDB.startage != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.startage));
 						Inst.STARTAGE.defaultValue = monsterDB.startage.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.STARTAGE.defaultValue = "";
 					}
 					break;
 				case MAXAGE:
 					if (monsterDB.maxage != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.maxage));
 						Inst.MAXAGE.defaultValue = monsterDB.maxage.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAXAGE.defaultValue = "";
 					}
 					break;
 				case OLDER:
 					if (monsterDB.older != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.older));
 						Inst.OLDER.defaultValue = monsterDB.older.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.OLDER.defaultValue = "";
 					}
 					break;
 				case HEALER:
 					if (monsterDB.healer != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.healer));
 						Inst.HEALER.defaultValue = monsterDB.healer.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.HEALER.defaultValue = "";
 					}
 					break;
 				case STARTAFF:
 					if (monsterDB.startaff != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.startaff));
 						Inst.STARTAFF.defaultValue = monsterDB.startaff.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.STARTAFF.defaultValue = "";
 					}
 					break;
 				case SUPPLYBONUS:
 					if (monsterDB.supplybonus != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.supplybonus));
 						Inst.SUPPLYBONUS.defaultValue = monsterDB.supplybonus.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SUPPLYBONUS.defaultValue = "";
 					}
 					break;
 				case UWDAMAGE:
 					if (monsterDB.uwdamage != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.uwdamage));
 						Inst.UWDAMAGE.defaultValue = monsterDB.uwdamage.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.UWDAMAGE.defaultValue = "";
 					}
 					break;
 				case COLDPOWER:
 					if (monsterDB.coldpower != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.coldpower));
 						Inst.COLDPOWER.defaultValue = monsterDB.coldpower.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.COLDPOWER.defaultValue = "";
 					}
 					break;
 				case FIREPOWER:
 					if (monsterDB.firepower != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.firepower));
 						Inst.FIREPOWER.defaultValue = monsterDB.firepower.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FIREPOWER.defaultValue = "";
 					}
 					break;
 				case STORMPOWER:
 					if (monsterDB.stormpower != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stormpower));
 						Inst.STORMPOWER.defaultValue = monsterDB.stormpower.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.STORMPOWER.defaultValue = "";
 					}
 					break;
 				case DARKPOWER:
 					if (monsterDB.darkpower != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.darkpower));
 						Inst.DARKPOWER.defaultValue = monsterDB.darkpower.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.DARKPOWER.defaultValue = "";
 					}
 					break;
 				case SPRINGPOWER:
 					if (monsterDB.springpower != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.springpower));
 						Inst.SPRINGPOWER.defaultValue = monsterDB.springpower.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SPRINGPOWER.defaultValue = "";
 					}
 					break;
 				case SUMMERPOWER:
 					if (monsterDB.summerpower != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.summerpower));
 						Inst.SUMMERPOWER.defaultValue = monsterDB.summerpower.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SUMMERPOWER.defaultValue = "";
 					}
 					break;
 				case FALLPOWER:
 					if (monsterDB.fallpower != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.fallpower));
 						Inst.FALLPOWER.defaultValue = monsterDB.fallpower.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FALLPOWER.defaultValue = "";
 					}
 					break;
 				case WINTERPOWER:
 					if (monsterDB.winterpower != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.winterpower));
 						Inst.WINTERPOWER.defaultValue = monsterDB.winterpower.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.WINTERPOWER.defaultValue = "";
 					}
 					break;
 				case AMBIDEXTROUS:
 					if (monsterDB.ambidextrous != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.ambidextrous));
 						Inst.AMBIDEXTROUS.defaultValue = monsterDB.ambidextrous.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.AMBIDEXTROUS.defaultValue = "";
 					}
 					break;
 				case BANEFIRESHIELD:
 					if (monsterDB.banefireshield != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.banefireshield));
 						Inst.BANEFIRESHIELD.defaultValue = monsterDB.banefireshield.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.BANEFIRESHIELD.defaultValue = "";
 					}
 					break;
 				case BERSERK:
 					if (monsterDB.berserk != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.berserk));
 						Inst.BERSERK.defaultValue = monsterDB.berserk.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.BERSERK.defaultValue = "";
 					}
 					break;
 				case STANDARD:
 					if (monsterDB.standard != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.standard));
 						Inst.STANDARD.defaultValue = monsterDB.standard.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.STANDARD.defaultValue = "";
 					}
 					break;
 				case ANIMALAWE:
 					if (monsterDB.animalawe != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.animalawe));
 						Inst.ANIMALAWE.defaultValue = monsterDB.animalawe.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ANIMALAWE.defaultValue = "";
 					}
 					break;
 				case AWE:
 					if (monsterDB.awe != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.awe));
 						Inst.AWE.defaultValue = monsterDB.awe.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.AWE.defaultValue = "";
 					}
 					break;
 				case FEAR:
 					if (monsterDB.fear != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.fear));
 						Inst.FEAR.defaultValue = monsterDB.fear.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FEAR.defaultValue = "";
 					}
 					break;
 				case REGENERATION:
 					if (monsterDB.regeneration != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.regeneration));
 						Inst.REGENERATION.defaultValue = monsterDB.regeneration.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.REGENERATION.defaultValue = "";
 					}
 					break;
 				case REINVIGORATION:
 					if (monsterDB.reinvigoration != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.reinvigoration));
 						Inst.REINVIGORATION.defaultValue = monsterDB.reinvigoration.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.REINVIGORATION.defaultValue = "";
 					}
 					break;
 				case FIRESHIELD:
 					if (monsterDB.fireshield != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.fireshield));
 						Inst.FIRESHIELD.defaultValue = monsterDB.fireshield.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FIRESHIELD.defaultValue = "";
 					}
 					break;
 				case HEAT:
 					if (monsterDB.heat != null) {
 						((Inst6Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.heat));
 						Inst.HEAT.defaultValue = monsterDB.heat.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.HEAT.defaultValue = "";
 					}
 					break;
 				case COLD:
 					if (monsterDB.cold != null) {
 						((Inst6Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.cold));
 						Inst.COLD.defaultValue = monsterDB.cold.toString();
+					} else {
+						((Inst6Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.COLD.defaultValue = "";
 					}
 					break;
 				case ICEPROT:
 					if (monsterDB.iceprot != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.iceprot));
 						Inst.ICEPROT.defaultValue = monsterDB.iceprot.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ICEPROT.defaultValue = "";
 					}
 					break;
 				case POISONCLOUD:
 					if (monsterDB.poisoncloud != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poisoncloud));
 						Inst.POISONCLOUD.defaultValue = monsterDB.poisoncloud.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.POISONCLOUD.defaultValue = "";
 					}
 					break;
 				case DISEASECLOUD:
 					if (monsterDB.diseasecloud != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.diseasecloud));
 						Inst.DISEASECLOUD.defaultValue = monsterDB.diseasecloud.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.DISEASECLOUD.defaultValue = "";
 					}
 					break;
 				case BLOODVENGEANCE:
 					if (monsterDB.bloodvengeance != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.bloodvengeance));
 						Inst.BLOODVENGEANCE.defaultValue = monsterDB.bloodvengeance.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.BLOODVENGEANCE.defaultValue = "";
 					}
 					break;
 				case CASTLEDEF:
 					if (monsterDB.castledef != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.castledef));
 						Inst.CASTLEDEF.defaultValue = monsterDB.castledef.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.CASTLEDEF.defaultValue = "";
 					}
 					break;
 				case SIEGEBONUS:
 					if (monsterDB.siegebonus != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.siegebonus));
 						Inst.SIEGEBONUS.defaultValue = monsterDB.siegebonus.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SIEGEBONUS.defaultValue = "";
 					}
 					break;
 				case PATROLBONUS:
 					if (monsterDB.patrolbonus != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.patrolbonus));
 						Inst.PATROLBONUS.defaultValue = monsterDB.patrolbonus.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.PATROLBONUS.defaultValue = "";
 					}
 					break;
 				case PILLAGEBONUS:
 					if (monsterDB.pillagebonus != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.pillagebonus));
 						Inst.PILLAGEBONUS.defaultValue = monsterDB.pillagebonus.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.PILLAGEBONUS.defaultValue = "";
 					}
 					break;
 				case RESEARCHBONUS:
 					if (monsterDB.researchbonus != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.researchbonus));
 						Inst.RESEARCHBONUS.defaultValue = monsterDB.researchbonus.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.RESEARCHBONUS.defaultValue = "";
 					}
 					break;
 				case FORGEBONUS:
 					if (monsterDB.forgebonus != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.forgebonus));
 						Inst.FORGEBONUS.defaultValue = monsterDB.forgebonus.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FORGEBONUS.defaultValue = "";
 					}
 					break;
 				case DOUSE:
 					if (monsterDB.douse != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.douse));
 						Inst.DOUSE.defaultValue = monsterDB.douse.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.DOUSE.defaultValue = "";
 					}
 					break;
 				case NOBADEVENTS:
 					if (monsterDB.nobadevents != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.nobadevents));
 						Inst.NOBADEVENTS.defaultValue = monsterDB.nobadevents.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.NOBADEVENTS.defaultValue = "";
 					}
 					break;
 				case INCUNREST:
 					if (monsterDB.incunrest != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.incunrest));
 						Inst.INCUNREST.defaultValue = monsterDB.incunrest.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.INCUNREST.defaultValue = "";
 					}
 					break;
 				case SPREADDOM:
 					if (monsterDB.spreaddom != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.spreaddom));
 						Inst.SPREADDOM.defaultValue = monsterDB.spreaddom.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SPREADDOM.defaultValue = "";
 					}
 					break;
 				case LEPER:
 					if (monsterDB.leper != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.leper));
 						Inst.LEPER.defaultValue = monsterDB.leper.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.LEPER.defaultValue = "";
 					}
 					break;
 				case POPKILL:
 					if (monsterDB.popkill != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.popkill));
 						Inst.POPKILL.defaultValue = monsterDB.popkill.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.POPKILL.defaultValue = "";
 					}
 					break;
 				case HERETIC:
 					if (monsterDB.heretic != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.heretic));
 						Inst.HERETIC.defaultValue = monsterDB.heretic.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.HERETIC.defaultValue = "";
 					}
 					break;
 				case ITEMSLOTS:
 					if (monsterDB.itemslots != null) {
 						((Inst8Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", getItemMaskString(monsterDB.itemslots)));
 						Inst.ITEMSLOTS.defaultValue = monsterDB.itemslots.toString();
+					} else {
+						((Inst8Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ITEMSLOTS.defaultValue = "";
 					}
 					break;
 				case NAMETYPE:
 					if (monsterDB.nametype != null) {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.nametype));
 						Inst.NAMETYPE.defaultValue = monsterDB.nametype.toString();
+					} else {
+						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ITEMSLOTS.defaultValue = "";
 					}
 					break;
 				case MAGICSKILL1:
@@ -2657,6 +2894,9 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					if (monsterDB.onebattlespell != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.onebattlespell));
 						Inst.ONEBATTLESPELL.defaultValue = monsterDB.onebattlespell.toString();
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ONEBATTLESPELL.defaultValue = "";
 					}
 					break;
 				case CLEAR:
@@ -2681,360 +2921,540 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					if (monsterDB.female != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.female));
 						Inst.FEMALE.defaultValue = monsterDB.female.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FEMALE.defaultValue = "";
 					}
 					break;
 				case MOUNTED:
 					if (monsterDB.mounted != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.mounted));
 						Inst.MOUNTED.defaultValue = monsterDB.mounted.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MOUNTED.defaultValue = "";
 					}
 					break;
 				case HOLY:
 					if (monsterDB.holy != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.holy));
 						Inst.HOLY.defaultValue = monsterDB.holy.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.HOLY.defaultValue = "";
 					}
 					break;
 				case ANIMAL:
 					if (monsterDB.animal != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.animal));
 						Inst.ANIMAL.defaultValue = monsterDB.animal.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ANIMAL.defaultValue = "";
 					}
 					break;
 				case UNDEAD:
 					if (monsterDB.undead != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.undead));
 						Inst.UNDEAD.defaultValue = monsterDB.undead.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.UNDEAD.defaultValue = "";
 					}
 					break;
 				case DEMON:
 					if (monsterDB.demon != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.demon));
 						Inst.DEMON.defaultValue = monsterDB.demon.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.DEMON.defaultValue = "";
 					}
 					break;
 				case MAGICBEING:
 					if (monsterDB.magicbeing != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.magicbeing));
 						Inst.MAGICBEING.defaultValue = monsterDB.magicbeing.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAGICBEING.defaultValue = "";
 					}
 					break;
 				case STONEBEING:
 					if (monsterDB.stonebeing != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stonebeing));
 						Inst.STONEBEING.defaultValue = monsterDB.stonebeing.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.STONEBEING.defaultValue = "";
 					}
 					break;
 				case INANIMATE:
 					if (monsterDB.inanimate != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.inanimate));
 						Inst.INANIMATE.defaultValue = monsterDB.inanimate.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.INANIMATE.defaultValue = "";
 					}
 					break;
 				case COLDBLOOD:
 					if (monsterDB.coldblood != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.coldblood));
 						Inst.COLDBLOOD.defaultValue = monsterDB.coldblood.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.COLDBLOOD.defaultValue = "";
 					}
 					break;
 				case IMMORTAL:
 					if (monsterDB.immortal != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.immortal));
 						Inst.IMMORTAL.defaultValue = monsterDB.immortal.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.IMMORTAL.defaultValue = "";
 					}
 					break;
 				case BLIND:
 					if (monsterDB.blind != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.blind));
 						Inst.BLIND.defaultValue = monsterDB.blind.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.BLIND.defaultValue = "";
 					}
 					break;
 				case UNIQUE:
 					if (monsterDB.unique != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.unique));
 						Inst.UNIQUE.defaultValue = monsterDB.unique.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.UNIQUE.defaultValue = "";
 					}
 					break;
 				case IMMOBILE:
 					if (monsterDB.immobile != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.immobile));
 						Inst.IMMOBILE.defaultValue = monsterDB.immobile.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.IMMOBILE.defaultValue = "";
 					}
 					break;
 				case AQUATIC:
 					if (monsterDB.aquatic != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.aquatic));
 						Inst.AQUATIC.defaultValue = monsterDB.aquatic.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.AQUATIC.defaultValue = "";
 					}
 					break;
 				case AMPHIBIAN:
 					if (monsterDB.amphibian != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.amphibian));
 						Inst.AMPHIBIAN.defaultValue = monsterDB.amphibian.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.AMPHIBIAN.defaultValue = "";
 					}
 					break;
 				case POORAMPHIBIAN:
 					if (monsterDB.pooramphibian != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.pooramphibian));
 						Inst.POORAMPHIBIAN.defaultValue = monsterDB.pooramphibian.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.POORAMPHIBIAN.defaultValue = "";
 					}
 					break;
 				case FLYING:
 					if (monsterDB.flying != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.flying));
 						Inst.FLYING.defaultValue = monsterDB.flying.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FLYING.defaultValue = "";
 					}
 					break;
 				case STORMIMMUNE:
 					if (monsterDB.stormimmune != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stormimmune));
 						Inst.STORMIMMUNE.defaultValue = monsterDB.stormimmune.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.STORMIMMUNE.defaultValue = "";
 					}
 					break;
 				case SAILING:
 					if (monsterDB.sailing != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.sailing));
 						Inst.SAILING.defaultValue = monsterDB.sailing.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SAILING.defaultValue = "";
 					}
 					break;
 				case FORESTSURVIVAL:
 					if (monsterDB.forestsurvival != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.forestsurvival));
 						Inst.FORESTSURVIVAL.defaultValue = monsterDB.forestsurvival.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FORESTSURVIVAL.defaultValue = "";
 					}
 					break;
 				case MOUNTAINSURVIVAL:
 					if (monsterDB.mountainsurvival != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.mountainsurvival));
 						Inst.MOUNTAINSURVIVAL.defaultValue = monsterDB.mountainsurvival.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MOUNTAINSURVIVAL.defaultValue = "";
 					}
 					break;
 				case SWAMPSURVIVAL:
 					if (monsterDB.swampsurvival != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.swampsurvival));
 						Inst.SWAMPSURVIVAL.defaultValue = monsterDB.swampsurvival.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SWAMPSURVIVAL.defaultValue = "";
 					}
 					break;
 				case WASTESURVIVAL:
 					if (monsterDB.wastesurvival != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.wastesurvival));
 						Inst.WASTESURVIVAL.defaultValue = monsterDB.wastesurvival.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.WASTESURVIVAL.defaultValue = "";
 					}
 					break;
 				case ILLUSION:
 					if (monsterDB.illusion != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.illusion));
 						Inst.ILLUSION.defaultValue = monsterDB.illusion.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ILLUSION.defaultValue = "";
 					}
 					break;
 				case SPY:
 					if (monsterDB.spy != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.spy));
 						Inst.SPY.defaultValue = monsterDB.spy.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SPY.defaultValue = "";
 					}
 					break;
 				case ASSASSIN:
 					if (monsterDB.assassin != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.assassin));
 						Inst.ASSASSIN.defaultValue = monsterDB.assassin.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ASSASSIN.defaultValue = "";
 					}
 					break;
 				case HEAL:
 					if (monsterDB.heal != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.heal));
 						Inst.HEAL.defaultValue = monsterDB.heal.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.HEAL.defaultValue = "";
 					}
 					break;
 				case NOHEAL:
 					if (monsterDB.noheal != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.noheal));
 						Inst.NOHEAL.defaultValue = monsterDB.noheal.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.NOHEAL.defaultValue = "";
 					}
 					break;
 				case NEEDNOTEAT:
 					if (monsterDB.neednoteat != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.neednoteat));
 						Inst.NEEDNOTEAT.defaultValue = monsterDB.neednoteat.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.NEEDNOTEAT.defaultValue = "";
 					}
 					break;
 				case ETHEREAL:
 					if (monsterDB.ethereal != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.ethereal));
 						Inst.ETHEREAL.defaultValue = monsterDB.ethereal.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ETHEREAL.defaultValue = "";
 					}
 					break;
 				case TRAMPLE:
 					if (monsterDB.trample != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.trample));
 						Inst.TRAMPLE.defaultValue = monsterDB.trample.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.TRAMPLE.defaultValue = "";
 					}
 					break;
 				case ENTANGLE:
 					if (monsterDB.entangle != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.entangle));
 						Inst.ENTANGLE.defaultValue = monsterDB.entangle.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.ENTANGLE.defaultValue = "";
 					}
 					break;
 				case EYELOSS:
 					if (monsterDB.eyeloss != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.eyeloss));
 						Inst.EYELOSS.defaultValue = monsterDB.eyeloss.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.EYELOSS.defaultValue = "";
 					}
 					break;
 				case HORRORMARK:
 					if (monsterDB.horrormark != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.horrormark));
 						Inst.HORRORMARK.defaultValue = monsterDB.horrormark.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.HORRORMARK.defaultValue = "";
 					}
 					break;
 				case POISONARMOR:
 					if (monsterDB.poisonarmor != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poisonarmor));
 						Inst.POISONARMOR.defaultValue = monsterDB.poisonarmor.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.POISONARMOR.defaultValue = "";
 					}
 					break;
 				case INQUISITOR:
 					if (monsterDB.inquisitor != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.inquisitor));
 						Inst.INQUISITOR.defaultValue = monsterDB.inquisitor.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.INQUISITOR.defaultValue = "";
 					}
 					break;
 				case NOITEM:
 					if (monsterDB.noitem != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.noitem));
 						Inst.NOITEM.defaultValue = monsterDB.noitem.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.NOITEM.defaultValue = "";
 					}
 					break;
 				case NOLEADER:
 					if (monsterDB.noleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.noleader));
 						Inst.NOLEADER.defaultValue = monsterDB.noleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.NOLEADER.defaultValue = "";
 					}
 					break;
 				case POORLEADER:
 					if (monsterDB.poorleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poorleader));
 						Inst.POORLEADER.defaultValue = monsterDB.poorleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.POORLEADER.defaultValue = "";
 					}
 					break;
 				case OKLEADER:
 					if (monsterDB.okleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.okleader));
 						Inst.OKLEADER.defaultValue = monsterDB.okleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.OKLEADER.defaultValue = "";
 					}
 					break;
 				case GOODLEADER:
 					if (monsterDB.goodleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.goodleader));
 						Inst.GOODLEADER.defaultValue = monsterDB.goodleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.GOODLEADER.defaultValue = "";
 					}
 					break;
 				case EXPERTLEADER:
 					if (monsterDB.expertleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.expertleader));
 						Inst.EXPERTLEADER.defaultValue = monsterDB.expertleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.EXPERTLEADER.defaultValue = "";
 					}
 					break;
 				case SUPERIORLEADER:
 					if (monsterDB.superiorleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.superiorleader));
 						Inst.SUPERIORLEADER.defaultValue = monsterDB.superiorleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SUPERIORLEADER.defaultValue = "";
 					}
 					break;
 				case NOMAGICLEADER:
 					if (monsterDB.nomagicleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.nomagicleader));
 						Inst.NOMAGICLEADER.defaultValue = monsterDB.nomagicleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.NOMAGICLEADER.defaultValue = "";
 					}
 					break;
 				case POORMAGICLEADER:
 					if (monsterDB.poormagicleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poormagicleader));
 						Inst.POORMAGICLEADER.defaultValue = monsterDB.poormagicleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.POORMAGICLEADER.defaultValue = "";
 					}
 					break;
 				case OKMAGICLEADER:
 					if (monsterDB.okmagicleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.okmagicleader));
 						Inst.OKMAGICLEADER.defaultValue = monsterDB.okmagicleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.OKMAGICLEADER.defaultValue = "";
 					}
 					break;
 				case GOODMAGICLEADER:
 					if (monsterDB.goodmagicleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.goodmagicleader));
 						Inst.GOODMAGICLEADER.defaultValue = monsterDB.goodmagicleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.GOODMAGICLEADER.defaultValue = "";
 					}
 					break;
 				case EXPERTMAGICLEADER:
 					if (monsterDB.expertmagicleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.expertmagicleader));
 						Inst.EXPERTMAGICLEADER.defaultValue = monsterDB.expertmagicleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.EXPERTMAGICLEADER.defaultValue = "";
 					}
 					break;
 				case SUPERIORMAGICLEADER:
 					if (monsterDB.superiormagicleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.superiormagicleader));
 						Inst.SUPERIORMAGICLEADER.defaultValue = monsterDB.superiormagicleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SUPERIORMAGICLEADER.defaultValue = "";
 					}
 					break;
 				case NOUNDEADLEADER:
 					if (monsterDB.noundeadleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.noundeadleader));
 						Inst.NOUNDEADLEADER.defaultValue = monsterDB.noundeadleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.NOUNDEADLEADER.defaultValue = "";
 					}
 					break;
 				case POORUNDEADLEADER:
 					if (monsterDB.poorundeadleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.poorundeadleader));
 						Inst.POORUNDEADLEADER.defaultValue = monsterDB.poorundeadleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.POORUNDEADLEADER.defaultValue = "";
 					}
 					break;
 				case OKUNDEADLEADER:
 					if (monsterDB.okundeadleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.okundeadleader));
 						Inst.OKUNDEADLEADER.defaultValue = monsterDB.okundeadleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.OKUNDEADLEADER.defaultValue = "";
 					}
 					break;
 				case GOODUNDEADLEADER:
 					if (monsterDB.goodundeadleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.goodundeadleader));
 						Inst.GOODUNDEADLEADER.defaultValue = monsterDB.goodundeadleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.GOODUNDEADLEADER.defaultValue = "";
 					}
 					break;
 				case EXPERTUNDEADLEADER:
 					if (monsterDB.expertundeadleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.expertundeadleader));
 						Inst.EXPERTUNDEADLEADER.defaultValue = monsterDB.expertundeadleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.EXPERTUNDEADLEADER.defaultValue = "";
 					}
 					break;
 				case SUPERIORUNDEADLEADER:
 					if (monsterDB.superiorundeadleader != null) {
 						((Inst4Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.superiorundeadleader));
 						Inst.SUPERIORUNDEADLEADER.defaultValue = monsterDB.superiorundeadleader.toString();
+					} else {
+						((Inst4Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SUPERIORUNDEADLEADER.defaultValue = "";
 					}
 					break;
 				case WEAPON1:
 					if (monsterDB.weapon1 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon1));
 						Inst.WEAPON1.defaultValue = monsterDB.weapon1;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.WEAPON1.defaultValue = "";
 					}
 					break;
 				case WEAPON2:
 					if (monsterDB.weapon2 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon2));
 						Inst.WEAPON2.defaultValue = monsterDB.weapon2;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.WEAPON2.defaultValue = "";
 					}
 					break;
 				case WEAPON3:
 					if (monsterDB.weapon3 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon3));
 						Inst.WEAPON3.defaultValue = monsterDB.weapon3;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.WEAPON3.defaultValue = "";
 					}
 					break;
 				case WEAPON4:
 					if (monsterDB.weapon4 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.weapon4));
 						Inst.WEAPON4.defaultValue = monsterDB.weapon4;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.WEAPON4.defaultValue = "";
 					}
 					break;
 				case FIRSTSHAPE:
@@ -3043,6 +3463,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						Inst.FIRSTSHAPE.defaultValue = monsterDB.firstshape;
 					} else {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FIRSTSHAPE.defaultValue = "";
 					}
 					break;
 				case SECONDSHAPE:
@@ -3051,6 +3472,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						Inst.SECONDSHAPE.defaultValue = monsterDB.secondshape;
 					} else {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SECONDSHAPE.defaultValue = "";
 					}
 					break;
 				case SECONDTMPSHAPE:
@@ -3059,6 +3481,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						Inst.SECONDTMPSHAPE.defaultValue = monsterDB.secondtmpshape;
 					} else {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SECONDTMPSHAPE.defaultValue = "";
 					}
 					break;
 				case SHAPECHANGE:
@@ -3067,6 +3490,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						Inst.SHAPECHANGE.defaultValue = monsterDB.shapechange;
 					} else {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SHAPECHANGE.defaultValue = "";
 					}
 					break;
 				case LANDSHAPE:
@@ -3075,6 +3499,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						Inst.LANDSHAPE.defaultValue = monsterDB.landshape;
 					} else {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.LANDSHAPE.defaultValue = "";
 					}
 					break;
 				case WATERSHAPE:
@@ -3083,6 +3508,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						Inst.WATERSHAPE.defaultValue = monsterDB.watershape;
 					} else {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.WATERSHAPE.defaultValue = "";
 					}
 					break;
 				case FORESTSHAPE:
@@ -3091,6 +3517,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						Inst.FORESTSHAPE.defaultValue = monsterDB.forestshape;
 					} else {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.FORESTSHAPE.defaultValue = "";
 					}
 					break;
 				case PLAINSHAPE:
@@ -3099,66 +3526,97 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						Inst.PLAINSHAPE.defaultValue = monsterDB.plainshape;
 					} else {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.PLAINSHAPE.defaultValue = "";
 					}
 					break;
 				case DOMSUMMON:
 					if (monsterDB.domsummon != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.domsummon));
 						Inst.DOMSUMMON.defaultValue = monsterDB.domsummon;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.DOMSUMMON.defaultValue = "";
 					}
 					break;
 				case DOMSUMMON2:
 					if (monsterDB.domsummon2 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.domsummon2));
 						Inst.DOMSUMMON2.defaultValue = monsterDB.domsummon2;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.DOMSUMMON2.defaultValue = "";
 					}
 					break;
 				case DOMSUMMON20:
 					if (monsterDB.domsummon20 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.domsummon20));
 						Inst.DOMSUMMON20.defaultValue = monsterDB.domsummon20;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.DOMSUMMON20.defaultValue = "";
 					}
 					break;
 				case MAKEMONSTER1:
 					if (monsterDB.makemonster1 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster1));
 						Inst.MAKEMONSTER1.defaultValue = monsterDB.makemonster1;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAKEMONSTER1.defaultValue = "";
 					}
 					break;
 				case MAKEMONSTER2:
 					if (monsterDB.makemonster2 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster2));
 						Inst.MAKEMONSTER2.defaultValue = monsterDB.makemonster2;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAKEMONSTER2.defaultValue = "";
 					}
 					break;
 				case MAKEMONSTER3:
 					if (monsterDB.makemonster3 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster3));
 						Inst.MAKEMONSTER3.defaultValue = monsterDB.makemonster3;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAKEMONSTER3.defaultValue = "";
 					}
 					break;
 				case MAKEMONSTER4:
 					if (monsterDB.makemonster4 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster4));
 						Inst.MAKEMONSTER4.defaultValue = monsterDB.makemonster4;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAKEMONSTER4.defaultValue = "";
 					}
 					break;
 				case MAKEMONSTER5:
 					if (monsterDB.makemonster5 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.makemonster5));
 						Inst.MAKEMONSTER5.defaultValue = monsterDB.makemonster5;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.MAKEMONSTER5.defaultValue = "";
 					}
 					break;
 				case SUMMON1:
 					if (monsterDB.summon1 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.summon1));
 						Inst.SUMMON1.defaultValue = monsterDB.summon1;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SUMMON1.defaultValue = "";
 					}
 					break;
 				case SUMMON5:
 					if (monsterDB.summon5 != null) {
 						((Inst5Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.summon5));
 						Inst.SUMMON5.defaultValue = monsterDB.summon5;
+					} else {
+						((Inst5Fields)fields.getValue()).defaultLabel.setText("");
+						Inst.SUMMON5.defaultValue = "";
 					}
 					break;
 				}
