@@ -94,11 +94,12 @@ import org.larz.dom3.dm.dm.WeaponInst4;
 import org.larz.dom3.dm.dm.WeaponMods;
 
 import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Font.FontFamily;
+import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -108,6 +109,7 @@ public class ReportGenerator {
 	public static final Font BOLD = new Font(FontFamily.HELVETICA, 12, Font.BOLD);
 	public static final Font TITLE = new Font(FontFamily.HELVETICA, 14, Font.BOLD);
 	public static final Font TEXT = new Font(FontFamily.HELVETICA, 8);
+	public static final Font BOLD_TEXT = new Font(FontFamily.HELVETICA, 8, Font.BOLD);
 	
 	public static final String MODIFIED_ARMOR = "Modified Armor";
 	public static final String NEW_ARMOR = "New Armor";
@@ -361,7 +363,7 @@ public class ReportGenerator {
 
 				try {
 					// step 1
-					Document document = new Document();
+					Document document = new Document(PageSize.LETTER.rotate());
 					// step 2
 					File tempFile = File.createTempFile("dom3editor", ".pdf");
 					tempFile.deleteOnExit();
@@ -371,8 +373,19 @@ public class ReportGenerator {
 					// step 3
 					document.open();
 					
-					for (Map.Entry<String, Map<String, ModObject>> entry : cellMap.entrySet()) {
-						PdfPTable table = new PdfPTable(2);
+					List <Map.Entry<String, Map<String, ModObject>>> cellList = new ArrayList<Map.Entry<String, Map<String, ModObject>>>();
+					for (Map.Entry<String, Map<String, ModObject>> innerEntry : cellMap.entrySet()) {
+						cellList.add(innerEntry);
+					}
+				    Collections.sort(cellList, new Comparator<Map.Entry<String, Map<String, ModObject>>>() {
+						@Override
+						public int compare(Map.Entry<String, Map<String, ModObject>> o1, Map.Entry<String, Map<String, ModObject>> o2) {
+							return o1.getKey().compareTo(o2.getKey());
+						}
+					});
+
+					for (Map.Entry<String, Map<String, ModObject>> entry : cellList) {
+						PdfPTable table = new PdfPTable(1);
 						table.setWidthPercentage(100f);
 
 						PdfPCell cell = new PdfPCell(new Phrase(entry.getKey(), TITLE));
@@ -380,8 +393,8 @@ public class ReportGenerator {
 					    cell.setFixedHeight(26f);
 					    cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 					    cell.setVerticalAlignment(Element.ALIGN_BOTTOM);
-					    cell.setColspan(2);
 					    table.addCell(cell);
+					    table.setHeaderRows(1);
 
 					    List<Map.Entry<String, ModObject>> list = new ArrayList<Map.Entry<String, ModObject>>();
 						for (Map.Entry<String, ModObject> innerEntry : entry.getValue().entrySet()) {
@@ -395,32 +408,47 @@ public class ReportGenerator {
 							}
 						});
 					    
-						for (Map.Entry<String, ModObject> innerEntry : list) {
-							if (innerEntry.getValue().propertyMap.size() == 0) continue;
-							cell = new PdfPCell();
-							PdfPTable innerTable = new PdfPTable(1);
-							innerTable.setWidthPercentage(95f);
-							cell.addElement(innerTable);
-							PdfPCell innerCell = new PdfPCell();
-							innerCell.addElement(new Phrase(innerEntry.getValue().title, BOLD));
-							innerCell.setBorder(PdfPCell.NO_BORDER);
-							innerTable.addCell(innerCell);
+					    PdfPTable propertyTable = null;
+					    if (entry.getKey().equals(MODIFIED_ARMOR) ||
+					    	entry.getKey().equals(NEW_ARMOR)) {
+					    	propertyTable = getTable(new String[]{"name","type","prot","def","enc","rcost"}, list);
+						    propertyTable.setWidths(new float[]{5,1,1,1,1,1});
+					    }
+					    if (entry.getKey().equals(MODIFIED_WEAPONS) ||
+				    		entry.getKey().equals(NEW_WEAPONS)) {
+					    	propertyTable = getTable(new String[]{"name","dmg","nratt","att","def","len","range","ammo","rcost"}, list);
+						    propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1});
+					    }
+					    if (entry.getKey().equals(MODIFIED_MONSTERS) ||
+					    	entry.getKey().equals(NEW_MONSTERS)) {
+						    propertyTable = getTable(new String[]{"name","ap","mapmove","hp","prot","size","ressize","str","enc","att","def","prec","mr","mor","gcost","rcost"}, list);
+						    propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1});
+						}
+					    if (entry.getKey().equals(MODIFIED_ITEMS) ||
+				    		entry.getKey().equals(NEW_ITEMS)) {
+					    	propertyTable = getTable(new String[]{"name", "armor", "constlevel", "mainpath", "mainlevel", "secondarypath", "secondarylevel", "type", "weapon"}, list);
+					    	propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1});
+					    }
+					    if (entry.getKey().equals(MODIFIED_SPELLS) ||
+					    	entry.getKey().equals(NEW_SPELLS)) {
+					    	propertyTable = getTable(new String[]{"name", "school", "researchlevel", "aoe", "damage", "effect", "fatiguecost", "nreff", "range", "precision", "spec", "path1", "path2", "pathlevel1", "pathlevel2", "nextspell"}, list);
+					    	propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1});
+					    }
+					    if (entry.getKey().equals(MODIFIED_NATIONS)) {
+					    	propertyTable = getTable(new String[]{"name", "startsite1", "startsite2", "startsite3", "startsite4", "era", "startfort"}, list);
+					    	propertyTable.setWidths(new float[]{5,1,1,1,1,1,1});
+					    }
+					    if (entry.getKey().equals(MODIFIED_SITES) ||
+					    	entry.getKey().equals(NEW_SITES)) {
+					    	propertyTable = getTable(new String[]{"name", "path", "level", "rarity", "loc", "homemon", "homecom", "gold", "res", "gemspath1", "gemsamt1", "gemspath2", "gemsamt2", "gemspath3", "gemsamt3"}, list);
+					    	propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1,1,1,1,1,1,1});
+					    }
+					    PdfPCell innerCell = new PdfPCell();
+					    innerCell.addElement(propertyTable);
+					    innerCell.setBorder(PdfPCell.NO_BORDER);
+					    innerCell.setHorizontalAlignment(Element.ALIGN_LEFT);
 
-							PdfPTable propertyTable = getPropertyTable(innerEntry.getValue().propertyMap);
-							innerCell = new PdfPCell();
-							innerCell.addElement(propertyTable);
-							innerCell.setBorder(PdfPCell.NO_BORDER);
-							innerCell.setHorizontalAlignment(Element.ALIGN_LEFT);
-							innerTable.addCell(innerCell);
-							
-							if (entry.getKey().equals(NEW_MONSTERS)) {
-								cell.setColspan(2);
-							}
-							table.addCell(cell);
-						}
-						if (entry.getValue().entrySet().size()%2 == 1) {
-							table.addCell(new PdfPCell());
-						}
+					    table.addCell(innerCell);
 						document.add(table);
 						document.newPage();
 					}
@@ -742,37 +770,39 @@ public class ReportGenerator {
 			for (Field field : fields) {
 				try {
 					field.setAccessible(true);
-					if (field.getBoolean(mod)) {
-						String property = field.getName();
-						if ("name".equals(property)) {
-							continue;
-						}
-						
-						String oldVal = null;
-						int id = Integer.valueOf(getArmorid(armor) != null ? getArmorid(armor) : "0");
-						if (id != 0) {
-							ArmorDB armorDB = Database.getArmor(id);
-							if (armorDB != null && armorDB.id != null) {
-								Field field2 = armorDB.getClass().getField(field.getName());
-								oldVal = "" + field2.get(armorDB);
+					String property = field.getName();
+					if ("name".equals(property)) {
+						continue;
+					}
+
+					String oldVal = null;
+					int id = Integer.valueOf(getArmorid(armor) != null ? getArmorid(armor) : "0");
+					if (id != 0) {
+						ArmorDB armorDB = Database.getArmor(id);
+						if (armorDB != null && armorDB.id != null) {
+							try {
+								oldVal = "" + armorDB.getClass().getField(field.getName()).get(armorDB);
+							} catch (NoSuchFieldException e) {
 							}
 						}
-						
-						String newVal = null;
+					}
+
+					String newVal = null;
+					if (field.getBoolean(mod)) {
 						if (mod instanceof ArmorInst1) {
 							newVal = ((ArmorInst1)mod).getValue();
 						} else if (mod instanceof ArmorInst2) {
 							newVal = ""+((ArmorInst2)mod).getValue();
 						}
-						if (!compareStrings(oldVal, newVal)) {
-							PropertyValues propertyValues = propertyMap.get(property);
-							if (propertyValues == null) {
-								propertyValues = new PropertyValues();
-								propertyMap.put(property, propertyValues);
-							}
-							propertyValues.oldValue = oldVal;
-							propertyValues.newValue = newVal;
+					}
+					if (oldVal != null || newVal != null) {
+						PropertyValues propertyValues = propertyMap.get(property);
+						if (propertyValues == null) {
+							propertyValues = new PropertyValues();
+							propertyMap.put(property, propertyValues);
 						}
+						propertyValues.oldValue = oldVal;
+						propertyValues.newValue = newVal;
 					}
 				} catch (IllegalArgumentException e) {
 					//e.printStackTrace();
@@ -780,13 +810,9 @@ public class ReportGenerator {
 					e.printStackTrace();
 				} catch (SecurityException e) {
 					e.printStackTrace();
-				} catch (NoSuchFieldException e) {
-					e.printStackTrace();
 				}
 			}
-			
 		}
-
 	}
 
 	private static void setPropertyValues(Weapon weapon, Map<String, PropertyValues> propertyMap) {
@@ -796,23 +822,25 @@ public class ReportGenerator {
 			for (Field field : fields) {
 				try {
 					field.setAccessible(true);
-					if (field.getBoolean(mod)) {
-						String property = field.getName();
-						if ("name".equals(property)) {
-							continue;
-						}
-						
-						String oldVal = null;
-						int id = Integer.valueOf(getWeaponid(weapon) != null ? getWeaponid(weapon) : "0");
-						if (id != 0) {
-							WeaponDB weaponDB = Database.getWeapon(id);
-							if (weaponDB != null && weaponDB.id != null) {
-								Field field2 = weaponDB.getClass().getField(field.getName());
-								oldVal = "" + field2.get(weaponDB);
+					String property = field.getName();
+					if ("name".equals(property)) {
+						continue;
+					}
+
+					String oldVal = null;
+					int id = Integer.valueOf(getWeaponid(weapon) != null ? getWeaponid(weapon) : "0");
+					if (id != 0) {
+						WeaponDB weaponDB = Database.getWeapon(id);
+						if (weaponDB != null && weaponDB.id != null) {
+							try {
+								oldVal = "" + weaponDB.getClass().getField(field.getName()).get(weaponDB);
+							} catch (NoSuchFieldException e) {
 							}
 						}
-						
-						String newVal = null;
+					}
+
+					String newVal = null;
+					if (field.getBoolean(mod)) {
 						if (mod instanceof WeaponInst1) {
 							newVal = ((WeaponInst1)mod).getValue();
 						} else if (mod instanceof WeaponInst2) {
@@ -822,15 +850,15 @@ public class ReportGenerator {
 						} else if (mod instanceof WeaponInst4) {
 							newVal = "true";
 						}
-						if (!compareStrings(oldVal, newVal)) {
-							PropertyValues propertyValues = propertyMap.get(property);
-							if (propertyValues == null) {
-								propertyValues = new PropertyValues();
-								propertyMap.put(property, propertyValues);
-							}
-							propertyValues.oldValue = oldVal;
-							propertyValues.newValue = newVal;
+					}
+					if (oldVal != null || newVal != null) {
+						PropertyValues propertyValues = propertyMap.get(property);
+						if (propertyValues == null) {
+							propertyValues = new PropertyValues();
+							propertyMap.put(property, propertyValues);
 						}
+						propertyValues.oldValue = oldVal;
+						propertyValues.newValue = newVal;
 					}
 				} catch (IllegalArgumentException e) {
 					//e.printStackTrace();
@@ -838,13 +866,9 @@ public class ReportGenerator {
 					e.printStackTrace();
 				} catch (SecurityException e) {
 					e.printStackTrace();
-				} catch (NoSuchFieldException e) {
-					e.printStackTrace();
 				}
 			}
-			
 		}
-
 	}
 	
 	private static void setPropertyValues(Monster monster, Map<String, PropertyValues> propertyMap) {
@@ -858,46 +882,48 @@ public class ReportGenerator {
 			for (Field field : fields) {
 				try {
 					field.setAccessible(true);
-					if (field.getBoolean(mod)) {
-						String property = field.getName();
-						if ("name".equals(property)) {
-							continue;
-						}
-						
-						String oldVal = null;
-						int id = Integer.valueOf(getMonsterid(monster) != null ? getMonsterid(monster) : "0");
-						if (id != 0) {
-							MonsterDB monsterDB = Database.getMonster(id);
-							if (monsterDB != null && monsterDB.id != null) {
-								String fieldName = field.getName();
-								if (fieldName.equals("weapon")) {
-									fieldName += weaponCount++;
-								} else if (fieldName.equals("armor")) {
-									fieldName += armorCount++;
-								} else if (fieldName.equals("magicboost")) {
-									fieldName += magicBoostCount++;
-								} else if (fieldName.equals("gemprod")) {
-									fieldName += gemprodCount++;
-								} 
-								if (fieldName.equals("magicskill")) {
-									int path = ((MonsterInst3)mod).getValue1();
-									if (monsterDB.magicskillpath1 != null && monsterDB.magicskillpath1.intValue() == path) {
-										oldVal = monsterDB.magicskillpath1 + ", " + monsterDB.magicskilllevel1;
-									} else if (monsterDB.magicskillpath2 != null && monsterDB.magicskillpath2.intValue() == path) {
-										oldVal = monsterDB.magicskillpath2 + ", " + monsterDB.magicskilllevel2;
-									} else if (monsterDB.magicskillpath3 != null && monsterDB.magicskillpath3.intValue() == path) {
-										oldVal = monsterDB.magicskillpath3 + ", " + monsterDB.magicskilllevel3;
-									} else if (monsterDB.magicskillpath4 != null && monsterDB.magicskillpath4.intValue() == path) {
-										oldVal = monsterDB.magicskillpath4 + ", " + monsterDB.magicskilllevel4;
-									}
-								} else if (!fieldName.equals("cleararmor") && !fieldName.equals("clearweapons") && !fieldName.equals("custommagic")) {
-									Field field2 = monsterDB.getClass().getField(fieldName);
-									oldVal = "" + field2.get(monsterDB);
+					String property = field.getName();
+					if ("name".equals(property)) {
+						continue;
+					}
+
+					String oldVal = null;
+					int id = Integer.valueOf(getMonsterid(monster) != null ? getMonsterid(monster) : "0");
+					if (id != 0) {
+						MonsterDB monsterDB = Database.getMonster(id);
+						if (monsterDB != null && monsterDB.id != null) {
+							String fieldName = field.getName();
+							if (fieldName.equals("weapon")) {
+								fieldName += weaponCount++;
+							} else if (fieldName.equals("armor")) {
+								fieldName += armorCount++;
+							} else if (fieldName.equals("magicboost")) {
+								fieldName += magicBoostCount++;
+							} else if (fieldName.equals("gemprod")) {
+								fieldName += gemprodCount++;
+							} 
+							if (fieldName.equals("magicskill")) {
+								int path = ((MonsterInst3)mod).getValue1();
+								if (monsterDB.magicskillpath1 != null && monsterDB.magicskillpath1.intValue() == path) {
+									oldVal = monsterDB.magicskillpath1 + ", " + monsterDB.magicskilllevel1;
+								} else if (monsterDB.magicskillpath2 != null && monsterDB.magicskillpath2.intValue() == path) {
+									oldVal = monsterDB.magicskillpath2 + ", " + monsterDB.magicskilllevel2;
+								} else if (monsterDB.magicskillpath3 != null && monsterDB.magicskillpath3.intValue() == path) {
+									oldVal = monsterDB.magicskillpath3 + ", " + monsterDB.magicskilllevel3;
+								} else if (monsterDB.magicskillpath4 != null && monsterDB.magicskillpath4.intValue() == path) {
+									oldVal = monsterDB.magicskillpath4 + ", " + monsterDB.magicskilllevel4;
+								}
+							} else if (!fieldName.equals("cleararmor") && !fieldName.equals("clearweapons") && !fieldName.equals("custommagic")) {
+								try {
+									oldVal = "" + monsterDB.getClass().getField(fieldName).get(monsterDB);
+								} catch (NoSuchFieldException e) {
 								}
 							}
 						}
-						
-						String newVal = null;
+					}
+
+					String newVal = null;
+					if (field.getBoolean(mod)) {
 						if (mod instanceof MonsterInst1) {
 							newVal = ((MonsterInst1)mod).getValue();
 						} else if (mod instanceof MonsterInst2) {
@@ -915,15 +941,15 @@ public class ReportGenerator {
 						} else if (mod instanceof MonsterInst6) {
 							newVal = ""+((MonsterInst6)mod).getValue();
 						}
-						if (!compareStrings(oldVal, newVal)) {
-							PropertyValues propertyValues = propertyMap.get(property);
-							if (propertyValues == null) {
-								propertyValues = new PropertyValues();
-								propertyMap.put(property, propertyValues);
-							}
-							propertyValues.oldValue = oldVal;
-							propertyValues.newValue = newVal;
+					}
+					if (oldVal != null || newVal != null) {
+						PropertyValues propertyValues = propertyMap.get(property);
+						if (propertyValues == null) {
+							propertyValues = new PropertyValues();
+							propertyMap.put(property, propertyValues);
 						}
+						propertyValues.oldValue = oldVal;
+						propertyValues.newValue = newVal;
 					}
 				} catch (IllegalArgumentException e) {
 					//e.printStackTrace();
@@ -931,13 +957,9 @@ public class ReportGenerator {
 					e.printStackTrace();
 				} catch (SecurityException e) {
 					e.printStackTrace();
-				} catch (NoSuchFieldException e) {
-					e.printStackTrace();
 				}
 			}
-			
 		}
-
 	}
 	
 	private static void setPropertyValues(Spell spell, Map<String, PropertyValues> propertyMap) {
@@ -947,42 +969,44 @@ public class ReportGenerator {
 			for (Field field : fields) {
 				try {
 					field.setAccessible(true);
-					if (field.getBoolean(mod)) {
-						String property = field.getName();
-						if ("name".equals(property)) {
-							continue;
-						}
-						
-						String oldVal = null;
-						int id = Integer.valueOf(getSpellid(spell) != null ? getSpellid(spell) : "0");
-						if (id != 0) {
-							SpellDB spellDB = Database.getSpell(id);
-							if (spellDB != null && spellDB.id != null) {
-								String fieldName = field.getName();
-								if (fieldName.equals("path")) {
-									if (((SpellInst3)mod).getValue1() == 0) {
-										oldVal = "0, " + spellDB.path1;
-									} else if (((SpellInst3)mod).getValue1() == 1) {
-										oldVal = "1, " + spellDB.path2;
-									} else {
-										System.out.println("invalid path: " + ((SpellInst3)mod).getValue1());
-									}
-								} else if (fieldName.equals("pathlevel")) {
-									if (((SpellInst3)mod).getValue1() == 0) {
-										oldVal = "0, " + spellDB.pathlevel1;
-									} else if (((SpellInst3)mod).getValue1() == 1) {
-										oldVal = "1, " + spellDB.pathlevel2;
-									} else {
-										System.out.println("invalid pathlevel: " + ((SpellInst3)mod).getValue1());
-									}
+					String property = field.getName();
+					if ("name".equals(property)) {
+						continue;
+					}
+
+					String oldVal = null;
+					int id = Integer.valueOf(getSpellid(spell) != null ? getSpellid(spell) : "0");
+					if (id != 0) {
+						SpellDB spellDB = Database.getSpell(id);
+						if (spellDB != null && spellDB.id != null) {
+							String fieldName = field.getName();
+							if (fieldName.equals("path")) {
+								if (((SpellInst3)mod).getValue1() == 0) {
+									oldVal = "0, " + spellDB.path1;
+								} else if (((SpellInst3)mod).getValue1() == 1) {
+									oldVal = "1, " + spellDB.path2;
 								} else {
-									Field field2 = spellDB.getClass().getField(fieldName);
-									oldVal = "" + field2.get(spellDB);
+									System.out.println("invalid path: " + ((SpellInst3)mod).getValue1());
+								}
+							} else if (fieldName.equals("pathlevel")) {
+								if (((SpellInst3)mod).getValue1() == 0) {
+									oldVal = "0, " + spellDB.pathlevel1;
+								} else if (((SpellInst3)mod).getValue1() == 1) {
+									oldVal = "1, " + spellDB.pathlevel2;
+								} else {
+									System.out.println("invalid pathlevel: " + ((SpellInst3)mod).getValue1());
+								}
+							} else {
+								try {
+									oldVal = "" + spellDB.getClass().getField(fieldName).get(spellDB);
+								} catch (NoSuchFieldException e) {
 								}
 							}
 						}
-						
-						String newVal = null;
+					}
+
+					String newVal = null;
+					if (field.getBoolean(mod)) {
 						if (mod instanceof SpellInst1) {
 							newVal = ((SpellInst1)mod).getValue();
 						} else if (mod instanceof SpellInst2) {
@@ -994,15 +1018,15 @@ public class ReportGenerator {
 						} else if (mod instanceof SpellInst5) {
 							newVal = ((SpellInst5)mod).getValue1()+", " + ((SpellInst5)mod).getValue2();
 						}
-						if (!compareStrings(oldVal, newVal)) {
-							PropertyValues propertyValues = propertyMap.get(property);
-							if (propertyValues == null) {
-								propertyValues = new PropertyValues();
-								propertyMap.put(property, propertyValues);
-							}
-							propertyValues.oldValue = oldVal;
-							propertyValues.newValue = newVal;
+					}
+					if (oldVal != null || newVal != null) {
+						PropertyValues propertyValues = propertyMap.get(property);
+						if (propertyValues == null) {
+							propertyValues = new PropertyValues();
+							propertyMap.put(property, propertyValues);
 						}
+						propertyValues.oldValue = oldVal;
+						propertyValues.newValue = newVal;
 					}
 				} catch (IllegalArgumentException e) {
 					//e.printStackTrace();
@@ -1010,15 +1034,11 @@ public class ReportGenerator {
 					e.printStackTrace();
 				} catch (SecurityException e) {
 					e.printStackTrace();
-				} catch (NoSuchFieldException e) {
-					e.printStackTrace();
 				}
 			}
-			
 		}
-
 	}
-	
+
 	private static void setPropertyValues(Item item, Map<String, PropertyValues> propertyMap) {
 		EList<ItemMods> list = item.getMods();
 		for (ItemMods mod : list) {
@@ -1026,23 +1046,25 @@ public class ReportGenerator {
 			for (Field field : fields) {
 				try {
 					field.setAccessible(true);
-					if (field.getBoolean(mod)) {
-						String property = field.getName();
-						if ("name".equals(property)) {
-							continue;
-						}
-						
-						String oldVal = null;
-						int id = Integer.valueOf(getItemid(item) != null ? getItemid(item) : "0");
-						if (id != 0) {
-							ItemDB itemDB = Database.getItem(id);
-							if (itemDB != null && itemDB.id != null) {
-								Field field2 = itemDB.getClass().getField(field.getName());
-								oldVal = "" + field2.get(itemDB);
+					String property = field.getName();
+					if ("name".equals(property)) {
+						continue;
+					}
+
+					String oldVal = null;
+					int id = Integer.valueOf(getItemid(item) != null ? getItemid(item) : "0");
+					if (id != 0) {
+						ItemDB itemDB = Database.getItem(id);
+						if (itemDB != null && itemDB.id != null) {
+							try {
+								oldVal = "" + itemDB.getClass().getField(field.getName()).get(itemDB);
+							} catch (NoSuchFieldException e) {
 							}
 						}
-						
-						String newVal = null;
+					}
+
+					String newVal = null;
+					if (field.getBoolean(mod)) {
 						if (mod instanceof ItemInst1) {
 							newVal = ((ItemInst1)mod).getValue();
 						} else if (mod instanceof ItemInst2) {
@@ -1054,15 +1076,15 @@ public class ReportGenerator {
 								newVal = "" + ((ItemInst3)mod).getValue2();
 							}
 						}
-						if (!compareStrings(oldVal, newVal)) {
-							PropertyValues propertyValues = propertyMap.get(property);
-							if (propertyValues == null) {
-								propertyValues = new PropertyValues();
-								propertyMap.put(property, propertyValues);
-							}
-							propertyValues.oldValue = oldVal;
-							propertyValues.newValue = newVal;
+					}
+					if (oldVal != null || newVal != null) {
+						PropertyValues propertyValues = propertyMap.get(property);
+						if (propertyValues == null) {
+							propertyValues = new PropertyValues();
+							propertyMap.put(property, propertyValues);
 						}
+						propertyValues.oldValue = oldVal;
+						propertyValues.newValue = newVal;
 					}
 				} catch (IllegalArgumentException e) {
 					//e.printStackTrace();
@@ -1070,13 +1092,9 @@ public class ReportGenerator {
 					e.printStackTrace();
 				} catch (SecurityException e) {
 					e.printStackTrace();
-				} catch (NoSuchFieldException e) {
-					e.printStackTrace();
 				}
 			}
-			
 		}
-
 	}
 	
 	private static void setPropertyValues(Site site, Map<String, PropertyValues> propertyMap) {
@@ -1088,40 +1106,42 @@ public class ReportGenerator {
 			for (Field field : fields) {
 				try {
 					field.setAccessible(true);
-					if (field.getBoolean(mod)) {
-						String property = field.getName();
-						if ("name".equals(property)) {
-							continue;
-						}
-						
-						String oldVal = null;
-						int id = Integer.valueOf(getSiteid(site) != null ? getSiteid(site) : "0");
-						if (id != 0) {
-							SiteDB siteDB = Database.getSite(id);
-							if (siteDB != null && siteDB.id != null) {
-								String fieldName = field.getName();
-								if (fieldName.equals("com")) {
-									fieldName += comCount++;
-								} else if (fieldName.equals("mon")) {
-									fieldName += monCount++;
-								}
-								if (fieldName.equals("gems")) {
-									int path = ((SiteInst3)mod).getValue1();
-									if (siteDB.gemspath1 != null && siteDB.gemspath1.intValue() == path) {
-										oldVal = siteDB.gemspath1 + ", " + siteDB.gemsamt1;
-									} else if (siteDB.gemspath2 != null && siteDB.gemspath2.intValue() == path) {
-										oldVal = siteDB.gemspath2 + ", " + siteDB.gemsamt2;
-									} else if (siteDB.gemspath3 != null && siteDB.gemspath3.intValue() == path) {
-										oldVal = siteDB.gemspath3 + ", " + siteDB.gemsamt3;
-									}								
-								} else {
-									Field field2 = siteDB.getClass().getField(fieldName);
-									oldVal = "" + field2.get(siteDB);
+					String property = field.getName();
+					if ("name".equals(property)) {
+						continue;
+					}
+
+					String oldVal = null;
+					int id = Integer.valueOf(getSiteid(site) != null ? getSiteid(site) : "0");
+					if (id != 0) {
+						SiteDB siteDB = Database.getSite(id);
+						if (siteDB != null && siteDB.id != null) {
+							String fieldName = field.getName();
+							if (fieldName.equals("com")) {
+								fieldName += comCount++;
+							} else if (fieldName.equals("mon")) {
+								fieldName += monCount++;
+							}
+							if (fieldName.equals("gems")) {
+								int path = ((SiteInst3)mod).getValue1();
+								if (siteDB.gemspath1 != null && siteDB.gemspath1.intValue() == path) {
+									oldVal = siteDB.gemspath1 + ", " + siteDB.gemsamt1;
+								} else if (siteDB.gemspath2 != null && siteDB.gemspath2.intValue() == path) {
+									oldVal = siteDB.gemspath2 + ", " + siteDB.gemsamt2;
+								} else if (siteDB.gemspath3 != null && siteDB.gemspath3.intValue() == path) {
+									oldVal = siteDB.gemspath3 + ", " + siteDB.gemsamt3;
+								}								
+							} else {
+								try {
+									oldVal = "" + siteDB.getClass().getField(fieldName).get(siteDB);
+								} catch (NoSuchFieldException e) {
 								}
 							}
 						}
-						
-						String newVal = null;
+					}
+
+					String newVal = null;
+					if (field.getBoolean(mod)) {
 						if (mod instanceof SiteInst1) {
 							newVal = ((SiteInst1)mod).getValue();
 						} else if (mod instanceof SiteInst2) {
@@ -1131,15 +1151,15 @@ public class ReportGenerator {
 						} else if (mod instanceof SiteInst4) {
 							newVal = "true";
 						}
-						if (!compareStrings(oldVal, newVal)) {
-							PropertyValues propertyValues = propertyMap.get(property);
-							if (propertyValues == null) {
-								propertyValues = new PropertyValues();
-								propertyMap.put(property, propertyValues);
-							}
-							propertyValues.oldValue = oldVal;
-							propertyValues.newValue = newVal;
+					}
+					if (oldVal != null || newVal != null) {
+						PropertyValues propertyValues = propertyMap.get(property);
+						if (propertyValues == null) {
+							propertyValues = new PropertyValues();
+							propertyMap.put(property, propertyValues);
 						}
+						propertyValues.oldValue = oldVal;
+						propertyValues.newValue = newVal;
 					}
 				} catch (IllegalArgumentException e) {
 					//e.printStackTrace();
@@ -1147,11 +1167,9 @@ public class ReportGenerator {
 					e.printStackTrace();
 				} catch (SecurityException e) {
 					e.printStackTrace();
-				} catch (NoSuchFieldException e) {
-					e.printStackTrace();
 				}
 			}
-			
+
 		}
 
 	}
@@ -1291,72 +1309,57 @@ public class ReportGenerator {
 		return name;
 	}
 	
-	private static boolean compareStrings(String str1, String str2) {
-		if (str1 == null && str2 == null) return true;
-		if (str1 == null && str2 != null) return false;
-		if (str1 != null && str2 == null) return false;
-		return str1.equals(str2);
-	}
-
-	private static PdfPTable getPropertyTable(Map<String, PropertyValues> map) {
-		boolean threeCells = false;
-		for (Map.Entry<String, PropertyValues> entry : map.entrySet()) {
-			if (entry.getValue().oldValue != null) {
-				threeCells = true;
-				break;
-			}
-		}
-		
-		PdfPTable table = new PdfPTable(threeCells ? 3 : 2);
+	private static PdfPTable getTable(String[] columns, List<Map.Entry<String, ModObject>> list) {
+		PdfPTable table = new PdfPTable(columns.length);
 		table.setWidthPercentage(100f);
 		table.setHorizontalAlignment(Element.ALIGN_LEFT);
-		PdfPCell c1 = new PdfPCell(new Phrase("property"));
-		c1.setBackgroundColor(BaseColor.LIGHT_GRAY);
-		table.addCell(c1);
-		if (threeCells) {
-			PdfPCell c2 = new PdfPCell(new Phrase("old"));
-			c2.setBackgroundColor(BaseColor.LIGHT_GRAY);
-			table.addCell(c2);
+		for (String col : columns) {
+			PdfPCell c = new PdfPCell(new Phrase(col));
+			c.setBackgroundColor(BaseColor.LIGHT_GRAY);
+			table.addCell(c);
 		}
-		PdfPCell c3 = new PdfPCell(new Phrase("new"));
-		c3.setBackgroundColor(BaseColor.LIGHT_GRAY);
-		table.addCell(c3);
-		
-	    List<Map.Entry<String, PropertyValues>> list = new ArrayList<Map.Entry<String, PropertyValues>>();
-		for (Map.Entry<String, PropertyValues> innerEntry : map.entrySet()) {
-			list.add(innerEntry);
-		}
-	    Collections.sort(list, new Comparator<Map.Entry<String, PropertyValues>>() {
-			@Override
-			public int compare(Map.Entry<String, PropertyValues> o1, Map.Entry<String, PropertyValues> o2) {
-				return o1.getKey().compareTo(o2.getKey());
-			}
-		});
+		table.setHeaderRows(1);
 
-		for (Map.Entry<String, PropertyValues> entry : list) {
-			PdfPCell cell1 = new PdfPCell();
-			PdfPCell cell2 = new PdfPCell();
-			PdfPCell cell3 = new PdfPCell();
+		for (Map.Entry<String, ModObject> innerEntry : list) {
+			String name = innerEntry.getValue().title;
+			Map<String, PropertyValues> map = innerEntry.getValue().propertyMap;
 
-			cell1.addElement(new Phrase(entry.getKey(), TEXT));
-			table.addCell(cell1);
-			if (threeCells) {
-				cell2.addElement(new Phrase(entry.getValue().oldValue, TEXT));
-				table.addCell(cell2);
+			List<Map.Entry<String, PropertyValues>> list2 = new ArrayList<Map.Entry<String, PropertyValues>>();
+			for (Map.Entry<String, PropertyValues> innerEntry2 : map.entrySet()) {
+				list2.add(innerEntry2);
 			}
-			cell3.addElement(new Phrase(entry.getValue().newValue, TEXT));
-			table.addCell(cell3);			
+			Collections.sort(list2, new Comparator<Map.Entry<String, PropertyValues>>() {
+				@Override
+				public int compare(Map.Entry<String, PropertyValues> o1, Map.Entry<String, PropertyValues> o2) {
+					return o1.getKey().compareTo(o2.getKey());
+				}
+			});
 			
-		}
-		try {
-			if (threeCells) {
-				table.setWidths(new float[]{0.6f, 1, 1});
-			} else {
-				table.setWidths(new float[]{0.5f, 1});
+			PdfPCell[] cells = new PdfPCell[columns.length];
+			cells[0] = new PdfPCell();
+			cells[0].addElement(new Phrase(name, BOLD_TEXT));
+
+			for (int i = 1; i < cells.length; i++) {
+				cells[i] = new PdfPCell();
+				for (Map.Entry<String, PropertyValues> entry : list2) {
+					if (entry.getKey().equals(columns[i])) {
+						if (entry.getValue().newValue != null) {
+							Phrase phrase = new Phrase();
+							phrase.add(new Chunk(entry.getValue().newValue, BOLD_TEXT));
+							if (entry.getValue().oldValue != null) {
+								phrase.add(new Chunk(" ("+entry.getValue().oldValue+")", TEXT));
+							}
+							cells[i].addElement(phrase);
+						} else if (entry.getValue().oldValue != null) {
+							cells[i].addElement(new Phrase(entry.getValue().oldValue, TEXT));
+						}
+					}
+				}
 			}
-		} catch (DocumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+			for (PdfPCell cell : cells) {
+				table.addCell(cell);
+			}
 		}
 		return table;
 	}
