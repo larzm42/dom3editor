@@ -1197,11 +1197,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 					public void widgetSelected(SelectionEvent e) {
 						if (check.getSelection()) {
 							value.setEnabled(true);
-							value.setItems(new String[]{
-									"Fire",	"Air", "Water", "Earth", "Astral", "Death",
-									"Nature", "Blood", "Priest", "Random", "Elemental", "Sorcery",
-									},
-									new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 50, 51, 52});
+							setComboItems(fields.getKey(), value);
 							int selection = Integer.parseInt(key.defaultValue);
 							value.select(selection);
 							for (List<Inst> dynamic : dynamicFields) {
@@ -1634,8 +1630,49 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 			return "Elemental";
 		case 52:
 			return "Sorcery";			
+		case 53:
+			return "All";			
 		}
 		return "Unknown";
+	}
+	
+	private void setComboItems(Inst key, MappedDynamicCombo combo) {
+		if (key == Inst.MAGICSKILL1 ||
+			key == Inst.MAGICSKILL2 ||
+			key == Inst.MAGICSKILL3 ||
+			key == Inst.MAGICSKILL4 ||
+			key == Inst.MAGICSKILL5 ||
+			key == Inst.MAGICSKILL6 ||
+			key == Inst.MAGICSKILL7 ||
+			key == Inst.MAGICSKILL8) {
+			combo.setItems(new String[]{
+					"Fire",	"Air", "Water", "Earth", "Astral", "Death", "Nature", "Blood", "Priest", "Random", "Elemental", "Sorcery"},
+					new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 50, 51, 52});
+		}
+		if (key == Inst.MAGICBOOST1 ||
+			key == Inst.MAGICBOOST2 ||
+			key == Inst.MAGICBOOST3 ||
+			key == Inst.MAGICBOOST4 ||
+			key == Inst.MAGICBOOST5 ||
+			key == Inst.MAGICBOOST6 ||
+			key == Inst.MAGICBOOST7 ||
+			key == Inst.MAGICBOOST8) {
+			combo.setItems(new String[]{
+					"Fire",	"Air", "Water", "Earth", "Astral", "Death",	"Nature", "Blood", "Priest", "All"},
+					new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 53});
+		}
+		if (key == Inst.GEMPROD1 ||
+			key == Inst.GEMPROD2 ||
+			key == Inst.GEMPROD3 ||
+			key == Inst.GEMPROD4 ||
+			key == Inst.GEMPROD5 ||
+			key == Inst.GEMPROD6 ||
+			key == Inst.GEMPROD7 ||
+			key == Inst.GEMPROD8) {
+			combo.setItems(new String[]{
+					"Fire",	"Air", "Water", "Earth", "Astral", "Death",	"Nature", "Blood"},
+					new int[]{0, 1, 2, 3, 4, 5, 6, 7});
+		}
 	}
 	
 	public void update() {
@@ -1872,11 +1909,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 				if (fields.getValue() instanceof Inst3Fields) {
 					int selection = vals[0];
 					((Inst3Fields)fields.getValue()).value1.setEnabled(true);
-					((Inst3Fields)fields.getValue()).value1.setItems(new String[]{
-							"Fire",	"Air", "Water", "Earth", "Astral", "Death",
-							"Nature", "Blood", "Priest", "Random", "Elemental", "Sorcery",
-							},
-							new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 50, 51, 52});
+					setComboItems(fields.getKey(), ((Inst3Fields)fields.getValue()).value1);
 					((Inst3Fields)fields.getValue()).value1.select(selection);
 					((Inst3Fields)fields.getValue()).value2.setText(vals[1].toString());
 					((Inst3Fields)fields.getValue()).value2.setEnabled(true);
