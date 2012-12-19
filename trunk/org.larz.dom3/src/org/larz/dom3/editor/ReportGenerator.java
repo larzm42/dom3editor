@@ -106,24 +106,18 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class ReportGenerator {
-	public static final Font BOLD = new Font(FontFamily.HELVETICA, 12, Font.BOLD);
+	public static final Font SUBTITLE = new Font(FontFamily.HELVETICA, 10);
 	public static final Font TITLE = new Font(FontFamily.HELVETICA, 14, Font.BOLD);
 	public static final Font TEXT = new Font(FontFamily.HELVETICA, 8);
 	public static final Font BOLD_TEXT = new Font(FontFamily.HELVETICA, 8, Font.BOLD);
 	
-	public static final String MODIFIED_ARMOR = "Modified Armor";
-	public static final String NEW_ARMOR = "New Armor";
-	public static final String MODIFIED_WEAPONS = "Modified Weapons";
-	public static final String NEW_WEAPONS = "New Weapons";
-	public static final String MODIFIED_MONSTERS = "Modified Monsters";
-	public static final String NEW_MONSTERS = "New Monsters";
-	public static final String MODIFIED_SPELLS = "Modified Spells";
-	public static final String NEW_SPELLS = "New Spells";
-	public static final String MODIFIED_ITEMS = "Modified Items";
-	public static final String NEW_ITEMS = "New Items";
-	public static final String MODIFIED_SITES = "Modified Sites";
-	public static final String NEW_SITES = "New Sites";
-	public static final String MODIFIED_NATIONS = "Modified Nations";
+	public static final String ARMOR = "Armor";
+	public static final String WEAPONS = "Weapons";
+	public static final String MONSTERS = "Monsters";
+	public static final String SPELLS = "Spells";
+	public static final String ITEMS = "Items";
+	public static final String SITES = "Sites";
+	public static final String NATIONS = "Nations";
 
 	public static void generateReport(XtextEditor sourcePage, final Shell shell) {
 		final IXtextDocument myDocument = ((XtextEditor)sourcePage).getDocument();
@@ -140,10 +134,10 @@ public class ReportGenerator {
 						if (name == null) continue;
 						String id = getArmorid((Armor)element);
 
-						Map<String, ModObject> map = cellMap.get(MODIFIED_ARMOR);
+						Map<String, ModObject> map = cellMap.get(ARMOR);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(MODIFIED_ARMOR, map);
+							cellMap.put(ARMOR, map);
 						}
 						ModObject modObject = map.get(id);
 						if (modObject == null) {
@@ -157,10 +151,10 @@ public class ReportGenerator {
 						String name = getArmorname((Armor)element);
 						String id = getArmorid((Armor)element);
 
-						Map<String, ModObject> map = cellMap.get(NEW_ARMOR);
+						Map<String, ModObject> map = cellMap.get(ARMOR);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(NEW_ARMOR, map);
+							cellMap.put(ARMOR, map);
 						}
 						ModObject modObject = map.get(id);
 						if (modObject == null) {
@@ -174,10 +168,10 @@ public class ReportGenerator {
 						String name = getSelectWeaponname((Weapon)element);
 						String id = getWeaponid((Weapon)element);
 
-						Map<String, ModObject> map = cellMap.get(MODIFIED_WEAPONS);
+						Map<String, ModObject> map = cellMap.get(WEAPONS);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(MODIFIED_WEAPONS, map);
+							cellMap.put(WEAPONS, map);
 						}
 						ModObject modObject = map.get(id);
 						if (modObject == null) {
@@ -191,10 +185,10 @@ public class ReportGenerator {
 						String name = getWeaponname((Weapon)element);
 						String id = getWeaponid((Weapon)element);
 
-						Map<String, ModObject> map = cellMap.get(NEW_WEAPONS);
+						Map<String, ModObject> map = cellMap.get(WEAPONS);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(NEW_WEAPONS, map);
+							cellMap.put(WEAPONS, map);
 						}
 						ModObject modObject = map.get(id);
 						if (modObject == null) {
@@ -208,10 +202,10 @@ public class ReportGenerator {
 						String name = getSelectMonstername((Monster)element);
 						String id = getMonsterid((Monster)element);
 
-						Map<String, ModObject> map = cellMap.get(MODIFIED_MONSTERS);
+						Map<String, ModObject> map = cellMap.get(MONSTERS);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(MODIFIED_MONSTERS, map);
+							cellMap.put(MONSTERS, map);
 						}
 						ModObject modObject = map.get(id);
 						if (modObject == null) {
@@ -225,10 +219,10 @@ public class ReportGenerator {
 						String name = getMonstername((Monster)element);
 						String id = getMonsterid((Monster)element);
 
-						Map<String, ModObject> map = cellMap.get(NEW_MONSTERS);
+						Map<String, ModObject> map = cellMap.get(MONSTERS);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(NEW_MONSTERS, map);
+							cellMap.put(MONSTERS, map);
 						}
 						ModObject modObject = map.get(id);
 						if (modObject == null) {
@@ -242,10 +236,10 @@ public class ReportGenerator {
 						String name = getSelectSpellname((Spell)element);
 						String id = getSpellid((Spell)element);
 
-						Map<String, ModObject> map = cellMap.get(MODIFIED_SPELLS);
+						Map<String, ModObject> map = cellMap.get(SPELLS);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(MODIFIED_SPELLS, map);
+							cellMap.put(SPELLS, map);
 						}
 						ModObject modObject = map.get(id);
 						if (modObject == null) {
@@ -259,10 +253,10 @@ public class ReportGenerator {
 						String name = getSpellname((Spell)element);
 						//String id = getSpellid((Spell)element);
 
-						Map<String, ModObject> map = cellMap.get(NEW_SPELLS);
+						Map<String, ModObject> map = cellMap.get(SPELLS);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(NEW_SPELLS, map);
+							cellMap.put(SPELLS, map);
 						}
 						ModObject modObject = map.get(name);
 						if (modObject == null) {
@@ -276,10 +270,10 @@ public class ReportGenerator {
 						String name = getSelectItemname((Item)element);
 						String id = getItemid((Item)element);
 
-						Map<String, ModObject> map = cellMap.get(MODIFIED_ITEMS);
+						Map<String, ModObject> map = cellMap.get(ITEMS);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(MODIFIED_ITEMS, map);
+							cellMap.put(ITEMS, map);
 						}
 						ModObject modObject = map.get(id);
 						if (modObject == null) {
@@ -293,10 +287,10 @@ public class ReportGenerator {
 						String name = getItemname((Item)element);
 						//String id = getItemid((Item)element);
 
-						Map<String, ModObject> map = cellMap.get(NEW_ITEMS);
+						Map<String, ModObject> map = cellMap.get(ITEMS);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(NEW_ITEMS, map);
+							cellMap.put(ITEMS, map);
 						}
 						ModObject modObject = map.get(name);
 						if (modObject == null) {
@@ -310,10 +304,10 @@ public class ReportGenerator {
 						String name = getSelectSitename((Site)element);
 						String id = getSiteid((Site)element);
 
-						Map<String, ModObject> map = cellMap.get(MODIFIED_SITES);
+						Map<String, ModObject> map = cellMap.get(SITES);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(MODIFIED_SITES, map);
+							cellMap.put(SITES, map);
 						}
 						ModObject modObject = map.get(id);
 						if (modObject == null) {
@@ -327,10 +321,10 @@ public class ReportGenerator {
 						String name = getSitename((Site)element);
 						String id = getSiteid((Site)element);
 
-						Map<String, ModObject> map = cellMap.get(NEW_SITES);
+						Map<String, ModObject> map = cellMap.get(SITES);
 						if (map == null) {
 							map = new HashMap<String, ModObject>();
-							cellMap.put(NEW_SITES, map);
+							cellMap.put(SITES, map);
 						}
 						ModObject modObject = map.get(id);
 						if (modObject == null) {
@@ -341,22 +335,22 @@ public class ReportGenerator {
 						}
 						setPropertyValues((Site)element, modObject.propertyMap);
 					} else if (element instanceof SelectNation) {
-						String name = getSelectNationname((Nation)element);
-						String id = getNationid((Nation)element);
-
-						Map<String, ModObject> map = cellMap.get(MODIFIED_NATIONS);
-						if (map == null) {
-							map = new HashMap<String, ModObject>();
-							cellMap.put(MODIFIED_NATIONS, map);
-						}
-						ModObject modObject = map.get(id);
-						if (modObject == null) {
-							modObject = new ModObject();
-							modObject.title = name + " (" + id + ")";
-							modObject.propertyMap = new HashMap<String, PropertyValues>();
-							map.put(id, modObject);
-						}
-						setPropertyValues((SelectNation)element, modObject.propertyMap, resource);
+//						String name = getSelectNationname((Nation)element);
+//						String id = getNationid((Nation)element);
+//
+//						Map<String, ModObject> map = cellMap.get(NATIONS);
+//						if (map == null) {
+//							map = new HashMap<String, ModObject>();
+//							cellMap.put(NATIONS, map);
+//						}
+//						ModObject modObject = map.get(id);
+//						if (modObject == null) {
+//							modObject = new ModObject();
+//							modObject.title = name + " (" + id + ")";
+//							modObject.propertyMap = new HashMap<String, PropertyValues>();
+//							map.put(id, modObject);
+//						}
+//						setPropertyValues((SelectNation)element, modObject.propertyMap, resource);
 					}
 					
 				}
@@ -409,39 +403,121 @@ public class ReportGenerator {
 						});
 					    
 					    PdfPTable propertyTable = null;
-					    if (entry.getKey().equals(MODIFIED_ARMOR) ||
-					    	entry.getKey().equals(NEW_ARMOR)) {
-					    	propertyTable = getTable(new String[]{"name","type","prot","def","enc","rcost"}, list);
+					    if (entry.getKey().equals(ARMOR)) {
+					    	propertyTable = getTable(new String[]{"name","type","prot","def","enc","rcost"}, 
+					    			new String[]{"Name","Type","Prot","Def","Enc","Rcost"}, 
+					    			new ValueTranslator[]{null, new ValueTranslator() {
+										@Override
+										public String translate(String value) {
+											if (value == null) return null;
+											if (value.equals("4")) return "Shield";
+											if (value.equals("5")) return "Body Armor";
+											if (value.equals("6")) return "Helmet";
+											return "Unknown";
+										}
+									}, null, null, null, null},
+									null,
+					    			list);
 						    propertyTable.setWidths(new float[]{5,1,1,1,1,1});
 					    }
-					    if (entry.getKey().equals(MODIFIED_WEAPONS) ||
-				    		entry.getKey().equals(NEW_WEAPONS)) {
-					    	propertyTable = getTable(new String[]{"name","dmg","nratt","att","def","len","range","ammo","rcost"}, list);
+					    if (entry.getKey().equals(WEAPONS)) {
+					    	propertyTable = getTable(new String[]{"name","dmg","att","nratt","def","len","range","ammo","rcost"},
+					    			new String[]{"Name","Dmg","Att","Nratt","Def","Len","Range","Ammo","Rcost"},
+					    			null,
+					    			null,
+					    			list);
 						    propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1});
 					    }
-					    if (entry.getKey().equals(MODIFIED_MONSTERS) ||
-					    	entry.getKey().equals(NEW_MONSTERS)) {
-						    propertyTable = getTable(new String[]{"name","ap","mapmove","hp","prot","size","ressize","str","enc","att","def","prec","mr","mor","gcost","rcost"}, list);
-						    propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1});
+					    if (entry.getKey().equals(MONSTERS)) {
+						    propertyTable = getTable(new String[]{"name","hp","prot","MOVE","size","ressize","str","enc","att","def","prec","mr","mor","gcost","rcost"},
+						    		new String[]{"Name","HP","Prot","Move","Size","Rsize","Str","Enc","Att","Def","Prec","MR","Mor","Gcost","Rcost"},
+						    		null,
+						    		new ValueCombiner[]{null, null, null, new ValueCombiner() {
+										@Override
+										public String translate(String[] value) {
+											if (value[0] == null && value[1] == null) return null;
+											return value[0] + "/" + value[1];
+										}
+										@Override
+										public String[] getNeededColumns() {
+											return new String[]{"mapmove", "ap"};
+										}
+									}, null, null, null, null, null, null, null, null, null, null, null},
+						    		list);
+						    propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1,1,1,1,1,1,1});
 						}
-					    if (entry.getKey().equals(MODIFIED_ITEMS) ||
-				    		entry.getKey().equals(NEW_ITEMS)) {
-					    	propertyTable = getTable(new String[]{"name", "armor", "constlevel", "mainpath", "mainlevel", "secondarypath", "secondarylevel", "type", "weapon"}, list);
-					    	propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1});
+					    if (entry.getKey().equals(ITEMS)) {
+					    	propertyTable = getTable(new String[]{"name", "constlevel", "PATH", "type", "weapon", "armor"}, 
+					    			new String[]{"Name", "Constlevel", "Path Req", "Type", "Weapon", "Armor"},
+					    			new ValueTranslator[]{null, null, null, new ValueTranslator() {
+										@Override
+										public String translate(String value) {
+											if (value == null) return null;
+											if (value.equals("1")) return "1-h Weapon";
+											if (value.equals("2")) return "2-h Weapon";
+											if (value.equals("3")) return "Missile Weapon";
+											if (value.equals("4")) return "Shield";
+											if (value.equals("5")) return "Body Armor";
+											if (value.equals("6")) return "Helmet";
+											if (value.equals("7")) return "Boots";
+											if (value.equals("8")) return "Misc";
+											return "Unknown";
+										}
+									}, null, null},
+						    		new ValueCombiner[]{null, null, new ValueCombiner() {
+										@Override
+										public String translate(String[] value) {
+											if (value[0] == null && value[1] == null && value[2] == null && value[3] == null) return null;
+											StringBuffer buf = new StringBuffer();
+											if (value[0] != null && !value[0].equals("null")) {
+												buf.append(getPathName(Integer.parseInt(value[0])) + value[1]);
+											}
+											if (value[2] != null && !value[2].equals("null") && !value[2].equals("-1")) {
+												buf.append(getPathName(Integer.parseInt(value[2])) + value[3]);
+											}
+											return buf.toString();
+										}
+										@Override
+										public String[] getNeededColumns() {
+											return new String[]{"mainpath", "mainlevel", "secondarypath", "secondarylevel"};
+										}
+									}, null, null, null},
+					    			list);
+					    	propertyTable.setWidths(new float[]{2.5f,1,1,1,2.5f,2.5f});
 					    }
-					    if (entry.getKey().equals(MODIFIED_SPELLS) ||
-					    	entry.getKey().equals(NEW_SPELLS)) {
-					    	propertyTable = getTable(new String[]{"name", "school", "researchlevel", "aoe", "damage", "effect", "fatiguecost", "nreff", "range", "precision", "spec", "path1", "path2", "pathlevel1", "pathlevel2", "nextspell"}, list);
-					    	propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1});
+					    if (entry.getKey().equals(SPELLS)) {
+					    	propertyTable = getTable(new String[]{"name", "school", "researchlevel", "aoe", "damage", "effect", "fatiguecost", "nreff", "range", "precision", "spec", "nextspell"},
+					    			new String[]{"Name", "School", "Research", "AOE", "Damage", "Effect", "Fatigue", "Nreff", "Range", "Precision", "Spec", "Nextspell"},
+					    			null,
+					    			null,
+					    			list);
+					    	propertyTable.setWidths(new float[]{3,1,1,1,1,1,1,1,1,1,1,1});
 					    }
-					    if (entry.getKey().equals(MODIFIED_NATIONS)) {
+					    if (entry.getKey().equals(NATIONS)) {
 					    	propertyTable = getTable(new String[]{"name", "startsite1", "startsite2", "startsite3", "startsite4", "era", "startfort"}, list);
 					    	propertyTable.setWidths(new float[]{5,1,1,1,1,1,1});
 					    }
-					    if (entry.getKey().equals(MODIFIED_SITES) ||
-					    	entry.getKey().equals(NEW_SITES)) {
-					    	propertyTable = getTable(new String[]{"name", "path", "level", "rarity", "loc", "homemon", "homecom", "gold", "res", "gemspath1", "gemsamt1", "gemspath2", "gemsamt2", "gemspath3", "gemsamt3"}, list);
-					    	propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1,1,1,1,1,1,1});
+					    if (entry.getKey().equals(SITES)) {
+					    	propertyTable = getTable(new String[]{"name", "path", "level", "rarity", "loc", "homemon", "homecom", "gold", "res"},
+					    			new String[]{"Name", "Path", "Level", "Rarity", "Loc", "Homemon", "Homecom", "Gold", "Res"},
+					    			new ValueTranslator[]{null, new ValueTranslator() {
+										@Override
+										public String translate(String value) {
+											if (value == null) return null;
+											if (value.equals("0")) return "Fire";
+											if (value.equals("1")) return "Air";
+											if (value.equals("2")) return "Water";
+											if (value.equals("3")) return "Earth";
+											if (value.equals("4")) return "Astral";
+											if (value.equals("5")) return "Death";
+											if (value.equals("6")) return "Nature";
+											if (value.equals("7")) return "Blood";
+											return "Unknown";
+										}
+									}, null, null, null, null, null, null, null},
+									null,
+					    			list);
+					    	propertyTable.setWidths(new float[]{5,1,1,1,1,1,1,1,1});
 					    }
 					    PdfPCell innerCell = new PdfPCell();
 					    innerCell.addElement(propertyTable);
@@ -1102,6 +1178,7 @@ public class ReportGenerator {
 		for (SiteMods mod : list) {
 			int comCount = 1;
 			int monCount = 1;
+			int gemCount = 1;
 			Field[] fields = mod.getClass().getDeclaredFields();
 			for (Field field : fields) {
 				try {
@@ -1116,13 +1193,13 @@ public class ReportGenerator {
 					if (id != 0) {
 						SiteDB siteDB = Database.getSite(id);
 						if (siteDB != null && siteDB.id != null) {
-							String fieldName = field.getName();
-							if (fieldName.equals("com")) {
-								fieldName += comCount++;
-							} else if (fieldName.equals("mon")) {
-								fieldName += monCount++;
+							if (property.equals("com")) {
+								property += comCount++;
+							} else if (property.equals("mon")) {
+								property += monCount++;
 							}
-							if (fieldName.equals("gems")) {
+							if (property.equals("gems")) {
+								property += gemCount++;
 								int path = ((SiteInst3)mod).getValue1();
 								if (siteDB.gemspath1 != null && siteDB.gemspath1.intValue() == path) {
 									oldVal = siteDB.gemspath1 + ", " + siteDB.gemsamt1;
@@ -1133,7 +1210,7 @@ public class ReportGenerator {
 								}								
 							} else {
 								try {
-									oldVal = "" + siteDB.getClass().getField(fieldName).get(siteDB);
+									oldVal = "" + siteDB.getClass().getField(property).get(siteDB);
 								} catch (NoSuchFieldException e) {
 								}
 							}
@@ -1310,11 +1387,15 @@ public class ReportGenerator {
 	}
 	
 	private static PdfPTable getTable(String[] columns, List<Map.Entry<String, ModObject>> list) {
+		return getTable(columns, columns, null, null, list);
+	}
+	
+	private static PdfPTable getTable(String[] columns, String[] columnNames, ValueTranslator[] trans, ValueCombiner[] combine, List<Map.Entry<String, ModObject>> list) {
 		PdfPTable table = new PdfPTable(columns.length);
 		table.setWidthPercentage(100f);
 		table.setHorizontalAlignment(Element.ALIGN_LEFT);
-		for (String col : columns) {
-			PdfPCell c = new PdfPCell(new Phrase(col));
+		for (String col : columnNames) {
+			PdfPCell c = new PdfPCell(new Phrase(col, SUBTITLE));
 			c.setBackgroundColor(BaseColor.LIGHT_GRAY);
 			table.addCell(c);
 		}
@@ -1335,23 +1416,74 @@ public class ReportGenerator {
 				}
 			});
 			
+			if (list2.size() == 0) continue;
+			
 			PdfPCell[] cells = new PdfPCell[columns.length];
 			cells[0] = new PdfPCell();
 			cells[0].addElement(new Phrase(name, BOLD_TEXT));
 
 			for (int i = 1; i < cells.length; i++) {
 				cells[i] = new PdfPCell();
-				for (Map.Entry<String, PropertyValues> entry : list2) {
-					if (entry.getKey().equals(columns[i])) {
-						if (entry.getValue().newValue != null) {
-							Phrase phrase = new Phrase();
-							phrase.add(new Chunk(entry.getValue().newValue, BOLD_TEXT));
-							if (entry.getValue().oldValue != null) {
-								phrase.add(new Chunk(" ("+entry.getValue().oldValue+")", TEXT));
+				if (combine != null && combine[i] != null) {
+					String[] neededCols = combine[i].getNeededColumns();
+					String[] oldValues = new String[neededCols.length];
+					String[] newValues = new String[neededCols.length];
+					for (int j = 0; j < neededCols.length; j++) {
+						for (Map.Entry<String, PropertyValues> entry : list2) {
+							if (entry.getKey().equals(neededCols[j])) {
+								oldValues[j] = entry.getValue().oldValue;
+								newValues[j] = entry.getValue().newValue;
+								break;
 							}
-							cells[i].addElement(phrase);
-						} else if (entry.getValue().oldValue != null) {
-							cells[i].addElement(new Phrase(entry.getValue().oldValue, TEXT));
+						}
+					}
+					// Put old values into null new values
+					boolean hasNew = false;
+					for (int k = 0; k < newValues.length; k++) {
+						if (newValues[k] != null) {
+							hasNew = true;
+							break;
+						}
+					}
+					if (hasNew) {
+						for (int k = 0; k < newValues.length; k++) {
+							if (newValues[k] == null) {
+								newValues[k] = oldValues[k];
+							}
+						}
+					}
+					String newValue = combine[i].translate(newValues);
+					String oldValue = combine[i].translate(oldValues);
+					if (newValue != null) {
+						Phrase phrase = new Phrase();
+						phrase.add(new Chunk(newValue, BOLD_TEXT));
+						if (oldValue != null) {
+							phrase.add(new Chunk(" ("+oldValue+")", TEXT));
+						}
+						cells[i].addElement(phrase);
+					} else if (oldValue != null) {
+						cells[i].addElement(new Phrase(oldValue, TEXT));
+					}
+				} else {
+					for (Map.Entry<String, PropertyValues> entry : list2) {
+						if (entry.getKey().equals(columns[i])) {
+							String oldValue = entry.getValue().oldValue;
+							String newValue = entry.getValue().newValue;
+							if (trans != null && trans.length > i && trans[i] != null) {
+								oldValue = trans[i].translate(oldValue);
+								newValue = trans[i].translate(newValue);
+							}
+							if (newValue != null) {
+								Phrase phrase = new Phrase();
+								phrase.add(new Chunk(newValue, BOLD_TEXT));
+								if (oldValue != null && !oldValue.equals("null")) {
+									phrase.add(new Chunk(" ("+oldValue+")", TEXT));
+								}
+								cells[i].addElement(phrase);
+							} else if (oldValue != null && !oldValue.equals("null")) {
+								cells[i].addElement(new Phrase(oldValue, TEXT));
+							}
+							break;
 						}
 					}
 				}
@@ -1363,7 +1495,30 @@ public class ReportGenerator {
 		}
 		return table;
 	}
-	
+	private static String getPathName(int id) {
+		switch (id) {
+		case -1:
+			return "cannot be researched";
+		case 0:
+			return "F";
+		case 1:
+			return "A";
+		case 2:
+			return "W";
+		case 3:
+			return "E";
+		case 4:
+			return "S";
+		case 5:
+			return "D";
+		case 6:
+			return "N";
+		case 7:
+			return "B";
+		}
+		return "Unknown";
+	}
+
 }
 
 class ModObject {
@@ -1374,4 +1529,13 @@ class ModObject {
 class PropertyValues {
 	String oldValue;
 	String newValue;
+}
+
+interface ValueTranslator {
+	public String translate(String value);
+}
+
+interface ValueCombiner {
+	public String[] getNeededColumns();
+	public String translate(String[] value);
 }
