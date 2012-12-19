@@ -685,7 +685,8 @@ public class Database {
 
 	private static WeaponDB getWeaponDB(ResultSet rs) throws SQLException {
 		WeaponDB weapon = new WeaponDB();
-		if (rs.next()) {	
+		if (rs.next()) {
+			weapon.id = rs.getInt("id");
 			weapon.name = rs.getString("name");
 			weapon.dmg = rs.getInt("dmg");
 			weapon.nratt = rs.getInt("nratt");
@@ -1149,14 +1150,14 @@ public class Database {
 			
 			monster.onebattlespell = rs.getInt("onebattlespell") != 0 ? Integer.toString(rs.getInt("onebattlespell")) : null;
 			
-			monster.firstshape = rs.getString("firstshape");
-			monster.secondshape = rs.getString("secondshape");
-			monster.secondtmpshape = rs.getString("secondtmpshape");
-			monster.shapechange = rs.getString("shapechange");
-			monster.landshape = rs.getString("landshape");
-			monster.watershape = rs.getString("watershape");
-			monster.forestshape = rs.getString("forestshape");
-			monster.plainshape = rs.getString("plainshape");
+			monster.firstshape = Integer.toString(rs.getInt("firstshape"));
+			monster.secondshape = Integer.toString(rs.getInt("secondshape"));
+			monster.secondtmpshape = Integer.toString(rs.getInt("secondtmpshape"));
+			monster.shapechange = Integer.toString(rs.getInt("shapechange"));
+			monster.landshape = Integer.toString(rs.getInt("landshape"));
+			monster.watershape = Integer.toString(rs.getInt("watershape"));
+			monster.forestshape = Integer.toString(rs.getInt("forestshape"));
+			monster.plainshape = Integer.toString(rs.getInt("plainshape"));
 			
 			int domNum = rs.getInt("n_domsummon");
 			if (domNum == 1) {
