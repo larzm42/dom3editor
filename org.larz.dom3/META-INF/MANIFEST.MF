@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.larz.dom3
 Bundle-SymbolicName: org.larz.dom3; singleton:=true
-Bundle-Version: 1.1
+Bundle-Version: 1.2
 Bundle-Activator: org.larz.dom3.Activator
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-Vendor: Larz
 Bundle-ClassPath: .,
  lib/hsqldb.jar,

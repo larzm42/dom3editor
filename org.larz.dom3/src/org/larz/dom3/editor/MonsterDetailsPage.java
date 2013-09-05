@@ -1926,6 +1926,24 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 							}
 						}
 					}
+				} else if (fields.getValue() instanceof Inst7Fields) {
+					((Inst7Fields)fields.getValue()).value1.setEnabled(true);
+					((Inst7Fields)fields.getValue()).value1.setText(vals[0].toString());
+					((Inst7Fields)fields.getValue()).value2.setText(vals[1].toString());
+					((Inst7Fields)fields.getValue()).value2.setEnabled(true);
+					((Inst7Fields)fields.getValue()).check.setSelection(true);
+					((Inst7Fields)fields.getValue()).check.setFont(boldFont);
+					for (List<Inst> dynamic : dynamicFields) {
+						if (dynamic.contains(fields.getKey())) {
+							if (Boolean.FALSE.equals(((Inst7Fields)fields.getValue()).value1.getData())) {
+								((Inst7Fields)fields.getValue()).value1.setData(Boolean.TRUE);
+								((Inst7Fields)fields.getValue()).value2.setData(Boolean.TRUE);
+								((Inst7Fields)fields.getValue()).check.setData(Boolean.TRUE);
+								((Inst7Fields)fields.getValue()).defaultLabel1.setData(Boolean.TRUE);
+								((Inst7Fields)fields.getValue()).defaultLabel2.setData(Boolean.TRUE);
+							}
+						}
+					}
 				}
 			} else {
 				if (fields.getValue() instanceof Inst3Fields) {
@@ -1956,6 +1974,38 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 									((Inst3Fields)fields.getValue()).check.setData(Boolean.TRUE);
 									((Inst3Fields)fields.getValue()).defaultLabel1.setData(Boolean.TRUE);
 									((Inst3Fields)fields.getValue()).defaultLabel2.setData(Boolean.TRUE);
+								}
+							}
+						}
+					}
+				} else if (fields.getValue() instanceof Inst7Fields) {
+					((Inst7Fields)fields.getValue()).value1.setEnabled(true);
+					((Inst7Fields)fields.getValue()).value1.setText("");
+					((Inst7Fields)fields.getValue()).value1.setEnabled(false);
+					((Inst7Fields)fields.getValue()).value2.setText("");
+					((Inst7Fields)fields.getValue()).value2.setEnabled(false);
+					((Inst7Fields)fields.getValue()).check.setSelection(false);
+					((Inst7Fields)fields.getValue()).check.setFont(normalFont);
+					for (List<Inst> dynamic : dynamicFields) {
+						if (dynamic.contains(fields.getKey())) {
+							if (dynamicFirstEmpty.contains(dynamic) && !isDefaultValue(fields.getKey(), monsterDB)) {
+								if (Boolean.TRUE.equals(((Inst7Fields)fields.getValue()).value1.getData())) {
+									((Inst7Fields)fields.getValue()).value1.setData(Boolean.FALSE);
+									((Inst7Fields)fields.getValue()).value2.setData(Boolean.FALSE);
+									((Inst7Fields)fields.getValue()).check.setData(Boolean.FALSE);
+									((Inst7Fields)fields.getValue()).defaultLabel1.setData(Boolean.FALSE);
+									((Inst7Fields)fields.getValue()).defaultLabel2.setData(Boolean.FALSE);
+								}
+							} else {
+								if (!isDefaultValue(fields.getKey(), monsterDB)) {
+									dynamicFirstEmpty.add(dynamic);
+								}
+								if (Boolean.FALSE.equals(((Inst7Fields)fields.getValue()).value1.getData())) {
+									((Inst7Fields)fields.getValue()).value1.setData(Boolean.TRUE);
+									((Inst7Fields)fields.getValue()).value2.setData(Boolean.TRUE);
+									((Inst7Fields)fields.getValue()).check.setData(Boolean.TRUE);
+									((Inst7Fields)fields.getValue()).defaultLabel1.setData(Boolean.TRUE);
+									((Inst7Fields)fields.getValue()).defaultLabel2.setData(Boolean.TRUE);
 								}
 							}
 						}
@@ -2036,7 +2086,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						Inst.SPECIALLOOK.defaultValue = monsterDB.speciallook.toString();
 					} else {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
-						Inst.SPECIALLOOK.defaultValue = "";
+						Inst.SPECIALLOOK.defaultValue = "1";
 					}
 					break;
 				case AP:
@@ -2090,7 +2140,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						Inst.RESSIZE.defaultValue = monsterDB.ressize.toString();
 					} else {
 						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
-						Inst.RESSIZE.defaultValue = "";
+						Inst.RESSIZE.defaultValue = "1";
 					}
 					break;
 				case STR:
@@ -2281,7 +2331,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						((Inst6Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.stealthy));
 						Inst.STEALTHY.defaultValue = monsterDB.stealthy.toString();
 					} else {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						((Inst6Fields)fields.getValue()).defaultLabel.setText("");
 						Inst.STEALTHY.defaultValue = "";
 					}
 					break;
@@ -2542,7 +2592,7 @@ public class MonsterDetailsPage extends AbstractDetailsPage {
 						((Inst6Fields)fields.getValue()).defaultLabel.setText(Messages.format("DetailsPage.DefaultLabel.fmt", monsterDB.heat));
 						Inst.HEAT.defaultValue = monsterDB.heat.toString();
 					} else {
-						((Inst2Fields)fields.getValue()).defaultLabel.setText("");
+						((Inst6Fields)fields.getValue()).defaultLabel.setText("");
 						Inst.HEAT.defaultValue = "";
 					}
 					break;

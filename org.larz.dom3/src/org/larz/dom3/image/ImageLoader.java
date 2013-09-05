@@ -53,7 +53,9 @@ public abstract class ImageLoader
             //        the order of the service providers so that precedence can
             //        be given to the RI provider
         	inputStream = getStream();
-            imageStream = ImageIO.createImageInputStream(inputStream);
+        	if (inputStream != null) {
+                imageStream = ImageIO.createImageInputStream(inputStream);
+        	}
             if(imageStream == null)
                 throw new Exception("Image could not be loaded.  Probably an unknown format.");
             /* else -- there is an ImageInputStream for the image */
