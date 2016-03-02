@@ -1,0 +1,54 @@
+# Getting Started #
+
+This page describes the basic features of dom3editor and how to create a mod.
+
+
+## Create a Mod ##
+
+To create a new mod select the "New Mod..." option under the File menu or click the New Mod icon in the toolbar. Then fill in the dialog with a name, description and version number for your mod. When clicking OK, you will be asked for a file name to save the mod in. Thats it! You now have a new mod.
+
+## Add Content ##
+
+You will now see a blank screen like this:
+
+![http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/blank_screen.png](http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/blank_screen.png)
+
+You can either modify an existing object in the game or add new content. Let's modify an existing weapon. To add modifications click on the Add... button. You will see this dialog:
+
+![http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/addDialog.png](http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/addDialog.png)
+
+From here you can select the type of object you want to work with. Let's modify an existing weapon in the game. So, choose weapon from the list. Then you have two choices; Select Weapon or New Weapon. Select selects an existing weapon, New will create a new weapon. Leave Select chosen. Now there are two text entry fields to the right of that. When selecting a weapon to modify you can either select it by name or id. If you don't remember the specific name or id you can press the Search button to the right of the text field you want to use. Lets select a weapon by id so press the search button to the right of the id field. You get a dialog like this:
+
+![http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/searchDialog.png](http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/searchDialog.png)
+
+Choose any weapon you like from the list and hit OK. The correct field gets filled in and you can hit OK again to add it to your mod. Your object has now been added to the main screen. It will look something like this:
+
+![http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/weapon.png](http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/weapon.png)
+
+
+## Modify Content ##
+As you can see I chose the Rod of Death to modify. It shows up in the list of objects on the left and the details show up on the right. Every object you add will show up in this list. If the list starts getting long, you can filter what types of objects are displayed by choosing one from the "Show" dropdown. Also, you can search the list for an item by typing a term in the search box.
+
+The details of the object are displayed on the left side of the screen. Most properties have a checkbox, then maybe a text entry or two depending on the property being modified. You will need to consult the modding manual for details on what the different properties control and what values they accept. A number of fields also have a value to the right of them in brackets. This is the default value for that property if you are modding an existing object. If you are creating an existing object there will be no defaults.
+
+So, let's say we want the Rod of Death to be longer then it currently is. As you can see, the "len" field has a default value of 1. To change this check the box next to len and enter a new value. Like this:
+
+![http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/weapon2.png](http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/weapon2.png)
+
+To verify that we have changed the length of the Rod of Death we can look at the source for our new mod. To see the source for the mod you can either select the "Source" tab at the bottom of the window, or, if you have a large mod and want to jump to a specific place, select an object in the table, right click "Go To Source". You will see source like this:
+
+![http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/source1.png](http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/source1.png)
+
+You can make changes directly to the source or switch back to the details view.
+
+## Browsing a Mod ##
+
+dom3editor is also useful for browsing existing mods to see what has changed. Here is an example of the Conceptual Balance Mod loaded into the editor.
+
+![http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/cbm.png](http://dom3editor.googlecode.com/svn/trunk/org.larz.dom3/screenshots/cbm.png)
+
+I have selected the Gorgon. As you can see, the only thing changed about the gorgon is that the cost in gold has gone up from 50 to 150. You can click on the changed object (filtering or searching as needed) to see what has changed and what the default values are.
+
+## Conclusion ##
+
+You can now create and edit a Dominions 3 mod file. Thanks for taking a look at the dom3editor project.
