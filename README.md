@@ -4,5 +4,12 @@ This application can be used to help create/edit .dm files used to add and chang
 ## Getting Started
 Learn how to [get started](https://github.com/larzm42/dom3editor/wiki/Getting-Started) with dom3editor.
 
+## Download
+Download Windows version 1.1 of the application [HERE](https://drive.google.com/file/d/0B3IGmBe9vPavdVZOLXpWTUdubFk/view?usp=sharing).
+
+Download Linux version 1.1 of the application [HERE](https://drive.google.com/file/d/0B3IGmBe9vPavWHVlVVlsOElEcDA/view?usp=sharing).
+
+Download Mac version 1.1 of the application [HERE](https://drive.google.com/file/d/0B3IGmBe9vPavbjFWMUUtQlBYeHc/view?usp=sharing).
+
 ## Screenshot ##
 ![https://raw.githubusercontent.com/larzm42/dom3editor/master/org.larz.dom3/screenshots/Screenshot5.png](https://raw.githubusercontent.com/larzm42/dom3editor/master/org.larz.dom3/screenshots/Screenshot5.png)
