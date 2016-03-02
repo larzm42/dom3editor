@@ -3,3 +3,6 @@ This application can be used to help create/edit .dm files used to add and chang
 
 ## Screenshot ##
 ![https://raw.githubusercontent.com/larzm42/dom3editor/master/org.larz.dom3/screenshots/Screenshot5.png](https://raw.githubusercontent.com/larzm42/dom3editor/master/org.larz.dom3/screenshots/Screenshot5.png)
+
+## Getting Started
+Learn how to [get started](https://github.com/larzm42/dom4editor/wiki/Getting-Started) with dom4editor.
